@@ -23,6 +23,7 @@ REQUIRES.append("aiohttp >= 3.0.0")
 {{#tornado}}
 REQUIRES.append("tornado>=4.2,<5")
 {{/tornado}}
+EXTRAS = {':python_version <= "2.7"': ['future']}
 
 setup(
     name=NAME,
@@ -33,6 +34,7 @@ setup(
     url="{{packageUrl}}",
     keywords=["OpenAPI", "OpenAPI-Generator", "{{{appName}}}"],
     install_requires=REQUIRES,
+    extras_require=EXTRAS,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
     {{#licenseInfo}}license="{{licenseInfo}}",
