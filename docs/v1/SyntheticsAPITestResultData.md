@@ -1,0 +1,20 @@
+# synthetics_api_test_result_data.SyntheticsAPITestResultData
+
+Object containing results for your Synthetic API test.
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**cert** | [**synthetics_ssl_certificate.SyntheticsSSLCertificate**](SyntheticsSSLCertificate.md) |  | [optional] 
+**error_code** | [**synthetics_error_code.SyntheticsErrorCode**](SyntheticsErrorCode.md) |  | [optional] 
+**error_message** | **str** | The API test error message. | [optional] 
+**event_type** | [**synthetics_test_process_status.SyntheticsTestProcessStatus**](SyntheticsTestProcessStatus.md) |  | [optional] 
+**http_status_code** | **int** | The API test HTTP status code. | [optional] 
+**request_headers** | **{str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)}** | Request header object used for the API test. | [optional] 
+**response_body** | **str** | Response body returned for the API test. | [optional] 
+**response_headers** | **{str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)}** | Response headers returned for the API test. | [optional] 
+**response_size** | **int** | Global size in byte of the API test response. | [optional] 
+**timings** | [**synthetics_timing.SyntheticsTiming**](SyntheticsTiming.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
