@@ -199,12 +199,12 @@ conf = datadog_api_client.v1.Configuration(
 
         # Keep track of unstable operations
         self.unstable_operations = {
-            "get_logs_index": false,
-            "get_logs_index_order": false,
-            "list_log_indexes": false,
-            "update_logs_index": false,
-            "update_logs_index_order": false,
-            "get_slo_history": false,
+            "get_logs_index": False,
+            "get_logs_index_order": False,
+            "list_log_indexes": False,
+            "update_logs_index": False,
+            "update_logs_index_order": False,
+            "get_slo_history": False,
         }
 
     def __deepcopy__(self, memo):

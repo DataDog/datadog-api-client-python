@@ -28,6 +28,11 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     str,
     validate_get_composed_info,
 )
+try:
+    from datadog_api_client.v1.model import slo_timeframe
+except ImportError:
+    slo_timeframe = sys.modules[
+        'datadog_api_client.v1.model.slo_timeframe']
 
 
 class SLOBulkDelete(ModelNormal):

@@ -199,9 +199,9 @@ conf = datadog_api_client.v2.Configuration(
 
         # Keep track of unstable operations
         self.unstable_operations = {
-            "add_read_role_to_archive": false,
-            "list_archive_read_roles": false,
-            "remove_role_from_archive": false,
+            "add_read_role_to_archive": False,
+            "list_archive_read_roles": False,
+            "remove_role_from_archive": False,
         }
 
     def __deepcopy__(self, memo):
