@@ -1,0 +1,12 @@
+# dashboard_list_items.DashboardListItems
+
+Dashboards within a list.
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**dashboards** | [**[dashboard_list_item.DashboardListItem]**](DashboardListItem.md) | List of dashboards in the dashboard list. | 
+**total** | **int** | Number of dashboards in the dashboard list. | [optional] [readonly] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

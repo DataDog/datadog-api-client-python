@@ -1,0 +1,781 @@
+# datadog_api_client.v2.LogsArchivesApi
+
+All URIs are relative to *https://api.datadoghq.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**add_read_role_to_archive**](LogsArchivesApi.md#add_read_role_to_archive) | **POST** /api/v2/logs/config/archives/{archive_id}/readers | Grant role to an archive
+[**create_logs_archive**](LogsArchivesApi.md#create_logs_archive) | **POST** /api/v2/logs/config/archives | Create an archive
+[**delete_logs_archive**](LogsArchivesApi.md#delete_logs_archive) | **DELETE** /api/v2/logs/config/archives/{archive_id} | Delete an archive
+[**get_logs_archive**](LogsArchivesApi.md#get_logs_archive) | **GET** /api/v2/logs/config/archives/{archive_id} | Get an archive
+[**list_archive_read_roles**](LogsArchivesApi.md#list_archive_read_roles) | **GET** /api/v2/logs/config/archives/{archive_id}/readers | List read roles for an archive
+[**list_logs_archives**](LogsArchivesApi.md#list_logs_archives) | **GET** /api/v2/logs/config/archives | Get all archives
+[**remove_role_from_archive**](LogsArchivesApi.md#remove_role_from_archive) | **DELETE** /api/v2/logs/config/archives/{archive_id}/readers | Revoke role from an archive
+[**update_logs_archive**](LogsArchivesApi.md#update_logs_archive) | **PUT** /api/v2/logs/config/archives/{archive_id} | Update an archive
+
+
+# **add_read_role_to_archive**
+> add_read_role_to_archive(archive_id)
+
+Grant role to an archive
+
+Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v2
+from datadog_api_client.v2.api import logs_archives_api
+from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model import relationship_to_role
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = logs_archives_api.LogsArchivesApi(api_client)
+    archive_id = 'archive_id_example' # str | The ID of the archive.
+    body = relationship_to_role.RelationshipToRole() # relationship_to_role.RelationshipToRole |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Grant role to an archive
+        api_instance.add_read_role_to_archive(archive_id)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling LogsArchivesApi->add_read_role_to_archive: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Grant role to an archive
+        api_instance.add_read_role_to_archive(archive_id, body=body)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling LogsArchivesApi->add_read_role_to_archive: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **archive_id** | **str**| The ID of the archive. |
+ **body** | [**relationship_to_role.RelationshipToRole**](RelationshipToRole.md)|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKeyAuth](../README.md#apiKeyAuth), [appKeyAuth](../README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_logs_archive**
+> logs_archive.LogsArchive create_logs_archive(body)
+
+Create an archive
+
+Create an archive in your organization.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v2
+from datadog_api_client.v2.api import logs_archives_api
+from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model import logs_archive
+from datadog_api_client.v2.model import logs_archive_create_request
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = logs_archives_api.LogsArchivesApi(api_client)
+    body = logs_archive_create_request.LogsArchiveCreateRequest() # logs_archive_create_request.LogsArchiveCreateRequest | The definition of the new archive.
+    
+    # example passing only required values which don't have defaults set
+    try:
+        # Create an archive
+        api_response = api_instance.create_logs_archive(body)
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling LogsArchivesApi->create_logs_archive: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**logs_archive_create_request.LogsArchiveCreateRequest**](LogsArchiveCreateRequest.md)| The definition of the new archive. |
+
+### Return type
+
+[**logs_archive.LogsArchive**](LogsArchive.md)
+
+### Authorization
+
+[apiKeyAuth](../README.md#apiKeyAuth), [appKeyAuth](../README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_logs_archive**
+> delete_logs_archive(archive_id)
+
+Delete an archive
+
+Delete a given archive from your organization.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v2
+from datadog_api_client.v2.api import logs_archives_api
+from datadog_api_client.v2.model import api_error_response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = logs_archives_api.LogsArchivesApi(api_client)
+    archive_id = 'archive_id_example' # str | The ID of the archive.
+    
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete an archive
+        api_instance.delete_logs_archive(archive_id)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling LogsArchivesApi->delete_logs_archive: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **archive_id** | **str**| The ID of the archive. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKeyAuth](../README.md#apiKeyAuth), [appKeyAuth](../README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_logs_archive**
+> logs_archive.LogsArchive get_logs_archive(archive_id)
+
+Get an archive
+
+Get a specific archive from your organization.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v2
+from datadog_api_client.v2.api import logs_archives_api
+from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model import logs_archive
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = logs_archives_api.LogsArchivesApi(api_client)
+    archive_id = 'archive_id_example' # str | The ID of the archive.
+    
+    # example passing only required values which don't have defaults set
+    try:
+        # Get an archive
+        api_response = api_instance.get_logs_archive(archive_id)
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling LogsArchivesApi->get_logs_archive: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **archive_id** | **str**| The ID of the archive. |
+
+### Return type
+
+[**logs_archive.LogsArchive**](LogsArchive.md)
+
+### Authorization
+
+[apiKeyAuth](../README.md#apiKeyAuth), [appKeyAuth](../README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_archive_read_roles**
+> roles_response.RolesResponse list_archive_read_roles(archive_id)
+
+List read roles for an archive
+
+Returns all read roles a given archive is restricted to.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v2
+from datadog_api_client.v2.api import logs_archives_api
+from datadog_api_client.v2.model import roles_response
+from datadog_api_client.v2.model import api_error_response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = logs_archives_api.LogsArchivesApi(api_client)
+    archive_id = 'archive_id_example' # str | The ID of the archive.
+    
+    # example passing only required values which don't have defaults set
+    try:
+        # List read roles for an archive
+        api_response = api_instance.list_archive_read_roles(archive_id)
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling LogsArchivesApi->list_archive_read_roles: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **archive_id** | **str**| The ID of the archive. |
+
+### Return type
+
+[**roles_response.RolesResponse**](RolesResponse.md)
+
+### Authorization
+
+[apiKeyAuth](../README.md#apiKeyAuth), [appKeyAuth](../README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_logs_archives**
+> logs_archives.LogsArchives list_logs_archives()
+
+Get all archives
+
+Get the list of configured logs archives with their definitions.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v2
+from datadog_api_client.v2.api import logs_archives_api
+from datadog_api_client.v2.model import logs_archives
+from datadog_api_client.v2.model import api_error_response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = logs_archives_api.LogsArchivesApi(api_client)
+    
+    # example, this endpoint has no required or optional parameters
+    try:
+        # Get all archives
+        api_response = api_instance.list_logs_archives()
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling LogsArchivesApi->list_logs_archives: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**logs_archives.LogsArchives**](LogsArchives.md)
+
+### Authorization
+
+[apiKeyAuth](../README.md#apiKeyAuth), [appKeyAuth](../README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **remove_role_from_archive**
+> remove_role_from_archive(archive_id)
+
+Revoke role from an archive
+
+Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v2
+from datadog_api_client.v2.api import logs_archives_api
+from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model import relationship_to_role
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = logs_archives_api.LogsArchivesApi(api_client)
+    archive_id = 'archive_id_example' # str | The ID of the archive.
+    body = relationship_to_role.RelationshipToRole() # relationship_to_role.RelationshipToRole |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Revoke role from an archive
+        api_instance.remove_role_from_archive(archive_id)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling LogsArchivesApi->remove_role_from_archive: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Revoke role from an archive
+        api_instance.remove_role_from_archive(archive_id, body=body)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling LogsArchivesApi->remove_role_from_archive: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **archive_id** | **str**| The ID of the archive. |
+ **body** | [**relationship_to_role.RelationshipToRole**](RelationshipToRole.md)|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKeyAuth](../README.md#apiKeyAuth), [appKeyAuth](../README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_logs_archive**
+> logs_archive.LogsArchive update_logs_archive(archive_id, body)
+
+Update an archive
+
+Update a given archive configuration.  **Note**: Using this method updates your archive configuration by **replacing** your current configuration with the new one sent to your Datadog organization.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v2
+from datadog_api_client.v2.api import logs_archives_api
+from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model import logs_archive
+from datadog_api_client.v2.model import logs_archive_create_request
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = logs_archives_api.LogsArchivesApi(api_client)
+    archive_id = 'archive_id_example' # str | The ID of the archive.
+    body = logs_archive_create_request.LogsArchiveCreateRequest() # logs_archive_create_request.LogsArchiveCreateRequest | New definition of the archive.
+    
+    # example passing only required values which don't have defaults set
+    try:
+        # Update an archive
+        api_response = api_instance.update_logs_archive(archive_id, body)
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling LogsArchivesApi->update_logs_archive: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **archive_id** | **str**| The ID of the archive. |
+ **body** | [**logs_archive_create_request.LogsArchiveCreateRequest**](LogsArchiveCreateRequest.md)| New definition of the archive. |
+
+### Return type
+
+[**logs_archive.LogsArchive**](LogsArchive.md)
+
+### Authorization
+
+[apiKeyAuth](../README.md#apiKeyAuth), [appKeyAuth](../README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

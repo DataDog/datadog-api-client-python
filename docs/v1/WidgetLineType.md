@@ -1,0 +1,11 @@
+# widget_line_type.WidgetLineType
+
+Type of lines displayed.
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**value** | **str** | Type of lines displayed. | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

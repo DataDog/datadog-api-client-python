@@ -1,0 +1,11 @@
+# aws_logs_list_response_lambdas.AWSLogsListResponseLambdas
+
+Description of the Lambdas.
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**arn** | **str** | Available ARN IDs. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
