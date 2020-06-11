@@ -18,4 +18,8 @@ else
     echo "LICENSE-3rdparty.csv is up to date"
 fi
 
-pytest
+# Install test dependencies
+python -m pip install -e .[tests]
+python -m pip install -U git+https://github.com/DataDog/dd-trace-py#egg=ddtrace || echo Windows
+# Run tests
+python -m pytest

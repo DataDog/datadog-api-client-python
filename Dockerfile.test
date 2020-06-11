@@ -1,7 +1,7 @@
 FROM python:3.8
-ENTRYPOINT ["pytest"]
+ENTRYPOINT [pytest]
 
 COPY . /datadog-api-client-python
 WORKDIR /datadog-api-client-python/
-RUN pip install --no-cache-dir -e .[tests]
+RUN pip wheel --wheel-dir=/tmp/wheelhouse .[tests] && pip install --no-index --find-links=/tmp/wheelhouse datadog-api-client[tests]
 
