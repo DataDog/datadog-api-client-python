@@ -38,7 +38,7 @@ def endpoint_response(api, name):
     api['calls'].append(getattr(api['api'], snake_case(name))())
 
 
-@then(parsers.parse('I should get an instace of "{name}"'))
+@then(parsers.parse('I should get an instance of "{name}"'))
 def i_should_get_an_instace_of(api, name):
     """I should get an instace."""
     module_name = snake_case(name)
