@@ -8,6 +8,7 @@ from datadog_api_client.v1 import ApiClient, Configuration
 
 @pytest.fixture
 def configuration():
+    print("calling configuration")
     yield Configuration()
 
 
