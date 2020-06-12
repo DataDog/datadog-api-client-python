@@ -10,16 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-try:
-    from datadog_api_client.v1.model import slo_timeframe
-except ImportError:
-    slo_timeframe = sys.modules[
-        'datadog_api_client.v1.model.slo_timeframe']
-from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
+from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
 
 
-class TestSLOBulkDelete(unittest.TestCase):
-    """SLOBulkDelete unit test stubs"""
+class TestSyntheticsLocation(unittest.TestCase):
+    """SyntheticsLocation unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,10 +22,10 @@ class TestSLOBulkDelete(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSLOBulkDelete(self):
-        """Test SLOBulkDelete"""
+    def testSyntheticsLocation(self):
+        """Test SyntheticsLocation"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = SLOBulkDelete()  # noqa: E501
+        # model = SyntheticsLocation()  # noqa: E501
         pass
 
 

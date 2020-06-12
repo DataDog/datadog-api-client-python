@@ -11,15 +11,15 @@ import unittest
 
 import datadog_api_client.v2
 try:
-    from datadog_api_client.v2.model import role_create_data
+    from datadog_api_client.v2.model import role_update_response_data
 except ImportError:
-    role_create_data = sys.modules[
-        'datadog_api_client.v2.model.role_create_data']
-from datadog_api_client.v2.model.role_create_payload import RoleCreatePayload
+    role_update_response_data = sys.modules[
+        'datadog_api_client.v2.model.role_update_response_data']
+from datadog_api_client.v2.model.role_update_response import RoleUpdateResponse
 
 
-class TestRoleCreatePayload(unittest.TestCase):
-    """RoleCreatePayload unit test stubs"""
+class TestRoleUpdateResponse(unittest.TestCase):
+    """RoleUpdateResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,10 +27,10 @@ class TestRoleCreatePayload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testRoleCreatePayload(self):
-        """Test RoleCreatePayload"""
+    def testRoleUpdateResponse(self):
+        """Test RoleUpdateResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = RoleCreatePayload()  # noqa: E501
+        # model = RoleUpdateResponse()  # noqa: E501
         pass
 
 

@@ -9,17 +9,17 @@ from __future__ import absolute_import
 import sys
 import unittest
 
-import datadog_api_client.v2
+import datadog_api_client.v1
 try:
-    from datadog_api_client.v2.model import role_update_data
+    from datadog_api_client.v1.model import synthetics_location
 except ImportError:
-    role_update_data = sys.modules[
-        'datadog_api_client.v2.model.role_update_data']
-from datadog_api_client.v2.model.role_update_payload import RoleUpdatePayload
+    synthetics_location = sys.modules[
+        'datadog_api_client.v1.model.synthetics_location']
+from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 
 
-class TestRoleUpdatePayload(unittest.TestCase):
-    """RoleUpdatePayload unit test stubs"""
+class TestSyntheticsLocations(unittest.TestCase):
+    """SyntheticsLocations unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,10 +27,10 @@ class TestRoleUpdatePayload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testRoleUpdatePayload(self):
-        """Test RoleUpdatePayload"""
+    def testSyntheticsLocations(self):
+        """Test SyntheticsLocations"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = RoleUpdatePayload()  # noqa: E501
+        # model = SyntheticsLocations()  # noqa: E501
         pass
 
 

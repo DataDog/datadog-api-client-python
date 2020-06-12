@@ -52,6 +52,7 @@ class WidgetLegendSize(ModelSimple):
 
     allowed_values = {
         ('value',): {
+            'ZERO': "0",
             'TWO': "2",
             'FOUR': "4",
             'EIGHT': "8",

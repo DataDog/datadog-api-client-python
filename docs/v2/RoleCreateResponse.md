@@ -1,10 +1,10 @@
-# role_response_relationships.RoleResponseRelationships
+# role_create_response.RoleCreateResponse
 
-Relationships of the role object returned by the API.
+Response containing information about a created role.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**permissions** | [**relationship_to_permissions.RelationshipToPermissions**](RelationshipToPermissions.md) |  | [optional] 
+**data** | [**role_create_response_data.RoleCreateResponseData**](RoleCreateResponseData.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

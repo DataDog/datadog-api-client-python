@@ -8,10 +8,11 @@ Method | HTTP request | Description
 [**delete_tests**](SyntheticsApi.md#delete_tests) | **POST** /api/v1/synthetics/tests/delete | Delete tests
 [**get_api_test_latest_results**](SyntheticsApi.md#get_api_test_latest_results) | **GET** /api/v1/synthetics/tests/{public_id}/results | Get the test&#39;s latest results summaries (API)
 [**get_api_test_result**](SyntheticsApi.md#get_api_test_result) | **GET** /api/v1/synthetics/tests/{public_id}/results/{result_id} | Get a test result (API)
-[**get_browser_test**](SyntheticsApi.md#get_browser_test) | **GET** /api/v1/synthetics/tests/browser/{public_id} | Get a browser test configuration
+[**get_browser_test**](SyntheticsApi.md#get_browser_test) | **GET** /api/v1/synthetics/tests/browser/{public_id} | Get a test configuration (browser)
 [**get_browser_test_latest_results**](SyntheticsApi.md#get_browser_test_latest_results) | **GET** /api/v1/synthetics/tests/browser/{public_id}/results | Get the test&#39;s latest results summaries (browser)
 [**get_browser_test_result**](SyntheticsApi.md#get_browser_test_result) | **GET** /api/v1/synthetics/tests/browser/{public_id}/results/{result_id} | Get a test result (browser)
-[**get_test**](SyntheticsApi.md#get_test) | **GET** /api/v1/synthetics/tests/{public_id} | Get a test configuration
+[**get_test**](SyntheticsApi.md#get_test) | **GET** /api/v1/synthetics/tests/{public_id} | Get a test configuration (API)
+[**list_locations**](SyntheticsApi.md#list_locations) | **GET** /api/v1/synthetics/locations | Get all locations (public and private)
 [**list_tests**](SyntheticsApi.md#list_tests) | **GET** /api/v1/synthetics/tests | Get a list of tests
 [**update_test**](SyntheticsApi.md#update_test) | **PUT** /api/v1/synthetics/tests/{public_id} | Edit a test
 [**update_test_pause_status**](SyntheticsApi.md#update_test_pause_status) | **PUT** /api/v1/synthetics/tests/{public_id}/status | Pause or start a test
@@ -412,7 +413,7 @@ Name | Type | Description  | Notes
 # **get_browser_test**
 > synthetics_test_details.SyntheticsTestDetails get_browser_test(public_id)
 
-Get a browser test configuration
+Get a test configuration (browser)
 
 Get the detailed configuration (including steps) associated with a Synthetics browser test.
 
@@ -467,7 +468,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     
     # example passing only required values which don't have defaults set
     try:
-        # Get a browser test configuration
+        # Get a test configuration (browser)
         api_response = api_instance.get_browser_test(public_id)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
@@ -708,7 +709,7 @@ Name | Type | Description  | Notes
 # **get_test**
 > synthetics_test_details.SyntheticsTestDetails get_test(public_id)
 
-Get a test configuration
+Get a test configuration (API)
 
 Get the detailed configuration associated with a Synthetics test.
 
@@ -763,7 +764,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     
     # example passing only required values which don't have defaults set
     try:
-        # Get a test configuration
+        # Get a test configuration (API)
         api_response = api_instance.get_test(public_id)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
@@ -795,6 +796,92 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **403** | Forbidden |  -  |
 **404** | - Synthetic is not activated for the user - Test is not owned by the user |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_locations**
+> synthetics_locations.SyntheticsLocations list_locations()
+
+Get all locations (public and private)
+
+Get the list of public and private locations available for Synthetics tests. No arguments required.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v1
+from datadog_api_client.v1.api import synthetics_api
+from datadog_api_client.v1.model import synthetics_locations
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = synthetics_api.SyntheticsApi(api_client)
+    
+    # example, this endpoint has no required or optional parameters
+    try:
+        # Get all locations (public and private)
+        api_response = api_instance.list_locations()
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling SyntheticsApi->list_locations: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**synthetics_locations.SyntheticsLocations**](SyntheticsLocations.md)
+
+### Authorization
+
+[apiKeyAuth](../README.md#apiKeyAuth), [appKeyAuth](../README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

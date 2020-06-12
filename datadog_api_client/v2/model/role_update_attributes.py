@@ -75,6 +75,8 @@ class RoleUpdateAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'created_at': (datetime,),  # noqa: E501
+            'modified_at': (datetime,),  # noqa: E501
             'name': (str,),  # noqa: E501
         }
 
@@ -83,6 +85,8 @@ class RoleUpdateAttributes(ModelNormal):
         return None
 
     attribute_map = {
+        'created_at': 'created_at',  # noqa: E501
+        'modified_at': 'modified_at',  # noqa: E501
         'name': 'name',  # noqa: E501
     }
 
@@ -132,7 +136,9 @@ class RoleUpdateAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the role.. [optional]  # noqa: E501
+            created_at (datetime): Creation time of the role.. [optional]  # noqa: E501
+            modified_at (datetime): Time of last role modification.. [optional]  # noqa: E501
+            name (str): Name of the role.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

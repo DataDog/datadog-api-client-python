@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_role**
-> role_response.RoleResponse create_role()
+> role_create_response.RoleCreateResponse create_role()
 
 Create role
 
@@ -246,9 +246,9 @@ from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import role_response
+from datadog_api_client.v2.model import role_create_request
+from datadog_api_client.v2.model import role_create_response
 from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import role_create_payload
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -285,7 +285,7 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    body = role_create_payload.RoleCreatePayload() # role_create_payload.RoleCreatePayload |  (optional)
+    body = role_create_request.RoleCreateRequest() # role_create_request.RoleCreateRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -301,11 +301,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**role_create_payload.RoleCreatePayload**](RoleCreatePayload.md)|  | [optional]
+ **body** | [**role_create_request.RoleCreateRequest**](RoleCreateRequest.md)|  | [optional]
 
 ### Return type
 
-[**role_response.RoleResponse**](RoleResponse.md)
+[**role_create_response.RoleCreateResponse**](RoleCreateResponse.md)
 
 ### Authorization
 
@@ -1114,7 +1114,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_role**
-> role_response.RoleResponse update_role(role_id)
+> role_update_response.RoleUpdateResponse update_role(role_id)
 
 Update a role
 
@@ -1129,9 +1129,9 @@ from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import role_response
+from datadog_api_client.v2.model import role_update_response
 from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import role_update_payload
+from datadog_api_client.v2.model import role_update_request
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1169,7 +1169,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
     role_id = 'role_id_example' # str | The ID of the role.
-    body = role_update_payload.RoleUpdatePayload() # role_update_payload.RoleUpdatePayload |  (optional)
+    body = role_update_request.RoleUpdateRequest() # role_update_request.RoleUpdateRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1194,11 +1194,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**role_update_payload.RoleUpdatePayload**](RoleUpdatePayload.md)|  | [optional]
+ **body** | [**role_update_request.RoleUpdateRequest**](RoleUpdateRequest.md)|  | [optional]
 
 ### Return type
 
-[**role_response.RoleResponse**](RoleResponse.md)
+[**role_update_response.RoleUpdateResponse**](RoleUpdateResponse.md)
 
 ### Authorization
 

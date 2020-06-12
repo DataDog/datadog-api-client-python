@@ -1,10 +1,10 @@
-# role_response_relationships.RoleResponseRelationships
+# synthetics_locations.SyntheticsLocations
 
-Relationships of the role object returned by the API.
+List of Synthetics locations.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**permissions** | [**relationship_to_permissions.RelationshipToPermissions**](RelationshipToPermissions.md) |  | [optional] 
+**locations** | [**[synthetics_location.SyntheticsLocation]**](SyntheticsLocation.md) | List of Synthetics locations. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,6 +25,7 @@
 *requirements.txt
 .gitlab-ci.yml
 .travis.yml
+.gitignore
 LICENSE
 README.md
 git_push.sh

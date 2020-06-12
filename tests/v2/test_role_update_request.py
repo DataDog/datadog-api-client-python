@@ -9,17 +9,17 @@ from __future__ import absolute_import
 import sys
 import unittest
 
-import datadog_api_client.v1
+import datadog_api_client.v2
 try:
-    from datadog_api_client.v1.model import slo_timeframe
+    from datadog_api_client.v2.model import role_update_data
 except ImportError:
-    slo_timeframe = sys.modules[
-        'datadog_api_client.v1.model.slo_timeframe']
-from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
+    role_update_data = sys.modules[
+        'datadog_api_client.v2.model.role_update_data']
+from datadog_api_client.v2.model.role_update_request import RoleUpdateRequest
 
 
-class TestSLOBulkDelete(unittest.TestCase):
-    """SLOBulkDelete unit test stubs"""
+class TestRoleUpdateRequest(unittest.TestCase):
+    """RoleUpdateRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,10 +27,10 @@ class TestSLOBulkDelete(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSLOBulkDelete(self):
-        """Test SLOBulkDelete"""
+    def testRoleUpdateRequest(self):
+        """Test RoleUpdateRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = SLOBulkDelete()  # noqa: E501
+        # model = RoleUpdateRequest()  # noqa: E501
         pass
 
 

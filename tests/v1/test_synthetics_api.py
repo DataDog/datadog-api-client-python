@@ -53,7 +53,7 @@ class TestSyntheticsApi(unittest.TestCase):
     def test_get_browser_test(self):
         """Test case for get_browser_test
 
-        Get a browser test configuration  # noqa: E501
+        Get a test configuration (browser)  # noqa: E501
         """
         pass
 
@@ -74,7 +74,14 @@ class TestSyntheticsApi(unittest.TestCase):
     def test_get_test(self):
         """Test case for get_test
 
-        Get a test configuration  # noqa: E501
+        Get a test configuration (API)  # noqa: E501
+        """
+        pass
+
+    def test_list_locations(self):
+        """Test case for list_locations
+
+        Get all locations (public and private)  # noqa: E501
         """
         pass
 
