@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **host_count** | **int** | Shows the total number of containers reporting via the Docker integration during the hour. | [optional] 
 **hour** | **datetime** | The hour for the usage. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

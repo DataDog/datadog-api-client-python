@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **type** | [**synthetics_browser_error_type.SyntheticsBrowserErrorType**](SyntheticsBrowserErrorType.md) |  | 
 **status_code** | **int** | Status Code of the error. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

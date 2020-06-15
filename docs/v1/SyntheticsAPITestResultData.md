@@ -15,6 +15,6 @@ Name | Type | Description | Notes
 **response_size** | **int** | Global size in byte of the API test response. | [optional] 
 **timings** | [**synthetics_timing.SyntheticsTiming**](SyntheticsTiming.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

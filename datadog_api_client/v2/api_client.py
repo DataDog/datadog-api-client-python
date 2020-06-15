@@ -75,7 +75,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/0.1.0/python'
+        self.user_agent = user_agent()
 
     def __enter__(self):
         return self
@@ -571,3 +571,15 @@ class ApiClient(object):
                     raise ApiValueError(
                         'Authentication token must be in `query` or `header`'
                     )
+
+
+def user_agent():
+    """Generate default User-Agent header."""
+    import platform
+    from datadog_api_client.version import __version__
+    return "datadog-api-client-python/{version} (python {py}; os {os}; arch {arch})".format(
+        version=__version__,
+        py=platform.python_version(),
+        os=platform.system(),
+        arch=platform.machine(),
+    )

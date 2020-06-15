@@ -78,6 +78,7 @@ class RoleAttributes(ModelNormal):
             'created_at': (datetime,),  # noqa: E501
             'modified_at': (datetime,),  # noqa: E501
             'name': (str,),  # noqa: E501
+            'user_count': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -88,6 +89,7 @@ class RoleAttributes(ModelNormal):
         'created_at': 'created_at',  # noqa: E501
         'modified_at': 'modified_at',  # noqa: E501
         'name': 'name',  # noqa: E501
+        'user_count': 'user_count',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -139,6 +141,7 @@ class RoleAttributes(ModelNormal):
             created_at (datetime): Creation time of the role.. [optional]  # noqa: E501
             modified_at (datetime): Time of last role modification.. [optional]  # noqa: E501
             name (str): Name of the role.. [optional]  # noqa: E501
+            user_count (int): Number of users with that role.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

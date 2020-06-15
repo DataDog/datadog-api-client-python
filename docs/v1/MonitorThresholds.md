@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **warning** | **float, none_type** | The monitor &#x60;WARNING&#x60; threshold. | [optional] 
 **warning_recovery** | **float, none_type** | The monitor &#x60;WARNING&#x60; recovery threshold. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

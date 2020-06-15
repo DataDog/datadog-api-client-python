@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **role_name** | **str** | Your Datadog role delegation name. | [optional] 
 **secret_access_key** | **str** | Your AWS secret access key. Only required if your AWS account is a GovCloud or China account. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

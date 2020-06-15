@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **step_count_completed** | **int** | Amount of browser test steps completed before failing. | [optional] 
 **step_count_total** | **int** | Total amount of browser test steps. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

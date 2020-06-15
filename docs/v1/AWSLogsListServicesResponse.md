@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **id** | **str** | Key value in returned object. | [optional] 
 **label** | **str** | Name of service available for configuration with Datadog logs. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

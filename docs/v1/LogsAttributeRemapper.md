@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **source_type** | **str** | Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;. | [optional]  if omitted the server will use the default value of 'attribute'
 **target_type** | **str** | Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;. | [optional]  if omitted the server will use the default value of 'attribute'
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

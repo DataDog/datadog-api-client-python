@@ -29,6 +29,6 @@ Name | Type | Description | Notes
 **synthetics_check_calls_count_sum** | **int** | Shows the sum of all Synthetic API tests over all hours in the current date for the given org. | [optional] 
 **trace_search_indexed_events_count_sum** | **int** | Shows the sum of all analyzed spans indexed over all hours in the current date for the given org. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

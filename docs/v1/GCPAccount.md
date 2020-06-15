@@ -18,6 +18,6 @@ Name | Type | Description | Notes
 **token_uri** | **str** | Should be &#x60;https://accounts.google.com/o/oauth2/token&#x60;. | [optional] 
 **type** | **str** | The value for service_account found in your JSON service account key. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

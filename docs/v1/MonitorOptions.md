@@ -25,6 +25,6 @@ Name | Type | Description | Notes
 **thresholds** | [**monitor_thresholds.MonitorThresholds**](MonitorThresholds.md) |  | [optional] 
 **timeout_h** | **int, none_type** | The number of hours of the monitor not reporting data before it automatically resolves from a triggered state. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **relationships** | [**user_relationships.UserRelationships**](UserRelationships.md) |  | [optional] 
 **type** | [**users_type.UsersType**](UsersType.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

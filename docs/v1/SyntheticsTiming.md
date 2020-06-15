@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **total** | **float** | The overall time in millisecond the request took to be processed. | [optional] 
 **wait** | **float** | Time spent in millisecond waiting for a response. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

@@ -19,6 +19,6 @@ Name | Type | Description | Notes
 **tags_by_source** | **{str: ([str],)}** | List of tags for each source (AWS, Datadog Agent, Chef..). | [optional] 
 **up** | **bool** | Displays UP when the expected metrics are received and displays &#x60;???&#x60; if no metrics are received. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

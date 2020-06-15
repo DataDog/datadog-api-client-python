@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **attributes** | [**logs_archive_attributes.LogsArchiveAttributes**](LogsArchiveAttributes.md) |  | [optional] 
 **id** | **str** | The archive ID. | [optional] [readonly] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

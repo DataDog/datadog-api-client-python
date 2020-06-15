@@ -69,7 +69,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKeyAuth](../README.md#apiKeyAuth)
+[apiKeyAuth](README.md#apiKeyAuth)
 
 ### HTTP request headers
 
@@ -82,5 +82,5 @@ This endpoint does not need any parameter.
 **200** | OK |  -  |
 **403** | Authentication error |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

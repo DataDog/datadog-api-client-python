@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **scope** | **str** | Query scope. | [optional] 
 **unit** | **str** | Query units (if available). | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

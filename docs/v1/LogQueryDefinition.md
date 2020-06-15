@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **multi_compute** | [**[logs_query_compute.LogsQueryCompute]**](LogsQueryCompute.md) | This field is mutually exclusive with &#x60;compute&#x60;. | [optional] 
 **search** | [**log_query_definition_search.LogQueryDefinitionSearch**](LogQueryDefinitionSearch.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

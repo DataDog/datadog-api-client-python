@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **type** | [**i_frame_widget_definition_type.IFrameWidgetDefinitionType**](IFrameWidgetDefinitionType.md) |  | 
 **url** | **str** | URL of the iframe. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

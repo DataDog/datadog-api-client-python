@@ -11,20 +11,10 @@ import unittest
 
 import datadog_api_client.v2
 try:
-    from datadog_api_client.v2.model import relationship_to_organization
+    from datadog_api_client.v2.model import relationship_to_permissions
 except ImportError:
-    relationship_to_organization = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_organization']
-try:
-    from datadog_api_client.v2.model import relationship_to_organizations
-except ImportError:
-    relationship_to_organizations = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_organizations']
-try:
-    from datadog_api_client.v2.model import relationship_to_roles
-except ImportError:
-    relationship_to_roles = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_roles']
+    relationship_to_permissions = sys.modules[
+        'datadog_api_client.v2.model.relationship_to_permissions']
 from datadog_api_client.v2.model.role_response_relationships import RoleResponseRelationships
 
 

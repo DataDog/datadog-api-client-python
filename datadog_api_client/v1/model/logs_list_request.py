@@ -159,7 +159,7 @@ class LogsListRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            index (str): For multi-index organizations, the log index in which the request is performed.. [optional]  # noqa: E501
+            index (str): For multi-index organizations, the log index in which the request is performed. Default to &#39;*&#39; (all indexes).. [optional]  # noqa: E501
             limit (int): Number of logs return in the response.. [optional]  # noqa: E501
             sort (logs_sort.LogsSort): [optional]  # noqa: E501
             start_at (str): Hash identifier of the first log to return in the list, available in a log &#x60;id&#x60; attribute. This parameter is used for the pagination feature.  **Note**: This parameter is ignored if the corresponding log is out of the scope of the specified time window.. [optional]  # noqa: E501

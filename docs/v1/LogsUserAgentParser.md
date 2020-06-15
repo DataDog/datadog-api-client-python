@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **is_encoded** | **bool** | Define if the source attribute is URL encoded or not. | [optional]  if omitted the server will use the default value of False
 **name** | **str** | Name of the processor. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

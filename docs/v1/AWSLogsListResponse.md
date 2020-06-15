@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **lambdas** | [**[aws_logs_list_response_lambdas.AWSLogsListResponseLambdas]**](AWSLogsListResponseLambdas.md) | List of ARNs configured in your Datadog account. | [optional] 
 **services** | **[str]** | Array of services IDs. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

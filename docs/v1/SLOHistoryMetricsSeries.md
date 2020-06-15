@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **sum** | **float** | Total sum of the query. | 
 **values** | **[float]** | The query values for each metric. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

@@ -29,20 +29,10 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 try:
-    from datadog_api_client.v2.model import relationship_to_organization
+    from datadog_api_client.v2.model import relationship_to_permissions
 except ImportError:
-    relationship_to_organization = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_organization']
-try:
-    from datadog_api_client.v2.model import relationship_to_organizations
-except ImportError:
-    relationship_to_organizations = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_organizations']
-try:
-    from datadog_api_client.v2.model import relationship_to_roles
-except ImportError:
-    relationship_to_roles = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_roles']
+    relationship_to_permissions = sys.modules[
+        'datadog_api_client.v2.model.relationship_to_permissions']
 
 
 class RoleResponseRelationships(ModelNormal):
@@ -90,10 +80,7 @@ class RoleResponseRelationships(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'org': (relationship_to_organization.RelationshipToOrganization,),  # noqa: E501
-            'other_orgs': (relationship_to_organizations.RelationshipToOrganizations,),  # noqa: E501
-            'other_roles': (relationship_to_roles.RelationshipToRoles,),  # noqa: E501
-            'roles': (relationship_to_roles.RelationshipToRoles,),  # noqa: E501
+            'permissions': (relationship_to_permissions.RelationshipToPermissions,),  # noqa: E501
         }
 
     @cached_property
@@ -101,10 +88,7 @@ class RoleResponseRelationships(ModelNormal):
         return None
 
     attribute_map = {
-        'org': 'org',  # noqa: E501
-        'other_orgs': 'other_orgs',  # noqa: E501
-        'other_roles': 'other_roles',  # noqa: E501
-        'roles': 'roles',  # noqa: E501
+        'permissions': 'permissions',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -153,10 +137,7 @@ class RoleResponseRelationships(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            org (relationship_to_organization.RelationshipToOrganization): [optional]  # noqa: E501
-            other_orgs (relationship_to_organizations.RelationshipToOrganizations): [optional]  # noqa: E501
-            other_roles (relationship_to_roles.RelationshipToRoles): [optional]  # noqa: E501
-            roles (relationship_to_roles.RelationshipToRoles): [optional]  # noqa: E501
+            permissions (relationship_to_permissions.RelationshipToPermissions): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

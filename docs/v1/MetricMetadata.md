@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **type** | **str** | Metric type such as &#x60;gauge&#x60; or &#x60;rate&#x60;. | [optional] 
 **unit** | **str** | Primary unit of the metric such as &#x60;byte&#x60; or &#x60;operation&#x60;. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

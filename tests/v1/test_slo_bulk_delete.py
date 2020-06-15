@@ -10,6 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+try:
+    from datadog_api_client.v1.model import slo_timeframe
+except ImportError:
+    slo_timeframe = sys.modules[
+        'datadog_api_client.v1.model.slo_timeframe']
 from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
 
 

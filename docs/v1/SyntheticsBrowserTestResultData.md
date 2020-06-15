@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **thumbnails_bucket_key** | **bool** | Whether or not a thumbnail is associated with the browser test. | [optional] 
 **time_to_interactive** | **float** | Time in second to wait before the browser test starts after reaching the start URL. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

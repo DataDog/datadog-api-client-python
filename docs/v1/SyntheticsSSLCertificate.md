@@ -17,6 +17,6 @@ Name | Type | Description | Notes
 **valid_from** | **datetime** | Date from which the SSL certificate is valid. | [optional] 
 **valid_to** | **datetime** | Date until which the SSL certificate is valid. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

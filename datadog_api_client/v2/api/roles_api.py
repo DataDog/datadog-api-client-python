@@ -35,11 +35,13 @@ from datadog_api_client.v2.model import permissions_response
 from datadog_api_client.v2.model import api_error_response
 from datadog_api_client.v2.model import users_response
 from datadog_api_client.v2.model import relationship_to_user
+from datadog_api_client.v2.model import role_create_request
+from datadog_api_client.v2.model import role_create_response
 from datadog_api_client.v2.model import role_response
-from datadog_api_client.v2.model import role_create_payload
 from datadog_api_client.v2.model import roles_response
 from datadog_api_client.v2.model import roles_sort
-from datadog_api_client.v2.model import role_update_payload
+from datadog_api_client.v2.model import role_update_response
+from datadog_api_client.v2.model import role_update_request
 
 logger = logging.getLogger(__name__)
 
@@ -325,7 +327,7 @@ class RolesApi(object):
 
 
             Keyword Args:
-                body (role_create_payload.RoleCreatePayload): [optional]
+                body (role_create_request.RoleCreateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -347,7 +349,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                role_response.RoleResponse
+                role_create_response.RoleCreateResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -374,7 +376,7 @@ class RolesApi(object):
 
         self.create_role = Endpoint(
             settings={
-                'response_type': (role_response.RoleResponse,),
+                'response_type': (role_create_response.RoleCreateResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -403,7 +405,7 @@ class RolesApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (role_create_payload.RoleCreatePayload,),
+                        (role_create_request.RoleCreateRequest,),
                 },
                 'attribute_map': {
                 },
@@ -1443,7 +1445,7 @@ class RolesApi(object):
                 role_id (str): The ID of the role.
 
             Keyword Args:
-                body (role_update_payload.RoleUpdatePayload): [optional]
+                body (role_update_request.RoleUpdateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1465,7 +1467,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                role_response.RoleResponse
+                role_update_response.RoleUpdateResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1494,7 +1496,7 @@ class RolesApi(object):
 
         self.update_role = Endpoint(
             settings={
-                'response_type': (role_response.RoleResponse,),
+                'response_type': (role_update_response.RoleUpdateResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1528,7 +1530,7 @@ class RolesApi(object):
                     'role_id':
                         (str,),
                     'body':
-                        (role_update_payload.RoleUpdatePayload,),
+                        (role_update_request.RoleUpdateRequest,),
                 },
                 'attribute_map': {
                     'role_id': 'role_id',
@@ -1750,6 +1752,7 @@ class Endpoint(object):
         self.__validate_inputs(kwargs)
 
         params = self.__gather_params(kwargs)
+        params['header']['Dd-Operation-Id'] = ''.join(x.title() for x in self.settings['operation_id'].split('_'))
 
         accept_headers_list = self.headers_map['accept']
         if accept_headers_list:

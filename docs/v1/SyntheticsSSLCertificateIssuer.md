@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **ou** | **str** | Organizational Unit that issued the certificate. | [optional] 
 **st** | **str** | State Or Province Name that issued the certificate. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 
