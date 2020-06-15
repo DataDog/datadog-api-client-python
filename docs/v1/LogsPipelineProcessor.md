@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **name** | **str** | Name of the processor. | [optional] 
 **processors** | [**[logs_processor.LogsProcessor]**](LogsProcessor.md) | Ordered list of processors in this pipeline. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

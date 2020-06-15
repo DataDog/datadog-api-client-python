@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **other_users** | [**relationship_to_users.RelationshipToUsers**](RelationshipToUsers.md) |  | [optional] 
 **roles** | [**relationship_to_roles.RelationshipToRoles**](RelationshipToRoles.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

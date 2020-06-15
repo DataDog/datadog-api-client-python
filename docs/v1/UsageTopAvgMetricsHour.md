@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **metric_category** | [**usage_metric_category.UsageMetricCategory**](UsageMetricCategory.md) |  | [optional] 
 **metric_name** | **str** | Contains the custom metric name. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

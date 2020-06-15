@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **timeout** | **float** | Timeout in millisecond for the test. | [optional] 
 **url** | **str** | URL to perform the test with. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

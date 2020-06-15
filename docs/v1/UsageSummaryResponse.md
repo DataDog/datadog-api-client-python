@@ -31,6 +31,6 @@ Name | Type | Description | Notes
 **trace_search_indexed_events_count_agg_sum** | **int** | Shows the sum of all analyzed spans indexed over all hours in the current month(s) for all organizations. | [optional] 
 **usage** | [**[usage_summary_date.UsageSummaryDate]**](UsageSummaryDate.md) | An array of objects regarding hourly usage. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

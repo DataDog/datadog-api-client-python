@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **new_tenant_name** | **str** | Your New Azure Active Directory ID. | [optional] 
 **tenant_name** | **str** | Your Azure Active Directory ID. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

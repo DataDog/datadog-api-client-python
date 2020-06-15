@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **retry** | [**synthetics_test_options_retry.SyntheticsTestOptionsRetry**](SyntheticsTestOptionsRetry.md) |  | [optional] 
 **tick_every** | [**synthetics_tick_interval.SyntheticsTickInterval**](SyntheticsTickInterval.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

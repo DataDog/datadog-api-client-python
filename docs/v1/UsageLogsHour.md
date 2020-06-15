@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **indexed_events_count** | **int** | Contains the number of log events indexed. | [optional] 
 **ingested_events_bytes** | **int** | Contains the number of log bytes ingested. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

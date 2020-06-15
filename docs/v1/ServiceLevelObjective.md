@@ -18,6 +18,6 @@ Name | Type | Description | Notes
 **query** | [**service_level_objective_query.ServiceLevelObjectiveQuery**](ServiceLevelObjectiveQuery.md) |  | [optional] 
 **tags** | **[str]** | A list of tags associated with this service level objective. Always included in service level objective responses (but may be empty). Optional in create/update requests. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

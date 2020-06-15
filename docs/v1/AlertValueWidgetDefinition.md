@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **title_size** | **str** | Size of value in the widget. | [optional] 
 **unit** | **str** | Unit to display with the value. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

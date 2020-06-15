@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **version** | **int** | Version of the IP list. | [optional] 
 **webhooks** | [**ip_prefixes_webhooks.IPPrefixesWebhooks**](IPPrefixesWebhooks.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **scale_factor** | **float** | Factor for scaling between units of the same family. | [optional] [readonly] 
 **short_name** | **str** | Abbreviation of the unit. | [optional] [readonly] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

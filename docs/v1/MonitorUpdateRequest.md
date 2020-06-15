@@ -19,6 +19,6 @@ Name | Type | Description | Notes
 **tags** | **[str]** | Tags associated to your monitor. | [optional] 
 **type** | [**monitor_type.MonitorType**](MonitorType.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

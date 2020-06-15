@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **tick_edge** | [**widget_tick_edge.WidgetTickEdge**](WidgetTickEdge.md) |  | [optional] 
 **tick_pos** | **str** | Where to position the tick on an edge. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

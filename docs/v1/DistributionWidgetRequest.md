@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **rum_query** | [**log_query_definition.LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **style** | [**widget_style.WidgetStyle**](WidgetStyle.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **metric_query** | **str** | The metric query. One of &#x60;metric_query&#x60; or &#x60;graph_def&#x60; is required. | [optional] 
 **snapshot_url** | **str** | URL of your [graph snapshot](https://docs.datadoghq.com/metrics/explorer/#snapshot). | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

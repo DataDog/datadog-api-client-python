@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **type** | [**logs_archive_destination_gcs_type.LogsArchiveDestinationGCSType**](LogsArchiveDestinationGCSType.md) |  | 
 **path** | **str** | The archive path. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

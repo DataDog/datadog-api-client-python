@@ -1,3 +1,4 @@
+README.md
 datadog_api_client/__init__.py
 datadog_api_client/v2/__init__.py
 datadog_api_client/v2/api/__init__.py

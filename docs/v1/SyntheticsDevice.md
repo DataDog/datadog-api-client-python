@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **width** | **int** | Screen width of the device. | 
 **is_mobile** | **bool** | Whether or not the device is a mobile. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

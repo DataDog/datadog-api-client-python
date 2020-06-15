@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **message** | **str** | The error message. | 
 **timeframe** | [**slo_error_timeframe.SLOErrorTimeframe**](SLOErrorTimeframe.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

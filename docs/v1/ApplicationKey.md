@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **name** | **str** | Name of an application key. | [optional] 
 **owner** | **str** | Owner of an application key. | [optional] [readonly] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

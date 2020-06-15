@@ -21,6 +21,6 @@ Name | Type | Description | Notes
 **timezone** | **str** | The timezone for the downtime. | [optional] 
 **updater_id** | **int, none_type** | ID of the last user that updated the downtime. | [optional] [readonly] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

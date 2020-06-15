@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **sharing** | **str** | Sharing type of the organization. | [optional] 
 **url** | **str** | URL of the site that this organization exists at. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **st** | **str** | State Or Province Name associated with the certificate. | [optional] 
 **alt_name** | **str** | Subject Alternative Name associated with the certificate. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

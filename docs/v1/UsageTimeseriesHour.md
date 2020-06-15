@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **num_custom_output_timeseries** | **int** | Contains the number of custom metrics that are outputs for aggregations (metric configured is custom). | [optional] 
 **num_custom_timeseries** | **int** | Contains the number of non-aggregation custom metrics. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

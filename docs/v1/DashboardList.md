@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **modified** | **datetime** | Date of last edition of the dashboard list. | [optional] [readonly] 
 **type** | **str** | The type of dashboard list. | [optional] [readonly] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

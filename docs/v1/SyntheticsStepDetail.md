@@ -22,6 +22,6 @@ Name | Type | Description | Notes
 **value** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** | Value for the step. | [optional] 
 **warnings** | [**[synthetics_step_detail_warnings.SyntheticsStepDetailWarnings]**](SyntheticsStepDetailWarnings.md) | Warning collected that didn&#39;t failed the step. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

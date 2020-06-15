@@ -18,6 +18,6 @@ Name | Type | Description | Notes
 **template_variables** | [**[dashboard_template_variables.DashboardTemplateVariables], none_type**](DashboardTemplateVariables.md) | List of template variables for this dashboard. | [optional] 
 **url** | **str** | The URL of the dashboard. | [optional] [readonly] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

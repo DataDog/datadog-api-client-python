@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **hostname** | **str** | The host name. | [optional] 
 **message** | **str** | Message associated with the mute. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

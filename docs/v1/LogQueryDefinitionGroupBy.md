@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **limit** | **int** | Maximum number of items in the group. | [optional] 
 **sort** | [**log_query_definition_sort.LogQueryDefinitionSort**](LogQueryDefinitionSort.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

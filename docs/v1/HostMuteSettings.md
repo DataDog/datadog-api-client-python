@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **message** | **str** | Message to associate with the muting of this host. | [optional] 
 **override** | **bool** | If true and the host is already muted, replaces existing host mute settings. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

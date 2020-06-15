@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **type** | [**slo_type.SLOType**](SLOType.md) |  | [optional] 
 **type_id** | [**slo_type_numeric.SLOTypeNumeric**](SLOTypeNumeric.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **status** | **str** | Status of the query. | [optional] [readonly] 
 **to_date** | **int** | End of requested time window, milliseconds since Unix epoch. | [optional] [readonly] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 

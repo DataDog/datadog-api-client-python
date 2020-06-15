@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **metric** | **str** | Metric from the request to correlate this conditional format with. | [optional] 
 **timeframe** | **str** | Defines the displayed timeframe. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
 
