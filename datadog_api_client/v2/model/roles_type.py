@@ -50,8 +50,6 @@ class RolesType(ModelSimple):
           as additional properties values.
     """
 
-    attribute_map = {}
-
     allowed_values = {
         ('value',): {
             'ROLES': "roles",

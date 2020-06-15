@@ -50,8 +50,6 @@ class PermissionsType(ModelSimple):
           as additional properties values.
     """
 
-    attribute_map = {}
-
     allowed_values = {
         ('value',): {
             'PERMISSIONS': "permissions",
