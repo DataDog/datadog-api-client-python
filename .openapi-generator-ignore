@@ -27,7 +27,6 @@
 .travis.yml
 .gitignore
 LICENSE
-README.md
 git_push.sh
 setup.cfg
 setup.py
