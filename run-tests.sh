@@ -21,4 +21,4 @@ fi
 # Install test dependencies
 python -m pip install -e .[tests]
 # Run tests
-pytest
+python -m pytest
