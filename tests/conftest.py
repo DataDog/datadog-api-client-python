@@ -31,7 +31,7 @@ def pytest_runtest_makereport(item, call):
     setattr(item, "dd_outcome", rep)
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def ddtrace(request):
     from ddtrace import patch, tracer
     from ddtrace.constants import ANALYTICS_SAMPLE_RATE_KEY
@@ -39,7 +39,7 @@ def ddtrace(request):
     patch(httplib=True)
 
     # marker = request.node.get_closest_marker("dd_tags")
-    with tracer.trace('test', resource=request.node.name, span_type='test') as span:
+    with tracer.trace("test", resource=request.node.name, span_type="test") as span:
         span.set_tag(ANALYTICS_SAMPLE_RATE_KEY, True)
         yield span
         outcome = request.node.dd_outcome
@@ -48,15 +48,15 @@ def ddtrace(request):
 
 
 def snake_case(value):
-    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', value)
-    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+    s1 = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", value)
+    return re.sub("([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def vcr_config():
     return dict(
-        filter_headers=('DD-API-KEY', 'DD-APPLICATION-KEY'),
-        filter_query_parameters=('api_key', 'application_key'),
+        filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY"),
+        filter_query_parameters=("api_key", "application_key"),
     )
 
 
@@ -69,31 +69,25 @@ def freezer(vcr_cassette_name, vcr_cassette, vcr):
         tzinfo = datetime.now().astimezone().tzinfo
         freeze_at = datetime.now().replace(tzinfo=tzinfo).isoformat()
         with open(
-            os.path.join(
-                vcr.cassette_library_dir, vcr_cassette_name + ".frozen"
-            ),
-            "w",
+            os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"), "w",
         ) as f:
             f.write(freeze_at)
     else:
         with open(
-            os.path.join(
-                vcr.cassette_library_dir, vcr_cassette_name + ".frozen"
-            ),
-            "r",
+            os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"), "r",
         ) as f:
             freeze_at = f.readline().strip()
 
     return freeze_time(parser.isoparse(freeze_at))
 
 
-@given('a valid API key')
+@given("a valid API key")
 def a_valid_api_key(configuration):
     """a valid API key."""
     configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY")
 
 
-@given('a valid Application key')
+@given("a valid Application key")
 def a_valid_application_key(configuration):
     """a valid Application key."""
     configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY")
@@ -119,31 +113,31 @@ def client(_package, configuration):
 def api(package_name, client, name):
     """Return an API instance."""
     module_name = snake_case(name)
-    package = importlib.import_module(f'{package_name}.api.{module_name}_api')
+    package = importlib.import_module(f"{package_name}.api.{module_name}_api")
     return {
-        'api': getattr(package, name + 'Api')(client),
-        'calls': [],
+        "api": getattr(package, name + "Api")(client),
+        "calls": [],
     }
 
 
 @when(parsers.parse('I call "{name}" endpoint'))
 def endpoint_response(api, name):
     """Call an endpoint."""
-    return api['calls'].append(getattr(api['api'], snake_case(name))())
+    return api["calls"].append(getattr(api["api"], snake_case(name))())
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))
 def i_should_get_an_instace_of(package_name, api, name):
     """I should get an instace."""
     module_name = snake_case(name)
-    package = importlib.import_module(f'{package_name}.model.{module_name}')
-    assert isinstance(api['calls'][0], getattr(package, name))
+    package = importlib.import_module(f"{package_name}.model.{module_name}")
+    assert isinstance(api["calls"][0], getattr(package, name))
 
 
 @then(parsers.parse('I should get a list of "{name}" objects'))
 def i_should_get_a_list_of_objects(package_name, api, name):
     """I should get an instace."""
     module_name = snake_case(name)
-    package = importlib.import_module(f'{package_name}.model.{module_name}')
+    package = importlib.import_module(f"{package_name}.model.{module_name}")
     cls = getattr(package, name)
-    assert all(isinstance(obj, cls) for obj in api['calls'][0])
+    assert all(isinstance(obj, cls) for obj in api["calls"][0])
