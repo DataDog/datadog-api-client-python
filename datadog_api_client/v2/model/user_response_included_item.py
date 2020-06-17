@@ -104,23 +104,13 @@ class UserResponseIncludedItem(ModelComposed):
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
-        return {
-            'type': (roles_type.RolesType,),  # noqa: E501
-            'attributes': (role_attributes.RoleAttributes,),  # noqa: E501
-            'id': (str,),  # noqa: E501
-            'relationships': (role_response_relationships.RoleResponseRelationships,),  # noqa: E501
-        }
+        return {}
 
     @cached_property
     def discriminator():
         return None
 
-    attribute_map = {
-        'type': 'type',  # noqa: E501
-        'attributes': 'attributes',  # noqa: E501
-        'id': 'id',  # noqa: E501
-        'relationships': 'relationships',  # noqa: E501
-    }
+    attribute_map = {}
 
     required_properties = set([
         '_data_store',

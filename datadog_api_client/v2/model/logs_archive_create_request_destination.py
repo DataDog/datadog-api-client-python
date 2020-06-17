@@ -99,29 +99,13 @@ class LogsArchiveCreateRequestDestination(ModelComposed):
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
-        return {
-            'container': (str,),  # noqa: E501
-            'integration': (logs_archive_integration_s3.LogsArchiveIntegrationS3,),  # noqa: E501
-            'storage_account': (str,),  # noqa: E501
-            'type': (logs_archive_destination_s3_type.LogsArchiveDestinationS3Type,),  # noqa: E501
-            'bucket': (str,),  # noqa: E501
-            'path': (str,),  # noqa: E501
-            'region': (str,),  # noqa: E501
-        }
+        return {}
 
     @cached_property
     def discriminator():
         return None
 
-    attribute_map = {
-        'container': 'container',  # noqa: E501
-        'integration': 'integration',  # noqa: E501
-        'storage_account': 'storage_account',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'bucket': 'bucket',  # noqa: E501
-        'path': 'path',  # noqa: E501
-        'region': 'region',  # noqa: E501
-    }
+    attribute_map = {}
 
     required_properties = set([
         '_data_store',

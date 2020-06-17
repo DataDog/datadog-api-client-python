@@ -169,59 +169,13 @@ class LogsProcessor(ModelComposed):
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
-        return {
-            'grok': (logs_grok_parser_rules.LogsGrokParserRules,),  # noqa: E501
-            'source': (str,),  # noqa: E501
-            'type': (logs_trace_remapper_type.LogsTraceRemapperType,),  # noqa: E501
-            'sources': ([str],),  # noqa: E501
-            'target': (str,),  # noqa: E501
-            'categories': ([logs_category_processor_categories.LogsCategoryProcessorCategories],),  # noqa: E501
-            'expression': (str,),  # noqa: E501
-            'template': (str,),  # noqa: E501
-            'lookup_table': ([str],),  # noqa: E501
-            'is_enabled': (bool,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'samples': ([str],),  # noqa: E501
-            'override_on_conflict': (bool,),  # noqa: E501
-            'preserve_source': (bool,),  # noqa: E501
-            'source_type': (str,),  # noqa: E501
-            'target_type': (str,),  # noqa: E501
-            'normalize_ending_slashes': (bool, none_type,),  # noqa: E501
-            'is_encoded': (bool,),  # noqa: E501
-            'is_replace_missing': (bool,),  # noqa: E501
-            'filter': (logs_filter.LogsFilter,),  # noqa: E501
-            'processors': ([LogsProcessor],),  # noqa: E501
-            'default_lookup': (str,),  # noqa: E501
-        }
+        return {}
 
     @cached_property
     def discriminator():
         return None
 
-    attribute_map = {
-        'grok': 'grok',  # noqa: E501
-        'source': 'source',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'sources': 'sources',  # noqa: E501
-        'target': 'target',  # noqa: E501
-        'categories': 'categories',  # noqa: E501
-        'expression': 'expression',  # noqa: E501
-        'template': 'template',  # noqa: E501
-        'lookup_table': 'lookup_table',  # noqa: E501
-        'is_enabled': 'is_enabled',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'samples': 'samples',  # noqa: E501
-        'override_on_conflict': 'override_on_conflict',  # noqa: E501
-        'preserve_source': 'preserve_source',  # noqa: E501
-        'source_type': 'source_type',  # noqa: E501
-        'target_type': 'target_type',  # noqa: E501
-        'normalize_ending_slashes': 'normalize_ending_slashes',  # noqa: E501
-        'is_encoded': 'is_encoded',  # noqa: E501
-        'is_replace_missing': 'is_replace_missing',  # noqa: E501
-        'filter': 'filter',  # noqa: E501
-        'processors': 'processors',  # noqa: E501
-        'default_lookup': 'default_lookup',  # noqa: E501
-    }
+    attribute_map = {}
 
     required_properties = set([
         '_data_store',
