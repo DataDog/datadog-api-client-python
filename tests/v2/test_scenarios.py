@@ -8,5 +8,3 @@ from pytest_bdd import scenarios
 pytestmark = pytest.mark.vcr
 
 scenarios('features')
-
-
