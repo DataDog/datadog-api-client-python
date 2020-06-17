@@ -5,6 +5,7 @@ import importlib
 import logging
 import os
 import re
+import sys
 import time
 from datetime import datetime
 
@@ -20,6 +21,30 @@ from pytest_bdd import (
 logging.basicConfig()
 # vcr_log = logging.getLogger("vcr")
 # vcr_log.setLevel(logging.INFO)
+
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    """Store outcome for tracing."""
+    outcome = yield
+    rep = outcome.get_result()
+    setattr(item, "dd_outcome", rep)
+
+
+@pytest.fixture(autouse=True)
+def ddtrace(request):
+    from ddtrace import patch, tracer
+    from ddtrace.constants import ANALYTICS_SAMPLE_RATE_KEY
+
+    patch(httplib=True)
+
+    # marker = request.node.get_closest_marker("dd_tags")
+    with tracer.trace('test', resource=request.node.name, span_type='test') as span:
+        span.set_tag(ANALYTICS_SAMPLE_RATE_KEY, True)
+        yield span
+        outcome = request.node.dd_outcome
+        if outcome.failed:
+            span.set_exc_info(sys.last_type, sys.last_value, sys.last_traceback)
 
 
 def snake_case(value):
