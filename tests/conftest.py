@@ -31,7 +31,7 @@ def pytest_runtest_makereport(item, call):
     setattr(item, "dd_outcome", rep)
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def ddtrace(request):
     from ddtrace import patch, tracer
     from ddtrace.constants import ANALYTICS_SAMPLE_RATE_KEY
