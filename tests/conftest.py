@@ -36,7 +36,7 @@ def pytest_runtest_makereport(item, call):
 
 
 @pytest.fixture(scope="function")
-def ddtrace(request):
+def ddspan(request):
     from ddtrace import tracer
     from ddtrace.constants import ANALYTICS_SAMPLE_RATE_KEY
 
@@ -106,8 +106,11 @@ def configuration(_package):
 
 
 @pytest.fixture
-def client(_package, configuration, ddtrace):
+def client(_package, configuration, ddspan):
+    from ddtrace.propagation.http import HTTPPropagator
+
     with _package.ApiClient(configuration) as api_client:
+        HTTPPropagator().inject(ddspan.context, api_client.default_headers)
         yield api_client
 
 
