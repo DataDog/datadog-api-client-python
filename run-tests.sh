@@ -20,5 +20,7 @@ fi
 
 # Install test dependencies
 python -m pip install -e .[tests]
+# FIXME
+pip install -U git+https://github.com/DataDog/dd-trace-py.git#egg=ddtrace
 # Run tests
 python -m pytest
