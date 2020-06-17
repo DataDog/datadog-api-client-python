@@ -1,6 +1,10 @@
 # coding=utf-8
 """Define basic fixtures."""
 
+# First patch httplib
+from ddtrace import patch
+patch(httplib=True)
+
 import importlib
 import logging
 import os
@@ -33,10 +37,8 @@ def pytest_runtest_makereport(item, call):
 
 @pytest.fixture(scope="function")
 def ddtrace(request):
-    from ddtrace import patch, tracer
+    from ddtrace import tracer
     from ddtrace.constants import ANALYTICS_SAMPLE_RATE_KEY
-
-    patch(httplib=True)
 
     # marker = request.node.get_closest_marker("dd_tags")
     with tracer.trace("test", resource=request.node.name, span_type="test") as span:
