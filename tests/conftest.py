@@ -31,7 +31,7 @@ def pytest_runtest_makereport(item, call):
     setattr(item, "dd_outcome", rep)
 
 
-@pytest.fixture(scope="function", autouse=True)
+@pytest.fixture(scope="function")
 def ddtrace(request):
     from ddtrace import patch, tracer
     from ddtrace.constants import ANALYTICS_SAMPLE_RATE_KEY
@@ -104,7 +104,7 @@ def configuration(_package):
 
 
 @pytest.fixture
-def client(_package, configuration):
+def client(_package, configuration, ddtrace):
     with _package.ApiClient(configuration) as api_client:
         yield api_client
 
