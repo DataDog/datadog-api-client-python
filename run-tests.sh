@@ -18,4 +18,7 @@ else
     echo "LICENSE-3rdparty.csv is up to date"
 fi
 
+# Install test dependencies
+python -m pip install -e .[tests]
+# Run tests
 pytest
