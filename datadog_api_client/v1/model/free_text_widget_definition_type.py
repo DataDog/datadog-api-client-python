@@ -81,6 +81,8 @@ class FreeTextWidgetDefinitionType(ModelSimple):
     def discriminator():
         return None
 
+    attribute_map = {}
+
     _composed_schemas = None
 
     required_properties = set([
