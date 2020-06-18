@@ -23,4 +23,4 @@ python -m pip install -e .[tests]
 # FIXME
 pip install -U git+https://github.com/DataDog/dd-trace-py.git@jirikuncar/httplib/distributed-tracing
 # Run tests
-python -m pytest
+python -m pytest --disable-vcr
