@@ -102,15 +102,14 @@ def _package(package_name):
 
 @pytest.fixture
 def configuration(_package):
-    yield _package.Configuration()
+    c = _package.Configuration()
+    c.debug = debug=os.getenv("DEBUG") in {'true', '1', 'yes', 'on'}
+    return c
 
 
 @pytest.fixture
 def client(_package, configuration, ddspan):
-    from ddtrace.propagation.http import HTTPPropagator
-
     with _package.ApiClient(configuration) as api_client:
-        HTTPPropagator().inject(ddspan.context, api_client.default_headers)
         yield api_client
 
 
