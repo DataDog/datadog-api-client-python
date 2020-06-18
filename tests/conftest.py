@@ -2,7 +2,8 @@
 """Define basic fixtures."""
 
 # First patch httplib
-from ddtrace import patch
+from ddtrace import config, patch
+config.httplib['distributed_tracing'] = True
 patch(httplib=True)
 
 import importlib
