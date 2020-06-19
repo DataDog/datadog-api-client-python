@@ -21,6 +21,6 @@ fi
 # Install test dependencies
 python -m pip install -e .[tests]
 # FIXME
-pip install -U git+https://github.com/DataDog/dd-trace-py.git@jirikuncar/httplib/distributed-tracing
+pip install -U git+https://github.com/DataDog/dd-trace-py.git@jirikuncar/httplib/distributed-tracing || pip install --find-links=https://s3.amazonaws.com/pypi.datadoghq.com/trace-dev/index.html --pre ddtrace
 # Run tests
 python -m pytest
