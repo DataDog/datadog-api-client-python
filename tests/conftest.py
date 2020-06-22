@@ -3,7 +3,8 @@
 
 # First patch httplib
 from ddtrace import config, patch
-config.httplib['distributed_tracing'] = True
+
+config.httplib["distributed_tracing"] = True
 patch(httplib=True)
 
 import importlib
@@ -55,6 +56,17 @@ def snake_case(value):
     return re.sub("([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
 
 
+@pytest.fixture
+def unique(request, freezer):
+    test_class = request.cls
+    if test_class:
+        prefix = "{}.{}".format(test_class.__name__, request.node.name)
+    else:
+        prefix = request.node.name
+
+    return lambda: f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+
+
 @pytest.fixture(scope="module")
 def vcr_config():
     return dict(
@@ -84,13 +96,13 @@ def freezer(vcr_cassette_name, vcr_cassette, vcr):
     return freeze_time(parser.isoparse(freeze_at))
 
 
-@given("a valid API key")
+@given('a valid "apiKeyAuth" key')
 def a_valid_api_key(configuration):
     """a valid API key."""
     configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY")
 
 
-@given("a valid Application key")
+@given('a valid "appKeyAuth" key')
 def a_valid_application_key(configuration):
     """a valid Application key."""
     configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY")
@@ -104,7 +116,7 @@ def _package(package_name):
 @pytest.fixture
 def configuration(_package):
     c = _package.Configuration()
-    c.debug = debug=os.getenv("DEBUG") in {'true', '1', 'yes', 'on'}
+    c.debug = debug = os.getenv("DEBUG") in {"true", "1", "yes", "on"}
     return c
 
 
@@ -125,10 +137,42 @@ def api(package_name, client, name):
     }
 
 
-@when(parsers.parse('I call "{name}" endpoint'))
-def endpoint_response(api, name):
+@given(parsers.parse('new "{name}" request'))
+def api_request(api, name):
     """Call an endpoint."""
-    return api["calls"].append(getattr(api["api"], snake_case(name))())
+    return {
+        "request": getattr(api["api"], snake_case(name)),
+        "args": [],
+        "kwargs": {
+            "_host_index": 0,
+            "_check_input_type": False,
+            "async_req": False,
+            "_check_return_type": True,
+            "_return_http_data_only": False,
+            "_preload_content": True,
+            "_request_timeout": None,
+        },
+        "response": (None, None, None),
+    }
+
+
+@given(parsers.parse("body {data}"))
+def request_body(api_request, data):
+    """Set request body."""
+    import json
+
+    body = api_request["kwargs"]["body"] = json.loads(data)
+    return body
+
+
+@when("I execute the request")
+def execute_request(api_request):
+    api_request["response"] = api_request["request"].call_with_http_info(
+        *api_request["args"], **api_request["kwargs"]
+    )
+    # TODO define clean-up methods
+    if api_request["request"].settings['http_method'] not in {'GET', 'HEAD', 'OPTIONS'}:
+        print("Needs cleanup")
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))
@@ -136,7 +180,7 @@ def i_should_get_an_instace_of(package_name, api, name):
     """I should get an instace."""
     module_name = snake_case(name)
     package = importlib.import_module(f"{package_name}.model.{module_name}")
-    assert isinstance(api["calls"][0], getattr(package, name))
+    assert isinstance(api_request["response"][0], getattr(package, name))
 
 
 @then(parsers.parse('I should get a list of "{name}" objects'))
@@ -145,4 +189,10 @@ def i_should_get_a_list_of_objects(package_name, api, name):
     module_name = snake_case(name)
     package = importlib.import_module(f"{package_name}.model.{module_name}")
     cls = getattr(package, name)
-    assert all(isinstance(obj, cls) for obj in api["calls"][0])
+    assert all(isinstance(obj, cls) for obj in api_request["response"][0])
+
+
+@then(parsers.parse("the status is {status:d} {description}"))
+def the_status_is(api_request, status, description):
+    """Check the status."""
+    assert status == api_request["response"][1]
