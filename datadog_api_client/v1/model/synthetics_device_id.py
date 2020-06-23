@@ -55,6 +55,12 @@ class SyntheticsDeviceID(ModelSimple):
             'LAPTOP_LARGE': "laptop_large",
             'TABLET': "tablet",
             'MOBILE_SMALL': "mobile_small",
+            'CHROME_LAPTOP_LARGE': "chrome.laptop_large",
+            'CHROME_TABLET': "chrome.tablet",
+            'CHROME_MOBILE_SMALL': "chrome.mobile_small",
+            'FIREFOX_LAPTOP_LARGE': "firefox.laptop_large",
+            'FIREFOX_TABLET': "firefox.tablet",
+            'FIREFOX_MOBILE_SMALL': "firefox.mobile_small",
         },
     }
 

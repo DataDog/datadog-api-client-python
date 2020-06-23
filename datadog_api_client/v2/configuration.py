@@ -64,6 +64,15 @@ class Configuration(object):
       disabled. This can be useful to troubleshoot data validation problem, such as
       when the OpenAPI document validation rules do not match the actual API data
       received by the server.
+    :param server_index: Index to servers configuration.
+    :param server_variables: Mapping with string values to replace variables in
+      templated server configuration. The validation of enums is performed for
+      variables with defined enum values before.
+    :param server_operation_index: Mapping from operation ID to an index to server
+      configuration.
+    :param server_operation_variables: Mapping from operation ID to a mapping with
+      string values to replace variables in templated server configuration.
+      The validation of enums is performed for variables with defined enum values before.
 
     :Example:
 
@@ -452,7 +461,7 @@ conf = datadog_api_client.v2.Configuration(
         """Gets host URL based on the index and variables
         :param index: array index of the host settings
         :param variables: hash of variable and the corresponding value
-        :param servers: host settings for the endpoint
+        :param servers: an array of host settings or None
         :return: URL based on host settings
         """
         if index is None:
@@ -490,9 +499,6 @@ conf = datadog_api_client.v2.Configuration(
     @property
     def host(self):
         """Return generated host."""
-        if self.server_index is None:
-            return self._base_path
-
         return self.get_host_from_settings(self.server_index, variables=self.server_variables)
 
     @host.setter

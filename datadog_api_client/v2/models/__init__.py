@@ -98,13 +98,13 @@ from datadog_api_client.v2.model.user import User
 from datadog_api_client.v2.model.user_attributes import UserAttributes
 from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
 from datadog_api_client.v2.model.user_create_data import UserCreateData
-from datadog_api_client.v2.model.user_create_payload import UserCreatePayload
+from datadog_api_client.v2.model.user_create_request import UserCreateRequest
 from datadog_api_client.v2.model.user_invitation_data import UserInvitationData
 from datadog_api_client.v2.model.user_invitation_data_attributes import UserInvitationDataAttributes
-from datadog_api_client.v2.model.user_invitation_payload import UserInvitationPayload
 from datadog_api_client.v2.model.user_invitation_relationships import UserInvitationRelationships
 from datadog_api_client.v2.model.user_invitation_response import UserInvitationResponse
 from datadog_api_client.v2.model.user_invitation_response_data import UserInvitationResponseData
+from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
 from datadog_api_client.v2.model.user_invitations_type import UserInvitationsType
 from datadog_api_client.v2.model.user_relationships import UserRelationships
@@ -113,6 +113,6 @@ from datadog_api_client.v2.model.user_response_included_item import UserResponse
 from datadog_api_client.v2.model.user_response_relationships import UserResponseRelationships
 from datadog_api_client.v2.model.user_update_attributes import UserUpdateAttributes
 from datadog_api_client.v2.model.user_update_data import UserUpdateData
-from datadog_api_client.v2.model.user_update_payload import UserUpdatePayload
+from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.users_type import UsersType

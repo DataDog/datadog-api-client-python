@@ -1,6 +1,6 @@
 # synthetics_test_options_retry.SyntheticsTestOptionsRetry
 
-Object describing the retry strategy to apply to a Synthetic test.
+Object describing the retry strategy to apply to a Synthetic test. By default, there is a 300ms wait before retrying a test that has failed.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
