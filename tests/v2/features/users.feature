@@ -24,7 +24,7 @@ Feature: Users
 
   Scenario: Create a user leading to OK
     Given new "CreateUser" request
-    And body {}
+    And body {"data": {"type": "users", "attributes": {"name": "Datadog API Client Python", "email": "{{ unique }}@datadoghq.com"}}}
     When I execute the request
     Then the status is 201 OK
 
@@ -46,7 +46,7 @@ Feature: Users
     Given there is a valid user in the system
     And new "UpdateUser" request
     And parameter user_id from user.data.id
-    And body {"data": {"type": "users", "attributes": {"name": "updated"}}}
+    And body {"data": {"id": "{{ user.data.id }}", "type": "users", "attributes": {"name": "updated"}}}
     When I execute the request
     Then the status is 204 OK
 

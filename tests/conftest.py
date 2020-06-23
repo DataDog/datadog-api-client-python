@@ -56,7 +56,7 @@ def snake_case(value):
     return re.sub("([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
 
 
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def unique(request, freezer):
     test_class = request.cls
     if test_class:
@@ -64,7 +64,15 @@ def unique(request, freezer):
     else:
         prefix = request.node.name
 
-    return lambda: f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+    class Lazy:
+        @staticmethod
+        def __call__():
+            return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+
+        def __str__(self):
+            return self()
+
+    return Lazy()
 
 
 @pytest.fixture(scope="module")
@@ -157,12 +165,25 @@ def api_request(api, name):
 
 
 @given(parsers.parse("body {data}"))
-def request_body(api_request, data):
+def request_body(request, api_request, data):
     """Set request body."""
     import json
 
-    body = api_request["kwargs"]["body"] = json.loads(data)
+    from jinja2 import Template
+    ctx = {f: request.getfixturevalue(f) for f in request.fixturenames}
+    tpl = Template(data).render(**ctx)
+
+    body = api_request["kwargs"]["body"] = json.loads(tpl)
     return body
+
+
+@given(parsers.parse("parameter {name} from {path}"))
+def request_parameter(request, api_request, name, path):
+    """Set request parameter."""
+    from glom import glom
+    ctx = {f: request.getfixturevalue(f) for f in request.fixturenames}
+    api_request["kwargs"][name] = parameter = glom(ctx, path)
+    return parameter
 
 
 @when("I execute the request")
