@@ -3674,11 +3674,23 @@ components:
       - laptop_large
       - tablet
       - mobile_small
+      - chrome.laptop_large
+      - chrome.tablet
+      - chrome.mobile_small
+      - firefox.laptop_large
+      - firefox.tablet
+      - firefox.mobile_small
       type: string
       x-enum-varnames:
       - LAPTOP_LARGE
       - TABLET
       - MOBILE_SMALL
+      - CHROME_LAPTOP_LARGE
+      - CHROME_TABLET
+      - CHROME_MOBILE_SMALL
+      - FIREFOX_LAPTOP_LARGE
+      - FIREFOX_TABLET
+      - FIREFOX_MOBILE_SMALL
     MonitorOptions:
       description: List of options associated with your monitor.
       properties:
@@ -5770,11 +5782,23 @@ components:
       - laptop_large
       - tablet
       - mobile_small
+      - chrome.laptop_large
+      - chrome.tablet
+      - chrome.mobile_small
+      - firefox.laptop_large
+      - firefox.tablet
+      - firefox.mobile_small
       type: string
       x-enum-varnames:
       - LAPTOP_LARGE
       - TABLET
       - MOBILE_SMALL
+      - CHROME_LAPTOP_LARGE
+      - CHROME_TABLET
+      - CHROME_MOBILE_SMALL
+      - FIREFOX_LAPTOP_LARGE
+      - FIREFOX_TABLET
+      - FIREFOX_MOBILE_SMALL
     SyntheticsErrorCode:
       description: Error code that can be returned by a Synthetic test.
       enum:
@@ -6269,8 +6293,10 @@ components:
           format: int64
           type: integer
         retry:
-          description: Object describing the retry strategy to apply to a Synthetic
+          description: 'Object describing the retry strategy to apply to a Synthetic
             test.
+
+            By default, there is a 300ms wait before retrying a test that has failed.'
           properties:
             count:
               description: The amount of location that needs to fail for the test

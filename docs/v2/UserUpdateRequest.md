@@ -1,4 +1,4 @@
-# user_update_payload.UserUpdatePayload
+# user_update_request.UserUpdateRequest
 
 Update a user.
 ## Properties

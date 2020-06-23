@@ -11,15 +11,15 @@ import unittest
 
 import datadog_api_client.v2
 try:
-    from datadog_api_client.v2.model import user_update_data
+    from datadog_api_client.v2.model import user_invitation_data
 except ImportError:
-    user_update_data = sys.modules[
-        'datadog_api_client.v2.model.user_update_data']
-from datadog_api_client.v2.model.user_update_payload import UserUpdatePayload
+    user_invitation_data = sys.modules[
+        'datadog_api_client.v2.model.user_invitation_data']
+from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
 
 
-class TestUserUpdatePayload(unittest.TestCase):
-    """UserUpdatePayload unit test stubs"""
+class TestUserInvitationsRequest(unittest.TestCase):
+    """UserInvitationsRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,10 +27,10 @@ class TestUserUpdatePayload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testUserUpdatePayload(self):
-        """Test UserUpdatePayload"""
+    def testUserInvitationsRequest(self):
+        """Test UserInvitationsRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = UserUpdatePayload()  # noqa: E501
+        # model = UserInvitationsRequest()  # noqa: E501
         pass
 
 

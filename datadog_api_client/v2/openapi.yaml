@@ -1323,7 +1323,7 @@ components:
         type:
           $ref: '#/components/schemas/UsersType'
       type: object
-    UserCreatePayload:
+    UserCreateRequest:
       description: Create a user.
       properties:
         data:
@@ -1355,15 +1355,6 @@ components:
           description: UUID of the user invitation.
           type: string
       type: object
-    UserInvitationPayload:
-      description: Object to invite users to join the organization.
-      properties:
-        data:
-          description: List of user invitations.
-          items:
-            $ref: '#/components/schemas/UserInvitationData'
-          type: array
-      type: object
     UserInvitationRelationships:
       description: Relationships data for user invitation.
       properties:
@@ -1386,6 +1377,15 @@ components:
           type: string
         type:
           $ref: '#/components/schemas/UserInvitationsType'
+      type: object
+    UserInvitationsRequest:
+      description: Object to invite users to join the organization.
+      properties:
+        data:
+          description: List of user invitations.
+          items:
+            $ref: '#/components/schemas/UserInvitationData'
+          type: array
       type: object
     UserInvitationsResponse:
       description: User invitations as returned by the API.
@@ -1464,7 +1464,7 @@ components:
         type:
           $ref: '#/components/schemas/UsersType'
       type: object
-    UserUpdatePayload:
+    UserUpdateRequest:
       description: Update a user.
       properties:
         data:
@@ -2517,7 +2517,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserInvitationPayload'
+              $ref: '#/components/schemas/UserInvitationsRequest'
       responses:
         '201':
           content:
@@ -2644,7 +2644,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserCreatePayload'
+              $ref: '#/components/schemas/UserCreateRequest'
       responses:
         '201':
           content:
@@ -2732,7 +2732,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserUpdatePayload'
+              $ref: '#/components/schemas/UserUpdateRequest'
       responses:
         '204':
           description: OK

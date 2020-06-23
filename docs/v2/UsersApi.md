@@ -31,7 +31,7 @@ from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
-from datadog_api_client.v2.model import user_create_payload
+from datadog_api_client.v2.model import user_create_request
 from datadog_api_client.v2.model import api_error_response
 from datadog_api_client.v2.model import user_response
 from pprint import pprint
@@ -70,7 +70,7 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    body = user_create_payload.UserCreatePayload() # user_create_payload.UserCreatePayload |  (optional)
+    body = user_create_request.UserCreateRequest() # user_create_request.UserCreateRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -86,7 +86,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**user_create_payload.UserCreatePayload**](UserCreatePayload.md)|  | [optional]
+ **body** | [**user_create_request.UserCreateRequest**](UserCreateRequest.md)|  | [optional]
 
 ### Return type
 
@@ -695,8 +695,8 @@ import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model import user_invitations_response
-from datadog_api_client.v2.model import user_invitation_payload
 from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model import user_invitations_request
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -733,7 +733,7 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    body = user_invitation_payload.UserInvitationPayload() # user_invitation_payload.UserInvitationPayload |  (optional)
+    body = user_invitations_request.UserInvitationsRequest() # user_invitations_request.UserInvitationsRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -749,7 +749,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**user_invitation_payload.UserInvitationPayload**](UserInvitationPayload.md)|  | [optional]
+ **body** | [**user_invitations_request.UserInvitationsRequest**](UserInvitationsRequest.md)|  | [optional]
 
 ### Return type
 
@@ -789,8 +789,8 @@ from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
+from datadog_api_client.v2.model import user_update_request
 from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import user_update_payload
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -828,7 +828,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     user_id = 'user_id_example' # str | The ID of the user.
-    body = user_update_payload.UserUpdatePayload() # user_update_payload.UserUpdatePayload |  (optional)
+    body = user_update_request.UserUpdateRequest() # user_update_request.UserUpdateRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -851,7 +851,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**| The ID of the user. |
- **body** | [**user_update_payload.UserUpdatePayload**](UserUpdatePayload.md)|  | [optional]
+ **body** | [**user_update_request.UserUpdateRequest**](UserUpdateRequest.md)|  | [optional]
 
 ### Return type
 

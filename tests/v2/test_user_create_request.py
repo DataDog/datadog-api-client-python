@@ -15,11 +15,11 @@ try:
 except ImportError:
     user_create_data = sys.modules[
         'datadog_api_client.v2.model.user_create_data']
-from datadog_api_client.v2.model.user_create_payload import UserCreatePayload
+from datadog_api_client.v2.model.user_create_request import UserCreateRequest
 
 
-class TestUserCreatePayload(unittest.TestCase):
-    """UserCreatePayload unit test stubs"""
+class TestUserCreateRequest(unittest.TestCase):
+    """UserCreateRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,10 +27,10 @@ class TestUserCreatePayload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testUserCreatePayload(self):
-        """Test UserCreatePayload"""
+    def testUserCreateRequest(self):
+        """Test UserCreateRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = UserCreatePayload()  # noqa: E501
+        # model = UserCreateRequest()  # noqa: E501
         pass
 
 

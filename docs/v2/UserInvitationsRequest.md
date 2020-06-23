@@ -1,4 +1,4 @@
-# user_invitation_payload.UserInvitationPayload
+# user_invitations_request.UserInvitationsRequest
 
 Object to invite users to join the organization.
 ## Properties

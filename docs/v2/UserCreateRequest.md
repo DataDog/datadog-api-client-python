@@ -1,4 +1,4 @@
-# user_create_payload.UserCreatePayload
+# user_create_request.UserCreateRequest
 
 Create a user.
 ## Properties
