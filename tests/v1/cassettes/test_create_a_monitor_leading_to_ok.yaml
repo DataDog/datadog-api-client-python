@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateMonitor
+      User-Agent:
+      - datadog-api-client-python/0.1.dev33+dirty (python 3.7.7; os Darwin; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"errors":["The parameter ''type'' is required"]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '47'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 24 Jun 2020 10:58:08 GMT
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=15724800;
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-VERSION:
+      - '35.2659241'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-RateLimit-Limit:
+      - '500'
+      X-RateLimit-Period:
+      - '10'
+      X-RateLimit-Remaining:
+      - '499'
+      X-RateLimit-Reset:
+      - '2'
+    status:
+      code: 400
+      message: Bad Request
+version: 1

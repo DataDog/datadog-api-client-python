@@ -25,8 +25,6 @@ from pytest_bdd import (
 )
 
 logging.basicConfig()
-# vcr_log = logging.getLogger("vcr")
-# vcr_log.setLevel(logging.INFO)
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
@@ -51,12 +49,28 @@ def ddspan(request):
             span.set_exc_info(sys.last_type, sys.last_value, sys.last_traceback)
 
 
+def pytest_bdd_apply_tag(tag, function):
+    """Register tags as custom markers and skip test for 'todo' ones."""
+    from pytest_bdd.utils import CONFIG_STACK
+
+    config = CONFIG_STACK[-1]
+    config.addinivalue_line("markers", f"{tag}: marker from feature")
+
+    if tag in {"todo", "todo-python"}:
+        marker = pytest.mark.skip(reason="Not implemented yet")
+        marker(function)
+        return True
+    else:
+        # Fall back to pytest-bdd's default behavior
+        return None
+
+
 def snake_case(value):
     s1 = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", value)
     return re.sub("([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture
 def unique(request, freezer):
     test_class = request.cls
     if test_class:
@@ -75,12 +89,41 @@ def unique(request, freezer):
     return Lazy()
 
 
+@pytest.fixture
+def fixtures(request, unique):
+    """Return a mapping with all defined fixtures."""
+    ctx = {}
+    for f in request.fixturenames:
+        if f == "fixtures":
+            continue
+        try:
+            ctx[f] = request.getfixturevalue(f)
+        except Exception:
+            pass
+    return ctx
+
+
+@pytest.fixture(scope="module", autouse=True)
+def record_mode(request):
+    mode = os.getenv("RECORD")
+    if mode is not None:
+        if mode == 'none':
+            request.config.option.disable_vcr = True
+        else:
+            setattr(request.config.option, 'vcr_record', {
+                "true": "all",
+                "false": "none",
+            }[mode])
+    return mode
+
+
 @pytest.fixture(scope="module")
-def vcr_config():
-    return dict(
+def vcr_config(record_mode):
+    config = dict(
         filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY"),
         filter_query_parameters=("api_key", "application_key"),
     )
+    return config
 
 
 @pytest.fixture
@@ -125,6 +168,9 @@ def _package(package_name):
 def configuration(_package):
     c = _package.Configuration()
     c.debug = debug = os.getenv("DEBUG") in {"true", "1", "yes", "on"}
+    if debug:  # enable vcr logs for DEBUG=true
+        vcr_log = logging.getLogger("vcr")
+        vcr_log.setLevel(logging.INFO)
     return c
 
 
@@ -165,24 +211,23 @@ def api_request(api, name):
 
 
 @given(parsers.parse("body {data}"))
-def request_body(request, api_request, data):
+def request_body(fixtures, api_request, data):
     """Set request body."""
     import json
-
     from jinja2 import Template
-    ctx = {f: request.getfixturevalue(f) for f in request.fixturenames}
-    tpl = Template(data).render(**ctx)
 
+    tpl = Template(data).render(**fixtures)
     body = api_request["kwargs"]["body"] = json.loads(tpl)
+
     return body
 
 
 @given(parsers.parse("parameter {name} from {path}"))
-def request_parameter(request, api_request, name, path):
+def request_parameter(fixtures, api_request, name, path):
     """Set request parameter."""
     from glom import glom
-    ctx = {f: request.getfixturevalue(f) for f in request.fixturenames}
-    api_request["kwargs"][name] = parameter = glom(ctx, path)
+
+    api_request["kwargs"][name] = parameter = glom(fixtures, path)
     return parameter
 
 
@@ -192,7 +237,7 @@ def execute_request(api_request):
         *api_request["args"], **api_request["kwargs"]
     )
     # TODO define clean-up methods
-    if api_request["request"].settings['http_method'] not in {'GET', 'HEAD', 'OPTIONS'}:
+    if api_request["request"].settings["http_method"] not in {"GET", "HEAD", "OPTIONS"}:
         print("Needs cleanup")
 
 

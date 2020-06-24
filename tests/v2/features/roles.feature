@@ -1,3 +1,4 @@
+@v2 @roles @todo
 Feature: Roles
   The Roles API is used to create and manage Datadog roles, what [global
   permissions](https://docs.datadoghq.com/account_management/rbac/) they

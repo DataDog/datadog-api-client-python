@@ -2,6 +2,7 @@
 """Define basic fixtures."""
 
 import pytest
+from pytest_bdd import given
 
 
 @pytest.fixture(scope='module')

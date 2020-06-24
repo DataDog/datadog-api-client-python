@@ -1,0 +1,169 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - ListSecurityMonitoringRules
+      User-Agent:
+      - datadog-api-client-python/0.1.dev33+dirty (python 3.7.7; os Darwin; arch x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"meta":{"page":{"total_filtered_count":1786,"total_count":1786}},"data":[{"creationAuthorId":0,"tags":["security:attack","tactic:TA0007-discovery","technique:T1069-permission-groups-discovery","source:guardduty","scope:iam"],"isEnabled":true,"hasExtendedTitle":true,"message":"###
+        Goal\nDetect when an attacker is enumerating IAM principals.\n\n### Strategy\nThis
+        rule lets you leverage GuardDuty to detect when an attacker is enumerating
+        IAM principals. The GuardDuty Findings which trigger this signal:\n\n* [Recon:IAMUser/NetworkPermissions][1]\n*
+        [Recon:IAMUser/ResourcePermissions][2]\n* [Recon:IAMUser/UserPermissions][3]
+        \n\n\n### Triage & Response\n1. Determine which user in your organization
+        owns the API key that made this API call.\n2. Contact the user to see if they
+        intended to make this API call.\n3. If the user did not make the API call:\n
+        * Rotate the credentials.\n * Investigate if the same credentials made other
+        unauthorized API calls.\n\n[1]: https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_recon.html#recon7\n[2]:
+        https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_recon.html#recon8\n[3]:
+        https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_recon.html#recon9","options":{"evaluationWindow":300,"maxSignalDuration":3600,"keepAlive":3600},"version":1,"createdAt":1585870276065,"queries":[{"query":"source:guardduty
+        @evt.name:(Recon\\:IAMUser\\/NetworkPermissions OR Recon\\:IAMUser\\/ResourcePermissions
+        OR Recon\\:IAMUser\\/UserPermissions)","groupByFields":["@detail.resource.accessKeyDetails.userName"],"name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"medium","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"u2j-xph-kc7","isDefault":true,"name":"AWS IAM Principal Enumeration"},{"creationAuthorId":0,"tags":["security:attack","tactic:TA0040-impact","technique:T1496-resource-hijacking","source:guardduty","scope:ec2"],"isEnabled":true,"hasExtendedTitle":true,"message":"###
+        Goal\nDetect when an EC2 instance is communicating with a cryptocurrency server\n\n###
+        Strategy\nThis rule lets you leverage GuardDuty to detect when an EC2 instance
+        has made a DNS request or is communicating with an IP that is associated with
+        cryptocurrency operations. The following GuardDuty Findings trigger this signal:\n\n*
+        [CryptoCurrency:EC2/BitcoinTool.B!DNS][1]\n* [CryptoCurrency:EC2/BitcoinTool.B][2]\n\n\n###
+        Triage & Response\n1. Determine which domain name or IP address triggered
+        the signal. This can be found in the samples. \n2. If the domain or IP address
+        should not have been requested, open a security investigation, and determine
+        which process requested the domain name or IP address.\n\n[1]: https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_crypto.html#crypto3\n[2]:
+        https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_crypto.html#crypto4","options":{"evaluationWindow":300,"maxSignalDuration":3600,"keepAlive":3600},"version":1,"createdAt":1585870276326,"queries":[{"query":"source:guardduty
+        @evt.name:(CryptoCurrency\\:EC2\\/BitcoinTool.B\\!DNS OR CryptoCurrency\\:EC2\\/BitcoinTool.B)","groupByFields":["instance-id"],"name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"high","notifications":[],"name":"","condition":"a
+        > 0"}],"id":"ky3-ds4-ipb","isDefault":true,"name":"AWS EC2 Instance Communicating
+        With a Cryptocurrency Server"},{"creationAuthorId":0,"tags":["security:attack","tactic:TA0040-impact","technique:T1485-data-destruction","source:cloudtrail","scope:rds"],"isEnabled":true,"hasExtendedTitle":true,"message":"###
+        Goal\nDetect when an attacker is destroying a RDS Cluster.\n\n### Strategy\nThis
+        rule lets you monitor this CloudTrail API call to detect if an attacker is
+        deleting a RDS cluster:\n\n* [DeleteDBCluster][1]\n\n### Triage & Response\n1.
+        Determine which user in your organization owns the API key that made this
+        API call.\n2. Contact the user to see if they intended to make this API call.\n3.
+        If the user did not make the API call:\n * Rotate the credentials.\n * Investigate
+        if the same credentials made other unauthorized API calls.\n\n[1]: https://docs.aws.amazon.com/cli/latest/reference/rds/delete-db-cluster.html","options":{"evaluationWindow":300,"maxSignalDuration":3600,"keepAlive":3600},"version":1,"createdAt":1585870276546,"queries":[{"query":"source:cloudtrail
+        @evt.name:DeleteDBCluster","groupByFields":["@userIdentity.arn"],"name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"high","notifications":[],"name":"
+        ","condition":"a > 0"}],"id":"6ng-pk1-ukh","isDefault":true,"name":"AWS RDS
+        Cluster Deleted"},{"creationAuthorId":0,"tags":["security:attack","tactic:TA0006-credential-access","technique:T1110-brute-force","scope:template"],"isEnabled":false,"hasExtendedTitle":true,"message":"###
+        Goal\nDetect Account Take Over (ATO) through brute force attempts\n\n### Strategy\nTo
+        determine a successful attempt: Detect a high amount of failed logins and
+        at least one successful login for a given user. This will generate a `HIGH`
+        severity signal.\nTo determine an attempt: Detect a high amount of failed
+        logins. This will generate an `INFO` severity signal.\n\n### Triage & Response\n1.
+        Inspect the logs to see if this was a valid login attempt.\n2. See if 2FA
+        was authenticated.\n3. If the user was compromised, rotate user credentials.","options":{"evaluationWindow":300,"maxSignalDuration":7200,"keepAlive":3600},"version":1,"createdAt":1585870276794,"queries":[{"query":"@evt.name:authentication
+        @evt.outcome:failure @usr.name:*","groupByFields":["@usr.name"],"name":"","distinctFields":[]},{"query":"@evt.name:authentication
+        @evt.outcome:success @usr.name:*","groupByFields":["@usr.name"],"name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"high","notifications":["@slack-secops"],"name":"Successful","condition":"a>0"}],"id":"jhi-klp-smm","isDefault":true,"name":"TEMPLATE
+        - Brute Force Attack Grouped By User"},{"creationAuthorId":0,"tags":["security:attack","tactic:TA0005-defense-evasion","technique:T1089-disabling-security-tools","source:cloudtrail","scope:eventbridge"],"isEnabled":true,"hasExtendedTitle":true,"message":"###
+        Goal\nDetect when an attacker is trying to evade defenses by deleting or disabling
+        EventBridge rules.\n\n### Strategy\nThis rule lets you monitor these CloudTrail
+        API calls to detect if an attacker is modifying or disabling EventBridge rules:\n\n*
+        [DeleteRule][1]\n* [DisableRule][2]\n\n### Triage & Response\n1. Determine
+        which user in your organization owns the API key that made this API call.\n2.
+        Contact the user to see if they intended to make this API call.\n3. If the
+        user did not make the API call:\n * Rotate the credentials.\n * Investigate
+        if the same credentials made other unauthorized API calls.\n\n[1]: https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteRule.html\n[2]:
+        https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html","options":{"evaluationWindow":300,"maxSignalDuration":3600,"keepAlive":3600},"version":1,"createdAt":1585870277044,"queries":[{"query":"source:cloudtrail
+        @evt.name:(DeleteRule OR DisableRule)","groupByFields":["@userIdentity.arn"],"name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"high","notifications":[],"name":"
+        ","condition":"a > 0"}],"id":"mq6-cjx-h9o","isDefault":true,"name":"AWS EventBridge
+        Rule Disabled or Deleted"},{"creationAuthorId":0,"tags":["security:attack","tactic:TA0005-defense-evasion","technique:T1066-indicator-removal-from-tools","source:cloudtrail","scope:ec2"],"isEnabled":true,"hasExtendedTitle":true,"message":"###
+        Goal\nDetect when an attacker is removing FlowLogs to cover their tracks.\n\n###
+        Strategy\nThis rule lets you monitor this CloudTrail API call to detect if
+        an attacker is deleting FlowLogs:\n\n* [DeleteFlowLogs][1]\n\n### Triage &
+        Response\n1. Determine which user in your organization owns the API key that
+        made this API call.\n2. Contact the user to see if they intended to make this
+        API call.\n3. If the user did not make the API call:\n * Rotate the credentials.\n
+        * Investigate if the same credentials made other unauthorized API calls.\n\n[1]:
+        https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFlowLogs.html","options":{"evaluationWindow":300,"maxSignalDuration":3600,"keepAlive":3600},"version":1,"createdAt":1585870278493,"queries":[{"query":"source:cloudtrail
+        @evt.name:DeleteFlowLogs","groupByFields":["@userIdentity.arn"],"name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"high","notifications":[],"name":"
+        ","condition":"a > 0"}],"id":"cws-b4f-uoh","isDefault":true,"name":"AWS FlowLogs
+        Removed"},{"creationAuthorId":0,"tags":["security:attack","tactic:TA0005-defense-evasion","technique:T1089-disabling-security-tools","source:cloudtrail","scope:guardduty"],"isEnabled":true,"hasExtendedTitle":true,"message":"###
+        Goal\nDetect when an attacker is trying to evade defenses by deleting a GuardDuty
+        detector.\n\n### Strategy\nThis rule lets you monitor this CloudTrail API
+        call to detect if an attacker is deleting a GuardDuty Detector:\n\n* [DeleteDetector][1]\n\n###
+        Triage & Response\n1. Determine which user in your organization owns the API
+        key that made this API call.\n2. Contact the user to see if they intended
+        to make this API call.\n3. If the user did not make the API call:\n * Rotate
+        the credentials.\n * Investigate if the same credentials made other unauthorized
+        API calls.\n\n[1]: https://docs.aws.amazon.com/guardduty/latest/ug/delete-detector.html","options":{"evaluationWindow":300,"maxSignalDuration":3600,"keepAlive":3600},"version":1,"createdAt":1585870279177,"queries":[{"query":"source:cloudtrail
+        @evt.name:DeleteDetector","groupByFields":["@userIdentity.arn"],"name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"high","notifications":[],"name":"
+        ","condition":"a > 0"}],"id":"pzi-led-yyc","isDefault":true,"name":"AWS GuardDuty
+        Detector Deleted"},{"creationAuthorId":0,"tags":["security:attack","tactic:TA0040-impact","technique:T1485-data-destruction","source:cloudtrail","scope:ecs"],"isEnabled":true,"hasExtendedTitle":true,"message":"###
+        Goal\nDetect when an attacker is destroying an ECS Cluster\n\n### Strategy\nThis
+        rule lets you monitor this CloudTrail API call to detect if an ECS cluster
+        is deleted:\n\n* [DeleteCluster][1]\n\n### Triage & Response\n1. Determine
+        which user in your organization owns the API key that made this API call.\n2.
+        Contact the user to see if they intended to make this API call.\n3. If the
+        user did not make the API call:\n * Rotate the credentials.\n * Investigate
+        if the same credentials made other unauthorized API calls.\n\n[1]: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteCluster.html","options":{"evaluationWindow":300,"maxSignalDuration":3600,"keepAlive":3600},"version":1,"createdAt":1585870279810,"queries":[{"query":"source:cloudtrail
+        @evt.name:DeleteCluster","groupByFields":["@userIdentity.arn"],"name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"high","notifications":[],"name":"
+        ","condition":"a > 0"}],"id":"vwu-6id-9lz","isDefault":true,"name":"AWS ECS
+        Cluster Deleted"},{"creationAuthorId":0,"tags":["security:compliance","source:cloudtrail","scope:s3"],"isEnabled":true,"hasExtendedTitle":true,"message":"###
+        Goal\nDetect when the S3 Public Access Block configuration has been removed
+        \n\n### Strategy\nThis rule lets you monitor this CloudTrail API call to detect
+        if an attacker is deleting the S3 Public Access Block configuration:\n\n*
+        [DeleteAccountPublicAccessBlock][1]\n\n### Triage & Response\n1. Determine
+        who the user was who made this API call.\n2. Contact the user and inform them
+        of best practices of enabling Public Access Block on S3 buckets.\n3. Re-enable
+        Public Access Block on the S3 bucket.\n\nMore details on S3 Public Block Public
+        Access can be found [here][2].\n\n[1]: https://docs.aws.amazon.com/cli/latest/reference/s3api/delete-public-access-block.html\n[2]:
+        https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html","options":{"evaluationWindow":300,"maxSignalDuration":3600,"keepAlive":3600},"version":1,"createdAt":1585870280316,"queries":[{"query":"source:cloudtrail
+        @evt.name:DeleteAccountPublicAccessBlock","groupByFields":["@userIdentity.arn"],"name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"high","notifications":[],"name":"
+        ","condition":"a > 0"}],"id":"uxr-5wk-8hk","isDefault":true,"name":"AWS S3
+        Public Access Block Removed"},{"creationAuthorId":0,"tags":["security:threat-intel","source:gsuite","scope:gsuite"],"isEnabled":true,"hasExtendedTitle":true,"message":"###
+        Goal\nDetect when a user attempts to log in with a password which is known
+        to be compromised.\n\n### Strategy\nThis rule allows you to monitor this Google
+        Activity API call to detect if an attacker is trying to login with a leaked
+        password: \n\n* [Leaked password][1]\n\n### Triage & Response\n1. Determine
+        which user in your organization owns the compromised password.\n2. Contact
+        the user and ensure they rotate the password on Google and any other accounts
+        where they may have reused this password. Ensure the user is aware of strong
+        password guidelines.\n\n[1]: https://developers.google.com/admin-sdk/reports/v1/appendix/activity/login#account_disabled_password_leak","options":{"evaluationWindow":300,"maxSignalDuration":3600,"keepAlive":3600},"version":1,"createdAt":1585870280553,"queries":[{"query":"source:gsuite
+        @event.type:account_warning @event.name:account_disabled_password_leak","groupByFields":["@actor.email"],"name":"","distinctFields":[]}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"
+        ","condition":"a > 0"}],"id":"9zi-bom-nmh","isDefault":true,"name":"User Attempted
+        Login with Leaked Password"}]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline
+      Content-Length:
+      - '13759'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json;charset=utf-8
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 24 Jun 2020 08:53:50 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 01-Jul-2020 08:53:50 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - hvGKayUGXeVy/DmHDcIjD3+gP6x9d+NwveU9CYPD06LgIrg7NUxobVuhZiOcmptK
+      X-DD-VERSION:
+      - '35.2658709'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

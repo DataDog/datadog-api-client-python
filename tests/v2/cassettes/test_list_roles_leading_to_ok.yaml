@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - ListRoles
+      User-Agent:
+      - datadog-api-client-python/0.1.dev33+dirty (python 3.7.7; os Darwin; arch x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/roles
+  response:
+    body:
+      string: '{"meta":{"page":{"total_filtered_count":14,"total_count":14}},"data":[{"type":"roles","id":"94172442-be03-11e9-a77a-3b7612558ac1","attributes":{"name":"Datadog
+        Admin Role","created_at":"2019-08-13T19:50:19.022791+00:00","modified_at":"2019-08-13T19:50:19.022791+00:00","user_count":8},"relationships":{"permissions":{"data":[{"type":"permissions","id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029"},{"type":"permissions","id":"5e605652-dd12-11e8-9e53-375565b8970e"},{"type":"permissions","id":"62cc036c-dd12-11e8-9e54-db9995643092"},{"type":"permissions","id":"6f66600e-dd12-11e8-9e55-7f30fbb45e73"},{"type":"permissions","id":"811ac4ca-dd12-11e8-9e57-676a7f0beef9"},{"type":"permissions","id":"87b00304-dd12-11e8-9e59-cbeb5f71f72f"},{"type":"permissions","id":"1a92ede2-6cb2-11e9-99c6-2b3a4a0cdf0a"},{"type":"permissions","id":"979df720-aed7-11e9-99c6-a7eb8373165a"},{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"d90f6831-d3d8-11e9-a77a-4fd230ddbc6a"},{"type":"permissions","id":"d90f6832-d3d8-11e9-a77a-bf8a2607f864"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"48ef71ea-d8b1-11e9-a77a-93f408470ad0"},{"type":"permissions","id":"4d87d5f8-d8b1-11e9-a77a-eb9c8350d04f"},{"type":"permissions","id":"1af86ce4-7823-11ea-93dc-d7cad1b1c6cb"},{"type":"permissions","id":"b382b982-8535-11ea-93de-2bf1bdf20798"},{"type":"permissions","id":"7314eb20-aa58-11ea-95e2-6fb6e4a451d5"},{"type":"permissions","id":"7b516476-aa58-11ea-95e2-93718cd56369"},{"type":"permissions","id":"80de1ec0-aa58-11ea-95e2-aff381626d5d"}]}}},{"type":"roles","id":"94172444-be03-11e9-a77a-db1879185210","attributes":{"name":"Datadog
+        Read Only Role","created_at":"2019-08-13T19:50:19.111007+00:00","modified_at":"2019-08-13T19:50:19.111007+00:00","user_count":8},"relationships":{"permissions":{"data":[{"type":"permissions","id":"5e605652-dd12-11e8-9e53-375565b8970e"},{"type":"permissions","id":"6f66600e-dd12-11e8-9e55-7f30fbb45e73"},{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"1af86ce4-7823-11ea-93dc-d7cad1b1c6cb"},{"type":"permissions","id":"b382b982-8535-11ea-93de-2bf1bdf20798"},{"type":"permissions","id":"7314eb20-aa58-11ea-95e2-6fb6e4a451d5"},{"type":"permissions","id":"80de1ec0-aa58-11ea-95e2-aff381626d5d"}]}}},{"type":"roles","id":"94172443-be03-11e9-a77a-373332f69711","attributes":{"name":"Datadog
+        Standard Role","created_at":"2019-08-13T19:50:19.075284+00:00","modified_at":"2019-08-13T19:50:19.075284+00:00","user_count":15},"relationships":{"permissions":{"data":[{"type":"permissions","id":"984d2f00-d3b4-11e8-a200-bb47109e9987"},{"type":"permissions","id":"5e605652-dd12-11e8-9e53-375565b8970e"},{"type":"permissions","id":"62cc036c-dd12-11e8-9e54-db9995643092"},{"type":"permissions","id":"6f66600e-dd12-11e8-9e55-7f30fbb45e73"},{"type":"permissions","id":"811ac4ca-dd12-11e8-9e57-676a7f0beef9"},{"type":"permissions","id":"84aa3ae4-dd12-11e8-9e58-a373a514ccd0"},{"type":"permissions","id":"979df720-aed7-11e9-99c6-a7eb8373165a"},{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"d90f6831-d3d8-11e9-a77a-4fd230ddbc6a"},{"type":"permissions","id":"d90f6832-d3d8-11e9-a77a-bf8a2607f864"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"48ef71ea-d8b1-11e9-a77a-93f408470ad0"},{"type":"permissions","id":"4d87d5f8-d8b1-11e9-a77a-eb9c8350d04f"},{"type":"permissions","id":"1af86ce4-7823-11ea-93dc-d7cad1b1c6cb"},{"type":"permissions","id":"b382b982-8535-11ea-93de-2bf1bdf20798"},{"type":"permissions","id":"7314eb20-aa58-11ea-95e2-6fb6e4a451d5"},{"type":"permissions","id":"7b516476-aa58-11ea-95e2-93718cd56369"},{"type":"permissions","id":"80de1ec0-aa58-11ea-95e2-aff381626d5d"}]}}},{"type":"roles","id":"258ba62c-9609-11ea-93e2-0ba2b335ba20","attributes":{"name":"go-TestAddPermissionToRoleErrors-local-1589477661","created_at":"2020-05-14T17:34:21.699040+00:00","modified_at":"2020-05-14T17:34:21.699040+00:00","user_count":0},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}},{"type":"roles","id":"d9e853da-abd6-11ea-9739-53b1f103265e","attributes":{"name":"go-TestListRoleUsersErrors-17706-1591874985","created_at":"2020-06-11T11:29:45.544643+00:00","modified_at":"2020-06-11T11:29:45.544643+00:00","user_count":0},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}},{"type":"roles","id":"66eb3b6c-83fa-11ea-93de-77ce70d751e9","attributes":{"name":"test-datadog-client-java-1587492207","created_at":"2020-04-21T18:03:27.996910+00:00","modified_at":"2020-04-21T18:03:27.996910+00:00","user_count":0},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}},{"type":"roles","id":"8693e49a-7f37-11ea-93dd-372feb23c430","attributes":{"name":"test-role-datadog-client-go-1586968703793831000","created_at":"2020-04-15T16:38:24.598260+00:00","modified_at":"2020-04-15T16:38:24.598260+00:00","user_count":0},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}},{"type":"roles","id":"e87a2016-82fc-11ea-93de-d319c7755922","attributes":{"name":"test-role-datadog-client-go-1587383332302665000","created_at":"2020-04-20T11:48:53.190021+00:00","modified_at":"2020-04-20T11:48:53.190021+00:00","user_count":0},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}},{"type":"roles","id":"5061736a-8301-11ea-93de-9fc17500aa97","attributes":{"name":"test-role-datadog-client-go-1587385224705923000","created_at":"2020-04-20T12:20:25.498342+00:00","modified_at":"2020-04-20T12:20:25.498342+00:00","user_count":0},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}},{"type":"roles","id":"80807b5e-8301-11ea-93de-c3f811865b49","attributes":{"name":"test-role-datadog-client-go-1587385305489029000","created_at":"2020-04-20T12:21:46.232335+00:00","modified_at":"2020-04-20T12:21:46.232335+00:00","user_count":0},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6811'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 24 Jun 2020 08:53:46 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 01-Jul-2020 08:53:46 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - btzHvL7Rg/f/n1wMP2CFVXsuErrwOO9p2hvsBofLQbxzRkmZbfvXcB18pURNtIOI
+      X-DD-VERSION:
+      - '35.2658709'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

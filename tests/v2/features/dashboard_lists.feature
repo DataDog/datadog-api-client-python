@@ -1,3 +1,4 @@
+@v2 @dashboard_lists @todo
 Feature: Dashboard Lists
   Interact with your dashboard lists through the API to make it easier to
   organize, find, and share all of your dashboards with your team and

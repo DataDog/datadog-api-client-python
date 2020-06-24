@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - ListLogsArchives
+      User-Agent:
+      - datadog-api-client-python/0.1.dev33+dirty (python 3.7.7; os Darwin; arch x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/logs/config/archives
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 24 Jun 2020 08:53:51 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 01-Jul-2020 08:53:51 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - x4m73yTAj65OpCjnvpw3RBJyiFQpkDOBZ7rE/UM6Q4o0837nUb4ZsWFNJUD0Xh0e
+      X-DD-VERSION:
+      - '35.2658709'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Period:
+      - '3600'
+      X-RateLimit-Remaining:
+      - '4998'
+      X-RateLimit-Reset:
+      - '369'
+    status:
+      code: 200
+      message: OK
+version: 1

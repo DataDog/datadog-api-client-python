@@ -1,3 +1,4 @@
+@v2 @security_monitoring @todo
 Feature: Security Monitoring
   Detection Rules for generating signals
 

@@ -1,3 +1,4 @@
+@v2 @users
 Feature: Users
   Create, edit, and disable users.
 
@@ -6,12 +7,14 @@ Feature: Users
     And a valid "appKeyAuth" key
     And an instance of "Users" API
 
+  @todo
   Scenario: Send invitation emails leading to OK
     Given new "SendInvitations" request
     And body {}
     When I execute the request
     Then the status is 201 OK
 
+  @todo
   Scenario: Get a user invitation leading to OK
     Given new "GetInvitation" request
     When I execute the request
