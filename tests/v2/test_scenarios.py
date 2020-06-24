@@ -32,7 +32,7 @@ def user(api, unique):
     try:
         api["api"].disable_user(response.data.id)
     except ApiException as e:
-        warnings.warn(e)
+        warnings.warn(str(e))
 
 
 scenarios("features")
