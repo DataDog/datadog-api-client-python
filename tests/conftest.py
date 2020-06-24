@@ -39,10 +39,7 @@ def pytest_runtest_makereport(item, call):
 def pytest_sessionfinish(session, exitstatus):
     """Flush open tracer."""
     from ddtrace import tracer
-    try:
-        tracer.writer.on_shutdown()
-    except Exception:
-        pass
+    tracer.shutdown()
 
 
 @pytest.fixture(scope="function")
