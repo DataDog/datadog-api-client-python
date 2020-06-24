@@ -29,42 +29,52 @@ Feature: Roles
     When I execute the request
     Then the status is 200 OK
 
-  @todo
   Scenario: Delete role leading to OK
-    Given new "DeleteRole" request
+    Given there is a valid role in the system
+    And new "DeleteRole" request
+    And parameter role_id from role.data.id
     When I execute the request
     Then the status is 204 OK
 
-  @todo
   Scenario: Get a role leading to OK for get role
-    Given new "GetRole" request
+    Given there is a valid role in the system
+    And new "GetRole" request
+    And parameter role_id from role.data.id
     When I execute the request
     Then the status is 200 OK for get role
 
-  @todo
   Scenario: Update a role leading to OK
-    Given new "UpdateRole" request
-    And body {}
+    Given there is a valid role in the system
+    And new "UpdateRole" request
+    And parameter role_id from role.data.id
+    And body {"data": {"id": "{{ role.data.id }}", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}}}
     When I execute the request
     Then the status is 200 OK
 
-  @todo
   Scenario: Revoke permission leading to OK
-    Given new "RemovePermissionFromRole" request
-    And body {}
+    Given there is a valid role in the system
+    And there is a valid permission in the system
+    And the permission is granted to the role
+    And new "RemovePermissionFromRole" request
+    And parameter role_id from role.data.id
+    And body {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
     When I execute the request
     Then the status is 200 OK
 
-  @todo
   Scenario: List permissions for a role leading to OK
-    Given new "ListRolePermissions" request
+    Given there is a valid role in the system
+    And there is a valid permission in the system
+    And the permission is granted to the role
+    And new "ListRolePermissions" request
     When I execute the request
     Then the status is 200 OK
 
-  @todo
   Scenario: Grant permission to a role leading to OK
-    Given new "AddPermissionToRole" request
-    And body {}
+    Given there is a valid role in the system
+    And there is a valid permission in the system
+    And new "AddPermissionToRole" request
+    And parameter role_id from role.data.id
+    And body {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
     When I execute the request
     Then the status is 200 OK
 
