@@ -204,6 +204,7 @@ def api(package_name, client, name):
 def api_request(api, name):
     """Call an endpoint."""
     return {
+        "api": api["api"],
         "request": getattr(api["api"], snake_case(name)),
         "args": [],
         "kwargs": {
@@ -240,14 +241,26 @@ def request_parameter(fixtures, api_request, name, path):
     return parameter
 
 
+def undo(api_request):
+    """Clean after operation."""
+    operation_id = api_request["request"].settings["operation_id"]
+    if operation_id == "create_user":
+        return api_request["api"].disable_user(api_request["response"][0].data.id)
+    elif operation_id == "create_role":
+        return api_request["api"].delete_role(api_request["response"][0].data.id)
+    elif operation_id in {"update_user"}:
+        return
+    raise NotImplementedError(operation_id)
+
+
 @when("I execute the request")
 def execute_request(api_request):
     api_request["response"] = api_request["request"].call_with_http_info(
         *api_request["args"], **api_request["kwargs"]
     )
     # TODO define clean-up methods
-    if api_request["request"].settings["http_method"] not in {"GET", "HEAD", "OPTIONS"}:
-        print("Needs cleanup")
+    if api_request["request"].settings["http_method"] not in {"GET", "HEAD", "OPTIONS", "DELETE"}:
+        undo(api_request)
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))
