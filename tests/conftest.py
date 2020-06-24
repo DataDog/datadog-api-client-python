@@ -13,6 +13,7 @@ import os
 import re
 import sys
 import time
+import warnings
 from datetime import datetime
 
 import pytest
@@ -33,6 +34,15 @@ def pytest_runtest_makereport(item, call):
     outcome = yield
     rep = outcome.get_result()
     setattr(item, "dd_outcome", rep)
+
+
+def pytest_sessionfinish(session, exitstatus):
+    """Flush open tracer."""
+    from ddtrace import tracer
+    try:
+        tracer.writer.on_shutdown()
+    except Exception:
+        pass
 
 
 @pytest.fixture(scope="function")
