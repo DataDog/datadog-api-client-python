@@ -1,6 +1,10 @@
-Feature: Get a list of IP prefixes belonging to Datadog.
+Feature: IP Ranges
+  Get a list of IP prefixes belonging to Datadog.
 
-    Scenario: List IP Ranges
-        Given an instance of "IPRanges" API
-        When I call "GetIPRanges" endpoint
-        Then I should get an instance of "IPRanges"
+  Background:
+    Given an instance of "IPRanges" API
+
+  Scenario: List IP Ranges
+    Given new "GetIPRanges" request
+    When I execute the request
+    Then the status is 200 List of IP ranges.
