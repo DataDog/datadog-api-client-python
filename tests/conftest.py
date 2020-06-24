@@ -105,6 +105,7 @@ def fixtures(request, unique):
 
 @pytest.fixture(scope="module", autouse=True)
 def record_mode(request):
+    """Manage compatibility with DD client libraries."""
     mode = os.getenv("RECORD")
     if mode is not None:
         if mode == 'none':
@@ -114,6 +115,7 @@ def record_mode(request):
                 "true": "all",
                 "false": "none",
             }[mode])
+            request.config.option.disable_vcr = False
     return mode
 
 
