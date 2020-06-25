@@ -56,6 +56,7 @@ jobs:
         DD_TAGS: "team:integration-tools-and-libraries,build.requested_by:$(Build.RequestedForId),build.attempt:$(System.StageAttempt),pull_request.number:$(System.PullRequest.PullRequestNumber)"
         DD_TEST_CLIENT_API_KEY: $(datadogAPIKey)
         DD_TEST_CLIENT_APP_KEY: $(datadogAPPKey)
+        DD_TRACE_ANALYTICS_ENABLED: "true"
         RECORD: "none"
     - script: |
         bash <(curl -s https://codecov.io/bash) -F integration -v
