@@ -1,4 +1,4 @@
-@v2 @logs_archive @todo
+@v2 @endpoint(logs-archive) @todo
 Feature: Logs Archives
   Archives forward all the logs ingested to a cloud storage system.  See the
   [Archives Page](https://app.datadoghq.com/logs/pipelines/archives) for a

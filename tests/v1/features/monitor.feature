@@ -1,4 +1,4 @@
-@v1 @monitors @todo
+@v1 @endpoint(monitors) @todo
 Feature: Monitors
   [Monitors](https://docs.datadoghq.com/monitors) allow you to watch a
   metric or check that you care about, notifying your team when some defined
