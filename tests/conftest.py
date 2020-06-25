@@ -227,7 +227,7 @@ def configuration(_package):
 
 
 @pytest.fixture
-def client(_package, configuration, ddspan):
+def client(_package, configuration):
     with _package.ApiClient(configuration) as api_client:
         yield api_client
 

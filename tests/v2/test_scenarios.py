@@ -6,7 +6,7 @@ import warnings
 import pytest
 from pytest_bdd import given, scenarios
 
-pytestmark = pytest.mark.vcr
+pytestmark = [pytest.mark.vcr, pytest.mark.usefixtures("ddspan")]
 
 
 @given("there is a valid user in the system")
