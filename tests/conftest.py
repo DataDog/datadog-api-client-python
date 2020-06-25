@@ -48,7 +48,7 @@ def ddspan(request):
     from ddtrace import tracer
     from ddtrace.constants import ANALYTICS_SAMPLE_RATE_KEY
 
-    tags = [marker.kwargs for marker in request.node.iter_markers(name="dd_tags")]
+    tags = [marker.kwargs for marker in request.node.iter_markers(name="dd_tag")]
 
     with tracer.trace("test", resource=request.node.name, span_type="test") as span:
         span.set_tag(ANALYTICS_SAMPLE_RATE_KEY, True)
@@ -94,21 +94,21 @@ def pytest_bdd_step_error(
 
 def pytest_bdd_apply_tag(tag, function):
     """Register tags as custom markers and skip test for 'todo' ones."""
-    from pytest_bdd.utils import CONFIG_STACK
-
-    config = CONFIG_STACK[-1]
-    config.addinivalue_line("markers", f"{tag}: marker from feature")
-
     if tag in {"todo", "todo-python"}:
         marker = pytest.mark.skip(reason="Not implemented yet")
         marker(function)
         return True
     elif tag.startswith("endpoint("):
         version = tag[len("endpoint(") : -1]
-        marker = pytest.mark.dd_tags(version=version)
+        marker = pytest.mark.dd_tag(version=version)
         marker(function)
         return True
     else:
+        from pytest_bdd.utils import CONFIG_STACK
+
+        config = CONFIG_STACK[-1]
+        config.addinivalue_line("markers", f"{tag}: marker from feature")
+
         # Fall back to pytest-bdd's default behavior
         return None
 
