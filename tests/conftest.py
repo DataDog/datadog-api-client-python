@@ -39,6 +39,7 @@ def pytest_runtest_makereport(item, call):
 def pytest_sessionfinish(session, exitstatus):
     """Flush open tracer."""
     from ddtrace import tracer
+
     tracer.shutdown()
 
 
@@ -47,13 +48,49 @@ def ddspan(request):
     from ddtrace import tracer
     from ddtrace.constants import ANALYTICS_SAMPLE_RATE_KEY
 
-    # marker = request.node.get_closest_marker("dd_tags")
+    tags = [marker.kwargs for marker in request.node.iter_markers(name="dd_tags")]
+
     with tracer.trace("test", resource=request.node.name, span_type="test") as span:
         span.set_tag(ANALYTICS_SAMPLE_RATE_KEY, True)
+
+        for tag in tags:
+            for key, value in tag.items():
+                span.set_tag(key, value)
+
         yield span
+
         outcome = request.node.dd_outcome
         if outcome.failed:
             span.set_exc_info(sys.last_type, sys.last_value, sys.last_traceback)
+
+
+def pytest_bdd_before_step(request, feature, scenario, step, step_func):
+    from ddtrace import tracer
+
+    context = tracer.get_call_context()
+    span = tracer.start_span(
+        step.type,
+        resource=f"{step.type.title()} {step.name}",
+        span_type=step.type,
+        child_of=context,
+    )
+    setattr(step_func, "__dd_span__", span)
+
+
+def pytest_bdd_after_step(request, feature, scenario, step, step_func, step_func_args):
+    span = getattr(step_func, "__dd_span__", None)
+    if span is not None:
+        span.finish()
+
+
+def pytest_bdd_step_error(
+    request, feature, scenario, step, step_func, step_func_args, exception
+):
+    span = getattr(step_func, "__dd_span__", None)
+    if span is not None:
+        span.set_exc_info(type(exception), exception, exception.__traceback__)
+        pytest.set_trace()
+        span.finish()
 
 
 def pytest_bdd_apply_tag(tag, function):
@@ -65,6 +102,11 @@ def pytest_bdd_apply_tag(tag, function):
 
     if tag in {"todo", "todo-python"}:
         marker = pytest.mark.skip(reason="Not implemented yet")
+        marker(function)
+        return True
+    elif tag.startswith("endpoint("):
+        version = tag[len("endpoint(") : -1]
+        marker = pytest.mark.dd_tags(version=version)
         marker(function)
         return True
     else:
@@ -115,13 +157,14 @@ def record_mode(request):
     """Manage compatibility with DD client libraries."""
     mode = os.getenv("RECORD")
     if mode is not None:
-        if mode == 'none':
+        if mode == "none":
             request.config.option.disable_vcr = True
         else:
-            setattr(request.config.option, 'vcr_record', {
-                "true": "all",
-                "false": "none",
-            }[mode])
+            setattr(
+                request.config.option,
+                "vcr_record",
+                {"true": "all", "false": "none",}[mode],
+            )
             request.config.option.disable_vcr = False
     return mode
 
@@ -261,7 +304,12 @@ def execute_request(api_request):
         *api_request["args"], **api_request["kwargs"]
     )
     # TODO define clean-up methods
-    if api_request["request"].settings["http_method"] not in {"GET", "HEAD", "OPTIONS", "DELETE"}:
+    if api_request["request"].settings["http_method"] not in {
+        "GET",
+        "HEAD",
+        "OPTIONS",
+        "DELETE",
+    }:
         undo(api_request)
 
 
