@@ -298,7 +298,7 @@ def undo(api_request):
 
 
 @when("I execute the request")
-def execute_request(api_request):
+def execute_request(vcr_cassette, api_request):
     api_request["response"] = api_request["request"].call_with_http_info(
         *api_request["args"], **api_request["kwargs"]
     )
@@ -309,7 +309,10 @@ def execute_request(api_request):
         "OPTIONS",
         "DELETE",
     }:
-        undo(api_request)
+        if vcr_cassette.record_mode != "none":
+            number_of_interactions = len(vcr_cassette.data)
+            undo(api_request)
+            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))

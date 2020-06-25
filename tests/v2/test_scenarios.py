@@ -7,15 +7,13 @@ import pytest
 from pytest_bdd import given, scenarios
 
 pytestmark = [
-    pytest.mark.vcr(
-        match_on=("method", "scheme", "host", "port", "path", "query", "body")
-    ),
+    pytest.mark.vcr(),
     pytest.mark.usefixtures("ddspan"),
 ]
 
 
 @given("there is a valid user in the system")
-def user(client, unique):
+def user(vcr_cassette, client, unique):
     """There is a valid user in the system."""
     from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import user_create_request
@@ -35,14 +33,17 @@ def user(client, unique):
     )
     response = api.create_user(body=body)
     yield response
-    try:
-        api.disable_user(response.data.id)
-    except ApiException as e:
-        warnings.warn(str(e))
+    if vcr_cassette.record_mode != "none":
+        number_of_interactions = len(vcr_cassette.data)
+        try:
+            api.disable_user(response.data.id)
+        except ApiException as e:
+            warnings.warn(str(e))
+        vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
 
 @given("there is a valid role in the system")
-def role(client, unique):
+def role(vcr_cassette, client, unique):
     """There is a valid role in the system."""
     from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import role_create_request
@@ -60,10 +61,13 @@ def role(client, unique):
     )
     response = api.create_role(body=body)
     yield response
-    try:
-        api.delete_role(response.data.id)
-    except ApiException as e:
-        warnings.warn(str(e))
+    if vcr_cassette.record_mode != "none":
+        number_of_interactions = len(vcr_cassette.data)
+        try:
+            api.delete_role(response.data.id)
+        except ApiException as e:
+            warnings.warn(str(e))
+        vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
 
 @given("there is a valid permission in the system")
@@ -91,7 +95,7 @@ def granted_permission(client, role, permission):
 
 
 @given("the user has the role")
-def user_has_role(client, user, role):
+def user_has_role(vcr_cassette, client, user, role):
     """The user has the role."""
     from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import relationship_to_user
@@ -105,10 +109,13 @@ def user_has_role(client, user, role):
         )
     )
     yield api.add_user_to_role(role.data.id, body=body)
-    try:
-        api.remove_user_from_role(role.data.id, body=body)
-    except ApiException as e:
-        warnings.warn(str(e))
+    if vcr_cassette.record_mode != "none":
+        number_of_interactions = len(vcr_cassette.data)
+        try:
+            api.remove_user_from_role(role.data.id, body=body)
+        except ApiException as e:
+            warnings.warn(str(e))
+        vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
 
 scenarios("features")
