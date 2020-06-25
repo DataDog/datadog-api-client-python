@@ -11,44 +11,44 @@ Feature: Logs Archives
 
   Scenario: Get all archives leading to OK
     Given new "ListLogsArchives" request
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Create an archive leading to OK
     Given new "CreateLogsArchive" request
     And body {}
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Delete an archive leading to OK
     Given new "DeleteLogsArchive" request
-    When I execute the request
+    When the request is sent
     Then the status is 204 OK
 
   Scenario: Get an archive leading to OK
     Given new "GetLogsArchive" request
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Update an archive leading to OK
     Given new "UpdateLogsArchive" request
     And body {}
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Revoke role from an archive leading to OK
     Given new "RemoveRoleFromArchive" request
     And body {}
-    When I execute the request
+    When the request is sent
     Then the status is 204 OK
 
   Scenario: List read roles for an archive leading to OK
     Given new "ListArchiveReadRoles" request
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Grant role to an archive leading to OK
     Given new "AddReadRoleToArchive" request
     And body {}
-    When I execute the request
+    When the request is sent
     Then the status is 204 OK

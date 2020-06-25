@@ -1,3 +1,4 @@
+@v1 @endpoint(ip-ranges)
 Feature: IP Ranges
   Get a list of IP prefixes belonging to Datadog.
 
@@ -6,5 +7,5 @@ Feature: IP Ranges
 
   Scenario: List IP Ranges
     Given new "GetIPRanges" request
-    When I execute the request
+    When the request is sent
     Then the status is 200 List of IP ranges.

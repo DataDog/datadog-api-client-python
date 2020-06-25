@@ -12,38 +12,38 @@ Feature: Monitors
 
   Scenario: Get all monitor details leading to OK
     Given new "ListMonitors" request
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Create a monitor leading to OK
     Given new "CreateMonitor" request
     And body {}
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Check if a monitor can be deleted leading to OK
     Given new "CheckCanDeleteMonitor" request
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Validate a monitor leading to OK
     Given new "ValidateMonitor" request
     And body {}
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Delete a monitor leading to OK
     Given new "DeleteMonitor" request
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Get a monitor's details leading to OK
     Given new "GetMonitor" request
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK
 
   Scenario: Edit a monitor leading to OK
     Given new "UpdateMonitor" request
     And body {}
-    When I execute the request
+    When the request is sent
     Then the status is 200 OK

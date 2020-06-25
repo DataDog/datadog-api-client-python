@@ -297,12 +297,12 @@ def undo(api_request):
     raise NotImplementedError(operation_id)
 
 
-@when("I execute the request")
+@when("the request is sent")
 def execute_request(vcr_cassette, api_request):
+    """Execute the prepared request."""
     api_request["response"] = api_request["request"].call_with_http_info(
         *api_request["args"], **api_request["kwargs"]
     )
-    # TODO define clean-up methods
     if api_request["request"].settings["http_method"] not in {
         "GET",
         "HEAD",
