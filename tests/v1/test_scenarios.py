@@ -6,7 +6,7 @@ from pytest_bdd import scenarios
 
 
 pytestmark = [
-    pytest.mark.vcr(),
+    pytest.mark.vcr,
     pytest.mark.usefixtures("ddspan"),
 ]
 
