@@ -290,7 +290,7 @@ def undo(api_request):
         return api_request["api"].disable_user(api_request["response"][0].data.id)
     elif operation_id == "create_role":
         return api_request["api"].delete_role(api_request["response"][0].data.id)
-    elif operation_id in {"update_user", "add_permission_to_role"}:
+    elif operation_id in {"update_user", "add_permission_to_role", "add_user_to_role"}:
         return
     elif api_request["request"].settings["http_method"] == "PATCH":
         return

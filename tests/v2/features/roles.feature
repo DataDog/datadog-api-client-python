@@ -66,6 +66,7 @@ Feature: Roles
     And there is a valid permission in the system
     And the permission is granted to the role
     And new "ListRolePermissions" request
+    And parameter role_id from role.data.id
     When I execute the request
     Then the status is 200 OK
 
@@ -78,22 +79,30 @@ Feature: Roles
     When I execute the request
     Then the status is 200 OK
 
-  @todo
   Scenario: Remove a user from a role leading to OK
-    Given new "RemoveUserFromRole" request
-    And body {}
+    Given there is a valid role in the system
+    And there is a valid user in the system
+    And the user has the role
+    And new "RemoveUserFromRole" request
+    And parameter role_id from role.data.id
+    And body {"data": {"id": "{{ user.data.id}}", "type": "{{ user.data.type }}"}}
     When I execute the request
     Then the status is 200 OK
 
-  @todo
   Scenario: Get all users of a role leading to OK
-    Given new "ListRoleUsers" request
+    Given there is a valid role in the system
+    And there is a valid user in the system
+    And the user has the role
+    And new "ListRoleUsers" request
+    And parameter role_id from role.data.id
     When I execute the request
     Then the status is 200 OK
 
-  @todo
   Scenario: Add a user to a role leading to OK
-    Given new "AddUserToRole" request
-    And body {}
+    Given there is a valid role in the system
+    And there is a valid user in the system
+    And new "AddUserToRole" request
+    And parameter role_id from role.data.id
+    And body {"data": {"id": "{{ user.data.id}}", "type": "{{ user.data.type }}"}}
     When I execute the request
     Then the status is 200 OK
