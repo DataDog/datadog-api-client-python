@@ -89,7 +89,6 @@ def pytest_bdd_step_error(
     span = getattr(step_func, "__dd_span__", None)
     if span is not None:
         span.set_exc_info(type(exception), exception, exception.__traceback__)
-        pytest.set_trace()
         span.finish()
 
 
