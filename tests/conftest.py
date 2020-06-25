@@ -70,7 +70,7 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
     context = tracer.get_call_context()
     span = tracer.start_span(
         step.type,
-        resource=f"{step.type.title()} {step.name}",
+        resource=step.name,
         span_type=step.type,
         child_of=context,
     )
