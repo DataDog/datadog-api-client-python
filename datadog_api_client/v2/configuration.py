@@ -208,6 +208,8 @@ conf = datadog_api_client.v2.Configuration(
 
         # Keep track of unstable operations
         self.unstable_operations = {
+            "list_logs": False,
+            "list_logs_get": False,
             "add_read_role_to_archive": False,
             "list_archive_read_roles": False,
             "remove_role_from_archive": False,

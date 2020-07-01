@@ -24,6 +24,9 @@ from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 from datadog_api_client.v2.model.dashboard_type import DashboardType
+from datadog_api_client.v2.model.log import Log
+from datadog_api_client.v2.model.log_attributes import LogAttributes
+from datadog_api_client.v2.model.log_type import LogType
 from datadog_api_client.v2.model.logs_archive import LogsArchive
 from datadog_api_client.v2.model.logs_archive_attributes import LogsArchiveAttributes
 from datadog_api_client.v2.model.logs_archive_create_request import LogsArchiveCreateRequest
@@ -43,6 +46,14 @@ from datadog_api_client.v2.model.logs_archive_integration_gcs import LogsArchive
 from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
 from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
 from datadog_api_client.v2.model.logs_archives import LogsArchives
+from datadog_api_client.v2.model.logs_list_request import LogsListRequest
+from datadog_api_client.v2.model.logs_list_request_filter import LogsListRequestFilter
+from datadog_api_client.v2.model.logs_list_request_page import LogsListRequestPage
+from datadog_api_client.v2.model.logs_list_response import LogsListResponse
+from datadog_api_client.v2.model.logs_list_response_links import LogsListResponseLinks
+from datadog_api_client.v2.model.logs_list_response_meta import LogsListResponseMeta
+from datadog_api_client.v2.model.logs_list_response_meta_page import LogsListResponseMetaPage
+from datadog_api_client.v2.model.logs_sort import LogsSort
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
