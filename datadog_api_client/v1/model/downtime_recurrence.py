@@ -82,6 +82,7 @@ class DowntimeRecurrence(ModelNormal):
         """
         return {
             'period': (int,),  # noqa: E501
+            'rrule': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
             'until_date': (int, none_type,),  # noqa: E501
             'until_occurrences': (int, none_type,),  # noqa: E501
@@ -94,6 +95,7 @@ class DowntimeRecurrence(ModelNormal):
 
     attribute_map = {
         'period': 'period',  # noqa: E501
+        'rrule': 'rrule',  # noqa: E501
         'type': 'type',  # noqa: E501
         'until_date': 'until_date',  # noqa: E501
         'until_occurrences': 'until_occurrences',  # noqa: E501
@@ -147,6 +149,7 @@ class DowntimeRecurrence(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             period (int): How often to repeat as an integer. For example, to repeat every 3 days, select a type of &#x60;days&#x60; and a period of &#x60;3&#x60;.. [optional]  # noqa: E501
+            rrule (str): The &#x60;RRULE&#x60; standard for defining recurring events. For example, to have a recurring event on the first day of each month, select a type of &#x60;rrule&#x60; and set the &#x60;FREQ&#x60; to &#x60;MONTHLY&#x60; and &#x60;BYMONTHDAY&#x60; to &#x60;1&#x60;. Most common &#x60;rrule&#x60; options from the [iCalendar Spec](https://tools.ietf.org/html/rfc5545) are supported.  **Note**: Attributes specifying the duration in &#x60;RRULE&#x60; are not supported (for example, &#x60;DTSTART&#x60;, &#x60;DTEND&#x60;, &#x60;DURATION&#x60;).. [optional]  # noqa: E501
             type (str): The type of recurrence. Choose from &#x60;days&#x60;, &#x60;weeks&#x60;, &#x60;months&#x60;, &#x60;years&#x60;.. [optional]  # noqa: E501
             until_date (int, none_type): The date at which the recurrence should end as a POSIX timestamp. &#x60;until_occurences&#x60; and &#x60;until_date&#x60; are mutually exclusive.. [optional]  # noqa: E501
             until_occurrences (int, none_type): How many times the downtime is rescheduled. &#x60;until_occurences&#x60; and &#x60;until_date&#x60; are mutually exclusive.. [optional]  # noqa: E501
