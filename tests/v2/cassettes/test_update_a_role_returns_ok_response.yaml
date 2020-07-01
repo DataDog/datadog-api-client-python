@@ -1,0 +1,117 @@
+interactions:
+- request:
+    body: '{"data": {"type": "roles", "attributes": {"name": "datadog-api-client-python-test_update_a_role_returns_ok_response-1593621224.124863"}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateRole
+      User-Agent:
+      - datadog-api-client-python/0.1.dev54+dirty (python 3.7.7; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '4781970308221268378'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '9032794087910804789'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/roles
+  response:
+    body:
+      string: '{"data":{"type":"roles","id":"a176434e-bbb8-11ea-9c9e-7f0fc95fbdef","attributes":{"name":"datadog-api-client-python-test_update_a_role_returns_ok_response-1593621224.124863","created_at":"2020-07-01T16:33:44.547103+00:00","modified_at":"2020-07-01T16:33:44.547103+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '450'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 01 Jul 2020 16:33:44 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 08-Jul-2020 16:33:44 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - A5a5htKhTUF1FdBQZRUZl4RVawKwk2RUtaZz3EDBmdXc0X6i0O7TBEBWn4bIBQ01
+      X-DD-VERSION:
+      - '35.2688709'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data": {"id": "a176434e-bbb8-11ea-9c9e-7f0fc95fbdef", "type": "roles",
+      "attributes": {"name": "datadog-api-client-python-test_update_a_role_returns_ok_response-1593621224.124863-updated"}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - UpdateRole
+      User-Agent:
+      - datadog-api-client-python/0.1.dev54+dirty (python 3.7.7; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '1669649967303415190'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '9032794087910804789'
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/roles/a176434e-bbb8-11ea-9c9e-7f0fc95fbdef
+  response:
+    body:
+      string: '{"data":{"type":"roles","id":"a176434e-bbb8-11ea-9c9e-7f0fc95fbdef","attributes":{"name":"datadog-api-client-python-test_update_a_role_returns_ok_response-1593621224.124863-updated","created_at":"2020-07-01T16:33:44.547103+00:00","modified_at":"2020-07-01T16:33:44.737616+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '458'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 01 Jul 2020 16:33:44 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 08-Jul-2020 16:33:44 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - vG5kxpR47Wd0uZGIzWkStfMxs3cmVIjKYEHLQf0xQiHS0P2BwlwJHwTESUSKlcdO
+      X-DD-VERSION:
+      - '35.2688709'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

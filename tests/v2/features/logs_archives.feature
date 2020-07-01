@@ -5,49 +5,49 @@ Feature: Logs Archives
   list of the archives currently configured in our UI.
 
   Background:
-    Given a valid "apiKeyAuth" key
-    And a valid "appKeyAuth" key
+    Given a valid "apiKeyAuth" key in the system
+    And a valid "appKeyAuth" key in the system
     And an instance of "LogsArchives" API
 
-  Scenario: Get all archives leading to OK
+  Scenario: Get all archives returns "OK" response
     Given new "ListLogsArchives" request
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Create an archive leading to OK
+  Scenario: Create an archive returns "OK" response
     Given new "CreateLogsArchive" request
     And body {}
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Delete an archive leading to OK
+  Scenario: Delete an archive returns "OK" response
     Given new "DeleteLogsArchive" request
     When the request is sent
     Then the status is 204 OK
 
-  Scenario: Get an archive leading to OK
+  Scenario: Get an archive returns "OK" response
     Given new "GetLogsArchive" request
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Update an archive leading to OK
+  Scenario: Update an archive returns "OK" response
     Given new "UpdateLogsArchive" request
     And body {}
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Revoke role from an archive leading to OK
+  Scenario: Revoke role from an archive returns "OK" response
     Given new "RemoveRoleFromArchive" request
     And body {}
     When the request is sent
     Then the status is 204 OK
 
-  Scenario: List read roles for an archive leading to OK
+  Scenario: List read roles for an archive returns "OK" response
     Given new "ListArchiveReadRoles" request
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Grant role to an archive leading to OK
+  Scenario: Grant role to an archive returns "OK" response
     Given new "AddReadRoleToArchive" request
     And body {}
     When the request is sent

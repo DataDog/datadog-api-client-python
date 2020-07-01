@@ -5,28 +5,28 @@ Feature: Dashboard Lists
   organization.
 
   Background:
-    Given a valid "apiKeyAuth" key
-    And a valid "appKeyAuth" key
+    Given a valid "apiKeyAuth" key in the system
+    And a valid "appKeyAuth" key in the system
     And an instance of "DashboardLists" API
 
-  Scenario: Delete items from a dashboard list leading to OK
+  Scenario: Delete items from a dashboard list returns "OK" response
     Given new "DeleteDashboardListItems" request
     And body {}
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Get a Dashboard List leading to OK
+  Scenario: Get a Dashboard List returns "OK" response
     Given new "GetDashboardListItems" request
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Add Items to a Dashboard List leading to OK
+  Scenario: Add Items to a Dashboard List returns "OK" response
     Given new "CreateDashboardListItems" request
     And body {}
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Update items of a dashboard list leading to OK
+  Scenario: Update items of a dashboard list returns "OK" response
     Given new "UpdateDashboardListItems" request
     And body {}
     When the request is sent

@@ -186,7 +186,7 @@ def freezer(vcr_cassette_name, vcr_cassette, vcr):
         tzinfo = datetime.now().astimezone().tzinfo
         freeze_at = datetime.now().replace(tzinfo=tzinfo).isoformat()
         with open(
-            os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"), "w",
+            os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"), "w+",
         ) as f:
             f.write(freeze_at)
     else:
@@ -198,13 +198,13 @@ def freezer(vcr_cassette_name, vcr_cassette, vcr):
     return freeze_time(parser.isoparse(freeze_at))
 
 
-@given('a valid "apiKeyAuth" key')
+@given('a valid "apiKeyAuth" key in the system')
 def a_valid_api_key(configuration):
     """a valid API key."""
     configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY")
 
 
-@given('a valid "appKeyAuth" key')
+@given('a valid "appKeyAuth" key in the system')
 def a_valid_application_key(configuration):
     """a valid Application key."""
     configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY")
@@ -274,7 +274,7 @@ def request_body(fixtures, api_request, data):
     return body
 
 
-@given(parsers.parse("parameter {name} from {path}"))
+@given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(fixtures, api_request, name, path):
     """Set request parameter."""
     from glom import glom

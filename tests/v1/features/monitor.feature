@@ -6,43 +6,43 @@ Feature: Monitors
   information on creating monitors.
 
   Background:
-    Given a valid "apiKeyAuth" key
-    And a valid "appKeyAuth" key
+    Given a valid "apiKeyAuth" key in the system
+    And a valid "appKeyAuth" key in the system
     And an instance of "Monitors" API
 
-  Scenario: Get all monitor details leading to OK
+  Scenario: Get all monitor details returns "OK" response
     Given new "ListMonitors" request
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Create a monitor leading to OK
+  Scenario: Create a monitor returns "OK" response
     Given new "CreateMonitor" request
     And body {}
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Check if a monitor can be deleted leading to OK
+  Scenario: Check if a monitor can be deleted returns "OK" response
     Given new "CheckCanDeleteMonitor" request
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Validate a monitor leading to OK
+  Scenario: Validate a monitor returns "OK" response
     Given new "ValidateMonitor" request
     And body {}
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Delete a monitor leading to OK
+  Scenario: Delete a monitor returns "OK" response
     Given new "DeleteMonitor" request
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Get a monitor's details leading to OK
+  Scenario: Get a monitor's details returns "OK" response
     Given new "GetMonitor" request
     When the request is sent
     Then the status is 200 OK
 
-  Scenario: Edit a monitor leading to OK
+  Scenario: Edit a monitor returns "OK" response
     Given new "UpdateMonitor" request
     And body {}
     When the request is sent
