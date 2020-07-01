@@ -57,7 +57,7 @@ class GCPIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (gcp_account.GCPAccount): Create a Datadog-Azure integration.
+                body (gcp_account.GCPAccount): Create a Datadog-GCP integration.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
