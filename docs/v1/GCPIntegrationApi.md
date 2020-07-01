@@ -64,7 +64,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gcp_integration_api.GCPIntegrationApi(api_client)
-    body = gcp_account.GCPAccount() # gcp_account.GCPAccount | Create a Datadog-Azure integration.
+    body = gcp_account.GCPAccount() # gcp_account.GCPAccount | Create a Datadog-GCP integration.
     
     # example passing only required values which don't have defaults set
     try:
@@ -79,7 +79,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**gcp_account.GCPAccount**](GCPAccount.md)| Create a Datadog-Azure integration. |
+ **body** | [**gcp_account.GCPAccount**](GCPAccount.md)| Create a Datadog-GCP integration. |
 
 ### Return type
 

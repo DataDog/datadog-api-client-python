@@ -410,7 +410,7 @@ class DashboardsApi(object):
         ):
             """Get all dashboards  # noqa: E501
 
-            Get all dashboards.  # noqa: E501
+            Get all dashboards.  **Note**: This query will only return custom created or cloned dashboards. This query will not return preset dashboards.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 

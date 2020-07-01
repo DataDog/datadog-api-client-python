@@ -117,6 +117,8 @@ Class | Method | HTTP request | Description
 *DashboardListsApi* | [**delete_dashboard_list_items**](DashboardListsApi.md#delete_dashboard_list_items) | **DELETE** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Delete items from a dashboard list
 *DashboardListsApi* | [**get_dashboard_list_items**](DashboardListsApi.md#get_dashboard_list_items) | **GET** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Get a Dashboard List
 *DashboardListsApi* | [**update_dashboard_list_items**](DashboardListsApi.md#update_dashboard_list_items) | **PUT** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Update items of a dashboard list
+*LogsApi* | [**list_logs**](LogsApi.md#list_logs) | **POST** /api/v2/logs/events/search | Get a list of logs
+*LogsApi* | [**list_logs_get**](LogsApi.md#list_logs_get) | **GET** /api/v2/logs/events | Get a quick list of logs
 *LogsArchivesApi* | [**add_read_role_to_archive**](LogsArchivesApi.md#add_read_role_to_archive) | **POST** /api/v2/logs/config/archives/{archive_id}/readers | Grant role to an archive
 *LogsArchivesApi* | [**create_logs_archive**](LogsArchivesApi.md#create_logs_archive) | **POST** /api/v2/logs/config/archives | Create an archive
 *LogsArchivesApi* | [**delete_logs_archive**](LogsArchivesApi.md#delete_logs_archive) | **DELETE** /api/v2/logs/config/archives/{archive_id} | Delete an archive
@@ -168,6 +170,9 @@ Class | Method | HTTP request | Description
  - [dashboard_list_update_items_request.DashboardListUpdateItemsRequest](DashboardListUpdateItemsRequest.md)
  - [dashboard_list_update_items_response.DashboardListUpdateItemsResponse](DashboardListUpdateItemsResponse.md)
  - [dashboard_type.DashboardType](DashboardType.md)
+ - [log.Log](Log.md)
+ - [log_attributes.LogAttributes](LogAttributes.md)
+ - [log_type.LogType](LogType.md)
  - [logs_archive.LogsArchive](LogsArchive.md)
  - [logs_archive_attributes.LogsArchiveAttributes](LogsArchiveAttributes.md)
  - [logs_archive_create_request.LogsArchiveCreateRequest](LogsArchiveCreateRequest.md)
@@ -187,6 +192,14 @@ Class | Method | HTTP request | Description
  - [logs_archive_integration_s3.LogsArchiveIntegrationS3](LogsArchiveIntegrationS3.md)
  - [logs_archive_state.LogsArchiveState](LogsArchiveState.md)
  - [logs_archives.LogsArchives](LogsArchives.md)
+ - [logs_list_request.LogsListRequest](LogsListRequest.md)
+ - [logs_list_request_filter.LogsListRequestFilter](LogsListRequestFilter.md)
+ - [logs_list_request_page.LogsListRequestPage](LogsListRequestPage.md)
+ - [logs_list_response.LogsListResponse](LogsListResponse.md)
+ - [logs_list_response_links.LogsListResponseLinks](LogsListResponseLinks.md)
+ - [logs_list_response_meta.LogsListResponseMeta](LogsListResponseMeta.md)
+ - [logs_list_response_meta_page.LogsListResponseMetaPage](LogsListResponseMetaPage.md)
+ - [logs_sort.LogsSort](LogsSort.md)
  - [organization.Organization](Organization.md)
  - [organization_attributes.OrganizationAttributes](OrganizationAttributes.md)
  - [organizations_type.OrganizationsType](OrganizationsType.md)
