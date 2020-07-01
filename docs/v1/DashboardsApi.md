@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 
 Get all dashboards
 
-Get all dashboards.
+Get all dashboards.  **Note**: This query will only return custom created or cloned dashboards. This query will not return preset dashboards.
 
 ### Example
 
