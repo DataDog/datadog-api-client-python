@@ -13,37 +13,37 @@ Feature: Monitors
   Scenario: Get all monitor details returns "OK" response
     Given new "ListMonitors" request
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Create a monitor returns "OK" response
     Given new "CreateMonitor" request
     And body {}
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Check if a monitor can be deleted returns "OK" response
     Given new "CheckCanDeleteMonitor" request
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Validate a monitor returns "OK" response
     Given new "ValidateMonitor" request
     And body {}
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Delete a monitor returns "OK" response
     Given new "DeleteMonitor" request
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Get a monitor's details returns "OK" response
     Given new "GetMonitor" request
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Edit a monitor returns "OK" response
     Given new "UpdateMonitor" request
     And body {}
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK

@@ -8,4 +8,4 @@ Feature: IP Ranges
   Scenario: List IP Ranges
     Given new "GetIPRanges" request
     When the request is sent
-    Then the status is 200 List of IP ranges.
+    Then the response status is 200 List of IP ranges.

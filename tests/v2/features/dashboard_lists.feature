@@ -13,21 +13,21 @@ Feature: Dashboard Lists
     Given new "DeleteDashboardListItems" request
     And body {}
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Get a Dashboard List returns "OK" response
     Given new "GetDashboardListItems" request
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Add Items to a Dashboard List returns "OK" response
     Given new "CreateDashboardListItems" request
     And body {}
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Update items of a dashboard list returns "OK" response
     Given new "UpdateDashboardListItems" request
     And body {}
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK

@@ -332,7 +332,7 @@ def i_should_get_a_list_of_objects(package_name, api, name):
     assert all(isinstance(obj, cls) for obj in api_request["response"][0])
 
 
-@then(parsers.parse("the status is {status:d} {description}"))
+@then(parsers.parse("the response status is {status:d} {description}"))
 def the_status_is(api_request, status, description):
     """Check the status."""
     assert status == api_request["response"][1]

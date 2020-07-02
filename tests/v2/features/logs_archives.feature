@@ -12,43 +12,43 @@ Feature: Logs Archives
   Scenario: Get all archives returns "OK" response
     Given new "ListLogsArchives" request
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Create an archive returns "OK" response
     Given new "CreateLogsArchive" request
     And body {}
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Delete an archive returns "OK" response
     Given new "DeleteLogsArchive" request
     When the request is sent
-    Then the status is 204 OK
+    Then the response status is 204 OK
 
   Scenario: Get an archive returns "OK" response
     Given new "GetLogsArchive" request
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Update an archive returns "OK" response
     Given new "UpdateLogsArchive" request
     And body {}
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Revoke role from an archive returns "OK" response
     Given new "RemoveRoleFromArchive" request
     And body {}
     When the request is sent
-    Then the status is 204 OK
+    Then the response status is 204 OK
 
   Scenario: List read roles for an archive returns "OK" response
     Given new "ListArchiveReadRoles" request
     When the request is sent
-    Then the status is 200 OK
+    Then the response status is 200 OK
 
   Scenario: Grant role to an archive returns "OK" response
     Given new "AddReadRoleToArchive" request
     And body {}
     When the request is sent
-    Then the status is 204 OK
+    Then the response status is 204 OK
