@@ -20,6 +20,6 @@ fi
 
 # Install test dependencies
 python -m pip install -e .[tests]
-pip install -U --find-links=https://s3.amazonaws.com/pypi.datadoghq.com/trace-dev/index.html --pre "ddtrace>=0.39.1.dev9"
+python -m pip install -U git+https://github.com/DataDog/dd-trace-py#egg=ddtrace
 # Run tests
 python -m pytest
