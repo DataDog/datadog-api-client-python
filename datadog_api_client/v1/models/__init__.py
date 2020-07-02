@@ -311,6 +311,10 @@ from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWi
 from datadog_api_client.v1.model.toplist_widget_request import ToplistWidgetRequest
 from datadog_api_client.v1.model.usage_analyzed_logs_hour import UsageAnalyzedLogsHour
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
+from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
+from datadog_api_client.v1.model.usage_billable_summary_hour import UsageBillableSummaryHour
+from datadog_api_client.v1.model.usage_billable_summary_keys import UsageBillableSummaryKeys
+from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
 from datadog_api_client.v1.model.usage_fargate_hour import UsageFargateHour
 from datadog_api_client.v1.model.usage_fargate_response import UsageFargateResponse
 from datadog_api_client.v1.model.usage_host_hour import UsageHostHour
