@@ -12,7 +12,7 @@ pytestmark = [
 ]
 
 
-@given("there is a valid user in the system")
+@given('there is a valid "user" in the system')
 def user(vcr_cassette, client, unique):
     """There is a valid user in the system."""
     from datadog_api_client.v2.exceptions import ApiException
@@ -42,7 +42,7 @@ def user(vcr_cassette, client, unique):
         vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
 
-@given("there is a valid role in the system")
+@given('there is a valid "role" in the system')
 def role(vcr_cassette, client, unique):
     """There is a valid role in the system."""
     from datadog_api_client.v2.exceptions import ApiException
@@ -70,7 +70,7 @@ def role(vcr_cassette, client, unique):
         vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
 
-@given("there is a valid permission in the system")
+@given('there is a valid "permission" in the system')
 def permission(client):
     """There is a valid permission in the system."""
     from datadog_api_client.v2.api.roles_api import RolesApi
@@ -78,7 +78,7 @@ def permission(client):
     return RolesApi(client).list_permissions().data[0]
 
 
-@given("the permission is granted to the role")
+@given('the "permission" is granted to the "role"')
 def granted_permission(client, role, permission):
     """The permission is granted to the role."""
     from datadog_api_client.v2.model import relationship_to_permission
@@ -94,7 +94,7 @@ def granted_permission(client, role, permission):
     return api.add_permission_to_role(role.data.id, body=body)
 
 
-@given("the user has the role")
+@given('the "user" has the "role"')
 def user_has_role(vcr_cassette, client, user, role):
     """The user has the role."""
     from datadog_api_client.v2.exceptions import ApiException
