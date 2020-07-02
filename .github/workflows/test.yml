@@ -27,17 +27,18 @@ jobs:
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8]
-        platform: [ubuntu-latest, macos-latest, windows-latest]
+        platform: [ubuntu-latest, macos-latest]  # windows-latest
         # test only latest version on macos and windows
         exclude:
           - platform: macos-latest
             python-version: 3.6
           - platform: macos-latest
             python-version: 3.7
-          - platform: windows-latest
-            python-version: 3.6
-          - platform: windows-latest
-            python-version: 3.7
+          # TODO enable once dd-trace-py is updated
+          # - platform: windows-latest
+          #  python-version: 3.6
+          # - platform: windows-latest
+          #   python-version: 3.7
     runs-on: ${{ matrix.platform }}
     if: github.event.pull_request.draft == false && !contains(github.event.pull_request.labels.*.name, 'ci/skip') && !contains(github.event.pull_request.head.ref, 'datadog-api-spec/test/')
     steps:
