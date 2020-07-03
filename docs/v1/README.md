@@ -225,6 +225,7 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**list_host_tags**](TagsApi.md#list_host_tags) | **GET** /api/v1/tags/hosts | Get Tags
 *TagsApi* | [**update_host_tags**](TagsApi.md#update_host_tags) | **PUT** /api/v1/tags/hosts/{host_name} | Update host tags
 *UsageMeteringApi* | [**get_usage_analyzed_logs**](UsageMeteringApi.md#get_usage_analyzed_logs) | **GET** /api/v1/usage/analyzed_logs | Get hourly usage for analyzed logs
+*UsageMeteringApi* | [**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get monthly billable summary
 *UsageMeteringApi* | [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 *UsageMeteringApi* | [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
 *UsageMeteringApi* | [**get_usage_lambda**](UsageMeteringApi.md#get_usage_lambda) | **GET** /api/v1/usage/aws_lambda | Get hourly usage for Lambda
@@ -550,6 +551,10 @@ Class | Method | HTTP request | Description
  - [toplist_widget_request.ToplistWidgetRequest](ToplistWidgetRequest.md)
  - [usage_analyzed_logs_hour.UsageAnalyzedLogsHour](UsageAnalyzedLogsHour.md)
  - [usage_analyzed_logs_response.UsageAnalyzedLogsResponse](UsageAnalyzedLogsResponse.md)
+ - [usage_billable_summary_body.UsageBillableSummaryBody](UsageBillableSummaryBody.md)
+ - [usage_billable_summary_hour.UsageBillableSummaryHour](UsageBillableSummaryHour.md)
+ - [usage_billable_summary_keys.UsageBillableSummaryKeys](UsageBillableSummaryKeys.md)
+ - [usage_billable_summary_response.UsageBillableSummaryResponse](UsageBillableSummaryResponse.md)
  - [usage_fargate_hour.UsageFargateHour](UsageFargateHour.md)
  - [usage_fargate_response.UsageFargateResponse](UsageFargateResponse.md)
  - [usage_host_hour.UsageHostHour](UsageHostHour.md)
