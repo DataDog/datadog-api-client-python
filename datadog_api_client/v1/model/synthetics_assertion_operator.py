@@ -57,10 +57,12 @@ class SyntheticsAssertionOperator(ModelSimple):
             'IS': "is",
             'IS_NOT': "isNot",
             'LESS_THAN': "lessThan",
+            'MORE_THAN': "moreThan",
             'MATCHES': "matches",
             'DOES_NOT_MATCH': "doesNotMatch",
             'VALIDATES': "validates",
             'IS_IN_MORE_DAYS_THAN': "isInMoreThan",
+            'IS_IN_LESS_DAYS_THAN': "isInLessThan",
         },
     }
 
