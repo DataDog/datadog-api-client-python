@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**get_usage_rum_sessions**](UsageMeteringApi.md#get_usage_rum_sessions) | **GET** /api/v1/usage/rum_sessions | Get hourly usage for RUM Sessions
 [**get_usage_snmp**](UsageMeteringApi.md#get_usage_snmp) | **GET** /api/v1/usage/snmp | Get hourly usage for SNMP devices
 [**get_usage_summary**](UsageMeteringApi.md#get_usage_summary) | **GET** /api/v1/usage/summary | Get usage across your multi-org account
-[**get_usage_synthetics**](UsageMeteringApi.md#get_usage_synthetics) | **GET** /api/v1/usage/synthetics | Get hourly usage for Synthetics API Checks
+[**get_usage_synthetics**](UsageMeteringApi.md#get_usage_synthetics) | **GET** /api/v1/usage/synthetics | Get hourly usage for Synthetics Checks
 [**get_usage_synthetics_api**](UsageMeteringApi.md#get_usage_synthetics_api) | **GET** /api/v1/usage/synthetics_api | Get hourly usage for Synthetics API Checks
 [**get_usage_synthetics_browser**](UsageMeteringApi.md#get_usage_synthetics_browser) | **GET** /api/v1/usage/synthetics_browser | Get hourly usage for Synthetics Browser Checks
 [**get_usage_timeseries**](UsageMeteringApi.md#get_usage_timeseries) | **GET** /api/v1/usage/timeseries | Get hourly usage for custom metrics
@@ -1269,9 +1269,9 @@ Name | Type | Description  | Notes
 # **get_usage_synthetics**
 > usage_synthetics_response.UsageSyntheticsResponse get_usage_synthetics(start_hr)
 
-Get hourly usage for Synthetics API Checks
+Get hourly usage for Synthetics Checks
 
-Get hourly usage for [Synthetics API checks](https://docs.datadoghq.com/synthetics/).
+Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/).
 
 ### Example
 
@@ -1325,7 +1325,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get hourly usage for Synthetics API Checks
+        # Get hourly usage for Synthetics Checks
         api_response = api_instance.get_usage_synthetics(start_hr)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
@@ -1334,7 +1334,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get hourly usage for Synthetics API Checks
+        # Get hourly usage for Synthetics Checks
         api_response = api_instance.get_usage_synthetics(start_hr, end_hr=end_hr)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
