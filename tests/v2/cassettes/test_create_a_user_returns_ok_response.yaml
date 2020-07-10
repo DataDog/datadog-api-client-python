@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: '{"data": {"type": "users", "attributes": {"name": "Datadog API Client Python",
+      "email": "datadog-api-client-python-test_create_a_user_returns_ok_response-1594284417.316457@datadoghq.com"}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateUser
+      User-Agent:
+      - datadog-api-client-python/0.1.dev66+dirty (python 3.7.7; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '4445470642948607222'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '9358077388343732657'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"bf8c43d4-c1c0-11ea-9cec-ff800e73b0bb","attributes":{"name":"Datadog
+        API Client Python","handle":"datadog-api-client-python-test_create_a_user_returns_ok_response-1594284417.316457@datadoghq.com","created_at":"2020-07-09T08:46:57.972300+00:00","email":"datadog-api-client-python-test_create_a_user_returns_ok_response-1594284417.316457@datadoghq.com","icon":"https://secure.gravatar.com/avatar/5810592c902594e1937b45044cac01e0?s=48&d=retro","title":null,"verified":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '678'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Thu, 09 Jul 2020 08:46:58 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 16-Jul-2020 08:46:57 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - XrVF9iGOfdATIczLJsCTqr1ORVJWAydZm12oLZRyDN+lGe5bU8VekbcSMjJ2fj90
+      X-DD-VERSION:
+      - '35.2718508'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+version: 1

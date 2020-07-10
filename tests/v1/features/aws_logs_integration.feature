@@ -1,0 +1,57 @@
+@endpoint(aws-logs-integration)
+Feature: AWS Logs Integration
+  Configure your Datadog-AWS-Logs integration directly through Datadog API.
+  For more information, see the [AWS integration
+  page](https://docs.datadoghq.com/api/?lang=bash#integration-aws-logs).
+
+  Background:
+    Given a valid "apiKeyAuth" key in the system
+    And a valid "appKeyAuth" key in the system
+    And an instance of "AWSLogsIntegration" API
+
+  @generated @skip
+  Scenario: Delete an AWS Logs integration returns "OK" response
+    Given new "DeleteAWSLambdaARN" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: List all AWS Logs integrations returns "OK" response
+    Given new "ListAWSLogsIntegrations" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Add AWS Log Lambda ARN returns "OK" response
+    Given new "CreateAWSLambdaARN" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Check that an AWS Lambda Function exists returns "OK" response
+    Given new "CheckAWSLogsLambdaAsync" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get list of AWS log ready services returns "OK" response
+    Given new "ListAWSLogsServices" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Enable an AWS Logs integration returns "OK" response
+    Given new "EnableAWSLogServices" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Check permissions for log services returns "OK" response
+    Given new "CheckAWSLogsServicesAsync" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK

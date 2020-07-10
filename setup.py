@@ -27,7 +27,7 @@ def parse_fetch_on_shallow(root):
 setup(
     use_scm_version={
         "local_scheme": "dirty-tag",
-        "write_to": os.path.join("datadog_api_client", "version.py"),
+        "write_to": os.path.join("src", "datadog_api_client", "version.py"),
         "write_to_template": version_template,
         "parse": parse_fetch_on_shallow,
     }

@@ -1576,9 +1576,9 @@ class UsageMeteringApi(object):
             start_hr,
             **kwargs
         ):
-            """Get hourly usage for Synthetics API Checks  # noqa: E501
+            """Get hourly usage for Synthetics Checks  # noqa: E501
 
-            Get hourly usage for [Synthetics API checks](https://docs.datadoghq.com/synthetics/).  # noqa: E501
+            Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/).  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 

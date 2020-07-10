@@ -1,0 +1,66 @@
+name: IntegrationTests
+trigger:
+  batch: false
+  branches:
+    include:
+    - master
+pr:
+  branches:
+    include:
+    - master
+schedules:
+  - cron: "15 1-23/3 * * *"
+    displayName: Scheduled CI run every 3 hours
+    always: true
+    branches:
+      include:
+        - master
+
+resources:
+  containers:
+  - container: datadog-agent
+    image: datadog/agent:7
+    options: --health-cmd="exit 0" --health-interval=1s
+    ports:
+    - 8125:8125
+    - 8126:8126
+    env:
+      DD_API_KEY: $(ddAPIKey)
+      DD_APM_ENABLED: "true"
+      DD_APM_NON_LOCAL_TRAFFIC: "true"
+      DD_LOGS_ENABLED: "true"
+      DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL: "true"
+      DD_AC_EXCLUDE: "name:datadog-agent"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+jobs:
+- job: IntegrationTests
+  pool:
+    vmImage: "Ubuntu-16.04"
+  container:
+    image: python:3.8
+    options: >-
+      -l com.datadoghq.ad.logs="[{\"source\": \"Azure Pipeline\", \"service\": \"datadog-api-client-python\"}]"
+  services:
+    datadog-agent: datadog-agent
+  steps:
+    - script: ./run-tests.sh
+      displayName: Run integration tests
+      env:
+        CI: "true"
+        DD_AGENT_HOST: datadog-agent
+        DD_ENV: prod
+        DD_SERVICE: datadog-api-client-python
+        DD_TAGS: "team:integration-tools-and-libraries,build.requested_by:$(Build.RequestedForId),build.attempt:$(System.StageAttempt),pull_request.number:$(System.PullRequest.PullRequestNumber)"
+        DD_TEST_CLIENT_API_KEY: $(datadogAPIKey)
+        DD_TEST_CLIENT_APP_KEY: $(datadogAPPKey)
+        DD_TRACE_ANALYTICS_ENABLED: "true"
+        RECORD: "none"
+    - script: |
+        bash <(curl -s https://codecov.io/bash) -F integration -v
+
+      displayName: Upload to codecov.io
+      env:
+        CODECOV_TOKEN: $(codecovToken)
