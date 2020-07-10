@@ -19,18 +19,21 @@ Feature: PagerDuty Integration
   @generated @skip
   Scenario: Delete a single service object returns "OK" response
     Given new "DeletePagerDutyIntegrationService" request
+    And request contains "service_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a single service object returns "OK" response
     Given new "GetPagerDutyIntegrationService" request
+    And request contains "service_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update a single service object returns "OK" response
     Given new "UpdatePagerDutyIntegrationService" request
+    And request contains "service_name" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK

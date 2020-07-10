@@ -22,12 +22,14 @@ Feature: Metrics
   @generated @skip
   Scenario: Get metric metadata returns "OK" response
     Given new "GetMetricMetadata" request
+    And request contains "metric_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Edit metric metadata returns "OK" response
     Given new "UpdateMetricMetadata" request
+    And request contains "metric_name" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK

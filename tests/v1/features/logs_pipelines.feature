@@ -46,18 +46,21 @@ Feature: Logs Pipelines
   @generated @skip
   Scenario: Delete a pipeline returns "OK" response
     Given new "DeleteLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a pipeline returns "OK" response
     Given new "GetLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update a pipeline returns "OK" response
     Given new "UpdateLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK

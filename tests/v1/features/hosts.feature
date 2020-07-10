@@ -10,6 +10,7 @@ Feature: Hosts
   @generated @skip
   Scenario: Mute a host returns "OK" response
     Given new "MuteHost" request
+    And request contains "host_name" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK
@@ -17,6 +18,7 @@ Feature: Hosts
   @generated @skip
   Scenario: Unmute a host returns "OK" response
     Given new "UnmuteHost" request
+    And request contains "host_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 

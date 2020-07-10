@@ -25,18 +25,21 @@ Feature: Dashboards
   @generated @skip
   Scenario: Delete a dashboard returns "OK" response
     Given new "DeleteDashboard" request
+    And request contains "dashboard_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a dashboard returns "OK" response
     Given new "GetDashboard" request
+    And request contains "dashboard_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update a dashboard returns "OK" response
     Given new "UpdateDashboard" request
+    And request contains "dashboard_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK

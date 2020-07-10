@@ -8,6 +8,7 @@ Feature: Dashboard Lists
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
     And an instance of "DashboardLists" API
+    And request contains "dashboard_list_id" parameter from "<PATH>"
 
   @generated @skip
   Scenario: Delete items from a dashboard list returns "OK" response

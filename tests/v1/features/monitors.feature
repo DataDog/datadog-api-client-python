@@ -39,18 +39,21 @@ Feature: Monitors
   @generated @skip
   Scenario: Delete a monitor returns "OK" response
     Given new "DeleteMonitor" request
+    And request contains "monitor_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a monitor's details returns "OK" response
     Given new "GetMonitor" request
+    And request contains "monitor_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Edit a monitor returns "OK" response
     Given new "UpdateMonitor" request
+    And request contains "monitor_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK

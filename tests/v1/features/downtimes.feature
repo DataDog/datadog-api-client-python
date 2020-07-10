@@ -34,18 +34,21 @@ Feature: Downtimes
   @generated @skip
   Scenario: Cancel a downtime returns "OK" response
     Given new "CancelDowntime" request
+    And request contains "downtime_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 204 OK
 
   @generated @skip
   Scenario: Get a downtime returns "OK" response
     Given new "GetDowntime" request
+    And request contains "downtime_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update a downtime returns "OK" response
     Given new "UpdateDowntime" request
+    And request contains "downtime_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK
