@@ -42,18 +42,21 @@ Feature: Service Level Objectives
   @generated @skip
   Scenario: Delete a SLO returns "OK" response
     Given new "DeleteSLO" request
+    And request contains "slo_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a SLO's details returns "OK" response
     Given new "GetSLO" request
+    And request contains "slo_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update a SLO returns "OK" response
     Given new "UpdateSLO" request
+    And request contains "slo_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK
@@ -61,5 +64,6 @@ Feature: Service Level Objectives
   @generated @skip
   Scenario: Get an SLO's history returns "OK" response
     Given new "GetSLOHistory" request
+    And request contains "slo_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK

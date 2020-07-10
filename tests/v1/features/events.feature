@@ -19,5 +19,6 @@ Feature: Events
   @generated @skip
   Scenario: Get an event returns "OK" response
     Given new "GetEvent" request
+    And request contains "event_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK

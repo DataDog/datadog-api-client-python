@@ -17,6 +17,7 @@ Feature: Users
   @generated @skip
   Scenario: Get a user invitation returns "OK" response
     Given new "GetInvitation" request
+    And request contains "user_invitation_uuid" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
@@ -63,11 +64,13 @@ Feature: Users
   @generated @skip
   Scenario: Get a user returns "OK for get user" response
     Given new "GetUser" request
+    And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK for get user
 
   @generated @skip
   Scenario: Get a user organization returns "OK" response
     Given new "ListUserOrganizations" request
+    And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK

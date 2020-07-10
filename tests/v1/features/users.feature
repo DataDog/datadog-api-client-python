@@ -24,18 +24,21 @@ Feature: Users
   @generated @skip
   Scenario: Disable a user returns "User disabled" response
     Given new "DisableUser" request
+    And request contains "user_handle" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 User disabled
 
   @generated @skip
   Scenario: Get user details returns "OK for get user" response
     Given new "GetUser" request
+    And request contains "user_handle" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK for get user
 
   @generated @skip
   Scenario: Update a user returns "User updated" response
     Given new "UpdateUser" request
+    And request contains "user_handle" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 User updated

@@ -24,18 +24,21 @@ Feature: Dashboard Lists
   @generated @skip
   Scenario: Delete a dashboard list returns "OK" response
     Given new "DeleteDashboardList" request
+    And request contains "list_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a dashboard list returns "OK" response
     Given new "GetDashboardList" request
+    And request contains "list_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update a dashboard list returns "OK" response
     Given new "UpdateDashboardList" request
+    And request contains "list_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK

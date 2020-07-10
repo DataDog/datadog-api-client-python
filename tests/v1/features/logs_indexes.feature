@@ -31,12 +31,14 @@ Feature: Logs Indexes
   @generated @skip
   Scenario: Get an index returns "OK" response
     Given new "GetLogsIndex" request
+    And request contains "name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update an index returns "OK" response
     Given new "UpdateLogsIndex" request
+    And request contains "name" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK

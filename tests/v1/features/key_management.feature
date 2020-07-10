@@ -26,18 +26,21 @@ Feature: Key Management
   @generated @skip
   Scenario: Delete an API key returns "OK" response
     Given new "DeleteAPIKey" request
+    And request contains "key" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get API key returns "OK" response
     Given new "GetAPIKey" request
+    And request contains "key" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Edit an API key returns "OK" response
     Given new "UpdateAPIKey" request
+    And request contains "key" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK
@@ -58,18 +61,21 @@ Feature: Key Management
   @generated @skip
   Scenario: Delete an application key returns "OK" response
     Given new "DeleteApplicationKey" request
+    And request contains "key" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get an application key returns "OK" response
     Given new "GetApplicationKey" request
+    And request contains "key" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Edit an application key returns "OK" response
     Given new "UpdateApplicationKey" request
+    And request contains "key" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK

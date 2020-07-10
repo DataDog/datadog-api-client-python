@@ -25,18 +25,21 @@ Feature: Logs Archives
   @generated @skip
   Scenario: Delete an archive returns "OK" response
     Given new "DeleteLogsArchive" request
+    And request contains "archive_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 204 OK
 
   @generated @skip
   Scenario: Get an archive returns "OK" response
     Given new "GetLogsArchive" request
+    And request contains "archive_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update an archive returns "OK" response
     Given new "UpdateLogsArchive" request
+    And request contains "archive_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK
@@ -44,6 +47,7 @@ Feature: Logs Archives
   @generated @skip
   Scenario: Revoke role from an archive returns "OK" response
     Given new "RemoveRoleFromArchive" request
+    And request contains "archive_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 204 OK
@@ -51,12 +55,14 @@ Feature: Logs Archives
   @generated @skip
   Scenario: List read roles for an archive returns "OK" response
     Given new "ListArchiveReadRoles" request
+    And request contains "archive_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Grant role to an archive returns "OK" response
     Given new "AddReadRoleToArchive" request
+    And request contains "archive_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 204 OK

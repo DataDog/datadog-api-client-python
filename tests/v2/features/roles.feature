@@ -110,5 +110,6 @@ Feature: Roles
   @generated @skip
   Scenario: Get a role returns "OK for get role" response
     Given new "GetRole" request
+    And request contains "role_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK for get role

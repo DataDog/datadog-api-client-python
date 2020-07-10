@@ -23,18 +23,21 @@ Feature: Tags
   @generated @skip
   Scenario: Remove host tags returns "OK" response
     Given new "DeleteHostTags" request
+    And request contains "host_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 204 OK
 
   @generated @skip
   Scenario: Get host tags returns "OK" response
     Given new "GetHostTags" request
+    And request contains "host_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Add tags to a host returns "Created" response
     Given new "CreateHostTags" request
+    And request contains "host_name" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 201 Created
@@ -42,6 +45,7 @@ Feature: Tags
   @generated @skip
   Scenario: Update host tags returns "OK" response
     Given new "UpdateHostTags" request
+    And request contains "host_name" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 201 OK

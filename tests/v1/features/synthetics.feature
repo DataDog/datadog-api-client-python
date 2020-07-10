@@ -37,18 +37,22 @@ Feature: Synthetics
   @generated @skip
   Scenario: Get a test configuration (browser) returns "OK" response
     Given new "GetBrowserTest" request
+    And request contains "public_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get the test's latest results summaries (browser) returns "OK" response
     Given new "GetBrowserTestLatestResults" request
+    And request contains "public_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a test result (browser) returns "OK" response
     Given new "GetBrowserTestResult" request
+    And request contains "public_id" parameter from "<PATH>"
+    And request contains "result_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
@@ -62,12 +66,14 @@ Feature: Synthetics
   @generated @skip
   Scenario: Get a test configuration (API) returns "OK" response
     Given new "GetTest" request
+    And request contains "public_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Edit a test returns "OK" response
     Given new "UpdateTest" request
+    And request contains "public_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK
@@ -75,18 +81,22 @@ Feature: Synthetics
   @generated @skip
   Scenario: Get the test's latest results summaries (API) returns "OK" response
     Given new "GetAPITestLatestResults" request
+    And request contains "public_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a test result (API) returns "OK" response
     Given new "GetAPITestResult" request
+    And request contains "public_id" parameter from "<PATH>"
+    And request contains "result_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Pause or start a test returns "OK - Returns a boolean indicating if the update was successful." response
     Given new "UpdateTestPauseStatus" request
+    And request contains "public_id" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 200 OK - Returns a boolean indicating if the update was successful.
