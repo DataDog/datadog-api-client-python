@@ -179,6 +179,8 @@ class HostsApi(object):
                 start (int): Host result to start search from.. [optional]
                 count (int): Number of hosts to return. Max 1000.. [optional]
                 _from (int): Number of seconds since UNIX epoch from which you want to search your hosts.. [optional]
+                include_muted_hosts_data (bool): Include information on the muted status of hosts and when the mute expires.. [optional]
+                include_hosts_metadata (bool): Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.).. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -245,6 +247,8 @@ class HostsApi(object):
                     'start',
                     'count',
                     '_from',
+                    'include_muted_hosts_data',
+                    'include_hosts_metadata',
                 ],
                 'required': [],
                 'nullable': [
@@ -272,6 +276,10 @@ class HostsApi(object):
                         (int,),
                     '_from':
                         (int,),
+                    'include_muted_hosts_data':
+                        (bool,),
+                    'include_hosts_metadata':
+                        (bool,),
                 },
                 'attribute_map': {
                     'filter': 'filter',
@@ -280,6 +288,8 @@ class HostsApi(object):
                     'start': 'start',
                     'count': 'count',
                     '_from': 'from',
+                    'include_muted_hosts_data': 'include_muted_hosts_data',
+                    'include_hosts_metadata': 'include_hosts_metadata',
                 },
                 'location_map': {
                     'filter': 'query',
@@ -288,6 +298,8 @@ class HostsApi(object):
                     'start': 'query',
                     'count': 'query',
                     '_from': 'query',
+                    'include_muted_hosts_data': 'query',
+                    'include_hosts_metadata': 'query',
                 },
                 'collection_format_map': {
                 }

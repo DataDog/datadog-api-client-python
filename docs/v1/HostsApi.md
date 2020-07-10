@@ -164,12 +164,14 @@ sort_dir = 'sort_dir_example' # str | Direction of sort. Options include `asc` a
 start = 56 # int | Host result to start search from. (optional)
 count = 56 # int | Number of hosts to return. Max 1000. (optional)
 _from = 56 # int | Number of seconds since UNIX epoch from which you want to search your hosts. (optional)
+include_muted_hosts_data = True # bool | Include information on the muted status of hosts and when the mute expires. (optional)
+include_hosts_metadata = True # bool | Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.). (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get all hosts for your organization
-        api_response = api_instance.list_hosts(filter=filter, sort_field=sort_field, sort_dir=sort_dir, start=start, count=count, _from=_from)
+        api_response = api_instance.list_hosts(filter=filter, sort_field=sort_field, sort_dir=sort_dir, start=start, count=count, _from=_from, include_muted_hosts_data=include_muted_hosts_data, include_hosts_metadata=include_hosts_metadata)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
         print("Exception when calling HostsApi->list_hosts: %s\n" % e)
@@ -185,6 +187,8 @@ Name | Type | Description  | Notes
  **start** | **int**| Host result to start search from. | [optional]
  **count** | **int**| Number of hosts to return. Max 1000. | [optional]
  **_from** | **int**| Number of seconds since UNIX epoch from which you want to search your hosts. | [optional]
+ **include_muted_hosts_data** | **bool**| Include information on the muted status of hosts and when the mute expires. | [optional]
+ **include_hosts_metadata** | **bool**| Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.). | [optional]
 
 ### Return type
 
