@@ -1,6 +1,6 @@
 # log_query_definition.LogQueryDefinition
 
-List of logs.
+The log query.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
