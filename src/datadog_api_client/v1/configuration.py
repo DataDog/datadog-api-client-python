@@ -214,6 +214,10 @@ conf = datadog_api_client.v1.Configuration(
             "update_logs_index": False,
             "update_logs_index_order": False,
             "get_slo_history": False,
+            "get_daily_custom_reports": False,
+            "get_monthly_custom_reports": False,
+            "get_specified_daily_custom_reports": False,
+            "get_specified_monthly_custom_reports": False,
         }
 
     def __deepcopy__(self, memo):
