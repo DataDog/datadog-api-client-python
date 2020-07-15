@@ -26,6 +26,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model import synthetics_global_variable
 from datadog_api_client.v1.model import synthetics_test_details
 from datadog_api_client.v1.model import synthetics_delete_tests_payload
 from datadog_api_client.v1.model import synthetics_delete_tests_response
@@ -49,6 +50,127 @@ class SyntheticsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        def __create_global_variable(
+            self,
+            body,
+            **kwargs
+        ):
+            """Create a global variable  # noqa: E501
+
+            Create a Synthetics global variable.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.create_global_variable(body, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                body (synthetics_global_variable.SyntheticsGlobalVariable): Details of the global variable to create.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                synthetics_global_variable.SyntheticsGlobalVariable
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
+            return self.call_with_http_info(**kwargs)
+
+        self.create_global_variable = Endpoint(
+            settings={
+                'response_type': (synthetics_global_variable.SyntheticsGlobalVariable,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/synthetics/variables',
+                'operation_id': 'create_global_variable',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (synthetics_global_variable.SyntheticsGlobalVariable,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__create_global_variable
+        )
 
         def __create_test(
             self,
@@ -171,6 +293,126 @@ class SyntheticsApi(object):
             callable=__create_test
         )
 
+        def __delete_global_variable(
+            self,
+            variable_id,
+            **kwargs
+        ):
+            """Delete a global variable  # noqa: E501
+
+            Delete a Synthetics global variable.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.delete_global_variable(variable_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                variable_id (str): The ID of the global variable.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                None
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['variable_id'] = \
+                variable_id
+            return self.call_with_http_info(**kwargs)
+
+        self.delete_global_variable = Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/synthetics/variables/{variable_id}',
+                'operation_id': 'delete_global_variable',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'variable_id',
+                ],
+                'required': [
+                    'variable_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'variable_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'variable_id': 'variable_id',
+                },
+                'location_map': {
+                    'variable_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__delete_global_variable
+        )
+
         def __delete_tests(
             self,
             body,
@@ -290,6 +532,137 @@ class SyntheticsApi(object):
             },
             api_client=api_client,
             callable=__delete_tests
+        )
+
+        def __edit_global_variable(
+            self,
+            variable_id,
+            body,
+            **kwargs
+        ):
+            """Edit a global variable  # noqa: E501
+
+            Edit a Synthetics global variable.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.edit_global_variable(variable_id, body, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                variable_id (str): The ID of the global variable.
+                body (synthetics_global_variable.SyntheticsGlobalVariable): Details of the global variable to update.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                synthetics_global_variable.SyntheticsGlobalVariable
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['variable_id'] = \
+                variable_id
+            kwargs['body'] = \
+                body
+            return self.call_with_http_info(**kwargs)
+
+        self.edit_global_variable = Endpoint(
+            settings={
+                'response_type': (synthetics_global_variable.SyntheticsGlobalVariable,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/synthetics/variables/{variable_id}',
+                'operation_id': 'edit_global_variable',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'variable_id',
+                    'body',
+                ],
+                'required': [
+                    'variable_id',
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'variable_id':
+                        (str,),
+                    'body':
+                        (synthetics_global_variable.SyntheticsGlobalVariable,),
+                },
+                'attribute_map': {
+                    'variable_id': 'variable_id',
+                },
+                'location_map': {
+                    'variable_id': 'path',
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__edit_global_variable
         )
 
         def __get_api_test_latest_results(
