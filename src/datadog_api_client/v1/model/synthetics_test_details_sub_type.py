@@ -54,6 +54,7 @@ class SyntheticsTestDetailsSubType(ModelSimple):
         ('value',): {
             'HTTP': "http",
             'SSL': "ssl",
+            'TCP': "tcp",
         },
     }
 

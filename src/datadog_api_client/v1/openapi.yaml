@@ -6292,10 +6292,12 @@ components:
       enum:
       - http
       - ssl
+      - tcp
       type: string
       x-enum-varnames:
       - HTTP
       - SSL
+      - TCP
     SyntheticsTestDetailsType:
       description: Type of the Synthetic test, either `api` or `browser`.
       enum:
