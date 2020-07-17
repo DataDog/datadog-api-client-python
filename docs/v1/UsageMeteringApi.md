@@ -4,8 +4,12 @@ All URIs are relative to *https://api.datadoghq.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_daily_custom_reports**](UsageMeteringApi.md#get_daily_custom_reports) | **GET** /api/v1/daily_custom_reports | Get the list of available daily custom reports
+[**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports | Get the list of available monthly custom reports
+[**get_specified_daily_custom_reports**](UsageMeteringApi.md#get_specified_daily_custom_reports) | **GET** /api/v1/daily_custom_reports/{report_id} | Get specified daily custom reports
+[**get_specified_monthly_custom_reports**](UsageMeteringApi.md#get_specified_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports/{report_id} | Get specified monthly custom reports
 [**get_usage_analyzed_logs**](UsageMeteringApi.md#get_usage_analyzed_logs) | **GET** /api/v1/usage/analyzed_logs | Get hourly usage for analyzed logs
-[**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get monthly billable summary
+[**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get billable usage across your multi-org account
 [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
 [**get_usage_lambda**](UsageMeteringApi.md#get_usage_lambda) | **GET** /api/v1/usage/aws_lambda | Get hourly usage for Lambda
@@ -23,6 +27,395 @@ Method | HTTP request | Description
 [**get_usage_top_avg_metrics**](UsageMeteringApi.md#get_usage_top_avg_metrics) | **GET** /api/v1/usage/top_avg_metrics | Get top 500 custom metrics by hourly average
 [**get_usage_trace**](UsageMeteringApi.md#get_usage_trace) | **GET** /api/v1/usage/traces | Get hourly usage for Trace Search
 
+
+# **get_daily_custom_reports**
+> usage_custom_reports_response.UsageCustomReportsResponse get_daily_custom_reports()
+
+Get the list of available daily custom reports
+
+Get daily custom reports.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v1
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model import usage_custom_reports_response
+from datadog_api_client.v1.model import usage_sort
+from datadog_api_client.v1.model import usage_sort_direction
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    page_size = 56 # int | The number of files to return in the response. `[default=60]`. (optional)
+page_number = 56 # int | The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`. (optional)
+sort_dir = usage_sort_direction.UsageSortDirection() # usage_sort_direction.UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
+sort = usage_sort.UsageSort() # usage_sort.UsageSort | The field to sort by: `[computed_on, size, start_date, end_date]`. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get the list of available daily custom reports
+        api_response = api_instance.get_daily_custom_reports(page_size=page_size, page_number=page_number, sort_dir=sort_dir, sort=sort)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_daily_custom_reports: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_size** | **int**| The number of files to return in the response. &#x60;[default&#x3D;60]&#x60;. | [optional]
+ **page_number** | **int**| The identifier of the first page to return. This parameter is used for the pagination feature &#x60;[default&#x3D;0]&#x60;. | [optional]
+ **sort_dir** | **usage_sort_direction.UsageSortDirection**| The direction to sort by: &#x60;[desc, asc]&#x60;. | [optional]
+ **sort** | **usage_sort.UsageSort**| The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;. | [optional]
+
+### Return type
+
+[**usage_custom_reports_response.UsageCustomReportsResponse**](UsageCustomReportsResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;datetime-format=rfc3339
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_monthly_custom_reports**
+> usage_custom_reports_response.UsageCustomReportsResponse get_monthly_custom_reports()
+
+Get the list of available monthly custom reports
+
+Get monthly custom reports.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v1
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model import usage_custom_reports_response
+from datadog_api_client.v1.model import usage_sort
+from datadog_api_client.v1.model import usage_sort_direction
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    page_size = 56 # int | The number of files to return in the response `[default=60].` (optional)
+page_number = 56 # int | The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`. (optional)
+sort_dir = usage_sort_direction.UsageSortDirection() # usage_sort_direction.UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
+sort = usage_sort.UsageSort() # usage_sort.UsageSort | The field to sort by: `[computed_on, size, start_date, end_date]`. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get the list of available monthly custom reports
+        api_response = api_instance.get_monthly_custom_reports(page_size=page_size, page_number=page_number, sort_dir=sort_dir, sort=sort)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_monthly_custom_reports: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_size** | **int**| The number of files to return in the response &#x60;[default&#x3D;60].&#x60; | [optional]
+ **page_number** | **int**| The identifier of the first page to return. This parameter is used for the pagination feature &#x60;[default&#x3D;0]&#x60;. | [optional]
+ **sort_dir** | **usage_sort_direction.UsageSortDirection**| The direction to sort by: &#x60;[desc, asc]&#x60;. | [optional]
+ **sort** | **usage_sort.UsageSort**| The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;. | [optional]
+
+### Return type
+
+[**usage_custom_reports_response.UsageCustomReportsResponse**](UsageCustomReportsResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;datetime-format=rfc3339
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_specified_daily_custom_reports**
+> usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse get_specified_daily_custom_reports(report_id)
+
+Get specified daily custom reports
+
+Get specified daily custom reports.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v1
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model import usage_specified_custom_reports_response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    report_id = 'report_id_example' # str | The specified ID to search results for.
+    
+    # example passing only required values which don't have defaults set
+    try:
+        # Get specified daily custom reports
+        api_response = api_instance.get_specified_daily_custom_reports(report_id)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_specified_daily_custom_reports: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **report_id** | **str**| The specified ID to search results for. |
+
+### Return type
+
+[**usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse**](UsageSpecifiedCustomReportsResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;datetime-format=rfc3339
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_specified_monthly_custom_reports**
+> usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse get_specified_monthly_custom_reports(report_id)
+
+Get specified monthly custom reports
+
+Get specified monthly custom reports.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v1
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model import usage_specified_custom_reports_response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    report_id = 'report_id_example' # str | The specified ID to search results for.
+    
+    # example passing only required values which don't have defaults set
+    try:
+        # Get specified monthly custom reports
+        api_response = api_instance.get_specified_monthly_custom_reports(report_id)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_specified_monthly_custom_reports: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **report_id** | **str**| The specified ID to search results for. |
+
+### Return type
+
+[**usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse**](UsageSpecifiedCustomReportsResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;datetime-format=rfc3339
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_analyzed_logs**
 > usage_analyzed_logs_response.UsageAnalyzedLogsResponse get_usage_analyzed_logs(start_hr)
@@ -131,9 +524,9 @@ Name | Type | Description  | Notes
 # **get_usage_billable_summary**
 > usage_billable_summary_response.UsageBillableSummaryResponse get_usage_billable_summary()
 
-Get monthly billable summary
+Get billable usage across your multi-org account
 
-Get the monthly billable summary.
+Get billable usage across your multi-org account.
 
 ### Example
 
@@ -187,7 +580,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get monthly billable summary
+        # Get billable usage across your multi-org account
         api_response = api_instance.get_usage_billable_summary(month=month)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:

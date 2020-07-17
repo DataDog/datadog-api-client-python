@@ -224,8 +224,12 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**get_host_tags**](TagsApi.md#get_host_tags) | **GET** /api/v1/tags/hosts/{host_name} | Get host tags
 *TagsApi* | [**list_host_tags**](TagsApi.md#list_host_tags) | **GET** /api/v1/tags/hosts | Get Tags
 *TagsApi* | [**update_host_tags**](TagsApi.md#update_host_tags) | **PUT** /api/v1/tags/hosts/{host_name} | Update host tags
+*UsageMeteringApi* | [**get_daily_custom_reports**](UsageMeteringApi.md#get_daily_custom_reports) | **GET** /api/v1/daily_custom_reports | Get the list of available daily custom reports
+*UsageMeteringApi* | [**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports | Get the list of available monthly custom reports
+*UsageMeteringApi* | [**get_specified_daily_custom_reports**](UsageMeteringApi.md#get_specified_daily_custom_reports) | **GET** /api/v1/daily_custom_reports/{report_id} | Get specified daily custom reports
+*UsageMeteringApi* | [**get_specified_monthly_custom_reports**](UsageMeteringApi.md#get_specified_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports/{report_id} | Get specified monthly custom reports
 *UsageMeteringApi* | [**get_usage_analyzed_logs**](UsageMeteringApi.md#get_usage_analyzed_logs) | **GET** /api/v1/usage/analyzed_logs | Get hourly usage for analyzed logs
-*UsageMeteringApi* | [**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get monthly billable summary
+*UsageMeteringApi* | [**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get billable usage across your multi-org account
 *UsageMeteringApi* | [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 *UsageMeteringApi* | [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
 *UsageMeteringApi* | [**get_usage_lambda**](UsageMeteringApi.md#get_usage_lambda) | **GET** /api/v1/usage/aws_lambda | Get hourly usage for Lambda
@@ -559,6 +563,11 @@ Class | Method | HTTP request | Description
  - [usage_billable_summary_hour.UsageBillableSummaryHour](UsageBillableSummaryHour.md)
  - [usage_billable_summary_keys.UsageBillableSummaryKeys](UsageBillableSummaryKeys.md)
  - [usage_billable_summary_response.UsageBillableSummaryResponse](UsageBillableSummaryResponse.md)
+ - [usage_custom_reports_attributes.UsageCustomReportsAttributes](UsageCustomReportsAttributes.md)
+ - [usage_custom_reports_data.UsageCustomReportsData](UsageCustomReportsData.md)
+ - [usage_custom_reports_meta.UsageCustomReportsMeta](UsageCustomReportsMeta.md)
+ - [usage_custom_reports_page.UsageCustomReportsPage](UsageCustomReportsPage.md)
+ - [usage_custom_reports_response.UsageCustomReportsResponse](UsageCustomReportsResponse.md)
  - [usage_fargate_hour.UsageFargateHour](UsageFargateHour.md)
  - [usage_fargate_response.UsageFargateResponse](UsageFargateResponse.md)
  - [usage_host_hour.UsageHostHour](UsageHostHour.md)
@@ -574,10 +583,18 @@ Class | Method | HTTP request | Description
  - [usage_network_flows_response.UsageNetworkFlowsResponse](UsageNetworkFlowsResponse.md)
  - [usage_network_hosts_hour.UsageNetworkHostsHour](UsageNetworkHostsHour.md)
  - [usage_network_hosts_response.UsageNetworkHostsResponse](UsageNetworkHostsResponse.md)
+ - [usage_reports_type.UsageReportsType](UsageReportsType.md)
  - [usage_rum_sessions_hour.UsageRumSessionsHour](UsageRumSessionsHour.md)
  - [usage_rum_sessions_response.UsageRumSessionsResponse](UsageRumSessionsResponse.md)
  - [usage_snmp_hour.UsageSNMPHour](UsageSNMPHour.md)
  - [usage_snmp_response.UsageSNMPResponse](UsageSNMPResponse.md)
+ - [usage_sort.UsageSort](UsageSort.md)
+ - [usage_sort_direction.UsageSortDirection](UsageSortDirection.md)
+ - [usage_specified_custom_reports_attributes.UsageSpecifiedCustomReportsAttributes](UsageSpecifiedCustomReportsAttributes.md)
+ - [usage_specified_custom_reports_data.UsageSpecifiedCustomReportsData](UsageSpecifiedCustomReportsData.md)
+ - [usage_specified_custom_reports_meta.UsageSpecifiedCustomReportsMeta](UsageSpecifiedCustomReportsMeta.md)
+ - [usage_specified_custom_reports_page.UsageSpecifiedCustomReportsPage](UsageSpecifiedCustomReportsPage.md)
+ - [usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse](UsageSpecifiedCustomReportsResponse.md)
  - [usage_summary_date.UsageSummaryDate](UsageSummaryDate.md)
  - [usage_summary_date_org.UsageSummaryDateOrg](UsageSummaryDateOrg.md)
  - [usage_summary_response.UsageSummaryResponse](UsageSummaryResponse.md)
