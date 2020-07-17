@@ -25,12 +25,6 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Get monthly billable summary returns "OK" response
-    Given new "GetUsageBillableSummary" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
   Scenario: Get hourly usage for Fargate returns "OK" response
     Given new "GetUsageFargate" request
     When the request is sent
@@ -117,5 +111,37 @@ Feature: Usage Metering
   @generated @skip
   Scenario: Get hourly usage for Trace Search returns "OK" response
     Given new "GetUsageTrace" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get the list of available daily custom reports returns "OK" response
+    Given new "GetDailyCustomReports" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get specified daily custom reports returns "OK" response
+    Given new "GetSpecifiedDailyCustomReports" request
+    And request contains "report_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get the list of available monthly custom reports returns "OK" response
+    Given new "GetMonthlyCustomReports" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get specified monthly custom reports returns "OK" response
+    Given new "GetSpecifiedMonthlyCustomReports" request
+    And request contains "report_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get billable usage across your multi-org account returns "OK" response
+    Given new "GetUsageBillableSummary" request
     When the request is sent
     Then the response status is 200 OK

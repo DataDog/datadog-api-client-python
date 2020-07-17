@@ -26,6 +26,10 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model import usage_custom_reports_response
+from datadog_api_client.v1.model import usage_sort
+from datadog_api_client.v1.model import usage_sort_direction
+from datadog_api_client.v1.model import usage_specified_custom_reports_response
 from datadog_api_client.v1.model import usage_analyzed_logs_response
 from datadog_api_client.v1.model import usage_billable_summary_response
 from datadog_api_client.v1.model import usage_fargate_response
@@ -57,6 +61,510 @@ class UsageMeteringApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        def __get_daily_custom_reports(
+            self,
+            **kwargs
+        ):
+            """Get the list of available daily custom reports  # noqa: E501
+
+            Get daily custom reports.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_daily_custom_reports(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                page_size (int): The number of files to return in the response. &#x60;[default&#x3D;60]&#x60;.. [optional]
+                page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature &#x60;[default&#x3D;0]&#x60;.. [optional]
+                sort_dir (usage_sort_direction.UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
+                sort (usage_sort.UsageSort): The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                usage_custom_reports_response.UsageCustomReportsResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.get_daily_custom_reports = Endpoint(
+            settings={
+                'response_type': (usage_custom_reports_response.UsageCustomReportsResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/daily_custom_reports',
+                'operation_id': 'get_daily_custom_reports',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'page_size',
+                    'page_number',
+                    'sort_dir',
+                    'sort',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'page_size':
+                        (int,),
+                    'page_number':
+                        (int,),
+                    'sort_dir':
+                        (usage_sort_direction.UsageSortDirection,),
+                    'sort':
+                        (usage_sort.UsageSort,),
+                },
+                'attribute_map': {
+                    'page_size': 'page[size]',
+                    'page_number': 'page[number]',
+                    'sort_dir': 'sort_dir',
+                    'sort': 'sort',
+                },
+                'location_map': {
+                    'page_size': 'query',
+                    'page_number': 'query',
+                    'sort_dir': 'query',
+                    'sort': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json;datetime-format=rfc3339'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_daily_custom_reports
+        )
+
+        def __get_monthly_custom_reports(
+            self,
+            **kwargs
+        ):
+            """Get the list of available monthly custom reports  # noqa: E501
+
+            Get monthly custom reports.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_monthly_custom_reports(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                page_size (int): The number of files to return in the response &#x60;[default&#x3D;60].&#x60;. [optional]
+                page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature &#x60;[default&#x3D;0]&#x60;.. [optional]
+                sort_dir (usage_sort_direction.UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
+                sort (usage_sort.UsageSort): The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                usage_custom_reports_response.UsageCustomReportsResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.get_monthly_custom_reports = Endpoint(
+            settings={
+                'response_type': (usage_custom_reports_response.UsageCustomReportsResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/monthly_custom_reports',
+                'operation_id': 'get_monthly_custom_reports',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'page_size',
+                    'page_number',
+                    'sort_dir',
+                    'sort',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'page_size':
+                        (int,),
+                    'page_number':
+                        (int,),
+                    'sort_dir':
+                        (usage_sort_direction.UsageSortDirection,),
+                    'sort':
+                        (usage_sort.UsageSort,),
+                },
+                'attribute_map': {
+                    'page_size': 'page[size]',
+                    'page_number': 'page[number]',
+                    'sort_dir': 'sort_dir',
+                    'sort': 'sort',
+                },
+                'location_map': {
+                    'page_size': 'query',
+                    'page_number': 'query',
+                    'sort_dir': 'query',
+                    'sort': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json;datetime-format=rfc3339'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_monthly_custom_reports
+        )
+
+        def __get_specified_daily_custom_reports(
+            self,
+            report_id,
+            **kwargs
+        ):
+            """Get specified daily custom reports  # noqa: E501
+
+            Get specified daily custom reports.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_specified_daily_custom_reports(report_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                report_id (str): The specified ID to search results for.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['report_id'] = \
+                report_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_specified_daily_custom_reports = Endpoint(
+            settings={
+                'response_type': (usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/daily_custom_reports/{report_id}',
+                'operation_id': 'get_specified_daily_custom_reports',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'report_id',
+                ],
+                'required': [
+                    'report_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'report_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'report_id': 'report_id',
+                },
+                'location_map': {
+                    'report_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json;datetime-format=rfc3339'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_specified_daily_custom_reports
+        )
+
+        def __get_specified_monthly_custom_reports(
+            self,
+            report_id,
+            **kwargs
+        ):
+            """Get specified monthly custom reports  # noqa: E501
+
+            Get specified monthly custom reports.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_specified_monthly_custom_reports(report_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                report_id (str): The specified ID to search results for.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['report_id'] = \
+                report_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_specified_monthly_custom_reports = Endpoint(
+            settings={
+                'response_type': (usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/monthly_custom_reports/{report_id}',
+                'operation_id': 'get_specified_monthly_custom_reports',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'report_id',
+                ],
+                'required': [
+                    'report_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'report_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'report_id': 'report_id',
+                },
+                'location_map': {
+                    'report_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json;datetime-format=rfc3339'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_specified_monthly_custom_reports
+        )
 
         def __get_usage_analyzed_logs(
             self,
@@ -188,9 +696,9 @@ class UsageMeteringApi(object):
             self,
             **kwargs
         ):
-            """Get monthly billable summary  # noqa: E501
+            """Get billable usage across your multi-org account  # noqa: E501
 
-            Get the monthly billable summary.  # noqa: E501
+            Get billable usage across your multi-org account.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
