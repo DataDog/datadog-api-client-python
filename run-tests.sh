@@ -19,7 +19,6 @@ else
 fi
 
 # Install test dependencies
-python -m pip install -e .[tests]
-python -m pip install -U git+https://github.com/DataDog/dd-trace-py#egg=ddtrace || echo Windows
+python -m pip install -e .[apm,tests]
 # Run tests
 python -m pytest

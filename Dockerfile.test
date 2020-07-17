@@ -3,5 +3,5 @@ ENTRYPOINT [pytest]
 
 COPY . /datadog-api-client-python
 WORKDIR /datadog-api-client-python/
-RUN pip wheel --wheel-dir=/tmp/wheelhouse .[tests] && pip install --no-index --find-links=/tmp/wheelhouse datadog-api-client[tests]
+RUN pip wheel --wheel-dir=/tmp/wheelhouse .[apm,tests] && pip install --no-index --find-links=/tmp/wheelhouse datadog-api-client[apm,tests]
 
