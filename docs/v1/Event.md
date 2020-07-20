@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **title** | **str** | The event title. Limited to 100 characters. Use &#x60;msg_title&#x60; with the Datadog Ruby library. | 
 **aggregation_key** | **str** | An arbitrary string to use for aggregation. Limited to 100 characters. If you specify a key, all events using that key are grouped together in the Event Stream. | [optional] 
 **alert_type** | [**event_alert_type.EventAlertType**](EventAlertType.md) |  | [optional] 
-**date_happened** | **int** | POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 1 year, 24 days (389 days). | [optional] 
+**date_happened** | **int** | POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days. | [optional] 
 **device_name** | **[str]** | A list of device names to post the event with. | [optional] 
 **host** | **str** | Host name to associate with the event. Any tags associated with the host are also applied to this event. | [optional] 
 **id** | **int** | Integer ID of the event. | [optional] [readonly] 
