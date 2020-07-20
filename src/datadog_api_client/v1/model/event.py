@@ -183,7 +183,7 @@ class Event(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             aggregation_key (str): An arbitrary string to use for aggregation. Limited to 100 characters. If you specify a key, all events using that key are grouped together in the Event Stream.. [optional]  # noqa: E501
             alert_type (event_alert_type.EventAlertType): [optional]  # noqa: E501
-            date_happened (int): POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 1 year, 24 days (389 days).. [optional]  # noqa: E501
+            date_happened (int): POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days.. [optional]  # noqa: E501
             device_name ([str]): A list of device names to post the event with.. [optional]  # noqa: E501
             host (str): Host name to associate with the event. Any tags associated with the host are also applied to this event.. [optional]  # noqa: E501
             id (int): Integer ID of the event.. [optional]  # noqa: E501
