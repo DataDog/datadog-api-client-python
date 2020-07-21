@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **options** | [**synthetics_test_options.SyntheticsTestOptions**](SyntheticsTestOptions.md) |  | [optional] 
 **public_id** | **str** | The test public ID. | [optional] 
 **status** | [**synthetics_test_pause_status.SyntheticsTestPauseStatus**](SyntheticsTestPauseStatus.md) |  | [optional] 
-**steps** | [**[synthetics_step.SyntheticsStep]**](SyntheticsStep.md) | The steps of the test (only for browser tests). | [optional] 
+**steps** | [**[synthetics_step.SyntheticsStep]**](SyntheticsStep.md) | For browser test, the steps of the test. | [optional] 
 **subtype** | [**synthetics_test_details_sub_type.SyntheticsTestDetailsSubType**](SyntheticsTestDetailsSubType.md) |  | [optional] 
 **tags** | **[str]** | Array of tags attached to the test. | [optional] 
 **type** | [**synthetics_test_details_type.SyntheticsTestDetailsType**](SyntheticsTestDetailsType.md) |  | [optional] 

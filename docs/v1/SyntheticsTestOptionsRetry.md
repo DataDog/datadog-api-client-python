@@ -1,11 +1,11 @@
 # synthetics_test_options_retry.SyntheticsTestOptionsRetry
 
-Object describing the retry strategy to apply to a Synthetic test. By default, there is a 300ms wait before retrying a test that has failed.
+Object describing the retry strategy to apply to a Synthetic test.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** | The amount of location that needs to fail for the test to be retried. | [optional] 
-**interval** | **float** | The interval over which the amount of location needed to fail for the test to be retried. | [optional] 
+**count** | **int** | Number of times a test needs to be retried before marking a location as failed. Defaults to 0. | [optional] 
+**interval** | **float** | Time interval between retries (in milliseconds). Defaults to 300ms. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

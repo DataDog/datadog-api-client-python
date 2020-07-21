@@ -161,12 +161,12 @@ class SyntheticsTestOptions(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            accept_self_signed (bool): For browser test, whether or not the test should allow self signed certificate.. [optional]  # noqa: E501
+            accept_self_signed (bool): For SSL test, whether or not the test should allow self signed certificates.. [optional]  # noqa: E501
             allow_insecure (bool): Allows loading insecure content for an HTTP request.. [optional]  # noqa: E501
-            device_ids ([synthetics_device_id.SyntheticsDeviceID]): Array with the different device IDs used to run the test.. [optional]  # noqa: E501
-            follow_redirects (bool): For API SSL test, whether or not the test should follow redirects.. [optional]  # noqa: E501
-            min_failure_duration (int): Minimum amount of time before declaring the test has failed.. [optional]  # noqa: E501
-            min_location_failed (int): Minimum amount of locations that are allowed to fail for the test.. [optional]  # noqa: E501
+            device_ids ([synthetics_device_id.SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]  # noqa: E501
+            follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]  # noqa: E501
+            min_failure_duration (int): Minimum amount of time in failure required to trigger an alert.. [optional]  # noqa: E501
+            min_location_failed (int): Minimum number of locations in failure required to trigger an alert.. [optional]  # noqa: E501
             retry (synthetics_test_options_retry.SyntheticsTestOptionsRetry): [optional]  # noqa: E501
             tick_every (synthetics_tick_interval.SyntheticsTickInterval): [optional]  # noqa: E501
         """

@@ -101,7 +101,7 @@ class SyntheticsTestDetailsSubType(ModelSimple):
         """synthetics_test_details_sub_type.SyntheticsTestDetailsSubType - a model defined in OpenAPI
 
         Args:
-            value (str): The sub-type of the Synthetic API test, either &#x60;http&#x60; or &#x60;ssl&#x60;.
+            value (str): The sub-type of the Synthetic API test, &#x60;http&#x60;, &#x60;ssl&#x60;, or &#x60;tcp&#x60;.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
