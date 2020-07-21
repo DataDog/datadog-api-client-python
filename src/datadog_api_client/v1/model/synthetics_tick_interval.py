@@ -107,7 +107,7 @@ class SyntheticsTickInterval(ModelSimple):
         """synthetics_tick_interval.SyntheticsTickInterval - a model defined in OpenAPI
 
         Args:
-            value (int): The frequency at which to run the Synthetic test.
+            value (int): The frequency at which to run the Synthetic test (in seconds).
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

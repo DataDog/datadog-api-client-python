@@ -134,8 +134,8 @@ class SyntheticsTestOptionsRetry(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            count (int): The amount of location that needs to fail for the test to be retried.. [optional]  # noqa: E501
-            interval (float): The interval over which the amount of location needed to fail for the test to be retried.. [optional]  # noqa: E501
+            count (int): Number of times a test needs to be retried before marking a location as failed. Defaults to 0.. [optional]  # noqa: E501
+            interval (float): Time interval between retries (in milliseconds). Defaults to 300ms.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

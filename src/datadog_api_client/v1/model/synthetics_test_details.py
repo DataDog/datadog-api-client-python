@@ -192,7 +192,7 @@ class SyntheticsTestDetails(ModelNormal):
             options (synthetics_test_options.SyntheticsTestOptions): [optional]  # noqa: E501
             public_id (str): The test public ID.. [optional]  # noqa: E501
             status (synthetics_test_pause_status.SyntheticsTestPauseStatus): [optional]  # noqa: E501
-            steps ([synthetics_step.SyntheticsStep]): The steps of the test (only for browser tests).. [optional]  # noqa: E501
+            steps ([synthetics_step.SyntheticsStep]): For browser test, the steps of the test.. [optional]  # noqa: E501
             subtype (synthetics_test_details_sub_type.SyntheticsTestDetailsSubType): [optional]  # noqa: E501
             tags ([str]): Array of tags attached to the test.. [optional]  # noqa: E501
             type (synthetics_test_details_type.SyntheticsTestDetailsType): [optional]  # noqa: E501
