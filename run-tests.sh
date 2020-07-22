@@ -25,7 +25,7 @@ set +e
 python -m pytest
 RESULT=$?
 if [ "$RERECORD_FAILED_TESTS" == "true" -a "$RESULT" -ne 0 ]; then
-    RECORD=true python -m pytest --last-failed
+    python -m pytest --last-failed --vcr-record=all
     RESULT=$?
 fi
 exit $RESULT
