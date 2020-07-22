@@ -62,6 +62,7 @@ class MonitorType(ModelSimple):
             'SERVICE_CHECK': "service check",
             'SYNTHETICS_ALERT': "synthetics alert",
             'TRACE_ANALYTICS_ALERT': "trace-analytics alert",
+            'SLO_ALERT': "slo alert",
         },
     }
 
