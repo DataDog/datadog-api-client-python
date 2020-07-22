@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 set -e
 echo "Ensuring all dependencies are present in LICENSE-3rdparty.csv ..."
 ALL_DEPS="" # TODO
