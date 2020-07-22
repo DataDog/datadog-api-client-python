@@ -21,4 +21,11 @@ fi
 # Install test dependencies
 python -m pip install -e .[apm,tests]
 # Run tests
+set +e
 python -m pytest
+RESULT=$?
+if [ "$RERECORD_FAILED_TESTS" == "true" -a "$RESULT" -ne 0 ]; then
+    RECORD=true python -m pytest --last-failed
+    RESULT=$?
+fi
+exit $RESULT
