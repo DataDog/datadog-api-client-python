@@ -14678,9 +14678,8 @@ tags:
 
     We encourage you to send your logs compressed.
 
-
-    **Note**: If you are in the Datadog EU site (`app.datadoghq.eu`), the HTTP log
-    endpoint is `http-intake.logs.datadoghq.eu`.'
+    Add the `Content-Encoding: gzip` header to the request when sending compressed
+    logs.'
   name: Logs
 - description: 'Manage configuration of [log indexes](https://docs.datadoghq.com/logs/indexes/).
 
