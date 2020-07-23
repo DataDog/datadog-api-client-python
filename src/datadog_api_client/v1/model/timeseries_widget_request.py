@@ -114,6 +114,7 @@ class TimeseriesWidgetRequest(ModelNormal):
             'process_query': (process_query_definition.ProcessQueryDefinition,),  # noqa: E501
             'q': (str,),  # noqa: E501
             'rum_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
+            'security_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
             'style': (widget_request_style.WidgetRequestStyle,),  # noqa: E501
         }
 
@@ -131,6 +132,7 @@ class TimeseriesWidgetRequest(ModelNormal):
         'process_query': 'process_query',  # noqa: E501
         'q': 'q',  # noqa: E501
         'rum_query': 'rum_query',  # noqa: E501
+        'security_query': 'security_query',  # noqa: E501
         'style': 'style',  # noqa: E501
     }
 
@@ -189,6 +191,7 @@ class TimeseriesWidgetRequest(ModelNormal):
             process_query (process_query_definition.ProcessQueryDefinition): [optional]  # noqa: E501
             q (str): Widget query.. [optional]  # noqa: E501
             rum_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
+            security_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
             style (widget_request_style.WidgetRequestStyle): [optional]  # noqa: E501
         """
 

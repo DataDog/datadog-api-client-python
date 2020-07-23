@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **process_query** | [**process_query_definition.ProcessQueryDefinition**](ProcessQueryDefinition.md) |  | [optional] 
 **q** | **str** | Widget query. | [optional] 
 **rum_query** | [**log_query_definition.LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
+**security_query** | [**log_query_definition.LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **style** | [**widget_request_style.WidgetRequestStyle**](WidgetRequestStyle.md) |  | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
