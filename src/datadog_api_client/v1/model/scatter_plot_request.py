@@ -103,6 +103,7 @@ class ScatterPlotRequest(ModelNormal):
             'process_query': (process_query_definition.ProcessQueryDefinition,),  # noqa: E501
             'q': (str,),  # noqa: E501
             'rum_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
+            'security_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
         }
 
     @cached_property
@@ -118,6 +119,7 @@ class ScatterPlotRequest(ModelNormal):
         'process_query': 'process_query',  # noqa: E501
         'q': 'q',  # noqa: E501
         'rum_query': 'rum_query',  # noqa: E501
+        'security_query': 'security_query',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -174,6 +176,7 @@ class ScatterPlotRequest(ModelNormal):
             process_query (process_query_definition.ProcessQueryDefinition): [optional]  # noqa: E501
             q (str): Query definition.. [optional]  # noqa: E501
             rum_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
+            security_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
