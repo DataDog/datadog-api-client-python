@@ -7,9 +7,8 @@ Feature: Logs
   For a single log request, the API truncates the log at 256KB and returns a
   2xx. - For a multi-logs request, the API processes all logs, truncates
   only logs larger than 256KB, and returns a 2xx.  We encourage you to send
-  your logs compressed.  **Note**: If you are in the Datadog EU site
-  (`app.datadoghq.eu`), the HTTP log endpoint is `http-
-  intake.logs.datadoghq.eu`.
+  your logs compressed. Add the `Content-Encoding: gzip` header to the
+  request when sending compressed logs.
 
   @generated @skip
   Scenario: Get a list of logs returns "OK" response
