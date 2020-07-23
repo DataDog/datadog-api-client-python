@@ -29,6 +29,9 @@ from datadog_api_client.v2.model import security_monitoring_rule_response
 from datadog_api_client.v2.model import security_monitoring_rule_create_payload
 from datadog_api_client.v2.model import api_error_response
 from datadog_api_client.v2.model import security_monitoring_list_rules_response
+from datadog_api_client.v2.model import security_monitoring_signals_sort
+from datadog_api_client.v2.model import security_monitoring_signals_list_response
+from datadog_api_client.v2.model import security_monitoring_signal_list_request
 from datadog_api_client.v2.model import security_monitoring_rule_update_payload
 
 
@@ -517,6 +520,270 @@ class SecurityMonitoringApi(object):
             },
             api_client=api_client,
             callable=__list_security_monitoring_rules
+        )
+
+        def __list_security_monitoring_signals(
+            self,
+            **kwargs
+        ):
+            """Get a quick list of security signals  # noqa: E501
+
+            List endpoint returns security signals that match a search query. Both this endpoint and the POST endpoint can be used interchangeably when listing security signals.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.list_security_monitoring_signals(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                filter_query (str): Search query for security signals.. [optional]
+                filter_from (datetime): Minimum timestamp for requested security signals.. [optional]
+                filter_to (datetime): Maximum timestamp for requested security signals.. [optional]
+                sort (security_monitoring_signals_sort.SecurityMonitoringSignalsSort): Order of security signals in results.. [optional]
+                page_cursor (str): List following results with a cursor provided in the previous query.. [optional]
+                page_limit (int): Maximum number of security signals in the response.. [optional] if omitted the server will use the default value of 10
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.list_security_monitoring_signals = Endpoint(
+            settings={
+                'response_type': (security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v2/security_monitoring/signals',
+                'operation_id': 'list_security_monitoring_signals',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'filter_query',
+                    'filter_from',
+                    'filter_to',
+                    'sort',
+                    'page_cursor',
+                    'page_limit',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'page_limit',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('page_limit',): {
+
+                        'inclusive_maximum': 1000,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'filter_query':
+                        (str,),
+                    'filter_from':
+                        (datetime,),
+                    'filter_to':
+                        (datetime,),
+                    'sort':
+                        (security_monitoring_signals_sort.SecurityMonitoringSignalsSort,),
+                    'page_cursor':
+                        (str,),
+                    'page_limit':
+                        (int,),
+                },
+                'attribute_map': {
+                    'filter_query': 'filter[query]',
+                    'filter_from': 'filter[from]',
+                    'filter_to': 'filter[to]',
+                    'sort': 'sort',
+                    'page_cursor': 'page[cursor]',
+                    'page_limit': 'page[limit]',
+                },
+                'location_map': {
+                    'filter_query': 'query',
+                    'filter_from': 'query',
+                    'filter_to': 'query',
+                    'sort': 'query',
+                    'page_cursor': 'query',
+                    'page_limit': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__list_security_monitoring_signals
+        )
+
+        def __search_security_monitoring_signals(
+            self,
+            **kwargs
+        ):
+            """Get a list of security signals  # noqa: E501
+
+            Returns security signals that match a search query. Both this endpoint and the GET endpoint can be used interchangeably when listing security signals.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.search_security_monitoring_signals(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                body (security_monitoring_signal_list_request.SecurityMonitoringSignalListRequest): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.search_security_monitoring_signals = Endpoint(
+            settings={
+                'response_type': (security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v2/security_monitoring/signals/search',
+                'operation_id': 'search_security_monitoring_signals',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (security_monitoring_signal_list_request.SecurityMonitoringSignalListRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__search_security_monitoring_signals
         )
 
         def __update_security_monitoring_rule(

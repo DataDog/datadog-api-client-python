@@ -143,6 +143,8 @@ Class | Method | HTTP request | Description
 *SecurityMonitoringApi* | [**delete_security_monitoring_rule**](SecurityMonitoringApi.md#delete_security_monitoring_rule) | **DELETE** /api/v2/security_monitoring/rules/{rule_id} | Delete an existing rule
 *SecurityMonitoringApi* | [**get_security_monitoring_rule**](SecurityMonitoringApi.md#get_security_monitoring_rule) | **GET** /api/v2/security_monitoring/rules/{rule_id} | Get a rule&#39;s details
 *SecurityMonitoringApi* | [**list_security_monitoring_rules**](SecurityMonitoringApi.md#list_security_monitoring_rules) | **GET** /api/v2/security_monitoring/rules | List rules
+*SecurityMonitoringApi* | [**list_security_monitoring_signals**](SecurityMonitoringApi.md#list_security_monitoring_signals) | **GET** /api/v2/security_monitoring/signals | Get a quick list of security signals
+*SecurityMonitoringApi* | [**search_security_monitoring_signals**](SecurityMonitoringApi.md#search_security_monitoring_signals) | **POST** /api/v2/security_monitoring/signals/search | Get a list of security signals
 *SecurityMonitoringApi* | [**update_security_monitoring_rule**](SecurityMonitoringApi.md#update_security_monitoring_rule) | **PUT** /api/v2/security_monitoring/rules/{rule_id} | Update an existing rule
 *UsersApi* | [**create_user**](UsersApi.md#create_user) | **POST** /api/v2/users | Create a user
 *UsersApi* | [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v2/users/{user_id} | Disable a user
@@ -251,6 +253,15 @@ Class | Method | HTTP request | Description
  - [security_monitoring_rule_response.SecurityMonitoringRuleResponse](SecurityMonitoringRuleResponse.md)
  - [security_monitoring_rule_severity.SecurityMonitoringRuleSeverity](SecurityMonitoringRuleSeverity.md)
  - [security_monitoring_rule_update_payload.SecurityMonitoringRuleUpdatePayload](SecurityMonitoringRuleUpdatePayload.md)
+ - [security_monitoring_signal.SecurityMonitoringSignal](SecurityMonitoringSignal.md)
+ - [security_monitoring_signal_attributes.SecurityMonitoringSignalAttributes](SecurityMonitoringSignalAttributes.md)
+ - [security_monitoring_signal_list_request.SecurityMonitoringSignalListRequest](SecurityMonitoringSignalListRequest.md)
+ - [security_monitoring_signal_list_request_filter.SecurityMonitoringSignalListRequestFilter](SecurityMonitoringSignalListRequestFilter.md)
+ - [security_monitoring_signal_list_request_page.SecurityMonitoringSignalListRequestPage](SecurityMonitoringSignalListRequestPage.md)
+ - [security_monitoring_signal_type.SecurityMonitoringSignalType](SecurityMonitoringSignalType.md)
+ - [security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse](SecurityMonitoringSignalsListResponse.md)
+ - [security_monitoring_signals_list_response_links.SecurityMonitoringSignalsListResponseLinks](SecurityMonitoringSignalsListResponseLinks.md)
+ - [security_monitoring_signals_sort.SecurityMonitoringSignalsSort](SecurityMonitoringSignalsSort.md)
  - [user.User](User.md)
  - [user_attributes.UserAttributes](UserAttributes.md)
  - [user_create_attributes.UserCreateAttributes](UserCreateAttributes.md)
