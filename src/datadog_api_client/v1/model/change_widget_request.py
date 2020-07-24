@@ -122,6 +122,7 @@ class ChangeWidgetRequest(ModelNormal):
             'process_query': (process_query_definition.ProcessQueryDefinition,),  # noqa: E501
             'q': (str,),  # noqa: E501
             'rum_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
+            'security_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
             'show_present': (bool,),  # noqa: E501
         }
 
@@ -142,6 +143,7 @@ class ChangeWidgetRequest(ModelNormal):
         'process_query': 'process_query',  # noqa: E501
         'q': 'q',  # noqa: E501
         'rum_query': 'rum_query',  # noqa: E501
+        'security_query': 'security_query',  # noqa: E501
         'show_present': 'show_present',  # noqa: E501
     }
 
@@ -203,6 +205,7 @@ class ChangeWidgetRequest(ModelNormal):
             process_query (process_query_definition.ProcessQueryDefinition): [optional]  # noqa: E501
             q (str): Query definition.. [optional]  # noqa: E501
             rum_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
+            security_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
             show_present (bool): Whether to show the present value.. [optional]  # noqa: E501
         """
 
