@@ -233,7 +233,10 @@ def configuration(_package):
 
 
 @pytest.fixture
-def client(_package, configuration):
+def client(_package, configuration, record_mode, vcr_cassette):
+    if record_mode == "true" and os.path.exists(vcr_cassette._path):
+        os.remove(vcr_cassette._path)
+
     with _package.ApiClient(configuration) as api_client:
         yield api_client
 

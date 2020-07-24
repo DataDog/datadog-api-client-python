@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 set -e
 echo "Ensuring all dependencies are present in LICENSE-3rdparty.csv ..."
 ALL_DEPS="" # TODO
@@ -21,4 +21,11 @@ fi
 # Install test dependencies
 python -m pip install -e .[apm,tests]
 # Run tests
+set +e
 python -m pytest
+RESULT=$?
+if [ "$RERECORD_FAILED_TESTS" == "true" -a "$RESULT" -ne 0 ]; then
+    RECORD=true python -m pytest --last-failed
+    RESULT=$?
+fi
+exit $RESULT
