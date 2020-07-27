@@ -5,7 +5,7 @@ Create a new rule.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cases** | [**[security_monitoring_rule_case.SecurityMonitoringRuleCase]**](SecurityMonitoringRuleCase.md) | Cases for generating signals. | 
-**enabled** | **bool** | Whether the rule is enabled. | 
+**is_enabled** | **bool** | Whether the rule is enabled. | 
 **message** | **str** | Message for generated signals. | 
 **name** | **str** | The name of the rule | 
 **options** | [**security_monitoring_rule_options.SecurityMonitoringRuleOptions**](SecurityMonitoringRuleOptions.md) |  | 

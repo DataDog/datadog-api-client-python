@@ -91,7 +91,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         """
         return {
             'cases': ([security_monitoring_rule_case.SecurityMonitoringRuleCase],),  # noqa: E501
-            'enabled': (bool,),  # noqa: E501
+            'is_enabled': (bool,),  # noqa: E501
             'message': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'options': (security_monitoring_rule_options.SecurityMonitoringRuleOptions,),  # noqa: E501
@@ -105,7 +105,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
 
     attribute_map = {
         'cases': 'cases',  # noqa: E501
-        'enabled': 'enabled',  # noqa: E501
+        'is_enabled': 'isEnabled',  # noqa: E501
         'message': 'message',  # noqa: E501
         'name': 'name',  # noqa: E501
         'options': 'options',  # noqa: E501
@@ -125,12 +125,12 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, cases, enabled, message, name, options, queries, tags, *args, **kwargs):  # noqa: E501
+    def __init__(self, cases, is_enabled, message, name, options, queries, tags, *args, **kwargs):  # noqa: E501
         """security_monitoring_rule_create_payload.SecurityMonitoringRuleCreatePayload - a model defined in OpenAPI
 
         Args:
             cases ([security_monitoring_rule_case.SecurityMonitoringRuleCase]): Cases for generating signals.
-            enabled (bool): Whether the rule is enabled.
+            is_enabled (bool): Whether the rule is enabled.
             message (str): Message for generated signals.
             name (str): The name of the rule
             options (security_monitoring_rule_options.SecurityMonitoringRuleOptions):
@@ -194,7 +194,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.cases = cases
-        self.enabled = enabled
+        self.is_enabled = is_enabled
         self.message = message
         self.name = name
         self.options = options
