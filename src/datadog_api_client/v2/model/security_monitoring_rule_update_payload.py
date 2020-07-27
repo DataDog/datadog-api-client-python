@@ -91,7 +91,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         """
         return {
             'cases': ([security_monitoring_rule_case.SecurityMonitoringRuleCase],),  # noqa: E501
-            'enabled': (bool,),  # noqa: E501
+            'is_enabled': (bool,),  # noqa: E501
             'message': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'options': (security_monitoring_rule_options.SecurityMonitoringRuleOptions,),  # noqa: E501
@@ -105,7 +105,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
     attribute_map = {
         'cases': 'cases',  # noqa: E501
-        'enabled': 'enabled',  # noqa: E501
+        'is_enabled': 'isEnabled',  # noqa: E501
         'message': 'message',  # noqa: E501
         'name': 'name',  # noqa: E501
         'options': 'options',  # noqa: E501
@@ -160,7 +160,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             cases ([security_monitoring_rule_case.SecurityMonitoringRuleCase]): Cases for generating signals.. [optional]  # noqa: E501
-            enabled (bool): Whether the rule is enabled.. [optional]  # noqa: E501
+            is_enabled (bool): Whether the rule is enabled.. [optional]  # noqa: E501
             message (str): Message for generated signals.. [optional]  # noqa: E501
             name (str): Name of the rule.. [optional]  # noqa: E501
             options (security_monitoring_rule_options.SecurityMonitoringRuleOptions): [optional]  # noqa: E501
