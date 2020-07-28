@@ -75,6 +75,7 @@ class SecurityMonitoringRuleQuery(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'distinct_fields': ([str],),  # noqa: E501
             'group_by_fields': ([str],),  # noqa: E501
             'name': (str,),  # noqa: E501
             'query': (str,),  # noqa: E501
@@ -85,6 +86,7 @@ class SecurityMonitoringRuleQuery(ModelNormal):
         return None
 
     attribute_map = {
+        'distinct_fields': 'distinctFields',  # noqa: E501
         'group_by_fields': 'groupByFields',  # noqa: E501
         'name': 'name',  # noqa: E501
         'query': 'query',  # noqa: E501
@@ -136,6 +138,7 @@ class SecurityMonitoringRuleQuery(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            distinct_fields ([str]): Field for which the cardinality is measured. Sent as an array.. [optional]  # noqa: E501
             group_by_fields ([str]): Fields to group by.. [optional]  # noqa: E501
             name (str): Name of the query. [optional]  # noqa: E501
             query (str): Query to run on logs. [optional]  # noqa: E501
