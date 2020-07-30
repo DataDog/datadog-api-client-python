@@ -117,6 +117,7 @@ Class | Method | HTTP request | Description
 *DashboardListsApi* | [**delete_dashboard_list_items**](DashboardListsApi.md#delete_dashboard_list_items) | **DELETE** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Delete items from a dashboard list
 *DashboardListsApi* | [**get_dashboard_list_items**](DashboardListsApi.md#get_dashboard_list_items) | **GET** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Get a Dashboard List
 *DashboardListsApi* | [**update_dashboard_list_items**](DashboardListsApi.md#update_dashboard_list_items) | **PUT** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Update items of a dashboard list
+*LogsApi* | [**aggregate_logs**](LogsApi.md#aggregate_logs) | **POST** /api/v2/logs/analytics/aggregate | Aggregate events
 *LogsApi* | [**list_logs**](LogsApi.md#list_logs) | **POST** /api/v2/logs/events/search | Get a list of logs
 *LogsApi* | [**list_logs_get**](LogsApi.md#list_logs_get) | **GET** /api/v2/logs/events | Get a quick list of logs
 *LogsArchivesApi* | [**add_read_role_to_archive**](LogsArchivesApi.md#add_read_role_to_archive) | **POST** /api/v2/logs/config/archives/{archive_id}/readers | Grant role to an archive
@@ -173,6 +174,18 @@ Class | Method | HTTP request | Description
  - [log.Log](Log.md)
  - [log_attributes.LogAttributes](LogAttributes.md)
  - [log_type.LogType](LogType.md)
+ - [logs_aggregate_bucket.LogsAggregateBucket](LogsAggregateBucket.md)
+ - [logs_aggregate_bucket_value.LogsAggregateBucketValue](LogsAggregateBucketValue.md)
+ - [logs_aggregate_bucket_value_timeseries.LogsAggregateBucketValueTimeseries](LogsAggregateBucketValueTimeseries.md)
+ - [logs_aggregate_bucket_value_timeseries_point.LogsAggregateBucketValueTimeseriesPoint](LogsAggregateBucketValueTimeseriesPoint.md)
+ - [logs_aggregate_request.LogsAggregateRequest](LogsAggregateRequest.md)
+ - [logs_aggregate_request_paging.LogsAggregateRequestPaging](LogsAggregateRequestPaging.md)
+ - [logs_aggregate_response.LogsAggregateResponse](LogsAggregateResponse.md)
+ - [logs_aggregate_response_data.LogsAggregateResponseData](LogsAggregateResponseData.md)
+ - [logs_aggregate_response_status.LogsAggregateResponseStatus](LogsAggregateResponseStatus.md)
+ - [logs_aggregate_sort.LogsAggregateSort](LogsAggregateSort.md)
+ - [logs_aggregate_sort_type.LogsAggregateSortType](LogsAggregateSortType.md)
+ - [logs_aggregation_function.LogsAggregationFunction](LogsAggregationFunction.md)
  - [logs_archive.LogsArchive](LogsArchive.md)
  - [logs_archive_attributes.LogsArchiveAttributes](LogsArchiveAttributes.md)
  - [logs_archive_create_request.LogsArchiveCreateRequest](LogsArchiveCreateRequest.md)
@@ -192,14 +205,23 @@ Class | Method | HTTP request | Description
  - [logs_archive_integration_s3.LogsArchiveIntegrationS3](LogsArchiveIntegrationS3.md)
  - [logs_archive_state.LogsArchiveState](LogsArchiveState.md)
  - [logs_archives.LogsArchives](LogsArchives.md)
+ - [logs_compute.LogsCompute](LogsCompute.md)
+ - [logs_compute_type.LogsComputeType](LogsComputeType.md)
+ - [logs_group_by.LogsGroupBy](LogsGroupBy.md)
+ - [logs_group_by_histogram.LogsGroupByHistogram](LogsGroupByHistogram.md)
+ - [logs_group_by_missing.LogsGroupByMissing](LogsGroupByMissing.md)
+ - [logs_group_by_total.LogsGroupByTotal](LogsGroupByTotal.md)
  - [logs_list_request.LogsListRequest](LogsListRequest.md)
- - [logs_list_request_filter.LogsListRequestFilter](LogsListRequestFilter.md)
  - [logs_list_request_page.LogsListRequestPage](LogsListRequestPage.md)
  - [logs_list_response.LogsListResponse](LogsListResponse.md)
  - [logs_list_response_links.LogsListResponseLinks](LogsListResponseLinks.md)
- - [logs_list_response_meta.LogsListResponseMeta](LogsListResponseMeta.md)
- - [logs_list_response_meta_page.LogsListResponseMetaPage](LogsListResponseMetaPage.md)
+ - [logs_query_filter.LogsQueryFilter](LogsQueryFilter.md)
+ - [logs_query_options.LogsQueryOptions](LogsQueryOptions.md)
+ - [logs_response_metadata.LogsResponseMetadata](LogsResponseMetadata.md)
+ - [logs_response_metadata_page.LogsResponseMetadataPage](LogsResponseMetadataPage.md)
  - [logs_sort.LogsSort](LogsSort.md)
+ - [logs_sort_order.LogsSortOrder](LogsSortOrder.md)
+ - [logs_warning.LogsWarning](LogsWarning.md)
  - [organization.Organization](Organization.md)
  - [organization_attributes.OrganizationAttributes](OrganizationAttributes.md)
  - [organizations_type.OrganizationsType](OrganizationsType.md)

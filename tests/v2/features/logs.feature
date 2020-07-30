@@ -20,3 +20,10 @@ Feature: Logs
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Aggregate events returns "OK" response
+    Given new "AggregateLogs" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK

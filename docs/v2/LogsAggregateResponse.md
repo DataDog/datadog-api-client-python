@@ -1,11 +1,10 @@
-# logs_list_response.LogsListResponse
+# logs_aggregate_response.LogsAggregateResponse
 
-Response object with all logs matching the request and pagination information.
+The response object for the logs aggregate API endpoint
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[log.Log]**](Log.md) | Array of logs matching the request. | [optional] 
-**links** | [**logs_list_response_links.LogsListResponseLinks**](LogsListResponseLinks.md) |  | [optional] 
+**data** | [**logs_aggregate_response_data.LogsAggregateResponseData**](LogsAggregateResponseData.md) |  | [optional] 
 **meta** | [**logs_response_metadata.LogsResponseMetadata**](LogsResponseMetadata.md) |  | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
