@@ -1,10 +1,10 @@
-# logs_list_response_meta.LogsListResponseMeta
+# logs_aggregate_request_paging.LogsAggregateRequestPaging
 
-Meta attributes.
+Paging settings
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**page** | [**logs_list_response_meta_page.LogsListResponseMetaPage**](LogsListResponseMetaPage.md) |  | [optional] 
+**after** | **str** | The returned paging point to use to get the next results | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

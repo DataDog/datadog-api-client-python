@@ -29,15 +29,20 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 try:
-    from datadog_api_client.v2.model import logs_list_request_filter
-except ImportError:
-    logs_list_request_filter = sys.modules[
-        'datadog_api_client.v2.model.logs_list_request_filter']
-try:
     from datadog_api_client.v2.model import logs_list_request_page
 except ImportError:
     logs_list_request_page = sys.modules[
         'datadog_api_client.v2.model.logs_list_request_page']
+try:
+    from datadog_api_client.v2.model import logs_query_filter
+except ImportError:
+    logs_query_filter = sys.modules[
+        'datadog_api_client.v2.model.logs_query_filter']
+try:
+    from datadog_api_client.v2.model import logs_query_options
+except ImportError:
+    logs_query_options = sys.modules[
+        'datadog_api_client.v2.model.logs_query_options']
 try:
     from datadog_api_client.v2.model import logs_sort
 except ImportError:
@@ -90,7 +95,8 @@ class LogsListRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'filter': (logs_list_request_filter.LogsListRequestFilter,),  # noqa: E501
+            'filter': (logs_query_filter.LogsQueryFilter,),  # noqa: E501
+            'options': (logs_query_options.LogsQueryOptions,),  # noqa: E501
             'page': (logs_list_request_page.LogsListRequestPage,),  # noqa: E501
             'sort': (logs_sort.LogsSort,),  # noqa: E501
         }
@@ -101,6 +107,7 @@ class LogsListRequest(ModelNormal):
 
     attribute_map = {
         'filter': 'filter',  # noqa: E501
+        'options': 'options',  # noqa: E501
         'page': 'page',  # noqa: E501
         'sort': 'sort',  # noqa: E501
     }
@@ -151,7 +158,8 @@ class LogsListRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            filter (logs_list_request_filter.LogsListRequestFilter): [optional]  # noqa: E501
+            filter (logs_query_filter.LogsQueryFilter): [optional]  # noqa: E501
+            options (logs_query_options.LogsQueryOptions): [optional]  # noqa: E501
             page (logs_list_request_page.LogsListRequestPage): [optional]  # noqa: E501
             sort (logs_sort.LogsSort): [optional]  # noqa: E501
         """
