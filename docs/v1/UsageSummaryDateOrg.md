@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **name** | **str** | The organization name. | [optional] 
 **netflow_indexed_events_count_sum** | **int** | Shows the sum of all Network flows indexed over all hours in the current date for the given org. | [optional] 
 **npm_host_top99p** | **int** | Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for the given org. | [optional] 
+**profiling_host_top99p** | **int** | Shows the 99th percentile of all profiled hosts over all hours in the current date for all organizations. | [optional] 
 **public_id** | **str** | The organization public id. | [optional] 
 **rum_session_count_sum** | **int** | Shows the sum of all RUM Sessions over all hours in the current date for the given org. | [optional] 
 **synthetics_browser_check_calls_count_sum** | **int** | Shows the sum of all Synthetic browser tests over all hours in the current date for the given org. | [optional] 

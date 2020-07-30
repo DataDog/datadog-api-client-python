@@ -99,6 +99,7 @@ class UsageSummaryDate(ModelNormal):
             'netflow_indexed_events_count_sum': (int,),  # noqa: E501
             'npm_host_top99p': (int,),  # noqa: E501
             'orgs': ([usage_summary_date_org.UsageSummaryDateOrg],),  # noqa: E501
+            'profiling_host_top99p': (int,),  # noqa: E501
             'rum_session_count_sum': (int,),  # noqa: E501
             'synthetics_browser_check_calls_count_sum': (int,),  # noqa: E501
             'synthetics_check_calls_count_sum': (int,),  # noqa: E501
@@ -129,6 +130,7 @@ class UsageSummaryDate(ModelNormal):
         'netflow_indexed_events_count_sum': 'netflow_indexed_events_count_sum',  # noqa: E501
         'npm_host_top99p': 'npm_host_top99p',  # noqa: E501
         'orgs': 'orgs',  # noqa: E501
+        'profiling_host_top99p': 'profiling_host_top99p',  # noqa: E501
         'rum_session_count_sum': 'rum_session_count_sum',  # noqa: E501
         'synthetics_browser_check_calls_count_sum': 'synthetics_browser_check_calls_count_sum',  # noqa: E501
         'synthetics_check_calls_count_sum': 'synthetics_check_calls_count_sum',  # noqa: E501
@@ -200,6 +202,7 @@ class UsageSummaryDate(ModelNormal):
             netflow_indexed_events_count_sum (int): Shows the sum of all Network flows indexed over all hours in the current date for all organizations.. [optional]  # noqa: E501
             npm_host_top99p (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
             orgs ([usage_summary_date_org.UsageSummaryDateOrg]): Organizations associated with a user.. [optional]  # noqa: E501
+            profiling_host_top99p (int): Shows the 99th percentile of all profiled hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
             rum_session_count_sum (int): Shows the sum of all RUM Sessions over all hours in the current date for all organizations. [optional]  # noqa: E501
             synthetics_browser_check_calls_count_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current date for all organizations.. [optional]  # noqa: E501
             synthetics_check_calls_count_sum (int): Shows the sum of all Synthetic API tests over all hours in the current date for all organizations.. [optional]  # noqa: E501
