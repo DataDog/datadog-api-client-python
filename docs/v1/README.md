@@ -207,8 +207,11 @@ Class | Method | HTTP request | Description
 *ServiceLevelObjectivesApi* | [**list_sl_os**](ServiceLevelObjectivesApi.md#list_sl_os) | **GET** /api/v1/slo | Search SLOs
 *ServiceLevelObjectivesApi* | [**update_slo**](ServiceLevelObjectivesApi.md#update_slo) | **PUT** /api/v1/slo/{slo_id} | Update a SLO
 *SnapshotsApi* | [**get_graph_snapshot**](SnapshotsApi.md#get_graph_snapshot) | **GET** /api/v1/graph/snapshot | Take graph snapshots
+*SyntheticsApi* | [**create_global_variable**](SyntheticsApi.md#create_global_variable) | **POST** /api/v1/synthetics/variables | Create a global variable
 *SyntheticsApi* | [**create_test**](SyntheticsApi.md#create_test) | **POST** /api/v1/synthetics/tests | Create a test
+*SyntheticsApi* | [**delete_global_variable**](SyntheticsApi.md#delete_global_variable) | **DELETE** /api/v1/synthetics/variables/{variable_id} | Delete a global variable
 *SyntheticsApi* | [**delete_tests**](SyntheticsApi.md#delete_tests) | **POST** /api/v1/synthetics/tests/delete | Delete tests
+*SyntheticsApi* | [**edit_global_variable**](SyntheticsApi.md#edit_global_variable) | **PUT** /api/v1/synthetics/variables/{variable_id} | Edit a global variable
 *SyntheticsApi* | [**get_api_test_latest_results**](SyntheticsApi.md#get_api_test_latest_results) | **GET** /api/v1/synthetics/tests/{public_id}/results | Get the test&#39;s latest results summaries (API)
 *SyntheticsApi* | [**get_api_test_result**](SyntheticsApi.md#get_api_test_result) | **GET** /api/v1/synthetics/tests/{public_id}/results/{result_id} | Get a test result (API)
 *SyntheticsApi* | [**get_browser_test**](SyntheticsApi.md#get_browser_test) | **GET** /api/v1/synthetics/tests/browser/{public_id} | Get a test configuration (browser)
@@ -518,6 +521,8 @@ Class | Method | HTTP request | Description
  - [synthetics_error_code.SyntheticsErrorCode](SyntheticsErrorCode.md)
  - [synthetics_get_api_test_latest_results_response.SyntheticsGetAPITestLatestResultsResponse](SyntheticsGetAPITestLatestResultsResponse.md)
  - [synthetics_get_browser_test_latest_results_response.SyntheticsGetBrowserTestLatestResultsResponse](SyntheticsGetBrowserTestLatestResultsResponse.md)
+ - [synthetics_global_variable.SyntheticsGlobalVariable](SyntheticsGlobalVariable.md)
+ - [synthetics_global_variable_value.SyntheticsGlobalVariableValue](SyntheticsGlobalVariableValue.md)
  - [synthetics_list_tests_response.SyntheticsListTestsResponse](SyntheticsListTestsResponse.md)
  - [synthetics_location.SyntheticsLocation](SyntheticsLocation.md)
  - [synthetics_locations.SyntheticsLocations](SyntheticsLocations.md)
