@@ -100,3 +100,25 @@ Feature: Synthetics
     And body {}
     When the request is sent
     Then the response status is 200 OK - Returns a boolean indicating if the update was successful.
+
+  @generated @skip
+  Scenario: Delete a global variable returns "OK" response
+    Given new "DeleteGlobalVariable" request
+    And request contains "variable_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Edit a global variable returns "OK" response
+    Given new "EditGlobalVariable" request
+    And request contains "variable_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Create a global variable returns "OK" response
+    Given new "CreateGlobalVariable" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
