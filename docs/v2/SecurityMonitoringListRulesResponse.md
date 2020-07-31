@@ -1,6 +1,6 @@
 # security_monitoring_list_rules_response.SecurityMonitoringListRulesResponse
 
-List of rules
+List of rules.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

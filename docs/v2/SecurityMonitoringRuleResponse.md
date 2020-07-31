@@ -1,6 +1,6 @@
 # security_monitoring_rule_response.SecurityMonitoringRuleResponse
 
-Detection rule
+Detection rule.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

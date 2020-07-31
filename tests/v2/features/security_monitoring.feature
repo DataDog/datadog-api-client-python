@@ -1,6 +1,6 @@
 @endpoint(security-monitoring)
 Feature: Security Monitoring
-  Detection Rules for generating signals
+  Detection Rules for generating signals.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
