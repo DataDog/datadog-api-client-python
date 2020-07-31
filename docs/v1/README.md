@@ -537,6 +537,7 @@ Class | Method | HTTP request | Description
  - [synthetics_test_details_type.SyntheticsTestDetailsType](SyntheticsTestDetailsType.md)
  - [synthetics_test_monitor_status.SyntheticsTestMonitorStatus](SyntheticsTestMonitorStatus.md)
  - [synthetics_test_options.SyntheticsTestOptions](SyntheticsTestOptions.md)
+ - [synthetics_test_options_monitor_options.SyntheticsTestOptionsMonitorOptions](SyntheticsTestOptionsMonitorOptions.md)
  - [synthetics_test_options_retry.SyntheticsTestOptionsRetry](SyntheticsTestOptionsRetry.md)
  - [synthetics_test_pause_status.SyntheticsTestPauseStatus](SyntheticsTestPauseStatus.md)
  - [synthetics_test_process_status.SyntheticsTestProcessStatus](SyntheticsTestProcessStatus.md)
