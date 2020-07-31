@@ -29,20 +29,20 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 try:
-    from datadog_api_client.v2.model import security_monitoring_rule_case
+    from datadog_api_client.v2.model import security_monitoring_rule_case_create
 except ImportError:
-    security_monitoring_rule_case = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_case']
+    security_monitoring_rule_case_create = sys.modules[
+        'datadog_api_client.v2.model.security_monitoring_rule_case_create']
 try:
     from datadog_api_client.v2.model import security_monitoring_rule_options
 except ImportError:
     security_monitoring_rule_options = sys.modules[
         'datadog_api_client.v2.model.security_monitoring_rule_options']
 try:
-    from datadog_api_client.v2.model import security_monitoring_rule_query
+    from datadog_api_client.v2.model import security_monitoring_rule_query_create
 except ImportError:
-    security_monitoring_rule_query = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_query']
+    security_monitoring_rule_query_create = sys.modules[
+        'datadog_api_client.v2.model.security_monitoring_rule_query_create']
 
 
 class SecurityMonitoringRuleCreatePayload(ModelNormal):
@@ -90,12 +90,12 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'cases': ([security_monitoring_rule_case.SecurityMonitoringRuleCase],),  # noqa: E501
+            'cases': ([security_monitoring_rule_case_create.SecurityMonitoringRuleCaseCreate],),  # noqa: E501
             'is_enabled': (bool,),  # noqa: E501
             'message': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'options': (security_monitoring_rule_options.SecurityMonitoringRuleOptions,),  # noqa: E501
-            'queries': ([security_monitoring_rule_query.SecurityMonitoringRuleQuery],),  # noqa: E501
+            'queries': ([security_monitoring_rule_query_create.SecurityMonitoringRuleQueryCreate],),  # noqa: E501
             'tags': ([str],),  # noqa: E501
         }
 
@@ -125,17 +125,16 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, cases, is_enabled, message, name, options, queries, tags, *args, **kwargs):  # noqa: E501
+    def __init__(self, cases, is_enabled, message, name, options, queries, *args, **kwargs):  # noqa: E501
         """security_monitoring_rule_create_payload.SecurityMonitoringRuleCreatePayload - a model defined in OpenAPI
 
         Args:
-            cases ([security_monitoring_rule_case.SecurityMonitoringRuleCase]): Cases for generating signals.
+            cases ([security_monitoring_rule_case_create.SecurityMonitoringRuleCaseCreate]): Cases for generating signals.
             is_enabled (bool): Whether the rule is enabled.
             message (str): Message for generated signals.
-            name (str): The name of the rule
+            name (str): The name of the rule.
             options (security_monitoring_rule_options.SecurityMonitoringRuleOptions):
-            queries ([security_monitoring_rule_query.SecurityMonitoringRuleQuery]): Queries for selecting logs which are part of the rule.
-            tags ([str]): Tags for generated signals.
+            queries ([security_monitoring_rule_query_create.SecurityMonitoringRuleQueryCreate]): Queries for selecting logs which are part of the rule.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -168,6 +167,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            tags ([str]): Tags for generated signals.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -199,7 +199,6 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         self.name = name
         self.options = options
         self.queries = queries
-        self.tags = tags
         for var_name, var_value in six.iteritems(kwargs):
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
