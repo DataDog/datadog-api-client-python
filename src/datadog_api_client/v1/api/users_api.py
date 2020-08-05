@@ -277,7 +277,7 @@ class UsersApi(object):
             },
             headers_map={
                 'accept': [
-                    'applcation/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },

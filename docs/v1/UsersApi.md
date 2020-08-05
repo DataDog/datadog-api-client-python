@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: applcation/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
