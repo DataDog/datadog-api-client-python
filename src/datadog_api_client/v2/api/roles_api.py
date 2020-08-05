@@ -760,8 +760,7 @@ class RolesApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json',
-                    'applcation/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -1157,8 +1156,7 @@ class RolesApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json',
-                    'applcation/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
