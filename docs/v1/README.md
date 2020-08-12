@@ -220,6 +220,7 @@ Class | Method | HTTP request | Description
 *SyntheticsApi* | [**get_test**](SyntheticsApi.md#get_test) | **GET** /api/v1/synthetics/tests/{public_id} | Get a test configuration (API)
 *SyntheticsApi* | [**list_locations**](SyntheticsApi.md#list_locations) | **GET** /api/v1/synthetics/locations | Get all locations (public and private)
 *SyntheticsApi* | [**list_tests**](SyntheticsApi.md#list_tests) | **GET** /api/v1/synthetics/tests | Get a list of tests
+*SyntheticsApi* | [**trigger_ci_tests**](SyntheticsApi.md#trigger_ci_tests) | **POST** /api/v1/synthetics/tests/trigger/ci | Trigger some Synthetics tests for CI
 *SyntheticsApi* | [**update_test**](SyntheticsApi.md#update_test) | **PUT** /api/v1/synthetics/tests/{public_id} | Edit a test
 *SyntheticsApi* | [**update_test_pause_status**](SyntheticsApi.md#update_test_pause_status) | **PUT** /api/v1/synthetics/tests/{public_id}/status | Pause or start a test
 *TagsApi* | [**create_host_tags**](TagsApi.md#create_host_tags) | **POST** /api/v1/tags/hosts/{host_name} | Add tags to a host
@@ -504,6 +505,7 @@ Class | Method | HTTP request | Description
  - [synthetics_assertion_operator.SyntheticsAssertionOperator](SyntheticsAssertionOperator.md)
  - [synthetics_assertion_target.SyntheticsAssertionTarget](SyntheticsAssertionTarget.md)
  - [synthetics_assertion_type.SyntheticsAssertionType](SyntheticsAssertionType.md)
+ - [synthetics_basic_auth.SyntheticsBasicAuth](SyntheticsBasicAuth.md)
  - [synthetics_browser_error.SyntheticsBrowserError](SyntheticsBrowserError.md)
  - [synthetics_browser_error_type.SyntheticsBrowserErrorType](SyntheticsBrowserErrorType.md)
  - [synthetics_browser_test_result_data.SyntheticsBrowserTestResultData](SyntheticsBrowserTestResultData.md)
@@ -514,6 +516,11 @@ Class | Method | HTTP request | Description
  - [synthetics_browser_variable.SyntheticsBrowserVariable](SyntheticsBrowserVariable.md)
  - [synthetics_browser_variable_type.SyntheticsBrowserVariableType](SyntheticsBrowserVariableType.md)
  - [synthetics_check_type.SyntheticsCheckType](SyntheticsCheckType.md)
+ - [synthetics_ci_test.SyntheticsCITest](SyntheticsCITest.md)
+ - [synthetics_ci_test_body.SyntheticsCITestBody](SyntheticsCITestBody.md)
+ - [synthetics_ci_test_metadata.SyntheticsCITestMetadata](SyntheticsCITestMetadata.md)
+ - [synthetics_ci_test_metadata_ci.SyntheticsCITestMetadataCi](SyntheticsCITestMetadataCi.md)
+ - [synthetics_ci_test_metadata_git.SyntheticsCITestMetadataGit](SyntheticsCITestMetadataGit.md)
  - [synthetics_delete_tests_payload.SyntheticsDeleteTestsPayload](SyntheticsDeleteTestsPayload.md)
  - [synthetics_delete_tests_response.SyntheticsDeleteTestsResponse](SyntheticsDeleteTestsResponse.md)
  - [synthetics_delete_tests_response_deleted_tests.SyntheticsDeleteTestsResponseDeletedTests](SyntheticsDeleteTestsResponseDeletedTests.md)
@@ -541,6 +548,7 @@ Class | Method | HTTP request | Description
  - [synthetics_test_details.SyntheticsTestDetails](SyntheticsTestDetails.md)
  - [synthetics_test_details_sub_type.SyntheticsTestDetailsSubType](SyntheticsTestDetailsSubType.md)
  - [synthetics_test_details_type.SyntheticsTestDetailsType](SyntheticsTestDetailsType.md)
+ - [synthetics_test_headers.SyntheticsTestHeaders](SyntheticsTestHeaders.md)
  - [synthetics_test_monitor_status.SyntheticsTestMonitorStatus](SyntheticsTestMonitorStatus.md)
  - [synthetics_test_options.SyntheticsTestOptions](SyntheticsTestOptions.md)
  - [synthetics_test_options_monitor_options.SyntheticsTestOptionsMonitorOptions](SyntheticsTestOptionsMonitorOptions.md)
@@ -548,9 +556,11 @@ Class | Method | HTTP request | Description
  - [synthetics_test_pause_status.SyntheticsTestPauseStatus](SyntheticsTestPauseStatus.md)
  - [synthetics_test_process_status.SyntheticsTestProcessStatus](SyntheticsTestProcessStatus.md)
  - [synthetics_test_request.SyntheticsTestRequest](SyntheticsTestRequest.md)
- - [synthetics_test_request_basic_auth.SyntheticsTestRequestBasicAuth](SyntheticsTestRequestBasicAuth.md)
  - [synthetics_tick_interval.SyntheticsTickInterval](SyntheticsTickInterval.md)
  - [synthetics_timing.SyntheticsTiming](SyntheticsTiming.md)
+ - [synthetics_trigger_ci_tests_response.SyntheticsTriggerCITestsResponse](SyntheticsTriggerCITestsResponse.md)
+ - [synthetics_trigger_ci_tests_response_locations.SyntheticsTriggerCITestsResponseLocations](SyntheticsTriggerCITestsResponseLocations.md)
+ - [synthetics_trigger_ci_tests_response_results.SyntheticsTriggerCITestsResponseResults](SyntheticsTriggerCITestsResponseResults.md)
  - [synthetics_update_test_pause_status_payload.SyntheticsUpdateTestPauseStatusPayload](SyntheticsUpdateTestPauseStatusPayload.md)
  - [synthetics_warning_type.SyntheticsWarningType](SyntheticsWarningType.md)
  - [table_widget_definition.TableWidgetDefinition](TableWidgetDefinition.md)

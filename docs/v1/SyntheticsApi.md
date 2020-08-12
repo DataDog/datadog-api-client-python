@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**get_test**](SyntheticsApi.md#get_test) | **GET** /api/v1/synthetics/tests/{public_id} | Get a test configuration (API)
 [**list_locations**](SyntheticsApi.md#list_locations) | **GET** /api/v1/synthetics/locations | Get all locations (public and private)
 [**list_tests**](SyntheticsApi.md#list_tests) | **GET** /api/v1/synthetics/tests | Get a list of tests
+[**trigger_ci_tests**](SyntheticsApi.md#trigger_ci_tests) | **POST** /api/v1/synthetics/tests/trigger/ci | Trigger some Synthetics tests for CI
 [**update_test**](SyntheticsApi.md#update_test) | **PUT** /api/v1/synthetics/tests/{public_id} | Edit a test
 [**update_test_pause_status**](SyntheticsApi.md#update_test_pause_status) | **PUT** /api/v1/synthetics/tests/{public_id}/status | Pause or start a test
 
@@ -1259,6 +1260,99 @@ Name | Type | Description  | Notes
 **200** | OK - Returns the list of all Synthetic tests (properly filtered by type). |  -  |
 **403** | Forbidden |  -  |
 **404** | Synthetics is not activated for the user. |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **trigger_ci_tests**
+> synthetics_trigger_ci_tests_response.SyntheticsTriggerCITestsResponse trigger_ci_tests(body)
+
+Trigger some Synthetics tests for CI
+
+Trigger a set of Synthetics tests for continuous integration
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v1
+from datadog_api_client.v1.api import synthetics_api
+from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model import synthetics_trigger_ci_tests_response
+from datadog_api_client.v1.model import synthetics_ci_test_body
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = synthetics_api.SyntheticsApi(api_client)
+    body = synthetics_ci_test_body.SyntheticsCITestBody() # synthetics_ci_test_body.SyntheticsCITestBody | Details of the test to trigger.
+    
+    # example passing only required values which don't have defaults set
+    try:
+        # Trigger some Synthetics tests for CI
+        api_response = api_instance.trigger_ci_tests(body)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling SyntheticsApi->trigger_ci_tests: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**synthetics_ci_test_body.SyntheticsCITestBody**](SyntheticsCITestBody.md)| Details of the test to trigger. |
+
+### Return type
+
+[**synthetics_trigger_ci_tests_response.SyntheticsTriggerCITestsResponse**](SyntheticsTriggerCITestsResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | JSON format is wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

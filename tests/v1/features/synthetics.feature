@@ -122,3 +122,10 @@ Feature: Synthetics
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Trigger some Synthetics tests for CI returns "OK" response
+    Given new "TriggerCITests" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK

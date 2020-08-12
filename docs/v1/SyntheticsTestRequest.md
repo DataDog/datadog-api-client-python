@@ -4,9 +4,9 @@ Object describing the Synthetic test request.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**basic_auth** | [**synthetics_test_request_basic_auth.SyntheticsTestRequestBasicAuth**](SyntheticsTestRequestBasicAuth.md) |  | [optional] 
+**basic_auth** | [**synthetics_basic_auth.SyntheticsBasicAuth**](SyntheticsBasicAuth.md) |  | [optional] 
 **body** | **str** | Body to include in the test. | [optional] 
-**headers** | **{str: (str,)}** | Headers to include when performing the test. | [optional] 
+**headers** | [**synthetics_test_headers.SyntheticsTestHeaders**](SyntheticsTestHeaders.md) |  | [optional] 
 **host** | **str** | Host name to perform the test with. | [optional] 
 **method** | [**http_method.HTTPMethod**](HTTPMethod.md) |  | [optional] 
 **port** | **int** | Port to use when performing the test. | [optional] 
