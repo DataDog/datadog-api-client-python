@@ -267,6 +267,7 @@ Class | Method | HTTP request | Description
  - [api_key.ApiKey](ApiKey.md)
  - [api_key_list_response.ApiKeyListResponse](ApiKeyListResponse.md)
  - [api_key_response.ApiKeyResponse](ApiKeyResponse.md)
+ - [apm_resources_query_definition.ApmResourcesQueryDefinition](ApmResourcesQueryDefinition.md)
  - [application_key.ApplicationKey](ApplicationKey.md)
  - [application_key_list_response.ApplicationKeyListResponse](ApplicationKeyListResponse.md)
  - [application_key_response.ApplicationKeyResponse](ApplicationKeyResponse.md)

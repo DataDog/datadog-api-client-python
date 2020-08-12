@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **aggregator** | [**widget_aggregator.WidgetAggregator**](WidgetAggregator.md) |  | [optional] 
 **alias** | **str** | The column name (defaults to the metric name). | [optional] 
 **apm_query** | [**log_query_definition.LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
+**apm_resources_query** | [**apm_resources_query_definition.ApmResourcesQueryDefinition**](ApmResourcesQueryDefinition.md) |  | [optional] 
 **conditional_formats** | [**[widget_conditional_format.WidgetConditionalFormat]**](WidgetConditionalFormat.md) | List of conditional formats. | [optional] 
 **event_query** | [**event_query_definition.EventQueryDefinition**](EventQueryDefinition.md) |  | [optional] 
 **limit** | **int** | For metric queries, the number of lines to show in the table. Only one request should have this property. | [optional] 
