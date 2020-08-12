@@ -1,6 +1,6 @@
 @endpoint(security-monitoring)
 Feature: Security Monitoring
-  Detection Rules for generating signals.
+  Detection rules for generating signals and listing of generated signals
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -38,6 +38,19 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get a quick list of security signals returns "OK" response
+    Given new "ListSecurityMonitoringSignals" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get a list of security signals returns "OK" response
+    Given new "SearchSecurityMonitoringSignals" request
     And body {}
     When the request is sent
     Then the response status is 200 OK

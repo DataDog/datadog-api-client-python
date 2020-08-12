@@ -214,6 +214,8 @@ conf = datadog_api_client.v2.Configuration(
             "add_read_role_to_archive": False,
             "list_archive_read_roles": False,
             "remove_role_from_archive": False,
+            "list_security_monitoring_signals": False,
+            "search_security_monitoring_signals": False,
         }
 
     def __deepcopy__(self, memo):
