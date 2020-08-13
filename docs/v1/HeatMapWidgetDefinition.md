@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **requests** | [**[heat_map_widget_request.HeatMapWidgetRequest]**](HeatMapWidgetRequest.md) | List of widget types. | 
 **type** | [**heat_map_widget_definition_type.HeatMapWidgetDefinitionType**](HeatMapWidgetDefinitionType.md) |  | 
 **events** | [**[widget_event.WidgetEvent]**](WidgetEvent.md) | List of widget events. | [optional] 
-**legend_size** | [**widget_legend_size.WidgetLegendSize**](WidgetLegendSize.md) |  | [optional] 
+**legend_size** | **str** | Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;. | [optional] 
 **show_legend** | **bool** | Whether or not to display the legend on this widget. | [optional] 
 **time** | [**widget_time.WidgetTime**](WidgetTime.md) |  | [optional] 
 **title** | **str** | Title of the widget. | [optional] 

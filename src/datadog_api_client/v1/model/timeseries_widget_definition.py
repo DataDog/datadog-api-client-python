@@ -49,11 +49,6 @@ except ImportError:
     widget_event = sys.modules[
         'datadog_api_client.v1.model.widget_event']
 try:
-    from datadog_api_client.v1.model import widget_legend_size
-except ImportError:
-    widget_legend_size = sys.modules[
-        'datadog_api_client.v1.model.widget_legend_size']
-try:
     from datadog_api_client.v1.model import widget_marker
 except ImportError:
     widget_marker = sys.modules[
@@ -118,7 +113,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
             'requests': ([timeseries_widget_request.TimeseriesWidgetRequest],),  # noqa: E501
             'type': (timeseries_widget_definition_type.TimeseriesWidgetDefinitionType,),  # noqa: E501
             'events': ([widget_event.WidgetEvent],),  # noqa: E501
-            'legend_size': (widget_legend_size.WidgetLegendSize,),  # noqa: E501
+            'legend_size': (str,),  # noqa: E501
             'markers': ([widget_marker.WidgetMarker],),  # noqa: E501
             'show_legend': (bool,),  # noqa: E501
             'time': (widget_time.WidgetTime,),  # noqa: E501
@@ -197,7 +192,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             events ([widget_event.WidgetEvent]): List of widget events.. [optional]  # noqa: E501
-            legend_size (widget_legend_size.WidgetLegendSize): [optional]  # noqa: E501
+            legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
             markers ([widget_marker.WidgetMarker]): List of markers.. [optional]  # noqa: E501
             show_legend (bool): (screenboard only) Show the legend for this widget.. [optional]  # noqa: E501
             time (widget_time.WidgetTime): [optional]  # noqa: E501

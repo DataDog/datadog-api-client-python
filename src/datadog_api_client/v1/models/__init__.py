@@ -400,7 +400,6 @@ from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
 from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
-from datadog_api_client.v1.model.widget_legend_size import WidgetLegendSize
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
 from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan

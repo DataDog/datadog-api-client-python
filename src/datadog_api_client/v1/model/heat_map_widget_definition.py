@@ -49,11 +49,6 @@ except ImportError:
     widget_event = sys.modules[
         'datadog_api_client.v1.model.widget_event']
 try:
-    from datadog_api_client.v1.model import widget_legend_size
-except ImportError:
-    widget_legend_size = sys.modules[
-        'datadog_api_client.v1.model.widget_legend_size']
-try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
     widget_text_align = sys.modules[
@@ -113,7 +108,7 @@ class HeatMapWidgetDefinition(ModelNormal):
             'requests': ([heat_map_widget_request.HeatMapWidgetRequest],),  # noqa: E501
             'type': (heat_map_widget_definition_type.HeatMapWidgetDefinitionType,),  # noqa: E501
             'events': ([widget_event.WidgetEvent],),  # noqa: E501
-            'legend_size': (widget_legend_size.WidgetLegendSize,),  # noqa: E501
+            'legend_size': (str,),  # noqa: E501
             'show_legend': (bool,),  # noqa: E501
             'time': (widget_time.WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
@@ -190,7 +185,7 @@ class HeatMapWidgetDefinition(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             events ([widget_event.WidgetEvent]): List of widget events.. [optional]  # noqa: E501
-            legend_size (widget_legend_size.WidgetLegendSize): [optional]  # noqa: E501
+            legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
             show_legend (bool): Whether or not to display the legend on this widget.. [optional]  # noqa: E501
             time (widget_time.WidgetTime): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
