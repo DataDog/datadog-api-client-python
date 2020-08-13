@@ -204,11 +204,6 @@ except ImportError:
     widget_layout_type = sys.modules[
         'datadog_api_client.v1.model.widget_layout_type']
 try:
-    from datadog_api_client.v1.model import widget_legend_size
-except ImportError:
-    widget_legend_size = sys.modules[
-        'datadog_api_client.v1.model.widget_legend_size']
-try:
     from datadog_api_client.v1.model import widget_margin
 except ImportError:
     widget_margin = sys.modules[
@@ -408,7 +403,7 @@ class WidgetDefinition(ModelComposed):
             group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
             group_by ([str]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
             tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
-            legend_size (widget_legend_size.WidgetLegendSize): [optional]  # noqa: E501
+            legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
             show_legend (bool): (screenboard only) Show the legend for this widget.. [optional]  # noqa: E501
             event_size (widget_event_size.WidgetEventSize): [optional]  # noqa: E501
             tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]  # noqa: E501

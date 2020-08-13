@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **group** | **[str]** | List of tag prefixes to group by. | [optional] 
 **group_by** | **[str]** | List of tag prefixes to group by in the case of a cluster check. | [optional] 
 **tags** | **[str]** | List of tags used to filter the groups reporting a cluster check. | [optional] 
-**legend_size** | [**widget_legend_size.WidgetLegendSize**](WidgetLegendSize.md) |  | [optional] 
+**legend_size** | **str** | Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;. | [optional] 
 **show_legend** | **bool** | (screenboard only) Show the legend for this widget. | [optional] 
 **event_size** | [**widget_event_size.WidgetEventSize**](WidgetEventSize.md) |  | [optional] 
 **tags_execution** | **str** | The execution method for multi-value filters. Can be either and or or. | [optional] 

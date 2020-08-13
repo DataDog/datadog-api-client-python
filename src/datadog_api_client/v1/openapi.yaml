@@ -5915,8 +5915,10 @@ components:
       properties:
         public_ids:
           description: An array of Synthetic test IDs you want to delete.
+          example: []
           items:
             description: A Synthetic test ID to delete.
+            example: abc-def-123
             type: string
           type: array
       type: object
@@ -8437,22 +8439,9 @@ components:
       x-enum-varnames:
       - ORDERED
     WidgetLegendSize:
-      description: Available legend sizes for a widget.
-      enum:
-      - '0'
-      - '2'
-      - '4'
-      - '8'
-      - '16'
-      - auto
+      description: Available legend sizes for a widget. Should be one of "0", "2",
+        "4", "8", "16", or "auto".
       type: string
-      x-enum-varnames:
-      - ZERO
-      - TWO
-      - FOUR
-      - EIGHT
-      - SIXTEEN
-      - AUTO
     WidgetLineType:
       description: Type of lines displayed.
       enum:

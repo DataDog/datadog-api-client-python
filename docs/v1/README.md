@@ -648,7 +648,6 @@ Class | Method | HTTP request | Description
  - [widget_image_sizing.WidgetImageSizing](WidgetImageSizing.md)
  - [widget_layout.WidgetLayout](WidgetLayout.md)
  - [widget_layout_type.WidgetLayoutType](WidgetLayoutType.md)
- - [widget_legend_size.WidgetLegendSize](WidgetLegendSize.md)
  - [widget_line_type.WidgetLineType](WidgetLineType.md)
  - [widget_line_width.WidgetLineWidth](WidgetLineWidth.md)
  - [widget_live_span.WidgetLiveSpan](WidgetLiveSpan.md)
