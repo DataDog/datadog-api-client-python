@@ -100,6 +100,7 @@ class UsageSummaryResponse(ModelNormal):
             'last_updated': (datetime,),  # noqa: E501
             'netflow_indexed_events_count_agg_sum': (int,),  # noqa: E501
             'npm_host_top99p_sum': (int,),  # noqa: E501
+            'profiling_container_agent_count_avg': (int,),  # noqa: E501
             'profiling_host_count_top99p_sum': (int,),  # noqa: E501
             'rum_session_count_agg_sum': (int,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
@@ -134,6 +135,7 @@ class UsageSummaryResponse(ModelNormal):
         'last_updated': 'last_updated',  # noqa: E501
         'netflow_indexed_events_count_agg_sum': 'netflow_indexed_events_count_agg_sum',  # noqa: E501
         'npm_host_top99p_sum': 'npm_host_top99p_sum',  # noqa: E501
+        'profiling_container_agent_count_avg': 'profiling_container_agent_count_avg',  # noqa: E501
         'profiling_host_count_top99p_sum': 'profiling_host_count_top99p_sum',  # noqa: E501
         'rum_session_count_agg_sum': 'rum_session_count_agg_sum',  # noqa: E501
         'start_date': 'start_date',  # noqa: E501
@@ -209,6 +211,7 @@ class UsageSummaryResponse(ModelNormal):
             last_updated (datetime): Shows the the most recent hour in the current month(s) for all organizations for which all usages were calculated.. [optional]  # noqa: E501
             netflow_indexed_events_count_agg_sum (int): Shows the sum of all Network flows indexed over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
             npm_host_top99p_sum (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
+            profiling_container_agent_count_avg (int): Shows the average number of profiled containers over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
             profiling_host_count_top99p_sum (int): Shows the 99th percentile of all profiled hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
             rum_session_count_agg_sum (int): Shows the sum of all RUM Sessions over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
             start_date (datetime): Shows the first date of usage in the current month(s) for all organizations.. [optional]  # noqa: E501

@@ -145,3 +145,9 @@ Feature: Usage Metering
     Given new "GetUsageBillableSummary" request
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get hourly usage for profiled hosts returns "OK" response
+    Given new "GetUsageProfiling" request
+    When the request is sent
+    Then the response status is 200 OK

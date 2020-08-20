@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **last_updated** | **datetime** | Shows the the most recent hour in the current month(s) for all organizations for which all usages were calculated. | [optional] 
 **netflow_indexed_events_count_agg_sum** | **int** | Shows the sum of all Network flows indexed over all hours in the current month(s) for all organizations. | [optional] 
 **npm_host_top99p_sum** | **int** | Shows the 99th percentile of all distinct Networks hosts over all hours in the current month(s) for all organizations. | [optional] 
+**profiling_container_agent_count_avg** | **int** | Shows the average number of profiled containers over all hours in the current month(s) for all organizations. | [optional] 
 **profiling_host_count_top99p_sum** | **int** | Shows the 99th percentile of all profiled hosts over all hours in the current month(s) for all organizations. | [optional] 
 **rum_session_count_agg_sum** | **int** | Shows the sum of all RUM Sessions over all hours in the current month(s) for all organizations. | [optional] 
 **start_date** | **datetime** | Shows the first date of usage in the current month(s) for all organizations. | [optional] 
