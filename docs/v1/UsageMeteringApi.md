@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**get_usage_logs_by_index**](UsageMeteringApi.md#get_usage_logs_by_index) | **GET** /api/v1/usage/logs_by_index | Get hourly usage for Logs by Index
 [**get_usage_network_flows**](UsageMeteringApi.md#get_usage_network_flows) | **GET** /api/v1/usage/network_flows | Get hourly usage for Network Flows
 [**get_usage_network_hosts**](UsageMeteringApi.md#get_usage_network_hosts) | **GET** /api/v1/usage/network_hosts | Get hourly usage for Network Hosts
+[**get_usage_profiling**](UsageMeteringApi.md#get_usage_profiling) | **GET** /api/v1/usage/profiling | Get hourly usage for profiled hosts
 [**get_usage_rum_sessions**](UsageMeteringApi.md#get_usage_rum_sessions) | **GET** /api/v1/usage/rum_sessions | Get hourly usage for RUM Sessions
 [**get_usage_snmp**](UsageMeteringApi.md#get_usage_snmp) | **GET** /api/v1/usage/snmp | Get hourly usage for SNMP devices
 [**get_usage_summary**](UsageMeteringApi.md#get_usage_summary) | **GET** /api/v1/usage/summary | Get usage across your multi-org account
@@ -1326,6 +1327,110 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**usage_network_hosts_response.UsageNetworkHostsResponse**](UsageNetworkHostsResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;datetime-format=rfc3339
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden - User is not authorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_usage_profiling**
+> usage_profiling_response.UsageProfilingResponse get_usage_profiling(start_hr)
+
+Get hourly usage for profiled hosts
+
+Get hourly usage for profiled hosts.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+from __future__ import print_function
+import time
+import datadog_api_client.v1
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model import usage_profiling_response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'apiKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com",
+    api_key = {
+        'appKeyAuth': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get hourly usage for profiled hosts
+        api_response = api_instance.get_usage_profiling(start_hr)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_usage_profiling: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get hourly usage for profiled hosts
+        api_response = api_instance.get_usage_profiling(start_hr, end_hr=end_hr)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_usage_profiling: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour. |
+ **end_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour. | [optional]
+
+### Return type
+
+[**usage_profiling_response.UsageProfilingResponse**](UsageProfilingResponse.md)
 
 ### Authorization
 

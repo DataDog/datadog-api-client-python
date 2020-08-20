@@ -241,6 +241,7 @@ Class | Method | HTTP request | Description
 *UsageMeteringApi* | [**get_usage_logs_by_index**](UsageMeteringApi.md#get_usage_logs_by_index) | **GET** /api/v1/usage/logs_by_index | Get hourly usage for Logs by Index
 *UsageMeteringApi* | [**get_usage_network_flows**](UsageMeteringApi.md#get_usage_network_flows) | **GET** /api/v1/usage/network_flows | Get hourly usage for Network Flows
 *UsageMeteringApi* | [**get_usage_network_hosts**](UsageMeteringApi.md#get_usage_network_hosts) | **GET** /api/v1/usage/network_hosts | Get hourly usage for Network Hosts
+*UsageMeteringApi* | [**get_usage_profiling**](UsageMeteringApi.md#get_usage_profiling) | **GET** /api/v1/usage/profiling | Get hourly usage for profiled hosts
 *UsageMeteringApi* | [**get_usage_rum_sessions**](UsageMeteringApi.md#get_usage_rum_sessions) | **GET** /api/v1/usage/rum_sessions | Get hourly usage for RUM Sessions
 *UsageMeteringApi* | [**get_usage_snmp**](UsageMeteringApi.md#get_usage_snmp) | **GET** /api/v1/usage/snmp | Get hourly usage for SNMP devices
 *UsageMeteringApi* | [**get_usage_summary**](UsageMeteringApi.md#get_usage_summary) | **GET** /api/v1/usage/summary | Get usage across your multi-org account
@@ -600,6 +601,8 @@ Class | Method | HTTP request | Description
  - [usage_network_flows_response.UsageNetworkFlowsResponse](UsageNetworkFlowsResponse.md)
  - [usage_network_hosts_hour.UsageNetworkHostsHour](UsageNetworkHostsHour.md)
  - [usage_network_hosts_response.UsageNetworkHostsResponse](UsageNetworkHostsResponse.md)
+ - [usage_profiling_hour.UsageProfilingHour](UsageProfilingHour.md)
+ - [usage_profiling_response.UsageProfilingResponse](UsageProfilingResponse.md)
  - [usage_reports_type.UsageReportsType](UsageReportsType.md)
  - [usage_rum_sessions_hour.UsageRumSessionsHour](UsageRumSessionsHour.md)
  - [usage_rum_sessions_response.UsageRumSessionsResponse](UsageRumSessionsResponse.md)
