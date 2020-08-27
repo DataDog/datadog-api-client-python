@@ -34,6 +34,11 @@ except ImportError:
     service_map_widget_definition_type = sys.modules[
         'datadog_api_client.v1.model.service_map_widget_definition_type']
 try:
+    from datadog_api_client.v1.model import widget_custom_link
+except ImportError:
+    widget_custom_link = sys.modules[
+        'datadog_api_client.v1.model.widget_custom_link']
+try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
     widget_text_align = sys.modules[
@@ -88,6 +93,7 @@ class ServiceMapWidgetDefinition(ModelNormal):
             'filters': ([str],),  # noqa: E501
             'service': (str,),  # noqa: E501
             'type': (service_map_widget_definition_type.ServiceMapWidgetDefinitionType,),  # noqa: E501
+            'custom_links': ([widget_custom_link.WidgetCustomLink],),  # noqa: E501
             'title': (str,),  # noqa: E501
             'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
@@ -101,6 +107,7 @@ class ServiceMapWidgetDefinition(ModelNormal):
         'filters': 'filters',  # noqa: E501
         'service': 'service',  # noqa: E501
         'type': 'type',  # noqa: E501
+        'custom_links': 'custom_links',  # noqa: E501
         'title': 'title',  # noqa: E501
         'title_align': 'title_align',  # noqa: E501
         'title_size': 'title_size',  # noqa: E501
@@ -157,6 +164,7 @@ class ServiceMapWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            custom_links ([widget_custom_link.WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             title (str): The title of your widget.. [optional]  # noqa: E501
             title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501

@@ -39,6 +39,11 @@ except ImportError:
     change_widget_request = sys.modules[
         'datadog_api_client.v1.model.change_widget_request']
 try:
+    from datadog_api_client.v1.model import widget_custom_link
+except ImportError:
+    widget_custom_link = sys.modules[
+        'datadog_api_client.v1.model.widget_custom_link']
+try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
     widget_text_align = sys.modules[
@@ -97,6 +102,7 @@ class ChangeWidgetDefinition(ModelNormal):
         return {
             'requests': ([change_widget_request.ChangeWidgetRequest],),  # noqa: E501
             'type': (change_widget_definition_type.ChangeWidgetDefinitionType,),  # noqa: E501
+            'custom_links': ([widget_custom_link.WidgetCustomLink],),  # noqa: E501
             'time': (widget_time.WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
             'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
@@ -110,6 +116,7 @@ class ChangeWidgetDefinition(ModelNormal):
     attribute_map = {
         'requests': 'requests',  # noqa: E501
         'type': 'type',  # noqa: E501
+        'custom_links': 'custom_links',  # noqa: E501
         'time': 'time',  # noqa: E501
         'title': 'title',  # noqa: E501
         'title_align': 'title_align',  # noqa: E501
@@ -166,6 +173,7 @@ class ChangeWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            custom_links ([widget_custom_link.WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             time (widget_time.WidgetTime): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
             title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501

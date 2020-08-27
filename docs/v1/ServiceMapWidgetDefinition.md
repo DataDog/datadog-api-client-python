@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **filters** | **[str]** | Your environment and primary tag (or * if enabled for your account). | 
 **service** | **str** | The ID of the service you want to map. | 
 **type** | [**service_map_widget_definition_type.ServiceMapWidgetDefinitionType**](ServiceMapWidgetDefinitionType.md) |  | 
+**custom_links** | [**[widget_custom_link.WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
 **title** | **str** | The title of your widget. | [optional] 
 **title_align** | [**widget_text_align.WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
 **title_size** | **str** | Size of the title. | [optional] 

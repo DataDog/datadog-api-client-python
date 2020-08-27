@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requests** | [**[heat_map_widget_request.HeatMapWidgetRequest]**](HeatMapWidgetRequest.md) | List of widget types. | 
 **type** | [**heat_map_widget_definition_type.HeatMapWidgetDefinitionType**](HeatMapWidgetDefinitionType.md) |  | 
+**custom_links** | [**[widget_custom_link.WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
 **events** | [**[widget_event.WidgetEvent]**](WidgetEvent.md) | List of widget events. | [optional] 
 **legend_size** | **str** | Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;. | [optional] 
 **show_legend** | **bool** | Whether or not to display the legend on this widget. | [optional] 

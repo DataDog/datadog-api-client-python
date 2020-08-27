@@ -179,6 +179,11 @@ except ImportError:
     widget_color_preference = sys.modules[
         'datadog_api_client.v1.model.widget_color_preference']
 try:
+    from datadog_api_client.v1.model import widget_custom_link
+except ImportError:
+    widget_custom_link = sys.modules[
+        'datadog_api_client.v1.model.widget_custom_link']
+try:
     from datadog_api_client.v1.model import widget_event
 except ImportError:
     widget_event = sys.modules[
@@ -400,6 +405,7 @@ class WidgetDefinition(ModelComposed):
             precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]  # noqa: E501
             text_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
             unit (str): Unit to display with the value.. [optional]  # noqa: E501
+            custom_links ([widget_custom_link.WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
             group_by ([str]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
             tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501

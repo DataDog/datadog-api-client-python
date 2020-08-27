@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **requests** | [**scatter_plot_widget_definition_requests.ScatterPlotWidgetDefinitionRequests**](ScatterPlotWidgetDefinitionRequests.md) |  | 
 **type** | [**scatter_plot_widget_definition_type.ScatterPlotWidgetDefinitionType**](ScatterPlotWidgetDefinitionType.md) |  | 
 **color_by_groups** | **[str]** | List of groups used for colors. | [optional] 
+**custom_links** | [**[widget_custom_link.WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
 **time** | [**widget_time.WidgetTime**](WidgetTime.md) |  | [optional] 
 **title** | **str** | Title of your widget. | [optional] 
 **title_align** | [**widget_text_align.WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 

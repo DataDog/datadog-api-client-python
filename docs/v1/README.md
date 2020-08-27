@@ -642,6 +642,7 @@ Class | Method | HTTP request | Description
  - [widget_comparator.WidgetComparator](WidgetComparator.md)
  - [widget_compare_to.WidgetCompareTo](WidgetCompareTo.md)
  - [widget_conditional_format.WidgetConditionalFormat](WidgetConditionalFormat.md)
+ - [widget_custom_link.WidgetCustomLink](WidgetCustomLink.md)
  - [widget_definition.WidgetDefinition](WidgetDefinition.md)
  - [widget_display_type.WidgetDisplayType](WidgetDisplayType.md)
  - [widget_event.WidgetEvent](WidgetEvent.md)

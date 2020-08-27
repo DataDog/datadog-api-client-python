@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **requests** | [**[query_value_widget_request.QueryValueWidgetRequest]**](QueryValueWidgetRequest.md) | Widget definition. | 
 **type** | [**query_value_widget_definition_type.QueryValueWidgetDefinitionType**](QueryValueWidgetDefinitionType.md) |  | 
 **autoscale** | **bool** | Whether to use auto-scaling or not. | [optional] 
+**custom_links** | [**[widget_custom_link.WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
 **custom_unit** | **str** | Display a unit of your choice on the widget. | [optional] 
 **precision** | **int** | Number of decimals to show. If not defined, the widget uses the raw value. | [optional] 
 **text_align** | [**widget_text_align.WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 

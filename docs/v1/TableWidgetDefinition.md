@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requests** | [**[table_widget_request.TableWidgetRequest]**](TableWidgetRequest.md) | Widget definition. | 
 **type** | [**table_widget_definition_type.TableWidgetDefinitionType**](TableWidgetDefinitionType.md) |  | 
+**custom_links** | [**[widget_custom_link.WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
 **time** | [**widget_time.WidgetTime**](WidgetTime.md) |  | [optional] 
 **title** | **str** | Title of your widget. | [optional] 
 **title_align** | [**widget_text_align.WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
