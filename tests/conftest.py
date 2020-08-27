@@ -11,6 +11,7 @@ except ImportError:
     tracer = None
 
 import importlib
+import json
 import logging
 import os
 import re
@@ -136,7 +137,8 @@ def unique(request, freezer):
     class Lazy:
         @staticmethod
         def __call__():
-            return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+            with freezer:
+                return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
 
         def __str__(self):
             return self()
@@ -145,7 +147,27 @@ def unique(request, freezer):
 
 
 @pytest.fixture
-def fixtures(request, unique):
+def unique_lower(request, freezer):
+    test_class = request.cls
+    if test_class:
+        prefix = "{}.{}".format(test_class.__name__, request.node.name)
+    else:
+        prefix = request.node.name
+
+    class Lazy:
+        @staticmethod
+        def __call__():
+            with freezer:
+                return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}".lower()
+
+        def __str__(self):
+            return self()
+
+    return Lazy()
+
+
+@pytest.fixture
+def fixtures(request, unique, unique_lower):
     """Return a mapping with all defined fixtures."""
     ctx = {}
     for f in request.fixturenames:
@@ -300,7 +322,7 @@ def undo(api_request):
         return api_request["api"].disable_user(api_request["response"][0].data.id)
     elif operation_id == "create_role":
         return api_request["api"].delete_role(api_request["response"][0].data.id)
-    elif operation_id in {"update_user", "add_permission_to_role", "add_user_to_role"}:
+    elif operation_id in {"update_user", "add_permission_to_role", "add_user_to_role", "send_invitations"}:
         return
     elif api_request["request"].settings["http_method"] == "PATCH":
         return
@@ -346,3 +368,30 @@ def i_should_get_a_list_of_objects(package_name, api, name):
 def the_status_is(api_request, status, description):
     """Check the status."""
     assert status == api_request["response"][1]
+
+
+@then(parsers.parse('expect response "{response_path}" to equal to {value}'))
+def expect_equal(api_request, fixtures, response_path, value):
+    from glom import glom
+    from jinja2 import Template
+
+    response_value = glom(api_request["response"][0], response_path)
+    test_value = json.loads(Template(value).render(**fixtures))
+    assert test_value == response_value
+
+
+@then(parsers.parse('expect response "{response_path}" to equal value from "{fixture_path}"'))
+def expect_equal_value(api_request, fixtures, response_path, fixture_path):
+    from glom import glom
+
+    fixture_value = glom(fixtures, fixture_path)
+    response_value = glom(api_request["response"][0], response_path)
+    assert fixture_value == response_value
+
+
+@then(parsers.parse('expect response "{response_path}" to be false'))
+def expect_false(api_request, response_path):
+    from glom import glom
+
+    response_value = glom(api_request["response"][0], response_path)
+    assert not response_value
