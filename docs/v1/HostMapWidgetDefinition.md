@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requests** | [**host_map_widget_definition_requests.HostMapWidgetDefinitionRequests**](HostMapWidgetDefinitionRequests.md) |  | 
 **type** | [**host_map_widget_definition_type.HostMapWidgetDefinitionType**](HostMapWidgetDefinitionType.md) |  | 
+**custom_links** | [**[widget_custom_link.WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
 **group** | **[str]** | List of tag prefixes to group by. | [optional] 
 **no_group_hosts** | **bool** | Whether to show the hosts that don’t fit in a group. | [optional] 
 **no_metric_hosts** | **bool** | Whether to show the hosts with no metrics. | [optional] 

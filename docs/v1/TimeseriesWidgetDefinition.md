@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requests** | [**[timeseries_widget_request.TimeseriesWidgetRequest]**](TimeseriesWidgetRequest.md) | List of timeseries widget requests. | 
 **type** | [**timeseries_widget_definition_type.TimeseriesWidgetDefinitionType**](TimeseriesWidgetDefinitionType.md) |  | 
+**custom_links** | [**[widget_custom_link.WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
 **events** | [**[widget_event.WidgetEvent]**](WidgetEvent.md) | List of widget events. | [optional] 
 **legend_size** | **str** | Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;. | [optional] 
 **markers** | [**[widget_marker.WidgetMarker]**](WidgetMarker.md) | List of markers. | [optional] 

@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **precision** | **int** | Number of decimals to show. If not defined, the widget uses the raw value. | [optional] 
 **text_align** | [**widget_text_align.WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
 **unit** | **str** | Unit to display with the value. | [optional] 
+**custom_links** | [**[widget_custom_link.WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
 **group** | **[str]** | List of tag prefixes to group by. | [optional] 
 **group_by** | **[str]** | List of tag prefixes to group by in the case of a cluster check. | [optional] 
 **tags** | **[str]** | List of tags used to filter the groups reporting a cluster check. | [optional] 

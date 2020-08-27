@@ -393,6 +393,7 @@ from datadog_api_client.v1.model.widget_color_preference import WidgetColorPrefe
 from datadog_api_client.v1.model.widget_comparator import WidgetComparator
 from datadog_api_client.v1.model.widget_compare_to import WidgetCompareTo
 from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
+from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
 from datadog_api_client.v1.model.widget_definition import WidgetDefinition
 from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
 from datadog_api_client.v1.model.widget_event import WidgetEvent

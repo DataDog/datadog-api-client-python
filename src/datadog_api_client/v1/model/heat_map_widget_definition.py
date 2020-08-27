@@ -44,6 +44,11 @@ except ImportError:
     widget_axis = sys.modules[
         'datadog_api_client.v1.model.widget_axis']
 try:
+    from datadog_api_client.v1.model import widget_custom_link
+except ImportError:
+    widget_custom_link = sys.modules[
+        'datadog_api_client.v1.model.widget_custom_link']
+try:
     from datadog_api_client.v1.model import widget_event
 except ImportError:
     widget_event = sys.modules[
@@ -107,6 +112,7 @@ class HeatMapWidgetDefinition(ModelNormal):
         return {
             'requests': ([heat_map_widget_request.HeatMapWidgetRequest],),  # noqa: E501
             'type': (heat_map_widget_definition_type.HeatMapWidgetDefinitionType,),  # noqa: E501
+            'custom_links': ([widget_custom_link.WidgetCustomLink],),  # noqa: E501
             'events': ([widget_event.WidgetEvent],),  # noqa: E501
             'legend_size': (str,),  # noqa: E501
             'show_legend': (bool,),  # noqa: E501
@@ -124,6 +130,7 @@ class HeatMapWidgetDefinition(ModelNormal):
     attribute_map = {
         'requests': 'requests',  # noqa: E501
         'type': 'type',  # noqa: E501
+        'custom_links': 'custom_links',  # noqa: E501
         'events': 'events',  # noqa: E501
         'legend_size': 'legend_size',  # noqa: E501
         'show_legend': 'show_legend',  # noqa: E501
@@ -184,6 +191,7 @@ class HeatMapWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            custom_links ([widget_custom_link.WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             events ([widget_event.WidgetEvent]): List of widget events.. [optional]  # noqa: E501
             legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
             show_legend (bool): Whether or not to display the legend on this widget.. [optional]  # noqa: E501

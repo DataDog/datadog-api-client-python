@@ -44,6 +44,11 @@ except ImportError:
     host_map_widget_definition_type = sys.modules[
         'datadog_api_client.v1.model.host_map_widget_definition_type']
 try:
+    from datadog_api_client.v1.model import widget_custom_link
+except ImportError:
+    widget_custom_link = sys.modules[
+        'datadog_api_client.v1.model.widget_custom_link']
+try:
     from datadog_api_client.v1.model import widget_node_type
 except ImportError:
     widget_node_type = sys.modules[
@@ -102,6 +107,7 @@ class HostMapWidgetDefinition(ModelNormal):
         return {
             'requests': (host_map_widget_definition_requests.HostMapWidgetDefinitionRequests,),  # noqa: E501
             'type': (host_map_widget_definition_type.HostMapWidgetDefinitionType,),  # noqa: E501
+            'custom_links': ([widget_custom_link.WidgetCustomLink],),  # noqa: E501
             'group': ([str],),  # noqa: E501
             'no_group_hosts': (bool,),  # noqa: E501
             'no_metric_hosts': (bool,),  # noqa: E501
@@ -121,6 +127,7 @@ class HostMapWidgetDefinition(ModelNormal):
     attribute_map = {
         'requests': 'requests',  # noqa: E501
         'type': 'type',  # noqa: E501
+        'custom_links': 'custom_links',  # noqa: E501
         'group': 'group',  # noqa: E501
         'no_group_hosts': 'no_group_hosts',  # noqa: E501
         'no_metric_hosts': 'no_metric_hosts',  # noqa: E501
@@ -183,6 +190,7 @@ class HostMapWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            custom_links ([widget_custom_link.WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
             no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]  # noqa: E501
             no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]  # noqa: E501
