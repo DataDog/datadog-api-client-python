@@ -774,7 +774,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_user**
-> update_user(user_id)
+> user_response.UserResponse update_user(user_id)
 
 Update a user
 
@@ -791,6 +791,7 @@ import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model import user_update_request
 from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model import user_response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -833,7 +834,8 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update a user
-        api_instance.update_user(user_id)
+        api_response = api_instance.update_user(user_id)
+        pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling UsersApi->update_user: %s\n" % e)
 
@@ -841,7 +843,8 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Update a user
-        api_instance.update_user(user_id, body=body)
+        api_response = api_instance.update_user(user_id, body=body)
+        pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling UsersApi->update_user: %s\n" % e)
 ```
@@ -855,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**user_response.UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -869,7 +872,8 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | OK |  -  |
+**200** | OK |  -  |
+**204** | No changes |  -  |
 **400** | Bad Request |  -  |
 **403** | Authentication error |  -  |
 **404** | Not found |  -  |

@@ -1063,7 +1063,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                None
+                user_response.UserResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1092,7 +1092,7 @@ class UsersApi(object):
 
         self.update_user = Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (user_response.UserResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'

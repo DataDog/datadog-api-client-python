@@ -7,30 +7,37 @@ Feature: Users
     And a valid "appKeyAuth" key in the system
     And an instance of "Users" API
 
-  @generated @skip
   Scenario: Send invitation emails returns "OK" response
-    Given new "SendInvitations" request
-    And body {}
+    Given there is a valid "user" in the system
+    And new "SendInvitations" request
+    And body {"data": [{"type": "user_invitations", "relationships": {"user": {"data": {"type": "{{ user.data.type }}", "id": "{{ user.data.id }}"}}}}]}
     When the request is sent
     Then the response status is 201 OK
 
-  @generated @skip
   Scenario: Get a user invitation returns "OK" response
-    Given new "GetInvitation" request
-    And request contains "user_invitation_uuid" parameter from "<PATH>"
+    Given there is a valid "user" in the system
+    And the "user" has a "user_invitation"
+    And new "GetInvitation" request
+    And request contains "user_invitation_uuid" parameter from "user_invitation.id"
     When the request is sent
     Then the response status is 200 OK
 
   Scenario: List all users returns "OK" response
-    Given new "ListUsers" request
+    Given there is a valid "user" in the system
+    And new "ListUsers" request
+    And request contains "filter" parameter from "user.data.attributes.email"
     When the request is sent
     Then the response status is 200 OK
+    And expect response "meta.page.total_filtered_count" to equal to 1
 
   Scenario: Create a user returns "OK" response
     Given new "CreateUser" request
     And body {"data": {"type": "users", "attributes": {"name": "Datadog API Client Python", "email": "{{ unique }}@datadoghq.com"}}}
     When the request is sent
     Then the response status is 201 OK
+    And expect response "data.attributes.email" to equal to "{{ unique_lower }}@datadoghq.com"
+    And expect response "data.attributes.name" to equal to "Datadog API Client Python"
+    And expect response "data.attributes.disabled" to be false
 
   Scenario: Disable a user returns "OK" response
     Given there is a valid "user" in the system
@@ -50,9 +57,13 @@ Feature: Users
     Given there is a valid "user" in the system
     And new "UpdateUser" request
     And request contains "user_id" parameter from "user.data.id"
-    And body {"data": {"id": "{{ user.data.id }}", "type": "users", "attributes": {"name": "updated"}}}
+    And body {"data": {"id": "{{ user.data.id }}", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
     When the request is sent
-    Then the response status is 204 OK
+    Then the response status is 200 OK
+    And expect response "data.attributes.email" to equal value from "user.data.attributes.email"
+    And expect response "data.attributes.title" to equal value from "user.data.attributes.title"
+    And expect response "data.attributes.name" to equal to "updated"
+    And expect response "data.attributes.disabled" to equal to true
 
   Scenario: Get a user permissions returns "OK" response
     Given there is a valid "user" in the system
