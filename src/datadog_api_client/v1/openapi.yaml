@@ -10341,6 +10341,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Authentication Error
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Conflict Error
       summary: Delete an AWS integration
       tags:
       - AWS Integration
@@ -10394,7 +10400,9 @@ paths:
 
         Using the `POST` method updates your integration configuration
 
-        by adding your new configuration to the existing one in your Datadog organization.'
+        by adding your new configuration to the existing one in your Datadog organization.
+
+        A unique AWS Account ID for role based authentication.'
       operationId: CreateAWSAccount
       requestBody:
         content:
@@ -10422,6 +10430,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Authentication Error
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Conflict Error
       summary: Create an AWS integration
       tags:
       - AWS Integration
@@ -10478,6 +10492,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Authentication Error
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Conflict Error
       summary: Update an AWS integration
       tags:
       - AWS Integration
