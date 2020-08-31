@@ -503,7 +503,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK for get role |  -  |
+**200** | OK |  -  |
 **403** | Authentication error |  -  |
 **404** | Not found |  -  |
 
