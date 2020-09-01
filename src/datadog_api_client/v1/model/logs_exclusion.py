@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import logs_exclusion_filter
-except ImportError:
-    logs_exclusion_filter = sys.modules[
-        'datadog_api_client.v1.model.logs_exclusion_filter']
+
+def lazy_import():
+    from datadog_api_client.v1.model.logs_exclusion_filter import LogsExclusionFilter
+    globals()['LogsExclusionFilter'] = LogsExclusionFilter
 
 
 class LogsExclusion(ModelNormal):
@@ -72,22 +67,24 @@ class LogsExclusion(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'name': (str,),  # noqa: E501
-            'filter': (logs_exclusion_filter.LogsExclusionFilter,),  # noqa: E501
+            'filter': (LogsExclusionFilter,),  # noqa: E501
             'is_enabled': (bool,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'name': 'name',  # noqa: E501
@@ -108,7 +105,7 @@ class LogsExclusion(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, name, *args, **kwargs):  # noqa: E501
-        """logs_exclusion.LogsExclusion - a model defined in OpenAPI
+        """LogsExclusion - a model defined in OpenAPI
 
         Args:
             name (str): Name of the index exclusion filter.
@@ -144,7 +141,7 @@ class LogsExclusion(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            filter (logs_exclusion_filter.LogsExclusionFilter): [optional]  # noqa: E501
+            filter (LogsExclusionFilter): [optional]  # noqa: E501
             is_enabled (bool): Whether or not the exclusion filter is active.. [optional]  # noqa: E501
         """
 
@@ -172,7 +169,7 @@ class LogsExclusion(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

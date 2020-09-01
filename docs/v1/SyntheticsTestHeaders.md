@@ -1,4 +1,4 @@
-# synthetics_test_headers.SyntheticsTestHeaders
+# SyntheticsTestHeaders
 
 Headers to include when performing the test.
 ## Properties

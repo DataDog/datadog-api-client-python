@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import api_key
-except ImportError:
-    api_key = sys.modules[
-        'datadog_api_client.v1.model.api_key']
-try:
-    from datadog_api_client.v1.model import application_key
-except ImportError:
-    application_key = sys.modules[
-        'datadog_api_client.v1.model.application_key']
-try:
-    from datadog_api_client.v1.model import organization
-except ImportError:
-    organization = sys.modules[
-        'datadog_api_client.v1.model.organization']
-try:
-    from datadog_api_client.v1.model import user
-except ImportError:
-    user = sys.modules[
-        'datadog_api_client.v1.model.user']
+
+def lazy_import():
+    from datadog_api_client.v1.model.api_key import ApiKey
+    from datadog_api_client.v1.model.application_key import ApplicationKey
+    from datadog_api_client.v1.model.organization import Organization
+    from datadog_api_client.v1.model.user import User
+    globals()['ApiKey'] = ApiKey
+    globals()['ApplicationKey'] = ApplicationKey
+    globals()['Organization'] = Organization
+    globals()['User'] = User
 
 
 class OrganizationCreateResponse(ModelNormal):
@@ -87,23 +73,25 @@ class OrganizationCreateResponse(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'api_key': (api_key.ApiKey,),  # noqa: E501
-            'application_key': (application_key.ApplicationKey,),  # noqa: E501
-            'org': (organization.Organization,),  # noqa: E501
-            'user': (user.User,),  # noqa: E501
+            'api_key': (ApiKey,),  # noqa: E501
+            'application_key': (ApplicationKey,),  # noqa: E501
+            'org': (Organization,),  # noqa: E501
+            'user': (User,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'api_key': 'api_key',  # noqa: E501
@@ -125,7 +113,7 @@ class OrganizationCreateResponse(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """organization_create_response.OrganizationCreateResponse - a model defined in OpenAPI
+        """OrganizationCreateResponse - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -158,10 +146,10 @@ class OrganizationCreateResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            api_key (api_key.ApiKey): [optional]  # noqa: E501
-            application_key (application_key.ApplicationKey): [optional]  # noqa: E501
-            org (organization.Organization): [optional]  # noqa: E501
-            user (user.User): [optional]  # noqa: E501
+            api_key (ApiKey): [optional]  # noqa: E501
+            application_key (ApplicationKey): [optional]  # noqa: E501
+            org (Organization): [optional]  # noqa: E501
+            user (User): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -187,7 +175,7 @@ class OrganizationCreateResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

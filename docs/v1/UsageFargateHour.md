@@ -1,4 +1,4 @@
-# usage_fargate_hour.UsageFargateHour
+# UsageFargateHour
 
 Number of Fargate tasks run and hourly usage.
 ## Properties

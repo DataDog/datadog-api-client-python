@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,41 +21,23 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import host_map_widget_definition_requests
-except ImportError:
-    host_map_widget_definition_requests = sys.modules[
-        'datadog_api_client.v1.model.host_map_widget_definition_requests']
-try:
-    from datadog_api_client.v1.model import host_map_widget_definition_style
-except ImportError:
-    host_map_widget_definition_style = sys.modules[
-        'datadog_api_client.v1.model.host_map_widget_definition_style']
-try:
-    from datadog_api_client.v1.model import host_map_widget_definition_type
-except ImportError:
-    host_map_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.host_map_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_custom_link
-except ImportError:
-    widget_custom_link = sys.modules[
-        'datadog_api_client.v1.model.widget_custom_link']
-try:
-    from datadog_api_client.v1.model import widget_node_type
-except ImportError:
-    widget_node_type = sys.modules[
-        'datadog_api_client.v1.model.widget_node_type']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+
+def lazy_import():
+    from datadog_api_client.v1.model.host_map_widget_definition_requests import HostMapWidgetDefinitionRequests
+    from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
+    from datadog_api_client.v1.model.host_map_widget_definition_type import HostMapWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+    from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    globals()['HostMapWidgetDefinitionRequests'] = HostMapWidgetDefinitionRequests
+    globals()['HostMapWidgetDefinitionStyle'] = HostMapWidgetDefinitionStyle
+    globals()['HostMapWidgetDefinitionType'] = HostMapWidgetDefinitionType
+    globals()['WidgetCustomLink'] = WidgetCustomLink
+    globals()['WidgetNodeType'] = WidgetNodeType
+    globals()['WidgetTextAlign'] = WidgetTextAlign
 
 
 class HostMapWidgetDefinition(ModelNormal):
@@ -97,32 +77,34 @@ class HostMapWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'requests': (host_map_widget_definition_requests.HostMapWidgetDefinitionRequests,),  # noqa: E501
-            'type': (host_map_widget_definition_type.HostMapWidgetDefinitionType,),  # noqa: E501
-            'custom_links': ([widget_custom_link.WidgetCustomLink],),  # noqa: E501
+            'requests': (HostMapWidgetDefinitionRequests,),  # noqa: E501
+            'type': (HostMapWidgetDefinitionType,),  # noqa: E501
+            'custom_links': ([WidgetCustomLink],),  # noqa: E501
             'group': ([str],),  # noqa: E501
             'no_group_hosts': (bool,),  # noqa: E501
             'no_metric_hosts': (bool,),  # noqa: E501
-            'node_type': (widget_node_type.WidgetNodeType,),  # noqa: E501
+            'node_type': (WidgetNodeType,),  # noqa: E501
             'notes': (str,),  # noqa: E501
             'scope': ([str],),  # noqa: E501
-            'style': (host_map_widget_definition_style.HostMapWidgetDefinitionStyle,),  # noqa: E501
+            'style': (HostMapWidgetDefinitionStyle,),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'requests': 'requests',  # noqa: E501
@@ -153,11 +135,11 @@ class HostMapWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, requests, type, *args, **kwargs):  # noqa: E501
-        """host_map_widget_definition.HostMapWidgetDefinition - a model defined in OpenAPI
+        """HostMapWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            requests (host_map_widget_definition_requests.HostMapWidgetDefinitionRequests):
-            type (host_map_widget_definition_type.HostMapWidgetDefinitionType):
+            requests (HostMapWidgetDefinitionRequests):
+            type (HostMapWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -190,16 +172,16 @@ class HostMapWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            custom_links ([widget_custom_link.WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
+            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
             no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]  # noqa: E501
             no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]  # noqa: E501
-            node_type (widget_node_type.WidgetNodeType): [optional]  # noqa: E501
+            node_type (WidgetNodeType): [optional]  # noqa: E501
             notes (str): Notes on the title.. [optional]  # noqa: E501
             scope ([str]): List of tags used to filter the map.. [optional]  # noqa: E501
-            style (host_map_widget_definition_style.HostMapWidgetDefinitionStyle): [optional]  # noqa: E501
+            style (HostMapWidgetDefinitionStyle): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
@@ -228,7 +210,7 @@ class HostMapWidgetDefinition(ModelNormal):
 
         self.requests = requests
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

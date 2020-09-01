@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import downtime_recurrence
-except ImportError:
-    downtime_recurrence = sys.modules[
-        'datadog_api_client.v1.model.downtime_recurrence']
+
+def lazy_import():
+    from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
+    globals()['DowntimeRecurrence'] = DowntimeRecurrence
 
 
 class Downtime(ModelNormal):
@@ -81,13 +76,14 @@ class Downtime(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'active': (bool,),  # noqa: E501
             'canceled': (int, none_type,),  # noqa: E501
@@ -100,7 +96,7 @@ class Downtime(ModelNormal):
             'monitor_id': (int, none_type,),  # noqa: E501
             'monitor_tags': ([str],),  # noqa: E501
             'parent_id': (int, none_type,),  # noqa: E501
-            'recurrence': (downtime_recurrence.DowntimeRecurrence, none_type,),  # noqa: E501
+            'recurrence': (DowntimeRecurrence,),  # noqa: E501
             'scope': ([str],),  # noqa: E501
             'start': (int,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
@@ -110,6 +106,7 @@ class Downtime(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'active': 'active',  # noqa: E501
@@ -143,7 +140,7 @@ class Downtime(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """downtime.Downtime - a model defined in OpenAPI
+        """Downtime - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -187,7 +184,7 @@ class Downtime(ModelNormal):
             monitor_id (int, none_type): A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.. [optional]  # noqa: E501
             monitor_tags ([str]): A comma-separated list of monitor tags. For example, tags that are applied directly to monitors, not tags that are used in monitor queries (which are filtered by the scope parameter), to which the downtime applies. The resulting downtime applies to monitors that match ALL provided monitor tags. For example, &#x60;service:postgres&#x60; **AND** &#x60;team:frontend&#x60;.. [optional]  # noqa: E501
             parent_id (int, none_type): ID of the parent Downtime.. [optional]  # noqa: E501
-            recurrence (downtime_recurrence.DowntimeRecurrence, none_type): [optional]  # noqa: E501
+            recurrence (DowntimeRecurrence): [optional]  # noqa: E501
             scope ([str]): The scope(s) to which the downtime applies. For example, &#x60;host:app2&#x60;. Provide multiple scopes as a comma-separated list like &#x60;env:dev,env:prod&#x60;. The resulting downtime applies to sources that matches ALL provided scopes (&#x60;env:dev&#x60; **AND** &#x60;env:prod&#x60;).. [optional]  # noqa: E501
             start (int): POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.. [optional]  # noqa: E501
             timezone (str): The timezone for the downtime.. [optional]  # noqa: E501
@@ -217,7 +214,7 @@ class Downtime(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

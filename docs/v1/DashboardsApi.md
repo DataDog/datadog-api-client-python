@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_dashboard**
-> dashboard.Dashboard create_dashboard(body)
+> Dashboard create_dashboard(body)
 
 Create a new dashboard
 
@@ -23,12 +23,11 @@ Create a dashboard using the specified options.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import dashboards_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import dashboard
+from datadog_api_client.v1.model.dashboard import Dashboard
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -65,8 +64,51 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboards_api.DashboardsApi(api_client)
-    body = dashboard.Dashboard() # dashboard.Dashboard | Create a dashboard request body.
-    
+    body = Dashboard(
+        author_handle="test@datadoghq.com",
+        created_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        description="description_example",
+        id="123-abc-456",
+        is_read_only=False,
+        layout_type=DashboardLayoutType("ordered"),
+        modified_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        notify_list=[
+            "notify_list_example",
+        ],
+        template_variable_presets=[
+            DashboardTemplateVariablePreset(
+                name="name_example",
+                template_variables=[
+                    DashboardTemplateVariablePresetValue(
+                        name="name_example",
+                        value="value_example",
+                    ),
+                ],
+            ),
+        ],
+        template_variables=[
+            DashboardTemplateVariables(
+                default="my-host",
+                name="host1",
+                prefix="host",
+            ),
+        ],
+        title="title_example",
+        url="/dashboard/123-abc-456/example-dashboard-title",
+        widgets=[
+            Widget(
+                definition=WidgetDefinition(),
+                id=1,
+                layout=WidgetLayout(
+                    height=0,
+                    width=0,
+                    x=0,
+                    y=0,
+                ),
+            ),
+        ],
+    ) # Dashboard | Create a dashboard request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Create a new dashboard
@@ -80,11 +122,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dashboard.Dashboard**](Dashboard.md)| Create a dashboard request body. |
+ **body** | [**Dashboard**](Dashboard.md)| Create a dashboard request body. |
 
 ### Return type
 
-[**dashboard.Dashboard**](Dashboard.md)
+[**Dashboard**](Dashboard.md)
 
 ### Authorization
 
@@ -105,7 +147,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_dashboard**
-> dashboard_delete_response.DashboardDeleteResponse delete_dashboard(dashboard_id)
+> DashboardDeleteResponse delete_dashboard(dashboard_id)
 
 Delete a dashboard
 
@@ -116,12 +158,11 @@ Delete a dashboard using the specified ID.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import dashboards_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import dashboard_delete_response
+from datadog_api_client.v1.model.dashboard_delete_response import DashboardDeleteResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -158,8 +199,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboards_api.DashboardsApi(api_client)
-    dashboard_id = 'dashboard_id_example' # str | The ID of the dashboard.
-    
+    dashboard_id = "dashboard_id_example" # str | The ID of the dashboard.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete a dashboard
@@ -177,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**dashboard_delete_response.DashboardDeleteResponse**](DashboardDeleteResponse.md)
+[**DashboardDeleteResponse**](DashboardDeleteResponse.md)
 
 ### Authorization
 
@@ -198,7 +239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_dashboard**
-> dashboard.Dashboard get_dashboard(dashboard_id)
+> Dashboard get_dashboard(dashboard_id)
 
 Get a dashboard
 
@@ -209,12 +250,11 @@ Get a dashboard using the specified ID.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import dashboards_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import dashboard
+from datadog_api_client.v1.model.dashboard import Dashboard
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -251,8 +291,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboards_api.DashboardsApi(api_client)
-    dashboard_id = 'dashboard_id_example' # str | The ID of the dashboard.
-    
+    dashboard_id = "dashboard_id_example" # str | The ID of the dashboard.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a dashboard
@@ -270,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**dashboard.Dashboard**](Dashboard.md)
+[**Dashboard**](Dashboard.md)
 
 ### Authorization
 
@@ -291,7 +331,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_dashboards**
-> dashboard_summary.DashboardSummary list_dashboards()
+> DashboardSummary list_dashboards()
 
 Get all dashboards
 
@@ -302,12 +342,11 @@ Get all dashboards.  **Note**: This query will only return custom created or clo
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import dashboards_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import dashboard_summary
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -344,7 +383,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboards_api.DashboardsApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get all dashboards
@@ -359,7 +398,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**dashboard_summary.DashboardSummary**](DashboardSummary.md)
+[**DashboardSummary**](DashboardSummary.md)
 
 ### Authorization
 
@@ -379,7 +418,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_dashboard**
-> dashboard.Dashboard update_dashboard(dashboard_id, body)
+> Dashboard update_dashboard(dashboard_id, body)
 
 Update a dashboard
 
@@ -390,12 +429,11 @@ Update a dashboard using the specified ID.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import dashboards_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import dashboard
+from datadog_api_client.v1.model.dashboard import Dashboard
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -432,9 +470,52 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboards_api.DashboardsApi(api_client)
-    dashboard_id = 'dashboard_id_example' # str | The ID of the dashboard.
-    body = dashboard.Dashboard() # dashboard.Dashboard | Update Dashboard request body.
-    
+    dashboard_id = "dashboard_id_example" # str | The ID of the dashboard.
+    body = Dashboard(
+        author_handle="test@datadoghq.com",
+        created_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        description="description_example",
+        id="123-abc-456",
+        is_read_only=False,
+        layout_type=DashboardLayoutType("ordered"),
+        modified_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        notify_list=[
+            "notify_list_example",
+        ],
+        template_variable_presets=[
+            DashboardTemplateVariablePreset(
+                name="name_example",
+                template_variables=[
+                    DashboardTemplateVariablePresetValue(
+                        name="name_example",
+                        value="value_example",
+                    ),
+                ],
+            ),
+        ],
+        template_variables=[
+            DashboardTemplateVariables(
+                default="my-host",
+                name="host1",
+                prefix="host",
+            ),
+        ],
+        title="title_example",
+        url="/dashboard/123-abc-456/example-dashboard-title",
+        widgets=[
+            Widget(
+                definition=WidgetDefinition(),
+                id=1,
+                layout=WidgetLayout(
+                    height=0,
+                    width=0,
+                    x=0,
+                    y=0,
+                ),
+            ),
+        ],
+    ) # Dashboard | Update Dashboard request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Update a dashboard
@@ -449,11 +530,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dashboard_id** | **str**| The ID of the dashboard. |
- **body** | [**dashboard.Dashboard**](Dashboard.md)| Update Dashboard request body. |
+ **body** | [**Dashboard**](Dashboard.md)| Update Dashboard request body. |
 
 ### Return type
 
-[**dashboard.Dashboard**](Dashboard.md)
+[**Dashboard**](Dashboard.md)
 
 ### Authorization
 

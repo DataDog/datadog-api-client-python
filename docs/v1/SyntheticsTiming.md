@@ -1,4 +1,4 @@
-# synthetics_timing.SyntheticsTiming
+# SyntheticsTiming
 
 Object containing all metrics and their values collected for a Synthetic API test. Learn more about those metrics in [Synthetics documentation](https://docs.datadoghq.com/synthetics/#metrics).
 ## Properties

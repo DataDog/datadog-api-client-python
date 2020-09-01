@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_pager_duty_integration_service**
-> pager_duty_service_name.PagerDutyServiceName create_pager_duty_integration_service(body)
+> PagerDutyServiceName create_pager_duty_integration_service(body)
 
 Create a new service object
 
@@ -22,13 +22,12 @@ Create a new service object in the PagerDuty integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import pager_duty_integration_api
-from datadog_api_client.v1.model import pager_duty_service_name
-from datadog_api_client.v1.model import pager_duty_service
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
+from datadog_api_client.v1.model.pager_duty_service import PagerDutyService
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -65,8 +64,11 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pager_duty_integration_api.PagerDutyIntegrationApi(api_client)
-    body = pager_duty_service.PagerDutyService() # pager_duty_service.PagerDutyService | Create a new service object request body.
-    
+    body = PagerDutyService(
+        service_key="service_key_example",
+        service_name="service_name_example",
+    ) # PagerDutyService | Create a new service object request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Create a new service object
@@ -80,11 +82,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**pager_duty_service.PagerDutyService**](PagerDutyService.md)| Create a new service object request body. |
+ **body** | [**PagerDutyService**](PagerDutyService.md)| Create a new service object request body. |
 
 ### Return type
 
-[**pager_duty_service_name.PagerDutyServiceName**](PagerDutyServiceName.md)
+[**PagerDutyServiceName**](PagerDutyServiceName.md)
 
 ### Authorization
 
@@ -116,11 +118,10 @@ Delete a single service object in the Datadog-PagerDuty integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import pager_duty_integration_api
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -157,8 +158,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pager_duty_integration_api.PagerDutyIntegrationApi(api_client)
-    service_name = 'service_name_example' # str | The service name
-    
+    service_name = "service_name_example" # str | The service name
+
     # example passing only required values which don't have defaults set
     try:
         # Delete a single service object
@@ -196,7 +197,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_pager_duty_integration_service**
-> pager_duty_service_name.PagerDutyServiceName get_pager_duty_integration_service(service_name)
+> PagerDutyServiceName get_pager_duty_integration_service(service_name)
 
 Get a single service object
 
@@ -207,12 +208,11 @@ Get service name in the Datadog-PagerDuty integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import pager_duty_integration_api
-from datadog_api_client.v1.model import pager_duty_service_name
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -249,8 +249,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pager_duty_integration_api.PagerDutyIntegrationApi(api_client)
-    service_name = 'service_name_example' # str | The service name.
-    
+    service_name = "service_name_example" # str | The service name.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a single service object
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**pager_duty_service_name.PagerDutyServiceName**](PagerDutyServiceName.md)
+[**PagerDutyServiceName**](PagerDutyServiceName.md)
 
 ### Authorization
 
@@ -300,12 +300,11 @@ Update a single service object in the Datadog-PagerDuty integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import pager_duty_integration_api
-from datadog_api_client.v1.model import pager_duty_service_key
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.pager_duty_service_key import PagerDutyServiceKey
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -342,9 +341,11 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pager_duty_integration_api.PagerDutyIntegrationApi(api_client)
-    service_name = 'service_name_example' # str | The service name
-    body = pager_duty_service_key.PagerDutyServiceKey() # pager_duty_service_key.PagerDutyServiceKey | Update an existing service object request body.
-    
+    service_name = "service_name_example" # str | The service name
+    body = PagerDutyServiceKey(
+        service_key="service_key_example",
+    ) # PagerDutyServiceKey | Update an existing service object request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Update a single service object
@@ -358,7 +359,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_name** | **str**| The service name |
- **body** | [**pager_duty_service_key.PagerDutyServiceKey**](PagerDutyServiceKey.md)| Update an existing service object request body. |
+ **body** | [**PagerDutyServiceKey**](PagerDutyServiceKey.md)| Update an existing service object request body. |
 
 ### Return type
 

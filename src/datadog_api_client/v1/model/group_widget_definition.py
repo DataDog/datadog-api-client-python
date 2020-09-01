@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import group_widget_definition_type
-except ImportError:
-    group_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.group_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget
-except ImportError:
-    widget = sys.modules[
-        'datadog_api_client.v1.model.widget']
-try:
-    from datadog_api_client.v1.model import widget_layout_type
-except ImportError:
-    widget_layout_type = sys.modules[
-        'datadog_api_client.v1.model.widget_layout_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.group_widget_definition_type import GroupWidgetDefinitionType
+    from datadog_api_client.v1.model.widget import Widget
+    from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
+    globals()['GroupWidgetDefinitionType'] = GroupWidgetDefinitionType
+    globals()['Widget'] = Widget
+    globals()['WidgetLayoutType'] = WidgetLayoutType
 
 
 class GroupWidgetDefinition(ModelNormal):
@@ -82,23 +71,25 @@ class GroupWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'layout_type': (widget_layout_type.WidgetLayoutType,),  # noqa: E501
-            'type': (group_widget_definition_type.GroupWidgetDefinitionType,),  # noqa: E501
-            'widgets': ([widget.Widget],),  # noqa: E501
+            'layout_type': (WidgetLayoutType,),  # noqa: E501
+            'type': (GroupWidgetDefinitionType,),  # noqa: E501
+            'widgets': ([Widget],),  # noqa: E501
             'title': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'layout_type': 'layout_type',  # noqa: E501
@@ -120,12 +111,12 @@ class GroupWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, layout_type, type, widgets, *args, **kwargs):  # noqa: E501
-        """group_widget_definition.GroupWidgetDefinition - a model defined in OpenAPI
+        """GroupWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            layout_type (widget_layout_type.WidgetLayoutType):
-            type (group_widget_definition_type.GroupWidgetDefinitionType):
-            widgets ([widget.Widget]): List of widget groups.
+            layout_type (WidgetLayoutType):
+            type (GroupWidgetDefinitionType):
+            widgets ([Widget]): List of widget groups.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -187,7 +178,7 @@ class GroupWidgetDefinition(ModelNormal):
         self.layout_type = layout_type
         self.type = type
         self.widgets = widgets
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

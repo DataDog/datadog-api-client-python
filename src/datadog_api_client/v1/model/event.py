@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import event_alert_type
-except ImportError:
-    event_alert_type = sys.modules[
-        'datadog_api_client.v1.model.event_alert_type']
-try:
-    from datadog_api_client.v1.model import event_priority
-except ImportError:
-    event_priority = sys.modules[
-        'datadog_api_client.v1.model.event_priority']
+
+def lazy_import():
+    from datadog_api_client.v1.model.event_alert_type import EventAlertType
+    from datadog_api_client.v1.model.event_priority import EventPriority
+    globals()['EventAlertType'] = EventAlertType
+    globals()['EventPriority'] = EventPriority
 
 
 class Event(ModelNormal):
@@ -86,24 +78,25 @@ class Event(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'text': (str,),  # noqa: E501
             'title': (str,),  # noqa: E501
             'aggregation_key': (str,),  # noqa: E501
-            'alert_type': (event_alert_type.EventAlertType,),  # noqa: E501
+            'alert_type': (EventAlertType,),  # noqa: E501
             'date_happened': (int,),  # noqa: E501
             'device_name': (str,),  # noqa: E501
             'host': (str,),  # noqa: E501
             'id': (int,),  # noqa: E501
             'payload': (str,),  # noqa: E501
-            'priority': (event_priority.EventPriority,),  # noqa: E501
+            'priority': (EventPriority,),  # noqa: E501
             'related_event_id': (int,),  # noqa: E501
             'source_type_name': (str,),  # noqa: E501
             'tags': ([str],),  # noqa: E501
@@ -113,6 +106,7 @@ class Event(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'text': 'text',  # noqa: E501
@@ -144,7 +138,7 @@ class Event(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, text, title, *args, **kwargs):  # noqa: E501
-        """event.Event - a model defined in OpenAPI
+        """Event - a model defined in OpenAPI
 
         Args:
             text (str): The body of the event. Limited to 4000 characters. The text supports markdown. Use &#x60;msg_text&#x60; with the Datadog Ruby library.
@@ -182,13 +176,13 @@ class Event(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregation_key (str): An arbitrary string to use for aggregation. Limited to 100 characters. If you specify a key, all events using that key are grouped together in the Event Stream.. [optional]  # noqa: E501
-            alert_type (event_alert_type.EventAlertType): [optional]  # noqa: E501
+            alert_type (EventAlertType): [optional]  # noqa: E501
             date_happened (int): POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days.. [optional]  # noqa: E501
             device_name (str): A device name.. [optional]  # noqa: E501
             host (str): Host name to associate with the event. Any tags associated with the host are also applied to this event.. [optional]  # noqa: E501
             id (int): Integer ID of the event.. [optional]  # noqa: E501
             payload (str): Payload of the event.. [optional]  # noqa: E501
-            priority (event_priority.EventPriority): [optional]  # noqa: E501
+            priority (EventPriority): [optional]  # noqa: E501
             related_event_id (int): ID of the parent event. Must be sent as an integer (i.e. no quotes).. [optional]  # noqa: E501
             source_type_name (str): The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]  # noqa: E501
             tags ([str]): A list of tags to apply to the event.. [optional]  # noqa: E501
@@ -220,7 +214,7 @@ class Event(ModelNormal):
 
         self.text = text
         self.title = title
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import logs_lookup_processor_type
-except ImportError:
-    logs_lookup_processor_type = sys.modules[
-        'datadog_api_client.v1.model.logs_lookup_processor_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.logs_lookup_processor_type import LogsLookupProcessorType
+    globals()['LogsLookupProcessorType'] = LogsLookupProcessorType
 
 
 class LogsLookupProcessor(ModelNormal):
@@ -72,18 +67,19 @@ class LogsLookupProcessor(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'lookup_table': ([str],),  # noqa: E501
             'source': (str,),  # noqa: E501
             'target': (str,),  # noqa: E501
-            'type': (logs_lookup_processor_type.LogsLookupProcessorType,),  # noqa: E501
+            'type': (LogsLookupProcessorType,),  # noqa: E501
             'default_lookup': (str,),  # noqa: E501
             'is_enabled': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
@@ -92,6 +88,7 @@ class LogsLookupProcessor(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'lookup_table': 'lookup_table',  # noqa: E501
@@ -116,13 +113,13 @@ class LogsLookupProcessor(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, lookup_table, source, target, type, *args, **kwargs):  # noqa: E501
-        """logs_lookup_processor.LogsLookupProcessor - a model defined in OpenAPI
+        """LogsLookupProcessor - a model defined in OpenAPI
 
         Args:
             lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as &#x60;[\&quot;source_key1,target_value1\&quot;, \&quot;source_key2,target_value2\&quot;]&#x60;
             source (str): Source attribute used to perform the lookup.
             target (str): Name of the attribute that contains the corresponding value in the mapping list or the &#x60;default_lookup&#x60; if not found in the mapping list.
-            type (logs_lookup_processor_type.LogsLookupProcessorType):
+            type (LogsLookupProcessorType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -187,7 +184,7 @@ class LogsLookupProcessor(ModelNormal):
         self.source = source
         self.target = target
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

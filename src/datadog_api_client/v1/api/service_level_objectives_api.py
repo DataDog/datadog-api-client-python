@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,21 +15,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import check_can_delete_slo_response
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import slo_list_response
-from datadog_api_client.v1.model import service_level_objective_request
-from datadog_api_client.v1.model import slo_delete_response
-from datadog_api_client.v1.model import slo_bulk_delete
-from datadog_api_client.v1.model import slo_bulk_delete_response
-from datadog_api_client.v1.model import slo_response
-from datadog_api_client.v1.model import slo_history_response
-from datadog_api_client.v1.model import service_level_objective
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDeleteSLOResponse
+from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
+from datadog_api_client.v1.model.slo_bulk_delete_response import SLOBulkDeleteResponse
+from datadog_api_client.v1.model.slo_delete_response import SLODeleteResponse
+from datadog_api_client.v1.model.slo_history_response import SLOHistoryResponse
+from datadog_api_client.v1.model.slo_list_response import SLOListResponse
+from datadog_api_client.v1.model.slo_response import SLOResponse
+from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
+from datadog_api_client.v1.model.service_level_objective_request import ServiceLevelObjectiveRequest
 
 
 class ServiceLevelObjectivesApi(object):
@@ -88,7 +81,7 @@ class ServiceLevelObjectivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                check_can_delete_slo_response.CheckCanDeleteSLOResponse
+                CheckCanDeleteSLOResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -117,7 +110,7 @@ class ServiceLevelObjectivesApi(object):
 
         self.check_can_delete_slo = Endpoint(
             settings={
-                'response_type': (check_can_delete_slo_response.CheckCanDeleteSLOResponse,),
+                'response_type': (CheckCanDeleteSLOResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -184,7 +177,7 @@ class ServiceLevelObjectivesApi(object):
             >>> result = thread.get()
 
             Args:
-                body (service_level_objective_request.ServiceLevelObjectiveRequest): Service level objective request object.
+                body (ServiceLevelObjectiveRequest): Service level objective request object.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -208,7 +201,7 @@ class ServiceLevelObjectivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                slo_list_response.SLOListResponse
+                SLOListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -237,7 +230,7 @@ class ServiceLevelObjectivesApi(object):
 
         self.create_slo = Endpoint(
             settings={
-                'response_type': (slo_list_response.SLOListResponse,),
+                'response_type': (SLOListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -268,7 +261,7 @@ class ServiceLevelObjectivesApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (service_level_objective_request.ServiceLevelObjectiveRequest,),
+                        (ServiceLevelObjectiveRequest,),
                 },
                 'attribute_map': {
                 },
@@ -330,7 +323,7 @@ class ServiceLevelObjectivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                slo_delete_response.SLODeleteResponse
+                SLODeleteResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -359,7 +352,7 @@ class ServiceLevelObjectivesApi(object):
 
         self.delete_slo = Endpoint(
             settings={
-                'response_type': (slo_delete_response.SLODeleteResponse,),
+                'response_type': (SLODeleteResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -431,7 +424,7 @@ class ServiceLevelObjectivesApi(object):
             >>> result = thread.get()
 
             Args:
-                body (slo_bulk_delete.SLOBulkDelete): Delete multiple service level objective objects request body.
+                body (SLOBulkDelete): Delete multiple service level objective objects request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -455,7 +448,7 @@ class ServiceLevelObjectivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                slo_bulk_delete_response.SLOBulkDeleteResponse
+                SLOBulkDeleteResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -484,7 +477,7 @@ class ServiceLevelObjectivesApi(object):
 
         self.delete_slo_timeframe_in_bulk = Endpoint(
             settings={
-                'response_type': (slo_bulk_delete_response.SLOBulkDeleteResponse,),
+                'response_type': (SLOBulkDeleteResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -515,7 +508,7 @@ class ServiceLevelObjectivesApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (slo_bulk_delete.SLOBulkDelete,),
+                        (SLOBulkDelete,),
                 },
                 'attribute_map': {
                 },
@@ -576,7 +569,7 @@ class ServiceLevelObjectivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                slo_response.SLOResponse
+                SLOResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -605,7 +598,7 @@ class ServiceLevelObjectivesApi(object):
 
         self.get_slo = Endpoint(
             settings={
-                'response_type': (slo_response.SLOResponse,),
+                'response_type': (SLOResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -700,7 +693,7 @@ class ServiceLevelObjectivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                slo_history_response.SLOHistoryResponse
+                SLOHistoryResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -733,7 +726,7 @@ class ServiceLevelObjectivesApi(object):
 
         self.get_slo_history = Endpoint(
             settings={
-                'response_type': (slo_history_response.SLOHistoryResponse,),
+                'response_type': (SLOHistoryResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -836,7 +829,7 @@ class ServiceLevelObjectivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                slo_list_response.SLOListResponse
+                SLOListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -865,7 +858,7 @@ class ServiceLevelObjectivesApi(object):
 
         self.list_sl_os = Endpoint(
             settings={
-                'response_type': (slo_list_response.SLOListResponse,),
+                'response_type': (SLOListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -934,7 +927,7 @@ class ServiceLevelObjectivesApi(object):
 
             Args:
                 slo_id (str): The ID of the service level objective object.
-                body (service_level_objective.ServiceLevelObjective): The edited service level objective request object.
+                body (ServiceLevelObjective): The edited service level objective request object.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -958,7 +951,7 @@ class ServiceLevelObjectivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                slo_list_response.SLOListResponse
+                SLOListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -989,7 +982,7 @@ class ServiceLevelObjectivesApi(object):
 
         self.update_slo = Endpoint(
             settings={
-                'response_type': (slo_list_response.SLOListResponse,),
+                'response_type': (SLOListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1024,7 +1017,7 @@ class ServiceLevelObjectivesApi(object):
                     'slo_id':
                         (str,),
                     'body':
-                        (service_level_objective.ServiceLevelObjective,),
+                        (ServiceLevelObjective,),
                 },
                 'attribute_map': {
                     'slo_id': 'slo_id',

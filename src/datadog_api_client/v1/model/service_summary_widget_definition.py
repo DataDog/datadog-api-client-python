@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,36 +21,21 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import service_summary_widget_definition_type
-except ImportError:
-    service_summary_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.service_summary_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_service_summary_display_format
-except ImportError:
-    widget_service_summary_display_format = sys.modules[
-        'datadog_api_client.v1.model.widget_service_summary_display_format']
-try:
-    from datadog_api_client.v1.model import widget_size_format
-except ImportError:
-    widget_size_format = sys.modules[
-        'datadog_api_client.v1.model.widget_size_format']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
-try:
-    from datadog_api_client.v1.model import widget_time
-except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+
+def lazy_import():
+    from datadog_api_client.v1.model.service_summary_widget_definition_type import ServiceSummaryWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_service_summary_display_format import WidgetServiceSummaryDisplayFormat
+    from datadog_api_client.v1.model.widget_size_format import WidgetSizeFormat
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    globals()['ServiceSummaryWidgetDefinitionType'] = ServiceSummaryWidgetDefinitionType
+    globals()['WidgetServiceSummaryDisplayFormat'] = WidgetServiceSummaryDisplayFormat
+    globals()['WidgetSizeFormat'] = WidgetSizeFormat
+    globals()['WidgetTextAlign'] = WidgetTextAlign
+    globals()['WidgetTime'] = WidgetTime
 
 
 class ServiceSummaryWidgetDefinition(ModelNormal):
@@ -92,35 +75,37 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'env': (str,),  # noqa: E501
             'service': (str,),  # noqa: E501
             'span_name': (str,),  # noqa: E501
-            'type': (service_summary_widget_definition_type.ServiceSummaryWidgetDefinitionType,),  # noqa: E501
-            'display_format': (widget_service_summary_display_format.WidgetServiceSummaryDisplayFormat,),  # noqa: E501
+            'type': (ServiceSummaryWidgetDefinitionType,),  # noqa: E501
+            'display_format': (WidgetServiceSummaryDisplayFormat,),  # noqa: E501
             'show_breakdown': (bool,),  # noqa: E501
             'show_distribution': (bool,),  # noqa: E501
             'show_errors': (bool,),  # noqa: E501
             'show_hits': (bool,),  # noqa: E501
             'show_latency': (bool,),  # noqa: E501
             'show_resource_list': (bool,),  # noqa: E501
-            'size_format': (widget_size_format.WidgetSizeFormat,),  # noqa: E501
-            'time': (widget_time.WidgetTime,),  # noqa: E501
+            'size_format': (WidgetSizeFormat,),  # noqa: E501
+            'time': (WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'env': 'env',  # noqa: E501
@@ -154,13 +139,13 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, env, service, span_name, type, *args, **kwargs):  # noqa: E501
-        """service_summary_widget_definition.ServiceSummaryWidgetDefinition - a model defined in OpenAPI
+        """ServiceSummaryWidgetDefinition - a model defined in OpenAPI
 
         Args:
             env (str): APM environment.
             service (str): APM service.
             span_name (str): APM span name.
-            type (service_summary_widget_definition_type.ServiceSummaryWidgetDefinitionType):
+            type (ServiceSummaryWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -193,17 +178,17 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            display_format (widget_service_summary_display_format.WidgetServiceSummaryDisplayFormat): [optional]  # noqa: E501
+            display_format (WidgetServiceSummaryDisplayFormat): [optional]  # noqa: E501
             show_breakdown (bool): Whether to show the latency breakdown or not.. [optional]  # noqa: E501
             show_distribution (bool): Whether to show the latency distribution or not.. [optional]  # noqa: E501
             show_errors (bool): Whether to show the error metrics or not.. [optional]  # noqa: E501
             show_hits (bool): Whether to show the hits metrics or not.. [optional]  # noqa: E501
             show_latency (bool): Whether to show the latency metrics or not.. [optional]  # noqa: E501
             show_resource_list (bool): Whether to show the resource list or not.. [optional]  # noqa: E501
-            size_format (widget_size_format.WidgetSizeFormat): [optional]  # noqa: E501
-            time (widget_time.WidgetTime): [optional]  # noqa: E501
+            size_format (WidgetSizeFormat): [optional]  # noqa: E501
+            time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
@@ -234,7 +219,7 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         self.service = service
         self.span_name = span_name
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

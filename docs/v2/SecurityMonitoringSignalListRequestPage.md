@@ -1,4 +1,4 @@
-# security_monitoring_signal_list_request_page.SecurityMonitoringSignalListRequestPage
+# SecurityMonitoringSignalListRequestPage
 
 The paging attributes for listing security signals.
 ## Properties

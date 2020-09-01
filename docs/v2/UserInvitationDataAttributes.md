@@ -1,4 +1,4 @@
-# user_invitation_data_attributes.UserInvitationDataAttributes
+# UserInvitationDataAttributes
 
 Attributes of a user invitation.
 ## Properties

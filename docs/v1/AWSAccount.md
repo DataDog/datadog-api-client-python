@@ -1,4 +1,4 @@
-# aws_account.AWSAccount
+# AWSAccount
 
 Returns the AWS account associated with this integration.
 ## Properties

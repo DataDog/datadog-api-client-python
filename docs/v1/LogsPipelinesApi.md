@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_logs_pipeline**
-> logs_pipeline.LogsPipeline create_logs_pipeline(body)
+> LogsPipeline create_logs_pipeline(body)
 
 Create a pipeline
 
@@ -25,13 +25,12 @@ Create a pipeline in your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_pipelines_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
-from datadog_api_client.v1.model import logs_pipeline
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
+from datadog_api_client.v1.model.logs_pipeline import LogsPipeline
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -68,8 +67,20 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
-    body = logs_pipeline.LogsPipeline() # logs_pipeline.LogsPipeline | Definition of the new pipeline.
-    
+    body = LogsPipeline(
+        filter=LogsFilter(
+            query="source:python",
+        ),
+        id="id_example",
+        is_enabled=True,
+        is_read_only=True,
+        name="name_example",
+        processors=[
+            LogsProcessor(),
+        ],
+        type="pipeline",
+    ) # LogsPipeline | Definition of the new pipeline.
+
     # example passing only required values which don't have defaults set
     try:
         # Create a pipeline
@@ -83,11 +94,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**logs_pipeline.LogsPipeline**](LogsPipeline.md)| Definition of the new pipeline. |
+ **body** | [**LogsPipeline**](LogsPipeline.md)| Definition of the new pipeline. |
 
 ### Return type
 
-[**logs_pipeline.LogsPipeline**](LogsPipeline.md)
+[**LogsPipeline**](LogsPipeline.md)
 
 ### Authorization
 
@@ -119,12 +130,11 @@ Delete a given pipeline from your organization. This endpoint takes no JSON argu
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_pipelines_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -161,8 +171,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
-    pipeline_id = 'pipeline_id_example' # str | ID of the pipeline to delete.
-    
+    pipeline_id = "pipeline_id_example" # str | ID of the pipeline to delete.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete a pipeline
@@ -200,7 +210,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_logs_pipeline**
-> logs_pipeline.LogsPipeline get_logs_pipeline(pipeline_id)
+> LogsPipeline get_logs_pipeline(pipeline_id)
 
 Get a pipeline
 
@@ -211,13 +221,12 @@ Get a specific pipeline from your organization. This endpoint takes no JSON argu
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_pipelines_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
-from datadog_api_client.v1.model import logs_pipeline
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
+from datadog_api_client.v1.model.logs_pipeline import LogsPipeline
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -254,8 +263,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
-    pipeline_id = 'pipeline_id_example' # str | ID of the pipeline to get.
-    
+    pipeline_id = "pipeline_id_example" # str | ID of the pipeline to get.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a pipeline
@@ -273,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**logs_pipeline.LogsPipeline**](LogsPipeline.md)
+[**LogsPipeline**](LogsPipeline.md)
 
 ### Authorization
 
@@ -294,7 +303,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_logs_pipeline_order**
-> logs_pipelines_order.LogsPipelinesOrder get_logs_pipeline_order()
+> LogsPipelinesOrder get_logs_pipeline_order()
 
 Get pipeline order
 
@@ -305,12 +314,11 @@ Get the current order of your pipelines. This endpoint takes no JSON arguments.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_pipelines_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_pipelines_order
+from datadog_api_client.v1.model.logs_pipelines_order import LogsPipelinesOrder
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -347,7 +355,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get pipeline order
@@ -362,7 +370,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**logs_pipelines_order.LogsPipelinesOrder**](LogsPipelinesOrder.md)
+[**LogsPipelinesOrder**](LogsPipelinesOrder.md)
 
 ### Authorization
 
@@ -382,7 +390,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_logs_pipelines**
-> logs_pipeline_list.LogsPipelineList list_logs_pipelines()
+> LogsPipelineList list_logs_pipelines()
 
 Get all pipelines
 
@@ -393,12 +401,11 @@ Get all pipelines from your organization. This endpoint takes no JSON arguments.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_pipelines_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_pipeline_list
+from datadog_api_client.v1.model.logs_pipeline_list import LogsPipelineList
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -435,7 +442,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get all pipelines
@@ -450,7 +457,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**logs_pipeline_list.LogsPipelineList**](LogsPipelineList.md)
+[**LogsPipelineList**](LogsPipelineList.md)
 
 ### Authorization
 
@@ -470,7 +477,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_pipeline**
-> logs_pipeline.LogsPipeline update_logs_pipeline(pipeline_id, body)
+> LogsPipeline update_logs_pipeline(pipeline_id, body)
 
 Update a pipeline
 
@@ -481,13 +488,12 @@ Update a given pipeline configuration to change it’s processors or their order
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_pipelines_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
-from datadog_api_client.v1.model import logs_pipeline
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
+from datadog_api_client.v1.model.logs_pipeline import LogsPipeline
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -524,9 +530,21 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
-    pipeline_id = 'pipeline_id_example' # str | ID of the pipeline to delete.
-    body = logs_pipeline.LogsPipeline() # logs_pipeline.LogsPipeline | New definition of the pipeline.
-    
+    pipeline_id = "pipeline_id_example" # str | ID of the pipeline to delete.
+    body = LogsPipeline(
+        filter=LogsFilter(
+            query="source:python",
+        ),
+        id="id_example",
+        is_enabled=True,
+        is_read_only=True,
+        name="name_example",
+        processors=[
+            LogsProcessor(),
+        ],
+        type="pipeline",
+    ) # LogsPipeline | New definition of the pipeline.
+
     # example passing only required values which don't have defaults set
     try:
         # Update a pipeline
@@ -541,11 +559,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pipeline_id** | **str**| ID of the pipeline to delete. |
- **body** | [**logs_pipeline.LogsPipeline**](LogsPipeline.md)| New definition of the pipeline. |
+ **body** | [**LogsPipeline**](LogsPipeline.md)| New definition of the pipeline. |
 
 ### Return type
 
-[**logs_pipeline.LogsPipeline**](LogsPipeline.md)
+[**LogsPipeline**](LogsPipeline.md)
 
 ### Authorization
 
@@ -566,7 +584,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_pipeline_order**
-> logs_pipelines_order.LogsPipelinesOrder update_logs_pipeline_order(body)
+> LogsPipelinesOrder update_logs_pipeline_order(body)
 
 Update pipeline order
 
@@ -577,13 +595,12 @@ Update the order of your pipelines. Since logs are processed sequentially, reord
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_pipelines_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
-from datadog_api_client.v1.model import logs_pipelines_order
+from datadog_api_client.v1.model.logs_pipelines_order import LogsPipelinesOrder
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -620,8 +637,12 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
-    body = logs_pipelines_order.LogsPipelinesOrder() # logs_pipelines_order.LogsPipelinesOrder | Object containing the new ordered list of pipeline IDs.
-    
+    body = LogsPipelinesOrder(
+        pipeline_ids=[
+            "["tags","org_ids","products"]",
+        ],
+    ) # LogsPipelinesOrder | Object containing the new ordered list of pipeline IDs.
+
     # example passing only required values which don't have defaults set
     try:
         # Update pipeline order
@@ -635,11 +656,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**logs_pipelines_order.LogsPipelinesOrder**](LogsPipelinesOrder.md)| Object containing the new ordered list of pipeline IDs. |
+ **body** | [**LogsPipelinesOrder**](LogsPipelinesOrder.md)| Object containing the new ordered list of pipeline IDs. |
 
 ### Return type
 
-[**logs_pipelines_order.LogsPipelinesOrder**](LogsPipelinesOrder.md)
+[**LogsPipelinesOrder**](LogsPipelinesOrder.md)
 
 ### Authorization
 

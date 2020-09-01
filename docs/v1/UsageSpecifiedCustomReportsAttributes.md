@@ -1,4 +1,4 @@
-# usage_specified_custom_reports_attributes.UsageSpecifiedCustomReportsAttributes
+# UsageSpecifiedCustomReportsAttributes
 
 The response containing attributes for specified custom reports.
 ## Properties

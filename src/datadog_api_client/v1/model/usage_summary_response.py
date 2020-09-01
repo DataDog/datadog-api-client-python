@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import usage_summary_date
-except ImportError:
-    usage_summary_date = sys.modules[
-        'datadog_api_client.v1.model.usage_summary_date']
+
+def lazy_import():
+    from datadog_api_client.v1.model.usage_summary_date import UsageSummaryDate
+    globals()['UsageSummaryDate'] = UsageSummaryDate
 
 
 class UsageSummaryResponse(ModelNormal):
@@ -72,19 +67,21 @@ class UsageSummaryResponse(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'agent_host_top99p_sum': (int,),  # noqa: E501
             'apm_host_top99p_sum': (int,),  # noqa: E501
             'aws_host_top99p_sum': (int,),  # noqa: E501
             'aws_lambda_func_count': (int,),  # noqa: E501
             'aws_lambda_invocations_sum': (int,),  # noqa: E501
+            'azure_app_service_top99p_sum': (int,),  # noqa: E501
             'azure_host_top99p_sum': (int,),  # noqa: E501
             'billable_ingested_bytes_agg_sum': (int,),  # noqa: E501
             'container_avg_sum': (int,),  # noqa: E501
@@ -107,12 +104,13 @@ class UsageSummaryResponse(ModelNormal):
             'synthetics_browser_check_calls_count_agg_sum': (int,),  # noqa: E501
             'synthetics_check_calls_count_agg_sum': (int,),  # noqa: E501
             'trace_search_indexed_events_count_agg_sum': (int,),  # noqa: E501
-            'usage': ([usage_summary_date.UsageSummaryDate],),  # noqa: E501
+            'usage': ([UsageSummaryDate],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'agent_host_top99p_sum': 'agent_host_top99p_sum',  # noqa: E501
@@ -120,6 +118,7 @@ class UsageSummaryResponse(ModelNormal):
         'aws_host_top99p_sum': 'aws_host_top99p_sum',  # noqa: E501
         'aws_lambda_func_count': 'aws_lambda_func_count',  # noqa: E501
         'aws_lambda_invocations_sum': 'aws_lambda_invocations_sum',  # noqa: E501
+        'azure_app_service_top99p_sum': 'azure_app_service_top99p_sum',  # noqa: E501
         'azure_host_top99p_sum': 'azure_host_top99p_sum',  # noqa: E501
         'billable_ingested_bytes_agg_sum': 'billable_ingested_bytes_agg_sum',  # noqa: E501
         'container_avg_sum': 'container_avg_sum',  # noqa: E501
@@ -158,7 +157,7 @@ class UsageSummaryResponse(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """usage_summary_response.UsageSummaryResponse - a model defined in OpenAPI
+        """UsageSummaryResponse - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -196,6 +195,7 @@ class UsageSummaryResponse(ModelNormal):
             aws_host_top99p_sum (int): Shows the 99th percentile of all AWS hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
             aws_lambda_func_count (int): Shows the average of the number of functions that executed 1 or more times each hour in the current month(s) for all organizations.. [optional]  # noqa: E501
             aws_lambda_invocations_sum (int): Shows the sum of all AWS Lambda invocations over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
+            azure_app_service_top99p_sum (int): Shows the 99th percentile of all Azure app services over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
             azure_host_top99p_sum (int): Shows the 99th percentile of all Azure hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
             billable_ingested_bytes_agg_sum (int): Shows the sum of all log bytes ingested over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
             container_avg_sum (int): Shows the average of all distinct containers over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
@@ -218,7 +218,7 @@ class UsageSummaryResponse(ModelNormal):
             synthetics_browser_check_calls_count_agg_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
             synthetics_check_calls_count_agg_sum (int): Shows the sum of all Synthetic API tests over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
             trace_search_indexed_events_count_agg_sum (int): Shows the sum of all analyzed spans indexed over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            usage ([usage_summary_date.UsageSummaryDate]): An array of objects regarding hourly usage.. [optional]  # noqa: E501
+            usage ([UsageSummaryDate]): An array of objects regarding hourly usage.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,7 +244,7 @@ class UsageSummaryResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_security_monitoring_rule**
-> security_monitoring_rule_response.SecurityMonitoringRuleResponse create_security_monitoring_rule()
+> SecurityMonitoringRuleResponse create_security_monitoring_rule()
 
 Create a detection rule
 
@@ -25,13 +25,12 @@ Create a detection rule.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
-from datadog_api_client.v2.model import security_monitoring_rule_response
-from datadog_api_client.v2.model import security_monitoring_rule_create_payload
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -68,7 +67,41 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    body = security_monitoring_rule_create_payload.SecurityMonitoringRuleCreatePayload() # security_monitoring_rule_create_payload.SecurityMonitoringRuleCreatePayload |  (optional)
+    body = SecurityMonitoringRuleCreatePayload(
+        cases=[
+            SecurityMonitoringRuleCaseCreate(
+                condition="condition_example",
+                name="name_example",
+                notifications=[
+                    "notifications_example",
+                ],
+                status=SecurityMonitoringRuleSeverity("info"),
+            ),
+        ],
+        is_enabled=True,
+        message="message_example",
+        name="name_example",
+        options=SecurityMonitoringRuleOptions(
+            evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
+            keep_alive=SecurityMonitoringRuleKeepAlive(0),
+            max_signal_duration=SecurityMonitoringRuleMaxSignalDuration(0),
+        ),
+        queries=[
+            SecurityMonitoringRuleQueryCreate(
+                distinct_fields=[
+                    "distinct_fields_example",
+                ],
+                group_by_fields=[
+                    "group_by_fields_example",
+                ],
+                name="name_example",
+                query="query_example",
+            ),
+        ],
+        tags=[
+            "["env:prod","team:security"]",
+        ],
+    ) # SecurityMonitoringRuleCreatePayload |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -84,11 +117,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**security_monitoring_rule_create_payload.SecurityMonitoringRuleCreatePayload**](SecurityMonitoringRuleCreatePayload.md)|  | [optional]
+ **body** | [**SecurityMonitoringRuleCreatePayload**](SecurityMonitoringRuleCreatePayload.md)|  | [optional]
 
 ### Return type
 
-[**security_monitoring_rule_response.SecurityMonitoringRuleResponse**](SecurityMonitoringRuleResponse.md)
+[**SecurityMonitoringRuleResponse**](SecurityMonitoringRuleResponse.md)
 
 ### Authorization
 
@@ -120,11 +153,10 @@ Delete an existing rule. Default rules cannot be deleted.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -161,8 +193,8 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    rule_id = 'rule_id_example' # str | The ID of the rule.
-    
+    rule_id = "rule_id_example" # str | The ID of the rule.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete an existing rule
@@ -200,7 +232,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_security_monitoring_rule**
-> security_monitoring_rule_response.SecurityMonitoringRuleResponse get_security_monitoring_rule(rule_id)
+> SecurityMonitoringRuleResponse get_security_monitoring_rule(rule_id)
 
 Get a rule's details
 
@@ -211,12 +243,11 @@ Get a rule's details.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
-from datadog_api_client.v2.model import security_monitoring_rule_response
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -253,8 +284,8 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    rule_id = 'rule_id_example' # str | The ID of the rule.
-    
+    rule_id = "rule_id_example" # str | The ID of the rule.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a rule's details
@@ -272,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**security_monitoring_rule_response.SecurityMonitoringRuleResponse**](SecurityMonitoringRuleResponse.md)
+[**SecurityMonitoringRuleResponse**](SecurityMonitoringRuleResponse.md)
 
 ### Authorization
 
@@ -292,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_security_monitoring_rules**
-> security_monitoring_list_rules_response.SecurityMonitoringListRulesResponse list_security_monitoring_rules()
+> SecurityMonitoringListRulesResponse list_security_monitoring_rules()
 
 List rules
 
@@ -303,12 +334,11 @@ List rules.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import security_monitoring_list_rules_response
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -346,7 +376,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
     page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -367,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**security_monitoring_list_rules_response.SecurityMonitoringListRulesResponse**](SecurityMonitoringListRulesResponse.md)
+[**SecurityMonitoringListRulesResponse**](SecurityMonitoringListRulesResponse.md)
 
 ### Authorization
 
@@ -387,7 +417,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_security_monitoring_signals**
-> security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse list_security_monitoring_signals()
+> SecurityMonitoringSignalsListResponse list_security_monitoring_signals()
 
 Get a quick list of security signals
 
@@ -398,13 +428,12 @@ The list endpoint returns security signals that match a search query. Both this 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
-from datadog_api_client.v2.model import security_monitoring_signals_sort
-from datadog_api_client.v2.model import security_monitoring_signals_list_response
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
+from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -441,12 +470,12 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    filter_query = 'security:attack status:high' # str | The search query for security signals. (optional)
-filter_from = '2019-01-02T09:42:36.320Z' # datetime | The minimum timestamp for requested security signals. (optional)
-filter_to = '2019-01-03T09:42:36.320Z' # datetime | The maximum timestamp for requested security signals. (optional)
-sort = security_monitoring_signals_sort.SecurityMonitoringSignalsSort() # security_monitoring_signals_sort.SecurityMonitoringSignalsSort | The order of the security signals in results. (optional)
-page_cursor = 'eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==' # str | A list of results using the cursor provided in the previous query. (optional)
-page_limit = 10 # int | The maximum number of security signals in the response. (optional) if omitted the server will use the default value of 10
+    filter_query = "security:attack status:high" # str | The search query for security signals. (optional)
+    filter_from = dateutil_parser('2019-01-02T09:42:36.320Z') # datetime | The minimum timestamp for requested security signals. (optional)
+    filter_to = dateutil_parser('2019-01-03T09:42:36.320Z') # datetime | The maximum timestamp for requested security signals. (optional)
+    sort = SecurityMonitoringSignalsSort("timestamp") # SecurityMonitoringSignalsSort | The order of the security signals in results. (optional)
+    page_cursor = "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==" # str | A list of results using the cursor provided in the previous query. (optional)
+    page_limit = 25 # int | The maximum number of security signals in the response. (optional) if omitted the server will use the default value of 10
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -465,13 +494,13 @@ Name | Type | Description  | Notes
  **filter_query** | **str**| The search query for security signals. | [optional]
  **filter_from** | **datetime**| The minimum timestamp for requested security signals. | [optional]
  **filter_to** | **datetime**| The maximum timestamp for requested security signals. | [optional]
- **sort** | **security_monitoring_signals_sort.SecurityMonitoringSignalsSort**| The order of the security signals in results. | [optional]
+ **sort** | **SecurityMonitoringSignalsSort**| The order of the security signals in results. | [optional]
  **page_cursor** | **str**| A list of results using the cursor provided in the previous query. | [optional]
  **page_limit** | **int**| The maximum number of security signals in the response. | [optional] if omitted the server will use the default value of 10
 
 ### Return type
 
-[**security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse**](SecurityMonitoringSignalsListResponse.md)
+[**SecurityMonitoringSignalsListResponse**](SecurityMonitoringSignalsListResponse.md)
 
 ### Authorization
 
@@ -492,7 +521,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **search_security_monitoring_signals**
-> security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse search_security_monitoring_signals()
+> SecurityMonitoringSignalsListResponse search_security_monitoring_signals()
 
 Get a list of security signals
 
@@ -503,13 +532,12 @@ Returns security signals that match a search query. Both this endpoint and the G
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
-from datadog_api_client.v2.model import security_monitoring_signals_list_response
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import security_monitoring_signal_list_request
+from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -546,7 +574,18 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    body = security_monitoring_signal_list_request.SecurityMonitoringSignalListRequest() # security_monitoring_signal_list_request.SecurityMonitoringSignalListRequest |  (optional)
+    body = SecurityMonitoringSignalListRequest(
+        filter=SecurityMonitoringSignalListRequestFilter(
+            _from=dateutil_parser('2019-01-02T09:42:36.32Z'),
+            query="security:attack status:high",
+            to=dateutil_parser('2019-01-03T09:42:36.32Z'),
+        ),
+        page=SecurityMonitoringSignalListRequestPage(
+            cursor="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==",
+            limit=25,
+        ),
+        sort=SecurityMonitoringSignalsSort("timestamp"),
+    ) # SecurityMonitoringSignalListRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -562,11 +601,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**security_monitoring_signal_list_request.SecurityMonitoringSignalListRequest**](SecurityMonitoringSignalListRequest.md)|  | [optional]
+ **body** | [**SecurityMonitoringSignalListRequest**](SecurityMonitoringSignalListRequest.md)|  | [optional]
 
 ### Return type
 
-[**security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse**](SecurityMonitoringSignalsListResponse.md)
+[**SecurityMonitoringSignalsListResponse**](SecurityMonitoringSignalsListResponse.md)
 
 ### Authorization
 
@@ -587,7 +626,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_security_monitoring_rule**
-> security_monitoring_rule_response.SecurityMonitoringRuleResponse update_security_monitoring_rule(rule_id)
+> SecurityMonitoringRuleResponse update_security_monitoring_rule(rule_id)
 
 Update an existing rule
 
@@ -598,13 +637,12 @@ Update an existing rule. When updating `cases`, `queries` or `options`, the whol
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
-from datadog_api_client.v2.model import security_monitoring_rule_response
-from datadog_api_client.v2.model import security_monitoring_rule_update_payload
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
+from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -641,8 +679,42 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    rule_id = 'rule_id_example' # str | The ID of the rule.
-    body = security_monitoring_rule_update_payload.SecurityMonitoringRuleUpdatePayload() # security_monitoring_rule_update_payload.SecurityMonitoringRuleUpdatePayload |  (optional)
+    rule_id = "rule_id_example" # str | The ID of the rule.
+    body = SecurityMonitoringRuleUpdatePayload(
+        cases=[
+            SecurityMonitoringRuleCase(
+                condition="condition_example",
+                name="name_example",
+                notifications=[
+                    "notifications_example",
+                ],
+                status=SecurityMonitoringRuleSeverity("info"),
+            ),
+        ],
+        is_enabled=True,
+        message="message_example",
+        name="name_example",
+        options=SecurityMonitoringRuleOptions(
+            evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
+            keep_alive=SecurityMonitoringRuleKeepAlive(0),
+            max_signal_duration=SecurityMonitoringRuleMaxSignalDuration(0),
+        ),
+        queries=[
+            SecurityMonitoringRuleQuery(
+                distinct_fields=[
+                    "distinct_fields_example",
+                ],
+                group_by_fields=[
+                    "group_by_fields_example",
+                ],
+                name="name_example",
+                query="query_example",
+            ),
+        ],
+        tags=[
+            "tags_example",
+        ],
+    ) # SecurityMonitoringRuleUpdatePayload |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -667,11 +739,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rule_id** | **str**| The ID of the rule. |
- **body** | [**security_monitoring_rule_update_payload.SecurityMonitoringRuleUpdatePayload**](SecurityMonitoringRuleUpdatePayload.md)|  | [optional]
+ **body** | [**SecurityMonitoringRuleUpdatePayload**](SecurityMonitoringRuleUpdatePayload.md)|  | [optional]
 
 ### Return type
 
-[**security_monitoring_rule_response.SecurityMonitoringRuleResponse**](SecurityMonitoringRuleResponse.md)
+[**SecurityMonitoringRuleResponse**](SecurityMonitoringRuleResponse.md)
 
 ### Authorization
 

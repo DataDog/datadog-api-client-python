@@ -1,4 +1,4 @@
-# logs_group_by_total.LogsGroupByTotal
+# LogsGroupByTotal
 
 A resulting object to put the given computes in over all the matching records.
 ## Properties

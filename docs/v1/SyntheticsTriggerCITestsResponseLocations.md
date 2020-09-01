@@ -1,4 +1,4 @@
-# synthetics_trigger_ci_tests_response_locations.SyntheticsTriggerCITestsResponseLocations
+# SyntheticsTriggerCITestsResponseLocations
 
 Synthetics location.
 ## Properties

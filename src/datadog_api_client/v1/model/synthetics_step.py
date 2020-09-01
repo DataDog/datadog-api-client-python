@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_step_type
-except ImportError:
-    synthetics_step_type = sys.modules[
-        'datadog_api_client.v1.model.synthetics_step_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+    globals()['SyntheticsStepType'] = SyntheticsStepType
 
 
 class SyntheticsStep(ModelNormal):
@@ -72,24 +67,26 @@ class SyntheticsStep(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'allow_failure': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'params': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'timeout': (float,),  # noqa: E501
-            'type': (synthetics_step_type.SyntheticsStepType,),  # noqa: E501
+            'type': (SyntheticsStepType,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'allow_failure': 'allowFailure',  # noqa: E501
@@ -112,7 +109,7 @@ class SyntheticsStep(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_step.SyntheticsStep - a model defined in OpenAPI
+        """SyntheticsStep - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -149,7 +146,7 @@ class SyntheticsStep(ModelNormal):
             name (str): The name of the step.. [optional]  # noqa: E501
             params ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): The parameters of the step.. [optional]  # noqa: E501
             timeout (float): The time before declaring a step failed.. [optional]  # noqa: E501
-            type (synthetics_step_type.SyntheticsStepType): [optional]  # noqa: E501
+            type (SyntheticsStepType): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -175,7 +172,7 @@ class SyntheticsStep(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

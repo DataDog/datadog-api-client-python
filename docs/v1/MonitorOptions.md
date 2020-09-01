@@ -1,13 +1,13 @@
-# monitor_options.MonitorOptions
+# MonitorOptions
 
 List of options associated with your monitor.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aggregation** | [**monitor_options_aggregation.MonitorOptionsAggregation**](MonitorOptionsAggregation.md) |  | [optional] 
-**device_ids** | [**[monitor_device_id.MonitorDeviceID]**](MonitorDeviceID.md) | IDs of the device the Synthetics monitor is running on. | [optional] [readonly] 
+**aggregation** | [**MonitorOptionsAggregation**](MonitorOptionsAggregation.md) |  | [optional] 
+**device_ids** | [**[MonitorDeviceID]**](MonitorDeviceID.md) | IDs of the device the Synthetics monitor is running on. | [optional] [readonly] 
 **enable_logs_sample** | **bool** | Whether or not to send a log sample when the log monitor triggers. | [optional] 
-**escalation_message** | **str** | A message to include with a re-notification. Supports the &#x60;@username&#x60; notification we allow elsewhere. Not applicable if &#x60;renotify_interval&#x60; is &#x60;None&#x60;. | [optional]  if omitted the server will use the default value of 'none'
+**escalation_message** | **str** | A message to include with a re-notification. Supports the &#x60;@username&#x60; notification we allow elsewhere. Not applicable if &#x60;renotify_interval&#x60; is &#x60;None&#x60;. | [optional]  if omitted the server will use the default value of "none"
 **evaluation_delay** | **int, none_type** | Time (in seconds) to delay evaluation, as a non-negative integer. For example, if the value is set to &#x60;300&#x60; (5min), the timeframe is set to &#x60;last_5m&#x60; and the time is 7:00, the monitor evaluates data from 6:50 to 6:55. This is useful for AWS CloudWatch and other backfilled metrics to ensure the monitor always has data during evaluation. | [optional] 
 **include_tags** | **bool** | A Boolean indicating whether notifications from this monitor automatically inserts its triggering tags into the title.  **Examples** - If &#x60;True&#x60;, &#x60;[Triggered on {host:h1}] Monitor Title&#x60; - If &#x60;False&#x60;, &#x60;[Triggered] Monitor Title&#x60; | [optional]  if omitted the server will use the default value of True
 **locked** | **bool** | Whether or not the monitor is locked (only editable by creator and admins). | [optional] 
@@ -21,8 +21,8 @@ Name | Type | Description | Notes
 **require_full_window** | **bool** | A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to &#x60;false&#x60; for sparse metrics, otherwise some evaluations are skipped. For “on average” “at all times” and “in total” aggregation, default is true. &#x60;False&#x60; otherwise. | [optional]  if omitted the server will use the default value of True
 **silenced** | **{str: (int, none_type)}** | Information about the downtime applied to the monitor. | [optional] 
 **synthetics_check_id** | **int, none_type** | ID of the corresponding Synthetic check. | [optional] 
-**threshold_windows** | [**monitor_threshold_window_options.MonitorThresholdWindowOptions**](MonitorThresholdWindowOptions.md) |  | [optional] 
-**thresholds** | [**monitor_thresholds.MonitorThresholds**](MonitorThresholds.md) |  | [optional] 
+**threshold_windows** | [**MonitorThresholdWindowOptions**](MonitorThresholdWindowOptions.md) |  | [optional] 
+**thresholds** | [**MonitorThresholds**](MonitorThresholds.md) |  | [optional] 
 **timeout_h** | **int, none_type** | The number of hours of the monitor not reporting data before it automatically resolves from a triggered state. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)

@@ -1,4 +1,4 @@
-# usage_host_hour.UsageHostHour
+# UsageHostHour
 
 Number of hosts/containers recorded for each hour for a given organization.
 ## Properties

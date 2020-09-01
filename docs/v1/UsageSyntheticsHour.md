@@ -1,4 +1,4 @@
-# usage_synthetics_hour.UsageSyntheticsHour
+# UsageSyntheticsHour
 
 The number of synthetics tests run for each hour for a given organization.
 ## Properties

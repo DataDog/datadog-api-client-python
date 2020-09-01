@@ -1,4 +1,4 @@
-# logs_list_request_time.LogsListRequestTime
+# LogsListRequestTime
 
 Timeframe to retrieve the log from.
 ## Properties

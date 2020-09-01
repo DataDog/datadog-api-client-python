@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import relationship_to_permissions
-except ImportError:
-    relationship_to_permissions = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_permissions']
-try:
-    from datadog_api_client.v2.model import relationship_to_users
-except ImportError:
-    relationship_to_users = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_users']
+
+def lazy_import():
+    from datadog_api_client.v2.model.relationship_to_permissions import RelationshipToPermissions
+    from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
+    globals()['RelationshipToPermissions'] = RelationshipToPermissions
+    globals()['RelationshipToUsers'] = RelationshipToUsers
 
 
 class RoleRelationships(ModelNormal):
@@ -77,21 +69,23 @@ class RoleRelationships(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'permissions': (relationship_to_permissions.RelationshipToPermissions,),  # noqa: E501
-            'users': (relationship_to_users.RelationshipToUsers,),  # noqa: E501
+            'permissions': (RelationshipToPermissions,),  # noqa: E501
+            'users': (RelationshipToUsers,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'permissions': 'permissions',  # noqa: E501
@@ -111,7 +105,7 @@ class RoleRelationships(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """role_relationships.RoleRelationships - a model defined in OpenAPI
+        """RoleRelationships - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -144,8 +138,8 @@ class RoleRelationships(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            permissions (relationship_to_permissions.RelationshipToPermissions): [optional]  # noqa: E501
-            users (relationship_to_users.RelationshipToUsers): [optional]  # noqa: E501
+            permissions (RelationshipToPermissions): [optional]  # noqa: E501
+            users (RelationshipToUsers): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -171,7 +165,7 @@ class RoleRelationships(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

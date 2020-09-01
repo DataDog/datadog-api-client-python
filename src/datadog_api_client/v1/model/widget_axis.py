@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,9 +21,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
 
@@ -67,8 +63,8 @@ class WidgetAxis(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
@@ -85,6 +81,7 @@ class WidgetAxis(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'include_zero': 'include_zero',  # noqa: E501
@@ -107,7 +104,7 @@ class WidgetAxis(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """widget_axis.WidgetAxis - a model defined in OpenAPI
+        """WidgetAxis - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -142,9 +139,9 @@ class WidgetAxis(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             include_zero (bool): True includes zero.. [optional]  # noqa: E501
             label (str): The label of the axis to display on the graph.. [optional]  # noqa: E501
-            max (str): Specifies the maximum value to show on the y-axis. It takes a number, or auto for default behavior.. [optional] if omitted the server will use the default value of 'auto'  # noqa: E501
-            min (str): Specifies minimum value to show on the y-axis. It takes a number, or auto for default behavior.. [optional] if omitted the server will use the default value of 'auto'  # noqa: E501
-            scale (str): Specifies the scale type. Possible values are &#x60;linear&#x60;, &#x60;log&#x60;, &#x60;sqrt&#x60;, &#x60;pow##&#x60; (e.g. &#x60;pow2&#x60;, &#x60;pow0.5&#x60; etc.).. [optional] if omitted the server will use the default value of 'linear'  # noqa: E501
+            max (str): Specifies the maximum value to show on the y-axis. It takes a number, or auto for default behavior.. [optional] if omitted the server will use the default value of "auto"  # noqa: E501
+            min (str): Specifies minimum value to show on the y-axis. It takes a number, or auto for default behavior.. [optional] if omitted the server will use the default value of "auto"  # noqa: E501
+            scale (str): Specifies the scale type. Possible values are &#x60;linear&#x60;, &#x60;log&#x60;, &#x60;sqrt&#x60;, &#x60;pow##&#x60; (e.g. &#x60;pow2&#x60;, &#x60;pow0.5&#x60; etc.).. [optional] if omitted the server will use the default value of "linear"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -170,7 +167,7 @@ class WidgetAxis(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

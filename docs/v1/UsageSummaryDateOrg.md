@@ -1,4 +1,4 @@
-# usage_summary_date_org.UsageSummaryDateOrg
+# UsageSummaryDateOrg
 
 Global hourly report of all data billed by Datadog for a given organization.
 ## Properties

@@ -1,4 +1,4 @@
-# logs_api_error.LogsAPIError
+# LogsAPIError
 
 Error returned by the Logs API
 ## Properties

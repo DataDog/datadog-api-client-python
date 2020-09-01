@@ -1,4 +1,4 @@
-# logs_filter.LogsFilter
+# LogsFilter
 
 Filter for logs.
 ## Properties

@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,15 +15,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_account
-from datadog_api_client.v1.model import aws_account_create_response
-from datadog_api_client.v1.model import aws_account_list_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.aws_account import AWSAccount
+from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
+from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
 
 
 class AWSIntegrationApi(object):
@@ -58,7 +51,7 @@ class AWSIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (aws_account.AWSAccount): AWS Request Object
+                body (AWSAccount): AWS Request Object
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -82,7 +75,7 @@ class AWSIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                aws_account_create_response.AWSAccountCreateResponse
+                AWSAccountCreateResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -111,7 +104,7 @@ class AWSIntegrationApi(object):
 
         self.create_aws_account = Endpoint(
             settings={
-                'response_type': (aws_account_create_response.AWSAccountCreateResponse,),
+                'response_type': (AWSAccountCreateResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -142,7 +135,7 @@ class AWSIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (aws_account.AWSAccount,),
+                        (AWSAccount,),
                 },
                 'attribute_map': {
                 },
@@ -179,7 +172,7 @@ class AWSIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (aws_account.AWSAccount): Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation).
+                body (AWSAccount): Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation).
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -203,7 +196,7 @@ class AWSIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                aws_account_create_response.AWSAccountCreateResponse
+                AWSAccountCreateResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -232,7 +225,7 @@ class AWSIntegrationApi(object):
 
         self.create_new_aws_external_id = Endpoint(
             settings={
-                'response_type': (aws_account_create_response.AWSAccountCreateResponse,),
+                'response_type': (AWSAccountCreateResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -263,7 +256,7 @@ class AWSIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (aws_account.AWSAccount,),
+                        (AWSAccount,),
                 },
                 'attribute_map': {
                 },
@@ -300,7 +293,7 @@ class AWSIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (aws_account.AWSAccount): AWS request object
+                body (AWSAccount): AWS request object
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -384,7 +377,7 @@ class AWSIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (aws_account.AWSAccount,),
+                        (AWSAccount,),
                 },
                 'attribute_map': {
                 },
@@ -553,7 +546,7 @@ class AWSIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                aws_account_list_response.AWSAccountListResponse
+                AWSAccountListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -580,7 +573,7 @@ class AWSIntegrationApi(object):
 
         self.list_aws_accounts = Endpoint(
             settings={
-                'response_type': (aws_account_list_response.AWSAccountListResponse,),
+                'response_type': (AWSAccountListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -655,7 +648,7 @@ class AWSIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (aws_account.AWSAccount): AWS request object
+                body (AWSAccount): AWS request object
 
             Keyword Args:
                 account_id (str): Only return AWS accounts that matches this &#x60;account_id&#x60;.. [optional]
@@ -745,7 +738,7 @@ class AWSIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (aws_account.AWSAccount,),
+                        (AWSAccount,),
                     'account_id':
                         (str,),
                     'role_name':

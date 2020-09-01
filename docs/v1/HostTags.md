@@ -1,4 +1,4 @@
-# host_tags.HostTags
+# HostTags
 
 Set of tags to associate with your host.
 ## Properties

@@ -1,4 +1,4 @@
-# user_create_attributes.UserCreateAttributes
+# UserCreateAttributes
 
 Attributes of the created user.
 ## Properties

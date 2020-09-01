@@ -20,11 +20,6 @@ try:
 except ImportError:
     logs_list_response_links = sys.modules[
         'datadog_api_client.v2.model.logs_list_response_links']
-try:
-    from datadog_api_client.v2.model import logs_list_response_meta
-except ImportError:
-    logs_list_response_meta = sys.modules[
-        'datadog_api_client.v2.model.logs_list_response_meta']
 from datadog_api_client.v2.model.logs_list_response import LogsListResponse
 
 

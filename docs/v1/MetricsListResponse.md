@@ -1,4 +1,4 @@
-# metrics_list_response.MetricsListResponse
+# MetricsListResponse
 
 Object listing all metric names stored by Datadog since a given time.
 ## Properties

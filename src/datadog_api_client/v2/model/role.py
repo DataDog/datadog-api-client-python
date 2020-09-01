@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import role_attributes
-except ImportError:
-    role_attributes = sys.modules[
-        'datadog_api_client.v2.model.role_attributes']
-try:
-    from datadog_api_client.v2.model import role_response_relationships
-except ImportError:
-    role_response_relationships = sys.modules[
-        'datadog_api_client.v2.model.role_response_relationships']
-try:
-    from datadog_api_client.v2.model import roles_type
-except ImportError:
-    roles_type = sys.modules[
-        'datadog_api_client.v2.model.roles_type']
+
+def lazy_import():
+    from datadog_api_client.v2.model.role_attributes import RoleAttributes
+    from datadog_api_client.v2.model.role_response_relationships import RoleResponseRelationships
+    from datadog_api_client.v2.model.roles_type import RolesType
+    globals()['RoleAttributes'] = RoleAttributes
+    globals()['RoleResponseRelationships'] = RoleResponseRelationships
+    globals()['RolesType'] = RolesType
 
 
 class Role(ModelNormal):
@@ -82,23 +71,25 @@ class Role(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'type': (roles_type.RolesType,),  # noqa: E501
-            'attributes': (role_attributes.RoleAttributes,),  # noqa: E501
+            'type': (RolesType,),  # noqa: E501
+            'attributes': (RoleAttributes,),  # noqa: E501
             'id': (str,),  # noqa: E501
-            'relationships': (role_response_relationships.RoleResponseRelationships,),  # noqa: E501
+            'relationships': (RoleResponseRelationships,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'type': 'type',  # noqa: E501
@@ -120,10 +111,10 @@ class Role(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, type, *args, **kwargs):  # noqa: E501
-        """role.Role - a model defined in OpenAPI
+        """Role - a model defined in OpenAPI
 
         Args:
-            type (roles_type.RolesType):
+            type (RolesType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -156,9 +147,9 @@ class Role(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (role_attributes.RoleAttributes): [optional]  # noqa: E501
+            attributes (RoleAttributes): [optional]  # noqa: E501
             id (str): ID of the role.. [optional]  # noqa: E501
-            relationships (role_response_relationships.RoleResponseRelationships): [optional]  # noqa: E501
+            relationships (RoleResponseRelationships): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -185,7 +176,7 @@ class Role(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

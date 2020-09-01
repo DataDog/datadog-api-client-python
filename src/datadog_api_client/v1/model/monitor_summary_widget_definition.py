@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,41 +21,23 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import monitor_summary_widget_definition_type
-except ImportError:
-    monitor_summary_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.monitor_summary_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_color_preference
-except ImportError:
-    widget_color_preference = sys.modules[
-        'datadog_api_client.v1.model.widget_color_preference']
-try:
-    from datadog_api_client.v1.model import widget_monitor_summary_display_format
-except ImportError:
-    widget_monitor_summary_display_format = sys.modules[
-        'datadog_api_client.v1.model.widget_monitor_summary_display_format']
-try:
-    from datadog_api_client.v1.model import widget_monitor_summary_sort
-except ImportError:
-    widget_monitor_summary_sort = sys.modules[
-        'datadog_api_client.v1.model.widget_monitor_summary_sort']
-try:
-    from datadog_api_client.v1.model import widget_summary_type
-except ImportError:
-    widget_summary_type = sys.modules[
-        'datadog_api_client.v1.model.widget_summary_type']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+
+def lazy_import():
+    from datadog_api_client.v1.model.monitor_summary_widget_definition_type import MonitorSummaryWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_color_preference import WidgetColorPreference
+    from datadog_api_client.v1.model.widget_monitor_summary_display_format import WidgetMonitorSummaryDisplayFormat
+    from datadog_api_client.v1.model.widget_monitor_summary_sort import WidgetMonitorSummarySort
+    from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    globals()['MonitorSummaryWidgetDefinitionType'] = MonitorSummaryWidgetDefinitionType
+    globals()['WidgetColorPreference'] = WidgetColorPreference
+    globals()['WidgetMonitorSummaryDisplayFormat'] = WidgetMonitorSummaryDisplayFormat
+    globals()['WidgetMonitorSummarySort'] = WidgetMonitorSummarySort
+    globals()['WidgetSummaryType'] = WidgetSummaryType
+    globals()['WidgetTextAlign'] = WidgetTextAlign
 
 
 class MonitorSummaryWidgetDefinition(ModelNormal):
@@ -97,32 +77,34 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'query': (str,),  # noqa: E501
-            'type': (monitor_summary_widget_definition_type.MonitorSummaryWidgetDefinitionType,),  # noqa: E501
-            'color_preference': (widget_color_preference.WidgetColorPreference,),  # noqa: E501
+            'type': (MonitorSummaryWidgetDefinitionType,),  # noqa: E501
+            'color_preference': (WidgetColorPreference,),  # noqa: E501
             'count': (int,),  # noqa: E501
-            'display_format': (widget_monitor_summary_display_format.WidgetMonitorSummaryDisplayFormat,),  # noqa: E501
+            'display_format': (WidgetMonitorSummaryDisplayFormat,),  # noqa: E501
             'hide_zero_counts': (bool,),  # noqa: E501
             'show_last_triggered': (bool,),  # noqa: E501
-            'sort': (widget_monitor_summary_sort.WidgetMonitorSummarySort,),  # noqa: E501
+            'sort': (WidgetMonitorSummarySort,),  # noqa: E501
             'start': (int,),  # noqa: E501
-            'summary_type': (widget_summary_type.WidgetSummaryType,),  # noqa: E501
+            'summary_type': (WidgetSummaryType,),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'query': 'query',  # noqa: E501
@@ -153,11 +135,11 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, query, type, *args, **kwargs):  # noqa: E501
-        """monitor_summary_widget_definition.MonitorSummaryWidgetDefinition - a model defined in OpenAPI
+        """MonitorSummaryWidgetDefinition - a model defined in OpenAPI
 
         Args:
             query (str): Query to filter the monitors with.
-            type (monitor_summary_widget_definition_type.MonitorSummaryWidgetDefinitionType):
+            type (MonitorSummaryWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -190,16 +172,16 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            color_preference (widget_color_preference.WidgetColorPreference): [optional]  # noqa: E501
+            color_preference (WidgetColorPreference): [optional]  # noqa: E501
             count (int): The number of monitors to display.. [optional]  # noqa: E501
-            display_format (widget_monitor_summary_display_format.WidgetMonitorSummaryDisplayFormat): [optional]  # noqa: E501
+            display_format (WidgetMonitorSummaryDisplayFormat): [optional]  # noqa: E501
             hide_zero_counts (bool): Whether to show counts of 0 or not.. [optional]  # noqa: E501
             show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]  # noqa: E501
-            sort (widget_monitor_summary_sort.WidgetMonitorSummarySort): [optional]  # noqa: E501
+            sort (WidgetMonitorSummarySort): [optional]  # noqa: E501
             start (int): The start of the list. Typically 0.. [optional]  # noqa: E501
-            summary_type (widget_summary_type.WidgetSummaryType): [optional]  # noqa: E501
+            summary_type (WidgetSummaryType): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
@@ -228,7 +210,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
 
         self.query = query
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

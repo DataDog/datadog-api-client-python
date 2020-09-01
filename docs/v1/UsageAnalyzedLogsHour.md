@@ -1,4 +1,4 @@
-# usage_analyzed_logs_hour.UsageAnalyzedLogsHour
+# UsageAnalyzedLogsHour
 
 The number of analyzed logs for each hour for a given organization.
 ## Properties

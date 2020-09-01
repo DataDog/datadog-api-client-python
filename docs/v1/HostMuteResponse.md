@@ -1,4 +1,4 @@
-# host_mute_response.HostMuteResponse
+# HostMuteResponse
 
 Response with the list of muted host for your organization.
 ## Properties

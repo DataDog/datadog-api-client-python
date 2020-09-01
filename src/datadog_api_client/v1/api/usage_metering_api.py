@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,35 +15,33 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_custom_reports_response
-from datadog_api_client.v1.model import usage_sort
-from datadog_api_client.v1.model import usage_sort_direction
-from datadog_api_client.v1.model import usage_specified_custom_reports_response
-from datadog_api_client.v1.model import usage_analyzed_logs_response
-from datadog_api_client.v1.model import usage_billable_summary_response
-from datadog_api_client.v1.model import usage_fargate_response
-from datadog_api_client.v1.model import usage_hosts_response
-from datadog_api_client.v1.model import usage_lambda_response
-from datadog_api_client.v1.model import usage_logs_response
-from datadog_api_client.v1.model import usage_logs_by_index_response
-from datadog_api_client.v1.model import usage_network_flows_response
-from datadog_api_client.v1.model import usage_network_hosts_response
-from datadog_api_client.v1.model import usage_profiling_response
-from datadog_api_client.v1.model import usage_rum_sessions_response
-from datadog_api_client.v1.model import usage_snmp_response
-from datadog_api_client.v1.model import usage_summary_response
-from datadog_api_client.v1.model import usage_synthetics_response
-from datadog_api_client.v1.model import usage_synthetics_api_response
-from datadog_api_client.v1.model import usage_synthetics_browser_response
-from datadog_api_client.v1.model import usage_timeseries_response
-from datadog_api_client.v1.model import usage_top_avg_metrics_response
-from datadog_api_client.v1.model import usage_trace_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
+from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
+from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
+from datadog_api_client.v1.model.usage_fargate_response import UsageFargateResponse
+from datadog_api_client.v1.model.usage_hosts_response import UsageHostsResponse
+from datadog_api_client.v1.model.usage_lambda_response import UsageLambdaResponse
+from datadog_api_client.v1.model.usage_logs_by_index_response import UsageLogsByIndexResponse
+from datadog_api_client.v1.model.usage_logs_response import UsageLogsResponse
+from datadog_api_client.v1.model.usage_network_flows_response import UsageNetworkFlowsResponse
+from datadog_api_client.v1.model.usage_network_hosts_response import UsageNetworkHostsResponse
+from datadog_api_client.v1.model.usage_profiling_response import UsageProfilingResponse
+from datadog_api_client.v1.model.usage_rum_sessions_response import UsageRumSessionsResponse
+from datadog_api_client.v1.model.usage_snmp_response import UsageSNMPResponse
+from datadog_api_client.v1.model.usage_sort import UsageSort
+from datadog_api_client.v1.model.usage_sort_direction import UsageSortDirection
+from datadog_api_client.v1.model.usage_specified_custom_reports_response import UsageSpecifiedCustomReportsResponse
+from datadog_api_client.v1.model.usage_summary_response import UsageSummaryResponse
+from datadog_api_client.v1.model.usage_synthetics_api_response import UsageSyntheticsAPIResponse
+from datadog_api_client.v1.model.usage_synthetics_browser_response import UsageSyntheticsBrowserResponse
+from datadog_api_client.v1.model.usage_synthetics_response import UsageSyntheticsResponse
+from datadog_api_client.v1.model.usage_timeseries_response import UsageTimeseriesResponse
+from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopAvgMetricsResponse
+from datadog_api_client.v1.model.usage_trace_response import UsageTraceResponse
 
 
 class UsageMeteringApi(object):
@@ -80,8 +73,8 @@ class UsageMeteringApi(object):
             Keyword Args:
                 page_size (int): The number of files to return in the response. &#x60;[default&#x3D;60]&#x60;.. [optional]
                 page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature &#x60;[default&#x3D;0]&#x60;.. [optional]
-                sort_dir (usage_sort_direction.UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
-                sort (usage_sort.UsageSort): The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;.. [optional]
+                sort_dir (UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
+                sort (UsageSort): The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -103,7 +96,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_custom_reports_response.UsageCustomReportsResponse
+                UsageCustomReportsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -130,7 +123,7 @@ class UsageMeteringApi(object):
 
         self.get_daily_custom_reports = Endpoint(
             settings={
-                'response_type': (usage_custom_reports_response.UsageCustomReportsResponse,),
+                'response_type': (UsageCustomReportsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -166,9 +159,9 @@ class UsageMeteringApi(object):
                     'page_number':
                         (int,),
                     'sort_dir':
-                        (usage_sort_direction.UsageSortDirection,),
+                        (UsageSortDirection,),
                     'sort':
-                        (usage_sort.UsageSort,),
+                        (UsageSort,),
                 },
                 'attribute_map': {
                     'page_size': 'page[size]',
@@ -212,8 +205,8 @@ class UsageMeteringApi(object):
             Keyword Args:
                 page_size (int): The number of files to return in the response &#x60;[default&#x3D;60].&#x60;. [optional]
                 page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature &#x60;[default&#x3D;0]&#x60;.. [optional]
-                sort_dir (usage_sort_direction.UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
-                sort (usage_sort.UsageSort): The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;.. [optional]
+                sort_dir (UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
+                sort (UsageSort): The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -235,7 +228,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_custom_reports_response.UsageCustomReportsResponse
+                UsageCustomReportsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -262,7 +255,7 @@ class UsageMeteringApi(object):
 
         self.get_monthly_custom_reports = Endpoint(
             settings={
-                'response_type': (usage_custom_reports_response.UsageCustomReportsResponse,),
+                'response_type': (UsageCustomReportsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -298,9 +291,9 @@ class UsageMeteringApi(object):
                     'page_number':
                         (int,),
                     'sort_dir':
-                        (usage_sort_direction.UsageSortDirection,),
+                        (UsageSortDirection,),
                     'sort':
-                        (usage_sort.UsageSort,),
+                        (UsageSort,),
                 },
                 'attribute_map': {
                     'page_size': 'page[size]',
@@ -366,7 +359,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse
+                UsageSpecifiedCustomReportsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -395,7 +388,7 @@ class UsageMeteringApi(object):
 
         self.get_specified_daily_custom_reports = Endpoint(
             settings={
-                'response_type': (usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse,),
+                'response_type': (UsageSpecifiedCustomReportsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -486,7 +479,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse
+                UsageSpecifiedCustomReportsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -515,7 +508,7 @@ class UsageMeteringApi(object):
 
         self.get_specified_monthly_custom_reports = Endpoint(
             settings={
-                'response_type': (usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse,),
+                'response_type': (UsageSpecifiedCustomReportsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -607,7 +600,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_analyzed_logs_response.UsageAnalyzedLogsResponse
+                UsageAnalyzedLogsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -636,7 +629,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_analyzed_logs = Endpoint(
             settings={
-                'response_type': (usage_analyzed_logs_response.UsageAnalyzedLogsResponse,),
+                'response_type': (UsageAnalyzedLogsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -730,7 +723,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_billable_summary_response.UsageBillableSummaryResponse
+                UsageBillableSummaryResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -757,7 +750,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_billable_summary = Endpoint(
             settings={
-                'response_type': (usage_billable_summary_response.UsageBillableSummaryResponse,),
+                'response_type': (UsageBillableSummaryResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -847,7 +840,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_fargate_response.UsageFargateResponse
+                UsageFargateResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -876,7 +869,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_fargate = Endpoint(
             settings={
-                'response_type': (usage_fargate_response.UsageFargateResponse,),
+                'response_type': (UsageFargateResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -973,7 +966,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_hosts_response.UsageHostsResponse
+                UsageHostsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1002,7 +995,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_hosts = Endpoint(
             settings={
-                'response_type': (usage_hosts_response.UsageHostsResponse,),
+                'response_type': (UsageHostsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1099,7 +1092,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_lambda_response.UsageLambdaResponse
+                UsageLambdaResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1128,7 +1121,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_lambda = Endpoint(
             settings={
-                'response_type': (usage_lambda_response.UsageLambdaResponse,),
+                'response_type': (UsageLambdaResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1225,7 +1218,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_logs_response.UsageLogsResponse
+                UsageLogsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1254,7 +1247,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_logs = Endpoint(
             settings={
-                'response_type': (usage_logs_response.UsageLogsResponse,),
+                'response_type': (UsageLogsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1352,7 +1345,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_logs_by_index_response.UsageLogsByIndexResponse
+                UsageLogsByIndexResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1381,7 +1374,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_logs_by_index = Endpoint(
             settings={
-                'response_type': (usage_logs_by_index_response.UsageLogsByIndexResponse,),
+                'response_type': (UsageLogsByIndexResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1484,7 +1477,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_network_flows_response.UsageNetworkFlowsResponse
+                UsageNetworkFlowsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1513,7 +1506,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_network_flows = Endpoint(
             settings={
-                'response_type': (usage_network_flows_response.UsageNetworkFlowsResponse,),
+                'response_type': (UsageNetworkFlowsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1610,7 +1603,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_network_hosts_response.UsageNetworkHostsResponse
+                UsageNetworkHostsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1639,7 +1632,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_network_hosts = Endpoint(
             settings={
-                'response_type': (usage_network_hosts_response.UsageNetworkHostsResponse,),
+                'response_type': (UsageNetworkHostsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1736,7 +1729,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_profiling_response.UsageProfilingResponse
+                UsageProfilingResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1765,7 +1758,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_profiling = Endpoint(
             settings={
-                'response_type': (usage_profiling_response.UsageProfilingResponse,),
+                'response_type': (UsageProfilingResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1862,7 +1855,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_rum_sessions_response.UsageRumSessionsResponse
+                UsageRumSessionsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1891,7 +1884,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_rum_sessions = Endpoint(
             settings={
-                'response_type': (usage_rum_sessions_response.UsageRumSessionsResponse,),
+                'response_type': (UsageRumSessionsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1988,7 +1981,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_snmp_response.UsageSNMPResponse
+                UsageSNMPResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -2017,7 +2010,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_snmp = Endpoint(
             settings={
-                'response_type': (usage_snmp_response.UsageSNMPResponse,),
+                'response_type': (UsageSNMPResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -2115,7 +2108,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_summary_response.UsageSummaryResponse
+                UsageSummaryResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -2144,7 +2137,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_summary = Endpoint(
             settings={
-                'response_type': (usage_summary_response.UsageSummaryResponse,),
+                'response_type': (UsageSummaryResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -2246,7 +2239,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_synthetics_response.UsageSyntheticsResponse
+                UsageSyntheticsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -2275,7 +2268,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_synthetics = Endpoint(
             settings={
-                'response_type': (usage_synthetics_response.UsageSyntheticsResponse,),
+                'response_type': (UsageSyntheticsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -2372,7 +2365,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_synthetics_api_response.UsageSyntheticsAPIResponse
+                UsageSyntheticsAPIResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -2401,7 +2394,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_synthetics_api = Endpoint(
             settings={
-                'response_type': (usage_synthetics_api_response.UsageSyntheticsAPIResponse,),
+                'response_type': (UsageSyntheticsAPIResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -2498,7 +2491,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_synthetics_browser_response.UsageSyntheticsBrowserResponse
+                UsageSyntheticsBrowserResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -2527,7 +2520,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_synthetics_browser = Endpoint(
             settings={
-                'response_type': (usage_synthetics_browser_response.UsageSyntheticsBrowserResponse,),
+                'response_type': (UsageSyntheticsBrowserResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -2624,7 +2617,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_timeseries_response.UsageTimeseriesResponse
+                UsageTimeseriesResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -2653,7 +2646,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_timeseries = Endpoint(
             settings={
-                'response_type': (usage_timeseries_response.UsageTimeseriesResponse,),
+                'response_type': (UsageTimeseriesResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -2750,7 +2743,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_top_avg_metrics_response.UsageTopAvgMetricsResponse
+                UsageTopAvgMetricsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -2779,7 +2772,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_top_avg_metrics = Endpoint(
             settings={
-                'response_type': (usage_top_avg_metrics_response.UsageTopAvgMetricsResponse,),
+                'response_type': (UsageTopAvgMetricsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -2877,7 +2870,7 @@ class UsageMeteringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                usage_trace_response.UsageTraceResponse
+                UsageTraceResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -2906,7 +2899,7 @@ class UsageMeteringApi(object):
 
         self.get_usage_trace = Endpoint(
             settings={
-                'response_type': (usage_trace_response.UsageTraceResponse,),
+                'response_type': (UsageTraceResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'

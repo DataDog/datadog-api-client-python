@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,36 +21,21 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_basic_auth
-except ImportError:
-    synthetics_basic_auth = sys.modules[
-        'datadog_api_client.v1.model.synthetics_basic_auth']
-try:
-    from datadog_api_client.v1.model import synthetics_ci_test_metadata
-except ImportError:
-    synthetics_ci_test_metadata = sys.modules[
-        'datadog_api_client.v1.model.synthetics_ci_test_metadata']
-try:
-    from datadog_api_client.v1.model import synthetics_device_id
-except ImportError:
-    synthetics_device_id = sys.modules[
-        'datadog_api_client.v1.model.synthetics_device_id']
-try:
-    from datadog_api_client.v1.model import synthetics_test_headers
-except ImportError:
-    synthetics_test_headers = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_headers']
-try:
-    from datadog_api_client.v1.model import synthetics_test_options_retry
-except ImportError:
-    synthetics_test_options_retry = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_options_retry']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
+    from datadog_api_client.v1.model.synthetics_ci_test_metadata import SyntheticsCITestMetadata
+    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+    from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
+    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+    globals()['SyntheticsBasicAuth'] = SyntheticsBasicAuth
+    globals()['SyntheticsCITestMetadata'] = SyntheticsCITestMetadata
+    globals()['SyntheticsDeviceID'] = SyntheticsDeviceID
+    globals()['SyntheticsTestHeaders'] = SyntheticsTestHeaders
+    globals()['SyntheticsTestOptionsRetry'] = SyntheticsTestOptionsRetry
 
 
 class SyntheticsCITest(ModelNormal):
@@ -92,26 +75,27 @@ class SyntheticsCITest(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'public_id': (str,),  # noqa: E501
             'allow_insecure_certificates': (bool,),  # noqa: E501
-            'basic_auth': (synthetics_basic_auth.SyntheticsBasicAuth,),  # noqa: E501
+            'basic_auth': (SyntheticsBasicAuth,),  # noqa: E501
             'body': (str,),  # noqa: E501
             'body_type': (str,),  # noqa: E501
             'cookies': (str,),  # noqa: E501
-            'device_ids': ([synthetics_device_id.SyntheticsDeviceID],),  # noqa: E501
+            'device_ids': ([SyntheticsDeviceID],),  # noqa: E501
             'follow_redirects': (bool,),  # noqa: E501
-            'headers': (synthetics_test_headers.SyntheticsTestHeaders,),  # noqa: E501
+            'headers': (SyntheticsTestHeaders,),  # noqa: E501
             'locations': ([str],),  # noqa: E501
-            'metadata': (synthetics_ci_test_metadata.SyntheticsCITestMetadata,),  # noqa: E501
-            'retry': (synthetics_test_options_retry.SyntheticsTestOptionsRetry,),  # noqa: E501
+            'metadata': (SyntheticsCITestMetadata,),  # noqa: E501
+            'retry': (SyntheticsTestOptionsRetry,),  # noqa: E501
             'start_url': (str,),  # noqa: E501
             'variables': ({str: (str,)},),  # noqa: E501
         }
@@ -119,6 +103,7 @@ class SyntheticsCITest(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'public_id': 'public_id',  # noqa: E501
@@ -150,7 +135,7 @@ class SyntheticsCITest(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, public_id, *args, **kwargs):  # noqa: E501
-        """synthetics_ci_test.SyntheticsCITest - a model defined in OpenAPI
+        """SyntheticsCITest - a model defined in OpenAPI
 
         Args:
             public_id (str): The public ID of the Synthetics test to trigger.
@@ -187,16 +172,16 @@ class SyntheticsCITest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             allow_insecure_certificates (bool): Disable certificate checks in API tests.. [optional]  # noqa: E501
-            basic_auth (synthetics_basic_auth.SyntheticsBasicAuth): [optional]  # noqa: E501
+            basic_auth (SyntheticsBasicAuth): [optional]  # noqa: E501
             body (str): Body to include in the test.. [optional]  # noqa: E501
             body_type (str): Type of the data sent in a synthetics API test.. [optional]  # noqa: E501
             cookies (str): Cookies for the request.. [optional]  # noqa: E501
-            device_ids ([synthetics_device_id.SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]  # noqa: E501
+            device_ids ([SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]  # noqa: E501
             follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]  # noqa: E501
-            headers (synthetics_test_headers.SyntheticsTestHeaders): [optional]  # noqa: E501
+            headers (SyntheticsTestHeaders): [optional]  # noqa: E501
             locations ([str]): Array of locations used to run the test.. [optional]  # noqa: E501
-            metadata (synthetics_ci_test_metadata.SyntheticsCITestMetadata): [optional]  # noqa: E501
-            retry (synthetics_test_options_retry.SyntheticsTestOptionsRetry): [optional]  # noqa: E501
+            metadata (SyntheticsCITestMetadata): [optional]  # noqa: E501
+            retry (SyntheticsTestOptionsRetry): [optional]  # noqa: E501
             start_url (str): Starting URL for the browser test.. [optional]  # noqa: E501
             variables ({str: (str,)}): Variables to replace in the test.. [optional]  # noqa: E501
         """
@@ -225,7 +210,7 @@ class SyntheticsCITest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.public_id = public_id
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

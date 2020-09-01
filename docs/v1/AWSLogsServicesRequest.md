@@ -1,4 +1,4 @@
-# aws_logs_services_request.AWSLogsServicesRequest
+# AWSLogsServicesRequest
 
 A list of current AWS services for which Datadog offers automatic log collection.
 ## Properties

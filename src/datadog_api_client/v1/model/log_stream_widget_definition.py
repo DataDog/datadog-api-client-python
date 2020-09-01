@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,36 +21,21 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import log_stream_widget_definition_type
-except ImportError:
-    log_stream_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.log_stream_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_field_sort
-except ImportError:
-    widget_field_sort = sys.modules[
-        'datadog_api_client.v1.model.widget_field_sort']
-try:
-    from datadog_api_client.v1.model import widget_message_display
-except ImportError:
-    widget_message_display = sys.modules[
-        'datadog_api_client.v1.model.widget_message_display']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
-try:
-    from datadog_api_client.v1.model import widget_time
-except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+
+def lazy_import():
+    from datadog_api_client.v1.model.log_stream_widget_definition_type import LogStreamWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
+    from datadog_api_client.v1.model.widget_message_display import WidgetMessageDisplay
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    globals()['LogStreamWidgetDefinitionType'] = LogStreamWidgetDefinitionType
+    globals()['WidgetFieldSort'] = WidgetFieldSort
+    globals()['WidgetMessageDisplay'] = WidgetMessageDisplay
+    globals()['WidgetTextAlign'] = WidgetTextAlign
+    globals()['WidgetTime'] = WidgetTime
 
 
 class LogStreamWidgetDefinition(ModelNormal):
@@ -92,32 +75,34 @@ class LogStreamWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'type': (log_stream_widget_definition_type.LogStreamWidgetDefinitionType,),  # noqa: E501
+            'type': (LogStreamWidgetDefinitionType,),  # noqa: E501
             'columns': ([str],),  # noqa: E501
             'indexes': ([str],),  # noqa: E501
             'logset': (str,),  # noqa: E501
-            'message_display': (widget_message_display.WidgetMessageDisplay,),  # noqa: E501
+            'message_display': (WidgetMessageDisplay,),  # noqa: E501
             'query': (str,),  # noqa: E501
             'show_date_column': (bool,),  # noqa: E501
             'show_message_column': (bool,),  # noqa: E501
-            'sort': (widget_field_sort.WidgetFieldSort,),  # noqa: E501
-            'time': (widget_time.WidgetTime,),  # noqa: E501
+            'sort': (WidgetFieldSort,),  # noqa: E501
+            'time': (WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'type': 'type',  # noqa: E501
@@ -148,10 +133,10 @@ class LogStreamWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, type, *args, **kwargs):  # noqa: E501
-        """log_stream_widget_definition.LogStreamWidgetDefinition - a model defined in OpenAPI
+        """LogStreamWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            type (log_stream_widget_definition_type.LogStreamWidgetDefinitionType):
+            type (LogStreamWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -187,14 +172,14 @@ class LogStreamWidgetDefinition(ModelNormal):
             columns ([str]): Which columns to display on the widget.. [optional]  # noqa: E501
             indexes ([str]): An array of index names to query in the stream. Use [] to query all indexes at once.. [optional]  # noqa: E501
             logset (str): ID of the log set to use.. [optional]  # noqa: E501
-            message_display (widget_message_display.WidgetMessageDisplay): [optional]  # noqa: E501
+            message_display (WidgetMessageDisplay): [optional]  # noqa: E501
             query (str): Query to filter the log stream with.. [optional]  # noqa: E501
             show_date_column (bool): Whether to show the date column or not. [optional]  # noqa: E501
             show_message_column (bool): Whether to show the message column or not. [optional]  # noqa: E501
-            sort (widget_field_sort.WidgetFieldSort): [optional]  # noqa: E501
-            time (widget_time.WidgetTime): [optional]  # noqa: E501
+            sort (WidgetFieldSort): [optional]  # noqa: E501
+            time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
@@ -222,7 +207,7 @@ class LogStreamWidgetDefinition(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

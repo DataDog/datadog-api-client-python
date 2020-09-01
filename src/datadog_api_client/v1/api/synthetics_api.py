@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,25 +15,23 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_global_variable
-from datadog_api_client.v1.model import synthetics_test_details
-from datadog_api_client.v1.model import synthetics_delete_tests_payload
-from datadog_api_client.v1.model import synthetics_delete_tests_response
-from datadog_api_client.v1.model import synthetics_get_api_test_latest_results_response
-from datadog_api_client.v1.model import synthetics_api_test_result_full
-from datadog_api_client.v1.model import synthetics_get_browser_test_latest_results_response
-from datadog_api_client.v1.model import synthetics_browser_test_result_full
-from datadog_api_client.v1.model import synthetics_locations
-from datadog_api_client.v1.model import synthetics_list_tests_response
-from datadog_api_client.v1.model import synthetics_trigger_ci_tests_response
-from datadog_api_client.v1.model import synthetics_ci_test_body
-from datadog_api_client.v1.model import synthetics_update_test_pause_status_payload
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.synthetics_api_test_result_full import SyntheticsAPITestResultFull
+from datadog_api_client.v1.model.synthetics_browser_test_result_full import SyntheticsBrowserTestResultFull
+from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
+from datadog_api_client.v1.model.synthetics_delete_tests_payload import SyntheticsDeleteTestsPayload
+from datadog_api_client.v1.model.synthetics_delete_tests_response import SyntheticsDeleteTestsResponse
+from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import SyntheticsGetAPITestLatestResultsResponse
+from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_response import SyntheticsGetBrowserTestLatestResultsResponse
+from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
+from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
+from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
+from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
+from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
+from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import SyntheticsUpdateTestPauseStatusPayload
 
 
 class SyntheticsApi(object):
@@ -68,7 +61,7 @@ class SyntheticsApi(object):
             >>> result = thread.get()
 
             Args:
-                body (synthetics_global_variable.SyntheticsGlobalVariable): Details of the global variable to create.
+                body (SyntheticsGlobalVariable): Details of the global variable to create.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -92,7 +85,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_global_variable.SyntheticsGlobalVariable
+                SyntheticsGlobalVariable
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -121,7 +114,7 @@ class SyntheticsApi(object):
 
         self.create_global_variable = Endpoint(
             settings={
-                'response_type': (synthetics_global_variable.SyntheticsGlobalVariable,),
+                'response_type': (SyntheticsGlobalVariable,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -152,7 +145,7 @@ class SyntheticsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (synthetics_global_variable.SyntheticsGlobalVariable,),
+                        (SyntheticsGlobalVariable,),
                 },
                 'attribute_map': {
                 },
@@ -189,7 +182,7 @@ class SyntheticsApi(object):
             >>> result = thread.get()
 
             Args:
-                body (synthetics_test_details.SyntheticsTestDetails): Details of the test to create.
+                body (SyntheticsTestDetails): Details of the test to create.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -213,7 +206,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_test_details.SyntheticsTestDetails
+                SyntheticsTestDetails
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -242,7 +235,7 @@ class SyntheticsApi(object):
 
         self.create_test = Endpoint(
             settings={
-                'response_type': (synthetics_test_details.SyntheticsTestDetails,),
+                'response_type': (SyntheticsTestDetails,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -273,7 +266,7 @@ class SyntheticsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (synthetics_test_details.SyntheticsTestDetails,),
+                        (SyntheticsTestDetails,),
                 },
                 'attribute_map': {
                 },
@@ -430,7 +423,7 @@ class SyntheticsApi(object):
             >>> result = thread.get()
 
             Args:
-                body (synthetics_delete_tests_payload.SyntheticsDeleteTestsPayload): Public ID list of the Synthetic tests to be deleted.
+                body (SyntheticsDeleteTestsPayload): Public ID list of the Synthetic tests to be deleted.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -454,7 +447,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_delete_tests_response.SyntheticsDeleteTestsResponse
+                SyntheticsDeleteTestsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -483,7 +476,7 @@ class SyntheticsApi(object):
 
         self.delete_tests = Endpoint(
             settings={
-                'response_type': (synthetics_delete_tests_response.SyntheticsDeleteTestsResponse,),
+                'response_type': (SyntheticsDeleteTestsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -514,7 +507,7 @@ class SyntheticsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (synthetics_delete_tests_payload.SyntheticsDeleteTestsPayload,),
+                        (SyntheticsDeleteTestsPayload,),
                 },
                 'attribute_map': {
                 },
@@ -553,7 +546,7 @@ class SyntheticsApi(object):
 
             Args:
                 variable_id (str): The ID of the global variable.
-                body (synthetics_global_variable.SyntheticsGlobalVariable): Details of the global variable to update.
+                body (SyntheticsGlobalVariable): Details of the global variable to update.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -577,7 +570,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_global_variable.SyntheticsGlobalVariable
+                SyntheticsGlobalVariable
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -608,7 +601,7 @@ class SyntheticsApi(object):
 
         self.edit_global_variable = Endpoint(
             settings={
-                'response_type': (synthetics_global_variable.SyntheticsGlobalVariable,),
+                'response_type': (SyntheticsGlobalVariable,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -643,7 +636,7 @@ class SyntheticsApi(object):
                     'variable_id':
                         (str,),
                     'body':
-                        (synthetics_global_variable.SyntheticsGlobalVariable,),
+                        (SyntheticsGlobalVariable,),
                 },
                 'attribute_map': {
                     'variable_id': 'variable_id',
@@ -709,7 +702,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_get_api_test_latest_results_response.SyntheticsGetAPITestLatestResultsResponse
+                SyntheticsGetAPITestLatestResultsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -738,7 +731,7 @@ class SyntheticsApi(object):
 
         self.get_api_test_latest_results = Endpoint(
             settings={
-                'response_type': (synthetics_get_api_test_latest_results_response.SyntheticsGetAPITestLatestResultsResponse,),
+                'response_type': (SyntheticsGetAPITestLatestResultsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -847,7 +840,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_api_test_result_full.SyntheticsAPITestResultFull
+                SyntheticsAPITestResultFull
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -878,7 +871,7 @@ class SyntheticsApi(object):
 
         self.get_api_test_result = Endpoint(
             settings={
-                'response_type': (synthetics_api_test_result_full.SyntheticsAPITestResultFull,),
+                'response_type': (SyntheticsAPITestResultFull,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -975,7 +968,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_test_details.SyntheticsTestDetails
+                SyntheticsTestDetails
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1004,7 +997,7 @@ class SyntheticsApi(object):
 
         self.get_browser_test = Endpoint(
             settings={
-                'response_type': (synthetics_test_details.SyntheticsTestDetails,),
+                'response_type': (SyntheticsTestDetails,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1098,7 +1091,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_get_browser_test_latest_results_response.SyntheticsGetBrowserTestLatestResultsResponse
+                SyntheticsGetBrowserTestLatestResultsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1127,7 +1120,7 @@ class SyntheticsApi(object):
 
         self.get_browser_test_latest_results = Endpoint(
             settings={
-                'response_type': (synthetics_get_browser_test_latest_results_response.SyntheticsGetBrowserTestLatestResultsResponse,),
+                'response_type': (SyntheticsGetBrowserTestLatestResultsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1236,7 +1229,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_browser_test_result_full.SyntheticsBrowserTestResultFull
+                SyntheticsBrowserTestResultFull
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1267,7 +1260,7 @@ class SyntheticsApi(object):
 
         self.get_browser_test_result = Endpoint(
             settings={
-                'response_type': (synthetics_browser_test_result_full.SyntheticsBrowserTestResultFull,),
+                'response_type': (SyntheticsBrowserTestResultFull,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1364,7 +1357,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_test_details.SyntheticsTestDetails
+                SyntheticsTestDetails
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1393,7 +1386,7 @@ class SyntheticsApi(object):
 
         self.get_test = Endpoint(
             settings={
-                'response_type': (synthetics_test_details.SyntheticsTestDetails,),
+                'response_type': (SyntheticsTestDetails,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1481,7 +1474,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_locations.SyntheticsLocations
+                SyntheticsLocations
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1508,7 +1501,7 @@ class SyntheticsApi(object):
 
         self.list_locations = Endpoint(
             settings={
-                'response_type': (synthetics_locations.SyntheticsLocations,),
+                'response_type': (SyntheticsLocations,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1590,7 +1583,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_list_tests_response.SyntheticsListTestsResponse
+                SyntheticsListTestsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1617,7 +1610,7 @@ class SyntheticsApi(object):
 
         self.list_tests = Endpoint(
             settings={
-                'response_type': (synthetics_list_tests_response.SyntheticsListTestsResponse,),
+                'response_type': (SyntheticsListTestsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1682,7 +1675,7 @@ class SyntheticsApi(object):
             >>> result = thread.get()
 
             Args:
-                body (synthetics_ci_test_body.SyntheticsCITestBody): Details of the test to trigger.
+                body (SyntheticsCITestBody): Details of the test to trigger.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -1706,7 +1699,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_trigger_ci_tests_response.SyntheticsTriggerCITestsResponse
+                SyntheticsTriggerCITestsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1735,7 +1728,7 @@ class SyntheticsApi(object):
 
         self.trigger_ci_tests = Endpoint(
             settings={
-                'response_type': (synthetics_trigger_ci_tests_response.SyntheticsTriggerCITestsResponse,),
+                'response_type': (SyntheticsTriggerCITestsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1766,7 +1759,7 @@ class SyntheticsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (synthetics_ci_test_body.SyntheticsCITestBody,),
+                        (SyntheticsCITestBody,),
                 },
                 'attribute_map': {
                 },
@@ -1805,7 +1798,7 @@ class SyntheticsApi(object):
 
             Args:
                 public_id (str): The public ID of the test to get details from.
-                body (synthetics_test_details.SyntheticsTestDetails): New test details to be saved.
+                body (SyntheticsTestDetails): New test details to be saved.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -1829,7 +1822,7 @@ class SyntheticsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                synthetics_test_details.SyntheticsTestDetails
+                SyntheticsTestDetails
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1860,7 +1853,7 @@ class SyntheticsApi(object):
 
         self.update_test = Endpoint(
             settings={
-                'response_type': (synthetics_test_details.SyntheticsTestDetails,),
+                'response_type': (SyntheticsTestDetails,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1895,7 +1888,7 @@ class SyntheticsApi(object):
                     'public_id':
                         (str,),
                     'body':
-                        (synthetics_test_details.SyntheticsTestDetails,),
+                        (SyntheticsTestDetails,),
                 },
                 'attribute_map': {
                     'public_id': 'public_id',
@@ -1936,7 +1929,7 @@ class SyntheticsApi(object):
 
             Args:
                 public_id (str): The public ID of the Synthetic test to update.
-                body (synthetics_update_test_pause_status_payload.SyntheticsUpdateTestPauseStatusPayload): Status to set the given Synthetic test to.
+                body (SyntheticsUpdateTestPauseStatusPayload): Status to set the given Synthetic test to.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -2026,7 +2019,7 @@ class SyntheticsApi(object):
                     'public_id':
                         (str,),
                     'body':
-                        (synthetics_update_test_pause_status_payload.SyntheticsUpdateTestPauseStatusPayload,),
+                        (SyntheticsUpdateTestPauseStatusPayload,),
                 },
                 'attribute_map': {
                     'public_id': 'public_id',

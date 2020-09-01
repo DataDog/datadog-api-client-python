@@ -1,4 +1,4 @@
-# ip_prefixes_process.IPPrefixesProcess
+# IPPrefixesProcess
 
 Available prefix information for the Process endpoints.
 ## Properties

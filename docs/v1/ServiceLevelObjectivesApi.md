@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **check_can_delete_slo**
-> check_can_delete_slo_response.CheckCanDeleteSLOResponse check_can_delete_slo(ids)
+> CheckCanDeleteSLOResponse check_can_delete_slo(ids)
 
 Check if SLOs can be safely deleted
 
@@ -26,12 +26,11 @@ Check if a SLO can be safely deleted. For example, assure an SLO can be deleted 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model import check_can_delete_slo_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDeleteSLOResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -68,8 +67,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    ids = 'id1, id2, id3' # str | A comma separated list of the IDs of the service level objectives objects.
-    
+    ids = "id1, id2, id3" # str | A comma separated list of the IDs of the service level objectives objects.
+
     # example passing only required values which don't have defaults set
     try:
         # Check if SLOs can be safely deleted
@@ -87,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**check_can_delete_slo_response.CheckCanDeleteSLOResponse**](CheckCanDeleteSLOResponse.md)
+[**CheckCanDeleteSLOResponse**](CheckCanDeleteSLOResponse.md)
 
 ### Authorization
 
@@ -109,7 +108,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_slo**
-> slo_list_response.SLOListResponse create_slo(body)
+> SLOListResponse create_slo(body)
 
 Create a SLO object
 
@@ -120,13 +119,12 @@ Create a service level objective object.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import slo_list_response
-from datadog_api_client.v1.model import service_level_objective_request
+from datadog_api_client.v1.model.slo_list_response import SLOListResponse
+from datadog_api_client.v1.model.service_level_objective_request import ServiceLevelObjectiveRequest
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -163,8 +161,42 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    body = service_level_objective_request.ServiceLevelObjectiveRequest() # service_level_objective_request.ServiceLevelObjectiveRequest | Service level objective request object.
-    
+    body = ServiceLevelObjectiveRequest(
+        created_at=1,
+        creator=Creator(
+            email="email_example",
+            handle="handle_example",
+            name="name_example",
+        ),
+        description="description_example",
+        groups=[
+            "["env:prod","role:mysql"]",
+        ],
+        id="id_example",
+        modified_at=1,
+        monitor_ids=[
+            1,
+        ],
+        name="name_example",
+        query=ServiceLevelObjectiveQuery(
+            denominator="denominator_example",
+            numerator="numerator_example",
+        ),
+        tags=[
+            "["env:prod","app:core"]",
+        ],
+        thresholds=[
+            SLOThreshold(
+                target=0.0,
+                target_display="99.9",
+                timeframe=SLOTimeframe("7d"),
+                warning=3.14,
+                warning_display="warning_display_example",
+            ),
+        ],
+        type=SLOType("metric"),
+    ) # ServiceLevelObjectiveRequest | Service level objective request object.
+
     # example passing only required values which don't have defaults set
     try:
         # Create a SLO object
@@ -178,11 +210,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**service_level_objective_request.ServiceLevelObjectiveRequest**](ServiceLevelObjectiveRequest.md)| Service level objective request object. |
+ **body** | [**ServiceLevelObjectiveRequest**](ServiceLevelObjectiveRequest.md)| Service level objective request object. |
 
 ### Return type
 
-[**slo_list_response.SLOListResponse**](SLOListResponse.md)
+[**SLOListResponse**](SLOListResponse.md)
 
 ### Authorization
 
@@ -203,7 +235,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_slo**
-> slo_delete_response.SLODeleteResponse delete_slo(slo_id)
+> SLODeleteResponse delete_slo(slo_id)
 
 Delete a SLO
 
@@ -214,12 +246,11 @@ Permanently delete the specified service level objective object.  If an SLO is u
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import slo_delete_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.slo_delete_response import SLODeleteResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -256,8 +287,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    slo_id = 'slo_id_example' # str | The ID of the service level objective.
-    force = 'force_example' # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
+    slo_id = "slo_id_example" # str | The ID of the service level objective.
+    force = "force_example" # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -286,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**slo_delete_response.SLODeleteResponse**](SLODeleteResponse.md)
+[**SLODeleteResponse**](SLODeleteResponse.md)
 
 ### Authorization
 
@@ -308,7 +339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_slo_timeframe_in_bulk**
-> slo_bulk_delete_response.SLOBulkDeleteResponse delete_slo_timeframe_in_bulk(body)
+> SLOBulkDeleteResponse delete_slo_timeframe_in_bulk(body)
 
 Bulk Delete SLO Timeframes
 
@@ -319,13 +350,12 @@ Delete (or partially delete) multiple service level objective objects.  This end
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import slo_bulk_delete
-from datadog_api_client.v1.model import slo_bulk_delete_response
+from datadog_api_client.v1.model.slo_bulk_delete_response import SLOBulkDeleteResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -362,8 +392,12 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    body = slo_bulk_delete.SLOBulkDelete() # slo_bulk_delete.SLOBulkDelete | Delete multiple service level objective objects request body.
-    
+    body = SLOBulkDelete(
+        "key": [
+            SLOTimeframe("7d"),
+        ],
+    ) # SLOBulkDelete | Delete multiple service level objective objects request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Bulk Delete SLO Timeframes
@@ -377,11 +411,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**slo_bulk_delete.SLOBulkDelete**](SLOBulkDelete.md)| Delete multiple service level objective objects request body. |
+ **body** | [**SLOBulkDelete**](SLOBulkDelete.md)| Delete multiple service level objective objects request body. |
 
 ### Return type
 
-[**slo_bulk_delete_response.SLOBulkDeleteResponse**](SLOBulkDeleteResponse.md)
+[**SLOBulkDeleteResponse**](SLOBulkDeleteResponse.md)
 
 ### Authorization
 
@@ -402,7 +436,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_slo**
-> slo_response.SLOResponse get_slo(slo_id)
+> SLOResponse get_slo(slo_id)
 
 Get a SLO's details
 
@@ -413,12 +447,11 @@ Get a service level objective object.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import slo_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.slo_response import SLOResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -455,8 +488,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    slo_id = 'slo_id_example' # str | The ID of the service level objective object.
-    
+    slo_id = "slo_id_example" # str | The ID of the service level objective object.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a SLO's details
@@ -474,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**slo_response.SLOResponse**](SLOResponse.md)
+[**SLOResponse**](SLOResponse.md)
 
 ### Authorization
 
@@ -495,7 +528,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_slo_history**
-> slo_history_response.SLOHistoryResponse get_slo_history(slo_id, from_ts, to_ts)
+> SLOHistoryResponse get_slo_history(slo_id, from_ts, to_ts)
 
 Get an SLO's history
 
@@ -506,12 +539,11 @@ Get a specific SLO’s history, regardless of its SLO type.  The detailed histor
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import slo_history_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.slo_history_response import SLOHistoryResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -548,10 +580,10 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    slo_id = 'slo_id_example' # str | The ID of the service level objective object.
-    from_ts = 56 # int | The `from` timestamp for the query window in epoch seconds.
-    to_ts = 56 # int | The `to` timestamp for the query window in epoch seconds.
-    
+    slo_id = "slo_id_example" # str | The ID of the service level objective object.
+    from_ts = 1 # int | The `from` timestamp for the query window in epoch seconds.
+    to_ts = 1 # int | The `to` timestamp for the query window in epoch seconds.
+
     # example passing only required values which don't have defaults set
     try:
         # Get an SLO's history
@@ -571,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**slo_history_response.SLOHistoryResponse**](SLOHistoryResponse.md)
+[**SLOHistoryResponse**](SLOHistoryResponse.md)
 
 ### Authorization
 
@@ -593,7 +625,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_sl_os**
-> slo_list_response.SLOListResponse list_sl_os(ids)
+> SLOListResponse list_sl_os(ids)
 
 Search SLOs
 
@@ -604,12 +636,11 @@ Get multiple service level objective objects by their IDs.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import slo_list_response
+from datadog_api_client.v1.model.slo_list_response import SLOListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -646,8 +677,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    ids = 'id1, id2, id3' # str | A comma separated list of the IDs of the service level objectives objects.
-    
+    ids = "id1, id2, id3" # str | A comma separated list of the IDs of the service level objectives objects.
+
     # example passing only required values which don't have defaults set
     try:
         # Search SLOs
@@ -665,7 +696,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**slo_list_response.SLOListResponse**](SLOListResponse.md)
+[**SLOListResponse**](SLOListResponse.md)
 
 ### Authorization
 
@@ -687,7 +718,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_slo**
-> slo_list_response.SLOListResponse update_slo(slo_id, body)
+> SLOListResponse update_slo(slo_id, body)
 
 Update a SLO
 
@@ -698,13 +729,12 @@ Update the specified service level objective object.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import service_level_objective
-from datadog_api_client.v1.model import slo_list_response
+from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
+from datadog_api_client.v1.model.slo_list_response import SLOListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -741,9 +771,46 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    slo_id = 'slo_id_example' # str | The ID of the service level objective object.
-    body = service_level_objective.ServiceLevelObjective() # service_level_objective.ServiceLevelObjective | The edited service level objective request object.
-    
+    slo_id = "slo_id_example" # str | The ID of the service level objective object.
+    body = ServiceLevelObjective(
+        created_at=1,
+        creator=Creator(
+            email="email_example",
+            handle="handle_example",
+            name="name_example",
+        ),
+        description="description_example",
+        groups=[
+            "["env:prod","role:mysql"]",
+        ],
+        id="id_example",
+        modified_at=1,
+        monitor_ids=[
+            1,
+        ],
+        monitor_tags=[
+            "monitor_tags_example",
+        ],
+        name="name_example",
+        query=ServiceLevelObjectiveQuery(
+            denominator="denominator_example",
+            numerator="numerator_example",
+        ),
+        tags=[
+            "["env:prod","app:core"]",
+        ],
+        thresholds=[
+            SLOThreshold(
+                target=0.0,
+                target_display="99.9",
+                timeframe=SLOTimeframe("7d"),
+                warning=3.14,
+                warning_display="warning_display_example",
+            ),
+        ],
+        type=SLOType("metric"),
+    ) # ServiceLevelObjective | The edited service level objective request object.
+
     # example passing only required values which don't have defaults set
     try:
         # Update a SLO
@@ -758,11 +825,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **slo_id** | **str**| The ID of the service level objective object. |
- **body** | [**service_level_objective.ServiceLevelObjective**](ServiceLevelObjective.md)| The edited service level objective request object. |
+ **body** | [**ServiceLevelObjective**](ServiceLevelObjective.md)| The edited service level objective request object. |
 
 ### Return type
 
-[**slo_list_response.SLOListResponse**](SLOListResponse.md)
+[**SLOListResponse**](SLOListResponse.md)
 
 ### Authorization
 

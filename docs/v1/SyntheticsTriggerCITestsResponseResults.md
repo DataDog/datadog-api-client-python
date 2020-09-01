@@ -1,9 +1,9 @@
-# synthetics_trigger_ci_tests_response_results.SyntheticsTriggerCITestsResponseResults
+# SyntheticsTriggerCITestsResponseResults
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**device** | [**synthetics_device_id.SyntheticsDeviceID**](SyntheticsDeviceID.md) |  | [optional] 
+**device** | [**SyntheticsDeviceID**](SyntheticsDeviceID.md) |  | [optional] 
 **location** | **float** | The location ID of the test run. | [optional] 
 **public_id** | **str** | The public ID of the Synthetics test. | [optional] 
 **result_id** | **str** | ID of the result. | [optional] 

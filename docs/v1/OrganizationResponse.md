@@ -1,10 +1,10 @@
-# organization_response.OrganizationResponse
+# OrganizationResponse
 
 Response with an organization.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**org** | [**organization.Organization**](Organization.md) |  | [optional] 
+**org** | [**Organization**](Organization.md) |  | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

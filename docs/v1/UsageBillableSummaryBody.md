@@ -1,4 +1,4 @@
-# usage_billable_summary_body.UsageBillableSummaryBody
+# UsageBillableSummaryBody
 
 Response with properties for each aggregated usage type.
 ## Properties

@@ -7,8 +7,6 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 __version__ = "0.1.0"
 
 # import ApiClient

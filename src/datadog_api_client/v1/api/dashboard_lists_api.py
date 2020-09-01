@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,15 +15,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import dashboard_list
-from datadog_api_client.v1.model import dashboard_list_delete_response
-from datadog_api_client.v1.model import dashboard_list_list_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.dashboard_list import DashboardList
+from datadog_api_client.v1.model.dashboard_list_delete_response import DashboardListDeleteResponse
+from datadog_api_client.v1.model.dashboard_list_list_response import DashboardListListResponse
 
 
 class DashboardListsApi(object):
@@ -58,7 +51,7 @@ class DashboardListsApi(object):
             >>> result = thread.get()
 
             Args:
-                body (dashboard_list.DashboardList): Create a dashboard list request body.
+                body (DashboardList): Create a dashboard list request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -82,7 +75,7 @@ class DashboardListsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_list.DashboardList
+                DashboardList
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -111,7 +104,7 @@ class DashboardListsApi(object):
 
         self.create_dashboard_list = Endpoint(
             settings={
-                'response_type': (dashboard_list.DashboardList,),
+                'response_type': (DashboardList,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -142,7 +135,7 @@ class DashboardListsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (dashboard_list.DashboardList,),
+                        (DashboardList,),
                 },
                 'attribute_map': {
                 },
@@ -203,7 +196,7 @@ class DashboardListsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_list_delete_response.DashboardListDeleteResponse
+                DashboardListDeleteResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -232,7 +225,7 @@ class DashboardListsApi(object):
 
         self.delete_dashboard_list = Endpoint(
             settings={
-                'response_type': (dashboard_list_delete_response.DashboardListDeleteResponse,),
+                'response_type': (DashboardListDeleteResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -323,7 +316,7 @@ class DashboardListsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_list.DashboardList
+                DashboardList
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -352,7 +345,7 @@ class DashboardListsApi(object):
 
         self.get_dashboard_list = Endpoint(
             settings={
-                'response_type': (dashboard_list.DashboardList,),
+                'response_type': (DashboardList,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -440,7 +433,7 @@ class DashboardListsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_list_list_response.DashboardListListResponse
+                DashboardListListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -467,7 +460,7 @@ class DashboardListsApi(object):
 
         self.list_dashboard_lists = Endpoint(
             settings={
-                'response_type': (dashboard_list_list_response.DashboardListListResponse,),
+                'response_type': (DashboardListListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -529,7 +522,7 @@ class DashboardListsApi(object):
 
             Args:
                 list_id (int): ID of the dashboard list to update.
-                body (dashboard_list.DashboardList): Update a dashboard list request body.
+                body (DashboardList): Update a dashboard list request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -553,7 +546,7 @@ class DashboardListsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_list.DashboardList
+                DashboardList
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -584,7 +577,7 @@ class DashboardListsApi(object):
 
         self.update_dashboard_list = Endpoint(
             settings={
-                'response_type': (dashboard_list.DashboardList,),
+                'response_type': (DashboardList,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -619,7 +612,7 @@ class DashboardListsApi(object):
                     'list_id':
                         (int,),
                     'body':
-                        (dashboard_list.DashboardList,),
+                        (DashboardList,),
                 },
                 'attribute_map': {
                     'list_id': 'list_id',

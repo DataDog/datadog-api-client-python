@@ -1,4 +1,4 @@
-# usage_rum_sessions_hour.UsageRumSessionsHour
+# UsageRumSessionsHour
 
 Number of RUM Sessions recorded for each hour for a given organization.
 ## Properties

@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,17 +15,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_logs_async_response
-from datadog_api_client.v1.model import aws_account_and_lambda_request
-from datadog_api_client.v1.model import aws_logs_services_request
-from datadog_api_client.v1.model import aws_logs_list_response
-from datadog_api_client.v1.model import aws_logs_list_services_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
+from datadog_api_client.v1.model.aws_logs_async_response import AWSLogsAsyncResponse
+from datadog_api_client.v1.model.aws_logs_list_response import AWSLogsListResponse
+from datadog_api_client.v1.model.aws_logs_list_services_response import AWSLogsListServicesResponse
+from datadog_api_client.v1.model.aws_logs_services_request import AWSLogsServicesRequest
 
 
 class AWSLogsIntegrationApi(object):
@@ -60,7 +53,7 @@ class AWSLogsIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (aws_account_and_lambda_request.AWSAccountAndLambdaRequest): Check AWS Log Lambda Async request body.
+                body (AWSAccountAndLambdaRequest): Check AWS Log Lambda Async request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -84,7 +77,7 @@ class AWSLogsIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                aws_logs_async_response.AWSLogsAsyncResponse
+                AWSLogsAsyncResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -113,7 +106,7 @@ class AWSLogsIntegrationApi(object):
 
         self.check_aws_logs_lambda_async = Endpoint(
             settings={
-                'response_type': (aws_logs_async_response.AWSLogsAsyncResponse,),
+                'response_type': (AWSLogsAsyncResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -144,7 +137,7 @@ class AWSLogsIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (aws_account_and_lambda_request.AWSAccountAndLambdaRequest,),
+                        (AWSAccountAndLambdaRequest,),
                 },
                 'attribute_map': {
                 },
@@ -181,7 +174,7 @@ class AWSLogsIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (aws_logs_services_request.AWSLogsServicesRequest): Check AWS Logs Async Services request body.
+                body (AWSLogsServicesRequest): Check AWS Logs Async Services request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -205,7 +198,7 @@ class AWSLogsIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                aws_logs_async_response.AWSLogsAsyncResponse
+                AWSLogsAsyncResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -234,7 +227,7 @@ class AWSLogsIntegrationApi(object):
 
         self.check_aws_logs_services_async = Endpoint(
             settings={
-                'response_type': (aws_logs_async_response.AWSLogsAsyncResponse,),
+                'response_type': (AWSLogsAsyncResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -265,7 +258,7 @@ class AWSLogsIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (aws_logs_services_request.AWSLogsServicesRequest,),
+                        (AWSLogsServicesRequest,),
                 },
                 'attribute_map': {
                 },
@@ -302,7 +295,7 @@ class AWSLogsIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (aws_account_and_lambda_request.AWSAccountAndLambdaRequest): AWS Log Lambda Async request body.
+                body (AWSAccountAndLambdaRequest): AWS Log Lambda Async request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -386,7 +379,7 @@ class AWSLogsIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (aws_account_and_lambda_request.AWSAccountAndLambdaRequest,),
+                        (AWSAccountAndLambdaRequest,),
                 },
                 'attribute_map': {
                 },
@@ -423,7 +416,7 @@ class AWSLogsIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (aws_account_and_lambda_request.AWSAccountAndLambdaRequest): Delete AWS Lambda ARN request body.
+                body (AWSAccountAndLambdaRequest): Delete AWS Lambda ARN request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -507,7 +500,7 @@ class AWSLogsIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (aws_account_and_lambda_request.AWSAccountAndLambdaRequest,),
+                        (AWSAccountAndLambdaRequest,),
                 },
                 'attribute_map': {
                 },
@@ -544,7 +537,7 @@ class AWSLogsIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (aws_logs_services_request.AWSLogsServicesRequest): Enable AWS Log Services request body.
+                body (AWSLogsServicesRequest): Enable AWS Log Services request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -628,7 +621,7 @@ class AWSLogsIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (aws_logs_services_request.AWSLogsServicesRequest,),
+                        (AWSLogsServicesRequest,),
                 },
                 'attribute_map': {
                 },
@@ -686,7 +679,7 @@ class AWSLogsIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                [aws_logs_list_response.AWSLogsListResponse]
+                [AWSLogsListResponse]
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -713,7 +706,7 @@ class AWSLogsIntegrationApi(object):
 
         self.list_aws_logs_integrations = Endpoint(
             settings={
-                'response_type': ([aws_logs_list_response.AWSLogsListResponse],),
+                'response_type': ([AWSLogsListResponse],),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -794,7 +787,7 @@ class AWSLogsIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                [aws_logs_list_services_response.AWSLogsListServicesResponse]
+                [AWSLogsListServicesResponse]
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -821,7 +814,7 @@ class AWSLogsIntegrationApi(object):
 
         self.list_aws_logs_services = Endpoint(
             settings={
-                'response_type': ([aws_logs_list_services_response.AWSLogsListServicesResponse],),
+                'response_type': ([AWSLogsListServicesResponse],),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'

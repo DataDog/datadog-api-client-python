@@ -1,4 +1,4 @@
-# logs_archive_integration_gcs.LogsArchiveIntegrationGCS
+# LogsArchiveIntegrationGCS
 
 The GCS archive's integration destination.
 ## Properties

@@ -1,4 +1,4 @@
-# dashboard_template_variable_preset_value.DashboardTemplateVariablePresetValue
+# DashboardTemplateVariablePresetValue
 
 Template variables saved views.
 ## Properties

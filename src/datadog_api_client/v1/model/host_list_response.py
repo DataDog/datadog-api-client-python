@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import host
-except ImportError:
-    host = sys.modules[
-        'datadog_api_client.v1.model.host']
+
+def lazy_import():
+    from datadog_api_client.v1.model.host import Host
+    globals()['Host'] = Host
 
 
 class HostListResponse(ModelNormal):
@@ -72,15 +67,16 @@ class HostListResponse(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'host_list': ([host.Host],),  # noqa: E501
+            'host_list': ([Host],),  # noqa: E501
             'total_matching': (int,),  # noqa: E501
             'total_returned': (int,),  # noqa: E501
         }
@@ -88,6 +84,7 @@ class HostListResponse(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'host_list': 'host_list',  # noqa: E501
@@ -108,7 +105,7 @@ class HostListResponse(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """host_list_response.HostListResponse - a model defined in OpenAPI
+        """HostListResponse - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -141,7 +138,7 @@ class HostListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            host_list ([host.Host]): Array of hosts.. [optional]  # noqa: E501
+            host_list ([Host]): Array of hosts.. [optional]  # noqa: E501
             total_matching (int): Number of host matching the query.. [optional]  # noqa: E501
             total_returned (int): Number of host returned.. [optional]  # noqa: E501
         """
@@ -169,7 +166,7 @@ class HostListResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_aws_account**
-> aws_account_create_response.AWSAccountCreateResponse create_aws_account(body)
+> AWSAccountCreateResponse create_aws_account(body)
 
 Create an AWS integration
 
@@ -24,13 +24,12 @@ Create a Datadog-Amazon Web Services integration. Using the `POST` method update
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_account
-from datadog_api_client.v1.model import aws_account_create_response
+from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.aws_account import AWSAccount
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -67,8 +66,25 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
-    body = aws_account.AWSAccount() # aws_account.AWSAccount | AWS Request Object
-    
+    body = AWSAccount(
+        access_key_id="access_key_id_example",
+        account_id="1234567",
+        account_specific_namespace_rules={
+            "key": True,
+        },
+        excluded_regions=[
+            "["us-east-1","us-west-2"]",
+        ],
+        filter_tags=[
+            "["<KEY>:<VALUE>"]",
+        ],
+        host_tags=[
+            "["<KEY>:<VALUE>"]",
+        ],
+        role_name="DatadogAWSIntegrationRole",
+        secret_access_key="secret_access_key_example",
+    ) # AWSAccount | AWS Request Object
+
     # example passing only required values which don't have defaults set
     try:
         # Create an AWS integration
@@ -82,11 +98,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**aws_account.AWSAccount**](AWSAccount.md)| AWS Request Object |
+ **body** | [**AWSAccount**](AWSAccount.md)| AWS Request Object |
 
 ### Return type
 
-[**aws_account_create_response.AWSAccountCreateResponse**](AWSAccountCreateResponse.md)
+[**AWSAccountCreateResponse**](AWSAccountCreateResponse.md)
 
 ### Authorization
 
@@ -108,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_new_aws_external_id**
-> aws_account_create_response.AWSAccountCreateResponse create_new_aws_external_id(body)
+> AWSAccountCreateResponse create_new_aws_external_id(body)
 
 Generate a new external ID
 
@@ -119,13 +135,12 @@ Generate a new AWS external ID for a given AWS account ID and role name pair.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_account
-from datadog_api_client.v1.model import aws_account_create_response
+from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.aws_account import AWSAccount
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -162,8 +177,25 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
-    body = aws_account.AWSAccount() # aws_account.AWSAccount | Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation).
-    
+    body = AWSAccount(
+        access_key_id="access_key_id_example",
+        account_id="1234567",
+        account_specific_namespace_rules={
+            "key": True,
+        },
+        excluded_regions=[
+            "["us-east-1","us-west-2"]",
+        ],
+        filter_tags=[
+            "["<KEY>:<VALUE>"]",
+        ],
+        host_tags=[
+            "["<KEY>:<VALUE>"]",
+        ],
+        role_name="DatadogAWSIntegrationRole",
+        secret_access_key="secret_access_key_example",
+    ) # AWSAccount | Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation).
+
     # example passing only required values which don't have defaults set
     try:
         # Generate a new external ID
@@ -177,11 +209,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**aws_account.AWSAccount**](AWSAccount.md)| Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation). |
+ **body** | [**AWSAccount**](AWSAccount.md)| Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation). |
 
 ### Return type
 
-[**aws_account_create_response.AWSAccountCreateResponse**](AWSAccountCreateResponse.md)
+[**AWSAccountCreateResponse**](AWSAccountCreateResponse.md)
 
 ### Authorization
 
@@ -213,12 +245,11 @@ Delete a Datadog-AWS integration matching the specified `account_id` and `role_n
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_account
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.aws_account import AWSAccount
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -255,8 +286,25 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
-    body = aws_account.AWSAccount() # aws_account.AWSAccount | AWS request object
-    
+    body = AWSAccount(
+        access_key_id="access_key_id_example",
+        account_id="1234567",
+        account_specific_namespace_rules={
+            "key": True,
+        },
+        excluded_regions=[
+            "["us-east-1","us-west-2"]",
+        ],
+        filter_tags=[
+            "["<KEY>:<VALUE>"]",
+        ],
+        host_tags=[
+            "["<KEY>:<VALUE>"]",
+        ],
+        role_name="DatadogAWSIntegrationRole",
+        secret_access_key="secret_access_key_example",
+    ) # AWSAccount | AWS request object
+
     # example passing only required values which don't have defaults set
     try:
         # Delete an AWS integration
@@ -270,7 +318,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**aws_account.AWSAccount**](AWSAccount.md)| AWS request object |
+ **body** | [**AWSAccount**](AWSAccount.md)| AWS request object |
 
 ### Return type
 
@@ -307,11 +355,10 @@ List all namespace rules for a given Datadog-AWS integration. This endpoint take
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -348,7 +395,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # List namespace rules
@@ -383,7 +430,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_aws_accounts**
-> aws_account_list_response.AWSAccountListResponse list_aws_accounts()
+> AWSAccountListResponse list_aws_accounts()
 
 List all AWS integrations
 
@@ -394,12 +441,11 @@ List all Datadog-AWS integrations available in your Datadog organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_account_list_response
+from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -436,9 +482,9 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
-    account_id = 'account_id_example' # str | Only return AWS accounts that matches this `account_id`. (optional)
-role_name = 'role_name_example' # str | Only return AWS accounts that matches this role_name. (optional)
-access_key_id = 'access_key_id_example' # str | Only return AWS accounts that matches this `access_key_id`. (optional)
+    account_id = "account_id_example" # str | Only return AWS accounts that matches this `account_id`. (optional)
+    role_name = "role_name_example" # str | Only return AWS accounts that matches this role_name. (optional)
+    access_key_id = "access_key_id_example" # str | Only return AWS accounts that matches this `access_key_id`. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -460,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**aws_account_list_response.AWSAccountListResponse**](AWSAccountListResponse.md)
+[**AWSAccountListResponse**](AWSAccountListResponse.md)
 
 ### Authorization
 
@@ -492,12 +538,11 @@ Update a Datadog-Amazon Web Services integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_account
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.aws_account import AWSAccount
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -534,10 +579,27 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
-    body = aws_account.AWSAccount() # aws_account.AWSAccount | AWS request object
-    account_id = 'account_id_example' # str | Only return AWS accounts that matches this `account_id`. (optional)
-role_name = 'role_name_example' # str | Only return AWS accounts that match this `role_name`. Required if `account_id` is specified. (optional)
-access_key_id = 'access_key_id_example' # str | Only return AWS accounts that matches this `access_key_id`. Required if none of the other two options are specified. (optional)
+    body = AWSAccount(
+        access_key_id="access_key_id_example",
+        account_id="1234567",
+        account_specific_namespace_rules={
+            "key": True,
+        },
+        excluded_regions=[
+            "["us-east-1","us-west-2"]",
+        ],
+        filter_tags=[
+            "["<KEY>:<VALUE>"]",
+        ],
+        host_tags=[
+            "["<KEY>:<VALUE>"]",
+        ],
+        role_name="DatadogAWSIntegrationRole",
+        secret_access_key="secret_access_key_example",
+    ) # AWSAccount | AWS request object
+    account_id = "account_id_example" # str | Only return AWS accounts that matches this `account_id`. (optional)
+    role_name = "role_name_example" # str | Only return AWS accounts that match this `role_name`. Required if `account_id` is specified. (optional)
+    access_key_id = "access_key_id_example" # str | Only return AWS accounts that matches this `access_key_id`. Required if none of the other two options are specified. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -561,7 +623,7 @@ access_key_id = 'access_key_id_example' # str | Only return AWS accounts that ma
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**aws_account.AWSAccount**](AWSAccount.md)| AWS request object |
+ **body** | [**AWSAccount**](AWSAccount.md)| AWS request object |
  **account_id** | **str**| Only return AWS accounts that matches this &#x60;account_id&#x60;. | [optional]
  **role_name** | **str**| Only return AWS accounts that match this &#x60;role_name&#x60;. Required if &#x60;account_id&#x60; is specified. | [optional]
  **access_key_id** | **str**| Only return AWS accounts that matches this &#x60;access_key_id&#x60;. Required if none of the other two options are specified. | [optional]

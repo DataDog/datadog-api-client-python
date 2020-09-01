@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,13 +15,11 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import graph_snapshot
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.graph_snapshot import GraphSnapshot
 
 
 class SnapshotsApi(object):
@@ -86,7 +79,7 @@ class SnapshotsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                graph_snapshot.GraphSnapshot
+                GraphSnapshot
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -117,7 +110,7 @@ class SnapshotsApi(object):
 
         self.get_graph_snapshot = Endpoint(
             settings={
-                'response_type': (graph_snapshot.GraphSnapshot,),
+                'response_type': (GraphSnapshot,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import alert_graph_widget_definition_type
-except ImportError:
-    alert_graph_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.alert_graph_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
-try:
-    from datadog_api_client.v1.model import widget_time
-except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
-try:
-    from datadog_api_client.v1.model import widget_viz_type
-except ImportError:
-    widget_viz_type = sys.modules[
-        'datadog_api_client.v1.model.widget_viz_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.alert_graph_widget_definition_type import AlertGraphWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_viz_type import WidgetVizType
+    globals()['AlertGraphWidgetDefinitionType'] = AlertGraphWidgetDefinitionType
+    globals()['WidgetTextAlign'] = WidgetTextAlign
+    globals()['WidgetTime'] = WidgetTime
+    globals()['WidgetVizType'] = WidgetVizType
 
 
 class AlertGraphWidgetDefinition(ModelNormal):
@@ -87,26 +73,28 @@ class AlertGraphWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'alert_id': (str,),  # noqa: E501
-            'type': (alert_graph_widget_definition_type.AlertGraphWidgetDefinitionType,),  # noqa: E501
-            'viz_type': (widget_viz_type.WidgetVizType,),  # noqa: E501
-            'time': (widget_time.WidgetTime,),  # noqa: E501
+            'type': (AlertGraphWidgetDefinitionType,),  # noqa: E501
+            'viz_type': (WidgetVizType,),  # noqa: E501
+            'time': (WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'alert_id': 'alert_id',  # noqa: E501
@@ -131,12 +119,12 @@ class AlertGraphWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, alert_id, type, viz_type, *args, **kwargs):  # noqa: E501
-        """alert_graph_widget_definition.AlertGraphWidgetDefinition - a model defined in OpenAPI
+        """AlertGraphWidgetDefinition - a model defined in OpenAPI
 
         Args:
             alert_id (str): ID of the alert to use in the widget.
-            type (alert_graph_widget_definition_type.AlertGraphWidgetDefinitionType):
-            viz_type (widget_viz_type.WidgetVizType):
+            type (AlertGraphWidgetDefinitionType):
+            viz_type (WidgetVizType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -169,9 +157,9 @@ class AlertGraphWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            time (widget_time.WidgetTime): [optional]  # noqa: E501
+            time (WidgetTime): [optional]  # noqa: E501
             title (str): The title of the widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
@@ -201,7 +189,7 @@ class AlertGraphWidgetDefinition(ModelNormal):
         self.alert_id = alert_id
         self.type = type
         self.viz_type = viz_type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

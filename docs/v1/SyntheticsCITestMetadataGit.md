@@ -1,4 +1,4 @@
-# synthetics_ci_test_metadata_git.SyntheticsCITestMetadataGit
+# SyntheticsCITestMetadataGit
 
 ## Properties
 Name | Type | Description | Notes

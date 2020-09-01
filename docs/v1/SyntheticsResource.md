@@ -1,4 +1,4 @@
-# synthetics_resource.SyntheticsResource
+# SyntheticsResource
 
 Object describing a resource which is the combination of requests (fetch, XHR) and Assets (HTML, CSS, JS, images).
 ## Properties
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **status** | **int** | Status Code of the resource. | [optional] 
 **timestamp** | **float** | Timestamp of the resource collection. | [optional] 
 **trace_id** | **str** | Trace ID associated with the resource if any. | [optional] 
-**type** | [**synthetics_resource_type.SyntheticsResourceType**](SyntheticsResourceType.md) |  | [optional] 
+**type** | [**SyntheticsResourceType**](SyntheticsResourceType.md) |  | [optional] 
 **url** | **str** | URL of the resource. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)

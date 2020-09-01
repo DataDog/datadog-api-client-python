@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -20,17 +15,15 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v2.model import logs_aggregate_response
-from datadog_api_client.v2.model import logs_aggregate_request
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import logs_list_response
-from datadog_api_client.v2.model import logs_list_request
-from datadog_api_client.v2.model import logs_sort
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.logs_aggregate_request import LogsAggregateRequest
+from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
+from datadog_api_client.v2.model.logs_list_request import LogsListRequest
+from datadog_api_client.v2.model.logs_list_response import LogsListResponse
+from datadog_api_client.v2.model.logs_sort import LogsSort
 
 
 class LogsApi(object):
@@ -60,7 +53,7 @@ class LogsApi(object):
 
 
             Keyword Args:
-                body (logs_aggregate_request.LogsAggregateRequest): [optional]
+                body (LogsAggregateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -82,7 +75,7 @@ class LogsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_aggregate_response.LogsAggregateResponse
+                LogsAggregateResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -109,7 +102,7 @@ class LogsApi(object):
 
         self.aggregate_logs = Endpoint(
             settings={
-                'response_type': (logs_aggregate_response.LogsAggregateResponse,),
+                'response_type': (LogsAggregateResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -138,7 +131,7 @@ class LogsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (logs_aggregate_request.LogsAggregateRequest,),
+                        (LogsAggregateRequest,),
                 },
                 'attribute_map': {
                 },
@@ -175,7 +168,7 @@ class LogsApi(object):
 
 
             Keyword Args:
-                body (logs_list_request.LogsListRequest): [optional]
+                body (LogsListRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -197,7 +190,7 @@ class LogsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_list_response.LogsListResponse
+                LogsListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -224,7 +217,7 @@ class LogsApi(object):
 
         self.list_logs = Endpoint(
             settings={
-                'response_type': (logs_list_response.LogsListResponse,),
+                'response_type': (LogsListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -253,7 +246,7 @@ class LogsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (logs_list_request.LogsListRequest,),
+                        (LogsListRequest,),
                 },
                 'attribute_map': {
                 },
@@ -294,7 +287,7 @@ class LogsApi(object):
                 filter_index (str): For customers with multiple indexes, the indexes to search Defaults to &#39;*&#39; which means all indexes. [optional]
                 filter_from (datetime): Minimum timestamp for requested logs.. [optional]
                 filter_to (datetime): Maximum timestamp for requested logs.. [optional]
-                sort (logs_sort.LogsSort): Order of logs in results.. [optional]
+                sort (LogsSort): Order of logs in results.. [optional]
                 page_cursor (str): List following results with a cursor provided in the previous query.. [optional]
                 page_limit (int): Maximum number of logs in the response.. [optional] if omitted the server will use the default value of 10
                 _return_http_data_only (bool): response data without head status
@@ -318,7 +311,7 @@ class LogsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_list_response.LogsListResponse
+                LogsListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -345,7 +338,7 @@ class LogsApi(object):
 
         self.list_logs_get = Endpoint(
             settings={
-                'response_type': (logs_list_response.LogsListResponse,),
+                'response_type': (LogsListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -393,7 +386,7 @@ class LogsApi(object):
                     'filter_to':
                         (datetime,),
                     'sort':
-                        (logs_sort.LogsSort,),
+                        (LogsSort,),
                     'page_cursor':
                         (str,),
                     'page_limit':

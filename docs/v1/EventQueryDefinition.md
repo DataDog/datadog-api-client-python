@@ -1,4 +1,4 @@
-# event_query_definition.EventQueryDefinition
+# EventQueryDefinition
 
 The event query.
 ## Properties

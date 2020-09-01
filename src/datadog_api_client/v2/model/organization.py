@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import organization_attributes
-except ImportError:
-    organization_attributes = sys.modules[
-        'datadog_api_client.v2.model.organization_attributes']
-try:
-    from datadog_api_client.v2.model import organizations_type
-except ImportError:
-    organizations_type = sys.modules[
-        'datadog_api_client.v2.model.organizations_type']
+
+def lazy_import():
+    from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
+    from datadog_api_client.v2.model.organizations_type import OrganizationsType
+    globals()['OrganizationAttributes'] = OrganizationAttributes
+    globals()['OrganizationsType'] = OrganizationsType
 
 
 class Organization(ModelNormal):
@@ -77,22 +69,24 @@ class Organization(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'type': (organizations_type.OrganizationsType,),  # noqa: E501
-            'attributes': (organization_attributes.OrganizationAttributes,),  # noqa: E501
+            'type': (OrganizationsType,),  # noqa: E501
+            'attributes': (OrganizationAttributes,),  # noqa: E501
             'id': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'type': 'type',  # noqa: E501
@@ -113,10 +107,10 @@ class Organization(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, type, *args, **kwargs):  # noqa: E501
-        """organization.Organization - a model defined in OpenAPI
+        """Organization - a model defined in OpenAPI
 
         Args:
-            type (organizations_type.OrganizationsType):
+            type (OrganizationsType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -149,7 +143,7 @@ class Organization(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (organization_attributes.OrganizationAttributes): [optional]  # noqa: E501
+            attributes (OrganizationAttributes): [optional]  # noqa: E501
             id (str): ID of the organization.. [optional]  # noqa: E501
         """
 
@@ -177,7 +171,7 @@ class Organization(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

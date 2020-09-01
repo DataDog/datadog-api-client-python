@@ -1,4 +1,4 @@
-# process_query_definition.ProcessQueryDefinition
+# ProcessQueryDefinition
 
 The process query to use in the widget.
 ## Properties

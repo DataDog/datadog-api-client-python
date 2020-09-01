@@ -1,4 +1,4 @@
-# logs_list_response_links.LogsListResponseLinks
+# LogsListResponseLinks
 
 Links attributes.
 ## Properties

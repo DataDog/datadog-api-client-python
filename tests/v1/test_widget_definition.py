@@ -186,11 +186,6 @@ except ImportError:
     widget_layout_type = sys.modules[
         'datadog_api_client.v1.model.widget_layout_type']
 try:
-    from datadog_api_client.v1.model import widget_legend_size
-except ImportError:
-    widget_legend_size = sys.modules[
-        'datadog_api_client.v1.model.widget_legend_size']
-try:
     from datadog_api_client.v1.model import widget_margin
 except ImportError:
     widget_margin = sys.modules[

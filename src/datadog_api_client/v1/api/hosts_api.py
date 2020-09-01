@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,16 +15,14 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import host_totals
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import host_list_response
-from datadog_api_client.v1.model import host_mute_settings
-from datadog_api_client.v1.model import host_mute_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.host_list_response import HostListResponse
+from datadog_api_client.v1.model.host_mute_response import HostMuteResponse
+from datadog_api_client.v1.model.host_mute_settings import HostMuteSettings
+from datadog_api_client.v1.model.host_totals import HostTotals
 
 
 class HostsApi(object):
@@ -81,7 +74,7 @@ class HostsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                host_totals.HostTotals
+                HostTotals
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -108,7 +101,7 @@ class HostsApi(object):
 
         self.get_host_totals = Endpoint(
             settings={
-                'response_type': (host_totals.HostTotals,),
+                'response_type': (HostTotals,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -202,7 +195,7 @@ class HostsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                host_list_response.HostListResponse
+                HostListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -229,7 +222,7 @@ class HostsApi(object):
 
         self.list_hosts = Endpoint(
             settings={
-                'response_type': (host_list_response.HostListResponse,),
+                'response_type': (HostListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -332,7 +325,7 @@ class HostsApi(object):
                 host_name (str): Name of the host to mute.
 
             Keyword Args:
-                body (host_mute_settings.HostMuteSettings): Mute a host request body.. [optional]
+                body (HostMuteSettings): Mute a host request body.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -354,7 +347,7 @@ class HostsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                host_mute_response.HostMuteResponse
+                HostMuteResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -383,7 +376,7 @@ class HostsApi(object):
 
         self.mute_host = Endpoint(
             settings={
-                'response_type': (host_mute_response.HostMuteResponse,),
+                'response_type': (HostMuteResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -417,7 +410,7 @@ class HostsApi(object):
                     'host_name':
                         (str,),
                     'body':
-                        (host_mute_settings.HostMuteSettings,),
+                        (HostMuteSettings,),
                 },
                 'attribute_map': {
                     'host_name': 'host_name',
@@ -480,7 +473,7 @@ class HostsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                host_mute_response.HostMuteResponse
+                HostMuteResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -509,7 +502,7 @@ class HostsApi(object):
 
         self.unmute_host = Endpoint(
             settings={
-                'response_type': (host_mute_response.HostMuteResponse,),
+                'response_type': (HostMuteResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'

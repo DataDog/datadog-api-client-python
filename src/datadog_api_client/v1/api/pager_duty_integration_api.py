@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,15 +15,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import pager_duty_service_name
-from datadog_api_client.v1.model import pager_duty_service
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import pager_duty_service_key
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.pager_duty_service import PagerDutyService
+from datadog_api_client.v1.model.pager_duty_service_key import PagerDutyServiceKey
+from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
 
 
 class PagerDutyIntegrationApi(object):
@@ -58,7 +51,7 @@ class PagerDutyIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (pager_duty_service.PagerDutyService): Create a new service object request body.
+                body (PagerDutyService): Create a new service object request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -82,7 +75,7 @@ class PagerDutyIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                pager_duty_service_name.PagerDutyServiceName
+                PagerDutyServiceName
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -111,7 +104,7 @@ class PagerDutyIntegrationApi(object):
 
         self.create_pager_duty_integration_service = Endpoint(
             settings={
-                'response_type': (pager_duty_service_name.PagerDutyServiceName,),
+                'response_type': (PagerDutyServiceName,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -142,7 +135,7 @@ class PagerDutyIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (pager_duty_service.PagerDutyService,),
+                        (PagerDutyService,),
                 },
                 'attribute_map': {
                 },
@@ -323,7 +316,7 @@ class PagerDutyIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                pager_duty_service_name.PagerDutyServiceName
+                PagerDutyServiceName
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -352,7 +345,7 @@ class PagerDutyIntegrationApi(object):
 
         self.get_pager_duty_integration_service = Endpoint(
             settings={
-                'response_type': (pager_duty_service_name.PagerDutyServiceName,),
+                'response_type': (PagerDutyServiceName,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -421,7 +414,7 @@ class PagerDutyIntegrationApi(object):
 
             Args:
                 service_name (str): The service name
-                body (pager_duty_service_key.PagerDutyServiceKey): Update an existing service object request body.
+                body (PagerDutyServiceKey): Update an existing service object request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -511,7 +504,7 @@ class PagerDutyIntegrationApi(object):
                     'service_name':
                         (str,),
                     'body':
-                        (pager_duty_service_key.PagerDutyServiceKey,),
+                        (PagerDutyServiceKey,),
                 },
                 'attribute_map': {
                     'service_name': 'service_name',

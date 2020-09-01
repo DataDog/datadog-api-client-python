@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **create_api_key**
-> api_key_response.ApiKeyResponse create_api_key(body)
+> ApiKeyResponse create_api_key(body)
 
 Create an API key
 
@@ -28,13 +28,12 @@ Creates an API key with a given name.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import key_management_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import api_key
-from datadog_api_client.v1.model import api_key_response
+from datadog_api_client.v1.model.api_key_response import ApiKeyResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.api_key import ApiKey
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -71,8 +70,13 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    body = api_key.ApiKey() # api_key.ApiKey | 
-    
+    body = ApiKey(
+        created="2019-08-02 15:31:07",
+        created_by="john@example.com",
+        key="1234512345123456abcabc912349abcd",
+        name="example user",
+    ) # ApiKey | 
+
     # example passing only required values which don't have defaults set
     try:
         # Create an API key
@@ -86,11 +90,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**api_key.ApiKey**](ApiKey.md)|  |
+ **body** | [**ApiKey**](ApiKey.md)|  |
 
 ### Return type
 
-[**api_key_response.ApiKeyResponse**](ApiKeyResponse.md)
+[**ApiKeyResponse**](ApiKeyResponse.md)
 
 ### Authorization
 
@@ -111,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_application_key**
-> application_key_response.ApplicationKeyResponse create_application_key(body)
+> ApplicationKeyResponse create_application_key(body)
 
 Create an application key
 
@@ -122,13 +126,12 @@ Create an application key with a given name.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import key_management_api
-from datadog_api_client.v1.model import application_key
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import application_key_response
+from datadog_api_client.v1.model.application_key import ApplicationKey
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.application_key_response import ApplicationKeyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -165,8 +168,12 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    body = application_key.ApplicationKey() # application_key.ApplicationKey | 
-    
+    body = ApplicationKey(
+        hash="1234512345123459cda4eb9ced49a3d84fd0138c",
+        name="example user",
+        owner="example.com",
+    ) # ApplicationKey | 
+
     # example passing only required values which don't have defaults set
     try:
         # Create an application key
@@ -180,11 +187,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**application_key.ApplicationKey**](ApplicationKey.md)|  |
+ **body** | [**ApplicationKey**](ApplicationKey.md)|  |
 
 ### Return type
 
-[**application_key_response.ApplicationKeyResponse**](ApplicationKeyResponse.md)
+[**ApplicationKeyResponse**](ApplicationKeyResponse.md)
 
 ### Authorization
 
@@ -206,7 +213,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_api_key**
-> api_key_response.ApiKeyResponse delete_api_key(key)
+> ApiKeyResponse delete_api_key(key)
 
 Delete an API key
 
@@ -217,12 +224,11 @@ Delete a given API key.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import key_management_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import api_key_response
+from datadog_api_client.v1.model.api_key_response import ApiKeyResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -259,8 +265,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    key = 'key_example' # str | The specific API key you are working with.
-    
+    key = "key_example" # str | The specific API key you are working with.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete an API key
@@ -278,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**api_key_response.ApiKeyResponse**](ApiKeyResponse.md)
+[**ApiKeyResponse**](ApiKeyResponse.md)
 
 ### Authorization
 
@@ -300,7 +306,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_application_key**
-> application_key_response.ApplicationKeyResponse delete_application_key(key)
+> ApplicationKeyResponse delete_application_key(key)
 
 Delete an application key
 
@@ -311,12 +317,11 @@ Delete a given application key.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import key_management_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import application_key_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.application_key_response import ApplicationKeyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -353,8 +358,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    key = 'key_example' # str | The specific APP key you are working with.
-    
+    key = "key_example" # str | The specific APP key you are working with.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete an application key
@@ -372,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**application_key_response.ApplicationKeyResponse**](ApplicationKeyResponse.md)
+[**ApplicationKeyResponse**](ApplicationKeyResponse.md)
 
 ### Authorization
 
@@ -393,7 +398,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_api_key**
-> api_key_response.ApiKeyResponse get_api_key(key)
+> ApiKeyResponse get_api_key(key)
 
 Get API key
 
@@ -404,12 +409,11 @@ Get a given API key.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import key_management_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import api_key_response
+from datadog_api_client.v1.model.api_key_response import ApiKeyResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -446,8 +450,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    key = 'key_example' # str | The specific API key you are working with.
-    
+    key = "key_example" # str | The specific API key you are working with.
+
     # example passing only required values which don't have defaults set
     try:
         # Get API key
@@ -465,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**api_key_response.ApiKeyResponse**](ApiKeyResponse.md)
+[**ApiKeyResponse**](ApiKeyResponse.md)
 
 ### Authorization
 
@@ -486,7 +490,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_application_key**
-> application_key_response.ApplicationKeyResponse get_application_key(key)
+> ApplicationKeyResponse get_application_key(key)
 
 Get an application key
 
@@ -497,12 +501,11 @@ Get a given application key.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import key_management_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import application_key_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.application_key_response import ApplicationKeyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -539,8 +542,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    key = 'key_example' # str | The specific APP key you are working with.
-    
+    key = "key_example" # str | The specific APP key you are working with.
+
     # example passing only required values which don't have defaults set
     try:
         # Get an application key
@@ -558,7 +561,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**application_key_response.ApplicationKeyResponse**](ApplicationKeyResponse.md)
+[**ApplicationKeyResponse**](ApplicationKeyResponse.md)
 
 ### Authorization
 
@@ -579,7 +582,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_api_keys**
-> api_key_list_response.ApiKeyListResponse list_api_keys()
+> ApiKeyListResponse list_api_keys()
 
 Get all API keys
 
@@ -590,12 +593,11 @@ Get all API keys available for your account.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import key_management_api
-from datadog_api_client.v1.model import api_key_list_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_key_list_response import ApiKeyListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -632,7 +634,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get all API keys
@@ -647,7 +649,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**api_key_list_response.ApiKeyListResponse**](ApiKeyListResponse.md)
+[**ApiKeyListResponse**](ApiKeyListResponse.md)
 
 ### Authorization
 
@@ -667,7 +669,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_application_keys**
-> application_key_list_response.ApplicationKeyListResponse list_application_keys()
+> ApplicationKeyListResponse list_application_keys()
 
 Get all application keys
 
@@ -678,12 +680,11 @@ Get all application keys available for your Datadog account.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import key_management_api
-from datadog_api_client.v1.model import application_key_list_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.application_key_list_response import ApplicationKeyListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -720,7 +721,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get all application keys
@@ -735,7 +736,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**application_key_list_response.ApplicationKeyListResponse**](ApplicationKeyListResponse.md)
+[**ApplicationKeyListResponse**](ApplicationKeyListResponse.md)
 
 ### Authorization
 
@@ -755,7 +756,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_api_key**
-> api_key_response.ApiKeyResponse update_api_key(key, body)
+> ApiKeyResponse update_api_key(key, body)
 
 Edit an API key
 
@@ -766,13 +767,12 @@ Edit an API key name.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import key_management_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import api_key
-from datadog_api_client.v1.model import api_key_response
+from datadog_api_client.v1.model.api_key_response import ApiKeyResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.api_key import ApiKey
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -809,9 +809,14 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    key = 'key_example' # str | The specific API key you are working with.
-    body = api_key.ApiKey() # api_key.ApiKey | 
-    
+    key = "key_example" # str | The specific API key you are working with.
+    body = ApiKey(
+        created="2019-08-02 15:31:07",
+        created_by="john@example.com",
+        key="1234512345123456abcabc912349abcd",
+        name="example user",
+    ) # ApiKey | 
+
     # example passing only required values which don't have defaults set
     try:
         # Edit an API key
@@ -826,11 +831,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **str**| The specific API key you are working with. |
- **body** | [**api_key.ApiKey**](ApiKey.md)|  |
+ **body** | [**ApiKey**](ApiKey.md)|  |
 
 ### Return type
 
-[**api_key_response.ApiKeyResponse**](ApiKeyResponse.md)
+[**ApiKeyResponse**](ApiKeyResponse.md)
 
 ### Authorization
 
@@ -852,7 +857,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_application_key**
-> application_key_response.ApplicationKeyResponse update_application_key(key, body)
+> ApplicationKeyResponse update_application_key(key, body)
 
 Edit an application key
 
@@ -863,13 +868,12 @@ Edit an application key name.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import key_management_api
-from datadog_api_client.v1.model import application_key
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import application_key_response
+from datadog_api_client.v1.model.application_key import ApplicationKey
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.application_key_response import ApplicationKeyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -906,9 +910,13 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    key = 'key_example' # str | The specific APP key you are working with.
-    body = application_key.ApplicationKey() # application_key.ApplicationKey | 
-    
+    key = "key_example" # str | The specific APP key you are working with.
+    body = ApplicationKey(
+        hash="1234512345123459cda4eb9ced49a3d84fd0138c",
+        name="example user",
+        owner="example.com",
+    ) # ApplicationKey | 
+
     # example passing only required values which don't have defaults set
     try:
         # Edit an application key
@@ -923,11 +931,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **str**| The specific APP key you are working with. |
- **body** | [**application_key.ApplicationKey**](ApplicationKey.md)|  |
+ **body** | [**ApplicationKey**](ApplicationKey.md)|  |
 
 ### Return type
 
-[**application_key_response.ApplicationKeyResponse**](ApplicationKeyResponse.md)
+[**ApplicationKeyResponse**](ApplicationKeyResponse.md)
 
 ### Authorization
 

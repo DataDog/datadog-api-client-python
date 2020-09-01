@@ -1,4 +1,4 @@
-# user_update_attributes.UserUpdateAttributes
+# UserUpdateAttributes
 
 Attributes of the edited user.
 ## Properties

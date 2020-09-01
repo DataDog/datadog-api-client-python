@@ -1,4 +1,4 @@
-# aws_account_create_response.AWSAccountCreateResponse
+# AWSAccountCreateResponse
 
 The Response returned by the AWS Create Account call.
 ## Properties

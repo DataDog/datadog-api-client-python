@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **validate**
-> authentication_validation_response.AuthenticationValidationResponse validate()
+> AuthenticationValidationResponse validate()
 
 Validate API key
 
@@ -18,12 +18,11 @@ Check if the API key (not the APP key) is valid. If invalid, a 403 is returned.
 
 * Api Key Authentication (apiKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import authentication_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import authentication_validation_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.authentication_validation_response import AuthenticationValidationResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -50,7 +49,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentication_api.AuthenticationApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Validate API key
@@ -65,7 +64,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**authentication_validation_response.AuthenticationValidationResponse**](AuthenticationValidationResponse.md)
+[**AuthenticationValidationResponse**](AuthenticationValidationResponse.md)
 
 ### Authorization
 

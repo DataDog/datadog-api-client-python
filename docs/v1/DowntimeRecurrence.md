@@ -1,4 +1,4 @@
-# downtime_recurrence.DowntimeRecurrence
+# DowntimeRecurrence
 
 An object defining the recurrence of the downtime.
 ## Properties

@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,15 +15,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
-from datadog_api_client.v1.model import logs_list_response
-from datadog_api_client.v1.model import logs_list_request
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
+from datadog_api_client.v1.model.logs_list_request import LogsListRequest
+from datadog_api_client.v1.model.logs_list_response import LogsListResponse
 
 
 class LogsApi(object):
@@ -58,7 +51,7 @@ class LogsApi(object):
             >>> result = thread.get()
 
             Args:
-                body (logs_list_request.LogsListRequest): Logs filter
+                body (LogsListRequest): Logs filter
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -82,7 +75,7 @@ class LogsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_list_response.LogsListResponse
+                LogsListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -111,7 +104,7 @@ class LogsApi(object):
 
         self.list_logs = Endpoint(
             settings={
-                'response_type': (logs_list_response.LogsListResponse,),
+                'response_type': (LogsListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -142,7 +135,7 @@ class LogsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (logs_list_request.LogsListRequest,),
+                        (LogsListRequest,),
                 },
                 'attribute_map': {
                 },

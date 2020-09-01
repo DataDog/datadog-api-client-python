@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import monitor_overall_states
-except ImportError:
-    monitor_overall_states = sys.modules[
-        'datadog_api_client.v1.model.monitor_overall_states']
+
+def lazy_import():
+    from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
+    globals()['MonitorOverallStates'] = MonitorOverallStates
 
 
 class MonitorStateGroup(ModelNormal):
@@ -72,25 +67,27 @@ class MonitorStateGroup(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'last_nodata_ts': (int,),  # noqa: E501
             'last_notified_ts': (int,),  # noqa: E501
             'last_resolved_ts': (int,),  # noqa: E501
             'last_triggered_ts': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'status': (monitor_overall_states.MonitorOverallStates,),  # noqa: E501
+            'status': (MonitorOverallStates,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'last_nodata_ts': 'last_nodata_ts',  # noqa: E501
@@ -114,7 +111,7 @@ class MonitorStateGroup(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """monitor_state_group.MonitorStateGroup - a model defined in OpenAPI
+        """MonitorStateGroup - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -152,7 +149,7 @@ class MonitorStateGroup(ModelNormal):
             last_resolved_ts (int): Latest timestamp the monitor group was resolved.. [optional]  # noqa: E501
             last_triggered_ts (int): Latest timestamp the monitor group triggered.. [optional]  # noqa: E501
             name (str): The name of the monitor.. [optional]  # noqa: E501
-            status (monitor_overall_states.MonitorOverallStates): [optional]  # noqa: E501
+            status (MonitorOverallStates): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -178,7 +175,7 @@ class MonitorStateGroup(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

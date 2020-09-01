@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import log_query_definition_group_by
-except ImportError:
-    log_query_definition_group_by = sys.modules[
-        'datadog_api_client.v1.model.log_query_definition_group_by']
-try:
-    from datadog_api_client.v1.model import log_query_definition_search
-except ImportError:
-    log_query_definition_search = sys.modules[
-        'datadog_api_client.v1.model.log_query_definition_search']
-try:
-    from datadog_api_client.v1.model import logs_query_compute
-except ImportError:
-    logs_query_compute = sys.modules[
-        'datadog_api_client.v1.model.logs_query_compute']
+
+def lazy_import():
+    from datadog_api_client.v1.model.log_query_definition_group_by import LogQueryDefinitionGroupBy
+    from datadog_api_client.v1.model.log_query_definition_search import LogQueryDefinitionSearch
+    from datadog_api_client.v1.model.logs_query_compute import LogsQueryCompute
+    globals()['LogQueryDefinitionGroupBy'] = LogQueryDefinitionGroupBy
+    globals()['LogQueryDefinitionSearch'] = LogQueryDefinitionSearch
+    globals()['LogsQueryCompute'] = LogsQueryCompute
 
 
 class LogQueryDefinition(ModelNormal):
@@ -82,24 +71,26 @@ class LogQueryDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'compute': (logs_query_compute.LogsQueryCompute,),  # noqa: E501
-            'group_by': ([log_query_definition_group_by.LogQueryDefinitionGroupBy],),  # noqa: E501
+            'compute': (LogsQueryCompute,),  # noqa: E501
+            'group_by': ([LogQueryDefinitionGroupBy],),  # noqa: E501
             'index': (str,),  # noqa: E501
-            'multi_compute': ([logs_query_compute.LogsQueryCompute],),  # noqa: E501
-            'search': (log_query_definition_search.LogQueryDefinitionSearch,),  # noqa: E501
+            'multi_compute': ([LogsQueryCompute],),  # noqa: E501
+            'search': (LogQueryDefinitionSearch,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'compute': 'compute',  # noqa: E501
@@ -122,7 +113,7 @@ class LogQueryDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """log_query_definition.LogQueryDefinition - a model defined in OpenAPI
+        """LogQueryDefinition - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -155,11 +146,11 @@ class LogQueryDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            compute (logs_query_compute.LogsQueryCompute): [optional]  # noqa: E501
-            group_by ([log_query_definition_group_by.LogQueryDefinitionGroupBy]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
+            compute (LogsQueryCompute): [optional]  # noqa: E501
+            group_by ([LogQueryDefinitionGroupBy]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
             index (str): A coma separated-list of index names. Use \&quot;*\&quot; query all indexes at once. [Multiple Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes). [optional]  # noqa: E501
-            multi_compute ([logs_query_compute.LogsQueryCompute]): This field is mutually exclusive with &#x60;compute&#x60;.. [optional]  # noqa: E501
-            search (log_query_definition_search.LogQueryDefinitionSearch): [optional]  # noqa: E501
+            multi_compute ([LogsQueryCompute]): This field is mutually exclusive with &#x60;compute&#x60;.. [optional]  # noqa: E501
+            search (LogQueryDefinitionSearch): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -185,7 +176,7 @@ class LogQueryDefinition(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

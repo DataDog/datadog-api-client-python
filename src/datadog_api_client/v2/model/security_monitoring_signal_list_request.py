@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import security_monitoring_signal_list_request_filter
-except ImportError:
-    security_monitoring_signal_list_request_filter = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signal_list_request_filter']
-try:
-    from datadog_api_client.v2.model import security_monitoring_signal_list_request_page
-except ImportError:
-    security_monitoring_signal_list_request_page = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signal_list_request_page']
-try:
-    from datadog_api_client.v2.model import security_monitoring_signals_sort
-except ImportError:
-    security_monitoring_signals_sort = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signals_sort']
+
+def lazy_import():
+    from datadog_api_client.v2.model.security_monitoring_signal_list_request_filter import SecurityMonitoringSignalListRequestFilter
+    from datadog_api_client.v2.model.security_monitoring_signal_list_request_page import SecurityMonitoringSignalListRequestPage
+    from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
+    globals()['SecurityMonitoringSignalListRequestFilter'] = SecurityMonitoringSignalListRequestFilter
+    globals()['SecurityMonitoringSignalListRequestPage'] = SecurityMonitoringSignalListRequestPage
+    globals()['SecurityMonitoringSignalsSort'] = SecurityMonitoringSignalsSort
 
 
 class SecurityMonitoringSignalListRequest(ModelNormal):
@@ -82,22 +71,24 @@ class SecurityMonitoringSignalListRequest(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'filter': (security_monitoring_signal_list_request_filter.SecurityMonitoringSignalListRequestFilter,),  # noqa: E501
-            'page': (security_monitoring_signal_list_request_page.SecurityMonitoringSignalListRequestPage,),  # noqa: E501
-            'sort': (security_monitoring_signals_sort.SecurityMonitoringSignalsSort,),  # noqa: E501
+            'filter': (SecurityMonitoringSignalListRequestFilter,),  # noqa: E501
+            'page': (SecurityMonitoringSignalListRequestPage,),  # noqa: E501
+            'sort': (SecurityMonitoringSignalsSort,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'filter': 'filter',  # noqa: E501
@@ -118,7 +109,7 @@ class SecurityMonitoringSignalListRequest(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """security_monitoring_signal_list_request.SecurityMonitoringSignalListRequest - a model defined in OpenAPI
+        """SecurityMonitoringSignalListRequest - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -151,9 +142,9 @@ class SecurityMonitoringSignalListRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            filter (security_monitoring_signal_list_request_filter.SecurityMonitoringSignalListRequestFilter): [optional]  # noqa: E501
-            page (security_monitoring_signal_list_request_page.SecurityMonitoringSignalListRequestPage): [optional]  # noqa: E501
-            sort (security_monitoring_signals_sort.SecurityMonitoringSignalsSort): [optional]  # noqa: E501
+            filter (SecurityMonitoringSignalListRequestFilter): [optional]  # noqa: E501
+            page (SecurityMonitoringSignalListRequestPage): [optional]  # noqa: E501
+            sort (SecurityMonitoringSignalsSort): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -179,7 +170,7 @@ class SecurityMonitoringSignalListRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

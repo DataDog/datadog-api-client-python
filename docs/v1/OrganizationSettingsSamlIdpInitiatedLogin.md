@@ -1,4 +1,4 @@
-# organization_settings_saml_idp_initiated_login.OrganizationSettingsSamlIdpInitiatedLogin
+# OrganizationSettingsSamlIdpInitiatedLogin
 
 Has one property enabled (boolean).
 ## Properties

@@ -1,4 +1,4 @@
-# slo_history_metrics_series_metadata.SLOHistoryMetricsSeriesMetadata
+# SLOHistoryMetricsSeriesMetadata
 
 Query metadata.
 ## Properties

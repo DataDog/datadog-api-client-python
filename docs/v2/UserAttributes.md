@@ -1,4 +1,4 @@
-# user_attributes.UserAttributes
+# UserAttributes
 
 Attributes of user object returned by the API.
 ## Properties

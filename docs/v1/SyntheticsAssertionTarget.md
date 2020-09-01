@@ -1,11 +1,11 @@
-# synthetics_assertion_target.SyntheticsAssertionTarget
+# SyntheticsAssertionTarget
 
 An assertion which uses a simple target.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**operator** | [**synthetics_assertion_operator.SyntheticsAssertionOperator**](SyntheticsAssertionOperator.md) |  | 
-**type** | [**synthetics_assertion_type.SyntheticsAssertionType**](SyntheticsAssertionType.md) |  | 
+**operator** | [**SyntheticsAssertionOperator**](SyntheticsAssertionOperator.md) |  | 
+**type** | [**SyntheticsAssertionType**](SyntheticsAssertionType.md) |  | 
 **_property** | **str** | The associated assertion property. | [optional] 
 **target** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** | Value used by the operator. | [optional] 
 

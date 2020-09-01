@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **check_aws_logs_lambda_async**
-> aws_logs_async_response.AWSLogsAsyncResponse check_aws_logs_lambda_async(body)
+> AWSLogsAsyncResponse check_aws_logs_lambda_async(body)
 
 Check that an AWS Lambda Function exists
 
@@ -25,13 +25,12 @@ Test if permissions are present to add a log-forwarding triggers for the given s
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_logs_async_response
-from datadog_api_client.v1.model import aws_account_and_lambda_request
+from datadog_api_client.v1.model.aws_logs_async_response import AWSLogsAsyncResponse
+from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -68,8 +67,11 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
-    body = aws_account_and_lambda_request.AWSAccountAndLambdaRequest() # aws_account_and_lambda_request.AWSAccountAndLambdaRequest | Check AWS Log Lambda Async request body.
-    
+    body = AWSAccountAndLambdaRequest(
+        account_id="1234567",
+        lambda_arn="arn:aws:lambda:us-east-1:1234567:function:LogsCollectionAPITest",
+    ) # AWSAccountAndLambdaRequest | Check AWS Log Lambda Async request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Check that an AWS Lambda Function exists
@@ -83,11 +85,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**aws_account_and_lambda_request.AWSAccountAndLambdaRequest**](AWSAccountAndLambdaRequest.md)| Check AWS Log Lambda Async request body. |
+ **body** | [**AWSAccountAndLambdaRequest**](AWSAccountAndLambdaRequest.md)| Check AWS Log Lambda Async request body. |
 
 ### Return type
 
-[**aws_logs_async_response.AWSLogsAsyncResponse**](AWSLogsAsyncResponse.md)
+[**AWSLogsAsyncResponse**](AWSLogsAsyncResponse.md)
 
 ### Authorization
 
@@ -108,7 +110,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **check_aws_logs_services_async**
-> aws_logs_async_response.AWSLogsAsyncResponse check_aws_logs_services_async(body)
+> AWSLogsAsyncResponse check_aws_logs_services_async(body)
 
 Check permissions for log services
 
@@ -119,13 +121,12 @@ Test if permissions are present to add log-forwarding triggers for the given ser
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_logs_async_response
-from datadog_api_client.v1.model import aws_logs_services_request
+from datadog_api_client.v1.model.aws_logs_services_request import AWSLogsServicesRequest
+from datadog_api_client.v1.model.aws_logs_async_response import AWSLogsAsyncResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -162,8 +163,13 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
-    body = aws_logs_services_request.AWSLogsServicesRequest() # aws_logs_services_request.AWSLogsServicesRequest | Check AWS Logs Async Services request body.
-    
+    body = AWSLogsServicesRequest(
+        account_id="1234567",
+        services=[
+            "["s3","elb","elbv2","cloudfront","redshift","lambda"]",
+        ],
+    ) # AWSLogsServicesRequest | Check AWS Logs Async Services request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Check permissions for log services
@@ -177,11 +183,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**aws_logs_services_request.AWSLogsServicesRequest**](AWSLogsServicesRequest.md)| Check AWS Logs Async Services request body. |
+ **body** | [**AWSLogsServicesRequest**](AWSLogsServicesRequest.md)| Check AWS Logs Async Services request body. |
 
 ### Return type
 
-[**aws_logs_async_response.AWSLogsAsyncResponse**](AWSLogsAsyncResponse.md)
+[**AWSLogsAsyncResponse**](AWSLogsAsyncResponse.md)
 
 ### Authorization
 
@@ -213,12 +219,11 @@ Attach the Lambda ARN of the Lambda created for the Datadog-AWS log collection t
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_account_and_lambda_request
+from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -255,8 +260,11 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
-    body = aws_account_and_lambda_request.AWSAccountAndLambdaRequest() # aws_account_and_lambda_request.AWSAccountAndLambdaRequest | AWS Log Lambda Async request body.
-    
+    body = AWSAccountAndLambdaRequest(
+        account_id="1234567",
+        lambda_arn="arn:aws:lambda:us-east-1:1234567:function:LogsCollectionAPITest",
+    ) # AWSAccountAndLambdaRequest | AWS Log Lambda Async request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Add AWS Log Lambda ARN
@@ -270,7 +278,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**aws_account_and_lambda_request.AWSAccountAndLambdaRequest**](AWSAccountAndLambdaRequest.md)| AWS Log Lambda Async request body. |
+ **body** | [**AWSAccountAndLambdaRequest**](AWSAccountAndLambdaRequest.md)| AWS Log Lambda Async request body. |
 
 ### Return type
 
@@ -306,12 +314,11 @@ Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN asso
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_account_and_lambda_request
+from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -348,8 +355,11 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
-    body = aws_account_and_lambda_request.AWSAccountAndLambdaRequest() # aws_account_and_lambda_request.AWSAccountAndLambdaRequest | Delete AWS Lambda ARN request body.
-    
+    body = AWSAccountAndLambdaRequest(
+        account_id="1234567",
+        lambda_arn="arn:aws:lambda:us-east-1:1234567:function:LogsCollectionAPITest",
+    ) # AWSAccountAndLambdaRequest | Delete AWS Lambda ARN request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete an AWS Logs integration
@@ -363,7 +373,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**aws_account_and_lambda_request.AWSAccountAndLambdaRequest**](AWSAccountAndLambdaRequest.md)| Delete AWS Lambda ARN request body. |
+ **body** | [**AWSAccountAndLambdaRequest**](AWSAccountAndLambdaRequest.md)| Delete AWS Lambda ARN request body. |
 
 ### Return type
 
@@ -399,12 +409,11 @@ Enable automatic log collection for a list of services. This should be run after
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_logs_services_request
+from datadog_api_client.v1.model.aws_logs_services_request import AWSLogsServicesRequest
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -441,8 +450,13 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
-    body = aws_logs_services_request.AWSLogsServicesRequest() # aws_logs_services_request.AWSLogsServicesRequest | Enable AWS Log Services request body.
-    
+    body = AWSLogsServicesRequest(
+        account_id="1234567",
+        services=[
+            "["s3","elb","elbv2","cloudfront","redshift","lambda"]",
+        ],
+    ) # AWSLogsServicesRequest | Enable AWS Log Services request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Enable an AWS Logs integration
@@ -456,7 +470,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**aws_logs_services_request.AWSLogsServicesRequest**](AWSLogsServicesRequest.md)| Enable AWS Log Services request body. |
+ **body** | [**AWSLogsServicesRequest**](AWSLogsServicesRequest.md)| Enable AWS Log Services request body. |
 
 ### Return type
 
@@ -481,7 +495,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_aws_logs_integrations**
-> [aws_logs_list_response.AWSLogsListResponse] list_aws_logs_integrations()
+> [AWSLogsListResponse] list_aws_logs_integrations()
 
 List all AWS Logs integrations
 
@@ -492,12 +506,11 @@ List all Datadog-AWS Logs integrations configured in your Datadog account.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model import aws_logs_list_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.aws_logs_list_response import AWSLogsListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -534,7 +547,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # List all AWS Logs integrations
@@ -549,7 +562,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[aws_logs_list_response.AWSLogsListResponse]**](AWSLogsListResponse.md)
+[**[AWSLogsListResponse]**](AWSLogsListResponse.md)
 
 ### Authorization
 
@@ -570,7 +583,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_aws_logs_services**
-> [aws_logs_list_services_response.AWSLogsListServicesResponse] list_aws_logs_services()
+> [AWSLogsListServicesResponse] list_aws_logs_services()
 
 Get list of AWS log ready services
 
@@ -581,12 +594,11 @@ Get the list of current AWS services that Datadog offers automatic log collectio
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import aws_logs_list_services_response
+from datadog_api_client.v1.model.aws_logs_list_services_response import AWSLogsListServicesResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -623,7 +635,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get list of AWS log ready services
@@ -638,7 +650,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[aws_logs_list_services_response.AWSLogsListServicesResponse]**](AWSLogsListServicesResponse.md)
+[**[AWSLogsListServicesResponse]**](AWSLogsListServicesResponse.md)
 
 ### Authorization
 
