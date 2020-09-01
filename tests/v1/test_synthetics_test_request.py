@@ -15,11 +15,6 @@ try:
 except ImportError:
     http_method = sys.modules[
         'datadog_api_client.v1.model.http_method']
-try:
-    from datadog_api_client.v1.model import synthetics_test_request_basic_auth
-except ImportError:
-    synthetics_test_request_basic_auth = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_request_basic_auth']
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
 
 

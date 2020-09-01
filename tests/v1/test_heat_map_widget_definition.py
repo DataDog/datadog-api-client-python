@@ -31,11 +31,6 @@ except ImportError:
     widget_event = sys.modules[
         'datadog_api_client.v1.model.widget_event']
 try:
-    from datadog_api_client.v1.model import widget_legend_size
-except ImportError:
-    widget_legend_size = sys.modules[
-        'datadog_api_client.v1.model.widget_legend_size']
-try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
     widget_text_align = sys.modules[

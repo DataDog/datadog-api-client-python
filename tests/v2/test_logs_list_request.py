@@ -11,11 +11,6 @@ import unittest
 
 import datadog_api_client.v2
 try:
-    from datadog_api_client.v2.model import logs_list_request_filter
-except ImportError:
-    logs_list_request_filter = sys.modules[
-        'datadog_api_client.v2.model.logs_list_request_filter']
-try:
     from datadog_api_client.v2.model import logs_list_request_page
 except ImportError:
     logs_list_request_page = sys.modules[
