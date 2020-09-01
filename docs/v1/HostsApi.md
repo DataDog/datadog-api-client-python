@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_host_totals**
-> host_totals.HostTotals get_host_totals()
+> HostTotals get_host_totals()
 
 Get the total number of active hosts
 
@@ -22,12 +22,11 @@ This endpoint returns the total number of active and up hosts in your Datadog ac
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import hosts_api
-from datadog_api_client.v1.model import host_totals
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.host_totals import HostTotals
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -64,7 +63,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hosts_api.HostsApi(api_client)
-    _from = 56 # int | Number of seconds from which you want to get total number of active hosts. (optional)
+    _from = 1 # int | Number of seconds from which you want to get total number of active hosts. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -84,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**host_totals.HostTotals**](HostTotals.md)
+[**HostTotals**](HostTotals.md)
 
 ### Authorization
 
@@ -105,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_hosts**
-> host_list_response.HostListResponse list_hosts()
+> HostListResponse list_hosts()
 
 Get all hosts for your organization
 
@@ -116,12 +115,11 @@ This endpoint allows searching for hosts by name, alias, or tag. Hosts live with
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import hosts_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import host_list_response
+from datadog_api_client.v1.model.host_list_response import HostListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -158,14 +156,14 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hosts_api.HostsApi(api_client)
-    filter = 'filter_example' # str | String to filter search results. (optional)
-sort_field = 'sort_field_example' # str | Sort hosts by this field. (optional)
-sort_dir = 'sort_dir_example' # str | Direction of sort. Options include `asc` and `desc`. (optional)
-start = 56 # int | Host result to start search from. (optional)
-count = 56 # int | Number of hosts to return. Max 1000. (optional)
-_from = 56 # int | Number of seconds since UNIX epoch from which you want to search your hosts. (optional)
-include_muted_hosts_data = True # bool | Include information on the muted status of hosts and when the mute expires. (optional)
-include_hosts_metadata = True # bool | Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.). (optional)
+    filter = "filter_example" # str | String to filter search results. (optional)
+    sort_field = "sort_field_example" # str | Sort hosts by this field. (optional)
+    sort_dir = "sort_dir_example" # str | Direction of sort. Options include `asc` and `desc`. (optional)
+    start = 1 # int | Host result to start search from. (optional)
+    count = 1 # int | Number of hosts to return. Max 1000. (optional)
+    _from = 1 # int | Number of seconds since UNIX epoch from which you want to search your hosts. (optional)
+    include_muted_hosts_data = True # bool | Include information on the muted status of hosts and when the mute expires. (optional)
+    include_hosts_metadata = True # bool | Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.). (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -192,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**host_list_response.HostListResponse**](HostListResponse.md)
+[**HostListResponse**](HostListResponse.md)
 
 ### Authorization
 
@@ -213,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **mute_host**
-> host_mute_response.HostMuteResponse mute_host(host_name)
+> HostMuteResponse mute_host(host_name)
 
 Mute a host
 
@@ -224,13 +222,12 @@ Mute a host.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import hosts_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import host_mute_settings
-from datadog_api_client.v1.model import host_mute_response
+from datadog_api_client.v1.model.host_mute_response import HostMuteResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.host_mute_settings import HostMuteSettings
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -267,8 +264,12 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hosts_api.HostsApi(api_client)
-    host_name = 'host_name_example' # str | Name of the host to mute.
-    body = host_mute_settings.HostMuteSettings() # host_mute_settings.HostMuteSettings | Mute a host request body. (optional)
+    host_name = "host_name_example" # str | Name of the host to mute.
+    body = HostMuteSettings(
+        end=1579098130,
+        message="Muting this host for a test!",
+        override=False,
+    ) # HostMuteSettings | Mute a host request body. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -293,11 +294,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **host_name** | **str**| Name of the host to mute. |
- **body** | [**host_mute_settings.HostMuteSettings**](HostMuteSettings.md)| Mute a host request body. | [optional]
+ **body** | [**HostMuteSettings**](HostMuteSettings.md)| Mute a host request body. | [optional]
 
 ### Return type
 
-[**host_mute_response.HostMuteResponse**](HostMuteResponse.md)
+[**HostMuteResponse**](HostMuteResponse.md)
 
 ### Authorization
 
@@ -318,7 +319,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **unmute_host**
-> host_mute_response.HostMuteResponse unmute_host(host_name)
+> HostMuteResponse unmute_host(host_name)
 
 Unmute a host
 
@@ -329,12 +330,11 @@ Unmutes a host. This endpoint takes no JSON arguments.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import hosts_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import host_mute_response
+from datadog_api_client.v1.model.host_mute_response import HostMuteResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -371,8 +371,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hosts_api.HostsApi(api_client)
-    host_name = 'host_name_example' # str | Name of the host to unmute.
-    
+    host_name = "host_name_example" # str | Name of the host to unmute.
+
     # example passing only required values which don't have defaults set
     try:
         # Unmute a host
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**host_mute_response.HostMuteResponse**](HostMuteResponse.md)
+[**HostMuteResponse**](HostMuteResponse.md)
 
 ### Authorization
 

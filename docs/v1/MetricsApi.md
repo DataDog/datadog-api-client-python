@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **get_metric_metadata**
-> metric_metadata.MetricMetadata get_metric_metadata(metric_name)
+> MetricMetadata get_metric_metadata(metric_name)
 
 Get metric metadata
 
@@ -23,12 +23,11 @@ Get metadata about a specific metric.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import metrics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import metric_metadata
+from datadog_api_client.v1.model.metric_metadata import MetricMetadata
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -65,8 +64,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = metrics_api.MetricsApi(api_client)
-    metric_name = 'metric_name_example' # str | Name of the metric for which to get metadata.
-    
+    metric_name = "metric_name_example" # str | Name of the metric for which to get metadata.
+
     # example passing only required values which don't have defaults set
     try:
         # Get metric metadata
@@ -84,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**metric_metadata.MetricMetadata**](MetricMetadata.md)
+[**MetricMetadata**](MetricMetadata.md)
 
 ### Authorization
 
@@ -105,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_active_metrics**
-> metrics_list_response.MetricsListResponse list_active_metrics(_from)
+> MetricsListResponse list_active_metrics(_from)
 
 Get active metrics list
 
@@ -116,12 +115,11 @@ Get the list of actively reporting metrics from a given time until now.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import metrics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import metrics_list_response
+from datadog_api_client.v1.model.metrics_list_response import MetricsListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -158,8 +156,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = metrics_api.MetricsApi(api_client)
-    _from = 56 # int | Seconds since the Unix epoch.
-    host = 'host_example' # str | Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag. (optional)
+    _from = 1 # int | Seconds since the Unix epoch.
+    host = "host_example" # str | Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -188,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**metrics_list_response.MetricsListResponse**](MetricsListResponse.md)
+[**MetricsListResponse**](MetricsListResponse.md)
 
 ### Authorization
 
@@ -209,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_metrics**
-> metric_search_response.MetricSearchResponse list_metrics(q)
+> MetricSearchResponse list_metrics(q)
 
 Search metrics
 
@@ -220,12 +218,11 @@ Search for metrics from the last 24 hours in Datadog.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import metrics_api
-from datadog_api_client.v1.model import metric_search_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.metric_search_response import MetricSearchResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -262,8 +259,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = metrics_api.MetricsApi(api_client)
-    q = 'q_example' # str | Query string to search metrics upon. Must be prefixed with `metrics:`.
-    
+    q = "q_example" # str | Query string to search metrics upon. Must be prefixed with `metrics:`.
+
     # example passing only required values which don't have defaults set
     try:
         # Search metrics
@@ -281,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**metric_search_response.MetricSearchResponse**](MetricSearchResponse.md)
+[**MetricSearchResponse**](MetricSearchResponse.md)
 
 ### Authorization
 
@@ -302,7 +299,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **query_metrics**
-> metrics_query_response.MetricsQueryResponse query_metrics(_from, to, query)
+> MetricsQueryResponse query_metrics(_from, to, query)
 
 Query timeseries points
 
@@ -313,12 +310,11 @@ Query timeseries points.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import metrics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import metrics_query_response
+from datadog_api_client.v1.model.metrics_query_response import MetricsQueryResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -355,10 +351,10 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = metrics_api.MetricsApi(api_client)
-    _from = 56 # int | Start of the queried time period, seconds since the Unix epoch.
-    to = 56 # int | End of the queried time period, seconds since the Unix epoch.
-    query = 'query_example' # str | Query string.
-    
+    _from = 1 # int | Start of the queried time period, seconds since the Unix epoch.
+    to = 1 # int | End of the queried time period, seconds since the Unix epoch.
+    query = "query_example" # str | Query string.
+
     # example passing only required values which don't have defaults set
     try:
         # Query timeseries points
@@ -378,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**metrics_query_response.MetricsQueryResponse**](MetricsQueryResponse.md)
+[**MetricsQueryResponse**](MetricsQueryResponse.md)
 
 ### Authorization
 
@@ -399,7 +395,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_metric_metadata**
-> metric_metadata.MetricMetadata update_metric_metadata(metric_name, body)
+> MetricMetadata update_metric_metadata(metric_name, body)
 
 Edit metric metadata
 
@@ -410,12 +406,11 @@ Edit metadata of a specific metric. Find out more about [supported types](https:
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import metrics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import metric_metadata
+from datadog_api_client.v1.model.metric_metadata import MetricMetadata
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -452,9 +447,17 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = metrics_api.MetricsApi(api_client)
-    metric_name = 'metric_name_example' # str | Name of the metric for which to edit metadata.
-    body = metric_metadata.MetricMetadata() # metric_metadata.MetricMetadata | New metadata.
-    
+    metric_name = "metric_name_example" # str | Name of the metric for which to edit metadata.
+    body = MetricMetadata(
+        description="description_example",
+        integration="integration_example",
+        per_unit="second",
+        short_name="short_name_example",
+        statsd_interval=1,
+        type="count",
+        unit="byte",
+    ) # MetricMetadata | New metadata.
+
     # example passing only required values which don't have defaults set
     try:
         # Edit metric metadata
@@ -469,11 +472,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metric_name** | **str**| Name of the metric for which to edit metadata. |
- **body** | [**metric_metadata.MetricMetadata**](MetricMetadata.md)| New metadata. |
+ **body** | [**MetricMetadata**](MetricMetadata.md)| New metadata. |
 
 ### Return type
 
-[**metric_metadata.MetricMetadata**](MetricMetadata.md)
+[**MetricMetadata**](MetricMetadata.md)
 
 ### Authorization
 

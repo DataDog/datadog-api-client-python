@@ -1,4 +1,4 @@
-# widget_marker.WidgetMarker
+# WidgetMarker
 
 Markers allow you to add visual conditional formatting for your graphs.
 ## Properties

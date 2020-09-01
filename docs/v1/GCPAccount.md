@@ -1,4 +1,4 @@
-# gcp_account.GCPAccount
+# GCPAccount
 
 Your Google Cloud Platform Account.
 ## Properties

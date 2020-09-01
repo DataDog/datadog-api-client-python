@@ -1,4 +1,4 @@
-# synthetics_ssl_certificate_subject.SyntheticsSSLCertificateSubject
+# SyntheticsSSLCertificateSubject
 
 Object describing the SSL certificate used for the test.
 ## Properties

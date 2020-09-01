@@ -1,4 +1,4 @@
-# synthetics_ci_test_metadata_ci.SyntheticsCITestMetadataCi
+# SyntheticsCITestMetadataCi
 
 ## Properties
 Name | Type | Description | Notes

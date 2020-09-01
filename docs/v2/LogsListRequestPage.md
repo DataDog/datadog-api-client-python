@@ -1,4 +1,4 @@
-# logs_list_request_page.LogsListRequestPage
+# LogsListRequestPage
 
 Paging attributes for listing logs.
 ## Properties

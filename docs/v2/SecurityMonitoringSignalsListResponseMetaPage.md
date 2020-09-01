@@ -1,4 +1,4 @@
-# security_monitoring_signals_list_response_meta_page.SecurityMonitoringSignalsListResponseMetaPage
+# SecurityMonitoringSignalsListResponseMetaPage
 
 Paging attributes.
 ## Properties

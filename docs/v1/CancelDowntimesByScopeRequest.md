@@ -1,4 +1,4 @@
-# cancel_downtimes_by_scope_request.CancelDowntimesByScopeRequest
+# CancelDowntimesByScopeRequest
 
 Cancel downtimes according to scope.
 ## Properties

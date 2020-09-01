@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import logs_attribute_remapper_type
-except ImportError:
-    logs_attribute_remapper_type = sys.modules[
-        'datadog_api_client.v1.model.logs_attribute_remapper_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.logs_attribute_remapper_type import LogsAttributeRemapperType
+    globals()['LogsAttributeRemapperType'] = LogsAttributeRemapperType
 
 
 class LogsAttributeRemapper(ModelNormal):
@@ -72,17 +67,18 @@ class LogsAttributeRemapper(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'sources': ([str],),  # noqa: E501
             'target': (str,),  # noqa: E501
-            'type': (logs_attribute_remapper_type.LogsAttributeRemapperType,),  # noqa: E501
+            'type': (LogsAttributeRemapperType,),  # noqa: E501
             'is_enabled': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'override_on_conflict': (bool,),  # noqa: E501
@@ -94,6 +90,7 @@ class LogsAttributeRemapper(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'sources': 'sources',  # noqa: E501
@@ -120,12 +117,12 @@ class LogsAttributeRemapper(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, sources, target, type, *args, **kwargs):  # noqa: E501
-        """logs_attribute_remapper.LogsAttributeRemapper - a model defined in OpenAPI
+        """LogsAttributeRemapper - a model defined in OpenAPI
 
         Args:
             sources ([str]): Array of source attributes.
             target (str): Final attribute or tag name to remap the sources to.
-            type (logs_attribute_remapper_type.LogsAttributeRemapperType):
+            type (LogsAttributeRemapperType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -162,8 +159,8 @@ class LogsAttributeRemapper(ModelNormal):
             name (str): Name of the processor.. [optional]  # noqa: E501
             override_on_conflict (bool): Override or not the target element if already set,. [optional] if omitted the server will use the default value of False  # noqa: E501
             preserve_source (bool): Remove or preserve the remapped source element.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            source_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of 'attribute'  # noqa: E501
-            target_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of 'attribute'  # noqa: E501
+            source_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
+            target_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -192,7 +189,7 @@ class LogsAttributeRemapper(ModelNormal):
         self.sources = sources
         self.target = target
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

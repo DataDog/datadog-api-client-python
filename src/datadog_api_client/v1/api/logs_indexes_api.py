@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,16 +15,14 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import logs_index
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
-from datadog_api_client.v1.model import logs_indexes_order
-from datadog_api_client.v1.model import logs_index_list_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
+from datadog_api_client.v1.model.logs_index import LogsIndex
+from datadog_api_client.v1.model.logs_index_list_response import LogsIndexListResponse
+from datadog_api_client.v1.model.logs_indexes_order import LogsIndexesOrder
 
 
 class LogsIndexesApi(object):
@@ -83,7 +76,7 @@ class LogsIndexesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_index.LogsIndex
+                LogsIndex
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -112,7 +105,7 @@ class LogsIndexesApi(object):
 
         self.get_logs_index = Endpoint(
             settings={
-                'response_type': (logs_index.LogsIndex,),
+                'response_type': (LogsIndex,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -200,7 +193,7 @@ class LogsIndexesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_indexes_order.LogsIndexesOrder
+                LogsIndexesOrder
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -227,7 +220,7 @@ class LogsIndexesApi(object):
 
         self.get_logs_index_order = Endpoint(
             settings={
-                'response_type': (logs_indexes_order.LogsIndexesOrder,),
+                'response_type': (LogsIndexesOrder,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -308,7 +301,7 @@ class LogsIndexesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_index_list_response.LogsIndexListResponse
+                LogsIndexListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -335,7 +328,7 @@ class LogsIndexesApi(object):
 
         self.list_log_indexes = Endpoint(
             settings={
-                'response_type': (logs_index_list_response.LogsIndexListResponse,),
+                'response_type': (LogsIndexListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -398,7 +391,7 @@ class LogsIndexesApi(object):
                 name (str): Name of the log index.
 
             Keyword Args:
-                body (logs_index.LogsIndex): Object containing the new &#x60;LogsIndex&#x60;.. [optional]
+                body (LogsIndex): Object containing the new &#x60;LogsIndex&#x60;.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -420,7 +413,7 @@ class LogsIndexesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_index.LogsIndex
+                LogsIndex
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -449,7 +442,7 @@ class LogsIndexesApi(object):
 
         self.update_logs_index = Endpoint(
             settings={
-                'response_type': (logs_index.LogsIndex,),
+                'response_type': (LogsIndex,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -483,7 +476,7 @@ class LogsIndexesApi(object):
                     'name':
                         (str,),
                     'body':
-                        (logs_index.LogsIndex,),
+                        (LogsIndex,),
                 },
                 'attribute_map': {
                     'name': 'name',
@@ -522,7 +515,7 @@ class LogsIndexesApi(object):
 
 
             Keyword Args:
-                body (logs_indexes_order.LogsIndexesOrder): Object containing the new ordered list of index names. [optional]
+                body (LogsIndexesOrder): Object containing the new ordered list of index names. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -544,7 +537,7 @@ class LogsIndexesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_indexes_order.LogsIndexesOrder
+                LogsIndexesOrder
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -571,7 +564,7 @@ class LogsIndexesApi(object):
 
         self.update_logs_index_order = Endpoint(
             settings={
-                'response_type': (logs_indexes_order.LogsIndexesOrder,),
+                'response_type': (LogsIndexesOrder,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -600,7 +593,7 @@ class LogsIndexesApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (logs_indexes_order.LogsIndexesOrder,),
+                        (LogsIndexesOrder,),
                 },
                 'attribute_map': {
                 },

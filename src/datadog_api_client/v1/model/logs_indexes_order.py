@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,9 +21,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
 
@@ -67,8 +63,8 @@ class LogsIndexesOrder(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
@@ -81,6 +77,7 @@ class LogsIndexesOrder(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'index_names': 'index_names',  # noqa: E501
@@ -99,7 +96,7 @@ class LogsIndexesOrder(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, index_names, *args, **kwargs):  # noqa: E501
-        """logs_indexes_order.LogsIndexesOrder - a model defined in OpenAPI
+        """LogsIndexesOrder - a model defined in OpenAPI
 
         Args:
             index_names ([str]): Array of strings identifying by their name(s) the index(es) of your organization. Logs are tested against the query filter of each index one by one, following the order of the array. Logs are eventually stored in the first matching index.
@@ -161,7 +158,7 @@ class LogsIndexesOrder(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.index_names = index_names
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

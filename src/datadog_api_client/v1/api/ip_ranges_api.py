@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,12 +15,10 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import ip_ranges
+from datadog_api_client.v1.model.ip_ranges import IPRanges
 
 
 class IPRangesApi(object):
@@ -76,7 +69,7 @@ class IPRangesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                ip_ranges.IPRanges
+                IPRanges
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -103,7 +96,7 @@ class IPRangesApi(object):
 
         self.get_ip_ranges = Endpoint(
             settings={
-                'response_type': (ip_ranges.IPRanges,),
+                'response_type': (IPRanges,),
                 'auth': [],
                 'endpoint_path': '/',
                 'operation_id': 'get_ip_ranges',

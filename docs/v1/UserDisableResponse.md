@@ -1,4 +1,4 @@
-# user_disable_response.UserDisableResponse
+# UserDisableResponse
 
 Array of user disabled for a given organization.
 ## Properties

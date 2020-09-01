@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_event**
-> event_response.EventResponse get_event(event_id)
+> EventResponse get_event(event_id)
 
 Get an event
 
@@ -20,12 +20,11 @@ This endpoint allows you to query for event details.  **Note**: If the event you
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import events_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import event_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.event_response import EventResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -62,8 +61,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = events_api.EventsApi(api_client)
-    event_id = 56 # int | The ID of the event.
-    
+    event_id = 1 # int | The ID of the event.
+
     # example passing only required values which don't have defaults set
     try:
         # Get an event
@@ -81,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**event_response.EventResponse**](EventResponse.md)
+[**EventResponse**](EventResponse.md)
 
 ### Authorization
 
@@ -102,7 +101,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_events**
-> event_list_response.EventListResponse list_events(start, end)
+> EventListResponse list_events(start, end)
 
 Query the event stream
 
@@ -113,13 +112,12 @@ The event stream can be queried and filtered by time, priority, sources and tags
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import events_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import event_priority
-from datadog_api_client.v1.model import event_list_response
+from datadog_api_client.v1.model.event_priority import EventPriority
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.event_list_response import EventListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -156,12 +154,12 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = events_api.EventsApi(api_client)
-    start = 56 # int | POSIX timestamp.
-    end = 56 # int | POSIX timestamp.
-    priority = event_priority.EventPriority() # event_priority.EventPriority | Priority of your events, either `low` or `normal`. (optional)
-sources = 'sources_example' # str | A comma separated string of sources. (optional)
-tags = 'host:host0' # str | A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. (optional)
-unaggregated = True # bool | Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output. (optional)
+    start = 1 # int | POSIX timestamp.
+    end = 1 # int | POSIX timestamp.
+    priority = EventPriority("normal") # EventPriority | Priority of your events, either `low` or `normal`. (optional)
+    sources = "sources_example" # str | A comma separated string of sources. (optional)
+    tags = "host:host0" # str | A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. (optional)
+    unaggregated = True # bool | Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -187,14 +185,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **int**| POSIX timestamp. |
  **end** | **int**| POSIX timestamp. |
- **priority** | **event_priority.EventPriority**| Priority of your events, either &#x60;low&#x60; or &#x60;normal&#x60;. | [optional]
+ **priority** | **EventPriority**| Priority of your events, either &#x60;low&#x60; or &#x60;normal&#x60;. | [optional]
  **sources** | **str**| A comma separated string of sources. | [optional]
  **tags** | **str**| A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. | [optional]
  **unaggregated** | **bool**| Set unaggregated to &#x60;true&#x60; to return all events within the specified [&#x60;start&#x60;,&#x60;end&#x60;] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won&#39;t be available in the output. | [optional]
 
 ### Return type
 
-[**event_list_response.EventListResponse**](EventListResponse.md)
+[**EventListResponse**](EventListResponse.md)
 
 ### Authorization
 

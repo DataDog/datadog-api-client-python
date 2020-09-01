@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,36 +21,21 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import toplist_widget_definition_type
-except ImportError:
-    toplist_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.toplist_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import toplist_widget_request
-except ImportError:
-    toplist_widget_request = sys.modules[
-        'datadog_api_client.v1.model.toplist_widget_request']
-try:
-    from datadog_api_client.v1.model import widget_custom_link
-except ImportError:
-    widget_custom_link = sys.modules[
-        'datadog_api_client.v1.model.widget_custom_link']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
-try:
-    from datadog_api_client.v1.model import widget_time
-except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+
+def lazy_import():
+    from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
+    from datadog_api_client.v1.model.toplist_widget_request import ToplistWidgetRequest
+    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    globals()['ToplistWidgetDefinitionType'] = ToplistWidgetDefinitionType
+    globals()['ToplistWidgetRequest'] = ToplistWidgetRequest
+    globals()['WidgetCustomLink'] = WidgetCustomLink
+    globals()['WidgetTextAlign'] = WidgetTextAlign
+    globals()['WidgetTime'] = WidgetTime
 
 
 class ToplistWidgetDefinition(ModelNormal):
@@ -92,26 +75,28 @@ class ToplistWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'requests': ([toplist_widget_request.ToplistWidgetRequest],),  # noqa: E501
-            'type': (toplist_widget_definition_type.ToplistWidgetDefinitionType,),  # noqa: E501
-            'custom_links': ([widget_custom_link.WidgetCustomLink],),  # noqa: E501
-            'time': (widget_time.WidgetTime,),  # noqa: E501
+            'requests': ([ToplistWidgetRequest],),  # noqa: E501
+            'type': (ToplistWidgetDefinitionType,),  # noqa: E501
+            'custom_links': ([WidgetCustomLink],),  # noqa: E501
+            'time': (WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'requests': 'requests',  # noqa: E501
@@ -136,11 +121,11 @@ class ToplistWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, requests, type, *args, **kwargs):  # noqa: E501
-        """toplist_widget_definition.ToplistWidgetDefinition - a model defined in OpenAPI
+        """ToplistWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            requests ([toplist_widget_request.ToplistWidgetRequest]): List of top list widget requests.
-            type (toplist_widget_definition_type.ToplistWidgetDefinitionType):
+            requests ([ToplistWidgetRequest]): List of top list widget requests.
+            type (ToplistWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -173,10 +158,10 @@ class ToplistWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            custom_links ([widget_custom_link.WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
-            time (widget_time.WidgetTime): [optional]  # noqa: E501
+            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
+            time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of your widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
@@ -205,7 +190,7 @@ class ToplistWidgetDefinition(ModelNormal):
 
         self.requests = requests
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

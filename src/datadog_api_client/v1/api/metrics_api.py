@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,16 +15,14 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import metric_metadata
-from datadog_api_client.v1.model import metrics_list_response
-from datadog_api_client.v1.model import metric_search_response
-from datadog_api_client.v1.model import metrics_query_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.metric_metadata import MetricMetadata
+from datadog_api_client.v1.model.metric_search_response import MetricSearchResponse
+from datadog_api_client.v1.model.metrics_list_response import MetricsListResponse
+from datadog_api_client.v1.model.metrics_query_response import MetricsQueryResponse
 
 
 class MetricsApi(object):
@@ -83,7 +76,7 @@ class MetricsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                metric_metadata.MetricMetadata
+                MetricMetadata
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -112,7 +105,7 @@ class MetricsApi(object):
 
         self.get_metric_metadata = Endpoint(
             settings={
-                'response_type': (metric_metadata.MetricMetadata,),
+                'response_type': (MetricMetadata,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -204,7 +197,7 @@ class MetricsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                metrics_list_response.MetricsListResponse
+                MetricsListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -233,7 +226,7 @@ class MetricsApi(object):
 
         self.list_active_metrics = Endpoint(
             settings={
-                'response_type': (metrics_list_response.MetricsListResponse,),
+                'response_type': (MetricsListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -329,7 +322,7 @@ class MetricsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                metric_search_response.MetricSearchResponse
+                MetricSearchResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -358,7 +351,7 @@ class MetricsApi(object):
 
         self.list_metrics = Endpoint(
             settings={
-                'response_type': (metric_search_response.MetricSearchResponse,),
+                'response_type': (MetricSearchResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -453,7 +446,7 @@ class MetricsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                metrics_query_response.MetricsQueryResponse
+                MetricsQueryResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -486,7 +479,7 @@ class MetricsApi(object):
 
         self.query_metrics = Endpoint(
             settings={
-                'response_type': (metrics_query_response.MetricsQueryResponse,),
+                'response_type': (MetricsQueryResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -567,7 +560,7 @@ class MetricsApi(object):
 
             Args:
                 metric_name (str): Name of the metric for which to edit metadata.
-                body (metric_metadata.MetricMetadata): New metadata.
+                body (MetricMetadata): New metadata.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -591,7 +584,7 @@ class MetricsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                metric_metadata.MetricMetadata
+                MetricMetadata
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -622,7 +615,7 @@ class MetricsApi(object):
 
         self.update_metric_metadata = Endpoint(
             settings={
-                'response_type': (metric_metadata.MetricMetadata,),
+                'response_type': (MetricMetadata,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -657,7 +650,7 @@ class MetricsApi(object):
                     'metric_name':
                         (str,),
                     'body':
-                        (metric_metadata.MetricMetadata,),
+                        (MetricMetadata,),
                 },
                 'attribute_map': {
                     'metric_name': 'metric_name',

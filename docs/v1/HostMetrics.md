@@ -1,4 +1,4 @@
-# host_metrics.HostMetrics
+# HostMetrics
 
 Host Metrics collected.
 ## Properties

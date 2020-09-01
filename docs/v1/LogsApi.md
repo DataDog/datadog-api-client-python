@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **list_logs**
-> logs_list_response.LogsListResponse list_logs(body)
+> LogsListResponse list_logs(body)
 
 Get a list of logs
 
@@ -19,14 +19,13 @@ List endpoint returns logs that match a log search query. [Results are paginated
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
-from datadog_api_client.v1.model import logs_list_response
-from datadog_api_client.v1.model import logs_list_request
+from datadog_api_client.v1.model.logs_list_response import LogsListResponse
+from datadog_api_client.v1.model.logs_list_request import LogsListRequest
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -63,8 +62,19 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_api.LogsApi(api_client)
-    body = logs_list_request.LogsListRequest() # logs_list_request.LogsListRequest | Logs filter
-    
+    body = LogsListRequest(
+        index="retention-3,retention-15",
+        limit=1,
+        query="service:web* AND @http.status_code:[200 TO 299]",
+        sort=LogsSort("asc"),
+        start_at="start_at_example",
+        time=LogsListRequestTime(
+            _from=dateutil_parser('2020-02-02T02:02:02Z'),
+            timezone="timezone_example",
+            to=dateutil_parser('2020-02-02T20:20:20Z'),
+        ),
+    ) # LogsListRequest | Logs filter
+
     # example passing only required values which don't have defaults set
     try:
         # Get a list of logs
@@ -78,11 +88,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**logs_list_request.LogsListRequest**](LogsListRequest.md)| Logs filter |
+ **body** | [**LogsListRequest**](LogsListRequest.md)| Logs filter |
 
 ### Return type
 
-[**logs_list_response.LogsListResponse**](LogsListResponse.md)
+[**LogsListResponse**](LogsListResponse.md)
 
 ### Authorization
 

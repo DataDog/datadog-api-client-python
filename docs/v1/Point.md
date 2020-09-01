@@ -1,4 +1,4 @@
-# point.Point
+# Point
 
 Array of timeseries points.
 ## Properties

@@ -1,4 +1,4 @@
-# pagination.Pagination
+# Pagination
 
 Pagination object.
 ## Properties

@@ -1,4 +1,4 @@
-# widget_style.WidgetStyle
+# WidgetStyle
 
 Widget style definition.
 ## Properties

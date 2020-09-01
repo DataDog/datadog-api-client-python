@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import host_meta
-except ImportError:
-    host_meta = sys.modules[
-        'datadog_api_client.v1.model.host_meta']
-try:
-    from datadog_api_client.v1.model import host_metrics
-except ImportError:
-    host_metrics = sys.modules[
-        'datadog_api_client.v1.model.host_metrics']
+
+def lazy_import():
+    from datadog_api_client.v1.model.host_meta import HostMeta
+    from datadog_api_client.v1.model.host_metrics import HostMetrics
+    globals()['HostMeta'] = HostMeta
+    globals()['HostMetrics'] = HostMetrics
 
 
 class Host(ModelNormal):
@@ -77,13 +69,14 @@ class Host(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'aliases': ([str],),  # noqa: E501
             'apps': ([str],),  # noqa: E501
@@ -92,8 +85,8 @@ class Host(ModelNormal):
             'id': (int,),  # noqa: E501
             'is_muted': (bool,),  # noqa: E501
             'last_reported_time': (int,),  # noqa: E501
-            'meta': (host_meta.HostMeta,),  # noqa: E501
-            'metrics': (host_metrics.HostMetrics,),  # noqa: E501
+            'meta': (HostMeta,),  # noqa: E501
+            'metrics': (HostMetrics,),  # noqa: E501
             'mute_timeout': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'sources': ([str],),  # noqa: E501
@@ -104,6 +97,7 @@ class Host(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'aliases': 'aliases',  # noqa: E501
@@ -135,7 +129,7 @@ class Host(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """host.Host - a model defined in OpenAPI
+        """Host - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -175,8 +169,8 @@ class Host(ModelNormal):
             id (int): The host ID.. [optional]  # noqa: E501
             is_muted (bool): If a host is muted or unmuted.. [optional]  # noqa: E501
             last_reported_time (int): Last time the host reported a metric data point.. [optional]  # noqa: E501
-            meta (host_meta.HostMeta): [optional]  # noqa: E501
-            metrics (host_metrics.HostMetrics): [optional]  # noqa: E501
+            meta (HostMeta): [optional]  # noqa: E501
+            metrics (HostMetrics): [optional]  # noqa: E501
             mute_timeout (int): Timeout of the mute applied to your host.. [optional]  # noqa: E501
             name (str): The host name.. [optional]  # noqa: E501
             sources ([str]): Source or cloud provider associated with your host.. [optional]  # noqa: E501
@@ -207,7 +201,7 @@ class Host(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

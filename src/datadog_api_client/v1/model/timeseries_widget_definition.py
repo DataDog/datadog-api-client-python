@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,51 +21,27 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import timeseries_widget_definition_type
-except ImportError:
-    timeseries_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.timeseries_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import timeseries_widget_request
-except ImportError:
-    timeseries_widget_request = sys.modules[
-        'datadog_api_client.v1.model.timeseries_widget_request']
-try:
-    from datadog_api_client.v1.model import widget_axis
-except ImportError:
-    widget_axis = sys.modules[
-        'datadog_api_client.v1.model.widget_axis']
-try:
-    from datadog_api_client.v1.model import widget_custom_link
-except ImportError:
-    widget_custom_link = sys.modules[
-        'datadog_api_client.v1.model.widget_custom_link']
-try:
-    from datadog_api_client.v1.model import widget_event
-except ImportError:
-    widget_event = sys.modules[
-        'datadog_api_client.v1.model.widget_event']
-try:
-    from datadog_api_client.v1.model import widget_marker
-except ImportError:
-    widget_marker = sys.modules[
-        'datadog_api_client.v1.model.widget_marker']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
-try:
-    from datadog_api_client.v1.model import widget_time
-except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+
+def lazy_import():
+    from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
+    from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
+    from datadog_api_client.v1.model.widget_axis import WidgetAxis
+    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+    from datadog_api_client.v1.model.widget_event import WidgetEvent
+    from datadog_api_client.v1.model.widget_marker import WidgetMarker
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    globals()['TimeseriesWidgetDefinitionType'] = TimeseriesWidgetDefinitionType
+    globals()['TimeseriesWidgetRequest'] = TimeseriesWidgetRequest
+    globals()['WidgetAxis'] = WidgetAxis
+    globals()['WidgetCustomLink'] = WidgetCustomLink
+    globals()['WidgetEvent'] = WidgetEvent
+    globals()['WidgetMarker'] = WidgetMarker
+    globals()['WidgetTextAlign'] = WidgetTextAlign
+    globals()['WidgetTime'] = WidgetTime
 
 
 class TimeseriesWidgetDefinition(ModelNormal):
@@ -107,31 +81,33 @@ class TimeseriesWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'requests': ([timeseries_widget_request.TimeseriesWidgetRequest],),  # noqa: E501
-            'type': (timeseries_widget_definition_type.TimeseriesWidgetDefinitionType,),  # noqa: E501
-            'custom_links': ([widget_custom_link.WidgetCustomLink],),  # noqa: E501
-            'events': ([widget_event.WidgetEvent],),  # noqa: E501
+            'requests': ([TimeseriesWidgetRequest],),  # noqa: E501
+            'type': (TimeseriesWidgetDefinitionType,),  # noqa: E501
+            'custom_links': ([WidgetCustomLink],),  # noqa: E501
+            'events': ([WidgetEvent],),  # noqa: E501
             'legend_size': (str,),  # noqa: E501
-            'markers': ([widget_marker.WidgetMarker],),  # noqa: E501
+            'markers': ([WidgetMarker],),  # noqa: E501
             'show_legend': (bool,),  # noqa: E501
-            'time': (widget_time.WidgetTime,),  # noqa: E501
+            'time': (WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
-            'yaxis': (widget_axis.WidgetAxis,),  # noqa: E501
+            'yaxis': (WidgetAxis,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'requests': 'requests',  # noqa: E501
@@ -161,11 +137,11 @@ class TimeseriesWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, requests, type, *args, **kwargs):  # noqa: E501
-        """timeseries_widget_definition.TimeseriesWidgetDefinition - a model defined in OpenAPI
+        """TimeseriesWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            requests ([timeseries_widget_request.TimeseriesWidgetRequest]): List of timeseries widget requests.
-            type (timeseries_widget_definition_type.TimeseriesWidgetDefinitionType):
+            requests ([TimeseriesWidgetRequest]): List of timeseries widget requests.
+            type (TimeseriesWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -198,16 +174,16 @@ class TimeseriesWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            custom_links ([widget_custom_link.WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
-            events ([widget_event.WidgetEvent]): List of widget events.. [optional]  # noqa: E501
+            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
+            events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
             legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
-            markers ([widget_marker.WidgetMarker]): List of markers.. [optional]  # noqa: E501
+            markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
             show_legend (bool): (screenboard only) Show the legend for this widget.. [optional]  # noqa: E501
-            time (widget_time.WidgetTime): [optional]  # noqa: E501
+            time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of your widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
-            yaxis (widget_axis.WidgetAxis): [optional]  # noqa: E501
+            yaxis (WidgetAxis): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,7 +211,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
 
         self.requests = requests
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

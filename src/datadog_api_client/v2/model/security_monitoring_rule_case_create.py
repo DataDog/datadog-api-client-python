@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import security_monitoring_rule_severity
-except ImportError:
-    security_monitoring_rule_severity = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_severity']
+
+def lazy_import():
+    from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
+    globals()['SecurityMonitoringRuleSeverity'] = SecurityMonitoringRuleSeverity
 
 
 class SecurityMonitoringRuleCaseCreate(ModelNormal):
@@ -72,15 +67,16 @@ class SecurityMonitoringRuleCaseCreate(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'status': (security_monitoring_rule_severity.SecurityMonitoringRuleSeverity,),  # noqa: E501
+            'status': (SecurityMonitoringRuleSeverity,),  # noqa: E501
             'condition': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'notifications': ([str],),  # noqa: E501
@@ -89,6 +85,7 @@ class SecurityMonitoringRuleCaseCreate(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'status': 'status',  # noqa: E501
@@ -110,10 +107,10 @@ class SecurityMonitoringRuleCaseCreate(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, status, *args, **kwargs):  # noqa: E501
-        """security_monitoring_rule_case_create.SecurityMonitoringRuleCaseCreate - a model defined in OpenAPI
+        """SecurityMonitoringRuleCaseCreate - a model defined in OpenAPI
 
         Args:
-            status (security_monitoring_rule_severity.SecurityMonitoringRuleSeverity):
+            status (SecurityMonitoringRuleSeverity):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -175,7 +172,7 @@ class SecurityMonitoringRuleCaseCreate(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.status = status
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

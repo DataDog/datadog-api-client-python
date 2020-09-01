@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_child_org**
-> organization_create_response.OrganizationCreateResponse create_child_org(body)
+> OrganizationCreateResponse create_child_org(body)
 
 Create a child organization
 
@@ -23,13 +23,12 @@ Create a child organization.  This endpoint requires the [multi-organization acc
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import organizations_api
-from datadog_api_client.v1.model import organization_create_body
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import organization_create_response
+from datadog_api_client.v1.model.organization_create_response import OrganizationCreateResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.organization_create_body import OrganizationCreateBody
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -66,8 +65,16 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = organizations_api.OrganizationsApi(api_client)
-    body = organization_create_body.OrganizationCreateBody() # organization_create_body.OrganizationCreateBody | Organization object that needs to be created
-    
+    body = OrganizationCreateBody(
+        billing=OrganizationBilling(
+            type="type_example",
+        ),
+        name="New child org",
+        subscription=OrganizationSubscription(
+            type="type_example",
+        ),
+    ) # OrganizationCreateBody | Organization object that needs to be created
+
     # example passing only required values which don't have defaults set
     try:
         # Create a child organization
@@ -81,11 +88,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**organization_create_body.OrganizationCreateBody**](OrganizationCreateBody.md)| Organization object that needs to be created |
+ **body** | [**OrganizationCreateBody**](OrganizationCreateBody.md)| Organization object that needs to be created |
 
 ### Return type
 
-[**organization_create_response.OrganizationCreateResponse**](OrganizationCreateResponse.md)
+[**OrganizationCreateResponse**](OrganizationCreateResponse.md)
 
 ### Authorization
 
@@ -106,7 +113,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_org**
-> organization_response.OrganizationResponse get_org(public_id)
+> OrganizationResponse get_org(public_id)
 
 Get organization information
 
@@ -117,12 +124,11 @@ Get organization information.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import organizations_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import organization_response
+from datadog_api_client.v1.model.organization_response import OrganizationResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -159,8 +165,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = organizations_api.OrganizationsApi(api_client)
-    public_id = 'abc123' # str | The `public_id` of the organization you are operating within.
-    
+    public_id = "abc123" # str | The `public_id` of the organization you are operating within.
+
     # example passing only required values which don't have defaults set
     try:
         # Get organization information
@@ -178,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**organization_response.OrganizationResponse**](OrganizationResponse.md)
+[**OrganizationResponse**](OrganizationResponse.md)
 
 ### Authorization
 
@@ -199,7 +205,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_orgs**
-> organization_list_response.OrganizationListResponse list_orgs()
+> OrganizationListResponse list_orgs()
 
 List your managed organizations
 
@@ -210,12 +216,11 @@ List your managed organizations.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import organizations_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import organization_list_response
+from datadog_api_client.v1.model.organization_list_response import OrganizationListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -252,7 +257,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = organizations_api.OrganizationsApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # List your managed organizations
@@ -267,7 +272,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**organization_list_response.OrganizationListResponse**](OrganizationListResponse.md)
+[**OrganizationListResponse**](OrganizationListResponse.md)
 
 ### Authorization
 
@@ -287,7 +292,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_org**
-> organization_response.OrganizationResponse update_org(public_id, body)
+> OrganizationResponse update_org(public_id, body)
 
 Update your organization
 
@@ -298,13 +303,12 @@ Update your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import organizations_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import organization
-from datadog_api_client.v1.model import organization_response
+from datadog_api_client.v1.model.organization_response import OrganizationResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.organization import Organization
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -341,9 +345,43 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = organizations_api.OrganizationsApi(api_client)
-    public_id = 'abc123' # str | The `public_id` of the organization you are operating within.
-    body = organization.Organization() # organization.Organization | 
-    
+    public_id = "abc123" # str | The `public_id` of the organization you are operating within.
+    body = Organization(
+        billing=OrganizationBilling(
+            type="type_example",
+        ),
+        created="2019-09-26T17:28:28Z",
+        description="some description",
+        name="New child org",
+        public_id="abcdef12345",
+        settings=OrganizationSettings(
+            private_widget_share=False,
+            saml=OrganizationSettingsSaml(
+                enabled=False,
+            ),
+            saml_autocreate_access_role=AccessRole("st"),
+            saml_autocreate_users_domains=OrganizationSettingsSamlAutocreateUsersDomains(
+                domains=[
+                    "example.com",
+                ],
+                enabled=False,
+            ),
+            saml_can_be_enabled=False,
+            saml_idp_endpoint="https://my.saml.endpoint",
+            saml_idp_initiated_login=OrganizationSettingsSamlIdpInitiatedLogin(
+                enabled=False,
+            ),
+            saml_idp_metadata_uploaded=False,
+            saml_login_url="https://my.saml.login.url",
+            saml_strict_mode=OrganizationSettingsSamlStrictMode(
+                enabled=False,
+            ),
+        ),
+        subscription=OrganizationSubscription(
+            type="type_example",
+        ),
+    ) # Organization | 
+
     # example passing only required values which don't have defaults set
     try:
         # Update your organization
@@ -358,11 +396,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **public_id** | **str**| The &#x60;public_id&#x60; of the organization you are operating within. |
- **body** | [**organization.Organization**](Organization.md)|  |
+ **body** | [**Organization**](Organization.md)|  |
 
 ### Return type
 
-[**organization_response.OrganizationResponse**](OrganizationResponse.md)
+[**OrganizationResponse**](OrganizationResponse.md)
 
 ### Authorization
 
@@ -383,7 +421,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **upload_id_p_for_org**
-> idp_response.IdpResponse upload_id_p_for_org(public_id, idp_file)
+> IdpResponse upload_id_p_for_org(public_id, idp_file)
 
 Upload IdP metadata
 
@@ -394,12 +432,11 @@ There are a couple of options for updating the Identity Provider (IdP) metadata 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import organizations_api
-from datadog_api_client.v1.model import idp_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.idp_response import IdpResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -436,9 +473,9 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = organizations_api.OrganizationsApi(api_client)
-    public_id = 'abc123' # str | The `public_id` of the organization you are operating with
+    public_id = "abc123" # str | The `public_id` of the organization you are operating with
     idp_file = open('/path/to/file', 'rb') # file_type | The path to the XML metadata file you wish to upload.
-    
+
     # example passing only required values which don't have defaults set
     try:
         # Upload IdP metadata
@@ -457,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**idp_response.IdpResponse**](IdpResponse.md)
+[**IdpResponse**](IdpResponse.md)
 
 ### Authorization
 

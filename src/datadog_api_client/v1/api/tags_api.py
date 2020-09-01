@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,14 +15,12 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import host_tags
-from datadog_api_client.v1.model import tag_to_hosts
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.host_tags import HostTags
+from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
 
 
 class TagsApi(object):
@@ -59,7 +52,7 @@ class TagsApi(object):
 
             Args:
                 host_name (str): This endpoint allows you to add new tags to a host, optionally specifying where the tags came from.
-                body (host_tags.HostTags): Update host tags request body.
+                body (HostTags): Update host tags request body.
 
             Keyword Args:
                 source (str): The source of the tags. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]
@@ -84,7 +77,7 @@ class TagsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                host_tags.HostTags
+                HostTags
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -115,7 +108,7 @@ class TagsApi(object):
 
         self.create_host_tags = Endpoint(
             settings={
-                'response_type': (host_tags.HostTags,),
+                'response_type': (HostTags,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -151,7 +144,7 @@ class TagsApi(object):
                     'host_name':
                         (str,),
                     'body':
-                        (host_tags.HostTags,),
+                        (HostTags,),
                     'source':
                         (str,),
                 },
@@ -345,7 +338,7 @@ class TagsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                host_tags.HostTags
+                HostTags
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -374,7 +367,7 @@ class TagsApi(object):
 
         self.get_host_tags = Endpoint(
             settings={
-                'response_type': (host_tags.HostTags,),
+                'response_type': (HostTags,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -468,7 +461,7 @@ class TagsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                tag_to_hosts.TagToHosts
+                TagToHosts
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -495,7 +488,7 @@ class TagsApi(object):
 
         self.list_host_tags = Endpoint(
             settings={
-                'response_type': (tag_to_hosts.TagToHosts,),
+                'response_type': (TagToHosts,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -562,7 +555,7 @@ class TagsApi(object):
 
             Args:
                 host_name (str): This endpoint allows you to update/replace all in an integration source with those supplied in the request.
-                body (host_tags.HostTags): Add tags to host
+                body (HostTags): Add tags to host
 
             Keyword Args:
                 source (str): The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). [optional]
@@ -587,7 +580,7 @@ class TagsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                host_tags.HostTags
+                HostTags
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -618,7 +611,7 @@ class TagsApi(object):
 
         self.update_host_tags = Endpoint(
             settings={
-                'response_type': (host_tags.HostTags,),
+                'response_type': (HostTags,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -654,7 +647,7 @@ class TagsApi(object):
                     'host_name':
                         (str,),
                     'body':
-                        (host_tags.HostTags,),
+                        (HostTags,),
                     'source':
                         (str,),
                 },

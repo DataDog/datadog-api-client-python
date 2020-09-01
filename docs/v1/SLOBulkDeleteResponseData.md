@@ -1,4 +1,4 @@
-# slo_bulk_delete_response_data.SLOBulkDeleteResponseData
+# SLOBulkDeleteResponseData
 
 An array of service level objective objects.
 ## Properties

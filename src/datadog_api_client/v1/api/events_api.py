@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,15 +15,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import event_response
-from datadog_api_client.v1.model import event_priority
-from datadog_api_client.v1.model import event_list_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.event_list_response import EventListResponse
+from datadog_api_client.v1.model.event_priority import EventPriority
+from datadog_api_client.v1.model.event_response import EventResponse
 
 
 class EventsApi(object):
@@ -82,7 +75,7 @@ class EventsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                event_response.EventResponse
+                EventResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -111,7 +104,7 @@ class EventsApi(object):
 
         self.get_event = Endpoint(
             settings={
-                'response_type': (event_response.EventResponse,),
+                'response_type': (EventResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -183,7 +176,7 @@ class EventsApi(object):
                 end (int): POSIX timestamp.
 
             Keyword Args:
-                priority (event_priority.EventPriority): Priority of your events, either &#x60;low&#x60; or &#x60;normal&#x60;.. [optional]
+                priority (EventPriority): Priority of your events, either &#x60;low&#x60; or &#x60;normal&#x60;.. [optional]
                 sources (str): A comma separated string of sources.. [optional]
                 tags (str): A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.. [optional]
                 unaggregated (bool): Set unaggregated to &#x60;true&#x60; to return all events within the specified [&#x60;start&#x60;,&#x60;end&#x60;] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won&#39;t be available in the output.. [optional]
@@ -208,7 +201,7 @@ class EventsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                event_list_response.EventListResponse
+                EventListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -239,7 +232,7 @@ class EventsApi(object):
 
         self.list_events = Endpoint(
             settings={
-                'response_type': (event_list_response.EventListResponse,),
+                'response_type': (EventListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -280,7 +273,7 @@ class EventsApi(object):
                     'end':
                         (int,),
                     'priority':
-                        (event_priority.EventPriority,),
+                        (EventPriority,),
                     'sources':
                         (str,),
                     'tags':

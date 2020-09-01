@@ -1,4 +1,4 @@
-# authentication_validation_response.AuthenticationValidationResponse
+# AuthenticationValidationResponse
 
 Represent validation endpoint responses.
 ## Properties

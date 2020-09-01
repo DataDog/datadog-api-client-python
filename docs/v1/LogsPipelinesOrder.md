@@ -1,4 +1,4 @@
-# logs_pipelines_order.LogsPipelinesOrder
+# LogsPipelinesOrder
 
 Object containing the ordered list of pipeline IDs.
 ## Properties

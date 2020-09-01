@@ -1,4 +1,4 @@
-# role_create_attributes.RoleCreateAttributes
+# RoleCreateAttributes
 
 Attributes of the created role.
 ## Properties

@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -20,19 +15,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v2.model import dashboard_list_add_items_request
-from datadog_api_client.v2.model import dashboard_list_add_items_response
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import dashboard_list_delete_items_request
-from datadog_api_client.v2.model import dashboard_list_delete_items_response
-from datadog_api_client.v2.model import dashboard_list_items
-from datadog_api_client.v2.model import dashboard_list_update_items_response
-from datadog_api_client.v2.model import dashboard_list_update_items_request
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
+from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
+from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
+from datadog_api_client.v2.model.dashboard_list_delete_items_response import DashboardListDeleteItemsResponse
+from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
+from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
+from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 
 
 class DashboardListsApi(object):
@@ -64,7 +57,7 @@ class DashboardListsApi(object):
 
             Args:
                 dashboard_list_id (int): ID of the dashboard list to add items to.
-                body (dashboard_list_add_items_request.DashboardListAddItemsRequest): Dashboards to add to the dashboard list.
+                body (DashboardListAddItemsRequest): Dashboards to add to the dashboard list.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -88,7 +81,7 @@ class DashboardListsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_list_add_items_response.DashboardListAddItemsResponse
+                DashboardListAddItemsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -119,7 +112,7 @@ class DashboardListsApi(object):
 
         self.create_dashboard_list_items = Endpoint(
             settings={
-                'response_type': (dashboard_list_add_items_response.DashboardListAddItemsResponse,),
+                'response_type': (DashboardListAddItemsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -154,7 +147,7 @@ class DashboardListsApi(object):
                     'dashboard_list_id':
                         (int,),
                     'body':
-                        (dashboard_list_add_items_request.DashboardListAddItemsRequest,),
+                        (DashboardListAddItemsRequest,),
                 },
                 'attribute_map': {
                     'dashboard_list_id': 'dashboard_list_id',
@@ -195,7 +188,7 @@ class DashboardListsApi(object):
 
             Args:
                 dashboard_list_id (int): ID of the dashboard list to delete items from.
-                body (dashboard_list_delete_items_request.DashboardListDeleteItemsRequest): Dashboards to delete from the dashboard list.
+                body (DashboardListDeleteItemsRequest): Dashboards to delete from the dashboard list.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -219,7 +212,7 @@ class DashboardListsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_list_delete_items_response.DashboardListDeleteItemsResponse
+                DashboardListDeleteItemsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -250,7 +243,7 @@ class DashboardListsApi(object):
 
         self.delete_dashboard_list_items = Endpoint(
             settings={
-                'response_type': (dashboard_list_delete_items_response.DashboardListDeleteItemsResponse,),
+                'response_type': (DashboardListDeleteItemsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -285,7 +278,7 @@ class DashboardListsApi(object):
                     'dashboard_list_id':
                         (int,),
                     'body':
-                        (dashboard_list_delete_items_request.DashboardListDeleteItemsRequest,),
+                        (DashboardListDeleteItemsRequest,),
                 },
                 'attribute_map': {
                     'dashboard_list_id': 'dashboard_list_id',
@@ -348,7 +341,7 @@ class DashboardListsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_list_items.DashboardListItems
+                DashboardListItems
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -377,7 +370,7 @@ class DashboardListsApi(object):
 
         self.get_dashboard_list_items = Endpoint(
             settings={
-                'response_type': (dashboard_list_items.DashboardListItems,),
+                'response_type': (DashboardListItems,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -446,7 +439,7 @@ class DashboardListsApi(object):
 
             Args:
                 dashboard_list_id (int): ID of the dashboard list to update items from.
-                body (dashboard_list_update_items_request.DashboardListUpdateItemsRequest): New dashboards of the dashboard list.
+                body (DashboardListUpdateItemsRequest): New dashboards of the dashboard list.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -470,7 +463,7 @@ class DashboardListsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_list_update_items_response.DashboardListUpdateItemsResponse
+                DashboardListUpdateItemsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -501,7 +494,7 @@ class DashboardListsApi(object):
 
         self.update_dashboard_list_items = Endpoint(
             settings={
-                'response_type': (dashboard_list_update_items_response.DashboardListUpdateItemsResponse,),
+                'response_type': (DashboardListUpdateItemsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -536,7 +529,7 @@ class DashboardListsApi(object):
                     'dashboard_list_id':
                         (int,),
                     'body':
-                        (dashboard_list_update_items_request.DashboardListUpdateItemsRequest,),
+                        (DashboardListUpdateItemsRequest,),
                 },
                 'attribute_map': {
                     'dashboard_list_id': 'dashboard_list_id',

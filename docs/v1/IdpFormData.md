@@ -1,4 +1,4 @@
-# idp_form_data.IdpFormData
+# IdpFormData
 
 Object describing the IdP configuration.
 ## Properties

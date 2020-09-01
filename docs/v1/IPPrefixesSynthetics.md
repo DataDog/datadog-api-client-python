@@ -1,4 +1,4 @@
-# ip_prefixes_synthetics.IPPrefixesSynthetics
+# IPPrefixesSynthetics
 
 Available prefix information for the Synthetics endpoints.
 ## Properties

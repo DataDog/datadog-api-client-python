@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import check_status_widget_definition_type
-except ImportError:
-    check_status_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.check_status_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_grouping
-except ImportError:
-    widget_grouping = sys.modules[
-        'datadog_api_client.v1.model.widget_grouping']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
-try:
-    from datadog_api_client.v1.model import widget_time
-except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+
+def lazy_import():
+    from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    globals()['CheckStatusWidgetDefinitionType'] = CheckStatusWidgetDefinitionType
+    globals()['WidgetGrouping'] = WidgetGrouping
+    globals()['WidgetTextAlign'] = WidgetTextAlign
+    globals()['WidgetTime'] = WidgetTime
 
 
 class CheckStatusWidgetDefinition(ModelNormal):
@@ -87,29 +73,31 @@ class CheckStatusWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'check': (str,),  # noqa: E501
-            'grouping': (widget_grouping.WidgetGrouping,),  # noqa: E501
-            'type': (check_status_widget_definition_type.CheckStatusWidgetDefinitionType,),  # noqa: E501
+            'grouping': (WidgetGrouping,),  # noqa: E501
+            'type': (CheckStatusWidgetDefinitionType,),  # noqa: E501
             'group': (str,),  # noqa: E501
             'group_by': ([str],),  # noqa: E501
             'tags': ([str],),  # noqa: E501
-            'time': (widget_time.WidgetTime,),  # noqa: E501
+            'time': (WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'check': 'check',  # noqa: E501
@@ -137,12 +125,12 @@ class CheckStatusWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, check, grouping, type, *args, **kwargs):  # noqa: E501
-        """check_status_widget_definition.CheckStatusWidgetDefinition - a model defined in OpenAPI
+        """CheckStatusWidgetDefinition - a model defined in OpenAPI
 
         Args:
             check (str): Name of the check to use in the widget.
-            grouping (widget_grouping.WidgetGrouping):
-            type (check_status_widget_definition_type.CheckStatusWidgetDefinitionType):
+            grouping (WidgetGrouping):
+            type (CheckStatusWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -178,9 +166,9 @@ class CheckStatusWidgetDefinition(ModelNormal):
             group (str): Group reporting a single check.. [optional]  # noqa: E501
             group_by ([str]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
             tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
-            time (widget_time.WidgetTime): [optional]  # noqa: E501
+            time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
@@ -210,7 +198,7 @@ class CheckStatusWidgetDefinition(ModelNormal):
         self.check = check
         self.grouping = grouping
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

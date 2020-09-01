@@ -1,4 +1,4 @@
-# deleted_monitor.DeletedMonitor
+# DeletedMonitor
 
 Response from the delete monitor call.
 ## Properties

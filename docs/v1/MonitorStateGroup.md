@@ -1,4 +1,4 @@
-# monitor_state_group.MonitorStateGroup
+# MonitorStateGroup
 
 Monitor state for a single group.
 ## Properties
@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **last_resolved_ts** | **int** | Latest timestamp the monitor group was resolved. | [optional] 
 **last_triggered_ts** | **int** | Latest timestamp the monitor group triggered. | [optional] 
 **name** | **str** | The name of the monitor. | [optional] 
-**status** | [**monitor_overall_states.MonitorOverallStates**](MonitorOverallStates.md) |  | [optional] 
+**status** | [**MonitorOverallStates**](MonitorOverallStates.md) |  | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

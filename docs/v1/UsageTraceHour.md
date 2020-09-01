@@ -1,4 +1,4 @@
-# usage_trace_hour.UsageTraceHour
+# UsageTraceHour
 
 The hours of trace usage.
 ## Properties

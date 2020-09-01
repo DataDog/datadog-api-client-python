@@ -1,4 +1,4 @@
-# ip_prefixes_logs.IPPrefixesLogs
+# IPPrefixesLogs
 
 Available prefix information for the Logs endpoints.
 ## Properties

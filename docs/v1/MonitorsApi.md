@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **check_can_delete_monitor**
-> check_can_delete_monitor_response.CheckCanDeleteMonitorResponse check_can_delete_monitor(monitor_ids)
+> CheckCanDeleteMonitorResponse check_can_delete_monitor(monitor_ids)
 
 Check if a monitor can be deleted
 
@@ -25,12 +25,11 @@ Check if the given monitors can be deleted.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import check_can_delete_monitor_response
+from datadog_api_client.v1.model.check_can_delete_monitor_response import CheckCanDeleteMonitorResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -67,8 +66,10 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    monitor_ids = [56] # [int] | The IDs of the monitor to check.
-    
+    monitor_ids = [
+        1,
+    ] # [int] | The IDs of the monitor to check.
+
     # example passing only required values which don't have defaults set
     try:
         # Check if a monitor can be deleted
@@ -86,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**check_can_delete_monitor_response.CheckCanDeleteMonitorResponse**](CheckCanDeleteMonitorResponse.md)
+[**CheckCanDeleteMonitorResponse**](CheckCanDeleteMonitorResponse.md)
 
 ### Authorization
 
@@ -108,7 +109,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_monitor**
-> monitor.Monitor create_monitor(body)
+> Monitor create_monitor(body)
 
 Create a monitor
 
@@ -119,12 +120,11 @@ Create a monitor using the specified options.  #### Monitor Types  The type of m
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model import monitor
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.monitor import Monitor
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -161,8 +161,79 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    body = monitor.Monitor() # monitor.Monitor | Create a monitor request body.
-    
+    body = Monitor(
+        created=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        creator=Creator(
+            email="email_example",
+            handle="handle_example",
+            name="name_example",
+        ),
+        deleted=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        id=1,
+        message="message_example",
+        modified=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        multi=True,
+        name="name_example",
+        options=MonitorOptions(
+            aggregation=MonitorOptionsAggregation(
+                group_by="host",
+                metric="metrics.name",
+                type="count",
+            ),
+            device_ids=[
+                MonitorDeviceID("laptop_large"),
+            ],
+            enable_logs_sample=True,
+            escalation_message="none",
+            evaluation_delay=1,
+            include_tags=True,
+            locked=True,
+            min_failure_duration=0,
+            min_location_failed=1,
+            new_host_delay=300,
+            no_data_timeframe=1,
+            notify_audit=False,
+            notify_no_data=False,
+            renotify_interval=1,
+            require_full_window=True,
+            silenced={
+                "key": 1,
+            },
+            synthetics_check_id=1,
+            threshold_windows=MonitorThresholdWindowOptions(
+                recovery_window="recovery_window_example",
+                trigger_window="trigger_window_example",
+            ),
+            thresholds=MonitorThresholds(
+                critical=3.14,
+                critical_recovery=3.14,
+                ok=3.14,
+                unknown=3.14,
+                warning=3.14,
+                warning_recovery=3.14,
+            ),
+            timeout_h=1,
+        ),
+        overall_state=MonitorOverallStates("Alert"),
+        query="query_example",
+        state=MonitorState(
+            groups={
+                "key": MonitorStateGroup(
+                    last_nodata_ts=1,
+                    last_notified_ts=1,
+                    last_resolved_ts=1,
+                    last_triggered_ts=1,
+                    name="name_example",
+                    status=MonitorOverallStates("Alert"),
+                ),
+            },
+        ),
+        tags=[
+            "tags_example",
+        ],
+        type=MonitorType("composite"),
+    ) # Monitor | Create a monitor request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Create a monitor
@@ -176,11 +247,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**monitor.Monitor**](Monitor.md)| Create a monitor request body. |
+ **body** | [**Monitor**](Monitor.md)| Create a monitor request body. |
 
 ### Return type
 
-[**monitor.Monitor**](Monitor.md)
+[**Monitor**](Monitor.md)
 
 ### Authorization
 
@@ -201,7 +272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_monitor**
-> deleted_monitor.DeletedMonitor delete_monitor(monitor_id)
+> DeletedMonitor delete_monitor(monitor_id)
 
 Delete a monitor
 
@@ -212,12 +283,11 @@ Delete the specified monitor
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import deleted_monitor
+from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -254,8 +324,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    monitor_id = 56 # int | The ID of the monitor.
-    force = 'force_example' # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
+    monitor_id = 1 # int | The ID of the monitor.
+    force = "force_example" # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -284,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**deleted_monitor.DeletedMonitor**](DeletedMonitor.md)
+[**DeletedMonitor**](DeletedMonitor.md)
 
 ### Authorization
 
@@ -307,7 +377,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_monitor**
-> monitor.Monitor get_monitor(monitor_id)
+> Monitor get_monitor(monitor_id)
 
 Get a monitor's details
 
@@ -318,12 +388,11 @@ Get details about the specified monitor from your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model import monitor
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.monitor import Monitor
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -360,8 +429,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    monitor_id = 56 # int | The ID of the monitor
-    group_states = 'group_states_example' # str | When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`. (optional)
+    monitor_id = 1 # int | The ID of the monitor
+    group_states = "group_states_example" # str | When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -390,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**monitor.Monitor**](Monitor.md)
+[**Monitor**](Monitor.md)
 
 ### Authorization
 
@@ -412,7 +481,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_monitors**
-> [monitor.Monitor] list_monitors()
+> [Monitor] list_monitors()
 
 Get all monitor details
 
@@ -423,12 +492,11 @@ Get details about the specified monitor from your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model import monitor
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.monitor import Monitor
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -465,14 +533,14 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    group_states = 'group_states_example' # str | When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`. (optional)
-name = 'name_example' # str | A string to filter monitors by name. (optional)
-tags = 'tags_example' # str | A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. For example, `host:host0`. (optional)
-monitor_tags = 'monitor_tags_example' # str | A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors. Tags created in the Datadog UI automatically have the service key prepended. For example, `service:my-app`. (optional)
-with_downtimes = True # bool | If this argument is set to true, then the returned data includes all current downtimes for each monitor. (optional)
-id_offset = 56 # int | Monitor ID offset. (optional)
-page = 56 # int | The page to start paginating from. If this argument is not specified, the request returns all monitors without pagination. (optional)
-page_size = 56 # int | The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a `page_size` limit. However, if page is specified and `page_size` is not, the argument defaults to 100. (optional)
+    group_states = "group_states_example" # str | When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`. (optional)
+    name = "name_example" # str | A string to filter monitors by name. (optional)
+    tags = "tags_example" # str | A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. For example, `host:host0`. (optional)
+    monitor_tags = "monitor_tags_example" # str | A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors. Tags created in the Datadog UI automatically have the service key prepended. For example, `service:my-app`. (optional)
+    with_downtimes = True # bool | If this argument is set to true, then the returned data includes all current downtimes for each monitor. (optional)
+    id_offset = 1 # int | Monitor ID offset. (optional)
+    page = 1 # int | The page to start paginating from. If this argument is not specified, the request returns all monitors without pagination. (optional)
+    page_size = 1 # int | The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a `page_size` limit. However, if page is specified and `page_size` is not, the argument defaults to 100. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -499,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[monitor.Monitor]**](Monitor.md)
+[**[Monitor]**](Monitor.md)
 
 ### Authorization
 
@@ -520,7 +588,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_monitor**
-> monitor.Monitor update_monitor(monitor_id, body)
+> Monitor update_monitor(monitor_id, body)
 
 Edit a monitor
 
@@ -531,13 +599,12 @@ Edit the specified monitor.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model import monitor
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import monitor_update_request
+from datadog_api_client.v1.model.monitor_update_request import MonitorUpdateRequest
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.monitor import Monitor
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -574,9 +641,80 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    monitor_id = 56 # int | The ID of the monitor.
-    body = monitor_update_request.MonitorUpdateRequest() # monitor_update_request.MonitorUpdateRequest | Edit a monitor request body.
-    
+    monitor_id = 1 # int | The ID of the monitor.
+    body = MonitorUpdateRequest(
+        created=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        creator=Creator(
+            email="email_example",
+            handle="handle_example",
+            name="name_example",
+        ),
+        deleted=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        id=1,
+        message="message_example",
+        modified=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        multi=True,
+        name="name_example",
+        options=MonitorOptions(
+            aggregation=MonitorOptionsAggregation(
+                group_by="host",
+                metric="metrics.name",
+                type="count",
+            ),
+            device_ids=[
+                MonitorDeviceID("laptop_large"),
+            ],
+            enable_logs_sample=True,
+            escalation_message="none",
+            evaluation_delay=1,
+            include_tags=True,
+            locked=True,
+            min_failure_duration=0,
+            min_location_failed=1,
+            new_host_delay=300,
+            no_data_timeframe=1,
+            notify_audit=False,
+            notify_no_data=False,
+            renotify_interval=1,
+            require_full_window=True,
+            silenced={
+                "key": 1,
+            },
+            synthetics_check_id=1,
+            threshold_windows=MonitorThresholdWindowOptions(
+                recovery_window="recovery_window_example",
+                trigger_window="trigger_window_example",
+            ),
+            thresholds=MonitorThresholds(
+                critical=3.14,
+                critical_recovery=3.14,
+                ok=3.14,
+                unknown=3.14,
+                warning=3.14,
+                warning_recovery=3.14,
+            ),
+            timeout_h=1,
+        ),
+        overall_state=MonitorOverallStates("Alert"),
+        query="query_example",
+        state=MonitorState(
+            groups={
+                "key": MonitorStateGroup(
+                    last_nodata_ts=1,
+                    last_notified_ts=1,
+                    last_resolved_ts=1,
+                    last_triggered_ts=1,
+                    name="name_example",
+                    status=MonitorOverallStates("Alert"),
+                ),
+            },
+        ),
+        tags=[
+            "tags_example",
+        ],
+        type=MonitorType("composite"),
+    ) # MonitorUpdateRequest | Edit a monitor request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Edit a monitor
@@ -591,11 +729,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **monitor_id** | **int**| The ID of the monitor. |
- **body** | [**monitor_update_request.MonitorUpdateRequest**](MonitorUpdateRequest.md)| Edit a monitor request body. |
+ **body** | [**MonitorUpdateRequest**](MonitorUpdateRequest.md)| Edit a monitor request body. |
 
 ### Return type
 
-[**monitor.Monitor**](Monitor.md)
+[**Monitor**](Monitor.md)
 
 ### Authorization
 
@@ -618,7 +756,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **validate_monitor**
-> monitor.Monitor validate_monitor(body)
+> Monitor validate_monitor(body)
 
 Validate a monitor
 
@@ -629,12 +767,11 @@ Validate the monitor provided in the request.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model import monitor
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.monitor import Monitor
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -671,8 +808,79 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    body = monitor.Monitor() # monitor.Monitor | Monitor request object
-    
+    body = Monitor(
+        created=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        creator=Creator(
+            email="email_example",
+            handle="handle_example",
+            name="name_example",
+        ),
+        deleted=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        id=1,
+        message="message_example",
+        modified=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        multi=True,
+        name="name_example",
+        options=MonitorOptions(
+            aggregation=MonitorOptionsAggregation(
+                group_by="host",
+                metric="metrics.name",
+                type="count",
+            ),
+            device_ids=[
+                MonitorDeviceID("laptop_large"),
+            ],
+            enable_logs_sample=True,
+            escalation_message="none",
+            evaluation_delay=1,
+            include_tags=True,
+            locked=True,
+            min_failure_duration=0,
+            min_location_failed=1,
+            new_host_delay=300,
+            no_data_timeframe=1,
+            notify_audit=False,
+            notify_no_data=False,
+            renotify_interval=1,
+            require_full_window=True,
+            silenced={
+                "key": 1,
+            },
+            synthetics_check_id=1,
+            threshold_windows=MonitorThresholdWindowOptions(
+                recovery_window="recovery_window_example",
+                trigger_window="trigger_window_example",
+            ),
+            thresholds=MonitorThresholds(
+                critical=3.14,
+                critical_recovery=3.14,
+                ok=3.14,
+                unknown=3.14,
+                warning=3.14,
+                warning_recovery=3.14,
+            ),
+            timeout_h=1,
+        ),
+        overall_state=MonitorOverallStates("Alert"),
+        query="query_example",
+        state=MonitorState(
+            groups={
+                "key": MonitorStateGroup(
+                    last_nodata_ts=1,
+                    last_notified_ts=1,
+                    last_resolved_ts=1,
+                    last_triggered_ts=1,
+                    name="name_example",
+                    status=MonitorOverallStates("Alert"),
+                ),
+            },
+        ),
+        tags=[
+            "tags_example",
+        ],
+        type=MonitorType("composite"),
+    ) # Monitor | Monitor request object
+
     # example passing only required values which don't have defaults set
     try:
         # Validate a monitor
@@ -686,11 +894,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**monitor.Monitor**](Monitor.md)| Monitor request object |
+ **body** | [**Monitor**](Monitor.md)| Monitor request object |
 
 ### Return type
 
-[**monitor.Monitor**](Monitor.md)
+[**Monitor**](Monitor.md)
 
 ### Authorization
 

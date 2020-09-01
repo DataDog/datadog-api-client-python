@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import azure_account
-except ImportError:
-    azure_account = sys.modules[
-        'datadog_api_client.v1.model.azure_account']
+
+def lazy_import():
+    from datadog_api_client.v1.model.azure_account import AzureAccount
+    globals()['AzureAccount'] = AzureAccount
 
 
 class AzureAccountListResponse(ModelSimple):
@@ -68,20 +63,22 @@ class AzureAccountListResponse(ModelSimple):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'value': ([azure_account.AzureAccount],),  # noqa: E501
+            'value': ([AzureAccount],),
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {}
 
@@ -97,11 +94,11 @@ class AzureAccountListResponse(ModelSimple):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, value, *args, **kwargs):  # noqa: E501
-        """azure_account_list_response.AzureAccountListResponse - a model defined in OpenAPI
+    def __init__(self, value, *args, **kwargs):
+        """AzureAccountListResponse - a model defined in OpenAPI
 
         Args:
-            value ([azure_account.AzureAccount]): Accounts configured for your organization.
+            value ([AzureAccount]): Accounts configured for your organization..  # noqa: E501
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -158,13 +155,13 @@ class AzureAccountListResponse(ModelSimple):
         self._path_to_item = _path_to_item
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
-
         self.value = value
-        for var_name, var_value in six.iteritems(kwargs):
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
-                # discard variable.
-                continue
-            setattr(self, var_name, var_value)
+        if kwargs:
+            raise ApiTypeError(
+                "Invalid named arguments=%s passed to %s. Remove those invalid named arguments." % (
+                    kwargs,
+                    self.__class__.__name__,
+                ),
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )

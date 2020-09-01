@@ -1,4 +1,4 @@
-# slo_delete_response.SLODeleteResponse
+# SLODeleteResponse
 
 A response list of all service level objective deleted.
 ## Properties

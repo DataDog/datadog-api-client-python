@@ -1,4 +1,4 @@
-# synthetics_basic_auth.SyntheticsBasicAuth
+# SyntheticsBasicAuth
 
 Object to handle basic authentication when performing the test.
 ## Properties

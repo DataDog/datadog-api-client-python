@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import creator
-except ImportError:
-    creator = sys.modules[
-        'datadog_api_client.v1.model.creator']
+
+def lazy_import():
+    from datadog_api_client.v1.model.creator import Creator
+    globals()['Creator'] = Creator
 
 
 class DashboardList(ModelNormal):
@@ -72,16 +67,17 @@ class DashboardList(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'name': (str,),  # noqa: E501
-            'author': (creator.Creator,),  # noqa: E501
+            'author': (Creator,),  # noqa: E501
             'created': (datetime,),  # noqa: E501
             'dashboard_count': (int,),  # noqa: E501
             'id': (int,),  # noqa: E501
@@ -93,6 +89,7 @@ class DashboardList(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'name': 'name',  # noqa: E501
@@ -118,7 +115,7 @@ class DashboardList(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, name, *args, **kwargs):  # noqa: E501
-        """dashboard_list.DashboardList - a model defined in OpenAPI
+        """DashboardList - a model defined in OpenAPI
 
         Args:
             name (str): The name of the dashboard list.
@@ -154,7 +151,7 @@ class DashboardList(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            author (creator.Creator): [optional]  # noqa: E501
+            author (Creator): [optional]  # noqa: E501
             created (datetime): Date of creation of the dashboard list.. [optional]  # noqa: E501
             dashboard_count (int): The number of dashboards in the list.. [optional]  # noqa: E501
             id (int): The ID of the dashboard list.. [optional]  # noqa: E501
@@ -187,7 +184,7 @@ class DashboardList(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

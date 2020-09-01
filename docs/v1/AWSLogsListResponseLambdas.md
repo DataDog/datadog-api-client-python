@@ -1,4 +1,4 @@
-# aws_logs_list_response_lambdas.AWSLogsListResponseLambdas
+# AWSLogsListResponseLambdas
 
 Description of the Lambdas.
 ## Properties

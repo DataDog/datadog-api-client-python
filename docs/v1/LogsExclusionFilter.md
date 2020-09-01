@@ -1,4 +1,4 @@
-# logs_exclusion_filter.LogsExclusionFilter
+# LogsExclusionFilter
 
 Exclusion filter is defined by a query, a sampling rule, and a active/inactive toggle.
 ## Properties

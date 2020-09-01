@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 
 # **get_daily_custom_reports**
-> usage_custom_reports_response.UsageCustomReportsResponse get_daily_custom_reports()
+> UsageCustomReportsResponse get_daily_custom_reports()
 
 Get the list of available daily custom reports
 
@@ -41,14 +41,13 @@ Get daily custom reports.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_custom_reports_response
-from datadog_api_client.v1.model import usage_sort
-from datadog_api_client.v1.model import usage_sort_direction
+from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
+from datadog_api_client.v1.model.usage_sort_direction import UsageSortDirection
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_sort import UsageSort
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -85,10 +84,10 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    page_size = 56 # int | The number of files to return in the response. `[default=60]`. (optional)
-page_number = 56 # int | The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`. (optional)
-sort_dir = usage_sort_direction.UsageSortDirection() # usage_sort_direction.UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
-sort = usage_sort.UsageSort() # usage_sort.UsageSort | The field to sort by: `[computed_on, size, start_date, end_date]`. (optional)
+    page_size = 1 # int | The number of files to return in the response. `[default=60]`. (optional)
+    page_number = 1 # int | The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`. (optional)
+    sort_dir = UsageSortDirection("desc") # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
+    sort = UsageSort("start_date") # UsageSort | The field to sort by: `[computed_on, size, start_date, end_date]`. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -106,12 +105,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_size** | **int**| The number of files to return in the response. &#x60;[default&#x3D;60]&#x60;. | [optional]
  **page_number** | **int**| The identifier of the first page to return. This parameter is used for the pagination feature &#x60;[default&#x3D;0]&#x60;. | [optional]
- **sort_dir** | **usage_sort_direction.UsageSortDirection**| The direction to sort by: &#x60;[desc, asc]&#x60;. | [optional]
- **sort** | **usage_sort.UsageSort**| The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;. | [optional]
+ **sort_dir** | **UsageSortDirection**| The direction to sort by: &#x60;[desc, asc]&#x60;. | [optional]
+ **sort** | **UsageSort**| The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;. | [optional]
 
 ### Return type
 
-[**usage_custom_reports_response.UsageCustomReportsResponse**](UsageCustomReportsResponse.md)
+[**UsageCustomReportsResponse**](UsageCustomReportsResponse.md)
 
 ### Authorization
 
@@ -131,7 +130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_monthly_custom_reports**
-> usage_custom_reports_response.UsageCustomReportsResponse get_monthly_custom_reports()
+> UsageCustomReportsResponse get_monthly_custom_reports()
 
 Get the list of available monthly custom reports
 
@@ -142,14 +141,13 @@ Get monthly custom reports.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_custom_reports_response
-from datadog_api_client.v1.model import usage_sort
-from datadog_api_client.v1.model import usage_sort_direction
+from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
+from datadog_api_client.v1.model.usage_sort_direction import UsageSortDirection
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_sort import UsageSort
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -186,10 +184,10 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    page_size = 56 # int | The number of files to return in the response `[default=60].` (optional)
-page_number = 56 # int | The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`. (optional)
-sort_dir = usage_sort_direction.UsageSortDirection() # usage_sort_direction.UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
-sort = usage_sort.UsageSort() # usage_sort.UsageSort | The field to sort by: `[computed_on, size, start_date, end_date]`. (optional)
+    page_size = 1 # int | The number of files to return in the response `[default=60].` (optional)
+    page_number = 1 # int | The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`. (optional)
+    sort_dir = UsageSortDirection("desc") # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
+    sort = UsageSort("start_date") # UsageSort | The field to sort by: `[computed_on, size, start_date, end_date]`. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -207,12 +205,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_size** | **int**| The number of files to return in the response &#x60;[default&#x3D;60].&#x60; | [optional]
  **page_number** | **int**| The identifier of the first page to return. This parameter is used for the pagination feature &#x60;[default&#x3D;0]&#x60;. | [optional]
- **sort_dir** | **usage_sort_direction.UsageSortDirection**| The direction to sort by: &#x60;[desc, asc]&#x60;. | [optional]
- **sort** | **usage_sort.UsageSort**| The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;. | [optional]
+ **sort_dir** | **UsageSortDirection**| The direction to sort by: &#x60;[desc, asc]&#x60;. | [optional]
+ **sort** | **UsageSort**| The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;. | [optional]
 
 ### Return type
 
-[**usage_custom_reports_response.UsageCustomReportsResponse**](UsageCustomReportsResponse.md)
+[**UsageCustomReportsResponse**](UsageCustomReportsResponse.md)
 
 ### Authorization
 
@@ -232,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_specified_daily_custom_reports**
-> usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse get_specified_daily_custom_reports(report_id)
+> UsageSpecifiedCustomReportsResponse get_specified_daily_custom_reports(report_id)
 
 Get specified daily custom reports
 
@@ -243,12 +241,11 @@ Get specified daily custom reports.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_specified_custom_reports_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_specified_custom_reports_response import UsageSpecifiedCustomReportsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -285,8 +282,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    report_id = 'report_id_example' # str | The specified ID to search results for.
-    
+    report_id = "report_id_example" # str | The specified ID to search results for.
+
     # example passing only required values which don't have defaults set
     try:
         # Get specified daily custom reports
@@ -304,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse**](UsageSpecifiedCustomReportsResponse.md)
+[**UsageSpecifiedCustomReportsResponse**](UsageSpecifiedCustomReportsResponse.md)
 
 ### Authorization
 
@@ -325,7 +322,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_specified_monthly_custom_reports**
-> usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse get_specified_monthly_custom_reports(report_id)
+> UsageSpecifiedCustomReportsResponse get_specified_monthly_custom_reports(report_id)
 
 Get specified monthly custom reports
 
@@ -336,12 +333,11 @@ Get specified monthly custom reports.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_specified_custom_reports_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_specified_custom_reports_response import UsageSpecifiedCustomReportsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -378,8 +374,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    report_id = 'report_id_example' # str | The specified ID to search results for.
-    
+    report_id = "report_id_example" # str | The specified ID to search results for.
+
     # example passing only required values which don't have defaults set
     try:
         # Get specified monthly custom reports
@@ -397,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_specified_custom_reports_response.UsageSpecifiedCustomReportsResponse**](UsageSpecifiedCustomReportsResponse.md)
+[**UsageSpecifiedCustomReportsResponse**](UsageSpecifiedCustomReportsResponse.md)
 
 ### Authorization
 
@@ -419,7 +415,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_analyzed_logs**
-> usage_analyzed_logs_response.UsageAnalyzedLogsResponse get_usage_analyzed_logs(start_hr)
+> UsageAnalyzedLogsResponse get_usage_analyzed_logs(start_hr)
 
 Get hourly usage for analyzed logs
 
@@ -430,12 +426,11 @@ Get hourly usage for analyzed logs (Security Monitoring).
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_analyzed_logs_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -472,8 +467,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -502,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_analyzed_logs_response.UsageAnalyzedLogsResponse**](UsageAnalyzedLogsResponse.md)
+[**UsageAnalyzedLogsResponse**](UsageAnalyzedLogsResponse.md)
 
 ### Authorization
 
@@ -523,7 +518,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_billable_summary**
-> usage_billable_summary_response.UsageBillableSummaryResponse get_usage_billable_summary()
+> UsageBillableSummaryResponse get_usage_billable_summary()
 
 Get billable usage across your multi-org account
 
@@ -534,12 +529,11 @@ Get billable usage across your multi-org account.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import usage_billable_summary_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -576,7 +570,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    month = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month. (optional)
+    month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -596,7 +590,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_billable_summary_response.UsageBillableSummaryResponse**](UsageBillableSummaryResponse.md)
+[**UsageBillableSummaryResponse**](UsageBillableSummaryResponse.md)
 
 ### Authorization
 
@@ -617,7 +611,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_fargate**
-> usage_fargate_response.UsageFargateResponse get_usage_fargate(start_hr)
+> UsageFargateResponse get_usage_fargate(start_hr)
 
 Get hourly usage for Fargate
 
@@ -628,12 +622,11 @@ Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_farga
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import usage_fargate_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.usage_fargate_response import UsageFargateResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -670,8 +663,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -700,7 +693,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_fargate_response.UsageFargateResponse**](UsageFargateResponse.md)
+[**UsageFargateResponse**](UsageFargateResponse.md)
 
 ### Authorization
 
@@ -721,7 +714,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_hosts**
-> usage_hosts_response.UsageHostsResponse get_usage_hosts(start_hr)
+> UsageHostsResponse get_usage_hosts(start_hr)
 
 Get hourly usage for hosts and containers
 
@@ -732,12 +725,11 @@ Get hourly usage for hosts and containers.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_hosts_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_hosts_response import UsageHostsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -774,8 +766,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -804,7 +796,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_hosts_response.UsageHostsResponse**](UsageHostsResponse.md)
+[**UsageHostsResponse**](UsageHostsResponse.md)
 
 ### Authorization
 
@@ -825,7 +817,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_lambda**
-> usage_lambda_response.UsageLambdaResponse get_usage_lambda(start_hr)
+> UsageLambdaResponse get_usage_lambda(start_hr)
 
 Get hourly usage for Lambda
 
@@ -836,12 +828,11 @@ Get hourly usage for lambda.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_lambda_response
+from datadog_api_client.v1.model.usage_lambda_response import UsageLambdaResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -878,8 +869,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -908,7 +899,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_lambda_response.UsageLambdaResponse**](UsageLambdaResponse.md)
+[**UsageLambdaResponse**](UsageLambdaResponse.md)
 
 ### Authorization
 
@@ -929,7 +920,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_logs**
-> usage_logs_response.UsageLogsResponse get_usage_logs(start_hr)
+> UsageLogsResponse get_usage_logs(start_hr)
 
 Get hourly usage for Logs
 
@@ -940,12 +931,11 @@ Get hourly usage for logs.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import usage_logs_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.usage_logs_response import UsageLogsResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -982,8 +972,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1012,7 +1002,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_logs_response.UsageLogsResponse**](UsageLogsResponse.md)
+[**UsageLogsResponse**](UsageLogsResponse.md)
 
 ### Authorization
 
@@ -1033,7 +1023,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_logs_by_index**
-> usage_logs_by_index_response.UsageLogsByIndexResponse get_usage_logs_by_index(start_hr)
+> UsageLogsByIndexResponse get_usage_logs_by_index(start_hr)
 
 Get hourly usage for Logs by Index
 
@@ -1044,12 +1034,11 @@ Get hourly usage for logs by index.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_logs_by_index_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_logs_by_index_response import UsageLogsByIndexResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1086,9 +1075,11 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
-index_name = ['index_name_example'] # [str] | Comma-separated list of log index names. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    index_name = [
+        "index_name_example",
+    ] # [str] | Comma-separated list of log index names. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1118,7 +1109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_logs_by_index_response.UsageLogsByIndexResponse**](UsageLogsByIndexResponse.md)
+[**UsageLogsByIndexResponse**](UsageLogsByIndexResponse.md)
 
 ### Authorization
 
@@ -1139,7 +1130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_network_flows**
-> usage_network_flows_response.UsageNetworkFlowsResponse get_usage_network_flows(start_hr)
+> UsageNetworkFlowsResponse get_usage_network_flows(start_hr)
 
 Get hourly usage for Network Flows
 
@@ -1150,12 +1141,11 @@ Get hourly usage for network flows.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_network_flows_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_network_flows_response import UsageNetworkFlowsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1192,8 +1182,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1222,7 +1212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_network_flows_response.UsageNetworkFlowsResponse**](UsageNetworkFlowsResponse.md)
+[**UsageNetworkFlowsResponse**](UsageNetworkFlowsResponse.md)
 
 ### Authorization
 
@@ -1243,7 +1233,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_network_hosts**
-> usage_network_hosts_response.UsageNetworkHostsResponse get_usage_network_hosts(start_hr)
+> UsageNetworkHostsResponse get_usage_network_hosts(start_hr)
 
 Get hourly usage for Network Hosts
 
@@ -1254,12 +1244,11 @@ Get hourly usage for network hosts.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_network_hosts_response
+from datadog_api_client.v1.model.usage_network_hosts_response import UsageNetworkHostsResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1296,8 +1285,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1326,7 +1315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_network_hosts_response.UsageNetworkHostsResponse**](UsageNetworkHostsResponse.md)
+[**UsageNetworkHostsResponse**](UsageNetworkHostsResponse.md)
 
 ### Authorization
 
@@ -1347,7 +1336,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_profiling**
-> usage_profiling_response.UsageProfilingResponse get_usage_profiling(start_hr)
+> UsageProfilingResponse get_usage_profiling(start_hr)
 
 Get hourly usage for profiled hosts
 
@@ -1358,12 +1347,11 @@ Get hourly usage for profiled hosts.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_profiling_response
+from datadog_api_client.v1.model.usage_profiling_response import UsageProfilingResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1400,8 +1388,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1430,7 +1418,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_profiling_response.UsageProfilingResponse**](UsageProfilingResponse.md)
+[**UsageProfilingResponse**](UsageProfilingResponse.md)
 
 ### Authorization
 
@@ -1451,7 +1439,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_rum_sessions**
-> usage_rum_sessions_response.UsageRumSessionsResponse get_usage_rum_sessions(start_hr)
+> UsageRumSessionsResponse get_usage_rum_sessions(start_hr)
 
 Get hourly usage for RUM Sessions
 
@@ -1462,12 +1450,11 @@ Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Ses
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_rum_sessions_response
+from datadog_api_client.v1.model.usage_rum_sessions_response import UsageRumSessionsResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1504,8 +1491,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1534,7 +1521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_rum_sessions_response.UsageRumSessionsResponse**](UsageRumSessionsResponse.md)
+[**UsageRumSessionsResponse**](UsageRumSessionsResponse.md)
 
 ### Authorization
 
@@ -1555,7 +1542,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_snmp**
-> usage_snmp_response.UsageSNMPResponse get_usage_snmp(start_hr)
+> UsageSNMPResponse get_usage_snmp(start_hr)
 
 Get hourly usage for SNMP devices
 
@@ -1566,12 +1553,11 @@ Get hourly usage for SNMP devices.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import usage_snmp_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.usage_snmp_response import UsageSNMPResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1608,8 +1594,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1638,7 +1624,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_snmp_response.UsageSNMPResponse**](UsageSNMPResponse.md)
+[**UsageSNMPResponse**](UsageSNMPResponse.md)
 
 ### Authorization
 
@@ -1659,7 +1645,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_summary**
-> usage_summary_response.UsageSummaryResponse get_usage_summary(start_month)
+> UsageSummaryResponse get_usage_summary(start_month)
 
 Get usage across your multi-org account
 
@@ -1670,12 +1656,11 @@ Get usage across your multi-org account.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import usage_summary_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.usage_summary_response import UsageSummaryResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1712,9 +1697,9 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_month = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
-    end_month = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month. (optional)
-include_org_details = True # bool | Include usage summaries for each sub-org. (optional)
+    start_month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+    end_month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month. (optional)
+    include_org_details = True # bool | Include usage summaries for each sub-org. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1744,7 +1729,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_summary_response.UsageSummaryResponse**](UsageSummaryResponse.md)
+[**UsageSummaryResponse**](UsageSummaryResponse.md)
 
 ### Authorization
 
@@ -1765,7 +1750,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_synthetics**
-> usage_synthetics_response.UsageSyntheticsResponse get_usage_synthetics(start_hr)
+> UsageSyntheticsResponse get_usage_synthetics(start_hr)
 
 Get hourly usage for Synthetics Checks
 
@@ -1776,12 +1761,11 @@ Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/)
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import usage_synthetics_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.usage_synthetics_response import UsageSyntheticsResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1818,8 +1802,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1848,7 +1832,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_synthetics_response.UsageSyntheticsResponse**](UsageSyntheticsResponse.md)
+[**UsageSyntheticsResponse**](UsageSyntheticsResponse.md)
 
 ### Authorization
 
@@ -1869,7 +1853,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_synthetics_api**
-> usage_synthetics_api_response.UsageSyntheticsAPIResponse get_usage_synthetics_api(start_hr)
+> UsageSyntheticsAPIResponse get_usage_synthetics_api(start_hr)
 
 Get hourly usage for Synthetics API Checks
 
@@ -1880,12 +1864,11 @@ Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/syntheti
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import usage_synthetics_api_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.usage_synthetics_api_response import UsageSyntheticsAPIResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1922,8 +1905,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1952,7 +1935,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_synthetics_api_response.UsageSyntheticsAPIResponse**](UsageSyntheticsAPIResponse.md)
+[**UsageSyntheticsAPIResponse**](UsageSyntheticsAPIResponse.md)
 
 ### Authorization
 
@@ -1973,7 +1956,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_synthetics_browser**
-> usage_synthetics_browser_response.UsageSyntheticsBrowserResponse get_usage_synthetics_browser(start_hr)
+> UsageSyntheticsBrowserResponse get_usage_synthetics_browser(start_hr)
 
 Get hourly usage for Synthetics Browser Checks
 
@@ -1984,12 +1967,11 @@ Get hourly usage for synthetics browser checks.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import usage_synthetics_browser_response
+from datadog_api_client.v1.model.usage_synthetics_browser_response import UsageSyntheticsBrowserResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2026,8 +2008,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2056,7 +2038,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_synthetics_browser_response.UsageSyntheticsBrowserResponse**](UsageSyntheticsBrowserResponse.md)
+[**UsageSyntheticsBrowserResponse**](UsageSyntheticsBrowserResponse.md)
 
 ### Authorization
 
@@ -2077,7 +2059,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_timeseries**
-> usage_timeseries_response.UsageTimeseriesResponse get_usage_timeseries(start_hr)
+> UsageTimeseriesResponse get_usage_timeseries(start_hr)
 
 Get hourly usage for custom metrics
 
@@ -2088,12 +2070,11 @@ Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metr
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import usage_timeseries_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.usage_timeseries_response import UsageTimeseriesResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2130,8 +2111,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2160,7 +2141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_timeseries_response.UsageTimeseriesResponse**](UsageTimeseriesResponse.md)
+[**UsageTimeseriesResponse**](UsageTimeseriesResponse.md)
 
 ### Authorization
 
@@ -2181,7 +2162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_top_avg_metrics**
-> usage_top_avg_metrics_response.UsageTopAvgMetricsResponse get_usage_top_avg_metrics(month)
+> UsageTopAvgMetricsResponse get_usage_top_avg_metrics(month)
 
 Get top 500 custom metrics by hourly average
 
@@ -2192,12 +2173,11 @@ Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_me
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import usage_top_avg_metrics_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopAvgMetricsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2234,8 +2214,10 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    month = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour.
-    names = ['names_example'] # [str] | Comma-separated list of metric names. (optional)
+    month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour.
+    names = [
+        "names_example",
+    ] # [str] | Comma-separated list of metric names. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2264,7 +2246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_top_avg_metrics_response.UsageTopAvgMetricsResponse**](UsageTopAvgMetricsResponse.md)
+[**UsageTopAvgMetricsResponse**](UsageTopAvgMetricsResponse.md)
 
 ### Authorization
 
@@ -2285,7 +2267,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_trace**
-> usage_trace_response.UsageTraceResponse get_usage_trace(start_hr)
+> UsageTraceResponse get_usage_trace(start_hr)
 
 Get hourly usage for Trace Search
 
@@ -2296,12 +2278,11 @@ Get hourly usage for trace search.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.model import usage_trace_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.usage_trace_response import UsageTraceResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2338,8 +2319,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = '2013-10-20T19:20:30+01:00' # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2368,7 +2349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**usage_trace_response.UsageTraceResponse**](UsageTraceResponse.md)
+[**UsageTraceResponse**](UsageTraceResponse.md)
 
 ### Authorization
 

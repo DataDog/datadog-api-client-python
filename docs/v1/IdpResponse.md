@@ -1,4 +1,4 @@
-# idp_response.IdpResponse
+# IdpResponse
 
 The IdP response object.
 ## Properties

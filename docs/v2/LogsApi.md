@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **aggregate_logs**
-> logs_aggregate_response.LogsAggregateResponse aggregate_logs()
+> LogsAggregateResponse aggregate_logs()
 
 Aggregate events
 
@@ -21,13 +21,12 @@ The public API endpoint to aggregate events into buckets and compute metrics and
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_api
-from datadog_api_client.v2.model import logs_aggregate_response
-from datadog_api_client.v2.model import logs_aggregate_request
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.logs_aggregate_request import LogsAggregateRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -64,7 +63,50 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_api.LogsApi(api_client)
-    body = logs_aggregate_request.LogsAggregateRequest() # logs_aggregate_request.LogsAggregateRequest |  (optional)
+    body = LogsAggregateRequest(
+        compute=[
+            LogsCompute(
+                aggregation=LogsAggregationFunction("pc90"),
+                interval="5m",
+                metric="@duration",
+                type=LogsComputeType("total"),
+            ),
+        ],
+        filter=LogsQueryFilter(
+            _from="now-15m",
+            indexes=[
+                "["main","web"]",
+            ],
+            query="service:web* AND @http.status_code:[200 TO 299]",
+            to="now",
+        ),
+        group_by=[
+            LogsGroupBy(
+                facet="host",
+                histogram=LogsGroupByHistogram(
+                    interval=10,
+                    max=100,
+                    min=50,
+                ),
+                limit=10,
+                missing=LogsGroupByMissing(),
+                sort=LogsAggregateSort(
+                    aggregation=LogsAggregationFunction("pc90"),
+                    metric="@duration",
+                    order=LogsSortOrder("asc"),
+                    type=LogsAggregateSortType("alphabetical"),
+                ),
+                total=LogsGroupByTotal(),
+            ),
+        ],
+        options=LogsQueryOptions(
+            time_offset=1,
+            timezone="GMT",
+        ),
+        paging=LogsAggregateRequestPaging(
+            after="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==",
+        ),
+    ) # LogsAggregateRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -80,11 +122,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**logs_aggregate_request.LogsAggregateRequest**](LogsAggregateRequest.md)|  | [optional]
+ **body** | [**LogsAggregateRequest**](LogsAggregateRequest.md)|  | [optional]
 
 ### Return type
 
-[**logs_aggregate_response.LogsAggregateResponse**](LogsAggregateResponse.md)
+[**LogsAggregateResponse**](LogsAggregateResponse.md)
 
 ### Authorization
 
@@ -105,7 +147,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_logs**
-> logs_list_response.LogsListResponse list_logs()
+> LogsListResponse list_logs()
 
 Get a list of logs
 
@@ -116,13 +158,12 @@ List endpoint returns logs that match a log search query. [Results are paginated
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_api
-from datadog_api_client.v2.model import logs_list_response
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import logs_list_request
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.logs_list_request import LogsListRequest
+from datadog_api_client.v2.model.logs_list_response import LogsListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -159,7 +200,25 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_api.LogsApi(api_client)
-    body = logs_list_request.LogsListRequest() # logs_list_request.LogsListRequest |  (optional)
+    body = LogsListRequest(
+        filter=LogsQueryFilter(
+            _from="now-15m",
+            indexes=[
+                "["main","web"]",
+            ],
+            query="service:web* AND @http.status_code:[200 TO 299]",
+            to="now",
+        ),
+        options=LogsQueryOptions(
+            time_offset=1,
+            timezone="GMT",
+        ),
+        page=LogsListRequestPage(
+            cursor="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==",
+            limit=25,
+        ),
+        sort=LogsSort("timestamp"),
+    ) # LogsListRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -175,11 +234,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**logs_list_request.LogsListRequest**](LogsListRequest.md)|  | [optional]
+ **body** | [**LogsListRequest**](LogsListRequest.md)|  | [optional]
 
 ### Return type
 
-[**logs_list_response.LogsListResponse**](LogsListResponse.md)
+[**LogsListResponse**](LogsListResponse.md)
 
 ### Authorization
 
@@ -200,7 +259,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_logs_get**
-> logs_list_response.LogsListResponse list_logs_get()
+> LogsListResponse list_logs_get()
 
 Get a quick list of logs
 
@@ -211,13 +270,12 @@ List endpoint returns logs that match a log search query. [Results are paginated
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_api
-from datadog_api_client.v2.model import logs_list_response
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import logs_sort
+from datadog_api_client.v2.model.logs_sort import LogsSort
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.logs_list_response import LogsListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -254,13 +312,13 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_api.LogsApi(api_client)
-    filter_query = '@datacenter:us @role:db' # str | Search query following logs syntax. (optional)
-filter_index = 'main' # str | For customers with multiple indexes, the indexes to search Defaults to '*' which means all indexes (optional)
-filter_from = '2019-01-02T09:42:36.320Z' # datetime | Minimum timestamp for requested logs. (optional)
-filter_to = '2019-01-03T09:42:36.320Z' # datetime | Maximum timestamp for requested logs. (optional)
-sort = logs_sort.LogsSort() # logs_sort.LogsSort | Order of logs in results. (optional)
-page_cursor = 'eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==' # str | List following results with a cursor provided in the previous query. (optional)
-page_limit = 10 # int | Maximum number of logs in the response. (optional) if omitted the server will use the default value of 10
+    filter_query = "@datacenter:us @role:db" # str | Search query following logs syntax. (optional)
+    filter_index = "main" # str | For customers with multiple indexes, the indexes to search Defaults to '*' which means all indexes (optional)
+    filter_from = dateutil_parser('2019-01-02T09:42:36.320Z') # datetime | Minimum timestamp for requested logs. (optional)
+    filter_to = dateutil_parser('2019-01-03T09:42:36.320Z') # datetime | Maximum timestamp for requested logs. (optional)
+    sort = LogsSort("timestamp") # LogsSort | Order of logs in results. (optional)
+    page_cursor = "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==" # str | List following results with a cursor provided in the previous query. (optional)
+    page_limit = 25 # int | Maximum number of logs in the response. (optional) if omitted the server will use the default value of 10
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -280,13 +338,13 @@ Name | Type | Description  | Notes
  **filter_index** | **str**| For customers with multiple indexes, the indexes to search Defaults to &#39;*&#39; which means all indexes | [optional]
  **filter_from** | **datetime**| Minimum timestamp for requested logs. | [optional]
  **filter_to** | **datetime**| Maximum timestamp for requested logs. | [optional]
- **sort** | **logs_sort.LogsSort**| Order of logs in results. | [optional]
+ **sort** | **LogsSort**| Order of logs in results. | [optional]
  **page_cursor** | **str**| List following results with a cursor provided in the previous query. | [optional]
  **page_limit** | **int**| Maximum number of logs in the response. | [optional] if omitted the server will use the default value of 10
 
 ### Return type
 
-[**logs_list_response.LogsListResponse**](LogsListResponse.md)
+[**LogsListResponse**](LogsListResponse.md)
 
 ### Authorization
 

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import image_widget_definition_type
-except ImportError:
-    image_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.image_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_image_sizing
-except ImportError:
-    widget_image_sizing = sys.modules[
-        'datadog_api_client.v1.model.widget_image_sizing']
-try:
-    from datadog_api_client.v1.model import widget_margin
-except ImportError:
-    widget_margin = sys.modules[
-        'datadog_api_client.v1.model.widget_margin']
+
+def lazy_import():
+    from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
+    from datadog_api_client.v1.model.widget_margin import WidgetMargin
+    globals()['ImageWidgetDefinitionType'] = ImageWidgetDefinitionType
+    globals()['WidgetImageSizing'] = WidgetImageSizing
+    globals()['WidgetMargin'] = WidgetMargin
 
 
 class ImageWidgetDefinition(ModelNormal):
@@ -82,23 +71,25 @@ class ImageWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'type': (image_widget_definition_type.ImageWidgetDefinitionType,),  # noqa: E501
+            'type': (ImageWidgetDefinitionType,),  # noqa: E501
             'url': (str,),  # noqa: E501
-            'margin': (widget_margin.WidgetMargin,),  # noqa: E501
-            'sizing': (widget_image_sizing.WidgetImageSizing,),  # noqa: E501
+            'margin': (WidgetMargin,),  # noqa: E501
+            'sizing': (WidgetImageSizing,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'type': 'type',  # noqa: E501
@@ -120,10 +111,10 @@ class ImageWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, type, url, *args, **kwargs):  # noqa: E501
-        """image_widget_definition.ImageWidgetDefinition - a model defined in OpenAPI
+        """ImageWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            type (image_widget_definition_type.ImageWidgetDefinitionType):
+            type (ImageWidgetDefinitionType):
             url (str): URL of the image.
 
         Keyword Args:
@@ -157,8 +148,8 @@ class ImageWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            margin (widget_margin.WidgetMargin): [optional]  # noqa: E501
-            sizing (widget_image_sizing.WidgetImageSizing): [optional]  # noqa: E501
+            margin (WidgetMargin): [optional]  # noqa: E501
+            sizing (WidgetImageSizing): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -186,7 +177,7 @@ class ImageWidgetDefinition(ModelNormal):
 
         self.type = type
         self.url = url
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

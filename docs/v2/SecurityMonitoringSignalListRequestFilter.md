@@ -1,4 +1,4 @@
-# security_monitoring_signal_list_request_filter.SecurityMonitoringSignalListRequestFilter
+# SecurityMonitoringSignalListRequestFilter
 
 Search filters for listing security signals.
 ## Properties

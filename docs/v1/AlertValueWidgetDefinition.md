@@ -1,15 +1,15 @@
-# alert_value_widget_definition.AlertValueWidgetDefinition
+# AlertValueWidgetDefinition
 
 Alert values are query values showing the current value of the metric in any monitor defined on your system.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alert_id** | **str** | ID of the alert to use in the widget. | 
-**type** | [**alert_value_widget_definition_type.AlertValueWidgetDefinitionType**](AlertValueWidgetDefinitionType.md) |  | 
+**type** | [**AlertValueWidgetDefinitionType**](AlertValueWidgetDefinitionType.md) |  | 
 **precision** | **int** | Number of decimal to show. If not defined, will use the raw value. | [optional] 
-**text_align** | [**widget_text_align.WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
+**text_align** | [**WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
 **title** | **str** | Title of the widget. | [optional] 
-**title_align** | [**widget_text_align.WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
+**title_align** | [**WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
 **title_size** | **str** | Size of value in the widget. | [optional] 
 **unit** | **str** | Unit to display with the value. | [optional] 
 

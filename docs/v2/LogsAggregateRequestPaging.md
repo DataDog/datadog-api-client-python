@@ -1,4 +1,4 @@
-# logs_aggregate_request_paging.LogsAggregateRequestPaging
+# LogsAggregateRequestPaging
 
 Paging settings
 ## Properties

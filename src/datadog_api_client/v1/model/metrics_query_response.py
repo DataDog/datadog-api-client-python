@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import metrics_query_response_series
-except ImportError:
-    metrics_query_response_series = sys.modules[
-        'datadog_api_client.v1.model.metrics_query_response_series']
+
+def lazy_import():
+    from datadog_api_client.v1.model.metrics_query_response_series import MetricsQueryResponseSeries
+    globals()['MetricsQueryResponseSeries'] = MetricsQueryResponseSeries
 
 
 class MetricsQueryResponse(ModelNormal):
@@ -72,13 +67,14 @@ class MetricsQueryResponse(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'error': (str,),  # noqa: E501
             'from_date': (int,),  # noqa: E501
@@ -86,7 +82,7 @@ class MetricsQueryResponse(ModelNormal):
             'message': (str,),  # noqa: E501
             'query': (str,),  # noqa: E501
             'res_type': (str,),  # noqa: E501
-            'series': ([metrics_query_response_series.MetricsQueryResponseSeries],),  # noqa: E501
+            'series': ([MetricsQueryResponseSeries],),  # noqa: E501
             'status': (str,),  # noqa: E501
             'to_date': (int,),  # noqa: E501
         }
@@ -94,6 +90,7 @@ class MetricsQueryResponse(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'error': 'error',  # noqa: E501
@@ -120,7 +117,7 @@ class MetricsQueryResponse(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """metrics_query_response.MetricsQueryResponse - a model defined in OpenAPI
+        """MetricsQueryResponse - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -159,7 +156,7 @@ class MetricsQueryResponse(ModelNormal):
             message (str): Message indicating &#x60;success&#x60; if status is &#x60;ok&#x60;.. [optional]  # noqa: E501
             query (str): Query string. [optional]  # noqa: E501
             res_type (str): Type of response.. [optional]  # noqa: E501
-            series ([metrics_query_response_series.MetricsQueryResponseSeries]): List of timeseries queried.. [optional]  # noqa: E501
+            series ([MetricsQueryResponseSeries]): List of timeseries queried.. [optional]  # noqa: E501
             status (str): Status of the query.. [optional]  # noqa: E501
             to_date (int): End of requested time window, milliseconds since Unix epoch.. [optional]  # noqa: E501
         """
@@ -187,7 +184,7 @@ class MetricsQueryResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

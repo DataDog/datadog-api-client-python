@@ -1,4 +1,4 @@
-# security_monitoring_signals_list_response_links.SecurityMonitoringSignalsListResponseLinks
+# SecurityMonitoringSignalsListResponseLinks
 
 Links attributes.
 ## Properties

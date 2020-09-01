@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_assertion
-except ImportError:
-    synthetics_assertion = sys.modules[
-        'datadog_api_client.v1.model.synthetics_assertion']
-try:
-    from datadog_api_client.v1.model import synthetics_browser_variable
-except ImportError:
-    synthetics_browser_variable = sys.modules[
-        'datadog_api_client.v1.model.synthetics_browser_variable']
-try:
-    from datadog_api_client.v1.model import synthetics_test_request
-except ImportError:
-    synthetics_test_request = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_request']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+    from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
+    from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+    globals()['SyntheticsAssertion'] = SyntheticsAssertion
+    globals()['SyntheticsBrowserVariable'] = SyntheticsBrowserVariable
+    globals()['SyntheticsTestRequest'] = SyntheticsTestRequest
 
 
 class SyntheticsTestConfig(ModelNormal):
@@ -82,22 +71,24 @@ class SyntheticsTestConfig(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'assertions': ([synthetics_assertion.SyntheticsAssertion],),  # noqa: E501
-            'request': (synthetics_test_request.SyntheticsTestRequest,),  # noqa: E501
-            'variables': ([synthetics_browser_variable.SyntheticsBrowserVariable],),  # noqa: E501
+            'assertions': ([SyntheticsAssertion],),  # noqa: E501
+            'request': (SyntheticsTestRequest,),  # noqa: E501
+            'variables': ([SyntheticsBrowserVariable],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'assertions': 'assertions',  # noqa: E501
@@ -118,13 +109,13 @@ class SyntheticsTestConfig(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, request, *args, **kwargs):  # noqa: E501
-        """synthetics_test_config.SyntheticsTestConfig - a model defined in OpenAPI
+        """SyntheticsTestConfig - a model defined in OpenAPI
 
         Args:
-            request (synthetics_test_request.SyntheticsTestRequest):
+            request (SyntheticsTestRequest):
 
         Keyword Args:
-            assertions ([synthetics_assertion.SyntheticsAssertion]): Array of assertions used for the test.. defaults to []  # noqa: E501
+            assertions ([SyntheticsAssertion]): Array of assertions used for the test.. defaults to []  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -155,7 +146,7 @@ class SyntheticsTestConfig(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            variables ([synthetics_browser_variable.SyntheticsBrowserVariable]): Array of variables used for the test.. [optional]  # noqa: E501
+            variables ([SyntheticsBrowserVariable]): Array of variables used for the test.. [optional]  # noqa: E501
         """
 
         assertions = kwargs.get('assertions', [])
@@ -184,7 +175,7 @@ class SyntheticsTestConfig(ModelNormal):
 
         self.assertions = assertions
         self.request = request
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

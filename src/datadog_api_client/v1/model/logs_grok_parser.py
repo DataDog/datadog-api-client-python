@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import logs_grok_parser_rules
-except ImportError:
-    logs_grok_parser_rules = sys.modules[
-        'datadog_api_client.v1.model.logs_grok_parser_rules']
-try:
-    from datadog_api_client.v1.model import logs_grok_parser_type
-except ImportError:
-    logs_grok_parser_type = sys.modules[
-        'datadog_api_client.v1.model.logs_grok_parser_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.logs_grok_parser_rules import LogsGrokParserRules
+    from datadog_api_client.v1.model.logs_grok_parser_type import LogsGrokParserType
+    globals()['LogsGrokParserRules'] = LogsGrokParserRules
+    globals()['LogsGrokParserType'] = LogsGrokParserType
 
 
 class LogsGrokParser(ModelNormal):
@@ -77,17 +69,18 @@ class LogsGrokParser(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'grok': (logs_grok_parser_rules.LogsGrokParserRules,),  # noqa: E501
+            'grok': (LogsGrokParserRules,),  # noqa: E501
             'source': (str,),  # noqa: E501
-            'type': (logs_grok_parser_type.LogsGrokParserType,),  # noqa: E501
+            'type': (LogsGrokParserType,),  # noqa: E501
             'is_enabled': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'samples': ([str],),  # noqa: E501
@@ -96,6 +89,7 @@ class LogsGrokParser(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'grok': 'grok',  # noqa: E501
@@ -119,14 +113,14 @@ class LogsGrokParser(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, grok, type, *args, **kwargs):  # noqa: E501
-        """logs_grok_parser.LogsGrokParser - a model defined in OpenAPI
+        """LogsGrokParser - a model defined in OpenAPI
 
         Args:
-            grok (logs_grok_parser_rules.LogsGrokParserRules):
-            type (logs_grok_parser_type.LogsGrokParserType):
+            grok (LogsGrokParserRules):
+            type (LogsGrokParserType):
 
         Keyword Args:
-            source (str): Name of the log attribute to parse.. defaults to 'message'  # noqa: E501
+            source (str): Name of the log attribute to parse.. defaults to "message"  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -162,7 +156,7 @@ class LogsGrokParser(ModelNormal):
             samples ([str]): List of sample logs to test this grok parser.. [optional]  # noqa: E501
         """
 
-        source = kwargs.get('source', 'message')
+        source = kwargs.get('source', "message")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -189,7 +183,7 @@ class LogsGrokParser(ModelNormal):
         self.grok = grok
         self.source = source
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

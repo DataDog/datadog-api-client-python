@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_user**
-> user_response.UserResponse create_user(body)
+> UserResponse create_user(body)
 
 Create a user
 
@@ -23,13 +23,12 @@ Create a user for your organization.  **Note**: Users can only be created with t
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import users_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import user
-from datadog_api_client.v1.model import user_response
+from datadog_api_client.v1.model.user_response import UserResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.user import User
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -66,8 +65,16 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    body = user.User() # user.User | User object that needs to be created.
-    
+    body = User(
+        access_role=AccessRole("st"),
+        disabled=False,
+        email="test@datadoghq.com",
+        handle="test@datadoghq.com",
+        icon="/path/to/matching/gravatar/icon",
+        name="test user",
+        verified=True,
+    ) # User | User object that needs to be created.
+
     # example passing only required values which don't have defaults set
     try:
         # Create a user
@@ -81,11 +88,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**user.User**](User.md)| User object that needs to be created. |
+ **body** | [**User**](User.md)| User object that needs to be created. |
 
 ### Return type
 
-[**user_response.UserResponse**](UserResponse.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -107,7 +114,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **disable_user**
-> user_disable_response.UserDisableResponse disable_user(user_handle)
+> UserDisableResponse disable_user(user_handle)
 
 Disable a user
 
@@ -118,12 +125,11 @@ Delete a user from an organization.  **Note**: This endpoint can only be used wi
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import users_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import user_disable_response
+from datadog_api_client.v1.model.user_disable_response import UserDisableResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -160,8 +166,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    user_handle = 'test@datadoghq.com' # str | The handle of the user.
-    
+    user_handle = "test@datadoghq.com" # str | The handle of the user.
+
     # example passing only required values which don't have defaults set
     try:
         # Disable a user
@@ -179,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**user_disable_response.UserDisableResponse**](UserDisableResponse.md)
+[**UserDisableResponse**](UserDisableResponse.md)
 
 ### Authorization
 
@@ -201,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_user**
-> user_response.UserResponse get_user(user_handle)
+> UserResponse get_user(user_handle)
 
 Get user details
 
@@ -212,12 +218,11 @@ Get a user's details.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import users_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import user_response
+from datadog_api_client.v1.model.user_response import UserResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -254,8 +259,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    user_handle = 'test@datadoghq.com' # str | The ID of the user.
-    
+    user_handle = "test@datadoghq.com" # str | The ID of the user.
+
     # example passing only required values which don't have defaults set
     try:
         # Get user details
@@ -273,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**user_response.UserResponse**](UserResponse.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -294,7 +299,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_users**
-> user_list_response.UserListResponse list_users()
+> UserListResponse list_users()
 
 Get all users
 
@@ -305,12 +310,11 @@ Get all users for your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import users_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import user_list_response
+from datadog_api_client.v1.model.user_list_response import UserListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -347,7 +351,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get all users
@@ -362,7 +366,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**user_list_response.UserListResponse**](UserListResponse.md)
+[**UserListResponse**](UserListResponse.md)
 
 ### Authorization
 
@@ -382,7 +386,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_user**
-> user_response.UserResponse update_user(user_handle, body)
+> UserResponse update_user(user_handle, body)
 
 Update a user
 
@@ -393,13 +397,12 @@ Update a user information.  **Note**: It can only be used with application keys 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import users_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import user
-from datadog_api_client.v1.model import user_response
+from datadog_api_client.v1.model.user_response import UserResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.user import User
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -436,9 +439,17 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    user_handle = 'test@datadoghq.com' # str | The ID of the user.
-    body = user.User() # user.User | Description of the update.
-    
+    user_handle = "test@datadoghq.com" # str | The ID of the user.
+    body = User(
+        access_role=AccessRole("st"),
+        disabled=False,
+        email="test@datadoghq.com",
+        handle="test@datadoghq.com",
+        icon="/path/to/matching/gravatar/icon",
+        name="test user",
+        verified=True,
+    ) # User | Description of the update.
+
     # example passing only required values which don't have defaults set
     try:
         # Update a user
@@ -453,11 +464,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_handle** | **str**| The ID of the user. |
- **body** | [**user.User**](User.md)| Description of the update. |
+ **body** | [**User**](User.md)| Description of the update. |
 
 ### Return type
 
-[**user_response.UserResponse**](UserResponse.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 

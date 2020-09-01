@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,15 +15,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import cancel_downtimes_by_scope_request
-from datadog_api_client.v1.model import canceled_downtimes_ids
-from datadog_api_client.v1.model import downtime
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import CancelDowntimesByScopeRequest
+from datadog_api_client.v1.model.canceled_downtimes_ids import CanceledDowntimesIds
+from datadog_api_client.v1.model.downtime import Downtime
 
 
 class DowntimesApi(object):
@@ -178,7 +171,7 @@ class DowntimesApi(object):
             >>> result = thread.get()
 
             Args:
-                body (cancel_downtimes_by_scope_request.CancelDowntimesByScopeRequest): Scope to cancel downtimes for.
+                body (CancelDowntimesByScopeRequest): Scope to cancel downtimes for.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -202,7 +195,7 @@ class DowntimesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                canceled_downtimes_ids.CanceledDowntimesIds
+                CanceledDowntimesIds
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -231,7 +224,7 @@ class DowntimesApi(object):
 
         self.cancel_downtimes_by_scope = Endpoint(
             settings={
-                'response_type': (canceled_downtimes_ids.CanceledDowntimesIds,),
+                'response_type': (CanceledDowntimesIds,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -262,7 +255,7 @@ class DowntimesApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (cancel_downtimes_by_scope_request.CancelDowntimesByScopeRequest,),
+                        (CancelDowntimesByScopeRequest,),
                 },
                 'attribute_map': {
                 },
@@ -299,7 +292,7 @@ class DowntimesApi(object):
             >>> result = thread.get()
 
             Args:
-                body (downtime.Downtime): Schedule a downtime request body.
+                body (Downtime): Schedule a downtime request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -323,7 +316,7 @@ class DowntimesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                downtime.Downtime
+                Downtime
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -352,7 +345,7 @@ class DowntimesApi(object):
 
         self.create_downtime = Endpoint(
             settings={
-                'response_type': (downtime.Downtime,),
+                'response_type': (Downtime,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -383,7 +376,7 @@ class DowntimesApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (downtime.Downtime,),
+                        (Downtime,),
                 },
                 'attribute_map': {
                 },
@@ -444,7 +437,7 @@ class DowntimesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                downtime.Downtime
+                Downtime
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -473,7 +466,7 @@ class DowntimesApi(object):
 
         self.get_downtime = Endpoint(
             settings={
-                'response_type': (downtime.Downtime,),
+                'response_type': (Downtime,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -562,7 +555,7 @@ class DowntimesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                [downtime.Downtime]
+                [Downtime]
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -589,7 +582,7 @@ class DowntimesApi(object):
 
         self.list_downtimes = Endpoint(
             settings={
-                'response_type': ([downtime.Downtime],),
+                'response_type': ([Downtime],),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -656,7 +649,7 @@ class DowntimesApi(object):
 
             Args:
                 downtime_id (int): ID of the downtime to update.
-                body (downtime.Downtime): Update a downtime request body.
+                body (Downtime): Update a downtime request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -680,7 +673,7 @@ class DowntimesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                downtime.Downtime
+                Downtime
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -711,7 +704,7 @@ class DowntimesApi(object):
 
         self.update_downtime = Endpoint(
             settings={
-                'response_type': (downtime.Downtime,),
+                'response_type': (Downtime,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -746,7 +739,7 @@ class DowntimesApi(object):
                     'downtime_id':
                         (int,),
                     'body':
-                        (downtime.Downtime,),
+                        (Downtime,),
                 },
                 'attribute_map': {
                     'downtime_id': 'downtime_id',

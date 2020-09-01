@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import log
-except ImportError:
-    log = sys.modules[
-        'datadog_api_client.v2.model.log']
-try:
-    from datadog_api_client.v2.model import logs_list_response_links
-except ImportError:
-    logs_list_response_links = sys.modules[
-        'datadog_api_client.v2.model.logs_list_response_links']
-try:
-    from datadog_api_client.v2.model import logs_response_metadata
-except ImportError:
-    logs_response_metadata = sys.modules[
-        'datadog_api_client.v2.model.logs_response_metadata']
+
+def lazy_import():
+    from datadog_api_client.v2.model.log import Log
+    from datadog_api_client.v2.model.logs_list_response_links import LogsListResponseLinks
+    from datadog_api_client.v2.model.logs_response_metadata import LogsResponseMetadata
+    globals()['Log'] = Log
+    globals()['LogsListResponseLinks'] = LogsListResponseLinks
+    globals()['LogsResponseMetadata'] = LogsResponseMetadata
 
 
 class LogsListResponse(ModelNormal):
@@ -82,22 +71,24 @@ class LogsListResponse(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'data': ([log.Log],),  # noqa: E501
-            'links': (logs_list_response_links.LogsListResponseLinks,),  # noqa: E501
-            'meta': (logs_response_metadata.LogsResponseMetadata,),  # noqa: E501
+            'data': ([Log],),  # noqa: E501
+            'links': (LogsListResponseLinks,),  # noqa: E501
+            'meta': (LogsResponseMetadata,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'data': 'data',  # noqa: E501
@@ -118,7 +109,7 @@ class LogsListResponse(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """logs_list_response.LogsListResponse - a model defined in OpenAPI
+        """LogsListResponse - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -151,9 +142,9 @@ class LogsListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([log.Log]): Array of logs matching the request.. [optional]  # noqa: E501
-            links (logs_list_response_links.LogsListResponseLinks): [optional]  # noqa: E501
-            meta (logs_response_metadata.LogsResponseMetadata): [optional]  # noqa: E501
+            data ([Log]): Array of logs matching the request.. [optional]  # noqa: E501
+            links (LogsListResponseLinks): [optional]  # noqa: E501
+            meta (LogsResponseMetadata): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -179,7 +170,7 @@ class LogsListResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

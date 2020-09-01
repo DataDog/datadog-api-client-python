@@ -1,4 +1,4 @@
-# dashboard_summary_dashboards.DashboardSummaryDashboards
+# DashboardSummaryDashboards
 
 Dashboard definition.
 ## Properties
@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the dashboard. | [optional] 
 **id** | **str** | Dashboard identifier. | [optional] 
 **is_read_only** | **bool** | Whether this dashboard is read-only. If True, only the author and admins can make changes to it. | [optional] 
-**layout_type** | [**dashboard_layout_type.DashboardLayoutType**](DashboardLayoutType.md) |  | [optional] 
+**layout_type** | [**DashboardLayoutType**](DashboardLayoutType.md) |  | [optional] 
 **modified_at** | **datetime** | Modification date of the dashboard. | [optional] 
 **title** | **str** | Title of the dashboard. | [optional] 
 **url** | **str** | URL of the dashboard. | [optional] 

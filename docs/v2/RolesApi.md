@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **add_permission_to_role**
-> permissions_response.PermissionsResponse add_permission_to_role(role_id)
+> PermissionsResponse add_permission_to_role(role_id)
 
 Grant permission to a role
 
@@ -30,13 +30,12 @@ Adds a permission to a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import relationship_to_permission
-from datadog_api_client.v2.model import permissions_response
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.relationship_to_permission import RelationshipToPermission
+from datadog_api_client.v2.model.permissions_response import PermissionsResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -73,8 +72,13 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = 'role_id_example' # str | The ID of the role.
-    body = relationship_to_permission.RelationshipToPermission() # relationship_to_permission.RelationshipToPermission |  (optional)
+    role_id = "role_id_example" # str | The ID of the role.
+    body = RelationshipToPermission(
+        data=RelationshipToPermissionData(
+            id="id_example",
+            type=PermissionsType("permissions"),
+        ),
+    ) # RelationshipToPermission |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -99,11 +103,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**relationship_to_permission.RelationshipToPermission**](RelationshipToPermission.md)|  | [optional]
+ **body** | [**RelationshipToPermission**](RelationshipToPermission.md)|  | [optional]
 
 ### Return type
 
-[**permissions_response.PermissionsResponse**](PermissionsResponse.md)
+[**PermissionsResponse**](PermissionsResponse.md)
 
 ### Authorization
 
@@ -125,7 +129,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **add_user_to_role**
-> users_response.UsersResponse add_user_to_role(role_id)
+> UsersResponse add_user_to_role(role_id)
 
 Add a user to a role
 
@@ -136,13 +140,12 @@ Adds a user to a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import users_response
-from datadog_api_client.v2.model import relationship_to_user
+from datadog_api_client.v2.model.users_response import UsersResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -179,8 +182,13 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = 'role_id_example' # str | The ID of the role.
-    body = relationship_to_user.RelationshipToUser() # relationship_to_user.RelationshipToUser |  (optional)
+    role_id = "role_id_example" # str | The ID of the role.
+    body = RelationshipToUser(
+        data=RelationshipToUserData(
+            id="id_example",
+            type="users",
+        ),
+    ) # RelationshipToUser |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -205,11 +213,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**relationship_to_user.RelationshipToUser**](RelationshipToUser.md)|  | [optional]
+ **body** | [**RelationshipToUser**](RelationshipToUser.md)|  | [optional]
 
 ### Return type
 
-[**users_response.UsersResponse**](UsersResponse.md)
+[**UsersResponse**](UsersResponse.md)
 
 ### Authorization
 
@@ -231,7 +239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_role**
-> role_create_response.RoleCreateResponse create_role()
+> RoleCreateResponse create_role()
 
 Create role
 
@@ -242,13 +250,12 @@ Create a new role for your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import role_create_request
-from datadog_api_client.v2.model import role_create_response
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.role_create_response import RoleCreateResponse
+from datadog_api_client.v2.model.role_create_request import RoleCreateRequest
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -285,7 +292,34 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    body = role_create_request.RoleCreateRequest() # role_create_request.RoleCreateRequest |  (optional)
+    body = RoleCreateRequest(
+        data=RoleCreateData(
+            attributes=RoleCreateAttributes(
+                created_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                modified_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                name="name_example",
+            ),
+            relationships=RoleRelationships(
+                permissions=RelationshipToPermissions(
+                    data=[
+                        RelationshipToPermissionData(
+                            id="id_example",
+                            type=PermissionsType("permissions"),
+                        ),
+                    ],
+                ),
+                users=RelationshipToUsers(
+                    data=[
+                        RelationshipToUserData(
+                            id="id_example",
+                            type="users",
+                        ),
+                    ],
+                ),
+            ),
+            type=RolesType("roles"),
+        ),
+    ) # RoleCreateRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -301,11 +335,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**role_create_request.RoleCreateRequest**](RoleCreateRequest.md)|  | [optional]
+ **body** | [**RoleCreateRequest**](RoleCreateRequest.md)|  | [optional]
 
 ### Return type
 
-[**role_create_response.RoleCreateResponse**](RoleCreateResponse.md)
+[**RoleCreateResponse**](RoleCreateResponse.md)
 
 ### Authorization
 
@@ -337,11 +371,10 @@ Disables a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -378,8 +411,8 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = 'role_id_example' # str | The ID of the role.
-    
+    role_id = "role_id_example" # str | The ID of the role.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete role
@@ -417,7 +450,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_role**
-> role_response.RoleResponse get_role(role_id)
+> RoleResponse get_role(role_id)
 
 Get a role
 
@@ -428,12 +461,11 @@ Get a role in the organization specified by the role’s `role_id`.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import role_response
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.role_response import RoleResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -470,8 +502,8 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = 'role_id_example' # str | The ID of the role.
-    
+    role_id = "role_id_example" # str | The ID of the role.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a role
@@ -489,7 +521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**role_response.RoleResponse**](RoleResponse.md)
+[**RoleResponse**](RoleResponse.md)
 
 ### Authorization
 
@@ -510,7 +542,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_permissions**
-> permissions_response.PermissionsResponse list_permissions()
+> PermissionsResponse list_permissions()
 
 List permissions
 
@@ -521,12 +553,11 @@ Returns a list of all permissions, including name, description, and ID.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import permissions_response
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.permissions_response import PermissionsResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -563,7 +594,7 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # List permissions
@@ -578,7 +609,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**permissions_response.PermissionsResponse**](PermissionsResponse.md)
+[**PermissionsResponse**](PermissionsResponse.md)
 
 ### Authorization
 
@@ -599,7 +630,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_role_permissions**
-> permissions_response.PermissionsResponse list_role_permissions(role_id)
+> PermissionsResponse list_role_permissions(role_id)
 
 List permissions for a role
 
@@ -610,12 +641,11 @@ Returns a list of all permissions for a single role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import permissions_response
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.permissions_response import PermissionsResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -652,8 +682,8 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = 'role_id_example' # str | The ID of the role.
-    
+    role_id = "role_id_example" # str | The ID of the role.
+
     # example passing only required values which don't have defaults set
     try:
         # List permissions for a role
@@ -671,7 +701,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**permissions_response.PermissionsResponse**](PermissionsResponse.md)
+[**PermissionsResponse**](PermissionsResponse.md)
 
 ### Authorization
 
@@ -692,7 +722,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_role_users**
-> users_response.UsersResponse list_role_users(role_id)
+> UsersResponse list_role_users(role_id)
 
 Get all users of a role
 
@@ -703,12 +733,11 @@ Gets all users of a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import users_response
+from datadog_api_client.v2.model.users_response import UsersResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -745,11 +774,11 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = 'role_id_example' # str | The ID of the role.
+    role_id = "role_id_example" # str | The ID of the role.
     page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
-sort = 'name' # str | User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`. (optional) if omitted the server will use the default value of 'name'
-filter = 'filter_example' # str | Filter all users by the given string. Defaults to no filtering. (optional)
+    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    sort = "name" # str | User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`. (optional) if omitted the server will use the default value of "name"
+    filter = "filter_example" # str | Filter all users by the given string. Defaults to no filtering. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -776,12 +805,12 @@ Name | Type | Description  | Notes
  **role_id** | **str**| The ID of the role. |
  **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
  **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
- **sort** | **str**| User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example &#x60;sort&#x3D;-name&#x60;. Options: &#x60;name&#x60;, &#x60;email&#x60;, &#x60;status&#x60;. | [optional] if omitted the server will use the default value of 'name'
+ **sort** | **str**| User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example &#x60;sort&#x3D;-name&#x60;. Options: &#x60;name&#x60;, &#x60;email&#x60;, &#x60;status&#x60;. | [optional] if omitted the server will use the default value of "name"
  **filter** | **str**| Filter all users by the given string. Defaults to no filtering. | [optional]
 
 ### Return type
 
-[**users_response.UsersResponse**](UsersResponse.md)
+[**UsersResponse**](UsersResponse.md)
 
 ### Authorization
 
@@ -802,7 +831,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_roles**
-> roles_response.RolesResponse list_roles()
+> RolesResponse list_roles()
 
 List roles
 
@@ -813,13 +842,12 @@ Returns all roles, including their names and IDs.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import roles_response
-from datadog_api_client.v2.model import roles_sort
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.roles_response import RolesResponse
+from datadog_api_client.v2.model.roles_sort import RolesSort
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -857,9 +885,9 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
     page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
-sort = roles_sort.RolesSort() # roles_sort.RolesSort | Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`. (optional)
-filter = 'filter_example' # str | Filter all roles by the given string. (optional)
+    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    sort = RolesSort("name") # RolesSort | Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`. (optional)
+    filter = "filter_example" # str | Filter all roles by the given string. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -877,12 +905,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
  **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
- **sort** | **roles_sort.RolesSort**| Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: &#x60;sort&#x3D;-name&#x60;. | [optional]
+ **sort** | **RolesSort**| Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: &#x60;sort&#x3D;-name&#x60;. | [optional]
  **filter** | **str**| Filter all roles by the given string. | [optional]
 
 ### Return type
 
-[**roles_response.RolesResponse**](RolesResponse.md)
+[**RolesResponse**](RolesResponse.md)
 
 ### Authorization
 
@@ -902,7 +930,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **remove_permission_from_role**
-> permissions_response.PermissionsResponse remove_permission_from_role(role_id)
+> PermissionsResponse remove_permission_from_role(role_id)
 
 Revoke permission
 
@@ -913,13 +941,12 @@ Removes a permission from a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import relationship_to_permission
-from datadog_api_client.v2.model import permissions_response
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.relationship_to_permission import RelationshipToPermission
+from datadog_api_client.v2.model.permissions_response import PermissionsResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -956,8 +983,13 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = 'role_id_example' # str | The ID of the role.
-    body = relationship_to_permission.RelationshipToPermission() # relationship_to_permission.RelationshipToPermission |  (optional)
+    role_id = "role_id_example" # str | The ID of the role.
+    body = RelationshipToPermission(
+        data=RelationshipToPermissionData(
+            id="id_example",
+            type=PermissionsType("permissions"),
+        ),
+    ) # RelationshipToPermission |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -982,11 +1014,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**relationship_to_permission.RelationshipToPermission**](RelationshipToPermission.md)|  | [optional]
+ **body** | [**RelationshipToPermission**](RelationshipToPermission.md)|  | [optional]
 
 ### Return type
 
-[**permissions_response.PermissionsResponse**](PermissionsResponse.md)
+[**PermissionsResponse**](PermissionsResponse.md)
 
 ### Authorization
 
@@ -1008,7 +1040,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **remove_user_from_role**
-> users_response.UsersResponse remove_user_from_role(role_id)
+> UsersResponse remove_user_from_role(role_id)
 
 Remove a user from a role
 
@@ -1019,13 +1051,12 @@ Removes a user from a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import users_response
-from datadog_api_client.v2.model import relationship_to_user
+from datadog_api_client.v2.model.users_response import UsersResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1062,8 +1093,13 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = 'role_id_example' # str | The ID of the role.
-    body = relationship_to_user.RelationshipToUser() # relationship_to_user.RelationshipToUser |  (optional)
+    role_id = "role_id_example" # str | The ID of the role.
+    body = RelationshipToUser(
+        data=RelationshipToUserData(
+            id="id_example",
+            type="users",
+        ),
+    ) # RelationshipToUser |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1088,11 +1124,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**relationship_to_user.RelationshipToUser**](RelationshipToUser.md)|  | [optional]
+ **body** | [**RelationshipToUser**](RelationshipToUser.md)|  | [optional]
 
 ### Return type
 
-[**users_response.UsersResponse**](UsersResponse.md)
+[**UsersResponse**](UsersResponse.md)
 
 ### Authorization
 
@@ -1114,7 +1150,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_role**
-> role_update_response.RoleUpdateResponse update_role(role_id)
+> RoleUpdateResponse update_role(role_id)
 
 Update a role
 
@@ -1125,13 +1161,12 @@ Edit a role. Can only be used with application keys belonging to administrators.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model import role_update_response
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import role_update_request
+from datadog_api_client.v2.model.role_update_request import RoleUpdateRequest
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.role_update_response import RoleUpdateResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1168,8 +1203,18 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = 'role_id_example' # str | The ID of the role.
-    body = role_update_request.RoleUpdateRequest() # role_update_request.RoleUpdateRequest |  (optional)
+    role_id = "role_id_example" # str | The ID of the role.
+    body = RoleUpdateRequest(
+        data=RoleUpdateData(
+            attributes=RoleUpdateAttributes(
+                created_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                modified_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                name="name_example",
+            ),
+            id="id_example",
+            type=RolesType("roles"),
+        ),
+    ) # RoleUpdateRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1194,11 +1239,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**role_update_request.RoleUpdateRequest**](RoleUpdateRequest.md)|  | [optional]
+ **body** | [**RoleUpdateRequest**](RoleUpdateRequest.md)|  | [optional]
 
 ### Return type
 
-[**role_update_response.RoleUpdateResponse**](RoleUpdateResponse.md)
+[**RoleUpdateResponse**](RoleUpdateResponse.md)
 
 ### Authorization
 

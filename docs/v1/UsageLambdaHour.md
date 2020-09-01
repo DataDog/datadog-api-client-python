@@ -1,4 +1,4 @@
-# usage_lambda_hour.UsageLambdaHour
+# UsageLambdaHour
 
 Number of lambda functions and sum of the invocations of all lambda functions for each hour for a given organization.
 ## Properties

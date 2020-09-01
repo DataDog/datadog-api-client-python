@@ -7668,6 +7668,11 @@ components:
             in the current date for all organizations.
           format: int64
           type: integer
+        azure_app_service_top99p:
+          description: Shows the 99th percentile of all Azure app services over all
+            hours in the current date for all organizations.
+          format: int64
+          type: integer
         billable_ingested_bytes_sum:
           description: Shows the sum of all log bytes ingested over all hours in the
             current date for all organizations.
@@ -7912,6 +7917,11 @@ components:
         aws_lambda_invocations_sum:
           description: Shows the sum of all AWS Lambda invocations over all hours
             in the current month(s) for all organizations.
+          format: int64
+          type: integer
+        azure_app_service_top99p_sum:
+          description: Shows the 99th percentile of all Azure app services over all
+            hours in the current month(s) for all organizations.
           format: int64
           type: integer
         azure_host_top99p_sum:

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import logs_exclusion
-except ImportError:
-    logs_exclusion = sys.modules[
-        'datadog_api_client.v1.model.logs_exclusion']
-try:
-    from datadog_api_client.v1.model import logs_filter
-except ImportError:
-    logs_filter = sys.modules[
-        'datadog_api_client.v1.model.logs_filter']
+
+def lazy_import():
+    from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
+    from datadog_api_client.v1.model.logs_filter import LogsFilter
+    globals()['LogsExclusion'] = LogsExclusion
+    globals()['LogsFilter'] = LogsFilter
 
 
 class LogsIndex(ModelNormal):
@@ -77,17 +69,18 @@ class LogsIndex(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'filter': (logs_filter.LogsFilter,),  # noqa: E501
+            'filter': (LogsFilter,),  # noqa: E501
             'daily_limit': (int,),  # noqa: E501
-            'exclusion_filters': ([logs_exclusion.LogsExclusion],),  # noqa: E501
+            'exclusion_filters': ([LogsExclusion],),  # noqa: E501
             'is_rate_limited': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'num_retention_days': (int,),  # noqa: E501
@@ -96,6 +89,7 @@ class LogsIndex(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'filter': 'filter',  # noqa: E501
@@ -119,10 +113,10 @@ class LogsIndex(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, filter, *args, **kwargs):  # noqa: E501
-        """logs_index.LogsIndex - a model defined in OpenAPI
+        """LogsIndex - a model defined in OpenAPI
 
         Args:
-            filter (logs_filter.LogsFilter):
+            filter (LogsFilter):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -156,7 +150,7 @@ class LogsIndex(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             daily_limit (int): The number of log events you can send in this index per day before you are rate-limited.. [optional]  # noqa: E501
-            exclusion_filters ([logs_exclusion.LogsExclusion]): An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.. [optional]  # noqa: E501
+            exclusion_filters ([LogsExclusion]): An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.. [optional]  # noqa: E501
             is_rate_limited (bool): A boolean stating if the index is rate limited, meaning more logs than the daily limit have been sent. Rate limit is reset every-day at 2pm UTC.. [optional]  # noqa: E501
             name (str): The name of the index.. [optional]  # noqa: E501
             num_retention_days (int): The number of days before logs are deleted from this index.. [optional]  # noqa: E501
@@ -186,7 +180,7 @@ class LogsIndex(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.filter = filter
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

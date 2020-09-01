@@ -1,4 +1,4 @@
-# check_can_delete_monitor_response_data.CheckCanDeleteMonitorResponseData
+# CheckCanDeleteMonitorResponseData
 
 Wrapper object with the list of monitor IDs.
 ## Properties

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_host_tags**
-> host_tags.HostTags create_host_tags(host_name, body)
+> HostTags create_host_tags(host_name, body)
 
 Add tags to a host
 
@@ -23,12 +23,11 @@ This endpoint allows you to add new tags to a host, optionally specifying where 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import tags_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import host_tags
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.host_tags import HostTags
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -65,9 +64,14 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tags_api.TagsApi(api_client)
-    host_name = 'host_name_example' # str | This endpoint allows you to add new tags to a host, optionally specifying where the tags came from.
-    body = host_tags.HostTags() # host_tags.HostTags | Update host tags request body.
-    source = 'chef' # str | The source of the tags. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). (optional)
+    host_name = "host_name_example" # str | This endpoint allows you to add new tags to a host, optionally specifying where the tags came from.
+    body = HostTags(
+        host="test.host",
+        tags=[
+            "environment:production",
+        ],
+    ) # HostTags | Update host tags request body.
+    source = "chef" # str | The source of the tags. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -92,12 +96,12 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **host_name** | **str**| This endpoint allows you to add new tags to a host, optionally specifying where the tags came from. |
- **body** | [**host_tags.HostTags**](HostTags.md)| Update host tags request body. |
+ **body** | [**HostTags**](HostTags.md)| Update host tags request body. |
  **source** | **str**| The source of the tags. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). | [optional]
 
 ### Return type
 
-[**host_tags.HostTags**](HostTags.md)
+[**HostTags**](HostTags.md)
 
 ### Authorization
 
@@ -129,11 +133,10 @@ This endpoint allows you to remove all user-assigned tags for a single host.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import tags_api
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -170,8 +173,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tags_api.TagsApi(api_client)
-    host_name = 'host_name_example' # str | This endpoint allows you to remove all user-assigned tags for a single host.
-    source = 'source_example' # str | The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). (optional)
+    host_name = "host_name_example" # str | This endpoint allows you to remove all user-assigned tags for a single host.
+    source = "source_example" # str | The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -219,7 +222,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_host_tags**
-> host_tags.HostTags get_host_tags(host_name)
+> HostTags get_host_tags(host_name)
 
 Get host tags
 
@@ -230,12 +233,11 @@ Return the list of tags that apply to a given host.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import tags_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import host_tags
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.host_tags import HostTags
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -272,8 +274,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tags_api.TagsApi(api_client)
-    host_name = 'host_name_example' # str | When specified, filters list of tags to those tags with the specified source.
-    source = 'source_example' # str | Source to filter. (optional)
+    host_name = "host_name_example" # str | When specified, filters list of tags to those tags with the specified source.
+    source = "source_example" # str | Source to filter. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -302,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**host_tags.HostTags**](HostTags.md)
+[**HostTags**](HostTags.md)
 
 ### Authorization
 
@@ -323,7 +325,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_host_tags**
-> tag_to_hosts.TagToHosts list_host_tags()
+> TagToHosts list_host_tags()
 
 Get Tags
 
@@ -334,12 +336,11 @@ Return a mapping of tags to hosts for your whole infrastructure.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import tags_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import tag_to_hosts
+from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -376,7 +377,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tags_api.TagsApi(api_client)
-    source = 'source_example' # str | When specified, filters host list to those tags with the specified source. (optional)
+    source = "source_example" # str | When specified, filters host list to those tags with the specified source. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -396,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**tag_to_hosts.TagToHosts**](TagToHosts.md)
+[**TagToHosts**](TagToHosts.md)
 
 ### Authorization
 
@@ -417,7 +418,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_host_tags**
-> host_tags.HostTags update_host_tags(host_name, body)
+> HostTags update_host_tags(host_name, body)
 
 Update host tags
 
@@ -428,12 +429,11 @@ This endpoint allows you to update/replace all tags in an integration source wit
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import tags_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import host_tags
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.host_tags import HostTags
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -470,9 +470,14 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tags_api.TagsApi(api_client)
-    host_name = 'host_name_example' # str | This endpoint allows you to update/replace all in an integration source with those supplied in the request.
-    body = host_tags.HostTags() # host_tags.HostTags | Add tags to host
-    source = 'source_example' # str | The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value) (optional)
+    host_name = "host_name_example" # str | This endpoint allows you to update/replace all in an integration source with those supplied in the request.
+    body = HostTags(
+        host="test.host",
+        tags=[
+            "environment:production",
+        ],
+    ) # HostTags | Add tags to host
+    source = "source_example" # str | The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value) (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -497,12 +502,12 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **host_name** | **str**| This endpoint allows you to update/replace all in an integration source with those supplied in the request. |
- **body** | [**host_tags.HostTags**](HostTags.md)| Add tags to host |
+ **body** | [**HostTags**](HostTags.md)| Add tags to host |
  **source** | **str**| The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value) | [optional]
 
 ### Return type
 
-[**host_tags.HostTags**](HostTags.md)
+[**HostTags**](HostTags.md)
 
 ### Authorization
 

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import logs_user_agent_parser_type
-except ImportError:
-    logs_user_agent_parser_type = sys.modules[
-        'datadog_api_client.v1.model.logs_user_agent_parser_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.logs_user_agent_parser_type import LogsUserAgentParserType
+    globals()['LogsUserAgentParserType'] = LogsUserAgentParserType
 
 
 class LogsUserAgentParser(ModelNormal):
@@ -72,17 +67,18 @@ class LogsUserAgentParser(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'sources': ([str],),  # noqa: E501
             'target': (str,),  # noqa: E501
-            'type': (logs_user_agent_parser_type.LogsUserAgentParserType,),  # noqa: E501
+            'type': (LogsUserAgentParserType,),  # noqa: E501
             'is_enabled': (bool,),  # noqa: E501
             'is_encoded': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
@@ -91,6 +87,7 @@ class LogsUserAgentParser(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'sources': 'sources',  # noqa: E501
@@ -114,14 +111,14 @@ class LogsUserAgentParser(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, type, *args, **kwargs):  # noqa: E501
-        """logs_user_agent_parser.LogsUserAgentParser - a model defined in OpenAPI
+        """LogsUserAgentParser - a model defined in OpenAPI
 
         Args:
-            type (logs_user_agent_parser_type.LogsUserAgentParserType):
+            type (LogsUserAgentParserType):
 
         Keyword Args:
             sources ([str]): Array of source attributes.. defaults to ["http.useragent"]  # noqa: E501
-            target (str): Name of the parent attribute that contains all the extracted details from the &#x60;sources&#x60;.. defaults to 'http.useragent_details'  # noqa: E501
+            target (str): Name of the parent attribute that contains all the extracted details from the &#x60;sources&#x60;.. defaults to "http.useragent_details"  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -158,7 +155,7 @@ class LogsUserAgentParser(ModelNormal):
         """
 
         sources = kwargs.get('sources', ["http.useragent"])
-        target = kwargs.get('target', 'http.useragent_details')
+        target = kwargs.get('target', "http.useragent_details")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -185,7 +182,7 @@ class LogsUserAgentParser(ModelNormal):
         self.sources = sources
         self.target = target
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

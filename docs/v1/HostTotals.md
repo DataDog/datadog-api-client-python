@@ -1,4 +1,4 @@
-# host_totals.HostTotals
+# HostTotals
 
 Total number of host currently monitored by Datadog.
 ## Properties

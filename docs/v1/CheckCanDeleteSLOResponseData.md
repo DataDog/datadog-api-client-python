@@ -1,4 +1,4 @@
-# check_can_delete_slo_response_data.CheckCanDeleteSLOResponseData
+# CheckCanDeleteSLOResponseData
 
 An array of service level objective objects.
 ## Properties

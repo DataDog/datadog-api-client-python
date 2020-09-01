@@ -1,4 +1,4 @@
-# log_query_definition_search.LogQueryDefinitionSearch
+# LogQueryDefinitionSearch
 
 The query being made on the logs.
 ## Properties

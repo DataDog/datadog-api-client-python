@@ -1,10 +1,10 @@
-# security_monitoring_rule_response.SecurityMonitoringRuleResponse
+# SecurityMonitoringRuleResponse
 
 Detection rule.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cases** | [**[security_monitoring_rule_case.SecurityMonitoringRuleCase]**](SecurityMonitoringRuleCase.md) | Cases for generating signals. | [optional] 
+**cases** | [**[SecurityMonitoringRuleCase]**](SecurityMonitoringRuleCase.md) | Cases for generating signals. | [optional] 
 **created_at** | **int** | When the rule was created, timestamp in milliseconds. | [optional] 
 **creation_author_id** | **int** | User ID of the user who created the rule. | [optional] 
 **id** | **str** | The ID of the rule. | [optional] 
@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **is_enabled** | **bool** | Whether the rule is enabled. | [optional] 
 **message** | **str** | Message for generated signals. | [optional] 
 **name** | **str** | The name of the rule. | [optional] 
-**options** | [**security_monitoring_rule_options.SecurityMonitoringRuleOptions**](SecurityMonitoringRuleOptions.md) |  | [optional] 
-**queries** | [**[security_monitoring_rule_query.SecurityMonitoringRuleQuery]**](SecurityMonitoringRuleQuery.md) | Queries for selecting logs which are part of the rule. | [optional] 
+**options** | [**SecurityMonitoringRuleOptions**](SecurityMonitoringRuleOptions.md) |  | [optional] 
+**queries** | [**[SecurityMonitoringRuleQuery]**](SecurityMonitoringRuleQuery.md) | Queries for selecting logs which are part of the rule. | [optional] 
 **tags** | **[str]** | Tags for generated signals. | [optional] 
 **version** | **int** | The version of the rule. | [optional] 
 

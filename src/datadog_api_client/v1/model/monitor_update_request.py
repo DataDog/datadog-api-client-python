@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,36 +21,21 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import creator
-except ImportError:
-    creator = sys.modules[
-        'datadog_api_client.v1.model.creator']
-try:
-    from datadog_api_client.v1.model import monitor_options
-except ImportError:
-    monitor_options = sys.modules[
-        'datadog_api_client.v1.model.monitor_options']
-try:
-    from datadog_api_client.v1.model import monitor_overall_states
-except ImportError:
-    monitor_overall_states = sys.modules[
-        'datadog_api_client.v1.model.monitor_overall_states']
-try:
-    from datadog_api_client.v1.model import monitor_state
-except ImportError:
-    monitor_state = sys.modules[
-        'datadog_api_client.v1.model.monitor_state']
-try:
-    from datadog_api_client.v1.model import monitor_type
-except ImportError:
-    monitor_type = sys.modules[
-        'datadog_api_client.v1.model.monitor_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.creator import Creator
+    from datadog_api_client.v1.model.monitor_options import MonitorOptions
+    from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
+    from datadog_api_client.v1.model.monitor_state import MonitorState
+    from datadog_api_client.v1.model.monitor_type import MonitorType
+    globals()['Creator'] = Creator
+    globals()['MonitorOptions'] = MonitorOptions
+    globals()['MonitorOverallStates'] = MonitorOverallStates
+    globals()['MonitorState'] = MonitorState
+    globals()['MonitorType'] = MonitorType
 
 
 class MonitorUpdateRequest(ModelNormal):
@@ -92,33 +75,35 @@ class MonitorUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'created': (datetime,),  # noqa: E501
-            'creator': (creator.Creator,),  # noqa: E501
+            'creator': (Creator,),  # noqa: E501
             'deleted': (datetime, none_type,),  # noqa: E501
             'id': (int,),  # noqa: E501
             'message': (str,),  # noqa: E501
             'modified': (datetime,),  # noqa: E501
             'multi': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'options': (monitor_options.MonitorOptions,),  # noqa: E501
-            'overall_state': (monitor_overall_states.MonitorOverallStates,),  # noqa: E501
+            'options': (MonitorOptions,),  # noqa: E501
+            'overall_state': (MonitorOverallStates,),  # noqa: E501
             'query': (str,),  # noqa: E501
-            'state': (monitor_state.MonitorState,),  # noqa: E501
+            'state': (MonitorState,),  # noqa: E501
             'tags': ([str],),  # noqa: E501
-            'type': (monitor_type.MonitorType,),  # noqa: E501
+            'type': (MonitorType,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'created': 'created',  # noqa: E501
@@ -150,7 +135,7 @@ class MonitorUpdateRequest(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """monitor_update_request.MonitorUpdateRequest - a model defined in OpenAPI
+        """MonitorUpdateRequest - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -184,19 +169,19 @@ class MonitorUpdateRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             created (datetime): Timestamp of the monitor creation.. [optional]  # noqa: E501
-            creator (creator.Creator): [optional]  # noqa: E501
+            creator (Creator): [optional]  # noqa: E501
             deleted (datetime, none_type): Whether or not the monitor is deleted. (Always &#x60;null&#x60;). [optional]  # noqa: E501
             id (int): ID of this monitor.. [optional]  # noqa: E501
             message (str): A message to include with notifications for this monitor.. [optional]  # noqa: E501
             modified (datetime): Last timestamp when the monitor was edited.. [optional]  # noqa: E501
             multi (bool): Whether or not the monitor is broken down on different groups.. [optional]  # noqa: E501
             name (str): The monitor name.. [optional]  # noqa: E501
-            options (monitor_options.MonitorOptions): [optional]  # noqa: E501
-            overall_state (monitor_overall_states.MonitorOverallStates): [optional]  # noqa: E501
+            options (MonitorOptions): [optional]  # noqa: E501
+            overall_state (MonitorOverallStates): [optional]  # noqa: E501
             query (str): The monitor query.. [optional]  # noqa: E501
-            state (monitor_state.MonitorState): [optional]  # noqa: E501
+            state (MonitorState): [optional]  # noqa: E501
             tags ([str]): Tags associated to your monitor.. [optional]  # noqa: E501
-            type (monitor_type.MonitorType): [optional]  # noqa: E501
+            type (MonitorType): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -222,7 +207,7 @@ class MonitorUpdateRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

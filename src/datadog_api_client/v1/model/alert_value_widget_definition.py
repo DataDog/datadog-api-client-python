@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import alert_value_widget_definition_type
-except ImportError:
-    alert_value_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.alert_value_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+
+def lazy_import():
+    from datadog_api_client.v1.model.alert_value_widget_definition_type import AlertValueWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    globals()['AlertValueWidgetDefinitionType'] = AlertValueWidgetDefinitionType
+    globals()['WidgetTextAlign'] = WidgetTextAlign
 
 
 class AlertValueWidgetDefinition(ModelNormal):
@@ -77,20 +69,21 @@ class AlertValueWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'alert_id': (str,),  # noqa: E501
-            'type': (alert_value_widget_definition_type.AlertValueWidgetDefinitionType,),  # noqa: E501
+            'type': (AlertValueWidgetDefinitionType,),  # noqa: E501
             'precision': (int,),  # noqa: E501
-            'text_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'text_align': (WidgetTextAlign,),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
             'unit': (str,),  # noqa: E501
         }
@@ -98,6 +91,7 @@ class AlertValueWidgetDefinition(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'alert_id': 'alert_id',  # noqa: E501
@@ -123,11 +117,11 @@ class AlertValueWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, alert_id, type, *args, **kwargs):  # noqa: E501
-        """alert_value_widget_definition.AlertValueWidgetDefinition - a model defined in OpenAPI
+        """AlertValueWidgetDefinition - a model defined in OpenAPI
 
         Args:
             alert_id (str): ID of the alert to use in the widget.
-            type (alert_value_widget_definition_type.AlertValueWidgetDefinitionType):
+            type (AlertValueWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -161,9 +155,9 @@ class AlertValueWidgetDefinition(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             precision (int): Number of decimal to show. If not defined, will use the raw value.. [optional]  # noqa: E501
-            text_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            text_align (WidgetTextAlign): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of value in the widget.. [optional]  # noqa: E501
             unit (str): Unit to display with the value.. [optional]  # noqa: E501
         """
@@ -193,7 +187,7 @@ class AlertValueWidgetDefinition(ModelNormal):
 
         self.alert_id = alert_id
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

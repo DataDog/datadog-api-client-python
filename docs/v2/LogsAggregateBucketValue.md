@@ -1,4 +1,4 @@
-# logs_aggregate_bucket_value.LogsAggregateBucketValue
+# LogsAggregateBucketValue
 
 A bucket value, can be either a timeseries or a single value
 ## Properties

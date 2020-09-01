@@ -1,4 +1,4 @@
-# pager_duty_service.PagerDutyService
+# PagerDutyService
 
 The PagerDuty service that is available for integration with Datadog.
 ## Properties

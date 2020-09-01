@@ -1,4 +1,4 @@
-# security_monitoring_signal_attributes.SecurityMonitoringSignalAttributes
+# SecurityMonitoringSignalAttributes
 
 The JSON object containing all signal attributes and their associated values.
 ## Properties

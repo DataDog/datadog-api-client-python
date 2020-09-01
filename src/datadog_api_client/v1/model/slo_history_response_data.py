@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,36 +21,21 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import slo_history_metrics
-except ImportError:
-    slo_history_metrics = sys.modules[
-        'datadog_api_client.v1.model.slo_history_metrics']
-try:
-    from datadog_api_client.v1.model import slo_history_sli_data
-except ImportError:
-    slo_history_sli_data = sys.modules[
-        'datadog_api_client.v1.model.slo_history_sli_data']
-try:
-    from datadog_api_client.v1.model import slo_threshold
-except ImportError:
-    slo_threshold = sys.modules[
-        'datadog_api_client.v1.model.slo_threshold']
-try:
-    from datadog_api_client.v1.model import slo_type
-except ImportError:
-    slo_type = sys.modules[
-        'datadog_api_client.v1.model.slo_type']
-try:
-    from datadog_api_client.v1.model import slo_type_numeric
-except ImportError:
-    slo_type_numeric = sys.modules[
-        'datadog_api_client.v1.model.slo_type_numeric']
+
+def lazy_import():
+    from datadog_api_client.v1.model.slo_history_metrics import SLOHistoryMetrics
+    from datadog_api_client.v1.model.slo_history_sli_data import SLOHistorySLIData
+    from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+    from datadog_api_client.v1.model.slo_type import SLOType
+    from datadog_api_client.v1.model.slo_type_numeric import SLOTypeNumeric
+    globals()['SLOHistoryMetrics'] = SLOHistoryMetrics
+    globals()['SLOHistorySLIData'] = SLOHistorySLIData
+    globals()['SLOThreshold'] = SLOThreshold
+    globals()['SLOType'] = SLOType
+    globals()['SLOTypeNumeric'] = SLOTypeNumeric
 
 
 class SLOHistoryResponseData(ModelNormal):
@@ -92,27 +75,29 @@ class SLOHistoryResponseData(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'from_ts': (int,),  # noqa: E501
-            'groups': (slo_history_sli_data.SLOHistorySLIData,),  # noqa: E501
-            'overall': (slo_history_sli_data.SLOHistorySLIData,),  # noqa: E501
-            'series': (slo_history_metrics.SLOHistoryMetrics,),  # noqa: E501
-            'thresholds': ({str: (slo_threshold.SLOThreshold,)},),  # noqa: E501
+            'groups': (SLOHistorySLIData,),  # noqa: E501
+            'overall': (SLOHistorySLIData,),  # noqa: E501
+            'series': (SLOHistoryMetrics,),  # noqa: E501
+            'thresholds': ({str: (SLOThreshold,)},),  # noqa: E501
             'to_ts': (int,),  # noqa: E501
-            'type': (slo_type.SLOType,),  # noqa: E501
-            'type_id': (slo_type_numeric.SLOTypeNumeric,),  # noqa: E501
+            'type': (SLOType,),  # noqa: E501
+            'type_id': (SLOTypeNumeric,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'from_ts': 'from_ts',  # noqa: E501
@@ -138,7 +123,7 @@ class SLOHistoryResponseData(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """slo_history_response_data.SLOHistoryResponseData - a model defined in OpenAPI
+        """SLOHistoryResponseData - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -172,13 +157,13 @@ class SLOHistoryResponseData(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             from_ts (int): The &#x60;from&#x60; timestamp in epoch seconds.. [optional]  # noqa: E501
-            groups (slo_history_sli_data.SLOHistorySLIData): [optional]  # noqa: E501
-            overall (slo_history_sli_data.SLOHistorySLIData): [optional]  # noqa: E501
-            series (slo_history_metrics.SLOHistoryMetrics): [optional]  # noqa: E501
-            thresholds ({str: (slo_threshold.SLOThreshold,)}): mapping of string timeframe to the SLO threshold.. [optional]  # noqa: E501
+            groups (SLOHistorySLIData): [optional]  # noqa: E501
+            overall (SLOHistorySLIData): [optional]  # noqa: E501
+            series (SLOHistoryMetrics): [optional]  # noqa: E501
+            thresholds ({str: (SLOThreshold,)}): mapping of string timeframe to the SLO threshold.. [optional]  # noqa: E501
             to_ts (int): The &#x60;to&#x60; timestamp in epoch seconds.. [optional]  # noqa: E501
-            type (slo_type.SLOType): [optional]  # noqa: E501
-            type_id (slo_type_numeric.SLOTypeNumeric): [optional]  # noqa: E501
+            type (SLOType): [optional]  # noqa: E501
+            type_id (SLOTypeNumeric): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -204,7 +189,7 @@ class SLOHistoryResponseData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

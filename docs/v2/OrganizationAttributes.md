@@ -1,4 +1,4 @@
-# organization_attributes.OrganizationAttributes
+# OrganizationAttributes
 
 Attributes of the organization.
 ## Properties

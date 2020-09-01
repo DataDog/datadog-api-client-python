@@ -1,4 +1,4 @@
-# metric_search_response_results.MetricSearchResponseResults
+# MetricSearchResponseResults
 
 Search result.
 ## Properties

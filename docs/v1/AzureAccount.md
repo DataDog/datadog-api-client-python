@@ -1,4 +1,4 @@
-# azure_account.AzureAccount
+# AzureAccount
 
 Datadog-Azure integrations configured for your organization.
 ## Properties
