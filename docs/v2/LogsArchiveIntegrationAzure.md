@@ -1,4 +1,4 @@
-# logs_archive_integration_azure.LogsArchiveIntegrationAzure
+# LogsArchiveIntegrationAzure
 
 The Azure archive's integration destination.
 ## Properties

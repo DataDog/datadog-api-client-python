@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,16 +15,14 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import user
-from datadog_api_client.v1.model import user_response
-from datadog_api_client.v1.model import user_disable_response
-from datadog_api_client.v1.model import user_list_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.user import User
+from datadog_api_client.v1.model.user_disable_response import UserDisableResponse
+from datadog_api_client.v1.model.user_list_response import UserListResponse
+from datadog_api_client.v1.model.user_response import UserResponse
 
 
 class UsersApi(object):
@@ -59,7 +52,7 @@ class UsersApi(object):
             >>> result = thread.get()
 
             Args:
-                body (user.User): User object that needs to be created.
+                body (User): User object that needs to be created.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -83,7 +76,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_response.UserResponse
+                UserResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -112,7 +105,7 @@ class UsersApi(object):
 
         self.create_user = Endpoint(
             settings={
-                'response_type': (user_response.UserResponse,),
+                'response_type': (UserResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -143,7 +136,7 @@ class UsersApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (user.User,),
+                        (User,),
                 },
                 'attribute_map': {
                 },
@@ -204,7 +197,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_disable_response.UserDisableResponse
+                UserDisableResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -233,7 +226,7 @@ class UsersApi(object):
 
         self.disable_user = Endpoint(
             settings={
-                'response_type': (user_disable_response.UserDisableResponse,),
+                'response_type': (UserDisableResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -324,7 +317,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_response.UserResponse
+                UserResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -353,7 +346,7 @@ class UsersApi(object):
 
         self.get_user = Endpoint(
             settings={
-                'response_type': (user_response.UserResponse,),
+                'response_type': (UserResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -441,7 +434,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_list_response.UserListResponse
+                UserListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -468,7 +461,7 @@ class UsersApi(object):
 
         self.list_users = Endpoint(
             settings={
-                'response_type': (user_list_response.UserListResponse,),
+                'response_type': (UserListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -530,7 +523,7 @@ class UsersApi(object):
 
             Args:
                 user_handle (str): The ID of the user.
-                body (user.User): Description of the update.
+                body (User): Description of the update.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -554,7 +547,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_response.UserResponse
+                UserResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -585,7 +578,7 @@ class UsersApi(object):
 
         self.update_user = Endpoint(
             settings={
-                'response_type': (user_response.UserResponse,),
+                'response_type': (UserResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -620,7 +613,7 @@ class UsersApi(object):
                     'user_handle':
                         (str,),
                     'body':
-                        (user.User,),
+                        (User,),
                 },
                 'attribute_map': {
                     'user_handle': 'user_handle',

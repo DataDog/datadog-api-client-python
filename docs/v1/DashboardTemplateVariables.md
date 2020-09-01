@@ -1,4 +1,4 @@
-# dashboard_template_variables.DashboardTemplateVariables
+# DashboardTemplateVariables
 
 Template variable.
 ## Properties

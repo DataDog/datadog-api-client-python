@@ -1,4 +1,4 @@
-# host_mute_settings.HostMuteSettings
+# HostMuteSettings
 
 Combination of settings to mute a host.
 ## Properties

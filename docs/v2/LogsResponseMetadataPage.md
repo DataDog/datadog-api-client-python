@@ -1,4 +1,4 @@
-# logs_response_metadata_page.LogsResponseMetadataPage
+# LogsResponseMetadataPage
 
 Paging attributes.
 ## Properties

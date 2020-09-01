@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,36 +21,21 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import access_role
-except ImportError:
-    access_role = sys.modules[
-        'datadog_api_client.v1.model.access_role']
-try:
-    from datadog_api_client.v1.model import organization_settings_saml
-except ImportError:
-    organization_settings_saml = sys.modules[
-        'datadog_api_client.v1.model.organization_settings_saml']
-try:
-    from datadog_api_client.v1.model import organization_settings_saml_autocreate_users_domains
-except ImportError:
-    organization_settings_saml_autocreate_users_domains = sys.modules[
-        'datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains']
-try:
-    from datadog_api_client.v1.model import organization_settings_saml_idp_initiated_login
-except ImportError:
-    organization_settings_saml_idp_initiated_login = sys.modules[
-        'datadog_api_client.v1.model.organization_settings_saml_idp_initiated_login']
-try:
-    from datadog_api_client.v1.model import organization_settings_saml_strict_mode
-except ImportError:
-    organization_settings_saml_strict_mode = sys.modules[
-        'datadog_api_client.v1.model.organization_settings_saml_strict_mode']
+
+def lazy_import():
+    from datadog_api_client.v1.model.access_role import AccessRole
+    from datadog_api_client.v1.model.organization_settings_saml import OrganizationSettingsSaml
+    from datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains import OrganizationSettingsSamlAutocreateUsersDomains
+    from datadog_api_client.v1.model.organization_settings_saml_idp_initiated_login import OrganizationSettingsSamlIdpInitiatedLogin
+    from datadog_api_client.v1.model.organization_settings_saml_strict_mode import OrganizationSettingsSamlStrictMode
+    globals()['AccessRole'] = AccessRole
+    globals()['OrganizationSettingsSaml'] = OrganizationSettingsSaml
+    globals()['OrganizationSettingsSamlAutocreateUsersDomains'] = OrganizationSettingsSamlAutocreateUsersDomains
+    globals()['OrganizationSettingsSamlIdpInitiatedLogin'] = OrganizationSettingsSamlIdpInitiatedLogin
+    globals()['OrganizationSettingsSamlStrictMode'] = OrganizationSettingsSamlStrictMode
 
 
 class OrganizationSettings(ModelNormal):
@@ -92,29 +75,31 @@ class OrganizationSettings(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'private_widget_share': (bool,),  # noqa: E501
-            'saml': (organization_settings_saml.OrganizationSettingsSaml,),  # noqa: E501
-            'saml_autocreate_access_role': (access_role.AccessRole,),  # noqa: E501
-            'saml_autocreate_users_domains': (organization_settings_saml_autocreate_users_domains.OrganizationSettingsSamlAutocreateUsersDomains,),  # noqa: E501
+            'saml': (OrganizationSettingsSaml,),  # noqa: E501
+            'saml_autocreate_access_role': (AccessRole,),  # noqa: E501
+            'saml_autocreate_users_domains': (OrganizationSettingsSamlAutocreateUsersDomains,),  # noqa: E501
             'saml_can_be_enabled': (bool,),  # noqa: E501
             'saml_idp_endpoint': (str,),  # noqa: E501
-            'saml_idp_initiated_login': (organization_settings_saml_idp_initiated_login.OrganizationSettingsSamlIdpInitiatedLogin,),  # noqa: E501
+            'saml_idp_initiated_login': (OrganizationSettingsSamlIdpInitiatedLogin,),  # noqa: E501
             'saml_idp_metadata_uploaded': (bool,),  # noqa: E501
             'saml_login_url': (str,),  # noqa: E501
-            'saml_strict_mode': (organization_settings_saml_strict_mode.OrganizationSettingsSamlStrictMode,),  # noqa: E501
+            'saml_strict_mode': (OrganizationSettingsSamlStrictMode,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'private_widget_share': 'private_widget_share',  # noqa: E501
@@ -142,7 +127,7 @@ class OrganizationSettings(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """organization_settings.OrganizationSettings - a model defined in OpenAPI
+        """OrganizationSettings - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -176,15 +161,15 @@ class OrganizationSettings(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             private_widget_share (bool): Whether or not the organization users can share widgets outside of Datadog.. [optional]  # noqa: E501
-            saml (organization_settings_saml.OrganizationSettingsSaml): [optional]  # noqa: E501
-            saml_autocreate_access_role (access_role.AccessRole): [optional]  # noqa: E501
-            saml_autocreate_users_domains (organization_settings_saml_autocreate_users_domains.OrganizationSettingsSamlAutocreateUsersDomains): [optional]  # noqa: E501
+            saml (OrganizationSettingsSaml): [optional]  # noqa: E501
+            saml_autocreate_access_role (AccessRole): [optional]  # noqa: E501
+            saml_autocreate_users_domains (OrganizationSettingsSamlAutocreateUsersDomains): [optional]  # noqa: E501
             saml_can_be_enabled (bool): Whether or not SAML can be enabled for this organization.. [optional]  # noqa: E501
             saml_idp_endpoint (str): Identity provider endpoint for SAML authentication.. [optional]  # noqa: E501
-            saml_idp_initiated_login (organization_settings_saml_idp_initiated_login.OrganizationSettingsSamlIdpInitiatedLogin): [optional]  # noqa: E501
+            saml_idp_initiated_login (OrganizationSettingsSamlIdpInitiatedLogin): [optional]  # noqa: E501
             saml_idp_metadata_uploaded (bool): Whether or not a SAML identity provider metadata file was provided to the Datadog organization.. [optional]  # noqa: E501
             saml_login_url (str): URL for SAML logging.. [optional]  # noqa: E501
-            saml_strict_mode (organization_settings_saml_strict_mode.OrganizationSettingsSamlStrictMode): [optional]  # noqa: E501
+            saml_strict_mode (OrganizationSettingsSamlStrictMode): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -210,7 +195,7 @@ class OrganizationSettings(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

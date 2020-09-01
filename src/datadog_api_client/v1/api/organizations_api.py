@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,18 +15,16 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import organization_create_body
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import organization_create_response
-from datadog_api_client.v1.model import organization_response
-from datadog_api_client.v1.model import organization_list_response
-from datadog_api_client.v1.model import organization
-from datadog_api_client.v1.model import idp_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.idp_response import IdpResponse
+from datadog_api_client.v1.model.organization import Organization
+from datadog_api_client.v1.model.organization_create_body import OrganizationCreateBody
+from datadog_api_client.v1.model.organization_create_response import OrganizationCreateResponse
+from datadog_api_client.v1.model.organization_list_response import OrganizationListResponse
+from datadog_api_client.v1.model.organization_response import OrganizationResponse
 
 
 class OrganizationsApi(object):
@@ -61,7 +54,7 @@ class OrganizationsApi(object):
             >>> result = thread.get()
 
             Args:
-                body (organization_create_body.OrganizationCreateBody): Organization object that needs to be created
+                body (OrganizationCreateBody): Organization object that needs to be created
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -85,7 +78,7 @@ class OrganizationsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                organization_create_response.OrganizationCreateResponse
+                OrganizationCreateResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -114,7 +107,7 @@ class OrganizationsApi(object):
 
         self.create_child_org = Endpoint(
             settings={
-                'response_type': (organization_create_response.OrganizationCreateResponse,),
+                'response_type': (OrganizationCreateResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -145,7 +138,7 @@ class OrganizationsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (organization_create_body.OrganizationCreateBody,),
+                        (OrganizationCreateBody,),
                 },
                 'attribute_map': {
                 },
@@ -206,7 +199,7 @@ class OrganizationsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                organization_response.OrganizationResponse
+                OrganizationResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -235,7 +228,7 @@ class OrganizationsApi(object):
 
         self.get_org = Endpoint(
             settings={
-                'response_type': (organization_response.OrganizationResponse,),
+                'response_type': (OrganizationResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -323,7 +316,7 @@ class OrganizationsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                organization_list_response.OrganizationListResponse
+                OrganizationListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -350,7 +343,7 @@ class OrganizationsApi(object):
 
         self.list_orgs = Endpoint(
             settings={
-                'response_type': (organization_list_response.OrganizationListResponse,),
+                'response_type': (OrganizationListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -412,7 +405,7 @@ class OrganizationsApi(object):
 
             Args:
                 public_id (str): The &#x60;public_id&#x60; of the organization you are operating within.
-                body (organization.Organization):
+                body (Organization):
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -436,7 +429,7 @@ class OrganizationsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                organization_response.OrganizationResponse
+                OrganizationResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -467,7 +460,7 @@ class OrganizationsApi(object):
 
         self.update_org = Endpoint(
             settings={
-                'response_type': (organization_response.OrganizationResponse,),
+                'response_type': (OrganizationResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -502,7 +495,7 @@ class OrganizationsApi(object):
                     'public_id':
                         (str,),
                     'body':
-                        (organization.Organization,),
+                        (Organization,),
                 },
                 'attribute_map': {
                     'public_id': 'public_id',
@@ -567,7 +560,7 @@ class OrganizationsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                idp_response.IdpResponse
+                IdpResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -598,7 +591,7 @@ class OrganizationsApi(object):
 
         self.upload_id_p_for_org = Endpoint(
             settings={
-                'response_type': (idp_response.IdpResponse,),
+                'response_type': (IdpResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'

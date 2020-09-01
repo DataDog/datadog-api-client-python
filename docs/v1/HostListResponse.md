@@ -1,10 +1,10 @@
-# host_list_response.HostListResponse
+# HostListResponse
 
 Response with Host information from Datadog.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**host_list** | [**[host.Host]**](Host.md) | Array of hosts. | [optional] 
+**host_list** | [**[Host]**](Host.md) | Array of hosts. | [optional] 
 **total_matching** | **int** | Number of host matching the query. | [optional] 
 **total_returned** | **int** | Number of host returned. | [optional] 
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **get_logs_index**
-> logs_index.LogsIndex get_logs_index(name)
+> LogsIndex get_logs_index(name)
 
 Get an index
 
@@ -23,13 +23,12 @@ Get one log index from your organization. This endpoint takes no JSON arguments.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_indexes_api
-from datadog_api_client.v1.model import logs_index
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
+from datadog_api_client.v1.model.logs_index import LogsIndex
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -66,8 +65,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
-    name = 'name_example' # str | Name of the log index.
-    
+    name = "name_example" # str | Name of the log index.
+
     # example passing only required values which don't have defaults set
     try:
         # Get an index
@@ -85,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**logs_index.LogsIndex**](LogsIndex.md)
+[**LogsIndex**](LogsIndex.md)
 
 ### Authorization
 
@@ -106,7 +105,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_logs_index_order**
-> logs_indexes_order.LogsIndexesOrder get_logs_index_order()
+> LogsIndexesOrder get_logs_index_order()
 
 Get indexes order
 
@@ -117,12 +116,11 @@ Get the current order of your log indexes. This endpoint takes no JSON arguments
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_indexes_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_indexes_order
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_indexes_order import LogsIndexesOrder
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -159,7 +157,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get indexes order
@@ -174,7 +172,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**logs_indexes_order.LogsIndexesOrder**](LogsIndexesOrder.md)
+[**LogsIndexesOrder**](LogsIndexesOrder.md)
 
 ### Authorization
 
@@ -194,7 +192,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_log_indexes**
-> logs_index_list_response.LogsIndexListResponse list_log_indexes()
+> LogsIndexListResponse list_log_indexes()
 
 Get all indexes
 
@@ -205,12 +203,11 @@ The Index object describes the configuration of a log index. This endpoint retur
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_indexes_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_index_list_response
+from datadog_api_client.v1.model.logs_index_list_response import LogsIndexListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -247,7 +244,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get all indexes
@@ -262,7 +259,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**logs_index_list_response.LogsIndexListResponse**](LogsIndexListResponse.md)
+[**LogsIndexListResponse**](LogsIndexListResponse.md)
 
 ### Authorization
 
@@ -282,7 +279,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_index**
-> logs_index.LogsIndex update_logs_index(name)
+> LogsIndex update_logs_index(name)
 
 Update an index
 
@@ -293,13 +290,12 @@ Update an index as identified by its name. Returns the Index object passed in th
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_indexes_api
-from datadog_api_client.v1.model import logs_index
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
+from datadog_api_client.v1.model.logs_index import LogsIndex
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -336,8 +332,26 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
-    name = 'name_example' # str | Name of the log index.
-    body = logs_index.LogsIndex() # logs_index.LogsIndex | Object containing the new `LogsIndex`. (optional)
+    name = "name_example" # str | Name of the log index.
+    body = LogsIndex(
+        daily_limit=1,
+        exclusion_filters=[
+            LogsExclusion(
+                filter=LogsExclusionFilter(
+                    query="*",
+                    sample_rate=1,
+                ),
+                is_enabled=True,
+                name="payment",
+            ),
+        ],
+        filter=LogsFilter(
+            query="source:python",
+        ),
+        is_rate_limited=True,
+        name="name_example",
+        num_retention_days=1,
+    ) # LogsIndex | Object containing the new `LogsIndex`. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -362,11 +376,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Name of the log index. |
- **body** | [**logs_index.LogsIndex**](LogsIndex.md)| Object containing the new &#x60;LogsIndex&#x60;. | [optional]
+ **body** | [**LogsIndex**](LogsIndex.md)| Object containing the new &#x60;LogsIndex&#x60;. | [optional]
 
 ### Return type
 
-[**logs_index.LogsIndex**](LogsIndex.md)
+[**LogsIndex**](LogsIndex.md)
 
 ### Authorization
 
@@ -388,7 +402,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_index_order**
-> logs_indexes_order.LogsIndexesOrder update_logs_index_order()
+> LogsIndexesOrder update_logs_index_order()
 
 Update indexes order
 
@@ -399,13 +413,12 @@ This endpoint updates the index order of your organization. It returns the index
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import logs_indexes_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
-from datadog_api_client.v1.model import logs_indexes_order
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_indexes_order import LogsIndexesOrder
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -442,7 +455,11 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
-    body = logs_indexes_order.LogsIndexesOrder() # logs_indexes_order.LogsIndexesOrder | Object containing the new ordered list of index names (optional)
+    body = LogsIndexesOrder(
+        index_names=[
+            "["main","payments","web"]",
+        ],
+    ) # LogsIndexesOrder | Object containing the new ordered list of index names (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -458,11 +475,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**logs_indexes_order.LogsIndexesOrder**](LogsIndexesOrder.md)| Object containing the new ordered list of index names | [optional]
+ **body** | [**LogsIndexesOrder**](LogsIndexesOrder.md)| Object containing the new ordered list of index names | [optional]
 
 ### Return type
 
-[**logs_indexes_order.LogsIndexesOrder**](LogsIndexesOrder.md)
+[**LogsIndexesOrder**](LogsIndexesOrder.md)
 
 ### Authorization
 

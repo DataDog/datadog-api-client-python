@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import slo_widget_definition_type
-except ImportError:
-    slo_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.slo_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
-try:
-    from datadog_api_client.v1.model import widget_time_windows
-except ImportError:
-    widget_time_windows = sys.modules[
-        'datadog_api_client.v1.model.widget_time_windows']
-try:
-    from datadog_api_client.v1.model import widget_view_mode
-except ImportError:
-    widget_view_mode = sys.modules[
-        'datadog_api_client.v1.model.widget_view_mode']
+
+def lazy_import():
+    from datadog_api_client.v1.model.slo_widget_definition_type import SLOWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
+    from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
+    globals()['SLOWidgetDefinitionType'] = SLOWidgetDefinitionType
+    globals()['WidgetTextAlign'] = WidgetTextAlign
+    globals()['WidgetTimeWindows'] = WidgetTimeWindows
+    globals()['WidgetViewMode'] = WidgetViewMode
 
 
 class SLOWidgetDefinition(ModelNormal):
@@ -87,28 +73,30 @@ class SLOWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'type': (slo_widget_definition_type.SLOWidgetDefinitionType,),  # noqa: E501
+            'type': (SLOWidgetDefinitionType,),  # noqa: E501
             'view_type': (str,),  # noqa: E501
             'show_error_budget': (bool,),  # noqa: E501
             'slo_id': (str,),  # noqa: E501
-            'time_windows': ([widget_time_windows.WidgetTimeWindows],),  # noqa: E501
+            'time_windows': ([WidgetTimeWindows],),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
-            'view_mode': (widget_view_mode.WidgetViewMode,),  # noqa: E501
+            'view_mode': (WidgetViewMode,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'type': 'type',  # noqa: E501
@@ -135,13 +123,13 @@ class SLOWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, type, *args, **kwargs):  # noqa: E501
-        """slo_widget_definition.SLOWidgetDefinition - a model defined in OpenAPI
+        """SLOWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            type (slo_widget_definition_type.SLOWidgetDefinitionType):
+            type (SLOWidgetDefinitionType):
 
         Keyword Args:
-            view_type (str): Type of view displayed by the widget.. defaults to 'detail'  # noqa: E501
+            view_type (str): Type of view displayed by the widget.. defaults to "detail"  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -174,14 +162,14 @@ class SLOWidgetDefinition(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             show_error_budget (bool): Defined error budget.. [optional]  # noqa: E501
             slo_id (str): ID of the SLO displayed.. [optional]  # noqa: E501
-            time_windows ([widget_time_windows.WidgetTimeWindows]): Times being monitored.. [optional]  # noqa: E501
+            time_windows ([WidgetTimeWindows]): Times being monitored.. [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
-            view_mode (widget_view_mode.WidgetViewMode): [optional]  # noqa: E501
+            view_mode (WidgetViewMode): [optional]  # noqa: E501
         """
 
-        view_type = kwargs.get('view_type', 'detail')
+        view_type = kwargs.get('view_type', "detail")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -207,7 +195,7 @@ class SLOWidgetDefinition(ModelNormal):
 
         self.type = type
         self.view_type = view_type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,16 +15,14 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import logs_api_error_response
-from datadog_api_client.v1.model import logs_pipeline
-from datadog_api_client.v1.model import logs_pipelines_order
-from datadog_api_client.v1.model import logs_pipeline_list
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
+from datadog_api_client.v1.model.logs_pipeline import LogsPipeline
+from datadog_api_client.v1.model.logs_pipeline_list import LogsPipelineList
+from datadog_api_client.v1.model.logs_pipelines_order import LogsPipelinesOrder
 
 
 class LogsPipelinesApi(object):
@@ -59,7 +52,7 @@ class LogsPipelinesApi(object):
             >>> result = thread.get()
 
             Args:
-                body (logs_pipeline.LogsPipeline): Definition of the new pipeline.
+                body (LogsPipeline): Definition of the new pipeline.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -83,7 +76,7 @@ class LogsPipelinesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_pipeline.LogsPipeline
+                LogsPipeline
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -112,7 +105,7 @@ class LogsPipelinesApi(object):
 
         self.create_logs_pipeline = Endpoint(
             settings={
-                'response_type': (logs_pipeline.LogsPipeline,),
+                'response_type': (LogsPipeline,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -143,7 +136,7 @@ class LogsPipelinesApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (logs_pipeline.LogsPipeline,),
+                        (LogsPipeline,),
                 },
                 'attribute_map': {
                 },
@@ -324,7 +317,7 @@ class LogsPipelinesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_pipeline.LogsPipeline
+                LogsPipeline
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -353,7 +346,7 @@ class LogsPipelinesApi(object):
 
         self.get_logs_pipeline = Endpoint(
             settings={
-                'response_type': (logs_pipeline.LogsPipeline,),
+                'response_type': (LogsPipeline,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -441,7 +434,7 @@ class LogsPipelinesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_pipelines_order.LogsPipelinesOrder
+                LogsPipelinesOrder
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -468,7 +461,7 @@ class LogsPipelinesApi(object):
 
         self.get_logs_pipeline_order = Endpoint(
             settings={
-                'response_type': (logs_pipelines_order.LogsPipelinesOrder,),
+                'response_type': (LogsPipelinesOrder,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -549,7 +542,7 @@ class LogsPipelinesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_pipeline_list.LogsPipelineList
+                LogsPipelineList
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -576,7 +569,7 @@ class LogsPipelinesApi(object):
 
         self.list_logs_pipelines = Endpoint(
             settings={
-                'response_type': (logs_pipeline_list.LogsPipelineList,),
+                'response_type': (LogsPipelineList,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -638,7 +631,7 @@ class LogsPipelinesApi(object):
 
             Args:
                 pipeline_id (str): ID of the pipeline to delete.
-                body (logs_pipeline.LogsPipeline): New definition of the pipeline.
+                body (LogsPipeline): New definition of the pipeline.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -662,7 +655,7 @@ class LogsPipelinesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_pipeline.LogsPipeline
+                LogsPipeline
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -693,7 +686,7 @@ class LogsPipelinesApi(object):
 
         self.update_logs_pipeline = Endpoint(
             settings={
-                'response_type': (logs_pipeline.LogsPipeline,),
+                'response_type': (LogsPipeline,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -728,7 +721,7 @@ class LogsPipelinesApi(object):
                     'pipeline_id':
                         (str,),
                     'body':
-                        (logs_pipeline.LogsPipeline,),
+                        (LogsPipeline,),
                 },
                 'attribute_map': {
                     'pipeline_id': 'pipeline_id',
@@ -767,7 +760,7 @@ class LogsPipelinesApi(object):
             >>> result = thread.get()
 
             Args:
-                body (logs_pipelines_order.LogsPipelinesOrder): Object containing the new ordered list of pipeline IDs.
+                body (LogsPipelinesOrder): Object containing the new ordered list of pipeline IDs.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -791,7 +784,7 @@ class LogsPipelinesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_pipelines_order.LogsPipelinesOrder
+                LogsPipelinesOrder
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -820,7 +813,7 @@ class LogsPipelinesApi(object):
 
         self.update_logs_pipeline_order = Endpoint(
             settings={
-                'response_type': (logs_pipelines_order.LogsPipelinesOrder,),
+                'response_type': (LogsPipelinesOrder,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -851,7 +844,7 @@ class LogsPipelinesApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (logs_pipelines_order.LogsPipelinesOrder,),
+                        (LogsPipelinesOrder,),
                 },
                 'attribute_map': {
                 },

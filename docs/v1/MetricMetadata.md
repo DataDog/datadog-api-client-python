@@ -1,4 +1,4 @@
-# metric_metadata.MetricMetadata
+# MetricMetadata
 
 Object with all metric related metadata.
 ## Properties

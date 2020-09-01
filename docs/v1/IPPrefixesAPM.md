@@ -1,4 +1,4 @@
-# ip_prefixes_apm.IPPrefixesAPM
+# IPPrefixesAPM
 
 Available prefix information for the APM endpoints.
 ## Properties

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_browser_test_result_data
-except ImportError:
-    synthetics_browser_test_result_data = sys.modules[
-        'datadog_api_client.v1.model.synthetics_browser_test_result_data']
-try:
-    from datadog_api_client.v1.model import synthetics_browser_test_result_full_check
-except ImportError:
-    synthetics_browser_test_result_full_check = sys.modules[
-        'datadog_api_client.v1.model.synthetics_browser_test_result_full_check']
-try:
-    from datadog_api_client.v1.model import synthetics_test_monitor_status
-except ImportError:
-    synthetics_test_monitor_status = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_monitor_status']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_browser_test_result_data import SyntheticsBrowserTestResultData
+    from datadog_api_client.v1.model.synthetics_browser_test_result_full_check import SyntheticsBrowserTestResultFullCheck
+    from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
+    globals()['SyntheticsBrowserTestResultData'] = SyntheticsBrowserTestResultData
+    globals()['SyntheticsBrowserTestResultFullCheck'] = SyntheticsBrowserTestResultFullCheck
+    globals()['SyntheticsTestMonitorStatus'] = SyntheticsTestMonitorStatus
 
 
 class SyntheticsBrowserTestResultFull(ModelNormal):
@@ -82,26 +71,28 @@ class SyntheticsBrowserTestResultFull(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'check': (synthetics_browser_test_result_full_check.SyntheticsBrowserTestResultFullCheck,),  # noqa: E501
+            'check': (SyntheticsBrowserTestResultFullCheck,),  # noqa: E501
             'check_time': (float,),  # noqa: E501
             'check_version': (int,),  # noqa: E501
             'probe_dc': (str,),  # noqa: E501
-            'result': (synthetics_browser_test_result_data.SyntheticsBrowserTestResultData,),  # noqa: E501
+            'result': (SyntheticsBrowserTestResultData,),  # noqa: E501
             'result_id': (str,),  # noqa: E501
-            'status': (synthetics_test_monitor_status.SyntheticsTestMonitorStatus,),  # noqa: E501
+            'status': (SyntheticsTestMonitorStatus,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'check': 'check',  # noqa: E501
@@ -126,7 +117,7 @@ class SyntheticsBrowserTestResultFull(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_browser_test_result_full.SyntheticsBrowserTestResultFull - a model defined in OpenAPI
+        """SyntheticsBrowserTestResultFull - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -159,13 +150,13 @@ class SyntheticsBrowserTestResultFull(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            check (synthetics_browser_test_result_full_check.SyntheticsBrowserTestResultFullCheck): [optional]  # noqa: E501
+            check (SyntheticsBrowserTestResultFullCheck): [optional]  # noqa: E501
             check_time (float): When the browser test was conducted.. [optional]  # noqa: E501
             check_version (int): Version of the browser test used.. [optional]  # noqa: E501
             probe_dc (str): Location from which the browser test was performed.. [optional]  # noqa: E501
-            result (synthetics_browser_test_result_data.SyntheticsBrowserTestResultData): [optional]  # noqa: E501
+            result (SyntheticsBrowserTestResultData): [optional]  # noqa: E501
             result_id (str): ID of the browser test result.. [optional]  # noqa: E501
-            status (synthetics_test_monitor_status.SyntheticsTestMonitorStatus): [optional]  # noqa: E501
+            status (SyntheticsTestMonitorStatus): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -191,7 +182,7 @@ class SyntheticsBrowserTestResultFull(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

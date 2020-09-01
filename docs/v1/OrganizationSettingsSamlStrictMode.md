@@ -1,4 +1,4 @@
-# organization_settings_saml_strict_mode.OrganizationSettingsSamlStrictMode
+# OrganizationSettingsSamlStrictMode
 
 Has one property enabled (boolean).
 ## Properties

@@ -1,4 +1,4 @@
-# dashboard_list_delete_response.DashboardListDeleteResponse
+# DashboardListDeleteResponse
 
 Deleted dashboard details.
 ## Properties

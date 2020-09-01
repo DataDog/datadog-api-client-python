@@ -1,4 +1,4 @@
-# logs_aggregate_bucket_value_timeseries_point.LogsAggregateBucketValueTimeseriesPoint
+# LogsAggregateBucketValueTimeseriesPoint
 
 A timeseries point
 ## Properties

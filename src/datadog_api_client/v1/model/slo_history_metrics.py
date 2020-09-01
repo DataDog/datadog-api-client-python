@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import slo_history_metrics_series
-except ImportError:
-    slo_history_metrics_series = sys.modules[
-        'datadog_api_client.v1.model.slo_history_metrics_series']
+
+def lazy_import():
+    from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
+    globals()['SLOHistoryMetricsSeries'] = SLOHistoryMetricsSeries
 
 
 class SLOHistoryMetrics(ModelNormal):
@@ -72,17 +67,18 @@ class SLOHistoryMetrics(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'denominator': (slo_history_metrics_series.SLOHistoryMetricsSeries,),  # noqa: E501
+            'denominator': (SLOHistoryMetricsSeries,),  # noqa: E501
             'interval': (int,),  # noqa: E501
-            'numerator': (slo_history_metrics_series.SLOHistoryMetricsSeries,),  # noqa: E501
+            'numerator': (SLOHistoryMetricsSeries,),  # noqa: E501
             'query': (str,),  # noqa: E501
             'res_type': (str,),  # noqa: E501
             'resp_version': (int,),  # noqa: E501
@@ -93,6 +89,7 @@ class SLOHistoryMetrics(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'denominator': 'denominator',  # noqa: E501
@@ -118,12 +115,12 @@ class SLOHistoryMetrics(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, denominator, interval, numerator, query, res_type, resp_version, times, *args, **kwargs):  # noqa: E501
-        """slo_history_metrics.SLOHistoryMetrics - a model defined in OpenAPI
+        """SLOHistoryMetrics - a model defined in OpenAPI
 
         Args:
-            denominator (slo_history_metrics_series.SLOHistoryMetricsSeries):
+            denominator (SLOHistoryMetricsSeries):
             interval (int): The aggregated query interval for the series data. It&#39;s implicit based on the query time window.
-            numerator (slo_history_metrics_series.SLOHistoryMetricsSeries):
+            numerator (SLOHistoryMetricsSeries):
             query (str): The combined numerator and denominator query CSV.
             res_type (str): The series result type. This mimics &#x60;batch_query&#x60; response type.
             resp_version (int): The series response version type. This mimics &#x60;batch_query&#x60; response type.
@@ -193,7 +190,7 @@ class SLOHistoryMetrics(ModelNormal):
         self.res_type = res_type
         self.resp_version = resp_version
         self.times = times
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

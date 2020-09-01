@@ -1,4 +1,4 @@
-# security_monitoring_rule_query_create.SecurityMonitoringRuleQueryCreate
+# SecurityMonitoringRuleQueryCreate
 
 Query for matching rule.
 ## Properties

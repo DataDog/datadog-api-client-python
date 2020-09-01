@@ -1,4 +1,4 @@
-# pager_duty_service_name.PagerDutyServiceName
+# PagerDutyServiceName
 
 PagerDuty service object name.
 ## Properties

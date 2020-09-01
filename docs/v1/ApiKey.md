@@ -1,4 +1,4 @@
-# api_key.ApiKey
+# ApiKey
 
 Datadog API key.
 ## Properties

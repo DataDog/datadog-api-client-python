@@ -1,4 +1,4 @@
-# slo_history_sli_data.SLOHistorySLIData
+# SLOHistorySLIData
 
 An object that holds an SLI value and its associated data. It can represent an SLO's overall SLI value or the SLI value for a specific monitor (in multi-monitor SLOs) or group (in grouped SLOs). The uptime history is included for monitor SLOs.
 ## Properties

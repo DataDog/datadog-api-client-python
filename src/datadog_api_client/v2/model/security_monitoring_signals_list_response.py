@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import security_monitoring_signal
-except ImportError:
-    security_monitoring_signal = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signal']
-try:
-    from datadog_api_client.v2.model import security_monitoring_signals_list_response_links
-except ImportError:
-    security_monitoring_signals_list_response_links = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signals_list_response_links']
-try:
-    from datadog_api_client.v2.model import security_monitoring_signals_list_response_meta
-except ImportError:
-    security_monitoring_signals_list_response_meta = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signals_list_response_meta']
+
+def lazy_import():
+    from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
+    from datadog_api_client.v2.model.security_monitoring_signals_list_response_links import SecurityMonitoringSignalsListResponseLinks
+    from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta import SecurityMonitoringSignalsListResponseMeta
+    globals()['SecurityMonitoringSignal'] = SecurityMonitoringSignal
+    globals()['SecurityMonitoringSignalsListResponseLinks'] = SecurityMonitoringSignalsListResponseLinks
+    globals()['SecurityMonitoringSignalsListResponseMeta'] = SecurityMonitoringSignalsListResponseMeta
 
 
 class SecurityMonitoringSignalsListResponse(ModelNormal):
@@ -82,22 +71,24 @@ class SecurityMonitoringSignalsListResponse(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'data': ([security_monitoring_signal.SecurityMonitoringSignal],),  # noqa: E501
-            'links': (security_monitoring_signals_list_response_links.SecurityMonitoringSignalsListResponseLinks,),  # noqa: E501
-            'meta': (security_monitoring_signals_list_response_meta.SecurityMonitoringSignalsListResponseMeta,),  # noqa: E501
+            'data': ([SecurityMonitoringSignal],),  # noqa: E501
+            'links': (SecurityMonitoringSignalsListResponseLinks,),  # noqa: E501
+            'meta': (SecurityMonitoringSignalsListResponseMeta,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'data': 'data',  # noqa: E501
@@ -118,7 +109,7 @@ class SecurityMonitoringSignalsListResponse(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse - a model defined in OpenAPI
+        """SecurityMonitoringSignalsListResponse - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -151,9 +142,9 @@ class SecurityMonitoringSignalsListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([security_monitoring_signal.SecurityMonitoringSignal]): An array of security signals matching the request.. [optional]  # noqa: E501
-            links (security_monitoring_signals_list_response_links.SecurityMonitoringSignalsListResponseLinks): [optional]  # noqa: E501
-            meta (security_monitoring_signals_list_response_meta.SecurityMonitoringSignalsListResponseMeta): [optional]  # noqa: E501
+            data ([SecurityMonitoringSignal]): An array of security signals matching the request.. [optional]  # noqa: E501
+            links (SecurityMonitoringSignalsListResponseLinks): [optional]  # noqa: E501
+            meta (SecurityMonitoringSignalsListResponseMeta): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -179,7 +170,7 @@ class SecurityMonitoringSignalsListResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

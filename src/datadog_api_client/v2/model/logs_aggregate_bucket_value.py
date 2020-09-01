@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import logs_aggregate_bucket_value_timeseries
-except ImportError:
-    logs_aggregate_bucket_value_timeseries = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries']
+
+def lazy_import():
+    from datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries import LogsAggregateBucketValueTimeseries
+    globals()['LogsAggregateBucketValueTimeseries'] = LogsAggregateBucketValueTimeseries
 
 
 class LogsAggregateBucketValue(ModelComposed):
@@ -65,15 +60,22 @@ class LogsAggregateBucketValue(ModelComposed):
     validations = {
     }
 
-    additional_properties_type = (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
@@ -84,6 +86,7 @@ class LogsAggregateBucketValue(ModelComposed):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {}
 
@@ -101,7 +104,7 @@ class LogsAggregateBucketValue(ModelComposed):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """logs_aggregate_bucket_value.LogsAggregateBucketValue - a model defined in OpenAPI
+        """LogsAggregateBucketValue - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -185,7 +188,7 @@ class LogsAggregateBucketValue(ModelComposed):
 
         for var_name, var_value in required_args.items():
             setattr(self, var_name, var_value)
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name in unused_args and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \
@@ -203,14 +206,15 @@ class LogsAggregateBucketValue(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
+        lazy_import()
         return {
           'anyOf': [
           ],
           'allOf': [
           ],
           'oneOf': [
+              LogsAggregateBucketValueTimeseries,
               float,
-              logs_aggregate_bucket_value_timeseries.LogsAggregateBucketValueTimeseries,
               str,
           ],
         }

@@ -1,4 +1,4 @@
-# log_attributes.LogAttributes
+# LogAttributes
 
 JSON object containing all log attributes and their associated values.
 ## Properties

@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,16 +15,14 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import check_can_delete_monitor_response
-from datadog_api_client.v1.model import monitor
-from datadog_api_client.v1.model import deleted_monitor
-from datadog_api_client.v1.model import monitor_update_request
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.check_can_delete_monitor_response import CheckCanDeleteMonitorResponse
+from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
+from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.model.monitor_update_request import MonitorUpdateRequest
 
 
 class MonitorsApi(object):
@@ -83,7 +76,7 @@ class MonitorsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                check_can_delete_monitor_response.CheckCanDeleteMonitorResponse
+                CheckCanDeleteMonitorResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -112,7 +105,7 @@ class MonitorsApi(object):
 
         self.check_can_delete_monitor = Endpoint(
             settings={
-                'response_type': (check_can_delete_monitor_response.CheckCanDeleteMonitorResponse,),
+                'response_type': (CheckCanDeleteMonitorResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -180,7 +173,7 @@ class MonitorsApi(object):
             >>> result = thread.get()
 
             Args:
-                body (monitor.Monitor): Create a monitor request body.
+                body (Monitor): Create a monitor request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -204,7 +197,7 @@ class MonitorsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                monitor.Monitor
+                Monitor
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -233,7 +226,7 @@ class MonitorsApi(object):
 
         self.create_monitor = Endpoint(
             settings={
-                'response_type': (monitor.Monitor,),
+                'response_type': (Monitor,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -264,7 +257,7 @@ class MonitorsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (monitor.Monitor,),
+                        (Monitor,),
                 },
                 'attribute_map': {
                 },
@@ -326,7 +319,7 @@ class MonitorsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                deleted_monitor.DeletedMonitor
+                DeletedMonitor
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -355,7 +348,7 @@ class MonitorsApi(object):
 
         self.delete_monitor = Endpoint(
             settings={
-                'response_type': (deleted_monitor.DeletedMonitor,),
+                'response_type': (DeletedMonitor,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -452,7 +445,7 @@ class MonitorsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                monitor.Monitor
+                Monitor
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -481,7 +474,7 @@ class MonitorsApi(object):
 
         self.get_monitor = Endpoint(
             settings={
-                'response_type': (monitor.Monitor,),
+                'response_type': (Monitor,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -582,7 +575,7 @@ class MonitorsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                [monitor.Monitor]
+                [Monitor]
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -609,7 +602,7 @@ class MonitorsApi(object):
 
         self.list_monitors = Endpoint(
             settings={
-                'response_type': ([monitor.Monitor],),
+                'response_type': ([Monitor],),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -716,7 +709,7 @@ class MonitorsApi(object):
 
             Args:
                 monitor_id (int): The ID of the monitor.
-                body (monitor_update_request.MonitorUpdateRequest): Edit a monitor request body.
+                body (MonitorUpdateRequest): Edit a monitor request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -740,7 +733,7 @@ class MonitorsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                monitor.Monitor
+                Monitor
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -771,7 +764,7 @@ class MonitorsApi(object):
 
         self.update_monitor = Endpoint(
             settings={
-                'response_type': (monitor.Monitor,),
+                'response_type': (Monitor,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -806,7 +799,7 @@ class MonitorsApi(object):
                     'monitor_id':
                         (int,),
                     'body':
-                        (monitor_update_request.MonitorUpdateRequest,),
+                        (MonitorUpdateRequest,),
                 },
                 'attribute_map': {
                     'monitor_id': 'monitor_id',
@@ -845,7 +838,7 @@ class MonitorsApi(object):
             >>> result = thread.get()
 
             Args:
-                body (monitor.Monitor): Monitor request object
+                body (Monitor): Monitor request object
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -869,7 +862,7 @@ class MonitorsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                monitor.Monitor
+                Monitor
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -898,7 +891,7 @@ class MonitorsApi(object):
 
         self.validate_monitor = Endpoint(
             settings={
-                'response_type': (monitor.Monitor,),
+                'response_type': (Monitor,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -929,7 +922,7 @@ class MonitorsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (monitor.Monitor,),
+                        (Monitor,),
                 },
                 'attribute_map': {
                 },

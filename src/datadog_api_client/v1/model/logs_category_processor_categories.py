@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import logs_filter
-except ImportError:
-    logs_filter = sys.modules[
-        'datadog_api_client.v1.model.logs_filter']
+
+def lazy_import():
+    from datadog_api_client.v1.model.logs_filter import LogsFilter
+    globals()['LogsFilter'] = LogsFilter
 
 
 class LogsCategoryProcessorCategories(ModelNormal):
@@ -72,21 +67,23 @@ class LogsCategoryProcessorCategories(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'filter': (logs_filter.LogsFilter,),  # noqa: E501
+            'filter': (LogsFilter,),  # noqa: E501
             'name': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'filter': 'filter',  # noqa: E501
@@ -106,7 +103,7 @@ class LogsCategoryProcessorCategories(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """logs_category_processor_categories.LogsCategoryProcessorCategories - a model defined in OpenAPI
+        """LogsCategoryProcessorCategories - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -139,7 +136,7 @@ class LogsCategoryProcessorCategories(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            filter (logs_filter.LogsFilter): [optional]  # noqa: E501
+            filter (LogsFilter): [optional]  # noqa: E501
             name (str): Value to assign to the target attribute.. [optional]  # noqa: E501
         """
 
@@ -166,7 +163,7 @@ class LogsCategoryProcessorCategories(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

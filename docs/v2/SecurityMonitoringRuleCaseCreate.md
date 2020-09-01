@@ -1,10 +1,10 @@
-# security_monitoring_rule_case_create.SecurityMonitoringRuleCaseCreate
+# SecurityMonitoringRuleCaseCreate
 
 Case when signal is generated.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | [**security_monitoring_rule_severity.SecurityMonitoringRuleSeverity**](SecurityMonitoringRuleSeverity.md) |  | 
+**status** | [**SecurityMonitoringRuleSeverity**](SecurityMonitoringRuleSeverity.md) |  | 
 **condition** | **str** | A rule case contains logical operations (&#x60;&gt;&#x60;,&#x60;&gt;&#x3D;&#x60;, &#x60;&amp;&amp;&#x60;, &#x60;||&#x60;) to determine if a signal should be generated based on the event counts in the previously defined queries. | [optional] 
 **name** | **str** | Name of the case. | [optional] 
 **notifications** | **[str]** | Notification targets for each rule case. | [optional] 

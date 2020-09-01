@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import logs_aggregation_function
-except ImportError:
-    logs_aggregation_function = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregation_function']
-try:
-    from datadog_api_client.v2.model import logs_compute_type
-except ImportError:
-    logs_compute_type = sys.modules[
-        'datadog_api_client.v2.model.logs_compute_type']
+
+def lazy_import():
+    from datadog_api_client.v2.model.logs_aggregation_function import LogsAggregationFunction
+    from datadog_api_client.v2.model.logs_compute_type import LogsComputeType
+    globals()['LogsAggregationFunction'] = LogsAggregationFunction
+    globals()['LogsComputeType'] = LogsComputeType
 
 
 class LogsCompute(ModelNormal):
@@ -77,23 +69,25 @@ class LogsCompute(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'aggregation': (logs_aggregation_function.LogsAggregationFunction,),  # noqa: E501
+            'aggregation': (LogsAggregationFunction,),  # noqa: E501
             'interval': (str,),  # noqa: E501
             'metric': (str,),  # noqa: E501
-            'type': (logs_compute_type.LogsComputeType,),  # noqa: E501
+            'type': (LogsComputeType,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'aggregation': 'aggregation',  # noqa: E501
@@ -115,10 +109,10 @@ class LogsCompute(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, aggregation, *args, **kwargs):  # noqa: E501
-        """logs_compute.LogsCompute - a model defined in OpenAPI
+        """LogsCompute - a model defined in OpenAPI
 
         Args:
-            aggregation (logs_aggregation_function.LogsAggregationFunction):
+            aggregation (LogsAggregationFunction):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -153,7 +147,7 @@ class LogsCompute(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             interval (str): The time buckets&#39; size (only used for type&#x3D;timeseries) Defaults to a resolution of 150 points. [optional]  # noqa: E501
             metric (str): The metric to use. [optional]  # noqa: E501
-            type (logs_compute_type.LogsComputeType): [optional]  # noqa: E501
+            type (LogsComputeType): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -180,7 +174,7 @@ class LogsCompute(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.aggregation = aggregation
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

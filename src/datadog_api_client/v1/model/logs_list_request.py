@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import logs_list_request_time
-except ImportError:
-    logs_list_request_time = sys.modules[
-        'datadog_api_client.v1.model.logs_list_request_time']
-try:
-    from datadog_api_client.v1.model import logs_sort
-except ImportError:
-    logs_sort = sys.modules[
-        'datadog_api_client.v1.model.logs_sort']
+
+def lazy_import():
+    from datadog_api_client.v1.model.logs_list_request_time import LogsListRequestTime
+    from datadog_api_client.v1.model.logs_sort import LogsSort
+    globals()['LogsListRequestTime'] = LogsListRequestTime
+    globals()['LogsSort'] = LogsSort
 
 
 class LogsListRequest(ModelNormal):
@@ -80,25 +72,27 @@ class LogsListRequest(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'query': (str,),  # noqa: E501
-            'time': (logs_list_request_time.LogsListRequestTime,),  # noqa: E501
+            'time': (LogsListRequestTime,),  # noqa: E501
             'index': (str,),  # noqa: E501
             'limit': (int,),  # noqa: E501
-            'sort': (logs_sort.LogsSort,),  # noqa: E501
+            'sort': (LogsSort,),  # noqa: E501
             'start_at': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'query': 'query',  # noqa: E501
@@ -122,11 +116,11 @@ class LogsListRequest(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, query, time, *args, **kwargs):  # noqa: E501
-        """logs_list_request.LogsListRequest - a model defined in OpenAPI
+        """LogsListRequest - a model defined in OpenAPI
 
         Args:
             query (str): The search query - following the log search syntax.
-            time (logs_list_request_time.LogsListRequestTime):
+            time (LogsListRequestTime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -161,7 +155,7 @@ class LogsListRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             index (str): For multi-index organizations, the log index in which the request is performed. Default to &#39;*&#39; (all indexes).. [optional]  # noqa: E501
             limit (int): Number of logs return in the response.. [optional]  # noqa: E501
-            sort (logs_sort.LogsSort): [optional]  # noqa: E501
+            sort (LogsSort): [optional]  # noqa: E501
             start_at (str): Hash identifier of the first log to return in the list, available in a log &#x60;id&#x60; attribute. This parameter is used for the pagination feature.  **Note**: This parameter is ignored if the corresponding log is out of the scope of the specified time window.. [optional]  # noqa: E501
         """
 
@@ -190,7 +184,7 @@ class LogsListRequest(ModelNormal):
 
         self.query = query
         self.time = time
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

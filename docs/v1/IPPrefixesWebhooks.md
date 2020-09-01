@@ -1,4 +1,4 @@
-# ip_prefixes_webhooks.IPPrefixesWebhooks
+# IPPrefixesWebhooks
 
 Available prefix information for the Webhook endpoints.
 ## Properties

@@ -1,12 +1,12 @@
-# dashboard_list_item.DashboardListItem
+# DashboardListItem
 
 A dashboard within a list.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | ID of the dashboard. | 
-**type** | [**dashboard_type.DashboardType**](DashboardType.md) |  | 
-**author** | [**creator.Creator**](Creator.md) |  | [optional] 
+**type** | [**DashboardType**](DashboardType.md) |  | 
+**author** | [**Creator**](Creator.md) |  | [optional] 
 **created** | **datetime** | Date of creation of the dashboard. | [optional] [readonly] 
 **icon** | **str** | URL to the icon of the dashboard. | [optional] [readonly] 
 **is_favorite** | **bool** | Whether or not the dashboard is in the favorites. | [optional] [readonly] 

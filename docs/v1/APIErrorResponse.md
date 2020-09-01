@@ -1,4 +1,4 @@
-# api_error_response.APIErrorResponse
+# APIErrorResponse
 
 Error response object.
 ## Properties

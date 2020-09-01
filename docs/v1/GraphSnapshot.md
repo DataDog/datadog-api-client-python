@@ -1,4 +1,4 @@
-# graph_snapshot.GraphSnapshot
+# GraphSnapshot
 
 Object representing a graph snapshot.
 ## Properties

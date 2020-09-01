@@ -1,4 +1,4 @@
-# timeseries_widget_request_metadata.TimeseriesWidgetRequestMetadata
+# TimeseriesWidgetRequestMetadata
 
 Define an expression alias.
 ## Properties

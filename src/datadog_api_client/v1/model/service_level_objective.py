@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import creator
-except ImportError:
-    creator = sys.modules[
-        'datadog_api_client.v1.model.creator']
-try:
-    from datadog_api_client.v1.model import service_level_objective_query
-except ImportError:
-    service_level_objective_query = sys.modules[
-        'datadog_api_client.v1.model.service_level_objective_query']
-try:
-    from datadog_api_client.v1.model import slo_threshold
-except ImportError:
-    slo_threshold = sys.modules[
-        'datadog_api_client.v1.model.slo_threshold']
-try:
-    from datadog_api_client.v1.model import slo_type
-except ImportError:
-    slo_type = sys.modules[
-        'datadog_api_client.v1.model.slo_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.creator import Creator
+    from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
+    from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+    from datadog_api_client.v1.model.slo_type import SLOType
+    globals()['Creator'] = Creator
+    globals()['SLOThreshold'] = SLOThreshold
+    globals()['SLOType'] = SLOType
+    globals()['ServiceLevelObjectiveQuery'] = ServiceLevelObjectiveQuery
 
 
 class ServiceLevelObjective(ModelNormal):
@@ -87,32 +73,34 @@ class ServiceLevelObjective(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'name': (str,),  # noqa: E501
-            'thresholds': ([slo_threshold.SLOThreshold],),  # noqa: E501
-            'type': (slo_type.SLOType,),  # noqa: E501
+            'thresholds': ([SLOThreshold],),  # noqa: E501
+            'type': (SLOType,),  # noqa: E501
             'created_at': (int,),  # noqa: E501
-            'creator': (creator.Creator,),  # noqa: E501
+            'creator': (Creator,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'groups': ([str],),  # noqa: E501
             'id': (str,),  # noqa: E501
             'modified_at': (int,),  # noqa: E501
             'monitor_ids': ([int],),  # noqa: E501
             'monitor_tags': ([str],),  # noqa: E501
-            'query': (service_level_objective_query.ServiceLevelObjectiveQuery,),  # noqa: E501
+            'query': (ServiceLevelObjectiveQuery,),  # noqa: E501
             'tags': ([str],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'name': 'name',  # noqa: E501
@@ -143,12 +131,12 @@ class ServiceLevelObjective(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, name, thresholds, type, *args, **kwargs):  # noqa: E501
-        """service_level_objective.ServiceLevelObjective - a model defined in OpenAPI
+        """ServiceLevelObjective - a model defined in OpenAPI
 
         Args:
             name (str): The name of the service level objective object.
-            thresholds ([slo_threshold.SLOThreshold]): The thresholds (timeframes and associated targets) for this service level objective object.
-            type (slo_type.SLOType):
+            thresholds ([SLOThreshold]): The thresholds (timeframes and associated targets) for this service level objective object.
+            type (SLOType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -182,14 +170,14 @@ class ServiceLevelObjective(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             created_at (int): Creation timestamp (UNIX time in seconds)  Always included in service level objective responses.. [optional]  # noqa: E501
-            creator (creator.Creator): [optional]  # noqa: E501
+            creator (Creator): [optional]  # noqa: E501
             description (str, none_type): A user-defined description of the service level objective.  Always included in service level objective responses (but may be &#x60;null&#x60;). Optional in create/update requests.. [optional]  # noqa: E501
             groups ([str]): A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective.  Included in service level objective responses if it is not empty. Optional in create/update requests for monitor service level objectives, but may only be used when then length of the &#x60;monitor_ids&#x60; field is one.. [optional]  # noqa: E501
             id (str): A unique identifier for the service level objective object.  Always included in service level objective responses.. [optional]  # noqa: E501
             modified_at (int): Modification timestamp (UNIX time in seconds)  Always included in service level objective responses.. [optional]  # noqa: E501
             monitor_ids ([int]): A list of monitor ids that defines the scope of a monitor service level objective. **Required if type is &#x60;monitor&#x60;**.. [optional]  # noqa: E501
             monitor_tags ([str]): The union of monitor tags for all monitors referenced by the &#x60;monitor_ids&#x60; field. Always included in service level objective responses for monitor service level objectives (but may be empty). Ignored in create/update requests. Does not affect which monitors are included in the service level objective (that is determined entirely by the &#x60;monitor_ids&#x60; field).. [optional]  # noqa: E501
-            query (service_level_objective_query.ServiceLevelObjectiveQuery): [optional]  # noqa: E501
+            query (ServiceLevelObjectiveQuery): [optional]  # noqa: E501
             tags ([str]): A list of tags associated with this service level objective. Always included in service level objective responses (but may be empty). Optional in create/update requests.. [optional]  # noqa: E501
         """
 
@@ -219,7 +207,7 @@ class ServiceLevelObjective(ModelNormal):
         self.name = name
         self.thresholds = thresholds
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

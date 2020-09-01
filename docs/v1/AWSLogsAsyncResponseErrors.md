@@ -1,4 +1,4 @@
-# aws_logs_async_response_errors.AWSLogsAsyncResponseErrors
+# AWSLogsAsyncResponseErrors
 
 Description of errors.
 ## Properties

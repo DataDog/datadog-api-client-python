@@ -1,4 +1,4 @@
-# monitor_options_aggregation.MonitorOptionsAggregation
+# MonitorOptionsAggregation
 
 Type of aggregation performed in the monitor query.
 ## Properties

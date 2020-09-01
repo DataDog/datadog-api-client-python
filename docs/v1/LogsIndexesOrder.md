@@ -1,4 +1,4 @@
-# logs_indexes_order.LogsIndexesOrder
+# LogsIndexesOrder
 
 Object containing the ordered list of log index names.
 ## Properties

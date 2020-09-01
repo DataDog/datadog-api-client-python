@@ -1,4 +1,4 @@
-# role_attributes.RoleAttributes
+# RoleAttributes
 
 Attributes of the role.
 ## Properties

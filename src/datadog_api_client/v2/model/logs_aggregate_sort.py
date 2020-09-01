@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import logs_aggregate_sort_type
-except ImportError:
-    logs_aggregate_sort_type = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregate_sort_type']
-try:
-    from datadog_api_client.v2.model import logs_aggregation_function
-except ImportError:
-    logs_aggregation_function = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregation_function']
-try:
-    from datadog_api_client.v2.model import logs_sort_order
-except ImportError:
-    logs_sort_order = sys.modules[
-        'datadog_api_client.v2.model.logs_sort_order']
+
+def lazy_import():
+    from datadog_api_client.v2.model.logs_aggregate_sort_type import LogsAggregateSortType
+    from datadog_api_client.v2.model.logs_aggregation_function import LogsAggregationFunction
+    from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
+    globals()['LogsAggregateSortType'] = LogsAggregateSortType
+    globals()['LogsAggregationFunction'] = LogsAggregationFunction
+    globals()['LogsSortOrder'] = LogsSortOrder
 
 
 class LogsAggregateSort(ModelNormal):
@@ -82,23 +71,25 @@ class LogsAggregateSort(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'aggregation': (logs_aggregation_function.LogsAggregationFunction,),  # noqa: E501
+            'aggregation': (LogsAggregationFunction,),  # noqa: E501
             'metric': (str,),  # noqa: E501
-            'order': (logs_sort_order.LogsSortOrder,),  # noqa: E501
-            'type': (logs_aggregate_sort_type.LogsAggregateSortType,),  # noqa: E501
+            'order': (LogsSortOrder,),  # noqa: E501
+            'type': (LogsAggregateSortType,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'aggregation': 'aggregation',  # noqa: E501
@@ -120,7 +111,7 @@ class LogsAggregateSort(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """logs_aggregate_sort.LogsAggregateSort - a model defined in OpenAPI
+        """LogsAggregateSort - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -153,10 +144,10 @@ class LogsAggregateSort(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregation (logs_aggregation_function.LogsAggregationFunction): [optional]  # noqa: E501
+            aggregation (LogsAggregationFunction): [optional]  # noqa: E501
             metric (str): The metric to sort by (only used for type&#x3D;metric). [optional]  # noqa: E501
-            order (logs_sort_order.LogsSortOrder): [optional]  # noqa: E501
-            type (logs_aggregate_sort_type.LogsAggregateSortType): [optional]  # noqa: E501
+            order (LogsSortOrder): [optional]  # noqa: E501
+            type (LogsAggregateSortType): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -182,7 +173,7 @@ class LogsAggregateSort(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

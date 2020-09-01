@@ -1,4 +1,4 @@
-# creator.Creator
+# Creator
 
 Creator of the object.
 ## Properties

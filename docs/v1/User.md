@@ -1,10 +1,10 @@
-# user.User
+# User
 
 Create, edit, and disable users.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**access_role** | [**access_role.AccessRole**](AccessRole.md) |  | [optional] 
+**access_role** | [**AccessRole**](AccessRole.md) |  | [optional] 
 **disabled** | **bool** | The new disabled status of the user. | [optional] 
 **email** | **str** | The new email of the user. | [optional] 
 **handle** | **str** | The user handle, must be a valid email. | [optional] 

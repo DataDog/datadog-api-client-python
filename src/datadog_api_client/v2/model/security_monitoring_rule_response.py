@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import security_monitoring_rule_case
-except ImportError:
-    security_monitoring_rule_case = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_case']
-try:
-    from datadog_api_client.v2.model import security_monitoring_rule_options
-except ImportError:
-    security_monitoring_rule_options = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_options']
-try:
-    from datadog_api_client.v2.model import security_monitoring_rule_query
-except ImportError:
-    security_monitoring_rule_query = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_query']
+
+def lazy_import():
+    from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
+    from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
+    from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
+    globals()['SecurityMonitoringRuleCase'] = SecurityMonitoringRuleCase
+    globals()['SecurityMonitoringRuleOptions'] = SecurityMonitoringRuleOptions
+    globals()['SecurityMonitoringRuleQuery'] = SecurityMonitoringRuleQuery
 
 
 class SecurityMonitoringRuleResponse(ModelNormal):
@@ -82,15 +71,16 @@ class SecurityMonitoringRuleResponse(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'cases': ([security_monitoring_rule_case.SecurityMonitoringRuleCase],),  # noqa: E501
+            'cases': ([SecurityMonitoringRuleCase],),  # noqa: E501
             'created_at': (int,),  # noqa: E501
             'creation_author_id': (int,),  # noqa: E501
             'id': (str,),  # noqa: E501
@@ -99,8 +89,8 @@ class SecurityMonitoringRuleResponse(ModelNormal):
             'is_enabled': (bool,),  # noqa: E501
             'message': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'options': (security_monitoring_rule_options.SecurityMonitoringRuleOptions,),  # noqa: E501
-            'queries': ([security_monitoring_rule_query.SecurityMonitoringRuleQuery],),  # noqa: E501
+            'options': (SecurityMonitoringRuleOptions,),  # noqa: E501
+            'queries': ([SecurityMonitoringRuleQuery],),  # noqa: E501
             'tags': ([str],),  # noqa: E501
             'version': (int,),  # noqa: E501
         }
@@ -108,6 +98,7 @@ class SecurityMonitoringRuleResponse(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'cases': 'cases',  # noqa: E501
@@ -138,7 +129,7 @@ class SecurityMonitoringRuleResponse(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """security_monitoring_rule_response.SecurityMonitoringRuleResponse - a model defined in OpenAPI
+        """SecurityMonitoringRuleResponse - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -171,7 +162,7 @@ class SecurityMonitoringRuleResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cases ([security_monitoring_rule_case.SecurityMonitoringRuleCase]): Cases for generating signals.. [optional]  # noqa: E501
+            cases ([SecurityMonitoringRuleCase]): Cases for generating signals.. [optional]  # noqa: E501
             created_at (int): When the rule was created, timestamp in milliseconds.. [optional]  # noqa: E501
             creation_author_id (int): User ID of the user who created the rule.. [optional]  # noqa: E501
             id (str): The ID of the rule.. [optional]  # noqa: E501
@@ -180,8 +171,8 @@ class SecurityMonitoringRuleResponse(ModelNormal):
             is_enabled (bool): Whether the rule is enabled.. [optional]  # noqa: E501
             message (str): Message for generated signals.. [optional]  # noqa: E501
             name (str): The name of the rule.. [optional]  # noqa: E501
-            options (security_monitoring_rule_options.SecurityMonitoringRuleOptions): [optional]  # noqa: E501
-            queries ([security_monitoring_rule_query.SecurityMonitoringRuleQuery]): Queries for selecting logs which are part of the rule.. [optional]  # noqa: E501
+            options (SecurityMonitoringRuleOptions): [optional]  # noqa: E501
+            queries ([SecurityMonitoringRuleQuery]): Queries for selecting logs which are part of the rule.. [optional]  # noqa: E501
             tags ([str]): Tags for generated signals.. [optional]  # noqa: E501
             version (int): The version of the rule.. [optional]  # noqa: E501
         """
@@ -209,7 +200,7 @@ class SecurityMonitoringRuleResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

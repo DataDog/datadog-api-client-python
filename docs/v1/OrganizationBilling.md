@@ -1,4 +1,4 @@
-# organization_billing.OrganizationBilling
+# OrganizationBilling
 
 A JSON array of billing type.
 ## Properties

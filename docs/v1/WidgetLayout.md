@@ -1,4 +1,4 @@
-# widget_layout.WidgetLayout
+# WidgetLayout
 
 The layout for a widget on a free dashboard.
 ## Properties

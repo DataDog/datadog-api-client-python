@@ -1,4 +1,4 @@
-# host_map_widget_definition_style.HostMapWidgetDefinitionStyle
+# HostMapWidgetDefinitionStyle
 
 The style to apply to the widget.
 ## Properties

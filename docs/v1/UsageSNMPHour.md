@@ -1,4 +1,4 @@
-# usage_snmp_hour.UsageSNMPHour
+# UsageSNMPHour
 
 The number of SNMP devices for each hour for a given organization.
 ## Properties

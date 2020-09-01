@@ -1,4 +1,4 @@
-# usage_synthetics_api_hour.UsageSyntheticsAPIHour
+# UsageSyntheticsAPIHour
 
 Number of Synthetics API tests run for each hour for a given organization.
 ## Properties

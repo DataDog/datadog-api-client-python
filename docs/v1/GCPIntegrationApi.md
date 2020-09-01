@@ -22,12 +22,11 @@ Create a Datadog-GCP integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import gcp_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import gcp_account
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.gcp_account import GCPAccount
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -64,8 +63,24 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gcp_integration_api.GCPIntegrationApi(api_client)
-    body = gcp_account.GCPAccount() # gcp_account.GCPAccount | Create a Datadog-GCP integration.
-    
+    body = GCPAccount(
+        auth_provider_x509_cert_url="https://www.googleapis.com/oauth2/v1/certs",
+        auth_uri="https://accounts.google.com/o/oauth2/auth",
+        automute=True,
+        client_email="api-dev@datadog-sandbox.iam.gserviceaccount.com",
+        client_id="123456712345671234567",
+        client_x509_cert_url="https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>",
+        errors=[
+            "["*"]",
+        ],
+        host_filters="key:value,filter:example",
+        private_key="private_key",
+        private_key_id="123456789abcdefghi123456789abcdefghijklm",
+        project_id="datadog-apitest",
+        token_uri="https://accounts.google.com/o/oauth2/token",
+        type="service_account",
+    ) # GCPAccount | Create a Datadog-GCP integration.
+
     # example passing only required values which don't have defaults set
     try:
         # Create a GCP integration
@@ -79,7 +94,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**gcp_account.GCPAccount**](GCPAccount.md)| Create a Datadog-GCP integration. |
+ **body** | [**GCPAccount**](GCPAccount.md)| Create a Datadog-GCP integration. |
 
 ### Return type
 
@@ -115,12 +130,11 @@ Delete a given Datadog-GCP integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import gcp_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import gcp_account
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.gcp_account import GCPAccount
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -157,8 +171,24 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gcp_integration_api.GCPIntegrationApi(api_client)
-    body = gcp_account.GCPAccount() # gcp_account.GCPAccount | Delete a given Datadog-GCP integration.
-    
+    body = GCPAccount(
+        auth_provider_x509_cert_url="https://www.googleapis.com/oauth2/v1/certs",
+        auth_uri="https://accounts.google.com/o/oauth2/auth",
+        automute=True,
+        client_email="api-dev@datadog-sandbox.iam.gserviceaccount.com",
+        client_id="123456712345671234567",
+        client_x509_cert_url="https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>",
+        errors=[
+            "["*"]",
+        ],
+        host_filters="key:value,filter:example",
+        private_key="private_key",
+        private_key_id="123456789abcdefghi123456789abcdefghijklm",
+        project_id="datadog-apitest",
+        token_uri="https://accounts.google.com/o/oauth2/token",
+        type="service_account",
+    ) # GCPAccount | Delete a given Datadog-GCP integration.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete a GCP integration
@@ -172,7 +202,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**gcp_account.GCPAccount**](GCPAccount.md)| Delete a given Datadog-GCP integration. |
+ **body** | [**GCPAccount**](GCPAccount.md)| Delete a given Datadog-GCP integration. |
 
 ### Return type
 
@@ -197,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_gcp_integration**
-> gcp_account_list_response.GCPAccountListResponse list_gcp_integration()
+> GCPAccountListResponse list_gcp_integration()
 
 List all GCP integrations
 
@@ -208,12 +238,11 @@ List all Datadog-GCP integrations configured in your Datadog account.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import gcp_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import gcp_account_list_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.gcp_account_list_response import GCPAccountListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -250,7 +279,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gcp_integration_api.GCPIntegrationApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # List all GCP integrations
@@ -265,7 +294,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**gcp_account_list_response.GCPAccountListResponse**](GCPAccountListResponse.md)
+[**GCPAccountListResponse**](GCPAccountListResponse.md)
 
 ### Authorization
 
@@ -297,12 +326,11 @@ Update a Datadog-GCP integrations host_filters and/or auto-mute. Requires a `pro
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import gcp_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import gcp_account
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.gcp_account import GCPAccount
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -339,8 +367,24 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gcp_integration_api.GCPIntegrationApi(api_client)
-    body = gcp_account.GCPAccount() # gcp_account.GCPAccount | Update a Datadog-GCP integration.
-    
+    body = GCPAccount(
+        auth_provider_x509_cert_url="https://www.googleapis.com/oauth2/v1/certs",
+        auth_uri="https://accounts.google.com/o/oauth2/auth",
+        automute=True,
+        client_email="api-dev@datadog-sandbox.iam.gserviceaccount.com",
+        client_id="123456712345671234567",
+        client_x509_cert_url="https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>",
+        errors=[
+            "["*"]",
+        ],
+        host_filters="key:value,filter:example",
+        private_key="private_key",
+        private_key_id="123456789abcdefghi123456789abcdefghijklm",
+        project_id="datadog-apitest",
+        token_uri="https://accounts.google.com/o/oauth2/token",
+        type="service_account",
+    ) # GCPAccount | Update a Datadog-GCP integration.
+
     # example passing only required values which don't have defaults set
     try:
         # Update a GCP integration
@@ -354,7 +398,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**gcp_account.GCPAccount**](GCPAccount.md)| Update a Datadog-GCP integration. |
+ **body** | [**GCPAccount**](GCPAccount.md)| Update a Datadog-GCP integration. |
 
 ### Return type
 

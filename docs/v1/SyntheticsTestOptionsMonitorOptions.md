@@ -1,4 +1,4 @@
-# synthetics_test_options_monitor_options.SyntheticsTestOptionsMonitorOptions
+# SyntheticsTestOptionsMonitorOptions
 
 Object containing the options for a Synthetic test as a monitor (e.g. renotification).
 ## Properties

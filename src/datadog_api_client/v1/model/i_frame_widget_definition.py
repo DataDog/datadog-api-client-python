@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import i_frame_widget_definition_type
-except ImportError:
-    i_frame_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.i_frame_widget_definition_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.i_frame_widget_definition_type import IFrameWidgetDefinitionType
+    globals()['IFrameWidgetDefinitionType'] = IFrameWidgetDefinitionType
 
 
 class IFrameWidgetDefinition(ModelNormal):
@@ -72,21 +67,23 @@ class IFrameWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'type': (i_frame_widget_definition_type.IFrameWidgetDefinitionType,),  # noqa: E501
+            'type': (IFrameWidgetDefinitionType,),  # noqa: E501
             'url': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'type': 'type',  # noqa: E501
@@ -106,10 +103,10 @@ class IFrameWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, type, url, *args, **kwargs):  # noqa: E501
-        """i_frame_widget_definition.IFrameWidgetDefinition - a model defined in OpenAPI
+        """IFrameWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            type (i_frame_widget_definition_type.IFrameWidgetDefinitionType):
+            type (IFrameWidgetDefinitionType):
             url (str): URL of the iframe.
 
         Keyword Args:
@@ -170,7 +167,7 @@ class IFrameWidgetDefinition(ModelNormal):
 
         self.type = type
         self.url = url
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

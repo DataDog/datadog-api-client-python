@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import dashboard_layout_type
-except ImportError:
-    dashboard_layout_type = sys.modules[
-        'datadog_api_client.v1.model.dashboard_layout_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
+    globals()['DashboardLayoutType'] = DashboardLayoutType
 
 
 class DashboardSummaryDashboards(ModelNormal):
@@ -72,20 +67,21 @@ class DashboardSummaryDashboards(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'author_handle': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'is_read_only': (bool,),  # noqa: E501
-            'layout_type': (dashboard_layout_type.DashboardLayoutType,),  # noqa: E501
+            'layout_type': (DashboardLayoutType,),  # noqa: E501
             'modified_at': (datetime,),  # noqa: E501
             'title': (str,),  # noqa: E501
             'url': (str,),  # noqa: E501
@@ -94,6 +90,7 @@ class DashboardSummaryDashboards(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'author_handle': 'author_handle',  # noqa: E501
@@ -120,7 +117,7 @@ class DashboardSummaryDashboards(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """dashboard_summary_dashboards.DashboardSummaryDashboards - a model defined in OpenAPI
+        """DashboardSummaryDashboards - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -158,7 +155,7 @@ class DashboardSummaryDashboards(ModelNormal):
             description (str): Description of the dashboard.. [optional]  # noqa: E501
             id (str): Dashboard identifier.. [optional]  # noqa: E501
             is_read_only (bool): Whether this dashboard is read-only. If True, only the author and admins can make changes to it.. [optional]  # noqa: E501
-            layout_type (dashboard_layout_type.DashboardLayoutType): [optional]  # noqa: E501
+            layout_type (DashboardLayoutType): [optional]  # noqa: E501
             modified_at (datetime): Modification date of the dashboard.. [optional]  # noqa: E501
             title (str): Title of the dashboard.. [optional]  # noqa: E501
             url (str): URL of the dashboard.. [optional]  # noqa: E501
@@ -187,7 +184,7 @@ class DashboardSummaryDashboards(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

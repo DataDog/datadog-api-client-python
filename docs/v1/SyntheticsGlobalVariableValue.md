@@ -1,4 +1,4 @@
-# synthetics_global_variable_value.SyntheticsGlobalVariableValue
+# SyntheticsGlobalVariableValue
 
 Value of the global variable.
 ## Properties

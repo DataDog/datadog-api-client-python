@@ -1,4 +1,4 @@
-# usage_logs_by_index_hour.UsageLogsByIndexHour
+# UsageLogsByIndexHour
 
 Number of indexed logs for each hour and index for a given organization.
 ## Properties

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import log
-except ImportError:
-    log = sys.modules[
-        'datadog_api_client.v1.model.log']
+
+def lazy_import():
+    from datadog_api_client.v1.model.log import Log
+    globals()['Log'] = Log
 
 
 class LogsListResponse(ModelNormal):
@@ -72,15 +67,16 @@ class LogsListResponse(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'logs': ([log.Log],),  # noqa: E501
+            'logs': ([Log],),  # noqa: E501
             'next_log_id': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
         }
@@ -88,6 +84,7 @@ class LogsListResponse(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'logs': 'logs',  # noqa: E501
@@ -108,7 +105,7 @@ class LogsListResponse(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """logs_list_response.LogsListResponse - a model defined in OpenAPI
+        """LogsListResponse - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -141,7 +138,7 @@ class LogsListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            logs ([log.Log]): Array of logs matching the request and the &#x60;nextLogId&#x60; if sent.. [optional]  # noqa: E501
+            logs ([Log]): Array of logs matching the request and the &#x60;nextLogId&#x60; if sent.. [optional]  # noqa: E501
             next_log_id (str): Hash identifier of the next log to return in the list. This parameter is used for the pagination feature.. [optional]  # noqa: E501
             status (str): Status of the response.. [optional]  # noqa: E501
         """
@@ -169,7 +166,7 @@ class LogsListResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

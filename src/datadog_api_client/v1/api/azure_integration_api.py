@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,14 +15,12 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import azure_account
-from datadog_api_client.v1.model import azure_account_list_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.azure_account import AzureAccount
+from datadog_api_client.v1.model.azure_account_list_response import AzureAccountListResponse
 
 
 class AzureIntegrationApi(object):
@@ -57,7 +50,7 @@ class AzureIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (azure_account.AzureAccount): Create a Datadog-Azure integration for your Datadog account request body.
+                body (AzureAccount): Create a Datadog-Azure integration for your Datadog account request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -141,7 +134,7 @@ class AzureIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (azure_account.AzureAccount,),
+                        (AzureAccount,),
                 },
                 'attribute_map': {
                 },
@@ -178,7 +171,7 @@ class AzureIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (azure_account.AzureAccount): Delete a given Datadog-Azure integration request body.
+                body (AzureAccount): Delete a given Datadog-Azure integration request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -262,7 +255,7 @@ class AzureIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (azure_account.AzureAccount,),
+                        (AzureAccount,),
                 },
                 'attribute_map': {
                 },
@@ -320,7 +313,7 @@ class AzureIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                azure_account_list_response.AzureAccountListResponse
+                AzureAccountListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -347,7 +340,7 @@ class AzureIntegrationApi(object):
 
         self.list_azure_integration = Endpoint(
             settings={
-                'response_type': (azure_account_list_response.AzureAccountListResponse,),
+                'response_type': (AzureAccountListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -407,7 +400,7 @@ class AzureIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (azure_account.AzureAccount): Update a Datadog-Azure integration&#39;s host filters request body.
+                body (AzureAccount): Update a Datadog-Azure integration&#39;s host filters request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -491,7 +484,7 @@ class AzureIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (azure_account.AzureAccount,),
+                        (AzureAccount,),
                 },
                 'attribute_map': {
                 },
@@ -528,7 +521,7 @@ class AzureIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (azure_account.AzureAccount): Update a Datadog-Azure integration request body.
+                body (AzureAccount): Update a Datadog-Azure integration request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -612,7 +605,7 @@ class AzureIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (azure_account.AzureAccount,),
+                        (AzureAccount,),
                 },
                 'attribute_map': {
                 },

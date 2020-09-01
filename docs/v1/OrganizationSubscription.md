@@ -1,4 +1,4 @@
-# organization_subscription.OrganizationSubscription
+# OrganizationSubscription
 
 Subscription definition.
 ## Properties

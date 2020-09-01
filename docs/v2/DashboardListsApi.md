@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_dashboard_list_items**
-> dashboard_list_add_items_response.DashboardListAddItemsResponse create_dashboard_list_items(dashboard_list_id, body)
+> DashboardListAddItemsResponse create_dashboard_list_items(dashboard_list_id, body)
 
 Add Items to a Dashboard List
 
@@ -22,13 +22,12 @@ Add dashboards to an existing dashboard list.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import dashboard_lists_api
-from datadog_api_client.v2.model import dashboard_list_add_items_request
-from datadog_api_client.v2.model import dashboard_list_add_items_response
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -65,9 +64,16 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
-    dashboard_list_id = 56 # int | ID of the dashboard list to add items to.
-    body = dashboard_list_add_items_request.DashboardListAddItemsRequest() # dashboard_list_add_items_request.DashboardListAddItemsRequest | Dashboards to add to the dashboard list.
-    
+    dashboard_list_id = 1 # int | ID of the dashboard list to add items to.
+    body = DashboardListAddItemsRequest(
+        dashboards=[
+            DashboardListItemRequest(
+                id="q5j-nti-fv6",
+                type=DashboardType("custom_timeboard"),
+            ),
+        ],
+    ) # DashboardListAddItemsRequest | Dashboards to add to the dashboard list.
+
     # example passing only required values which don't have defaults set
     try:
         # Add Items to a Dashboard List
@@ -82,11 +88,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dashboard_list_id** | **int**| ID of the dashboard list to add items to. |
- **body** | [**dashboard_list_add_items_request.DashboardListAddItemsRequest**](DashboardListAddItemsRequest.md)| Dashboards to add to the dashboard list. |
+ **body** | [**DashboardListAddItemsRequest**](DashboardListAddItemsRequest.md)| Dashboards to add to the dashboard list. |
 
 ### Return type
 
-[**dashboard_list_add_items_response.DashboardListAddItemsResponse**](DashboardListAddItemsResponse.md)
+[**DashboardListAddItemsResponse**](DashboardListAddItemsResponse.md)
 
 ### Authorization
 
@@ -108,7 +114,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_dashboard_list_items**
-> dashboard_list_delete_items_response.DashboardListDeleteItemsResponse delete_dashboard_list_items(dashboard_list_id, body)
+> DashboardListDeleteItemsResponse delete_dashboard_list_items(dashboard_list_id, body)
 
 Delete items from a dashboard list
 
@@ -119,13 +125,12 @@ Delete dashboards from an existing dashboard list.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import dashboard_lists_api
-from datadog_api_client.v2.model import dashboard_list_delete_items_request
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import dashboard_list_delete_items_response
+from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.dashboard_list_delete_items_response import DashboardListDeleteItemsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -162,9 +167,16 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
-    dashboard_list_id = 56 # int | ID of the dashboard list to delete items from.
-    body = dashboard_list_delete_items_request.DashboardListDeleteItemsRequest() # dashboard_list_delete_items_request.DashboardListDeleteItemsRequest | Dashboards to delete from the dashboard list.
-    
+    dashboard_list_id = 1 # int | ID of the dashboard list to delete items from.
+    body = DashboardListDeleteItemsRequest(
+        dashboards=[
+            DashboardListItemRequest(
+                id="q5j-nti-fv6",
+                type=DashboardType("custom_timeboard"),
+            ),
+        ],
+    ) # DashboardListDeleteItemsRequest | Dashboards to delete from the dashboard list.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete items from a dashboard list
@@ -179,11 +191,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dashboard_list_id** | **int**| ID of the dashboard list to delete items from. |
- **body** | [**dashboard_list_delete_items_request.DashboardListDeleteItemsRequest**](DashboardListDeleteItemsRequest.md)| Dashboards to delete from the dashboard list. |
+ **body** | [**DashboardListDeleteItemsRequest**](DashboardListDeleteItemsRequest.md)| Dashboards to delete from the dashboard list. |
 
 ### Return type
 
-[**dashboard_list_delete_items_response.DashboardListDeleteItemsResponse**](DashboardListDeleteItemsResponse.md)
+[**DashboardListDeleteItemsResponse**](DashboardListDeleteItemsResponse.md)
 
 ### Authorization
 
@@ -205,7 +217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_dashboard_list_items**
-> dashboard_list_items.DashboardListItems get_dashboard_list_items(dashboard_list_id)
+> DashboardListItems get_dashboard_list_items(dashboard_list_id)
 
 Get a Dashboard List
 
@@ -216,12 +228,11 @@ Fetch the dashboard list’s dashboard definitions.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import dashboard_lists_api
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import dashboard_list_items
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -258,8 +269,8 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
-    dashboard_list_id = 56 # int | ID of the dashboard list to get items from.
-    
+    dashboard_list_id = 1 # int | ID of the dashboard list to get items from.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a Dashboard List
@@ -277,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**dashboard_list_items.DashboardListItems**](DashboardListItems.md)
+[**DashboardListItems**](DashboardListItems.md)
 
 ### Authorization
 
@@ -298,7 +309,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_dashboard_list_items**
-> dashboard_list_update_items_response.DashboardListUpdateItemsResponse update_dashboard_list_items(dashboard_list_id, body)
+> DashboardListUpdateItemsResponse update_dashboard_list_items(dashboard_list_id, body)
 
 Update items of a dashboard list
 
@@ -309,13 +320,12 @@ Update dashboards of an existing dashboard list.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import dashboard_lists_api
-from datadog_api_client.v2.model import dashboard_list_update_items_response
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import dashboard_list_update_items_request
+from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
+from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -352,9 +362,16 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
-    dashboard_list_id = 56 # int | ID of the dashboard list to update items from.
-    body = dashboard_list_update_items_request.DashboardListUpdateItemsRequest() # dashboard_list_update_items_request.DashboardListUpdateItemsRequest | New dashboards of the dashboard list.
-    
+    dashboard_list_id = 1 # int | ID of the dashboard list to update items from.
+    body = DashboardListUpdateItemsRequest(
+        dashboards=[
+            DashboardListItemRequest(
+                id="q5j-nti-fv6",
+                type=DashboardType("custom_timeboard"),
+            ),
+        ],
+    ) # DashboardListUpdateItemsRequest | New dashboards of the dashboard list.
+
     # example passing only required values which don't have defaults set
     try:
         # Update items of a dashboard list
@@ -369,11 +386,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dashboard_list_id** | **int**| ID of the dashboard list to update items from. |
- **body** | [**dashboard_list_update_items_request.DashboardListUpdateItemsRequest**](DashboardListUpdateItemsRequest.md)| New dashboards of the dashboard list. |
+ **body** | [**DashboardListUpdateItemsRequest**](DashboardListUpdateItemsRequest.md)| New dashboards of the dashboard list. |
 
 ### Return type
 
-[**dashboard_list_update_items_response.DashboardListUpdateItemsResponse**](DashboardListUpdateItemsResponse.md)
+[**DashboardListUpdateItemsResponse**](DashboardListUpdateItemsResponse.md)
 
 ### Authorization
 
