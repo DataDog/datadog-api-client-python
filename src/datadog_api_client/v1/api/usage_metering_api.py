@@ -42,6 +42,7 @@ from datadog_api_client.v1.model.usage_synthetics_response import UsageSynthetic
 from datadog_api_client.v1.model.usage_timeseries_response import UsageTimeseriesResponse
 from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopAvgMetricsResponse
 from datadog_api_client.v1.model.usage_trace_response import UsageTraceResponse
+from datadog_api_client.v1.model.usage_tracing_without_limits_response import UsageTracingWithoutLimitsResponse
 
 
 class UsageMeteringApi(object):
@@ -558,6 +559,132 @@ class UsageMeteringApi(object):
             },
             api_client=api_client,
             callable=__get_specified_monthly_custom_reports
+        )
+
+        def __get_tracing_without_limits(
+            self,
+            start_hr,
+            **kwargs
+        ):
+            """Get hourly usage for tracing without limits  # noqa: E501
+
+            Get hourly usage for tracing without limits.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_tracing_without_limits(start_hr, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.
+
+            Keyword Args:
+                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                UsageTracingWithoutLimitsResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['start_hr'] = \
+                start_hr
+            return self.call_with_http_info(**kwargs)
+
+        self.get_tracing_without_limits = Endpoint(
+            settings={
+                'response_type': (UsageTracingWithoutLimitsResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/usage/tracing-without-limits',
+                'operation_id': 'get_tracing_without_limits',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'start_hr',
+                    'end_hr',
+                ],
+                'required': [
+                    'start_hr',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'start_hr':
+                        (datetime,),
+                    'end_hr':
+                        (datetime,),
+                },
+                'attribute_map': {
+                    'start_hr': 'start_hr',
+                    'end_hr': 'end_hr',
+                },
+                'location_map': {
+                    'start_hr': 'query',
+                    'end_hr': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json;datetime-format=rfc3339'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_tracing_without_limits
         )
 
         def __get_usage_analyzed_logs(

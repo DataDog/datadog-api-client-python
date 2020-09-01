@@ -151,3 +151,9 @@ Feature: Usage Metering
     Given new "GetUsageProfiling" request
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get hourly usage for tracing without limits returns "OK" response
+    Given new "GetTracingWithoutLimits" request
+    When the request is sent
+    Then the response status is 200 OK

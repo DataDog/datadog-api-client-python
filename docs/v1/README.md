@@ -248,6 +248,7 @@ Class | Method | HTTP request | Description
 *UsageMeteringApi* | [**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports | Get the list of available monthly custom reports
 *UsageMeteringApi* | [**get_specified_daily_custom_reports**](UsageMeteringApi.md#get_specified_daily_custom_reports) | **GET** /api/v1/daily_custom_reports/{report_id} | Get specified daily custom reports
 *UsageMeteringApi* | [**get_specified_monthly_custom_reports**](UsageMeteringApi.md#get_specified_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports/{report_id} | Get specified monthly custom reports
+*UsageMeteringApi* | [**get_tracing_without_limits**](UsageMeteringApi.md#get_tracing_without_limits) | **GET** /api/v1/usage/tracing-without-limits | Get hourly usage for tracing without limits
 *UsageMeteringApi* | [**get_usage_analyzed_logs**](UsageMeteringApi.md#get_usage_analyzed_logs) | **GET** /api/v1/usage/analyzed_logs | Get hourly usage for analyzed logs
 *UsageMeteringApi* | [**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get billable usage across your multi-org account
 *UsageMeteringApi* | [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
@@ -789,6 +790,8 @@ for each hour for a given organization..md)
  - [UsageTopAvgMetricsResponse](Response containing the number of hourly recorded custom metrics for a given organization..md)
  - [UsageTraceHour](The hours of trace usage..md)
  - [UsageTraceResponse](A response containing trace usage..md)
+ - [UsageTracingWithoutLimitsHour](Tracing without limits usage for a given organization for a given hour..md)
+ - [UsageTracingWithoutLimitsResponse](Response containing the tracing without limits usage for each hour for a given organization..md)
  - [User](Create, edit, and disable users..md)
  - [UserDisableResponse](Array of user disabled for a given organization..md)
  - [UserListResponse](Array of Datadog users for a given organization..md)
