@@ -381,6 +381,8 @@ from datadog_api_client.v1.model.usage_top_avg_metrics_hour import UsageTopAvgMe
 from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopAvgMetricsResponse
 from datadog_api_client.v1.model.usage_trace_hour import UsageTraceHour
 from datadog_api_client.v1.model.usage_trace_response import UsageTraceResponse
+from datadog_api_client.v1.model.usage_tracing_without_limits_hour import UsageTracingWithoutLimitsHour
+from datadog_api_client.v1.model.usage_tracing_without_limits_response import UsageTracingWithoutLimitsResponse
 from datadog_api_client.v1.model.user import User
 from datadog_api_client.v1.model.user_disable_response import UserDisableResponse
 from datadog_api_client.v1.model.user_list_response import UserListResponse
