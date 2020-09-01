@@ -126,6 +126,12 @@ def snake_case(value):
     return re.sub("([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
 
 
+def glom(value, path):
+    from glom import glom as g
+    # replace foo[index].bar by foo.index.bar
+    return g(value, re.sub('\[([0-9]*)\]', '.\\1', path))
+
+
 @pytest.fixture
 def unique(request, freezer):
     test_class = request.cls
@@ -309,8 +315,6 @@ def request_body(fixtures, api_request, data):
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(fixtures, api_request, name, path):
     """Set request parameter."""
-    from glom import glom
-
     api_request["kwargs"][name] = parameter = glom(fixtures, path)
     return parameter
 
@@ -372,7 +376,6 @@ def the_status_is(api_request, status, description):
 
 @then(parsers.parse('expect response "{response_path}" to equal to {value}'))
 def expect_equal(api_request, fixtures, response_path, value):
-    from glom import glom
     from jinja2 import Template
 
     response_value = glom(api_request["response"][0], response_path)
@@ -382,8 +385,6 @@ def expect_equal(api_request, fixtures, response_path, value):
 
 @then(parsers.parse('expect response "{response_path}" to equal value from "{fixture_path}"'))
 def expect_equal_value(api_request, fixtures, response_path, fixture_path):
-    from glom import glom
-
     fixture_value = glom(fixtures, fixture_path)
     response_value = glom(api_request["response"][0], response_path)
     assert fixture_value == response_value
@@ -391,7 +392,5 @@ def expect_equal_value(api_request, fixtures, response_path, fixture_path):
 
 @then(parsers.parse('expect response "{response_path}" to be false'))
 def expect_false(api_request, response_path):
-    from glom import glom
-
     response_value = glom(api_request["response"][0], response_path)
     assert not response_value
