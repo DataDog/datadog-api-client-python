@@ -374,7 +374,7 @@ def the_status_is(api_request, status, description):
     assert status == api_request["response"][1]
 
 
-@then(parsers.parse('expect response "{response_path}" to equal to {value}'))
+@then(parsers.parse('the response "{response_path}" is equal to {value}'))
 def expect_equal(api_request, fixtures, response_path, value):
     from jinja2 import Template
 
@@ -383,14 +383,14 @@ def expect_equal(api_request, fixtures, response_path, value):
     assert test_value == response_value
 
 
-@then(parsers.parse('expect response "{response_path}" to equal value from "{fixture_path}"'))
+@then(parsers.parse('the response "{response_path}" has same value as "{fixture_path}"'))
 def expect_equal_value(api_request, fixtures, response_path, fixture_path):
     fixture_value = glom(fixtures, fixture_path)
     response_value = glom(api_request["response"][0], response_path)
     assert fixture_value == response_value
 
 
-@then(parsers.parse('expect response "{response_path}" to be false'))
+@then(parsers.parse('the response "{response_path}" is false'))
 def expect_false(api_request, response_path):
     response_value = glom(api_request["response"][0], response_path)
     assert not response_value
