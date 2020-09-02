@@ -1,4 +1,4 @@
-# monitor_thresholds.MonitorThresholds
+# MonitorThresholds
 
 List of the different monitor threshold available.
 ## Properties

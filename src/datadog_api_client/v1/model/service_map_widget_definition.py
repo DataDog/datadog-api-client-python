@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import service_map_widget_definition_type
-except ImportError:
-    service_map_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.service_map_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_custom_link
-except ImportError:
-    widget_custom_link = sys.modules[
-        'datadog_api_client.v1.model.widget_custom_link']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+
+def lazy_import():
+    from datadog_api_client.v1.model.service_map_widget_definition_type import ServiceMapWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    globals()['ServiceMapWidgetDefinitionType'] = ServiceMapWidgetDefinitionType
+    globals()['WidgetCustomLink'] = WidgetCustomLink
+    globals()['WidgetTextAlign'] = WidgetTextAlign
 
 
 class ServiceMapWidgetDefinition(ModelNormal):
@@ -82,26 +71,28 @@ class ServiceMapWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'filters': ([str],),  # noqa: E501
             'service': (str,),  # noqa: E501
-            'type': (service_map_widget_definition_type.ServiceMapWidgetDefinitionType,),  # noqa: E501
-            'custom_links': ([widget_custom_link.WidgetCustomLink],),  # noqa: E501
+            'type': (ServiceMapWidgetDefinitionType,),  # noqa: E501
+            'custom_links': ([WidgetCustomLink],),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'filters': 'filters',  # noqa: E501
@@ -126,12 +117,12 @@ class ServiceMapWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, filters, service, type, *args, **kwargs):  # noqa: E501
-        """service_map_widget_definition.ServiceMapWidgetDefinition - a model defined in OpenAPI
+        """ServiceMapWidgetDefinition - a model defined in OpenAPI
 
         Args:
             filters ([str]): Your environment and primary tag (or * if enabled for your account).
             service (str): The ID of the service you want to map.
-            type (service_map_widget_definition_type.ServiceMapWidgetDefinitionType):
+            type (ServiceMapWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -164,9 +155,9 @@ class ServiceMapWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            custom_links ([widget_custom_link.WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
+            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             title (str): The title of your widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
@@ -196,7 +187,7 @@ class ServiceMapWidgetDefinition(ModelNormal):
         self.filters = filters
         self.service = service
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

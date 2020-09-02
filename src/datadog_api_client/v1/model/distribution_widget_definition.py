@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import distribution_widget_definition_type
-except ImportError:
-    distribution_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.distribution_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import distribution_widget_request
-except ImportError:
-    distribution_widget_request = sys.modules[
-        'datadog_api_client.v1.model.distribution_widget_request']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
-try:
-    from datadog_api_client.v1.model import widget_time
-except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+
+def lazy_import():
+    from datadog_api_client.v1.model.distribution_widget_definition_type import DistributionWidgetDefinitionType
+    from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    globals()['DistributionWidgetDefinitionType'] = DistributionWidgetDefinitionType
+    globals()['DistributionWidgetRequest'] = DistributionWidgetRequest
+    globals()['WidgetTextAlign'] = WidgetTextAlign
+    globals()['WidgetTime'] = WidgetTime
 
 
 class DistributionWidgetDefinition(ModelNormal):
@@ -87,27 +73,29 @@ class DistributionWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'requests': ([distribution_widget_request.DistributionWidgetRequest],),  # noqa: E501
-            'type': (distribution_widget_definition_type.DistributionWidgetDefinitionType,),  # noqa: E501
+            'requests': ([DistributionWidgetRequest],),  # noqa: E501
+            'type': (DistributionWidgetDefinitionType,),  # noqa: E501
             'legend_size': (str,),  # noqa: E501
             'show_legend': (bool,),  # noqa: E501
-            'time': (widget_time.WidgetTime,),  # noqa: E501
+            'time': (WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
-            'title_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
+            'title_align': (WidgetTextAlign,),  # noqa: E501
             'title_size': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'requests': 'requests',  # noqa: E501
@@ -133,11 +121,11 @@ class DistributionWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, requests, type, *args, **kwargs):  # noqa: E501
-        """distribution_widget_definition.DistributionWidgetDefinition - a model defined in OpenAPI
+        """DistributionWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            requests ([distribution_widget_request.DistributionWidgetRequest]): Array of one request object to display in the widget.  See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)  to learn how to build the &#x60;REQUEST_SCHEMA&#x60;.
-            type (distribution_widget_definition_type.DistributionWidgetDefinitionType):
+            requests ([DistributionWidgetRequest]): Array of one request object to display in the widget.  See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)  to learn how to build the &#x60;REQUEST_SCHEMA&#x60;.
+            type (DistributionWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -172,9 +160,9 @@ class DistributionWidgetDefinition(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
             show_legend (bool): Whether or not to display the legend on this widget.. [optional]  # noqa: E501
-            time (widget_time.WidgetTime): [optional]  # noqa: E501
+            time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
@@ -203,7 +191,7 @@ class DistributionWidgetDefinition(ModelNormal):
 
         self.requests = requests
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

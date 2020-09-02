@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import widget_comparator
-except ImportError:
-    widget_comparator = sys.modules[
-        'datadog_api_client.v1.model.widget_comparator']
-try:
-    from datadog_api_client.v1.model import widget_palette
-except ImportError:
-    widget_palette = sys.modules[
-        'datadog_api_client.v1.model.widget_palette']
+
+def lazy_import():
+    from datadog_api_client.v1.model.widget_comparator import WidgetComparator
+    from datadog_api_client.v1.model.widget_palette import WidgetPalette
+    globals()['WidgetComparator'] = WidgetComparator
+    globals()['WidgetPalette'] = WidgetPalette
 
 
 class WidgetConditionalFormat(ModelNormal):
@@ -77,16 +69,17 @@ class WidgetConditionalFormat(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'comparator': (widget_comparator.WidgetComparator,),  # noqa: E501
-            'palette': (widget_palette.WidgetPalette,),  # noqa: E501
+            'comparator': (WidgetComparator,),  # noqa: E501
+            'palette': (WidgetPalette,),  # noqa: E501
             'value': (float,),  # noqa: E501
             'custom_bg_color': (str,),  # noqa: E501
             'custom_fg_color': (str,),  # noqa: E501
@@ -99,6 +92,7 @@ class WidgetConditionalFormat(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'comparator': 'comparator',  # noqa: E501
@@ -125,11 +119,11 @@ class WidgetConditionalFormat(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, comparator, palette, value, *args, **kwargs):  # noqa: E501
-        """widget_conditional_format.WidgetConditionalFormat - a model defined in OpenAPI
+        """WidgetConditionalFormat - a model defined in OpenAPI
 
         Args:
-            comparator (widget_comparator.WidgetComparator):
-            palette (widget_palette.WidgetPalette):
+            comparator (WidgetComparator):
+            palette (WidgetPalette):
             value (float): Value for the comparator.
 
         Keyword Args:
@@ -197,7 +191,7 @@ class WidgetConditionalFormat(ModelNormal):
         self.comparator = comparator
         self.palette = palette
         self.value = value
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

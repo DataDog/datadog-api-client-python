@@ -1,4 +1,4 @@
-# host_meta.HostMeta
+# HostMeta
 
 Metadata associated with your host.
 ## Properties

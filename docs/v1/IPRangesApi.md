@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_ip_ranges**
-> ip_ranges.IPRanges get_ip_ranges()
+> IPRanges get_ip_ranges()
 
 List IP Ranges
 
@@ -17,11 +17,10 @@ Get information about Datadog IP ranges.
 ### Example
 
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import ip_ranges_api
-from datadog_api_client.v1.model import ip_ranges
+from datadog_api_client.v1.model.ip_ranges import IPRanges
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -34,7 +33,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = ip_ranges_api.IPRangesApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # List IP Ranges
@@ -49,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ip_ranges.IPRanges**](IPRanges.md)
+[**IPRanges**](IPRanges.md)
 
 ### Authorization
 

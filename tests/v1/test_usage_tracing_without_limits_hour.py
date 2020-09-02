@@ -5,16 +5,15 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
-import datadog_api_client.v2
-from datadog_api_client.v2.model.logs_list_response_meta_page import LogsListResponseMetaPage
+import datadog_api_client.v1
+from datadog_api_client.v1.model.usage_tracing_without_limits_hour import UsageTracingWithoutLimitsHour
 
 
-class TestLogsListResponseMetaPage(unittest.TestCase):
-    """LogsListResponseMetaPage unit test stubs"""
+class TestUsageTracingWithoutLimitsHour(unittest.TestCase):
+    """UsageTracingWithoutLimitsHour unit test stubs"""
 
     def setUp(self):
         pass
@@ -22,10 +21,10 @@ class TestLogsListResponseMetaPage(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testLogsListResponseMetaPage(self):
-        """Test LogsListResponseMetaPage"""
+    def testUsageTracingWithoutLimitsHour(self):
+        """Test UsageTracingWithoutLimitsHour"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = LogsListResponseMetaPage()  # noqa: E501
+        # model = UsageTracingWithoutLimitsHour()  # noqa: E501
         pass
 
 

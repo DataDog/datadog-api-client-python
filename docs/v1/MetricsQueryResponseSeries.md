@@ -1,4 +1,4 @@
-# metrics_query_response_series.MetricsQueryResponseSeries
+# MetricsQueryResponseSeries
 
 Object containing all metric names returned and their associated metadata.
 ## Properties
@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **interval** | **int** | Number of seconds between data samples. | [optional] [readonly] 
 **length** | **int** | Number of data samples. | [optional] [readonly] 
 **metric** | **str** | Metric name. | [optional] [readonly] 
-**pointlist** | [**[point.Point]**](Point.md) | List of points of the time series. | [optional] [readonly] 
+**pointlist** | [**[Point]**](Point.md) | List of points of the time series. | [optional] [readonly] 
 **scope** | **str** | Metric scope, comma separated list of tags. | [optional] [readonly] 
 **start** | **int** | Start of the time window, milliseconds since Unix epoch. | [optional] [readonly] 
-**unit** | [**[metrics_query_response_unit.MetricsQueryResponseUnit]**](MetricsQueryResponseUnit.md) | Detailed information about the metric unit. First element describes the \&quot;primary unit\&quot; (for example, &#x60;bytes&#x60; in &#x60;bytes per second&#x60;), second describes the \&quot;per unit\&quot; (for example, &#x60;second&#x60; in &#x60;bytes per second&#x60;). | [optional] [readonly] 
+**unit** | [**[MetricsQueryResponseUnit]**](MetricsQueryResponseUnit.md) | Detailed information about the metric unit. First element describes the \&quot;primary unit\&quot; (for example, &#x60;bytes&#x60; in &#x60;bytes per second&#x60;), second describes the \&quot;per unit\&quot; (for example, &#x60;second&#x60; in &#x60;bytes per second&#x60;). | [optional] [readonly] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

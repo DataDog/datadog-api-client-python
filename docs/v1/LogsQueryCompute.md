@@ -1,4 +1,4 @@
-# logs_query_compute.LogsQueryCompute
+# LogsQueryCompute
 
 Define computation for a log query.
 ## Properties

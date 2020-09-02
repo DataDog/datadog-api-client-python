@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,41 +21,23 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import organization
-except ImportError:
-    organization = sys.modules[
-        'datadog_api_client.v2.model.organization']
-try:
-    from datadog_api_client.v2.model import permission
-except ImportError:
-    permission = sys.modules[
-        'datadog_api_client.v2.model.permission']
-try:
-    from datadog_api_client.v2.model import role
-except ImportError:
-    role = sys.modules[
-        'datadog_api_client.v2.model.role']
-try:
-    from datadog_api_client.v2.model import role_attributes
-except ImportError:
-    role_attributes = sys.modules[
-        'datadog_api_client.v2.model.role_attributes']
-try:
-    from datadog_api_client.v2.model import role_response_relationships
-except ImportError:
-    role_response_relationships = sys.modules[
-        'datadog_api_client.v2.model.role_response_relationships']
-try:
-    from datadog_api_client.v2.model import roles_type
-except ImportError:
-    roles_type = sys.modules[
-        'datadog_api_client.v2.model.roles_type']
+
+def lazy_import():
+    from datadog_api_client.v2.model.organization import Organization
+    from datadog_api_client.v2.model.permission import Permission
+    from datadog_api_client.v2.model.role import Role
+    from datadog_api_client.v2.model.role_attributes import RoleAttributes
+    from datadog_api_client.v2.model.role_response_relationships import RoleResponseRelationships
+    from datadog_api_client.v2.model.roles_type import RolesType
+    globals()['Organization'] = Organization
+    globals()['Permission'] = Permission
+    globals()['Role'] = Role
+    globals()['RoleAttributes'] = RoleAttributes
+    globals()['RoleResponseRelationships'] = RoleResponseRelationships
+    globals()['RolesType'] = RolesType
 
 
 class UserResponseIncludedItem(ModelComposed):
@@ -90,15 +70,22 @@ class UserResponseIncludedItem(ModelComposed):
     validations = {
     }
 
-    additional_properties_type = (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
@@ -109,6 +96,7 @@ class UserResponseIncludedItem(ModelComposed):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {}
 
@@ -126,12 +114,12 @@ class UserResponseIncludedItem(ModelComposed):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """user_response_included_item.UserResponseIncludedItem - a model defined in OpenAPI
+        """UserResponseIncludedItem - a model defined in OpenAPI
 
         Args:
 
         Keyword Args:
-            type (roles_type.RolesType): defaults to nulltype.Null, must be one of ["roles", ]  # noqa: E501
+            type (RolesType): defaults to nulltype.Null, must be one of ["roles", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -162,9 +150,9 @@ class UserResponseIncludedItem(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (role_attributes.RoleAttributes): [optional]  # noqa: E501
+            attributes (RoleAttributes): [optional]  # noqa: E501
             id (str): ID of the role.. [optional]  # noqa: E501
-            relationships (role_response_relationships.RoleResponseRelationships): [optional]  # noqa: E501
+            relationships (RoleResponseRelationships): [optional]  # noqa: E501
         """
 
         type = kwargs.get('type', nulltype.Null)
@@ -218,7 +206,7 @@ class UserResponseIncludedItem(ModelComposed):
 
         for var_name, var_value in required_args.items():
             setattr(self, var_name, var_value)
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name in unused_args and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \
@@ -236,14 +224,15 @@ class UserResponseIncludedItem(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
+        lazy_import()
         return {
           'anyOf': [
           ],
           'allOf': [
           ],
           'oneOf': [
-              organization.Organization,
-              permission.Permission,
-              role.Role,
+              Organization,
+              Permission,
+              Role,
           ],
         }

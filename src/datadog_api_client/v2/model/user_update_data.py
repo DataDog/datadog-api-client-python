@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import user_update_attributes
-except ImportError:
-    user_update_attributes = sys.modules[
-        'datadog_api_client.v2.model.user_update_attributes']
-try:
-    from datadog_api_client.v2.model import users_type
-except ImportError:
-    users_type = sys.modules[
-        'datadog_api_client.v2.model.users_type']
+
+def lazy_import():
+    from datadog_api_client.v2.model.user_update_attributes import UserUpdateAttributes
+    from datadog_api_client.v2.model.users_type import UsersType
+    globals()['UserUpdateAttributes'] = UserUpdateAttributes
+    globals()['UsersType'] = UsersType
 
 
 class UserUpdateData(ModelNormal):
@@ -77,22 +69,24 @@ class UserUpdateData(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'attributes': (user_update_attributes.UserUpdateAttributes,),  # noqa: E501
+            'attributes': (UserUpdateAttributes,),  # noqa: E501
             'id': (str,),  # noqa: E501
-            'type': (users_type.UsersType,),  # noqa: E501
+            'type': (UsersType,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'attributes': 'attributes',  # noqa: E501
@@ -113,7 +107,7 @@ class UserUpdateData(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """user_update_data.UserUpdateData - a model defined in OpenAPI
+        """UserUpdateData - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -146,9 +140,9 @@ class UserUpdateData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (user_update_attributes.UserUpdateAttributes): [optional]  # noqa: E501
+            attributes (UserUpdateAttributes): [optional]  # noqa: E501
             id (str): ID of the user.. [optional]  # noqa: E501
-            type (users_type.UsersType): [optional]  # noqa: E501
+            type (UsersType): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -174,7 +168,7 @@ class UserUpdateData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

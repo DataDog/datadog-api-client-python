@@ -1,4 +1,4 @@
-# permission_attributes.PermissionAttributes
+# PermissionAttributes
 
 Attributes of a permission.
 ## Properties

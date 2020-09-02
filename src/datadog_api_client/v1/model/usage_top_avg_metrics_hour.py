@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import usage_metric_category
-except ImportError:
-    usage_metric_category = sys.modules[
-        'datadog_api_client.v1.model.usage_metric_category']
+
+def lazy_import():
+    from datadog_api_client.v1.model.usage_metric_category import UsageMetricCategory
+    globals()['UsageMetricCategory'] = UsageMetricCategory
 
 
 class UsageTopAvgMetricsHour(ModelNormal):
@@ -72,23 +67,25 @@ class UsageTopAvgMetricsHour(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'avg_metric_hour': (int,),  # noqa: E501
             'max_metric_hour': (int,),  # noqa: E501
-            'metric_category': (usage_metric_category.UsageMetricCategory,),  # noqa: E501
+            'metric_category': (UsageMetricCategory,),  # noqa: E501
             'metric_name': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'avg_metric_hour': 'avg_metric_hour',  # noqa: E501
@@ -110,7 +107,7 @@ class UsageTopAvgMetricsHour(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """usage_top_avg_metrics_hour.UsageTopAvgMetricsHour - a model defined in OpenAPI
+        """UsageTopAvgMetricsHour - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -145,7 +142,7 @@ class UsageTopAvgMetricsHour(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             avg_metric_hour (int): Average number of timeseries per hour in which the metric occurs.. [optional]  # noqa: E501
             max_metric_hour (int): Maximum number of timeseries per hour in which the metric occurs.. [optional]  # noqa: E501
-            metric_category (usage_metric_category.UsageMetricCategory): [optional]  # noqa: E501
+            metric_category (UsageMetricCategory): [optional]  # noqa: E501
             metric_name (str): Contains the custom metric name.. [optional]  # noqa: E501
         """
 
@@ -172,7 +169,7 @@ class UsageTopAvgMetricsHour(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

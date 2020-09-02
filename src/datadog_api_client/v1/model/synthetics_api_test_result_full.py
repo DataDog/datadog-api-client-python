@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_api_test_result_data
-except ImportError:
-    synthetics_api_test_result_data = sys.modules[
-        'datadog_api_client.v1.model.synthetics_api_test_result_data']
-try:
-    from datadog_api_client.v1.model import synthetics_api_test_result_full_check
-except ImportError:
-    synthetics_api_test_result_full_check = sys.modules[
-        'datadog_api_client.v1.model.synthetics_api_test_result_full_check']
-try:
-    from datadog_api_client.v1.model import synthetics_test_monitor_status
-except ImportError:
-    synthetics_test_monitor_status = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_monitor_status']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_api_test_result_data import SyntheticsAPITestResultData
+    from datadog_api_client.v1.model.synthetics_api_test_result_full_check import SyntheticsAPITestResultFullCheck
+    from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
+    globals()['SyntheticsAPITestResultData'] = SyntheticsAPITestResultData
+    globals()['SyntheticsAPITestResultFullCheck'] = SyntheticsAPITestResultFullCheck
+    globals()['SyntheticsTestMonitorStatus'] = SyntheticsTestMonitorStatus
 
 
 class SyntheticsAPITestResultFull(ModelNormal):
@@ -82,26 +71,28 @@ class SyntheticsAPITestResultFull(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'check': (synthetics_api_test_result_full_check.SyntheticsAPITestResultFullCheck,),  # noqa: E501
+            'check': (SyntheticsAPITestResultFullCheck,),  # noqa: E501
             'check_time': (float,),  # noqa: E501
             'check_version': (int,),  # noqa: E501
             'probe_dc': (str,),  # noqa: E501
-            'result': (synthetics_api_test_result_data.SyntheticsAPITestResultData,),  # noqa: E501
+            'result': (SyntheticsAPITestResultData,),  # noqa: E501
             'result_id': (str,),  # noqa: E501
-            'status': (synthetics_test_monitor_status.SyntheticsTestMonitorStatus,),  # noqa: E501
+            'status': (SyntheticsTestMonitorStatus,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'check': 'check',  # noqa: E501
@@ -126,7 +117,7 @@ class SyntheticsAPITestResultFull(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_api_test_result_full.SyntheticsAPITestResultFull - a model defined in OpenAPI
+        """SyntheticsAPITestResultFull - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -159,13 +150,13 @@ class SyntheticsAPITestResultFull(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            check (synthetics_api_test_result_full_check.SyntheticsAPITestResultFullCheck): [optional]  # noqa: E501
+            check (SyntheticsAPITestResultFullCheck): [optional]  # noqa: E501
             check_time (float): When the API test was conducted.. [optional]  # noqa: E501
             check_version (int): Version of the API test used.. [optional]  # noqa: E501
             probe_dc (str): Locations for which to query the API test results.. [optional]  # noqa: E501
-            result (synthetics_api_test_result_data.SyntheticsAPITestResultData): [optional]  # noqa: E501
+            result (SyntheticsAPITestResultData): [optional]  # noqa: E501
             result_id (str): ID of the API test result.. [optional]  # noqa: E501
-            status (synthetics_test_monitor_status.SyntheticsTestMonitorStatus): [optional]  # noqa: E501
+            status (SyntheticsTestMonitorStatus): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -191,7 +182,7 @@ class SyntheticsAPITestResultFull(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

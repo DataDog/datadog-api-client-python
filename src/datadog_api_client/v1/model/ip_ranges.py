@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,46 +21,25 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import ip_prefixes_agents
-except ImportError:
-    ip_prefixes_agents = sys.modules[
-        'datadog_api_client.v1.model.ip_prefixes_agents']
-try:
-    from datadog_api_client.v1.model import ip_prefixes_api
-except ImportError:
-    ip_prefixes_api = sys.modules[
-        'datadog_api_client.v1.model.ip_prefixes_api']
-try:
-    from datadog_api_client.v1.model import ip_prefixes_apm
-except ImportError:
-    ip_prefixes_apm = sys.modules[
-        'datadog_api_client.v1.model.ip_prefixes_apm']
-try:
-    from datadog_api_client.v1.model import ip_prefixes_logs
-except ImportError:
-    ip_prefixes_logs = sys.modules[
-        'datadog_api_client.v1.model.ip_prefixes_logs']
-try:
-    from datadog_api_client.v1.model import ip_prefixes_process
-except ImportError:
-    ip_prefixes_process = sys.modules[
-        'datadog_api_client.v1.model.ip_prefixes_process']
-try:
-    from datadog_api_client.v1.model import ip_prefixes_synthetics
-except ImportError:
-    ip_prefixes_synthetics = sys.modules[
-        'datadog_api_client.v1.model.ip_prefixes_synthetics']
-try:
-    from datadog_api_client.v1.model import ip_prefixes_webhooks
-except ImportError:
-    ip_prefixes_webhooks = sys.modules[
-        'datadog_api_client.v1.model.ip_prefixes_webhooks']
+
+def lazy_import():
+    from datadog_api_client.v1.model.ip_prefixes_agents import IPPrefixesAgents
+    from datadog_api_client.v1.model.ip_prefixes_api import IPPrefixesAPI
+    from datadog_api_client.v1.model.ip_prefixes_apm import IPPrefixesAPM
+    from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
+    from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
+    from datadog_api_client.v1.model.ip_prefixes_synthetics import IPPrefixesSynthetics
+    from datadog_api_client.v1.model.ip_prefixes_webhooks import IPPrefixesWebhooks
+    globals()['IPPrefixesAPI'] = IPPrefixesAPI
+    globals()['IPPrefixesAPM'] = IPPrefixesAPM
+    globals()['IPPrefixesAgents'] = IPPrefixesAgents
+    globals()['IPPrefixesLogs'] = IPPrefixesLogs
+    globals()['IPPrefixesProcess'] = IPPrefixesProcess
+    globals()['IPPrefixesSynthetics'] = IPPrefixesSynthetics
+    globals()['IPPrefixesWebhooks'] = IPPrefixesWebhooks
 
 
 class IPRanges(ModelNormal):
@@ -102,28 +79,30 @@ class IPRanges(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'agents': (ip_prefixes_agents.IPPrefixesAgents,),  # noqa: E501
-            'api': (ip_prefixes_api.IPPrefixesAPI,),  # noqa: E501
-            'apm': (ip_prefixes_apm.IPPrefixesAPM,),  # noqa: E501
-            'logs': (ip_prefixes_logs.IPPrefixesLogs,),  # noqa: E501
+            'agents': (IPPrefixesAgents,),  # noqa: E501
+            'api': (IPPrefixesAPI,),  # noqa: E501
+            'apm': (IPPrefixesAPM,),  # noqa: E501
+            'logs': (IPPrefixesLogs,),  # noqa: E501
             'modified': (str,),  # noqa: E501
-            'process': (ip_prefixes_process.IPPrefixesProcess,),  # noqa: E501
-            'synthetics': (ip_prefixes_synthetics.IPPrefixesSynthetics,),  # noqa: E501
+            'process': (IPPrefixesProcess,),  # noqa: E501
+            'synthetics': (IPPrefixesSynthetics,),  # noqa: E501
             'version': (int,),  # noqa: E501
-            'webhooks': (ip_prefixes_webhooks.IPPrefixesWebhooks,),  # noqa: E501
+            'webhooks': (IPPrefixesWebhooks,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'agents': 'agents',  # noqa: E501
@@ -150,7 +129,7 @@ class IPRanges(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """ip_ranges.IPRanges - a model defined in OpenAPI
+        """IPRanges - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -183,15 +162,15 @@ class IPRanges(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            agents (ip_prefixes_agents.IPPrefixesAgents): [optional]  # noqa: E501
-            api (ip_prefixes_api.IPPrefixesAPI): [optional]  # noqa: E501
-            apm (ip_prefixes_apm.IPPrefixesAPM): [optional]  # noqa: E501
-            logs (ip_prefixes_logs.IPPrefixesLogs): [optional]  # noqa: E501
+            agents (IPPrefixesAgents): [optional]  # noqa: E501
+            api (IPPrefixesAPI): [optional]  # noqa: E501
+            apm (IPPrefixesAPM): [optional]  # noqa: E501
+            logs (IPPrefixesLogs): [optional]  # noqa: E501
             modified (str): Date when last updated, in the form &#x60;YYYY-MM-DD-hh-mm-ss&#x60;.. [optional]  # noqa: E501
-            process (ip_prefixes_process.IPPrefixesProcess): [optional]  # noqa: E501
-            synthetics (ip_prefixes_synthetics.IPPrefixesSynthetics): [optional]  # noqa: E501
+            process (IPPrefixesProcess): [optional]  # noqa: E501
+            synthetics (IPPrefixesSynthetics): [optional]  # noqa: E501
             version (int): Version of the IP list.. [optional]  # noqa: E501
-            webhooks (ip_prefixes_webhooks.IPPrefixesWebhooks): [optional]  # noqa: E501
+            webhooks (IPPrefixesWebhooks): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -217,7 +196,7 @@ class IPRanges(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

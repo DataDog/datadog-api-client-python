@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,14 +15,12 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import gcp_account
-from datadog_api_client.v1.model import gcp_account_list_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.gcp_account import GCPAccount
+from datadog_api_client.v1.model.gcp_account_list_response import GCPAccountListResponse
 
 
 class GCPIntegrationApi(object):
@@ -57,7 +50,7 @@ class GCPIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (gcp_account.GCPAccount): Create a Datadog-GCP integration.
+                body (GCPAccount): Create a Datadog-GCP integration.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -141,7 +134,7 @@ class GCPIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (gcp_account.GCPAccount,),
+                        (GCPAccount,),
                 },
                 'attribute_map': {
                 },
@@ -178,7 +171,7 @@ class GCPIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (gcp_account.GCPAccount): Delete a given Datadog-GCP integration.
+                body (GCPAccount): Delete a given Datadog-GCP integration.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -262,7 +255,7 @@ class GCPIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (gcp_account.GCPAccount,),
+                        (GCPAccount,),
                 },
                 'attribute_map': {
                 },
@@ -320,7 +313,7 @@ class GCPIntegrationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                gcp_account_list_response.GCPAccountListResponse
+                GCPAccountListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -347,7 +340,7 @@ class GCPIntegrationApi(object):
 
         self.list_gcp_integration = Endpoint(
             settings={
-                'response_type': (gcp_account_list_response.GCPAccountListResponse,),
+                'response_type': (GCPAccountListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -407,7 +400,7 @@ class GCPIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (gcp_account.GCPAccount): Update a Datadog-GCP integration.
+                body (GCPAccount): Update a Datadog-GCP integration.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -491,7 +484,7 @@ class GCPIntegrationApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (gcp_account.GCPAccount,),
+                        (GCPAccount,),
                 },
                 'attribute_map': {
                 },

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import logs_archive_attributes
-except ImportError:
-    logs_archive_attributes = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_attributes']
+
+def lazy_import():
+    from datadog_api_client.v2.model.logs_archive_attributes import LogsArchiveAttributes
+    globals()['LogsArchiveAttributes'] = LogsArchiveAttributes
 
 
 class LogsArchiveDefinition(ModelNormal):
@@ -72,22 +67,24 @@ class LogsArchiveDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'type': (str,),  # noqa: E501
-            'attributes': (logs_archive_attributes.LogsArchiveAttributes,),  # noqa: E501
+            'attributes': (LogsArchiveAttributes,),  # noqa: E501
             'id': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'type': 'type',  # noqa: E501
@@ -108,12 +105,12 @@ class LogsArchiveDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """logs_archive_definition.LogsArchiveDefinition - a model defined in OpenAPI
+        """LogsArchiveDefinition - a model defined in OpenAPI
 
         Args:
 
         Keyword Args:
-            type (str): The type of the resource. The value should always be archives.. defaults to 'archives'  # noqa: E501
+            type (str): The type of the resource. The value should always be archives.. defaults to "archives"  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -144,11 +141,11 @@ class LogsArchiveDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (logs_archive_attributes.LogsArchiveAttributes): [optional]  # noqa: E501
+            attributes (LogsArchiveAttributes): [optional]  # noqa: E501
             id (str): The archive ID.. [optional]  # noqa: E501
         """
 
-        type = kwargs.get('type', 'archives')
+        type = kwargs.get('type', "archives")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -173,7 +170,7 @@ class LogsArchiveDefinition(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

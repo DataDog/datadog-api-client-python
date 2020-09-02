@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_api_test_result_short_result
-except ImportError:
-    synthetics_api_test_result_short_result = sys.modules[
-        'datadog_api_client.v1.model.synthetics_api_test_result_short_result']
-try:
-    from datadog_api_client.v1.model import synthetics_test_monitor_status
-except ImportError:
-    synthetics_test_monitor_status = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_monitor_status']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_api_test_result_short_result import SyntheticsAPITestResultShortResult
+    from datadog_api_client.v1.model.synthetics_test_monitor_status import SyntheticsTestMonitorStatus
+    globals()['SyntheticsAPITestResultShortResult'] = SyntheticsAPITestResultShortResult
+    globals()['SyntheticsTestMonitorStatus'] = SyntheticsTestMonitorStatus
 
 
 class SyntheticsAPITestResultShort(ModelNormal):
@@ -77,24 +69,26 @@ class SyntheticsAPITestResultShort(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'check_time': (float,),  # noqa: E501
             'probe_dc': (str,),  # noqa: E501
-            'result': (synthetics_api_test_result_short_result.SyntheticsAPITestResultShortResult,),  # noqa: E501
+            'result': (SyntheticsAPITestResultShortResult,),  # noqa: E501
             'result_id': (str,),  # noqa: E501
-            'status': (synthetics_test_monitor_status.SyntheticsTestMonitorStatus,),  # noqa: E501
+            'status': (SyntheticsTestMonitorStatus,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'check_time': 'check_time',  # noqa: E501
@@ -117,7 +111,7 @@ class SyntheticsAPITestResultShort(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_api_test_result_short.SyntheticsAPITestResultShort - a model defined in OpenAPI
+        """SyntheticsAPITestResultShort - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -152,9 +146,9 @@ class SyntheticsAPITestResultShort(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             check_time (float): Last time the API test was performed.. [optional]  # noqa: E501
             probe_dc (str): Location from which the API test was performed.. [optional]  # noqa: E501
-            result (synthetics_api_test_result_short_result.SyntheticsAPITestResultShortResult): [optional]  # noqa: E501
+            result (SyntheticsAPITestResultShortResult): [optional]  # noqa: E501
             result_id (str): ID of the API test result.. [optional]  # noqa: E501
-            status (synthetics_test_monitor_status.SyntheticsTestMonitorStatus): [optional]  # noqa: E501
+            status (SyntheticsTestMonitorStatus): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -180,7 +174,7 @@ class SyntheticsAPITestResultShort(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

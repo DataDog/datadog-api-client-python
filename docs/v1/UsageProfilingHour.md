@@ -1,4 +1,4 @@
-# usage_profiling_hour.UsageProfilingHour
+# UsageProfilingHour
 
 The number of profiled hosts for each hour for a given organization.
 ## Properties

@@ -1,4 +1,4 @@
-# synthetics_delete_tests_response_deleted_tests.SyntheticsDeleteTestsResponseDeletedTests
+# SyntheticsDeleteTestsResponseDeletedTests
 
 Object containing a deleted Synthetic test ID with the associated deletion timestamp.
 ## Properties

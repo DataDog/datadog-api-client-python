@@ -1,4 +1,4 @@
-# usage_synthetics_browser_hour.UsageSyntheticsBrowserHour
+# UsageSyntheticsBrowserHour
 
 Number of Synthetics Browser tests run for each hour for a given organization.
 ## Properties

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import logs_archive_destination_s3_type
-except ImportError:
-    logs_archive_destination_s3_type = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_destination_s3_type']
-try:
-    from datadog_api_client.v2.model import logs_archive_integration_s3
-except ImportError:
-    logs_archive_integration_s3 = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_integration_s3']
+
+def lazy_import():
+    from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArchiveDestinationS3Type
+    from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
+    globals()['LogsArchiveDestinationS3Type'] = LogsArchiveDestinationS3Type
+    globals()['LogsArchiveIntegrationS3'] = LogsArchiveIntegrationS3
 
 
 class LogsArchiveDestinationS3(ModelNormal):
@@ -77,23 +69,25 @@ class LogsArchiveDestinationS3(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'bucket': (str,),  # noqa: E501
-            'integration': (logs_archive_integration_s3.LogsArchiveIntegrationS3,),  # noqa: E501
-            'type': (logs_archive_destination_s3_type.LogsArchiveDestinationS3Type,),  # noqa: E501
+            'integration': (LogsArchiveIntegrationS3,),  # noqa: E501
+            'type': (LogsArchiveDestinationS3Type,),  # noqa: E501
             'path': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'bucket': 'bucket',  # noqa: E501
@@ -115,12 +109,12 @@ class LogsArchiveDestinationS3(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, bucket, integration, type, *args, **kwargs):  # noqa: E501
-        """logs_archive_destination_s3.LogsArchiveDestinationS3 - a model defined in OpenAPI
+        """LogsArchiveDestinationS3 - a model defined in OpenAPI
 
         Args:
             bucket (str): The bucket where the archive will be stored.
-            integration (logs_archive_integration_s3.LogsArchiveIntegrationS3):
-            type (logs_archive_destination_s3_type.LogsArchiveDestinationS3Type):
+            integration (LogsArchiveIntegrationS3):
+            type (LogsArchiveDestinationS3Type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -182,7 +176,7 @@ class LogsArchiveDestinationS3(ModelNormal):
         self.bucket = bucket
         self.integration = integration
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

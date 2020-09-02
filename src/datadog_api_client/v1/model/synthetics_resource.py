@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_resource_type
-except ImportError:
-    synthetics_resource_type = sys.modules[
-        'datadog_api_client.v1.model.synthetics_resource_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_resource_type import SyntheticsResourceType
+    globals()['SyntheticsResourceType'] = SyntheticsResourceType
 
 
 class SyntheticsResource(ModelNormal):
@@ -72,13 +67,14 @@ class SyntheticsResource(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'duration': (float,),  # noqa: E501
             'method': (str,),  # noqa: E501
@@ -86,13 +82,14 @@ class SyntheticsResource(ModelNormal):
             'status': (int,),  # noqa: E501
             'timestamp': (float,),  # noqa: E501
             'trace_id': (str,),  # noqa: E501
-            'type': (synthetics_resource_type.SyntheticsResourceType,),  # noqa: E501
+            'type': (SyntheticsResourceType,),  # noqa: E501
             'url': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'duration': 'duration',  # noqa: E501
@@ -118,7 +115,7 @@ class SyntheticsResource(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_resource.SyntheticsResource - a model defined in OpenAPI
+        """SyntheticsResource - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -157,7 +154,7 @@ class SyntheticsResource(ModelNormal):
             status (int): Status Code of the resource.. [optional]  # noqa: E501
             timestamp (float): Timestamp of the resource collection.. [optional]  # noqa: E501
             trace_id (str): Trace ID associated with the resource if any.. [optional]  # noqa: E501
-            type (synthetics_resource_type.SyntheticsResourceType): [optional]  # noqa: E501
+            type (SyntheticsResourceType): [optional]  # noqa: E501
             url (str): URL of the resource.. [optional]  # noqa: E501
         """
 
@@ -184,7 +181,7 @@ class SyntheticsResource(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

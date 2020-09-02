@@ -1,4 +1,4 @@
-# application_key.ApplicationKey
+# ApplicationKey
 
 An application key with its associated metadata.
 ## Properties

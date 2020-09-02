@@ -1,10 +1,10 @@
-# usage_logs_by_index_response.UsageLogsByIndexResponse
+# UsageLogsByIndexResponse
 
 Response containing the number of indexed logs for each hour and index for a given organization.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**usage** | [**[usage_logs_by_index_hour.UsageLogsByIndexHour]**](UsageLogsByIndexHour.md) | An array of objects regarding hourly usage of logs by index response. | [optional] 
+**usage** | [**[UsageLogsByIndexHour]**](UsageLogsByIndexHour.md) | An array of objects regarding hourly usage of logs by index response. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

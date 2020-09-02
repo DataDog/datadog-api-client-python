@@ -1,4 +1,4 @@
-# apm_resources_query_definition.ApmResourcesQueryDefinition
+# ApmResourcesQueryDefinition
 
 The APM resources (stats) query for Table Widget.
 ## Properties

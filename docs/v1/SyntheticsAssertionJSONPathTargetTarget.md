@@ -1,4 +1,4 @@
-# synthetics_assertion_json_path_target_target.SyntheticsAssertionJSONPathTargetTarget
+# SyntheticsAssertionJSONPathTargetTarget
 
 Composed target for `validatesJSONPath` operator.
 ## Properties

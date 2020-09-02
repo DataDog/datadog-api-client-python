@@ -1,4 +1,4 @@
-# ip_prefixes_api.IPPrefixesAPI
+# IPPrefixesAPI
 
 Available prefix information for the API endpoints.
 ## Properties

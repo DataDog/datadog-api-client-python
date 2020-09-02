@@ -1,4 +1,4 @@
-# logs_archive_integration_s3.LogsArchiveIntegrationS3
+# LogsArchiveIntegrationS3
 
 The S3 Archive's integration destination.
 ## Properties

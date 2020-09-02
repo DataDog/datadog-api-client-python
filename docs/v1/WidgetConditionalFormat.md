@@ -1,11 +1,11 @@
-# widget_conditional_format.WidgetConditionalFormat
+# WidgetConditionalFormat
 
 Define a conditional format for the widget.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comparator** | [**widget_comparator.WidgetComparator**](WidgetComparator.md) |  | 
-**palette** | [**widget_palette.WidgetPalette**](WidgetPalette.md) |  | 
+**comparator** | [**WidgetComparator**](WidgetComparator.md) |  | 
+**palette** | [**WidgetPalette**](WidgetPalette.md) |  | 
 **value** | **float** | Value for the comparator. | 
 **custom_bg_color** | **str** | Color palette to apply to the background, same values available as palette. | [optional] 
 **custom_fg_color** | **str** | Color palette to apply to the foreground, same values available as palette. | [optional] 

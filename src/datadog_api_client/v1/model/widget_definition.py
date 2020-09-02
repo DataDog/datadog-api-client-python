@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,261 +21,111 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import alert_graph_widget_definition
-except ImportError:
-    alert_graph_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.alert_graph_widget_definition']
-try:
-    from datadog_api_client.v1.model import alert_value_widget_definition
-except ImportError:
-    alert_value_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.alert_value_widget_definition']
-try:
-    from datadog_api_client.v1.model import change_widget_definition
-except ImportError:
-    change_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.change_widget_definition']
-try:
-    from datadog_api_client.v1.model import check_status_widget_definition
-except ImportError:
-    check_status_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.check_status_widget_definition']
-try:
-    from datadog_api_client.v1.model import distribution_widget_definition
-except ImportError:
-    distribution_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.distribution_widget_definition']
-try:
-    from datadog_api_client.v1.model import event_stream_widget_definition
-except ImportError:
-    event_stream_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.event_stream_widget_definition']
-try:
-    from datadog_api_client.v1.model import event_timeline_widget_definition
-except ImportError:
-    event_timeline_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.event_timeline_widget_definition']
-try:
-    from datadog_api_client.v1.model import free_text_widget_definition
-except ImportError:
-    free_text_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.free_text_widget_definition']
-try:
-    from datadog_api_client.v1.model import group_widget_definition
-except ImportError:
-    group_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.group_widget_definition']
-try:
-    from datadog_api_client.v1.model import heat_map_widget_definition
-except ImportError:
-    heat_map_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.heat_map_widget_definition']
-try:
-    from datadog_api_client.v1.model import host_map_widget_definition
-except ImportError:
-    host_map_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.host_map_widget_definition']
-try:
-    from datadog_api_client.v1.model import host_map_widget_definition_style
-except ImportError:
-    host_map_widget_definition_style = sys.modules[
-        'datadog_api_client.v1.model.host_map_widget_definition_style']
-try:
-    from datadog_api_client.v1.model import i_frame_widget_definition
-except ImportError:
-    i_frame_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.i_frame_widget_definition']
-try:
-    from datadog_api_client.v1.model import image_widget_definition
-except ImportError:
-    image_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.image_widget_definition']
-try:
-    from datadog_api_client.v1.model import log_stream_widget_definition
-except ImportError:
-    log_stream_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.log_stream_widget_definition']
-try:
-    from datadog_api_client.v1.model import monitor_summary_widget_definition
-except ImportError:
-    monitor_summary_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.monitor_summary_widget_definition']
-try:
-    from datadog_api_client.v1.model import note_widget_definition
-except ImportError:
-    note_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.note_widget_definition']
-try:
-    from datadog_api_client.v1.model import query_value_widget_definition
-except ImportError:
-    query_value_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.query_value_widget_definition']
-try:
-    from datadog_api_client.v1.model import scatter_plot_widget_definition
-except ImportError:
-    scatter_plot_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.scatter_plot_widget_definition']
-try:
-    from datadog_api_client.v1.model import service_map_widget_definition
-except ImportError:
-    service_map_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.service_map_widget_definition']
-try:
-    from datadog_api_client.v1.model import service_summary_widget_definition
-except ImportError:
-    service_summary_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.service_summary_widget_definition']
-try:
-    from datadog_api_client.v1.model import slo_widget_definition
-except ImportError:
-    slo_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.slo_widget_definition']
-try:
-    from datadog_api_client.v1.model import table_widget_definition
-except ImportError:
-    table_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.table_widget_definition']
-try:
-    from datadog_api_client.v1.model import timeseries_widget_definition
-except ImportError:
-    timeseries_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.timeseries_widget_definition']
-try:
-    from datadog_api_client.v1.model import toplist_widget_definition
-except ImportError:
-    toplist_widget_definition = sys.modules[
-        'datadog_api_client.v1.model.toplist_widget_definition']
-try:
-    from datadog_api_client.v1.model import toplist_widget_definition_type
-except ImportError:
-    toplist_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.toplist_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import toplist_widget_request
-except ImportError:
-    toplist_widget_request = sys.modules[
-        'datadog_api_client.v1.model.toplist_widget_request']
-try:
-    from datadog_api_client.v1.model import widget
-except ImportError:
-    widget = sys.modules[
-        'datadog_api_client.v1.model.widget']
-try:
-    from datadog_api_client.v1.model import widget_axis
-except ImportError:
-    widget_axis = sys.modules[
-        'datadog_api_client.v1.model.widget_axis']
-try:
-    from datadog_api_client.v1.model import widget_color_preference
-except ImportError:
-    widget_color_preference = sys.modules[
-        'datadog_api_client.v1.model.widget_color_preference']
-try:
-    from datadog_api_client.v1.model import widget_custom_link
-except ImportError:
-    widget_custom_link = sys.modules[
-        'datadog_api_client.v1.model.widget_custom_link']
-try:
-    from datadog_api_client.v1.model import widget_event
-except ImportError:
-    widget_event = sys.modules[
-        'datadog_api_client.v1.model.widget_event']
-try:
-    from datadog_api_client.v1.model import widget_event_size
-except ImportError:
-    widget_event_size = sys.modules[
-        'datadog_api_client.v1.model.widget_event_size']
-try:
-    from datadog_api_client.v1.model import widget_grouping
-except ImportError:
-    widget_grouping = sys.modules[
-        'datadog_api_client.v1.model.widget_grouping']
-try:
-    from datadog_api_client.v1.model import widget_image_sizing
-except ImportError:
-    widget_image_sizing = sys.modules[
-        'datadog_api_client.v1.model.widget_image_sizing']
-try:
-    from datadog_api_client.v1.model import widget_layout_type
-except ImportError:
-    widget_layout_type = sys.modules[
-        'datadog_api_client.v1.model.widget_layout_type']
-try:
-    from datadog_api_client.v1.model import widget_margin
-except ImportError:
-    widget_margin = sys.modules[
-        'datadog_api_client.v1.model.widget_margin']
-try:
-    from datadog_api_client.v1.model import widget_marker
-except ImportError:
-    widget_marker = sys.modules[
-        'datadog_api_client.v1.model.widget_marker']
-try:
-    from datadog_api_client.v1.model import widget_message_display
-except ImportError:
-    widget_message_display = sys.modules[
-        'datadog_api_client.v1.model.widget_message_display']
-try:
-    from datadog_api_client.v1.model import widget_monitor_summary_sort
-except ImportError:
-    widget_monitor_summary_sort = sys.modules[
-        'datadog_api_client.v1.model.widget_monitor_summary_sort']
-try:
-    from datadog_api_client.v1.model import widget_node_type
-except ImportError:
-    widget_node_type = sys.modules[
-        'datadog_api_client.v1.model.widget_node_type']
-try:
-    from datadog_api_client.v1.model import widget_service_summary_display_format
-except ImportError:
-    widget_service_summary_display_format = sys.modules[
-        'datadog_api_client.v1.model.widget_service_summary_display_format']
-try:
-    from datadog_api_client.v1.model import widget_size_format
-except ImportError:
-    widget_size_format = sys.modules[
-        'datadog_api_client.v1.model.widget_size_format']
-try:
-    from datadog_api_client.v1.model import widget_summary_type
-except ImportError:
-    widget_summary_type = sys.modules[
-        'datadog_api_client.v1.model.widget_summary_type']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
-try:
-    from datadog_api_client.v1.model import widget_tick_edge
-except ImportError:
-    widget_tick_edge = sys.modules[
-        'datadog_api_client.v1.model.widget_tick_edge']
-try:
-    from datadog_api_client.v1.model import widget_time
-except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
-try:
-    from datadog_api_client.v1.model import widget_time_windows
-except ImportError:
-    widget_time_windows = sys.modules[
-        'datadog_api_client.v1.model.widget_time_windows']
-try:
-    from datadog_api_client.v1.model import widget_view_mode
-except ImportError:
-    widget_view_mode = sys.modules[
-        'datadog_api_client.v1.model.widget_view_mode']
-try:
-    from datadog_api_client.v1.model import widget_viz_type
-except ImportError:
-    widget_viz_type = sys.modules[
-        'datadog_api_client.v1.model.widget_viz_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
+    from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
+    from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
+    from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
+    from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
+    from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
+    from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
+    from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
+    from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
+    from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
+    from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
+    from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
+    from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
+    from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
+    from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
+    from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
+    from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
+    from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
+    from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
+    from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
+    from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
+    from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
+    from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
+    from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
+    from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
+    from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
+    from datadog_api_client.v1.model.toplist_widget_request import ToplistWidgetRequest
+    from datadog_api_client.v1.model.widget import Widget
+    from datadog_api_client.v1.model.widget_axis import WidgetAxis
+    from datadog_api_client.v1.model.widget_color_preference import WidgetColorPreference
+    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+    from datadog_api_client.v1.model.widget_event import WidgetEvent
+    from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
+    from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
+    from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
+    from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
+    from datadog_api_client.v1.model.widget_margin import WidgetMargin
+    from datadog_api_client.v1.model.widget_marker import WidgetMarker
+    from datadog_api_client.v1.model.widget_message_display import WidgetMessageDisplay
+    from datadog_api_client.v1.model.widget_monitor_summary_sort import WidgetMonitorSummarySort
+    from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
+    from datadog_api_client.v1.model.widget_service_summary_display_format import WidgetServiceSummaryDisplayFormat
+    from datadog_api_client.v1.model.widget_size_format import WidgetSizeFormat
+    from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
+    from datadog_api_client.v1.model.widget_time import WidgetTime
+    from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
+    from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
+    from datadog_api_client.v1.model.widget_viz_type import WidgetVizType
+    globals()['AlertGraphWidgetDefinition'] = AlertGraphWidgetDefinition
+    globals()['AlertValueWidgetDefinition'] = AlertValueWidgetDefinition
+    globals()['ChangeWidgetDefinition'] = ChangeWidgetDefinition
+    globals()['CheckStatusWidgetDefinition'] = CheckStatusWidgetDefinition
+    globals()['DistributionWidgetDefinition'] = DistributionWidgetDefinition
+    globals()['EventStreamWidgetDefinition'] = EventStreamWidgetDefinition
+    globals()['EventTimelineWidgetDefinition'] = EventTimelineWidgetDefinition
+    globals()['FreeTextWidgetDefinition'] = FreeTextWidgetDefinition
+    globals()['GroupWidgetDefinition'] = GroupWidgetDefinition
+    globals()['HeatMapWidgetDefinition'] = HeatMapWidgetDefinition
+    globals()['HostMapWidgetDefinition'] = HostMapWidgetDefinition
+    globals()['HostMapWidgetDefinitionStyle'] = HostMapWidgetDefinitionStyle
+    globals()['IFrameWidgetDefinition'] = IFrameWidgetDefinition
+    globals()['ImageWidgetDefinition'] = ImageWidgetDefinition
+    globals()['LogStreamWidgetDefinition'] = LogStreamWidgetDefinition
+    globals()['MonitorSummaryWidgetDefinition'] = MonitorSummaryWidgetDefinition
+    globals()['NoteWidgetDefinition'] = NoteWidgetDefinition
+    globals()['QueryValueWidgetDefinition'] = QueryValueWidgetDefinition
+    globals()['SLOWidgetDefinition'] = SLOWidgetDefinition
+    globals()['ScatterPlotWidgetDefinition'] = ScatterPlotWidgetDefinition
+    globals()['ServiceMapWidgetDefinition'] = ServiceMapWidgetDefinition
+    globals()['ServiceSummaryWidgetDefinition'] = ServiceSummaryWidgetDefinition
+    globals()['TableWidgetDefinition'] = TableWidgetDefinition
+    globals()['TimeseriesWidgetDefinition'] = TimeseriesWidgetDefinition
+    globals()['ToplistWidgetDefinition'] = ToplistWidgetDefinition
+    globals()['ToplistWidgetDefinitionType'] = ToplistWidgetDefinitionType
+    globals()['ToplistWidgetRequest'] = ToplistWidgetRequest
+    globals()['Widget'] = Widget
+    globals()['WidgetAxis'] = WidgetAxis
+    globals()['WidgetColorPreference'] = WidgetColorPreference
+    globals()['WidgetCustomLink'] = WidgetCustomLink
+    globals()['WidgetEvent'] = WidgetEvent
+    globals()['WidgetEventSize'] = WidgetEventSize
+    globals()['WidgetGrouping'] = WidgetGrouping
+    globals()['WidgetImageSizing'] = WidgetImageSizing
+    globals()['WidgetLayoutType'] = WidgetLayoutType
+    globals()['WidgetMargin'] = WidgetMargin
+    globals()['WidgetMarker'] = WidgetMarker
+    globals()['WidgetMessageDisplay'] = WidgetMessageDisplay
+    globals()['WidgetMonitorSummarySort'] = WidgetMonitorSummarySort
+    globals()['WidgetNodeType'] = WidgetNodeType
+    globals()['WidgetServiceSummaryDisplayFormat'] = WidgetServiceSummaryDisplayFormat
+    globals()['WidgetSizeFormat'] = WidgetSizeFormat
+    globals()['WidgetSummaryType'] = WidgetSummaryType
+    globals()['WidgetTextAlign'] = WidgetTextAlign
+    globals()['WidgetTickEdge'] = WidgetTickEdge
+    globals()['WidgetTime'] = WidgetTime
+    globals()['WidgetTimeWindows'] = WidgetTimeWindows
+    globals()['WidgetViewMode'] = WidgetViewMode
+    globals()['WidgetVizType'] = WidgetVizType
 
 
 class WidgetDefinition(ModelComposed):
@@ -310,15 +158,22 @@ class WidgetDefinition(ModelComposed):
     validations = {
     }
 
-    additional_properties_type = (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
@@ -329,6 +184,7 @@ class WidgetDefinition(ModelComposed):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {}
 
@@ -346,21 +202,21 @@ class WidgetDefinition(ModelComposed):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """widget_definition.WidgetDefinition - a model defined in OpenAPI
+        """WidgetDefinition - a model defined in OpenAPI
 
         Args:
 
         Keyword Args:
             alert_id (str): ID of the alert to use in the widget.. defaults to nulltype.Null  # noqa: E501
-            type (toplist_widget_definition_type.ToplistWidgetDefinitionType): defaults to nulltype.Null, must be one of ["toplist", ]  # noqa: E501
-            viz_type (widget_viz_type.WidgetVizType): defaults to nulltype.Null, must be one of ["timeseries", "toplist", ]  # noqa: E501
-            requests ([toplist_widget_request.ToplistWidgetRequest]): List of top list widget requests.. defaults to nulltype.Null  # noqa: E501
+            type (ToplistWidgetDefinitionType): defaults to nulltype.Null, must be one of ["toplist", ]  # noqa: E501
+            viz_type (WidgetVizType): defaults to nulltype.Null, must be one of ["timeseries", "toplist", ]  # noqa: E501
+            requests ([ToplistWidgetRequest]): List of top list widget requests.. defaults to nulltype.Null  # noqa: E501
             check (str): Name of the check to use in the widget.. defaults to nulltype.Null  # noqa: E501
-            grouping (widget_grouping.WidgetGrouping): defaults to nulltype.Null, must be one of ["check", "cluster", ]  # noqa: E501
+            grouping (WidgetGrouping): defaults to nulltype.Null, must be one of ["check", "cluster", ]  # noqa: E501
             query (str): Query to filter the monitors with.. defaults to nulltype.Null  # noqa: E501
             text (str): Text to display.. defaults to nulltype.Null  # noqa: E501
-            layout_type (widget_layout_type.WidgetLayoutType): defaults to nulltype.Null, must be one of ["ordered", ]  # noqa: E501
-            widgets ([widget.Widget]): List of widget groups.. defaults to nulltype.Null  # noqa: E501
+            layout_type (WidgetLayoutType): defaults to nulltype.Null, must be one of ["ordered", ]  # noqa: E501
+            widgets ([Widget]): List of widget groups.. defaults to nulltype.Null  # noqa: E501
             url (str): URL of the image.. defaults to nulltype.Null  # noqa: E501
             content (str): Content of the note.. defaults to nulltype.Null  # noqa: E501
             view_type (str): Type of view displayed by the widget.. defaults to nulltype.Null  # noqa: E501
@@ -398,67 +254,67 @@ class WidgetDefinition(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            time (widget_time.WidgetTime): [optional]  # noqa: E501
+            time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of your widget.. [optional]  # noqa: E501
-            title_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
             precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]  # noqa: E501
-            text_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
+            text_align (WidgetTextAlign): [optional]  # noqa: E501
             unit (str): Unit to display with the value.. [optional]  # noqa: E501
-            custom_links ([widget_custom_link.WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
+            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
             group_by ([str]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
             tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
             legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
             show_legend (bool): (screenboard only) Show the legend for this widget.. [optional]  # noqa: E501
-            event_size (widget_event_size.WidgetEventSize): [optional]  # noqa: E501
+            event_size (WidgetEventSize): [optional]  # noqa: E501
             tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]  # noqa: E501
             color (str): Color of the text.. [optional]  # noqa: E501
             font_size (str): Size of the text.. [optional]  # noqa: E501
-            events ([widget_event.WidgetEvent]): List of widget events.. [optional]  # noqa: E501
-            yaxis (widget_axis.WidgetAxis): [optional]  # noqa: E501
+            events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
+            yaxis (WidgetAxis): [optional]  # noqa: E501
             no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]  # noqa: E501
             no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]  # noqa: E501
-            node_type (widget_node_type.WidgetNodeType): [optional]  # noqa: E501
+            node_type (WidgetNodeType): [optional]  # noqa: E501
             notes (str): Notes on the title.. [optional]  # noqa: E501
             scope ([str]): List of tags used to filter the map.. [optional]  # noqa: E501
-            style (host_map_widget_definition_style.HostMapWidgetDefinitionStyle): [optional]  # noqa: E501
-            margin (widget_margin.WidgetMargin): [optional]  # noqa: E501
-            sizing (widget_image_sizing.WidgetImageSizing): [optional]  # noqa: E501
+            style (HostMapWidgetDefinitionStyle): [optional]  # noqa: E501
+            margin (WidgetMargin): [optional]  # noqa: E501
+            sizing (WidgetImageSizing): [optional]  # noqa: E501
             columns ([str]): Which columns to display on the widget.. [optional]  # noqa: E501
             indexes ([str]): An array of index names to query in the stream. Use [] to query all indexes at once.. [optional]  # noqa: E501
             logset (str): ID of the log set to use.. [optional]  # noqa: E501
-            message_display (widget_message_display.WidgetMessageDisplay): [optional]  # noqa: E501
+            message_display (WidgetMessageDisplay): [optional]  # noqa: E501
             show_date_column (bool): Whether to show the date column or not. [optional]  # noqa: E501
             show_message_column (bool): Whether to show the message column or not. [optional]  # noqa: E501
-            sort (widget_monitor_summary_sort.WidgetMonitorSummarySort): [optional]  # noqa: E501
-            color_preference (widget_color_preference.WidgetColorPreference): [optional]  # noqa: E501
+            sort (WidgetMonitorSummarySort): [optional]  # noqa: E501
+            color_preference (WidgetColorPreference): [optional]  # noqa: E501
             count (int): The number of monitors to display.. [optional]  # noqa: E501
-            display_format (widget_service_summary_display_format.WidgetServiceSummaryDisplayFormat): [optional]  # noqa: E501
+            display_format (WidgetServiceSummaryDisplayFormat): [optional]  # noqa: E501
             hide_zero_counts (bool): Whether to show counts of 0 or not.. [optional]  # noqa: E501
             show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]  # noqa: E501
             start (int): The start of the list. Typically 0.. [optional]  # noqa: E501
-            summary_type (widget_summary_type.WidgetSummaryType): [optional]  # noqa: E501
+            summary_type (WidgetSummaryType): [optional]  # noqa: E501
             background_color (str): Background color of the note.. [optional]  # noqa: E501
             show_tick (bool): Whether to show a tick or not.. [optional]  # noqa: E501
-            tick_edge (widget_tick_edge.WidgetTickEdge): [optional]  # noqa: E501
+            tick_edge (WidgetTickEdge): [optional]  # noqa: E501
             tick_pos (str): Where to position the tick on an edge.. [optional]  # noqa: E501
             autoscale (bool): Whether to use auto-scaling or not.. [optional]  # noqa: E501
             custom_unit (str): Display a unit of your choice on the widget.. [optional]  # noqa: E501
             color_by_groups ([str]): List of groups used for colors.. [optional]  # noqa: E501
-            xaxis (widget_axis.WidgetAxis): [optional]  # noqa: E501
+            xaxis (WidgetAxis): [optional]  # noqa: E501
             show_error_budget (bool): Defined error budget.. [optional]  # noqa: E501
             slo_id (str): ID of the SLO displayed.. [optional]  # noqa: E501
-            time_windows ([widget_time_windows.WidgetTimeWindows]): Times being monitored.. [optional]  # noqa: E501
-            view_mode (widget_view_mode.WidgetViewMode): [optional]  # noqa: E501
+            time_windows ([WidgetTimeWindows]): Times being monitored.. [optional]  # noqa: E501
+            view_mode (WidgetViewMode): [optional]  # noqa: E501
             show_breakdown (bool): Whether to show the latency breakdown or not.. [optional]  # noqa: E501
             show_distribution (bool): Whether to show the latency distribution or not.. [optional]  # noqa: E501
             show_errors (bool): Whether to show the error metrics or not.. [optional]  # noqa: E501
             show_hits (bool): Whether to show the hits metrics or not.. [optional]  # noqa: E501
             show_latency (bool): Whether to show the latency metrics or not.. [optional]  # noqa: E501
             show_resource_list (bool): Whether to show the resource list or not.. [optional]  # noqa: E501
-            size_format (widget_size_format.WidgetSizeFormat): [optional]  # noqa: E501
-            markers ([widget_marker.WidgetMarker]): List of markers.. [optional]  # noqa: E501
+            size_format (WidgetSizeFormat): [optional]  # noqa: E501
+            markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
         """
 
         alert_id = kwargs.get('alert_id', nulltype.Null)
@@ -544,7 +400,7 @@ class WidgetDefinition(ModelComposed):
 
         for var_name, var_value in required_args.items():
             setattr(self, var_name, var_value)
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name in unused_args and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \
@@ -562,35 +418,36 @@ class WidgetDefinition(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
+        lazy_import()
         return {
           'anyOf': [
           ],
           'allOf': [
           ],
           'oneOf': [
-              alert_graph_widget_definition.AlertGraphWidgetDefinition,
-              alert_value_widget_definition.AlertValueWidgetDefinition,
-              change_widget_definition.ChangeWidgetDefinition,
-              check_status_widget_definition.CheckStatusWidgetDefinition,
-              distribution_widget_definition.DistributionWidgetDefinition,
-              event_stream_widget_definition.EventStreamWidgetDefinition,
-              event_timeline_widget_definition.EventTimelineWidgetDefinition,
-              free_text_widget_definition.FreeTextWidgetDefinition,
-              group_widget_definition.GroupWidgetDefinition,
-              heat_map_widget_definition.HeatMapWidgetDefinition,
-              host_map_widget_definition.HostMapWidgetDefinition,
-              i_frame_widget_definition.IFrameWidgetDefinition,
-              image_widget_definition.ImageWidgetDefinition,
-              log_stream_widget_definition.LogStreamWidgetDefinition,
-              monitor_summary_widget_definition.MonitorSummaryWidgetDefinition,
-              note_widget_definition.NoteWidgetDefinition,
-              query_value_widget_definition.QueryValueWidgetDefinition,
-              scatter_plot_widget_definition.ScatterPlotWidgetDefinition,
-              service_map_widget_definition.ServiceMapWidgetDefinition,
-              service_summary_widget_definition.ServiceSummaryWidgetDefinition,
-              slo_widget_definition.SLOWidgetDefinition,
-              table_widget_definition.TableWidgetDefinition,
-              timeseries_widget_definition.TimeseriesWidgetDefinition,
-              toplist_widget_definition.ToplistWidgetDefinition,
+              AlertGraphWidgetDefinition,
+              AlertValueWidgetDefinition,
+              ChangeWidgetDefinition,
+              CheckStatusWidgetDefinition,
+              DistributionWidgetDefinition,
+              EventStreamWidgetDefinition,
+              EventTimelineWidgetDefinition,
+              FreeTextWidgetDefinition,
+              GroupWidgetDefinition,
+              HeatMapWidgetDefinition,
+              HostMapWidgetDefinition,
+              IFrameWidgetDefinition,
+              ImageWidgetDefinition,
+              LogStreamWidgetDefinition,
+              MonitorSummaryWidgetDefinition,
+              NoteWidgetDefinition,
+              QueryValueWidgetDefinition,
+              SLOWidgetDefinition,
+              ScatterPlotWidgetDefinition,
+              ServiceMapWidgetDefinition,
+              ServiceSummaryWidgetDefinition,
+              TableWidgetDefinition,
+              TimeseriesWidgetDefinition,
+              ToplistWidgetDefinition,
           ],
         }

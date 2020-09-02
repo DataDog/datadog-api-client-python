@@ -1,4 +1,4 @@
-# aws_account_and_lambda_request.AWSAccountAndLambdaRequest
+# AWSAccountAndLambdaRequest
 
 AWS account ID and Lambda ARN.
 ## Properties

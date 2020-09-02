@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import logs_archive_destination_azure_type
-except ImportError:
-    logs_archive_destination_azure_type = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_destination_azure_type']
-try:
-    from datadog_api_client.v2.model import logs_archive_integration_azure
-except ImportError:
-    logs_archive_integration_azure = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_integration_azure']
+
+def lazy_import():
+    from datadog_api_client.v2.model.logs_archive_destination_azure_type import LogsArchiveDestinationAzureType
+    from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchiveIntegrationAzure
+    globals()['LogsArchiveDestinationAzureType'] = LogsArchiveDestinationAzureType
+    globals()['LogsArchiveIntegrationAzure'] = LogsArchiveIntegrationAzure
 
 
 class LogsArchiveDestinationAzure(ModelNormal):
@@ -77,18 +69,19 @@ class LogsArchiveDestinationAzure(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'container': (str,),  # noqa: E501
-            'integration': (logs_archive_integration_azure.LogsArchiveIntegrationAzure,),  # noqa: E501
+            'integration': (LogsArchiveIntegrationAzure,),  # noqa: E501
             'storage_account': (str,),  # noqa: E501
-            'type': (logs_archive_destination_azure_type.LogsArchiveDestinationAzureType,),  # noqa: E501
+            'type': (LogsArchiveDestinationAzureType,),  # noqa: E501
             'path': (str,),  # noqa: E501
             'region': (str,),  # noqa: E501
         }
@@ -96,6 +89,7 @@ class LogsArchiveDestinationAzure(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'container': 'container',  # noqa: E501
@@ -119,13 +113,13 @@ class LogsArchiveDestinationAzure(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, container, integration, storage_account, type, *args, **kwargs):  # noqa: E501
-        """logs_archive_destination_azure.LogsArchiveDestinationAzure - a model defined in OpenAPI
+        """LogsArchiveDestinationAzure - a model defined in OpenAPI
 
         Args:
             container (str): The container where the archive will be stored.
-            integration (logs_archive_integration_azure.LogsArchiveIntegrationAzure):
+            integration (LogsArchiveIntegrationAzure):
             storage_account (str): The associated storage account.
-            type (logs_archive_destination_azure_type.LogsArchiveDestinationAzureType):
+            type (LogsArchiveDestinationAzureType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -189,7 +183,7 @@ class LogsArchiveDestinationAzure(ModelNormal):
         self.integration = integration
         self.storage_account = storage_account
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

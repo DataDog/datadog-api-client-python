@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import permissions_type
-except ImportError:
-    permissions_type = sys.modules[
-        'datadog_api_client.v2.model.permissions_type']
+
+def lazy_import():
+    from datadog_api_client.v2.model.permissions_type import PermissionsType
+    globals()['PermissionsType'] = PermissionsType
 
 
 class RelationshipToPermissionData(ModelNormal):
@@ -72,21 +67,23 @@ class RelationshipToPermissionData(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'type': (permissions_type.PermissionsType,),  # noqa: E501
+            'type': (PermissionsType,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'id': 'id',  # noqa: E501
@@ -106,7 +103,7 @@ class RelationshipToPermissionData(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """relationship_to_permission_data.RelationshipToPermissionData - a model defined in OpenAPI
+        """RelationshipToPermissionData - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -140,7 +137,7 @@ class RelationshipToPermissionData(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): ID of the permission.. [optional]  # noqa: E501
-            type (permissions_type.PermissionsType): [optional]  # noqa: E501
+            type (PermissionsType): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -166,7 +163,7 @@ class RelationshipToPermissionData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

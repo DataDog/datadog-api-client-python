@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import monitor_device_id
-except ImportError:
-    monitor_device_id = sys.modules[
-        'datadog_api_client.v1.model.monitor_device_id']
-try:
-    from datadog_api_client.v1.model import monitor_options_aggregation
-except ImportError:
-    monitor_options_aggregation = sys.modules[
-        'datadog_api_client.v1.model.monitor_options_aggregation']
-try:
-    from datadog_api_client.v1.model import monitor_threshold_window_options
-except ImportError:
-    monitor_threshold_window_options = sys.modules[
-        'datadog_api_client.v1.model.monitor_threshold_window_options']
-try:
-    from datadog_api_client.v1.model import monitor_thresholds
-except ImportError:
-    monitor_thresholds = sys.modules[
-        'datadog_api_client.v1.model.monitor_thresholds']
+
+def lazy_import():
+    from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+    from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
+    from datadog_api_client.v1.model.monitor_threshold_window_options import MonitorThresholdWindowOptions
+    from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
+    globals()['MonitorDeviceID'] = MonitorDeviceID
+    globals()['MonitorOptionsAggregation'] = MonitorOptionsAggregation
+    globals()['MonitorThresholdWindowOptions'] = MonitorThresholdWindowOptions
+    globals()['MonitorThresholds'] = MonitorThresholds
 
 
 class MonitorOptions(ModelNormal):
@@ -91,16 +77,17 @@ class MonitorOptions(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'aggregation': (monitor_options_aggregation.MonitorOptionsAggregation,),  # noqa: E501
-            'device_ids': ([monitor_device_id.MonitorDeviceID],),  # noqa: E501
+            'aggregation': (MonitorOptionsAggregation,),  # noqa: E501
+            'device_ids': ([MonitorDeviceID],),  # noqa: E501
             'enable_logs_sample': (bool,),  # noqa: E501
             'escalation_message': (str,),  # noqa: E501
             'evaluation_delay': (int, none_type,),  # noqa: E501
@@ -116,14 +103,15 @@ class MonitorOptions(ModelNormal):
             'require_full_window': (bool,),  # noqa: E501
             'silenced': ({str: (int, none_type)},),  # noqa: E501
             'synthetics_check_id': (int, none_type,),  # noqa: E501
-            'threshold_windows': (monitor_threshold_window_options.MonitorThresholdWindowOptions,),  # noqa: E501
-            'thresholds': (monitor_thresholds.MonitorThresholds,),  # noqa: E501
+            'threshold_windows': (MonitorThresholdWindowOptions,),  # noqa: E501
+            'thresholds': (MonitorThresholds,),  # noqa: E501
             'timeout_h': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'aggregation': 'aggregation',  # noqa: E501
@@ -161,7 +149,7 @@ class MonitorOptions(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """monitor_options.MonitorOptions - a model defined in OpenAPI
+        """MonitorOptions - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -194,10 +182,10 @@ class MonitorOptions(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregation (monitor_options_aggregation.MonitorOptionsAggregation): [optional]  # noqa: E501
-            device_ids ([monitor_device_id.MonitorDeviceID]): IDs of the device the Synthetics monitor is running on.. [optional]  # noqa: E501
+            aggregation (MonitorOptionsAggregation): [optional]  # noqa: E501
+            device_ids ([MonitorDeviceID]): IDs of the device the Synthetics monitor is running on.. [optional]  # noqa: E501
             enable_logs_sample (bool): Whether or not to send a log sample when the log monitor triggers.. [optional]  # noqa: E501
-            escalation_message (str): A message to include with a re-notification. Supports the &#x60;@username&#x60; notification we allow elsewhere. Not applicable if &#x60;renotify_interval&#x60; is &#x60;None&#x60;.. [optional] if omitted the server will use the default value of 'none'  # noqa: E501
+            escalation_message (str): A message to include with a re-notification. Supports the &#x60;@username&#x60; notification we allow elsewhere. Not applicable if &#x60;renotify_interval&#x60; is &#x60;None&#x60;.. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             evaluation_delay (int, none_type): Time (in seconds) to delay evaluation, as a non-negative integer. For example, if the value is set to &#x60;300&#x60; (5min), the timeframe is set to &#x60;last_5m&#x60; and the time is 7:00, the monitor evaluates data from 6:50 to 6:55. This is useful for AWS CloudWatch and other backfilled metrics to ensure the monitor always has data during evaluation.. [optional]  # noqa: E501
             include_tags (bool): A Boolean indicating whether notifications from this monitor automatically inserts its triggering tags into the title.  **Examples** - If &#x60;True&#x60;, &#x60;[Triggered on {host:h1}] Monitor Title&#x60; - If &#x60;False&#x60;, &#x60;[Triggered] Monitor Title&#x60;. [optional] if omitted the server will use the default value of True  # noqa: E501
             locked (bool): Whether or not the monitor is locked (only editable by creator and admins).. [optional]  # noqa: E501
@@ -211,8 +199,8 @@ class MonitorOptions(ModelNormal):
             require_full_window (bool): A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to &#x60;false&#x60; for sparse metrics, otherwise some evaluations are skipped. For “on average” “at all times” and “in total” aggregation, default is true. &#x60;False&#x60; otherwise.. [optional] if omitted the server will use the default value of True  # noqa: E501
             silenced ({str: (int, none_type)}): Information about the downtime applied to the monitor.. [optional]  # noqa: E501
             synthetics_check_id (int, none_type): ID of the corresponding Synthetic check.. [optional]  # noqa: E501
-            threshold_windows (monitor_threshold_window_options.MonitorThresholdWindowOptions): [optional]  # noqa: E501
-            thresholds (monitor_thresholds.MonitorThresholds): [optional]  # noqa: E501
+            threshold_windows (MonitorThresholdWindowOptions): [optional]  # noqa: E501
+            thresholds (MonitorThresholds): [optional]  # noqa: E501
             timeout_h (int, none_type): The number of hours of the monitor not reporting data before it automatically resolves from a triggered state.. [optional]  # noqa: E501
         """
 
@@ -239,7 +227,7 @@ class MonitorOptions(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

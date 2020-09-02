@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -20,19 +15,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v2.model import security_monitoring_rule_response
-from datadog_api_client.v2.model import security_monitoring_rule_create_payload
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import security_monitoring_list_rules_response
-from datadog_api_client.v2.model import security_monitoring_signals_sort
-from datadog_api_client.v2.model import security_monitoring_signals_list_response
-from datadog_api_client.v2.model import security_monitoring_signal_list_request
-from datadog_api_client.v2.model import security_monitoring_rule_update_payload
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
+from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
+from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
+from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
+from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
+from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
+from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
 
 
 class SecurityMonitoringApi(object):
@@ -62,7 +55,7 @@ class SecurityMonitoringApi(object):
 
 
             Keyword Args:
-                body (security_monitoring_rule_create_payload.SecurityMonitoringRuleCreatePayload): [optional]
+                body (SecurityMonitoringRuleCreatePayload): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -84,7 +77,7 @@ class SecurityMonitoringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                security_monitoring_rule_response.SecurityMonitoringRuleResponse
+                SecurityMonitoringRuleResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -111,7 +104,7 @@ class SecurityMonitoringApi(object):
 
         self.create_security_monitoring_rule = Endpoint(
             settings={
-                'response_type': (security_monitoring_rule_response.SecurityMonitoringRuleResponse,),
+                'response_type': (SecurityMonitoringRuleResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -140,7 +133,7 @@ class SecurityMonitoringApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (security_monitoring_rule_create_payload.SecurityMonitoringRuleCreatePayload,),
+                        (SecurityMonitoringRuleCreatePayload,),
                 },
                 'attribute_map': {
                 },
@@ -321,7 +314,7 @@ class SecurityMonitoringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                security_monitoring_rule_response.SecurityMonitoringRuleResponse
+                SecurityMonitoringRuleResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -350,7 +343,7 @@ class SecurityMonitoringApi(object):
 
         self.get_security_monitoring_rule = Endpoint(
             settings={
-                'response_type': (security_monitoring_rule_response.SecurityMonitoringRuleResponse,),
+                'response_type': (SecurityMonitoringRuleResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -440,7 +433,7 @@ class SecurityMonitoringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                security_monitoring_list_rules_response.SecurityMonitoringListRulesResponse
+                SecurityMonitoringListRulesResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -467,7 +460,7 @@ class SecurityMonitoringApi(object):
 
         self.list_security_monitoring_rules = Endpoint(
             settings={
-                'response_type': (security_monitoring_list_rules_response.SecurityMonitoringListRulesResponse,),
+                'response_type': (SecurityMonitoringListRulesResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -540,7 +533,7 @@ class SecurityMonitoringApi(object):
                 filter_query (str): The search query for security signals.. [optional]
                 filter_from (datetime): The minimum timestamp for requested security signals.. [optional]
                 filter_to (datetime): The maximum timestamp for requested security signals.. [optional]
-                sort (security_monitoring_signals_sort.SecurityMonitoringSignalsSort): The order of the security signals in results.. [optional]
+                sort (SecurityMonitoringSignalsSort): The order of the security signals in results.. [optional]
                 page_cursor (str): A list of results using the cursor provided in the previous query.. [optional]
                 page_limit (int): The maximum number of security signals in the response.. [optional] if omitted the server will use the default value of 10
                 _return_http_data_only (bool): response data without head status
@@ -564,7 +557,7 @@ class SecurityMonitoringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse
+                SecurityMonitoringSignalsListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -591,7 +584,7 @@ class SecurityMonitoringApi(object):
 
         self.list_security_monitoring_signals = Endpoint(
             settings={
-                'response_type': (security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse,),
+                'response_type': (SecurityMonitoringSignalsListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -636,7 +629,7 @@ class SecurityMonitoringApi(object):
                     'filter_to':
                         (datetime,),
                     'sort':
-                        (security_monitoring_signals_sort.SecurityMonitoringSignalsSort,),
+                        (SecurityMonitoringSignalsSort,),
                     'page_cursor':
                         (str,),
                     'page_limit':
@@ -686,7 +679,7 @@ class SecurityMonitoringApi(object):
 
 
             Keyword Args:
-                body (security_monitoring_signal_list_request.SecurityMonitoringSignalListRequest): [optional]
+                body (SecurityMonitoringSignalListRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -708,7 +701,7 @@ class SecurityMonitoringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse
+                SecurityMonitoringSignalsListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -735,7 +728,7 @@ class SecurityMonitoringApi(object):
 
         self.search_security_monitoring_signals = Endpoint(
             settings={
-                'response_type': (security_monitoring_signals_list_response.SecurityMonitoringSignalsListResponse,),
+                'response_type': (SecurityMonitoringSignalsListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -764,7 +757,7 @@ class SecurityMonitoringApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (security_monitoring_signal_list_request.SecurityMonitoringSignalListRequest,),
+                        (SecurityMonitoringSignalListRequest,),
                 },
                 'attribute_map': {
                 },
@@ -804,7 +797,7 @@ class SecurityMonitoringApi(object):
                 rule_id (str): The ID of the rule.
 
             Keyword Args:
-                body (security_monitoring_rule_update_payload.SecurityMonitoringRuleUpdatePayload): [optional]
+                body (SecurityMonitoringRuleUpdatePayload): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -826,7 +819,7 @@ class SecurityMonitoringApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                security_monitoring_rule_response.SecurityMonitoringRuleResponse
+                SecurityMonitoringRuleResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -855,7 +848,7 @@ class SecurityMonitoringApi(object):
 
         self.update_security_monitoring_rule = Endpoint(
             settings={
-                'response_type': (security_monitoring_rule_response.SecurityMonitoringRuleResponse,),
+                'response_type': (SecurityMonitoringRuleResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -889,7 +882,7 @@ class SecurityMonitoringApi(object):
                     'rule_id':
                         (str,),
                     'body':
-                        (security_monitoring_rule_update_payload.SecurityMonitoringRuleUpdatePayload,),
+                        (SecurityMonitoringRuleUpdatePayload,),
                 },
                 'attribute_map': {
                     'rule_id': 'rule_id',

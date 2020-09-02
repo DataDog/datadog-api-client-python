@@ -26,12 +26,11 @@ Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/r
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import relationship_to_role
+from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -68,8 +67,13 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = 'archive_id_example' # str | The ID of the archive.
-    body = relationship_to_role.RelationshipToRole() # relationship_to_role.RelationshipToRole |  (optional)
+    archive_id = "archive_id_example" # str | The ID of the archive.
+    body = RelationshipToRole(
+        data=RelationshipToRoleData(
+            id="3653d3c6-0c75-11ea-ad28-fb5701eabc7d",
+            type=RolesType("roles"),
+        ),
+    ) # RelationshipToRole |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -92,7 +96,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **archive_id** | **str**| The ID of the archive. |
- **body** | [**relationship_to_role.RelationshipToRole**](RelationshipToRole.md)|  | [optional]
+ **body** | [**RelationshipToRole**](RelationshipToRole.md)|  | [optional]
 
 ### Return type
 
@@ -118,7 +122,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_logs_archive**
-> logs_archive.LogsArchive create_logs_archive(body)
+> LogsArchive create_logs_archive(body)
 
 Create an archive
 
@@ -129,13 +133,12 @@ Create an archive in your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import logs_archive
-from datadog_api_client.v2.model import logs_archive_create_request
+from datadog_api_client.v2.model.logs_archive import LogsArchive
+from datadog_api_client.v2.model.logs_archive_create_request import LogsArchiveCreateRequest
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -172,8 +175,17 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    body = logs_archive_create_request.LogsArchiveCreateRequest() # logs_archive_create_request.LogsArchiveCreateRequest | The definition of the new archive.
-    
+    body = LogsArchiveCreateRequest(
+        data=LogsArchiveCreateRequestDefinition(
+            attributes=LogsArchiveCreateRequestAttributes(
+                destination=LogsArchiveCreateRequestDestination(),
+                name="Nginx Archive",
+                query="source:nginx",
+            ),
+            type="archives",
+        ),
+    ) # LogsArchiveCreateRequest | The definition of the new archive.
+
     # example passing only required values which don't have defaults set
     try:
         # Create an archive
@@ -187,11 +199,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**logs_archive_create_request.LogsArchiveCreateRequest**](LogsArchiveCreateRequest.md)| The definition of the new archive. |
+ **body** | [**LogsArchiveCreateRequest**](LogsArchiveCreateRequest.md)| The definition of the new archive. |
 
 ### Return type
 
-[**logs_archive.LogsArchive**](LogsArchive.md)
+[**LogsArchive**](LogsArchive.md)
 
 ### Authorization
 
@@ -223,11 +235,10 @@ Delete a given archive from your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -264,8 +275,8 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = 'archive_id_example' # str | The ID of the archive.
-    
+    archive_id = "archive_id_example" # str | The ID of the archive.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete an archive
@@ -304,7 +315,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_logs_archive**
-> logs_archive.LogsArchive get_logs_archive(archive_id)
+> LogsArchive get_logs_archive(archive_id)
 
 Get an archive
 
@@ -315,12 +326,11 @@ Get a specific archive from your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import logs_archive
+from datadog_api_client.v2.model.logs_archive import LogsArchive
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -357,8 +367,8 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = 'archive_id_example' # str | The ID of the archive.
-    
+    archive_id = "archive_id_example" # str | The ID of the archive.
+
     # example passing only required values which don't have defaults set
     try:
         # Get an archive
@@ -376,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**logs_archive.LogsArchive**](LogsArchive.md)
+[**LogsArchive**](LogsArchive.md)
 
 ### Authorization
 
@@ -398,7 +408,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_archive_read_roles**
-> roles_response.RolesResponse list_archive_read_roles(archive_id)
+> RolesResponse list_archive_read_roles(archive_id)
 
 List read roles for an archive
 
@@ -409,12 +419,11 @@ Returns all read roles a given archive is restricted to.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model import roles_response
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.roles_response import RolesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -451,8 +460,8 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = 'archive_id_example' # str | The ID of the archive.
-    
+    archive_id = "archive_id_example" # str | The ID of the archive.
+
     # example passing only required values which don't have defaults set
     try:
         # List read roles for an archive
@@ -470,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**roles_response.RolesResponse**](RolesResponse.md)
+[**RolesResponse**](RolesResponse.md)
 
 ### Authorization
 
@@ -492,7 +501,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_logs_archives**
-> logs_archives.LogsArchives list_logs_archives()
+> LogsArchives list_logs_archives()
 
 Get all archives
 
@@ -503,12 +512,11 @@ Get the list of configured logs archives with their definitions.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model import logs_archives
-from datadog_api_client.v2.model import api_error_response
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.logs_archives import LogsArchives
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -545,7 +553,7 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get all archives
@@ -560,7 +568,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**logs_archives.LogsArchives**](LogsArchives.md)
+[**LogsArchives**](LogsArchives.md)
 
 ### Authorization
 
@@ -591,12 +599,11 @@ Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/r
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import relationship_to_role
+from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -633,8 +640,13 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = 'archive_id_example' # str | The ID of the archive.
-    body = relationship_to_role.RelationshipToRole() # relationship_to_role.RelationshipToRole |  (optional)
+    archive_id = "archive_id_example" # str | The ID of the archive.
+    body = RelationshipToRole(
+        data=RelationshipToRoleData(
+            id="3653d3c6-0c75-11ea-ad28-fb5701eabc7d",
+            type=RolesType("roles"),
+        ),
+    ) # RelationshipToRole |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -657,7 +669,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **archive_id** | **str**| The ID of the archive. |
- **body** | [**relationship_to_role.RelationshipToRole**](RelationshipToRole.md)|  | [optional]
+ **body** | [**RelationshipToRole**](RelationshipToRole.md)|  | [optional]
 
 ### Return type
 
@@ -683,7 +695,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_archive**
-> logs_archive.LogsArchive update_logs_archive(archive_id, body)
+> LogsArchive update_logs_archive(archive_id, body)
 
 Update an archive
 
@@ -694,13 +706,12 @@ Update a given archive configuration.  **Note**: Using this method updates your 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import logs_archive
-from datadog_api_client.v2.model import logs_archive_create_request
+from datadog_api_client.v2.model.logs_archive import LogsArchive
+from datadog_api_client.v2.model.logs_archive_create_request import LogsArchiveCreateRequest
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -737,9 +748,18 @@ configuration = datadog_api_client.v2.Configuration(
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = 'archive_id_example' # str | The ID of the archive.
-    body = logs_archive_create_request.LogsArchiveCreateRequest() # logs_archive_create_request.LogsArchiveCreateRequest | New definition of the archive.
-    
+    archive_id = "archive_id_example" # str | The ID of the archive.
+    body = LogsArchiveCreateRequest(
+        data=LogsArchiveCreateRequestDefinition(
+            attributes=LogsArchiveCreateRequestAttributes(
+                destination=LogsArchiveCreateRequestDestination(),
+                name="Nginx Archive",
+                query="source:nginx",
+            ),
+            type="archives",
+        ),
+    ) # LogsArchiveCreateRequest | New definition of the archive.
+
     # example passing only required values which don't have defaults set
     try:
         # Update an archive
@@ -754,11 +774,11 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **archive_id** | **str**| The ID of the archive. |
- **body** | [**logs_archive_create_request.LogsArchiveCreateRequest**](LogsArchiveCreateRequest.md)| New definition of the archive. |
+ **body** | [**LogsArchiveCreateRequest**](LogsArchiveCreateRequest.md)| New definition of the archive. |
 
 ### Return type
 
-[**logs_archive.LogsArchive**](LogsArchive.md)
+[**LogsArchive**](LogsArchive.md)
 
 ### Authorization
 

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_ssl_certificate_issuer
-except ImportError:
-    synthetics_ssl_certificate_issuer = sys.modules[
-        'datadog_api_client.v1.model.synthetics_ssl_certificate_issuer']
-try:
-    from datadog_api_client.v1.model import synthetics_ssl_certificate_subject
-except ImportError:
-    synthetics_ssl_certificate_subject = sys.modules[
-        'datadog_api_client.v1.model.synthetics_ssl_certificate_subject']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_ssl_certificate_issuer import SyntheticsSSLCertificateIssuer
+    from datadog_api_client.v1.model.synthetics_ssl_certificate_subject import SyntheticsSSLCertificateSubject
+    globals()['SyntheticsSSLCertificateIssuer'] = SyntheticsSSLCertificateIssuer
+    globals()['SyntheticsSSLCertificateSubject'] = SyntheticsSSLCertificateSubject
 
 
 class SyntheticsSSLCertificate(ModelNormal):
@@ -77,24 +69,25 @@ class SyntheticsSSLCertificate(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'cipher': (str,),  # noqa: E501
             'exponent': (float,),  # noqa: E501
             'ext_key_usage': ([str],),  # noqa: E501
             'fingerprint': (str,),  # noqa: E501
             'fingerprint256': (str,),  # noqa: E501
-            'issuer': (synthetics_ssl_certificate_issuer.SyntheticsSSLCertificateIssuer,),  # noqa: E501
+            'issuer': (SyntheticsSSLCertificateIssuer,),  # noqa: E501
             'modulus': (str,),  # noqa: E501
             'protocol': (str,),  # noqa: E501
             'serial_number': (str,),  # noqa: E501
-            'subject': (synthetics_ssl_certificate_subject.SyntheticsSSLCertificateSubject,),  # noqa: E501
+            'subject': (SyntheticsSSLCertificateSubject,),  # noqa: E501
             'valid_from': (datetime,),  # noqa: E501
             'valid_to': (datetime,),  # noqa: E501
         }
@@ -102,6 +95,7 @@ class SyntheticsSSLCertificate(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'cipher': 'cipher',  # noqa: E501
@@ -131,7 +125,7 @@ class SyntheticsSSLCertificate(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_ssl_certificate.SyntheticsSSLCertificate - a model defined in OpenAPI
+        """SyntheticsSSLCertificate - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -169,11 +163,11 @@ class SyntheticsSSLCertificate(ModelNormal):
             ext_key_usage ([str]): Array of extensions and details used for the certificate.. [optional]  # noqa: E501
             fingerprint (str): MD5 digest of the DER-encoded Certificate information.. [optional]  # noqa: E501
             fingerprint256 (str): SHA-1 digest of the DER-encoded Certificate information.. [optional]  # noqa: E501
-            issuer (synthetics_ssl_certificate_issuer.SyntheticsSSLCertificateIssuer): [optional]  # noqa: E501
+            issuer (SyntheticsSSLCertificateIssuer): [optional]  # noqa: E501
             modulus (str): Modulus associated to the SSL certificate private key.. [optional]  # noqa: E501
             protocol (str): TLS protocol used for the test.. [optional]  # noqa: E501
             serial_number (str): Serial Number assigned by Symantec to the SSL certificate.. [optional]  # noqa: E501
-            subject (synthetics_ssl_certificate_subject.SyntheticsSSLCertificateSubject): [optional]  # noqa: E501
+            subject (SyntheticsSSLCertificateSubject): [optional]  # noqa: E501
             valid_from (datetime): Date from which the SSL certificate is valid.. [optional]  # noqa: E501
             valid_to (datetime): Date until which the SSL certificate is valid.. [optional]  # noqa: E501
         """
@@ -201,7 +195,7 @@ class SyntheticsSSLCertificate(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

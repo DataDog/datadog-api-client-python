@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,13 +15,11 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import authentication_validation_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.authentication_validation_response import AuthenticationValidationResponse
 
 
 class AuthenticationApi(object):
@@ -77,7 +70,7 @@ class AuthenticationApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                authentication_validation_response.AuthenticationValidationResponse
+                AuthenticationValidationResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -104,7 +97,7 @@ class AuthenticationApi(object):
 
         self.validate = Endpoint(
             settings={
-                'response_type': (authentication_validation_response.AuthenticationValidationResponse,),
+                'response_type': (AuthenticationValidationResponse,),
                 'auth': [
                     'apiKeyAuth'
                 ],

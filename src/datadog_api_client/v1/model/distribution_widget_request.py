@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import event_query_definition
-except ImportError:
-    event_query_definition = sys.modules[
-        'datadog_api_client.v1.model.event_query_definition']
-try:
-    from datadog_api_client.v1.model import log_query_definition
-except ImportError:
-    log_query_definition = sys.modules[
-        'datadog_api_client.v1.model.log_query_definition']
-try:
-    from datadog_api_client.v1.model import process_query_definition
-except ImportError:
-    process_query_definition = sys.modules[
-        'datadog_api_client.v1.model.process_query_definition']
-try:
-    from datadog_api_client.v1.model import widget_style
-except ImportError:
-    widget_style = sys.modules[
-        'datadog_api_client.v1.model.widget_style']
+
+def lazy_import():
+    from datadog_api_client.v1.model.event_query_definition import EventQueryDefinition
+    from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+    from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+    from datadog_api_client.v1.model.widget_style import WidgetStyle
+    globals()['EventQueryDefinition'] = EventQueryDefinition
+    globals()['LogQueryDefinition'] = LogQueryDefinition
+    globals()['ProcessQueryDefinition'] = ProcessQueryDefinition
+    globals()['WidgetStyle'] = WidgetStyle
 
 
 class DistributionWidgetRequest(ModelNormal):
@@ -87,28 +73,30 @@ class DistributionWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'apm_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
-            'event_query': (event_query_definition.EventQueryDefinition,),  # noqa: E501
-            'log_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
-            'network_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
-            'process_query': (process_query_definition.ProcessQueryDefinition,),  # noqa: E501
+            'apm_query': (LogQueryDefinition,),  # noqa: E501
+            'event_query': (EventQueryDefinition,),  # noqa: E501
+            'log_query': (LogQueryDefinition,),  # noqa: E501
+            'network_query': (LogQueryDefinition,),  # noqa: E501
+            'process_query': (ProcessQueryDefinition,),  # noqa: E501
             'q': (str,),  # noqa: E501
-            'rum_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
-            'security_query': (log_query_definition.LogQueryDefinition,),  # noqa: E501
-            'style': (widget_style.WidgetStyle,),  # noqa: E501
+            'rum_query': (LogQueryDefinition,),  # noqa: E501
+            'security_query': (LogQueryDefinition,),  # noqa: E501
+            'style': (WidgetStyle,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'apm_query': 'apm_query',  # noqa: E501
@@ -135,7 +123,7 @@ class DistributionWidgetRequest(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """distribution_widget_request.DistributionWidgetRequest - a model defined in OpenAPI
+        """DistributionWidgetRequest - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -168,15 +156,15 @@ class DistributionWidgetRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            apm_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
-            event_query (event_query_definition.EventQueryDefinition): [optional]  # noqa: E501
-            log_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
-            network_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
-            process_query (process_query_definition.ProcessQueryDefinition): [optional]  # noqa: E501
+            apm_query (LogQueryDefinition): [optional]  # noqa: E501
+            event_query (EventQueryDefinition): [optional]  # noqa: E501
+            log_query (LogQueryDefinition): [optional]  # noqa: E501
+            network_query (LogQueryDefinition): [optional]  # noqa: E501
+            process_query (ProcessQueryDefinition): [optional]  # noqa: E501
             q (str): Widget query.. [optional]  # noqa: E501
-            rum_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
-            security_query (log_query_definition.LogQueryDefinition): [optional]  # noqa: E501
-            style (widget_style.WidgetStyle): [optional]  # noqa: E501
+            rum_query (LogQueryDefinition): [optional]  # noqa: E501
+            security_query (LogQueryDefinition): [optional]  # noqa: E501
+            style (WidgetStyle): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -202,7 +190,7 @@ class DistributionWidgetRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

@@ -1,4 +1,4 @@
-# synthetics_ssl_certificate_issuer.SyntheticsSSLCertificateIssuer
+# SyntheticsSSLCertificateIssuer
 
 Object describing the issuer of a SSL certificate.
 ## Properties

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_global_variable_value
-except ImportError:
-    synthetics_global_variable_value = sys.modules[
-        'datadog_api_client.v1.model.synthetics_global_variable_value']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
+    globals()['SyntheticsGlobalVariableValue'] = SyntheticsGlobalVariableValue
 
 
 class SyntheticsGlobalVariable(ModelNormal):
@@ -72,24 +67,26 @@ class SyntheticsGlobalVariable(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'description': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'tags': ([str],),  # noqa: E501
-            'value': (synthetics_global_variable_value.SyntheticsGlobalVariableValue,),  # noqa: E501
+            'value': (SyntheticsGlobalVariableValue,),  # noqa: E501
             'id': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'description': 'description',  # noqa: E501
@@ -112,13 +109,13 @@ class SyntheticsGlobalVariable(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, description, name, tags, value, *args, **kwargs):  # noqa: E501
-        """synthetics_global_variable.SyntheticsGlobalVariable - a model defined in OpenAPI
+        """SyntheticsGlobalVariable - a model defined in OpenAPI
 
         Args:
             description (str): Description of the global variable.
             name (str): Name of the global variable.
             tags ([str]): Tags of the global variable.
-            value (synthetics_global_variable_value.SyntheticsGlobalVariableValue):
+            value (SyntheticsGlobalVariableValue):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -181,7 +178,7 @@ class SyntheticsGlobalVariable(ModelNormal):
         self.name = name
         self.tags = tags
         self.value = value
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,16 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import usage_summary_date_org
-except ImportError:
-    usage_summary_date_org = sys.modules[
-        'datadog_api_client.v1.model.usage_summary_date_org']
+
+def lazy_import():
+    from datadog_api_client.v1.model.usage_summary_date_org import UsageSummaryDateOrg
+    globals()['UsageSummaryDateOrg'] = UsageSummaryDateOrg
 
 
 class UsageSummaryDate(ModelNormal):
@@ -72,19 +67,21 @@ class UsageSummaryDate(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'agent_host_top99p': (int,),  # noqa: E501
             'apm_host_top99p': (int,),  # noqa: E501
             'aws_host_top99p': (int,),  # noqa: E501
             'aws_lambda_func_count': (int,),  # noqa: E501
             'aws_lambda_invocations_sum': (int,),  # noqa: E501
+            'azure_app_service_top99p': (int,),  # noqa: E501
             'billable_ingested_bytes_sum': (int,),  # noqa: E501
             'container_avg': (int,),  # noqa: E501
             'container_hwm': (int,),  # noqa: E501
@@ -98,17 +95,19 @@ class UsageSummaryDate(ModelNormal):
             'ingested_events_bytes_sum': (int,),  # noqa: E501
             'netflow_indexed_events_count_sum': (int,),  # noqa: E501
             'npm_host_top99p': (int,),  # noqa: E501
-            'orgs': ([usage_summary_date_org.UsageSummaryDateOrg],),  # noqa: E501
+            'orgs': ([UsageSummaryDateOrg],),  # noqa: E501
             'profiling_host_top99p': (int,),  # noqa: E501
             'rum_session_count_sum': (int,),  # noqa: E501
             'synthetics_browser_check_calls_count_sum': (int,),  # noqa: E501
             'synthetics_check_calls_count_sum': (int,),  # noqa: E501
             'trace_search_indexed_events_count_sum': (int,),  # noqa: E501
+            'twol_ingested_events_bytes_sum': (int,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'agent_host_top99p': 'agent_host_top99p',  # noqa: E501
@@ -116,6 +115,7 @@ class UsageSummaryDate(ModelNormal):
         'aws_host_top99p': 'aws_host_top99p',  # noqa: E501
         'aws_lambda_func_count': 'aws_lambda_func_count',  # noqa: E501
         'aws_lambda_invocations_sum': 'aws_lambda_invocations_sum',  # noqa: E501
+        'azure_app_service_top99p': 'azure_app_service_top99p',  # noqa: E501
         'billable_ingested_bytes_sum': 'billable_ingested_bytes_sum',  # noqa: E501
         'container_avg': 'container_avg',  # noqa: E501
         'container_hwm': 'container_hwm',  # noqa: E501
@@ -135,6 +135,7 @@ class UsageSummaryDate(ModelNormal):
         'synthetics_browser_check_calls_count_sum': 'synthetics_browser_check_calls_count_sum',  # noqa: E501
         'synthetics_check_calls_count_sum': 'synthetics_check_calls_count_sum',  # noqa: E501
         'trace_search_indexed_events_count_sum': 'trace_search_indexed_events_count_sum',  # noqa: E501
+        'twol_ingested_events_bytes_sum': 'twol_ingested_events_bytes_sum',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -150,7 +151,7 @@ class UsageSummaryDate(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """usage_summary_date.UsageSummaryDate - a model defined in OpenAPI
+        """UsageSummaryDate - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -188,6 +189,7 @@ class UsageSummaryDate(ModelNormal):
             aws_host_top99p (int): Shows the 99th percentile of all AWS hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
             aws_lambda_func_count (int): Shows the average of the number of functions that executed 1 or more times each hour in the current date for all organizations.. [optional]  # noqa: E501
             aws_lambda_invocations_sum (int): Shows the sum of all AWS Lambda invocations over all hours in the current date for all organizations.. [optional]  # noqa: E501
+            azure_app_service_top99p (int): Shows the 99th percentile of all Azure app services over all hours in the current date for all organizations.. [optional]  # noqa: E501
             billable_ingested_bytes_sum (int): Shows the sum of all log bytes ingested over all hours in the current date for all organizations.. [optional]  # noqa: E501
             container_avg (int): Shows the average of all distinct containers over all hours in the current date for all organizations.. [optional]  # noqa: E501
             container_hwm (int): Shows the high watermark of all distinct containers over all hours in the current date for all organizations.. [optional]  # noqa: E501
@@ -201,12 +203,13 @@ class UsageSummaryDate(ModelNormal):
             ingested_events_bytes_sum (int): Shows the sum of all log bytes ingested over all hours in the current date for all organizations.. [optional]  # noqa: E501
             netflow_indexed_events_count_sum (int): Shows the sum of all Network flows indexed over all hours in the current date for all organizations.. [optional]  # noqa: E501
             npm_host_top99p (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
-            orgs ([usage_summary_date_org.UsageSummaryDateOrg]): Organizations associated with a user.. [optional]  # noqa: E501
+            orgs ([UsageSummaryDateOrg]): Organizations associated with a user.. [optional]  # noqa: E501
             profiling_host_top99p (int): Shows the 99th percentile of all profiled hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
             rum_session_count_sum (int): Shows the sum of all RUM Sessions over all hours in the current date for all organizations. [optional]  # noqa: E501
             synthetics_browser_check_calls_count_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current date for all organizations.. [optional]  # noqa: E501
             synthetics_check_calls_count_sum (int): Shows the sum of all Synthetic API tests over all hours in the current date for all organizations.. [optional]  # noqa: E501
             trace_search_indexed_events_count_sum (int): Shows the sum of all analyzed spans indexed over all hours in the current date for all organizations.. [optional]  # noqa: E501
+            twol_ingested_events_bytes_sum (int): Shows the sum of all tracing without limits bytes ingested over all hours in the current date for all organizations.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,7 +235,7 @@ class UsageSummaryDate(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,41 +21,23 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_step
-except ImportError:
-    synthetics_step = sys.modules[
-        'datadog_api_client.v1.model.synthetics_step']
-try:
-    from datadog_api_client.v1.model import synthetics_test_config
-except ImportError:
-    synthetics_test_config = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_config']
-try:
-    from datadog_api_client.v1.model import synthetics_test_details_sub_type
-except ImportError:
-    synthetics_test_details_sub_type = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_details_sub_type']
-try:
-    from datadog_api_client.v1.model import synthetics_test_details_type
-except ImportError:
-    synthetics_test_details_type = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_details_type']
-try:
-    from datadog_api_client.v1.model import synthetics_test_options
-except ImportError:
-    synthetics_test_options = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_options']
-try:
-    from datadog_api_client.v1.model import synthetics_test_pause_status
-except ImportError:
-    synthetics_test_pause_status = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_pause_status']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
+    from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestConfig
+    from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
+    from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
+    from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
+    from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+    globals()['SyntheticsStep'] = SyntheticsStep
+    globals()['SyntheticsTestConfig'] = SyntheticsTestConfig
+    globals()['SyntheticsTestDetailsSubType'] = SyntheticsTestDetailsSubType
+    globals()['SyntheticsTestDetailsType'] = SyntheticsTestDetailsType
+    globals()['SyntheticsTestOptions'] = SyntheticsTestOptions
+    globals()['SyntheticsTestPauseStatus'] = SyntheticsTestPauseStatus
 
 
 class SyntheticsTestDetails(ModelNormal):
@@ -97,31 +77,33 @@ class SyntheticsTestDetails(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'config': (synthetics_test_config.SyntheticsTestConfig,),  # noqa: E501
+            'config': (SyntheticsTestConfig,),  # noqa: E501
             'locations': ([str],),  # noqa: E501
             'message': (str,),  # noqa: E501
             'monitor_id': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'options': (synthetics_test_options.SyntheticsTestOptions,),  # noqa: E501
+            'options': (SyntheticsTestOptions,),  # noqa: E501
             'public_id': (str,),  # noqa: E501
-            'status': (synthetics_test_pause_status.SyntheticsTestPauseStatus,),  # noqa: E501
-            'steps': ([synthetics_step.SyntheticsStep],),  # noqa: E501
-            'subtype': (synthetics_test_details_sub_type.SyntheticsTestDetailsSubType,),  # noqa: E501
+            'status': (SyntheticsTestPauseStatus,),  # noqa: E501
+            'steps': ([SyntheticsStep],),  # noqa: E501
+            'subtype': (SyntheticsTestDetailsSubType,),  # noqa: E501
             'tags': ([str],),  # noqa: E501
-            'type': (synthetics_test_details_type.SyntheticsTestDetailsType,),  # noqa: E501
+            'type': (SyntheticsTestDetailsType,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'config': 'config',  # noqa: E501
@@ -151,7 +133,7 @@ class SyntheticsTestDetails(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_test_details.SyntheticsTestDetails - a model defined in OpenAPI
+        """SyntheticsTestDetails - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -184,18 +166,18 @@ class SyntheticsTestDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            config (synthetics_test_config.SyntheticsTestConfig): [optional]  # noqa: E501
+            config (SyntheticsTestConfig): [optional]  # noqa: E501
             locations ([str]): Array of locations used to run the test.. [optional]  # noqa: E501
             message (str): Notification message associated with the test.. [optional]  # noqa: E501
             monitor_id (int): The associated monitor ID.. [optional]  # noqa: E501
             name (str): Name of the test.. [optional]  # noqa: E501
-            options (synthetics_test_options.SyntheticsTestOptions): [optional]  # noqa: E501
+            options (SyntheticsTestOptions): [optional]  # noqa: E501
             public_id (str): The test public ID.. [optional]  # noqa: E501
-            status (synthetics_test_pause_status.SyntheticsTestPauseStatus): [optional]  # noqa: E501
-            steps ([synthetics_step.SyntheticsStep]): For browser test, the steps of the test.. [optional]  # noqa: E501
-            subtype (synthetics_test_details_sub_type.SyntheticsTestDetailsSubType): [optional]  # noqa: E501
+            status (SyntheticsTestPauseStatus): [optional]  # noqa: E501
+            steps ([SyntheticsStep]): For browser test, the steps of the test.. [optional]  # noqa: E501
+            subtype (SyntheticsTestDetailsSubType): [optional]  # noqa: E501
             tags ([str]): Array of tags attached to the test.. [optional]  # noqa: E501
-            type (synthetics_test_details_type.SyntheticsTestDetailsType): [optional]  # noqa: E501
+            type (SyntheticsTestDetailsType): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -221,7 +203,7 @@ class SyntheticsTestDetails(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

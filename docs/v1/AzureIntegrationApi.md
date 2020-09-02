@@ -23,12 +23,11 @@ Create a Datadog-Azure integration.  Using the `POST` method updates your integr
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import azure_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import azure_account
+from datadog_api_client.v1.model.azure_account import AzureAccount
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -65,8 +64,18 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
-    body = azure_account.AzureAccount() # azure_account.AzureAccount | Create a Datadog-Azure integration for your Datadog account request body.
-    
+    body = AzureAccount(
+        client_id="testc7f6-1234-5678-9101-3fcbf464test",
+        client_secret="testingx./Sw*g/Y33t..R1cH+hScMDt",
+        errors=[
+            "["*"]",
+        ],
+        host_filters="key:value,filter:example",
+        new_client_id="new1c7f6-1234-5678-9101-3fcbf464test",
+        new_tenant_name="new1c44-1234-5678-9101-cc00736ftest",
+        tenant_name="testc44-1234-5678-9101-cc00736ftest",
+    ) # AzureAccount | Create a Datadog-Azure integration for your Datadog account request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Create an Azure integration
@@ -80,7 +89,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**azure_account.AzureAccount**](AzureAccount.md)| Create a Datadog-Azure integration for your Datadog account request body. |
+ **body** | [**AzureAccount**](AzureAccount.md)| Create a Datadog-Azure integration for your Datadog account request body. |
 
 ### Return type
 
@@ -116,12 +125,11 @@ Delete a given Datadog-Azure integration from your Datadog account.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import azure_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import azure_account
+from datadog_api_client.v1.model.azure_account import AzureAccount
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -158,8 +166,18 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
-    body = azure_account.AzureAccount() # azure_account.AzureAccount | Delete a given Datadog-Azure integration request body.
-    
+    body = AzureAccount(
+        client_id="testc7f6-1234-5678-9101-3fcbf464test",
+        client_secret="testingx./Sw*g/Y33t..R1cH+hScMDt",
+        errors=[
+            "["*"]",
+        ],
+        host_filters="key:value,filter:example",
+        new_client_id="new1c7f6-1234-5678-9101-3fcbf464test",
+        new_tenant_name="new1c44-1234-5678-9101-cc00736ftest",
+        tenant_name="testc44-1234-5678-9101-cc00736ftest",
+    ) # AzureAccount | Delete a given Datadog-Azure integration request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete an Azure integration
@@ -173,7 +191,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**azure_account.AzureAccount**](AzureAccount.md)| Delete a given Datadog-Azure integration request body. |
+ **body** | [**AzureAccount**](AzureAccount.md)| Delete a given Datadog-Azure integration request body. |
 
 ### Return type
 
@@ -198,7 +216,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_azure_integration**
-> azure_account_list_response.AzureAccountListResponse list_azure_integration()
+> AzureAccountListResponse list_azure_integration()
 
 List all Azure integrations
 
@@ -209,12 +227,11 @@ List all Datadog-Azure integrations configured in your Datadog account.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import azure_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import azure_account_list_response
+from datadog_api_client.v1.model.azure_account_list_response import AzureAccountListResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -251,7 +268,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # List all Azure integrations
@@ -266,7 +283,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**azure_account_list_response.AzureAccountListResponse**](AzureAccountListResponse.md)
+[**AzureAccountListResponse**](AzureAccountListResponse.md)
 
 ### Authorization
 
@@ -298,12 +315,11 @@ Update the defined list of host filters for a given Datadog-Azure integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import azure_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import azure_account
+from datadog_api_client.v1.model.azure_account import AzureAccount
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -340,8 +356,18 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
-    body = azure_account.AzureAccount() # azure_account.AzureAccount | Update a Datadog-Azure integration's host filters request body.
-    
+    body = AzureAccount(
+        client_id="testc7f6-1234-5678-9101-3fcbf464test",
+        client_secret="testingx./Sw*g/Y33t..R1cH+hScMDt",
+        errors=[
+            "["*"]",
+        ],
+        host_filters="key:value,filter:example",
+        new_client_id="new1c7f6-1234-5678-9101-3fcbf464test",
+        new_tenant_name="new1c44-1234-5678-9101-cc00736ftest",
+        tenant_name="testc44-1234-5678-9101-cc00736ftest",
+    ) # AzureAccount | Update a Datadog-Azure integration's host filters request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Update Azure integration host filters
@@ -355,7 +381,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**azure_account.AzureAccount**](AzureAccount.md)| Update a Datadog-Azure integration&#39;s host filters request body. |
+ **body** | [**AzureAccount**](AzureAccount.md)| Update a Datadog-Azure integration&#39;s host filters request body. |
 
 ### Return type
 
@@ -391,12 +417,11 @@ Update a Datadog-Azure integration. Requires an existing `tenant_name` and `clie
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import azure_integration_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import azure_account
+from datadog_api_client.v1.model.azure_account import AzureAccount
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -433,8 +458,18 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
-    body = azure_account.AzureAccount() # azure_account.AzureAccount | Update a Datadog-Azure integration request body.
-    
+    body = AzureAccount(
+        client_id="testc7f6-1234-5678-9101-3fcbf464test",
+        client_secret="testingx./Sw*g/Y33t..R1cH+hScMDt",
+        errors=[
+            "["*"]",
+        ],
+        host_filters="key:value,filter:example",
+        new_client_id="new1c7f6-1234-5678-9101-3fcbf464test",
+        new_tenant_name="new1c44-1234-5678-9101-cc00736ftest",
+        tenant_name="testc44-1234-5678-9101-cc00736ftest",
+    ) # AzureAccount | Update a Datadog-Azure integration request body.
+
     # example passing only required values which don't have defaults set
     try:
         # Update an Azure integration
@@ -448,7 +483,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**azure_account.AzureAccount**](AzureAccount.md)| Update a Datadog-Azure integration request body. |
+ **body** | [**AzureAccount**](AzureAccount.md)| Update a Datadog-Azure integration request body. |
 
 ### Return type
 

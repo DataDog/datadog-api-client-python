@@ -1,4 +1,4 @@
-# widget_custom_link.WidgetCustomLink
+# WidgetCustomLink
 
 Custom links help you connect a data value to a URL, like a Datadog page or your AWS console.
 ## Properties

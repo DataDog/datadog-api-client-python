@@ -1,4 +1,4 @@
-# canceled_downtimes_ids.CanceledDowntimesIds
+# CanceledDowntimesIds
 
 Object containing array of IDs of canceled downtimes.
 ## Properties

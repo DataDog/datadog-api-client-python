@@ -1,4 +1,4 @@
-# logs_group_by_missing.LogsGroupByMissing
+# LogsGroupByMissing
 
 The value to use for logs that don't have the facet used to group by
 ## Properties

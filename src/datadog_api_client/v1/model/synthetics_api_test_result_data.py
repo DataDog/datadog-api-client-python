@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_error_code
-except ImportError:
-    synthetics_error_code = sys.modules[
-        'datadog_api_client.v1.model.synthetics_error_code']
-try:
-    from datadog_api_client.v1.model import synthetics_ssl_certificate
-except ImportError:
-    synthetics_ssl_certificate = sys.modules[
-        'datadog_api_client.v1.model.synthetics_ssl_certificate']
-try:
-    from datadog_api_client.v1.model import synthetics_test_process_status
-except ImportError:
-    synthetics_test_process_status = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_process_status']
-try:
-    from datadog_api_client.v1.model import synthetics_timing
-except ImportError:
-    synthetics_timing = sys.modules[
-        'datadog_api_client.v1.model.synthetics_timing']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_error_code import SyntheticsErrorCode
+    from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
+    from datadog_api_client.v1.model.synthetics_test_process_status import SyntheticsTestProcessStatus
+    from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
+    globals()['SyntheticsErrorCode'] = SyntheticsErrorCode
+    globals()['SyntheticsSSLCertificate'] = SyntheticsSSLCertificate
+    globals()['SyntheticsTestProcessStatus'] = SyntheticsTestProcessStatus
+    globals()['SyntheticsTiming'] = SyntheticsTiming
 
 
 class SyntheticsAPITestResultData(ModelNormal):
@@ -87,29 +73,31 @@ class SyntheticsAPITestResultData(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'cert': (synthetics_ssl_certificate.SyntheticsSSLCertificate,),  # noqa: E501
-            'error_code': (synthetics_error_code.SyntheticsErrorCode,),  # noqa: E501
+            'cert': (SyntheticsSSLCertificate,),  # noqa: E501
+            'error_code': (SyntheticsErrorCode,),  # noqa: E501
             'error_message': (str,),  # noqa: E501
-            'event_type': (synthetics_test_process_status.SyntheticsTestProcessStatus,),  # noqa: E501
+            'event_type': (SyntheticsTestProcessStatus,),  # noqa: E501
             'http_status_code': (int,),  # noqa: E501
             'request_headers': ({str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)},),  # noqa: E501
             'response_body': (str,),  # noqa: E501
             'response_headers': ({str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)},),  # noqa: E501
             'response_size': (int,),  # noqa: E501
-            'timings': (synthetics_timing.SyntheticsTiming,),  # noqa: E501
+            'timings': (SyntheticsTiming,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'cert': 'cert',  # noqa: E501
@@ -137,7 +125,7 @@ class SyntheticsAPITestResultData(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_api_test_result_data.SyntheticsAPITestResultData - a model defined in OpenAPI
+        """SyntheticsAPITestResultData - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -170,16 +158,16 @@ class SyntheticsAPITestResultData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cert (synthetics_ssl_certificate.SyntheticsSSLCertificate): [optional]  # noqa: E501
-            error_code (synthetics_error_code.SyntheticsErrorCode): [optional]  # noqa: E501
+            cert (SyntheticsSSLCertificate): [optional]  # noqa: E501
+            error_code (SyntheticsErrorCode): [optional]  # noqa: E501
             error_message (str): The API test error message.. [optional]  # noqa: E501
-            event_type (synthetics_test_process_status.SyntheticsTestProcessStatus): [optional]  # noqa: E501
+            event_type (SyntheticsTestProcessStatus): [optional]  # noqa: E501
             http_status_code (int): The API test HTTP status code.. [optional]  # noqa: E501
             request_headers ({str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)}): Request header object used for the API test.. [optional]  # noqa: E501
             response_body (str): Response body returned for the API test.. [optional]  # noqa: E501
             response_headers ({str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)}): Response headers returned for the API test.. [optional]  # noqa: E501
             response_size (int): Global size in byte of the API test response.. [optional]  # noqa: E501
-            timings (synthetics_timing.SyntheticsTiming): [optional]  # noqa: E501
+            timings (SyntheticsTiming): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -205,7 +193,7 @@ class SyntheticsAPITestResultData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

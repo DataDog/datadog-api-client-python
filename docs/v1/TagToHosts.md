@@ -1,4 +1,4 @@
-# tag_to_hosts.TagToHosts
+# TagToHosts
 
 In this object, the key is the tag, the value is a list of host names that are reporting that tag.
 ## Properties

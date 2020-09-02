@@ -1,4 +1,4 @@
-# synthetics_ssl_certificate.SyntheticsSSLCertificate
+# SyntheticsSSLCertificate
 
 Object describing the SSL certificate used for a Synthetic test.
 ## Properties
@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **ext_key_usage** | **[str]** | Array of extensions and details used for the certificate. | [optional] 
 **fingerprint** | **str** | MD5 digest of the DER-encoded Certificate information. | [optional] 
 **fingerprint256** | **str** | SHA-1 digest of the DER-encoded Certificate information. | [optional] 
-**issuer** | [**synthetics_ssl_certificate_issuer.SyntheticsSSLCertificateIssuer**](SyntheticsSSLCertificateIssuer.md) |  | [optional] 
+**issuer** | [**SyntheticsSSLCertificateIssuer**](SyntheticsSSLCertificateIssuer.md) |  | [optional] 
 **modulus** | **str** | Modulus associated to the SSL certificate private key. | [optional] 
 **protocol** | **str** | TLS protocol used for the test. | [optional] 
 **serial_number** | **str** | Serial Number assigned by Symantec to the SSL certificate. | [optional] 
-**subject** | [**synthetics_ssl_certificate_subject.SyntheticsSSLCertificateSubject**](SyntheticsSSLCertificateSubject.md) |  | [optional] 
+**subject** | [**SyntheticsSSLCertificateSubject**](SyntheticsSSLCertificateSubject.md) |  | [optional] 
 **valid_from** | **datetime** | Date from which the SSL certificate is valid. | [optional] 
 **valid_to** | **datetime** | Date until which the SSL certificate is valid. | [optional] 
 

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,41 +21,23 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_browser_error
-except ImportError:
-    synthetics_browser_error = sys.modules[
-        'datadog_api_client.v1.model.synthetics_browser_error']
-try:
-    from datadog_api_client.v1.model import synthetics_check_type
-except ImportError:
-    synthetics_check_type = sys.modules[
-        'datadog_api_client.v1.model.synthetics_check_type']
-try:
-    from datadog_api_client.v1.model import synthetics_playing_tab
-except ImportError:
-    synthetics_playing_tab = sys.modules[
-        'datadog_api_client.v1.model.synthetics_playing_tab']
-try:
-    from datadog_api_client.v1.model import synthetics_resource
-except ImportError:
-    synthetics_resource = sys.modules[
-        'datadog_api_client.v1.model.synthetics_resource']
-try:
-    from datadog_api_client.v1.model import synthetics_step_detail_warnings
-except ImportError:
-    synthetics_step_detail_warnings = sys.modules[
-        'datadog_api_client.v1.model.synthetics_step_detail_warnings']
-try:
-    from datadog_api_client.v1.model import synthetics_step_type
-except ImportError:
-    synthetics_step_type = sys.modules[
-        'datadog_api_client.v1.model.synthetics_step_type']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
+    from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckType
+    from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
+    from datadog_api_client.v1.model.synthetics_resource import SyntheticsResource
+    from datadog_api_client.v1.model.synthetics_step_detail_warnings import SyntheticsStepDetailWarnings
+    from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+    globals()['SyntheticsBrowserError'] = SyntheticsBrowserError
+    globals()['SyntheticsCheckType'] = SyntheticsCheckType
+    globals()['SyntheticsPlayingTab'] = SyntheticsPlayingTab
+    globals()['SyntheticsResource'] = SyntheticsResource
+    globals()['SyntheticsStepDetailWarnings'] = SyntheticsStepDetailWarnings
+    globals()['SyntheticsStepType'] = SyntheticsStepType
 
 
 class SyntheticsStepDetail(ModelNormal):
@@ -97,36 +77,38 @@ class SyntheticsStepDetail(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'browser_errors': ([synthetics_browser_error.SyntheticsBrowserError],),  # noqa: E501
-            'check_type': (synthetics_check_type.SyntheticsCheckType,),  # noqa: E501
+            'browser_errors': ([SyntheticsBrowserError],),  # noqa: E501
+            'check_type': (SyntheticsCheckType,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'duration': (float,),  # noqa: E501
             'error': (str,),  # noqa: E501
-            'playing_tab': (synthetics_playing_tab.SyntheticsPlayingTab,),  # noqa: E501
-            'resources': ([synthetics_resource.SyntheticsResource],),  # noqa: E501
+            'playing_tab': (SyntheticsPlayingTab,),  # noqa: E501
+            'resources': ([SyntheticsResource],),  # noqa: E501
             'screenshot_bucket_key': (bool,),  # noqa: E501
             'skipped': (bool,),  # noqa: E501
             'snapshot_bucket_key': (bool,),  # noqa: E501
             'step_id': (int,),  # noqa: E501
             'sub_test_step_details': ([SyntheticsStepDetail],),  # noqa: E501
             'time_to_interactive': (float,),  # noqa: E501
-            'type': (synthetics_step_type.SyntheticsStepType,),  # noqa: E501
+            'type': (SyntheticsStepType,),  # noqa: E501
             'url': (str,),  # noqa: E501
             'value': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            'warnings': ([synthetics_step_detail_warnings.SyntheticsStepDetailWarnings],),  # noqa: E501
+            'warnings': ([SyntheticsStepDetailWarnings],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'browser_errors': 'browserErrors',  # noqa: E501
@@ -161,7 +143,7 @@ class SyntheticsStepDetail(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_step_detail.SyntheticsStepDetail - a model defined in OpenAPI
+        """SyntheticsStepDetail - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -194,23 +176,23 @@ class SyntheticsStepDetail(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            browser_errors ([synthetics_browser_error.SyntheticsBrowserError]): Array of errors collected for a browser test.. [optional]  # noqa: E501
-            check_type (synthetics_check_type.SyntheticsCheckType): [optional]  # noqa: E501
+            browser_errors ([SyntheticsBrowserError]): Array of errors collected for a browser test.. [optional]  # noqa: E501
+            check_type (SyntheticsCheckType): [optional]  # noqa: E501
             description (str): Description of the test.. [optional]  # noqa: E501
             duration (float): Total duration in millisecond of the test.. [optional]  # noqa: E501
             error (str): Error returned by the test.. [optional]  # noqa: E501
-            playing_tab (synthetics_playing_tab.SyntheticsPlayingTab): [optional]  # noqa: E501
-            resources ([synthetics_resource.SyntheticsResource]): Array of resources collected by the test.. [optional]  # noqa: E501
+            playing_tab (SyntheticsPlayingTab): [optional]  # noqa: E501
+            resources ([SyntheticsResource]): Array of resources collected by the test.. [optional]  # noqa: E501
             screenshot_bucket_key (bool): Whether or not screenshots where collected by the test.. [optional]  # noqa: E501
             skipped (bool): Whether or not to skip this step.. [optional]  # noqa: E501
             snapshot_bucket_key (bool): Whether or not snapshots where collected by the test.. [optional]  # noqa: E501
             step_id (int): The step ID.. [optional]  # noqa: E501
             sub_test_step_details ([SyntheticsStepDetail]): If this steps include a sub-test. [Subtests documentation](https://docs.datadoghq.com/synthetics/browser_tests/advanced_options/#subtests).. [optional]  # noqa: E501
             time_to_interactive (float): Time before starting the step.. [optional]  # noqa: E501
-            type (synthetics_step_type.SyntheticsStepType): [optional]  # noqa: E501
+            type (SyntheticsStepType): [optional]  # noqa: E501
             url (str): URL to perform the step against.. [optional]  # noqa: E501
             value ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Value for the step.. [optional]  # noqa: E501
-            warnings ([synthetics_step_detail_warnings.SyntheticsStepDetailWarnings]): Warning collected that didn&#39;t failed the step.. [optional]  # noqa: E501
+            warnings ([SyntheticsStepDetailWarnings]): Warning collected that didn&#39;t failed the step.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,7 +218,7 @@ class SyntheticsStepDetail(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

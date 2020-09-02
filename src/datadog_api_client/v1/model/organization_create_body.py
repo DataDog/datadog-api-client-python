@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import organization_billing
-except ImportError:
-    organization_billing = sys.modules[
-        'datadog_api_client.v1.model.organization_billing']
-try:
-    from datadog_api_client.v1.model import organization_subscription
-except ImportError:
-    organization_subscription = sys.modules[
-        'datadog_api_client.v1.model.organization_subscription']
+
+def lazy_import():
+    from datadog_api_client.v1.model.organization_billing import OrganizationBilling
+    from datadog_api_client.v1.model.organization_subscription import OrganizationSubscription
+    globals()['OrganizationBilling'] = OrganizationBilling
+    globals()['OrganizationSubscription'] = OrganizationSubscription
 
 
 class OrganizationCreateBody(ModelNormal):
@@ -77,22 +69,24 @@ class OrganizationCreateBody(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'billing': (organization_billing.OrganizationBilling,),  # noqa: E501
+            'billing': (OrganizationBilling,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'subscription': (organization_subscription.OrganizationSubscription,),  # noqa: E501
+            'subscription': (OrganizationSubscription,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'billing': 'billing',  # noqa: E501
@@ -113,12 +107,12 @@ class OrganizationCreateBody(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, billing, name, subscription, *args, **kwargs):  # noqa: E501
-        """organization_create_body.OrganizationCreateBody - a model defined in OpenAPI
+        """OrganizationCreateBody - a model defined in OpenAPI
 
         Args:
-            billing (organization_billing.OrganizationBilling):
+            billing (OrganizationBilling):
             name (str): The name of the new child-organization, limited to 32 characters.
-            subscription (organization_subscription.OrganizationSubscription):
+            subscription (OrganizationSubscription):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -179,7 +173,7 @@ class OrganizationCreateBody(ModelNormal):
         self.billing = billing
         self.name = name
         self.subscription = subscription
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -20,17 +15,15 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import relationship_to_role
-from datadog_api_client.v2.model import logs_archive
-from datadog_api_client.v2.model import logs_archive_create_request
-from datadog_api_client.v2.model import roles_response
-from datadog_api_client.v2.model import logs_archives
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.logs_archive import LogsArchive
+from datadog_api_client.v2.model.logs_archive_create_request import LogsArchiveCreateRequest
+from datadog_api_client.v2.model.logs_archives import LogsArchives
+from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
+from datadog_api_client.v2.model.roles_response import RolesResponse
 
 
 class LogsArchivesApi(object):
@@ -63,7 +56,7 @@ class LogsArchivesApi(object):
                 archive_id (str): The ID of the archive.
 
             Keyword Args:
-                body (relationship_to_role.RelationshipToRole): [optional]
+                body (RelationshipToRole): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -148,7 +141,7 @@ class LogsArchivesApi(object):
                     'archive_id':
                         (str,),
                     'body':
-                        (relationship_to_role.RelationshipToRole,),
+                        (RelationshipToRole,),
                 },
                 'attribute_map': {
                     'archive_id': 'archive_id',
@@ -187,7 +180,7 @@ class LogsArchivesApi(object):
             >>> result = thread.get()
 
             Args:
-                body (logs_archive_create_request.LogsArchiveCreateRequest): The definition of the new archive.
+                body (LogsArchiveCreateRequest): The definition of the new archive.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -211,7 +204,7 @@ class LogsArchivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_archive.LogsArchive
+                LogsArchive
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -240,7 +233,7 @@ class LogsArchivesApi(object):
 
         self.create_logs_archive = Endpoint(
             settings={
-                'response_type': (logs_archive.LogsArchive,),
+                'response_type': (LogsArchive,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -271,7 +264,7 @@ class LogsArchivesApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (logs_archive_create_request.LogsArchiveCreateRequest,),
+                        (LogsArchiveCreateRequest,),
                 },
                 'attribute_map': {
                 },
@@ -452,7 +445,7 @@ class LogsArchivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_archive.LogsArchive
+                LogsArchive
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -481,7 +474,7 @@ class LogsArchivesApi(object):
 
         self.get_logs_archive = Endpoint(
             settings={
-                'response_type': (logs_archive.LogsArchive,),
+                'response_type': (LogsArchive,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -572,7 +565,7 @@ class LogsArchivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                roles_response.RolesResponse
+                RolesResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -601,7 +594,7 @@ class LogsArchivesApi(object):
 
         self.list_archive_read_roles = Endpoint(
             settings={
-                'response_type': (roles_response.RolesResponse,),
+                'response_type': (RolesResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -689,7 +682,7 @@ class LogsArchivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_archives.LogsArchives
+                LogsArchives
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -716,7 +709,7 @@ class LogsArchivesApi(object):
 
         self.list_logs_archives = Endpoint(
             settings={
-                'response_type': (logs_archives.LogsArchives,),
+                'response_type': (LogsArchives,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -779,7 +772,7 @@ class LogsArchivesApi(object):
                 archive_id (str): The ID of the archive.
 
             Keyword Args:
-                body (relationship_to_role.RelationshipToRole): [optional]
+                body (RelationshipToRole): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -864,7 +857,7 @@ class LogsArchivesApi(object):
                     'archive_id':
                         (str,),
                     'body':
-                        (relationship_to_role.RelationshipToRole,),
+                        (RelationshipToRole,),
                 },
                 'attribute_map': {
                     'archive_id': 'archive_id',
@@ -905,7 +898,7 @@ class LogsArchivesApi(object):
 
             Args:
                 archive_id (str): The ID of the archive.
-                body (logs_archive_create_request.LogsArchiveCreateRequest): New definition of the archive.
+                body (LogsArchiveCreateRequest): New definition of the archive.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -929,7 +922,7 @@ class LogsArchivesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                logs_archive.LogsArchive
+                LogsArchive
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -960,7 +953,7 @@ class LogsArchivesApi(object):
 
         self.update_logs_archive = Endpoint(
             settings={
-                'response_type': (logs_archive.LogsArchive,),
+                'response_type': (LogsArchive,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -995,7 +988,7 @@ class LogsArchivesApi(object):
                     'archive_id':
                         (str,),
                     'body':
-                        (logs_archive_create_request.LogsArchiveCreateRequest,),
+                        (LogsArchiveCreateRequest,),
                 },
                 'attribute_map': {
                     'archive_id': 'archive_id',

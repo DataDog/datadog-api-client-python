@@ -1,4 +1,4 @@
-# synthetics_test_options_retry.SyntheticsTestOptionsRetry
+# SyntheticsTestOptionsRetry
 
 Object describing the retry strategy to apply to a Synthetic test.
 ## Properties

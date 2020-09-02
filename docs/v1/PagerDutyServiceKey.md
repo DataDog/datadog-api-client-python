@@ -1,4 +1,4 @@
-# pager_duty_service_key.PagerDutyServiceKey
+# PagerDutyServiceKey
 
 PagerDuty service object key.
 ## Properties

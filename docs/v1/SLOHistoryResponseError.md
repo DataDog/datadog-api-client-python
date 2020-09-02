@@ -1,4 +1,4 @@
-# slo_history_response_error.SLOHistoryResponseError
+# SLOHistoryResponseError
 
 A service level objective response containing the requested history.
 ## Properties

@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_device_id
-except ImportError:
-    synthetics_device_id = sys.modules[
-        'datadog_api_client.v1.model.synthetics_device_id']
-try:
-    from datadog_api_client.v1.model import synthetics_test_options_monitor_options
-except ImportError:
-    synthetics_test_options_monitor_options = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_options_monitor_options']
-try:
-    from datadog_api_client.v1.model import synthetics_test_options_retry
-except ImportError:
-    synthetics_test_options_retry = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_options_retry']
-try:
-    from datadog_api_client.v1.model import synthetics_tick_interval
-except ImportError:
-    synthetics_tick_interval = sys.modules[
-        'datadog_api_client.v1.model.synthetics_tick_interval']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+    from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
+    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+    from datadog_api_client.v1.model.synthetics_tick_interval import SyntheticsTickInterval
+    globals()['SyntheticsDeviceID'] = SyntheticsDeviceID
+    globals()['SyntheticsTestOptionsMonitorOptions'] = SyntheticsTestOptionsMonitorOptions
+    globals()['SyntheticsTestOptionsRetry'] = SyntheticsTestOptionsRetry
+    globals()['SyntheticsTickInterval'] = SyntheticsTickInterval
 
 
 class SyntheticsTestOptions(ModelNormal):
@@ -87,28 +73,30 @@ class SyntheticsTestOptions(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'accept_self_signed': (bool,),  # noqa: E501
             'allow_insecure': (bool,),  # noqa: E501
-            'device_ids': ([synthetics_device_id.SyntheticsDeviceID],),  # noqa: E501
+            'device_ids': ([SyntheticsDeviceID],),  # noqa: E501
             'follow_redirects': (bool,),  # noqa: E501
             'min_failure_duration': (int,),  # noqa: E501
             'min_location_failed': (int,),  # noqa: E501
-            'monitor_options': (synthetics_test_options_monitor_options.SyntheticsTestOptionsMonitorOptions,),  # noqa: E501
-            'retry': (synthetics_test_options_retry.SyntheticsTestOptionsRetry,),  # noqa: E501
-            'tick_every': (synthetics_tick_interval.SyntheticsTickInterval,),  # noqa: E501
+            'monitor_options': (SyntheticsTestOptionsMonitorOptions,),  # noqa: E501
+            'retry': (SyntheticsTestOptionsRetry,),  # noqa: E501
+            'tick_every': (SyntheticsTickInterval,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'accept_self_signed': 'accept_self_signed',  # noqa: E501
@@ -135,7 +123,7 @@ class SyntheticsTestOptions(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_test_options.SyntheticsTestOptions - a model defined in OpenAPI
+        """SyntheticsTestOptions - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -170,13 +158,13 @@ class SyntheticsTestOptions(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             accept_self_signed (bool): For SSL test, whether or not the test should allow self signed certificates.. [optional]  # noqa: E501
             allow_insecure (bool): Allows loading insecure content for an HTTP request.. [optional]  # noqa: E501
-            device_ids ([synthetics_device_id.SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]  # noqa: E501
+            device_ids ([SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]  # noqa: E501
             follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]  # noqa: E501
             min_failure_duration (int): Minimum amount of time in failure required to trigger an alert.. [optional]  # noqa: E501
             min_location_failed (int): Minimum number of locations in failure required to trigger an alert.. [optional]  # noqa: E501
-            monitor_options (synthetics_test_options_monitor_options.SyntheticsTestOptionsMonitorOptions): [optional]  # noqa: E501
-            retry (synthetics_test_options_retry.SyntheticsTestOptionsRetry): [optional]  # noqa: E501
-            tick_every (synthetics_tick_interval.SyntheticsTickInterval): [optional]  # noqa: E501
+            monitor_options (SyntheticsTestOptionsMonitorOptions): [optional]  # noqa: E501
+            retry (SyntheticsTestOptionsRetry): [optional]  # noqa: E501
+            tick_every (SyntheticsTickInterval): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -202,7 +190,7 @@ class SyntheticsTestOptions(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

@@ -1,4 +1,4 @@
-# usage_custom_reports_page.UsageCustomReportsPage
+# UsageCustomReportsPage
 
 The object containing page total count.
 ## Properties

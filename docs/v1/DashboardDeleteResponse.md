@@ -1,4 +1,4 @@
-# dashboard_delete_response.DashboardDeleteResponse
+# DashboardDeleteResponse
 
 Response from the delete dashboard call.
 ## Properties

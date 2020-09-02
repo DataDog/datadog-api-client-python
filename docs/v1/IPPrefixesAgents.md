@@ -1,4 +1,4 @@
-# ip_prefixes_agents.IPPrefixesAgents
+# IPPrefixesAgents
 
 Available prefix information for the Agent endpoints.
 ## Properties

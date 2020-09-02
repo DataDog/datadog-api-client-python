@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,36 +21,21 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import logs_aggregate_request_paging
-except ImportError:
-    logs_aggregate_request_paging = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregate_request_paging']
-try:
-    from datadog_api_client.v2.model import logs_compute
-except ImportError:
-    logs_compute = sys.modules[
-        'datadog_api_client.v2.model.logs_compute']
-try:
-    from datadog_api_client.v2.model import logs_group_by
-except ImportError:
-    logs_group_by = sys.modules[
-        'datadog_api_client.v2.model.logs_group_by']
-try:
-    from datadog_api_client.v2.model import logs_query_filter
-except ImportError:
-    logs_query_filter = sys.modules[
-        'datadog_api_client.v2.model.logs_query_filter']
-try:
-    from datadog_api_client.v2.model import logs_query_options
-except ImportError:
-    logs_query_options = sys.modules[
-        'datadog_api_client.v2.model.logs_query_options']
+
+def lazy_import():
+    from datadog_api_client.v2.model.logs_aggregate_request_paging import LogsAggregateRequestPaging
+    from datadog_api_client.v2.model.logs_compute import LogsCompute
+    from datadog_api_client.v2.model.logs_group_by import LogsGroupBy
+    from datadog_api_client.v2.model.logs_query_filter import LogsQueryFilter
+    from datadog_api_client.v2.model.logs_query_options import LogsQueryOptions
+    globals()['LogsAggregateRequestPaging'] = LogsAggregateRequestPaging
+    globals()['LogsCompute'] = LogsCompute
+    globals()['LogsGroupBy'] = LogsGroupBy
+    globals()['LogsQueryFilter'] = LogsQueryFilter
+    globals()['LogsQueryOptions'] = LogsQueryOptions
 
 
 class LogsAggregateRequest(ModelNormal):
@@ -92,24 +75,26 @@ class LogsAggregateRequest(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'compute': ([logs_compute.LogsCompute],),  # noqa: E501
-            'filter': (logs_query_filter.LogsQueryFilter,),  # noqa: E501
-            'group_by': ([logs_group_by.LogsGroupBy],),  # noqa: E501
-            'options': (logs_query_options.LogsQueryOptions,),  # noqa: E501
-            'paging': (logs_aggregate_request_paging.LogsAggregateRequestPaging,),  # noqa: E501
+            'compute': ([LogsCompute],),  # noqa: E501
+            'filter': (LogsQueryFilter,),  # noqa: E501
+            'group_by': ([LogsGroupBy],),  # noqa: E501
+            'options': (LogsQueryOptions,),  # noqa: E501
+            'paging': (LogsAggregateRequestPaging,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'compute': 'compute',  # noqa: E501
@@ -132,7 +117,7 @@ class LogsAggregateRequest(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """logs_aggregate_request.LogsAggregateRequest - a model defined in OpenAPI
+        """LogsAggregateRequest - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -165,11 +150,11 @@ class LogsAggregateRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            compute ([logs_compute.LogsCompute]): The list of metrics or timeseries to compute for the retrieved buckets.. [optional]  # noqa: E501
-            filter (logs_query_filter.LogsQueryFilter): [optional]  # noqa: E501
-            group_by ([logs_group_by.LogsGroupBy]): The rules for the group by. [optional]  # noqa: E501
-            options (logs_query_options.LogsQueryOptions): [optional]  # noqa: E501
-            paging (logs_aggregate_request_paging.LogsAggregateRequestPaging): [optional]  # noqa: E501
+            compute ([LogsCompute]): The list of metrics or timeseries to compute for the retrieved buckets.. [optional]  # noqa: E501
+            filter (LogsQueryFilter): [optional]  # noqa: E501
+            group_by ([LogsGroupBy]): The rules for the group by. [optional]  # noqa: E501
+            options (LogsQueryOptions): [optional]  # noqa: E501
+            paging (LogsAggregateRequestPaging): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -195,7 +180,7 @@ class LogsAggregateRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

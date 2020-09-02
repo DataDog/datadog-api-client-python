@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,26 +21,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import note_widget_definition_type
-except ImportError:
-    note_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.note_widget_definition_type']
-try:
-    from datadog_api_client.v1.model import widget_text_align
-except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
-try:
-    from datadog_api_client.v1.model import widget_tick_edge
-except ImportError:
-    widget_tick_edge = sys.modules[
-        'datadog_api_client.v1.model.widget_tick_edge']
+
+def lazy_import():
+    from datadog_api_client.v1.model.note_widget_definition_type import NoteWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+    from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
+    globals()['NoteWidgetDefinitionType'] = NoteWidgetDefinitionType
+    globals()['WidgetTextAlign'] = WidgetTextAlign
+    globals()['WidgetTickEdge'] = WidgetTickEdge
 
 
 class NoteWidgetDefinition(ModelNormal):
@@ -82,27 +71,29 @@ class NoteWidgetDefinition(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'content': (str,),  # noqa: E501
-            'type': (note_widget_definition_type.NoteWidgetDefinitionType,),  # noqa: E501
+            'type': (NoteWidgetDefinitionType,),  # noqa: E501
             'background_color': (str,),  # noqa: E501
             'font_size': (str,),  # noqa: E501
             'show_tick': (bool,),  # noqa: E501
-            'text_align': (widget_text_align.WidgetTextAlign,),  # noqa: E501
-            'tick_edge': (widget_tick_edge.WidgetTickEdge,),  # noqa: E501
+            'text_align': (WidgetTextAlign,),  # noqa: E501
+            'tick_edge': (WidgetTickEdge,),  # noqa: E501
             'tick_pos': (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'content': 'content',  # noqa: E501
@@ -128,11 +119,11 @@ class NoteWidgetDefinition(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, content, type, *args, **kwargs):  # noqa: E501
-        """note_widget_definition.NoteWidgetDefinition - a model defined in OpenAPI
+        """NoteWidgetDefinition - a model defined in OpenAPI
 
         Args:
             content (str): Content of the note.
-            type (note_widget_definition_type.NoteWidgetDefinitionType):
+            type (NoteWidgetDefinitionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -168,8 +159,8 @@ class NoteWidgetDefinition(ModelNormal):
             background_color (str): Background color of the note.. [optional]  # noqa: E501
             font_size (str): Size of the text.. [optional]  # noqa: E501
             show_tick (bool): Whether to show a tick or not.. [optional]  # noqa: E501
-            text_align (widget_text_align.WidgetTextAlign): [optional]  # noqa: E501
-            tick_edge (widget_tick_edge.WidgetTickEdge): [optional]  # noqa: E501
+            text_align (WidgetTextAlign): [optional]  # noqa: E501
+            tick_edge (WidgetTickEdge): [optional]  # noqa: E501
             tick_pos (str): Where to position the tick on an edge.. [optional]  # noqa: E501
         """
 
@@ -198,7 +189,7 @@ class NoteWidgetDefinition(ModelNormal):
 
         self.content = content
         self.type = type
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

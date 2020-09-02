@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,18 +15,16 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import api_key
-from datadog_api_client.v1.model import api_key_response
-from datadog_api_client.v1.model import application_key
-from datadog_api_client.v1.model import application_key_response
-from datadog_api_client.v1.model import api_key_list_response
-from datadog_api_client.v1.model import application_key_list_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.api_key import ApiKey
+from datadog_api_client.v1.model.api_key_list_response import ApiKeyListResponse
+from datadog_api_client.v1.model.api_key_response import ApiKeyResponse
+from datadog_api_client.v1.model.application_key import ApplicationKey
+from datadog_api_client.v1.model.application_key_list_response import ApplicationKeyListResponse
+from datadog_api_client.v1.model.application_key_response import ApplicationKeyResponse
 
 
 class KeyManagementApi(object):
@@ -61,7 +54,7 @@ class KeyManagementApi(object):
             >>> result = thread.get()
 
             Args:
-                body (api_key.ApiKey):
+                body (ApiKey):
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -85,7 +78,7 @@ class KeyManagementApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                api_key_response.ApiKeyResponse
+                ApiKeyResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -114,7 +107,7 @@ class KeyManagementApi(object):
 
         self.create_api_key = Endpoint(
             settings={
-                'response_type': (api_key_response.ApiKeyResponse,),
+                'response_type': (ApiKeyResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -145,7 +138,7 @@ class KeyManagementApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (api_key.ApiKey,),
+                        (ApiKey,),
                 },
                 'attribute_map': {
                 },
@@ -182,7 +175,7 @@ class KeyManagementApi(object):
             >>> result = thread.get()
 
             Args:
-                body (application_key.ApplicationKey):
+                body (ApplicationKey):
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -206,7 +199,7 @@ class KeyManagementApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                application_key_response.ApplicationKeyResponse
+                ApplicationKeyResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -235,7 +228,7 @@ class KeyManagementApi(object):
 
         self.create_application_key = Endpoint(
             settings={
-                'response_type': (application_key_response.ApplicationKeyResponse,),
+                'response_type': (ApplicationKeyResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -266,7 +259,7 @@ class KeyManagementApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (application_key.ApplicationKey,),
+                        (ApplicationKey,),
                 },
                 'attribute_map': {
                 },
@@ -327,7 +320,7 @@ class KeyManagementApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                api_key_response.ApiKeyResponse
+                ApiKeyResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -356,7 +349,7 @@ class KeyManagementApi(object):
 
         self.delete_api_key = Endpoint(
             settings={
-                'response_type': (api_key_response.ApiKeyResponse,),
+                'response_type': (ApiKeyResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -447,7 +440,7 @@ class KeyManagementApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                application_key_response.ApplicationKeyResponse
+                ApplicationKeyResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -476,7 +469,7 @@ class KeyManagementApi(object):
 
         self.delete_application_key = Endpoint(
             settings={
-                'response_type': (application_key_response.ApplicationKeyResponse,),
+                'response_type': (ApplicationKeyResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -567,7 +560,7 @@ class KeyManagementApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                api_key_response.ApiKeyResponse
+                ApiKeyResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -596,7 +589,7 @@ class KeyManagementApi(object):
 
         self.get_api_key = Endpoint(
             settings={
-                'response_type': (api_key_response.ApiKeyResponse,),
+                'response_type': (ApiKeyResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -687,7 +680,7 @@ class KeyManagementApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                application_key_response.ApplicationKeyResponse
+                ApplicationKeyResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -716,7 +709,7 @@ class KeyManagementApi(object):
 
         self.get_application_key = Endpoint(
             settings={
-                'response_type': (application_key_response.ApplicationKeyResponse,),
+                'response_type': (ApplicationKeyResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -804,7 +797,7 @@ class KeyManagementApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                api_key_list_response.ApiKeyListResponse
+                ApiKeyListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -831,7 +824,7 @@ class KeyManagementApi(object):
 
         self.list_api_keys = Endpoint(
             settings={
-                'response_type': (api_key_list_response.ApiKeyListResponse,),
+                'response_type': (ApiKeyListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -912,7 +905,7 @@ class KeyManagementApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                application_key_list_response.ApplicationKeyListResponse
+                ApplicationKeyListResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -939,7 +932,7 @@ class KeyManagementApi(object):
 
         self.list_application_keys = Endpoint(
             settings={
-                'response_type': (application_key_list_response.ApplicationKeyListResponse,),
+                'response_type': (ApplicationKeyListResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1001,7 +994,7 @@ class KeyManagementApi(object):
 
             Args:
                 key (str): The specific API key you are working with.
-                body (api_key.ApiKey):
+                body (ApiKey):
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -1025,7 +1018,7 @@ class KeyManagementApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                api_key_response.ApiKeyResponse
+                ApiKeyResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1056,7 +1049,7 @@ class KeyManagementApi(object):
 
         self.update_api_key = Endpoint(
             settings={
-                'response_type': (api_key_response.ApiKeyResponse,),
+                'response_type': (ApiKeyResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1091,7 +1084,7 @@ class KeyManagementApi(object):
                     'key':
                         (str,),
                     'body':
-                        (api_key.ApiKey,),
+                        (ApiKey,),
                 },
                 'attribute_map': {
                     'key': 'key',
@@ -1132,7 +1125,7 @@ class KeyManagementApi(object):
 
             Args:
                 key (str): The specific APP key you are working with.
-                body (application_key.ApplicationKey):
+                body (ApplicationKey):
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -1156,7 +1149,7 @@ class KeyManagementApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                application_key_response.ApplicationKeyResponse
+                ApplicationKeyResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1187,7 +1180,7 @@ class KeyManagementApi(object):
 
         self.update_application_key = Endpoint(
             settings={
-                'response_type': (application_key_response.ApplicationKeyResponse,),
+                'response_type': (ApplicationKeyResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1222,7 +1215,7 @@ class KeyManagementApi(object):
                     'key':
                         (str,),
                     'body':
-                        (application_key.ApplicationKey,),
+                        (ApplicationKey,),
                 },
                 'attribute_map': {
                     'key': 'key',

@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -20,21 +15,19 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v2.model import user_create_request
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import user_response
-from datadog_api_client.v2.model import user_invitation_response
-from datadog_api_client.v2.model import permissions_response
-from datadog_api_client.v2.model import users_response
-from datadog_api_client.v2.model import query_sort_order
-from datadog_api_client.v2.model import user_invitations_response
-from datadog_api_client.v2.model import user_invitations_request
-from datadog_api_client.v2.model import user_update_request
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.permissions_response import PermissionsResponse
+from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v2.model.user_create_request import UserCreateRequest
+from datadog_api_client.v2.model.user_invitation_response import UserInvitationResponse
+from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
+from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
+from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
+from datadog_api_client.v2.model.users_response import UsersResponse
 
 
 class UsersApi(object):
@@ -64,7 +57,7 @@ class UsersApi(object):
 
 
             Keyword Args:
-                body (user_create_request.UserCreateRequest): [optional]
+                body (UserCreateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -86,7 +79,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_response.UserResponse
+                UserResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -113,7 +106,7 @@ class UsersApi(object):
 
         self.create_user = Endpoint(
             settings={
-                'response_type': (user_response.UserResponse,),
+                'response_type': (UserResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -142,7 +135,7 @@ class UsersApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (user_create_request.UserCreateRequest,),
+                        (UserCreateRequest,),
                 },
                 'attribute_map': {
                 },
@@ -323,7 +316,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_invitation_response.UserInvitationResponse
+                UserInvitationResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -352,7 +345,7 @@ class UsersApi(object):
 
         self.get_invitation = Endpoint(
             settings={
-                'response_type': (user_invitation_response.UserInvitationResponse,),
+                'response_type': (UserInvitationResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -443,7 +436,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_response.UserResponse
+                UserResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -472,7 +465,7 @@ class UsersApi(object):
 
         self.get_user = Endpoint(
             settings={
-                'response_type': (user_response.UserResponse,),
+                'response_type': (UserResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -563,7 +556,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_response.UserResponse
+                UserResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -592,7 +585,7 @@ class UsersApi(object):
 
         self.list_user_organizations = Endpoint(
             settings={
-                'response_type': (user_response.UserResponse,),
+                'response_type': (UserResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -683,7 +676,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                permissions_response.PermissionsResponse
+                PermissionsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -712,7 +705,7 @@ class UsersApi(object):
 
         self.list_user_permissions = Endpoint(
             settings={
-                'response_type': (permissions_response.PermissionsResponse,),
+                'response_type': (PermissionsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -781,8 +774,8 @@ class UsersApi(object):
             Keyword Args:
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (str): User attribute to order results by. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example &#x60;sort&#x3D;-name&#x60;. Options: &#x60;name&#x60;, &#x60;modified_at&#x60;, &#x60;user_count&#x60;.. [optional] if omitted the server will use the default value of 'name'
-                sort_dir (query_sort_order.QuerySortOrder): Direction of sort. Options: &#x60;asc&#x60;, &#x60;desc&#x60;.. [optional]
+                sort (str): User attribute to order results by. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example &#x60;sort&#x3D;-name&#x60;. Options: &#x60;name&#x60;, &#x60;modified_at&#x60;, &#x60;user_count&#x60;.. [optional] if omitted the server will use the default value of "name"
+                sort_dir (QuerySortOrder): Direction of sort. Options: &#x60;asc&#x60;, &#x60;desc&#x60;.. [optional]
                 filter (str): Filter all users by the given string. Defaults to no filtering.. [optional]
                 filter_status (str): Filter on status attribute. Comma separated list, with possible values &#x60;Active&#x60;, &#x60;Pending&#x60;, and &#x60;Disabled&#x60;. Defaults to no filtering.. [optional]
                 _return_http_data_only (bool): response data without head status
@@ -806,7 +799,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                users_response.UsersResponse
+                UsersResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -833,7 +826,7 @@ class UsersApi(object):
 
         self.list_users = Endpoint(
             settings={
-                'response_type': (users_response.UsersResponse,),
+                'response_type': (UsersResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -873,7 +866,7 @@ class UsersApi(object):
                     'sort':
                         (str,),
                     'sort_dir':
-                        (query_sort_order.QuerySortOrder,),
+                        (QuerySortOrder,),
                     'filter':
                         (str,),
                     'filter_status':
@@ -923,7 +916,7 @@ class UsersApi(object):
 
 
             Keyword Args:
-                body (user_invitations_request.UserInvitationsRequest): [optional]
+                body (UserInvitationsRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -945,7 +938,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_invitations_response.UserInvitationsResponse
+                UserInvitationsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -972,7 +965,7 @@ class UsersApi(object):
 
         self.send_invitations = Endpoint(
             settings={
-                'response_type': (user_invitations_response.UserInvitationsResponse,),
+                'response_type': (UserInvitationsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1001,7 +994,7 @@ class UsersApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (user_invitations_request.UserInvitationsRequest,),
+                        (UserInvitationsRequest,),
                 },
                 'attribute_map': {
                 },
@@ -1041,7 +1034,7 @@ class UsersApi(object):
                 user_id (str): The ID of the user.
 
             Keyword Args:
-                body (user_update_request.UserUpdateRequest): [optional]
+                body (UserUpdateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1063,7 +1056,7 @@ class UsersApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                user_response.UserResponse
+                UserResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1092,7 +1085,7 @@ class UsersApi(object):
 
         self.update_user = Endpoint(
             settings={
-                'response_type': (user_response.UserResponse,),
+                'response_type': (UserResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1126,7 +1119,7 @@ class UsersApi(object):
                     'user_id':
                         (str,),
                     'body':
-                        (user_update_request.UserUpdateRequest,),
+                        (UserUpdateRequest,),
                 },
                 'attribute_map': {
                     'user_id': 'user_id',

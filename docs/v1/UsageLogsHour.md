@@ -1,4 +1,4 @@
-# usage_logs_hour.UsageLogsHour
+# UsageLogsHour
 
 Hour usage for logs.
 ## Properties

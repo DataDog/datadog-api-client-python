@@ -1,4 +1,4 @@
-# usage_network_hosts_hour.UsageNetworkHostsHour
+# UsageNetworkHostsHour
 
 Number of active NPM hosts for each hour for a given organization.
 ## Properties

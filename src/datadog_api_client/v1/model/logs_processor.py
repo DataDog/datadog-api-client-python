@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,106 +21,49 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import logs_arithmetic_processor
-except ImportError:
-    logs_arithmetic_processor = sys.modules[
-        'datadog_api_client.v1.model.logs_arithmetic_processor']
-try:
-    from datadog_api_client.v1.model import logs_attribute_remapper
-except ImportError:
-    logs_attribute_remapper = sys.modules[
-        'datadog_api_client.v1.model.logs_attribute_remapper']
-try:
-    from datadog_api_client.v1.model import logs_category_processor
-except ImportError:
-    logs_category_processor = sys.modules[
-        'datadog_api_client.v1.model.logs_category_processor']
-try:
-    from datadog_api_client.v1.model import logs_category_processor_categories
-except ImportError:
-    logs_category_processor_categories = sys.modules[
-        'datadog_api_client.v1.model.logs_category_processor_categories']
-try:
-    from datadog_api_client.v1.model import logs_date_remapper
-except ImportError:
-    logs_date_remapper = sys.modules[
-        'datadog_api_client.v1.model.logs_date_remapper']
-try:
-    from datadog_api_client.v1.model import logs_filter
-except ImportError:
-    logs_filter = sys.modules[
-        'datadog_api_client.v1.model.logs_filter']
-try:
-    from datadog_api_client.v1.model import logs_geo_ip_parser
-except ImportError:
-    logs_geo_ip_parser = sys.modules[
-        'datadog_api_client.v1.model.logs_geo_ip_parser']
-try:
-    from datadog_api_client.v1.model import logs_grok_parser
-except ImportError:
-    logs_grok_parser = sys.modules[
-        'datadog_api_client.v1.model.logs_grok_parser']
-try:
-    from datadog_api_client.v1.model import logs_grok_parser_rules
-except ImportError:
-    logs_grok_parser_rules = sys.modules[
-        'datadog_api_client.v1.model.logs_grok_parser_rules']
-try:
-    from datadog_api_client.v1.model import logs_lookup_processor
-except ImportError:
-    logs_lookup_processor = sys.modules[
-        'datadog_api_client.v1.model.logs_lookup_processor']
-try:
-    from datadog_api_client.v1.model import logs_message_remapper
-except ImportError:
-    logs_message_remapper = sys.modules[
-        'datadog_api_client.v1.model.logs_message_remapper']
-try:
-    from datadog_api_client.v1.model import logs_pipeline_processor
-except ImportError:
-    logs_pipeline_processor = sys.modules[
-        'datadog_api_client.v1.model.logs_pipeline_processor']
-try:
-    from datadog_api_client.v1.model import logs_service_remapper
-except ImportError:
-    logs_service_remapper = sys.modules[
-        'datadog_api_client.v1.model.logs_service_remapper']
-try:
-    from datadog_api_client.v1.model import logs_status_remapper
-except ImportError:
-    logs_status_remapper = sys.modules[
-        'datadog_api_client.v1.model.logs_status_remapper']
-try:
-    from datadog_api_client.v1.model import logs_string_builder_processor
-except ImportError:
-    logs_string_builder_processor = sys.modules[
-        'datadog_api_client.v1.model.logs_string_builder_processor']
-try:
-    from datadog_api_client.v1.model import logs_trace_remapper
-except ImportError:
-    logs_trace_remapper = sys.modules[
-        'datadog_api_client.v1.model.logs_trace_remapper']
-try:
-    from datadog_api_client.v1.model import logs_trace_remapper_type
-except ImportError:
-    logs_trace_remapper_type = sys.modules[
-        'datadog_api_client.v1.model.logs_trace_remapper_type']
-try:
-    from datadog_api_client.v1.model import logs_url_parser
-except ImportError:
-    logs_url_parser = sys.modules[
-        'datadog_api_client.v1.model.logs_url_parser']
-try:
-    from datadog_api_client.v1.model import logs_user_agent_parser
-except ImportError:
-    logs_user_agent_parser = sys.modules[
-        'datadog_api_client.v1.model.logs_user_agent_parser']
+
+def lazy_import():
+    from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
+    from datadog_api_client.v1.model.logs_attribute_remapper import LogsAttributeRemapper
+    from datadog_api_client.v1.model.logs_category_processor import LogsCategoryProcessor
+    from datadog_api_client.v1.model.logs_category_processor_categories import LogsCategoryProcessorCategories
+    from datadog_api_client.v1.model.logs_date_remapper import LogsDateRemapper
+    from datadog_api_client.v1.model.logs_filter import LogsFilter
+    from datadog_api_client.v1.model.logs_geo_ip_parser import LogsGeoIPParser
+    from datadog_api_client.v1.model.logs_grok_parser import LogsGrokParser
+    from datadog_api_client.v1.model.logs_grok_parser_rules import LogsGrokParserRules
+    from datadog_api_client.v1.model.logs_lookup_processor import LogsLookupProcessor
+    from datadog_api_client.v1.model.logs_message_remapper import LogsMessageRemapper
+    from datadog_api_client.v1.model.logs_pipeline_processor import LogsPipelineProcessor
+    from datadog_api_client.v1.model.logs_service_remapper import LogsServiceRemapper
+    from datadog_api_client.v1.model.logs_status_remapper import LogsStatusRemapper
+    from datadog_api_client.v1.model.logs_string_builder_processor import LogsStringBuilderProcessor
+    from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
+    from datadog_api_client.v1.model.logs_trace_remapper_type import LogsTraceRemapperType
+    from datadog_api_client.v1.model.logs_url_parser import LogsURLParser
+    from datadog_api_client.v1.model.logs_user_agent_parser import LogsUserAgentParser
+    globals()['LogsArithmeticProcessor'] = LogsArithmeticProcessor
+    globals()['LogsAttributeRemapper'] = LogsAttributeRemapper
+    globals()['LogsCategoryProcessor'] = LogsCategoryProcessor
+    globals()['LogsCategoryProcessorCategories'] = LogsCategoryProcessorCategories
+    globals()['LogsDateRemapper'] = LogsDateRemapper
+    globals()['LogsFilter'] = LogsFilter
+    globals()['LogsGeoIPParser'] = LogsGeoIPParser
+    globals()['LogsGrokParser'] = LogsGrokParser
+    globals()['LogsGrokParserRules'] = LogsGrokParserRules
+    globals()['LogsLookupProcessor'] = LogsLookupProcessor
+    globals()['LogsMessageRemapper'] = LogsMessageRemapper
+    globals()['LogsPipelineProcessor'] = LogsPipelineProcessor
+    globals()['LogsServiceRemapper'] = LogsServiceRemapper
+    globals()['LogsStatusRemapper'] = LogsStatusRemapper
+    globals()['LogsStringBuilderProcessor'] = LogsStringBuilderProcessor
+    globals()['LogsTraceRemapper'] = LogsTraceRemapper
+    globals()['LogsTraceRemapperType'] = LogsTraceRemapperType
+    globals()['LogsURLParser'] = LogsURLParser
+    globals()['LogsUserAgentParser'] = LogsUserAgentParser
 
 
 class LogsProcessor(ModelComposed):
@@ -155,15 +96,22 @@ class LogsProcessor(ModelComposed):
     validations = {
     }
 
-    additional_properties_type = (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
@@ -174,6 +122,7 @@ class LogsProcessor(ModelComposed):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {}
 
@@ -191,17 +140,17 @@ class LogsProcessor(ModelComposed):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """logs_processor.LogsProcessor - a model defined in OpenAPI
+        """LogsProcessor - a model defined in OpenAPI
 
         Args:
 
         Keyword Args:
-            grok (logs_grok_parser_rules.LogsGrokParserRules): defaults to nulltype.Null  # noqa: E501
+            grok (LogsGrokParserRules): defaults to nulltype.Null  # noqa: E501
             source (str): Source attribute used to perform the lookup.. defaults to nulltype.Null  # noqa: E501
-            type (logs_trace_remapper_type.LogsTraceRemapperType): defaults to nulltype.Null, must be one of ["trace-id-remapper", ]  # noqa: E501
+            type (LogsTraceRemapperType): defaults to nulltype.Null, must be one of ["trace-id-remapper", ]  # noqa: E501
             sources ([str]): Array of source attributes.. defaults to nulltype.Null  # noqa: E501
             target (str): Name of the attribute that contains the corresponding value in the mapping list or the &#x60;default_lookup&#x60; if not found in the mapping list.. defaults to nulltype.Null  # noqa: E501
-            categories ([logs_category_processor_categories.LogsCategoryProcessorCategories]): Array of filters to match or not a log and their corresponding &#x60;name&#x60;to assign a custom value to the log.. defaults to nulltype.Null  # noqa: E501
+            categories ([LogsCategoryProcessorCategories]): Array of filters to match or not a log and their corresponding &#x60;name&#x60;to assign a custom value to the log.. defaults to nulltype.Null  # noqa: E501
             expression (str): Arithmetic operation between one or more log attributes.. defaults to nulltype.Null  # noqa: E501
             template (str): A formula with one or more attributes and raw text.. defaults to nulltype.Null  # noqa: E501
             lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as &#x60;[\&quot;source_key1,target_value1\&quot;, \&quot;source_key2,target_value2\&quot;]&#x60;. defaults to nulltype.Null  # noqa: E501
@@ -240,12 +189,12 @@ class LogsProcessor(ModelComposed):
             samples ([str]): List of sample logs to test this grok parser.. [optional]  # noqa: E501
             override_on_conflict (bool): Override or not the target element if already set,. [optional] if omitted the server will use the default value of False  # noqa: E501
             preserve_source (bool): Remove or preserve the remapped source element.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            source_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of 'attribute'  # noqa: E501
-            target_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of 'attribute'  # noqa: E501
+            source_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
+            target_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
             normalize_ending_slashes (bool, none_type): Normalize the ending slashes or not.. [optional] if omitted the server will use the default value of False  # noqa: E501
             is_encoded (bool): Define if the source attribute is URL encoded or not.. [optional] if omitted the server will use the default value of False  # noqa: E501
             is_replace_missing (bool): If true, it replaces all missing attributes of &#x60;template&#x60; by an empty string. If &#x60;false&#x60; (default), skips the operation for missing attributes.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            filter (logs_filter.LogsFilter): [optional]  # noqa: E501
+            filter (LogsFilter): [optional]  # noqa: E501
             processors ([LogsProcessor]): Ordered list of processors in this pipeline.. [optional]  # noqa: E501
             default_lookup (str): Value to set the target attribute if the source value is not found in the list.. [optional]  # noqa: E501
         """
@@ -317,7 +266,7 @@ class LogsProcessor(ModelComposed):
 
         for var_name, var_value in required_args.items():
             setattr(self, var_name, var_value)
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name in unused_args and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \
@@ -335,26 +284,27 @@ class LogsProcessor(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
+        lazy_import()
         return {
           'anyOf': [
           ],
           'allOf': [
           ],
           'oneOf': [
-              logs_arithmetic_processor.LogsArithmeticProcessor,
-              logs_attribute_remapper.LogsAttributeRemapper,
-              logs_category_processor.LogsCategoryProcessor,
-              logs_date_remapper.LogsDateRemapper,
-              logs_geo_ip_parser.LogsGeoIPParser,
-              logs_grok_parser.LogsGrokParser,
-              logs_lookup_processor.LogsLookupProcessor,
-              logs_message_remapper.LogsMessageRemapper,
-              logs_pipeline_processor.LogsPipelineProcessor,
-              logs_service_remapper.LogsServiceRemapper,
-              logs_status_remapper.LogsStatusRemapper,
-              logs_string_builder_processor.LogsStringBuilderProcessor,
-              logs_trace_remapper.LogsTraceRemapper,
-              logs_url_parser.LogsURLParser,
-              logs_user_agent_parser.LogsUserAgentParser,
+              LogsArithmeticProcessor,
+              LogsAttributeRemapper,
+              LogsCategoryProcessor,
+              LogsDateRemapper,
+              LogsGeoIPParser,
+              LogsGrokParser,
+              LogsLookupProcessor,
+              LogsMessageRemapper,
+              LogsPipelineProcessor,
+              LogsServiceRemapper,
+              LogsStatusRemapper,
+              LogsStringBuilderProcessor,
+              LogsTraceRemapper,
+              LogsURLParser,
+              LogsUserAgentParser,
           ],
         }

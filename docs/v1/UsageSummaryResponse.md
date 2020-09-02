@@ -1,4 +1,4 @@
-# usage_summary_response.UsageSummaryResponse
+# UsageSummaryResponse
 
 Response with hourly report of all data billed by Datadog all organizations.
 ## Properties
@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **aws_host_top99p_sum** | **int** | Shows the 99th percentile of all AWS hosts over all hours in the current month(s) for all organizations. | [optional] 
 **aws_lambda_func_count** | **int** | Shows the average of the number of functions that executed 1 or more times each hour in the current month(s) for all organizations. | [optional] 
 **aws_lambda_invocations_sum** | **int** | Shows the sum of all AWS Lambda invocations over all hours in the current month(s) for all organizations. | [optional] 
+**azure_app_service_top99p_sum** | **int** | Shows the 99th percentile of all Azure app services over all hours in the current month(s) for all organizations. | [optional] 
 **azure_host_top99p_sum** | **int** | Shows the 99th percentile of all Azure hosts over all hours in the current month(s) for all organizations. | [optional] 
 **billable_ingested_bytes_agg_sum** | **int** | Shows the sum of all log bytes ingested over all hours in the current month(s) for all organizations. | [optional] 
 **container_avg_sum** | **int** | Shows the average of all distinct containers over all hours in the current month(s) for all organizations. | [optional] 
@@ -31,7 +32,8 @@ Name | Type | Description | Notes
 **synthetics_browser_check_calls_count_agg_sum** | **int** | Shows the sum of all Synthetic browser tests over all hours in the current month(s) for all organizations. | [optional] 
 **synthetics_check_calls_count_agg_sum** | **int** | Shows the sum of all Synthetic API tests over all hours in the current month(s) for all organizations. | [optional] 
 **trace_search_indexed_events_count_agg_sum** | **int** | Shows the sum of all analyzed spans indexed over all hours in the current month(s) for all organizations. | [optional] 
-**usage** | [**[usage_summary_date.UsageSummaryDate]**](UsageSummaryDate.md) | An array of objects regarding hourly usage. | [optional] 
+**twol_ingested_events_bytes_agg_sum** | **int** | Shows the sum of all tracing without limits bytes ingested over all hours in the current month(s) for all organizations. | [optional] 
+**usage** | [**[UsageSummaryDate]**](UsageSummaryDate.md) | An array of objects regarding hourly usage. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

@@ -1,4 +1,4 @@
-# monitor_threshold_window_options.MonitorThresholdWindowOptions
+# MonitorThresholdWindowOptions
 
 Alerting time window options.
 ## Properties

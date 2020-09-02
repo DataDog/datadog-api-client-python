@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_graph_snapshot**
-> graph_snapshot.GraphSnapshot get_graph_snapshot(start, end)
+> GraphSnapshot get_graph_snapshot(start, end)
 
 Take graph snapshots
 
@@ -19,12 +19,11 @@ Take graph snapshots. **Note**: When a snapshot is created, there is some delay 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import snapshots_api
-from datadog_api_client.v1.model import graph_snapshot
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.graph_snapshot import GraphSnapshot
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -61,12 +60,12 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = snapshots_api.SnapshotsApi(api_client)
-    start = 56 # int | The POSIX timestamp of the start of the query.
-    end = 56 # int | The POSIX timestamp of the end of the query.
-    metric_query = 'metric_query_example' # str | The metric query. (optional)
-event_query = 'event_query_example' # str | A query that adds event bands to the graph. (optional)
-graph_def = 'graph_def_example' # str | A JSON document defining the graph. `graph_def` can be used instead of `metric_query`. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded. (optional)
-title = 'title_example' # str | A title for the graph. If no title is specified, the graph does not have a title. (optional)
+    start = 1 # int | The POSIX timestamp of the start of the query.
+    end = 1 # int | The POSIX timestamp of the end of the query.
+    metric_query = "metric_query_example" # str | The metric query. (optional)
+    event_query = "event_query_example" # str | A query that adds event bands to the graph. (optional)
+    graph_def = "graph_def_example" # str | A JSON document defining the graph. `graph_def` can be used instead of `metric_query`. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded. (optional)
+    title = "title_example" # str | A title for the graph. If no title is specified, the graph does not have a title. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -99,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**graph_snapshot.GraphSnapshot**](GraphSnapshot.md)
+[**GraphSnapshot**](GraphSnapshot.md)
 
 ### Authorization
 

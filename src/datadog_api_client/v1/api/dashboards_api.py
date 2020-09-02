@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -20,15 +15,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import dashboard
-from datadog_api_client.v1.model import dashboard_delete_response
-from datadog_api_client.v1.model import dashboard_summary
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.dashboard import Dashboard
+from datadog_api_client.v1.model.dashboard_delete_response import DashboardDeleteResponse
+from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
 
 
 class DashboardsApi(object):
@@ -58,7 +51,7 @@ class DashboardsApi(object):
             >>> result = thread.get()
 
             Args:
-                body (dashboard.Dashboard): Create a dashboard request body.
+                body (Dashboard): Create a dashboard request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -82,7 +75,7 @@ class DashboardsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard.Dashboard
+                Dashboard
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -111,7 +104,7 @@ class DashboardsApi(object):
 
         self.create_dashboard = Endpoint(
             settings={
-                'response_type': (dashboard.Dashboard,),
+                'response_type': (Dashboard,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -142,7 +135,7 @@ class DashboardsApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (dashboard.Dashboard,),
+                        (Dashboard,),
                 },
                 'attribute_map': {
                 },
@@ -203,7 +196,7 @@ class DashboardsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_delete_response.DashboardDeleteResponse
+                DashboardDeleteResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -232,7 +225,7 @@ class DashboardsApi(object):
 
         self.delete_dashboard = Endpoint(
             settings={
-                'response_type': (dashboard_delete_response.DashboardDeleteResponse,),
+                'response_type': (DashboardDeleteResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -323,7 +316,7 @@ class DashboardsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard.Dashboard
+                Dashboard
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -352,7 +345,7 @@ class DashboardsApi(object):
 
         self.get_dashboard = Endpoint(
             settings={
-                'response_type': (dashboard.Dashboard,),
+                'response_type': (Dashboard,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -440,7 +433,7 @@ class DashboardsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard_summary.DashboardSummary
+                DashboardSummary
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -467,7 +460,7 @@ class DashboardsApi(object):
 
         self.list_dashboards = Endpoint(
             settings={
-                'response_type': (dashboard_summary.DashboardSummary,),
+                'response_type': (DashboardSummary,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -529,7 +522,7 @@ class DashboardsApi(object):
 
             Args:
                 dashboard_id (str): The ID of the dashboard.
-                body (dashboard.Dashboard): Update Dashboard request body.
+                body (Dashboard): Update Dashboard request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -553,7 +546,7 @@ class DashboardsApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                dashboard.Dashboard
+                Dashboard
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -584,7 +577,7 @@ class DashboardsApi(object):
 
         self.update_dashboard = Endpoint(
             settings={
-                'response_type': (dashboard.Dashboard,),
+                'response_type': (Dashboard,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -619,7 +612,7 @@ class DashboardsApi(object):
                     'dashboard_id':
                         (str,),
                     'body':
-                        (dashboard.Dashboard,),
+                        (Dashboard,),
                 },
                 'attribute_map': {
                     'dashboard_id': 'dashboard_id',

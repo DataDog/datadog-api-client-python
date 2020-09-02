@@ -5,13 +5,8 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
-
 import re  # noqa: F401
 import sys  # noqa: F401
-
-# python 2 and python 3 compatibility library
-import six
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -20,23 +15,21 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_and_convert_types
 )
-from datadog_api_client.v2.model import relationship_to_permission
-from datadog_api_client.v2.model import permissions_response
-from datadog_api_client.v2.model import api_error_response
-from datadog_api_client.v2.model import users_response
-from datadog_api_client.v2.model import relationship_to_user
-from datadog_api_client.v2.model import role_create_request
-from datadog_api_client.v2.model import role_create_response
-from datadog_api_client.v2.model import role_response
-from datadog_api_client.v2.model import roles_response
-from datadog_api_client.v2.model import roles_sort
-from datadog_api_client.v2.model import role_update_response
-from datadog_api_client.v2.model import role_update_request
+from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.permissions_response import PermissionsResponse
+from datadog_api_client.v2.model.relationship_to_permission import RelationshipToPermission
+from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
+from datadog_api_client.v2.model.role_create_request import RoleCreateRequest
+from datadog_api_client.v2.model.role_create_response import RoleCreateResponse
+from datadog_api_client.v2.model.role_response import RoleResponse
+from datadog_api_client.v2.model.role_update_request import RoleUpdateRequest
+from datadog_api_client.v2.model.role_update_response import RoleUpdateResponse
+from datadog_api_client.v2.model.roles_response import RolesResponse
+from datadog_api_client.v2.model.roles_sort import RolesSort
+from datadog_api_client.v2.model.users_response import UsersResponse
 
 
 class RolesApi(object):
@@ -69,7 +62,7 @@ class RolesApi(object):
                 role_id (str): The ID of the role.
 
             Keyword Args:
-                body (relationship_to_permission.RelationshipToPermission): [optional]
+                body (RelationshipToPermission): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -91,7 +84,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                permissions_response.PermissionsResponse
+                PermissionsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -120,7 +113,7 @@ class RolesApi(object):
 
         self.add_permission_to_role = Endpoint(
             settings={
-                'response_type': (permissions_response.PermissionsResponse,),
+                'response_type': (PermissionsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -154,7 +147,7 @@ class RolesApi(object):
                     'role_id':
                         (str,),
                     'body':
-                        (relationship_to_permission.RelationshipToPermission,),
+                        (RelationshipToPermission,),
                 },
                 'attribute_map': {
                     'role_id': 'role_id',
@@ -196,7 +189,7 @@ class RolesApi(object):
                 role_id (str): The ID of the role.
 
             Keyword Args:
-                body (relationship_to_user.RelationshipToUser): [optional]
+                body (RelationshipToUser): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -218,7 +211,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                users_response.UsersResponse
+                UsersResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -247,7 +240,7 @@ class RolesApi(object):
 
         self.add_user_to_role = Endpoint(
             settings={
-                'response_type': (users_response.UsersResponse,),
+                'response_type': (UsersResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -281,7 +274,7 @@ class RolesApi(object):
                     'role_id':
                         (str,),
                     'body':
-                        (relationship_to_user.RelationshipToUser,),
+                        (RelationshipToUser,),
                 },
                 'attribute_map': {
                     'role_id': 'role_id',
@@ -320,7 +313,7 @@ class RolesApi(object):
 
 
             Keyword Args:
-                body (role_create_request.RoleCreateRequest): [optional]
+                body (RoleCreateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -342,7 +335,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                role_create_response.RoleCreateResponse
+                RoleCreateResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -369,7 +362,7 @@ class RolesApi(object):
 
         self.create_role = Endpoint(
             settings={
-                'response_type': (role_create_response.RoleCreateResponse,),
+                'response_type': (RoleCreateResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -398,7 +391,7 @@ class RolesApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (role_create_request.RoleCreateRequest,),
+                        (RoleCreateRequest,),
                 },
                 'attribute_map': {
                 },
@@ -579,7 +572,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                role_response.RoleResponse
+                RoleResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -608,7 +601,7 @@ class RolesApi(object):
 
         self.get_role = Endpoint(
             settings={
-                'response_type': (role_response.RoleResponse,),
+                'response_type': (RoleResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -696,7 +689,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                permissions_response.PermissionsResponse
+                PermissionsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -723,7 +716,7 @@ class RolesApi(object):
 
         self.list_permissions = Endpoint(
             settings={
-                'response_type': (permissions_response.PermissionsResponse,),
+                'response_type': (PermissionsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -807,7 +800,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                permissions_response.PermissionsResponse
+                PermissionsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -836,7 +829,7 @@ class RolesApi(object):
 
         self.list_role_permissions = Endpoint(
             settings={
-                'response_type': (permissions_response.PermissionsResponse,),
+                'response_type': (PermissionsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -908,7 +901,7 @@ class RolesApi(object):
             Keyword Args:
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (str): User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example &#x60;sort&#x3D;-name&#x60;. Options: &#x60;name&#x60;, &#x60;email&#x60;, &#x60;status&#x60;.. [optional] if omitted the server will use the default value of 'name'
+                sort (str): User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example &#x60;sort&#x3D;-name&#x60;. Options: &#x60;name&#x60;, &#x60;email&#x60;, &#x60;status&#x60;.. [optional] if omitted the server will use the default value of "name"
                 filter (str): Filter all users by the given string. Defaults to no filtering.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
@@ -931,7 +924,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                users_response.UsersResponse
+                UsersResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -960,7 +953,7 @@ class RolesApi(object):
 
         self.list_role_users = Endpoint(
             settings={
-                'response_type': (users_response.UsersResponse,),
+                'response_type': (UsersResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1049,7 +1042,7 @@ class RolesApi(object):
             Keyword Args:
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (roles_sort.RolesSort): Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: &#x60;sort&#x3D;-name&#x60;.. [optional]
+                sort (RolesSort): Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: &#x60;sort&#x3D;-name&#x60;.. [optional]
                 filter (str): Filter all roles by the given string.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
@@ -1072,7 +1065,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                roles_response.RolesResponse
+                RolesResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1099,7 +1092,7 @@ class RolesApi(object):
 
         self.list_roles = Endpoint(
             settings={
-                'response_type': (roles_response.RolesResponse,),
+                'response_type': (RolesResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1135,7 +1128,7 @@ class RolesApi(object):
                     'page_number':
                         (int,),
                     'sort':
-                        (roles_sort.RolesSort,),
+                        (RolesSort,),
                     'filter':
                         (str,),
                 },
@@ -1182,7 +1175,7 @@ class RolesApi(object):
                 role_id (str): The ID of the role.
 
             Keyword Args:
-                body (relationship_to_permission.RelationshipToPermission): [optional]
+                body (RelationshipToPermission): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1204,7 +1197,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                permissions_response.PermissionsResponse
+                PermissionsResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1233,7 +1226,7 @@ class RolesApi(object):
 
         self.remove_permission_from_role = Endpoint(
             settings={
-                'response_type': (permissions_response.PermissionsResponse,),
+                'response_type': (PermissionsResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1267,7 +1260,7 @@ class RolesApi(object):
                     'role_id':
                         (str,),
                     'body':
-                        (relationship_to_permission.RelationshipToPermission,),
+                        (RelationshipToPermission,),
                 },
                 'attribute_map': {
                     'role_id': 'role_id',
@@ -1309,7 +1302,7 @@ class RolesApi(object):
                 role_id (str): The ID of the role.
 
             Keyword Args:
-                body (relationship_to_user.RelationshipToUser): [optional]
+                body (RelationshipToUser): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1331,7 +1324,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                users_response.UsersResponse
+                UsersResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1360,7 +1353,7 @@ class RolesApi(object):
 
         self.remove_user_from_role = Endpoint(
             settings={
-                'response_type': (users_response.UsersResponse,),
+                'response_type': (UsersResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1394,7 +1387,7 @@ class RolesApi(object):
                     'role_id':
                         (str,),
                     'body':
-                        (relationship_to_user.RelationshipToUser,),
+                        (RelationshipToUser,),
                 },
                 'attribute_map': {
                     'role_id': 'role_id',
@@ -1436,7 +1429,7 @@ class RolesApi(object):
                 role_id (str): The ID of the role.
 
             Keyword Args:
-                body (role_update_request.RoleUpdateRequest): [optional]
+                body (RoleUpdateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1458,7 +1451,7 @@ class RolesApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                role_update_response.RoleUpdateResponse
+                RoleUpdateResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -1487,7 +1480,7 @@ class RolesApi(object):
 
         self.update_role = Endpoint(
             settings={
-                'response_type': (role_update_response.RoleUpdateResponse,),
+                'response_type': (RoleUpdateResponse,),
                 'auth': [
                     'apiKeyAuth',
                     'appKeyAuth'
@@ -1521,7 +1514,7 @@ class RolesApi(object):
                     'role_id':
                         (str,),
                     'body':
-                        (role_update_request.RoleUpdateRequest,),
+                        (RoleUpdateRequest,),
                 },
                 'attribute_map': {
                     'role_id': 'role_id',

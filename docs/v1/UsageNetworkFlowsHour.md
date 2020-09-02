@@ -1,4 +1,4 @@
-# usage_network_flows_hour.UsageNetworkFlowsHour
+# UsageNetworkFlowsHour
 
 Number of netflow events indexed for each hour for a given organization.
 ## Properties

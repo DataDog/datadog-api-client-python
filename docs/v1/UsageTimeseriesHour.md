@@ -1,4 +1,4 @@
-# usage_timeseries_hour.UsageTimeseriesHour
+# UsageTimeseriesHour
 
 The hourly usage of timeseries.
 ## Properties

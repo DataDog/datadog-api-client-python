@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -23,31 +21,19 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v2.model import relationship_to_organization
-except ImportError:
-    relationship_to_organization = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_organization']
-try:
-    from datadog_api_client.v2.model import relationship_to_organizations
-except ImportError:
-    relationship_to_organizations = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_organizations']
-try:
-    from datadog_api_client.v2.model import relationship_to_roles
-except ImportError:
-    relationship_to_roles = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_roles']
-try:
-    from datadog_api_client.v2.model import relationship_to_users
-except ImportError:
-    relationship_to_users = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_users']
+
+def lazy_import():
+    from datadog_api_client.v2.model.relationship_to_organization import RelationshipToOrganization
+    from datadog_api_client.v2.model.relationship_to_organizations import RelationshipToOrganizations
+    from datadog_api_client.v2.model.relationship_to_roles import RelationshipToRoles
+    from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
+    globals()['RelationshipToOrganization'] = RelationshipToOrganization
+    globals()['RelationshipToOrganizations'] = RelationshipToOrganizations
+    globals()['RelationshipToRoles'] = RelationshipToRoles
+    globals()['RelationshipToUsers'] = RelationshipToUsers
 
 
 class UserResponseRelationships(ModelNormal):
@@ -87,23 +73,25 @@ class UserResponseRelationships(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
-            'org': (relationship_to_organization.RelationshipToOrganization,),  # noqa: E501
-            'other_orgs': (relationship_to_organizations.RelationshipToOrganizations,),  # noqa: E501
-            'other_users': (relationship_to_users.RelationshipToUsers,),  # noqa: E501
-            'roles': (relationship_to_roles.RelationshipToRoles,),  # noqa: E501
+            'org': (RelationshipToOrganization,),  # noqa: E501
+            'other_orgs': (RelationshipToOrganizations,),  # noqa: E501
+            'other_users': (RelationshipToUsers,),  # noqa: E501
+            'roles': (RelationshipToRoles,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'org': 'org',  # noqa: E501
@@ -125,7 +113,7 @@ class UserResponseRelationships(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """user_response_relationships.UserResponseRelationships - a model defined in OpenAPI
+        """UserResponseRelationships - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -158,10 +146,10 @@ class UserResponseRelationships(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            org (relationship_to_organization.RelationshipToOrganization): [optional]  # noqa: E501
-            other_orgs (relationship_to_organizations.RelationshipToOrganizations): [optional]  # noqa: E501
-            other_users (relationship_to_users.RelationshipToUsers): [optional]  # noqa: E501
-            roles (relationship_to_roles.RelationshipToRoles): [optional]  # noqa: E501
+            org (RelationshipToOrganization): [optional]  # noqa: E501
+            other_orgs (RelationshipToOrganizations): [optional]  # noqa: E501
+            other_users (RelationshipToUsers): [optional]  # noqa: E501
+            roles (RelationshipToRoles): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -187,7 +175,7 @@ class UserResponseRelationships(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

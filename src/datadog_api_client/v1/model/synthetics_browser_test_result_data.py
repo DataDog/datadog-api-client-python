@@ -5,11 +5,9 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -23,21 +21,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     date,
     datetime,
     file_type,
-    int,
     none_type,
-    str,
     validate_get_composed_info,
 )
-try:
-    from datadog_api_client.v1.model import synthetics_device
-except ImportError:
-    synthetics_device = sys.modules[
-        'datadog_api_client.v1.model.synthetics_device']
-try:
-    from datadog_api_client.v1.model import synthetics_step_detail
-except ImportError:
-    synthetics_step_detail = sys.modules[
-        'datadog_api_client.v1.model.synthetics_step_detail']
+
+def lazy_import():
+    from datadog_api_client.v1.model.synthetics_device import SyntheticsDevice
+    from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
+    globals()['SyntheticsDevice'] = SyntheticsDevice
+    globals()['SyntheticsStepDetail'] = SyntheticsStepDetail
 
 
 class SyntheticsBrowserTestResultData(ModelNormal):
@@ -77,23 +69,24 @@ class SyntheticsBrowserTestResultData(ModelNormal):
     @cached_property
     def openapi_types():
         """
-        This must be a class method so a model may have properties that are
-        of type self, this ensures that we don't create a cyclic import
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
 
         Returns
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+        lazy_import()
         return {
             'browser_type': (str,),  # noqa: E501
             'browser_version': (str,),  # noqa: E501
-            'device': (synthetics_device.SyntheticsDevice,),  # noqa: E501
+            'device': (SyntheticsDevice,),  # noqa: E501
             'duration': (float,),  # noqa: E501
             'error': (str,),  # noqa: E501
             'passed': (bool,),  # noqa: E501
             'received_email_count': (int,),  # noqa: E501
             'start_url': (str,),  # noqa: E501
-            'step_details': ([synthetics_step_detail.SyntheticsStepDetail],),  # noqa: E501
+            'step_details': ([SyntheticsStepDetail],),  # noqa: E501
             'thumbnails_bucket_key': (bool,),  # noqa: E501
             'time_to_interactive': (float,),  # noqa: E501
         }
@@ -101,6 +94,7 @@ class SyntheticsBrowserTestResultData(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
     attribute_map = {
         'browser_type': 'browserType',  # noqa: E501
@@ -129,7 +123,7 @@ class SyntheticsBrowserTestResultData(ModelNormal):
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
-        """synthetics_browser_test_result_data.SyntheticsBrowserTestResultData - a model defined in OpenAPI
+        """SyntheticsBrowserTestResultData - a model defined in OpenAPI
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -164,13 +158,13 @@ class SyntheticsBrowserTestResultData(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             browser_type (str): Type of browser device used for the browser test.. [optional]  # noqa: E501
             browser_version (str): Browser version used for the browser test.. [optional]  # noqa: E501
-            device (synthetics_device.SyntheticsDevice): [optional]  # noqa: E501
+            device (SyntheticsDevice): [optional]  # noqa: E501
             duration (float): Global duration in second of the browser test.. [optional]  # noqa: E501
             error (str): Error returned for the browser test.. [optional]  # noqa: E501
             passed (bool): Whether or not the browser test was conducted.. [optional]  # noqa: E501
             received_email_count (int): The amount of email received during the browser test.. [optional]  # noqa: E501
             start_url (str): Starting URL for the browser test.. [optional]  # noqa: E501
-            step_details ([synthetics_step_detail.SyntheticsStepDetail]): Array containing the different browser test steps.. [optional]  # noqa: E501
+            step_details ([SyntheticsStepDetail]): Array containing the different browser test steps.. [optional]  # noqa: E501
             thumbnails_bucket_key (bool): Whether or not a thumbnail is associated with the browser test.. [optional]  # noqa: E501
             time_to_interactive (float): Time in second to wait before the browser test starts after reaching the start URL.. [optional]  # noqa: E501
         """
@@ -198,7 +192,7 @@ class SyntheticsBrowserTestResultData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        for var_name, var_value in six.iteritems(kwargs):
+        for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
                         self._configuration.discard_unknown_keys and \

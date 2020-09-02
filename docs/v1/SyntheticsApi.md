@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **create_global_variable**
-> synthetics_global_variable.SyntheticsGlobalVariable create_global_variable(body)
+> SyntheticsGlobalVariable create_global_variable(body)
 
 Create a global variable
 
@@ -34,12 +34,11 @@ Create a Synthetics global variable.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_global_variable
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -76,8 +75,19 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    body = synthetics_global_variable.SyntheticsGlobalVariable() # synthetics_global_variable.SyntheticsGlobalVariable | Details of the global variable to create.
-    
+    body = SyntheticsGlobalVariable(
+        description="description_example",
+        id="id_example",
+        name="name_example",
+        tags=[
+            "tags_example",
+        ],
+        value=SyntheticsGlobalVariableValue(
+            secure=True,
+            value="value_example",
+        ),
+    ) # SyntheticsGlobalVariable | Details of the global variable to create.
+
     # example passing only required values which don't have defaults set
     try:
         # Create a global variable
@@ -91,11 +101,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**synthetics_global_variable.SyntheticsGlobalVariable**](SyntheticsGlobalVariable.md)| Details of the global variable to create. |
+ **body** | [**SyntheticsGlobalVariable**](SyntheticsGlobalVariable.md)| Details of the global variable to create. |
 
 ### Return type
 
-[**synthetics_global_variable.SyntheticsGlobalVariable**](SyntheticsGlobalVariable.md)
+[**SyntheticsGlobalVariable**](SyntheticsGlobalVariable.md)
 
 ### Authorization
 
@@ -116,7 +126,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_test**
-> synthetics_test_details.SyntheticsTestDetails create_test(body)
+> SyntheticsTestDetails create_test(body)
 
 Create a test
 
@@ -127,12 +137,11 @@ Create a Synthetic test.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_test_details
+from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -169,8 +178,79 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    body = synthetics_test_details.SyntheticsTestDetails() # synthetics_test_details.SyntheticsTestDetails | Details of the test to create.
-    
+    body = SyntheticsTestDetails(
+        config=SyntheticsTestConfig(
+            assertions=[
+                SyntheticsAssertion(),
+            ],
+            request=SyntheticsTestRequest(
+                basic_auth=SyntheticsBasicAuth(
+                    password="password_example",
+                    username="username_example",
+                ),
+                body="body_example",
+                headers=SyntheticsTestHeaders(
+                    "key": "key_example",
+                ),
+                host="host_example",
+                method=HTTPMethod("GET"),
+                port=1,
+                query={},
+                timeout=3.14,
+                url="url_example",
+            ),
+            variables=[
+                SyntheticsBrowserVariable(
+                    example="example_example",
+                    id="id_example",
+                    name="name_example",
+                    pattern="pattern_example",
+                    type=SyntheticsBrowserVariableType("element"),
+                ),
+            ],
+        ),
+        locations=[
+            "locations_example",
+        ],
+        message="message_example",
+        monitor_id=1,
+        name="name_example",
+        options=SyntheticsTestOptions(
+            accept_self_signed=True,
+            allow_insecure=True,
+            device_ids=[
+                SyntheticsDeviceID("laptop_large"),
+            ],
+            follow_redirects=True,
+            min_failure_duration=1,
+            min_location_failed=1,
+            monitor_options=SyntheticsTestOptionsMonitorOptions(
+                renotify_interval=0,
+            ),
+            retry=SyntheticsTestOptionsRetry(
+                count=1,
+                interval=3.14,
+            ),
+            tick_every=SyntheticsTickInterval(60),
+        ),
+        public_id="public_id_example",
+        status=SyntheticsTestPauseStatus("live"),
+        steps=[
+            SyntheticsStep(
+                allow_failure=True,
+                name="name_example",
+                params={},
+                timeout=3.14,
+                type=SyntheticsStepType("assertCurrentUrl"),
+            ),
+        ],
+        subtype=SyntheticsTestDetailsSubType("http"),
+        tags=[
+            "tags_example",
+        ],
+        type=SyntheticsTestDetailsType("api"),
+    ) # SyntheticsTestDetails | Details of the test to create.
+
     # example passing only required values which don't have defaults set
     try:
         # Create a test
@@ -184,11 +264,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**synthetics_test_details.SyntheticsTestDetails**](SyntheticsTestDetails.md)| Details of the test to create. |
+ **body** | [**SyntheticsTestDetails**](SyntheticsTestDetails.md)| Details of the test to create. |
 
 ### Return type
 
-[**synthetics_test_details.SyntheticsTestDetails**](SyntheticsTestDetails.md)
+[**SyntheticsTestDetails**](SyntheticsTestDetails.md)
 
 ### Authorization
 
@@ -221,11 +301,10 @@ Delete a Synthetics global variable.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -262,8 +341,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    variable_id = 'variable_id_example' # str | The ID of the global variable.
-    
+    variable_id = "variable_id_example" # str | The ID of the global variable.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete a global variable
@@ -302,7 +381,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_tests**
-> synthetics_delete_tests_response.SyntheticsDeleteTestsResponse delete_tests(body)
+> SyntheticsDeleteTestsResponse delete_tests(body)
 
 Delete tests
 
@@ -313,13 +392,12 @@ Delete multiple Synthetic tests by ID.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_delete_tests_payload
-from datadog_api_client.v1.model import synthetics_delete_tests_response
+from datadog_api_client.v1.model.synthetics_delete_tests_response import SyntheticsDeleteTestsResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.synthetics_delete_tests_payload import SyntheticsDeleteTestsPayload
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -356,8 +434,12 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    body = synthetics_delete_tests_payload.SyntheticsDeleteTestsPayload() # synthetics_delete_tests_payload.SyntheticsDeleteTestsPayload | Public ID list of the Synthetic tests to be deleted.
-    
+    body = SyntheticsDeleteTestsPayload(
+        public_ids=[
+            "[]",
+        ],
+    ) # SyntheticsDeleteTestsPayload | Public ID list of the Synthetic tests to be deleted.
+
     # example passing only required values which don't have defaults set
     try:
         # Delete tests
@@ -371,11 +453,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**synthetics_delete_tests_payload.SyntheticsDeleteTestsPayload**](SyntheticsDeleteTestsPayload.md)| Public ID list of the Synthetic tests to be deleted. |
+ **body** | [**SyntheticsDeleteTestsPayload**](SyntheticsDeleteTestsPayload.md)| Public ID list of the Synthetic tests to be deleted. |
 
 ### Return type
 
-[**synthetics_delete_tests_response.SyntheticsDeleteTestsResponse**](SyntheticsDeleteTestsResponse.md)
+[**SyntheticsDeleteTestsResponse**](SyntheticsDeleteTestsResponse.md)
 
 ### Authorization
 
@@ -397,7 +479,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **edit_global_variable**
-> synthetics_global_variable.SyntheticsGlobalVariable edit_global_variable(variable_id, body)
+> SyntheticsGlobalVariable edit_global_variable(variable_id, body)
 
 Edit a global variable
 
@@ -408,12 +490,11 @@ Edit a Synthetics global variable.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_global_variable
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -450,9 +531,20 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    variable_id = 'variable_id_example' # str | The ID of the global variable.
-    body = synthetics_global_variable.SyntheticsGlobalVariable() # synthetics_global_variable.SyntheticsGlobalVariable | Details of the global variable to update.
-    
+    variable_id = "variable_id_example" # str | The ID of the global variable.
+    body = SyntheticsGlobalVariable(
+        description="description_example",
+        id="id_example",
+        name="name_example",
+        tags=[
+            "tags_example",
+        ],
+        value=SyntheticsGlobalVariableValue(
+            secure=True,
+            value="value_example",
+        ),
+    ) # SyntheticsGlobalVariable | Details of the global variable to update.
+
     # example passing only required values which don't have defaults set
     try:
         # Edit a global variable
@@ -467,11 +559,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **variable_id** | **str**| The ID of the global variable. |
- **body** | [**synthetics_global_variable.SyntheticsGlobalVariable**](SyntheticsGlobalVariable.md)| Details of the global variable to update. |
+ **body** | [**SyntheticsGlobalVariable**](SyntheticsGlobalVariable.md)| Details of the global variable to update. |
 
 ### Return type
 
-[**synthetics_global_variable.SyntheticsGlobalVariable**](SyntheticsGlobalVariable.md)
+[**SyntheticsGlobalVariable**](SyntheticsGlobalVariable.md)
 
 ### Authorization
 
@@ -492,7 +584,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_api_test_latest_results**
-> synthetics_get_api_test_latest_results_response.SyntheticsGetAPITestLatestResultsResponse get_api_test_latest_results(public_id)
+> SyntheticsGetAPITestLatestResultsResponse get_api_test_latest_results(public_id)
 
 Get the test's latest results summaries (API)
 
@@ -503,12 +595,11 @@ Get the last 50 test results summaries for a given Synthetics API test.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import synthetics_get_api_test_latest_results_response
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import SyntheticsGetAPITestLatestResultsResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -545,10 +636,12 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = 'public_id_example' # str | The public ID of the test for which to search results for.
-    from_ts = 56 # int | Timestamp from which to start querying results. (optional)
-to_ts = 56 # int | Timestamp up to which to query results. (optional)
-probe_dc = ['probe_dc_example'] # [str] | Locations for which to query results. (optional)
+    public_id = "public_id_example" # str | The public ID of the test for which to search results for.
+    from_ts = 1 # int | Timestamp from which to start querying results. (optional)
+    to_ts = 1 # int | Timestamp up to which to query results. (optional)
+    probe_dc = [
+        "probe_dc_example",
+    ] # [str] | Locations for which to query results. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -579,7 +672,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**synthetics_get_api_test_latest_results_response.SyntheticsGetAPITestLatestResultsResponse**](SyntheticsGetAPITestLatestResultsResponse.md)
+[**SyntheticsGetAPITestLatestResultsResponse**](SyntheticsGetAPITestLatestResultsResponse.md)
 
 ### Authorization
 
@@ -600,7 +693,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_api_test_result**
-> synthetics_api_test_result_full.SyntheticsAPITestResultFull get_api_test_result(public_id, result_id)
+> SyntheticsAPITestResultFull get_api_test_result(public_id, result_id)
 
 Get a test result (API)
 
@@ -611,12 +704,11 @@ Get a specific full result from a given (API) Synthetic test.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_api_test_result_full
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.synthetics_api_test_result_full import SyntheticsAPITestResultFull
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -653,9 +745,9 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = 'public_id_example' # str | The public ID of the API test to which the target result belongs.
-    result_id = 'result_id_example' # str | The ID of the result to get.
-    
+    public_id = "public_id_example" # str | The public ID of the API test to which the target result belongs.
+    result_id = "result_id_example" # str | The ID of the result to get.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a test result (API)
@@ -674,7 +766,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**synthetics_api_test_result_full.SyntheticsAPITestResultFull**](SyntheticsAPITestResultFull.md)
+[**SyntheticsAPITestResultFull**](SyntheticsAPITestResultFull.md)
 
 ### Authorization
 
@@ -695,7 +787,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_browser_test**
-> synthetics_test_details.SyntheticsTestDetails get_browser_test(public_id)
+> SyntheticsTestDetails get_browser_test(public_id)
 
 Get a test configuration (browser)
 
@@ -706,12 +798,11 @@ Get the detailed configuration (including steps) associated with a Synthetics br
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_test_details
+from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -748,8 +839,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = 'public_id_example' # str | The public ID of the test to get details from.
-    
+    public_id = "public_id_example" # str | The public ID of the test to get details from.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a test configuration (browser)
@@ -767,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**synthetics_test_details.SyntheticsTestDetails**](SyntheticsTestDetails.md)
+[**SyntheticsTestDetails**](SyntheticsTestDetails.md)
 
 ### Authorization
 
@@ -788,7 +879,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_browser_test_latest_results**
-> synthetics_get_browser_test_latest_results_response.SyntheticsGetBrowserTestLatestResultsResponse get_browser_test_latest_results(public_id)
+> SyntheticsGetBrowserTestLatestResultsResponse get_browser_test_latest_results(public_id)
 
 Get the test's latest results summaries (browser)
 
@@ -799,12 +890,11 @@ Get the last 50 test results summaries for a given Synthetics Browser test.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_get_browser_test_latest_results_response
+from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_response import SyntheticsGetBrowserTestLatestResultsResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -841,10 +931,12 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = 'public_id_example' # str | The public ID of the browser test for which to search results for.
-    from_ts = 56 # int | Timestamp from which to start querying results. (optional)
-to_ts = 56 # int | Timestamp up to which to query results. (optional)
-probe_dc = ['probe_dc_example'] # [str] | Locations for which to query results. (optional)
+    public_id = "public_id_example" # str | The public ID of the browser test for which to search results for.
+    from_ts = 1 # int | Timestamp from which to start querying results. (optional)
+    to_ts = 1 # int | Timestamp up to which to query results. (optional)
+    probe_dc = [
+        "probe_dc_example",
+    ] # [str] | Locations for which to query results. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -875,7 +967,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**synthetics_get_browser_test_latest_results_response.SyntheticsGetBrowserTestLatestResultsResponse**](SyntheticsGetBrowserTestLatestResultsResponse.md)
+[**SyntheticsGetBrowserTestLatestResultsResponse**](SyntheticsGetBrowserTestLatestResultsResponse.md)
 
 ### Authorization
 
@@ -896,7 +988,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_browser_test_result**
-> synthetics_browser_test_result_full.SyntheticsBrowserTestResultFull get_browser_test_result(public_id, result_id)
+> SyntheticsBrowserTestResultFull get_browser_test_result(public_id, result_id)
 
 Get a test result (browser)
 
@@ -907,12 +999,11 @@ Get a specific full result from a given (browser) Synthetic test.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_browser_test_result_full
+from datadog_api_client.v1.model.synthetics_browser_test_result_full import SyntheticsBrowserTestResultFull
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -949,9 +1040,9 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = 'public_id_example' # str | The public ID of the browser test to which the target result belongs.
-    result_id = 'result_id_example' # str | The ID of the result to get.
-    
+    public_id = "public_id_example" # str | The public ID of the browser test to which the target result belongs.
+    result_id = "result_id_example" # str | The ID of the result to get.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a test result (browser)
@@ -970,7 +1061,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**synthetics_browser_test_result_full.SyntheticsBrowserTestResultFull**](SyntheticsBrowserTestResultFull.md)
+[**SyntheticsBrowserTestResultFull**](SyntheticsBrowserTestResultFull.md)
 
 ### Authorization
 
@@ -991,7 +1082,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_test**
-> synthetics_test_details.SyntheticsTestDetails get_test(public_id)
+> SyntheticsTestDetails get_test(public_id)
 
 Get a test configuration (API)
 
@@ -1002,12 +1093,11 @@ Get the detailed configuration associated with a Synthetics test.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_test_details
+from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1044,8 +1134,8 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = 'public_id_example' # str | The public ID of the test to get details from.
-    
+    public_id = "public_id_example" # str | The public ID of the test to get details from.
+
     # example passing only required values which don't have defaults set
     try:
         # Get a test configuration (API)
@@ -1063,7 +1153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**synthetics_test_details.SyntheticsTestDetails**](SyntheticsTestDetails.md)
+[**SyntheticsTestDetails**](SyntheticsTestDetails.md)
 
 ### Authorization
 
@@ -1084,7 +1174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_locations**
-> synthetics_locations.SyntheticsLocations list_locations()
+> SyntheticsLocations list_locations()
 
 Get all locations (public and private)
 
@@ -1095,11 +1185,10 @@ Get the list of public and private locations available for Synthetics tests. No 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import synthetics_locations
+from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1136,7 +1225,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    
+
     # example, this endpoint has no required or optional parameters
     try:
         # Get all locations (public and private)
@@ -1151,7 +1240,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**synthetics_locations.SyntheticsLocations**](SyntheticsLocations.md)
+[**SyntheticsLocations**](SyntheticsLocations.md)
 
 ### Authorization
 
@@ -1170,7 +1259,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_tests**
-> synthetics_list_tests_response.SyntheticsListTestsResponse list_tests()
+> SyntheticsListTestsResponse list_tests()
 
 Get a list of tests
 
@@ -1181,12 +1270,11 @@ Get the list of all Synthetic tests (can be filtered by type).
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_list_tests_response
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1223,7 +1311,7 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    check_type = 'check_type_example' # str | API or browser to filter the list by test type, undefined to get the unfiltered list. (optional)
+    check_type = "check_type_example" # str | API or browser to filter the list by test type, undefined to get the unfiltered list. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -1243,7 +1331,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**synthetics_list_tests_response.SyntheticsListTestsResponse**](SyntheticsListTestsResponse.md)
+[**SyntheticsListTestsResponse**](SyntheticsListTestsResponse.md)
 
 ### Authorization
 
@@ -1264,7 +1352,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **trigger_ci_tests**
-> synthetics_trigger_ci_tests_response.SyntheticsTriggerCITestsResponse trigger_ci_tests(body)
+> SyntheticsTriggerCITestsResponse trigger_ci_tests(body)
 
 Trigger some Synthetics tests for CI
 
@@ -1275,13 +1363,12 @@ Trigger a set of Synthetics tests for continuous integration
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_trigger_ci_tests_response
-from datadog_api_client.v1.model import synthetics_ci_test_body
+from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
+from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1318,8 +1405,50 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    body = synthetics_ci_test_body.SyntheticsCITestBody() # synthetics_ci_test_body.SyntheticsCITestBody | Details of the test to trigger.
-    
+    body = SyntheticsCITestBody(
+        tests=[
+            SyntheticsCITest(
+                allow_insecure_certificates=True,
+                basic_auth=SyntheticsBasicAuth(
+                    password="password_example",
+                    username="username_example",
+                ),
+                body="body_example",
+                body_type="body_type_example",
+                cookies="cookies_example",
+                device_ids=[
+                    SyntheticsDeviceID("laptop_large"),
+                ],
+                follow_redirects=True,
+                headers=SyntheticsTestHeaders(
+                    "key": "key_example",
+                ),
+                locations=[
+                    "locations_example",
+                ],
+                metadata=SyntheticsCITestMetadata(
+                    ci=SyntheticsCITestMetadataCi(
+                        pipeline="pipeline_example",
+                        provider="provider_example",
+                    ),
+                    git=SyntheticsCITestMetadataGit(
+                        branch="branch_example",
+                        commit_sha="commit_sha_example",
+                    ),
+                ),
+                public_id="public_id_example",
+                retry=SyntheticsTestOptionsRetry(
+                    count=1,
+                    interval=3.14,
+                ),
+                start_url="start_url_example",
+                variables={
+                    "key": "key_example",
+                },
+            ),
+        ],
+    ) # SyntheticsCITestBody | Details of the test to trigger.
+
     # example passing only required values which don't have defaults set
     try:
         # Trigger some Synthetics tests for CI
@@ -1333,11 +1462,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**synthetics_ci_test_body.SyntheticsCITestBody**](SyntheticsCITestBody.md)| Details of the test to trigger. |
+ **body** | [**SyntheticsCITestBody**](SyntheticsCITestBody.md)| Details of the test to trigger. |
 
 ### Return type
 
-[**synthetics_trigger_ci_tests_response.SyntheticsTriggerCITestsResponse**](SyntheticsTriggerCITestsResponse.md)
+[**SyntheticsTriggerCITestsResponse**](SyntheticsTriggerCITestsResponse.md)
 
 ### Authorization
 
@@ -1357,7 +1486,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_test**
-> synthetics_test_details.SyntheticsTestDetails update_test(public_id, body)
+> SyntheticsTestDetails update_test(public_id, body)
 
 Edit a test
 
@@ -1368,12 +1497,11 @@ Edit the configuration of a Synthetic test.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import api_error_response
-from datadog_api_client.v1.model import synthetics_test_details
+from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1410,9 +1538,80 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = 'public_id_example' # str | The public ID of the test to get details from.
-    body = synthetics_test_details.SyntheticsTestDetails() # synthetics_test_details.SyntheticsTestDetails | New test details to be saved.
-    
+    public_id = "public_id_example" # str | The public ID of the test to get details from.
+    body = SyntheticsTestDetails(
+        config=SyntheticsTestConfig(
+            assertions=[
+                SyntheticsAssertion(),
+            ],
+            request=SyntheticsTestRequest(
+                basic_auth=SyntheticsBasicAuth(
+                    password="password_example",
+                    username="username_example",
+                ),
+                body="body_example",
+                headers=SyntheticsTestHeaders(
+                    "key": "key_example",
+                ),
+                host="host_example",
+                method=HTTPMethod("GET"),
+                port=1,
+                query={},
+                timeout=3.14,
+                url="url_example",
+            ),
+            variables=[
+                SyntheticsBrowserVariable(
+                    example="example_example",
+                    id="id_example",
+                    name="name_example",
+                    pattern="pattern_example",
+                    type=SyntheticsBrowserVariableType("element"),
+                ),
+            ],
+        ),
+        locations=[
+            "locations_example",
+        ],
+        message="message_example",
+        monitor_id=1,
+        name="name_example",
+        options=SyntheticsTestOptions(
+            accept_self_signed=True,
+            allow_insecure=True,
+            device_ids=[
+                SyntheticsDeviceID("laptop_large"),
+            ],
+            follow_redirects=True,
+            min_failure_duration=1,
+            min_location_failed=1,
+            monitor_options=SyntheticsTestOptionsMonitorOptions(
+                renotify_interval=0,
+            ),
+            retry=SyntheticsTestOptionsRetry(
+                count=1,
+                interval=3.14,
+            ),
+            tick_every=SyntheticsTickInterval(60),
+        ),
+        public_id="public_id_example",
+        status=SyntheticsTestPauseStatus("live"),
+        steps=[
+            SyntheticsStep(
+                allow_failure=True,
+                name="name_example",
+                params={},
+                timeout=3.14,
+                type=SyntheticsStepType("assertCurrentUrl"),
+            ),
+        ],
+        subtype=SyntheticsTestDetailsSubType("http"),
+        tags=[
+            "tags_example",
+        ],
+        type=SyntheticsTestDetailsType("api"),
+    ) # SyntheticsTestDetails | New test details to be saved.
+
     # example passing only required values which don't have defaults set
     try:
         # Edit a test
@@ -1427,11 +1626,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **public_id** | **str**| The public ID of the test to get details from. |
- **body** | [**synthetics_test_details.SyntheticsTestDetails**](SyntheticsTestDetails.md)| New test details to be saved. |
+ **body** | [**SyntheticsTestDetails**](SyntheticsTestDetails.md)| New test details to be saved. |
 
 ### Return type
 
-[**synthetics_test_details.SyntheticsTestDetails**](SyntheticsTestDetails.md)
+[**SyntheticsTestDetails**](SyntheticsTestDetails.md)
 
 ### Authorization
 
@@ -1464,12 +1663,11 @@ Pause or start a Synthetics test by changing the status.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-from __future__ import print_function
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model import synthetics_update_test_pause_status_payload
-from datadog_api_client.v1.model import api_error_response
+from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import SyntheticsUpdateTestPauseStatusPayload
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1506,9 +1704,11 @@ configuration = datadog_api_client.v1.Configuration(
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = 'public_id_example' # str | The public ID of the Synthetic test to update.
-    body = synthetics_update_test_pause_status_payload.SyntheticsUpdateTestPauseStatusPayload() # synthetics_update_test_pause_status_payload.SyntheticsUpdateTestPauseStatusPayload | Status to set the given Synthetic test to.
-    
+    public_id = "public_id_example" # str | The public ID of the Synthetic test to update.
+    body = SyntheticsUpdateTestPauseStatusPayload(
+        new_status=SyntheticsTestPauseStatus("live"),
+    ) # SyntheticsUpdateTestPauseStatusPayload | Status to set the given Synthetic test to.
+
     # example passing only required values which don't have defaults set
     try:
         # Pause or start a test
@@ -1523,7 +1723,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **public_id** | **str**| The public ID of the Synthetic test to update. |
- **body** | [**synthetics_update_test_pause_status_payload.SyntheticsUpdateTestPauseStatusPayload**](SyntheticsUpdateTestPauseStatusPayload.md)| Status to set the given Synthetic test to. |
+ **body** | [**SyntheticsUpdateTestPauseStatusPayload**](SyntheticsUpdateTestPauseStatusPayload.md)| Status to set the given Synthetic test to. |
 
 ### Return type
 
