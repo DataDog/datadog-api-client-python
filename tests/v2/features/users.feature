@@ -28,16 +28,17 @@ Feature: Users
     And request contains "filter" parameter from "user.data.attributes.email"
     When the request is sent
     Then the response status is 200 OK
-    And expect response "meta.page.total_filtered_count" to equal to 1
+    And the response "meta.page.total_filtered_count" is equal to 1
+    And the response "data[0].attributes.email" has the same value as "user.data.attributes.email"
 
   Scenario: Create a user returns "OK" response
     Given new "CreateUser" request
     And body {"data": {"type": "users", "attributes": {"name": "Datadog API Client Python", "email": "{{ unique }}@datadoghq.com"}}}
     When the request is sent
     Then the response status is 201 OK
-    And expect response "data.attributes.email" to equal to "{{ unique_lower }}@datadoghq.com"
-    And expect response "data.attributes.name" to equal to "Datadog API Client Python"
-    And expect response "data.attributes.disabled" to be false
+    And the response "data.attributes.email" is equal to "{{ unique_lower }}@datadoghq.com"
+    And the response "data.attributes.name" is equal to "Datadog API Client Python"
+    And the response "data.attributes.disabled" is false
 
   Scenario: Disable a user returns "OK" response
     Given there is a valid "user" in the system
@@ -60,10 +61,10 @@ Feature: Users
     And body {"data": {"id": "{{ user.data.id }}", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
     When the request is sent
     Then the response status is 200 OK
-    And expect response "data.attributes.email" to equal value from "user.data.attributes.email"
-    And expect response "data.attributes.title" to equal value from "user.data.attributes.title"
-    And expect response "data.attributes.name" to equal to "updated"
-    And expect response "data.attributes.disabled" to equal to true
+    And the response "data.attributes.email" has the same value as "user.data.attributes.email"
+    And the response "data.attributes.title" has the same value as "user.data.attributes.title"
+    And the response "data.attributes.name" is equal to "updated"
+    And the response "data.attributes.disabled" is equal to true
 
   Scenario: Get a user permissions returns "OK" response
     Given there is a valid "user" in the system
