@@ -1,0 +1,9 @@
+site_name: Datadog API Client for Python
+nav:
+  - API:
+      - 'Version 1': v1/
+      - 'Version 2': v2/
+theme: readthedocs
+markdown_extensions:
+  - toc:
+      baselevel: 2
