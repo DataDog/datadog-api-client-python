@@ -383,7 +383,7 @@ def expect_equal(api_request, fixtures, response_path, value):
     assert test_value == response_value
 
 
-@then(parsers.parse('the response "{response_path}" has same value as "{fixture_path}"'))
+@then(parsers.parse('the response "{response_path}" has the same value as "{fixture_path}"'))
 def expect_equal_value(api_request, fixtures, response_path, fixture_path):
     fixture_value = glom(fixtures, fixture_path)
     response_value = glom(api_request["response"][0], response_path)
