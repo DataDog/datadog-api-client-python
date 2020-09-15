@@ -281,7 +281,7 @@ def api(package_name, client, name):
 
 @given(parsers.parse('operation "{name}" enabled'))
 def operation_enabled(client, name):
-    """Return an API instance."""
+    """Enable the unstable operation specific in the clause."""
     client.configuration.unstable_operations[snake_case(name)] = True
 
 
