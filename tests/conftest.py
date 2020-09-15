@@ -279,6 +279,11 @@ def api(package_name, client, name):
         "calls": [],
     }
 
+@given(parsers.parse('operation "{name}" enabled'))
+def operation_enabled(client, name):
+    """Return an API instance."""
+    client.configuration.unstable_operations[snake_case(name)] = True
+
 
 @given(parsers.parse('new "{name}" request'))
 def api_request(api, name):
