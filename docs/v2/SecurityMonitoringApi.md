@@ -88,12 +88,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         ),
         queries=[
             SecurityMonitoringRuleQueryCreate(
+                aggregation=SecurityMonitoringRuleQueryAggregation("count"),
                 distinct_fields=[
                     "distinct_fields_example",
                 ],
                 group_by_fields=[
                     "group_by_fields_example",
                 ],
+                metric="metric_example",
                 name="name_example",
                 query="query_example",
             ),
@@ -701,12 +703,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         ),
         queries=[
             SecurityMonitoringRuleQuery(
+                aggregation=SecurityMonitoringRuleQueryAggregation("count"),
                 distinct_fields=[
                     "distinct_fields_example",
                 ],
                 group_by_fields=[
                     "group_by_fields_example",
                 ],
+                metric="metric_example",
                 name="name_example",
                 query="query_example",
             ),

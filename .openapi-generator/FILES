@@ -126,6 +126,7 @@ datadog_api_client/v2/model/security_monitoring_rule_keep_alive.py
 datadog_api_client/v2/model/security_monitoring_rule_max_signal_duration.py
 datadog_api_client/v2/model/security_monitoring_rule_options.py
 datadog_api_client/v2/model/security_monitoring_rule_query.py
+datadog_api_client/v2/model/security_monitoring_rule_query_aggregation.py
 datadog_api_client/v2/model/security_monitoring_rule_query_create.py
 datadog_api_client/v2/model/security_monitoring_rule_response.py
 datadog_api_client/v2/model/security_monitoring_rule_severity.py
@@ -284,6 +285,7 @@ docs/SecurityMonitoringRuleKeepAlive.md
 docs/SecurityMonitoringRuleMaxSignalDuration.md
 docs/SecurityMonitoringRuleOptions.md
 docs/SecurityMonitoringRuleQuery.md
+docs/SecurityMonitoringRuleQueryAggregation.md
 docs/SecurityMonitoringRuleQueryCreate.md
 docs/SecurityMonitoringRuleResponse.md
 docs/SecurityMonitoringRuleSeverity.md
@@ -441,6 +443,7 @@ test/test_security_monitoring_rule_keep_alive.py
 test/test_security_monitoring_rule_max_signal_duration.py
 test/test_security_monitoring_rule_options.py
 test/test_security_monitoring_rule_query.py
+test/test_security_monitoring_rule_query_aggregation.py
 test/test_security_monitoring_rule_query_create.py
 test/test_security_monitoring_rule_response.py
 test/test_security_monitoring_rule_severity.py
