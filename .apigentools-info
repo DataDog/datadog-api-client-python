@@ -1,0 +1,16 @@
+{
+    "additional_stamps": [],
+    "info_version": "2",
+    "spec_versions": {
+        "v1": {
+            "apigentools_version": "1.2.0",
+            "regenerated": "2020-09-16 19:01:02.865793",
+            "spec_repo_commit": "bdcaa80"
+        },
+        "v2": {
+            "apigentools_version": "1.2.0",
+            "regenerated": "2020-09-16 19:02:17.243259",
+            "spec_repo_commit": "bdcaa80"
+        }
+    }
+}
