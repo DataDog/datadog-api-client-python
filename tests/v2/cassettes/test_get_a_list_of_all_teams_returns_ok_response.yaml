@@ -1,0 +1,195 @@
+interactions:
+- request:
+    body: !!binary |
+      kZ2MqHRyYWNlX2lkz9h+0YyEEslSqXBhcmVudF9pZMCnc3Bhbl9pZM8q0BeV/fdI0adzZXJ2aWNl
+      wKhyZXNvdXJjZdoAMHRlc3RfZGVsZXRlX2FuX2V4aXN0aW5nX3RlYW1fcmV0dXJuc19va19yZXNw
+      b25zZaRuYW1lpHRlc3SlZXJyb3IApXN0YXJ0zxY1UlXAx5sgqGR1cmF0aW9uzo5+bJCkdHlwZaR0
+      ZXN0pG1ldGGCqnJ1bnRpbWUtaWTaACAwNDA5ZDRiZjc0MDU0YjFhYmZkZmJlMDBlNzEyZTA3Zqd2
+      ZXJzaW9upXRlYW1zp21ldHJpY3OErV9kZC5hZ2VudF9wc3LLP/AAAAAAAACqc3lzdGVtLnBpZM2L
+      J61fZGQxLnNyLmVhdXNyyz/wAAAAAAAAtV9zYW1wbGluZ19wcmlvcml0eV92MQGKqHRyYWNlX2lk
+      z9h+0YyEEslSqXBhcmVudF9pZM8q0BeV/fdI0adzcGFuX2lkz42+lWrfdRGqp3NlcnZpY2XAqHJl
+      c291cmNl2gAmYSB2YWxpZCAiYXBpS2V5QXV0aCIga2V5IGluIHRoZSBzeXN0ZW2kbmFtZaVnaXZl
+      bqVlcnJvcgClc3RhcnTPFjVSVcDSvrCoZHVyYXRpb27OAAhoWKR0eXBlpWdpdmVuiqh0cmFjZV9p
+      ZM/YftGMhBLJUqlwYXJlbnRfaWTPKtAXlf33SNGnc3Bhbl9pZM9asMuGsHmsTadzZXJ2aWNlwKhy
+      ZXNvdXJjZdoAJmEgdmFsaWQgImFwcEtleUF1dGgiIGtleSBpbiB0aGUgc3lzdGVtpG5hbWWlZ2l2
+      ZW6lZXJyb3IApXN0YXJ0zxY1UlXA3fHgqGR1cmF0aW9uzgACiHCkdHlwZaVnaXZlboqodHJhY2Vf
+      aWTP2H7RjIQSyVKpcGFyZW50X2lkzyrQF5X990jRp3NwYW5faWTPkqa2lN246Wunc2VydmljZcCo
+      cmVzb3VyY2W6YW4gaW5zdGFuY2Ugb2YgIlRlYW1zIiBBUEmkbmFtZaVnaXZlbqVlcnJvcgClc3Rh
+      cnTPFjVSVcDloqCoZHVyYXRpb27OAAxcEKR0eXBlpWdpdmVuiqh0cmFjZV9pZM/YftGMhBLJUqlw
+      YXJlbnRfaWTPKtAXlf33SNGnc3Bhbl9pZM9z/7GEnBaWtqdzZXJ2aWNlwKhyZXNvdXJjZdoAJXRo
+      ZXJlIGlzIGEgdmFsaWQgInRlYW0iIGluIHRoZSBzeXN0ZW2kbmFtZaVnaXZlbqVlcnJvcgClc3Rh
+      cnTPFjVSVcD0c5ioZHVyYXRpb27OInzL4KR0eXBlpWdpdmVui6h0cmFjZV9pZM/YftGMhBLJUqlw
+      YXJlbnRfaWTPc/+xhJwWlranc3Bhbl9pZM/3S/3N/sOE/adzZXJ2aWNlwKhyZXNvdXJjZbNodHRw
+      LmNsaWVudC5yZXF1ZXN0pG5hbWWzaHR0cC5jbGllbnQucmVxdWVzdKVlcnJvcgClc3RhcnTPFjVS
+      VcbrPvioZHVyYXRpb27OHEoM2KR0eXBlpGh0dHCkbWV0YYOoaHR0cC51cmzaAClodHRwOi8vYXBp
+      LmRhdGFkb2docS5jb206NDQzL2FwaS92Mi90ZWFtc6todHRwLm1ldGhvZKRQT1NUsGh0dHAuc3Rh
+      dHVzX2NvZGWjMjAxiqh0cmFjZV9pZM/YftGMhBLJUqlwYXJlbnRfaWTPKtAXlf33SNGnc3Bhbl9p
+      ZM/OE4N4Uxi2AadzZXJ2aWNlwKhyZXNvdXJjZb5vcGVyYXRpb24gIkRlbGV0ZVRlYW0iIGVuYWJs
+      ZWSkbmFtZaVnaXZlbqVlcnJvcgClc3RhcnTPFjVSVeN4iqioZHVyYXRpb27OAALqGKR0eXBlpWdp
+      dmVuiqh0cmFjZV9pZM/YftGMhBLJUqlwYXJlbnRfaWTPKtAXlf33SNGnc3Bhbl9pZM/aMBTHqcmr
+      CadzZXJ2aWNlwKhyZXNvdXJjZbhuZXcgIkRlbGV0ZVRlYW0iIHJlcXVlc3SkbmFtZaVnaXZlbqVl
+      cnJvcgClc3RhcnTPFjVSVeOAkVioZHVyYXRpb27OAAK3UKR0eXBlpWdpdmVuiqh0cmFjZV9pZM/Y
+      ftGMhBLJUqlwYXJlbnRfaWTPKtAXlf33SNGnc3Bhbl9pZM9/Y1uYK3pwSadzZXJ2aWNlwKhyZXNv
+      dXJjZdoAOHJlcXVlc3QgY29udGFpbnMgInRlYW1faWQiIHBhcmFtZXRlciBmcm9tICJ0ZWFtLmRh
+      dGEuaWQipG5hbWWlZ2l2ZW6lZXJyb3IApXN0YXJ0zxY1UlXjiZIIqGR1cmF0aW9uzgAJrJCkdHlw
+      ZaVnaXZlboqodHJhY2VfaWTP2H7RjIQSyVKpcGFyZW50X2lkzyrQF5X990jRp3NwYW5faWTPSIVg
+      wlfBzGync2VydmljZcCocmVzb3VyY2WzdGhlIHJlcXVlc3QgaXMgc2VudKRuYW1lpHdoZW6lZXJy
+      b3IApXN0YXJ0zxY1UlXjlWlIqGR1cmF0aW9uzmWGFPCkdHlwZaR3aGVui6h0cmFjZV9pZM/YftGM
+      hBLJUqlwYXJlbnRfaWTPSIVgwlfBzGync3Bhbl9pZM/Yy3cRLhjsuqdzZXJ2aWNlwKhyZXNvdXJj
+      ZbNodHRwLmNsaWVudC5yZXF1ZXN0pG5hbWWzaHR0cC5jbGllbnQucmVxdWVzdKVlcnJvcgClc3Rh
+      cnTPFjVSVePj6vCoZHVyYXRpb27OZSGiGKR0eXBlpGh0dHCkbWV0YYOoaHR0cC51cmzaAE5odHRw
+      Oi8vYXBpLmRhdGFkb2docS5jb206NDQzL2FwaS92Mi90ZWFtcy9iOWY1YjgzYi03NzNlLTUzMTIt
+      YmZkNC1iMmExNWViMTEyZjeraHR0cC5tZXRob2SmREVMRVRFsGh0dHAuc3RhdHVzX2NvZGWjMjA0
+      iqh0cmFjZV9pZM/YftGMhBLJUqlwYXJlbnRfaWTPKtAXlf33SNGnc3Bhbl9pZM9CjoEAQN4Fpadz
+      ZXJ2aWNlwKhyZXNvdXJjZb10aGUgcmVzcG9uc2Ugc3RhdHVzIGlzIDIwNCBPS6RuYW1lpHRoZW6l
+      ZXJyb3IApXN0YXJ0zxY1UlZJKasgqGR1cmF0aW9uzgACKrCkdHlwZaR0aGVui6h0cmFjZV9pZM/Y
+      ftGMhBLJUqlwYXJlbnRfaWTPKtAXlf33SNGnc3Bhbl9pZM8I4PUuOkDKJadzZXJ2aWNlwKhyZXNv
+      dXJjZbNodHRwLmNsaWVudC5yZXF1ZXN0pG5hbWWzaHR0cC5jbGllbnQucmVxdWVzdKVlcnJvcgCl
+      c3RhcnTPFjVSVkmo1dCoZHVyYXRpb27OBXeJQKR0eXBlpGh0dHCkbWV0YYOoaHR0cC51cmzaAE5o
+      dHRwOi8vYXBpLmRhdGFkb2docS5jb206NDQzL2FwaS92Mi90ZWFtcy9iOWY1YjgzYi03NzNlLTUz
+      MTItYmZkNC1iMmExNWViMTEyZjeraHR0cC5tZXRob2SmREVMRVRFsGh0dHAuc3RhdHVzX2NvZGWj
+      NDA0
+    headers:
+      Content-Type:
+      - application/msgpack
+      Datadog-Meta-Lang:
+      - python
+      Datadog-Meta-Lang-Interpreter:
+      - CPython
+      Datadog-Meta-Lang-Version:
+      - 3.8.5
+      Datadog-Meta-Tracer-Version:
+      - 0.41.2
+      X-Datadog-Trace-Count:
+      - '1'
+    method: PUT
+    uri: http://localhost:8126/v0.4/traces
+  response:
+    body:
+      string: '{"rate_by_service":{"service:,env:":1,"service:unnamed-python-service,env:":1,"service:unnamed-python-service,env:none":1}}
+
+        '
+    headers:
+      Content-Length:
+      - '124'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Sep 2020 17:02:53 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data": {"type": "teams", "attributes": {"name": "datadog-api-client-python-test_get_a_list_of_all_teams_returns_ok_response-1600275773.287573"}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateTeam
+      User-Agent:
+      - datadog-api-client-python/0.1.dev61+dirty (python 3.8.5; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '1872369052531948889'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '937992053586829943'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/teams
+  response:
+    body:
+      string: '{"included":[{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3","attributes":{"name":"Matt
+        Hardwick","handle":"matt.hardwick@datadoghq.com","created_at":"2019-05-15T20:23:56.312874+00:00","email":"matt.hardwick@datadoghq.com","icon":"https://secure.gravatar.com/avatar/0414b0ba84e0c939de98a9a634018961?s=48&d=retro","title":null,"verified":true,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"8bb4d410-00cb-11ea-a77b-538f1147085c"}}}}],"data":{"type":"teams","id":"7eccae20-2ae4-5c22-bac8-9bd00695828c","attributes":{"name":"datadog-api-client-python-test_get_a_list_of_all_teams_returns_ok_response-1600275773.287573","created":"2020-09-16T17:02:53.432371+00:00","modified":"2020-09-16T17:02:53.432371+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '978'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 16 Sep 2020 17:02:54 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=122; Max-Age=604800; Path=/; expires=Wed, 23-Sep-2020 17:02:53 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - pM+XKBj4qFLZ8yMOGFimFFWK4TZi4eDSQXhACYRLW8peTFy6SOt656nT+bVYauOi
+      X-DD-VERSION:
+      - '35.3045542'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - GetTeams
+      User-Agent:
+      - datadog-api-client-python/0.1.dev61+dirty (python 3.8.5; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '13285670145780716011'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '937992053586829943'
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/teams
+  response:
+    body:
+      string: '{"meta":{"sort":"ASC","pagination":{"size":25,"next_offset":25,"offset":0}},"data":[{"type":"teams","id":"47aa5730-46f8-51d0-8445-571b5d27e483","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_a_list_of_all_teams_returns__OK__response-Given_there_is_a_valid__team__in_the_system-local-1600266613","created":"2020-09-16T14:30:13.758036+00:00","modified":"2020-09-16T14:30:13.758036+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"9fd4edf9-f076-52c8-9abe-cd4f2c44a148","attributes":{"name":"go-Feature_Teams-Scenario_Create_a_new_team_returns__CREATED__response-local-1600266613","created":"2020-09-16T14:30:14.168211+00:00","modified":"2020-09-16T14:30:14.168211+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"212db8c5-8a84-57a3-9069-feffa2759f16","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_details_of_a_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-local-1600266616","created":"2020-09-16T14:30:16.628056+00:00","modified":"2020-09-16T14:30:16.628056+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"505c407b-a1f0-58ed-841c-60a55640ccd1","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Update_an_existing_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-local-1600266618-updated","created":"2020-09-16T14:30:18.580767+00:00","modified":"2020-09-16T14:30:19.492464+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"14ef13bb-27e2-5ac4-b98a-8bd8fec6447f","attributes":{"name":"community","created":"2020-09-16T14:32:02.380073+00:00","modified":"2020-09-16T14:32:02.380073+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"be4795e7-c09b-5346-bceb-86347cd3dc3c","attributes":{"name":"internalanalytics,infrastructureandenablement","created":"2020-09-16T14:32:02.570359+00:00","modified":"2020-09-16T14:32:02.570359+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"d72b798b-bf41-556d-925b-43d5ff3bd91d","attributes":{"name":"coreindex","created":"2020-09-16T14:32:02.580873+00:00","modified":"2020-09-16T14:32:02.580873+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"ce6dc44e-b8ab-5979-b002-517ee1e3ea76","attributes":{"name":"apmtraceintake","created":"2020-09-16T14:32:02.590680+00:00","modified":"2020-09-16T14:32:02.590680+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"6d2c751e-dc19-5ca0-8cc0-4f8abbf8e518","attributes":{"name":"dataviz","created":"2020-09-16T14:32:02.598999+00:00","modified":"2020-09-16T14:32:02.598999+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"d7bdfc51-8054-59b0-aa0e-441ddf4e5023","attributes":{"name":"productmanagement","created":"2020-09-16T14:32:02.609324+00:00","modified":"2020-09-16T14:32:02.609324+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"37fa24e9-1f78-533b-ab79-337be840ca08","attributes":{"name":"technicalrecruiting","created":"2020-09-16T14:32:02.619300+00:00","modified":"2020-09-16T14:32:02.619300+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"5fe3abad-44a7-586c-925f-dfcd701b4600","attributes":{"name":"metricsreliability","created":"2020-09-16T14:32:02.629294+00:00","modified":"2020-09-16T14:32:02.629294+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"89371a40-ea8b-574e-93aa-56de94b13d06","attributes":{"name":"historicalmetricsquery","created":"2020-09-16T14:32:02.641092+00:00","modified":"2020-09-16T14:32:02.641092+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"052b8e81-4b83-5549-9e49-1dfff9e7bbad","attributes":{"name":"cakesolutionseng","created":"2020-09-16T14:32:02.651207+00:00","modified":"2020-09-16T14:32:02.651207+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"382f0125-ac27-575d-a589-0c8eb71343f0","attributes":{"name":"deveng","created":"2020-09-16T14:32:02.660874+00:00","modified":"2020-09-16T14:32:02.660874+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"b6ce7546-dd03-58ed-b879-e7841d67f83c","attributes":{"name":"logs-app","created":"2020-09-16T14:32:02.670223+00:00","modified":"2020-09-16T14:32:02.670223+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"6d6643c6-6af1-5b8b-b891-490463339370","attributes":{"name":"aaa","created":"2020-09-16T14:32:02.680144+00:00","modified":"2020-09-16T14:32:02.680144+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"6aded18a-5ebc-5965-921d-c18cc1b1b4d8","attributes":{"name":"datascienceengineering","created":"2020-09-16T14:32:02.689580+00:00","modified":"2020-09-16T14:32:02.689580+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"55703c73-7a70-5160-bd75-e32c53dd2aab","attributes":{"name":"apmlivesearch","created":"2020-09-16T14:32:02.700257+00:00","modified":"2020-09-16T14:32:02.700257+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"teams","id":"b4ed0589-4472-5cb4-ba79-78e232b66c6c","attributes":{"name":"containerintegrations","created":"2020-09-16T14:32:02.710520+00:00","modified":"2020-09-16T14:32:02.710520+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}}]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8205'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 16 Sep 2020 17:02:55 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=122; Max-Age=604800; Path=/; expires=Wed, 23-Sep-2020 17:02:55 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - NVN1vUIP943yBv5BrKvNkq9LhGENimQCGx913v3GQzIJuXIMEzcrTlr1CpALPFWv
+      X-DD-VERSION:
+      - '35.3045542'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

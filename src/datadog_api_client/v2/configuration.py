@@ -213,6 +213,16 @@ conf = datadog_api_client.v2.Configuration(
             "remove_role_from_archive": False,
             "list_security_monitoring_signals": False,
             "search_security_monitoring_signals": False,
+            "create_service": False,
+            "delete_service": False,
+            "get_service": False,
+            "get_services": False,
+            "patch_service": False,
+            "create_team": False,
+            "delete_team": False,
+            "get_team": False,
+            "get_teams": False,
+            "patch_team": False,
         }
 
     def __deepcopy__(self, memo):

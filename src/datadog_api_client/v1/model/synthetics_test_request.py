@@ -161,7 +161,7 @@ class SyntheticsTestRequest(ModelNormal):
             method (HTTPMethod): [optional]  # noqa: E501
             port (int): Port to use when performing the test.. [optional]  # noqa: E501
             query ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Query to use for the test.. [optional]  # noqa: E501
-            timeout (float): Timeout in seconds for the test.. [optional]  # noqa: E501
+            timeout (float): Timeout in millisecond for the test.. [optional]  # noqa: E501
             url (str): URL to perform the test with.. [optional]  # noqa: E501
         """
 

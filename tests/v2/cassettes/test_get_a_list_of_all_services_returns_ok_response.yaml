@@ -1,0 +1,189 @@
+interactions:
+- request:
+    body: '{"data": {"type": "services", "attributes": {"name": "datadog-api-client-python-test_get_a_list_of_all_services_returns_ok_response-1600275344.169713"}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateService
+      User-Agent:
+      - datadog-api-client-python/0.1.dev61+dirty (python 3.8.5; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '15838148164569640750'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '15551273328604042422'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/services
+  response:
+    body:
+      string: '{"included":[{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3","attributes":{"name":"Matt
+        Hardwick","handle":"matt.hardwick@datadoghq.com","created_at":"2019-05-15T20:23:56.312874+00:00","email":"matt.hardwick@datadoghq.com","icon":"https://secure.gravatar.com/avatar/0414b0ba84e0c939de98a9a634018961?s=48&d=retro","title":null,"verified":true,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"8bb4d410-00cb-11ea-a77b-538f1147085c"}}}}],"data":{"type":"services","id":"8836b6bb-8d95-5940-9494-033ba792ae4c","attributes":{"name":"datadog-api-client-python-test_get_a_list_of_all_services_returns_ok_response-1600275344.169713","created":"2020-09-16T16:55:44.414796+00:00","modified":"2020-09-16T16:55:44.414796+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '984'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 16 Sep 2020 16:55:44 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=122; Max-Age=604800; Path=/; expires=Wed, 23-Sep-2020 16:55:44 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - mjjix3i7KxHakJGjOSXbyjGLp+IPNWPrPaCVopgkuqm46lk1b+kLivuxRokDQC1N
+      X-DD-VERSION:
+      - '35.3045542'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data": {"type": "services", "attributes": {"name": "datadog-api-client-python-test_get_a_list_of_all_services_returns_ok_response-1600275416.439266"}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateService
+      User-Agent:
+      - datadog-api-client-python/0.1.dev61+dirty (python 3.8.5; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '9818721816048007351'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '14798907340824285672'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/services
+  response:
+    body:
+      string: '{"included":[{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3","attributes":{"name":"Matt
+        Hardwick","handle":"matt.hardwick@datadoghq.com","created_at":"2019-05-15T20:23:56.312874+00:00","email":"matt.hardwick@datadoghq.com","icon":"https://secure.gravatar.com/avatar/0414b0ba84e0c939de98a9a634018961?s=48&d=retro","title":null,"verified":true,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"8bb4d410-00cb-11ea-a77b-538f1147085c"}}}}],"data":{"type":"services","id":"58fc24ab-7b2d-51e4-bdaa-310ebdd67435","attributes":{"name":"datadog-api-client-python-test_get_a_list_of_all_services_returns_ok_response-1600275416.439266","created":"2020-09-16T16:56:56.599450+00:00","modified":"2020-09-16T16:56:56.599450+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '984'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 16 Sep 2020 16:56:56 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=122; Max-Age=604800; Path=/; expires=Wed, 23-Sep-2020 16:56:56 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - 8zBNddJvUHkIbPMeF88y91Hz6JbkP3LresIlBCA27F8xJQ5O1jB8COuYutWaPiaL
+      X-DD-VERSION:
+      - '35.3045542'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - GetServices
+      User-Agent:
+      - datadog-api-client-python/0.1.dev61+dirty (python 3.8.5; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '7124689982014210216'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '14798907340824285672'
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/services
+  response:
+    body:
+      string: '{"meta":{"sort":"ASC","pagination":{"size":25,"next_offset":25,"offset":0}},"data":[{"type":"services","id":"a9feb592-d103-546d-a883-f0aa91ae3cb8","attributes":{"name":"Trace
+        Search","created":"2020-09-16T15:32:27.854004+00:00","modified":"2020-09-16T15:32:27.854004+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"9c073ee2-0a3c-54a5-b6b6-bc74ea41cb7f","attributes":{"name":"Cassandra
+        Trace Firehose","created":"2020-09-16T15:32:27.999025+00:00","modified":"2020-09-16T15:32:27.999025+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"c77b3ff5-34ce-5f0e-a4e3-de5cafcf6de7","attributes":{"name":"Trace
+        Fetcher","created":"2020-09-16T15:32:28.008750+00:00","modified":"2020-09-16T15:32:28.008750+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"6027ea44-578d-54c8-a03a-2bedfefc9877","attributes":{"name":"Trace
+        Firehose Writer","created":"2020-09-16T15:32:28.019787+00:00","modified":"2020-09-16T15:32:28.019787+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"4200c451-ad5b-5b18-956f-5e548663e0b8","attributes":{"name":"Trace
+        Resolver","created":"2020-09-16T15:32:28.029105+00:00","modified":"2020-09-16T15:32:28.029105+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"78eaa4a9-fa9c-53b2-b4ed-053acbf4d0da","attributes":{"name":"Trace
+        Resolver Cache","created":"2020-09-16T15:32:28.037948+00:00","modified":"2020-09-16T15:32:28.037948+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"325b0b09-4fbf-5ca3-9371-638d1848b0aa","attributes":{"name":"Trace
+        Sampler","created":"2020-09-16T15:32:28.046601+00:00","modified":"2020-09-16T15:32:28.046601+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"63cb57b8-0f46-5833-bba6-322a0b7e2e06","attributes":{"name":"Destro","created":"2020-09-16T15:32:28.056287+00:00","modified":"2020-09-16T15:32:28.056287+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"3920529e-0cf2-5093-97f8-5115467be6a8","attributes":{"name":"Trace
+        Quota CLI","created":"2020-09-16T15:32:28.065801+00:00","modified":"2020-09-16T15:32:28.065801+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"be05f6b5-7452-5db7-8318-a36b226d82af","attributes":{"name":"Resource
+        Writer","created":"2020-09-16T15:32:28.073966+00:00","modified":"2020-09-16T15:32:28.073966+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"a187ed9e-9149-593a-9f33-15a6d61cea1c","attributes":{"name":"Trace
+        Sync Marlo","created":"2020-09-16T15:32:28.081365+00:00","modified":"2020-09-16T15:32:28.081365+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"143d00e3-7a5a-5fca-9503-8d80e5af4c12","attributes":{"name":"Synthtracer","created":"2020-09-16T15:32:28.089374+00:00","modified":"2020-09-16T15:32:28.089374+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"5edab33a-c09c-5a49-970f-7876c20ffc91","attributes":{"name":"Trace
+        Queue Reader Stats","created":"2020-09-16T15:32:28.097513+00:00","modified":"2020-09-16T15:32:28.097513+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"13bb7956-4a79-5885-b5ac-e6fde3cfd3ab","attributes":{"name":"Trace
+        API Common","created":"2020-09-16T15:32:28.105563+00:00","modified":"2020-09-16T15:32:28.105563+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"047fc123-8a25-5f09-9436-ea30acba19d1","attributes":{"name":"Trace
+        Breakdown","created":"2020-09-16T15:32:28.113971+00:00","modified":"2020-09-16T15:32:28.113971+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"b130f668-d015-5e07-90f7-8d6c6e9725f8","attributes":{"name":"Trace
+        Breakdown Curator","created":"2020-09-16T15:32:28.121855+00:00","modified":"2020-09-16T15:32:28.121855+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"3ba08ed8-0aa2-5387-8cfe-697c1a224eca","attributes":{"name":"Trace
+        Checker","created":"2020-09-16T15:32:28.129573+00:00","modified":"2020-09-16T15:32:28.129573+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"e6a63033-f0aa-503e-8e96-b2814898ebe1","attributes":{"name":"Trace
+        Edge","created":"2020-09-16T15:32:28.137066+00:00","modified":"2020-09-16T15:32:28.137066+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"d321fdc8-80d0-5540-8950-81f3f3fdf5e2","attributes":{"name":"Trace
+        Log Writer","created":"2020-09-16T15:32:28.145367+00:00","modified":"2020-09-16T15:32:28.145367+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}},{"type":"services","id":"a8a4bb1d-68cf-52c7-89a2-88e1598b72cc","attributes":{"name":"Trace
+        Loom","created":"2020-09-16T15:32:28.153357+00:00","modified":"2020-09-16T15:32:28.153357+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}}]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7792'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 16 Sep 2020 16:56:56 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=122; Max-Age=604800; Path=/; expires=Wed, 23-Sep-2020 16:56:56 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - b75osX7OVlAMIFVOOsjON7d6NomkWqyplp7QrvDHZxeD8cbKIgA/UnwdWe4vYNhY
+      X-DD-VERSION:
+      - '35.3045542'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

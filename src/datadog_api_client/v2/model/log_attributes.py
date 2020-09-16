@@ -76,7 +76,7 @@ class LogAttributes(ModelNormal):
             'message': (str,),  # noqa: E501
             'service': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
-            'tags': ([str],),  # noqa: E501
+            'tags': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
             'timestamp': (datetime,),  # noqa: E501
         }
 
@@ -146,7 +146,7 @@ class LogAttributes(ModelNormal):
             message (str): The message [reserved attribute](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes) of your log. By default, Datadog ingests the value of the message attribute as the body of the log entry. That value is then highlighted and displayed in the Logstream, where it is indexed for full text search.. [optional]  # noqa: E501
             service (str): The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products.. [optional]  # noqa: E501
             status (str): Status of the message associated with your log.. [optional]  # noqa: E501
-            tags ([str]): Array of tags associated with your log.. [optional]  # noqa: E501
+            tags ([bool, date, datetime, dict, float, int, list, str, none_type]): Array of tags associated with your log.. [optional]  # noqa: E501
             timestamp (datetime): Timestamp of your log.. [optional]  # noqa: E501
         """
 
