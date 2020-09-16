@@ -809,4 +809,115 @@ interactions:
     status:
       code: 204
       message: No Content
+- request:
+    body: '{"data": {"type": "services", "attributes": {"name": "datadog-api-client-python-test_delete_an_existing_service_returns_ok_response-1600278527.599945"}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateService
+      User-Agent:
+      - datadog-api-client-python/0.1.dev61+dirty (python 3.8.5; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '7812785296602125179'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '1297789538629126949'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/services
+  response:
+    body:
+      string: '{"included":[{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3","attributes":{"name":"Matt
+        Hardwick","handle":"matt.hardwick@datadoghq.com","created_at":"2019-05-15T20:23:56.312874+00:00","email":"matt.hardwick@datadoghq.com","icon":"https://secure.gravatar.com/avatar/0414b0ba84e0c939de98a9a634018961?s=48&d=retro","title":null,"verified":true,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"8bb4d410-00cb-11ea-a77b-538f1147085c"}}}}],"data":{"type":"services","id":"1618a685-d8f9-5e68-9ac1-4af7b5d56544","attributes":{"name":"datadog-api-client-python-test_delete_an_existing_service_returns_ok_response-1600278527.599945","created":"2020-09-16T17:48:47.861830+00:00","modified":"2020-09-16T17:48:47.861830+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}},"created_by":{"data":{"type":"users","id":"26101b01-eba0-11e9-a77a-0bb0b66104b3"}}}}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '984'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 16 Sep 2020 17:48:49 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=122; Max-Age=604800; Path=/; expires=Wed, 23-Sep-2020 17:48:47 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - vJlCdCjZjHKDWCQaZXaKHjefwu7Jotxr42UmWttwNlCEvibEd08wFg9UscwYl4z7
+      X-DD-VERSION:
+      - '35.3045879'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteService
+      User-Agent:
+      - datadog-api-client-python/0.1.dev61+dirty (python 3.8.5; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '1890814250804906971'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '1297789538629126949'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/services/1618a685-d8f9-5e68-9ac1-4af7b5d56544
+  response:
+    body:
+      string: ''
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 16 Sep 2020 17:48:49 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=122; Max-Age=604800; Path=/; expires=Wed, 23-Sep-2020 17:48:49 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - /3efrffY0fOidOw5YXy+ujUt+jIWndj9KkkaQ3CKNiYFs6CCTkTChAR8M9mejUqc
+      X-DD-VERSION:
+      - '35.3045879'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 204
+      message: No Content
 version: 1
