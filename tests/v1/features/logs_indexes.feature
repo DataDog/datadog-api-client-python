@@ -11,33 +11,38 @@ Feature: Logs Indexes
 
   @generated @skip
   Scenario: Get indexes order returns "OK" response
-    Given new "GetLogsIndexOrder" request
+    Given operation "GetLogsIndexOrder" enabled
+    And new "GetLogsIndexOrder" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update indexes order returns "OK" response
-    Given new "UpdateLogsIndexOrder" request
+    Given operation "UpdateLogsIndexOrder" enabled
+    And new "UpdateLogsIndexOrder" request
     And body {}
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get all indexes returns "OK" response
-    Given new "ListLogIndexes" request
+    Given operation "ListLogIndexes" enabled
+    And new "ListLogIndexes" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get an index returns "OK" response
-    Given new "GetLogsIndex" request
+    Given operation "GetLogsIndex" enabled
+    And new "GetLogsIndex" request
     And request contains "name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update an index returns "OK" response
-    Given new "UpdateLogsIndex" request
+    Given operation "UpdateLogsIndex" enabled
+    And new "UpdateLogsIndex" request
     And request contains "name" parameter from "<PATH>"
     And body {}
     When the request is sent
