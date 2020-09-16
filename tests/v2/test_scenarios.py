@@ -40,6 +40,65 @@ def user(vcr_cassette, client, unique):
         vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
 
+@given('there is a valid "service" in the system')
+def service(vcr_cassette, client, unique):
+    """There is a valid service in the system."""
+    from datadog_api_client.v2.exceptions import ApiException
+    from datadog_api_client.v2.model import service_create_request
+    from datadog_api_client.v2.model import service_create_data
+    from datadog_api_client.v2.model import service_create_attributes
+    from datadog_api_client.v2.model import service_type
+    from datadog_api_client.v2.api.services_api import ServicesApi
+
+    client.configuration.unstable_operations["create_service"] = True
+    client.configuration.unstable_operations["delete_service"] = True
+    api = ServicesApi(client)
+    body = service_create_request.ServiceCreateRequest(
+        data=service_create_data.ServiceCreateData(
+            type=service_type.ServiceType(value="services"),
+            attributes=service_create_attributes.ServiceCreateAttributes(
+                name=str(unique), ),
+        ), )
+    response = api.create_service(body=body)
+    yield response
+    if vcr_cassette.record_mode != "none":
+        number_of_interactions = len(vcr_cassette.data)
+        try:
+            api.delete_service(response.data.id)
+        except ApiException as e:
+            warnings.warn(str(e))
+        vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+
+
+@given('there is a valid "team" in the system')
+def team(vcr_cassette, client, unique):
+    """There is a valid team in the system."""
+    from datadog_api_client.v2.exceptions import ApiException
+    from datadog_api_client.v2.model import team_create_request
+    from datadog_api_client.v2.model import team_create_data
+    from datadog_api_client.v2.model import team_create_attributes
+    from datadog_api_client.v2.model import team_type
+    from datadog_api_client.v2.api.teams_api import TeamsApi
+
+    client.configuration.unstable_operations["create_team"] = True
+    client.configuration.unstable_operations["delete_team"] = True
+    api = TeamsApi(client)
+    body = team_create_request.TeamCreateRequest(
+        data=team_create_data.TeamCreateData(
+            type=team_type.TeamType(value="teams"),
+            attributes=team_create_attributes.TeamCreateAttributes(
+                name=str(unique), ),
+        ), )
+    response = api.create_team(body=body)
+    yield response
+    if vcr_cassette.record_mode != "none":
+        number_of_interactions = len(vcr_cassette.data)
+        try:
+            api.delete_team(response.data.id)
+        except ApiException as e:
+            warnings.warn(str(e))
+        vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+
 @given('there is a valid "role" in the system')
 def role(vcr_cassette, client, unique):
     """There is a valid role in the system."""
