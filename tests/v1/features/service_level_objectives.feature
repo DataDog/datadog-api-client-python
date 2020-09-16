@@ -63,7 +63,8 @@ Feature: Service Level Objectives
 
   @generated @skip
   Scenario: Get an SLO's history returns "OK" response
-    Given new "GetSLOHistory" request
+    Given operation "GetSLOHistory" enabled
+    And new "GetSLOHistory" request
     And request contains "slo_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK

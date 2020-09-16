@@ -10,20 +10,23 @@ Feature: Logs
 
   @generated @skip
   Scenario: Get a quick list of logs returns "OK" response
-    Given new "ListLogsGet" request
+    Given operation "ListLogsGet" enabled
+    And new "ListLogsGet" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a list of logs returns "OK" response
-    Given new "ListLogs" request
+    Given operation "ListLogs" enabled
+    And new "ListLogs" request
     And body {}
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Aggregate events returns "OK" response
-    Given new "AggregateLogs" request
+    Given operation "AggregateLogs" enabled
+    And new "AggregateLogs" request
     And body {}
     When the request is sent
     Then the response status is 200 OK

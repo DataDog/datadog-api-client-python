@@ -44,13 +44,15 @@ Feature: Security Monitoring
 
   @generated @skip
   Scenario: Get a quick list of security signals returns "OK" response
-    Given new "ListSecurityMonitoringSignals" request
+    Given operation "ListSecurityMonitoringSignals" enabled
+    And new "ListSecurityMonitoringSignals" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a list of security signals returns "OK" response
-    Given new "SearchSecurityMonitoringSignals" request
+    Given operation "SearchSecurityMonitoringSignals" enabled
+    And new "SearchSecurityMonitoringSignals" request
     And body {}
     When the request is sent
     Then the response status is 200 OK
