@@ -1550,9 +1550,9 @@ class SyntheticsApi(object):
             self,
             **kwargs
         ):
-            """Get a list of tests  # noqa: E501
+            """Get the list of all tests  # noqa: E501
 
-            Get the list of all Synthetic tests (can be filtered by type).  # noqa: E501
+            Get the list of all Synthetic tests.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
@@ -1561,7 +1561,6 @@ class SyntheticsApi(object):
 
 
             Keyword Args:
-                check_type (str): API or browser to filter the list by test type, undefined to get the unfiltered list.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1622,7 +1621,6 @@ class SyntheticsApi(object):
             },
             params_map={
                 'all': [
-                    'check_type',
                 ],
                 'required': [],
                 'nullable': [
@@ -1638,14 +1636,10 @@ class SyntheticsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'check_type':
-                        (str,),
                 },
                 'attribute_map': {
-                    'check_type': 'check_type',
                 },
                 'location_map': {
-                    'check_type': 'query',
                 },
                 'collection_format_map': {
                 }

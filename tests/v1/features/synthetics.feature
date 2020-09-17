@@ -22,12 +22,6 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Get a list of tests returns "OK - Returns the list of all Synthetic tests (properly filtered by type)." response
-    Given new "ListTests" request
-    When the request is sent
-    Then the response status is 200 OK - Returns the list of all Synthetic tests (properly filtered by type).
-
-  @generated @skip
   Scenario: Create a test returns "OK - Returns the created test details." response
     Given new "CreateTest" request
     And body {}
@@ -129,3 +123,9 @@ Feature: Synthetics
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get the list of all tests returns "OK - Returns the list of all Synthetic tests." response
+    Given new "ListTests" request
+    When the request is sent
+    Then the response status is 200 OK - Returns the list of all Synthetic tests.
