@@ -186,7 +186,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     body = RelationshipToUser(
         data=RelationshipToUserData(
             id="id_example",
-            type="users",
+            type=UsersType("users"),
         ),
     ) # RelationshipToUser |  (optional)
 
@@ -312,7 +312,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                     data=[
                         RelationshipToUserData(
                             id="id_example",
-                            type="users",
+                            type=UsersType("users"),
                         ),
                     ],
                 ),
@@ -1097,7 +1097,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     body = RelationshipToUser(
         data=RelationshipToUserData(
             id="id_example",
-            type="users",
+            type=UsersType("users"),
         ),
     ) # RelationshipToUser |  (optional)
 
