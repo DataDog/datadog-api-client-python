@@ -751,7 +751,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                     user=RelationshipToUser(
                         data=RelationshipToUserData(
                             id="id_example",
-                            type="users",
+                            type=UsersType("users"),
                         ),
                     ),
                 ),
