@@ -104,7 +104,7 @@ def user_has_role(vcr_cassette, client, user, role):
     body = relationship_to_user.RelationshipToUser(
         data=relationship_to_user_data.RelationshipToUserData(
             id=user.data.id,
-            type=str(user.data.type),
+            type=user.data.type,
         ))
     yield api.add_user_to_role(role.data.id, body=body)
     if vcr_cassette.record_mode != "none":
@@ -137,7 +137,7 @@ def user_invitation(vcr_cassette, client, user):
                     user=relationship_to_user.RelationshipToUser(
                         data=relationship_to_user_data.RelationshipToUserData(
                             id=user.data.id,
-                            type=str(user.data.type),
+                            type=user.data.type,
                         ))))
         ], )
     yield api.send_invitations(body=body).data[0]
