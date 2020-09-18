@@ -46,7 +46,8 @@ jobs:
   services:
     datadog-agent: datadog-agent
   steps:
-    - script: pythom -m pip install -e .[apm,tests]
+    - script: python -m pip install -e .[apm,tests]
+      displayName: Install package
     - script: ./run-tests.sh
       displayName: Run integration tests
       env:
