@@ -330,13 +330,13 @@ def request_parameter(fixtures, api_request, name, path):
     return parameter
 
 
-@given(parsers.parse('request contains "{name}" parameter with value {data}'))
-def request_parameter(fixtures, api_request, name, data):
+@given(parsers.parse('request contains "{name}" parameter with value {value}'))
+def request_parameter_with_value(fixtures, api_request, name, value):
     """Set request parameter."""
     import json
     from jinja2 import Template
 
-    tpl = Template(data).render(**fixtures)
+    tpl = Template(value).render(**fixtures)
     api_request["kwargs"][name] = parameter = json.loads(tpl)
     return parameter
 
