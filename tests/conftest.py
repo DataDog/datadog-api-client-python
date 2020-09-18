@@ -330,7 +330,18 @@ def request_parameter(fixtures, api_request, name, path):
     return parameter
 
 
-def undo(api_request, client):
+@given(parsers.parse('request contains "{name}" parameter with value {data}'))
+def request_parameter(fixtures, api_request, name, data):
+    """Set request parameter."""
+    import json
+    from jinja2 import Template
+
+    tpl = Template(data).render(**fixtures)
+    api_request["kwargs"][name] = parameter = json.loads(tpl)
+    return parameter
+
+
+def undo(api_request):
     """Clean after operation."""
     operation_id = api_request["request"].settings["operation_id"]
     if operation_id == "create_user":
@@ -343,7 +354,7 @@ def undo(api_request, client):
     elif operation_id == "create_team":
         client.configuration.unstable_operations["delete_team"] = True
         return api_request["api"].delete_team(api_request["response"][0].data.id)
-    elif operation_id in {"update_user", "add_permission_to_role", "add_user_to_role", "send_invitations"}:
+    elif operation_id in {"update_user", "add_permission_to_role", "add_user_to_role", "send_invitations", "aggregate_logs"}:
         return
     elif api_request["request"].settings["http_method"] == "PATCH":
         return
