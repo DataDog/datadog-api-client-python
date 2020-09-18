@@ -242,13 +242,13 @@ def freezer(vcr_cassette_name, vcr_cassette, vcr):
 @given('a valid "apiKeyAuth" key in the system')
 def a_valid_api_key(configuration):
     """a valid API key."""
-    configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY")
+    configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "")
 
 
 @given('a valid "appKeyAuth" key in the system')
 def a_valid_application_key(configuration):
     """a valid Application key."""
-    configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY")
+    configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "")
 
 
 @pytest.fixture
