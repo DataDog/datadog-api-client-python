@@ -1597,6 +1597,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
     start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
     end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    type = "type_example" # str | RUM type: `[browser, mobile]`. Defaults to `browser`. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1610,7 +1611,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get hourly usage for RUM Sessions
-        api_response = api_instance.get_usage_rum_sessions(start_hr, end_hr=end_hr)
+        api_response = api_instance.get_usage_rum_sessions(start_hr, end_hr=end_hr, type=type)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_rum_sessions: %s\n" % e)
@@ -1622,6 +1623,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour. |
  **end_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. | [optional]
+ **type** | **str**| RUM type: &#x60;[browser, mobile]&#x60;. Defaults to &#x60;browser&#x60;. | [optional]
 
 ### Return type
 
