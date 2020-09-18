@@ -205,9 +205,15 @@ def record_mode(request):
 
 @pytest.fixture(scope="module")
 def vcr_config(record_mode):
+    def before_record_request(request):
+        if 'Datadog-Meta-Tracer-Version' in request.headers:
+            return None
+        return request
+
     config = dict(
         filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY"),
         filter_query_parameters=("api_key", "application_key"),
+        before_record_request=before_record_request,
     )
     return config
 
