@@ -1961,6 +1961,7 @@ class UsageMeteringApi(object):
 
             Keyword Args:
                 end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+                type (str): RUM type: &#x60;[browser, mobile]&#x60;. Defaults to &#x60;browser&#x60;.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2025,6 +2026,7 @@ class UsageMeteringApi(object):
                 'all': [
                     'start_hr',
                     'end_hr',
+                    'type',
                 ],
                 'required': [
                     'start_hr',
@@ -2046,14 +2048,18 @@ class UsageMeteringApi(object):
                         (datetime,),
                     'end_hr':
                         (datetime,),
+                    'type':
+                        (str,),
                 },
                 'attribute_map': {
                     'start_hr': 'start_hr',
                     'end_hr': 'end_hr',
+                    'type': 'type',
                 },
                 'location_map': {
                     'start_hr': 'query',
                     'end_hr': 'query',
+                    'type': 'query',
                 },
                 'collection_format_map': {
                 }
