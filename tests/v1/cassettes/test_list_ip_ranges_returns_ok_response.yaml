@@ -9,18 +9,18 @@ interactions:
       Dd-Operation-Id:
       - GetIpRanges
       User-Agent:
-      - datadog-api-client-python/0.1.dev66+dirty (python 3.7.7; os Darwin; arch x86_64)
+      - datadog-api-client-python/0.1.dev67+dirty (python 3.8.5; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '15076274472212834694'
+      - '3810264299572682533'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '1396492202956212894'
+      - '18298303860074712282'
     method: GET
     uri: https://ip-ranges.datadoghq.com/
   response:
     body:
-      string: "{\n    \"version\": 29,\n    \"modified\": \"2020-06-22-12-00-00\",\n
+      string: "{\n    \"version\": 30,\n    \"modified\": \"2020-08-27-09-00-00\",\n
         \   \"agents\": {\n        \"prefixes_ipv4\": [\n            \"107.21.15.22/32\",\n
         \           \"107.21.18.19/32\",\n            \"107.23.209.202/32\",\n            \"107.23.59.124/32\",\n
         \           \"107.23.68.220/32\",\n            \"107.23.74.206/32\",\n            \"184.72.98.113/32\",\n
@@ -310,36 +310,38 @@ interactions:
         \           \"52.9.13.199/32\",\n            \"52.9.139.134/32\",\n            \"63.34.100.178/32\",\n
         \           \"63.35.33.198/32\",\n            \"99.79.87.237/32\"\n        ],\n
         \       \"prefixes_ipv6\": []\n    },\n    \"webhooks\": {\n        \"prefixes_ipv4\":
-        [\n            \"34.192.254.186/32\",\n            \"34.204.102.208/32\",\n
-        \           \"52.20.96.17/32\"\n        ],\n        \"prefixes_ipv6\": []\n
-        \   }\n}\n"
+        [\n            \"3.218.14.56/32\",\n            \"3.225.172.201/32\",\n            \"34.192.254.186/32\",\n
+        \           \"34.204.102.208/32\",\n            \"52.20.96.17/32\",\n            \"52.21.183.255/32\"\n
+        \       ],\n        \"prefixes_ipv6\": []\n    }\n}\n"
     headers:
       Accept-Ranges:
       - bytes
+      Age:
+      - '32'
       Connection:
       - keep-alive
       Content-Length:
-      - '27355'
+      - '27449'
       Content-Type:
       - application/json
       Date:
-      - Thu, 09 Jul 2020 08:46:42 GMT
+      - Fri, 18 Sep 2020 11:51:12 GMT
       ETag:
-      - '"669c774898319a1b2b93efe51e7bab92"'
+      - '"a10a4e3f85ed8c2509855388e149972a"'
       Last-Modified:
-      - Mon, 22 Jun 2020 10:05:14 GMT
+      - Thu, 27 Aug 2020 12:58:04 GMT
       Server:
       - AmazonS3
       Vary:
       - Accept-Encoding
       Via:
-      - 1.1 4debdaa39c21a3212350a638102f8b06.cloudfront.net (CloudFront)
+      - 1.1 960b47175d6cfc9ed048624de2747035.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - _94naS-Szp4Jgjjj9udFzWCwuBpdhGth5JG2qscWc9rKXI3uh6azJA==
+      - 5ags5K5jwp3hZhwNEgfIo8HYE8a8H1kJQCFA2CCWxvwO9dV6q4JyzQ==
       X-Amz-Cf-Pop:
-      - MAD50-C1
+      - MAD51-C2
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
     status:
       code: 200
       message: OK

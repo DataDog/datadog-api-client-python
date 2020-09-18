@@ -19,7 +19,7 @@ else
 fi
 
 # Install test dependencies
-python -m pip install -e .[apm,tests]
+# python -m pip install -e .[apm,tests]
 # Run tests
 set +e
 python -m pytest
