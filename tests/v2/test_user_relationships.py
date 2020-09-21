@@ -5,16 +5,12 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v2
-try:
-    from datadog_api_client.v2.model import relationship_to_roles
-except ImportError:
-    relationship_to_roles = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_roles']
+from datadog_api_client.v2.model.relationship_to_roles import RelationshipToRoles
+globals()['RelationshipToRoles'] = RelationshipToRoles
 from datadog_api_client.v2.model.user_relationships import UserRelationships
 
 
