@@ -153,6 +153,16 @@ Class | Method | HTTP request | Description
 *SecurityMonitoringApi* | [**list_security_monitoring_signals**](SecurityMonitoringApi.md#list_security_monitoring_signals) | **GET** /api/v2/security_monitoring/signals | Get a quick list of security signals
 *SecurityMonitoringApi* | [**search_security_monitoring_signals**](SecurityMonitoringApi.md#search_security_monitoring_signals) | **POST** /api/v2/security_monitoring/signals/search | Get a list of security signals
 *SecurityMonitoringApi* | [**update_security_monitoring_rule**](SecurityMonitoringApi.md#update_security_monitoring_rule) | **PUT** /api/v2/security_monitoring/rules/{rule_id} | Update an existing rule
+*ServicesApi* | [**create_service**](ServicesApi.md#create_service) | **POST** /api/v2/services | Create a new service
+*ServicesApi* | [**delete_service**](ServicesApi.md#delete_service) | **DELETE** /api/v2/services/{service_id} | Delete an existing service
+*ServicesApi* | [**get_service**](ServicesApi.md#get_service) | **GET** /api/v2/services/{service_id} | Get details of a service
+*ServicesApi* | [**get_services**](ServicesApi.md#get_services) | **GET** /api/v2/services | Get a list of all services
+*ServicesApi* | [**update_service**](ServicesApi.md#update_service) | **PATCH** /api/v2/services/{service_id} | Update an existing service
+*TeamsApi* | [**create_team**](TeamsApi.md#create_team) | **POST** /api/v2/teams | Create a new team
+*TeamsApi* | [**delete_team**](TeamsApi.md#delete_team) | **DELETE** /api/v2/teams/{team_id} | Delete an existing team
+*TeamsApi* | [**get_team**](TeamsApi.md#get_team) | **GET** /api/v2/teams/{team_id} | Get details of a team
+*TeamsApi* | [**get_teams**](TeamsApi.md#get_teams) | **GET** /api/v2/teams | Get a list of all teams
+*TeamsApi* | [**update_team**](TeamsApi.md#update_team) | **PATCH** /api/v2/teams/{team_id} | Update an existing team
 *UsersApi* | [**create_user**](UsersApi.md#create_user) | **POST** /api/v2/users | Create a user
 *UsersApi* | [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v2/users/{user_id} | Disable a user
 *UsersApi* | [**get_invitation**](UsersApi.md#get_invitation) | **GET** /api/v2/user_invitations/{user_invitation_uuid} | Get a user invitation
@@ -300,6 +310,34 @@ This time is calculated from the first seen timestamp..md)
  - [SecurityMonitoringSignalsListResponseMeta](Meta attributes..md)
  - [SecurityMonitoringSignalsListResponseMetaPage](Paging attributes..md)
  - [SecurityMonitoringSignalsSort](The sort parameters used for querying security signals..md)
+ - [ServiceCreateAttributes](The service's attributes for a create request..md)
+ - [ServiceCreateData](Service payload for create requests..md)
+ - [ServiceCreateRequest](Create request with a service payload..md)
+ - [ServiceIncludedItems](An object related to a service which is present in the included payload..md)
+ - [ServiceRelationships](The service's relationships..md)
+ - [ServiceResponse](Response with a service payload..md)
+ - [ServiceResponseAttributes](The service's attributes from a response..md)
+ - [ServiceResponseData](Service data from responses..md)
+ - [ServiceType](Service resource type..md)
+ - [ServiceUpdateAttributes](The service's attributes for an update request..md)
+ - [ServiceUpdateData](Service payload for update requests..md)
+ - [ServiceUpdateRequest](Update request with a service payload..md)
+ - [ServicesResponse](Response with a list of service payloads..md)
+ - [ServicesResponseMeta](The metadata object containing pagination metadata..md)
+ - [ServicesResponseMetaPagination](Pagination properties..md)
+ - [TeamCreateAttributes](The team's attributes for a create request..md)
+ - [TeamCreateData](Team data for a create request..md)
+ - [TeamCreateRequest](Create request with a team payload..md)
+ - [TeamIncludedItems](An object related to a team which is present in the included payload..md)
+ - [TeamRelationships](The team's relationships..md)
+ - [TeamResponse](Response with a team payload..md)
+ - [TeamResponseAttributes](The team's attributes from a response..md)
+ - [TeamResponseData](Team data from a response..md)
+ - [TeamType](Team resource type..md)
+ - [TeamUpdateAttributes](The team's attributes for an update request..md)
+ - [TeamUpdateData](Team data for an update request..md)
+ - [TeamUpdateRequest](Update request with a team payload..md)
+ - [TeamsResponse](Response with a list of team payloads..md)
  - [User](User object returned by the API..md)
  - [UserAttributes](Attributes of user object returned by the API..md)
  - [UserCreateAttributes](Attributes of the created user..md)
@@ -313,6 +351,8 @@ This time is calculated from the first seen timestamp..md)
  - [UserInvitationsRequest](Object to invite users to join the organization..md)
  - [UserInvitationsResponse](User invitations as returned by the API..md)
  - [UserInvitationsType](User invitations type..md)
+ - [UserRelationship](A relationship reference for users..md)
+ - [UserRelationshipData](The User relationship data..md)
  - [UserRelationships](Relationships of the user object..md)
  - [UserResponse](Response containing information about a single user..md)
  - [UserResponseIncludedItem](An object related to a user..md)
