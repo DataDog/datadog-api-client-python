@@ -13,7 +13,7 @@ pytestmark = [
 
 
 @given('there is a valid "user" in the system')
-def user(fixtures, vcr_cassette, client, unique):
+def user(context, vcr_cassette, client, unique):
     """There is a valid user in the system."""
     from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import user_create_request
@@ -29,7 +29,8 @@ def user(fixtures, vcr_cassette, client, unique):
             attributes=user_create_attributes.UserCreateAttributes(
                 email=str(unique) + "@datadoghq.com", ),
         ), )
-    response = api.create_user(body=body)
+
+    context["user"] = response = api.create_user(body=body)
 
     def undo():
         if vcr_cassette.record_mode != "none":
@@ -40,12 +41,11 @@ def user(fixtures, vcr_cassette, client, unique):
                 warnings.warn(str(e))
             vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
-    fixtures["user"] = response
-    fixtures["undo_operations"].append(undo)
+    context["undo_operations"].append(undo)
 
 
 @given('there is a valid "service" in the system')
-def service(fixtures, vcr_cassette, client, unique):
+def service(context, vcr_cassette, client, unique):
     """There is a valid service in the system."""
     from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import service_create_request
@@ -64,7 +64,7 @@ def service(fixtures, vcr_cassette, client, unique):
                 name=str(unique), ),
         ), )
 
-    response = fixtures["service"] = api.create_service(body=body)
+    response = context["service"] = api.create_service(body=body)
 
     def undo():
         if vcr_cassette.record_mode != "none":
@@ -75,11 +75,11 @@ def service(fixtures, vcr_cassette, client, unique):
                 warnings.warn(str(e))
             vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
-    fixtures["undo_operations"].append(undo)
+    context["undo_operations"].append(undo)
 
 
 @given('there is a valid "team" in the system')
-def team(fixtures, vcr_cassette, client, unique):
+def team(context, vcr_cassette, client, unique):
     """There is a valid team in the system."""
     from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import team_create_request
@@ -97,7 +97,7 @@ def team(fixtures, vcr_cassette, client, unique):
             attributes=team_create_attributes.TeamCreateAttributes(
                 name=str(unique), ),
         ), )
-    response = fixtures["team"] = api.create_team(body=body)
+    response = context["team"] = api.create_team(body=body)
 
     def undo():
         if vcr_cassette.record_mode != "none":
@@ -108,11 +108,11 @@ def team(fixtures, vcr_cassette, client, unique):
                 warnings.warn(str(e))
             vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
-    fixtures["undo_operations"].append(undo)
+    context["undo_operations"].append(undo)
 
 
 @given('there is a valid "role" in the system')
-def role(fixtures, vcr_cassette, client, unique):
+def role(context, vcr_cassette, client, unique):
     """There is a valid role in the system."""
     from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import role_create_request
@@ -129,7 +129,7 @@ def role(fixtures, vcr_cassette, client, unique):
                 name=str(unique), ),
         ), )
 
-    response = fixtures["role"] = api.create_role(body=body)
+    response = context["role"] = api.create_role(body=body)
 
     def undo():
         if vcr_cassette.record_mode != "none":
@@ -140,25 +140,25 @@ def role(fixtures, vcr_cassette, client, unique):
                 warnings.warn(str(e))
             vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
-    fixtures["undo_operations"].append(undo)
+    context["undo_operations"].append(undo)
 
 
 @given('there is a valid "permission" in the system')
-def permission(fixtures, client):
+def permission(context, client):
     """There is a valid permission in the system."""
     from datadog_api_client.v2.api.roles_api import RolesApi
 
-    fixtures["permission"] = RolesApi(client).list_permissions().data[0]
+    context["permission"] = RolesApi(client).list_permissions().data[0]
 
 
 @given('the "permission" is granted to the "role"')
-def granted_permission(fixtures, client):
+def granted_permission(context, client):
     """The permission is granted to the role."""
     from datadog_api_client.v2.model import relationship_to_permission
     from datadog_api_client.v2.model import relationship_to_permission_data
     from datadog_api_client.v2.api.roles_api import RolesApi
-    role = fixtures["role"]
-    permission = fixtures["permission"]
+    role = context["role"]
+    permission = context["permission"]
     api = RolesApi(client)
     body = relationship_to_permission.RelationshipToPermission(
         data=relationship_to_permission_data.RelationshipToPermissionData(
@@ -169,14 +169,14 @@ def granted_permission(fixtures, client):
 
 
 @given('the "user" has the "role"')
-def user_has_role(fixtures, vcr_cassette, client):
+def user_has_role(context, vcr_cassette, client):
     """The user has the role."""
     from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import relationship_to_user
     from datadog_api_client.v2.model import relationship_to_user_data
     from datadog_api_client.v2.api.roles_api import RolesApi
-    role = fixtures["role"]
-    user = fixtures["user"]
+    role = context["role"]
+    user = context["user"]
     api = RolesApi(client)
     body = relationship_to_user.RelationshipToUser(
         data=relationship_to_user_data.RelationshipToUserData(
@@ -194,11 +194,11 @@ def user_has_role(fixtures, vcr_cassette, client):
                 warnings.warn(str(e))
             vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
-    fixtures["undo_operations"].append(undo)
+    context["undo_operations"].append(undo)
 
 
 @given('the "user" has a "user_invitation"')
-def user_invitation(fixtures, vcr_cassette, client):
+def user_invitation(context, vcr_cassette, client):
     """The user has an invitation."""
     from datadog_api_client.v2.model import relationship_to_user
     from datadog_api_client.v2.model import relationship_to_user_data
@@ -208,7 +208,7 @@ def user_invitation(fixtures, vcr_cassette, client):
     from datadog_api_client.v2.model import user_invitations_type
     from datadog_api_client.v2.api.users_api import UsersApi
 
-    user = fixtures["user"]
+    user = context["user"]
 
     api = UsersApi(client)
     body = user_invitations_request.UserInvitationsRequest(
@@ -223,7 +223,7 @@ def user_invitation(fixtures, vcr_cassette, client):
                             type=user.data.type,
                         ))))
         ], )
-    fixtures["user_invitation"] = api.send_invitations(body=body).data[0]
+    context["user_invitation"] = api.send_invitations(body=body).data[0]
 
 
 scenarios("features")
