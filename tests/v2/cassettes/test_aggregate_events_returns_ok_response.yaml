@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.datadog-api-client-python-test_aggregate_events_returns_ok_response-1600762875.671556",
+    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.datadog-api-client-python-test_aggregate_events_returns_ok_response-1600774782.557857",
       "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"],
       "query": "datadog-agent", "to": "1600348600"}}'
     headers:
@@ -13,16 +13,16 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '5779953507876047395'
+      - '6437825066997986357'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '11798104506455966190'
+      - '4285043469519053814'
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"U1MwT294SjFSNmFpbFBvbnVlandPd3xFb0I3TDlSakt0VnB4a0JnVkxIVHZn","elapsed":0},"data":{"buckets":[]}}'
+      string: '{"meta":{"status":"done","request_id":"MUlnU19IeklSUnlBSDl1SW1Wa1Rid3x0MVZTQmdEMy1fQkR3TWxNTF9FcExR","elapsed":0},"data":{"buckets":[]}}'
     headers:
       Cache-Control:
       - no-cache
@@ -37,11 +37,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Tue, 22 Sep 2020 08:21:16 GMT
+      - Tue, 22 Sep 2020 11:39:43 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 08:21:16 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 11:39:42 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -50,9 +50,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - hj67/REi7e3yYcyH3k1IhaTqyaqEZObxcXfHyl0cMf/YGOgEumufCDMBPGXJkv7n
+      - ab9XUIoH2WQru6KxGEk/Ky3/8hPDJn6S4CroFe2GTMSO5ISVqinE+UtO1EgJ/Q5E
       X-DD-VERSION:
-      - '35.3072861'
+      - '35.3073683'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -62,141 +62,7 @@ interactions:
       X-RateLimit-Remaining:
       - '4'
       X-RateLimit-Reset:
-      - '14'
-    status:
-      code: 200
-      message: OK
-- request:
-    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.datadog-api-client-python-test_aggregate_events_returns_ok_response-1600763281.632622",
-      "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"],
-      "query": "datadog-agent", "to": "1600348600"}}'
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - AggregateLogs
-      User-Agent:
-      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
-      x-datadog-parent-id:
-      - '944636931125464760'
-      x-datadog-sampling-priority:
-      - '1'
-      x-datadog-trace-id:
-      - '8179156855181502075'
-    method: POST
-    uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
-  response:
-    body:
-      string: '{"meta":{"status":"done","request_id":"LVA4WklRaG5UZ09fb3pNSzMwdEhHd3xweHlhcnlmckdOenpwMTZnYkdTcnlB","elapsed":0},"data":{"buckets":[]}}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '136'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      Content-Type:
-      - application/json
-      DD-POOL:
-      - dogweb
-      Date:
-      - Tue, 22 Sep 2020 08:28:02 GMT
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 08:28:01 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
-      - max-age=15724800;
-      Vary:
-      - Accept-Encoding
-      X-Content-Type-Options:
-      - nosniff
-      X-DD-Debug:
-      - Y8u+fIaXZZ2yK5ttthsjkZm5Z3VHyXaOdS8/tSd/bNF4IfeGhCl8vKDnFe8gSTEA
-      X-DD-VERSION:
-      - '35.3072861'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-RateLimit-Limit:
-      - '5'
-      X-RateLimit-Period:
-      - '30'
-      X-RateLimit-Remaining:
-      - '4'
-      X-RateLimit-Reset:
-      - '28'
-    status:
-      code: 200
-      message: OK
-- request:
-    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.datadog-api-client-python-test_aggregate_events_returns_ok_response-1600763490.735502",
-      "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"],
-      "query": "datadog-agent", "to": "1600348600"}}'
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - AggregateLogs
-      User-Agent:
-      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
-      x-datadog-parent-id:
-      - '1537583643871473388'
-      x-datadog-sampling-priority:
-      - '1'
-      x-datadog-trace-id:
-      - '4358819586307034066'
-    method: POST
-    uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
-  response:
-    body:
-      string: '{"meta":{"status":"done","request_id":"LUdmS1V3Sk1ROUtacndEUXRTRFRPUXxDVXBPbXJIM25nQzlSWjlURzhvM3BB","elapsed":0},"data":{"buckets":[]}}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '136'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      Content-Type:
-      - application/json
-      DD-POOL:
-      - dogweb
-      Date:
-      - Tue, 22 Sep 2020 08:31:31 GMT
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 08:31:31 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
-      - max-age=15724800;
-      Vary:
-      - Accept-Encoding
-      X-Content-Type-Options:
-      - nosniff
-      X-DD-Debug:
-      - ZvbT5Hkp4NkmoFNp2kmSQo90Sobu/hiarT/8VcAY1HhBaO2tDabc9sAn9xbJsaIr
-      X-DD-VERSION:
-      - '35.3072861'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-RateLimit-Limit:
-      - '5'
-      X-RateLimit-Period:
-      - '30'
-      X-RateLimit-Remaining:
-      - '4'
-      X-RateLimit-Reset:
-      - '29'
+      - '18'
     status:
       code: 200
       message: OK

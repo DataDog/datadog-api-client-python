@@ -11,11 +11,11 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '8900999371742975878'
+      - '12799090080768338228'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '11596153825488178589'
+      - '10863073789208041740'
     method: GET
     uri: https://api.datadoghq.com/api/v2/logs/events?filter%5Bfrom%5D=2020-09-17T11%3A48%3A36%2B01%3A00&filter%5Bindex%5D=main&filter%5Bquery%5D=datadog-agent&filter%5Bto%5D=2020-09-17T12%3A48%3A36%2B00%3A01&page%5Blimit%5D=5
   response:
@@ -35,20 +35,20 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Tue, 22 Sep 2020 08:21:24 GMT
+      - Tue, 22 Sep 2020 11:39:39 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 08:21:23 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 11:39:38 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - JpSPTIQ3ADIUVR7tKVVULYhgssheTcmYaILqA7y+vRKHVMoWYI3X+n8nhC2vhKFP
+      - 1G9SOBrnmfyC5G29bCdNvI2JHlJyC7aSDsVB1mrRvQ+HE/loVdx5+fgtIfMtj8Fo
       X-DD-VERSION:
-      - '35.3072861'
+      - '35.3073683'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -56,135 +56,9 @@ interactions:
       X-RateLimit-Period:
       - '3600'
       X-RateLimit-Remaining:
-      - '298'
+      - '294'
       X-RateLimit-Reset:
-      - '2317'
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - ListLogsGet
-      User-Agent:
-      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
-      x-datadog-parent-id:
-      - '15447674909046837787'
-      x-datadog-sampling-priority:
-      - '1'
-      x-datadog-trace-id:
-      - '11641197894020188252'
-    method: GET
-    uri: https://api.datadoghq.com/api/v2/logs/events?filter%5Bfrom%5D=2020-09-17T11%3A48%3A36%2B01%3A00&filter%5Bindex%5D=main&filter%5Bquery%5D=datadog-agent&filter%5Bto%5D=2020-09-17T12%3A48%3A36%2B00%3A01&page%5Blimit%5D=5
-  response:
-    body:
-      string: '{"data":[]}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '11'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      Content-Type:
-      - application/json
-      DD-POOL:
-      - dogweb
-      Date:
-      - Tue, 22 Sep 2020 08:28:23 GMT
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 08:28:23 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
-      - max-age=15724800;
-      X-Content-Type-Options:
-      - nosniff
-      X-DD-Debug:
-      - n+NV79XuUQY1zXMLrjRysjwaT2qzFWS0TneyrqIFDbOz2iCaH1br1q0uLZWIG8on
-      X-DD-VERSION:
-      - '35.3072861'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-RateLimit-Limit:
-      - '300'
-      X-RateLimit-Period:
-      - '3600'
-      X-RateLimit-Remaining:
-      - '296'
-      X-RateLimit-Reset:
-      - '1897'
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - ListLogsGet
-      User-Agent:
-      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
-      x-datadog-parent-id:
-      - '1993567521605704157'
-      x-datadog-sampling-priority:
-      - '1'
-      x-datadog-trace-id:
-      - '10956450472767110068'
-    method: GET
-    uri: https://api.datadoghq.com/api/v2/logs/events?filter%5Bfrom%5D=2020-09-17T11%3A48%3A36%2B01%3A00&filter%5Bindex%5D=main&filter%5Bquery%5D=datadog-agent&filter%5Bto%5D=2020-09-17T12%3A48%3A36%2B00%3A01&page%5Blimit%5D=5
-  response:
-    body:
-      string: '{"data":[]}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '11'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      Content-Type:
-      - application/json
-      DD-POOL:
-      - dogweb
-      Date:
-      - Tue, 22 Sep 2020 08:31:26 GMT
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 08:31:26 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
-      - max-age=15724800;
-      X-Content-Type-Options:
-      - nosniff
-      X-DD-Debug:
-      - 554jtl/SJjxTmK4ElYRM70FG0Y8nm2ZpMLRYU7gYOwQo5oClqUW2XRpaqEBdUJZQ
-      X-DD-VERSION:
-      - '35.3072861'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-RateLimit-Limit:
-      - '300'
-      X-RateLimit-Period:
-      - '3600'
-      X-RateLimit-Remaining:
-      - '295'
-      X-RateLimit-Reset:
-      - '1714'
+      - '1221'
     status:
       code: 200
       message: OK

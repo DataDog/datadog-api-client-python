@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"type": "services", "attributes": {"name": "datadog-api-client-python-test_get_details_of_a_service_returns_ok_response-1600767605.271618"}}}'
+    body: '{"data": {"type": "services", "attributes": {"name": "datadog-api-client-python-test_get_details_of_a_service_returns_ok_response-1600774799.956279"}}}'
     headers:
       Accept:
       - application/json
@@ -11,16 +11,16 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '15201955627446336218'
+      - '11802177407736818315'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '11158476231252436460'
+      - '701298446239607814'
     method: POST
     uri: https://api.datadoghq.com/api/v2/services
   response:
     body:
-      string: '{"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}],"data":{"type":"services","id":"427476ef-5a24-58c6-9a96-0b1ae26b3615","attributes":{"name":"datadog-api-client-python-test_get_details_of_a_service_returns_ok_response-1600767605.271618","created":"2020-09-22T09:40:05.677621+00:00","modified":"2020-09-22T09:40:05.677621+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+      string: '{"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}],"data":{"type":"services","id":"15b7e289-cf67-54d0-b3a7-241374d437ec","attributes":{"name":"datadog-api-client-python-test_get_details_of_a_service_returns_ok_response-1600774799.956279","created":"2020-09-22T11:40:00.336783+00:00","modified":"2020-09-22T11:40:00.336783+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
     headers:
       Cache-Control:
       - no-cache
@@ -35,20 +35,20 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Tue, 22 Sep 2020 09:40:07 GMT
+      - Tue, 22 Sep 2020 11:40:01 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 09:40:05 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 11:40:00 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - fbpub1YRPbOoyJvhJBk1iFu2e+h0/QC0EzprMcQ+j5QBEVxUjSwBwj1+J3+NnpX8
+      - 0dpwUqkfQHWkgXeMRxMzd53GmXFItYtBrsUmywck00fH892lNzaBVoL155iIFepa
       X-DD-VERSION:
-      - '35.3073063'
+      - '35.3073683'
       X-Frame-Options:
       - SAMEORIGIN
     status:
@@ -66,16 +66,16 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '13662144405492936254'
+      - '6176260367881762192'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '11158476231252436460'
+      - '701298446239607814'
     method: GET
-    uri: https://api.datadoghq.com/api/v2/services/427476ef-5a24-58c6-9a96-0b1ae26b3615
+    uri: https://api.datadoghq.com/api/v2/services/15b7e289-cf67-54d0-b3a7-241374d437ec
   response:
     body:
-      string: '{"data":{"type":"services","id":"427476ef-5a24-58c6-9a96-0b1ae26b3615","attributes":{"name":"datadog-api-client-python-test_get_details_of_a_service_returns_ok_response-1600767605.271618","created":"2020-09-22T09:40:05.677621+00:00","modified":"2020-09-22T09:40:05.677621+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+      string: '{"data":{"type":"services","id":"15b7e289-cf67-54d0-b3a7-241374d437ec","attributes":{"name":"datadog-api-client-python-test_get_details_of_a_service_returns_ok_response-1600774799.956279","created":"2020-09-22T11:40:00.336783+00:00","modified":"2020-09-22T11:40:00.336783+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
     headers:
       Cache-Control:
       - no-cache
@@ -90,11 +90,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Tue, 22 Sep 2020 09:40:07 GMT
+      - Tue, 22 Sep 2020 11:40:02 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 09:40:07 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 11:40:02 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -103,9 +103,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - CEeLq0Go7dWGJU+fr2n+CYAUDbVj0m8JNtbW3olNX1v3toKEuyF2ucrViqaycHWr
+      - fD4Z/lU+RXqTTZ3a6QzIYIS71jYdOWOeKg+9gi8WTYoWGc4ju4awlLTlSP1eWtSz
       X-DD-VERSION:
-      - '35.3073063'
+      - '35.3073683'
       X-Frame-Options:
       - SAMEORIGIN
     status:
