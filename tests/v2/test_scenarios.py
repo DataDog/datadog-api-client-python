@@ -45,7 +45,7 @@ def user(fixtures, vcr_cassette, client, unique):
 
 
 @given('there is a valid "service" in the system')
-def service(vcr_cassette, client, unique):
+def service(fixtures, vcr_cassette, client, unique):
     """There is a valid service in the system."""
     from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import service_create_request
@@ -63,19 +63,23 @@ def service(vcr_cassette, client, unique):
             attributes=service_create_attributes.ServiceCreateAttributes(
                 name=str(unique), ),
         ), )
-    response = api.create_service(body=body)
-    yield response
-    if vcr_cassette.record_mode != "none":
-        number_of_interactions = len(vcr_cassette.data)
-        try:
-            api.delete_service(response.data.id)
-        except ApiException as e:
-            warnings.warn(str(e))
-        vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+
+    response = fixtures["service"] = api.create_service(body=body)
+
+    def undo():
+        if vcr_cassette.record_mode != "none":
+            number_of_interactions = len(vcr_cassette.data)
+            try:
+                api.delete_service(response.data.id)
+            except ApiException as e:
+                warnings.warn(str(e))
+            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+
+    fixtures["undo_operations"].append(undo)
 
 
 @given('there is a valid "team" in the system')
-def team(vcr_cassette, client, unique):
+def team(fixtures, vcr_cassette, client, unique):
     """There is a valid team in the system."""
     from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import team_create_request
@@ -93,15 +97,19 @@ def team(vcr_cassette, client, unique):
             attributes=team_create_attributes.TeamCreateAttributes(
                 name=str(unique), ),
         ), )
-    response = api.create_team(body=body)
-    yield response
-    if vcr_cassette.record_mode != "none":
-        number_of_interactions = len(vcr_cassette.data)
-        try:
-            api.delete_team(response.data.id)
-        except ApiException as e:
-            warnings.warn(str(e))
-        vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+    response = fixtures["team"] = api.create_team(body=body)
+
+    def undo():
+        if vcr_cassette.record_mode != "none":
+            number_of_interactions = len(vcr_cassette.data)
+            try:
+                api.delete_team(response.data.id)
+            except ApiException as e:
+                warnings.warn(str(e))
+            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+
+    fixtures["undo_operations"].append(undo)
+
 
 @given('there is a valid "role" in the system')
 def role(fixtures, vcr_cassette, client, unique):
@@ -121,6 +129,8 @@ def role(fixtures, vcr_cassette, client, unique):
                 name=str(unique), ),
         ), )
 
+    response = fixtures["role"] = api.create_role(body=body)
+
     def undo():
         if vcr_cassette.record_mode != "none":
             number_of_interactions = len(vcr_cassette.data)
@@ -130,8 +140,6 @@ def role(fixtures, vcr_cassette, client, unique):
                 warnings.warn(str(e))
             vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
-    response = api.create_role(body=body)
-    fixtures["role"] = response
     fixtures["undo_operations"].append(undo)
 
 

@@ -344,13 +344,19 @@ def request_parameter_with_value(fixtures, name, value):
     fixtures["api_request"]["kwargs"][snake_case(name)] = json.loads(tpl)
 
 
-def undo(api_request):
+def undo(api_request, client):
     """Clean after operation."""
     operation_id = api_request["request"].settings["operation_id"]
     if operation_id == "create_user":
         return api_request["api"].disable_user(api_request["response"][0].data.id)
     elif operation_id == "create_role":
         return api_request["api"].delete_role(api_request["response"][0].data.id)
+    elif operation_id == "create_service":
+        client.configuration.unstable_operations["delete_service"] = True
+        return api_request["api"].delete_service(api_request["response"][0].data.id)
+    elif operation_id == "create_team":
+        client.configuration.unstable_operations["delete_team"] = True
+        return api_request["api"].delete_team(api_request["response"][0].data.id)
     elif operation_id in {
         "update_user",
         "add_permission_to_role",
@@ -366,7 +372,7 @@ def undo(api_request):
 
 
 @when("the request is sent")
-def execute_request(vcr_cassette, fixtures):
+def execute_request(vcr_cassette, fixtures, client):
     """Execute the prepared request."""
     api_request = fixtures["api_request"]
     api_request["response"] = api_request["request"].call_with_http_info(
