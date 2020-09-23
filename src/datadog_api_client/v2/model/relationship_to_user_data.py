@@ -106,7 +106,7 @@ class RelationshipToUserData(ModelNormal):
         """RelationshipToUserData - a model defined in OpenAPI
 
         Args:
-            id (str): ID of the user.
+            id (str): A unique identifier that represents the user.
             type (UsersType):
 
         Keyword Args:

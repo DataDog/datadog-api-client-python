@@ -26,8 +26,8 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 )
 
 def lazy_import():
-    from datadog_api_client.v2.model.user_relationship import UserRelationship
-    globals()['UserRelationship'] = UserRelationship
+    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
+    globals()['RelationshipToUser'] = RelationshipToUser
 
 
 class ServiceRelationships(ModelNormal):
@@ -76,8 +76,8 @@ class ServiceRelationships(ModelNormal):
         """
         lazy_import()
         return {
-            'created_by': (UserRelationship,),  # noqa: E501
-            'last_modified_by': (UserRelationship,),  # noqa: E501
+            'created_by': (RelationshipToUser,),  # noqa: E501
+            'last_modified_by': (RelationshipToUser,),  # noqa: E501
         }
 
     @cached_property
@@ -136,8 +136,8 @@ class ServiceRelationships(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_by (UserRelationship): [optional]  # noqa: E501
-            last_modified_by (UserRelationship): [optional]  # noqa: E501
+            created_by (RelationshipToUser): [optional]  # noqa: E501
+            last_modified_by (RelationshipToUser): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

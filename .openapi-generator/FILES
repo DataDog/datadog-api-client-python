@@ -185,8 +185,6 @@ datadog_api_client/v2/model/user_invitation_response_data.py
 datadog_api_client/v2/model/user_invitations_request.py
 datadog_api_client/v2/model/user_invitations_response.py
 datadog_api_client/v2/model/user_invitations_type.py
-datadog_api_client/v2/model/user_relationship.py
-datadog_api_client/v2/model/user_relationship_data.py
 datadog_api_client/v2/model/user_relationships.py
 datadog_api_client/v2/model/user_response.py
 datadog_api_client/v2/model/user_response_included_item.py
@@ -376,8 +374,6 @@ docs/UserInvitationResponseData.md
 docs/UserInvitationsRequest.md
 docs/UserInvitationsResponse.md
 docs/UserInvitationsType.md
-docs/UserRelationship.md
-docs/UserRelationshipData.md
 docs/UserRelationships.md
 docs/UserResponse.md
 docs/UserResponseIncludedItem.md
@@ -566,8 +562,6 @@ test/test_user_invitation_response_data.py
 test/test_user_invitations_request.py
 test/test_user_invitations_response.py
 test/test_user_invitations_type.py
-test/test_user_relationship.py
-test/test_user_relationship_data.py
 test/test_user_relationships.py
 test/test_user_response.py
 test/test_user_response_included_item.py

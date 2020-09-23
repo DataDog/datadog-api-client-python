@@ -181,8 +181,6 @@ from datadog_api_client.v2.model.user_invitation_response_data import UserInvita
 from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
 from datadog_api_client.v2.model.user_invitations_type import UserInvitationsType
-from datadog_api_client.v2.model.user_relationship import UserRelationship
-from datadog_api_client.v2.model.user_relationship_data import UserRelationshipData
 from datadog_api_client.v2.model.user_relationships import UserRelationships
 from datadog_api_client.v2.model.user_response import UserResponse
 from datadog_api_client.v2.model.user_response_included_item import UserResponseIncludedItem
