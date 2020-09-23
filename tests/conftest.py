@@ -1,19 +1,22 @@
 # coding=utf-8
 """Define basic fixtures."""
 
-# First patch httplib
-try:
-    from ddtrace import config, patch, tracer
+import os
 
-    config.httplib["distributed_tracing"] = True
-    patch(httplib=True)
-except ImportError:
-    tracer = None
+# First patch httplib
+tracer = None
+if "false" != os.getenv("RECORD", "false"):
+    try:
+        from ddtrace import config, patch, tracer
+
+        config.httplib["distributed_tracing"] = True
+        patch(httplib=True)
+    except ImportError:
+        pass
 
 import importlib
 import json
 import logging
-import os
 import re
 import sys
 import time
@@ -190,8 +193,8 @@ def context(request, unique, unique_lower):
         except Exception:
             pass
     yield ctx
-    while ctx["undo_operations"]:
-        ctx["undo_operations"].pop()()
+    for undo in reversed(ctx["undo_operations"]):
+        undo()
 
 
 @pytest.fixture(scope="module", autouse=True)
@@ -234,10 +237,11 @@ def freezer(vcr_cassette_name, vcr_cassette, vcr):
     if vcr_cassette.record_mode != "none":
         tzinfo = datetime.now().astimezone().tzinfo
         freeze_at = datetime.now().replace(tzinfo=tzinfo).isoformat()
-        with open(
-            os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"), "w+",
-        ) as f:
-            f.write(freeze_at)
+        if vcr_cassette.record_mode == "all":
+            with open(
+                os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"), "w+",
+            ) as f:
+                f.write(freeze_at)
     else:
         with open(
             os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"), "r",
