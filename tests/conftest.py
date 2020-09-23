@@ -179,7 +179,7 @@ def unique_lower(request, freezer):
 
 
 @pytest.fixture
-def context(request, unique, unique_lower):
+def context(vcr_cassette, request, unique, unique_lower):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
@@ -194,7 +194,13 @@ def context(request, unique, unique_lower):
             pass
     yield ctx
     for undo in reversed(ctx["undo_operations"]):
-        undo()
+        if vcr_cassette.record_mode != "none":
+            number_of_interactions = len(vcr_cassette.data)
+            try:
+                undo()
+            except Exception as e:
+                warnings.warn(str(e))
+            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
 
 
 @pytest.fixture(scope="module", autouse=True)

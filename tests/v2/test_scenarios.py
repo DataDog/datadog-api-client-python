@@ -1,8 +1,6 @@
 # coding=utf-8
 """Test scenarios."""
 
-import warnings
-
 import pytest
 from pytest_bdd import given, scenarios
 
@@ -13,9 +11,8 @@ pytestmark = [
 
 
 @given('there is a valid "user" in the system')
-def user(context, vcr_cassette, client, unique):
+def user(context, client, unique):
     """There is a valid user in the system."""
-    from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import user_create_request
     from datadog_api_client.v2.model import user_create_data
     from datadog_api_client.v2.model import user_create_attributes
@@ -33,21 +30,14 @@ def user(context, vcr_cassette, client, unique):
     context["user"] = response = api.create_user(body=body)
 
     def undo():
-        if vcr_cassette.record_mode != "none":
-            number_of_interactions = len(vcr_cassette.data)
-            try:
-                api.disable_user(response.data.id)
-            except ApiException as e:
-                warnings.warn(str(e))
-            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+        api.disable_user(response.data.id)
 
     context["undo_operations"].append(undo)
 
 
 @given('there is a valid "service" in the system')
-def service(context, vcr_cassette, client, unique):
+def service(context, client, unique):
     """There is a valid service in the system."""
-    from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import service_create_request
     from datadog_api_client.v2.model import service_create_data
     from datadog_api_client.v2.model import service_create_attributes
@@ -67,13 +57,7 @@ def service(context, vcr_cassette, client, unique):
     response = context["service"] = api.create_service(body=body)
 
     def undo():
-        if vcr_cassette.record_mode != "none":
-            number_of_interactions = len(vcr_cassette.data)
-            try:
-                api.delete_service(response.data.id)
-            except ApiException as e:
-                warnings.warn(str(e))
-            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+        api.delete_service(response.data.id)
 
     context["undo_operations"].append(undo)
 
@@ -81,7 +65,6 @@ def service(context, vcr_cassette, client, unique):
 @given('there is a valid "team" in the system')
 def team(context, vcr_cassette, client, unique):
     """There is a valid team in the system."""
-    from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import team_create_request
     from datadog_api_client.v2.model import team_create_data
     from datadog_api_client.v2.model import team_create_attributes
@@ -100,13 +83,7 @@ def team(context, vcr_cassette, client, unique):
     response = context["team"] = api.create_team(body=body)
 
     def undo():
-        if vcr_cassette.record_mode != "none":
-            number_of_interactions = len(vcr_cassette.data)
-            try:
-                api.delete_team(response.data.id)
-            except ApiException as e:
-                warnings.warn(str(e))
-            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+        api.delete_team(response.data.id)
 
     context["undo_operations"].append(undo)
 
@@ -114,7 +91,6 @@ def team(context, vcr_cassette, client, unique):
 @given('there is a valid "role" in the system')
 def role(context, vcr_cassette, client, unique):
     """There is a valid role in the system."""
-    from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import role_create_request
     from datadog_api_client.v2.model import role_create_data
     from datadog_api_client.v2.model import role_create_attributes
@@ -132,13 +108,7 @@ def role(context, vcr_cassette, client, unique):
     response = context["role"] = api.create_role(body=body)
 
     def undo():
-        if vcr_cassette.record_mode != "none":
-            number_of_interactions = len(vcr_cassette.data)
-            try:
-                api.delete_role(response.data.id)
-            except ApiException as e:
-                warnings.warn(str(e))
-            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+        api.delete_role(response.data.id)
 
     context["undo_operations"].append(undo)
 
@@ -171,7 +141,6 @@ def granted_permission(context, client):
 @given('the "user" has the "role"')
 def user_has_role(context, vcr_cassette, client):
     """The user has the role."""
-    from datadog_api_client.v2.exceptions import ApiException
     from datadog_api_client.v2.model import relationship_to_user
     from datadog_api_client.v2.model import relationship_to_user_data
     from datadog_api_client.v2.api.roles_api import RolesApi
@@ -186,13 +155,7 @@ def user_has_role(context, vcr_cassette, client):
     api.add_user_to_role(role.data.id, body=body)
 
     def undo():
-        if vcr_cassette.record_mode != "none":
-            number_of_interactions = len(vcr_cassette.data)
-            try:
-                api.remove_user_from_role(role.data.id, body=body)
-            except ApiException as e:
-                warnings.warn(str(e))
-            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+        api.remove_user_from_role(role.data.id, body=body)
 
     context["undo_operations"].append(undo)
 
