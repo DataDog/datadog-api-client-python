@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"type": "roles", "attributes": {"name": "datadog-api-client-python-test_grant_permission_to_a_role_returns_ok_response-1600774781.531312"}}}'
+    body: '{"data": {"type": "roles", "attributes": {"name": "datadog-api-client-python-test_grant_permission_to_a_role_returns_ok_response-1600857127.946325"}}}'
     headers:
       Accept:
       - application/json
@@ -11,16 +11,16 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '10355046666743852748'
+      - '17448924128377081603'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '9291988961530763237'
+      - '16262706661839565611'
     method: POST
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
-      string: '{"data":{"type":"roles","id":"4debb564-fcc8-11ea-b0f2-27b156ca44a1","attributes":{"name":"datadog-api-client-python-test_grant_permission_to_a_role_returns_ok_response-1600774781.531312","created_at":"2020-09-22T11:39:41.916494+00:00","modified_at":"2020-09-22T11:39:41.916494+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}}'
+      string: '{"data":{"type":"roles","id":"0837bbe2-fd88-11ea-b1b0-0b6ec766c532","attributes":{"name":"datadog-api-client-python-test_grant_permission_to_a_role_returns_ok_response-1600857127.946325","created_at":"2020-09-23T10:32:08.346266+00:00","modified_at":"2020-09-23T10:32:08.346266+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}}'
     headers:
       Cache-Control:
       - no-cache
@@ -35,11 +35,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Tue, 22 Sep 2020 11:39:41 GMT
+      - Wed, 23 Sep 2020 10:32:08 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 11:39:41 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:32:08 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -48,9 +48,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - aULNoq4B+Li2RyvImqqIGvV9zBOy+W4ECQXeYm6tlt00wjSS0XOfIhyiB91s+vQw
+      - TlObKNxJC6mRjORAptBjah7X7IZlZoWDhxDuIhUdNUMmnkpihyb67mpyYPwy4Xl5
       X-DD-VERSION:
-      - '35.3073683'
+      - '35.3080163'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -58,9 +58,9 @@ interactions:
       X-RateLimit-Period:
       - '60'
       X-RateLimit-Remaining:
-      - '485'
+      - '495'
       X-RateLimit-Reset:
-      - '19'
+      - '52'
     status:
       code: 200
       message: OK
@@ -76,11 +76,11 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '11750657936407279432'
+      - '9492211939829230271'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '9291988961530763237'
+      - '16262706661839565611'
     method: GET
     uri: https://api.datadoghq.com/api/v2/permissions
   response:
@@ -154,11 +154,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Tue, 22 Sep 2020 11:39:42 GMT
+      - Wed, 23 Sep 2020 10:32:08 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 11:39:42 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:32:08 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -167,9 +167,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - rbGMi63XY6ETkPw9boG8yUDqogZ/1IN0Hh4Igu952urF41BH1CFuhykimklaERoh
+      - 7QEcyEeiQNfV/0gu5JIpTHXljtLMqyFtDSs67sHgArYEiV5BVrC9iQFEWV1cGojK
       X-DD-VERSION:
-      - '35.3073683'
+      - '35.3080163'
       X-Frame-Options:
       - SAMEORIGIN
     status:
@@ -187,13 +187,13 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '17439000474425429527'
+      - '652926538657923227'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '9291988961530763237'
+      - '16262706661839565611'
     method: POST
-    uri: https://api.datadoghq.com/api/v2/roles/4debb564-fcc8-11ea-b0f2-27b156ca44a1/permissions
+    uri: https://api.datadoghq.com/api/v2/roles/0837bbe2-fd88-11ea-b1b0-0b6ec766c532/permissions
   response:
     body:
       string: '{"data":[{"type":"permissions","id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","attributes":{"name":"admin","display_name":"Privileged
@@ -217,11 +217,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Tue, 22 Sep 2020 11:39:42 GMT
+      - Wed, 23 Sep 2020 10:32:08 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 11:39:42 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:32:08 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -230,9 +230,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - M827keIeHgZeqezhGzPP+Gd5GSRighH0alcGV+l2b9IPZcm0Qit9YxQBjvzL4SO1
+      - pDS7Zrj1TgmEnWRyBzKLDh7mlmNUPuITZ/GwI6tiSzuW64zPbzNbNp9jLNX+Cpgz
       X-DD-VERSION:
-      - '35.3073683'
+      - '35.3080163'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -240,9 +240,9 @@ interactions:
       X-RateLimit-Period:
       - '60'
       X-RateLimit-Remaining:
-      - '484'
+      - '494'
       X-RateLimit-Reset:
-      - '18'
+      - '52'
     status:
       code: 200
       message: OK

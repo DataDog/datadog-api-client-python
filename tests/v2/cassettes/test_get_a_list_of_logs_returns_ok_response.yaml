@@ -12,11 +12,11 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '12055278772864758193'
+      - '16784750853665958046'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '13892607936812663202'
+      - '9161004987006521814'
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/events/search
   response:
@@ -36,20 +36,20 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Tue, 22 Sep 2020 11:39:30 GMT
+      - Wed, 23 Sep 2020 10:31:56 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 11:39:30 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:31:56 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - PJIyDXpxEN4mcEZXeKHAupMoEkL0DxL1Os4C2/ywa2GjpRxyYTc76kt+BnhUGIa5
+      - 2V6J6bfi8Lp+2UjnPdTvcW5IjbRGxJrhStYZW/ACt/za6xfDiK/Y5IuDyUadsRtA
       X-DD-VERSION:
-      - '35.3073683'
+      - '35.3080163'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -57,9 +57,9 @@ interactions:
       X-RateLimit-Period:
       - '3600'
       X-RateLimit-Remaining:
-      - '295'
+      - '297'
       X-RateLimit-Reset:
-      - '1230'
+      - '1684'
     status:
       code: 200
       message: OK

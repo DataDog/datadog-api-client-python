@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"type": "users", "attributes": {"email": "datadog-api-client-python-test_list_all_users_returns_ok_response-1600774784.390938@datadoghq.com"}}}'
+    body: '{"data": {"type": "users", "attributes": {"email": "datadog-api-client-python-test_list_all_users_returns_ok_response-1600857107.868323@datadoghq.com"}}}'
     headers:
       Accept:
       - application/json
@@ -11,16 +11,16 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '1192139119346708412'
+      - '11942664546057855909'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '18308365522687013262'
+      - '11900443550198151185'
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"4fb08be0-fcc8-11ea-b0f2-47697baf17f3","attributes":{"name":null,"handle":"datadog-api-client-python-test_list_all_users_returns_ok_response-1600774784.390938@datadoghq.com","created_at":"2020-09-22T11:39:44.883249+00:00","email":"datadog-api-client-python-test_list_all_users_returns_ok_response-1600774784.390938@datadoghq.com","icon":"https://secure.gravatar.com/avatar/be796c8b63d6a8c3d99e5baba05093a1?s=48&d=retro","title":null,"verified":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
+      string: '{"data":{"type":"users","id":"fc45e8ea-fd87-11ea-b1b0-9b39710c1b84","attributes":{"name":null,"handle":"datadog-api-client-python-test_list_all_users_returns_ok_response-1600857107.868323@datadoghq.com","created_at":"2020-09-23T10:31:48.305822+00:00","email":"datadog-api-client-python-test_list_all_users_returns_ok_response-1600857107.868323@datadoghq.com","icon":"https://secure.gravatar.com/avatar/5235098646acd12c33b1cf3bbc233b55?s=48&d=retro","title":null,"verified":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       Cache-Control:
       - no-cache
@@ -35,20 +35,20 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Tue, 22 Sep 2020 11:39:44 GMT
+      - Wed, 23 Sep 2020 10:31:48 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 11:39:44 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:31:48 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - Kee9VS5NjjPfA/YHh7xlRIB+loWgKfgYfbh+K0I50KRAhLkjH2oXj4YLUubPn5Pt
+      - Lz3XQmS/aMrD2s8dTb68gJQbMlDQb/2odnJX/DHsjHnv1C9na1q4YNvmnKcr4AfX
       X-DD-VERSION:
-      - '35.3073683'
+      - '35.3080163'
       X-Frame-Options:
       - SAMEORIGIN
     status:
@@ -66,16 +66,16 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '10695568452711700849'
+      - '11228558232206729800'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '18308365522687013262'
+      - '11900443550198151185'
     method: GET
-    uri: https://api.datadoghq.com/api/v2/users?filter=datadog-api-client-python-test_list_all_users_returns_ok_response-1600774784.390938%40datadoghq.com
+    uri: https://api.datadoghq.com/api/v2/users?filter=datadog-api-client-python-test_list_all_users_returns_ok_response-1600857107.868323%40datadoghq.com
   response:
     body:
-      string: '{"meta":{"page":{"total_filtered_count":1,"total_count":38493}},"data":[{"type":"users","id":"4fb08be0-fcc8-11ea-b0f2-47697baf17f3","attributes":{"name":null,"handle":"datadog-api-client-python-test_list_all_users_returns_ok_response-1600774784.390938@datadoghq.com","created_at":"2020-09-22T11:39:44.883249+00:00","email":"datadog-api-client-python-test_list_all_users_returns_ok_response-1600774784.390938@datadoghq.com","icon":"https://secure.gravatar.com/avatar/be796c8b63d6a8c3d99e5baba05093a1?s=48&d=retro","title":null,"verified":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}]}'
+      string: '{"meta":{"page":{"total_filtered_count":1,"total_count":38858}},"data":[{"type":"users","id":"fc45e8ea-fd87-11ea-b1b0-9b39710c1b84","attributes":{"name":null,"handle":"datadog-api-client-python-test_list_all_users_returns_ok_response-1600857107.868323@datadoghq.com","created_at":"2020-09-23T10:31:48.305822+00:00","email":"datadog-api-client-python-test_list_all_users_returns_ok_response-1600857107.868323@datadoghq.com","icon":"https://secure.gravatar.com/avatar/5235098646acd12c33b1cf3bbc233b55?s=48&d=retro","title":null,"verified":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}]}'
     headers:
       Cache-Control:
       - no-cache
@@ -90,11 +90,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Tue, 22 Sep 2020 11:39:52 GMT
+      - Wed, 23 Sep 2020 10:31:56 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Sep-2020 11:39:45 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:31:48 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -103,9 +103,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - gr+QII7IFZVxhXS35BsEOrW9Uz3gs+l7g2tB1FOjy4hKCe3rtnWg3KfE74dirBtE
+      - GzqFsJiHmsMG2ZkgPZxP4KU7BbP1543ieTDBlTOcSv7mMVZ5sYoywme9ykeCrzfU
       X-DD-VERSION:
-      - '35.3073683'
+      - '35.3080163'
       X-Frame-Options:
       - SAMEORIGIN
     status:
