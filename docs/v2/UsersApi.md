@@ -750,7 +750,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                 relationships=UserInvitationRelationships(
                     user=RelationshipToUser(
                         data=RelationshipToUserData(
-                            id="id_example",
+                            id="00000000-0000-0000-0000-000000000000",
                             type=UsersType("users"),
                         ),
                     ),

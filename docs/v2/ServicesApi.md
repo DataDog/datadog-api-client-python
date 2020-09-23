@@ -71,14 +71,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                 name="an example service name",
             ),
             relationships=ServiceRelationships(
-                created_by=UserRelationship(
-                    data=UserRelationshipData(
+                created_by=RelationshipToUser(
+                    data=RelationshipToUserData(
                         id="00000000-0000-0000-0000-000000000000",
                         type=UsersType("users"),
                     ),
                 ),
-                last_modified_by=UserRelationship(
-                    data=UserRelationshipData(
+                last_modified_by=RelationshipToUser(
+                    data=RelationshipToUserData(
                         id="00000000-0000-0000-0000-000000000000",
                         type=UsersType("users"),
                     ),
@@ -485,14 +485,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             id="00000000-0000-0000-0000-000000000000",
             relationships=ServiceRelationships(
-                created_by=UserRelationship(
-                    data=UserRelationshipData(
+                created_by=RelationshipToUser(
+                    data=RelationshipToUserData(
                         id="00000000-0000-0000-0000-000000000000",
                         type=UsersType("users"),
                     ),
                 ),
-                last_modified_by=UserRelationship(
-                    data=UserRelationshipData(
+                last_modified_by=RelationshipToUser(
+                    data=RelationshipToUserData(
                         id="00000000-0000-0000-0000-000000000000",
                         type=UsersType("users"),
                     ),

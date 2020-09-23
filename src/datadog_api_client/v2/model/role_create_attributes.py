@@ -71,9 +71,9 @@ class RoleCreateAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'name': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'modified_at': (datetime,),  # noqa: E501
-            'name': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -82,9 +82,9 @@ class RoleCreateAttributes(ModelNormal):
 
 
     attribute_map = {
+        'name': 'name',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
         'modified_at': 'modified_at',  # noqa: E501
-        'name': 'name',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -99,8 +99,11 @@ class RoleCreateAttributes(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, *args, **kwargs):  # noqa: E501
         """RoleCreateAttributes - a model defined in OpenAPI
+
+        Args:
+            name (str): Name of the role.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -135,7 +138,6 @@ class RoleCreateAttributes(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             created_at (datetime): Creation time of the role.. [optional]  # noqa: E501
             modified_at (datetime): Time of last role modification.. [optional]  # noqa: E501
-            name (str): Name of the role.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -161,6 +163,7 @@ class RoleCreateAttributes(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.name = name
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
