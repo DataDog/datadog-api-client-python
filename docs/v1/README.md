@@ -701,7 +701,7 @@ Learn more in the [Browser test Actions documentation](https://docs.datadoghq.co
  - [SyntheticsStepType](Step type used in your Synthetic test..md)
  - [SyntheticsTestConfig](Configuration object for a Synthetic test..md)
  - [SyntheticsTestDetails](Object containing details about your Synthetic test..md)
- - [SyntheticsTestDetailsSubType](The sub-type of the Synthetic API test, `http`, `ssl`, or `tcp`..md)
+ - [SyntheticsTestDetailsSubType](The sub-type of the Synthetic API test, `http`, `ssl`, `tcp` or `dns`..md)
  - [SyntheticsTestDetailsType](Type of the Synthetic test, either `api` or `browser`..md)
  - [SyntheticsTestHeaders](Headers to include when performing the test..md)
  - [SyntheticsTestMonitorStatus](The status of your Synthetic monitor.
