@@ -29,10 +29,7 @@ def user(context, client, unique):
 
     context["user"] = response = api.create_user(body=body)
 
-    def undo():
-        api.disable_user(response.data.id)
-
-    context["undo_operations"].append(undo)
+    context["undo_operations"].append(lambda: api.disable_user(response.data.id))
 
 
 @given('there is a valid "service" in the system')
@@ -56,10 +53,7 @@ def service(context, client, unique):
 
     response = context["service"] = api.create_service(body=body)
 
-    def undo():
-        api.delete_service(response.data.id)
-
-    context["undo_operations"].append(undo)
+    context["undo_operations"].append(lambda: api.delete_service(response.data.id))
 
 
 @given('there is a valid "team" in the system')
@@ -82,10 +76,7 @@ def team(context, vcr_cassette, client, unique):
         ), )
     response = context["team"] = api.create_team(body=body)
 
-    def undo():
-        api.delete_team(response.data.id)
-
-    context["undo_operations"].append(undo)
+    context["undo_operations"].append(lambda: api.delete_team(response.data.id))
 
 
 @given('there is a valid "role" in the system')
@@ -107,10 +98,7 @@ def role(context, vcr_cassette, client, unique):
 
     response = context["role"] = api.create_role(body=body)
 
-    def undo():
-        api.delete_role(response.data.id)
-
-    context["undo_operations"].append(undo)
+    context["undo_operations"].append(lambda: api.delete_role(response.data.id))
 
 
 @given('there is a valid "permission" in the system')
@@ -154,10 +142,7 @@ def user_has_role(context, vcr_cassette, client):
         ))
     api.add_user_to_role(role.data.id, body=body)
 
-    def undo():
-        api.remove_user_from_role(role.data.id, body=body)
-
-    context["undo_operations"].append(undo)
+    context["undo_operations"].append(lambda: api.remove_user_from_role(role.data.id, body=body))
 
 
 @given('the "user" has a "user_invitation"')
