@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.datadog-api-client-python-test_aggregate_events_returns_ok_response-1600857142.380402",
+    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.datadog-api-client-python-test_aggregate_events_returns_ok_response-1600941705.697982",
       "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"],
       "query": "datadog-agent", "to": "1600348600"}}'
     headers:
@@ -13,16 +13,16 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '7244256873196748699'
+      - '13156350893909060842'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '17112365646857898435'
+      - '17838188105411464632'
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"dWVoRkIxcmRTSHFWa0ZIbXhLQzhqZ3xDcEJnS0xRbFlTZ2RiT0owOUdGLWJB","elapsed":0},"data":{"buckets":[]}}'
+      string: '{"meta":{"status":"done","request_id":"YmN2c3ZhclRTUGlxbVFSTVNlUWdDd3xFOG5BWHJGZ2M2cVpidXgxemNraEdR","elapsed":0},"data":{"buckets":[]}}'
     headers:
       Cache-Control:
       - no-cache
@@ -37,11 +37,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Wed, 23 Sep 2020 10:32:22 GMT
+      - Thu, 24 Sep 2020 10:01:46 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:32:22 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:46 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -50,9 +50,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - nFyTUry7tLSCWgKgQTsGO10dBCh8TOEhHGgwdexQMnQchHPTOyo6yaXIidoJXR1X
+      - AqBVHmyy+L9zrCUEAQ2Jd2pwskksgC+7nOsWqbNjcjcM+9M/ChipUo2OR6Q8oPwE
       X-DD-VERSION:
-      - '35.3080163'
+      - '35.3086554'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -62,7 +62,7 @@ interactions:
       X-RateLimit-Remaining:
       - '4'
       X-RateLimit-Reset:
-      - '8'
+      - '14'
     status:
       code: 200
       message: OK

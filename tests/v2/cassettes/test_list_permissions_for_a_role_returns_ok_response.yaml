@@ -1,6 +1,7 @@
 interactions:
 - request:
-    body: '{"data": {"type": "roles", "attributes": {"name": "datadog-api-client-python-test_list_permissions_for_a_role_returns_ok_response-1600857126.694416"}}}'
+    body: '{"data": {"attributes": {"name": "datadog-api-client-python-test_list_permissions_for_a_role_returns_ok_response-1600941655.509971"},
+      "type": "roles"}}'
     headers:
       Accept:
       - application/json
@@ -11,16 +12,16 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '15306416672115577757'
+      - '13455620377173224837'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '4172496280833018820'
+      - '11706601879014630718'
     method: POST
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
-      string: '{"data":{"type":"roles","id":"077bfa88-fd88-11ea-b1b0-af0df2b663c6","attributes":{"name":"datadog-api-client-python-test_list_permissions_for_a_role_returns_ok_response-1600857126.694416","created_at":"2020-09-23T10:32:07.115953+00:00","modified_at":"2020-09-23T10:32:07.115953+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}}'
+      string: '{"data":{"type":"roles","id":"d6937066-fe4c-11ea-b268-2fed4c9d715f","attributes":{"name":"datadog-api-client-python-test_list_permissions_for_a_role_returns_ok_response-1600941655.509971","created_at":"2020-09-24T10:00:55.916866+00:00","modified_at":"2020-09-24T10:00:55.916866+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}}'
     headers:
       Cache-Control:
       - no-cache
@@ -35,11 +36,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Wed, 23 Sep 2020 10:32:07 GMT
+      - Thu, 24 Sep 2020 10:00:55 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:32:07 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:00:55 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -48,9 +49,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - shSARNU4/WQFPOKM8NVdagbh/ZoS+zYzlyviY3k5npVGETiEU89iNTNvqiMXn1f6
+      - kU8oLj3zrGL/NsMXNRXUrvjc5SX7m5Zi20YpnuFt2mcszekWqSDwHwhFasJc2aus
       X-DD-VERSION:
-      - '35.3080163'
+      - '35.3086554'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -60,7 +61,7 @@ interactions:
       X-RateLimit-Remaining:
       - '499'
       X-RateLimit-Reset:
-      - '53'
+      - '5'
     status:
       code: 200
       message: OK
@@ -76,11 +77,11 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '7098287133366744688'
+      - '15638620432390668280'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '4172496280833018820'
+      - '11706601879014630718'
     method: GET
     uri: https://api.datadoghq.com/api/v2/permissions
   response:
@@ -154,11 +155,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Wed, 23 Sep 2020 10:32:07 GMT
+      - Thu, 24 Sep 2020 10:00:56 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:32:07 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:00:56 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -167,9 +168,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - b7N5fdPhYXDjMBDnrRAJWxJNxeU8H5y+B5ea/L1cXAMez449FKZtw3SF5mhatH7J
+      - mpg/BCzsUMOxVwcAuQg/6c40bDAb3ejXVT4tkiODN0ExybQ/Ia68faurJX6CivjX
       X-DD-VERSION:
-      - '35.3080163'
+      - '35.3086554'
       X-Frame-Options:
       - SAMEORIGIN
     status:
@@ -187,13 +188,13 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '14864649622565649631'
+      - '2027587361676241128'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '4172496280833018820'
+      - '11706601879014630718'
     method: POST
-    uri: https://api.datadoghq.com/api/v2/roles/077bfa88-fd88-11ea-b1b0-af0df2b663c6/permissions
+    uri: https://api.datadoghq.com/api/v2/roles/d6937066-fe4c-11ea-b268-2fed4c9d715f/permissions
   response:
     body:
       string: '{"data":[{"type":"permissions","id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","attributes":{"name":"admin","display_name":"Privileged
@@ -217,11 +218,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Wed, 23 Sep 2020 10:32:07 GMT
+      - Thu, 24 Sep 2020 10:00:56 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:32:07 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:00:56 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -230,9 +231,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - M5AkO8bVyO5yuX6OQA9nCjANXZokYPd2NqFZwMNyvfQQbQnBskFTa6rdUllh6BsX
+      - RxKcx0U1IrcJ2sL0co6YTKQdWxTKBjGeO6Rh6plfmXfsHGMiZ332nvRBeUlqIMht
       X-DD-VERSION:
-      - '35.3080163'
+      - '35.3086554'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -242,7 +243,7 @@ interactions:
       X-RateLimit-Remaining:
       - '498'
       X-RateLimit-Reset:
-      - '53'
+      - '4'
     status:
       code: 200
       message: OK
@@ -258,13 +259,13 @@ interactions:
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '13475668692239119007'
+      - '14981433163226520503'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '4172496280833018820'
+      - '11706601879014630718'
     method: GET
-    uri: https://api.datadoghq.com/api/v2/roles/077bfa88-fd88-11ea-b1b0-af0df2b663c6/permissions
+    uri: https://api.datadoghq.com/api/v2/roles/d6937066-fe4c-11ea-b268-2fed4c9d715f/permissions
   response:
     body:
       string: '{"data":[{"type":"permissions","id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","attributes":{"name":"admin","display_name":"Privileged
@@ -288,11 +289,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Wed, 23 Sep 2020 10:32:07 GMT
+      - Thu, 24 Sep 2020 10:00:56 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Sep-2020 10:32:07 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:00:56 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -301,9 +302,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - g1JN5WIJ1Um2nWq9AQ7orHFBA37V3eIZYgeyDV/dLV8QtbkkvRVVIW0Fy1xXObzE
+      - fOvn++WNyeGiJqGJ1RGVl2OtzlCSW+9FmhW07NDhLHuS9Ypy2JL89j65gnqIRQTf
       X-DD-VERSION:
-      - '35.3080163'
+      - '35.3086554'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -313,7 +314,7 @@ interactions:
       X-RateLimit-Remaining:
       - '497'
       X-RateLimit-Reset:
-      - '53'
+      - '4'
     status:
       code: 200
       message: OK
