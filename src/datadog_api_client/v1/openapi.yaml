@@ -1233,14 +1233,6 @@ components:
     Event:
       description: Object representing an event.
       properties:
-        aggregation_key:
-          description: 'An arbitrary string to use for aggregation. Limited to 100
-            characters.
-
-            If you specify a key, all events using that key are grouped together in
-            the Event Stream.'
-          maxLength: 100
-          type: string
         alert_type:
           $ref: '#/components/schemas/EventAlertType'
         date_happened:
@@ -1270,11 +1262,6 @@ components:
           type: string
         priority:
           $ref: '#/components/schemas/EventPriority'
-        related_event_id:
-          description: ID of the parent event. Must be sent as an integer (i.e. no
-            quotes).
-          format: int64
-          type: integer
         source_type_name:
           description: 'The type of event being posted. Option examples include nagios,
             hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc.
@@ -1307,9 +1294,6 @@ components:
           description: URL of the event.
           readOnly: true
           type: string
-      required:
-      - title
-      - text
       type: object
     EventAlertType:
       description: 'If an alert event is enabled, set its type.
