@@ -51,6 +51,7 @@ class SyntheticsTestDetailsSubType(ModelSimple):
             'HTTP': "http",
             'SSL': "ssl",
             'TCP': "tcp",
+            'DNS': "dns",
         },
     }
 
@@ -98,7 +99,7 @@ class SyntheticsTestDetailsSubType(ModelSimple):
         """SyntheticsTestDetailsSubType - a model defined in OpenAPI
 
         Args:
-            value (str): The sub-type of the Synthetic API test, &#x60;http&#x60;, &#x60;ssl&#x60;, or &#x60;tcp&#x60;.., must be one of ["http", "ssl", "tcp", ]  # noqa: E501
+            value (str): The sub-type of the Synthetic API test, &#x60;http&#x60;, &#x60;ssl&#x60;, &#x60;tcp&#x60; or &#x60;dns&#x60;.., must be one of ["http", "ssl", "tcp", "dns", ]  # noqa: E501
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
