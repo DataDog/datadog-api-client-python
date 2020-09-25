@@ -9,13 +9,13 @@ interactions:
       Dd-Operation-Id:
       - GetIpRanges
       User-Agent:
-      - datadog-api-client-python/0.1.dev67+dirty (python 3.8.5; os Darwin; arch x86_64)
+      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '3810264299572682533'
+      - '10148525951698483321'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '18298303860074712282'
+      - '10171452926111618949'
     method: GET
     uri: https://ip-ranges.datadoghq.com/
   response:
@@ -316,8 +316,6 @@ interactions:
     headers:
       Accept-Ranges:
       - bytes
-      Age:
-      - '32'
       Connection:
       - keep-alive
       Content-Length:
@@ -325,7 +323,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 18 Sep 2020 11:51:12 GMT
+      - Thu, 24 Sep 2020 13:22:51 GMT
       ETag:
       - '"a10a4e3f85ed8c2509855388e149972a"'
       Last-Modified:
@@ -335,13 +333,13 @@ interactions:
       Vary:
       - Accept-Encoding
       Via:
-      - 1.1 960b47175d6cfc9ed048624de2747035.cloudfront.net (CloudFront)
+      - 1.1 bfb83f89a06636844c21e465f3ea5acf.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 5ags5K5jwp3hZhwNEgfIo8HYE8a8H1kJQCFA2CCWxvwO9dV6q4JyzQ==
+      - T8zhfoQyuT0N75mlu4Kmot22acMZbddJm1TLEyMHcHZkborBncUEWQ==
       X-Amz-Cf-Pop:
-      - MAD51-C2
+      - CDG3-C2
       X-Cache:
-      - Hit from cloudfront
+      - RefreshHit from cloudfront
     status:
       code: 200
       message: OK
