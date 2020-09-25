@@ -31,6 +31,33 @@ def user(context, client, unique):
 
     context["undo_operations"].append(lambda: api.disable_user(response.data.id))
 
+@given('there is a valid "incident" in the system')
+def incident(context, client, unique):
+    """There is a valid incident in the system."""
+    from datadog_api_client.v2.exceptions import ApiException
+    from datadog_api_client.v2.model import incident_create_request
+    from datadog_api_client.v2.model import incident_create_data
+    from datadog_api_client.v2.model import incident_create_attributes
+    from datadog_api_client.v2.model import incident_type
+    from datadog_api_client.v2.api.incidents_api import IncidentsApi
+
+    # client.configuration.unstable_operations["create_incident"] = True
+    # client.configuration.unstable_operations["delete_incident"] = True
+    api = IncidentsApi(client)
+    body = incident_create_request.IncidentCreateRequest(
+        data=incident_create_data.IncidentCreateData(
+            type=incident_type.IncidentType(value="incidents"),
+            attributes=incident_create_attributes.IncidentCreateAttributes(
+                title=str(unique),
+                customer_impacted=False,
+            ),
+        ),
+    )
+
+    response = context["incident"] = api.create_incident(body=body)
+
+    context["undo_operations"].append(lambda: api.delete_incident(response.data.id))
+
 
 @given('there is a valid "service" in the system')
 def service(context, client, unique):
