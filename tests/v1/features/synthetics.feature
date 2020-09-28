@@ -129,3 +129,10 @@ Feature: Synthetics
     Given new "ListTests" request
     When the request is sent
     Then the response status is 200 OK - Returns the list of all Synthetic tests.
+
+  @generated @skip
+  Scenario: Get a global variable returns "OK" response
+    Given new "GetGlobalVariable" request
+    And request contains "variable_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
