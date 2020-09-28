@@ -101,7 +101,7 @@ class SyntheticsGlobalVariableValue(ModelNormal):
         """SyntheticsGlobalVariableValue - a model defined in OpenAPI
 
         Args:
-            value (str): Value of the global variable.
+            value (str): Value of the global variable. When reading a global variable, the value will not be present if the variable is secure.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

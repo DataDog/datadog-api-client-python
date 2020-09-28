@@ -6094,7 +6094,8 @@ components:
           description: Determines if the variable is secure.
           type: boolean
         value:
-          description: Value of the global variable.
+          description: Value of the global variable. When reading a global variable,
+            the value will not be present if the variable is secure.
           type: string
       required:
       - value
@@ -13817,6 +13818,38 @@ paths:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Not found
       summary: Delete a global variable
+      tags:
+      - Synthetics
+    get:
+      description: Get the detailed configuration of a global variable.
+      operationId: GetGlobalVariable
+      parameters:
+      - description: The ID of the global variable.
+        in: path
+        name: variable_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SyntheticsGlobalVariable'
+          description: OK
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Not found
+      summary: Get a global variable
       tags:
       - Synthetics
     put:
