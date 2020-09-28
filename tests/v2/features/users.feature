@@ -74,15 +74,15 @@ Feature: Users
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Get a user returns "OK for get user" response
-    Given new "GetUser" request
-    And request contains "user_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK for get user
-
-  @generated @skip
   Scenario: Get a user organization returns "OK" response
     Given new "ListUserOrganizations" request
     And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get user details returns "OK for get user" response
+    Given new "GetUser" request
+    And request contains "user_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK for get user

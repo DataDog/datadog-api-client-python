@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**create_user**](UsersApi.md#create_user) | **POST** /api/v1/user | Create a user
 [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v1/user/{user_handle} | Disable a user
 [**get_user**](UsersApi.md#get_user) | **GET** /api/v1/user/{user_handle} | Get user details
-[**list_users**](UsersApi.md#list_users) | **GET** /api/v1/user | Get all users
+[**list_users**](UsersApi.md#list_users) | **GET** /api/v1/user | List all users
 [**update_user**](UsersApi.md#update_user) | **PUT** /api/v1/user/{user_handle} | Update a user
 
 
@@ -301,9 +301,9 @@ Name | Type | Description  | Notes
 # **list_users**
 > UserListResponse list_users()
 
-Get all users
+List all users
 
-Get all users for your organization.
+List all users for your organization.
 
 ### Example
 
@@ -354,7 +354,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
-        # Get all users
+        # List all users
         api_response = api_instance.list_users()
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
