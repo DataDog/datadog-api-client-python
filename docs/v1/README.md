@@ -271,7 +271,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**create_user**](UsersApi.md#create_user) | **POST** /api/v1/user | Create a user
 *UsersApi* | [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v1/user/{user_handle} | Disable a user
 *UsersApi* | [**get_user**](UsersApi.md#get_user) | **GET** /api/v1/user/{user_handle} | Get user details
-*UsersApi* | [**list_users**](UsersApi.md#list_users) | **GET** /api/v1/user | Get all users
+*UsersApi* | [**list_users**](UsersApi.md#list_users) | **GET** /api/v1/user | List all users
 *UsersApi* | [**update_user**](UsersApi.md#update_user) | **PUT** /api/v1/user/{user_handle} | Update a user
 
 

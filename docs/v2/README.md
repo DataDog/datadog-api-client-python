@@ -166,7 +166,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**create_user**](UsersApi.md#create_user) | **POST** /api/v2/users | Create a user
 *UsersApi* | [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v2/users/{user_id} | Disable a user
 *UsersApi* | [**get_invitation**](UsersApi.md#get_invitation) | **GET** /api/v2/user_invitations/{user_invitation_uuid} | Get a user invitation
-*UsersApi* | [**get_user**](UsersApi.md#get_user) | **GET** /api/v2/users/{user_id} | Get a user
+*UsersApi* | [**get_user**](UsersApi.md#get_user) | **GET** /api/v2/users/{user_id} | Get user details
 *UsersApi* | [**list_user_organizations**](UsersApi.md#list_user_organizations) | **GET** /api/v2/users/{user_id}/orgs | Get a user organization
 *UsersApi* | [**list_user_permissions**](UsersApi.md#list_user_permissions) | **GET** /api/v2/users/{user_id}/permissions | Get a user permissions
 *UsersApi* | [**list_users**](UsersApi.md#list_users) | **GET** /api/v2/users | List all users

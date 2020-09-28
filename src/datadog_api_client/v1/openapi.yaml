@@ -14964,7 +14964,7 @@ paths:
       - Usage Metering
   /api/v1/user:
     get:
-      description: Get all users for your organization.
+      description: List all users for your organization.
       operationId: ListUsers
       responses:
         '200':
@@ -14979,7 +14979,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Authentication error
-      summary: Get all users
+      summary: List all users
       tags:
       - Users
     post:
