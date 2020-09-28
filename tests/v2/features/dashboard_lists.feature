@@ -2,7 +2,8 @@
 Feature: Dashboard Lists
   Interact with your dashboard lists through the API to make it easier to
   organize, find, and share all of your dashboards with your team and
-  organization.
+  organization. Note that you can add API v1 Dashboards to Dashboard Lists
+  that you create with API v2.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

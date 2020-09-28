@@ -233,6 +233,7 @@ Class | Method | HTTP request | Description
 *SyntheticsApi* | [**get_browser_test**](SyntheticsApi.md#get_browser_test) | **GET** /api/v1/synthetics/tests/browser/{public_id} | Get a test configuration (browser)
 *SyntheticsApi* | [**get_browser_test_latest_results**](SyntheticsApi.md#get_browser_test_latest_results) | **GET** /api/v1/synthetics/tests/browser/{public_id}/results | Get the test&#39;s latest results summaries (browser)
 *SyntheticsApi* | [**get_browser_test_result**](SyntheticsApi.md#get_browser_test_result) | **GET** /api/v1/synthetics/tests/browser/{public_id}/results/{result_id} | Get a test result (browser)
+*SyntheticsApi* | [**get_global_variable**](SyntheticsApi.md#get_global_variable) | **GET** /api/v1/synthetics/variables/{variable_id} | Get a global variable
 *SyntheticsApi* | [**get_test**](SyntheticsApi.md#get_test) | **GET** /api/v1/synthetics/tests/{public_id} | Get a test configuration (API)
 *SyntheticsApi* | [**list_locations**](SyntheticsApi.md#list_locations) | **GET** /api/v1/synthetics/locations | Get all locations (public and private)
 *SyntheticsApi* | [**list_tests**](SyntheticsApi.md#list_tests) | **GET** /api/v1/synthetics/tests | Get the list of all tests
@@ -271,7 +272,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**create_user**](UsersApi.md#create_user) | **POST** /api/v1/user | Create a user
 *UsersApi* | [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v1/user/{user_handle} | Disable a user
 *UsersApi* | [**get_user**](UsersApi.md#get_user) | **GET** /api/v1/user/{user_handle} | Get user details
-*UsersApi* | [**list_users**](UsersApi.md#list_users) | **GET** /api/v1/user | Get all users
+*UsersApi* | [**list_users**](UsersApi.md#list_users) | **GET** /api/v1/user | List all users
 *UsersApi* | [**update_user**](UsersApi.md#update_user) | **PUT** /api/v1/user/{user_handle} | Update a user
 
 
