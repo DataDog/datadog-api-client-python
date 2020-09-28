@@ -5616,6 +5616,8 @@ components:
       - certificate
       - responseTime
       - property
+      - recordEvery
+      - recordSome
       type: string
       x-enum-varnames:
       - BODY
@@ -5624,6 +5626,8 @@ components:
       - CERTIFICATE
       - RESPONSE_TIME
       - PROPERTY
+      - RECORD_EVERY
+      - RECORD_SOME
     SyntheticsBasicAuth:
       description: Object to handle basic authentication when performing the test.
       properties:

@@ -54,6 +54,8 @@ class SyntheticsAssertionType(ModelSimple):
             'CERTIFICATE': "certificate",
             'RESPONSE_TIME': "responseTime",
             'PROPERTY': "property",
+            'RECORD_EVERY': "recordEvery",
+            'RECORD_SOME': "recordSome",
         },
     }
 
@@ -101,7 +103,7 @@ class SyntheticsAssertionType(ModelSimple):
         """SyntheticsAssertionType - a model defined in OpenAPI
 
         Args:
-            value (str): Type of the assertion.., must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", ]  # noqa: E501
+            value (str): Type of the assertion.., must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", ]  # noqa: E501
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
