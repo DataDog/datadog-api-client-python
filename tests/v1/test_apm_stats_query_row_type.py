@@ -5,16 +5,15 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.apm_resources_query_definition import ApmResourcesQueryDefinition
+from datadog_api_client.v1.model.apm_stats_query_row_type import ApmStatsQueryRowType
 
 
-class TestApmResourcesQueryDefinition(unittest.TestCase):
-    """ApmResourcesQueryDefinition unit test stubs"""
+class TestApmStatsQueryRowType(unittest.TestCase):
+    """ApmStatsQueryRowType unit test stubs"""
 
     def setUp(self):
         pass
@@ -22,10 +21,10 @@ class TestApmResourcesQueryDefinition(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testApmResourcesQueryDefinition(self):
-        """Test ApmResourcesQueryDefinition"""
+    def testApmStatsQueryRowType(self):
+        """Test ApmStatsQueryRowType"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ApmResourcesQueryDefinition()  # noqa: E501
+        # model = ApmStatsQueryRowType()  # noqa: E501
         pass
 
 
