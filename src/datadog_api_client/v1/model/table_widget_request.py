@@ -26,14 +26,14 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 )
 
 def lazy_import():
-    from datadog_api_client.v1.model.apm_resources_query_definition import ApmResourcesQueryDefinition
+    from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
     from datadog_api_client.v1.model.event_query_definition import EventQueryDefinition
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
     from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
     from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
     from datadog_api_client.v1.model.widget_sort import WidgetSort
-    globals()['ApmResourcesQueryDefinition'] = ApmResourcesQueryDefinition
+    globals()['ApmStatsQueryDefinition'] = ApmStatsQueryDefinition
     globals()['EventQueryDefinition'] = EventQueryDefinition
     globals()['LogQueryDefinition'] = LogQueryDefinition
     globals()['ProcessQueryDefinition'] = ProcessQueryDefinition
@@ -91,7 +91,7 @@ class TableWidgetRequest(ModelNormal):
             'aggregator': (WidgetAggregator,),  # noqa: E501
             'alias': (str,),  # noqa: E501
             'apm_query': (LogQueryDefinition,),  # noqa: E501
-            'apm_resources_query': (ApmResourcesQueryDefinition,),  # noqa: E501
+            'apm_stats_query': (ApmStatsQueryDefinition,),  # noqa: E501
             'conditional_formats': ([WidgetConditionalFormat],),  # noqa: E501
             'event_query': (EventQueryDefinition,),  # noqa: E501
             'limit': (int,),  # noqa: E501
@@ -113,7 +113,7 @@ class TableWidgetRequest(ModelNormal):
         'aggregator': 'aggregator',  # noqa: E501
         'alias': 'alias',  # noqa: E501
         'apm_query': 'apm_query',  # noqa: E501
-        'apm_resources_query': 'apm_resources_query',  # noqa: E501
+        'apm_stats_query': 'apm_stats_query',  # noqa: E501
         'conditional_formats': 'conditional_formats',  # noqa: E501
         'event_query': 'event_query',  # noqa: E501
         'limit': 'limit',  # noqa: E501
@@ -175,7 +175,7 @@ class TableWidgetRequest(ModelNormal):
             aggregator (WidgetAggregator): [optional]  # noqa: E501
             alias (str): The column name (defaults to the metric name).. [optional]  # noqa: E501
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
-            apm_resources_query (ApmResourcesQueryDefinition): [optional]  # noqa: E501
+            apm_stats_query (ApmStatsQueryDefinition): [optional]  # noqa: E501
             conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
             event_query (EventQueryDefinition): [optional]  # noqa: E501
             limit (int): For metric queries, the number of lines to show in the table. Only one request should have this property.. [optional]  # noqa: E501

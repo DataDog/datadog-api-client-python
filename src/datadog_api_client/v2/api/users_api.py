@@ -402,7 +402,7 @@ class UsersApi(object):
             user_id,
             **kwargs
         ):
-            """Get a user  # noqa: E501
+            """Get user details  # noqa: E501
 
             Get a user in the organization specified by the user’s `user_id`.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an

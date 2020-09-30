@@ -30,7 +30,8 @@ from datadog_api_client.v1.model.alert_value_widget_definition_type import Alert
 from datadog_api_client.v1.model.api_key import ApiKey
 from datadog_api_client.v1.model.api_key_list_response import ApiKeyListResponse
 from datadog_api_client.v1.model.api_key_response import ApiKeyResponse
-from datadog_api_client.v1.model.apm_resources_query_definition import ApmResourcesQueryDefinition
+from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
+from datadog_api_client.v1.model.apm_stats_query_row_type import ApmStatsQueryRowType
 from datadog_api_client.v1.model.application_key import ApplicationKey
 from datadog_api_client.v1.model.application_key_list_response import ApplicationKeyListResponse
 from datadog_api_client.v1.model.application_key_response import ApplicationKeyResponse

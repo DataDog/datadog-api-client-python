@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**create_user**](UsersApi.md#create_user) | **POST** /api/v2/users | Create a user
 [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v2/users/{user_id} | Disable a user
 [**get_invitation**](UsersApi.md#get_invitation) | **GET** /api/v2/user_invitations/{user_invitation_uuid} | Get a user invitation
-[**get_user**](UsersApi.md#get_user) | **GET** /api/v2/users/{user_id} | Get a user
+[**get_user**](UsersApi.md#get_user) | **GET** /api/v2/users/{user_id} | Get user details
 [**list_user_organizations**](UsersApi.md#list_user_organizations) | **GET** /api/v2/users/{user_id}/orgs | Get a user organization
 [**list_user_permissions**](UsersApi.md#list_user_permissions) | **GET** /api/v2/users/{user_id}/permissions | Get a user permissions
 [**list_users**](UsersApi.md#list_users) | **GET** /api/v2/users | List all users
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 # **get_user**
 > UserResponse get_user(user_id)
 
-Get a user
+Get user details
 
 Get a user in the organization specified by the user’s `user_id`.
 
@@ -367,7 +367,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get a user
+        # Get user details
         api_response = api_instance.get_user(user_id)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
