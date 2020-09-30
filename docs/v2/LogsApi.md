@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Aggregate events
 
-The public API endpoint to aggregate events into buckets and compute metrics and timeseries.
+The API endpoint to aggregate events into buckets and compute metrics and timeseries.
 
 ### Example
 

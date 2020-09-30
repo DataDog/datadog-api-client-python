@@ -27,8 +27,7 @@ Feature: Logs
     Then the response status is 200 OK
 
   Scenario: Aggregate events returns "OK" response
-    Given operation "AggregateLogs" enabled
-    And new "AggregateLogs" request
+    Given new "AggregateLogs" request
     And body {"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.{{ unique }}", "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"], "query": "datadog-agent", "to": "1600348600"}}
     When the request is sent
     Then the response status is 200 OK
