@@ -42,22 +42,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -142,22 +134,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -234,22 +218,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -322,22 +298,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -450,22 +418,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 

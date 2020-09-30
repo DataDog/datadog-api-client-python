@@ -162,7 +162,7 @@ def user_invitation(context, vcr_cassette, client):
     body = user_invitations_request.UserInvitationsRequest(
         data=[
             user_invitation_data.UserInvitationData(
-                type=user_invitations_type.UserInvitationsType(),
+                type=user_invitations_type.UserInvitationsType('user_invitations'),
                 relationships=user_invitation_relationships.
                 UserInvitationRelationships(
                     user=relationship_to_user.RelationshipToUser(

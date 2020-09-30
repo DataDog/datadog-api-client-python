@@ -7,7 +7,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.pet_api import PetApi
+#   from .api.aws_integration_api import AWSIntegrationApi
 #
 # or import this package, but before doing it, use:
 #
