@@ -50,6 +50,10 @@ class Point(ModelSimple):
     }
 
     validations = {
+        ('value',): {
+            'max_items': 2,
+            'min_items': 2,
+        },
     }
 
     additional_properties_type = None

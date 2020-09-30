@@ -92,11 +92,13 @@ class TableWidgetDefinitionType(ModelSimple):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):
+    def __init__(self, value, *args, **kwargs):
         """TableWidgetDefinitionType - a model defined in OpenAPI
 
+        Args:
+            value (str): Type of the table widget.. if omitted the server will use the default value of "query_table", must be one of ["query_table", ]  # noqa: E501
+
         Keyword Args:
-            value (str): Type of the table widget.. defaults to "query_table", must be one of ["query_table", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -129,13 +131,6 @@ class TableWidgetDefinitionType(ModelSimple):
                                 _visited_composed_classes = (Animal,)
         """
 
-        if 'value' in kwargs:
-            value = kwargs.pop('value')
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "query_table"
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())

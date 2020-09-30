@@ -92,11 +92,13 @@ class AlertGraphWidgetDefinitionType(ModelSimple):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):
+    def __init__(self, value, *args, **kwargs):
         """AlertGraphWidgetDefinitionType - a model defined in OpenAPI
 
+        Args:
+            value (str): Type of the alert graph widget.. if omitted the server will use the default value of "alert_graph", must be one of ["alert_graph", ]  # noqa: E501
+
         Keyword Args:
-            value (str): Type of the alert graph widget.. defaults to "alert_graph", must be one of ["alert_graph", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -129,13 +131,6 @@ class AlertGraphWidgetDefinitionType(ModelSimple):
                                 _visited_composed_classes = (Animal,)
         """
 
-        if 'value' in kwargs:
-            value = kwargs.pop('value')
-        elif args:
-            args = list(args)
-            value = args.pop(0)
-        else:
-            value = "alert_graph"
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
