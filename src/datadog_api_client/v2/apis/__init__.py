@@ -7,7 +7,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.pet_api import PetApi
+#   from .api.dashboard_lists_api import DashboardListsApi
 #
 # or import this package, but before doing it, use:
 #
