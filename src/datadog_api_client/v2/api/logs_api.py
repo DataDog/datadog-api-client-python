@@ -44,7 +44,7 @@ class LogsApi(object):
         ):
             """Aggregate events  # noqa: E501
 
-            The public API endpoint to aggregate events into buckets and compute metrics and timeseries.  # noqa: E501
+            The API endpoint to aggregate events into buckets and compute metrics and timeseries.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
