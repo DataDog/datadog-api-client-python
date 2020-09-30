@@ -9,13 +9,13 @@ interactions:
       Dd-Operation-Id:
       - ListPermissions
       User-Agent:
-      - datadog-api-client-python/0.1.dev67+dirty (python 3.8.5; os Darwin; arch x86_64)
+      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '10967852836623590485'
+      - '11466770334710314744'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '11457079571241413355'
+      - '12910274475521189348'
     method: GET
     uri: https://api.datadoghq.com/api/v2/permissions
   response:
@@ -89,11 +89,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Fri, 18 Sep 2020 11:51:44 GMT
+      - Thu, 24 Sep 2020 10:01:34 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Fri, 25-Sep-2020 11:51:44 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:34 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -102,9 +102,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - snRlN2mG6m2XG8PW7FJyIbLe3cfPR84i7BVTReiz8buNCpZ4AuQEpjHGMH+TQHsx
+      - xRBFY2Rp8NHDG9Rp4RaGjcqlKnbzhHpETMjn37ZNtmzdKqGU6DeuhyyL4o7jfpVZ
       X-DD-VERSION:
-      - '35.3056650'
+      - '35.3086554'
       X-Frame-Options:
       - SAMEORIGIN
     status:

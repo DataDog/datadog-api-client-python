@@ -1,33 +1,33 @@
 interactions:
 - request:
-    body: '{"data": {"type": "roles", "attributes": {"name": "datadog-api-client-python-test_create_role_returns_ok_response-1600941680.439353"}}}'
+    body: null
     headers:
       Accept:
       - application/json
       Content-Type:
       - application/json
       Dd-Operation-Id:
-      - CreateRole
+      - ListLogsGet
       User-Agent:
       - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '7115542117736921841'
+      - '3339637536236447807'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '5744151535108232165'
-    method: POST
-    uri: https://api.datadoghq.com/api/v2/roles
+      - '7879557664041849767'
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/logs/events?filter%5Bfrom%5D=2020-09-17T11%3A48%3A36%2B01%3A00&filter%5Bindex%5D=main&filter%5Bquery%5D=datadog-agent&filter%5Bto%5D=2020-09-17T12%3A48%3A36%2B01%3A00&page%5Blimit%5D=5
   response:
     body:
-      string: '{"data":{"type":"roles","id":"e5786c30-fe4c-11ea-b268-eff110ea9709","attributes":{"name":"datadog-api-client-python-test_create_role_returns_ok_response-1600941680.439353","created_at":"2020-09-24T10:01:20.905818+00:00","modified_at":"2020-09-24T10:01:20.905818+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}}'
+      string: '{"data":[]}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - keep-alive
       Content-Length:
-      - '448'
+      - '11'
       Content-Security-Policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       Content-Type:
@@ -35,32 +35,30 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Thu, 24 Sep 2020 10:01:20 GMT
+      - Thu, 24 Sep 2020 10:01:41 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:20 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:41 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
-      Vary:
-      - Accept-Encoding
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - saoIV/FA/z8H0gcXHP3CQ32hxYowRdGCvx+QRO7UdacLP4hVHOLNCuxXnf6LPRGD
+      - mjjix3i7KxHakJGjOSXbyjGLp+IPNWPrPaCVopgkuqm46lk1b+kLivuxRokDQC1N
       X-DD-VERSION:
       - '35.3086554'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
-      - '500'
+      - '300'
       X-RateLimit-Period:
-      - '60'
+      - '3600'
       X-RateLimit-Remaining:
-      - '488'
+      - '298'
       X-RateLimit-Reset:
-      - '40'
+      - '3499'
     status:
       code: 200
       message: OK
