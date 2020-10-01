@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **events** | [**[WidgetEvent]**](WidgetEvent.md) | List of widget events. | [optional] 
 **legend_size** | **str** | Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;. | [optional] 
 **markers** | [**[WidgetMarker]**](WidgetMarker.md) | List of markers. | [optional] 
+**right_yaxis** | [**WidgetAxis**](WidgetAxis.md) |  | [optional] 
 **show_legend** | **bool** | (screenboard only) Show the legend for this widget. | [optional] 
 **time** | [**WidgetTime**](WidgetTime.md) |  | [optional] 
 **title** | **str** | Title of your widget. | [optional] 
