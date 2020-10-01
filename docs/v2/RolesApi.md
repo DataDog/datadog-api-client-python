@@ -273,7 +273,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             attributes=RoleCreateAttributes(
                 created_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 modified_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                name="name_example",
+                name="developers",
             ),
             relationships=RoleRelationships(
                 permissions=RelationshipToPermissions(
@@ -1115,7 +1115,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                 modified_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 name="name_example",
             ),
-            id="id_example",
+            id="00000000-0000-0000-0000-000000000000",
             type=RolesType("roles"),
         ),
     ) # RoleUpdateRequest |  (optional)

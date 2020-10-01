@@ -131,8 +131,8 @@ class SyntheticsCITestMetadataCi(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            pipeline (str): [optional]  # noqa: E501
-            provider (str): [optional]  # noqa: E501
+            pipeline (str): Name of the pipeline.. [optional]  # noqa: E501
+            provider (str): Name of the CI provider.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

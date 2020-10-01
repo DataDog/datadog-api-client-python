@@ -64,7 +64,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     body = UserCreateRequest(
         data=UserCreateData(
             attributes=UserCreateAttributes(
-                email="email_example",
+                email="joe.doe@example.com",
                 name="name_example",
                 title="title_example",
             ),
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 List all users
 
-Get the list of all users in the organization. This list includes all users even if they are disabled or unverified.
+Get the list of all users in the organization. This list includes all users even if they are deactivated or unverified.
 
 ### Example
 
@@ -788,7 +788,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                 email="email_example",
                 name="name_example",
             ),
-            id="id_example",
+            id="00000000-0000-0000-0000-000000000000",
             type=UsersType("users"),
         ),
     ) # UserUpdateRequest |  (optional)

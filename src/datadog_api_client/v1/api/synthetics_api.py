@@ -936,7 +936,7 @@ class SyntheticsApi(object):
         ):
             """Get a test configuration (browser)  # noqa: E501
 
-            Get the detailed configuration (including steps) associated with a Synthetics browser test.  # noqa: E501
+            Get the detailed configuration (including steps) associated with a Synthetic browser test.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
@@ -1564,7 +1564,7 @@ class SyntheticsApi(object):
         ):
             """Get all locations (public and private)  # noqa: E501
 
-            Get the list of public and private locations available for Synthetics tests. No arguments required.  # noqa: E501
+            Get the list of public and private locations available for Synthetic tests. No arguments required.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
