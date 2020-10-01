@@ -315,6 +315,7 @@ class WidgetDefinition(ModelComposed):
             show_resource_list (bool): Whether to show the resource list or not.. [optional]  # noqa: E501
             size_format (WidgetSizeFormat): [optional]  # noqa: E501
             markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
+            right_yaxis (WidgetAxis): [optional]  # noqa: E501
         """
 
         alert_id = kwargs.get('alert_id', nulltype.Null)

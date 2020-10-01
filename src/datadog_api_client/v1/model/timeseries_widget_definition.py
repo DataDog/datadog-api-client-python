@@ -96,6 +96,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
             'events': ([WidgetEvent],),  # noqa: E501
             'legend_size': (str,),  # noqa: E501
             'markers': ([WidgetMarker],),  # noqa: E501
+            'right_yaxis': (WidgetAxis,),  # noqa: E501
             'show_legend': (bool,),  # noqa: E501
             'time': (WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
@@ -116,6 +117,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
         'events': 'events',  # noqa: E501
         'legend_size': 'legend_size',  # noqa: E501
         'markers': 'markers',  # noqa: E501
+        'right_yaxis': 'right_yaxis',  # noqa: E501
         'show_legend': 'show_legend',  # noqa: E501
         'time': 'time',  # noqa: E501
         'title': 'title',  # noqa: E501
@@ -178,6 +180,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
             events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
             legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
             markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
+            right_yaxis (WidgetAxis): [optional]  # noqa: E501
             show_legend (bool): (screenboard only) Show the legend for this widget.. [optional]  # noqa: E501
             time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of your widget.. [optional]  # noqa: E501
