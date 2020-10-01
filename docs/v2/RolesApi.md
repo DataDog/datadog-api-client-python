@@ -30,6 +30,7 @@ Adds a permission to a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -49,13 +50,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -132,6 +133,7 @@ Adds a user to a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -151,13 +153,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -234,6 +236,7 @@ Create a new role for your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -253,13 +256,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -347,6 +350,7 @@ Disables a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -364,13 +368,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -429,6 +433,7 @@ Get a role in the organization specified by the role’s `role_id`.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -447,13 +452,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -513,6 +518,7 @@ Returns a list of all permissions, including name, description, and ID.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -531,13 +537,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -593,6 +599,7 @@ Returns a list of all permissions for a single role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -611,13 +618,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -677,6 +684,7 @@ Gets all users of a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -695,13 +703,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -778,6 +786,7 @@ Returns all roles, including their names and IDs.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -797,13 +806,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -869,6 +878,7 @@ Removes a permission from a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -888,13 +898,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -971,6 +981,7 @@ Removes a user from a role.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -990,13 +1001,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -1073,6 +1084,7 @@ Edit a role. Can only be used with application keys belonging to administrators.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
@@ -1092,13 +1104,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'

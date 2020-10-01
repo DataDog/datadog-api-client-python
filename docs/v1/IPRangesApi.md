@@ -17,6 +17,7 @@ Get information about Datadog IP ranges.
 ### Example
 
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import ip_ranges_api

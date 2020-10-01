@@ -23,6 +23,7 @@ Get metadata about a specific metric.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import metrics_api
@@ -41,13 +42,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -107,6 +108,7 @@ Get the list of actively reporting metrics from a given time until now.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import metrics_api
@@ -125,13 +127,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -202,6 +204,7 @@ Search for metrics from the last 24 hours in Datadog.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import metrics_api
@@ -220,13 +223,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -286,6 +289,7 @@ Query timeseries points.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import metrics_api
@@ -304,13 +308,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -374,6 +378,7 @@ Edit metadata of a specific metric. Find out more about [supported types](https:
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import metrics_api
@@ -392,13 +397,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'

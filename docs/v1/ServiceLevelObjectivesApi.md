@@ -26,6 +26,7 @@ Check if a SLO can be safely deleted. For example, assure an SLO can be deleted 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
@@ -44,13 +45,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -111,6 +112,7 @@ Create a service level objective object.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
@@ -130,13 +132,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -230,6 +232,7 @@ Permanently delete the specified service level objective object.  If an SLO is u
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
@@ -248,13 +251,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -326,6 +329,7 @@ Delete (or partially delete) multiple service level objective objects.  This end
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
@@ -345,13 +349,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -415,6 +419,7 @@ Get a service level objective object.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
@@ -433,13 +438,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -499,6 +504,7 @@ Get a specific SLO’s history, regardless of its SLO type.  The detailed histor
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
@@ -517,13 +523,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -588,6 +594,7 @@ Get multiple service level objective objects by their IDs.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
@@ -606,13 +613,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -673,6 +680,7 @@ Update the specified service level objective object.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
@@ -692,13 +700,13 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'

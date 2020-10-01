@@ -22,6 +22,7 @@ Add dashboards to an existing dashboard list.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import dashboard_lists_api
@@ -41,13 +42,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -117,6 +118,7 @@ Delete dashboards from an existing dashboard list.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import dashboard_lists_api
@@ -136,13 +138,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -212,6 +214,7 @@ Fetch the dashboard list’s dashboard definitions.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import dashboard_lists_api
@@ -230,13 +233,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
@@ -296,6 +299,7 @@ Update dashboards of an existing dashboard list.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import dashboard_lists_api
@@ -315,13 +319,13 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = 'YOUR_API_KEY'
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
