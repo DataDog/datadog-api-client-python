@@ -667,12 +667,14 @@ Learn more in the [Browser test Actions documentation](https://docs.datadoghq.co
  - [SyntheticsCITest](Test configuration for Synthetics CI.md)
  - [SyntheticsCITestBody](Object describing the synthetics tests to trigger..md)
  - [SyntheticsCITestMetadata](Metadata for the Synthetics tests run.md)
- - [SyntheticsCITestMetadataCi](.md)
- - [SyntheticsCITestMetadataGit](.md)
+ - [SyntheticsCITestMetadataCi](Describe CI provider..md)
+ - [SyntheticsCITestMetadataGit](Git information..md)
  - [SyntheticsCheckType](Type of assertion to apply in an API test..md)
- - [SyntheticsDeleteTestsPayload](A JSON list of the ID or IDs of the Synthetic tests that you want to delete..md)
+ - [SyntheticsDeleteTestsPayload](A JSON list of the ID or IDs of the Synthetic tests that you want
+to delete..md)
  - [SyntheticsDeleteTestsResponse](Response object for deleting Synthetic tests..md)
- - [SyntheticsDeleteTestsResponseDeletedTests](Object containing a deleted Synthetic test ID with the associated deletion timestamp..md)
+ - [SyntheticsDeleteTestsResponseDeletedTests](Object containing a deleted Synthetic test ID with the associated
+deletion timestamp..md)
  - [SyntheticsDevice](Object describing the device used to perform the Synthetic test..md)
  - [SyntheticsDeviceID](The device ID..md)
  - [SyntheticsErrorCode](Error code that can be returned by a Synthetic test..md)
@@ -681,7 +683,8 @@ Learn more in the [Browser test Actions documentation](https://docs.datadoghq.co
  - [SyntheticsGlobalVariable](Synthetics global variable..md)
  - [SyntheticsGlobalVariableValue](Value of the global variable..md)
  - [SyntheticsListTestsResponse](Object containing an array of Synthetic tests configuration..md)
- - [SyntheticsLocation](Synthetics location that can be used when creating or editing a test..md)
+ - [SyntheticsLocation](Synthetic location that can be used when creating or editing a
+test..md)
  - [SyntheticsLocations](List of Synthetics locations..md)
  - [SyntheticsPlayingTab](Navigate between different tabs for your browser test..md)
  - [SyntheticsResource](Object describing a resource which is the combination of requests (fetch, XHR) and Assets (HTML, CSS, JS, images)..md)
@@ -695,7 +698,8 @@ Learn more in the [Browser test Actions documentation](https://docs.datadoghq.co
  - [SyntheticsStepType](Step type used in your Synthetic test..md)
  - [SyntheticsTestConfig](Configuration object for a Synthetic test..md)
  - [SyntheticsTestDetails](Object containing details about your Synthetic test..md)
- - [SyntheticsTestDetailsSubType](The sub-type of the Synthetic API test, `http`, `ssl`, `tcp` or `dns`..md)
+ - [SyntheticsTestDetailsSubType](The sub-type of the Synthetic API test, `http`, `ssl`, `tcp` or
+`dns`..md)
  - [SyntheticsTestDetailsType](Type of the Synthetic test, either `api` or `browser`..md)
  - [SyntheticsTestHeaders](Headers to include when performing the test..md)
  - [SyntheticsTestMonitorStatus](The status of your Synthetic monitor.
@@ -703,9 +707,11 @@ Learn more in the [Browser test Actions documentation](https://docs.datadoghq.co
 * `1` for triggered
 * `2` for no data.md)
  - [SyntheticsTestOptions](Object describing the extra options for a Synthetic test..md)
- - [SyntheticsTestOptionsMonitorOptions](Object containing the options for a Synthetic test as a monitor (e.g. renotification)..md)
+ - [SyntheticsTestOptionsMonitorOptions](Object containing the options for a Synthetic test as a monitor
+(for example, renotification)..md)
  - [SyntheticsTestOptionsRetry](Object describing the retry strategy to apply to a Synthetic test..md)
- - [SyntheticsTestPauseStatus](Define whether you want to start (`live`) or pause (`paused`) a Synthetic test..md)
+ - [SyntheticsTestPauseStatus](Define whether you want to start (`live`) or pause (`paused`) a
+Synthetic test..md)
  - [SyntheticsTestProcessStatus](Status of a Synthetic test..md)
  - [SyntheticsTestRequest](Object describing the Synthetic test request..md)
  - [SyntheticsTickInterval](The frequency at which to run the Synthetic test (in seconds)..md)
@@ -713,7 +719,7 @@ Learn more in the [Browser test Actions documentation](https://docs.datadoghq.co
 Learn more about those metrics in [Synthetics documentation](https://docs.datadoghq.com/synthetics/#metrics)..md)
  - [SyntheticsTriggerCITestsResponse](Object containing information about the tests triggered..md)
  - [SyntheticsTriggerCITestsResponseLocations](Synthetics location..md)
- - [SyntheticsTriggerCITestsResponseResults](.md)
+ - [SyntheticsTriggerCITestsResponseResults](Information about a single test run..md)
  - [SyntheticsUpdateTestPauseStatusPayload](Object to start or pause an existing Synthetic test..md)
  - [SyntheticsWarningType](User locator used..md)
  - [TableWidgetDefinition](The table visualization is available on timeboards and screenboards. It displays columns of metrics grouped by tag key..md)

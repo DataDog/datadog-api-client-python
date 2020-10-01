@@ -763,7 +763,7 @@ class UsersApi(object):
         ):
             """List all users  # noqa: E501
 
-            Get the list of all users in the organization. This list includes all users even if they are disabled or unverified.  # noqa: E501
+            Get the list of all users in the organization. This list includes all users even if they are deactivated or unverified.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 

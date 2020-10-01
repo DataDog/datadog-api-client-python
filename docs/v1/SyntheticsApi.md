@@ -69,15 +69,15 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsGlobalVariable(
-        description="description_example",
+        description="Example description",
         id="id_example",
-        name="name_example",
+        name="MY_VARIABLE",
         tags=[
-            "tags_example",
+            "["team:front","test:workflow-1"]",
         ],
         value=SyntheticsGlobalVariableValue(
             secure=True,
-            value="value_example",
+            value="example-value",
         ),
     ) # SyntheticsGlobalVariable | Details of the global variable to create.
 
@@ -494,15 +494,15 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     api_instance = synthetics_api.SyntheticsApi(api_client)
     variable_id = "variable_id_example" # str | The ID of the global variable.
     body = SyntheticsGlobalVariable(
-        description="description_example",
+        description="Example description",
         id="id_example",
-        name="name_example",
+        name="MY_VARIABLE",
         tags=[
-            "tags_example",
+            "["team:front","test:workflow-1"]",
         ],
         value=SyntheticsGlobalVariableValue(
             secure=True,
-            value="value_example",
+            value="example-value",
         ),
     ) # SyntheticsGlobalVariable | Details of the global variable to update.
 
@@ -736,7 +736,7 @@ Name | Type | Description  | Notes
 
 Get a test configuration (browser)
 
-Get the detailed configuration (including steps) associated with a Synthetics browser test.
+Get the detailed configuration (including steps) associated with a Synthetic browser test.
 
 ### Example
 
@@ -1175,7 +1175,7 @@ Name | Type | Description  | Notes
 
 Get all locations (public and private)
 
-Get the list of public and private locations available for Synthetics tests. No arguments required.
+Get the list of public and private locations available for Synthetic tests. No arguments required.
 
 ### Example
 
@@ -1404,7 +1404,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                         commit_sha="commit_sha_example",
                     ),
                 ),
-                public_id="public_id_example",
+                public_id="aaa-aaa-aaa",
                 retry=SyntheticsTestOptionsRetry(
                     count=1,
                     interval=3.14,

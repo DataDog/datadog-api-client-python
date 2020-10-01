@@ -89,7 +89,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                 ],
                 metric="metric_example",
                 name="name_example",
-                query="query_example",
+                query="a < 3",
             ),
         ],
         tags=[
