@@ -320,6 +320,7 @@ from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefin
 from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
 from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
 from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
+from datadog_api_client.v1.model.target_format_type import TargetFormatType
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
