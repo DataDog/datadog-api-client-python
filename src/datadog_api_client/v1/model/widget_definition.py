@@ -153,6 +153,11 @@ class WidgetDefinition(ModelComposed):
     """
 
     allowed_values = {
+        ('has_search_bar',): {
+            'ALWAYS': "always",
+            'NEVER': "never",
+            'AUTO': "auto",
+        },
     }
 
     validations = {
@@ -314,6 +319,7 @@ class WidgetDefinition(ModelComposed):
             show_latency (bool): Whether to show the latency metrics or not.. [optional]  # noqa: E501
             show_resource_list (bool): Whether to show the resource list or not.. [optional]  # noqa: E501
             size_format (WidgetSizeFormat): [optional]  # noqa: E501
+            has_search_bar (str): Controls the display of the search bar.. [optional] if omitted the server will use the default value of "auto"  # noqa: E501
             markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
             right_yaxis (WidgetAxis): [optional]  # noqa: E501
         """
