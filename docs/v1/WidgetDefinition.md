@@ -81,7 +81,7 @@ Name | Type | Description | Notes
 **show_latency** | **bool** | Whether to show the latency metrics or not. | [optional] 
 **show_resource_list** | **bool** | Whether to show the resource list or not. | [optional] 
 **size_format** | [**WidgetSizeFormat**](WidgetSizeFormat.md) |  | [optional] 
-**has_search_bar** | **str** | Controls the display of the search bar. | [optional]  if omitted the server will use the default value of "auto"
+**has_search_bar** | [**TableWidgetHasSearchBar**](TableWidgetHasSearchBar.md) |  | [optional] 
 **markers** | [**[WidgetMarker]**](WidgetMarker.md) | List of markers. | [optional] 
 **right_yaxis** | [**WidgetAxis**](WidgetAxis.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

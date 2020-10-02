@@ -30,6 +30,7 @@ def lazy_import():
     from datadog_api_client.v1.model.event_query_definition import EventQueryDefinition
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+    from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
     from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
     from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
     from datadog_api_client.v1.model.widget_sort import WidgetSort
@@ -37,6 +38,7 @@ def lazy_import():
     globals()['EventQueryDefinition'] = EventQueryDefinition
     globals()['LogQueryDefinition'] = LogQueryDefinition
     globals()['ProcessQueryDefinition'] = ProcessQueryDefinition
+    globals()['TableWidgetCellDisplayMode'] = TableWidgetCellDisplayMode
     globals()['WidgetAggregator'] = WidgetAggregator
     globals()['WidgetConditionalFormat'] = WidgetConditionalFormat
     globals()['WidgetSort'] = WidgetSort
@@ -67,10 +69,6 @@ class TableWidgetRequest(ModelNormal):
     """
 
     allowed_values = {
-        ('cell_display_mode',): {
-            'NUMBER': "number",
-            'BAR': "bar",
-        },
     }
 
     validations = {
@@ -96,7 +94,7 @@ class TableWidgetRequest(ModelNormal):
             'alias': (str,),  # noqa: E501
             'apm_query': (LogQueryDefinition,),  # noqa: E501
             'apm_stats_query': (ApmStatsQueryDefinition,),  # noqa: E501
-            'cell_display_mode': ([str],),  # noqa: E501
+            'cell_display_mode': ([TableWidgetCellDisplayMode],),  # noqa: E501
             'conditional_formats': ([WidgetConditionalFormat],),  # noqa: E501
             'event_query': (EventQueryDefinition,),  # noqa: E501
             'limit': (int,),  # noqa: E501
@@ -182,7 +180,7 @@ class TableWidgetRequest(ModelNormal):
             alias (str): The column name (defaults to the metric name).. [optional]  # noqa: E501
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
             apm_stats_query (ApmStatsQueryDefinition): [optional]  # noqa: E501
-            cell_display_mode ([str]): A list of display modes for each table cell.. [optional]  # noqa: E501
+            cell_display_mode ([TableWidgetCellDisplayMode]): A list of display modes for each table cell.. [optional]  # noqa: E501
             conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
             event_query (EventQueryDefinition): [optional]  # noqa: E501
             limit (int): For metric queries, the number of lines to show in the table. Only one request should have this property.. [optional]  # noqa: E501

@@ -49,6 +49,7 @@ def lazy_import():
     from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
     from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
     from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
+    from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
     from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
     from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
     from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
@@ -99,6 +100,7 @@ def lazy_import():
     globals()['ServiceMapWidgetDefinition'] = ServiceMapWidgetDefinition
     globals()['ServiceSummaryWidgetDefinition'] = ServiceSummaryWidgetDefinition
     globals()['TableWidgetDefinition'] = TableWidgetDefinition
+    globals()['TableWidgetHasSearchBar'] = TableWidgetHasSearchBar
     globals()['TimeseriesWidgetDefinition'] = TimeseriesWidgetDefinition
     globals()['ToplistWidgetDefinition'] = ToplistWidgetDefinition
     globals()['ToplistWidgetDefinitionType'] = ToplistWidgetDefinitionType
@@ -153,11 +155,6 @@ class WidgetDefinition(ModelComposed):
     """
 
     allowed_values = {
-        ('has_search_bar',): {
-            'ALWAYS': "always",
-            'NEVER': "never",
-            'AUTO': "auto",
-        },
     }
 
     validations = {
@@ -319,7 +316,7 @@ class WidgetDefinition(ModelComposed):
             show_latency (bool): Whether to show the latency metrics or not.. [optional]  # noqa: E501
             show_resource_list (bool): Whether to show the resource list or not.. [optional]  # noqa: E501
             size_format (WidgetSizeFormat): [optional]  # noqa: E501
-            has_search_bar (str): Controls the display of the search bar.. [optional] if omitted the server will use the default value of "auto"  # noqa: E501
+            has_search_bar (TableWidgetHasSearchBar): [optional]  # noqa: E501
             markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
             right_yaxis (WidgetAxis): [optional]  # noqa: E501
         """
