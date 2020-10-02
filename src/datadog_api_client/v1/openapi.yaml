@@ -2514,6 +2514,8 @@ components:
           description: Final attribute or tag name to remap the sources to.
           example: operation_id
           type: string
+        target_format:
+          $ref: '#/components/schemas/TargetFormatType'
         target_type:
           default: attribute
           description: Defines if the final attribute or tag name is from log `attribute`
@@ -6913,6 +6915,24 @@ components:
           description: A list of tags to apply to the host.
           type: object
       type: object
+    TargetFormatType:
+      default: auto
+      description: 'If the target of the remapper is an attribute, try to cast the
+        value to a new specific type.
+
+        If the cast is not possible, the original type is kept. `string`, `integer`,
+        or `double` are the possible types.'
+      enum:
+      - auto
+      - string
+      - integer
+      - double
+      type: string
+      x-enum-varnames:
+      - AUTO
+      - STRING
+      - INTEGER
+      - DOUBLE
     TimeseriesWidgetDefinition:
       description: The timeseries visualization allows you to display the evolution
         of one or more metrics, log events, or Analyzed Spans over time.
