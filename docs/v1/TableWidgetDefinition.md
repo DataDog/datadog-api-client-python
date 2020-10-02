@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **requests** | [**[TableWidgetRequest]**](TableWidgetRequest.md) | Widget definition. | 
 **type** | [**TableWidgetDefinitionType**](TableWidgetDefinitionType.md) |  | 
 **custom_links** | [**[WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
+**has_search_bar** | **str** | Controls the display of the search bar. | [optional]  if omitted the server will use the default value of "auto"
 **time** | [**WidgetTime**](WidgetTime.md) |  | [optional] 
 **title** | **str** | Title of your widget. | [optional] 
 **title_align** | [**WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 

@@ -67,6 +67,10 @@ class TableWidgetRequest(ModelNormal):
     """
 
     allowed_values = {
+        ('cell_display_mode',): {
+            'NUMBER': "number",
+            'BAR': "bar",
+        },
     }
 
     validations = {
@@ -92,6 +96,7 @@ class TableWidgetRequest(ModelNormal):
             'alias': (str,),  # noqa: E501
             'apm_query': (LogQueryDefinition,),  # noqa: E501
             'apm_stats_query': (ApmStatsQueryDefinition,),  # noqa: E501
+            'cell_display_mode': ([str],),  # noqa: E501
             'conditional_formats': ([WidgetConditionalFormat],),  # noqa: E501
             'event_query': (EventQueryDefinition,),  # noqa: E501
             'limit': (int,),  # noqa: E501
@@ -114,6 +119,7 @@ class TableWidgetRequest(ModelNormal):
         'alias': 'alias',  # noqa: E501
         'apm_query': 'apm_query',  # noqa: E501
         'apm_stats_query': 'apm_stats_query',  # noqa: E501
+        'cell_display_mode': 'cell_display_mode',  # noqa: E501
         'conditional_formats': 'conditional_formats',  # noqa: E501
         'event_query': 'event_query',  # noqa: E501
         'limit': 'limit',  # noqa: E501
@@ -176,6 +182,7 @@ class TableWidgetRequest(ModelNormal):
             alias (str): The column name (defaults to the metric name).. [optional]  # noqa: E501
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
             apm_stats_query (ApmStatsQueryDefinition): [optional]  # noqa: E501
+            cell_display_mode ([str]): A list of display modes for each table cell.. [optional]  # noqa: E501
             conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
             event_query (EventQueryDefinition): [optional]  # noqa: E501
             limit (int): For metric queries, the number of lines to show in the table. Only one request should have this property.. [optional]  # noqa: E501

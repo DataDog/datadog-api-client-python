@@ -63,6 +63,11 @@ class TableWidgetDefinition(ModelNormal):
     """
 
     allowed_values = {
+        ('has_search_bar',): {
+            'ALWAYS': "always",
+            'NEVER': "never",
+            'AUTO': "auto",
+        },
     }
 
     validations = {
@@ -87,6 +92,7 @@ class TableWidgetDefinition(ModelNormal):
             'requests': ([TableWidgetRequest],),  # noqa: E501
             'type': (TableWidgetDefinitionType,),  # noqa: E501
             'custom_links': ([WidgetCustomLink],),  # noqa: E501
+            'has_search_bar': (str,),  # noqa: E501
             'time': (WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
             'title_align': (WidgetTextAlign,),  # noqa: E501
@@ -102,6 +108,7 @@ class TableWidgetDefinition(ModelNormal):
         'requests': 'requests',  # noqa: E501
         'type': 'type',  # noqa: E501
         'custom_links': 'custom_links',  # noqa: E501
+        'has_search_bar': 'has_search_bar',  # noqa: E501
         'time': 'time',  # noqa: E501
         'title': 'title',  # noqa: E501
         'title_align': 'title_align',  # noqa: E501
@@ -159,6 +166,7 @@ class TableWidgetDefinition(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
+            has_search_bar (str): Controls the display of the search bar.. [optional] if omitted the server will use the default value of "auto"  # noqa: E501
             time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of your widget.. [optional]  # noqa: E501
             title_align (WidgetTextAlign): [optional]  # noqa: E501
