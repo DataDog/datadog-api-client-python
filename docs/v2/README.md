@@ -122,10 +122,12 @@ Class | Method | HTTP request | Description
 *LogsArchivesApi* | [**create_logs_archive**](LogsArchivesApi.md#create_logs_archive) | **POST** /api/v2/logs/config/archives | Create an archive
 *LogsArchivesApi* | [**delete_logs_archive**](LogsArchivesApi.md#delete_logs_archive) | **DELETE** /api/v2/logs/config/archives/{archive_id} | Delete an archive
 *LogsArchivesApi* | [**get_logs_archive**](LogsArchivesApi.md#get_logs_archive) | **GET** /api/v2/logs/config/archives/{archive_id} | Get an archive
+*LogsArchivesApi* | [**get_logs_archive_order**](LogsArchivesApi.md#get_logs_archive_order) | **GET** /api/v2/logs/config/archive-order | Get archive order
 *LogsArchivesApi* | [**list_archive_read_roles**](LogsArchivesApi.md#list_archive_read_roles) | **GET** /api/v2/logs/config/archives/{archive_id}/readers | List read roles for an archive
 *LogsArchivesApi* | [**list_logs_archives**](LogsArchivesApi.md#list_logs_archives) | **GET** /api/v2/logs/config/archives | Get all archives
 *LogsArchivesApi* | [**remove_role_from_archive**](LogsArchivesApi.md#remove_role_from_archive) | **DELETE** /api/v2/logs/config/archives/{archive_id}/readers | Revoke role from an archive
 *LogsArchivesApi* | [**update_logs_archive**](LogsArchivesApi.md#update_logs_archive) | **PUT** /api/v2/logs/config/archives/{archive_id} | Update an archive
+*LogsArchivesApi* | [**update_logs_archive_order**](LogsArchivesApi.md#update_logs_archive_order) | **PUT** /api/v2/logs/config/archive-order | Update archive order
 *RolesApi* | [**add_permission_to_role**](RolesApi.md#add_permission_to_role) | **POST** /api/v2/roles/{role_id}/permissions | Grant permission to a role
 *RolesApi* | [**add_user_to_role**](RolesApi.md#add_user_to_role) | **POST** /api/v2/roles/{role_id}/users | Add a user to a role
 *RolesApi* | [**create_role**](RolesApi.md#create_role) | **POST** /api/v2/roles | Create role
@@ -213,6 +215,10 @@ Class | Method | HTTP request | Description
  - [LogsArchiveIntegrationAzure](LogsArchiveIntegrationAzure.md)
  - [LogsArchiveIntegrationGCS](LogsArchiveIntegrationGCS.md)
  - [LogsArchiveIntegrationS3](LogsArchiveIntegrationS3.md)
+ - [LogsArchiveOrder](LogsArchiveOrder.md)
+ - [LogsArchiveOrderAttributes](LogsArchiveOrderAttributes.md)
+ - [LogsArchiveOrderDefinition](LogsArchiveOrderDefinition.md)
+ - [LogsArchiveOrderDefinitionType](LogsArchiveOrderDefinitionType.md)
  - [LogsArchiveState](LogsArchiveState.md)
  - [LogsArchives](LogsArchives.md)
  - [LogsCompute](LogsCompute.md)

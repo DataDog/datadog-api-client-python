@@ -69,3 +69,16 @@ Feature: Logs Archives
     And body {}
     When the request is sent
     Then the response status is 204 OK
+
+  @generated @skip
+  Scenario: Get archive order returns "OK" response
+    Given new "GetLogsArchiveOrder" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Update archive order returns "OK" response
+    Given new "UpdateLogsArchiveOrder" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK

@@ -56,6 +56,10 @@ from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArc
 from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchiveIntegrationAzure
 from datadog_api_client.v2.model.logs_archive_integration_gcs import LogsArchiveIntegrationGCS
 from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
+from datadog_api_client.v2.model.logs_archive_order import LogsArchiveOrder
+from datadog_api_client.v2.model.logs_archive_order_attributes import LogsArchiveOrderAttributes
+from datadog_api_client.v2.model.logs_archive_order_definition import LogsArchiveOrderDefinition
+from datadog_api_client.v2.model.logs_archive_order_definition_type import LogsArchiveOrderDefinitionType
 from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
 from datadog_api_client.v2.model.logs_archives import LogsArchives
 from datadog_api_client.v2.model.logs_compute import LogsCompute
