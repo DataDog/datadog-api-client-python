@@ -289,6 +289,7 @@ Class | Method | HTTP request | Description
  - [ApiKey](ApiKey.md)
  - [ApiKeyListResponse](ApiKeyListResponse.md)
  - [ApiKeyResponse](ApiKeyResponse.md)
+ - [ApmStatsQueryColumnType](ApmStatsQueryColumnType.md)
  - [ApmStatsQueryDefinition](ApmStatsQueryDefinition.md)
  - [ApmStatsQueryRowType](ApmStatsQueryRowType.md)
  - [ApplicationKey](ApplicationKey.md)
