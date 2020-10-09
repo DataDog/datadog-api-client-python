@@ -79,6 +79,7 @@ class LogsArchiveCreateRequestAttributes(ModelNormal):
             'destination': (LogsArchiveCreateRequestDestination,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'query': (str,),  # noqa: E501
+            'rehydration_tags': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -90,6 +91,7 @@ class LogsArchiveCreateRequestAttributes(ModelNormal):
         'destination': 'destination',  # noqa: E501
         'name': 'name',  # noqa: E501
         'query': 'query',  # noqa: E501
+        'rehydration_tags': 'rehydration_tags',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -143,6 +145,7 @@ class LogsArchiveCreateRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            rehydration_tags ([str]): An array of tags to add to rehydrated logs from an archive.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
