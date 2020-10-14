@@ -81,8 +81,8 @@ class UserCreateData(ModelNormal):
         lazy_import()
         return {
             'attributes': (UserCreateAttributes,),  # noqa: E501
-            'relationships': (UserRelationships,),  # noqa: E501
             'type': (UsersType,),  # noqa: E501
+            'relationships': (UserRelationships,),  # noqa: E501
         }
 
     @cached_property
@@ -92,8 +92,8 @@ class UserCreateData(ModelNormal):
 
     attribute_map = {
         'attributes': 'attributes',  # noqa: E501
-        'relationships': 'relationships',  # noqa: E501
         'type': 'type',  # noqa: E501
+        'relationships': 'relationships',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -108,8 +108,12 @@ class UserCreateData(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, attributes, type, *args, **kwargs):  # noqa: E501
         """UserCreateData - a model defined in OpenAPI
+
+        Args:
+            attributes (UserCreateAttributes):
+            type (UsersType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -142,9 +146,7 @@ class UserCreateData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (UserCreateAttributes): [optional]  # noqa: E501
             relationships (UserRelationships): [optional]  # noqa: E501
-            type (UsersType): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -170,6 +172,8 @@ class UserCreateData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.attributes = attributes
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

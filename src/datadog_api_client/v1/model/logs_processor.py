@@ -45,6 +45,7 @@ def lazy_import():
     from datadog_api_client.v1.model.logs_trace_remapper_type import LogsTraceRemapperType
     from datadog_api_client.v1.model.logs_url_parser import LogsURLParser
     from datadog_api_client.v1.model.logs_user_agent_parser import LogsUserAgentParser
+    from datadog_api_client.v1.model.target_format_type import TargetFormatType
     globals()['LogsArithmeticProcessor'] = LogsArithmeticProcessor
     globals()['LogsAttributeRemapper'] = LogsAttributeRemapper
     globals()['LogsCategoryProcessor'] = LogsCategoryProcessor
@@ -64,6 +65,7 @@ def lazy_import():
     globals()['LogsTraceRemapperType'] = LogsTraceRemapperType
     globals()['LogsURLParser'] = LogsURLParser
     globals()['LogsUserAgentParser'] = LogsUserAgentParser
+    globals()['TargetFormatType'] = TargetFormatType
 
 
 class LogsProcessor(ModelComposed):
@@ -190,7 +192,8 @@ class LogsProcessor(ModelComposed):
             override_on_conflict (bool): Override or not the target element if already set,. [optional] if omitted the server will use the default value of False  # noqa: E501
             preserve_source (bool): Remove or preserve the remapped source element.. [optional] if omitted the server will use the default value of False  # noqa: E501
             source_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
-            target_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
+            target_format (TargetFormatType): [optional]  # noqa: E501
+            target_type (str): Defines if the final attribute or tag name is from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
             normalize_ending_slashes (bool, none_type): Normalize the ending slashes or not.. [optional] if omitted the server will use the default value of False  # noqa: E501
             is_encoded (bool): Define if the source attribute is URL encoded or not.. [optional] if omitted the server will use the default value of False  # noqa: E501
             is_replace_missing (bool): If true, it replaces all missing attributes of &#x60;template&#x60; by an empty string. If &#x60;false&#x60; (default), skips the operation for missing attributes.. [optional] if omitted the server will use the default value of False  # noqa: E501

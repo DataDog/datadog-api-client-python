@@ -1,3 +1,3 @@
 # do not import all apis into this module because that uses a lot of memory and stack frames
 # if you need the ability to import all apis from one package, import them with
-# from {{packageName}.apis import DefaultApi, PetApi
+# from datadog_api_client.v1.apis import AWSIntegrationApi

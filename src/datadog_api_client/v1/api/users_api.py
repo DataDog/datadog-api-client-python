@@ -402,9 +402,9 @@ class UsersApi(object):
             self,
             **kwargs
         ):
-            """Get all users  # noqa: E501
+            """List all users  # noqa: E501
 
-            Get all users for your organization.  # noqa: E501
+            List all users for your organization.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 

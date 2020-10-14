@@ -25,6 +25,7 @@ Create a detection rule.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
@@ -44,22 +45,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -88,14 +81,16 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         ),
         queries=[
             SecurityMonitoringRuleQueryCreate(
+                aggregation=SecurityMonitoringRuleQueryAggregation("count"),
                 distinct_fields=[
                     "distinct_fields_example",
                 ],
                 group_by_fields=[
                     "group_by_fields_example",
                 ],
+                metric="metric_example",
                 name="name_example",
-                query="query_example",
+                query="a < 3",
             ),
         ],
         tags=[
@@ -153,6 +148,7 @@ Delete an existing rule. Default rules cannot be deleted.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
@@ -170,22 +166,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -243,6 +231,7 @@ Get a rule's details.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
@@ -261,22 +250,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -334,6 +315,7 @@ List rules.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
@@ -352,22 +334,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -428,6 +402,7 @@ The list endpoint returns security signals that match a search query. Both this 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
@@ -447,22 +422,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -532,6 +499,7 @@ Returns security signals that match a search query. Both this endpoint and the G
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
@@ -551,22 +519,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -637,6 +597,7 @@ Update an existing rule. When updating `cases`, `queries` or `options`, the whol
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
+import os
 import time
 import datadog_api_client.v2
 from datadog_api_client.v2.api import security_monitoring_api
@@ -656,22 +617,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -701,12 +654,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         ),
         queries=[
             SecurityMonitoringRuleQuery(
+                aggregation=SecurityMonitoringRuleQueryAggregation("count"),
                 distinct_fields=[
                     "distinct_fields_example",
                 ],
                 group_by_fields=[
                     "group_by_fields_example",
                 ],
+                metric="metric_example",
                 name="name_example",
                 query="query_example",
             ),

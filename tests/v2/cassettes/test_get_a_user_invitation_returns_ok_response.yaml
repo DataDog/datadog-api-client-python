@@ -1,6 +1,7 @@
 interactions:
 - request:
-    body: '{"data": {"type": "users", "attributes": {"email": "datadog-api-client-python-test_get_a_user_invitation_returns_ok_response-1598520748.968827@datadoghq.com"}}}'
+    body: '{"data": {"attributes": {"email": "datadog-api-client-python-test_get_a_user_invitation_returns_ok_response-1600941683.764739@datadoghq.com"},
+      "type": "users"}}'
     headers:
       Accept:
       - application/json
@@ -9,12 +10,18 @@ interactions:
       Dd-Operation-Id:
       - CreateUser
       User-Agent:
-      - datadog-api-client-python/0.1.dev43+dirty (python 3.8.5; os Darwin; arch x86_64)
+      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '16995879611970580225'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '2589705253696363900'
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"39f617aa-e848-11ea-aa53-07718bb4d850","attributes":{"name":null,"handle":"datadog-api-client-python-test_get_a_user_invitation_returns_ok_response-1598520748.968827@datadoghq.com","created_at":"2020-08-27T09:32:29.592341+00:00","email":"datadog-api-client-python-test_get_a_user_invitation_returns_ok_response-1598520748.968827@datadoghq.com","icon":"https://secure.gravatar.com/avatar/722ef1dabe46892faed401200d14ae00?s=48&d=retro","title":null,"verified":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
+      string: '{"data":{"type":"users","id":"e769ab12-fe4c-11ea-b268-3301e530c7e0","attributes":{"name":null,"handle":"datadog-api-client-python-test_get_a_user_invitation_returns_ok_response-1600941683.764739@datadoghq.com","created_at":"2020-09-24T10:01:24.163955+00:00","email":"datadog-api-client-python-test_get_a_user_invitation_returns_ok_response-1600941683.764739@datadoghq.com","icon":"https://secure.gravatar.com/avatar/0a9371c74fd40af3e8a5d64d2a70c3b3?s=48&d=retro","title":null,"verified":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       Cache-Control:
       - no-cache
@@ -29,28 +36,28 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Thu, 27 Aug 2020 09:32:29 GMT
+      - Thu, 24 Sep 2020 10:01:24 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 03-Sep-2020 09:32:29 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:24 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - ZTMib3S/rZeXw/RhaeaehRILC7QJAaERfyf3m4/am8FN44e9rxbkPcmk4YzKBISj
+      - ZvbT5Hkp4NkmoFNp2kmSQo90Sobu/hiarT/8VcAY1HhBaO2tDabc9sAn9xbJsaIr
       X-DD-VERSION:
-      - '35.2942348'
+      - '35.3086554'
       X-Frame-Options:
       - SAMEORIGIN
     status:
       code: 201
       message: Created
 - request:
-    body: '{"data": [{"type": "user_invitations", "relationships": {"user": {"data":
-      {"id": "39f617aa-e848-11ea-aa53-07718bb4d850", "type": "users"}}}}]}'
+    body: '{"data": [{"relationships": {"user": {"data": {"id": "e769ab12-fe4c-11ea-b268-3301e530c7e0",
+      "type": "users"}}}, "type": "user_invitations"}]}'
     headers:
       Accept:
       - application/json
@@ -59,12 +66,18 @@ interactions:
       Dd-Operation-Id:
       - SendInvitations
       User-Agent:
-      - datadog-api-client-python/0.1.dev43+dirty (python 3.8.5; os Darwin; arch x86_64)
+      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '11896051179821405586'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '2589705253696363900'
     method: POST
     uri: https://api.datadoghq.com/api/v2/user_invitations
   response:
     body:
-      string: '{"data":[{"type":"user_invitations","id":"3a2ecbfe-e848-11ea-aa53-13f873fd2605","attributes":{"uuid":"3a2ecbfe-e848-11ea-aa53-13f873fd2605","login_method":null,"invite_type":"openid_invite","created_at":"2020-08-27T09:32:29.965134+00:00","expires_at":"2020-08-29T09:32:29.875516+00:00"},"relationships":{"user":{"data":{"type":"users","id":"39f617aa-e848-11ea-aa53-07718bb4d850"}}}}]}'
+      string: '{"data":[{"type":"user_invitations","id":"e79a33d6-fe4c-11ea-b268-234ac6ba062a","attributes":{"uuid":"e79a33d6-fe4c-11ea-b268-234ac6ba062a","login_method":null,"invite_type":"openid_invite","created_at":"2020-09-24T10:01:24.482962+00:00","expires_at":"2020-09-26T10:01:24.389380+00:00"},"relationships":{"user":{"data":{"type":"users","id":"e769ab12-fe4c-11ea-b268-3301e530c7e0"}}}}]}'
     headers:
       Cache-Control:
       - no-cache
@@ -79,20 +92,20 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Thu, 27 Aug 2020 09:32:31 GMT
+      - Thu, 24 Sep 2020 10:01:24 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 03-Sep-2020 09:32:29 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:24 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - NVN1vUIP943yBv5BrKvNkq9LhGENimQCGx913v3GQzIJuXIMEzcrTlr1CpALPFWv
+      - 1P9wTBqAbIBgrelvLhZC6yMU4dh3hoPJxqgVxGKRZAP7KGr8YPkzxcmHF9q0g7sB
       X-DD-VERSION:
-      - '35.2942348'
+      - '35.3086554'
       X-Frame-Options:
       - SAMEORIGIN
     status:
@@ -108,12 +121,18 @@ interactions:
       Dd-Operation-Id:
       - GetInvitation
       User-Agent:
-      - datadog-api-client-python/0.1.dev43+dirty (python 3.8.5; os Darwin; arch x86_64)
+      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '6959190372727679742'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '2589705253696363900'
     method: GET
-    uri: https://api.datadoghq.com/api/v2/user_invitations/3a2ecbfe-e848-11ea-aa53-13f873fd2605
+    uri: https://api.datadoghq.com/api/v2/user_invitations/e79a33d6-fe4c-11ea-b268-234ac6ba062a
   response:
     body:
-      string: '{"data":{"type":"user_invitations","id":"3a2ecbfe-e848-11ea-aa53-13f873fd2605","attributes":{"uuid":"3a2ecbfe-e848-11ea-aa53-13f873fd2605","login_method":null,"invite_type":"openid_invite","created_at":"2020-08-27T09:32:29.965134+00:00","expires_at":"2020-08-29T09:32:29.875516+00:00"},"relationships":{"user":{"data":{"type":"users","id":"39f617aa-e848-11ea-aa53-07718bb4d850"}}}}}'
+      string: '{"data":{"type":"user_invitations","id":"e79a33d6-fe4c-11ea-b268-234ac6ba062a","attributes":{"uuid":"e79a33d6-fe4c-11ea-b268-234ac6ba062a","login_method":null,"invite_type":"openid_invite","created_at":"2020-09-24T10:01:24.482962+00:00","expires_at":"2020-09-26T10:01:24.389380+00:00"},"relationships":{"user":{"data":{"type":"users","id":"e769ab12-fe4c-11ea-b268-3301e530c7e0"}}}}}'
     headers:
       Cache-Control:
       - no-cache
@@ -128,11 +147,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Thu, 27 Aug 2020 09:32:31 GMT
+      - Thu, 24 Sep 2020 10:01:24 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 03-Sep-2020 09:32:31 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:24 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -141,9 +160,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - RxKcx0U1IrcJ2sL0co6YTKQdWxTKBjGeO6Rh6plfmXfsHGMiZ332nvRBeUlqIMht
+      - gKyXo3ULf4VOW0DRCpK6x6wW7WjimdWLkpQ5lRR6vSBvVWmlphnibJv0tavEU2N8
       X-DD-VERSION:
-      - '35.2942348'
+      - '35.3086554'
       X-Frame-Options:
       - SAMEORIGIN
     status:

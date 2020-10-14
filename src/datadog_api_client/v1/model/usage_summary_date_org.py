@@ -87,6 +87,7 @@ class UsageSummaryDateOrg(ModelNormal):
             'indexed_events_count_sum': (int,),  # noqa: E501
             'infra_host_top99p': (int,),  # noqa: E501
             'ingested_events_bytes_sum': (int,),  # noqa: E501
+            'mobile_rum_session_count_sum': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'netflow_indexed_events_count_sum': (int,),  # noqa: E501
             'npm_host_top99p': (int,),  # noqa: E501
@@ -121,6 +122,7 @@ class UsageSummaryDateOrg(ModelNormal):
         'indexed_events_count_sum': 'indexed_events_count_sum',  # noqa: E501
         'infra_host_top99p': 'infra_host_top99p',  # noqa: E501
         'ingested_events_bytes_sum': 'ingested_events_bytes_sum',  # noqa: E501
+        'mobile_rum_session_count_sum': 'mobile_rum_session_count_sum',  # noqa: E501
         'name': 'name',  # noqa: E501
         'netflow_indexed_events_count_sum': 'netflow_indexed_events_count_sum',  # noqa: E501
         'npm_host_top99p': 'npm_host_top99p',  # noqa: E501
@@ -195,12 +197,13 @@ class UsageSummaryDateOrg(ModelNormal):
             indexed_events_count_sum (int): Shows the sum of all log events indexed over all hours in the current date for the given org.. [optional]  # noqa: E501
             infra_host_top99p (int): Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
             ingested_events_bytes_sum (int): Shows the sum of all log bytes ingested over all hours in the current date for the given org.. [optional]  # noqa: E501
+            mobile_rum_session_count_sum (int): Shows the sum of all mobile RUM Sessions over all hours in the current date for the given org.. [optional]  # noqa: E501
             name (str): The organization name.. [optional]  # noqa: E501
             netflow_indexed_events_count_sum (int): Shows the sum of all Network flows indexed over all hours in the current date for the given org.. [optional]  # noqa: E501
             npm_host_top99p (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
             profiling_host_top99p (int): Shows the 99th percentile of all profiled hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
             public_id (str): The organization public id.. [optional]  # noqa: E501
-            rum_session_count_sum (int): Shows the sum of all RUM Sessions over all hours in the current date for the given org.. [optional]  # noqa: E501
+            rum_session_count_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current date for the given org.. [optional]  # noqa: E501
             synthetics_browser_check_calls_count_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current date for the given org.. [optional]  # noqa: E501
             synthetics_check_calls_count_sum (int): Shows the sum of all Synthetic API tests over all hours in the current date for the given org.. [optional]  # noqa: E501
             trace_search_indexed_events_count_sum (int): Shows the sum of all analyzed spans indexed over all hours in the current date for the given org.. [optional]  # noqa: E501

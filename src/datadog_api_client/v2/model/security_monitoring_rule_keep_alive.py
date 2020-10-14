@@ -56,6 +56,8 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
             'THIRTY_MINUTES': 1800,
             'ONE_HOUR': 3600,
             'TWO_HOURS': 7200,
+            'THREE_HOURS': 10800,
+            'SIX_HOURS': 21600,
         },
     }
 
@@ -103,7 +105,7 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
         """SecurityMonitoringRuleKeepAlive - a model defined in OpenAPI
 
         Args:
-            value (int): Once a signal is generated, the signal will remain “open” if a case is matched at least once within this keep alive window.., must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200, ]  # noqa: E501
+            value (int): Once a signal is generated, the signal will remain “open” if a case is matched at least once within this keep alive window.., must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200, 10800, 21600, ]  # noqa: E501
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

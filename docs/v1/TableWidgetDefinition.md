@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **requests** | [**[TableWidgetRequest]**](TableWidgetRequest.md) | Widget definition. | 
 **type** | [**TableWidgetDefinitionType**](TableWidgetDefinitionType.md) |  | 
 **custom_links** | [**[WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
+**has_search_bar** | [**TableWidgetHasSearchBar**](TableWidgetHasSearchBar.md) |  | [optional] 
 **time** | [**WidgetTime**](WidgetTime.md) |  | [optional] 
 **title** | **str** | Title of your widget. | [optional] 
 **title_align** | [**WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 

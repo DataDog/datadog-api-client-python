@@ -66,9 +66,6 @@ class Event(ModelNormal):
         ('title',): {
             'max_length': 100,
         },
-        ('aggregation_key',): {
-            'max_length': 100,
-        },
     }
 
     additional_properties_type = None
@@ -87,9 +84,6 @@ class Event(ModelNormal):
         """
         lazy_import()
         return {
-            'text': (str,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'aggregation_key': (str,),  # noqa: E501
             'alert_type': (EventAlertType,),  # noqa: E501
             'date_happened': (int,),  # noqa: E501
             'device_name': (str,),  # noqa: E501
@@ -97,9 +91,10 @@ class Event(ModelNormal):
             'id': (int,),  # noqa: E501
             'payload': (str,),  # noqa: E501
             'priority': (EventPriority,),  # noqa: E501
-            'related_event_id': (int,),  # noqa: E501
             'source_type_name': (str,),  # noqa: E501
             'tags': ([str],),  # noqa: E501
+            'text': (str,),  # noqa: E501
+            'title': (str,),  # noqa: E501
             'url': (str,),  # noqa: E501
         }
 
@@ -109,9 +104,6 @@ class Event(ModelNormal):
 
 
     attribute_map = {
-        'text': 'text',  # noqa: E501
-        'title': 'title',  # noqa: E501
-        'aggregation_key': 'aggregation_key',  # noqa: E501
         'alert_type': 'alert_type',  # noqa: E501
         'date_happened': 'date_happened',  # noqa: E501
         'device_name': 'device_name',  # noqa: E501
@@ -119,9 +111,10 @@ class Event(ModelNormal):
         'id': 'id',  # noqa: E501
         'payload': 'payload',  # noqa: E501
         'priority': 'priority',  # noqa: E501
-        'related_event_id': 'related_event_id',  # noqa: E501
         'source_type_name': 'source_type_name',  # noqa: E501
         'tags': 'tags',  # noqa: E501
+        'text': 'text',  # noqa: E501
+        'title': 'title',  # noqa: E501
         'url': 'url',  # noqa: E501
     }
 
@@ -137,12 +130,8 @@ class Event(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, text, title, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """Event - a model defined in OpenAPI
-
-        Args:
-            text (str): The body of the event. Limited to 4000 characters. The text supports markdown. Use &#x60;msg_text&#x60; with the Datadog Ruby library.
-            title (str): The event title. Limited to 100 characters. Use &#x60;msg_title&#x60; with the Datadog Ruby library.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -175,7 +164,6 @@ class Event(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregation_key (str): An arbitrary string to use for aggregation. Limited to 100 characters. If you specify a key, all events using that key are grouped together in the Event Stream.. [optional]  # noqa: E501
             alert_type (EventAlertType): [optional]  # noqa: E501
             date_happened (int): POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days.. [optional]  # noqa: E501
             device_name (str): A device name.. [optional]  # noqa: E501
@@ -183,9 +171,10 @@ class Event(ModelNormal):
             id (int): Integer ID of the event.. [optional]  # noqa: E501
             payload (str): Payload of the event.. [optional]  # noqa: E501
             priority (EventPriority): [optional]  # noqa: E501
-            related_event_id (int): ID of the parent event. Must be sent as an integer (i.e. no quotes).. [optional]  # noqa: E501
             source_type_name (str): The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]  # noqa: E501
             tags ([str]): A list of tags to apply to the event.. [optional]  # noqa: E501
+            text (str): The body of the event. Limited to 4000 characters. The text supports markdown. Use &#x60;msg_text&#x60; with the Datadog Ruby library.. [optional]  # noqa: E501
+            title (str): The event title. Limited to 100 characters. Use &#x60;msg_title&#x60; with the Datadog Ruby library.. [optional]  # noqa: E501
             url (str): URL of the event.. [optional]  # noqa: E501
         """
 
@@ -212,8 +201,6 @@ class Event(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.text = text
-        self.title = title
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
