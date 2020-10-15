@@ -97,7 +97,7 @@ class TableWidgetCellDisplayMode(ModelSimple):
         """TableWidgetCellDisplayMode - a model defined in OpenAPI
 
         Args:
-            value (str): Define a display mode for the table cell.. if omitted the server will use the default value of "number", must be one of ["number", "bar", ]  # noqa: E501
+            value (str): Define a display mode for the table cell.., must be one of ["number", "bar", ]  # noqa: E501
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
