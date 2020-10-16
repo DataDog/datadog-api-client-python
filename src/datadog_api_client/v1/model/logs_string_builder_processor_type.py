@@ -92,13 +92,16 @@ class LogsStringBuilderProcessorType(ModelSimple):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, value, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """LogsStringBuilderProcessorType - a model defined in OpenAPI
 
+        Note that value can be passed either in args or in kwargs, but not in both.
+
         Args:
-            value (str): Type of logs string builder processor.. if omitted the server will use the default value of "string-builder-processor", must be one of ["string-builder-processor", ]  # noqa: E501
+            args[0] (str): Type of logs string builder processor.. if omitted defaults to "string-builder-processor", must be one of ["string-builder-processor", ]  # noqa: E501
 
         Keyword Args:
+            value (str): Type of logs string builder processor.. if omitted defaults to "string-builder-processor", must be one of ["string-builder-processor", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -130,6 +133,14 @@ class LogsStringBuilderProcessorType(ModelSimple):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
         """
+
+        if 'value' in kwargs:
+            value = kwargs.pop('value')
+        elif args:
+            args = list(args)
+            value = args.pop(0)
+        else:
+            value = "string-builder-processor"
 
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
