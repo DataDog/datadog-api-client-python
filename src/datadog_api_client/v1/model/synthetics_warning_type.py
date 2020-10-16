@@ -95,8 +95,13 @@ class SyntheticsWarningType(ModelSimple):
     def __init__(self, *args, **kwargs):
         """SyntheticsWarningType - a model defined in OpenAPI
 
+        Note that value can be passed either in args or in kwargs, but not in both.
+
+        Args:
+            args[0] (str): User locator used.. if omitted defaults to "user_locator", must be one of ["user_locator", ]  # noqa: E501
+
         Keyword Args:
-            value (str): User locator used.. defaults to "user_locator", must be one of ["user_locator", ]  # noqa: E501
+            value (str): User locator used.. if omitted defaults to "user_locator", must be one of ["user_locator", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -136,6 +141,7 @@ class SyntheticsWarningType(ModelSimple):
             value = args.pop(0)
         else:
             value = "user_locator"
+
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())

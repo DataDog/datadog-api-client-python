@@ -93,13 +93,16 @@ class LogsComputeType(ModelSimple):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, value, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """LogsComputeType - a model defined in OpenAPI
 
+        Note that value can be passed either in args or in kwargs, but not in both.
+
         Args:
-            value (str): The type of compute. if omitted the server will use the default value of "total", must be one of ["timeseries", "total", ]  # noqa: E501
+            args[0] (str): The type of compute. if omitted defaults to "total", must be one of ["timeseries", "total", ]  # noqa: E501
 
         Keyword Args:
+            value (str): The type of compute. if omitted defaults to "total", must be one of ["timeseries", "total", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -131,6 +134,14 @@ class LogsComputeType(ModelSimple):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
         """
+
+        if 'value' in kwargs:
+            value = kwargs.pop('value')
+        elif args:
+            args = list(args)
+            value = args.pop(0)
+        else:
+            value = "total"
 
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)

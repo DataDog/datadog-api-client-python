@@ -95,13 +95,16 @@ class EventAlertType(ModelSimple):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, value, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """EventAlertType - a model defined in OpenAPI
 
+        Note that value can be passed either in args or in kwargs, but not in both.
+
         Args:
-            value (str): If an alert event is enabled, set its type. For example, &#x60;error&#x60;, &#x60;warning&#x60;, &#x60;info&#x60;, and &#x60;success&#x60;.., must be one of ["error", "warning", "info", "success", ]  # noqa: E501
+            args[0] (str): If an alert event is enabled, set its type. For example, &#x60;error&#x60;, &#x60;warning&#x60;, &#x60;info&#x60;, and &#x60;success&#x60;.., must be one of ["error", "warning", "info", "success", ]  # noqa: E501
 
         Keyword Args:
+            value (str): If an alert event is enabled, set its type. For example, &#x60;error&#x60;, &#x60;warning&#x60;, &#x60;info&#x60;, and &#x60;success&#x60;.., must be one of ["error", "warning", "info", "success", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -133,6 +136,18 @@ class EventAlertType(ModelSimple):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
         """
+
+        if 'value' in kwargs:
+            value = kwargs.pop('value')
+        elif args:
+            args = list(args)
+            value = args.pop(0)
+        else:
+            raise ApiTypeError(
+                "value is required, but not passed in args or kwargs and doesn't have default",
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
 
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)

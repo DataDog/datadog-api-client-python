@@ -94,13 +94,16 @@ class ApmStatsQueryRowType(ModelSimple):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, value, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """ApmStatsQueryRowType - a model defined in OpenAPI
 
+        Note that value can be passed either in args or in kwargs, but not in both.
+
         Args:
-            value (str): The level of detail for the request.., must be one of ["service", "resource", "span", ]  # noqa: E501
+            args[0] (str): The level of detail for the request.., must be one of ["service", "resource", "span", ]  # noqa: E501
 
         Keyword Args:
+            value (str): The level of detail for the request.., must be one of ["service", "resource", "span", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -132,6 +135,18 @@ class ApmStatsQueryRowType(ModelSimple):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
         """
+
+        if 'value' in kwargs:
+            value = kwargs.pop('value')
+        elif args:
+            args = list(args)
+            value = args.pop(0)
+        else:
+            raise ApiTypeError(
+                "value is required, but not passed in args or kwargs and doesn't have default",
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
 
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
