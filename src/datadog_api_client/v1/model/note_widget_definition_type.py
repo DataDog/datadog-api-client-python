@@ -92,13 +92,16 @@ class NoteWidgetDefinitionType(ModelSimple):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, value, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """NoteWidgetDefinitionType - a model defined in OpenAPI
 
+        Note that value can be passed either in args or in kwargs, but not in both.
+
         Args:
-            value (str): Type of the note widget.. if omitted the server will use the default value of "note", must be one of ["note", ]  # noqa: E501
+            args[0] (str): Type of the note widget.. if omitted defaults to "note", must be one of ["note", ]  # noqa: E501
 
         Keyword Args:
+            value (str): Type of the note widget.. if omitted defaults to "note", must be one of ["note", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -130,6 +133,14 @@ class NoteWidgetDefinitionType(ModelSimple):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
         """
+
+        if 'value' in kwargs:
+            value = kwargs.pop('value')
+        elif args:
+            args = list(args)
+            value = args.pop(0)
+        else:
+            value = "note"
 
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)

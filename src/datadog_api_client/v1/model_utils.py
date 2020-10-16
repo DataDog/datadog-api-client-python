@@ -311,6 +311,14 @@ class ModelSimple(OpenApiModel):
             [name]
         )
 
+    def __contains__(self, name):
+        """this allows us to use `in` operator: `'attr' in instance`"""
+        if name in self.required_properties:
+            return name in self.__dict__
+
+        return name in self.__dict__['_data_store']
+
+
     def to_str(self):
         """Returns the string representation of the model"""
         return str(self.value)
@@ -358,6 +366,14 @@ class ModelNormal(OpenApiModel):
                 type(self).__name__, name),
             [name]
         )
+
+    def __contains__(self, name):
+        """this allows us to use `in` operator: `'attr' in instance`"""
+        if name in self.required_properties:
+            return name in self.__dict__
+
+        return name in self.__dict__['_data_store']
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -482,6 +498,23 @@ class ModelComposed(OpenApiModel):
                 "the same".format(name, type(self).__name__),
                 path_to_item
             )
+
+    def __contains__(self, name):
+        """this allows us to use `in` operator: `'attr' in instance`"""
+
+        if name in self.required_properties:
+            return name in self.__dict__
+
+        model_instances = self._var_name_to_model_instances.get(
+            name, self._additional_properties_model_instances)
+
+        if model_instances:
+            for model_instance in model_instances:
+                if name in model_instance._data_store:
+                    return True
+
+        return False
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""
