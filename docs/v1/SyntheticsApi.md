@@ -176,6 +176,19 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                     username="username_example",
                 ),
                 body="body_example",
+                certificate=SyntheticsTestRequestCertificate(
+                    cert=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                    key=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                ),
+                dns_server="dns_server_example",
                 headers=SyntheticsTestHeaders(
                     "key": "key_example",
                 ),
@@ -1526,6 +1539,19 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                     username="username_example",
                 ),
                 body="body_example",
+                certificate=SyntheticsTestRequestCertificate(
+                    cert=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                    key=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                ),
+                dns_server="dns_server_example",
                 headers=SyntheticsTestHeaders(
                     "key": "key_example",
                 ),

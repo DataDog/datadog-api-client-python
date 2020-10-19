@@ -569,6 +569,8 @@ Class | Method | HTTP request | Description
  - [SyntheticsTestPauseStatus](SyntheticsTestPauseStatus.md)
  - [SyntheticsTestProcessStatus](SyntheticsTestProcessStatus.md)
  - [SyntheticsTestRequest](SyntheticsTestRequest.md)
+ - [SyntheticsTestRequestCertificate](SyntheticsTestRequestCertificate.md)
+ - [SyntheticsTestRequestCertificateItem](SyntheticsTestRequestCertificateItem.md)
  - [SyntheticsTickInterval](SyntheticsTickInterval.md)
  - [SyntheticsTiming](SyntheticsTiming.md)
  - [SyntheticsTriggerCITestsResponse](SyntheticsTriggerCITestsResponse.md)
