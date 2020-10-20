@@ -34,9 +34,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.relationship_to_permission import RelationshipToPermission
-from datadog_api_client.v2.model.permissions_response import PermissionsResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -138,9 +135,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.users_response import UsersResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -242,9 +236,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.role_create_response import RoleCreateResponse
-from datadog_api_client.v2.model.role_create_request import RoleCreateRequest
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -357,7 +348,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -441,8 +431,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.role_response import RoleResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -527,8 +515,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.permissions_response import PermissionsResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -609,8 +595,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.permissions_response import PermissionsResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -695,8 +679,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.users_response import UsersResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -798,9 +780,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.roles_response import RolesResponse
-from datadog_api_client.v2.model.roles_sort import RolesSort
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -891,9 +870,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.relationship_to_permission import RelationshipToPermission
-from datadog_api_client.v2.model.permissions_response import PermissionsResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -995,9 +971,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.users_response import UsersResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -1099,9 +1072,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import roles_api
-from datadog_api_client.v2.model.role_update_request import RoleUpdateRequest
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.role_update_response import RoleUpdateResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com

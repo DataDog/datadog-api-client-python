@@ -26,8 +26,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import hosts_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.host_totals import HostTotals
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -113,8 +111,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import hosts_api
-from datadog_api_client.v1.model.host_list_response import HostListResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -214,9 +210,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import hosts_api
-from datadog_api_client.v1.model.host_mute_response import HostMuteResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.host_mute_settings import HostMuteSettings
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -316,8 +309,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import hosts_api
-from datadog_api_client.v1.model.host_mute_response import HostMuteResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com

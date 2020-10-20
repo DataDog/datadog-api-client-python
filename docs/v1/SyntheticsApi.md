@@ -39,8 +39,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -136,8 +134,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -307,7 +303,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -392,9 +387,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_delete_tests_response import SyntheticsDeleteTestsResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.synthetics_delete_tests_payload import SyntheticsDeleteTestsPayload
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -484,8 +476,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -583,8 +573,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import SyntheticsGetAPITestLatestResultsResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -686,8 +674,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.synthetics_api_test_result_full import SyntheticsAPITestResultFull
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -774,8 +760,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -860,8 +844,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_response import SyntheticsGetBrowserTestLatestResultsResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -963,8 +945,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_browser_test_result_full import SyntheticsBrowserTestResultFull
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -1051,8 +1031,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -1137,8 +1115,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -1223,7 +1199,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -1302,8 +1277,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -1384,9 +1357,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
-from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -1512,8 +1482,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -1685,8 +1653,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import synthetics_api
-from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import SyntheticsUpdateTestPauseStatusPayload
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
