@@ -32,8 +32,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -133,9 +131,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model.logs_archive import LogsArchive
-from datadog_api_client.v2.model.logs_archive_create_request import LogsArchiveCreateRequest
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -232,7 +227,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -317,8 +311,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model.logs_archive import LogsArchive
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -404,8 +396,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model.logs_archive_order import LogsArchiveOrder
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -485,8 +475,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.roles_response import RolesResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -572,8 +560,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.logs_archives import LogsArchives
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -653,8 +639,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -754,9 +738,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model.logs_archive import LogsArchive
-from datadog_api_client.v2.model.logs_archive_create_request import LogsArchiveCreateRequest
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -856,8 +837,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import logs_archives_api
-from datadog_api_client.v2.model.logs_archive_order import LogsArchiveOrder
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com

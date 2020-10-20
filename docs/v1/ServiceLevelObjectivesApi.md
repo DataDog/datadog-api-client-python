@@ -30,8 +30,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDeleteSLOResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -117,9 +115,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model.slo_list_response import SLOListResponse
-from datadog_api_client.v1.model.service_level_objective_request import ServiceLevelObjectiveRequest
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -238,8 +233,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.slo_delete_response import SLODeleteResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -336,9 +329,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model.slo_bulk_delete_response import SLOBulkDeleteResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -427,8 +417,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.slo_response import SLOResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -513,8 +501,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.slo_history_response import SLOHistoryResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -604,8 +590,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model.slo_list_response import SLOListResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -691,9 +675,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import service_level_objectives_api
-from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
-from datadog_api_client.v1.model.slo_list_response import SLOListResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com

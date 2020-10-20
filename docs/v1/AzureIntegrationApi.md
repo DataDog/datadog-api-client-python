@@ -27,8 +27,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import azure_integration_api
-from datadog_api_client.v1.model.azure_account import AzureAccount
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -123,8 +121,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import azure_integration_api
-from datadog_api_client.v1.model.azure_account import AzureAccount
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -219,8 +215,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import azure_integration_api
-from datadog_api_client.v1.model.azure_account_list_response import AzureAccountListResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -301,8 +295,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import azure_integration_api
-from datadog_api_client.v1.model.azure_account import AzureAccount
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -397,8 +389,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import azure_integration_api
-from datadog_api_client.v1.model.azure_account import AzureAccount
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com

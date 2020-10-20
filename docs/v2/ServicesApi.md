@@ -27,9 +27,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import services_api
-from datadog_api_client.v2.model.service_create_request import ServiceCreateRequest
-from datadog_api_client.v2.model.service_response import ServiceResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -137,7 +134,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import services_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -223,8 +219,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import services_api
-from datadog_api_client.v2.model.service_response import ServiceResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -322,8 +316,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import services_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.services_response import ServicesResponse
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -415,9 +407,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import services_api
-from datadog_api_client.v2.model.service_response import ServiceResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.service_update_request import ServiceUpdateRequest
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com

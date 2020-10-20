@@ -29,9 +29,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model.aws_logs_async_response import AWSLogsAsyncResponse
-from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -119,9 +116,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model.aws_logs_services_request import AWSLogsServicesRequest
-from datadog_api_client.v1.model.aws_logs_async_response import AWSLogsAsyncResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -211,8 +205,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -300,8 +292,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -389,8 +379,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model.aws_logs_services_request import AWSLogsServicesRequest
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -480,8 +468,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.aws_logs_list_response import AWSLogsListResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
@@ -562,8 +548,6 @@ import os
 from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_logs_integration_api
-from datadog_api_client.v1.model.aws_logs_list_services_response import AWSLogsListServicesResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
