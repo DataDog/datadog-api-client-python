@@ -26,11 +26,12 @@ Check if the given monitors can be deleted.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.model.check_can_delete_monitor_response import CheckCanDeleteMonitorResponse
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -114,11 +115,12 @@ Create a monitor using the specified options.  #### Monitor Types  The type of m
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -270,11 +272,12 @@ Delete the specified monitor
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -368,11 +371,12 @@ Get details about the specified monitor from your organization.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -465,11 +469,12 @@ Get details about the specified monitor from your organization.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -565,12 +570,13 @@ Edit the specified monitor.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.model.monitor_update_request import MonitorUpdateRequest
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -726,11 +732,12 @@ Validate the monitor provided in the request.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.

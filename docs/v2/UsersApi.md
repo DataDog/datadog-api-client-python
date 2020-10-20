@@ -28,12 +28,13 @@ Create a user for your organization.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model.user_create_request import UserCreateRequest
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -134,10 +135,11 @@ Disable a user. Can only be used with an application key belonging to an adminis
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -217,11 +219,12 @@ Returns a single user invitation by its UUID.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model.user_invitation_response import UserInvitationResponse
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -302,11 +305,12 @@ Get a user in the organization specified by the user’s `user_id`.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -387,11 +391,12 @@ Get a user organization. Returns the user information and all organizations join
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -472,11 +477,12 @@ Get a user permission set. Returns a list of the user’s permissions granted by
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -557,12 +563,13 @@ Get the list of all users in the organization. This list includes all users even
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -654,12 +661,13 @@ Sends emails to one or more users inviting them to join the organization.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -755,12 +763,13 @@ Edit a user. Can only be used with an application key belonging to an administra
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
 from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.

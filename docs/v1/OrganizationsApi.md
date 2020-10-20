@@ -24,12 +24,13 @@ Create a child organization.  This endpoint requires the [multi-organization acc
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import organizations_api
 from datadog_api_client.v1.model.organization_create_response import OrganizationCreateResponse
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.organization_create_body import OrganizationCreateBody
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -118,11 +119,12 @@ Get organization information.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import organizations_api
 from datadog_api_client.v1.model.organization_response import OrganizationResponse
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -203,11 +205,12 @@ List your managed organizations.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import organizations_api
 from datadog_api_client.v1.model.organization_list_response import OrganizationListResponse
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -283,12 +286,13 @@ Update your organization.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import organizations_api
 from datadog_api_client.v1.model.organization_response import OrganizationResponse
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.organization import Organization
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -405,11 +409,12 @@ There are a couple of options for updating the Identity Provider (IdP) metadata 
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import organizations_api
 from datadog_api_client.v1.model.idp_response import IdpResponse
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.

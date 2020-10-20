@@ -24,11 +24,12 @@ Create an empty dashboard list.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import dashboard_lists_api
 from datadog_api_client.v1.model.dashboard_list import DashboardList
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -122,11 +123,12 @@ Delete a dashboard list.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import dashboard_lists_api
 from datadog_api_client.v1.model.dashboard_list_delete_response import DashboardListDeleteResponse
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -207,11 +209,12 @@ Fetch an existing dashboard list's definition.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import dashboard_lists_api
 from datadog_api_client.v1.model.dashboard_list import DashboardList
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -292,11 +295,12 @@ Fetch all of your existing dashboard list definitions.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import dashboard_lists_api
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.dashboard_list_list_response import DashboardListListResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -372,11 +376,12 @@ Update the name of a dashboard list.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import dashboard_lists_api
 from datadog_api_client.v1.model.dashboard_list import DashboardList
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.

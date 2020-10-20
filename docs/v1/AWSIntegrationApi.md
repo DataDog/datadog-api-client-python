@@ -25,12 +25,13 @@ Create a Datadog-Amazon Web Services integration. Using the `POST` method update
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -129,12 +130,13 @@ Generate a new AWS external ID for a given AWS account ID and role name pair.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -232,11 +234,12 @@ Delete a Datadog-AWS integration matching the specified `account_id` and `role_n
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -335,10 +338,11 @@ List all namespace rules for a given Datadog-AWS integration. This endpoint take
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -414,11 +418,12 @@ List all Datadog-AWS integrations available in your Datadog organization.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -504,11 +509,12 @@ Update a Datadog-Amazon Web Services integration.
 * Api Key Authentication (appKeyAuth):
 ```python
 import os
-import time
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
