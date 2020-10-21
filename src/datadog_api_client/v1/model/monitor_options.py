@@ -102,7 +102,7 @@ class MonitorOptions(ModelNormal):
             'renotify_interval': (int, none_type,),  # noqa: E501
             'require_full_window': (bool,),  # noqa: E501
             'silenced': ({str: (int, none_type)},),  # noqa: E501
-            'synthetics_check_id': (int, none_type,),  # noqa: E501
+            'synthetics_check_id': (str, none_type,),  # noqa: E501
             'threshold_windows': (MonitorThresholdWindowOptions,),  # noqa: E501
             'thresholds': (MonitorThresholds,),  # noqa: E501
             'timeout_h': (int, none_type,),  # noqa: E501
@@ -198,7 +198,7 @@ class MonitorOptions(ModelNormal):
             renotify_interval (int, none_type): The number of minutes after the last notification before a monitor re-notifies on the current status. It only re-notifies if it’s not resolved.. [optional]  # noqa: E501
             require_full_window (bool): A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to &#x60;false&#x60; for sparse metrics, otherwise some evaluations are skipped. For “on average” “at all times” and “in total” aggregation, default is true. &#x60;False&#x60; otherwise.. [optional] if omitted the server will use the default value of True  # noqa: E501
             silenced ({str: (int, none_type)}): Information about the downtime applied to the monitor.. [optional]  # noqa: E501
-            synthetics_check_id (int, none_type): ID of the corresponding Synthetic check.. [optional]  # noqa: E501
+            synthetics_check_id (str, none_type): ID of the corresponding Synthetic check.. [optional]  # noqa: E501
             threshold_windows (MonitorThresholdWindowOptions): [optional]  # noqa: E501
             thresholds (MonitorThresholds): [optional]  # noqa: E501
             timeout_h (int, none_type): The number of hours of the monitor not reporting data before it automatically resolves from a triggered state.. [optional]  # noqa: E501
