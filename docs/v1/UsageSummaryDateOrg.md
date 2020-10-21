@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **rum_session_count_sum** | **int** | Shows the sum of all browser RUM Sessions over all hours in the current date for the given org. | [optional] 
 **synthetics_browser_check_calls_count_sum** | **int** | Shows the sum of all Synthetic browser tests over all hours in the current date for the given org. | [optional] 
 **synthetics_check_calls_count_sum** | **int** | Shows the sum of all Synthetic API tests over all hours in the current date for the given org. | [optional] 
-**trace_search_indexed_events_count_sum** | **int** | Shows the sum of all analyzed spans indexed over all hours in the current date for the given org. | [optional] 
+**trace_search_indexed_events_count_sum** | **int** | Shows the sum of all Indexed Spans indexed over all hours in the current date for the given org. | [optional] 
 **twol_ingested_events_bytes_sum** | **int** | Shows the sum of all tracing without limits bytes ingested over all hours in the current date for the given org. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)

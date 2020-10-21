@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **start_date** | **datetime** | Shows the first date of usage in the current month(s) for all organizations. | [optional] 
 **synthetics_browser_check_calls_count_agg_sum** | **int** | Shows the sum of all Synthetic browser tests over all hours in the current month(s) for all organizations. | [optional] 
 **synthetics_check_calls_count_agg_sum** | **int** | Shows the sum of all Synthetic API tests over all hours in the current month(s) for all organizations. | [optional] 
-**trace_search_indexed_events_count_agg_sum** | **int** | Shows the sum of all analyzed spans indexed over all hours in the current month(s) for all organizations. | [optional] 
+**trace_search_indexed_events_count_agg_sum** | **int** | Shows the sum of all Indexed Spans indexed over all hours in the current month(s) for all organizations. | [optional] 
 **twol_ingested_events_bytes_agg_sum** | **int** | Shows the sum of all tracing without limits bytes ingested over all hours in the current month(s) for all organizations. | [optional] 
 **usage** | [**[UsageSummaryDate]**](UsageSummaryDate.md) | An array of objects regarding hourly usage. | [optional] 
 
