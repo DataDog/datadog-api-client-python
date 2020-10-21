@@ -27,7 +27,7 @@ Our team will trigger the release pipeline.
 - Commit the changes to the repository in a release branch and open a PR. Do not merge yet.
 
 ### Release
-1. Create the release on GitHub. [Example](https://github.com/DataDog/datadogpy/releases/tag/v0.33.0)
+1. Create the release on GitHub. [Example](https://github.com/DataDog/datadog-api-client-python/releases/tag/1.0.0b1)
 1. Checkout the tag created at the previous step.
 1. Run `ddev release build .` and `ddev release upload . `.
    - Make sure that both an `sdist` and a [universal wheel](https://packaging.python.org/guides/distributing-packages-using-setuptools/#universal-wheels) have been uploaded to [PyPI](https://pypi.python.org/pypi/datadog/).
