@@ -132,7 +132,7 @@ class UsageTraceHour(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
-            indexed_events_count (int): Contains the number of Analyzed Spans indexed.. [optional]  # noqa: E501
+            indexed_events_count (int): Contains the number of Indexed Spans indexed.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

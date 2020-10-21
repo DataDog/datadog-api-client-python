@@ -1,6 +1,6 @@
 # TimeseriesWidgetDefinition
 
-The timeseries visualization allows you to display the evolution of one or more metrics, log events, or Analyzed Spans over time.
+The timeseries visualization allows you to display the evolution of one or more metrics, log events, or Indexed Spans over time.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
