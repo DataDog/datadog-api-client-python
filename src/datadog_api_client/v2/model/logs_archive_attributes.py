@@ -81,6 +81,7 @@ class LogsArchiveAttributes(ModelNormal):
             'destination': (LogsArchiveDestination,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'query': (str,),  # noqa: E501
+            'include_tags': (bool,),  # noqa: E501
             'rehydration_tags': ([str],),  # noqa: E501
             'state': (LogsArchiveState,),  # noqa: E501
         }
@@ -94,6 +95,7 @@ class LogsArchiveAttributes(ModelNormal):
         'destination': 'destination',  # noqa: E501
         'name': 'name',  # noqa: E501
         'query': 'query',  # noqa: E501
+        'include_tags': 'include_tags',  # noqa: E501
         'rehydration_tags': 'rehydration_tags',  # noqa: E501
         'state': 'state',  # noqa: E501
     }
@@ -149,6 +151,7 @@ class LogsArchiveAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            include_tags (bool): To store the tags in the archive, set the value \&quot;true\&quot;. If it is set to \&quot;false\&quot;, the tags will be deleted when the logs are sent to the archive.. [optional] if omitted the server will use the default value of False  # noqa: E501
             rehydration_tags ([str]): An array of tags to add to rehydrated logs from an archive.. [optional]  # noqa: E501
             state (LogsArchiveState): [optional]  # noqa: E501
         """

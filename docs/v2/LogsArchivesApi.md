@@ -164,6 +164,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         data=LogsArchiveCreateRequestDefinition(
             attributes=LogsArchiveCreateRequestAttributes(
                 destination=LogsArchiveCreateRequestDestination(),
+                include_tags=False,
                 name="Nginx Archive",
                 query="source:nginx",
                 rehydration_tags=[
@@ -772,6 +773,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         data=LogsArchiveCreateRequestDefinition(
             attributes=LogsArchiveCreateRequestAttributes(
                 destination=LogsArchiveCreateRequestDestination(),
+                include_tags=False,
                 name="Nginx Archive",
                 query="source:nginx",
                 rehydration_tags=[
