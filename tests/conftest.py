@@ -364,12 +364,12 @@ def undo(api_request, client):
         return api_request["api"].disable_user(api_request["response"][0].data.id)
     elif operation_id == "create_role":
         return api_request["api"].delete_role(api_request["response"][0].data.id)
-    elif operation_id == "create_service":
-        client.configuration.unstable_operations["delete_service"] = True
-        return api_request["api"].delete_service(api_request["response"][0].data.id)
-    elif operation_id == "create_team":
-        client.configuration.unstable_operations["delete_team"] = True
-        return api_request["api"].delete_team(api_request["response"][0].data.id)
+    elif operation_id == "create_incident_service":
+        client.configuration.unstable_operations["delete_incident_service"] = True
+        return api_request["api"].delete_incident_service(api_request["response"][0].data.id)
+    elif operation_id == "create_incident_team":
+        client.configuration.unstable_operations["delete_incident_team"] = True
+        return api_request["api"].delete_incident_team(api_request["response"][0].data.id)
     elif operation_id in {
         "update_user",
         "add_permission_to_role",
