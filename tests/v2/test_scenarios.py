@@ -35,48 +35,48 @@ def user(context, client, unique):
 @given('there is a valid "service" in the system')
 def service(context, client, unique):
     """There is a valid service in the system."""
-    from datadog_api_client.v2.model import service_create_request
-    from datadog_api_client.v2.model import service_create_data
-    from datadog_api_client.v2.model import service_create_attributes
-    from datadog_api_client.v2.model import service_type
-    from datadog_api_client.v2.api.services_api import ServicesApi
+    from datadog_api_client.v2.model import incident_service_create_request
+    from datadog_api_client.v2.model import incident_service_create_data
+    from datadog_api_client.v2.model import incident_service_create_attributes
+    from datadog_api_client.v2.model import incident_service_type
+    from datadog_api_client.v2.api.incident_services_api import IncidentServicesApi
 
-    client.configuration.unstable_operations["create_service"] = True
-    client.configuration.unstable_operations["delete_service"] = True
-    api = ServicesApi(client)
-    body = service_create_request.ServiceCreateRequest(
-        data=service_create_data.ServiceCreateData(
-            type=service_type.ServiceType(value="services"),
-            attributes=service_create_attributes.ServiceCreateAttributes(
+    client.configuration.unstable_operations["create_incident_service"] = True
+    client.configuration.unstable_operations["delete_incident_service"] = True
+    api = IncidentServicesApi(client)
+    body = incident_service_create_request.IncidentServiceCreateRequest(
+        data=incident_service_create_data.IncidentServiceCreateData(
+            type=incident_service_type.IncidentServiceType(value="services"),
+            attributes=incident_service_create_attributes.IncidentServiceCreateAttributes(
                 name=str(unique), ),
         ), )
 
-    response = context["service"] = api.create_service(body=body)
+    response = context["service"] = api.create_incident_service(body=body)
 
-    context["undo_operations"].append(lambda: api.delete_service(response.data.id))
+    context["undo_operations"].append(lambda: api.delete_incident_service(response.data.id))
 
 
 @given('there is a valid "team" in the system')
 def team(context, vcr_cassette, client, unique):
     """There is a valid team in the system."""
-    from datadog_api_client.v2.model import team_create_request
-    from datadog_api_client.v2.model import team_create_data
-    from datadog_api_client.v2.model import team_create_attributes
-    from datadog_api_client.v2.model import team_type
-    from datadog_api_client.v2.api.teams_api import TeamsApi
+    from datadog_api_client.v2.model import incident_team_create_request
+    from datadog_api_client.v2.model import incident_team_create_data
+    from datadog_api_client.v2.model import incident_team_create_attributes
+    from datadog_api_client.v2.model import incident_team_type
+    from datadog_api_client.v2.api.teams_api import IncidentTeamsApi
 
-    client.configuration.unstable_operations["create_team"] = True
-    client.configuration.unstable_operations["delete_team"] = True
+    client.configuration.unstable_operations["create_incident_team"] = True
+    client.configuration.unstable_operations["delete_incident_team"] = True
     api = TeamsApi(client)
-    body = team_create_request.TeamCreateRequest(
-        data=team_create_data.TeamCreateData(
-            type=team_type.TeamType(value="teams"),
-            attributes=team_create_attributes.TeamCreateAttributes(
+    body = incident_team_create_request.IncidentTeamCreateRequest(
+        data=incident_team_create_data.IncidentTeamCreateData(
+            type=incident_team_type.IncidentTeamType(value="teams"),
+            attributes=incident_team_create_attributes.IncidentTeamCreateAttributes(
                 name=str(unique), ),
         ), )
-    response = context["team"] = api.create_team(body=body)
+    response = context["team"] = api.create_incident_team(body=body)
 
-    context["undo_operations"].append(lambda: api.delete_team(response.data.id))
+    context["undo_operations"].append(lambda: api.delete_incident_team(response.data.id))
 
 
 @given('there is a valid "role" in the system')
