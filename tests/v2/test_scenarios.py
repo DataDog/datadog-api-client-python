@@ -67,7 +67,7 @@ def team(context, vcr_cassette, client, unique):
 
     client.configuration.unstable_operations["create_incident_team"] = True
     client.configuration.unstable_operations["delete_incident_team"] = True
-    api = TeamsApi(client)
+    api = IncidentTeamsApi(client)
     body = incident_team_create_request.IncidentTeamCreateRequest(
         data=incident_team_create_data.IncidentTeamCreateData(
             type=incident_team_type.IncidentTeamType(value="teams"),
