@@ -63,7 +63,7 @@ def team(context, vcr_cassette, client, unique):
     from datadog_api_client.v2.model import incident_team_create_data
     from datadog_api_client.v2.model import incident_team_create_attributes
     from datadog_api_client.v2.model import incident_team_type
-    from datadog_api_client.v2.api.teams_api import IncidentTeamsApi
+    from datadog_api_client.v2.api.incident_teams_api import IncidentTeamsApi
 
     client.configuration.unstable_operations["create_incident_team"] = True
     client.configuration.unstable_operations["delete_incident_team"] = True
