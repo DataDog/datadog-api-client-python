@@ -49,12 +49,16 @@ class SyntheticsStepType(ModelSimple):
     allowed_values = {
         ('value',): {
             'ASSERT_CURRENT_URL': "assertCurrentUrl",
+            'ASSERT_ELEMENT_ATTRIBUTE': "assertElementAttribute",
             'ASSERT_ELEMENT_CONTENT': "assertElementContent",
             'ASSERT_ELEMENT_PRESENT': "assertElementPresent",
             'ASSERT_EMAIL': "assertEmail",
+            'ASSERT_FILE_DOWNLOAD': "assertFileDownload",
+            'ASSERT_FROM_JAVASCRIPT': "assertFromJavascript",
             'ASSERT_PAGE_CONTAINS': "assertPageContains",
             'ASSERT_PAGE_LACKS': "assertPageLacks",
             'CLICK': "click",
+            'EXTRACT_FROM_JAVASCRIPT': "extractFromJavascript",
             'EXTRACT_VARIABLE': "extractVariable",
             'GO_TO_EMAIL_LINK': "goToEmailLink",
             'GO_TO_URL': "goToUrl",
@@ -63,6 +67,8 @@ class SyntheticsStepType(ModelSimple):
             'PLAY_SUB_TEST': "playSubTest",
             'PRESS_KEY': "pressKey",
             'REFRESH': "refresh",
+            'RUN_API_TEST': "runApiTest",
+            'SCROLL': "scroll",
             'SELECT_OPTION': "selectOption",
             'TYPE_TEXT': "typeText",
             'UPLOAD_FILES': "uploadFiles",
@@ -116,10 +122,10 @@ class SyntheticsStepType(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Step type used in your Synthetic test.., must be one of ["assertCurrentUrl", "assertElementContent", "assertElementPresent", "assertEmail", "assertPageContains", "assertPageLacks", "click", "extractVariable", "goToEmailLink", "goToUrl", "goToUrlAndMeasureTti", "hover", "playSubTest", "pressKey", "refresh", "selectOption", "typeText", "uploadFiles", "wait", ]  # noqa: E501
+            args[0] (str): Step type used in your Synthetic test.., must be one of ["assertCurrentUrl", "assertElementAttribute", "assertElementContent", "assertElementPresent", "assertEmail", "assertFileDownload", "assertFromJavascript", "assertPageContains", "assertPageLacks", "click", "extractFromJavascript", "extractVariable", "goToEmailLink", "goToUrl", "goToUrlAndMeasureTti", "hover", "playSubTest", "pressKey", "refresh", "runApiTest", "scroll", "selectOption", "typeText", "uploadFiles", "wait", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Step type used in your Synthetic test.., must be one of ["assertCurrentUrl", "assertElementContent", "assertElementPresent", "assertEmail", "assertPageContains", "assertPageLacks", "click", "extractVariable", "goToEmailLink", "goToUrl", "goToUrlAndMeasureTti", "hover", "playSubTest", "pressKey", "refresh", "selectOption", "typeText", "uploadFiles", "wait", ]  # noqa: E501
+            value (str): Step type used in your Synthetic test.., must be one of ["assertCurrentUrl", "assertElementAttribute", "assertElementContent", "assertElementPresent", "assertEmail", "assertFileDownload", "assertFromJavascript", "assertPageContains", "assertPageLacks", "click", "extractFromJavascript", "extractVariable", "goToEmailLink", "goToUrl", "goToUrlAndMeasureTti", "hover", "playSubTest", "pressKey", "refresh", "runApiTest", "scroll", "selectOption", "typeText", "uploadFiles", "wait", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
