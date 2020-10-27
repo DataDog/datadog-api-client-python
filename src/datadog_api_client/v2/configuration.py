@@ -205,6 +205,16 @@ conf = datadog_api_client.v2.Configuration(
 
         # Keep track of unstable operations
         self.unstable_operations = {
+            "create_incident_service": False,
+            "delete_incident_service": False,
+            "get_incident_service": False,
+            "get_incident_services": False,
+            "update_incident_service": False,
+            "create_incident_team": False,
+            "delete_incident_team": False,
+            "get_incident_team": False,
+            "get_incident_teams": False,
+            "update_incident_team": False,
             "list_logs": False,
             "list_logs_get": False,
             "add_read_role_to_archive": False,
@@ -212,16 +222,6 @@ conf = datadog_api_client.v2.Configuration(
             "remove_role_from_archive": False,
             "list_security_monitoring_signals": False,
             "search_security_monitoring_signals": False,
-            "create_service": False,
-            "delete_service": False,
-            "get_service": False,
-            "get_services": False,
-            "update_service": False,
-            "create_team": False,
-            "delete_team": False,
-            "get_team": False,
-            "get_teams": False,
-            "update_team": False,
         }
 
     def __deepcopy__(self, memo):
