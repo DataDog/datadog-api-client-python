@@ -1,0 +1,120 @@
+interactions:
+- request:
+    body: '{"data": {"type": "teams", "attributes": {"name": "datadog-api-client-python-test_get_a_list_of_all_incident_teams_returns_ok_response-1603476801.66004"}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateTeam
+      User-Agent:
+      - datadog-api-client-python/1.0.0b2.dev7+dirty (python 3.8.5; os Darwin; arch
+        x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/teams
+  response:
+    body:
+      string: '{"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}],"data":{"type":"teams","id":"ce0e01ac-d4ae-5926-9c60-d6b11a503669","attributes":{"name":"datadog-api-client-python-test_get_a_list_of_all_incident_teams_returns_ok_response-1603476801.66004","created":"2020-10-23T18:13:21.897739+00:00","modified":"2020-10-23T18:13:21.897739+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '957'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Fri, 23 Oct 2020 18:13:21 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Fri, 30-Oct-2020 18:13:21 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - 2yLQyeuXdHKf2qhVlcnhVSRUgzA6Krta0LEltrGESIMHoX7HWgb/dSrVA+a76Sm3
+      X-DD-VERSION:
+      - '35.3248028'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-RateLimit-Limit:
+      - '12000'
+      X-RateLimit-Period:
+      - '60'
+      X-RateLimit-Remaining:
+      - '11995'
+      X-RateLimit-Reset:
+      - '39'
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - GetIncidentTeams
+      User-Agent:
+      - datadog-api-client-python/1.0.0b2.dev7+dirty (python 3.8.5; os Darwin; arch
+        x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/teams
+  response:
+    body:
+      string: '{"meta":{"sort":"ASC","pagination":{"size":25,"next_offset":25,"offset":0}},"data":[{"type":"teams","id":"f2c21146-175c-5ad5-b9fc-c1cde5f4b803","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Update_an_existing_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26862-1602223580-updated","created":"2020-10-09T06:06:20.950262+00:00","modified":"2020-10-09T06:06:22.108241+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"cae197f4-b47d-546c-92e2-5db718853f00","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_a_list_of_all_teams_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26880-1602234380","created":"2020-10-09T09:06:21.006581+00:00","modified":"2020-10-09T09:06:21.006581+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"18f2345f-fd43-5bc5-869a-d3af64530c63","attributes":{"name":"go-Feature_Teams-Scenario_Create_a_new_team_returns__CREATED__response-26880-1602234381","created":"2020-10-09T09:06:22.050733+00:00","modified":"2020-10-09T09:06:22.050733+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"b5aa1cfe-04e4-5285-97ba-4ba1589847dd","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_details_of_a_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26880-1602234385","created":"2020-10-09T09:06:25.123310+00:00","modified":"2020-10-09T09:06:25.123310+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"6aee5f2a-57ab-52b8-8f7c-8a1a67fd63a0","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Update_an_existing_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26880-1602234387-updated","created":"2020-10-09T09:06:27.254935+00:00","modified":"2020-10-09T09:06:29.220669+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"e0f43df0-7b4e-56ee-bbe1-8b44c4a2f33a","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_a_list_of_all_teams_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26905-1602245326","created":"2020-10-09T12:08:46.359988+00:00","modified":"2020-10-09T12:08:46.359988+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"a8c19209-7a79-50c4-a87a-44f3eff09cc3","attributes":{"name":"go-Feature_Teams-Scenario_Create_a_new_team_returns__CREATED__response-26905-1602245328","created":"2020-10-09T12:08:48.269535+00:00","modified":"2020-10-09T12:08:48.269535+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"c85ba31e-6c48-52d4-bae3-82191c563311","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_details_of_a_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26905-1602245332","created":"2020-10-09T12:08:52.160333+00:00","modified":"2020-10-09T12:08:52.160333+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"a2b0c23a-00d0-52c3-a65e-7274ba9149a8","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Update_an_existing_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26905-1602245333-updated","created":"2020-10-09T12:08:53.506025+00:00","modified":"2020-10-09T12:08:54.494904+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"9837302c-1f17-5634-8add-69f98016d332","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_a_list_of_all_teams_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26927-1602251087","created":"2020-10-09T13:44:47.416919+00:00","modified":"2020-10-09T13:44:47.416919+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"eb8e527f-0a8a-5ae8-9958-c0e3e47bf76e","attributes":{"name":"go-Feature_Teams-Scenario_Create_a_new_team_returns__CREATED__response-26927-1602251087","created":"2020-10-09T13:44:47.762311+00:00","modified":"2020-10-09T13:44:47.762311+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"0ba093e6-6586-574c-b25a-f3cf1190dd35","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_details_of_a_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26927-1602251088","created":"2020-10-09T13:44:48.413050+00:00","modified":"2020-10-09T13:44:48.413050+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"fa1404dc-5a3f-56c7-90d2-d77974bb413b","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Update_an_existing_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26927-1602251088-updated","created":"2020-10-09T13:44:48.901596+00:00","modified":"2020-10-09T13:44:50.830380+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"3c8cc2e1-9b7a-5cfd-9f48-f3cf41eb771a","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_a_list_of_all_teams_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26935-1602252135","created":"2020-10-09T14:02:15.920948+00:00","modified":"2020-10-09T14:02:15.920948+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"a93bda71-92f6-5d7d-9f6c-6e5b382535ce","attributes":{"name":"go-Feature_Teams-Scenario_Create_a_new_team_returns__CREATED__response-26935-1602252137","created":"2020-10-09T14:02:17.720560+00:00","modified":"2020-10-09T14:02:17.720560+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"0ab515b6-6a4e-5e3b-9ef3-96d205714106","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_details_of_a_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26935-1602252140","created":"2020-10-09T14:02:20.993068+00:00","modified":"2020-10-09T14:02:20.993068+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"174c1ff2-4716-5732-b5d2-ce81116641c6","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Update_an_existing_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26935-1602252141-updated","created":"2020-10-09T14:02:21.891109+00:00","modified":"2020-10-09T14:02:23.247823+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"b5ed4dc8-d0d4-5f1d-9d71-13b84fa0dea1","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_a_list_of_all_teams_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26944-1602254040","created":"2020-10-09T14:34:00.326211+00:00","modified":"2020-10-09T14:34:00.326211+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"35f8bd94-65b5-5026-8969-d953cf523c57","attributes":{"name":"go-Feature_Teams-Scenario_Create_a_new_team_returns__CREATED__response-26944-1602254042","created":"2020-10-09T14:34:02.424569+00:00","modified":"2020-10-09T14:34:02.424569+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"3f9290f1-4181-54bd-94ff-913a472bd6c9","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_details_of_a_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26944-1602254044","created":"2020-10-09T14:34:05.136559+00:00","modified":"2020-10-09T14:34:05.136559+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"a6d466fc-da1c-5563-84c5-798f191649c6","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Update_an_existing_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26944-1602254047-updated","created":"2020-10-09T14:34:07.142089+00:00","modified":"2020-10-09T14:34:08.707478+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"95545899-39ac-5e6c-8d28-36b9321c5341","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_a_list_of_all_teams_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26951-1602256010","created":"2020-10-09T15:06:50.751553+00:00","modified":"2020-10-09T15:06:50.751553+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"3639a817-fece-54a3-aafa-f0bb1afd747e","attributes":{"name":"go-Feature_Teams-Scenario_Create_a_new_team_returns__CREATED__response-26951-1602256011","created":"2020-10-09T15:06:51.294627+00:00","modified":"2020-10-09T15:06:51.294627+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"d7a144bd-3026-51e9-bb95-ad5a5a62a5f1","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Get_details_of_a_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26951-1602256014","created":"2020-10-09T15:06:54.773081+00:00","modified":"2020-10-09T15:06:54.773081+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}},{"type":"teams","id":"9735cfea-fd03-5d69-bfda-8ea9ec226d32","attributes":{"name":"go-TestScenarios-Feature_Teams-Scenario_Update_an_existing_team_returns__OK__response-Given_there_is_a_valid__team__in_the_system-26951-1602256016-updated","created":"2020-10-09T15:06:56.511493+00:00","modified":"2020-10-09T15:06:57.587840+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}}}]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '12600'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Fri, 23 Oct 2020 18:13:22 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Fri, 30-Oct-2020 18:13:21 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - 1yK3PnBzCoxF/WGKEJeJqS2Jb9mutr3xDuvLdPbJCfX1HVDqeCXkaWYDO6wQpQhO
+      X-DD-VERSION:
+      - '35.3248028'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-RateLimit-Limit:
+      - '12000'
+      X-RateLimit-Period:
+      - '60'
+      X-RateLimit-Remaining:
+      - '11999'
+      X-RateLimit-Reset:
+      - '38'
+    status:
+      code: 200
+      message: OK
+version: 1
