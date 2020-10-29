@@ -164,7 +164,7 @@ class EventsApi(object):
         ):
             """Query the event stream  # noqa: E501
 
-            The event stream can be queried and filtered by time, priority, sources and tags.  **Note**: If the event you’re querying contains markdown formatting of any kind, you may see characters such as %,\\,n in your output.  # noqa: E501
+            The event stream can be queried and filtered by time, priority, sources and tags.  **Notes**:  - If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  - This endpoint returns a maximum of `1000` most recent results. To return additional results, identify the last timestamp of the last result and set that as the `end` query time to [paginate](https://gist.github.com/ericmustin/250feab4c3640c8bf80c9ade535e73da) the results.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
