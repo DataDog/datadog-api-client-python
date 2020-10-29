@@ -199,6 +199,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             timeout_h=1,
         ),
         overall_state=MonitorOverallStates("Alert"),
+        priority=1,
         query="query_example",
         state=MonitorState(
             groups={
@@ -647,6 +648,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             timeout_h=1,
         ),
         overall_state=MonitorOverallStates("Alert"),
+        priority=1,
         query="query_example",
         state=MonitorState(
             groups={
@@ -805,6 +807,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             timeout_h=1,
         ),
         overall_state=MonitorOverallStates("Alert"),
+        priority=1,
         query="query_example",
         state=MonitorState(
             groups={
