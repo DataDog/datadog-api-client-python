@@ -66,6 +66,10 @@ class Monitor(ModelNormal):
     }
 
     validations = {
+        ('priority',): {
+            'inclusive_maximum': 5,
+            'inclusive_minimum': 1,
+        },
     }
 
     additional_properties_type = None
@@ -94,6 +98,7 @@ class Monitor(ModelNormal):
             'name': (str,),  # noqa: E501
             'options': (MonitorOptions,),  # noqa: E501
             'overall_state': (MonitorOverallStates,),  # noqa: E501
+            'priority': (int,),  # noqa: E501
             'query': (str,),  # noqa: E501
             'state': (MonitorState,),  # noqa: E501
             'tags': ([str],),  # noqa: E501
@@ -116,6 +121,7 @@ class Monitor(ModelNormal):
         'name': 'name',  # noqa: E501
         'options': 'options',  # noqa: E501
         'overall_state': 'overall_state',  # noqa: E501
+        'priority': 'priority',  # noqa: E501
         'query': 'query',  # noqa: E501
         'state': 'state',  # noqa: E501
         'tags': 'tags',  # noqa: E501
@@ -178,6 +184,7 @@ class Monitor(ModelNormal):
             name (str): The monitor name.. [optional]  # noqa: E501
             options (MonitorOptions): [optional]  # noqa: E501
             overall_state (MonitorOverallStates): [optional]  # noqa: E501
+            priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]  # noqa: E501
             query (str): The monitor query.. [optional]  # noqa: E501
             state (MonitorState): [optional]  # noqa: E501
             tags ([str]): Tags associated to your monitor.. [optional]  # noqa: E501
