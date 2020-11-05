@@ -29,7 +29,7 @@ jobs:
       - name: Set ddev pypi credentials
         run: |
           ddev config set pypi.user __token__
-          ddev config set pypi.token ${{ secrets.PYPI_TOKEN }}
+          ddev config set pypi.pass ${{ secrets.PYPI_TOKEN }}
 
       - name: Publish the wheel to PyPI
         run: |
