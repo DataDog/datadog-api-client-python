@@ -180,6 +180,9 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             notify_no_data=False,
             renotify_interval=1,
             require_full_window=True,
+            restricted_roles=[
+                "restricted_roles_example",
+            ],
             silenced={
                 "key": 1,
             },
@@ -629,6 +632,9 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             notify_no_data=False,
             renotify_interval=1,
             require_full_window=True,
+            restricted_roles=[
+                "restricted_roles_example",
+            ],
             silenced={
                 "key": 1,
             },
@@ -788,6 +794,9 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             notify_no_data=False,
             renotify_interval=1,
             require_full_window=True,
+            restricted_roles=[
+                "restricted_roles_example",
+            ],
             silenced={
                 "key": 1,
             },
