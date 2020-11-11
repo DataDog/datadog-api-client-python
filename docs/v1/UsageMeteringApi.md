@@ -5,6 +5,7 @@ All URIs are relative to *https://api.datadoghq.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_daily_custom_reports**](UsageMeteringApi.md#get_daily_custom_reports) | **GET** /api/v1/daily_custom_reports | Get the list of available daily custom reports
+[**get_ingested_spans**](UsageMeteringApi.md#get_ingested_spans) | **GET** /api/v1/usage/ingested-spans | Get hourly usage for ingested spans
 [**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports | Get the list of available monthly custom reports
 [**get_specified_daily_custom_reports**](UsageMeteringApi.md#get_specified_daily_custom_reports) | **GET** /api/v1/daily_custom_reports/{report_id} | Get specified daily custom reports
 [**get_specified_monthly_custom_reports**](UsageMeteringApi.md#get_specified_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports/{report_id} | Get specified monthly custom reports
@@ -13,6 +14,7 @@ Method | HTTP request | Description
 [**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get billable usage across your multi-org account
 [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
+[**get_usage_indexed_spans**](UsageMeteringApi.md#get_usage_indexed_spans) | **GET** /api/v1/usage/indexed-spans | Get hourly usage for indexed spans
 [**get_usage_lambda**](UsageMeteringApi.md#get_usage_lambda) | **GET** /api/v1/usage/aws_lambda | Get hourly usage for Lambda
 [**get_usage_logs**](UsageMeteringApi.md#get_usage_logs) | **GET** /api/v1/usage/logs | Get hourly usage for Logs
 [**get_usage_logs_by_index**](UsageMeteringApi.md#get_usage_logs_by_index) | **GET** /api/v1/usage/logs_by_index | Get hourly usage for Logs by Index
@@ -116,6 +118,101 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**403** | Forbidden - User is not authorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_ingested_spans**
+> UsageIngestedSpansResponse get_ingested_spans(start_hr)
+
+Get hourly usage for ingested spans
+
+Get hourly usage for ingested spans.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+import datadog_api_client.v1
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get hourly usage for ingested spans
+        api_response = api_instance.get_ingested_spans(start_hr)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_ingested_spans: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get hourly usage for ingested spans
+        api_response = api_instance.get_ingested_spans(start_hr, end_hr=end_hr)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_ingested_spans: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour. |
+ **end_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour. | [optional]
+
+### Return type
+
+[**UsageIngestedSpansResponse**](UsageIngestedSpansResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;datetime-format=rfc3339
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
 **403** | Forbidden - User is not authorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -384,7 +481,7 @@ Name | Type | Description  | Notes
 
 Get hourly usage for tracing without limits
 
-Get hourly usage for tracing without limits.
+Get hourly usage for tracing without limits.  **Note** This endpoint has been renamed to `/api/v1/usage/ingested-spans`.
 
 ### Example
 
@@ -825,6 +922,101 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UsageHostsResponse**](UsageHostsResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;datetime-format=rfc3339
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden - User is not authorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_usage_indexed_spans**
+> UsageIndexedSpansResponse get_usage_indexed_spans(start_hr)
+
+Get hourly usage for indexed spans
+
+Get hourly usage for indexed spans.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+import datadog_api_client.v1
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v1.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get hourly usage for indexed spans
+        api_response = api_instance.get_usage_indexed_spans(start_hr)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_usage_indexed_spans: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get hourly usage for indexed spans
+        api_response = api_instance.get_usage_indexed_spans(start_hr, end_hr=end_hr)
+        pprint(api_response)
+    except datadog_api_client.v1.ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_usage_indexed_spans: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour. |
+ **end_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour. | [optional]
+
+### Return type
+
+[**UsageIndexedSpansResponse**](UsageIndexedSpansResponse.md)
 
 ### Authorization
 
@@ -2189,7 +2381,7 @@ Name | Type | Description  | Notes
 
 Get hourly usage for Trace Search
 
-Get hourly usage for trace search.
+Get hourly usage for trace search.  **Note** This endpoint has been renamed to `/api/v1/usage/indexed-spans`.
 
 ### Example
 
