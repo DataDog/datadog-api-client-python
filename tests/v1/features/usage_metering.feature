@@ -109,12 +109,6 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Get hourly usage for Trace Search returns "OK" response
-    Given new "GetUsageTrace" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
   Scenario: Get the list of available daily custom reports returns "OK" response
     Given operation "GetDailyCustomReports" enabled
     And new "GetDailyCustomReports" request
@@ -153,6 +147,24 @@ Feature: Usage Metering
   @generated @skip
   Scenario: Get hourly usage for profiled hosts returns "OK" response
     Given new "GetUsageProfiling" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get hourly usage for indexed spans returns "OK" response
+    Given new "GetUsageIndexedSpans" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get hourly usage for ingested spans returns "OK" response
+    Given new "GetIngestedSpans" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get hourly usage for Trace Search returns "OK" response
+    Given new "GetUsageTrace" request
     When the request is sent
     Then the response status is 200 OK
 

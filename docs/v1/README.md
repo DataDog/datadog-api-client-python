@@ -238,6 +238,7 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**list_host_tags**](TagsApi.md#list_host_tags) | **GET** /api/v1/tags/hosts | Get Tags
 *TagsApi* | [**update_host_tags**](TagsApi.md#update_host_tags) | **PUT** /api/v1/tags/hosts/{host_name} | Update host tags
 *UsageMeteringApi* | [**get_daily_custom_reports**](UsageMeteringApi.md#get_daily_custom_reports) | **GET** /api/v1/daily_custom_reports | Get the list of available daily custom reports
+*UsageMeteringApi* | [**get_ingested_spans**](UsageMeteringApi.md#get_ingested_spans) | **GET** /api/v1/usage/ingested-spans | Get hourly usage for ingested spans
 *UsageMeteringApi* | [**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports | Get the list of available monthly custom reports
 *UsageMeteringApi* | [**get_specified_daily_custom_reports**](UsageMeteringApi.md#get_specified_daily_custom_reports) | **GET** /api/v1/daily_custom_reports/{report_id} | Get specified daily custom reports
 *UsageMeteringApi* | [**get_specified_monthly_custom_reports**](UsageMeteringApi.md#get_specified_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports/{report_id} | Get specified monthly custom reports
@@ -246,6 +247,7 @@ Class | Method | HTTP request | Description
 *UsageMeteringApi* | [**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get billable usage across your multi-org account
 *UsageMeteringApi* | [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 *UsageMeteringApi* | [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
+*UsageMeteringApi* | [**get_usage_indexed_spans**](UsageMeteringApi.md#get_usage_indexed_spans) | **GET** /api/v1/usage/indexed-spans | Get hourly usage for indexed spans
 *UsageMeteringApi* | [**get_usage_lambda**](UsageMeteringApi.md#get_usage_lambda) | **GET** /api/v1/usage/aws_lambda | Get hourly usage for Lambda
 *UsageMeteringApi* | [**get_usage_logs**](UsageMeteringApi.md#get_usage_logs) | **GET** /api/v1/usage/logs | Get hourly usage for Logs
 *UsageMeteringApi* | [**get_usage_logs_by_index**](UsageMeteringApi.md#get_usage_logs_by_index) | **GET** /api/v1/usage/logs_by_index | Get hourly usage for Logs by Index
@@ -607,6 +609,10 @@ Class | Method | HTTP request | Description
  - [UsageFargateResponse](UsageFargateResponse.md)
  - [UsageHostHour](UsageHostHour.md)
  - [UsageHostsResponse](UsageHostsResponse.md)
+ - [UsageIndexedSpansHour](UsageIndexedSpansHour.md)
+ - [UsageIndexedSpansResponse](UsageIndexedSpansResponse.md)
+ - [UsageIngestedSpansHour](UsageIngestedSpansHour.md)
+ - [UsageIngestedSpansResponse](UsageIngestedSpansResponse.md)
  - [UsageLambdaHour](UsageLambdaHour.md)
  - [UsageLambdaResponse](UsageLambdaResponse.md)
  - [UsageLogsByIndexHour](UsageLogsByIndexHour.md)
