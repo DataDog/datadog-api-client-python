@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **notify_no_data** | **bool** | A Boolean indicating whether this monitor notifies when data stops reporting. | [optional]  if omitted the server will use the default value of False
 **renotify_interval** | **int, none_type** | The number of minutes after the last notification before a monitor re-notifies on the current status. It only re-notifies if it’s not resolved. | [optional] 
 **require_full_window** | **bool** | A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to &#x60;false&#x60; for sparse metrics, otherwise some evaluations are skipped. Default is false. | [optional] 
+**restricted_roles** | **[str]** | A list of role identifiers that can be pulled from the Roles API. Cannot be used with &#x60;locked&#x60;. | [optional] 
 **silenced** | **{str: (int, none_type)}** | Information about the downtime applied to the monitor. | [optional] 
 **synthetics_check_id** | **str, none_type** | ID of the corresponding Synthetic check. | [optional] 
 **threshold_windows** | [**MonitorThresholdWindowOptions**](MonitorThresholdWindowOptions.md) |  | [optional] 
