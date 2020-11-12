@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**create_incident_service**](IncidentServicesApi.md#create_incident_service) | **POST** /api/v2/services | Create a new incident service
 [**delete_incident_service**](IncidentServicesApi.md#delete_incident_service) | **DELETE** /api/v2/services/{service_id} | Delete an existing incident service
 [**get_incident_service**](IncidentServicesApi.md#get_incident_service) | **GET** /api/v2/services/{service_id} | Get details of an incident service
-[**get_incident_services**](IncidentServicesApi.md#get_incident_services) | **GET** /api/v2/services | Get a list of all incident services
+[**list_incident_services**](IncidentServicesApi.md#list_incident_services) | **GET** /api/v2/services | Get a list of all incident services
 [**update_incident_service**](IncidentServicesApi.md#update_incident_service) | **PATCH** /api/v2/services/{service_id} | Update an existing incident service
 
 
@@ -300,8 +300,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **get_incident_services**
-> IncidentServicesResponse get_incident_services()
+# **list_incident_services**
+> IncidentServicesResponse list_incident_services()
 
 Get a list of all incident services
 
@@ -348,15 +348,16 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     include = "users" # str | Specifies which types of related objects should be included in the response. (optional) if omitted the server will use the default value of "users"
     page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
     page_offset = 0 # int | Specific offset to use as the beginning of the returned page. (optional) if omitted the server will use the default value of 0
+    filter = "ExampleServiceName" # str | A search query that filters services by name. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get a list of all incident services
-        api_response = api_instance.get_incident_services(include=include, page_size=page_size, page_offset=page_offset)
+        api_response = api_instance.list_incident_services(include=include, page_size=page_size, page_offset=page_offset, filter=filter)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling IncidentServicesApi->get_incident_services: %s\n" % e)
+        print("Exception when calling IncidentServicesApi->list_incident_services: %s\n" % e)
 ```
 
 ### Parameters
@@ -366,6 +367,7 @@ Name | Type | Description  | Notes
  **include** | **str**| Specifies which types of related objects should be included in the response. | [optional] if omitted the server will use the default value of "users"
  **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
  **page_offset** | **int**| Specific offset to use as the beginning of the returned page. | [optional] if omitted the server will use the default value of 0
+ **filter** | **str**| A search query that filters services by name. | [optional]
 
 ### Return type
 

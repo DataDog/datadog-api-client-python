@@ -15,6 +15,7 @@ Feature: Incident Services
     And request contains "filter" parameter from "service.data.attributes.name"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 1
     And the response "data[0].attributes.name" has the same value as "service.data.attributes.name"
 
   Scenario: Create a new incident service returns "CREATED" response
