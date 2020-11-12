@@ -10,10 +10,13 @@ Feature: Incident Services
 
   Scenario: Get a list of all incident services returns "OK" response
     Given there is a valid "service" in the system
-    And operation "GetIncidentServices" enabled
-    And new "GetIncidentServices" request
+    And operation "ListIncidentServices" enabled
+    And new "ListIncidentServices" request
+    And request contains "filter" parameter from "service.data.attributes.name"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.name" has the same value as "service.data.attributes.name"
 
   Scenario: Create a new incident service returns "CREATED" response
     Given operation "CreateIncidentService" enabled

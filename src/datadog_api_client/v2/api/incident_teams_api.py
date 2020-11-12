@@ -409,7 +409,7 @@ class IncidentTeamsApi(object):
             callable=__get_incident_team
         )
 
-        def __get_incident_teams(
+        def __list_incident_teams(
             self,
             **kwargs
         ):
@@ -419,7 +419,7 @@ class IncidentTeamsApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.get_incident_teams(async_req=True)
+            >>> thread = api.list_incident_teams(async_req=True)
             >>> result = thread.get()
 
 
@@ -427,6 +427,7 @@ class IncidentTeamsApi(object):
                 include (str): Specifies which types of related objects should be included in the response.. [optional] if omitted the server will use the default value of "users"
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_offset (int): Specific offset to use as the beginning of the returned page.. [optional] if omitted the server will use the default value of 0
+                filter (str): A search query that filters teams by name.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -473,7 +474,7 @@ class IncidentTeamsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.get_incident_teams = Endpoint(
+        self.list_incident_teams = Endpoint(
             settings={
                 'response_type': (IncidentTeamsResponse,),
                 'auth': [
@@ -481,7 +482,7 @@ class IncidentTeamsApi(object):
                     'appKeyAuth'
                 ],
                 'endpoint_path': '/api/v2/teams',
-                'operation_id': 'get_incident_teams',
+                'operation_id': 'list_incident_teams',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -490,6 +491,7 @@ class IncidentTeamsApi(object):
                     'include',
                     'page_size',
                     'page_offset',
+                    'filter',
                 ],
                 'required': [],
                 'nullable': [
@@ -516,16 +518,20 @@ class IncidentTeamsApi(object):
                         (int,),
                     'page_offset':
                         (int,),
+                    'filter':
+                        (str,),
                 },
                 'attribute_map': {
                     'include': 'include',
                     'page_size': 'page[size]',
                     'page_offset': 'page[offset]',
+                    'filter': 'filter',
                 },
                 'location_map': {
                     'include': 'query',
                     'page_size': 'query',
                     'page_offset': 'query',
+                    'filter': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -537,7 +543,7 @@ class IncidentTeamsApi(object):
                 'content_type': [],
             },
             api_client=api_client,
-            callable=__get_incident_teams
+            callable=__list_incident_teams
         )
 
         def __update_incident_team(

@@ -10,10 +10,13 @@ Feature: Incident Teams
 
   Scenario: Get a list of all incident teams returns "OK" response
     Given there is a valid "team" in the system
-    And operation "GetIncidentTeams" enabled
-    And new "GetIncidentTeams" request
+    And operation "ListIncidentTeams" enabled
+    And new "ListIncidentTeams" request
+    And request contains "filter" parameter from "team.data.attributes.name"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.name" has the same value as "team.data.attributes.name"
 
   Scenario: Create a new incident team returns "CREATED" response
     Given operation "CreateIncidentTeam" enabled
