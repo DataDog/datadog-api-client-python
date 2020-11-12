@@ -72,7 +72,9 @@ class IPPrefixesSynthetics(ModelNormal):
         """
         return {
             'prefixes_ipv4': ([str],),  # noqa: E501
+            'prefixes_ipv4_by_location': ({str: ([str],)},),  # noqa: E501
             'prefixes_ipv6': ([str],),  # noqa: E501
+            'prefixes_ipv6_by_location': ({str: ([str],)},),  # noqa: E501
         }
 
     @cached_property
@@ -82,7 +84,9 @@ class IPPrefixesSynthetics(ModelNormal):
 
     attribute_map = {
         'prefixes_ipv4': 'prefixes_ipv4',  # noqa: E501
+        'prefixes_ipv4_by_location': 'prefixes_ipv4_by_location',  # noqa: E501
         'prefixes_ipv6': 'prefixes_ipv6',  # noqa: E501
+        'prefixes_ipv6_by_location': 'prefixes_ipv6_by_location',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -132,7 +136,9 @@ class IPPrefixesSynthetics(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             prefixes_ipv4 ([str]): List of IPv4 prefixes.. [optional]  # noqa: E501
+            prefixes_ipv4_by_location ({str: ([str],)}): List of IPv4 prefixes by location.. [optional]  # noqa: E501
             prefixes_ipv6 ([str]): List of IPv6 prefixes.. [optional]  # noqa: E501
+            prefixes_ipv6_by_location ({str: ([str],)}): List of IPv6 prefixes by location.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
