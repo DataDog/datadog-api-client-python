@@ -443,8 +443,8 @@ def expect_equal_value(context, response_path, fixture_path):
 
 
 @then(parsers.parse('the response "{response_path}" has length {fixture_length:d}'))
-def expect_equal_value(api_request, fixtures, response_path, fixture_length):
-    response_value = glom(api_request["response"][0], response_path)
+def expect_equal_value(fixtures, response_path, fixture_length):
+    response_value = glom(context["api_request"]["response"][0], response_path)
     assert fixture_length == len(response_value)
 
 
