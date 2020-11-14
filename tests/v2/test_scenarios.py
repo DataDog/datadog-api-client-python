@@ -42,8 +42,8 @@ def incident(context, client, unique):
     from datadog_api_client.v2.model import incident_type
     from datadog_api_client.v2.api.incidents_api import IncidentsApi
 
-    # client.configuration.unstable_operations["create_incident"] = True
-    # client.configuration.unstable_operations["delete_incident"] = True
+    client.configuration.unstable_operations["create_incident"] = True
+    client.configuration.unstable_operations["delete_incident"] = True
     api = IncidentsApi(client)
     body = incident_create_request.IncidentCreateRequest(
         data=incident_create_data.IncidentCreateData(
