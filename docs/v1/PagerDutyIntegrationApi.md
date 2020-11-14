@@ -22,12 +22,11 @@ Create a new service object in the PagerDuty integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import pager_duty_integration_api
-from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
-from datadog_api_client.v1.model.pager_duty_service import PagerDutyService
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -41,22 +40,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -118,10 +109,11 @@ Delete a single service object in the Datadog-PagerDuty integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import pager_duty_integration_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -135,22 +127,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -208,11 +192,11 @@ Get service name in the Datadog-PagerDuty integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import pager_duty_integration_api
-from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -226,22 +210,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -300,11 +276,11 @@ Update a single service object in the Datadog-PagerDuty integration.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import pager_duty_integration_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.pager_duty_service_key import PagerDutyServiceKey
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -318,22 +294,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 

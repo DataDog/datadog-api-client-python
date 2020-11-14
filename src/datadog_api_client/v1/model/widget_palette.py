@@ -64,6 +64,9 @@ class WidgetPalette(ModelSimple):
             'WHITE_ON_RED': "white_on_red",
             'WHITE_ON_YELLOW': "white_on_yellow",
             'YELLOW_ON_WHITE': "yellow_on_white",
+            'BLACK_ON_LIGHT_YELLOW': "black_on_light_yellow",
+            'BLACK_ON_LIGHT_GREEN': "black_on_light_green",
+            'BLACK_ON_LIGHT_RED': "black_on_light_red",
         },
     }
 
@@ -107,13 +110,16 @@ class WidgetPalette(ModelSimple):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, value, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """WidgetPalette - a model defined in OpenAPI
 
+        Note that value can be passed either in args or in kwargs, but not in both.
+
         Args:
-            value (str): Color palette to apply.., must be one of ["blue", "custom_bg", "custom_image", "custom_text", "gray_on_white", "grey", "green", "orange", "red", "red_on_white", "white_on_gray", "white_on_green", "green_on_white", "white_on_red", "white_on_yellow", "yellow_on_white", ]  # noqa: E501
+            args[0] (str): Color palette to apply.., must be one of ["blue", "custom_bg", "custom_image", "custom_text", "gray_on_white", "grey", "green", "orange", "red", "red_on_white", "white_on_gray", "white_on_green", "green_on_white", "white_on_red", "white_on_yellow", "yellow_on_white", "black_on_light_yellow", "black_on_light_green", "black_on_light_red", ]  # noqa: E501
 
         Keyword Args:
+            value (str): Color palette to apply.., must be one of ["blue", "custom_bg", "custom_image", "custom_text", "gray_on_white", "grey", "green", "orange", "red", "red_on_white", "white_on_gray", "white_on_green", "green_on_white", "white_on_red", "white_on_yellow", "yellow_on_white", "black_on_light_yellow", "black_on_light_green", "black_on_light_red", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -145,6 +151,18 @@ class WidgetPalette(ModelSimple):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
         """
+
+        if 'value' in kwargs:
+            value = kwargs.pop('value')
+        elif args:
+            args = list(args)
+            value = args.pop(0)
+        else:
+            raise ApiTypeError(
+                "value is required, but not passed in args or kwargs and doesn't have default",
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
 
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)

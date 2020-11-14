@@ -95,8 +95,13 @@ class LogType(ModelSimple):
     def __init__(self, *args, **kwargs):
         """LogType - a model defined in OpenAPI
 
+        Note that value can be passed either in args or in kwargs, but not in both.
+
+        Args:
+            args[0] (str): Type of the event.. if omitted defaults to "log", must be one of ["log", ]  # noqa: E501
+
         Keyword Args:
-            value (str): Type of the event.. defaults to "log", must be one of ["log", ]  # noqa: E501
+            value (str): Type of the event.. if omitted defaults to "log", must be one of ["log", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -136,6 +141,7 @@ class LogType(ModelSimple):
             value = args.pop(0)
         else:
             value = "log"
+
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())

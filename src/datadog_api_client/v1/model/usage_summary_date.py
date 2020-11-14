@@ -211,7 +211,7 @@ class UsageSummaryDate(ModelNormal):
             rum_session_count_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current date for all organizations. [optional]  # noqa: E501
             synthetics_browser_check_calls_count_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current date for all organizations.. [optional]  # noqa: E501
             synthetics_check_calls_count_sum (int): Shows the sum of all Synthetic API tests over all hours in the current date for all organizations.. [optional]  # noqa: E501
-            trace_search_indexed_events_count_sum (int): Shows the sum of all analyzed spans indexed over all hours in the current date for all organizations.. [optional]  # noqa: E501
+            trace_search_indexed_events_count_sum (int): Shows the sum of all Indexed Spans indexed over all hours in the current date for all organizations.. [optional]  # noqa: E501
             twol_ingested_events_bytes_sum (int): Shows the sum of all tracing without limits bytes ingested over all hours in the current date for all organizations.. [optional]  # noqa: E501
         """
 

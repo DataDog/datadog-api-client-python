@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**create_user**](UsersApi.md#create_user) | **POST** /api/v2/users | Create a user
 [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v2/users/{user_id} | Disable a user
 [**get_invitation**](UsersApi.md#get_invitation) | **GET** /api/v2/user_invitations/{user_invitation_uuid} | Get a user invitation
-[**get_user**](UsersApi.md#get_user) | **GET** /api/v2/users/{user_id} | Get a user
+[**get_user**](UsersApi.md#get_user) | **GET** /api/v2/users/{user_id} | Get user details
 [**list_user_organizations**](UsersApi.md#list_user_organizations) | **GET** /api/v2/users/{user_id}/orgs | Get a user organization
 [**list_user_permissions**](UsersApi.md#list_user_permissions) | **GET** /api/v2/users/{user_id}/permissions | Get a user permissions
 [**list_users**](UsersApi.md#list_users) | **GET** /api/v2/users | List all users
@@ -27,12 +27,11 @@ Create a user for your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
-from datadog_api_client.v2.model.user_create_request import UserCreateRequest
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -46,22 +45,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -72,7 +63,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     body = UserCreateRequest(
         data=UserCreateData(
             attributes=UserCreateAttributes(
-                email="email_example",
+                email="joe.doe@example.com",
                 name="name_example",
                 title="title_example",
             ),
@@ -140,10 +131,11 @@ Disable a user. Can only be used with an application key belonging to an adminis
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -157,22 +149,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -230,11 +214,11 @@ Returns a single user invitation by its UUID.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
-from datadog_api_client.v2.model.user_invitation_response import UserInvitationResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -248,22 +232,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -313,7 +289,7 @@ Name | Type | Description  | Notes
 # **get_user**
 > UserResponse get_user(user_id)
 
-Get a user
+Get user details
 
 Get a user in the organization specified by the user’s `user_id`.
 
@@ -322,11 +298,11 @@ Get a user in the organization specified by the user’s `user_id`.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -340,22 +316,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -367,7 +335,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get a user
+        # Get user details
         api_response = api_instance.get_user(user_id)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
@@ -414,11 +382,11 @@ Get a user organization. Returns the user information and all organizations join
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -432,22 +400,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -506,11 +466,11 @@ Get a user permission set. Returns a list of the user’s permissions granted by
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
-from datadog_api_client.v2.model.permissions_response import PermissionsResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -524,22 +484,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -591,19 +543,18 @@ Name | Type | Description  | Notes
 
 List all users
 
-Get the list of all users in the organization. This list includes all users even if they are disabled or unverified.
+Get the list of all users in the organization. This list includes all users even if they are deactivated or unverified.
 
 ### Example
 
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
-from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
-from datadog_api_client.v2.model.users_response import UsersResponse
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -617,22 +568,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -702,12 +645,11 @@ Sends emails to one or more users inviting them to join the organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
-from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -721,22 +663,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -810,12 +744,11 @@ Edit a user. Can only be used with an application key belonging to an administra
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v2
 from datadog_api_client.v2.api import users_api
-from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
-from datadog_api_client.v2.model.api_error_response import APIErrorResponse
-from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -829,22 +762,14 @@ configuration = datadog_api_client.v2.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -860,7 +785,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                 email="email_example",
                 name="name_example",
             ),
-            id="id_example",
+            id="00000000-0000-0000-0000-000000000000",
             type=UsersType("users"),
         ),
     ) # UserUpdateRequest |  (optional)

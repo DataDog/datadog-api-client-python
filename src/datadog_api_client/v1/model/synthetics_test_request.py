@@ -29,9 +29,11 @@ def lazy_import():
     from datadog_api_client.v1.model.http_method import HTTPMethod
     from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
+    from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
     globals()['HTTPMethod'] = HTTPMethod
     globals()['SyntheticsBasicAuth'] = SyntheticsBasicAuth
     globals()['SyntheticsTestHeaders'] = SyntheticsTestHeaders
+    globals()['SyntheticsTestRequestCertificate'] = SyntheticsTestRequestCertificate
 
 
 class SyntheticsTestRequest(ModelNormal):
@@ -82,6 +84,8 @@ class SyntheticsTestRequest(ModelNormal):
         return {
             'basic_auth': (SyntheticsBasicAuth,),  # noqa: E501
             'body': (str,),  # noqa: E501
+            'certificate': (SyntheticsTestRequestCertificate,),  # noqa: E501
+            'dns_server': (str,),  # noqa: E501
             'headers': (SyntheticsTestHeaders,),  # noqa: E501
             'host': (str,),  # noqa: E501
             'method': (HTTPMethod,),  # noqa: E501
@@ -99,6 +103,8 @@ class SyntheticsTestRequest(ModelNormal):
     attribute_map = {
         'basic_auth': 'basicAuth',  # noqa: E501
         'body': 'body',  # noqa: E501
+        'certificate': 'certificate',  # noqa: E501
+        'dns_server': 'dnsServer',  # noqa: E501
         'headers': 'headers',  # noqa: E501
         'host': 'host',  # noqa: E501
         'method': 'method',  # noqa: E501
@@ -156,6 +162,8 @@ class SyntheticsTestRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             basic_auth (SyntheticsBasicAuth): [optional]  # noqa: E501
             body (str): Body to include in the test.. [optional]  # noqa: E501
+            certificate (SyntheticsTestRequestCertificate): [optional]  # noqa: E501
+            dns_server (str): DNS server to use for DNS tests.. [optional]  # noqa: E501
             headers (SyntheticsTestHeaders): [optional]  # noqa: E501
             host (str): Host name to perform the test with.. [optional]  # noqa: E501
             method (HTTPMethod): [optional]  # noqa: E501

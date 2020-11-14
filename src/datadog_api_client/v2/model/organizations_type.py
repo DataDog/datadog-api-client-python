@@ -95,8 +95,13 @@ class OrganizationsType(ModelSimple):
     def __init__(self, *args, **kwargs):
         """OrganizationsType - a model defined in OpenAPI
 
+        Note that value can be passed either in args or in kwargs, but not in both.
+
+        Args:
+            args[0] (str): Organizations resource type.. if omitted defaults to "orgs", must be one of ["orgs", ]  # noqa: E501
+
         Keyword Args:
-            value (str): Organizations resource type.. defaults to "orgs", must be one of ["orgs", ]  # noqa: E501
+            value (str): Organizations resource type.. if omitted defaults to "orgs", must be one of ["orgs", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -136,6 +141,7 @@ class OrganizationsType(ModelSimple):
             value = args.pop(0)
         else:
             value = "orgs"
+
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())

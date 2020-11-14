@@ -27,7 +27,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.logs_attribute_remapper_type import LogsAttributeRemapperType
+    from datadog_api_client.v1.model.target_format_type import TargetFormatType
     globals()['LogsAttributeRemapperType'] = LogsAttributeRemapperType
+    globals()['TargetFormatType'] = TargetFormatType
 
 
 class LogsAttributeRemapper(ModelNormal):
@@ -84,6 +86,7 @@ class LogsAttributeRemapper(ModelNormal):
             'override_on_conflict': (bool,),  # noqa: E501
             'preserve_source': (bool,),  # noqa: E501
             'source_type': (str,),  # noqa: E501
+            'target_format': (TargetFormatType,),  # noqa: E501
             'target_type': (str,),  # noqa: E501
         }
 
@@ -101,6 +104,7 @@ class LogsAttributeRemapper(ModelNormal):
         'override_on_conflict': 'override_on_conflict',  # noqa: E501
         'preserve_source': 'preserve_source',  # noqa: E501
         'source_type': 'source_type',  # noqa: E501
+        'target_format': 'target_format',  # noqa: E501
         'target_type': 'target_type',  # noqa: E501
     }
 
@@ -160,6 +164,7 @@ class LogsAttributeRemapper(ModelNormal):
             override_on_conflict (bool): Override or not the target element if already set,. [optional] if omitted the server will use the default value of False  # noqa: E501
             preserve_source (bool): Remove or preserve the remapped source element.. [optional] if omitted the server will use the default value of False  # noqa: E501
             source_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
+            target_format (TargetFormatType): [optional]  # noqa: E501
             target_type (str): Defines if the final attribute or tag name is from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
         """
 

@@ -25,11 +25,11 @@ Check if the given monitors can be deleted.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model.check_can_delete_monitor_response import CheckCanDeleteMonitorResponse
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -43,22 +43,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -120,11 +112,11 @@ Create a monitor using the specified options.  #### Monitor Types  The type of m
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -138,22 +130,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -196,10 +180,13 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             notify_no_data=False,
             renotify_interval=1,
             require_full_window=True,
+            restricted_roles=[
+                "restricted_roles_example",
+            ],
             silenced={
                 "key": 1,
             },
-            synthetics_check_id=1,
+            synthetics_check_id="synthetics_check_id_example",
             threshold_windows=MonitorThresholdWindowOptions(
                 recovery_window="recovery_window_example",
                 trigger_window="trigger_window_example",
@@ -215,6 +202,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             timeout_h=1,
         ),
         overall_state=MonitorOverallStates("Alert"),
+        priority=1,
         query="query_example",
         state=MonitorState(
             groups={
@@ -283,11 +271,11 @@ Delete the specified monitor
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -301,22 +289,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -388,11 +368,11 @@ Get details about the specified monitor from your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -406,22 +386,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -492,11 +464,11 @@ Get details about the specified monitor from your organization.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -510,22 +482,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -599,12 +563,11 @@ Edit the specified monitor.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model.monitor_update_request import MonitorUpdateRequest
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -618,22 +581,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -677,10 +632,13 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             notify_no_data=False,
             renotify_interval=1,
             require_full_window=True,
+            restricted_roles=[
+                "restricted_roles_example",
+            ],
             silenced={
                 "key": 1,
             },
-            synthetics_check_id=1,
+            synthetics_check_id="synthetics_check_id_example",
             threshold_windows=MonitorThresholdWindowOptions(
                 recovery_window="recovery_window_example",
                 trigger_window="trigger_window_example",
@@ -696,6 +654,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             timeout_h=1,
         ),
         overall_state=MonitorOverallStates("Alert"),
+        priority=1,
         query="query_example",
         state=MonitorState(
             groups={
@@ -767,11 +726,11 @@ Validate the monitor provided in the request.
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
-import time
+import os
+from dateutil.parser import parse as dateutil_parser
 import datadog_api_client.v1
 from datadog_api_client.v1.api import monitors_api
-from datadog_api_client.v1.model.api_error_response import APIErrorResponse
-from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -785,22 +744,14 @@ configuration = datadog_api_client.v1.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'apiKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
 
 # Configure API key authorization: appKeyAuth
-configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com",
-    api_key = {
-        'appKeyAuth': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 
@@ -843,10 +794,13 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             notify_no_data=False,
             renotify_interval=1,
             require_full_window=True,
+            restricted_roles=[
+                "restricted_roles_example",
+            ],
             silenced={
                 "key": 1,
             },
-            synthetics_check_id=1,
+            synthetics_check_id="synthetics_check_id_example",
             threshold_windows=MonitorThresholdWindowOptions(
                 recovery_window="recovery_window_example",
                 trigger_window="trigger_window_example",
@@ -862,6 +816,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             timeout_h=1,
         ),
         overall_state=MonitorOverallStates("Alert"),
+        priority=1,
         query="query_example",
         state=MonitorState(
             groups={

@@ -95,8 +95,13 @@ class PermissionsType(ModelSimple):
     def __init__(self, *args, **kwargs):
         """PermissionsType - a model defined in OpenAPI
 
+        Note that value can be passed either in args or in kwargs, but not in both.
+
+        Args:
+            args[0] (str): Permissions resource type.. if omitted defaults to "permissions", must be one of ["permissions", ]  # noqa: E501
+
         Keyword Args:
-            value (str): Permissions resource type.. defaults to "permissions", must be one of ["permissions", ]  # noqa: E501
+            value (str): Permissions resource type.. if omitted defaults to "permissions", must be one of ["permissions", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -136,6 +141,7 @@ class PermissionsType(ModelSimple):
             value = args.pop(0)
         else:
             value = "permissions"
+
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())

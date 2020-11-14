@@ -27,11 +27,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
+    from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
     from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
     from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.widget_time import WidgetTime
     globals()['TableWidgetDefinitionType'] = TableWidgetDefinitionType
+    globals()['TableWidgetHasSearchBar'] = TableWidgetHasSearchBar
     globals()['TableWidgetRequest'] = TableWidgetRequest
     globals()['WidgetCustomLink'] = WidgetCustomLink
     globals()['WidgetTextAlign'] = WidgetTextAlign
@@ -87,6 +89,7 @@ class TableWidgetDefinition(ModelNormal):
             'requests': ([TableWidgetRequest],),  # noqa: E501
             'type': (TableWidgetDefinitionType,),  # noqa: E501
             'custom_links': ([WidgetCustomLink],),  # noqa: E501
+            'has_search_bar': (TableWidgetHasSearchBar,),  # noqa: E501
             'time': (WidgetTime,),  # noqa: E501
             'title': (str,),  # noqa: E501
             'title_align': (WidgetTextAlign,),  # noqa: E501
@@ -102,6 +105,7 @@ class TableWidgetDefinition(ModelNormal):
         'requests': 'requests',  # noqa: E501
         'type': 'type',  # noqa: E501
         'custom_links': 'custom_links',  # noqa: E501
+        'has_search_bar': 'has_search_bar',  # noqa: E501
         'time': 'time',  # noqa: E501
         'title': 'title',  # noqa: E501
         'title_align': 'title_align',  # noqa: E501
@@ -159,6 +163,7 @@ class TableWidgetDefinition(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
+            has_search_bar (TableWidgetHasSearchBar): [optional]  # noqa: E501
             time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of your widget.. [optional]  # noqa: E501
             title_align (WidgetTextAlign): [optional]  # noqa: E501

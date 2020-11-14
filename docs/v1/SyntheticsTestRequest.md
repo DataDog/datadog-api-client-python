@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **basic_auth** | [**SyntheticsBasicAuth**](SyntheticsBasicAuth.md) |  | [optional] 
 **body** | **str** | Body to include in the test. | [optional] 
+**certificate** | [**SyntheticsTestRequestCertificate**](SyntheticsTestRequestCertificate.md) |  | [optional] 
+**dns_server** | **str** | DNS server to use for DNS tests. | [optional] 
 **headers** | [**SyntheticsTestHeaders**](SyntheticsTestHeaders.md) |  | [optional] 
 **host** | **str** | Host name to perform the test with. | [optional] 
 **method** | [**HTTPMethod**](HTTPMethod.md) |  | [optional] 

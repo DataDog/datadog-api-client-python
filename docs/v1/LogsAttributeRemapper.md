@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **override_on_conflict** | **bool** | Override or not the target element if already set, | [optional]  if omitted the server will use the default value of False
 **preserve_source** | **bool** | Remove or preserve the remapped source element. | [optional]  if omitted the server will use the default value of False
 **source_type** | **str** | Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;. | [optional]  if omitted the server will use the default value of "attribute"
+**target_format** | [**TargetFormatType**](TargetFormatType.md) |  | [optional] 
 **target_type** | **str** | Defines if the final attribute or tag name is from log &#x60;attribute&#x60; or &#x60;tag&#x60;. | [optional]  if omitted the server will use the default value of "attribute"
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)

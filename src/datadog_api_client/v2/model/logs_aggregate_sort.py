@@ -145,7 +145,7 @@ class LogsAggregateSort(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregation (LogsAggregationFunction): [optional]  # noqa: E501
-            metric (str): The metric to sort by (only used for type&#x3D;metric). [optional]  # noqa: E501
+            metric (str): The metric to sort by (only used for &#x60;type&#x3D;measure&#x60;). [optional]  # noqa: E501
             order (LogsSortOrder): [optional]  # noqa: E501
             type (LogsAggregateSortType): [optional]  # noqa: E501
         """

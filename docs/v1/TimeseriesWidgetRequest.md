@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **log_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **metadata** | [**[TimeseriesWidgetRequestMetadata]**](TimeseriesWidgetRequestMetadata.md) | Used to define expression aliases. | [optional] 
 **network_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
+**on_right_yaxis** | **bool** | Whether or not to display a second y-axis on the right. | [optional] 
 **process_query** | [**ProcessQueryDefinition**](ProcessQueryDefinition.md) |  | [optional] 
 **q** | **str** | Widget query. | [optional] 
 **rum_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
