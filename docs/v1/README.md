@@ -406,6 +406,7 @@ Class | Method | HTTP request | Description
  - [LogsGrokParserType](LogsGrokParserType.md)
  - [LogsIndex](LogsIndex.md)
  - [LogsIndexListResponse](LogsIndexListResponse.md)
+ - [LogsIndexUpdateRequest](LogsIndexUpdateRequest.md)
  - [LogsIndexesOrder](LogsIndexesOrder.md)
  - [LogsListRequest](LogsListRequest.md)
  - [LogsListRequestTime](LogsListRequestTime.md)

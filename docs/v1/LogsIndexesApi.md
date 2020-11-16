@@ -299,8 +299,9 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
     name = "name_example" # str | Name of the log index.
-    body = LogsIndex(
+    body = LogsIndexUpdateRequest(
         daily_limit=1,
+        disable_daily_limit=True,
         exclusion_filters=[
             LogsExclusion(
                 filter=LogsExclusionFilter(
@@ -314,10 +315,8 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         filter=LogsFilter(
             query="source:python",
         ),
-        is_rate_limited=True,
-        name="name_example",
         num_retention_days=1,
-    ) # LogsIndex | Object containing the new `LogsIndex`. (optional)
+    ) # LogsIndexUpdateRequest | Object containing the new `LogsIndexUpdateRequest`. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -342,7 +341,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Name of the log index. |
- **body** | [**LogsIndex**](LogsIndex.md)| Object containing the new &#x60;LogsIndex&#x60;. | [optional]
+ **body** | [**LogsIndexUpdateRequest**](LogsIndexUpdateRequest.md)| Object containing the new &#x60;LogsIndexUpdateRequest&#x60;. | [optional]
 
 ### Return type
 
