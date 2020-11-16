@@ -145,6 +145,7 @@ from datadog_api_client.v1.model.logs_grok_parser_rules import LogsGrokParserRul
 from datadog_api_client.v1.model.logs_grok_parser_type import LogsGrokParserType
 from datadog_api_client.v1.model.logs_index import LogsIndex
 from datadog_api_client.v1.model.logs_index_list_response import LogsIndexListResponse
+from datadog_api_client.v1.model.logs_index_update_request import LogsIndexUpdateRequest
 from datadog_api_client.v1.model.logs_indexes_order import LogsIndexesOrder
 from datadog_api_client.v1.model.logs_list_request import LogsListRequest
 from datadog_api_client.v1.model.logs_list_request_time import LogsListRequestTime

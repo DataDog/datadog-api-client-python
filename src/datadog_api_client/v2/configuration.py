@@ -203,6 +203,9 @@ conf = datadog_api_client.v2.Configuration(
         # Enable client side validation
         self.client_side_validation = True
 
+        # Options to pass down to the underlying urllib3 socket
+        self.socket_options = None
+
         # Keep track of unstable operations
         self.unstable_operations = {
             "create_incident_service": False,
