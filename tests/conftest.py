@@ -364,6 +364,9 @@ def undo(api_request, client):
         return api_request["api"].disable_user(api_request["response"][0].data.id)
     elif operation_id == "create_role":
         return api_request["api"].delete_role(api_request["response"][0].data.id)
+    elif operation_id == "create_incident":
+        client.configuration.unstable_operations["delete_incident"] = True
+        return api_request["api"].delete_incident(api_request["response"][0].data.id)
     elif operation_id == "create_incident_service":
         client.configuration.unstable_operations["delete_incident_service"] = True
         return api_request["api"].delete_incident_service(api_request["response"][0].data.id)
@@ -443,7 +446,7 @@ def expect_equal_value(context, response_path, fixture_path):
 
 
 @then(parsers.parse('the response "{response_path}" has length {fixture_length:d}'))
-def expect_equal_value(context, response_path, fixture_length):
+def expect_equal_length(context, response_path, fixture_length):
     response_value = glom(context["api_request"]["response"][0], response_path)
     assert fixture_length == len(response_value)
 
