@@ -365,6 +365,7 @@ def undo(api_request, client):
     elif operation_id == "create_role":
         return api_request["api"].delete_role(api_request["response"][0].data.id)
     elif operation_id == "create_incident":
+        client.configuration.unstable_operations["delete_incident"] = True
         return api_request["api"].delete_incident(api_request["response"][0].data.id)
     elif operation_id == "create_incident_service":
         client.configuration.unstable_operations["delete_incident_service"] = True
