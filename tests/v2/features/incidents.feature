@@ -13,7 +13,6 @@ Feature: Incidents
     And new "ListIncidents" request
     When the request is sent
     Then the response status is 200 OK
-    And the response "data" has length 1
 
   Scenario: Create an incident returns "CREATED" response
     Given there is a valid "user" in the system
