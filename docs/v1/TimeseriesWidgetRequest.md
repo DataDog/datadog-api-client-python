@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apm_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **display_type** | [**WidgetDisplayType**](WidgetDisplayType.md) |  | [optional] 
-**event_query** | [**EventQueryDefinition**](EventQueryDefinition.md) |  | [optional] 
+**event_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **log_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **metadata** | [**[TimeseriesWidgetRequestMetadata]**](TimeseriesWidgetRequestMetadata.md) | Used to define expression aliases. | [optional] 
 **network_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 

@@ -26,11 +26,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 )
 
 def lazy_import():
-    from datadog_api_client.v1.model.event_query_definition import EventQueryDefinition
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
     from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
-    globals()['EventQueryDefinition'] = EventQueryDefinition
     globals()['LogQueryDefinition'] = LogQueryDefinition
     globals()['ProcessQueryDefinition'] = ProcessQueryDefinition
     globals()['WidgetAggregator'] = WidgetAggregator
@@ -84,7 +82,7 @@ class ScatterPlotRequest(ModelNormal):
         return {
             'aggregator': (WidgetAggregator,),  # noqa: E501
             'apm_query': (LogQueryDefinition,),  # noqa: E501
-            'event_query': (EventQueryDefinition,),  # noqa: E501
+            'event_query': (LogQueryDefinition,),  # noqa: E501
             'log_query': (LogQueryDefinition,),  # noqa: E501
             'network_query': (LogQueryDefinition,),  # noqa: E501
             'process_query': (ProcessQueryDefinition,),  # noqa: E501
@@ -158,7 +156,7 @@ class ScatterPlotRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             aggregator (WidgetAggregator): [optional]  # noqa: E501
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
-            event_query (EventQueryDefinition): [optional]  # noqa: E501
+            event_query (LogQueryDefinition): [optional]  # noqa: E501
             log_query (LogQueryDefinition): [optional]  # noqa: E501
             network_query (LogQueryDefinition): [optional]  # noqa: E501
             process_query (ProcessQueryDefinition): [optional]  # noqa: E501

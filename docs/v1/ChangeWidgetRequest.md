@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **apm_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **change_type** | [**WidgetChangeType**](WidgetChangeType.md) |  | [optional] 
 **compare_to** | [**WidgetCompareTo**](WidgetCompareTo.md) |  | [optional] 
-**event_query** | [**EventQueryDefinition**](EventQueryDefinition.md) |  | [optional] 
+**event_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **increase_good** | **bool** | Whether to show increase as good. | [optional] 
 **log_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **network_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
