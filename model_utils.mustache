@@ -96,9 +96,9 @@ def composed_model_input_classes(cls):
 class OpenApiModel(object):
     """The base class for all OpenAPIModels"""
 
-{{> python-experimental/model_templates/method_set_attribute }}
+{{> model_templates/method_set_attribute }}
 
-{{> python-experimental/model_templates/methods_shared }}
+{{> model_templates/methods_shared }}
 
     def __new__(cls, *args, **kwargs):
         # this function uses the discriminator to
@@ -218,18 +218,18 @@ class ModelSimple(OpenApiModel):
     """the parent class of models whose type != object in their
     swagger/openapi"""
 
-{{> python-experimental/model_templates/methods_setattr_getattr_normal }}
+{{> model_templates/methods_setattr_getattr_normal }}
 
-{{> python-experimental/model_templates/methods_tostr_eq_simple }}
+{{> model_templates/methods_tostr_eq_simple }}
 
 
 class ModelNormal(OpenApiModel):
     """the parent class of models whose type == object in their
     swagger/openapi"""
 
-{{> python-experimental/model_templates/methods_setattr_getattr_normal }}
+{{> model_templates/methods_setattr_getattr_normal }}
 
-{{> python-experimental/model_templates/methods_todict_tostr_eq_shared}}
+{{> model_templates/methods_todict_tostr_eq_shared}}
 
 
 class ModelComposed(OpenApiModel):
@@ -258,9 +258,9 @@ class ModelComposed(OpenApiModel):
     which contain the value that the key is referring to.
     """
 
-{{> python-experimental/model_templates/methods_setattr_getattr_composed }}
+{{> model_templates/methods_setattr_getattr_composed }}
 
-{{> python-experimental/model_templates/methods_todict_tostr_eq_shared}}
+{{> model_templates/methods_todict_tostr_eq_shared}}
 
 
 COERCION_INDEX_BY_TYPE = {
