@@ -65,6 +65,7 @@ jobs:
         DD_TRACE_ANALYTICS_ENABLED: "true"
         RECORD: "none"
         PYTEST_ADDOPTS: "--ddtrace"
+        DD_PYTEST_OPERATION_NAME: "test"
     - script: |
         bash <(curl -s https://codecov.io/bash) -F integration -v
 
