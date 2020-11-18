@@ -19,7 +19,7 @@ schedules:
 resources:
   containers:
   - container: datadog-agent
-    image: datadog/agent:7
+    image: datadog/agent:latest
     options: --health-cmd="exit 0" --health-interval=1s
     ports:
     - 8125:8125
@@ -46,7 +46,11 @@ jobs:
   services:
     datadog-agent: datadog-agent
   steps:
-    - script: python -m pip install -e .[apm,tests]
+    - script: |
+        python -m pip install --upgrade pip setuptools
+        python -m pip install cython
+        python -m pip install -e .[apm,tests]
+        python -m pip install -U --pre --find-links=https://s3.amazonaws.com/pypi.datadoghq.com/trace-dev/index.html ddtrace
       displayName: Install package
     - script: ./run-tests.sh
       displayName: Run integration tests
@@ -55,11 +59,12 @@ jobs:
         DD_AGENT_HOST: datadog-agent
         DD_ENV: prod
         DD_SERVICE: datadog-api-client-python
-        DD_TAGS: "team:integration-tools-and-libraries,build.requested_by:$(Build.RequestedForId),build.attempt:$(System.StageAttempt),pull_request.number:$(System.PullRequest.PullRequestNumber)"
+        DD_TAGS: "team:integration-tools-and-libraries"
         DD_TEST_CLIENT_API_KEY: $(datadogAPIKey)
         DD_TEST_CLIENT_APP_KEY: $(datadogAPPKey)
         DD_TRACE_ANALYTICS_ENABLED: "true"
         RECORD: "none"
+        PYTEST_ADDOPTS: "--ddtrace"
     - script: |
         bash <(curl -s https://codecov.io/bash) -F integration -v
 
