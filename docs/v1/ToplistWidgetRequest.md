@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apm_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **conditional_formats** | [**[WidgetConditionalFormat]**](WidgetConditionalFormat.md) | List of conditional formats. | [optional] 
-**event_query** | [**EventQueryDefinition**](EventQueryDefinition.md) |  | [optional] 
+**event_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **log_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **network_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **process_query** | [**ProcessQueryDefinition**](ProcessQueryDefinition.md) |  | [optional] 

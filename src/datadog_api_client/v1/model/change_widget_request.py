@@ -26,14 +26,12 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 )
 
 def lazy_import():
-    from datadog_api_client.v1.model.event_query_definition import EventQueryDefinition
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
     from datadog_api_client.v1.model.widget_change_type import WidgetChangeType
     from datadog_api_client.v1.model.widget_compare_to import WidgetCompareTo
     from datadog_api_client.v1.model.widget_order_by import WidgetOrderBy
     from datadog_api_client.v1.model.widget_sort import WidgetSort
-    globals()['EventQueryDefinition'] = EventQueryDefinition
     globals()['LogQueryDefinition'] = LogQueryDefinition
     globals()['ProcessQueryDefinition'] = ProcessQueryDefinition
     globals()['WidgetChangeType'] = WidgetChangeType
@@ -91,7 +89,7 @@ class ChangeWidgetRequest(ModelNormal):
             'apm_query': (LogQueryDefinition,),  # noqa: E501
             'change_type': (WidgetChangeType,),  # noqa: E501
             'compare_to': (WidgetCompareTo,),  # noqa: E501
-            'event_query': (EventQueryDefinition,),  # noqa: E501
+            'event_query': (LogQueryDefinition,),  # noqa: E501
             'increase_good': (bool,),  # noqa: E501
             'log_query': (LogQueryDefinition,),  # noqa: E501
             'network_query': (LogQueryDefinition,),  # noqa: E501
@@ -175,7 +173,7 @@ class ChangeWidgetRequest(ModelNormal):
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
             change_type (WidgetChangeType): [optional]  # noqa: E501
             compare_to (WidgetCompareTo): [optional]  # noqa: E501
-            event_query (EventQueryDefinition): [optional]  # noqa: E501
+            event_query (LogQueryDefinition): [optional]  # noqa: E501
             increase_good (bool): Whether to show increase as good.. [optional]  # noqa: E501
             log_query (LogQueryDefinition): [optional]  # noqa: E501
             network_query (LogQueryDefinition): [optional]  # noqa: E501

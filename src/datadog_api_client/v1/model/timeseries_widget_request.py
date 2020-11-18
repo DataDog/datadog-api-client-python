@@ -26,13 +26,11 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 )
 
 def lazy_import():
-    from datadog_api_client.v1.model.event_query_definition import EventQueryDefinition
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
     from datadog_api_client.v1.model.timeseries_widget_request_metadata import TimeseriesWidgetRequestMetadata
     from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
     from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
-    globals()['EventQueryDefinition'] = EventQueryDefinition
     globals()['LogQueryDefinition'] = LogQueryDefinition
     globals()['ProcessQueryDefinition'] = ProcessQueryDefinition
     globals()['TimeseriesWidgetRequestMetadata'] = TimeseriesWidgetRequestMetadata
@@ -88,7 +86,7 @@ class TimeseriesWidgetRequest(ModelNormal):
         return {
             'apm_query': (LogQueryDefinition,),  # noqa: E501
             'display_type': (WidgetDisplayType,),  # noqa: E501
-            'event_query': (EventQueryDefinition,),  # noqa: E501
+            'event_query': (LogQueryDefinition,),  # noqa: E501
             'log_query': (LogQueryDefinition,),  # noqa: E501
             'metadata': ([TimeseriesWidgetRequestMetadata],),  # noqa: E501
             'network_query': (LogQueryDefinition,),  # noqa: E501
@@ -168,7 +166,7 @@ class TimeseriesWidgetRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
             display_type (WidgetDisplayType): [optional]  # noqa: E501
-            event_query (EventQueryDefinition): [optional]  # noqa: E501
+            event_query (LogQueryDefinition): [optional]  # noqa: E501
             log_query (LogQueryDefinition): [optional]  # noqa: E501
             metadata ([TimeseriesWidgetRequestMetadata]): Used to define expression aliases.. [optional]  # noqa: E501
             network_query (LogQueryDefinition): [optional]  # noqa: E501
