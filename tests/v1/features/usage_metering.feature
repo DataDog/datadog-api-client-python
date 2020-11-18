@@ -173,3 +173,9 @@ Feature: Usage Metering
     Given new "GetTracingWithoutLimits" request
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get hourly usage for incident management returns "OK" response
+    Given new "GetIncidentManagement" request
+    When the request is sent
+    Then the response status is 200 OK

@@ -349,6 +349,8 @@ from datadog_api_client.v1.model.usage_fargate_hour import UsageFargateHour
 from datadog_api_client.v1.model.usage_fargate_response import UsageFargateResponse
 from datadog_api_client.v1.model.usage_host_hour import UsageHostHour
 from datadog_api_client.v1.model.usage_hosts_response import UsageHostsResponse
+from datadog_api_client.v1.model.usage_incident_management_hour import UsageIncidentManagementHour
+from datadog_api_client.v1.model.usage_incident_management_response import UsageIncidentManagementResponse
 from datadog_api_client.v1.model.usage_indexed_spans_hour import UsageIndexedSpansHour
 from datadog_api_client.v1.model.usage_indexed_spans_response import UsageIndexedSpansResponse
 from datadog_api_client.v1.model.usage_ingested_spans_hour import UsageIngestedSpansHour
