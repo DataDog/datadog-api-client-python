@@ -44,18 +44,18 @@
     validations = {
 {{#hasValidation}}
         ('value',): {
-{{> python-experimental/model_templates/validations }}
+{{> model_templates/validations }}
 {{/hasValidation}}
 {{#requiredVars}}
 {{#hasValidation}}
         ('{{name}}',): {
-{{> python-experimental/model_templates/validations }}
+{{> model_templates/validations }}
 {{/hasValidation}}
 {{/requiredVars}}
 {{#optionalVars}}
 {{#hasValidation}}
         ('{{name}}',): {
-{{> python-experimental/model_templates/validations }}
+{{> model_templates/validations }}
 {{/hasValidation}}
 {{/optionalVars}}
     }
