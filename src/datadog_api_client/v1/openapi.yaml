@@ -3009,7 +3009,6 @@ components:
           - to
           type: object
       required:
-      - query
       - time
       type: object
     LogsListResponse:

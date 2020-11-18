@@ -81,10 +81,10 @@ class LogsListRequest(ModelNormal):
         """
         lazy_import()
         return {
-            'query': (str,),  # noqa: E501
             'time': (LogsListRequestTime,),  # noqa: E501
             'index': (str,),  # noqa: E501
             'limit': (int,),  # noqa: E501
+            'query': (str,),  # noqa: E501
             'sort': (LogsSort,),  # noqa: E501
             'start_at': (str,),  # noqa: E501
         }
@@ -95,10 +95,10 @@ class LogsListRequest(ModelNormal):
 
 
     attribute_map = {
-        'query': 'query',  # noqa: E501
         'time': 'time',  # noqa: E501
         'index': 'index',  # noqa: E501
         'limit': 'limit',  # noqa: E501
+        'query': 'query',  # noqa: E501
         'sort': 'sort',  # noqa: E501
         'start_at': 'startAt',  # noqa: E501
     }
@@ -115,11 +115,10 @@ class LogsListRequest(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, query, time, *args, **kwargs):  # noqa: E501
+    def __init__(self, time, *args, **kwargs):  # noqa: E501
         """LogsListRequest - a model defined in OpenAPI
 
         Args:
-            query (str): The search query - following the log search syntax.
             time (LogsListRequestTime):
 
         Keyword Args:
@@ -155,6 +154,7 @@ class LogsListRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             index (str): The log index on which the request is performed. For multi-index organizations, the default is all live indexes. Historical indexes of rehydrated logs must be specified.. [optional]  # noqa: E501
             limit (int): Number of logs return in the response.. [optional]  # noqa: E501
+            query (str): The search query - following the log search syntax.. [optional]  # noqa: E501
             sort (LogsSort): [optional]  # noqa: E501
             start_at (str): Hash identifier of the first log to return in the list, available in a log &#x60;id&#x60; attribute. This parameter is used for the pagination feature.  **Note**: This parameter is ignored if the corresponding log is out of the scope of the specified time window.. [optional]  # noqa: E501
         """
@@ -182,7 +182,6 @@ class LogsListRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.query = query
         self.time = time
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
