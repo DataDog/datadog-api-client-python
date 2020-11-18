@@ -22,6 +22,7 @@ from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
 from datadog_api_client.v1.model.logs_index import LogsIndex
 from datadog_api_client.v1.model.logs_index_list_response import LogsIndexListResponse
+from datadog_api_client.v1.model.logs_index_update_request import LogsIndexUpdateRequest
 from datadog_api_client.v1.model.logs_indexes_order import LogsIndexesOrder
 
 
@@ -391,7 +392,7 @@ class LogsIndexesApi(object):
                 name (str): Name of the log index.
 
             Keyword Args:
-                body (LogsIndex): Object containing the new &#x60;LogsIndex&#x60;.. [optional]
+                body (LogsIndexUpdateRequest): Object containing the new &#x60;LogsIndexUpdateRequest&#x60;.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -476,7 +477,7 @@ class LogsIndexesApi(object):
                     'name':
                         (str,),
                     'body':
-                        (LogsIndex,),
+                        (LogsIndexUpdateRequest,),
                 },
                 'attribute_map': {
                     'name': 'name',

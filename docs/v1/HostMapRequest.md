@@ -5,7 +5,7 @@ Updated host map.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apm_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
-**event_query** | [**EventQueryDefinition**](EventQueryDefinition.md) |  | [optional] 
+**event_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **log_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **network_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **process_query** | [**ProcessQueryDefinition**](ProcessQueryDefinition.md) |  | [optional] 

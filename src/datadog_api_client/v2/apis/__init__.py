@@ -18,6 +18,7 @@
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.incident_services_api import IncidentServicesApi
 from datadog_api_client.v2.api.incident_teams_api import IncidentTeamsApi
+from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.api.logs_api import LogsApi
 from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
 from datadog_api_client.v2.api.roles_api import RolesApi

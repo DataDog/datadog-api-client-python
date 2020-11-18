@@ -118,13 +118,18 @@ Class | Method | HTTP request | Description
 *IncidentServicesApi* | [**create_incident_service**](IncidentServicesApi.md#create_incident_service) | **POST** /api/v2/services | Create a new incident service
 *IncidentServicesApi* | [**delete_incident_service**](IncidentServicesApi.md#delete_incident_service) | **DELETE** /api/v2/services/{service_id} | Delete an existing incident service
 *IncidentServicesApi* | [**get_incident_service**](IncidentServicesApi.md#get_incident_service) | **GET** /api/v2/services/{service_id} | Get details of an incident service
-*IncidentServicesApi* | [**get_incident_services**](IncidentServicesApi.md#get_incident_services) | **GET** /api/v2/services | Get a list of all incident services
+*IncidentServicesApi* | [**list_incident_services**](IncidentServicesApi.md#list_incident_services) | **GET** /api/v2/services | Get a list of all incident services
 *IncidentServicesApi* | [**update_incident_service**](IncidentServicesApi.md#update_incident_service) | **PATCH** /api/v2/services/{service_id} | Update an existing incident service
 *IncidentTeamsApi* | [**create_incident_team**](IncidentTeamsApi.md#create_incident_team) | **POST** /api/v2/teams | Create a new incident team
 *IncidentTeamsApi* | [**delete_incident_team**](IncidentTeamsApi.md#delete_incident_team) | **DELETE** /api/v2/teams/{team_id} | Delete an existing incident team
 *IncidentTeamsApi* | [**get_incident_team**](IncidentTeamsApi.md#get_incident_team) | **GET** /api/v2/teams/{team_id} | Get details of an incident team
-*IncidentTeamsApi* | [**get_incident_teams**](IncidentTeamsApi.md#get_incident_teams) | **GET** /api/v2/teams | Get a list of all incident teams
+*IncidentTeamsApi* | [**list_incident_teams**](IncidentTeamsApi.md#list_incident_teams) | **GET** /api/v2/teams | Get a list of all incident teams
 *IncidentTeamsApi* | [**update_incident_team**](IncidentTeamsApi.md#update_incident_team) | **PATCH** /api/v2/teams/{team_id} | Update an existing incident team
+*IncidentsApi* | [**create_incident**](IncidentsApi.md#create_incident) | **POST** /api/v2/incidents | Create an incident
+*IncidentsApi* | [**delete_incident**](IncidentsApi.md#delete_incident) | **DELETE** /api/v2/incidents/{incident_id} | Delete an existing incident
+*IncidentsApi* | [**get_incident**](IncidentsApi.md#get_incident) | **GET** /api/v2/incidents/{incident_id} | Get the details of an incident
+*IncidentsApi* | [**list_incidents**](IncidentsApi.md#list_incidents) | **GET** /api/v2/incidents | Get a list of incidents
+*IncidentsApi* | [**update_incident**](IncidentsApi.md#update_incident) | **PATCH** /api/v2/incidents/{incident_id} | Update an existing incident
 *LogsApi* | [**aggregate_logs**](LogsApi.md#aggregate_logs) | **POST** /api/v2/logs/analytics/aggregate | Aggregate events
 *LogsApi* | [**list_logs**](LogsApi.md#list_logs) | **POST** /api/v2/logs/events/search | Get a list of logs
 *LogsApi* | [**list_logs_get**](LogsApi.md#list_logs_get) | **GET** /api/v2/logs/events | Get a quick list of logs
@@ -183,6 +188,22 @@ Class | Method | HTTP request | Description
  - [DashboardListUpdateItemsRequest](DashboardListUpdateItemsRequest.md)
  - [DashboardListUpdateItemsResponse](DashboardListUpdateItemsResponse.md)
  - [DashboardType](DashboardType.md)
+ - [IncidentCreateAttributes](IncidentCreateAttributes.md)
+ - [IncidentCreateData](IncidentCreateData.md)
+ - [IncidentCreateRelationships](IncidentCreateRelationships.md)
+ - [IncidentCreateRequest](IncidentCreateRequest.md)
+ - [IncidentFieldAttributes](IncidentFieldAttributes.md)
+ - [IncidentFieldAttributesMultipleValue](IncidentFieldAttributesMultipleValue.md)
+ - [IncidentFieldAttributesSingleValue](IncidentFieldAttributesSingleValue.md)
+ - [IncidentFieldAttributesSingleValueType](IncidentFieldAttributesSingleValueType.md)
+ - [IncidentFieldAttributesValueType](IncidentFieldAttributesValueType.md)
+ - [IncidentIntegrationMetadataType](IncidentIntegrationMetadataType.md)
+ - [IncidentPostmortemType](IncidentPostmortemType.md)
+ - [IncidentResponse](IncidentResponse.md)
+ - [IncidentResponseAttributes](IncidentResponseAttributes.md)
+ - [IncidentResponseData](IncidentResponseData.md)
+ - [IncidentResponseIncludedItem](IncidentResponseIncludedItem.md)
+ - [IncidentResponseRelationships](IncidentResponseRelationships.md)
  - [IncidentServiceCreateAttributes](IncidentServiceCreateAttributes.md)
  - [IncidentServiceCreateData](IncidentServiceCreateData.md)
  - [IncidentServiceCreateRequest](IncidentServiceCreateRequest.md)
@@ -211,6 +232,16 @@ Class | Method | HTTP request | Description
  - [IncidentTeamUpdateData](IncidentTeamUpdateData.md)
  - [IncidentTeamUpdateRequest](IncidentTeamUpdateRequest.md)
  - [IncidentTeamsResponse](IncidentTeamsResponse.md)
+ - [IncidentTimelineCellCreateAttributes](IncidentTimelineCellCreateAttributes.md)
+ - [IncidentTimelineCellMarkdownContentType](IncidentTimelineCellMarkdownContentType.md)
+ - [IncidentTimelineCellMarkdownCreateAttributes](IncidentTimelineCellMarkdownCreateAttributes.md)
+ - [IncidentTimelineCellMarkdownCreateAttributesContent](IncidentTimelineCellMarkdownCreateAttributesContent.md)
+ - [IncidentType](IncidentType.md)
+ - [IncidentUpdateAttributes](IncidentUpdateAttributes.md)
+ - [IncidentUpdateData](IncidentUpdateData.md)
+ - [IncidentUpdateRelationships](IncidentUpdateRelationships.md)
+ - [IncidentUpdateRequest](IncidentUpdateRequest.md)
+ - [IncidentsResponse](IncidentsResponse.md)
  - [Log](Log.md)
  - [LogAttributes](LogAttributes.md)
  - [LogType](LogType.md)
@@ -275,6 +306,10 @@ Class | Method | HTTP request | Description
  - [PermissionsResponse](PermissionsResponse.md)
  - [PermissionsType](PermissionsType.md)
  - [QuerySortOrder](QuerySortOrder.md)
+ - [RelationshipToIncidentIntegrationMetadataData](RelationshipToIncidentIntegrationMetadataData.md)
+ - [RelationshipToIncidentIntegrationMetadatas](RelationshipToIncidentIntegrationMetadatas.md)
+ - [RelationshipToIncidentPostmortem](RelationshipToIncidentPostmortem.md)
+ - [RelationshipToIncidentPostmortemData](RelationshipToIncidentPostmortemData.md)
  - [RelationshipToOrganization](RelationshipToOrganization.md)
  - [RelationshipToOrganizationData](RelationshipToOrganizationData.md)
  - [RelationshipToOrganizations](RelationshipToOrganizations.md)

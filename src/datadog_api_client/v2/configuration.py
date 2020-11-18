@@ -203,18 +203,26 @@ conf = datadog_api_client.v2.Configuration(
         # Enable client side validation
         self.client_side_validation = True
 
+        # Options to pass down to the underlying urllib3 socket
+        self.socket_options = None
+
         # Keep track of unstable operations
         self.unstable_operations = {
             "create_incident_service": False,
             "delete_incident_service": False,
             "get_incident_service": False,
-            "get_incident_services": False,
+            "list_incident_services": False,
             "update_incident_service": False,
             "create_incident_team": False,
             "delete_incident_team": False,
             "get_incident_team": False,
-            "get_incident_teams": False,
+            "list_incident_teams": False,
             "update_incident_team": False,
+            "create_incident": False,
+            "delete_incident": False,
+            "get_incident": False,
+            "list_incidents": False,
+            "update_incident": False,
             "list_logs": False,
             "list_logs_get": False,
             "add_read_role_to_archive": False,

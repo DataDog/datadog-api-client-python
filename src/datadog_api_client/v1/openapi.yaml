@@ -617,7 +617,7 @@ components:
         compare_to:
           $ref: '#/components/schemas/WidgetCompareTo'
         event_query:
-          $ref: '#/components/schemas/EventQueryDefinition'
+          $ref: '#/components/schemas/LogQueryDefinition'
         increase_good:
           description: Whether to show increase as good.
           type: boolean
@@ -1054,7 +1054,7 @@ components:
         apm_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         event_query:
-          $ref: '#/components/schemas/EventQueryDefinition'
+          $ref: '#/components/schemas/LogQueryDefinition'
         log_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         network_query:
@@ -1859,7 +1859,7 @@ components:
         apm_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         event_query:
-          $ref: '#/components/schemas/EventQueryDefinition'
+          $ref: '#/components/schemas/LogQueryDefinition'
         log_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         network_query:
@@ -2133,12 +2133,30 @@ components:
             description: IPv4 prefix
             type: string
           type: array
+        prefixes_ipv4_by_location:
+          additionalProperties:
+            description: List of IPv4 prefixes.
+            items:
+              description: IPv4 prefix.
+              type: string
+            type: array
+          description: List of IPv4 prefixes by location.
+          type: object
         prefixes_ipv6:
           description: List of IPv6 prefixes.
           items:
             description: IPv6 prefix
             type: string
           type: array
+        prefixes_ipv6_by_location:
+          additionalProperties:
+            description: List of IPv6 prefixes.
+            items:
+              description: IPv6 prefix.
+              type: string
+            type: array
+          description: List of IPv6 prefixes by location.
+          type: object
       type: object
     IPPrefixesWebhooks:
       description: Available prefix information for the Webhook endpoints.
@@ -2824,7 +2842,6 @@ components:
           description: The number of log events you can send in this index per day
             before you are rate-limited.
           format: int64
-          readOnly: true
           type: integer
         exclusion_filters:
           description: 'An array of exclusion objects. The logs are tested against
@@ -2851,9 +2868,11 @@ components:
           readOnly: true
           type: string
         num_retention_days:
-          description: The number of days before logs are deleted from this index.
+          description: 'The number of days before logs are deleted from this index.
+            Available values depend on
+
+            retention plans specified in your organization''s contract/subscriptions.'
           format: int64
-          readOnly: true
           type: integer
       required:
       - filter
@@ -2866,6 +2885,52 @@ components:
           items:
             $ref: '#/components/schemas/LogsIndex'
           type: array
+      type: object
+    LogsIndexUpdateRequest:
+      description: Object for updating a Datadog Log index.
+      properties:
+        daily_limit:
+          description: The number of log events you can send in this index per day
+            before you are rate-limited.
+          format: int64
+          type: integer
+        disable_daily_limit:
+          description: 'If true, sets the `daily_limit` value to null and the index
+            is not limited on a daily basis (any
+
+            specified `daily_limit` value in the request is ignored). If false or
+            omitted, the index''s current
+
+            `daily_limit` is maintained.'
+          type: boolean
+        exclusion_filters:
+          description: 'An array of exclusion objects. The logs are tested against
+            the query of each filter,
+
+            following the order of the array. Only the first matching active exclusion
+            matters,
+
+            others (if any) are ignored.'
+          items:
+            $ref: '#/components/schemas/LogsExclusion'
+          type: array
+        filter:
+          $ref: '#/components/schemas/LogsFilter'
+        num_retention_days:
+          description: 'The number of days before logs are deleted from this index.
+            Available values depend on
+
+            retention plans specified in your organization''s contract/subscriptions.
+
+
+            **Note:** Changing the retention for an index adjusts the length of retention
+            for all logs
+
+            already in this index. It may also affect billing.'
+          format: int64
+          type: integer
+      required:
+      - filter
       type: object
     LogsIndexesOrder:
       description: Object containing the ordered list of log index names.
@@ -4561,7 +4626,7 @@ components:
             $ref: '#/components/schemas/WidgetConditionalFormat'
           type: array
         event_query:
-          $ref: '#/components/schemas/EventQueryDefinition'
+          $ref: '#/components/schemas/LogQueryDefinition'
         log_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         network_query:
@@ -5055,7 +5120,7 @@ components:
         apm_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         event_query:
-          $ref: '#/components/schemas/EventQueryDefinition'
+          $ref: '#/components/schemas/LogQueryDefinition'
         log_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         network_query:
@@ -6981,7 +7046,7 @@ components:
             $ref: '#/components/schemas/WidgetConditionalFormat'
           type: array
         event_query:
-          $ref: '#/components/schemas/EventQueryDefinition'
+          $ref: '#/components/schemas/LogQueryDefinition'
         limit:
           description: For metric queries, the number of lines to show in the table.
             Only one request should have this property.
@@ -7106,7 +7171,7 @@ components:
         display_type:
           $ref: '#/components/schemas/WidgetDisplayType'
         event_query:
-          $ref: '#/components/schemas/EventQueryDefinition'
+          $ref: '#/components/schemas/LogQueryDefinition'
         log_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         metadata:
@@ -7200,7 +7265,7 @@ components:
           minItems: 1
           type: array
         event_query:
-          $ref: '#/components/schemas/EventQueryDefinition'
+          $ref: '#/components/schemas/LogQueryDefinition'
         log_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         network_query:
@@ -11773,8 +11838,8 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LogsIndex'
-        description: Object containing the new `LogsIndex`.
+              $ref: '#/components/schemas/LogsIndexUpdateRequest'
+        description: Object containing the new `LogsIndexUpdateRequest`.
       responses:
         '200':
           content:

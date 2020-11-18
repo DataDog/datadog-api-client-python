@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **apm_stats_query** | [**ApmStatsQueryDefinition**](ApmStatsQueryDefinition.md) |  | [optional] 
 **cell_display_mode** | [**[TableWidgetCellDisplayMode]**](TableWidgetCellDisplayMode.md) | A list of display modes for each table cell. | [optional] 
 **conditional_formats** | [**[WidgetConditionalFormat]**](WidgetConditionalFormat.md) | List of conditional formats. | [optional] 
-**event_query** | [**EventQueryDefinition**](EventQueryDefinition.md) |  | [optional] 
+**event_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **limit** | **int** | For metric queries, the number of lines to show in the table. Only one request should have this property. | [optional] 
 **log_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **network_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 

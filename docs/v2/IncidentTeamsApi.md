@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**create_incident_team**](IncidentTeamsApi.md#create_incident_team) | **POST** /api/v2/teams | Create a new incident team
 [**delete_incident_team**](IncidentTeamsApi.md#delete_incident_team) | **DELETE** /api/v2/teams/{team_id} | Delete an existing incident team
 [**get_incident_team**](IncidentTeamsApi.md#get_incident_team) | **GET** /api/v2/teams/{team_id} | Get details of an incident team
-[**get_incident_teams**](IncidentTeamsApi.md#get_incident_teams) | **GET** /api/v2/teams | Get a list of all incident teams
+[**list_incident_teams**](IncidentTeamsApi.md#list_incident_teams) | **GET** /api/v2/teams | Get a list of all incident teams
 [**update_incident_team**](IncidentTeamsApi.md#update_incident_team) | **PATCH** /api/v2/teams/{team_id} | Update an existing incident team
 
 
@@ -300,8 +300,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **get_incident_teams**
-> IncidentTeamsResponse get_incident_teams()
+# **list_incident_teams**
+> IncidentTeamsResponse list_incident_teams()
 
 Get a list of all incident teams
 
@@ -348,15 +348,16 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     include = "users" # str | Specifies which types of related objects should be included in the response. (optional) if omitted the server will use the default value of "users"
     page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
     page_offset = 0 # int | Specific offset to use as the beginning of the returned page. (optional) if omitted the server will use the default value of 0
+    filter = "ExampleTeamName" # str | A search query that filters teams by name. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get a list of all incident teams
-        api_response = api_instance.get_incident_teams(include=include, page_size=page_size, page_offset=page_offset)
+        api_response = api_instance.list_incident_teams(include=include, page_size=page_size, page_offset=page_offset, filter=filter)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling IncidentTeamsApi->get_incident_teams: %s\n" % e)
+        print("Exception when calling IncidentTeamsApi->list_incident_teams: %s\n" % e)
 ```
 
 ### Parameters
@@ -366,6 +367,7 @@ Name | Type | Description  | Notes
  **include** | **str**| Specifies which types of related objects should be included in the response. | [optional] if omitted the server will use the default value of "users"
  **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
  **page_offset** | **int**| Specific offset to use as the beginning of the returned page. | [optional] if omitted the server will use the default value of 0
+ **filter** | **str**| A search query that filters teams by name. | [optional]
 
 ### Return type
 
