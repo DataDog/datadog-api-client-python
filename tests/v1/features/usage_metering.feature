@@ -179,3 +179,9 @@ Feature: Usage Metering
     Given new "GetIncidentManagement" request
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get Usage Attribution returns "OK" response
+    Given new "GetUsageAttribution" request
+    When the request is sent
+    Then the response status is 200 OK
