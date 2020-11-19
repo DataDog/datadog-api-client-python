@@ -84,6 +84,7 @@ class UsageSummaryDateOrg(ModelNormal):
             'fargate_tasks_count_hwm': (int,),  # noqa: E501
             'gcp_host_top99p': (int,),  # noqa: E501
             'id': (str,),  # noqa: E501
+            'incident_management_monthly_active_users_hwm': (int,),  # noqa: E501
             'indexed_events_count_sum': (int,),  # noqa: E501
             'infra_host_top99p': (int,),  # noqa: E501
             'ingested_events_bytes_sum': (int,),  # noqa: E501
@@ -119,6 +120,7 @@ class UsageSummaryDateOrg(ModelNormal):
         'fargate_tasks_count_hwm': 'fargate_tasks_count_hwm',  # noqa: E501
         'gcp_host_top99p': 'gcp_host_top99p',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'incident_management_monthly_active_users_hwm': 'incident_management_monthly_active_users_hwm',  # noqa: E501
         'indexed_events_count_sum': 'indexed_events_count_sum',  # noqa: E501
         'infra_host_top99p': 'infra_host_top99p',  # noqa: E501
         'ingested_events_bytes_sum': 'ingested_events_bytes_sum',  # noqa: E501
@@ -188,12 +190,13 @@ class UsageSummaryDateOrg(ModelNormal):
             aws_lambda_invocations_sum (int): Shows the sum of all AWS Lambda invocations over all hours in the current date for the given org.. [optional]  # noqa: E501
             billable_ingested_bytes_sum (int): Shows the sum of all log bytes ingested over all hours in the current date for the given org.. [optional]  # noqa: E501
             container_avg (int): Shows the average of all distinct containers over all hours in the current date for the given org.. [optional]  # noqa: E501
-            container_hwm (int): Shows the high watermark of all distinct containers over all hours in the current date for the given org.. [optional]  # noqa: E501
+            container_hwm (int): Shows the high-water mark of all distinct containers over all hours in the current date for the given org.. [optional]  # noqa: E501
             custom_ts_avg (int): Shows the average number of distinct custom metrics over all hours in the current date for the given org.. [optional]  # noqa: E501
             fargate_tasks_count_avg (int): The average task count for Fargate.. [optional]  # noqa: E501
-            fargate_tasks_count_hwm (int): Shows the high watermark of all Fargate tasks over all hours in the current date for the given org.. [optional]  # noqa: E501
+            fargate_tasks_count_hwm (int): Shows the high-water mark of all Fargate tasks over all hours in the current date for the given org.. [optional]  # noqa: E501
             gcp_host_top99p (int): Shows the 99th percentile of all GCP hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
             id (str): The organization id.. [optional]  # noqa: E501
+            incident_management_monthly_active_users_hwm (int): Shows the high-water mark of incident management monthly active users over all hours in the current date for the given org.. [optional]  # noqa: E501
             indexed_events_count_sum (int): Shows the sum of all log events indexed over all hours in the current date for the given org.. [optional]  # noqa: E501
             infra_host_top99p (int): Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
             ingested_events_bytes_sum (int): Shows the sum of all log bytes ingested over all hours in the current date for the given org.. [optional]  # noqa: E501

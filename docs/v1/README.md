@@ -238,6 +238,7 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**list_host_tags**](TagsApi.md#list_host_tags) | **GET** /api/v1/tags/hosts | Get Tags
 *TagsApi* | [**update_host_tags**](TagsApi.md#update_host_tags) | **PUT** /api/v1/tags/hosts/{host_name} | Update host tags
 *UsageMeteringApi* | [**get_daily_custom_reports**](UsageMeteringApi.md#get_daily_custom_reports) | **GET** /api/v1/daily_custom_reports | Get the list of available daily custom reports
+*UsageMeteringApi* | [**get_incident_management**](UsageMeteringApi.md#get_incident_management) | **GET** /api/v1/usage/incident-management | Get hourly usage for incident management
 *UsageMeteringApi* | [**get_ingested_spans**](UsageMeteringApi.md#get_ingested_spans) | **GET** /api/v1/usage/ingested-spans | Get hourly usage for ingested spans
 *UsageMeteringApi* | [**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports | Get the list of available monthly custom reports
 *UsageMeteringApi* | [**get_specified_daily_custom_reports**](UsageMeteringApi.md#get_specified_daily_custom_reports) | **GET** /api/v1/daily_custom_reports/{report_id} | Get specified daily custom reports
@@ -610,6 +611,8 @@ Class | Method | HTTP request | Description
  - [UsageFargateResponse](UsageFargateResponse.md)
  - [UsageHostHour](UsageHostHour.md)
  - [UsageHostsResponse](UsageHostsResponse.md)
+ - [UsageIncidentManagementHour](UsageIncidentManagementHour.md)
+ - [UsageIncidentManagementResponse](UsageIncidentManagementResponse.md)
  - [UsageIndexedSpansHour](UsageIndexedSpansHour.md)
  - [UsageIndexedSpansResponse](UsageIndexedSpansResponse.md)
  - [UsageIngestedSpansHour](UsageIngestedSpansHour.md)
