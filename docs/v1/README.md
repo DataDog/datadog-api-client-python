@@ -245,6 +245,7 @@ Class | Method | HTTP request | Description
 *UsageMeteringApi* | [**get_specified_monthly_custom_reports**](UsageMeteringApi.md#get_specified_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports/{report_id} | Get specified monthly custom reports
 *UsageMeteringApi* | [**get_tracing_without_limits**](UsageMeteringApi.md#get_tracing_without_limits) | **GET** /api/v1/usage/tracing-without-limits | Get hourly usage for tracing without limits
 *UsageMeteringApi* | [**get_usage_analyzed_logs**](UsageMeteringApi.md#get_usage_analyzed_logs) | **GET** /api/v1/usage/analyzed_logs | Get hourly usage for analyzed logs
+*UsageMeteringApi* | [**get_usage_attribution**](UsageMeteringApi.md#get_usage_attribution) | **GET** /api/v1/usage/attribution | Get Usage Attribution
 *UsageMeteringApi* | [**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get billable usage across your multi-org account
 *UsageMeteringApi* | [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 *UsageMeteringApi* | [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
@@ -598,6 +599,15 @@ Class | Method | HTTP request | Description
  - [ToplistWidgetRequest](ToplistWidgetRequest.md)
  - [UsageAnalyzedLogsHour](UsageAnalyzedLogsHour.md)
  - [UsageAnalyzedLogsResponse](UsageAnalyzedLogsResponse.md)
+ - [UsageAttributionAggregates](UsageAttributionAggregates.md)
+ - [UsageAttributionAggregatesBody](UsageAttributionAggregatesBody.md)
+ - [UsageAttributionBody](UsageAttributionBody.md)
+ - [UsageAttributionMetadata](UsageAttributionMetadata.md)
+ - [UsageAttributionPagination](UsageAttributionPagination.md)
+ - [UsageAttributionResponse](UsageAttributionResponse.md)
+ - [UsageAttributionSort](UsageAttributionSort.md)
+ - [UsageAttributionTagNames](UsageAttributionTagNames.md)
+ - [UsageAttributionValues](UsageAttributionValues.md)
  - [UsageBillableSummaryBody](UsageBillableSummaryBody.md)
  - [UsageBillableSummaryHour](UsageBillableSummaryHour.md)
  - [UsageBillableSummaryKeys](UsageBillableSummaryKeys.md)
