@@ -20,10 +20,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
+from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
+from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
 from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
 from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
 from datadog_api_client.v1.model.usage_fargate_response import UsageFargateResponse
 from datadog_api_client.v1.model.usage_hosts_response import UsageHostsResponse
+from datadog_api_client.v1.model.usage_incident_management_response import UsageIncidentManagementResponse
 from datadog_api_client.v1.model.usage_indexed_spans_response import UsageIndexedSpansResponse
 from datadog_api_client.v1.model.usage_ingested_spans_response import UsageIngestedSpansResponse
 from datadog_api_client.v1.model.usage_lambda_response import UsageLambdaResponse
@@ -189,6 +192,132 @@ class UsageMeteringApi(object):
             },
             api_client=api_client,
             callable=__get_daily_custom_reports
+        )
+
+        def __get_incident_management(
+            self,
+            start_hr,
+            **kwargs
+        ):
+            """Get hourly usage for incident management  # noqa: E501
+
+            Get hourly usage for incident management.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_incident_management(start_hr, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.
+
+            Keyword Args:
+                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                UsageIncidentManagementResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['start_hr'] = \
+                start_hr
+            return self.call_with_http_info(**kwargs)
+
+        self.get_incident_management = Endpoint(
+            settings={
+                'response_type': (UsageIncidentManagementResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/usage/incident-management',
+                'operation_id': 'get_incident_management',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'start_hr',
+                    'end_hr',
+                ],
+                'required': [
+                    'start_hr',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'start_hr':
+                        (datetime,),
+                    'end_hr':
+                        (datetime,),
+                },
+                'attribute_map': {
+                    'start_hr': 'start_hr',
+                    'end_hr': 'end_hr',
+                },
+                'location_map': {
+                    'start_hr': 'query',
+                    'end_hr': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json;datetime-format=rfc3339'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_incident_management
         )
 
         def __get_ingested_spans(
@@ -939,6 +1068,160 @@ class UsageMeteringApi(object):
             },
             api_client=api_client,
             callable=__get_usage_analyzed_logs
+        )
+
+        def __get_usage_attribution(
+            self,
+            start_month,
+            fields,
+            **kwargs
+        ):
+            """Get Usage Attribution  # noqa: E501
+
+            Get Usage Attribution.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_usage_attribution(start_month, fields, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                start_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage beginning in this month. Maximum of 15 months ago.
+                fields (str): The specified field to search results for.
+
+            Keyword Args:
+                end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage ending this month.. [optional]
+                org_id (int): Include usage summaries for each sub-org.. [optional]
+                sort_direction (UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
+                sort_name (UsageAttributionSort): The field to sort by.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                UsageAttributionResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['start_month'] = \
+                start_month
+            kwargs['fields'] = \
+                fields
+            return self.call_with_http_info(**kwargs)
+
+        self.get_usage_attribution = Endpoint(
+            settings={
+                'response_type': (UsageAttributionResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/usage/attribution',
+                'operation_id': 'get_usage_attribution',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'start_month',
+                    'fields',
+                    'end_month',
+                    'org_id',
+                    'sort_direction',
+                    'sort_name',
+                ],
+                'required': [
+                    'start_month',
+                    'fields',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'start_month':
+                        (datetime,),
+                    'fields':
+                        (str,),
+                    'end_month':
+                        (datetime,),
+                    'org_id':
+                        (int,),
+                    'sort_direction':
+                        (UsageSortDirection,),
+                    'sort_name':
+                        (UsageAttributionSort,),
+                },
+                'attribute_map': {
+                    'start_month': 'start_month',
+                    'fields': 'fields',
+                    'end_month': 'end_month',
+                    'org_id': 'org_id',
+                    'sort_direction': 'sort_direction',
+                    'sort_name': 'sort_name',
+                },
+                'location_map': {
+                    'start_month': 'query',
+                    'fields': 'query',
+                    'end_month': 'query',
+                    'org_id': 'query',
+                    'sort_direction': 'query',
+                    'sort_name': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json;datetime-format=rfc3339'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_usage_attribution
         )
 
         def __get_usage_billable_summary(

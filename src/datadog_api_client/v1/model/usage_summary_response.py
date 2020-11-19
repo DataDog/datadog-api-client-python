@@ -91,6 +91,7 @@ class UsageSummaryResponse(ModelNormal):
             'fargate_tasks_count_avg_sum': (int,),  # noqa: E501
             'fargate_tasks_count_hwm_sum': (int,),  # noqa: E501
             'gcp_host_top99p_sum': (int,),  # noqa: E501
+            'incident_management_monthly_active_users_hwm_sum': (int,),  # noqa: E501
             'indexed_events_count_agg_sum': (int,),  # noqa: E501
             'infra_host_top99p_sum': (int,),  # noqa: E501
             'ingested_events_bytes_agg_sum': (int,),  # noqa: E501
@@ -130,6 +131,7 @@ class UsageSummaryResponse(ModelNormal):
         'fargate_tasks_count_avg_sum': 'fargate_tasks_count_avg_sum',  # noqa: E501
         'fargate_tasks_count_hwm_sum': 'fargate_tasks_count_hwm_sum',  # noqa: E501
         'gcp_host_top99p_sum': 'gcp_host_top99p_sum',  # noqa: E501
+        'incident_management_monthly_active_users_hwm_sum': 'incident_management_monthly_active_users_hwm_sum',  # noqa: E501
         'indexed_events_count_agg_sum': 'indexed_events_count_agg_sum',  # noqa: E501
         'infra_host_top99p_sum': 'infra_host_top99p_sum',  # noqa: E501
         'ingested_events_bytes_agg_sum': 'ingested_events_bytes_agg_sum',  # noqa: E501
@@ -194,36 +196,37 @@ class UsageSummaryResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            agent_host_top99p_sum (int): Shows the 99th percentile of all agent hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            apm_host_top99p_sum (int): Shows the 99th percentile of all distinct APM hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            aws_host_top99p_sum (int): Shows the 99th percentile of all AWS hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            aws_lambda_func_count (int): Shows the average of the number of functions that executed 1 or more times each hour in the current month(s) for all organizations.. [optional]  # noqa: E501
-            aws_lambda_invocations_sum (int): Shows the sum of all AWS Lambda invocations over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            azure_app_service_top99p_sum (int): Shows the 99th percentile of all Azure app services over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            azure_host_top99p_sum (int): Shows the 99th percentile of all Azure hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            billable_ingested_bytes_agg_sum (int): Shows the sum of all log bytes ingested over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            container_avg_sum (int): Shows the average of all distinct containers over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            container_hwm_sum (int): Shows the high watermark of all distinct containers over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            custom_ts_sum (int): Shows the average number of distinct custom metrics over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            end_date (datetime): Shows the last date of usage in the current month(s) for all organizations.. [optional]  # noqa: E501
-            fargate_tasks_count_avg_sum (int): Shows the average of all Fargate tasks over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            fargate_tasks_count_hwm_sum (int): Shows the high watermark of all Fargate tasks over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            gcp_host_top99p_sum (int): Shows the 99th percentile of all GCP hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            indexed_events_count_agg_sum (int): Shows the sum of all log events indexed over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            infra_host_top99p_sum (int): Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            ingested_events_bytes_agg_sum (int): Shows the sum of all log bytes ingested over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            last_updated (datetime): Shows the the most recent hour in the current month(s) for all organizations for which all usages were calculated.. [optional]  # noqa: E501
-            mobile_rum_session_count_agg_sum (int): Shows the sum of all mobile RUM Sessions over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            netflow_indexed_events_count_agg_sum (int): Shows the sum of all Network flows indexed over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            npm_host_top99p_sum (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            profiling_container_agent_count_avg (int): Shows the average number of profiled containers over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            profiling_host_count_top99p_sum (int): Shows the 99th percentile of all profiled hosts over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            rum_session_count_agg_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            start_date (datetime): Shows the first date of usage in the current month(s) for all organizations.. [optional]  # noqa: E501
-            synthetics_browser_check_calls_count_agg_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            synthetics_check_calls_count_agg_sum (int): Shows the sum of all Synthetic API tests over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            trace_search_indexed_events_count_agg_sum (int): Shows the sum of all Indexed Spans indexed over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
-            twol_ingested_events_bytes_agg_sum (int): Shows the sum of all tracing without limits bytes ingested over all hours in the current month(s) for all organizations.. [optional]  # noqa: E501
+            agent_host_top99p_sum (int): Shows the 99th percentile of all agent hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            apm_host_top99p_sum (int): Shows the 99th percentile of all distinct APM hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            aws_host_top99p_sum (int): Shows the 99th percentile of all AWS hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            aws_lambda_func_count (int): Shows the average of the number of functions that executed 1 or more times each hour in the current months for all organizations.. [optional]  # noqa: E501
+            aws_lambda_invocations_sum (int): Shows the sum of all AWS Lambda invocations over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            azure_app_service_top99p_sum (int): Shows the 99th percentile of all Azure app services over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            azure_host_top99p_sum (int): Shows the 99th percentile of all Azure hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            billable_ingested_bytes_agg_sum (int): Shows the sum of all log bytes ingested over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            container_avg_sum (int): Shows the average of all distinct containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            container_hwm_sum (int): Shows the sum of the high-water marks of all distinct containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            custom_ts_sum (int): Shows the average number of distinct custom metrics over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            end_date (datetime): Shows the last date of usage in the current months for all organizations.. [optional]  # noqa: E501
+            fargate_tasks_count_avg_sum (int): Shows the average of all Fargate tasks over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            fargate_tasks_count_hwm_sum (int): Shows the sum of the high-water marks of all Fargate tasks over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            gcp_host_top99p_sum (int): Shows the 99th percentile of all GCP hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            incident_management_monthly_active_users_hwm_sum (int): Shows sum of the the high-water marks of incident management monthly active users in the current months for all organizations.. [optional]  # noqa: E501
+            indexed_events_count_agg_sum (int): Shows the sum of all log events indexed over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            infra_host_top99p_sum (int): Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            ingested_events_bytes_agg_sum (int): Shows the sum of all log bytes ingested over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            last_updated (datetime): Shows the the most recent hour in the current months for all organizations for which all usages were calculated.. [optional]  # noqa: E501
+            mobile_rum_session_count_agg_sum (int): Shows the sum of all mobile RUM Sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            netflow_indexed_events_count_agg_sum (int): Shows the sum of all Network flows indexed over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            npm_host_top99p_sum (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            profiling_container_agent_count_avg (int): Shows the average number of profiled containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            profiling_host_count_top99p_sum (int): Shows the 99th percentile of all profiled hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            rum_session_count_agg_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            start_date (datetime): Shows the first date of usage in the current months for all organizations.. [optional]  # noqa: E501
+            synthetics_browser_check_calls_count_agg_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            synthetics_check_calls_count_agg_sum (int): Shows the sum of all Synthetic API tests over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            trace_search_indexed_events_count_agg_sum (int): Shows the sum of all Indexed Spans indexed over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            twol_ingested_events_bytes_agg_sum (int): Shows the sum of all tracing without limits bytes ingested over all hours in the current months for all organizations.. [optional]  # noqa: E501
             usage ([UsageSummaryDate]): An array of objects regarding hourly usage.. [optional]  # noqa: E501
         """
 

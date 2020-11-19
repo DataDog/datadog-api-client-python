@@ -35,45 +35,6 @@ from pytest_bdd import (
 logging.basicConfig()
 
 
-@pytest.hookimpl(tryfirst=True, hookwrapper=True)
-def pytest_runtest_makereport(item, call):
-    """Store outcome for tracing."""
-    outcome = yield
-    rep = outcome.get_result()
-    setattr(item, "dd_outcome", rep)
-
-
-def pytest_sessionfinish(session, exitstatus):
-    """Flush open tracer."""
-    if tracer is None:
-        return
-
-    tracer.shutdown()
-
-
-@pytest.fixture(scope="function")
-def ddspan(request):
-    if tracer is None:
-        yield None
-        return
-
-    tags = [marker.kwargs for marker in request.node.iter_markers(name="dd_tag")]
-
-    with tracer.trace("test", resource=request.node.name, span_type="test") as span:
-        from ddtrace.constants import ANALYTICS_SAMPLE_RATE_KEY
-        span.set_tag(ANALYTICS_SAMPLE_RATE_KEY, True)
-
-        for tag in tags:
-            for key, value in tag.items():
-                span.set_tag(key, value)
-
-        yield span
-
-        outcome = request.node.dd_outcome
-        if outcome.failed:
-            span.set_exc_info(sys.last_type, sys.last_value, sys.last_traceback)
-
-
 def pytest_bdd_before_step(request, feature, scenario, step, step_func):
     if tracer is None:
         return
