@@ -52,6 +52,9 @@ class EventAlertType(ModelSimple):
             'WARNING': "warning",
             'INFO': "info",
             'SUCCESS': "success",
+            'USER_UPDATE': "user_update",
+            'RECOMMENDATION': "recommendation",
+            'SNAPSHOT': "snapshot",
         },
     }
 
@@ -101,10 +104,10 @@ class EventAlertType(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): If an alert event is enabled, set its type. For example, &#x60;error&#x60;, &#x60;warning&#x60;, &#x60;info&#x60;, and &#x60;success&#x60;.., must be one of ["error", "warning", "info", "success", ]  # noqa: E501
+            args[0] (str): If an alert event is enabled, set its type. For example, &#x60;error&#x60;, &#x60;warning&#x60;, &#x60;info&#x60;, &#x60;success&#x60;, &#x60;user_update&#x60;, &#x60;recommendation&#x60;, and &#x60;snapshot&#x60;.., must be one of ["error", "warning", "info", "success", "user_update", "recommendation", "snapshot", ]  # noqa: E501
 
         Keyword Args:
-            value (str): If an alert event is enabled, set its type. For example, &#x60;error&#x60;, &#x60;warning&#x60;, &#x60;info&#x60;, and &#x60;success&#x60;.., must be one of ["error", "warning", "info", "success", ]  # noqa: E501
+            value (str): If an alert event is enabled, set its type. For example, &#x60;error&#x60;, &#x60;warning&#x60;, &#x60;info&#x60;, &#x60;success&#x60;, &#x60;user_update&#x60;, &#x60;recommendation&#x60;, and &#x60;snapshot&#x60;.., must be one of ["error", "warning", "info", "success", "user_update", "recommendation", "snapshot", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
