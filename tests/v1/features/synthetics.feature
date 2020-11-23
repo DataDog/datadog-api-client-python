@@ -136,3 +136,32 @@ Feature: Synthetics
     And request contains "variable_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Create a private location returns "OK" response
+    Given new "CreatePrivateLocation" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Delete a private location returns "OK" response
+    Given new "DeletePrivateLocation" request
+    And request contains "location_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 204 OK
+
+  @generated @skip
+  Scenario: Get a private location returns "OK" response
+    Given new "GetPrivateLocation" request
+    And request contains "location_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Edit a private location returns "OK" response
+    Given new "UpdatePrivateLocation" request
+    And request contains "location_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
