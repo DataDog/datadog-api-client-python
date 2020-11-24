@@ -182,6 +182,7 @@ Feature: Usage Metering
 
   @generated @skip
   Scenario: Get Usage Attribution returns "OK" response
-    Given new "GetUsageAttribution" request
+    Given operation "GetUsageAttribution" enabled
+    And new "GetUsageAttribution" request
     When the request is sent
     Then the response status is 200 OK

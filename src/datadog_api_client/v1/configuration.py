@@ -218,6 +218,7 @@ conf = datadog_api_client.v1.Configuration(
             "get_monthly_custom_reports": False,
             "get_specified_daily_custom_reports": False,
             "get_specified_monthly_custom_reports": False,
+            "get_usage_attribution": False,
         }
 
     def __deepcopy__(self, memo):
