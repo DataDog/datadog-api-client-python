@@ -4424,6 +4424,7 @@ components:
           $ref: '#/components/schemas/OrganizationSubscription'
       type: object
     OrganizationBilling:
+      deprecated: true
       description: A JSON array of billing type.
       example:
         type: parent_billing
@@ -4446,8 +4447,6 @@ components:
           $ref: '#/components/schemas/OrganizationSubscription'
       required:
       - name
-      - subscription
-      - billing
       type: object
     OrganizationCreateResponse:
       description: Response object for an organization creation.
@@ -4477,6 +4476,7 @@ components:
           $ref: '#/components/schemas/Organization'
       type: object
     OrganizationSubscription:
+      deprecated: true
       description: Subscription definition.
       example:
         type: pro
