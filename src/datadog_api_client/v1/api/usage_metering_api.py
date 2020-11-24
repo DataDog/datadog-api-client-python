@@ -3392,6 +3392,7 @@ class UsageMeteringApi(object):
 
             Keyword Args:
                 names ([str]): Comma-separated list of metric names.. [optional]
+                limit (int): Maximum number of results to return.. [optional] if omitted the server will use the default value of 500
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3456,6 +3457,7 @@ class UsageMeteringApi(object):
                 'all': [
                     'month',
                     'names',
+                    'limit',
                 ],
                 'required': [
                     'month',
@@ -3465,10 +3467,16 @@ class UsageMeteringApi(object):
                 'enum': [
                 ],
                 'validation': [
+                    'limit',
                 ]
             },
             root_map={
                 'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 5000,
+                        'inclusive_minimum': 1,
+                    },
                 },
                 'allowed_values': {
                 },
@@ -3477,14 +3485,18 @@ class UsageMeteringApi(object):
                         (datetime,),
                     'names':
                         ([str],),
+                    'limit':
+                        (int,),
                 },
                 'attribute_map': {
                     'month': 'month',
                     'names': 'names',
+                    'limit': 'limit',
                 },
                 'location_map': {
                     'month': 'query',
                     'names': 'query',
+                    'limit': 'query',
                 },
                 'collection_format_map': {
                     'names': 'multi',
