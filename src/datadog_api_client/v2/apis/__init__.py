@@ -21,6 +21,7 @@ from datadog_api_client.v2.api.incident_teams_api import IncidentTeamsApi
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.api.logs_api import LogsApi
 from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
+from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.api.users_api import UsersApi
