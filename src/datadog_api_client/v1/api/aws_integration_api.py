@@ -22,6 +22,9 @@ from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
 from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
 from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
+from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilterCreateRequest
+from datadog_api_client.v1.model.aws_tag_filter_delete_request import AWSTagFilterDeleteRequest
+from datadog_api_client.v1.model.aws_tag_filter_list_response import AWSTagFilterListResponse
 
 
 class AWSIntegrationApi(object):
@@ -155,6 +158,159 @@ class AWSIntegrationApi(object):
             },
             api_client=api_client,
             callable=__create_aws_account
+        )
+
+        def __create_aws_tag_filter(
+            self,
+            body,
+            **kwargs
+        ):
+            """Set an AWS tag filter  # noqa: E501
+
+            Set an AWS tag filter.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.create_aws_tag_filter(body, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                body (AWSTagFilterCreateRequest): Set an AWS tag filter using an &#x60;aws_account_identifier&#x60;, &#x60;namespace&#x60;, and filtering string. Namespace options are &#x60;application_elb&#x60;, &#x60;elb&#x60;, &#x60;lambda&#x60;, &#x60;network_elb&#x60;, &#x60;rds&#x60;, &#x60;sqs&#x60;, and &#x60;custom&#x60;.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
+            return self.call_with_http_info(**kwargs)
+
+        self.create_aws_tag_filter = Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/integration/aws/filtering',
+                'operation_id': 'create_aws_tag_filter',
+                'http_method': 'POST',
+                'servers': [
+                    {
+                        'url': "https://{subdomain}.{site}",
+                        'description': "No description provided",
+                        'variables': {
+                            'site': {
+                                'description': "The regional site for our customers.",
+                                'default_value': "datadoghq.com",
+                                'enum_values': [
+                                    "datadoghq.com"
+                                ]
+                                },
+                            'subdomain': {
+                                'description': "The subdomain where the API is deployed.",
+                                'default_value': "api",
+                                }
+                            }
+                    },
+                    {
+                        'url': "{protocol}://{name}",
+                        'description': "No description provided",
+                        'variables': {
+                            'name': {
+                                'description': "Full site DNS name.",
+                                'default_value': "api.datadoghq.com",
+                                },
+                            'protocol': {
+                                'description': "The protocol for accessing the API.",
+                                'default_value': "https",
+                                }
+                            }
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (AWSTagFilterCreateRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__create_aws_tag_filter
         )
 
         def __create_new_aws_external_id(
@@ -399,6 +555,159 @@ class AWSIntegrationApi(object):
             callable=__delete_aws_account
         )
 
+        def __delete_aws_tag_filter(
+            self,
+            body,
+            **kwargs
+        ):
+            """Delete a tag filtering entry  # noqa: E501
+
+            Delete a tag filtering entry.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.delete_aws_tag_filter(body, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                body (AWSTagFilterDeleteRequest): Delete a tag filtering entry for a given AWS account and &#x60;dd-aws&#x60; namespace.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
+            return self.call_with_http_info(**kwargs)
+
+        self.delete_aws_tag_filter = Endpoint(
+            settings={
+                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/integration/aws/filtering',
+                'operation_id': 'delete_aws_tag_filter',
+                'http_method': 'DELETE',
+                'servers': [
+                    {
+                        'url': "https://{subdomain}.{site}",
+                        'description': "No description provided",
+                        'variables': {
+                            'site': {
+                                'description': "The regional site for our customers.",
+                                'default_value': "datadoghq.com",
+                                'enum_values': [
+                                    "datadoghq.com"
+                                ]
+                                },
+                            'subdomain': {
+                                'description': "The subdomain where the API is deployed.",
+                                'default_value': "api",
+                                }
+                            }
+                    },
+                    {
+                        'url': "{protocol}://{name}",
+                        'description': "No description provided",
+                        'variables': {
+                            'name': {
+                                'description': "Full site DNS name.",
+                                'default_value': "api.datadoghq.com",
+                                },
+                            'protocol': {
+                                'description': "The protocol for accessing the API.",
+                                'default_value': "https",
+                                }
+                            }
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (AWSTagFilterDeleteRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__delete_aws_tag_filter
+        )
+
         def __list_available_aws_namespaces(
             self,
             **kwargs
@@ -631,6 +940,158 @@ class AWSIntegrationApi(object):
             },
             api_client=api_client,
             callable=__list_aws_accounts
+        )
+
+        def __list_aws_tag_filters(
+            self,
+            account_id,
+            **kwargs
+        ):
+            """Get all AWS tag filters  # noqa: E501
+
+            Get all AWS tag filters.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.list_aws_tag_filters(account_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                account_id (str): Only return AWS filters that matches this &#x60;account_id&#x60;.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AWSTagFilterListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['account_id'] = \
+                account_id
+            return self.call_with_http_info(**kwargs)
+
+        self.list_aws_tag_filters = Endpoint(
+            settings={
+                'response_type': (AWSTagFilterListResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/integration/aws/filtering',
+                'operation_id': 'list_aws_tag_filters',
+                'http_method': 'GET',
+                'servers': [
+                    {
+                        'url': "https://{subdomain}.{site}",
+                        'description': "No description provided",
+                        'variables': {
+                            'site': {
+                                'description': "The regional site for our customers.",
+                                'default_value': "datadoghq.com",
+                                'enum_values': [
+                                    "datadoghq.com"
+                                ]
+                                },
+                            'subdomain': {
+                                'description': "The subdomain where the API is deployed.",
+                                'default_value': "api",
+                                }
+                            }
+                    },
+                    {
+                        'url': "{protocol}://{name}",
+                        'description': "No description provided",
+                        'variables': {
+                            'name': {
+                                'description': "Full site DNS name.",
+                                'default_value': "api.datadoghq.com",
+                                },
+                            'protocol': {
+                                'description': "The protocol for accessing the API.",
+                                'default_value': "https",
+                                }
+                            }
+                    },
+                ]
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'account_id': 'account_id',
+                },
+                'location_map': {
+                    'account_id': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__list_aws_tag_filters
         )
 
         def __update_aws_account(

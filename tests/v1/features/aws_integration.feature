@@ -48,3 +48,23 @@ Feature: AWS Integration
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Delete a tag filtering entry returns "OK" response
+    Given new "DeleteAWSTagFilter" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get all AWS tag filters returns "OK" response
+    Given new "ListAWSTagFilters" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Set an AWS tag filter returns "OK" response
+    Given new "CreateAWSTagFilter" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK

@@ -55,6 +55,9 @@ from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
 from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
 from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
+from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilterCreateRequest
+from datadog_api_client.v1.model.aws_tag_filter_delete_request import AWSTagFilterDeleteRequest
+from datadog_api_client.v1.model.aws_tag_filter_list_response import AWSTagFilterListResponse
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
@@ -117,10 +120,13 @@ All URIs are relative to *https://api.datadoghq.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AWSIntegrationApi* | [**create_aws_account**](AWSIntegrationApi.md#create_aws_account) | **POST** /api/v1/integration/aws | Create an AWS integration
+*AWSIntegrationApi* | [**create_aws_tag_filter**](AWSIntegrationApi.md#create_aws_tag_filter) | **POST** /api/v1/integration/aws/filtering | Set an AWS tag filter
 *AWSIntegrationApi* | [**create_new_aws_external_id**](AWSIntegrationApi.md#create_new_aws_external_id) | **PUT** /api/v1/integration/aws/generate_new_external_id | Generate a new external ID
 *AWSIntegrationApi* | [**delete_aws_account**](AWSIntegrationApi.md#delete_aws_account) | **DELETE** /api/v1/integration/aws | Delete an AWS integration
+*AWSIntegrationApi* | [**delete_aws_tag_filter**](AWSIntegrationApi.md#delete_aws_tag_filter) | **DELETE** /api/v1/integration/aws/filtering | Delete a tag filtering entry
 *AWSIntegrationApi* | [**list_available_aws_namespaces**](AWSIntegrationApi.md#list_available_aws_namespaces) | **GET** /api/v1/integration/aws/available_namespace_rules | List namespace rules
 *AWSIntegrationApi* | [**list_aws_accounts**](AWSIntegrationApi.md#list_aws_accounts) | **GET** /api/v1/integration/aws | List all AWS integrations
+*AWSIntegrationApi* | [**list_aws_tag_filters**](AWSIntegrationApi.md#list_aws_tag_filters) | **GET** /api/v1/integration/aws/filtering | Get all AWS tag filters
 *AWSIntegrationApi* | [**update_aws_account**](AWSIntegrationApi.md#update_aws_account) | **PUT** /api/v1/integration/aws | Update an AWS integration
 *AWSLogsIntegrationApi* | [**check_aws_logs_lambda_async**](AWSLogsIntegrationApi.md#check_aws_logs_lambda_async) | **POST** /api/v1/integration/aws/logs/check_async | Check that an AWS Lambda Function exists
 *AWSLogsIntegrationApi* | [**check_aws_logs_services_async**](AWSLogsIntegrationApi.md#check_aws_logs_services_async) | **POST** /api/v1/integration/aws/logs/services_async | Check permissions for log services
@@ -289,6 +295,11 @@ Class | Method | HTTP request | Description
  - [AWSLogsListResponseLambdas](AWSLogsListResponseLambdas.md)
  - [AWSLogsListServicesResponse](AWSLogsListServicesResponse.md)
  - [AWSLogsServicesRequest](AWSLogsServicesRequest.md)
+ - [AWSNamespace](AWSNamespace.md)
+ - [AWSTagFilterCreateRequest](AWSTagFilterCreateRequest.md)
+ - [AWSTagFilterDeleteRequest](AWSTagFilterDeleteRequest.md)
+ - [AWSTagFilterListResponse](AWSTagFilterListResponse.md)
+ - [AWSTagFilterListResponseFilters](AWSTagFilterListResponseFilters.md)
  - [AccessRole](AccessRole.md)
  - [AlertGraphWidgetDefinition](AlertGraphWidgetDefinition.md)
  - [AlertGraphWidgetDefinitionType](AlertGraphWidgetDefinitionType.md)
