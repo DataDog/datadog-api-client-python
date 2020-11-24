@@ -15837,6 +15837,16 @@ paths:
           items:
             type: string
           type: array
+      - description: Maximum number of results to return.
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 500
+          format: int32
+          maximum: 5000
+          minimum: 1
+          type: integer
       responses:
         '200':
           content:

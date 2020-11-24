@@ -2527,6 +2527,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     names = [
         "names_example",
     ] # [str] | Comma-separated list of metric names. (optional)
+    limit = 500 # int | Maximum number of results to return. (optional) if omitted the server will use the default value of 500
 
     # example passing only required values which don't have defaults set
     try:
@@ -2540,7 +2541,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get top 500 custom metrics by hourly average
-        api_response = api_instance.get_usage_top_avg_metrics(month, names=names)
+        api_response = api_instance.get_usage_top_avg_metrics(month, names=names, limit=limit)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_top_avg_metrics: %s\n" % e)
@@ -2552,6 +2553,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **month** | **datetime**| Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. |
  **names** | **[str]**| Comma-separated list of metric names. | [optional]
+ **limit** | **int**| Maximum number of results to return. | [optional] if omitted the server will use the default value of 500
 
 ### Return type
 
