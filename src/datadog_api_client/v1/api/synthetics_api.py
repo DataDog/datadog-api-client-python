@@ -29,6 +29,8 @@ from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_resp
 from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
 from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
+from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
+from datadog_api_client.v1.model.synthetics_private_location_creation_response import SyntheticsPrivateLocationCreationResponse
 from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
 from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import SyntheticsUpdateTestPauseStatusPayload
@@ -165,6 +167,127 @@ class SyntheticsApi(object):
             },
             api_client=api_client,
             callable=__create_global_variable
+        )
+
+        def __create_private_location(
+            self,
+            body,
+            **kwargs
+        ):
+            """Create a private location  # noqa: E501
+
+            Create a new Synthetics private location.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.create_private_location(body, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                body (SyntheticsPrivateLocation): Details of the private location to create.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                SyntheticsPrivateLocationCreationResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
+            return self.call_with_http_info(**kwargs)
+
+        self.create_private_location = Endpoint(
+            settings={
+                'response_type': (SyntheticsPrivateLocationCreationResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/synthetics/private-locations',
+                'operation_id': 'create_private_location',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (SyntheticsPrivateLocation,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__create_private_location
         )
 
         def __create_test(
@@ -406,6 +529,126 @@ class SyntheticsApi(object):
             },
             api_client=api_client,
             callable=__delete_global_variable
+        )
+
+        def __delete_private_location(
+            self,
+            location_id,
+            **kwargs
+        ):
+            """Delete a private location  # noqa: E501
+
+            Delete a Synthetics private location.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.delete_private_location(location_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                location_id (str): The ID of the private location.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                None
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['location_id'] = \
+                location_id
+            return self.call_with_http_info(**kwargs)
+
+        self.delete_private_location = Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/synthetics/private-locations/{location_id}',
+                'operation_id': 'delete_private_location',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'location_id',
+                ],
+                'required': [
+                    'location_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'location_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'location_id': 'location_id',
+                },
+                'location_map': {
+                    'location_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__delete_private_location
         )
 
         def __delete_tests(
@@ -1438,6 +1681,126 @@ class SyntheticsApi(object):
             callable=__get_global_variable
         )
 
+        def __get_private_location(
+            self,
+            location_id,
+            **kwargs
+        ):
+            """Get a private location  # noqa: E501
+
+            Get a Synthetics private location.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_private_location(location_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                location_id (str): The ID of the private location.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                SyntheticsPrivateLocation
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['location_id'] = \
+                location_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_private_location = Endpoint(
+            settings={
+                'response_type': (SyntheticsPrivateLocation,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/synthetics/private-locations/{location_id}',
+                'operation_id': 'get_private_location',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'location_id',
+                ],
+                'required': [
+                    'location_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'location_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'location_id': 'location_id',
+                },
+                'location_map': {
+                    'location_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_private_location
+        )
+
         def __get_test(
             self,
             public_id,
@@ -1781,7 +2144,7 @@ class SyntheticsApi(object):
         ):
             """Trigger some Synthetics tests for CI  # noqa: E501
 
-            Trigger a set of Synthetics tests for continuous integration  # noqa: E501
+            Trigger a set of Synthetics tests for continuous integration.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
@@ -1893,6 +2256,137 @@ class SyntheticsApi(object):
             },
             api_client=api_client,
             callable=__trigger_ci_tests
+        )
+
+        def __update_private_location(
+            self,
+            location_id,
+            body,
+            **kwargs
+        ):
+            """Edit a private location  # noqa: E501
+
+            Edit a Synthetics private location.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.update_private_location(location_id, body, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                location_id (str): The ID of the private location.
+                body (SyntheticsPrivateLocation): Details of the private location to be updated.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                SyntheticsPrivateLocation
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['location_id'] = \
+                location_id
+            kwargs['body'] = \
+                body
+            return self.call_with_http_info(**kwargs)
+
+        self.update_private_location = Endpoint(
+            settings={
+                'response_type': (SyntheticsPrivateLocation,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v1/synthetics/private-locations/{location_id}',
+                'operation_id': 'update_private_location',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'location_id',
+                    'body',
+                ],
+                'required': [
+                    'location_id',
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'location_id':
+                        (str,),
+                    'body':
+                        (SyntheticsPrivateLocation,),
+                },
+                'attribute_map': {
+                    'location_id': 'location_id',
+                },
+                'location_map': {
+                    'location_id': 'path',
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__update_private_location
         )
 
         def __update_test(
