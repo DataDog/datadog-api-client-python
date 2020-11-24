@@ -1,0 +1,64 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - ListProcesses
+      User-Agent:
+      - datadog-api-client-python/0.1.dev135+dirty (python 3.8.6; os Linux; arch x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/processes?page%5Blimit%5D=2&search=process-agent&tags=testing%3Atrue
+  response:
+    body:
+      string: '{"meta":{"page":{"after":"48ad51e27501000015e90400c5f73d639eae5b250aeeb430a3acb093","size":2}},"data":[{"type":"process","id":"15e90400c53674fe2bf07fb2988d3c1cbe735b5f","attributes":{"cmdline":"/opt/datadog-agent/embedded/bin/process-agent
+        --config=/etc/datadog-agent/datadog.yaml --sysprobe-config=/etc/datadog-agent/system-probe.yaml
+        --pid=/opt/datadog-agent/run/process-agent.pid","timestamp":"2020-11-19T21:52:09","start":"2020-11-19T19:05:21","user":"uid:118","pid":1168,"ppid":1,"host":"gardie-frog","tags":["testing:true","host:gardie-frog","user:uid:118","command:process-agent","state_zombie:false"]}},{"type":"process","id":"15e90400c5f73d639eae5b250aeeb430a3acb093","attributes":{"cmdline":"process-agent
+        --config=/etc/datadog-agent/datadog.yaml","timestamp":"2020-11-19T21:54:09","start":"2020-11-19T21:03:25","user":"root","pid":16407,"ppid":16402,"host":"gardie-frog","tags":["testing:true","host:gardie-frog","user:uid:118","command:process-agent","state_zombie:false"]}}]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '988'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Thu, 19 Nov 2020 21:55:18 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 26-Nov-2020 21:55:18 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - bOYRvpIMaDWtEAFc77xh4cYKoSxr/zmllvfW+/1TUFo7Zbru0n5QEX4LCoKiS3Mv
+      X-DD-VERSION:
+      - '35.3401942'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-RateLimit-Limit:
+      - '100'
+      X-RateLimit-Period:
+      - '60'
+      X-RateLimit-Remaining:
+      - '99'
+      X-RateLimit-Reset:
+      - '42'
+    status:
+      code: 200
+      message: OK
+version: 1
