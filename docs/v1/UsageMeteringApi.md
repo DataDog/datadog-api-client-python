@@ -30,7 +30,7 @@ Method | HTTP request | Description
 [**get_usage_synthetics_api**](UsageMeteringApi.md#get_usage_synthetics_api) | **GET** /api/v1/usage/synthetics_api | Get hourly usage for Synthetics API Checks
 [**get_usage_synthetics_browser**](UsageMeteringApi.md#get_usage_synthetics_browser) | **GET** /api/v1/usage/synthetics_browser | Get hourly usage for Synthetics Browser Checks
 [**get_usage_timeseries**](UsageMeteringApi.md#get_usage_timeseries) | **GET** /api/v1/usage/timeseries | Get hourly usage for custom metrics
-[**get_usage_top_avg_metrics**](UsageMeteringApi.md#get_usage_top_avg_metrics) | **GET** /api/v1/usage/top_avg_metrics | Get top 500 custom metrics by hourly average
+[**get_usage_top_avg_metrics**](UsageMeteringApi.md#get_usage_top_avg_metrics) | **GET** /api/v1/usage/top_avg_metrics | Get top custom metrics by hourly average
 [**get_usage_trace**](UsageMeteringApi.md#get_usage_trace) | **GET** /api/v1/usage/traces | Get hourly usage for Trace Search
 
 
@@ -2481,7 +2481,7 @@ Name | Type | Description  | Notes
 # **get_usage_top_avg_metrics**
 > UsageTopAvgMetricsResponse get_usage_top_avg_metrics(month)
 
-Get top 500 custom metrics by hourly average
+Get top custom metrics by hourly average
 
 Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average.
 
@@ -2527,11 +2527,11 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     names = [
         "names_example",
     ] # [str] | Comma-separated list of metric names. (optional)
-    limit = 500 # int | Maximum number of results to return. (optional) if omitted the server will use the default value of 500
+    limit = 500 # int | Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. (optional) if omitted the server will use the default value of 500
 
     # example passing only required values which don't have defaults set
     try:
-        # Get top 500 custom metrics by hourly average
+        # Get top custom metrics by hourly average
         api_response = api_instance.get_usage_top_avg_metrics(month)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
@@ -2540,7 +2540,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get top 500 custom metrics by hourly average
+        # Get top custom metrics by hourly average
         api_response = api_instance.get_usage_top_avg_metrics(month, names=names, limit=limit)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
@@ -2553,7 +2553,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **month** | **datetime**| Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. |
  **names** | **[str]**| Comma-separated list of metric names. | [optional]
- **limit** | **int**| Maximum number of results to return. | [optional] if omitted the server will use the default value of 500
+ **limit** | **int**| Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. | [optional] if omitted the server will use the default value of 500
 
 ### Return type
 
