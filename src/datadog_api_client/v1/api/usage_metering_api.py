@@ -3378,7 +3378,7 @@ class UsageMeteringApi(object):
             month,
             **kwargs
         ):
-            """Get top 500 custom metrics by hourly average  # noqa: E501
+            """Get top custom metrics by hourly average  # noqa: E501
 
             Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
@@ -3392,7 +3392,7 @@ class UsageMeteringApi(object):
 
             Keyword Args:
                 names ([str]): Comma-separated list of metric names.. [optional]
-                limit (int): Maximum number of results to return.. [optional] if omitted the server will use the default value of 500
+                limit (int): Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified.. [optional] if omitted the server will use the default value of 500
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object

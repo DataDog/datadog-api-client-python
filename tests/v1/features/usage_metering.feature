@@ -103,12 +103,6 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Get top 500 custom metrics by hourly average returns "OK" response
-    Given new "GetUsageTopAvgMetrics" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
   Scenario: Get the list of available daily custom reports returns "OK" response
     Given operation "GetDailyCustomReports" enabled
     And new "GetDailyCustomReports" request
@@ -184,5 +178,11 @@ Feature: Usage Metering
   Scenario: Get Usage Attribution returns "OK" response
     Given operation "GetUsageAttribution" enabled
     And new "GetUsageAttribution" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get top custom metrics by hourly average returns "OK" response
+    Given new "GetUsageTopAvgMetrics" request
     When the request is sent
     Then the response status is 200 OK
