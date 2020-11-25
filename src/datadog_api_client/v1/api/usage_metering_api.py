@@ -1091,7 +1091,6 @@ class UsageMeteringApi(object):
 
             Keyword Args:
                 end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage ending this month.. [optional]
-                org_id (int): Include usage summaries for each sub-org.. [optional]
                 sort_direction (UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
                 sort_name (UsageAttributionSort): The field to sort by.. [optional]
                 _return_http_data_only (bool): response data without head status
@@ -1161,7 +1160,6 @@ class UsageMeteringApi(object):
                     'start_month',
                     'fields',
                     'end_month',
-                    'org_id',
                     'sort_direction',
                     'sort_name',
                 ],
@@ -1188,8 +1186,6 @@ class UsageMeteringApi(object):
                         (str,),
                     'end_month':
                         (datetime,),
-                    'org_id':
-                        (int,),
                     'sort_direction':
                         (UsageSortDirection,),
                     'sort_name':
@@ -1199,7 +1195,6 @@ class UsageMeteringApi(object):
                     'start_month': 'start_month',
                     'fields': 'fields',
                     'end_month': 'end_month',
-                    'org_id': 'org_id',
                     'sort_direction': 'sort_direction',
                     'sort_name': 'sort_name',
                 },
@@ -1207,7 +1202,6 @@ class UsageMeteringApi(object):
                     'start_month': 'query',
                     'fields': 'query',
                     'end_month': 'query',
-                    'org_id': 'query',
                     'sort_direction': 'query',
                     'sort_name': 'query',
                 },
