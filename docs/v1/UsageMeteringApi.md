@@ -811,7 +811,6 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     start_month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
     fields = "fields_example" # str | The specified field to search results for.
     end_month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month. (optional)
-    org_id = 1 # int | Include usage summaries for each sub-org. (optional)
     sort_direction = UsageSortDirection("desc") # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
     sort_name = UsageAttributionSort("custom_timeseries_usage") # UsageAttributionSort | The field to sort by. (optional)
 
@@ -827,7 +826,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Usage Attribution
-        api_response = api_instance.get_usage_attribution(start_month, fields, end_month=end_month, org_id=org_id, sort_direction=sort_direction, sort_name=sort_name)
+        api_response = api_instance.get_usage_attribution(start_month, fields, end_month=end_month, sort_direction=sort_direction, sort_name=sort_name)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_attribution: %s\n" % e)
@@ -840,7 +839,6 @@ Name | Type | Description  | Notes
  **start_month** | **datetime**| Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage beginning in this month. Maximum of 15 months ago. |
  **fields** | **str**| The specified field to search results for. |
  **end_month** | **datetime**| Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage ending this month. | [optional]
- **org_id** | **int**| Include usage summaries for each sub-org. | [optional]
  **sort_direction** | **UsageSortDirection**| The direction to sort by: &#x60;[desc, asc]&#x60;. | [optional]
  **sort_name** | **UsageAttributionSort**| The field to sort by. | [optional]
 

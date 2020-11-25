@@ -15160,13 +15160,6 @@ paths:
         schema:
           format: date-time
           type: string
-      - description: Include usage summaries for each sub-org.
-        in: query
-        name: org_id
-        required: false
-        schema:
-          format: int64
-          type: integer
       - description: 'The direction to sort by: `[desc, asc]`.'
         in: query
         name: sort_direction
