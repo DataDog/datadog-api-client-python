@@ -95,8 +95,9 @@ def snake_case(value):
 
 def glom(value, path):
     from glom import glom as g
+
     # replace foo[index].bar by foo.index.bar
-    return g(value, re.sub('\[([0-9]*)\]', '.\\1', path))
+    return g(value, re.sub("\[([0-9]*)\]", ".\\1", path))
 
 
 @pytest.fixture
@@ -111,7 +112,9 @@ def unique(request, freezer):
         @staticmethod
         def __call__():
             with freezer:
-                return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+                return (
+                    f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+                )
 
         def __str__(self):
             return self()
@@ -140,7 +143,7 @@ def unique_lower(request, freezer):
 
 
 @pytest.fixture
-def context(vcr_cassette, request, unique, unique_lower):
+def context(vcr_cassette, package_name, request, unique, unique_lower):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
@@ -154,14 +157,13 @@ def context(vcr_cassette, request, unique, unique_lower):
         except Exception:
             pass
     yield ctx
+
+    exceptions = importlib.import_module(package_name + ".exceptions")
     for undo in reversed(ctx["undo_operations"]):
-        if vcr_cassette.record_mode != "none":
-            number_of_interactions = len(vcr_cassette.data)
-            try:
-                undo()
-            except Exception as e:
-                warnings.warn(str(e))
-            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+        try:
+            undo()
+        except exceptions.ApiException as e:
+            warnings.warn(str(e))
 
 
 @pytest.fixture(scope="module", autouse=True)
@@ -175,7 +177,10 @@ def record_mode(request):
             setattr(
                 request.config.option,
                 "vcr_record",
-                {"true": "all", "false": "none",}[mode],
+                {
+                    "true": "all",
+                    "false": "none",
+                }[mode],
             )
             request.config.option.disable_vcr = False
     return mode
@@ -184,7 +189,7 @@ def record_mode(request):
 @pytest.fixture(scope="module")
 def vcr_config(record_mode):
     def before_record_request(request):
-        if 'Datadog-Meta-Tracer-Version' in request.headers:
+        if "Datadog-Meta-Tracer-Version" in request.headers:
             return None
         return request
 
@@ -206,12 +211,14 @@ def freezer(vcr_cassette_name, vcr_cassette, vcr):
         freeze_at = datetime.now().replace(tzinfo=tzinfo).isoformat()
         if vcr_cassette.record_mode == "all":
             with open(
-                os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"), "w+",
+                os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"),
+                "w+",
             ) as f:
                 f.write(freeze_at)
     else:
         with open(
-            os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"), "r",
+            os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"),
+            "r",
         ) as f:
             freeze_at = f.readline().strip()
 
@@ -235,6 +242,20 @@ def _package(package_name):
     return importlib.import_module(package_name)
 
 
+@pytest.fixture(scope="module")
+def undo_operations(package_name):
+    version = package_name.split(".")[-1]
+    with open(
+        os.path.join(os.path.dirname(__file__), version, "features", "undo.json")
+    ) as fp:
+        data = json.load(fp)
+
+    return {
+        snake_case(operation_id): settings.get("undo")
+        for operation_id, settings in data.items()
+    }
+
+
 @pytest.fixture
 def configuration(_package):
     c = _package.Configuration()
@@ -249,6 +270,7 @@ def configuration(_package):
 def client(_package, configuration, record_mode, vcr_cassette):
     if record_mode == "true" and os.path.exists(vcr_cassette._path):
         os.remove(vcr_cassette._path)
+        vcr_cassette.data.clear()
 
     with _package.ApiClient(configuration) as api_client:
         yield api_client
@@ -318,53 +340,49 @@ def request_parameter_with_value(context, name, value):
     context["api_request"]["kwargs"][snake_case(name)] = json.loads(tpl)
 
 
-def undo(api_request, client):
+@pytest.fixture
+def undo(undo_operations, client):
     """Clean after operation."""
-    operation_id = api_request["request"].settings["operation_id"]
-    if operation_id == "create_user":
-        return api_request["api"].disable_user(api_request["response"][0].data.id)
-    elif operation_id == "create_role":
-        return api_request["api"].delete_role(api_request["response"][0].data.id)
-    elif operation_id == "create_incident":
-        client.configuration.unstable_operations["delete_incident"] = True
-        return api_request["api"].delete_incident(api_request["response"][0].data.id)
-    elif operation_id == "create_incident_service":
-        client.configuration.unstable_operations["delete_incident_service"] = True
-        return api_request["api"].delete_incident_service(api_request["response"][0].data.id)
-    elif operation_id == "create_incident_team":
-        client.configuration.unstable_operations["delete_incident_team"] = True
-        return api_request["api"].delete_incident_team(api_request["response"][0].data.id)
-    elif operation_id in {
-        "update_user",
-        "add_permission_to_role",
-        "add_user_to_role",
-        "send_invitations",
-        "aggregate_logs",
-        "list_logs",
-    }:
-        return
-    elif api_request["request"].settings["http_method"] == "PATCH":
-        return
-    raise NotImplementedError(operation_id)
+
+    def cleanup(api, operation_id, response, client=client):
+        if operation_id not in undo_operations:
+            raise NotImplementedError(operation_id)
+
+        operation = undo_operations[operation_id]
+        if operation["type"] is None:
+            raise NotImplementedError(operation_id)
+
+        if operation["type"] != "unsafe":
+            return
+
+        operation_name = snake_case(operation["operationId"])
+        method = getattr(api, operation_name)
+        args = [
+            glom(response, parameter["source"])
+            for parameter in operation.get("parameters", [])
+        ]
+
+        if operation_name in client.configuration.unstable_operations:
+            client.configuration.unstable_operations[operation_name] = True
+
+        return method(*args)
+
+    return cleanup
 
 
 @when("the request is sent")
-def execute_request(context, vcr_cassette, client):
+def execute_request(undo, context, vcr_cassette, client):
     """Execute the prepared request."""
     api_request = context["api_request"]
     api_request["response"] = api_request["request"].call_with_http_info(
         *api_request["args"], **api_request["kwargs"]
     )
-    if api_request["request"].settings["http_method"] not in {
-        "GET",
-        "HEAD",
-        "OPTIONS",
-        "DELETE",
-    }:
-        if vcr_cassette.record_mode != "none":
-            number_of_interactions = len(vcr_cassette.data)
-            undo(api_request, client)
-            vcr_cassette.data = vcr_cassette.data[:number_of_interactions]
+
+    api = api_request["api"]
+    operation_id = api_request["request"].settings["operation_id"]
+    response = api_request["response"][0]
+
+    context["undo_operations"].append(lambda: undo(api, operation_id, response))
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))
@@ -399,7 +417,11 @@ def expect_equal(context, response_path, value):
     assert test_value == response_value
 
 
-@then(parsers.parse('the response "{response_path}" has the same value as "{fixture_path}"'))
+@then(
+    parsers.parse(
+        'the response "{response_path}" has the same value as "{fixture_path}"'
+    )
+)
 def expect_equal_value(context, response_path, fixture_path):
     fixture_value = glom(context, fixture_path)
     response_value = glom(context["api_request"]["response"][0], response_path)

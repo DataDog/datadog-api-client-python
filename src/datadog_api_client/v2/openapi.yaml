@@ -5472,6 +5472,8 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
+      x-undo:
+        type: safe
   /api/v2/user_invitations/{user_invitation_uuid}:
     get:
       description: Returns a single user invitation by its UUID.
@@ -5506,6 +5508,8 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
+      x-undo:
+        type: safe
   /api/v2/users:
     get:
       description: 'Get the list of all users in the organization. This list includes
@@ -5574,6 +5578,8 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
+      x-undo:
+        type: safe
     post:
       description: Create a user for your organization.
       operationId: CreateUser
@@ -5605,6 +5611,12 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
+      x-undo:
+        operationId: DisableUser
+        parameters:
+        - name: user_id
+          source: data.id
+        type: unsafe
   /api/v2/users/{user_id}:
     delete:
       description: 'Disable a user. Can only be used with an application key belonging
@@ -5632,6 +5644,8 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
+      x-undo:
+        type: idempotent
     get:
       description: "Get a user in the organization specified by the user\u2019s `user_id`."
       operationId: GetUser
@@ -5660,6 +5674,8 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
+      x-undo:
+        type: safe
     patch:
       description: 'Edit a user. Can only be used with an application key belonging
 
@@ -5707,6 +5723,8 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
+      x-undo:
+        type: idempotent
   /api/v2/users/{user_id}/orgs:
     get:
       description: 'Get a user organization. Returns the user information and all
@@ -5739,6 +5757,8 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
+      x-undo:
+        type: safe
   /api/v2/users/{user_id}/permissions:
     get:
       description: "Get a user permission set. Returns a list of the user\u2019s permissions\n\
@@ -5769,6 +5789,8 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
+      x-undo:
+        type: safe
 security:
 - apiKeyAuth: []
   appKeyAuth: []

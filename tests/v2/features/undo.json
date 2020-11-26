@@ -1,0 +1,416 @@
+{
+  "DeleteDashboardListItems": {
+    "tag": "Dashboard Lists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDashboardListItems": {
+    "tag": "Dashboard Lists",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateDashboardListItems": {
+    "tag": "Dashboard Lists",
+    "undo": {
+      "operationId": "DeleteDashboardListItems",
+      "parameters": [
+        {
+          "name": "dashboard_list_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "UpdateDashboardListItems": {
+    "tag": "Dashboard Lists",
+    "undo": null
+  },
+  "ListIncidents": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncident": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncident",
+      "parameters": [
+        {
+          "name": "incident_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncident": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncident": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncident": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "AggregateLogs": {
+    "tag": "Logs",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetLogsArchiveOrder": {
+    "tag": "Logs Archives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateLogsArchiveOrder": {
+    "tag": "Logs Archives",
+    "undo": null
+  },
+  "ListLogsArchives": {
+    "tag": "Logs Archives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLogsArchive": {
+    "tag": "Logs Archives",
+    "undo": {
+      "operationId": "DeleteLogsArchive",
+      "parameters": [
+        {
+          "name": "archive_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLogsArchive": {
+    "tag": "Logs Archives",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetLogsArchive": {
+    "tag": "Logs Archives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateLogsArchive": {
+    "tag": "Logs Archives",
+    "undo": null
+  },
+  "RemoveRoleFromArchive": {
+    "tag": "Logs Archives",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListArchiveReadRoles": {
+    "tag": "Logs Archives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AddReadRoleToArchive": {
+    "tag": "Logs Archives",
+    "undo": null
+  },
+  "ListLogsGet": {
+    "tag": "Logs",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListLogs": {
+    "tag": "Logs",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListPermissions": {
+    "tag": "Roles",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListProcesses": {
+    "tag": "Processes",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRoles": {
+    "tag": "Roles",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRole": {
+    "tag": "Roles",
+    "undo": {
+      "operationId": "DeleteRole",
+      "parameters": [
+        {
+          "name": "role_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteRole": {
+    "tag": "Roles",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRole": {
+    "tag": "Roles",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRole": {
+    "tag": "Roles",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RemovePermissionFromRole": {
+    "tag": "Roles",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListRolePermissions": {
+    "tag": "Roles",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AddPermissionToRole": {
+    "tag": "Roles",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RemoveUserFromRole": {
+    "tag": "Roles",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListRoleUsers": {
+    "tag": "Roles",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AddUserToRole": {
+    "tag": "Roles",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSecurityMonitoringRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityMonitoringRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityMonitoringRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSecurityMonitoringRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityMonitoringRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSecurityMonitoringRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListSecurityMonitoringSignals": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchSecurityMonitoringSignals": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListIncidentServices": {
+    "tag": "Incident Services",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentService": {
+    "tag": "Incident Services",
+    "undo": {
+      "operationId": "DeleteIncidentService",
+      "parameters": [
+        {
+          "name": "service_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentService": {
+    "tag": "Incident Services",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentService": {
+    "tag": "Incident Services",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentService": {
+    "tag": "Incident Services",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListIncidentTeams": {
+    "tag": "Incident Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentTeam": {
+    "tag": "Incident Teams",
+    "undo": {
+      "operationId": "DeleteIncidentTeam",
+      "parameters": [
+        {
+          "name": "team_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentTeam": {
+    "tag": "Incident Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentTeam": {
+    "tag": "Incident Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentTeam": {
+    "tag": "Incident Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "SendInvitations": {
+    "tag": "Users",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetInvitation": {
+    "tag": "Users",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListUsers": {
+    "tag": "Users",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateUser": {
+    "tag": "Users",
+    "undo": {
+      "operationId": "DisableUser",
+      "parameters": [
+        {
+          "name": "user_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DisableUser": {
+    "tag": "Users",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetUser": {
+    "tag": "Users",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateUser": {
+    "tag": "Users",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListUserOrganizations": {
+    "tag": "Users",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListUserPermissions": {
+    "tag": "Users",
+    "undo": {
+      "type": "safe"
+    }
+  }
+}

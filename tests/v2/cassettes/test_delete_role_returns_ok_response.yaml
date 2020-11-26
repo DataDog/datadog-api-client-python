@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"name": "datadog-api-client-python-test_delete_role_returns_ok_response-1600941702.671028"},
+    body: '{"data": {"attributes": {"name": "datadog-api-client-python-test_delete_role_returns_ok_response-1606385949.066807"},
       "type": "roles"}}'
     headers:
       Accept:
@@ -10,18 +10,19 @@ interactions:
       Dd-Operation-Id:
       - CreateRole
       User-Agent:
-      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b4.dev14+dirty (python 3.8.6; os Darwin; arch
+        x86_64)
       x-datadog-parent-id:
-      - '1976077066202444789'
+      - '8662618578124124675'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '14189814963739519665'
+      - '12852956396134738605'
     method: POST
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
-      string: '{"data":{"type":"roles","id":"f2afe7c0-fe4c-11ea-b268-cf8fcf023560","attributes":{"name":"datadog-api-client-python-test_delete_role_returns_ok_response-1600941702.671028","created_at":"2020-09-24T10:01:43.079827+00:00","modified_at":"2020-09-24T10:01:43.079827+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}}'
+      string: '{"data":{"type":"roles","id":"d278e38e-2fd0-11eb-8697-434836db1f2d","attributes":{"name":"datadog-api-client-python-test_delete_role_returns_ok_response-1606385949.066807","created_at":"2020-11-26T10:19:09.576404+00:00","modified_at":"2020-11-26T10:19:09.576404+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}}'
     headers:
       Cache-Control:
       - no-cache
@@ -36,11 +37,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Thu, 24 Sep 2020 10:01:43 GMT
+      - Thu, 26 Nov 2020 10:19:09 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:43 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 03-Dec-2020 10:19:09 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -49,9 +50,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - FHfHzbfIddsg0sQ7IeNBOxLqb5wz+d6n32kEDCDFZtJpoagPnr4KgZnA3JebHBTT
+      - E8kYJH6Hb74I4gS4d8oTnZBbKR38RfM4isuhSW09hK2ARkJHcJxE0DNPxSd582jS
       X-DD-VERSION:
-      - '35.3086554'
+      - '35.3435414'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -59,9 +60,9 @@ interactions:
       X-RateLimit-Period:
       - '60'
       X-RateLimit-Remaining:
-      - '480'
+      - '499'
       X-RateLimit-Reset:
-      - '17'
+      - '51'
     status:
       code: 200
       message: OK
@@ -75,15 +76,16 @@ interactions:
       Dd-Operation-Id:
       - DeleteRole
       User-Agent:
-      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b4.dev14+dirty (python 3.8.6; os Darwin; arch
+        x86_64)
       x-datadog-parent-id:
-      - '704606456846013586'
+      - '17445802385688481415'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '14189814963739519665'
+      - '12594289830577318759'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/roles/f2afe7c0-fe4c-11ea-b268-cf8fcf023560
+    uri: https://api.datadoghq.com/api/v2/roles/d278e38e-2fd0-11eb-8697-434836db1f2d
   response:
     body:
       string: ''
@@ -101,20 +103,20 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Thu, 24 Sep 2020 10:01:43 GMT
+      - Thu, 26 Nov 2020 10:19:09 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:43 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 03-Dec-2020 10:19:09 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - QgQu/iPnCQXRgWPQKBm0M4xipFcbwl50MnRHSjKNayyZv/6KjuJNpOhY5+udaeL8
+      - hhAfI9DpjHRbHS2z+2prVh0mHwAun3McFDOF8AzNv8c8J6c/l2q8Kye8syKGTxkY
       X-DD-VERSION:
-      - '35.3086554'
+      - '35.3435414'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -122,10 +124,72 @@ interactions:
       X-RateLimit-Period:
       - '60'
       X-RateLimit-Remaining:
-      - '479'
+      - '498'
       X-RateLimit-Reset:
-      - '17'
+      - '51'
     status:
       code: 204
       message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteRole
+      User-Agent:
+      - datadog-api-client-python/1.0.0b4.dev14+dirty (python 3.8.6; os Darwin; arch
+        x86_64)
+      x-datadog-parent-id:
+      - '4259196500949787113'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '4411938167220291259'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/roles/d278e38e-2fd0-11eb-8697-434836db1f2d
+  response:
+    body:
+      string: '{"errors": ["The role d278e38e-2fd0-11eb-8697-434836db1f2d does not
+        exist not found"]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '86'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Thu, 26 Nov 2020 10:19:10 GMT
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-VERSION:
+      - '35.3435414'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-RateLimit-Limit:
+      - '500'
+      X-RateLimit-Period:
+      - '60'
+      X-RateLimit-Remaining:
+      - '497'
+      X-RateLimit-Reset:
+      - '50'
+    status:
+      code: 404
+      message: Not Found
 version: 1
