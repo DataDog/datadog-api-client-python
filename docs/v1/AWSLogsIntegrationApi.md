@@ -147,9 +147,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
     body = AWSLogsServicesRequest(
         account_id="1234567",
-        services=[
-            "["s3","elb","elbv2","cloudfront","redshift","lambda"]",
-        ],
+["s3","elb","elbv2","cloudfront","redshift","lambda"],
     ) # AWSLogsServicesRequest | Check AWS Logs Async Services request body.
 
     # example passing only required values which don't have defaults set
@@ -410,9 +408,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
     body = AWSLogsServicesRequest(
         account_id="1234567",
-        services=[
-            "["s3","elb","elbv2","cloudfront","redshift","lambda"]",
-        ],
+["s3","elb","elbv2","cloudfront","redshift","lambda"],
     ) # AWSLogsServicesRequest | Enable AWS Log Services request body.
 
     # example passing only required values which don't have defaults set

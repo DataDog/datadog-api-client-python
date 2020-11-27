@@ -152,9 +152,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             name="name_example",
         ),
         description="description_example",
-        groups=[
-            "["env:prod","role:mysql"]",
-        ],
+["env:prod","role:mysql"],
         id="id_example",
         modified_at=1,
         monitor_ids=[
@@ -165,18 +163,8 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             denominator="denominator_example",
             numerator="numerator_example",
         ),
-        tags=[
-            "["env:prod","app:core"]",
-        ],
-        thresholds=[
-            SLOThreshold(
-                target=0.0,
-                target_display="99.9",
-                timeframe=SLOTimeframe("7d"),
-                warning=3.14,
-                warning_display="warning_display_example",
-            ),
-        ],
+["env:prod","app:core"],
+[],
         type=SLOType("metric"),
     ) # ServiceLevelObjectiveRequest | Service level objective request object.
 
@@ -713,9 +701,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             name="name_example",
         ),
         description="description_example",
-        groups=[
-            "["env:prod","role:mysql"]",
-        ],
+["env:prod","role:mysql"],
         id="id_example",
         modified_at=1,
         monitor_ids=[
@@ -729,18 +715,8 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             denominator="denominator_example",
             numerator="numerator_example",
         ),
-        tags=[
-            "["env:prod","app:core"]",
-        ],
-        thresholds=[
-            SLOThreshold(
-                target=0.0,
-                target_display="99.9",
-                timeframe=SLOTimeframe("7d"),
-                warning=3.14,
-                warning_display="warning_display_example",
-            ),
-        ],
+["env:prod","app:core"],
+[],
         type=SLOType("metric"),
     ) # ServiceLevelObjective | The edited service level objective request object.
 

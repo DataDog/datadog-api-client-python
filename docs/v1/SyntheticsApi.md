@@ -76,9 +76,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         description="Example description",
         id="id_example",
         name="MY_VARIABLE",
-        tags=[
-            "["team:front","test:workflow-1"]",
-        ],
+["team:front","test:workflow-1"],
         value=SyntheticsGlobalVariableValue(
             secure=True,
             value="example-value",
@@ -180,9 +178,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 key="key_example",
             ),
         ),
-        tags=[
-            "["team:front"]",
-        ],
+["team:front"],
     ) # SyntheticsPrivateLocation | Details of the private location to create.
 
     # example passing only required values which don't have defaults set
@@ -269,9 +265,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsTestDetails(
         config=SyntheticsTestConfig(
-            assertions=[
-                SyntheticsAssertion(),
-            ],
+[],
             request=SyntheticsTestRequest(
                 basic_auth=SyntheticsBasicAuth(
                     password="password_example",
@@ -603,9 +597,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsDeleteTestsPayload(
-        public_ids=[
-            "[]",
-        ],
+[],
     ) # SyntheticsDeleteTestsPayload | Public ID list of the Synthetic tests to be deleted.
 
     # example passing only required values which don't have defaults set
@@ -696,9 +688,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         description="Example description",
         id="id_example",
         name="MY_VARIABLE",
-        tags=[
-            "["team:front","test:workflow-1"]",
-        ],
+["team:front","test:workflow-1"],
         value=SyntheticsGlobalVariableValue(
             secure=True,
             value="example-value",
@@ -1794,9 +1784,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 key="key_example",
             ),
         ),
-        tags=[
-            "["team:front"]",
-        ],
+["team:front"],
     ) # SyntheticsPrivateLocation | Details of the private location to be updated.
 
     # example passing only required values which don't have defaults set
@@ -1884,9 +1872,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     public_id = "public_id_example" # str | The public ID of the test to get details from.
     body = SyntheticsTestDetails(
         config=SyntheticsTestConfig(
-            assertions=[
-                SyntheticsAssertion(),
-            ],
+[],
             request=SyntheticsTestRequest(
                 basic_auth=SyntheticsBasicAuth(
                     password="password_example",

@@ -87,18 +87,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         ],
         title="title_example",
         url="/dashboard/123-abc-456/example-dashboard-title",
-        widgets=[
-            Widget(
-                definition=WidgetDefinition(),
-                id=1,
-                layout=WidgetLayout(
-                    height=0,
-                    width=0,
-                    x=0,
-                    y=0,
-                ),
-            ),
-        ],
+[{"definition":{"requests":{"fill":{"q":"system.cpu.user"}},"type":"hostmap"}}],
     ) # Dashboard | Create a dashboard request body.
 
     # example passing only required values which don't have defaults set
@@ -462,18 +451,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         ],
         title="title_example",
         url="/dashboard/123-abc-456/example-dashboard-title",
-        widgets=[
-            Widget(
-                definition=WidgetDefinition(),
-                id=1,
-                layout=WidgetLayout(
-                    height=0,
-                    width=0,
-                    x=0,
-                    y=0,
-                ),
-            ),
-        ],
+[{"definition":{"requests":{"fill":{"q":"system.cpu.user"}},"type":"hostmap"}}],
     ) # Dashboard | Update Dashboard request body.
 
     # example passing only required values which don't have defaults set
