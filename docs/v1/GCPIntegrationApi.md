@@ -62,9 +62,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         client_email="api-dev@datadog-sandbox.iam.gserviceaccount.com",
         client_id="123456712345671234567",
         client_x509_cert_url="https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>",
-        errors=[
-            "["*"]",
-        ],
+["*"],
         host_filters="key:value,filter:example",
         private_key="private_key",
         private_key_id="123456789abcdefghi123456789abcdefghijklm",
@@ -162,9 +160,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         client_email="api-dev@datadog-sandbox.iam.gserviceaccount.com",
         client_id="123456712345671234567",
         client_x509_cert_url="https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>",
-        errors=[
-            "["*"]",
-        ],
+["*"],
         host_filters="key:value,filter:example",
         private_key="private_key",
         private_key_id="123456789abcdefghi123456789abcdefghijklm",
@@ -342,9 +338,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         client_email="api-dev@datadog-sandbox.iam.gserviceaccount.com",
         client_id="123456712345671234567",
         client_x509_cert_url="https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>",
-        errors=[
-            "["*"]",
-        ],
+["*"],
         host_filters="key:value,filter:example",
         private_key="private_key",
         private_key_id="123456789abcdefghi123456789abcdefghijklm",

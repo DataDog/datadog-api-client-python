@@ -237,9 +237,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         id=1625,
         message="Message on the downtime",
         monitor_id=123456,
-        monitor_tags=[
-            "["*"]",
-        ],
+["*"],
         parent_id=123,
         recurrence=DowntimeRecurrence(
             period=1,
@@ -247,13 +245,9 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             type="weeks",
             until_date=1447786293,
             until_occurrences=2,
-            week_days=[
-                "["Mon","Tue"]",
-            ],
+["Mon","Tue"],
         ),
-        scope=[
-            "["env:staging"]",
-        ],
+["env:staging"],
         start=1412792983,
         timezone="America/New_York",
         updater_id=123456,
@@ -520,9 +514,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         id=1625,
         message="Message on the downtime",
         monitor_id=123456,
-        monitor_tags=[
-            "["*"]",
-        ],
+["*"],
         parent_id=123,
         recurrence=DowntimeRecurrence(
             period=1,
@@ -530,13 +522,9 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             type="weeks",
             until_date=1447786293,
             until_occurrences=2,
-            week_days=[
-                "["Mon","Tue"]",
-            ],
+["Mon","Tue"],
         ),
-        scope=[
-            "["env:staging"]",
-        ],
+["env:staging"],
         start=1412792983,
         timezone="America/New_York",
         updater_id=123456,
