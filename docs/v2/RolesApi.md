@@ -282,12 +282,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                     ],
                 ),
                 users=RelationshipToUsers(
-                    data=[
-                        RelationshipToUserData(
-                            id="00000000-0000-0000-0000-000000000000",
-                            type=UsersType("users"),
-                        ),
-                    ],
+[],
                 ),
             ),
             type=RolesType("roles"),
