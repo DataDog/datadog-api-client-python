@@ -310,6 +310,7 @@ class HostsApi(object):
         def __mute_host(
             self,
             host_name,
+            body,
             **kwargs
         ):
             """Mute a host  # noqa: E501
@@ -318,14 +319,14 @@ class HostsApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.mute_host(host_name, async_req=True)
+            >>> thread = api.mute_host(host_name, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 host_name (str): Name of the host to mute.
+                body (HostMuteSettings): Mute a host request body.
 
             Keyword Args:
-                body (HostMuteSettings): Mute a host request body.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -372,6 +373,8 @@ class HostsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['host_name'] = \
                 host_name
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.mute_host = Endpoint(
@@ -393,6 +396,7 @@ class HostsApi(object):
                 ],
                 'required': [
                     'host_name',
+                    'body',
                 ],
                 'nullable': [
                 ],

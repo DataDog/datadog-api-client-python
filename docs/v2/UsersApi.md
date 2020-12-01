@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **create_user**
-> UserResponse create_user()
+> UserResponse create_user(body)
 
 Create a user
 
@@ -79,13 +79,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=UsersType("users"),
         ),
-    ) # UserCreateRequest |  (optional)
+    ) # UserCreateRequest | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Create a user
-        api_response = api_instance.create_user(body=body)
+        api_response = api_instance.create_user(body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling UsersApi->create_user: %s\n" % e)
@@ -95,7 +94,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserCreateRequest**](UserCreateRequest.md)|  | [optional]
+ **body** | [**UserCreateRequest**](UserCreateRequest.md)|  |
 
 ### Return type
 
@@ -634,7 +633,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **send_invitations**
-> UserInvitationsResponse send_invitations()
+> UserInvitationsResponse send_invitations(body)
 
 Send invitation emails
 
@@ -680,13 +679,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     api_instance = users_api.UsersApi(api_client)
     body = UserInvitationsRequest(
 [],
-    ) # UserInvitationsRequest |  (optional)
+    ) # UserInvitationsRequest | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Send invitation emails
-        api_response = api_instance.send_invitations(body=body)
+        api_response = api_instance.send_invitations(body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling UsersApi->send_invitations: %s\n" % e)
@@ -696,7 +694,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserInvitationsRequest**](UserInvitationsRequest.md)|  | [optional]
+ **body** | [**UserInvitationsRequest**](UserInvitationsRequest.md)|  |
 
 ### Return type
 
@@ -721,7 +719,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_user**
-> UserResponse update_user(user_id)
+> UserResponse update_user(user_id, body)
 
 Update a user
 
@@ -776,21 +774,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="00000000-0000-0000-0000-000000000000",
             type=UsersType("users"),
         ),
-    ) # UserUpdateRequest |  (optional)
+    ) # UserUpdateRequest | 
 
     # example passing only required values which don't have defaults set
     try:
         # Update a user
-        api_response = api_instance.update_user(user_id)
-        pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling UsersApi->update_user: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Update a user
-        api_response = api_instance.update_user(user_id, body=body)
+        api_response = api_instance.update_user(user_id, body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling UsersApi->update_user: %s\n" % e)
@@ -801,7 +790,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**| The ID of the user. |
- **body** | [**UserUpdateRequest**](UserUpdateRequest.md)|  | [optional]
+ **body** | [**UserUpdateRequest**](UserUpdateRequest.md)|  |
 
 ### Return type
 

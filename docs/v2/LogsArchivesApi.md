@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **add_read_role_to_archive**
-> add_read_role_to_archive(archive_id)
+> add_read_role_to_archive(archive_id, body)
 
 Grant role to an archive
 
@@ -67,20 +67,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="3653d3c6-0c75-11ea-ad28-fb5701eabc7d",
             type=RolesType("roles"),
         ),
-    ) # RelationshipToRole |  (optional)
+    ) # RelationshipToRole | 
 
     # example passing only required values which don't have defaults set
     try:
         # Grant role to an archive
-        api_instance.add_read_role_to_archive(archive_id)
-    except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling LogsArchivesApi->add_read_role_to_archive: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Grant role to an archive
-        api_instance.add_read_role_to_archive(archive_id, body=body)
+        api_instance.add_read_role_to_archive(archive_id, body)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling LogsArchivesApi->add_read_role_to_archive: %s\n" % e)
 ```
@@ -90,7 +82,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **archive_id** | **str**| The ID of the archive. |
- **body** | [**RelationshipToRole**](RelationshipToRole.md)|  | [optional]
+ **body** | [**RelationshipToRole**](RelationshipToRole.md)|  |
 
 ### Return type
 
@@ -623,7 +615,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **remove_role_from_archive**
-> remove_role_from_archive(archive_id)
+> remove_role_from_archive(archive_id, body)
 
 Revoke role from an archive
 
@@ -673,20 +665,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="3653d3c6-0c75-11ea-ad28-fb5701eabc7d",
             type=RolesType("roles"),
         ),
-    ) # RelationshipToRole |  (optional)
+    ) # RelationshipToRole | 
 
     # example passing only required values which don't have defaults set
     try:
         # Revoke role from an archive
-        api_instance.remove_role_from_archive(archive_id)
-    except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling LogsArchivesApi->remove_role_from_archive: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Revoke role from an archive
-        api_instance.remove_role_from_archive(archive_id, body=body)
+        api_instance.remove_role_from_archive(archive_id, body)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling LogsArchivesApi->remove_role_from_archive: %s\n" % e)
 ```
@@ -696,7 +680,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **archive_id** | **str**| The ID of the archive. |
- **body** | [**RelationshipToRole**](RelationshipToRole.md)|  | [optional]
+ **body** | [**RelationshipToRole**](RelationshipToRole.md)|  |
 
 ### Return type
 
