@@ -42,6 +42,7 @@ class LogsArchivesApi(object):
         def __add_read_role_to_archive(
             self,
             archive_id,
+            body,
             **kwargs
         ):
             """Grant role to an archive  # noqa: E501
@@ -50,14 +51,14 @@ class LogsArchivesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.add_read_role_to_archive(archive_id, async_req=True)
+            >>> thread = api.add_read_role_to_archive(archive_id, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 archive_id (str): The ID of the archive.
+                body (RelationshipToRole):
 
             Keyword Args:
-                body (RelationshipToRole): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -104,6 +105,8 @@ class LogsArchivesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['archive_id'] = \
                 archive_id
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.add_read_role_to_archive = Endpoint(
@@ -125,6 +128,7 @@ class LogsArchivesApi(object):
                 ],
                 'required': [
                     'archive_id',
+                    'body',
                 ],
                 'nullable': [
                 ],
@@ -866,6 +870,7 @@ class LogsArchivesApi(object):
         def __remove_role_from_archive(
             self,
             archive_id,
+            body,
             **kwargs
         ):
             """Revoke role from an archive  # noqa: E501
@@ -874,14 +879,14 @@ class LogsArchivesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.remove_role_from_archive(archive_id, async_req=True)
+            >>> thread = api.remove_role_from_archive(archive_id, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 archive_id (str): The ID of the archive.
+                body (RelationshipToRole):
 
             Keyword Args:
-                body (RelationshipToRole): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -928,6 +933,8 @@ class LogsArchivesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['archive_id'] = \
                 archive_id
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.remove_role_from_archive = Endpoint(
@@ -949,6 +956,7 @@ class LogsArchivesApi(object):
                 ],
                 'required': [
                     'archive_id',
+                    'body',
                 ],
                 'nullable': [
                 ],

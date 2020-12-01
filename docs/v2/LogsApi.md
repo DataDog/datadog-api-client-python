@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **aggregate_logs**
-> LogsAggregateResponse aggregate_logs()
+> LogsAggregateResponse aggregate_logs(body)
 
 Aggregate events
 
@@ -95,13 +95,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         paging=LogsAggregateRequestPaging(
             after="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==",
         ),
-    ) # LogsAggregateRequest |  (optional)
+    ) # LogsAggregateRequest | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Aggregate events
-        api_response = api_instance.aggregate_logs(body=body)
+        api_response = api_instance.aggregate_logs(body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling LogsApi->aggregate_logs: %s\n" % e)
@@ -111,7 +110,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**LogsAggregateRequest**](LogsAggregateRequest.md)|  | [optional]
+ **body** | [**LogsAggregateRequest**](LogsAggregateRequest.md)|  |
 
 ### Return type
 

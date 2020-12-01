@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_security_monitoring_rule**
-> SecurityMonitoringRuleResponse create_security_monitoring_rule()
+> SecurityMonitoringRuleResponse create_security_monitoring_rule(body)
 
 Create a detection rule
 
@@ -70,13 +70,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         ),
 [],
 ["env:prod","team:security"],
-    ) # SecurityMonitoringRuleCreatePayload |  (optional)
+    ) # SecurityMonitoringRuleCreatePayload | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Create a detection rule
-        api_response = api_instance.create_security_monitoring_rule(body=body)
+        api_response = api_instance.create_security_monitoring_rule(body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling SecurityMonitoringApi->create_security_monitoring_rule: %s\n" % e)
@@ -86,7 +85,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SecurityMonitoringRuleCreatePayload**](SecurityMonitoringRuleCreatePayload.md)|  | [optional]
+ **body** | [**SecurityMonitoringRuleCreatePayload**](SecurityMonitoringRuleCreatePayload.md)|  |
 
 ### Return type
 
@@ -554,7 +553,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_security_monitoring_rule**
-> SecurityMonitoringRuleResponse update_security_monitoring_rule(rule_id)
+> SecurityMonitoringRuleResponse update_security_monitoring_rule(rule_id, body)
 
 Update an existing rule
 
@@ -635,21 +634,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-    ) # SecurityMonitoringRuleUpdatePayload |  (optional)
+    ) # SecurityMonitoringRuleUpdatePayload | 
 
     # example passing only required values which don't have defaults set
     try:
         # Update an existing rule
-        api_response = api_instance.update_security_monitoring_rule(rule_id)
-        pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling SecurityMonitoringApi->update_security_monitoring_rule: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Update an existing rule
-        api_response = api_instance.update_security_monitoring_rule(rule_id, body=body)
+        api_response = api_instance.update_security_monitoring_rule(rule_id, body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling SecurityMonitoringApi->update_security_monitoring_rule: %s\n" % e)
@@ -660,7 +650,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rule_id** | **str**| The ID of the rule. |
- **body** | [**SecurityMonitoringRuleUpdatePayload**](SecurityMonitoringRuleUpdatePayload.md)|  | [optional]
+ **body** | [**SecurityMonitoringRuleUpdatePayload**](SecurityMonitoringRuleUpdatePayload.md)|  |
 
 ### Return type
 

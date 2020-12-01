@@ -10872,6 +10872,7 @@ paths:
             schema:
               $ref: '#/components/schemas/HostMuteSettings'
         description: Mute a host request body.
+        required: true
       responses:
         '200':
           content:
@@ -12287,6 +12288,7 @@ paths:
             schema:
               $ref: '#/components/schemas/LogsIndexesOrder'
         description: Object containing the new ordered list of index names
+        required: true
       responses:
         '200':
           content:
@@ -12394,6 +12396,7 @@ paths:
             schema:
               $ref: '#/components/schemas/LogsIndexUpdateRequest'
         description: Object containing the new `LogsIndexUpdateRequest`.
+        required: true
       responses:
         '200':
           content:
@@ -13614,6 +13617,7 @@ paths:
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/IdpFormData'
+        required: true
       responses:
         '200':
           content:
