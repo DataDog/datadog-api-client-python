@@ -3,10 +3,9 @@ set -e
 echo "Ensuring all dependencies are present in LICENSE-3rdparty.csv ..."
 ALL_DEPS="" # TODO
 DEPS_NOT_FOUND=""
-for one_dep in `echo $ALL_DEPS`; do
+for one_dep in $ALL_DEPS; do
     set +e
-    cat LICENSE-3rdparty.csv | grep "$one_dep" > /dev/null 2>&1
-    if [ $? -ne 0 ]; then
+    if grep "$one_dep" LICENSE-3rdparty.csv > /dev/null 2>&1; then
         DEPS_NOT_FOUND="${DEPS_NOT_FOUND}\n${one_dep}<LICENSE>,<COPYRIGHT>"
     fi
     set -e
@@ -18,14 +17,12 @@ else
     echo "LICENSE-3rdparty.csv is up to date"
 fi
 
-# Install test dependencies
-python -m pip install -e .
 # Run tests
 set +e
-python -m pytest
+python -m pytest -vvv
 RESULT=$?
-if [ "$RERECORD_FAILED_TESTS" == "true" -a "$RESULT" -ne 0 ]; then
-    RECORD=true python -m pytest --last-failed
+if [ "$RERECORD_FAILED_TESTS" == "true" ] && [ "$RESULT" -ne 0 ]; then
+    RECORD=true python -m pytest -vvv --last-failed
     RESULT=$?
 fi
 exit $RESULT

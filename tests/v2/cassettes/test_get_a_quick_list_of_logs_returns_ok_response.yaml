@@ -9,13 +9,13 @@ interactions:
       Dd-Operation-Id:
       - ListLogsGet
       User-Agent:
-      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b4.dev20 (python 3.9.0; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '3339637536236447807'
+      - '11806888560271838787'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '7879557664041849767'
+      - '5844141015908203807'
     method: GET
     uri: https://api.datadoghq.com/api/v2/logs/events?filter%5Bfrom%5D=2020-09-17T11%3A48%3A36%2B01%3A00&filter%5Bindex%5D=main&filter%5Bquery%5D=datadog-agent&filter%5Bto%5D=2020-09-17T12%3A48%3A36%2B01%3A00&page%5Blimit%5D=5
   response:
@@ -35,30 +35,30 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Thu, 24 Sep 2020 10:01:41 GMT
+      - Tue, 15 Dec 2020 11:11:42 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:41 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 22-Dec-2020 11:11:42 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - mjjix3i7KxHakJGjOSXbyjGLp+IPNWPrPaCVopgkuqm46lk1b+kLivuxRokDQC1N
+      - EZL7bEfcgNGbknKpx0YgUay5sRnB08o7ifIkIU7pH4DOkkWS5DRjfEr3ib9KggTa
       X-DD-VERSION:
-      - '35.3086554'
+      - '35.3542700'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
-      - '300'
+      - '3000'
       X-RateLimit-Period:
-      - '3600'
+      - '60'
       X-RateLimit-Remaining:
-      - '298'
+      - '2998'
       X-RateLimit-Reset:
-      - '3499'
+      - '18'
     status:
       code: 200
       message: OK

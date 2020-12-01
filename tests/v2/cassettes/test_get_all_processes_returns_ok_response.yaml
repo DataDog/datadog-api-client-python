@@ -9,34 +9,37 @@ interactions:
       Dd-Operation-Id:
       - ListProcesses
       User-Agent:
-      - datadog-api-client-python/0.1.dev135+dirty (python 3.8.6; os Linux; arch x86_64)
+      - datadog-api-client-python/1.0.0b4.dev20 (python 3.9.0; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '15743843264059619055'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '818058313597582181'
     method: GET
     uri: https://api.datadoghq.com/api/v2/processes?page%5Blimit%5D=2&search=process-agent&tags=testing%3Atrue
   response:
     body:
-      string: '{"meta":{"page":{"after":"48ad51e27501000015e90400c5f73d639eae5b250aeeb430a3acb093","size":2}},"data":[{"type":"process","id":"15e90400c53674fe2bf07fb2988d3c1cbe735b5f","attributes":{"cmdline":"/opt/datadog-agent/embedded/bin/process-agent
-        --config=/etc/datadog-agent/datadog.yaml --sysprobe-config=/etc/datadog-agent/system-probe.yaml
-        --pid=/opt/datadog-agent/run/process-agent.pid","timestamp":"2020-11-19T21:52:09","start":"2020-11-19T19:05:21","user":"uid:118","pid":1168,"ppid":1,"host":"gardie-frog","tags":["testing:true","host:gardie-frog","user:uid:118","command:process-agent","state_zombie:false"]}},{"type":"process","id":"15e90400c5f73d639eae5b250aeeb430a3acb093","attributes":{"cmdline":"process-agent
-        --config=/etc/datadog-agent/datadog.yaml","timestamp":"2020-11-19T21:54:09","start":"2020-11-19T21:03:25","user":"root","pid":16407,"ppid":16402,"host":"gardie-frog","tags":["testing:true","host:gardie-frog","user:uid:118","command:process-agent","state_zombie:false"]}}]}'
+      string: '{"meta":{"page":{"after":"","size":0}},"data":[]}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - keep-alive
       Content-Length:
-      - '988'
+      - '49'
       Content-Security-Policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       Content-Type:
       - application/json
       DD-POOL:
-      - dogweb
+      - dogweb_query
       Date:
-      - Thu, 19 Nov 2020 21:55:18 GMT
+      - Tue, 15 Dec 2020 11:11:44 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 26-Nov-2020 21:55:18 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 22-Dec-2020 11:11:44 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -45,9 +48,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - bOYRvpIMaDWtEAFc77xh4cYKoSxr/zmllvfW+/1TUFo7Zbru0n5QEX4LCoKiS3Mv
+      - 2Z1d/Fs+G8vj5RBjIjS/CQCkha5z8CMoc3DbmUbef9OdIo2KcEUp2I+NqH5rHFUO
       X-DD-VERSION:
-      - '35.3401942'
+      - '35.3542700'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -57,7 +60,7 @@ interactions:
       X-RateLimit-Remaining:
       - '99'
       X-RateLimit-Reset:
-      - '42'
+      - '16'
     status:
       code: 200
       message: OK

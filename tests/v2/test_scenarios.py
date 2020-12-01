@@ -84,7 +84,7 @@ def service(context, client, unique):
 
 
 @given('there is a valid "team" in the system')
-def team(context, vcr_cassette, client, unique):
+def team(context, client, unique):
     """There is a valid team in the system."""
     from datadog_api_client.v2.model import incident_team_create_request
     from datadog_api_client.v2.model import incident_team_create_data
@@ -107,7 +107,7 @@ def team(context, vcr_cassette, client, unique):
 
 
 @given('there is a valid "role" in the system')
-def role(context, vcr_cassette, client, unique):
+def role(context, client, unique):
     """There is a valid role in the system."""
     from datadog_api_client.v2.model import role_create_request
     from datadog_api_client.v2.model import role_create_data
@@ -154,7 +154,7 @@ def granted_permission(context, client):
 
 
 @given('the "user" has the "role"')
-def user_has_role(context, vcr_cassette, client):
+def user_has_role(context, client):
     """The user has the role."""
     from datadog_api_client.v2.model import relationship_to_user
     from datadog_api_client.v2.model import relationship_to_user_data
@@ -173,7 +173,7 @@ def user_has_role(context, vcr_cassette, client):
 
 
 @given('the "user" has a "user_invitation"')
-def user_invitation(context, vcr_cassette, client):
+def user_invitation(context, client):
     """The user has an invitation."""
     from datadog_api_client.v2.model import relationship_to_user
     from datadog_api_client.v2.model import relationship_to_user_data
