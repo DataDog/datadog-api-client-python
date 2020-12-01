@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **add_permission_to_role**
-> PermissionsResponse add_permission_to_role(role_id)
+> PermissionsResponse add_permission_to_role(role_id, body)
 
 Grant permission to a role
 
@@ -69,21 +69,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="id_example",
             type=PermissionsType("permissions"),
         ),
-    ) # RelationshipToPermission |  (optional)
+    ) # RelationshipToPermission | 
 
     # example passing only required values which don't have defaults set
     try:
         # Grant permission to a role
-        api_response = api_instance.add_permission_to_role(role_id)
-        pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling RolesApi->add_permission_to_role: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Grant permission to a role
-        api_response = api_instance.add_permission_to_role(role_id, body=body)
+        api_response = api_instance.add_permission_to_role(role_id, body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling RolesApi->add_permission_to_role: %s\n" % e)
@@ -94,7 +85,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**RelationshipToPermission**](RelationshipToPermission.md)|  | [optional]
+ **body** | [**RelationshipToPermission**](RelationshipToPermission.md)|  |
 
 ### Return type
 
@@ -120,7 +111,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **add_user_to_role**
-> UsersResponse add_user_to_role(role_id)
+> UsersResponse add_user_to_role(role_id, body)
 
 Add a user to a role
 
@@ -170,21 +161,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="00000000-0000-0000-0000-000000000000",
             type=UsersType("users"),
         ),
-    ) # RelationshipToUser |  (optional)
+    ) # RelationshipToUser | 
 
     # example passing only required values which don't have defaults set
     try:
         # Add a user to a role
-        api_response = api_instance.add_user_to_role(role_id)
-        pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling RolesApi->add_user_to_role: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Add a user to a role
-        api_response = api_instance.add_user_to_role(role_id, body=body)
+        api_response = api_instance.add_user_to_role(role_id, body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling RolesApi->add_user_to_role: %s\n" % e)
@@ -195,7 +177,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**RelationshipToUser**](RelationshipToUser.md)|  | [optional]
+ **body** | [**RelationshipToUser**](RelationshipToUser.md)|  |
 
 ### Return type
 
@@ -221,7 +203,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_role**
-> RoleCreateResponse create_role()
+> RoleCreateResponse create_role(body)
 
 Create role
 
@@ -287,13 +269,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=RolesType("roles"),
         ),
-    ) # RoleCreateRequest |  (optional)
+    ) # RoleCreateRequest | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Create role
-        api_response = api_instance.create_role(body=body)
+        api_response = api_instance.create_role(body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling RolesApi->create_role: %s\n" % e)
@@ -303,7 +284,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RoleCreateRequest**](RoleCreateRequest.md)|  | [optional]
+ **body** | [**RoleCreateRequest**](RoleCreateRequest.md)|  |
 
 ### Return type
 
@@ -850,7 +831,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **remove_permission_from_role**
-> PermissionsResponse remove_permission_from_role(role_id)
+> PermissionsResponse remove_permission_from_role(role_id, body)
 
 Revoke permission
 
@@ -900,21 +881,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="id_example",
             type=PermissionsType("permissions"),
         ),
-    ) # RelationshipToPermission |  (optional)
+    ) # RelationshipToPermission | 
 
     # example passing only required values which don't have defaults set
     try:
         # Revoke permission
-        api_response = api_instance.remove_permission_from_role(role_id)
-        pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling RolesApi->remove_permission_from_role: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Revoke permission
-        api_response = api_instance.remove_permission_from_role(role_id, body=body)
+        api_response = api_instance.remove_permission_from_role(role_id, body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling RolesApi->remove_permission_from_role: %s\n" % e)
@@ -925,7 +897,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**RelationshipToPermission**](RelationshipToPermission.md)|  | [optional]
+ **body** | [**RelationshipToPermission**](RelationshipToPermission.md)|  |
 
 ### Return type
 
@@ -951,7 +923,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **remove_user_from_role**
-> UsersResponse remove_user_from_role(role_id)
+> UsersResponse remove_user_from_role(role_id, body)
 
 Remove a user from a role
 
@@ -1001,21 +973,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="00000000-0000-0000-0000-000000000000",
             type=UsersType("users"),
         ),
-    ) # RelationshipToUser |  (optional)
+    ) # RelationshipToUser | 
 
     # example passing only required values which don't have defaults set
     try:
         # Remove a user from a role
-        api_response = api_instance.remove_user_from_role(role_id)
-        pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling RolesApi->remove_user_from_role: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Remove a user from a role
-        api_response = api_instance.remove_user_from_role(role_id, body=body)
+        api_response = api_instance.remove_user_from_role(role_id, body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling RolesApi->remove_user_from_role: %s\n" % e)
@@ -1026,7 +989,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**RelationshipToUser**](RelationshipToUser.md)|  | [optional]
+ **body** | [**RelationshipToUser**](RelationshipToUser.md)|  |
 
 ### Return type
 
@@ -1052,7 +1015,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_role**
-> RoleUpdateResponse update_role(role_id)
+> RoleUpdateResponse update_role(role_id, body)
 
 Update a role
 
@@ -1107,21 +1070,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="00000000-0000-0000-0000-000000000000",
             type=RolesType("roles"),
         ),
-    ) # RoleUpdateRequest |  (optional)
+    ) # RoleUpdateRequest | 
 
     # example passing only required values which don't have defaults set
     try:
         # Update a role
-        api_response = api_instance.update_role(role_id)
-        pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
-        print("Exception when calling RolesApi->update_role: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Update a role
-        api_response = api_instance.update_role(role_id, body=body)
+        api_response = api_instance.update_role(role_id, body)
         pprint(api_response)
     except datadog_api_client.v2.ApiException as e:
         print("Exception when calling RolesApi->update_role: %s\n" % e)
@@ -1132,7 +1086,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **str**| The ID of the role. |
- **body** | [**RoleUpdateRequest**](RoleUpdateRequest.md)|  | [optional]
+ **body** | [**RoleUpdateRequest**](RoleUpdateRequest.md)|  |
 
 ### Return type
 

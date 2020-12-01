@@ -47,6 +47,7 @@ class RolesApi(object):
         def __add_permission_to_role(
             self,
             role_id,
+            body,
             **kwargs
         ):
             """Grant permission to a role  # noqa: E501
@@ -55,14 +56,14 @@ class RolesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.add_permission_to_role(role_id, async_req=True)
+            >>> thread = api.add_permission_to_role(role_id, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 role_id (str): The ID of the role.
+                body (RelationshipToPermission):
 
             Keyword Args:
-                body (RelationshipToPermission): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -109,6 +110,8 @@ class RolesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['role_id'] = \
                 role_id
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.add_permission_to_role = Endpoint(
@@ -130,6 +133,7 @@ class RolesApi(object):
                 ],
                 'required': [
                     'role_id',
+                    'body',
                 ],
                 'nullable': [
                 ],
@@ -174,6 +178,7 @@ class RolesApi(object):
         def __add_user_to_role(
             self,
             role_id,
+            body,
             **kwargs
         ):
             """Add a user to a role  # noqa: E501
@@ -182,14 +187,14 @@ class RolesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.add_user_to_role(role_id, async_req=True)
+            >>> thread = api.add_user_to_role(role_id, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 role_id (str): The ID of the role.
+                body (RelationshipToUser):
 
             Keyword Args:
-                body (RelationshipToUser): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -236,6 +241,8 @@ class RolesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['role_id'] = \
                 role_id
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.add_user_to_role = Endpoint(
@@ -257,6 +264,7 @@ class RolesApi(object):
                 ],
                 'required': [
                     'role_id',
+                    'body',
                 ],
                 'nullable': [
                 ],
@@ -300,6 +308,7 @@ class RolesApi(object):
 
         def __create_role(
             self,
+            body,
             **kwargs
         ):
             """Create role  # noqa: E501
@@ -308,12 +317,13 @@ class RolesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.create_role(async_req=True)
+            >>> thread = api.create_role(body, async_req=True)
             >>> result = thread.get()
 
+            Args:
+                body (RoleCreateRequest):
 
             Keyword Args:
-                body (RoleCreateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -358,6 +368,8 @@ class RolesApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.create_role = Endpoint(
@@ -376,7 +388,9 @@ class RolesApi(object):
                 'all': [
                     'body',
                 ],
-                'required': [],
+                'required': [
+                    'body',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -1160,6 +1174,7 @@ class RolesApi(object):
         def __remove_permission_from_role(
             self,
             role_id,
+            body,
             **kwargs
         ):
             """Revoke permission  # noqa: E501
@@ -1168,14 +1183,14 @@ class RolesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.remove_permission_from_role(role_id, async_req=True)
+            >>> thread = api.remove_permission_from_role(role_id, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 role_id (str): The ID of the role.
+                body (RelationshipToPermission):
 
             Keyword Args:
-                body (RelationshipToPermission): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1222,6 +1237,8 @@ class RolesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['role_id'] = \
                 role_id
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.remove_permission_from_role = Endpoint(
@@ -1243,6 +1260,7 @@ class RolesApi(object):
                 ],
                 'required': [
                     'role_id',
+                    'body',
                 ],
                 'nullable': [
                 ],
@@ -1287,6 +1305,7 @@ class RolesApi(object):
         def __remove_user_from_role(
             self,
             role_id,
+            body,
             **kwargs
         ):
             """Remove a user from a role  # noqa: E501
@@ -1295,14 +1314,14 @@ class RolesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.remove_user_from_role(role_id, async_req=True)
+            >>> thread = api.remove_user_from_role(role_id, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 role_id (str): The ID of the role.
+                body (RelationshipToUser):
 
             Keyword Args:
-                body (RelationshipToUser): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1349,6 +1368,8 @@ class RolesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['role_id'] = \
                 role_id
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.remove_user_from_role = Endpoint(
@@ -1370,6 +1391,7 @@ class RolesApi(object):
                 ],
                 'required': [
                     'role_id',
+                    'body',
                 ],
                 'nullable': [
                 ],
@@ -1414,6 +1436,7 @@ class RolesApi(object):
         def __update_role(
             self,
             role_id,
+            body,
             **kwargs
         ):
             """Update a role  # noqa: E501
@@ -1422,14 +1445,14 @@ class RolesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.update_role(role_id, async_req=True)
+            >>> thread = api.update_role(role_id, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 role_id (str): The ID of the role.
+                body (RoleUpdateRequest):
 
             Keyword Args:
-                body (RoleUpdateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1476,6 +1499,8 @@ class RolesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['role_id'] = \
                 role_id
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.update_role = Endpoint(
@@ -1497,6 +1522,7 @@ class RolesApi(object):
                 ],
                 'required': [
                     'role_id',
+                    'body',
                 ],
                 'nullable': [
                 ],

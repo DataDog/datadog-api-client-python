@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **mute_host**
-> HostMuteResponse mute_host(host_name)
+> HostMuteResponse mute_host(host_name, body)
 
 Mute a host
 
@@ -244,21 +244,12 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         end=1579098130,
         message="Muting this host for a test!",
         override=False,
-    ) # HostMuteSettings | Mute a host request body. (optional)
+    ) # HostMuteSettings | Mute a host request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Mute a host
-        api_response = api_instance.mute_host(host_name)
-        pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
-        print("Exception when calling HostsApi->mute_host: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Mute a host
-        api_response = api_instance.mute_host(host_name, body=body)
+        api_response = api_instance.mute_host(host_name, body)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
         print("Exception when calling HostsApi->mute_host: %s\n" % e)
@@ -269,7 +260,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **host_name** | **str**| Name of the host to mute. |
- **body** | [**HostMuteSettings**](HostMuteSettings.md)| Mute a host request body. | [optional]
+ **body** | [**HostMuteSettings**](HostMuteSettings.md)| Mute a host request body. |
 
 ### Return type
 

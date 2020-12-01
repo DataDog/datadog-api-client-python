@@ -44,6 +44,7 @@ class UsersApi(object):
 
         def __create_user(
             self,
+            body,
             **kwargs
         ):
             """Create a user  # noqa: E501
@@ -52,12 +53,13 @@ class UsersApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.create_user(async_req=True)
+            >>> thread = api.create_user(body, async_req=True)
             >>> result = thread.get()
 
+            Args:
+                body (UserCreateRequest):
 
             Keyword Args:
-                body (UserCreateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -102,6 +104,8 @@ class UsersApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.create_user = Endpoint(
@@ -120,7 +124,9 @@ class UsersApi(object):
                 'all': [
                     'body',
                 ],
-                'required': [],
+                'required': [
+                    'body',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -903,6 +909,7 @@ class UsersApi(object):
 
         def __send_invitations(
             self,
+            body,
             **kwargs
         ):
             """Send invitation emails  # noqa: E501
@@ -911,12 +918,13 @@ class UsersApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.send_invitations(async_req=True)
+            >>> thread = api.send_invitations(body, async_req=True)
             >>> result = thread.get()
 
+            Args:
+                body (UserInvitationsRequest):
 
             Keyword Args:
-                body (UserInvitationsRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -961,6 +969,8 @@ class UsersApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.send_invitations = Endpoint(
@@ -979,7 +989,9 @@ class UsersApi(object):
                 'all': [
                     'body',
                 ],
-                'required': [],
+                'required': [
+                    'body',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -1019,6 +1031,7 @@ class UsersApi(object):
         def __update_user(
             self,
             user_id,
+            body,
             **kwargs
         ):
             """Update a user  # noqa: E501
@@ -1027,14 +1040,14 @@ class UsersApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.update_user(user_id, async_req=True)
+            >>> thread = api.update_user(user_id, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 user_id (str): The ID of the user.
+                body (UserUpdateRequest):
 
             Keyword Args:
-                body (UserUpdateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1081,6 +1094,8 @@ class UsersApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['user_id'] = \
                 user_id
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.update_user = Endpoint(
@@ -1102,6 +1117,7 @@ class UsersApi(object):
                 ],
                 'required': [
                     'user_id',
+                    'body',
                 ],
                 'nullable': [
                 ],

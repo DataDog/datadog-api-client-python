@@ -40,6 +40,7 @@ class LogsApi(object):
 
         def __aggregate_logs(
             self,
+            body,
             **kwargs
         ):
             """Aggregate events  # noqa: E501
@@ -48,12 +49,13 @@ class LogsApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.aggregate_logs(async_req=True)
+            >>> thread = api.aggregate_logs(body, async_req=True)
             >>> result = thread.get()
 
+            Args:
+                body (LogsAggregateRequest):
 
             Keyword Args:
-                body (LogsAggregateRequest): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -98,6 +100,8 @@ class LogsApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.aggregate_logs = Endpoint(
@@ -116,7 +120,9 @@ class LogsApi(object):
                 'all': [
                     'body',
                 ],
-                'required': [],
+                'required': [
+                    'body',
+                ],
                 'nullable': [
                 ],
                 'enum': [

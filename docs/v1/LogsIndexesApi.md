@@ -254,7 +254,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_index**
-> LogsIndex update_logs_index(name)
+> LogsIndex update_logs_index(name, body)
 
 Update an index
 
@@ -316,21 +316,12 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             query="source:python",
         ),
         num_retention_days=1,
-    ) # LogsIndexUpdateRequest | Object containing the new `LogsIndexUpdateRequest`. (optional)
+    ) # LogsIndexUpdateRequest | Object containing the new `LogsIndexUpdateRequest`.
 
     # example passing only required values which don't have defaults set
     try:
         # Update an index
-        api_response = api_instance.update_logs_index(name)
-        pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
-        print("Exception when calling LogsIndexesApi->update_logs_index: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Update an index
-        api_response = api_instance.update_logs_index(name, body=body)
+        api_response = api_instance.update_logs_index(name, body)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
         print("Exception when calling LogsIndexesApi->update_logs_index: %s\n" % e)
@@ -341,7 +332,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Name of the log index. |
- **body** | [**LogsIndexUpdateRequest**](LogsIndexUpdateRequest.md)| Object containing the new &#x60;LogsIndexUpdateRequest&#x60;. | [optional]
+ **body** | [**LogsIndexUpdateRequest**](LogsIndexUpdateRequest.md)| Object containing the new &#x60;LogsIndexUpdateRequest&#x60;. |
 
 ### Return type
 
@@ -367,7 +358,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_index_order**
-> LogsIndexesOrder update_logs_index_order()
+> LogsIndexesOrder update_logs_index_order(body)
 
 Update indexes order
 
@@ -413,13 +404,12 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
     body = LogsIndexesOrder(
 ["main","payments","web"],
-    ) # LogsIndexesOrder | Object containing the new ordered list of index names (optional)
+    ) # LogsIndexesOrder | Object containing the new ordered list of index names
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Update indexes order
-        api_response = api_instance.update_logs_index_order(body=body)
+        api_response = api_instance.update_logs_index_order(body)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
         print("Exception when calling LogsIndexesApi->update_logs_index_order: %s\n" % e)
@@ -429,7 +419,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**LogsIndexesOrder**](LogsIndexesOrder.md)| Object containing the new ordered list of index names | [optional]
+ **body** | [**LogsIndexesOrder**](LogsIndexesOrder.md)| Object containing the new ordered list of index names |
 
 ### Return type
 

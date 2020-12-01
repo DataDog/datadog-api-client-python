@@ -377,6 +377,7 @@ class LogsIndexesApi(object):
         def __update_logs_index(
             self,
             name,
+            body,
             **kwargs
         ):
             """Update an index  # noqa: E501
@@ -385,14 +386,14 @@ class LogsIndexesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.update_logs_index(name, async_req=True)
+            >>> thread = api.update_logs_index(name, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 name (str): Name of the log index.
+                body (LogsIndexUpdateRequest): Object containing the new &#x60;LogsIndexUpdateRequest&#x60;.
 
             Keyword Args:
-                body (LogsIndexUpdateRequest): Object containing the new &#x60;LogsIndexUpdateRequest&#x60;.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -439,6 +440,8 @@ class LogsIndexesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['name'] = \
                 name
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.update_logs_index = Endpoint(
@@ -460,6 +463,7 @@ class LogsIndexesApi(object):
                 ],
                 'required': [
                     'name',
+                    'body',
                 ],
                 'nullable': [
                 ],
@@ -503,6 +507,7 @@ class LogsIndexesApi(object):
 
         def __update_logs_index_order(
             self,
+            body,
             **kwargs
         ):
             """Update indexes order  # noqa: E501
@@ -511,12 +516,13 @@ class LogsIndexesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.update_logs_index_order(async_req=True)
+            >>> thread = api.update_logs_index_order(body, async_req=True)
             >>> result = thread.get()
 
+            Args:
+                body (LogsIndexesOrder): Object containing the new ordered list of index names
 
             Keyword Args:
-                body (LogsIndexesOrder): Object containing the new ordered list of index names. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -561,6 +567,8 @@ class LogsIndexesApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.update_logs_index_order = Endpoint(
@@ -579,7 +587,9 @@ class LogsIndexesApi(object):
                 'all': [
                     'body',
                 ],
-                'required': [],
+                'required': [
+                    'body',
+                ],
                 'nullable': [
                 ],
                 'enum': [

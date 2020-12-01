@@ -42,6 +42,7 @@ class SecurityMonitoringApi(object):
 
         def __create_security_monitoring_rule(
             self,
+            body,
             **kwargs
         ):
             """Create a detection rule  # noqa: E501
@@ -50,12 +51,13 @@ class SecurityMonitoringApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.create_security_monitoring_rule(async_req=True)
+            >>> thread = api.create_security_monitoring_rule(body, async_req=True)
             >>> result = thread.get()
 
+            Args:
+                body (SecurityMonitoringRuleCreatePayload):
 
             Keyword Args:
-                body (SecurityMonitoringRuleCreatePayload): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -100,6 +102,8 @@ class SecurityMonitoringApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.create_security_monitoring_rule = Endpoint(
@@ -118,7 +122,9 @@ class SecurityMonitoringApi(object):
                 'all': [
                     'body',
                 ],
-                'required': [],
+                'required': [
+                    'body',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -782,6 +788,7 @@ class SecurityMonitoringApi(object):
         def __update_security_monitoring_rule(
             self,
             rule_id,
+            body,
             **kwargs
         ):
             """Update an existing rule  # noqa: E501
@@ -790,14 +797,14 @@ class SecurityMonitoringApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.update_security_monitoring_rule(rule_id, async_req=True)
+            >>> thread = api.update_security_monitoring_rule(rule_id, body, async_req=True)
             >>> result = thread.get()
 
             Args:
                 rule_id (str): The ID of the rule.
+                body (SecurityMonitoringRuleUpdatePayload):
 
             Keyword Args:
-                body (SecurityMonitoringRuleUpdatePayload): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -844,6 +851,8 @@ class SecurityMonitoringApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['rule_id'] = \
                 rule_id
+            kwargs['body'] = \
+                body
             return self.call_with_http_info(**kwargs)
 
         self.update_security_monitoring_rule = Endpoint(
@@ -865,6 +874,7 @@ class SecurityMonitoringApi(object):
                 ],
                 'required': [
                     'rule_id',
+                    'body',
                 ],
                 'nullable': [
                 ],
