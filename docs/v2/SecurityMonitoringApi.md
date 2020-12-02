@@ -59,7 +59,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
     body = SecurityMonitoringRuleCreatePayload(
-[],
+        cases=[],
         is_enabled=True,
         message="message_example",
         name="name_example",
@@ -68,8 +68,8 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             keep_alive=SecurityMonitoringRuleKeepAlive(0),
             max_signal_duration=SecurityMonitoringRuleMaxSignalDuration(0),
         ),
-[],
-["env:prod","team:security"],
+        queries=[],
+        tags=["env:prod","team:security"],
     ) # SecurityMonitoringRuleCreatePayload | 
 
     # example passing only required values which don't have defaults set

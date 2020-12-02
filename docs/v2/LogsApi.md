@@ -65,7 +65,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         ],
         filter=LogsQueryFilter(
             _from="now-15m",
-["main","web"],
+            indexes=["main","web"],
             query="service:web* AND @http.status_code:[200 TO 299]",
             to="now",
         ),
@@ -182,7 +182,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     body = LogsListRequest(
         filter=LogsQueryFilter(
             _from="now-15m",
-["main","web"],
+            indexes=["main","web"],
             query="service:web* AND @http.status_code:[200 TO 299]",
             to="now",
         ),

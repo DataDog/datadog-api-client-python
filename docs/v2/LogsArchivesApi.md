@@ -159,7 +159,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                 include_tags=False,
                 name="Nginx Archive",
                 query="source:nginx",
-["team:intake","team:app"],
+                rehydration_tags=["team:intake","team:app"],
             ),
             type="archives",
         ),
@@ -758,7 +758,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                 include_tags=False,
                 name="Nginx Archive",
                 query="source:nginx",
-["team:intake","team:app"],
+                rehydration_tags=["team:intake","team:app"],
             ),
             type="archives",
         ),
@@ -851,7 +851,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     body = LogsArchiveOrder(
         data=LogsArchiveOrderDefinition(
             attributes=LogsArchiveOrderAttributes(
-["a2zcMylnM4OCHpYusxIi1g","a2zcMylnM4OCHpYusxIi2g","a2zcMylnM4OCHpYusxIi3g"],
+                archive_ids=["a2zcMylnM4OCHpYusxIi1g","a2zcMylnM4OCHpYusxIi2g","a2zcMylnM4OCHpYusxIi3g"],
             ),
             type=LogsArchiveOrderDefinitionType("archive_order"),
         ),

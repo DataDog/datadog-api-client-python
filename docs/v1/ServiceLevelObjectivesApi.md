@@ -152,7 +152,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             name="name_example",
         ),
         description="description_example",
-["env:prod","role:mysql"],
+        groups=["env:prod","role:mysql"],
         id="id_example",
         modified_at=1,
         monitor_ids=[
@@ -163,8 +163,8 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             denominator="denominator_example",
             numerator="numerator_example",
         ),
-["env:prod","app:core"],
-[],
+        tags=["env:prod","app:core"],
+        thresholds=[],
         type=SLOType("metric"),
     ) # ServiceLevelObjectiveRequest | Service level objective request object.
 
@@ -701,7 +701,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             name="name_example",
         ),
         description="description_example",
-["env:prod","role:mysql"],
+        groups=["env:prod","role:mysql"],
         id="id_example",
         modified_at=1,
         monitor_ids=[
@@ -715,8 +715,8 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             denominator="denominator_example",
             numerator="numerator_example",
         ),
-["env:prod","app:core"],
-[],
+        tags=["env:prod","app:core"],
+        thresholds=[],
         type=SLOType("metric"),
     ) # ServiceLevelObjective | The edited service level objective request object.
 
