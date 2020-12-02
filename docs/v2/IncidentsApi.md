@@ -477,7 +477,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                     ),
                 ),
                 integrations=RelationshipToIncidentIntegrationMetadatas(
-[{"id":"00000000-0000-0000-0000-000000000000","type":"incident_integration_metadata"},{"id":"00000000-0000-0000-0000-000000000000","type":"incident_integration_metadata"}],
+                    data=[{"id":"00000000-0000-0000-0000-000000000000","type":"incident_integration_metadata"},{"id":"00000000-0000-0000-0000-000000000000","type":"incident_integration_metadata"}],
                 ),
                 last_modified_by_user=RelationshipToUser(
                     data=RelationshipToUserData(

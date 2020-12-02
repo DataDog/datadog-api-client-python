@@ -403,7 +403,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
     body = LogsIndexesOrder(
-["main","payments","web"],
+        index_names=["main","payments","web"],
     ) # LogsIndexesOrder | Object containing the new ordered list of index names
 
     # example passing only required values which don't have defaults set

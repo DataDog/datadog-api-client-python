@@ -264,7 +264,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                     ],
                 ),
                 users=RelationshipToUsers(
-[],
+                    data=[],
                 ),
             ),
             type=RolesType("roles"),

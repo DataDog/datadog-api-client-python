@@ -66,9 +66,9 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         account_specific_namespace_rules={
             "key": True,
         },
-["us-east-1","us-west-2"],
-["<KEY>:<VALUE>"],
-["<KEY>:<VALUE>"],
+        excluded_regions=["us-east-1","us-west-2"],
+        filter_tags=["<KEY>:<VALUE>"],
+        host_tags=["<KEY>:<VALUE>"],
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
     ) # AWSAccount | AWS Request Object
@@ -250,9 +250,9 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         account_specific_namespace_rules={
             "key": True,
         },
-["us-east-1","us-west-2"],
-["<KEY>:<VALUE>"],
-["<KEY>:<VALUE>"],
+        excluded_regions=["us-east-1","us-west-2"],
+        filter_tags=["<KEY>:<VALUE>"],
+        host_tags=["<KEY>:<VALUE>"],
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
     ) # AWSAccount | Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation).
@@ -345,9 +345,9 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         account_specific_namespace_rules={
             "key": True,
         },
-["us-east-1","us-west-2"],
-["<KEY>:<VALUE>"],
-["<KEY>:<VALUE>"],
+        excluded_regions=["us-east-1","us-west-2"],
+        filter_tags=["<KEY>:<VALUE>"],
+        host_tags=["<KEY>:<VALUE>"],
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
     ) # AWSAccount | AWS request object
@@ -780,9 +780,9 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         account_specific_namespace_rules={
             "key": True,
         },
-["us-east-1","us-west-2"],
-["<KEY>:<VALUE>"],
-["<KEY>:<VALUE>"],
+        excluded_regions=["us-east-1","us-west-2"],
+        filter_tags=["<KEY>:<VALUE>"],
+        host_tags=["<KEY>:<VALUE>"],
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
     ) # AWSAccount | AWS request object

@@ -578,7 +578,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
     body = LogsPipelinesOrder(
-["tags","org_ids","products"],
+        pipeline_ids=["tags","org_ids","products"],
     ) # LogsPipelinesOrder | Object containing the new ordered list of pipeline IDs.
 
     # example passing only required values which don't have defaults set

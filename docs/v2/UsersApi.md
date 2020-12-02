@@ -678,7 +678,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     body = UserInvitationsRequest(
-[],
+        data=[],
     ) # UserInvitationsRequest | 
 
     # example passing only required values which don't have defaults set
