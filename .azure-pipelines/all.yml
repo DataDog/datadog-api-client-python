@@ -49,8 +49,7 @@ jobs:
     - script: |
         python -m pip install --upgrade pip setuptools
         python -m pip install cython
-        python -m pip install -e .[tests]
-        python -m pip install --pre --find-links=https://s3.amazonaws.com/pypi.datadoghq.com/trace-dev/index.html ddtrace
+        python -m pip install -e .[apm,tests]
       displayName: Install package
     - script: ./run-tests.sh
       displayName: Run integration tests

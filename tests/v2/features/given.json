@@ -1,0 +1,114 @@
+[
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\": \"incidents\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"incident\" in the system",
+    "key": "incident",
+    "tag": "Incidents",
+    "operationId": "CreateIncident"
+  },
+  {
+    "source": "data[0]",
+    "step": "there is a valid \"permission\" in the system",
+    "key": "permission",
+    "tag": "Roles",
+    "operationId": "ListPermissions"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n     },\n     \"type\": \"roles\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"role\" in the system",
+    "key": "role",
+    "tag": "Roles",
+    "operationId": "CreateRole"
+  },
+  {
+    "parameters": [
+      {
+        "name": "role_id",
+        "source": "role.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"id\": \"{{ permission.id }}\",\n    \"type\": \"{{ permission.type }}\"\n  }\n}"
+      }
+    ],
+    "step": "the \"permission\" is granted to the \"role\"",
+    "key": "permission_role",
+    "tag": "Roles",
+    "operationId": "AddPermissionToRole"
+  },
+  {
+    "parameters": [
+      {
+        "name": "role_id",
+        "source": "role.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"id\": \"{{ user.data.id }}\",\n    \"type\": \"{{ user.data.type }}\"\n  }\n}"
+      }
+    ],
+    "step": "the \"user\" has the \"role\"",
+    "key": "permission_role",
+    "tag": "Roles",
+    "operationId": "AddUserToRole"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n     },\n     \"type\": \"services\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"service\" in the system",
+    "key": "service",
+    "tag": "Incident Services",
+    "operationId": "CreateIncidentService"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n     },\n     \"type\": \"teams\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"team\" in the system",
+    "key": "team",
+    "tag": "Incident Teams",
+    "operationId": "CreateIncidentTeam"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": [\n    {\n      \"relationships\": {\"user\": {\"data\": {\n        \"id\": \"{{ user.data.id }}\",\n        \"type\": \"{{ user.data.type }}\"\n      }}},\n      \"type\": \"user_invitations\"\n    }\n  ]\n}"
+      }
+    ],
+    "source": "data[0]",
+    "step": "the \"user\" has a \"user_invitation\"",
+    "key": "user_invitation",
+    "tag": "Users",
+    "operationId": "SendInvitations"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"email\": \"{{ unique }}@datadoghq.com\"\n     },\n     \"type\": \"users\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"user\" in the system",
+    "key": "user",
+    "tag": "Users",
+    "operationId": "CreateUser"
+  }
+]

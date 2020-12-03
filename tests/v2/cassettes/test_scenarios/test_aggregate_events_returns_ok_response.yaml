@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.datadog-api-client-python-test_aggregate_events_returns_ok_response-1608079895.242024",
+      "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"],
+      "query": "datadog-agent", "to": "1600348600"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - AggregateLogs
+      User-Agent:
+      - datadog-api-client-python/1.0.0b4.dev20 (python 3.9.0; os Darwin; arch x86_64)
+      x-datadog-parent-id:
+      - '6522842474797848832'
+      x-datadog-sampling-priority:
+      - '1'
+      x-datadog-trace-id:
+      - '5804401827217737207'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
+  response:
+    body:
+      string: '{"meta":{"status":"done","request_id":"cW1CSkphQ1RURW0wSFRCaW1hR1lhUXxzRkVfeEpPdnphY3JJbDZYNHVZYjBB","elapsed":0},"data":{"buckets":[]}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '136'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 16 Dec 2020 00:51:35 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 00:51:35 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - 6IhQMEQHjYL1ZYwBd1xPnaqhoM5GIKrVP4vKHrLdyvV0W9ZbpSld8lY0ehD40SZe
+      X-DD-VERSION:
+      - '35.3548464'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-RateLimit-Limit:
+      - '5'
+      X-RateLimit-Period:
+      - '30'
+      X-RateLimit-Remaining:
+      - '4'
+      X-RateLimit-Reset:
+      - '25'
+    status:
+      code: 200
+      message: OK
+version: 1
