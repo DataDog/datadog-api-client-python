@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **recurrence** | [**DowntimeRecurrence**](DowntimeRecurrence.md) |  | [optional] 
 **scope** | **[str]** | The scope(s) to which the downtime applies. For example, &#x60;host:app2&#x60;. Provide multiple scopes as a comma-separated list like &#x60;env:dev,env:prod&#x60;. The resulting downtime applies to sources that matches ALL provided scopes (&#x60;env:dev&#x60; **AND** &#x60;env:prod&#x60;). | [optional] 
 **start** | **int** | POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created. | [optional] 
-**timezone** | **str** | The timezone for the downtime. | [optional] 
+**timezone** | **str** | The timezone in which to display the downtime&#39;s start and end times in Datadog applications. | [optional] 
 **updater_id** | **int, none_type** | ID of the last user that updated the downtime. | [optional] [readonly] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
