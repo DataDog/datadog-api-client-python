@@ -268,8 +268,8 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             assertions=[],
             request=SyntheticsTestRequest(
                 basic_auth=SyntheticsBasicAuth(
-                    password="password_example",
-                    username="username_example",
+                    password="",
+                    username="",
                 ),
                 body="body_example",
                 certificate=SyntheticsTestRequestCertificate(
@@ -286,7 +286,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 ),
                 dns_server="dns_server_example",
                 headers=SyntheticsTestHeaders(
-                    "key": "key_example",
+                    key="key_example",
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
@@ -299,7 +299,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 SyntheticsBrowserVariable(
                     example="example_example",
                     id="id_example",
-                    name="name_example",
+                    name="",
                     pattern="pattern_example",
                     type=SyntheticsBrowserVariableType("element"),
                 ),
@@ -1650,8 +1650,8 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             SyntheticsCITest(
                 allow_insecure_certificates=True,
                 basic_auth=SyntheticsBasicAuth(
-                    password="password_example",
-                    username="username_example",
+                    password="",
+                    username="",
                 ),
                 body="body_example",
                 body_type="body_type_example",
@@ -1661,7 +1661,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 ],
                 follow_redirects=True,
                 headers=SyntheticsTestHeaders(
-                    "key": "key_example",
+                    key="key_example",
                 ),
                 locations=[
                     "locations_example",
@@ -1875,8 +1875,8 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             assertions=[],
             request=SyntheticsTestRequest(
                 basic_auth=SyntheticsBasicAuth(
-                    password="password_example",
-                    username="username_example",
+                    password="",
+                    username="",
                 ),
                 body="body_example",
                 certificate=SyntheticsTestRequestCertificate(
@@ -1893,7 +1893,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 ),
                 dns_server="dns_server_example",
                 headers=SyntheticsTestHeaders(
-                    "key": "key_example",
+                    key="key_example",
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
@@ -1906,7 +1906,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 SyntheticsBrowserVariable(
                     example="example_example",
                     id="id_example",
-                    name="name_example",
+                    name="",
                     pattern="pattern_example",
                     type=SyntheticsBrowserVariableType("element"),
                 ),
