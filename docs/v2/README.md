@@ -10,7 +10,7 @@ For more information, please visit [https://www.datadoghq.com/support/](https://
 
 ## Requirements.
 
-Python >= 3.5
+Python >= 3.6
 
 ## Installation & Usage
 ### pip install

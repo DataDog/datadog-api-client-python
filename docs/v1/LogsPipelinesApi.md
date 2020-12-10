@@ -65,7 +65,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         id="id_example",
         is_enabled=True,
         is_read_only=True,
-        name="name_example",
+        name="",
         processors=[
             LogsProcessor(),
         ],
@@ -487,7 +487,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         id="id_example",
         is_enabled=True,
         is_read_only=True,
-        name="name_example",
+        name="",
         processors=[
             LogsProcessor(),
         ],

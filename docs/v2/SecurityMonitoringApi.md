@@ -61,8 +61,8 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     body = SecurityMonitoringRuleCreatePayload(
         cases=[],
         is_enabled=True,
-        message="message_example",
-        name="name_example",
+        message="",
+        name="",
         options=SecurityMonitoringRuleOptions(
             evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
             keep_alive=SecurityMonitoringRuleKeepAlive(0),
