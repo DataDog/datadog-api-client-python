@@ -51,7 +51,9 @@ class SyntheticsAssertionOperator(ModelSimple):
             'IS': "is",
             'IS_NOT': "isNot",
             'LESS_THAN': "lessThan",
+            'LESS_THAN_OR_EQUAL': "lessThanOrEqual",
             'MORE_THAN': "moreThan",
+            'MORE_THAN_OR_EQUAL': "moreThanOrEqual",
             'MATCHES': "matches",
             'DOES_NOT_MATCH': "doesNotMatch",
             'VALIDATES': "validates",
@@ -106,10 +108,10 @@ class SyntheticsAssertionOperator(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Assertion operator to apply.., must be one of ["contains", "doesNotContain", "is", "isNot", "lessThan", "moreThan", "matches", "doesNotMatch", "validates", "isInMoreThan", "isInLessThan", ]  # noqa: E501
+            args[0] (str): Assertion operator to apply.., must be one of ["contains", "doesNotContain", "is", "isNot", "lessThan", "lessThanOrEqual", "moreThan", "moreThanOrEqual", "matches", "doesNotMatch", "validates", "isInMoreThan", "isInLessThan", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Assertion operator to apply.., must be one of ["contains", "doesNotContain", "is", "isNot", "lessThan", "moreThan", "matches", "doesNotMatch", "validates", "isInMoreThan", "isInLessThan", ]  # noqa: E501
+            value (str): Assertion operator to apply.., must be one of ["contains", "doesNotContain", "is", "isNot", "lessThan", "lessThanOrEqual", "moreThan", "moreThanOrEqual", "matches", "doesNotMatch", "validates", "isInMoreThan", "isInLessThan", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
