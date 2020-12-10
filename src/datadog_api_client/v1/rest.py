@@ -1,5 +1,3 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
@@ -15,7 +13,7 @@ from urllib.parse import urlencode
 import certifi
 import urllib3
 
-from datadog_api_client.v1.exceptions import ApiException, ApiValueError
+from datadog_api_client.v1.exceptions import ApiException, UnauthorizedException, ForbiddenException, NotFoundException, ServiceException, ApiValueError
 
 
 logger = logging.getLogger(__name__)
@@ -215,6 +213,18 @@ class RESTClientObject(object):
             logger.debug("response body: %s", r.data)
 
         if not 200 <= r.status <= 299:
+            if r.status == 401:
+                raise UnauthorizedException(http_resp=r)
+
+            if r.status == 403:
+                raise ForbiddenException(http_resp=r)
+
+            if r.status == 404:
+                raise NotFoundException(http_resp=r)
+
+            if 500 <= r.status <= 599:
+                raise ServiceException(http_resp=r)
+
             raise ApiException(http_resp=r)
 
         return r

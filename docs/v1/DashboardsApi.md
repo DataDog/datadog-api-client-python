@@ -85,7 +85,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 prefix="host",
             ),
         ],
-        title="title_example",
+        title="",
         url="/dashboard/123-abc-456/example-dashboard-title",
         widgets=[{"definition":{"requests":{"fill":{"q":"system.cpu.user"}},"type":"hostmap"}}],
     ) # Dashboard | Create a dashboard request body.
@@ -449,7 +449,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 prefix="host",
             ),
         ],
-        title="title_example",
+        title="",
         url="/dashboard/123-abc-456/example-dashboard-title",
         widgets=[{"definition":{"requests":{"fill":{"q":"system.cpu.user"}},"type":"hostmap"}}],
     ) # Dashboard | Update Dashboard request body.

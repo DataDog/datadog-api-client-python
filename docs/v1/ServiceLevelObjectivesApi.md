@@ -158,10 +158,10 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         monitor_ids=[
             1,
         ],
-        name="name_example",
+        name="",
         query=ServiceLevelObjectiveQuery(
-            denominator="denominator_example",
-            numerator="numerator_example",
+            denominator="",
+            numerator="",
         ),
         tags=["env:prod","app:core"],
         thresholds=[],
@@ -347,7 +347,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
     body = SLOBulkDelete(
-        "key": [
+        key=[
             SLOTimeframe("7d"),
         ],
     ) # SLOBulkDelete | Delete multiple service level objective objects request body.
@@ -710,10 +710,10 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         monitor_tags=[
             "monitor_tags_example",
         ],
-        name="name_example",
+        name="",
         query=ServiceLevelObjectiveQuery(
-            denominator="denominator_example",
-            numerator="numerator_example",
+            denominator="",
+            numerator="",
         ),
         tags=["env:prod","app:core"],
         thresholds=[],

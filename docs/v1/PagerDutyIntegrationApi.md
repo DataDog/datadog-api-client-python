@@ -56,8 +56,8 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pager_duty_integration_api.PagerDutyIntegrationApi(api_client)
     body = PagerDutyService(
-        service_key="service_key_example",
-        service_name="service_name_example",
+        service_key="",
+        service_name="",
     ) # PagerDutyService | Create a new service object request body.
 
     # example passing only required values which don't have defaults set
@@ -311,7 +311,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     api_instance = pager_duty_integration_api.PagerDutyIntegrationApi(api_client)
     service_name = "service_name_example" # str | The service name
     body = PagerDutyServiceKey(
-        service_key="service_key_example",
+        service_key="",
     ) # PagerDutyServiceKey | Update an existing service object request body.
 
     # example passing only required values which don't have defaults set
