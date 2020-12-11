@@ -143,12 +143,12 @@ class DowntimeRecurrence(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            period (int): How often to repeat as an integer. For example, to repeat every 3 days, select a type of &#x60;days&#x60; and a period of &#x60;3&#x60;.. [optional]  # noqa: E501
-            rrule (str): The &#x60;RRULE&#x60; standard for defining recurring events. For example, to have a recurring event on the first day of each month, select a type of &#x60;rrule&#x60; and set the &#x60;FREQ&#x60; to &#x60;MONTHLY&#x60; and &#x60;BYMONTHDAY&#x60; to &#x60;1&#x60;. Most common &#x60;rrule&#x60; options from the [iCalendar Spec](https://tools.ietf.org/html/rfc5545) are supported.  **Note**: Attributes specifying the duration in &#x60;RRULE&#x60; are not supported (for example, &#x60;DTSTART&#x60;, &#x60;DTEND&#x60;, &#x60;DURATION&#x60;).. [optional]  # noqa: E501
-            type (str): The type of recurrence. Choose from &#x60;days&#x60;, &#x60;weeks&#x60;, &#x60;months&#x60;, &#x60;years&#x60;.. [optional]  # noqa: E501
-            until_date (int, none_type): The date at which the recurrence should end as a POSIX timestamp. &#x60;until_occurences&#x60; and &#x60;until_date&#x60; are mutually exclusive.. [optional]  # noqa: E501
-            until_occurrences (int, none_type): How many times the downtime is rescheduled. &#x60;until_occurences&#x60; and &#x60;until_date&#x60; are mutually exclusive.. [optional]  # noqa: E501
-            week_days ([str]): A list of week days to repeat on. Choose from &#x60;Mon&#x60;, &#x60;Tue&#x60;, &#x60;Wed&#x60;, &#x60;Thu&#x60;, &#x60;Fri&#x60;, &#x60;Sat&#x60; or &#x60;Sun&#x60;. Only applicable when type is weeks. First letter must be capitalized.. [optional]  # noqa: E501
+            period (int): How often to repeat as an integer. For example, to repeat every 3 days, select a type of `days` and a period of `3`.. [optional]  # noqa: E501
+            rrule (str): The `RRULE` standard for defining recurring events. For example, to have a recurring event on the first day of each month, select a type of `rrule` and set the `FREQ` to `MONTHLY` and `BYMONTHDAY` to `1`. Most common `rrule` options from the [iCalendar Spec](https://tools.ietf.org/html/rfc5545) are supported.  **Note**: Attributes specifying the duration in `RRULE` are not supported (for example, `DTSTART`, `DTEND`, `DURATION`).. [optional]  # noqa: E501
+            type (str): The type of recurrence. Choose from `days`, `weeks`, `months`, `years`.. [optional]  # noqa: E501
+            until_date (int, none_type): The date at which the recurrence should end as a POSIX timestamp. `until_occurences` and `until_date` are mutually exclusive.. [optional]  # noqa: E501
+            until_occurrences (int, none_type): How many times the downtime is rescheduled. `until_occurences` and `until_date` are mutually exclusive.. [optional]  # noqa: E501
+            week_days ([str]): A list of week days to repeat on. Choose from `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat` or `Sun`. Only applicable when type is weeks. First letter must be capitalized.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

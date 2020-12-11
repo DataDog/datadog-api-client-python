@@ -149,11 +149,11 @@ class LogsProcessor(ModelComposed):
             source (str): Source attribute used to perform the lookup.. defaults to nulltype.Null  # noqa: E501
             type (LogsTraceRemapperType): defaults to nulltype.Null, must be one of ["trace-id-remapper", ]  # noqa: E501
             sources ([str]): Array of source attributes.. defaults to nulltype.Null  # noqa: E501
-            target (str): Name of the attribute that contains the corresponding value in the mapping list or the &#x60;default_lookup&#x60; if not found in the mapping list.. defaults to nulltype.Null  # noqa: E501
-            categories ([LogsCategoryProcessorCategories]): Array of filters to match or not a log and their corresponding &#x60;name&#x60;to assign a custom value to the log.. defaults to nulltype.Null  # noqa: E501
+            target (str): Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.. defaults to nulltype.Null  # noqa: E501
+            categories ([LogsCategoryProcessorCategories]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.. defaults to nulltype.Null  # noqa: E501
             expression (str): Arithmetic operation between one or more log attributes.. defaults to nulltype.Null  # noqa: E501
             template (str): A formula with one or more attributes and raw text.. defaults to nulltype.Null  # noqa: E501
-            lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as &#x60;[\&quot;source_key1,target_value1\&quot;, \&quot;source_key2,target_value2\&quot;]&#x60;. defaults to nulltype.Null  # noqa: E501
+            lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`. defaults to nulltype.Null  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -189,12 +189,12 @@ class LogsProcessor(ModelComposed):
             samples ([str]): List of sample logs to test this grok parser.. [optional]  # noqa: E501
             override_on_conflict (bool): Override or not the target element if already set,. [optional] if omitted the server will use the default value of False  # noqa: E501
             preserve_source (bool): Remove or preserve the remapped source element.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            source_type (str): Defines if the sources are from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
+            source_type (str): Defines if the sources are from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
             target_format (TargetFormatType): [optional]  # noqa: E501
-            target_type (str): Defines if the final attribute or tag name is from log &#x60;attribute&#x60; or &#x60;tag&#x60;.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
+            target_type (str): Defines if the final attribute or tag name is from log `attribute` or `tag`.. [optional] if omitted the server will use the default value of "attribute"  # noqa: E501
             normalize_ending_slashes (bool, none_type): Normalize the ending slashes or not.. [optional] if omitted the server will use the default value of False  # noqa: E501
             is_encoded (bool): Define if the source attribute is URL encoded or not.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            is_replace_missing (bool): If true, it replaces all missing attributes of &#x60;template&#x60; by an empty string. If &#x60;false&#x60; (default), skips the operation for missing attributes.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            is_replace_missing (bool): If true, it replaces all missing attributes of `template` by an empty string. If `false` (default), skips the operation for missing attributes.. [optional] if omitted the server will use the default value of False  # noqa: E501
             filter (LogsFilter): [optional]  # noqa: E501
             processors ([LogsProcessor]): Ordered list of processors in this pipeline.. [optional]  # noqa: E501
             default_lookup (str): Value to set the target attribute if the source value is not found in the list.. [optional]  # noqa: E501

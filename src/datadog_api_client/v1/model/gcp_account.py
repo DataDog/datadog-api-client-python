@@ -151,18 +151,18 @@ class GCPAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            auth_provider_x509_cert_url (str): Should be &#x60;https://www.googleapis.com/oauth2/v1/certs&#x60;.. [optional]  # noqa: E501
-            auth_uri (str): Should be &#x60;https://accounts.google.com/o/oauth2/auth&#x60;.. [optional]  # noqa: E501
+            auth_provider_x509_cert_url (str): Should be `https://www.googleapis.com/oauth2/v1/certs`.. [optional]  # noqa: E501
+            auth_uri (str): Should be `https://accounts.google.com/o/oauth2/auth`.. [optional]  # noqa: E501
             automute (bool): Silence monitors for expected GCE instance shutdowns.. [optional]  # noqa: E501
             client_email (str): Your email found in your JSON service account key.. [optional]  # noqa: E501
             client_id (str): Your ID found in your JSON service account key.. [optional]  # noqa: E501
-            client_x509_cert_url (str): Should be &#x60;https://www.googleapis.com/robot/v1/metadata/x509/&lt;CLIENT_EMAIL&gt;&#x60; where &#x60;&lt;CLIENT_EMAIL&gt;&#x60; is the email found in your JSON service account key.. [optional]  # noqa: E501
+            client_x509_cert_url (str): Should be `https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>` where `<CLIENT_EMAIL>` is the email found in your JSON service account key.. [optional]  # noqa: E501
             errors ([str]): An array of errors.. [optional]  # noqa: E501
             host_filters (str): Limit the GCE instances that are pulled into Datadog by using tags. Only hosts that match one of the defined tags are imported into Datadog.. [optional]  # noqa: E501
             private_key (str): Your private key name found in your JSON service account key.. [optional]  # noqa: E501
             private_key_id (str): Your private key ID found in your JSON service account key.. [optional]  # noqa: E501
             project_id (str): Your Google Cloud project ID found in your JSON service account key.. [optional]  # noqa: E501
-            token_uri (str): Should be &#x60;https://accounts.google.com/o/oauth2/token&#x60;.. [optional]  # noqa: E501
+            token_uri (str): Should be `https://accounts.google.com/o/oauth2/token`.. [optional]  # noqa: E501
             type (str): The value for service_account found in your JSON service account key.. [optional]  # noqa: E501
         """
 

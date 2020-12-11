@@ -154,12 +154,12 @@ class SLOHistoryResponseData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            from_ts (int): The &#x60;from&#x60; timestamp in epoch seconds.. [optional]  # noqa: E501
+            from_ts (int): The `from` timestamp in epoch seconds.. [optional]  # noqa: E501
             groups (SLOHistorySLIData): [optional]  # noqa: E501
             overall (SLOHistorySLIData): [optional]  # noqa: E501
             series (SLOHistoryMetrics): [optional]  # noqa: E501
             thresholds ({str: (SLOThreshold,)}): mapping of string timeframe to the SLO threshold.. [optional]  # noqa: E501
-            to_ts (int): The &#x60;to&#x60; timestamp in epoch seconds.. [optional]  # noqa: E501
+            to_ts (int): The `to` timestamp in epoch seconds.. [optional]  # noqa: E501
             type (SLOType): [optional]  # noqa: E501
             type_id (SLOTypeNumeric): [optional]  # noqa: E501
         """

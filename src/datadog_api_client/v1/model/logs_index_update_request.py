@@ -146,9 +146,9 @@ class LogsIndexUpdateRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             daily_limit (int): The number of log events you can send in this index per day before you are rate-limited.. [optional]  # noqa: E501
-            disable_daily_limit (bool): If true, sets the &#x60;daily_limit&#x60; value to null and the index is not limited on a daily basis (any specified &#x60;daily_limit&#x60; value in the request is ignored). If false or omitted, the index&#39;s current &#x60;daily_limit&#x60; is maintained.. [optional]  # noqa: E501
+            disable_daily_limit (bool): If true, sets the `daily_limit` value to null and the index is not limited on a daily basis (any specified `daily_limit` value in the request is ignored). If false or omitted, the index's current `daily_limit` is maintained.. [optional]  # noqa: E501
             exclusion_filters ([LogsExclusion]): An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.. [optional]  # noqa: E501
-            num_retention_days (int): The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization&#39;s contract/subscriptions.  **Note:** Changing the retention for an index adjusts the length of retention for all logs already in this index. It may also affect billing.. [optional]  # noqa: E501
+            num_retention_days (int): The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.  **Note:** Changing the retention for an index adjusts the length of retention for all logs already in this index. It may also affect billing.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

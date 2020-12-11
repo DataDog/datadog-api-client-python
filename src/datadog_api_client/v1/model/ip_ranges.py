@@ -164,7 +164,7 @@ class IPRanges(ModelNormal):
             api (IPPrefixesAPI): [optional]  # noqa: E501
             apm (IPPrefixesAPM): [optional]  # noqa: E501
             logs (IPPrefixesLogs): [optional]  # noqa: E501
-            modified (str): Date when last updated, in the form &#x60;YYYY-MM-DD-hh-mm-ss&#x60;.. [optional]  # noqa: E501
+            modified (str): Date when last updated, in the form `YYYY-MM-DD-hh-mm-ss`.. [optional]  # noqa: E501
             process (IPPrefixesProcess): [optional]  # noqa: E501
             synthetics (IPPrefixesSynthetics): [optional]  # noqa: E501
             version (int): Version of the IP list.. [optional]  # noqa: E501

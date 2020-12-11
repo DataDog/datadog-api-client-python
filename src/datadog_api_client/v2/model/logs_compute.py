@@ -143,7 +143,7 @@ class LogsCompute(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            interval (str): The time buckets&#39; size (only used for type&#x3D;timeseries) Defaults to a resolution of 150 points. [optional]  # noqa: E501
+            interval (str): The time buckets' size (only used for type=timeseries) Defaults to a resolution of 150 points. [optional]  # noqa: E501
             metric (str): The metric to use. [optional]  # noqa: E501
             type (LogsComputeType): [optional]  # noqa: E501
         """

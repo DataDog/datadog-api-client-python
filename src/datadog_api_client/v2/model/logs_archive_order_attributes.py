@@ -97,7 +97,7 @@ class LogsArchiveOrderAttributes(ModelNormal):
         """LogsArchiveOrderAttributes - a model defined in OpenAPI
 
         Args:
-            archive_ids ([str]): An ordered array of &#x60;&lt;ARCHIVE_ID&gt;&#x60; strings, the order of archive IDs in the array define the overall archives order for Datadog.
+            archive_ids ([str]): An ordered array of `<ARCHIVE_ID>` strings, the order of archive IDs in the array define the overall archives order for Datadog.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

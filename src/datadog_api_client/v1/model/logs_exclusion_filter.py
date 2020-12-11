@@ -132,7 +132,7 @@ class LogsExclusionFilter(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            query (str): Default query is &#x60;*&#x60;, meaning all logs flowing in the index would be excluded. Scope down exclusion filter to only a subset of logs with a log query.. [optional]  # noqa: E501
+            query (str): Default query is `*`, meaning all logs flowing in the index would be excluded. Scope down exclusion filter to only a subset of logs with a log query.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

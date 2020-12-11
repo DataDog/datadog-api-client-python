@@ -127,7 +127,7 @@ class AuthenticationValidationResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            valid (bool): Return &#x60;true&#x60; if the authentication response is valid.. [optional]  # noqa: E501
+            valid (bool): Return `true` if the authentication response is valid.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -913,7 +913,7 @@ class RolesApi(object):
             Keyword Args:
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (str): User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example &#x60;sort&#x3D;-name&#x60;. Options: &#x60;name&#x60;, &#x60;email&#x60;, &#x60;status&#x60;.. [optional] if omitted the server will use the default value of "name"
+                sort (str): User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`.. [optional] if omitted the server will use the default value of "name"
                 filter (str): Filter all users by the given string. Defaults to no filtering.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
@@ -1054,7 +1054,7 @@ class RolesApi(object):
             Keyword Args:
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (RolesSort): Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: &#x60;sort&#x3D;-name&#x60;.. [optional]
+                sort (RolesSort): Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`.. [optional]
                 filter (str): Filter all roles by the given string.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.

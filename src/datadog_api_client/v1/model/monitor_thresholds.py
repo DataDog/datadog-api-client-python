@@ -137,12 +137,12 @@ class MonitorThresholds(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            critical (float): The monitor &#x60;CRITICAL&#x60; threshold.. [optional]  # noqa: E501
-            critical_recovery (float, none_type): The monitor &#x60;CRITICAL&#x60; recovery threshold.. [optional]  # noqa: E501
-            ok (float, none_type): The monitor &#x60;OK&#x60; threshold.. [optional]  # noqa: E501
+            critical (float): The monitor `CRITICAL` threshold.. [optional]  # noqa: E501
+            critical_recovery (float, none_type): The monitor `CRITICAL` recovery threshold.. [optional]  # noqa: E501
+            ok (float, none_type): The monitor `OK` threshold.. [optional]  # noqa: E501
             unknown (float, none_type): The monitor UNKNOWN threshold.. [optional]  # noqa: E501
-            warning (float, none_type): The monitor &#x60;WARNING&#x60; threshold.. [optional]  # noqa: E501
-            warning_recovery (float, none_type): The monitor &#x60;WARNING&#x60; recovery threshold.. [optional]  # noqa: E501
+            warning (float, none_type): The monitor `WARNING` threshold.. [optional]  # noqa: E501
+            warning_recovery (float, none_type): The monitor `WARNING` recovery threshold.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

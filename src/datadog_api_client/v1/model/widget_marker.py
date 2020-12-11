@@ -103,7 +103,7 @@ class WidgetMarker(ModelNormal):
         """WidgetMarker - a model defined in OpenAPI
 
         Args:
-            value (str): Value to apply. Can be a single value y &#x3D; 15 or a range of values 0 &lt; y &lt; 10.
+            value (str): Value to apply. Can be a single value y = 15 or a range of values 0 < y < 10.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

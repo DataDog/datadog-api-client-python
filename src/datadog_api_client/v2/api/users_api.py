@@ -778,10 +778,10 @@ class UsersApi(object):
             Keyword Args:
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (str): User attribute to order results by. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example &#x60;sort&#x3D;-name&#x60;. Options: &#x60;name&#x60;, &#x60;modified_at&#x60;, &#x60;user_count&#x60;.. [optional] if omitted the server will use the default value of "name"
-                sort_dir (QuerySortOrder): Direction of sort. Options: &#x60;asc&#x60;, &#x60;desc&#x60;.. [optional]
+                sort (str): User attribute to order results by. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `modified_at`, `user_count`.. [optional] if omitted the server will use the default value of "name"
+                sort_dir (QuerySortOrder): Direction of sort. Options: `asc`, `desc`.. [optional]
                 filter (str): Filter all users by the given string. Defaults to no filtering.. [optional]
-                filter_status (str): Filter on status attribute. Comma separated list, with possible values &#x60;Active&#x60;, &#x60;Pending&#x60;, and &#x60;Disabled&#x60;. Defaults to no filtering.. [optional]
+                filter_status (str): Filter on status attribute. Comma separated list, with possible values `Active`, `Pending`, and `Disabled`. Defaults to no filtering.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object

@@ -118,7 +118,7 @@ class ApmStatsQueryDefinition(ModelNormal):
         Args:
             env (str): Environment name.
             name (str): Operation name associated with service.
-            primary_tag (str): The organization&#39;s host group name and value.
+            primary_tag (str): The organization's host group name and value.
             row_type (ApmStatsQueryRowType):
             service (str): Service name.
 

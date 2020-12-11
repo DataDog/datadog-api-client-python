@@ -112,7 +112,7 @@ class IncidentResponseData(ModelNormal):
         """IncidentResponseData - a model defined in OpenAPI
 
         Args:
-            id (str): The incident&#39;s ID.
+            id (str): The incident's ID.
             type (IncidentType):
 
         Keyword Args:

@@ -127,7 +127,7 @@ class OrganizationBilling(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): The type of billing. Only &#x60;parent_billing&#x60; is supported.. [optional]  # noqa: E501
+            type (str): The type of billing. Only `parent_billing` is supported.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

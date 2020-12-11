@@ -148,7 +148,7 @@ class LogsStringBuilderProcessor(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            is_replace_missing (bool): If true, it replaces all missing attributes of &#x60;template&#x60; by an empty string. If &#x60;false&#x60; (default), skips the operation for missing attributes.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            is_replace_missing (bool): If true, it replaces all missing attributes of `template` by an empty string. If `false` (default), skips the operation for missing attributes.. [optional] if omitted the server will use the default value of False  # noqa: E501
             name (str): Name of the processor.. [optional]  # noqa: E501
         """
 

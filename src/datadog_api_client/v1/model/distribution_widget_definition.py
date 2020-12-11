@@ -122,7 +122,7 @@ class DistributionWidgetDefinition(ModelNormal):
         """DistributionWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            requests ([DistributionWidgetRequest]): Array of one request object to display in the widget.  See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)  to learn how to build the &#x60;REQUEST_SCHEMA&#x60;.
+            requests ([DistributionWidgetRequest]): Array of one request object to display in the widget.  See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)  to learn how to build the `REQUEST_SCHEMA`.
             type (DistributionWidgetDefinitionType):
 
         Keyword Args:
@@ -156,7 +156,7 @@ class DistributionWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
+            legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
             show_legend (bool): Whether or not to display the legend on this widget.. [optional]  # noqa: E501
             time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501

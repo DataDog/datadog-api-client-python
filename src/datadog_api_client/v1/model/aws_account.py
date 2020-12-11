@@ -143,10 +143,10 @@ class AWSAccount(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             access_key_id (str): Your AWS access key ID. Only required if your AWS account is a GovCloud or China account.. [optional]  # noqa: E501
             account_id (str): Your AWS Account ID without dashes.. [optional]  # noqa: E501
-            account_specific_namespace_rules ({str: (bool,)}): An object, (in the form &#x60;{\&quot;namespace1\&quot;:true/false, \&quot;namespace2\&quot;:true/false}&#x60;), that enables or disables metric collection for specific AWS namespaces for this AWS account only.. [optional]  # noqa: E501
+            account_specific_namespace_rules ({str: (bool,)}): An object, (in the form `{\"namespace1\":true/false, \"namespace2\":true/false}`), that enables or disables metric collection for specific AWS namespaces for this AWS account only.. [optional]  # noqa: E501
             excluded_regions ([str]): An array of AWS regions to exclude from metrics collection.. [optional]  # noqa: E501
-            filter_tags ([str]): The array of EC2 tags (in the form &#x60;key:value&#x60;) defines a filter that Datadog uses when collecting metrics from EC2. Wildcards, such as &#x60;?&#x60; (for single characters) and &#x60;*&#x60; (for multiple characters) can also be used. Only hosts that match one of the defined tags will be imported into Datadog. The rest will be ignored. Host matching a given tag can also be excluded by adding &#x60;!&#x60; before the tag. For example, &#x60;env:production,instance-type:c1.*,!region:us-east-1&#x60;. [optional]  # noqa: E501
-            host_tags ([str]): Array of tags (in the form &#x60;key:value&#x60;) to add to all hosts and metrics reporting through this integration.. [optional]  # noqa: E501
+            filter_tags ([str]): The array of EC2 tags (in the form `key:value`) defines a filter that Datadog uses when collecting metrics from EC2. Wildcards, such as `?` (for single characters) and `*` (for multiple characters) can also be used. Only hosts that match one of the defined tags will be imported into Datadog. The rest will be ignored. Host matching a given tag can also be excluded by adding `!` before the tag. For example, `env:production,instance-type:c1.*,!region:us-east-1`. [optional]  # noqa: E501
+            host_tags ([str]): Array of tags (in the form `key:value`) to add to all hosts and metrics reporting through this integration.. [optional]  # noqa: E501
             role_name (str): Your Datadog role delegation name.. [optional]  # noqa: E501
             secret_access_key (str): Your AWS secret access key. Only required if your AWS account is a GovCloud or China account.. [optional]  # noqa: E501
         """

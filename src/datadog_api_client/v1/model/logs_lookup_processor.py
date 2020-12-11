@@ -114,9 +114,9 @@ class LogsLookupProcessor(ModelNormal):
         """LogsLookupProcessor - a model defined in OpenAPI
 
         Args:
-            lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as &#x60;[\&quot;source_key1,target_value1\&quot;, \&quot;source_key2,target_value2\&quot;]&#x60;
+            lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`
             source (str): Source attribute used to perform the lookup.
-            target (str): Name of the attribute that contains the corresponding value in the mapping list or the &#x60;default_lookup&#x60; if not found in the mapping list.
+            target (str): Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.
             type (LogsLookupProcessorType):
 
         Keyword Args:

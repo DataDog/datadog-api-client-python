@@ -170,7 +170,7 @@ class IncidentResponseAttributes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             created (datetime): Timestamp when the incident was created.. [optional]  # noqa: E501
-            customer_impact_duration (int): Length of the incident&#39;s customer impact in seconds. Equals the difference between &#x60;customer_impact_start&#x60; and &#x60;customer_impact_end&#x60;.. [optional]  # noqa: E501
+            customer_impact_duration (int): Length of the incident's customer impact in seconds. Equals the difference between `customer_impact_start` and `customer_impact_end`.. [optional]  # noqa: E501
             customer_impact_end (datetime, none_type): Timestamp when customers were no longer impacted by the incident.. [optional]  # noqa: E501
             customer_impact_scope (str, none_type): A summary of the impact customers experienced during the incident.. [optional]  # noqa: E501
             customer_impact_start (datetime, none_type): Timestamp when customers began being impacted by the incident.. [optional]  # noqa: E501
@@ -181,11 +181,11 @@ class IncidentResponseAttributes(ModelNormal):
             notification_handles ([str]): Notification handles that will be notified of the incident during update.. [optional]  # noqa: E501
             postmortem_id (str): The UUID of the postmortem object attached to the incident.. [optional]  # noqa: E501
             public_id (int): The monotonically increasing integer ID for the incident.. [optional]  # noqa: E501
-            resolved (datetime, none_type): Timestamp when the incident&#39;s state was set to resolved.. [optional]  # noqa: E501
-            time_to_detect (int): The amount of time in seconds to detect the incident. Equals the difference between &#x60;customer_impact_start&#x60; and &#x60;detected&#x60;.. [optional]  # noqa: E501
-            time_to_internal_response (int): The amount of time in seconds to call incident after detection. Equals the difference of &#x60;detected&#x60; and &#x60;created&#x60;.. [optional]  # noqa: E501
-            time_to_repair (int): The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between &#x60;customer_impact_end&#x60; and &#x60;detected&#x60;.. [optional]  # noqa: E501
-            time_to_resolve (int): The amount of time in seconds to resolve the incident after it was created. Equals the difference between &#x60;created&#x60; and &#x60;resolved&#x60;.. [optional]  # noqa: E501
+            resolved (datetime, none_type): Timestamp when the incident's state was set to resolved.. [optional]  # noqa: E501
+            time_to_detect (int): The amount of time in seconds to detect the incident. Equals the difference between `customer_impact_start` and `detected`.. [optional]  # noqa: E501
+            time_to_internal_response (int): The amount of time in seconds to call incident after detection. Equals the difference of `detected` and `created`.. [optional]  # noqa: E501
+            time_to_repair (int): The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between `customer_impact_end` and `detected`.. [optional]  # noqa: E501
+            time_to_resolve (int): The amount of time in seconds to resolve the incident after it was created. Equals the difference between `created` and `resolved`.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

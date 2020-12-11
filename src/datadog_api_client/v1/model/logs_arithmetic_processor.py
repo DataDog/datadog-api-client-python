@@ -148,7 +148,7 @@ class LogsArithmeticProcessor(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            is_replace_missing (bool): If &#x60;true&#x60;, it replaces all missing attributes of expression by &#x60;0&#x60;, &#x60;false&#x60; skip the operation if an attribute is missing.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            is_replace_missing (bool): If `true`, it replaces all missing attributes of expression by `0`, `false` skip the operation if an attribute is missing.. [optional] if omitted the server will use the default value of False  # noqa: E501
             name (str): Name of the processor.. [optional]  # noqa: E501
         """
 

@@ -148,10 +148,10 @@ class MetricsQueryResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            error (str): Message indicating the errors if status is not &#x60;ok&#x60;.. [optional]  # noqa: E501
+            error (str): Message indicating the errors if status is not `ok`.. [optional]  # noqa: E501
             from_date (int): Start of requested time window, milliseconds since Unix epoch.. [optional]  # noqa: E501
             group_by ([str]): List of tag keys on which to group.. [optional]  # noqa: E501
-            message (str): Message indicating &#x60;success&#x60; if status is &#x60;ok&#x60;.. [optional]  # noqa: E501
+            message (str): Message indicating `success` if status is `ok`.. [optional]  # noqa: E501
             query (str): Query string. [optional]  # noqa: E501
             res_type (str): Type of response.. [optional]  # noqa: E501
             series ([MetricsQueryResponseSeries]): List of timeseries queried.. [optional]  # noqa: E501

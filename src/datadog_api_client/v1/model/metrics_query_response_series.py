@@ -164,7 +164,7 @@ class MetricsQueryResponseSeries(ModelNormal):
             pointlist ([Point]): List of points of the time series.. [optional]  # noqa: E501
             scope (str): Metric scope, comma separated list of tags.. [optional]  # noqa: E501
             start (int): Start of the time window, milliseconds since Unix epoch.. [optional]  # noqa: E501
-            unit ([MetricsQueryResponseUnit]): Detailed information about the metric unit. First element describes the \&quot;primary unit\&quot; (for example, &#x60;bytes&#x60; in &#x60;bytes per second&#x60;), second describes the \&quot;per unit\&quot; (for example, &#x60;second&#x60; in &#x60;bytes per second&#x60;).. [optional]  # noqa: E501
+            unit ([MetricsQueryResponseUnit]): Detailed information about the metric unit. First element describes the \"primary unit\" (for example, `bytes` in `bytes per second`), second describes the \"per unit\" (for example, `second` in `bytes per second`).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

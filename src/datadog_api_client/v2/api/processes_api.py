@@ -49,10 +49,10 @@ class ProcessesApi(object):
             Keyword Args:
                 search (str): String to search processes by.. [optional]
                 tags (str): Comma-separated list of tags to filter processes by.. [optional]
-                _from (int): Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window will be 15 minutes before the &#x60;to&#x60; timestamp. If neither &#x60;from&#x60; nor &#x60;to&#x60; are provided, the query window will be &#x60;[now - 15m, now]&#x60;.. [optional]
-                to (int): Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window will be 15 minutes after the &#x60;from&#x60; timestamp. If neither &#x60;from&#x60; nor &#x60;to&#x60; are provided, the query window will be &#x60;[now - 15m, now]&#x60;.. [optional]
+                _from (int): Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window will be 15 minutes before the `to` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.. [optional]
+                to (int): Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window will be 15 minutes after the `from` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.. [optional]
                 page_limit (int): Maximum number of results returned.. [optional] if omitted the server will use the default value of 1000
-                page_cursor (str): String to query the next page of results. This key is provided with each valid response from the API in &#x60;meta.page.after&#x60;.. [optional]
+                page_cursor (str): String to query the next page of results. This key is provided with each valid response from the API in `meta.page.after`.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object

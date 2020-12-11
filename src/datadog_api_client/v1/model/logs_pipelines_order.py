@@ -97,7 +97,7 @@ class LogsPipelinesOrder(ModelNormal):
         """LogsPipelinesOrder - a model defined in OpenAPI
 
         Args:
-            pipeline_ids ([str]): Ordered Array of &#x60;&lt;PIPELINE_ID&gt;&#x60; strings, the order of pipeline IDs in the array define the overall Pipelines order for Datadog.
+            pipeline_ids ([str]): Ordered Array of `<PIPELINE_ID>` strings, the order of pipeline IDs in the array define the overall Pipelines order for Datadog.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

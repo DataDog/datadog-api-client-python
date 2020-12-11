@@ -98,10 +98,10 @@ class SyntheticsTestMonitorStatus(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (int): The status of your Synthetic monitor. * &#x60;O&#x60; for not triggered * &#x60;1&#x60; for triggered * &#x60;2&#x60; for no data., must be one of [0, 1, 2, ]  # noqa: E501
+            args[0] (int): The status of your Synthetic monitor. * `O` for not triggered * `1` for triggered * `2` for no data., must be one of [0, 1, 2, ]  # noqa: E501
 
         Keyword Args:
-            value (int): The status of your Synthetic monitor. * &#x60;O&#x60; for not triggered * &#x60;1&#x60; for triggered * &#x60;2&#x60; for no data., must be one of [0, 1, 2, ]  # noqa: E501
+            value (int): The status of your Synthetic monitor. * `O` for not triggered * `1` for triggered * `2` for no data., must be one of [0, 1, 2, ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

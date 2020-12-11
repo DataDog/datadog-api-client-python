@@ -127,7 +127,7 @@ class OrganizationSubscription(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): The subscription type. Types available are &#x60;trial&#x60;, &#x60;free&#x60;, and &#x60;pro&#x60;.. [optional]  # noqa: E501
+            type (str): The subscription type. Types available are `trial`, `free`, and `pro`.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -130,7 +130,7 @@ class UsageIncidentManagementHour(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
-            monthly_active_users (int): Contains the total number monthly active users from the start of the given hour&#39;s month until the given hour.. [optional]  # noqa: E501
+            monthly_active_users (int): Contains the total number monthly active users from the start of the given hour's month until the given hour.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -122,7 +122,7 @@ class ChangeWidgetDefinition(ModelNormal):
         """ChangeWidgetDefinition - a model defined in OpenAPI
 
         Args:
-            requests ([ChangeWidgetRequest]): Array of one request object to display in the widget.  See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)  to learn how to build the &#x60;REQUEST_SCHEMA&#x60;.
+            requests ([ChangeWidgetRequest]): Array of one request object to display in the widget.  See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)  to learn how to build the `REQUEST_SCHEMA`.
             type (ChangeWidgetDefinitionType):
 
         Keyword Args:

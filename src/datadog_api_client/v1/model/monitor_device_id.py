@@ -104,10 +104,10 @@ class MonitorDeviceID(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): ID of the device the Synthetics monitor is running on. Same as &#x60;SyntheticsDeviceID&#x60;.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", ]  # noqa: E501
+            args[0] (str): ID of the device the Synthetics monitor is running on. Same as `SyntheticsDeviceID`.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", ]  # noqa: E501
 
         Keyword Args:
-            value (str): ID of the device the Synthetics monitor is running on. Same as &#x60;SyntheticsDeviceID&#x60;.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", ]  # noqa: E501
+            value (str): ID of the device the Synthetics monitor is running on. Same as `SyntheticsDeviceID`.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

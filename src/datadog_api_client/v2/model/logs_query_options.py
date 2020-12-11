@@ -130,7 +130,7 @@ class LogsQueryOptions(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             time_offset (int): The time offset (in seconds) to apply to the query.. [optional]  # noqa: E501
-            timezone (str): The timezone can be specified both as an offset, for example: \&quot;UTC+03:00\&quot;.. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            timezone (str): The timezone can be specified both as an offset, for example: \"UTC+03:00\".. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

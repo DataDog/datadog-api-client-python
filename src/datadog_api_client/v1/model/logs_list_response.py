@@ -136,7 +136,7 @@ class LogsListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            logs ([Log]): Array of logs matching the request and the &#x60;nextLogId&#x60; if sent.. [optional]  # noqa: E501
+            logs ([Log]): Array of logs matching the request and the `nextLogId` if sent.. [optional]  # noqa: E501
             next_log_id (str): Hash identifier of the next log to return in the list. This parameter is used for the pagination feature.. [optional]  # noqa: E501
             status (str): Status of the response.. [optional]  # noqa: E501
         """

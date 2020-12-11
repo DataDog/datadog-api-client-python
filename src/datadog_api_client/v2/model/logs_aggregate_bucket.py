@@ -135,7 +135,7 @@ class LogsAggregateBucket(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             by ({str: (str,)}): The key, value pairs for each group by. [optional]  # noqa: E501
-            computes ({str: (LogsAggregateBucketValue,)}): A map of the metric name -&gt; value for regular compute or list of values for a timeseries. [optional]  # noqa: E501
+            computes ({str: (LogsAggregateBucketValue,)}): A map of the metric name -> value for regular compute or list of values for a timeseries. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

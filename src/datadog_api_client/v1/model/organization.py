@@ -152,7 +152,7 @@ class Organization(ModelNormal):
             created (str): Date of the organization creation.. [optional]  # noqa: E501
             description (str): Description of the organization.. [optional]  # noqa: E501
             name (str): The name of the new child-organization, limited to 32 characters.. [optional]  # noqa: E501
-            public_id (str): The &#x60;public_id&#x60; of the organization you are operating within.. [optional]  # noqa: E501
+            public_id (str): The `public_id` of the organization you are operating within.. [optional]  # noqa: E501
             settings (OrganizationSettings): [optional]  # noqa: E501
             subscription (OrganizationSubscription): [optional]  # noqa: E501
         """

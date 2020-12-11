@@ -137,7 +137,7 @@ class CheckCanDeleteMonitorResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ({str: ([str],)}): A mapping of Monitor ID to strings denoting where it&#39;s used.. [optional]  # noqa: E501
+            errors ({str: ([str],)}): A mapping of Monitor ID to strings denoting where it's used.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

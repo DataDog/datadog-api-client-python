@@ -116,7 +116,7 @@ class LogsURLParser(ModelNormal):
 
         Keyword Args:
             sources ([str]): Array of source attributes.. defaults to ["http.url"]  # noqa: E501
-            target (str): Name of the parent attribute that contains all the extracted details from the &#x60;sources&#x60;.. defaults to "http.url_details"  # noqa: E501
+            target (str): Name of the parent attribute that contains all the extracted details from the `sources`.. defaults to "http.url_details"  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

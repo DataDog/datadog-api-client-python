@@ -112,7 +112,7 @@ class IncidentUpdateData(ModelNormal):
         """IncidentUpdateData - a model defined in OpenAPI
 
         Args:
-            id (str): The team&#39;s ID.
+            id (str): The team's ID.
             type (IncidentType):
 
         Keyword Args:

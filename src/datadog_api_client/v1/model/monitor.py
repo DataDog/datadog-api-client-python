@@ -174,7 +174,7 @@ class Monitor(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             created (datetime): Timestamp of the monitor creation.. [optional]  # noqa: E501
             creator (Creator): [optional]  # noqa: E501
-            deleted (datetime, none_type): Whether or not the monitor is deleted. (Always &#x60;null&#x60;). [optional]  # noqa: E501
+            deleted (datetime, none_type): Whether or not the monitor is deleted. (Always `null`). [optional]  # noqa: E501
             id (int): ID of this monitor.. [optional]  # noqa: E501
             message (str): A message to include with notifications for this monitor.. [optional]  # noqa: E501
             modified (datetime): Last timestamp when the monitor was edited.. [optional]  # noqa: E501

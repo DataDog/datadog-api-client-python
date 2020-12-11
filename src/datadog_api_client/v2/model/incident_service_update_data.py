@@ -112,7 +112,7 @@ class IncidentServiceUpdateData(ModelNormal):
         """IncidentServiceUpdateData - a model defined in OpenAPI
 
         Args:
-            id (str): The incident service&#39;s ID.
+            id (str): The incident service's ID.
             type (IncidentServiceType):
 
         Keyword Args:

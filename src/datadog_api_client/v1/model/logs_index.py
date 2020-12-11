@@ -151,7 +151,7 @@ class LogsIndex(ModelNormal):
             exclusion_filters ([LogsExclusion]): An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.. [optional]  # noqa: E501
             is_rate_limited (bool): A boolean stating if the index is rate limited, meaning more logs than the daily limit have been sent. Rate limit is reset every-day at 2pm UTC.. [optional]  # noqa: E501
             name (str): The name of the index.. [optional]  # noqa: E501
-            num_retention_days (int): The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization&#39;s contract/subscriptions.. [optional]  # noqa: E501
+            num_retention_days (int): The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

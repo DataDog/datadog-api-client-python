@@ -131,8 +131,8 @@ class GraphSnapshot(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            graph_def (str): A JSON document defining the graph. &#x60;graph_def&#x60; can be used instead of &#x60;metric_query&#x60;. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded.. [optional]  # noqa: E501
-            metric_query (str): The metric query. One of &#x60;metric_query&#x60; or &#x60;graph_def&#x60; is required.. [optional]  # noqa: E501
+            graph_def (str): A JSON document defining the graph. `graph_def` can be used instead of `metric_query`. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded.. [optional]  # noqa: E501
+            metric_query (str): The metric query. One of `metric_query` or `graph_def` is required.. [optional]  # noqa: E501
             snapshot_url (str): URL of your [graph snapshot](https://docs.datadoghq.com/metrics/explorer/#snapshot).. [optional]  # noqa: E501
         """
 

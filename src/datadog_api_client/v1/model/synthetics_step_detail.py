@@ -190,7 +190,7 @@ class SyntheticsStepDetail(ModelNormal):
             type (SyntheticsStepType): [optional]  # noqa: E501
             url (str): URL to perform the step against.. [optional]  # noqa: E501
             value ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Value for the step.. [optional]  # noqa: E501
-            warnings ([SyntheticsStepDetailWarnings]): Warning collected that didn&#39;t failed the step.. [optional]  # noqa: E501
+            warnings ([SyntheticsStepDetailWarnings]): Warning collected that didn't failed the step.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

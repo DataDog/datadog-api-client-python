@@ -146,8 +146,8 @@ class LogQueryDefinition(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             compute (LogsQueryCompute): [optional]  # noqa: E501
             group_by ([LogQueryDefinitionGroupBy]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
-            index (str): A coma separated-list of index names. Use \&quot;*\&quot; query all indexes at once. [Multiple Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes). [optional]  # noqa: E501
-            multi_compute ([LogsQueryCompute]): This field is mutually exclusive with &#x60;compute&#x60;.. [optional]  # noqa: E501
+            index (str): A coma separated-list of index names. Use \"*\" query all indexes at once. [Multiple Indexes](https://docs.datadoghq.com/logs/indexes/#multiple-indexes). [optional]  # noqa: E501
+            multi_compute ([LogsQueryCompute]): This field is mutually exclusive with `compute`.. [optional]  # noqa: E501
             search (LogQueryDefinitionSearch): [optional]  # noqa: E501
         """
 
