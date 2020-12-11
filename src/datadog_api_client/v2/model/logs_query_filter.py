@@ -134,7 +134,7 @@ class LogsQueryFilter(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             _from (str): The minimum time for the requested logs, supports date math and regular timestamps. [optional] if omitted the server will use the default value of "now-15m"  # noqa: E501
-            indexes ([str]): For customers with multiple indexes, the indexes to search. Defaults to [&#39;*&#39;] which means all indexes.. [optional] if omitted the server will use the default value of ["*"]  # noqa: E501
+            indexes ([str]): For customers with multiple indexes, the indexes to search. Defaults to ['*'] which means all indexes.. [optional] if omitted the server will use the default value of ["*"]  # noqa: E501
             query (str): The search query - following the log search syntax.. [optional] if omitted the server will use the default value of "*"  # noqa: E501
             to (str): The maximum time for the requested logs, supports date math and regular timestamps. [optional] if omitted the server will use the default value of "now"  # noqa: E501
         """

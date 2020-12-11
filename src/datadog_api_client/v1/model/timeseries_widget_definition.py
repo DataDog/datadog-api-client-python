@@ -176,7 +176,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
-            legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
+            legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
             markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
             right_yaxis (WidgetAxis): [optional]  # noqa: E501
             show_legend (bool): (screenboard only) Show the legend for this widget.. [optional]  # noqa: E501

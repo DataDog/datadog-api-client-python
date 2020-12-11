@@ -139,13 +139,13 @@ class SLOHistorySLIData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            history ([[float]]): For &#x60;monitor&#x60; based SLOs, this includes the aggregated history uptime time series.. [optional]  # noqa: E501
+            history ([[float]]): For `monitor` based SLOs, this includes the aggregated history uptime time series.. [optional]  # noqa: E501
             name (str): For groups in a grouped SLO this is the group name. For monitors in a multi-monitor SLO this is the monitor name.. [optional]  # noqa: E501
-            precision ({str: (float,)}): A mapping of threshold &#x60;timeframe&#x60; to number of accurate decimals, regardless of the from &amp;&amp; to timestamp.. [optional]  # noqa: E501
-            preview (bool): For &#x60;monitor&#x60; based SLOs when &#x60;true&#x60; this indicates that a replay is in progress to give an accurate uptime calculation.. [optional]  # noqa: E501
+            precision ({str: (float,)}): A mapping of threshold `timeframe` to number of accurate decimals, regardless of the from && to timestamp.. [optional]  # noqa: E501
+            preview (bool): For `monitor` based SLOs when `true` this indicates that a replay is in progress to give an accurate uptime calculation.. [optional]  # noqa: E501
             sli_value (float): The current SLI value of the SLO over the history window.. [optional]  # noqa: E501
-            span_precision (float): The amount of decimal places the SLI value is accurate to for the given from &#x60;&amp;&amp;&#x60; to timestamp.. [optional]  # noqa: E501
-            uptime (float): Deprecated. Use &#x60;sli_value&#x60; instead.. [optional]  # noqa: E501
+            span_precision (float): The amount of decimal places the SLI value is accurate to for the given from `&&` to timestamp.. [optional]  # noqa: E501
+            uptime (float): Deprecated. Use `sli_value` instead.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

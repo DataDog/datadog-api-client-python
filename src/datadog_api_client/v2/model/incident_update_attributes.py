@@ -155,7 +155,7 @@ class IncidentUpdateAttributes(ModelNormal):
             detected (datetime, none_type): Timestamp when the incident was detected.. [optional]  # noqa: E501
             fields ({str: (IncidentFieldAttributes,)}): A condensed view of the user-defined fields for which to update selections.. [optional]  # noqa: E501
             notification_handles ([str]): Notification handles that will be notified of the incident during update.. [optional]  # noqa: E501
-            resolved (datetime, none_type): Timestamp when the incident&#39;s state was set to resolved.. [optional]  # noqa: E501
+            resolved (datetime, none_type): Timestamp when the incident's state was set to resolved.. [optional]  # noqa: E501
             title (str): The title of the incident, which summarizes what happened.. [optional]  # noqa: E501
         """
 

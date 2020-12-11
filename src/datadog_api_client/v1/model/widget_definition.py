@@ -265,7 +265,7 @@ class WidgetDefinition(ModelComposed):
             group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
             group_by ([str]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
             tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
-            legend_size (str): Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;.. [optional]  # noqa: E501
+            legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
             show_legend (bool): (screenboard only) Show the legend for this widget.. [optional]  # noqa: E501
             event_size (WidgetEventSize): [optional]  # noqa: E501
             tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]  # noqa: E501

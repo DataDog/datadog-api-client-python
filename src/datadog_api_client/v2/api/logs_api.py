@@ -288,7 +288,7 @@ class LogsApi(object):
 
             Keyword Args:
                 filter_query (str): Search query following logs syntax.. [optional]
-                filter_index (str): For customers with multiple indexes, the indexes to search Defaults to &#39;*&#39; which means all indexes. [optional]
+                filter_index (str): For customers with multiple indexes, the indexes to search Defaults to '*' which means all indexes. [optional]
                 filter_from (datetime): Minimum timestamp for requested logs.. [optional]
                 filter_to (datetime): Maximum timestamp for requested logs.. [optional]
                 sort (LogsSort): Order of logs in results.. [optional]

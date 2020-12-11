@@ -295,7 +295,7 @@ class MonitorsApi(object):
                 monitor_id (int): The ID of the monitor.
 
             Keyword Args:
-                force (str): Delete the monitor even if it&#39;s referenced by other resources (e.g. SLO, composite monitor).. [optional]
+                force (str): Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor).. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -421,7 +421,7 @@ class MonitorsApi(object):
                 monitor_id (int): The ID of the monitor
 
             Keyword Args:
-                group_states (str): When specified, shows additional information about the group states. Choose one or more from &#x60;all&#x60;, &#x60;alert&#x60;, &#x60;warn&#x60;, and &#x60;no data&#x60;.. [optional]
+                group_states (str): When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -544,14 +544,14 @@ class MonitorsApi(object):
 
 
             Keyword Args:
-                group_states (str): When specified, shows additional information about the group states. Choose one or more from &#x60;all&#x60;, &#x60;alert&#x60;, &#x60;warn&#x60;, and &#x60;no data&#x60;.. [optional]
+                group_states (str): When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`.. [optional]
                 name (str): A string to filter monitors by name.. [optional]
-                tags (str): A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. For example, &#x60;host:host0&#x60;.. [optional]
-                monitor_tags (str): A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors. Tags created in the Datadog UI automatically have the service key prepended. For example, &#x60;service:my-app&#x60;.. [optional]
+                tags (str): A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. For example, `host:host0`.. [optional]
+                monitor_tags (str): A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors. Tags created in the Datadog UI automatically have the service key prepended. For example, `service:my-app`.. [optional]
                 with_downtimes (bool): If this argument is set to true, then the returned data includes all current downtimes for each monitor.. [optional]
                 id_offset (int): Monitor ID offset.. [optional]
                 page (int): The page to start paginating from. If this argument is not specified, the request returns all monitors without pagination.. [optional]
-                page_size (int): The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a &#x60;page_size&#x60; limit. However, if page is specified and &#x60;page_size&#x60; is not, the argument defaults to 100.. [optional]
+                page_size (int): The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a `page_size` limit. However, if page is specified and `page_size` is not, the argument defaults to 100.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object

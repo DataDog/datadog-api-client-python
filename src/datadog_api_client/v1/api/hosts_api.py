@@ -166,7 +166,7 @@ class HostsApi(object):
             Keyword Args:
                 filter (str): String to filter search results.. [optional]
                 sort_field (str): Sort hosts by this field.. [optional]
-                sort_dir (str): Direction of sort. Options include &#x60;asc&#x60; and &#x60;desc&#x60;.. [optional]
+                sort_dir (str): Direction of sort. Options include `asc` and `desc`.. [optional]
                 start (int): Host result to start search from.. [optional]
                 count (int): Number of hosts to return. Max 1000.. [optional]
                 _from (int): Number of seconds since UNIX epoch from which you want to search your hosts.. [optional]

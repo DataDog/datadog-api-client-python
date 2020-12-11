@@ -54,7 +54,7 @@ class SnapshotsApi(object):
             Keyword Args:
                 metric_query (str): The metric query.. [optional]
                 event_query (str): A query that adds event bands to the graph.. [optional]
-                graph_def (str): A JSON document defining the graph. &#x60;graph_def&#x60; can be used instead of &#x60;metric_query&#x60;. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded.. [optional]
+                graph_def (str): A JSON document defining the graph. `graph_def` can be used instead of `metric_query`. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded.. [optional]
                 title (str): A title for the graph. If no title is specified, the graph does not have a title.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.

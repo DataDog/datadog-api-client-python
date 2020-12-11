@@ -149,7 +149,7 @@ class LogsArchiveAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            include_tags (bool): To store the tags in the archive, set the value \&quot;true\&quot;. If it is set to \&quot;false\&quot;, the tags will be deleted when the logs are sent to the archive.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            include_tags (bool): To store the tags in the archive, set the value \"true\". If it is set to \"false\", the tags will be deleted when the logs are sent to the archive.. [optional] if omitted the server will use the default value of False  # noqa: E501
             rehydration_tags ([str]): An array of tags to add to rehydrated logs from an archive.. [optional]  # noqa: E501
             state (LogsArchiveState): [optional]  # noqa: E501
         """

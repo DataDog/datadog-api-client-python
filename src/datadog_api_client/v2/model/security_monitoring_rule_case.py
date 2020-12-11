@@ -138,7 +138,7 @@ class SecurityMonitoringRuleCase(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            condition (str): A rule case contains logical operations (&#x60;&gt;&#x60;,&#x60;&gt;&#x3D;&#x60;, &#x60;&amp;&amp;&#x60;, &#x60;||&#x60;) to determine if a signal should be generated based on the event counts in the previously defined queries.. [optional]  # noqa: E501
+            condition (str): A rule case contains logical operations (`>`,`>=`, `&&`, `||`) to determine if a signal should be generated based on the event counts in the previously defined queries.. [optional]  # noqa: E501
             name (str): Name of the case.. [optional]  # noqa: E501
             notifications ([str]): Notification targets for each rule case.. [optional]  # noqa: E501
             status (SecurityMonitoringRuleSeverity): [optional]  # noqa: E501

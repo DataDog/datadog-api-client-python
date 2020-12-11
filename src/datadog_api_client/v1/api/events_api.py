@@ -174,10 +174,10 @@ class EventsApi(object):
                 end (int): POSIX timestamp.
 
             Keyword Args:
-                priority (EventPriority): Priority of your events, either &#x60;low&#x60; or &#x60;normal&#x60;.. [optional]
+                priority (EventPriority): Priority of your events, either `low` or `normal`.. [optional]
                 sources (str): A comma separated string of sources.. [optional]
                 tags (str): A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.. [optional]
-                unaggregated (bool): Set unaggregated to &#x60;true&#x60; to return all events within the specified [&#x60;start&#x60;,&#x60;end&#x60;] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won&#39;t be available in the output.. [optional]
+                unaggregated (bool): Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object

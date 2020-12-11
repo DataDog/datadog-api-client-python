@@ -173,7 +173,7 @@ class Host(ModelNormal):
             name (str): The host name.. [optional]  # noqa: E501
             sources ([str]): Source or cloud provider associated with your host.. [optional]  # noqa: E501
             tags_by_source ({str: ([str],)}): List of tags for each source (AWS, Datadog Agent, Chef..).. [optional]  # noqa: E501
-            up (bool): Displays UP when the expected metrics are received and displays &#x60;???&#x60; if no metrics are received.. [optional]  # noqa: E501
+            up (bool): Displays UP when the expected metrics are received and displays `???` if no metrics are received.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

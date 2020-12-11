@@ -135,7 +135,7 @@ class LogsListRequestTime(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            timezone (str): Timezone can be specified both as an offset (e.g. \&quot;UTC+03:00\&quot;) or a regional zone (e.g. \&quot;Europe/Paris\&quot;).. [optional]  # noqa: E501
+            timezone (str): Timezone can be specified both as an offset (e.g. \"UTC+03:00\") or a regional zone (e.g. \"Europe/Paris\").. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

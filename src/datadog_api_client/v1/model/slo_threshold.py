@@ -144,9 +144,9 @@ class SLOThreshold(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            target_display (str): A string representation of the target that indicates its precision. It uses trailing zeros to show significant decimal places (e.g. &#x60;98.00&#x60;).  Always included in service level objective responses. Ignored in create/update requests.. [optional]  # noqa: E501
+            target_display (str): A string representation of the target that indicates its precision. It uses trailing zeros to show significant decimal places (e.g. `98.00`).  Always included in service level objective responses. Ignored in create/update requests.. [optional]  # noqa: E501
             warning (float): The warning value for the service level objective.. [optional]  # noqa: E501
-            warning_display (str): A string representation of the warning target (see the description of the &#x60;target_display&#x60; field for details).  Included in service level objective responses if a warning target exists. Ignored in create/update requests.. [optional]  # noqa: E501
+            warning_display (str): A string representation of the warning target (see the description of the `target_display` field for details).  Included in service level objective responses if a warning target exists. Ignored in create/update requests.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

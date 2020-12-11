@@ -112,7 +112,7 @@ class LogsCategoryProcessor(ModelNormal):
         """LogsCategoryProcessor - a model defined in OpenAPI
 
         Args:
-            categories ([LogsCategoryProcessorCategories]): Array of filters to match or not a log and their corresponding &#x60;name&#x60;to assign a custom value to the log.
+            categories ([LogsCategoryProcessorCategories]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.
             target (str): Name of the target attribute which value is defined by the matching category.
             type (LogsCategoryProcessorType):
 

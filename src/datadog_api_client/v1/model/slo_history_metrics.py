@@ -117,11 +117,11 @@ class SLOHistoryMetrics(ModelNormal):
 
         Args:
             denominator (SLOHistoryMetricsSeries):
-            interval (int): The aggregated query interval for the series data. It&#39;s implicit based on the query time window.
+            interval (int): The aggregated query interval for the series data. It's implicit based on the query time window.
             numerator (SLOHistoryMetricsSeries):
             query (str): The combined numerator and denominator query CSV.
-            res_type (str): The series result type. This mimics &#x60;batch_query&#x60; response type.
-            resp_version (int): The series response version type. This mimics &#x60;batch_query&#x60; response type.
+            res_type (str): The series result type. This mimics `batch_query` response type.
+            resp_version (int): The series response version type. This mimics `batch_query` response type.
             times ([float]): An array of query timestamps in EPOCH milliseconds
 
         Keyword Args:

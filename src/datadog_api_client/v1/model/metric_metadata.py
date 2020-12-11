@@ -141,11 +141,11 @@ class MetricMetadata(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             description (str): Metric description.. [optional]  # noqa: E501
             integration (str): Name of the integration that sent the metric if applicable.. [optional]  # noqa: E501
-            per_unit (str): Per unit of the metric such as &#x60;second&#x60; in &#x60;bytes per second&#x60;.. [optional]  # noqa: E501
+            per_unit (str): Per unit of the metric such as `second` in `bytes per second`.. [optional]  # noqa: E501
             short_name (str): A more human-readable and abbreviated version of the metric name.. [optional]  # noqa: E501
             statsd_interval (int): StatsD flush interval of the metric in seconds if applicable.. [optional]  # noqa: E501
-            type (str): Metric type such as &#x60;gauge&#x60; or &#x60;rate&#x60;.. [optional]  # noqa: E501
-            unit (str): Primary unit of the metric such as &#x60;byte&#x60; or &#x60;operation&#x60;.. [optional]  # noqa: E501
+            type (str): Metric type such as `gauge` or `rate`.. [optional]  # noqa: E501
+            unit (str): Primary unit of the metric such as `byte` or `operation`.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

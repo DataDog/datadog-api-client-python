@@ -127,7 +127,7 @@ class LogsResponseMetadataPage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            after (str): The cursor to use to get the next results, if any. To make the next request, use the same. parameters with the addition of the &#x60;page[cursor]&#x60;.. [optional]  # noqa: E501
+            after (str): The cursor to use to get the next results, if any. To make the next request, use the same. parameters with the addition of the `page[cursor]`.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

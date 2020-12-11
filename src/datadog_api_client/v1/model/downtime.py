@@ -175,17 +175,17 @@ class Downtime(ModelNormal):
             canceled (int, none_type): If a scheduled downtime is canceled.. [optional]  # noqa: E501
             creator_id (int): User ID of the downtime creator.. [optional]  # noqa: E501
             disabled (bool): If a downtime has been disabled.. [optional]  # noqa: E501
-            downtime_type (int): &#x60;0&#x60; for a downtime applied on &#x60;*&#x60; or all, &#x60;1&#x60; when the downtime is only scoped to hosts, or &#x60;2&#x60; when the downtime is scoped to anything but hosts.. [optional]  # noqa: E501
+            downtime_type (int): `0` for a downtime applied on `*` or all, `1` when the downtime is only scoped to hosts, or `2` when the downtime is scoped to anything but hosts.. [optional]  # noqa: E501
             end (int, none_type): POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely until you cancel it.. [optional]  # noqa: E501
             id (int): The downtime ID.. [optional]  # noqa: E501
-            message (str): A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same &#x60;@username&#x60; notation as events.. [optional]  # noqa: E501
+            message (str): A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.. [optional]  # noqa: E501
             monitor_id (int, none_type): A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.. [optional]  # noqa: E501
-            monitor_tags ([str]): A comma-separated list of monitor tags. For example, tags that are applied directly to monitors, not tags that are used in monitor queries (which are filtered by the scope parameter), to which the downtime applies. The resulting downtime applies to monitors that match ALL provided monitor tags. For example, &#x60;service:postgres&#x60; **AND** &#x60;team:frontend&#x60;.. [optional]  # noqa: E501
+            monitor_tags ([str]): A comma-separated list of monitor tags. For example, tags that are applied directly to monitors, not tags that are used in monitor queries (which are filtered by the scope parameter), to which the downtime applies. The resulting downtime applies to monitors that match ALL provided monitor tags. For example, `service:postgres` **AND** `team:frontend`.. [optional]  # noqa: E501
             parent_id (int, none_type): ID of the parent Downtime.. [optional]  # noqa: E501
             recurrence (DowntimeRecurrence): [optional]  # noqa: E501
-            scope ([str]): The scope(s) to which the downtime applies. For example, &#x60;host:app2&#x60;. Provide multiple scopes as a comma-separated list like &#x60;env:dev,env:prod&#x60;. The resulting downtime applies to sources that matches ALL provided scopes (&#x60;env:dev&#x60; **AND** &#x60;env:prod&#x60;).. [optional]  # noqa: E501
+            scope ([str]): The scope(s) to which the downtime applies. For example, `host:app2`. Provide multiple scopes as a comma-separated list like `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (`env:dev` **AND** `env:prod`).. [optional]  # noqa: E501
             start (int): POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.. [optional]  # noqa: E501
-            timezone (str): The timezone in which to display the downtime&#39;s start and end times in Datadog applications.. [optional]  # noqa: E501
+            timezone (str): The timezone in which to display the downtime's start and end times in Datadog applications.. [optional]  # noqa: E501
             updater_id (int, none_type): ID of the last user that updated the downtime.. [optional]  # noqa: E501
         """
 

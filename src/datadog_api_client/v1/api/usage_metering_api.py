@@ -75,10 +75,10 @@ class UsageMeteringApi(object):
 
 
             Keyword Args:
-                page_size (int): The number of files to return in the response. &#x60;[default&#x3D;60]&#x60;.. [optional]
-                page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature &#x60;[default&#x3D;0]&#x60;.. [optional]
-                sort_dir (UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
-                sort (UsageSort): The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;.. [optional]
+                page_size (int): The number of files to return in the response. `[default=60]`.. [optional]
+                page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.. [optional]
+                sort_dir (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
+                sort (UsageSort): The field to sort by: `[computed_on, size, start_date, end_date]`.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -210,7 +210,7 @@ class UsageMeteringApi(object):
                 start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.
 
             Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour.. [optional]
+                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -336,7 +336,7 @@ class UsageMeteringApi(object):
                 start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.
 
             Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour.. [optional]
+                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -459,10 +459,10 @@ class UsageMeteringApi(object):
 
 
             Keyword Args:
-                page_size (int): The number of files to return in the response &#x60;[default&#x3D;60].&#x60;. [optional]
-                page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature &#x60;[default&#x3D;0]&#x60;.. [optional]
-                sort_dir (UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
-                sort (UsageSort): The field to sort by: &#x60;[computed_on, size, start_date, end_date]&#x60;.. [optional]
+                page_size (int): The number of files to return in the response `[default=60].`. [optional]
+                page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.. [optional]
+                sort_dir (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
+                sort (UsageSort): The field to sort by: `[computed_on, size, start_date, end_date]`.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -834,7 +834,7 @@ class UsageMeteringApi(object):
                 start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.
 
             Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour.. [optional]
+                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -960,7 +960,7 @@ class UsageMeteringApi(object):
                 start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.
 
             Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour.. [optional]
+                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1088,8 +1088,8 @@ class UsageMeteringApi(object):
                 fields (str): The specified field to search results for.
 
             Keyword Args:
-                end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage ending this month.. [optional]
-                sort_direction (UsageSortDirection): The direction to sort by: &#x60;[desc, asc]&#x60;.. [optional]
+                end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
+                sort_direction (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
                 sort_name (UsageAttributionSort): The field to sort by.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
@@ -1231,7 +1231,7 @@ class UsageMeteringApi(object):
 
 
             Keyword Args:
-                month (datetime): Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage starting this month.. [optional]
+                month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1600,7 +1600,7 @@ class UsageMeteringApi(object):
                 start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.
 
             Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour.. [optional]
+                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2111,7 +2111,7 @@ class UsageMeteringApi(object):
                 start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.
 
             Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour.. [optional]
+                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2363,7 +2363,7 @@ class UsageMeteringApi(object):
                 start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.
 
             Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour.. [optional]
+                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2490,7 +2490,7 @@ class UsageMeteringApi(object):
 
             Keyword Args:
                 end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                type (str): RUM type: &#x60;[browser, mobile]&#x60;. Defaults to &#x60;browser&#x60;.. [optional]
+                type (str): RUM type: `[browser, mobile]`. Defaults to `browser`.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2621,7 +2621,7 @@ class UsageMeteringApi(object):
                 start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour.
 
             Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour.. [optional]
+                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2747,7 +2747,7 @@ class UsageMeteringApi(object):
                 start_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage beginning in this month. Maximum of 15 months ago.
 
             Keyword Args:
-                end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage ending this month.. [optional]
+                end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
                 include_org_details (bool): Include usage summaries for each sub-org.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.

@@ -829,9 +829,9 @@ class AWSIntegrationApi(object):
 
 
             Keyword Args:
-                account_id (str): Only return AWS accounts that matches this &#x60;account_id&#x60;.. [optional]
+                account_id (str): Only return AWS accounts that matches this `account_id`.. [optional]
                 role_name (str): Only return AWS accounts that matches this role_name.. [optional]
-                access_key_id (str): Only return AWS accounts that matches this &#x60;access_key_id&#x60;.. [optional]
+                access_key_id (str): Only return AWS accounts that matches this `access_key_id`.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1110,9 +1110,9 @@ class AWSIntegrationApi(object):
                 body (AWSAccount): AWS request object
 
             Keyword Args:
-                account_id (str): Only return AWS accounts that matches this &#x60;account_id&#x60;.. [optional]
-                role_name (str): Only return AWS accounts that match this &#x60;role_name&#x60;. Required if &#x60;account_id&#x60; is specified.. [optional]
-                access_key_id (str): Only return AWS accounts that matches this &#x60;access_key_id&#x60;. Required if none of the other two options are specified.. [optional]
+                account_id (str): Only return AWS accounts that matches this `account_id`.. [optional]
+                role_name (str): Only return AWS accounts that match this `role_name`. Required if `account_id` is specified.. [optional]
+                access_key_id (str): Only return AWS accounts that matches this `access_key_id`. Required if none of the other two options are specified.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object

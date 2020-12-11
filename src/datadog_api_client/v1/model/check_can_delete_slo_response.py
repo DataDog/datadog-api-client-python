@@ -135,7 +135,7 @@ class CheckCanDeleteSLOResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (CheckCanDeleteSLOResponseData): [optional]  # noqa: E501
-            errors ({str: (str,)}): A mapping of SLO id to it&#39;s current usages.. [optional]  # noqa: E501
+            errors ({str: (str,)}): A mapping of SLO id to it's current usages.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

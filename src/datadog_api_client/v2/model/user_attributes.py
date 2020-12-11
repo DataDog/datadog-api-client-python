@@ -147,7 +147,7 @@ class UserAttributes(ModelNormal):
             disabled (bool): Whether the user is disabled.. [optional]  # noqa: E501
             email (str): Email of the user.. [optional]  # noqa: E501
             handle (str): Handle of the user.. [optional]  # noqa: E501
-            icon (str): URL of the user&#39;s icon.. [optional]  # noqa: E501
+            icon (str): URL of the user's icon.. [optional]  # noqa: E501
             name (str): Name of the user.. [optional]  # noqa: E501
             status (str): Status of the user.. [optional]  # noqa: E501
             title (str): Title of the user.. [optional]  # noqa: E501

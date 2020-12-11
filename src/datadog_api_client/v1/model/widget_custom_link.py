@@ -100,7 +100,7 @@ class WidgetCustomLink(ModelNormal):
 
         Args:
             label (str): The label for the custom link URL. Keep the label short and descriptive. Use metrics and tags as variables.
-            link (str): The URL of the custom link. URL must include &#x60;http&#x60; or &#x60;https&#x60;. A relative URL must start with &#x60;/&#x60;.
+            link (str): The URL of the custom link. URL must include `http` or `https`. A relative URL must start with `/`.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

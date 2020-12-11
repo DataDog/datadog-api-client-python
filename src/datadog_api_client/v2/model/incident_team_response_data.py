@@ -143,7 +143,7 @@ class IncidentTeamResponseData(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (IncidentTeamResponseAttributes): [optional]  # noqa: E501
-            id (str): The incident team&#39;s ID.. [optional]  # noqa: E501
+            id (str): The incident team's ID.. [optional]  # noqa: E501
             relationships (IncidentTeamRelationships): [optional]  # noqa: E501
             type (IncidentTeamType): [optional]  # noqa: E501
         """
