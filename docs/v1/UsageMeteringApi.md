@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**get_tracing_without_limits**](UsageMeteringApi.md#get_tracing_without_limits) | **GET** /api/v1/usage/tracing-without-limits | Get hourly usage for tracing without limits
 [**get_usage_analyzed_logs**](UsageMeteringApi.md#get_usage_analyzed_logs) | **GET** /api/v1/usage/analyzed_logs | Get hourly usage for analyzed logs
 [**get_usage_attribution**](UsageMeteringApi.md#get_usage_attribution) | **GET** /api/v1/usage/attribution | Get Usage Attribution
-[**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get billable usage across your multi-org account
+[**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get billable usage across your account
 [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
 [**get_usage_indexed_spans**](UsageMeteringApi.md#get_usage_indexed_spans) | **GET** /api/v1/usage/indexed-spans | Get hourly usage for indexed spans
@@ -866,9 +866,9 @@ Name | Type | Description  | Notes
 # **get_usage_billable_summary**
 > UsageBillableSummaryResponse get_usage_billable_summary()
 
-Get billable usage across your multi-org account
+Get billable usage across your account
 
-Get billable usage across your multi-org account.
+Get billable usage across your account.
 
 ### Example
 
@@ -913,7 +913,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get billable usage across your multi-org account
+        # Get billable usage across your account
         api_response = api_instance.get_usage_billable_summary(month=month)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
@@ -2004,7 +2004,7 @@ Name | Type | Description  | Notes
 
 Get usage across your multi-org account
 
-Get usage across your multi-org account.
+Get usage across your multi-org account. You must have the multi-org feature enabled.
 
 ### Example
 
