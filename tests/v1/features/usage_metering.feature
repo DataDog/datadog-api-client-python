@@ -133,12 +133,6 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Get billable usage across your multi-org account returns "OK" response
-    Given new "GetUsageBillableSummary" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
   Scenario: Get hourly usage for profiled hosts returns "OK" response
     Given new "GetUsageProfiling" request
     When the request is sent
@@ -184,5 +178,11 @@ Feature: Usage Metering
   @generated @skip
   Scenario: Get top custom metrics by hourly average returns "OK" response
     Given new "GetUsageTopAvgMetrics" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get billable usage across your account returns "OK" response
+    Given new "GetUsageBillableSummary" request
     When the request is sent
     Then the response status is 200 OK

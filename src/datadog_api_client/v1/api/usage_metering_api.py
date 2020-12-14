@@ -1220,9 +1220,9 @@ class UsageMeteringApi(object):
             self,
             **kwargs
         ):
-            """Get billable usage across your multi-org account  # noqa: E501
+            """Get billable usage across your account  # noqa: E501
 
-            Get billable usage across your multi-org account.  # noqa: E501
+            Get billable usage across your account.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
@@ -2736,7 +2736,7 @@ class UsageMeteringApi(object):
         ):
             """Get usage across your multi-org account  # noqa: E501
 
-            Get usage across your multi-org account.  # noqa: E501
+            Get usage across your multi-org account. You must have the multi-org feature enabled.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 

@@ -38,7 +38,9 @@
   },
   "UpdateAPIKey": {
     "tag": "Key Management",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "ListApplicationKeys": {
     "tag": "Key Management",
@@ -73,7 +75,9 @@
   },
   "UpdateApplicationKey": {
     "tag": "Key Management",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "GetDailyCustomReports": {
     "tag": "Usage Metering",
@@ -100,7 +104,7 @@
       "parameters": [
         {
           "name": "dashboard_id",
-          "source": "<RESPONSE_PATH>"
+          "source": "id"
         }
       ],
       "type": "unsafe"
@@ -119,7 +123,7 @@
       "parameters": [
         {
           "name": "list_id",
-          "source": "<RESPONSE_PATH>"
+          "source": "id"
         }
       ],
       "type": "unsafe"
@@ -139,7 +143,9 @@
   },
   "UpdateDashboardList": {
     "tag": "Dashboard Lists",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "DeleteDashboard": {
     "tag": "Dashboards",
@@ -155,7 +161,9 @@
   },
   "UpdateDashboard": {
     "tag": "Dashboards",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "ListDowntimes": {
     "tag": "Downtimes",
@@ -165,11 +173,17 @@
   },
   "CreateDowntime": {
     "tag": "Downtimes",
-    "undo": null
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
   },
   "CancelDowntimesByScope": {
     "tag": "Downtimes",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "CancelDowntime": {
     "tag": "Downtimes",
@@ -185,7 +199,9 @@
   },
   "UpdateDowntime": {
     "tag": "Downtimes",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "ListEvents": {
     "tag": "Events",
@@ -207,11 +223,15 @@
   },
   "MuteHost": {
     "tag": "Hosts",
-    "undo": null
+    "undo": {
+      "type": "safe"
+    }
   },
   "UnmuteHost": {
     "tag": "Hosts",
-    "undo": null
+    "undo": {
+      "type": "safe"
+    }
   },
   "ListHosts": {
     "tag": "Hosts",
@@ -247,7 +267,9 @@
   },
   "UpdateAWSAccount": {
     "tag": "AWS Integration",
-    "undo": null
+    "undo": {
+      "type": "safe"
+    }
   },
   "ListAvailableAWSNamespaces": {
     "tag": "AWS Integration",
@@ -277,7 +299,9 @@
   },
   "CreateNewAWSExternalID": {
     "tag": "AWS Integration",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "DeleteAWSLambdaARN": {
     "tag": "AWS Logs Integration",
@@ -301,7 +325,9 @@
   },
   "CheckAWSLogsLambdaAsync": {
     "tag": "AWS Logs Integration",
-    "undo": null
+    "undo": {
+      "type": "safe"
+    }
   },
   "ListAWSLogsServices": {
     "tag": "AWS Logs Integration",
@@ -311,11 +337,16 @@
   },
   "EnableAWSLogServices": {
     "tag": "AWS Logs Integration",
-    "undo": null
+    "undo": {
+      "operationId": "TODO",
+      "type": "unsafe"
+    }
   },
   "CheckAWSLogsServicesAsync": {
     "tag": "AWS Logs Integration",
-    "undo": null
+    "undo": {
+      "type": "safe"
+    }
   },
   "DeleteAzureIntegration": {
     "tag": "Azure Integration",
@@ -339,11 +370,15 @@
   },
   "UpdateAzureIntegration": {
     "tag": "Azure Integration",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "UpdateAzureHostFilters": {
     "tag": "Azure Integration",
-    "undo": null
+    "undo": {
+      "type": "safe"
+    }
   },
   "DeleteGCPIntegration": {
     "tag": "GCP Integration",
@@ -367,7 +402,9 @@
   },
   "UpdateGCPIntegration": {
     "tag": "GCP Integration",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "CreatePagerDutyIntegrationService": {
     "tag": "PagerDuty Integration",
@@ -376,7 +413,7 @@
       "parameters": [
         {
           "name": "service_name",
-          "source": "<RESPONSE_PATH>"
+          "source": "service_name"
         }
       ],
       "type": "unsafe"
@@ -396,11 +433,15 @@
   },
   "UpdatePagerDutyIntegrationService": {
     "tag": "PagerDuty Integration",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "ListLogs": {
     "tag": "Logs",
-    "undo": null
+    "undo": {
+      "type": "safe"
+    }
   },
   "GetLogsIndexOrder": {
     "tag": "Logs Indexes",
@@ -410,7 +451,9 @@
   },
   "UpdateLogsIndexOrder": {
     "tag": "Logs Indexes",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "ListLogIndexes": {
     "tag": "Logs Indexes",
@@ -426,7 +469,9 @@
   },
   "UpdateLogsIndex": {
     "tag": "Logs Indexes",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "GetLogsPipelineOrder": {
     "tag": "Logs Pipelines",
@@ -436,7 +481,9 @@
   },
   "UpdateLogsPipelineOrder": {
     "tag": "Logs Pipelines",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "ListLogsPipelines": {
     "tag": "Logs Pipelines",
@@ -451,7 +498,7 @@
       "parameters": [
         {
           "name": "pipeline_id",
-          "source": "<RESPONSE_PATH>"
+          "source": "id"
         }
       ],
       "type": "unsafe"
@@ -471,7 +518,9 @@
   },
   "UpdateLogsPipeline": {
     "tag": "Logs Pipelines",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "ListActiveMetrics": {
     "tag": "Metrics",
@@ -487,7 +536,9 @@
   },
   "UpdateMetricMetadata": {
     "tag": "Metrics",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "ListMonitors": {
     "tag": "Monitors",
@@ -502,11 +553,7 @@
       "parameters": [
         {
           "name": "monitor_id",
-          "source": "<RESPONSE_PATH>"
-        },
-        {
-          "name": "force",
-          "source": "<RESPONSE_PATH>"
+          "source": "id"
         }
       ],
       "type": "unsafe"
@@ -520,7 +567,9 @@
   },
   "ValidateMonitor": {
     "tag": "Monitors",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "DeleteMonitor": {
     "tag": "Monitors",
@@ -536,7 +585,9 @@
   },
   "UpdateMonitor": {
     "tag": "Monitors",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "GetMonthlyCustomReports": {
     "tag": "Usage Metering",
@@ -558,7 +609,11 @@
   },
   "CreateChildOrg": {
     "tag": "Organizations",
-    "undo": null
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
   },
   "GetOrg": {
     "tag": "Organizations",
@@ -568,11 +623,15 @@
   },
   "UpdateOrg": {
     "tag": "Organizations",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "UploadIdPForOrg": {
     "tag": "Organizations",
-    "undo": null
+    "undo": {
+      "type": "safe"
+    }
   },
   "QueryMetrics": {
     "tag": "Metrics",
@@ -599,11 +658,7 @@
       "parameters": [
         {
           "name": "slo_id",
-          "source": "<RESPONSE_PATH>"
-        },
-        {
-          "name": "force",
-          "source": "<RESPONSE_PATH>"
+          "source": "data.id"
         }
       ],
       "type": "unsafe"
@@ -611,7 +666,9 @@
   },
   "DeleteSLOTimeframeInBulk": {
     "tag": "Service Level Objectives",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "CheckCanDeleteSLO": {
     "tag": "Service Level Objectives",
@@ -633,7 +690,9 @@
   },
   "UpdateSLO": {
     "tag": "Service Level Objectives",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "GetSLOHistory": {
     "tag": "Service Level Objectives",
@@ -654,7 +713,7 @@
       "parameters": [
         {
           "name": "location_id",
-          "source": "<RESPONSE_PATH>"
+          "source": "private_location"
         }
       ],
       "type": "unsafe"
@@ -674,7 +733,9 @@
   },
   "UpdatePrivateLocation": {
     "tag": "Synthetics",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "ListTests": {
     "tag": "Synthetics",
@@ -684,7 +745,11 @@
   },
   "CreateTest": {
     "tag": "Synthetics",
-    "undo": null
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
   },
   "GetBrowserTest": {
     "tag": "Synthetics",
@@ -706,11 +771,15 @@
   },
   "DeleteTests": {
     "tag": "Synthetics",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "TriggerCITests": {
     "tag": "Synthetics",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "GetTest": {
     "tag": "Synthetics",
@@ -720,7 +789,9 @@
   },
   "UpdateTest": {
     "tag": "Synthetics",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "GetAPITestLatestResults": {
     "tag": "Synthetics",
@@ -736,7 +807,9 @@
   },
   "UpdateTestPauseStatus": {
     "tag": "Synthetics",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "CreateGlobalVariable": {
     "tag": "Synthetics",
@@ -745,7 +818,7 @@
       "parameters": [
         {
           "name": "variable_id",
-          "source": "<RESPONSE_PATH>"
+          "source": "id"
         }
       ],
       "type": "unsafe"
@@ -765,7 +838,9 @@
   },
   "EditGlobalVariable": {
     "tag": "Synthetics",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "ListHostTags": {
     "tag": "Tags",
@@ -804,7 +879,9 @@
   },
   "UpdateHostTags": {
     "tag": "Tags",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "GetUsageAnalyzedLogs": {
     "tag": "Usage Metering",
@@ -963,7 +1040,7 @@
       "parameters": [
         {
           "name": "user_handle",
-          "source": "<RESPONSE_PATH>"
+          "source": "user.handle"
         }
       ],
       "type": "unsafe"
@@ -983,7 +1060,9 @@
   },
   "UpdateUser": {
     "tag": "Users",
-    "undo": null
+    "undo": {
+      "type": "idempotent"
+    }
   },
   "Validate": {
     "tag": "Authentication",
