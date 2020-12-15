@@ -9,13 +9,13 @@ interactions:
       Dd-Operation-Id:
       - ListPermissions
       User-Agent:
-      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b4.dev20 (python 3.9.0; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '11466770334710314744'
+      - '10217174419650904509'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '12910274475521189348'
+      - '13860796239544745907'
     method: GET
     uri: https://api.datadoghq.com/api/v2/permissions
   response:
@@ -23,7 +23,7 @@ interactions:
       string: '{"data":[{"type":"permissions","id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","attributes":{"name":"admin","display_name":"Privileged
         Access","description":"This permission gives you the ability to view and edit
         everything in your Datadog organization that does not have an explicitly defined
-        permission. This includes billing and usage, user, key, and organization management.
+        permission. This includes billing and usage, key, and organization management.
         This permission is inclusive of all Standard access permissions.","created":"2018-10-19T15:35:23.734317+00:00","group_name":"General","display_type":"other","restricted":false}},{"type":"permissions","id":"984d2f00-d3b4-11e8-a200-bb47109e9987","attributes":{"name":"standard","display_name":"Standard
         Access","description":"This permission gives you the ability to view and edit
         components in your Datadog organization that do not have explicitly defined
@@ -73,15 +73,24 @@ interactions:
         Rules","description":"The ability to create and edit Detection rules.","created":"2020-06-09T13:52:39.099413+00:00","group_name":"Security
         Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"80de1ec0-aa58-11ea-95e2-aff381626d5d","attributes":{"name":"security_monitoring_signals_read","display_name":"Security
         Signals","description":"The ability to view Security signals.","created":"2020-06-09T13:52:48.410398+00:00","group_name":"Security
-        Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"07c3c146-f7f8-11ea-acf6-0bd62b9ae60e","attributes":{"name":"logs_write_historical_view","display_name":"Logs
-        Historical View","description":"The capability to rehydrate logs from Archives.","created":"2020-09-16T08:38:44.242076+00:00","group_name":"Logs","display_type":"write","restricted":false}}]}'
+        Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"9ac1d8cc-e707-11ea-aa2d-73d37e989a9d","attributes":{"name":"user_access_invite","display_name":"Invite
+        User","description":"Allows users to invite other users to your organization.","created":"2020-08-25T19:17:23.539701+00:00","group_name":"User
+        Access","display_type":"other","restricted":false}},{"type":"permissions","id":"9de604d8-e707-11ea-aa2d-93f1a783b3a3","attributes":{"name":"user_access_manage","display_name":"Access
+        Management","description":"Grants the permission to disable users, manage
+        user roles and SAML-to-role mappings.","created":"2020-08-25T19:17:28.810412+00:00","group_name":"User
+        Access","display_type":"other","restricted":false}},{"type":"permissions","id":"07c3c146-f7f8-11ea-acf6-0bd62b9ae60e","attributes":{"name":"logs_write_historical_view","display_name":"Logs
+        Historical View","description":"The capability to rehydrate logs from Archives.","created":"2020-09-16T08:38:44.242076+00:00","group_name":"Logs","display_type":"write","restricted":false}},{"type":"permissions","id":"6ba32d22-0e1a-11eb-ba44-bf9a5aafaa39","attributes":{"name":"logs_write_facets","display_name":"Logs
+        Facets","description":"The capability to create or edit logs facets.","created":"2020-10-14T12:40:20.271908+00:00","group_name":"Logs","display_type":"write","restricted":false}},{"type":"permissions","id":"fcac2ad8-2843-11eb-8315-0fe47949d625","attributes":{"name":"integrations_api","display_name":"Integrations
+        API Access","description":"The ability to use the Integrations APIs to configure
+        Integrations that the user has access to. This permission does not restrict
+        or grant access to Integrations.","created":"2020-11-16T19:43:23.198568+00:00","group_name":"Integrations","display_type":"other","restricted":false}}]}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - keep-alive
       Content-Length:
-      - '9006'
+      - '10436'
       Content-Security-Policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       Content-Type:
@@ -89,11 +98,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Thu, 24 Sep 2020 10:01:34 GMT
+      - Tue, 15 Dec 2020 11:11:50 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:34 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 22-Dec-2020 11:11:50 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -102,9 +111,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - xRBFY2Rp8NHDG9Rp4RaGjcqlKnbzhHpETMjn37ZNtmzdKqGU6DeuhyyL4o7jfpVZ
+      - 5Vp6Lwv2kl5vwmtrK8x4SHT87up1E/Mb5wu+zWq1n+sTPuGmJfRlxsKBupN/GCCj
       X-DD-VERSION:
-      - '35.3086554'
+      - '35.3542700'
       X-Frame-Options:
       - SAMEORIGIN
     status:

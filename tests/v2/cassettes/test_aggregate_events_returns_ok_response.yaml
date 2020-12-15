@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.datadog-api-client-python-test_aggregate_events_returns_ok_response-1600941705.697982",
+    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.datadog-api-client-python-test_aggregate_events_returns_ok_response-1608030692.434477",
       "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"],
       "query": "datadog-agent", "to": "1600348600"}}'
     headers:
@@ -11,18 +11,18 @@ interactions:
       Dd-Operation-Id:
       - AggregateLogs
       User-Agent:
-      - datadog-api-client-python/0.1.dev66+dirty (python 3.8.2; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b4.dev20 (python 3.9.0; os Darwin; arch x86_64)
       x-datadog-parent-id:
-      - '13156350893909060842'
+      - '6602309412919947682'
       x-datadog-sampling-priority:
       - '1'
       x-datadog-trace-id:
-      - '17838188105411464632'
+      - '7995236019174511917'
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"YmN2c3ZhclRTUGlxbVFSTVNlUWdDd3xFOG5BWHJGZ2M2cVpidXgxemNraEdR","elapsed":0},"data":{"buckets":[]}}'
+      string: '{"meta":{"status":"done","request_id":"bm9URFVRV0tTRGFDY053cFo4aEJud3x5eHpiUXM0RFVwZE42YUs0MFR1RlJR","elapsed":0},"data":{"buckets":[]}}'
     headers:
       Cache-Control:
       - no-cache
@@ -37,11 +37,11 @@ interactions:
       DD-POOL:
       - dogweb
       Date:
-      - Thu, 24 Sep 2020 10:01:46 GMT
+      - Tue, 15 Dec 2020 11:11:32 GMT
       Pragma:
       - no-cache
       Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Thu, 01-Oct-2020 10:01:46 GMT;
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 22-Dec-2020 11:11:32 GMT;
         secure; HttpOnly
       Strict-Transport-Security:
       - max-age=15724800;
@@ -50,9 +50,9 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-DD-Debug:
-      - AqBVHmyy+L9zrCUEAQ2Jd2pwskksgC+7nOsWqbNjcjcM+9M/ChipUo2OR6Q8oPwE
+      - BZ+RYjLsV2y+9XXNTM/Wbkdcz3DkJnqgQFCAf9xIIxOOOd9x3Em2wjhPfW0piM2C
       X-DD-VERSION:
-      - '35.3086554'
+      - '35.3542700'
       X-Frame-Options:
       - SAMEORIGIN
       X-RateLimit-Limit:
@@ -62,7 +62,7 @@ interactions:
       X-RateLimit-Remaining:
       - '4'
       X-RateLimit-Reset:
-      - '14'
+      - '28'
     status:
       code: 200
       message: OK

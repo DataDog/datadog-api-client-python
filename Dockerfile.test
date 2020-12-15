@@ -1,6 +1,7 @@
-FROM python:3.8
+FROM python:3.9
 ENTRYPOINT [/datadog-api-client-python/run-tests.sh]
 
 COPY . /datadog-api-client-python
 WORKDIR /datadog-api-client-python/
-RUN pip install -e .[apm,tests]
+RUN pip install -U --pre --find-links=https://s3.amazonaws.com/pypi.datadoghq.com/trace-dev/index.html ddtrace && \
+    pip install -e .[tests]

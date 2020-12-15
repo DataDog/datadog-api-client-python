@@ -5,18 +5,18 @@ import os
 
 # First patch httplib
 tracer = None
-if "false" != os.getenv("RECORD", "false"):
-    try:
-        from ddtrace import config, patch, tracer
+try:
+    from ddtrace import config, patch, tracer
 
-        config.httplib["distributed_tracing"] = True
-        patch(httplib=True)
-    except ImportError:
-        pass
+    config.httplib["distributed_tracing"] = True
+    patch(httplib=True)
+except ImportError:
+    pass
 
 import importlib
 import json
 import logging
+import pathlib
 import re
 import sys
 import time
@@ -143,19 +143,17 @@ def unique_lower(request, freezer):
 
 
 @pytest.fixture
-def context(vcr_cassette, package_name, request, unique, unique_lower):
+def context(package_name, request, unique, unique_lower):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
     """
-    ctx = {"undo_operations": []}
-    for f in request.fixturenames:
-        if f == "context":
-            continue
-        try:
-            ctx[f] = request.getfixturevalue(f)
-        except Exception:
-            pass
+    ctx = {
+        "undo_operations": [],
+        "unique": unique,
+        "unique_lower": unique_lower,
+    }
+
     yield ctx
 
     exceptions = importlib.import_module(package_name + ".exceptions")
@@ -188,28 +186,23 @@ def record_mode(request):
 
 @pytest.fixture(scope="module")
 def vcr_config(record_mode):
-    def before_record_request(request):
-        if "Datadog-Meta-Tracer-Version" in request.headers:
-            return None
-        return request
-
     config = dict(
         filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY"),
         filter_query_parameters=("api_key", "application_key"),
-        before_record_request=before_record_request,
     )
     return config
 
 
 @pytest.fixture
-def freezer(vcr_cassette_name, vcr_cassette, vcr):
+def freezer(vcr_cassette_name, record_mode, vcr):
     from freezegun import freeze_time
     from dateutil import parser
 
-    if vcr_cassette.record_mode != "none":
+    if record_mode != "false":
         tzinfo = datetime.now().astimezone().tzinfo
         freeze_at = datetime.now().replace(tzinfo=tzinfo).isoformat()
-        if vcr_cassette.record_mode == "all":
+        if record_mode == "true":
+            pathlib.Path(vcr.cassette_library_dir).mkdir(parents=True, exist_ok=True)
             with open(
                 os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"),
                 "w+",
@@ -273,7 +266,9 @@ def client(_package, configuration, record_mode, vcr_cassette):
         vcr_cassette.data.clear()
 
     with _package.ApiClient(configuration) as api_client:
+        print(f"starting with {vcr_cassette}")
         yield api_client
+
 
 
 @given(parsers.parse('an instance of "{name}" API'))
@@ -371,7 +366,7 @@ def undo(undo_operations, client):
 
 
 @when("the request is sent")
-def execute_request(undo, context, vcr_cassette, client):
+def execute_request(undo, context, client):
     """Execute the prepared request."""
     api_request = context["api_request"]
     api_request["response"] = api_request["request"].call_with_http_info(
