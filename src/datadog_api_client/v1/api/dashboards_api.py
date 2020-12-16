@@ -41,7 +41,7 @@ class DashboardsApi(object):
         ):
             """Create a new dashboard  # noqa: E501
 
-            Create a dashboard using the specified options.  # noqa: E501
+            Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the `as_count()` or `as_rate()` modifiers appended. Refer to the following [documentation](https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers) for more information on these modifiers.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
