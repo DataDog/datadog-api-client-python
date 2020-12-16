@@ -666,8 +666,8 @@ class ServiceLevelObjectivesApi(object):
 
             Args:
                 slo_id (str): The ID of the service level objective object.
-                from_ts (int): The &#x60;from&#x60; timestamp for the query window in epoch seconds.
-                to_ts (int): The &#x60;to&#x60; timestamp for the query window in epoch seconds.
+                from_ts (int): The `from` timestamp for the query window in epoch seconds.
+                to_ts (int): The `to` timestamp for the query window in epoch seconds.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status

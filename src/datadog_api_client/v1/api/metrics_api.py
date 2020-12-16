@@ -296,7 +296,7 @@ class MetricsApi(object):
             >>> result = thread.get()
 
             Args:
-                q (str): Query string to search metrics upon. Must be prefixed with &#x60;metrics:&#x60;.
+                q (str): Query string to search metrics upon. Must be prefixed with `metrics:`.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
