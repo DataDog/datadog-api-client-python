@@ -398,7 +398,7 @@ class AzureIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (AzureAccount): Update a Datadog-Azure integration&#39;s host filters request body.
+                body (AzureAccount): Update a Datadog-Azure integration's host filters request body.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status

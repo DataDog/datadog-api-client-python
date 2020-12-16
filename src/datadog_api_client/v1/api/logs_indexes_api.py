@@ -389,7 +389,7 @@ class LogsIndexesApi(object):
 
             Args:
                 name (str): Name of the log index.
-                body (LogsIndexUpdateRequest): Object containing the new &#x60;LogsIndexUpdateRequest&#x60;.
+                body (LogsIndexUpdateRequest): Object containing the new `LogsIndexUpdateRequest`.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status

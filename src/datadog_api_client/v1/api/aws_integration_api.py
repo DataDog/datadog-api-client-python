@@ -173,7 +173,7 @@ class AWSIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (AWSTagFilterCreateRequest): Set an AWS tag filter using an &#x60;aws_account_identifier&#x60;, &#x60;namespace&#x60;, and filtering string. Namespace options are &#x60;application_elb&#x60;, &#x60;elb&#x60;, &#x60;lambda&#x60;, &#x60;network_elb&#x60;, &#x60;rds&#x60;, &#x60;sqs&#x60;, and &#x60;custom&#x60;.
+                body (AWSTagFilterCreateRequest): Set an AWS tag filter using an `aws_account_identifier`, `namespace`, and filtering string. Namespace options are `application_elb`, `elb`, `lambda`, `network_elb`, `rds`, `sqs`, and `custom`.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -568,7 +568,7 @@ class AWSIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                body (AWSTagFilterDeleteRequest): Delete a tag filtering entry for a given AWS account and &#x60;dd-aws&#x60; namespace.
+                body (AWSTagFilterDeleteRequest): Delete a tag filtering entry for a given AWS account and `dd-aws` namespace.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -955,7 +955,7 @@ class AWSIntegrationApi(object):
             >>> result = thread.get()
 
             Args:
-                account_id (str): Only return AWS filters that matches this &#x60;account_id&#x60;.
+                account_id (str): Only return AWS filters that matches this `account_id`.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status

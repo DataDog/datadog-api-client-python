@@ -173,7 +173,7 @@ class OrganizationsApi(object):
             >>> result = thread.get()
 
             Args:
-                public_id (str): The &#x60;public_id&#x60; of the organization you are operating within.
+                public_id (str): The `public_id` of the organization you are operating within.
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -402,7 +402,7 @@ class OrganizationsApi(object):
             >>> result = thread.get()
 
             Args:
-                public_id (str): The &#x60;public_id&#x60; of the organization you are operating within.
+                public_id (str): The `public_id` of the organization you are operating within.
                 body (Organization):
 
             Keyword Args:
@@ -533,7 +533,7 @@ class OrganizationsApi(object):
             >>> result = thread.get()
 
             Args:
-                public_id (str): The &#x60;public_id&#x60; of the organization you are operating with
+                public_id (str): The `public_id` of the organization you are operating with
                 idp_file (file_type): The path to the XML metadata file you wish to upload.
 
             Keyword Args:
