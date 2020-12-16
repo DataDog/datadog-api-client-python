@@ -24,10 +24,10 @@ import warnings
 from datetime import datetime
 
 import pytest
+from jinja2 import Template
 from pytest_bdd import (
     given,
     parsers,
-    scenarios,
     then,
     when,
 )
@@ -143,7 +143,7 @@ def unique_lower(request, freezer):
 
 
 @pytest.fixture
-def context(package_name, request, unique, unique_lower):
+def context(vcr, unique, unique_lower):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
@@ -156,63 +156,52 @@ def context(package_name, request, unique, unique_lower):
 
     yield ctx
 
-    exceptions = importlib.import_module(package_name + ".exceptions")
     for undo in reversed(ctx["undo_operations"]):
-        try:
-            undo()
-        except exceptions.ApiException as e:
-            warnings.warn(str(e))
+        undo()
 
 
-@pytest.fixture(scope="module", autouse=True)
+@pytest.fixture(scope="session")
 def record_mode(request):
     """Manage compatibility with DD client libraries."""
-    mode = os.getenv("RECORD", "false")
-    if mode is not None:
-        if mode == "none":
-            request.config.option.disable_vcr = True
-        else:
-            setattr(
-                request.config.option,
-                "vcr_record",
-                {
-                    "true": "all",
-                    "false": "none",
-                }[mode],
-            )
-            request.config.option.disable_vcr = False
-    return mode
+    return {
+        "false": "none",
+        "true": "rewrite",
+        "none": "new_episodes",
+    }[os.getenv("RECORD", "false").lower()]
 
 
-@pytest.fixture(scope="module")
-def vcr_config(record_mode):
+@pytest.fixture(scope="session")
+def disable_recording(request):
+    """Disable VCR.py integration."""
+    return os.getenv("RECORD", "false").lower() == "none"
+
+
+@pytest.fixture
+def vcr_config():
     config = dict(
         filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY"),
         filter_query_parameters=("api_key", "application_key"),
     )
+    if tracer:
+        config["ignore_hosts"] = [tracer.writer.api.hostname]
+
     return config
 
 
 @pytest.fixture
-def freezer(vcr_cassette_name, record_mode, vcr):
+def freezer(default_cassette_name, record_mode, vcr):
     from freezegun import freeze_time
     from dateutil import parser
 
-    if record_mode != "false":
+    if record_mode in {"new_episodes", "rewrite"}:
         tzinfo = datetime.now().astimezone().tzinfo
         freeze_at = datetime.now().replace(tzinfo=tzinfo).isoformat()
-        if record_mode == "true":
-            pathlib.Path(vcr.cassette_library_dir).mkdir(parents=True, exist_ok=True)
-            with open(
-                os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"),
-                "w+",
-            ) as f:
+        if record_mode == "rewrite":
+            pathlib.Path(vcr._path).parent.mkdir(parents=True, exist_ok=True)
+            with pathlib.Path(vcr._path).with_suffix(".frozen").open("w+") as f:
                 f.write(freeze_at)
     else:
-        with open(
-            os.path.join(vcr.cassette_library_dir, vcr_cassette_name + ".frozen"),
-            "r",
-        ) as f:
+        with pathlib.Path(vcr._path).with_suffix(".frozen").open("r") as f:
             freeze_at = f.readline().strip()
 
     return freeze_time(parser.isoparse(freeze_at))
@@ -249,9 +238,9 @@ def undo_operations(package_name):
     }
 
 
-@pytest.fixture
-def configuration(_package):
-    c = _package.Configuration()
+def build_configuration(package):
+    c = package.Configuration()
+    c.connection_pool_maxsize = 0
     c.debug = debug = os.getenv("DEBUG") in {"true", "1", "yes", "on"}
     if debug:  # enable vcr logs for DEBUG=true
         vcr_log = logging.getLogger("vcr")
@@ -260,15 +249,14 @@ def configuration(_package):
 
 
 @pytest.fixture
-def client(_package, configuration, record_mode, vcr_cassette):
-    if record_mode == "true" and os.path.exists(vcr_cassette._path):
-        os.remove(vcr_cassette._path)
-        vcr_cassette.data.clear()
+def configuration(_package):
+    return build_configuration(_package)
 
+
+@pytest.fixture
+def client(_package, context, configuration):
     with _package.ApiClient(configuration) as api_client:
-        print(f"starting with {vcr_cassette}")
         yield api_client
-
 
 
 @given(parsers.parse('an instance of "{name}" API'))
@@ -312,9 +300,6 @@ def api_request(context, name):
 @given(parsers.parse("body {data}"))
 def request_body(context, data):
     """Set request body."""
-    import json
-    from jinja2 import Template
-
     tpl = Template(data).render(**context)
     context["api_request"]["kwargs"]["body"] = json.loads(tpl)
 
@@ -328,16 +313,73 @@ def request_parameter(context, name, path):
 @given(parsers.parse('request contains "{name}" parameter with value {value}'))
 def request_parameter_with_value(context, name, value):
     """Set request parameter."""
-    import json
-    from jinja2 import Template
-
     tpl = Template(value).render(**context)
     context["api_request"]["kwargs"][snake_case(name)] = json.loads(tpl)
 
 
+def build_given(version, operation):
+    def wrapper(context, undo):
+        name = operation["tag"].replace(" ", "")
+        module_name = snake_case(operation["tag"])
+        operation_name = snake_case(operation["operationId"])
+        package_name = f"datadog_api_client.{version}"
+
+        # make sure we have a fresh instance of API client and configuration
+        configuration = build_configuration(importlib.import_module(package_name))
+        configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "")
+        configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "")
+
+        # enable unstable operation
+        configuration.unstable_operations[operation_name] = True
+
+        package = importlib.import_module(f"{package_name}.api.{module_name}_api")
+        with package.ApiClient(configuration) as client:
+            api = getattr(package, name + "Api")(client)
+            operation_method = getattr(api, operation_name)
+
+            # perform operation
+            def build_param(p):
+                if "value" in p:
+                    return json.loads(Template(p["value"]).render(**context))
+                if "source" in p:
+                    return glom(context, p["source"])
+
+            kwargs = {
+                snake_case(p["name"]): build_param(p)
+                for p in operation.get("parameters", [])
+            }
+            result = operation_method(**kwargs)
+            client.last_response.urllib3_response.close()
+
+            # register undo method
+            context["undo_operations"].append(
+                lambda: undo(api, operation_name, result, client=client)
+            )
+
+            # optional re-shaping
+            if "source" in operation:
+                result = glom(result, operation["source"])
+
+            # store response in fixtures
+            context[operation["key"]] = result
+
+            # Make sure that all connections are released
+            client.rest_client.pool_manager.clear()
+
+    return wrapper
+
+
+for f in pathlib.Path(os.path.dirname(__file__)).rglob("given.json"):
+    version = f.parent.parent.name
+    with f.open() as fp:
+        for settings in json.load(fp):
+            given(settings["step"])(build_given(version, settings))
+
+
 @pytest.fixture
-def undo(undo_operations, client):
+def undo(package_name, undo_operations, client):
     """Clean after operation."""
+    exceptions = importlib.import_module(package_name + ".exceptions")
 
     def cleanup(api, operation_id, response, client=client):
         if operation_id not in undo_operations:
@@ -360,9 +402,13 @@ def undo(undo_operations, client):
         if operation_name in client.configuration.unstable_operations:
             client.configuration.unstable_operations[operation_name] = True
 
-        return method(*args)
+        try:
+            method(*args)
+            client.last_response.urllib3_response.close()
+        except exceptions.ApiException as e:
+            warnings.warn(f"failed undo: {e}")
 
-    return cleanup
+    yield cleanup
 
 
 @when("the request is sent")
@@ -372,6 +418,7 @@ def execute_request(undo, context, client):
     api_request["response"] = api_request["request"].call_with_http_info(
         *api_request["args"], **api_request["kwargs"]
     )
+    client.last_response.urllib3_response.close()
 
     api = api_request["api"]
     operation_id = api_request["request"].settings["operation_id"]
@@ -405,8 +452,6 @@ def the_status_is(context, status, description):
 
 @then(parsers.parse('the response "{response_path}" is equal to {value}'))
 def expect_equal(context, response_path, value):
-    from jinja2 import Template
-
     response_value = glom(context["api_request"]["response"][0], response_path)
     test_value = json.loads(Template(value).render(**context))
     assert test_value == response_value
