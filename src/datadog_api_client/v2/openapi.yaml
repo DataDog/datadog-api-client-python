@@ -3823,7 +3823,8 @@ paths:
           parameters:
           - name: body
             value: "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{\
-              \ unique }}\"\n     },\n     \"type\": \"incidents\"\n  }\n}"
+              \ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"\
+              type\": \"incidents\"\n  }\n}"
           step: there is a valid "incident" in the system
       x-undo:
         operationId: DeleteIncident
