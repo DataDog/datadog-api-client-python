@@ -187,13 +187,12 @@ def vcr_config():
     return config
 
 
-
 @pytest.fixture
 def freezer(default_cassette_name, record_mode, vcr):
     from freezegun import freeze_time
     from dateutil import parser
 
-    if record_mode != "none":
+    if record_mode in {"none", "once", "rewrite"}:
         tzinfo = datetime.now().astimezone().tzinfo
         freeze_at = datetime.now().replace(tzinfo=tzinfo).isoformat()
         if record_mode == "once" or record_mode == "rewrite":
