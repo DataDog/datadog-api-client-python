@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - ListApiKeys
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev7 (python 3.8.5; os Darwin; arch x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/api_keys
+  response:
+    body:
+      string: '{"meta":{"max_allowed":200,"page":{"total_filtered_count":25}},"data":[{"type":"api_keys","attributes":{"created_at":"2020-04-20T15:25:00.852857+00:00","last4":"ffff","modified_at":"2020-04-20T15:25:00.852881+00:00","name":"1PASSWORD_SHARED"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":null}},"id":"cc9dac44-9f1e-546a-8ce4-7f1a35653bb3"},{"type":"api_keys","attributes":{"created_at":"2019-11-12T22:36:05.343711+00:00","last4":"ffff","modified_at":"2019-11-12T22:36:05.343729+00:00","name":"armcburney"},"relationships":{"created_by":{"data":{"type":"users","id":"af29975c-059c-11ea-a77c-c3d911d2ed55"}},"modified_by":{"data":null}},"id":"224f7c94-329c-5fda-9b38-4d6df3cbf865"},{"type":"api_keys","attributes":{"created_at":"2020-07-09T14:58:35.010284+00:00","last4":"ffff","modified_at":"2020-07-09T14:58:35.010300+00:00","name":"AWS_INTEGRATIONS_LAB_CLOUDFORMATION_2"},"relationships":{"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"modified_by":{"data":null}},"id":"9a70aa7f-d34e-5675-a260-59cea0a5d9e1"},{"type":"api_keys","attributes":{"created_at":"2019-11-15T15:39:39.228185+00:00","last4":"ffff","modified_at":"2019-11-15T15:39:39.228215+00:00","name":"datadog-api-spec-ci"},"relationships":{"created_by":{"data":{"type":"users","id":"35d26b57-eba0-11e9-a77a-6f9ab1aa16b2"}},"modified_by":{"data":null}},"id":"bf8225cd-de01-5796-a7e1-7861ca3c5f0d"},{"type":"api_keys","attributes":{"created_at":"2019-09-24T12:11:58.009980+00:00","last4":"ffff","modified_at":"2019-09-24T12:11:58.010000+00:00","name":"DATADOGPY_TEST"},"relationships":{"created_by":{"data":{"type":"users","id":"35d26b5f-eba0-11e9-a77a-876976ea2f77"}},"modified_by":{"data":null}},"id":"393738f7-adea-5cf7-9690-815c4782baf0"},{"type":"api_keys","attributes":{"created_at":"2019-08-24T17:21:01.421281+00:00","last4":"ffff","modified_at":"2019-08-24T17:21:01.421297+00:00","name":"DD_GO_CLIENT"},"relationships":{"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"modified_by":{"data":null}},"id":"ac3f2bcc-a878-5624-8803-0d66dcce4f01"},{"type":"api_keys","attributes":{"created_at":"2019-11-04T18:57:42.814500+00:00","last4":"ffff","modified_at":"2019-11-04T18:57:42.814513+00:00","name":"DD_GO_CLIENT_CI"},"relationships":{"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"modified_by":{"data":null}},"id":"7e20d449-cd01-56a8-a15e-be9e5e167db6"},{"type":"api_keys","attributes":{"created_at":"2019-10-31T18:16:47.663906+00:00","last4":"ffff","modified_at":"2019-10-31T18:16:47.663924+00:00","name":"DD_JAVA_CLIENT_CI"},"relationships":{"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"modified_by":{"data":null}},"id":"0cbeb908-5dae-5fa5-a883-766f1f862baf"},{"type":"api_keys","attributes":{"created_at":"2020-07-11T17:27:04.686873+00:00","last4":"ffff","modified_at":"2020-07-11T17:27:04.686888+00:00","name":"DD_TEST_CLIENT_API_KEY"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":null}},"id":"fb45693a-9fb1-5a7d-a423-6d94192716e6"},{"type":"api_keys","attributes":{"created_at":"2020-10-19T00:11:47.460409+00:00","last4":"ffff","modified_at":"2020-10-19T00:11:48.347521+00:00","name":"go-TestApiKeyFunctions-27902-1603066307-new"},"relationships":{"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}},"id":"26a1f0f1-8c9d-5cde-afc2-93e597d25a90"},{"type":"api_keys","attributes":{"created_at":"2020-12-11T00:06:59.670872+00:00","last4":"ffff","modified_at":"2020-12-11T00:06:59.670872+00:00","name":"go-TestApiKeyFunctions-35873-1607645219"},"relationships":{"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}},"id":"3fea0f0b-4bfd-5dce-9ac6-835f61059dcc"},{"type":"api_keys","attributes":{"created_at":"2020-12-16T18:07:10.427467+00:00","last4":"ffff","modified_at":"2020-12-16T18:07:10.427467+00:00","name":"go-TestApiKeyFunctions-36775-1608142030"},"relationships":{"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}},"id":"54fec9d2-8f5a-5c67-a561-b0cde3be3cb0"},{"type":"api_keys","attributes":{"created_at":"2019-08-23T16:57:28.816605+00:00","last4":"ffff","modified_at":"2019-08-23T16:57:28.816619+00:00","name":"JENKINS_TESTING"},"relationships":{"created_by":{"data":{"type":"users","id":"360d238e-eba0-11e9-a77a-6f10737b42e3"}},"modified_by":{"data":null}},"id":"1babf7ca-5da6-530c-ba04-fc2768122935"},{"type":"api_keys","attributes":{"created_at":"2020-01-28T16:58:29.287914+00:00","last4":"ffff","modified_at":"2020-01-28T16:58:29.287927+00:00","name":"jiri.kuncar"},"relationships":{"created_by":{"data":{"type":"users","id":"9a56dfbc-009f-11ea-a77b-0b2eff7a464c"}},"modified_by":{"data":null}},"id":"2fd6f9db-e170-5c8f-ab77-e45f4f5483fa"},{"type":"api_keys","attributes":{"created_at":"2019-10-11T21:41:10.102416+00:00","last4":"ffff","modified_at":"2019-10-11T21:41:10.102434+00:00","name":"Manually
+        Test CloudFormation"},"relationships":{"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"modified_by":{"data":null}},"id":"997b4c64-3397-5af9-9f37-ee294718d54c"},{"type":"api_keys","attributes":{"created_at":"2020-01-22T20:56:44.032637+00:00","last4":"ffff","modified_at":"2020-01-22T20:56:44.032651+00:00","name":"PIVOTAL_PLATFORM_TESTING"},"relationships":{"created_by":{"data":{"type":"users","id":"360d238e-eba0-11e9-a77a-6f10737b42e3"}},"modified_by":{"data":null}},"id":"62377dc2-52f8-5a82-8773-de305719e031"},{"type":"api_keys","attributes":{"created_at":"2020-12-03T20:08:16.157842+00:00","last4":"ffff","modified_at":"2020-12-03T20:08:16.157842+00:00","name":"ruby-Create_an_API_key_returns_Created_response-1607026096"},"relationships":{"created_by":{"data":{"type":"users","id":"35d26b57-eba0-11e9-a77a-6f9ab1aa16b2"}},"modified_by":{"data":{"type":"users","id":"35d26b57-eba0-11e9-a77a-6f9ab1aa16b2"}}},"id":"5e72cfe9-7e53-597d-9bb8-670742bf352d"},{"type":"api_keys","attributes":{"created_at":"2020-03-27T09:58:22.821271+00:00","last4":"ffff","modified_at":"2020-03-27T09:58:22.821290+00:00","name":"slavek.kabrda"},"relationships":{"created_by":{"data":{"type":"users","id":"35d26b57-eba0-11e9-a77a-6f9ab1aa16b2"}},"modified_by":{"data":null}},"id":"93b95391-b224-5972-ae6b-569d3f86b191"},{"type":"api_keys","attributes":{"created_at":"2020-07-23T14:25:26.591159+00:00","last4":"ffff","modified_at":"2020-07-23T14:25:26.591178+00:00","name":"TERRAFORM_AZURE_CI"},"relationships":{"created_by":{"data":{"type":"users","id":"35d26b57-eba0-11e9-a77a-6f9ab1aa16b2"}},"modified_by":{"data":null}},"id":"2ec8724f-d675-5a93-ae05-4bcd30e763e9"},{"type":"api_keys","attributes":{"created_at":"2020-02-24T14:22:40.084015+00:00","last4":"ffff","modified_at":"2020-02-24T14:22:40.084032+00:00","name":"TERRAFORM_PRIVATE_GREG"},"relationships":{"created_by":{"data":{"type":"users","id":"360d238e-eba0-11e9-a77a-6f10737b42e3"}},"modified_by":{"data":null}},"id":"c36c4b5b-8a1f-5aa2-befb-693f88a6e000"},{"type":"api_keys","attributes":{"created_at":"2020-01-21T20:24:15.098233+00:00","last4":"ffff","modified_at":"2020-01-21T20:24:15.098247+00:00","name":"TERRAFORM_TEAMCITY"},"relationships":{"created_by":{"data":{"type":"users","id":"360d238e-eba0-11e9-a77a-6f10737b42e3"}},"modified_by":{"data":null}},"id":"9c6643d2-4ac6-56d8-9dc1-dc0f525d0cc8"},{"type":"api_keys","attributes":{"created_at":"2019-10-24T14:33:38.037650+00:00","last4":"ffff","modified_at":"2019-10-24T14:33:38.037666+00:00","name":"TERRAFORM_TEST"},"relationships":{"created_by":{"data":{"type":"users","id":"35d26b5f-eba0-11e9-a77a-876976ea2f77"}},"modified_by":{"data":null}},"id":"e1474f40-60dd-5550-8557-b19e16315c7f"},{"type":"api_keys","attributes":{"created_at":"2020-03-16T20:38:17.788242+00:00","last4":"ffff","modified_at":"2020-03-16T20:38:17.788259+00:00","name":"TERRAFORM_TEST_NICK"},"relationships":{"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"modified_by":{"data":null}},"id":"ab208a75-f1d3-5f79-9e6a-8de3b6bb3409"},{"type":"api_keys","attributes":{"created_at":"2019-10-28T10:14:20.582242+00:00","last4":"ffff","modified_at":"2019-10-28T10:14:20.582258+00:00","name":"testHippo"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":null}},"id":"f3028610-6ed4-545c-9b18-1b33706e1daa"},{"type":"api_keys","attributes":{"created_at":"2020-12-09T18:27:39.590813+00:00","last4":"ffff","modified_at":"2020-12-09T18:27:39.590813+00:00","name":"testNICK"},"relationships":{"created_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}},"modified_by":{"data":{"type":"users","id":"35c75c20-eba0-11e9-a77a-db716d075be2"}}},"id":"8f27196b-4db0-58d6-a75c-f77146fb4b4f"}]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '9142'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 16 Dec 2020 22:20:28 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 22:20:28 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - GVd3H6+s0wOEEQNbWfOlfSTR2GEFs46b/AVWKmAErR/5auOQpwMvzy3i6o9DNymz
+      X-DD-VERSION:
+      - '35.3556526'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1
