@@ -193,17 +193,15 @@ def freezer(default_cassette_name, record_mode, vcr):
     from freezegun import freeze_time
     from dateutil import parser
 
-    cassette_path = pathlib.Path(vcr._path)
-
     if record_mode != "none":
         tzinfo = datetime.now().astimezone().tzinfo
         freeze_at = datetime.now().replace(tzinfo=tzinfo).isoformat()
         if record_mode == "once" or record_mode == "rewrite":
-            cassette_path.parent.mkdir(parents=True, exist_ok=True)
-            with cassette_path.with_suffix(".frozen").open("w+") as f:
+            pathlib.Path(vcr._path).parent.mkdir(parents=True, exist_ok=True)
+            with pathlib.Path(vcr._path).with_suffix(".frozen").open("w+") as f:
                 f.write(freeze_at)
     else:
-        with cassette_path.with_suffix(".frozen").open("r") as f:
+        with pathlib.Path(vcr._path).with_suffix(".frozen").open("r") as f:
             freeze_at = f.readline().strip()
 
     return freeze_time(parser.isoparse(freeze_at))
