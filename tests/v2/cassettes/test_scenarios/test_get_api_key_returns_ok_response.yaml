@@ -1,0 +1,146 @@
+interactions:
+- request:
+    body: '{"data": {"attributes": {"name": "datadog-api-client-python-test_get_api_key_returns_ok_response-1608151199.086615"},
+      "type": "api_keys"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateApiKey
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev7 (python 3.8.5; os Darwin; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/api_keys
+  response:
+    body:
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2020-12-16T20:39:59.346951+00:00","key":"fc3f12b98a3a636d32b5fa4579284920","last4":"4920","modified_at":"2020-12-16T20:39:59.346951+00:00","name":"datadog-api-client-python-test_get_api_key_returns_ok_response-1608151199.086615"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"43666d8e-100f-5926-8d44-92b84145539d"}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '515'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Dec 2020 20:39:59 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      set-cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 20:39:59 GMT;
+        secure; HttpOnly
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - vJlCdCjZjHKDWCQaZXaKHjefwu7Jotxr42UmWttwNlCEvibEd08wFg9UscwYl4z7
+      x-dd-version:
+      - '35.3555652'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - GetApiKey
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev7 (python 3.8.5; os Darwin; arch x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/api_keys/43666d8e-100f-5926-8d44-92b84145539d
+  response:
+    body:
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2020-12-16T20:39:59.346951+00:00","key":"fc3f12b98a3a636d32b5fa4579284920","last4":"4920","modified_at":"2020-12-16T20:39:59.346951+00:00","name":"datadog-api-client-python-test_get_api_key_returns_ok_response-1608151199.086615"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"43666d8e-100f-5926-8d44-92b84145539d"}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '515'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Dec 2020 20:39:59 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      set-cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 20:39:59 GMT;
+        secure; HttpOnly
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - UiHAIpiIPiMTUiGNeR+rZVnFnmJkUm64kqWBQawJNSrsYAeselUV6xrARY3WHwv4
+      x-dd-version:
+      - '35.3555652'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteApiKey
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev7 (python 3.8.5; os Darwin; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/api_keys/43666d8e-100f-5926-8d44-92b84145539d
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Dec 2020 20:39:59 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      set-cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 20:39:59 GMT;
+        secure; HttpOnly
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - 7QEcyEeiQNfV/0gu5JIpTHXljtLMqyFtDSs67sHgArYEiV5BVrC9iQFEWV1cGojK
+      x-dd-version:
+      - '35.3555652'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -1,0 +1,141 @@
+interactions:
+- request:
+    body: '{"data": {"attributes": {"name": "datadog-api-client-python-test_delete_an_api_key_returns_no_content_response-1608151196.901266"},
+      "type": "api_keys"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateApiKey
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev7 (python 3.8.5; os Darwin; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/api_keys
+  response:
+    body:
+      string: '{"data":{"type":"api_keys","attributes":{"created_at":"2020-12-16T20:39:57.300374+00:00","key":"e0e37f1195675c6e9de17f5a4d2fe38a","last4":"e38a","modified_at":"2020-12-16T20:39:57.300374+00:00","name":"datadog-api-client-python-test_delete_an_api_key_returns_no_content_response-1608151196.901266"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"a48c3115-3e04-5d61-b76d-f08cbd023156"}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '529'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Dec 2020 20:39:57 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      set-cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 20:39:57 GMT;
+        secure; HttpOnly
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - i3kq+QX78RffjnNgnM5zmiWzGMsFnhM4liQTSNUgnpglr14R7eRaqNxK/q9SML9W
+      x-dd-version:
+      - '35.3555652'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteApiKey
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev7 (python 3.8.5; os Darwin; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/api_keys/a48c3115-3e04-5d61-b76d-f08cbd023156
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Dec 2020 20:39:57 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      set-cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 20:39:57 GMT;
+        secure; HttpOnly
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - JNmeA3l0ccOXtA8wh8DpQGSmyIQ4z3r0Sqn1W1sQHkMGKxYzMqf/DJpF1RAS+Dpy
+      x-dd-version:
+      - '35.3555652'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteApiKey
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev7 (python 3.8.5; os Darwin; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/api_keys/a48c3115-3e04-5d61-b76d-f08cbd023156
+  response:
+    body:
+      string: '{"errors": ["API key not found"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '33'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Dec 2020 20:39:57 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.3555652'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 404
+      message: Not Found
+version: 1
