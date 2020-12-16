@@ -166,7 +166,8 @@ def record_mode(request):
     return {
         "false": "none",
         "true": "rewrite",
-    }.get(os.getenv("RECORD", "false").lower(), "none")
+        "none": "new_episodes",
+    }[os.getenv("RECORD", "false").lower()]
 
 
 @pytest.fixture(scope="session")
@@ -192,10 +193,10 @@ def freezer(default_cassette_name, record_mode, vcr):
     from freezegun import freeze_time
     from dateutil import parser
 
-    if record_mode in {"none", "once", "rewrite"}:
+    if record_mode in {"new_episodes", "rewrite"}:
         tzinfo = datetime.now().astimezone().tzinfo
         freeze_at = datetime.now().replace(tzinfo=tzinfo).isoformat()
-        if record_mode == "once" or record_mode == "rewrite":
+        if record_mode == "rewrite":
             pathlib.Path(vcr._path).parent.mkdir(parents=True, exist_ok=True)
             with pathlib.Path(vcr._path).with_suffix(".frozen").open("w+") as f:
                 f.write(freeze_at)
@@ -348,6 +349,7 @@ def build_given(version, operation):
                 for p in operation.get("parameters", [])
             }
             result = operation_method(**kwargs)
+            client.last_response.urllib3_response.close()
 
             # register undo method
             context["undo_operations"].append(
@@ -402,6 +404,7 @@ def undo(package_name, undo_operations, client):
 
         try:
             method(*args)
+            client.last_response.urllib3_response.close()
         except exceptions.ApiException as e:
             warnings.warn(f"failed undo: {e}")
 
@@ -415,6 +418,7 @@ def execute_request(undo, context, client):
     api_request["response"] = api_request["request"].call_with_http_info(
         *api_request["args"], **api_request["kwargs"]
     )
+    client.last_response.urllib3_response.close()
 
     api = api_request["api"]
     operation_id = api_request["request"].settings["operation_id"]
