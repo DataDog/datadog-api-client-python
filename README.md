@@ -99,31 +99,12 @@ Documentation for API endpoints and models can be found under the [`docs`](/docs
 
 ## Documentation for Authorization
 
-Authentication schemes defined for the API:
+Authenticate with the API by providing your API and Application keys in the configuration:
 
-### apiKeyAuth
-
-- **Type**: API key
-- **API key parameter name**: api_key
-- **Location**: URL query string
-
-### apiKeyAuthHeader
-
-- **Type**: API key
-- **API key parameter name**: DD-API-KEY
-- **Location**: HTTP header
-
-### appKeyAuth
-
-- **Type**: API key
-- **API key parameter name**: application_key
-- **Location**: URL query string
-
-### appKeyAuthHeader
-
-- **Type**: API key
-- **API key parameter name**: DD-APPLICATION-KEY
-- **Location**: HTTP header
+```python
+configuration.api_key["apiKeyAuth"] = "YOUR_API_KEY"
+configuration.api_key["appKeyAuth"] = "YOUR_APPLICATION_KEY"
+```
 
 ## Author
 
