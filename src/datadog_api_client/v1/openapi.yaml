@@ -6015,12 +6015,14 @@ components:
       - element
       - email
       - global
+      - javascript
       - text
       type: string
       x-enum-varnames:
       - ELEMENT
       - EMAIL
       - GLOBAL
+      - JAVASCRIPT
       - TEXT
     SyntheticsCITest:
       description: Test configuration for Synthetics CI
