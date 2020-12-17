@@ -74,6 +74,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+configuration.unstable_operations["get_daily_custom_reports"] = True
 
 # Enter a context with an instance of the API client
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
@@ -354,6 +355,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+configuration.unstable_operations["get_monthly_custom_reports"] = True
 
 # Enter a context with an instance of the API client
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
@@ -444,6 +446,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+configuration.unstable_operations["get_specified_daily_custom_reports"] = True
 
 # Enter a context with an instance of the API client
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
@@ -528,6 +531,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+configuration.unstable_operations["get_specified_monthly_custom_reports"] = True
 
 # Enter a context with an instance of the API client
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
@@ -803,6 +807,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+configuration.unstable_operations["get_usage_attribution"] = True
 
 # Enter a context with an instance of the API client
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
