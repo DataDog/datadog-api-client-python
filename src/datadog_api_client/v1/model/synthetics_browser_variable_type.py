@@ -49,6 +49,7 @@ class SyntheticsBrowserVariableType(ModelSimple):
             'ELEMENT': "element",
             'EMAIL': "email",
             'GLOBAL': "global",
+            'JAVASCRIPT': "javascript",
             'TEXT': "text",
         },
     }
@@ -99,10 +100,10 @@ class SyntheticsBrowserVariableType(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Type of browser test variable.., must be one of ["element", "email", "global", "text", ]  # noqa: E501
+            args[0] (str): Type of browser test variable.., must be one of ["element", "email", "global", "javascript", "text", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Type of browser test variable.., must be one of ["element", "email", "global", "text", ]  # noqa: E501
+            value (str): Type of browser test variable.., must be one of ["element", "email", "global", "javascript", "text", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
