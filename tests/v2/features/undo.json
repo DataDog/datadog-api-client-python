@@ -1,4 +1,41 @@
 {
+  "ListAPIKeys": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAPIKey": {
+    "tag": "Key Management",
+    "undo": {
+      "operationId": "DeleteAPIKey",
+      "parameters": [
+        {
+          "name": "api_key_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAPIKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAPIKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAPIKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteDashboardListItems": {
     "tag": "Dashboard Lists",
     "undo": {

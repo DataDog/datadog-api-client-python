@@ -3,6 +3,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"api_keys\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"api_key\" in the system",
+    "key": "api_key",
+    "tag": "Key Management",
+    "operationId": "CreateAPIKey"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\": \"incidents\"\n  }\n}"
       }
     ],
