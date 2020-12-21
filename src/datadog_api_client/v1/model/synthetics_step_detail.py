@@ -27,13 +27,11 @@ def lazy_import():
     from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
     from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckType
     from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
-    from datadog_api_client.v1.model.synthetics_resource import SyntheticsResource
     from datadog_api_client.v1.model.synthetics_step_detail_warnings import SyntheticsStepDetailWarnings
     from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
     globals()['SyntheticsBrowserError'] = SyntheticsBrowserError
     globals()['SyntheticsCheckType'] = SyntheticsCheckType
     globals()['SyntheticsPlayingTab'] = SyntheticsPlayingTab
-    globals()['SyntheticsResource'] = SyntheticsResource
     globals()['SyntheticsStepDetailWarnings'] = SyntheticsStepDetailWarnings
     globals()['SyntheticsStepType'] = SyntheticsStepType
 
@@ -90,7 +88,6 @@ class SyntheticsStepDetail(ModelNormal):
             'duration': (float,),  # noqa: E501
             'error': (str,),  # noqa: E501
             'playing_tab': (SyntheticsPlayingTab,),  # noqa: E501
-            'resources': ([SyntheticsResource],),  # noqa: E501
             'screenshot_bucket_key': (bool,),  # noqa: E501
             'skipped': (bool,),  # noqa: E501
             'snapshot_bucket_key': (bool,),  # noqa: E501
@@ -115,7 +112,6 @@ class SyntheticsStepDetail(ModelNormal):
         'duration': 'duration',  # noqa: E501
         'error': 'error',  # noqa: E501
         'playing_tab': 'playingTab',  # noqa: E501
-        'resources': 'resources',  # noqa: E501
         'screenshot_bucket_key': 'screenshotBucketKey',  # noqa: E501
         'skipped': 'skipped',  # noqa: E501
         'snapshot_bucket_key': 'snapshotBucketKey',  # noqa: E501
@@ -180,7 +176,6 @@ class SyntheticsStepDetail(ModelNormal):
             duration (float): Total duration in millisecond of the test.. [optional]  # noqa: E501
             error (str): Error returned by the test.. [optional]  # noqa: E501
             playing_tab (SyntheticsPlayingTab): [optional]  # noqa: E501
-            resources ([SyntheticsResource]): Array of resources collected by the test.. [optional]  # noqa: E501
             screenshot_bucket_key (bool): Whether or not screenshots where collected by the test.. [optional]  # noqa: E501
             skipped (bool): Whether or not to skip this step.. [optional]  # noqa: E501
             snapshot_bucket_key (bool): Whether or not snapshots where collected by the test.. [optional]  # noqa: E501

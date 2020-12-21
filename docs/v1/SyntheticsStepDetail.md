@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **duration** | **float** | Total duration in millisecond of the test. | [optional] 
 **error** | **str** | Error returned by the test. | [optional] 
 **playing_tab** | [**SyntheticsPlayingTab**](SyntheticsPlayingTab.md) |  | [optional] 
-**resources** | [**[SyntheticsResource]**](SyntheticsResource.md) | Array of resources collected by the test. | [optional] 
 **screenshot_bucket_key** | **bool** | Whether or not screenshots where collected by the test. | [optional] 
 **skipped** | **bool** | Whether or not to skip this step. | [optional] 
 **snapshot_bucket_key** | **bool** | Whether or not snapshots where collected by the test. | [optional] 
