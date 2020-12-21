@@ -66,8 +66,12 @@ def pytest_bdd_step_error(
 
 def pytest_bdd_apply_tag(tag, function):
     """Register tags as custom markers and skip test for '@skip' ones."""
-    if tag in {"skip", "skip-python"}:
-        marker = pytest.mark.skip(reason="Not implemented yet")
+    skip_tags = {"skip", "skip-python"}
+    if not _disable_recording():
+        # ignore integration-only scenarios if the recording is enabled
+        skip_tags.add("integration-only")
+    if tag in skip_tags:
+        marker = pytest.mark.skip(reason=f"skipped because '{tag}' in {skip_tags}")
         marker(function)
         return True
     elif tag.startswith("endpoint("):
@@ -170,10 +174,15 @@ def record_mode(request):
     }[os.getenv("RECORD", "false").lower()]
 
 
+def _disable_recording():
+    """Disable VCR.py integration."""
+    return os.getenv("RECORD", "false").lower() == "none"
+
+
 @pytest.fixture(scope="session")
 def disable_recording(request):
     """Disable VCR.py integration."""
-    return os.getenv("RECORD", "false").lower() == "none"
+    return _disable_recording()
 
 
 @pytest.fixture

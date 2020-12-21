@@ -10,6 +10,17 @@
 # sys.setrecursionlimit(n)
 
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.api_key_create_attributes import APIKeyCreateAttributes
+from datadog_api_client.v2.model.api_key_create_data import APIKeyCreateData
+from datadog_api_client.v2.model.api_key_create_request import APIKeyCreateRequest
+from datadog_api_client.v2.model.api_key_relationships import APIKeyRelationships
+from datadog_api_client.v2.model.api_key_response import APIKeyResponse
+from datadog_api_client.v2.model.api_key_response_included_item import APIKeyResponseIncludedItem
+from datadog_api_client.v2.model.api_key_update_attributes import APIKeyUpdateAttributes
+from datadog_api_client.v2.model.api_key_update_data import APIKeyUpdateData
+from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateRequest
+from datadog_api_client.v2.model.api_keys_response import APIKeysResponse
+from datadog_api_client.v2.model.api_keys_type import APIKeysType
 from datadog_api_client.v2.model.creator import Creator
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
@@ -22,6 +33,8 @@ from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 from datadog_api_client.v2.model.dashboard_type import DashboardType
+from datadog_api_client.v2.model.full_api_key import FullAPIKey
+from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
 from datadog_api_client.v2.model.incident_create_relationships import IncidentCreateRelationships
@@ -135,6 +148,8 @@ from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
 from datadog_api_client.v2.model.pagination import Pagination
+from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
+from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKeyAttributes
 from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
