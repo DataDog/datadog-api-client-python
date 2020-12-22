@@ -170,6 +170,43 @@
       "type": "unsafe"
     }
   },
+  "ListLogsMetrics": {
+    "tag": "Logs Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLogsMetric": {
+    "tag": "Logs Metrics",
+    "undo": {
+      "operationId": "DeleteLogsMetric",
+      "parameters": [
+        {
+          "name": "metric_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLogsMetric": {
+    "tag": "Logs Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetLogsMetric": {
+    "tag": "Logs Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateLogsMetric": {
+    "tag": "Logs Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListLogsGet": {
     "tag": "Logs",
     "undo": {
