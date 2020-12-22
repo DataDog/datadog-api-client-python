@@ -24,6 +24,18 @@
     "operationId": "CreateIncident"
   },
   {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\": {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"compute\": {\n        \"aggregation_type\": \"count\"\n      }\n    },\n    \"type\": \"logs_metrics\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"logs_metric\" in the system",
+    "key": "logs_metric",
+    "tag": "Logs Metrics",
+    "operationId": "CreateLogsMetric"
+  },
+  {
     "source": "data[0]",
     "step": "there is a valid \"permission\" in the system",
     "key": "permission",
