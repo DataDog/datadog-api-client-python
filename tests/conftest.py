@@ -5,13 +5,14 @@ import os
 
 # First patch httplib
 tracer = None
-try:
-    from ddtrace import config, patch, tracer
+if os.getenv("RECORD", "false") != "none":
+    try:
+        from ddtrace import config, patch, tracer
 
-    config.httplib["distributed_tracing"] = True
-    patch(httplib=True)
-except ImportError:
-    pass
+        config.httplib["distributed_tracing"] = True
+        patch(httplib=True)
+    except ImportError:
+        pass
 
 import importlib
 import json
