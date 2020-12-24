@@ -548,6 +548,8 @@ Class | Method | HTTP request | Description
  - [SyntheticsCITestMetadataCi](SyntheticsCITestMetadataCi.md)
  - [SyntheticsCITestMetadataGit](SyntheticsCITestMetadataGit.md)
  - [SyntheticsCheckType](SyntheticsCheckType.md)
+ - [SyntheticsConfigVariable](SyntheticsConfigVariable.md)
+ - [SyntheticsConfigVariableType](SyntheticsConfigVariableType.md)
  - [SyntheticsDeleteTestsPayload](SyntheticsDeleteTestsPayload.md)
  - [SyntheticsDeleteTestsResponse](SyntheticsDeleteTestsResponse.md)
  - [SyntheticsDeleteTestsResponseDeletedTests](SyntheticsDeleteTestsResponseDeletedTests.md)
