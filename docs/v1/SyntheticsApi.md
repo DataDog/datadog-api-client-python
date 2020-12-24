@@ -266,6 +266,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     body = SyntheticsTestDetails(
         config=SyntheticsTestConfig(
             assertions=[],
+            config_variables=[
+                SyntheticsConfigVariable(
+                    example="example_example",
+                    name="VARIABLE_NAME",
+                    pattern="pattern_example",
+                    type=SyntheticsConfigVariableType("text"),
+                ),
+            ],
             request=SyntheticsTestRequest(
                 basic_auth=SyntheticsBasicAuth(
                     password="",
@@ -299,7 +307,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 SyntheticsBrowserVariable(
                     example="example_example",
                     id="id_example",
-                    name="",
+                    name="VARIABLE_NAME",
                     pattern="pattern_example",
                     type=SyntheticsBrowserVariableType("element"),
                 ),
@@ -1873,6 +1881,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     body = SyntheticsTestDetails(
         config=SyntheticsTestConfig(
             assertions=[],
+            config_variables=[
+                SyntheticsConfigVariable(
+                    example="example_example",
+                    name="VARIABLE_NAME",
+                    pattern="pattern_example",
+                    type=SyntheticsConfigVariableType("text"),
+                ),
+            ],
             request=SyntheticsTestRequest(
                 basic_auth=SyntheticsBasicAuth(
                     password="",
@@ -1906,7 +1922,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 SyntheticsBrowserVariable(
                     example="example_example",
                     id="id_example",
-                    name="",
+                    name="VARIABLE_NAME",
                     pattern="pattern_example",
                     type=SyntheticsBrowserVariableType("element"),
                 ),
