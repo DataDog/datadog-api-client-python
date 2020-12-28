@@ -71,6 +71,8 @@ class UsageRumSessionsHour(ModelNormal):
         return {
             'hour': (datetime,),  # noqa: E501
             'session_count': (int,),  # noqa: E501
+            'session_count_android': (int,),  # noqa: E501
+            'session_count_ios': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -81,6 +83,8 @@ class UsageRumSessionsHour(ModelNormal):
     attribute_map = {
         'hour': 'hour',  # noqa: E501
         'session_count': 'session_count',  # noqa: E501
+        'session_count_android': 'session_count_android',  # noqa: E501
+        'session_count_ios': 'session_count_ios',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -131,6 +135,8 @@ class UsageRumSessionsHour(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
             session_count (int): Contains the number of RUM Sessions.. [optional]  # noqa: E501
+            session_count_android (int): Contains the number of mobile RUM Sessions on Android (data available beginning December 1, 2020).. [optional]  # noqa: E501
+            session_count_ios (int): Contains the number of mobile RUM Sessions on iOS (data available beginning December 1, 2020).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
