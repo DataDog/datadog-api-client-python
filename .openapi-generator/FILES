@@ -224,6 +224,8 @@ datadog_api_client/v2/model/role_update_response_data.py
 datadog_api_client/v2/model/roles_response.py
 datadog_api_client/v2/model/roles_sort.py
 datadog_api_client/v2/model/roles_type.py
+datadog_api_client/v2/model/security_monitoring_filter.py
+datadog_api_client/v2/model/security_monitoring_filter_action.py
 datadog_api_client/v2/model/security_monitoring_list_rules_response.py
 datadog_api_client/v2/model/security_monitoring_rule_case.py
 datadog_api_client/v2/model/security_monitoring_rule_case_create.py
@@ -492,6 +494,8 @@ docs/RolesResponse.md
 docs/RolesSort.md
 docs/RolesType.md
 docs/SecurityMonitoringApi.md
+docs/SecurityMonitoringFilter.md
+docs/SecurityMonitoringFilterAction.md
 docs/SecurityMonitoringListRulesResponse.md
 docs/SecurityMonitoringRuleCase.md
 docs/SecurityMonitoringRuleCaseCreate.md
@@ -758,6 +762,8 @@ test/test_roles_response.py
 test/test_roles_sort.py
 test/test_roles_type.py
 test/test_security_monitoring_api.py
+test/test_security_monitoring_filter.py
+test/test_security_monitoring_filter_action.py
 test/test_security_monitoring_list_rules_response.py
 test/test_security_monitoring_rule_case.py
 test/test_security_monitoring_rule_case_create.py

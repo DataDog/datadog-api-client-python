@@ -24,9 +24,11 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 )
 
 def lazy_import():
+    from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
+    globals()['SecurityMonitoringFilter'] = SecurityMonitoringFilter
     globals()['SecurityMonitoringRuleCase'] = SecurityMonitoringRuleCase
     globals()['SecurityMonitoringRuleOptions'] = SecurityMonitoringRuleOptions
     globals()['SecurityMonitoringRuleQuery'] = SecurityMonitoringRuleQuery
@@ -79,6 +81,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         lazy_import()
         return {
             'cases': ([SecurityMonitoringRuleCase],),  # noqa: E501
+            'filters': ([SecurityMonitoringFilter],),  # noqa: E501
             'is_enabled': (bool,),  # noqa: E501
             'message': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
@@ -94,6 +97,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
     attribute_map = {
         'cases': 'cases',  # noqa: E501
+        'filters': 'filters',  # noqa: E501
         'is_enabled': 'isEnabled',  # noqa: E501
         'message': 'message',  # noqa: E501
         'name': 'name',  # noqa: E501
@@ -149,6 +153,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             cases ([SecurityMonitoringRuleCase]): Cases for generating signals.. [optional]  # noqa: E501
+            filters ([SecurityMonitoringFilter]): Additional queries to filter matched events before they are processed.. [optional]  # noqa: E501
             is_enabled (bool): Whether the rule is enabled.. [optional]  # noqa: E501
             message (str): Message for generated signals.. [optional]  # noqa: E501
             name (str): Name of the rule.. [optional]  # noqa: E501

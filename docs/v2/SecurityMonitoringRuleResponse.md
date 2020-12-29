@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **cases** | [**[SecurityMonitoringRuleCase]**](SecurityMonitoringRuleCase.md) | Cases for generating signals. | [optional] 
 **created_at** | **int** | When the rule was created, timestamp in milliseconds. | [optional] 
 **creation_author_id** | **int** | User ID of the user who created the rule. | [optional] 
+**filters** | [**[SecurityMonitoringFilter]**](SecurityMonitoringFilter.md) | Additional queries to filter matched events before they are processed. | [optional] 
 **id** | **str** | The ID of the rule. | [optional] 
 **is_default** | **bool** | Whether the rule is included by default. | [optional] 
 **is_deleted** | **bool** | Whether the rule has been deleted. | [optional] 
