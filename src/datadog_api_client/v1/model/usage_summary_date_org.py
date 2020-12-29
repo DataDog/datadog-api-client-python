@@ -70,10 +70,12 @@ class UsageSummaryDateOrg(ModelNormal):
         """
         return {
             'agent_host_top99p': (int,),  # noqa: E501
+            'apm_azure_app_service_host_top99p': (int,),  # noqa: E501
             'apm_host_top99p': (int,),  # noqa: E501
             'aws_host_top99p': (int,),  # noqa: E501
             'aws_lambda_func_count': (int,),  # noqa: E501
             'aws_lambda_invocations_sum': (int,),  # noqa: E501
+            'azure_app_service_top99p': (int,),  # noqa: E501
             'billable_ingested_bytes_sum': (int,),  # noqa: E501
             'container_avg': (int,),  # noqa: E501
             'container_hwm': (int,),  # noqa: E501
@@ -109,10 +111,12 @@ class UsageSummaryDateOrg(ModelNormal):
 
     attribute_map = {
         'agent_host_top99p': 'agent_host_top99p',  # noqa: E501
+        'apm_azure_app_service_host_top99p': 'apm_azure_app_service_host_top99p',  # noqa: E501
         'apm_host_top99p': 'apm_host_top99p',  # noqa: E501
         'aws_host_top99p': 'aws_host_top99p',  # noqa: E501
         'aws_lambda_func_count': 'aws_lambda_func_count',  # noqa: E501
         'aws_lambda_invocations_sum': 'aws_lambda_invocations_sum',  # noqa: E501
+        'azure_app_service_top99p': 'azure_app_service_top99p',  # noqa: E501
         'billable_ingested_bytes_sum': 'billable_ingested_bytes_sum',  # noqa: E501
         'container_avg': 'container_avg',  # noqa: E501
         'container_hwm': 'container_hwm',  # noqa: E501
@@ -188,10 +192,12 @@ class UsageSummaryDateOrg(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             agent_host_top99p (int): Shows the 99th percentile of all agent hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+            apm_azure_app_service_host_top99p (int): Shows the 99th percentile of all Azure app services using APM over all hours in the current date for the given org.. [optional]  # noqa: E501
             apm_host_top99p (int): Shows the 99th percentile of all distinct APM hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
             aws_host_top99p (int): Shows the 99th percentile of all AWS hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
             aws_lambda_func_count (int): Shows the sum of all AWS Lambda invocations over all hours in the current date for the given org.. [optional]  # noqa: E501
             aws_lambda_invocations_sum (int): Shows the sum of all AWS Lambda invocations over all hours in the current date for the given org.. [optional]  # noqa: E501
+            azure_app_service_top99p (int): Shows the 99th percentile of all Azure app services over all hours in the current date for the given org.. [optional]  # noqa: E501
             billable_ingested_bytes_sum (int): Shows the sum of all log bytes ingested over all hours in the current date for the given org.. [optional]  # noqa: E501
             container_avg (int): Shows the average of all distinct containers over all hours in the current date for the given org.. [optional]  # noqa: E501
             container_hwm (int): Shows the high-water mark of all distinct containers over all hours in the current date for the given org.. [optional]  # noqa: E501
