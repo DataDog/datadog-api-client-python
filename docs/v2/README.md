@@ -392,6 +392,8 @@ Class | Method | HTTP request | Description
  - [RolesResponse](RolesResponse.md)
  - [RolesSort](RolesSort.md)
  - [RolesType](RolesType.md)
+ - [SecurityMonitoringFilter](SecurityMonitoringFilter.md)
+ - [SecurityMonitoringFilterAction](SecurityMonitoringFilterAction.md)
  - [SecurityMonitoringListRulesResponse](SecurityMonitoringListRulesResponse.md)
  - [SecurityMonitoringRuleCase](SecurityMonitoringRuleCase.md)
  - [SecurityMonitoringRuleCaseCreate](SecurityMonitoringRuleCaseCreate.md)
