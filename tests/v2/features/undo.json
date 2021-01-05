@@ -36,6 +36,61 @@
       "type": "idempotent"
     }
   },
+  "ListApplicationKeys": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteApplicationKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateApplicationKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListCurrentUserApplicationKeys": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCurrentUserApplicationKey": {
+    "tag": "Key Management",
+    "undo": {
+      "operationId": "DeleteCurrentUserApplicationKey",
+      "parameters": [
+        {
+          "name": "app_key_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCurrentUserApplicationKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCurrentUserApplicationKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCurrentUserApplicationKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteDashboardListItems": {
     "tag": "Dashboard Lists",
     "undo": {
