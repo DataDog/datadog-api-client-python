@@ -21,6 +21,10 @@ from datadog_api_client.v2.model.api_key_create_request import APIKeyCreateReque
 from datadog_api_client.v2.model.api_key_response import APIKeyResponse
 from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateRequest
 from datadog_api_client.v2.model.api_keys_response import APIKeysResponse
+from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
+from datadog_api_client.v2.model.application_key_response import ApplicationKeyResponse
+from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
+from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
 
 
 class KeyManagementApi(object):
@@ -156,6 +160,127 @@ class KeyManagementApi(object):
             callable=__create_api_key
         )
 
+        def __create_current_user_application_key(
+            self,
+            body,
+            **kwargs
+        ):
+            """Create an application key for current user  # noqa: E501
+
+            Create an application key for current user  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.create_current_user_application_key(body, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                body (ApplicationKeyCreateRequest):
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ApplicationKeyResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['body'] = \
+                body
+            return self.call_with_http_info(**kwargs)
+
+        self.create_current_user_application_key = Endpoint(
+            settings={
+                'response_type': (ApplicationKeyResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v2/current_user/application_keys',
+                'operation_id': 'create_current_user_application_key',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (ApplicationKeyCreateRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__create_current_user_application_key
+        )
+
         def __delete_api_key(
             self,
             api_key_id,
@@ -274,6 +399,246 @@ class KeyManagementApi(object):
             },
             api_client=api_client,
             callable=__delete_api_key
+        )
+
+        def __delete_application_key(
+            self,
+            app_key_id,
+            **kwargs
+        ):
+            """Delete an application key  # noqa: E501
+
+            Delete an application key  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.delete_application_key(app_key_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                app_key_id (str): The ID of the application key.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                None
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['app_key_id'] = \
+                app_key_id
+            return self.call_with_http_info(**kwargs)
+
+        self.delete_application_key = Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v2/application_keys/{app_key_id}',
+                'operation_id': 'delete_application_key',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'app_key_id',
+                ],
+                'required': [
+                    'app_key_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'app_key_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'app_key_id': 'app_key_id',
+                },
+                'location_map': {
+                    'app_key_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__delete_application_key
+        )
+
+        def __delete_current_user_application_key(
+            self,
+            app_key_id,
+            **kwargs
+        ):
+            """Delete an application key owned by current user  # noqa: E501
+
+            Delete an application key owned by current user  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.delete_current_user_application_key(app_key_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                app_key_id (str): The ID of the application key.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                None
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['app_key_id'] = \
+                app_key_id
+            return self.call_with_http_info(**kwargs)
+
+        self.delete_current_user_application_key = Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v2/current_user/application_keys/{app_key_id}',
+                'operation_id': 'delete_current_user_application_key',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'app_key_id',
+                ],
+                'required': [
+                    'app_key_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'app_key_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'app_key_id': 'app_key_id',
+                },
+                'location_map': {
+                    'app_key_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__delete_current_user_application_key
         )
 
         def __get_api_key(
@@ -400,6 +765,126 @@ class KeyManagementApi(object):
             },
             api_client=api_client,
             callable=__get_api_key
+        )
+
+        def __get_current_user_application_key(
+            self,
+            app_key_id,
+            **kwargs
+        ):
+            """Get one application key owned by current user  # noqa: E501
+
+            Get an application key owned by current user  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_current_user_application_key(app_key_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                app_key_id (str): The ID of the application key.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ApplicationKeyResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['app_key_id'] = \
+                app_key_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_current_user_application_key = Endpoint(
+            settings={
+                'response_type': (ApplicationKeyResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v2/current_user/application_keys/{app_key_id}',
+                'operation_id': 'get_current_user_application_key',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'app_key_id',
+                ],
+                'required': [
+                    'app_key_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'app_key_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'app_key_id': 'app_key_id',
+                },
+                'location_map': {
+                    'app_key_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_current_user_application_key
         )
 
         def __list_api_keys(
@@ -576,6 +1061,314 @@ class KeyManagementApi(object):
             callable=__list_api_keys
         )
 
+        def __list_application_keys(
+            self,
+            **kwargs
+        ):
+            """Get all application keys  # noqa: E501
+
+            List all application keys available for your org  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.list_application_keys(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
+                page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
+                sort (str): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional] if omitted the server will use the default value of "name"
+                filter (str): Filter application keys by the specified string.. [optional]
+                filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
+                filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ListApplicationKeysResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.list_application_keys = Endpoint(
+            settings={
+                'response_type': (ListApplicationKeysResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v2/application_keys',
+                'operation_id': 'list_application_keys',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'page_size',
+                    'page_number',
+                    'sort',
+                    'filter',
+                    'filter_created_at_start',
+                    'filter_created_at_end',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                    'sort',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('sort',): {
+
+                        "CREATED_AT": "created_at",
+                        "-CREATED_AT": "-created_at",
+                        "LAST4": "last4",
+                        "-LAST4": "-last4",
+                        "NAME": "name",
+                        "-NAME": "-name"
+                    },
+                },
+                'openapi_types': {
+                    'page_size':
+                        (int,),
+                    'page_number':
+                        (int,),
+                    'sort':
+                        (str,),
+                    'filter':
+                        (str,),
+                    'filter_created_at_start':
+                        (str,),
+                    'filter_created_at_end':
+                        (str,),
+                },
+                'attribute_map': {
+                    'page_size': 'page[size]',
+                    'page_number': 'page[number]',
+                    'sort': 'sort',
+                    'filter': 'filter',
+                    'filter_created_at_start': 'filter[created_at][start]',
+                    'filter_created_at_end': 'filter[created_at][end]',
+                },
+                'location_map': {
+                    'page_size': 'query',
+                    'page_number': 'query',
+                    'sort': 'query',
+                    'filter': 'query',
+                    'filter_created_at_start': 'query',
+                    'filter_created_at_end': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__list_application_keys
+        )
+
+        def __list_current_user_application_keys(
+            self,
+            **kwargs
+        ):
+            """Get all application keys owned by current user  # noqa: E501
+
+            List all application keys available for current user  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.list_current_user_application_keys(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
+                page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
+                sort (str): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional] if omitted the server will use the default value of "name"
+                filter (str): Filter application keys by the specified string.. [optional]
+                filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
+                filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ListApplicationKeysResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.list_current_user_application_keys = Endpoint(
+            settings={
+                'response_type': (ListApplicationKeysResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v2/current_user/application_keys',
+                'operation_id': 'list_current_user_application_keys',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'page_size',
+                    'page_number',
+                    'sort',
+                    'filter',
+                    'filter_created_at_start',
+                    'filter_created_at_end',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                    'sort',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('sort',): {
+
+                        "CREATED_AT": "created_at",
+                        "-CREATED_AT": "-created_at",
+                        "LAST4": "last4",
+                        "-LAST4": "-last4",
+                        "NAME": "name",
+                        "-NAME": "-name"
+                    },
+                },
+                'openapi_types': {
+                    'page_size':
+                        (int,),
+                    'page_number':
+                        (int,),
+                    'sort':
+                        (str,),
+                    'filter':
+                        (str,),
+                    'filter_created_at_start':
+                        (str,),
+                    'filter_created_at_end':
+                        (str,),
+                },
+                'attribute_map': {
+                    'page_size': 'page[size]',
+                    'page_number': 'page[number]',
+                    'sort': 'sort',
+                    'filter': 'filter',
+                    'filter_created_at_start': 'filter[created_at][start]',
+                    'filter_created_at_end': 'filter[created_at][end]',
+                },
+                'location_map': {
+                    'page_size': 'query',
+                    'page_number': 'query',
+                    'sort': 'query',
+                    'filter': 'query',
+                    'filter_created_at_start': 'query',
+                    'filter_created_at_end': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__list_current_user_application_keys
+        )
+
         def __update_api_key(
             self,
             api_key_id,
@@ -705,4 +1498,266 @@ class KeyManagementApi(object):
             },
             api_client=api_client,
             callable=__update_api_key
+        )
+
+        def __update_application_key(
+            self,
+            app_key_id,
+            body,
+            **kwargs
+        ):
+            """Edit an application key  # noqa: E501
+
+            Edit an application key  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.update_application_key(app_key_id, body, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                app_key_id (str): The ID of the application key.
+                body (ApplicationKeyUpdateRequest):
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ApplicationKeyResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['app_key_id'] = \
+                app_key_id
+            kwargs['body'] = \
+                body
+            return self.call_with_http_info(**kwargs)
+
+        self.update_application_key = Endpoint(
+            settings={
+                'response_type': (ApplicationKeyResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v2/application_keys/{app_key_id}',
+                'operation_id': 'update_application_key',
+                'http_method': 'PATCH',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'app_key_id',
+                    'body',
+                ],
+                'required': [
+                    'app_key_id',
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'app_key_id':
+                        (str,),
+                    'body':
+                        (ApplicationKeyUpdateRequest,),
+                },
+                'attribute_map': {
+                    'app_key_id': 'app_key_id',
+                },
+                'location_map': {
+                    'app_key_id': 'path',
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__update_application_key
+        )
+
+        def __update_current_user_application_key(
+            self,
+            app_key_id,
+            body,
+            **kwargs
+        ):
+            """Edit an application key owned by current user  # noqa: E501
+
+            Edit an application key owned by current user  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.update_current_user_application_key(app_key_id, body, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                app_key_id (str): The ID of the application key.
+                body (ApplicationKeyUpdateRequest):
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ApplicationKeyResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['app_key_id'] = \
+                app_key_id
+            kwargs['body'] = \
+                body
+            return self.call_with_http_info(**kwargs)
+
+        self.update_current_user_application_key = Endpoint(
+            settings={
+                'response_type': (ApplicationKeyResponse,),
+                'auth': [
+                    'apiKeyAuth',
+                    'appKeyAuth'
+                ],
+                'endpoint_path': '/api/v2/current_user/application_keys/{app_key_id}',
+                'operation_id': 'update_current_user_application_key',
+                'http_method': 'PATCH',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'app_key_id',
+                    'body',
+                ],
+                'required': [
+                    'app_key_id',
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'app_key_id':
+                        (str,),
+                    'body':
+                        (ApplicationKeyUpdateRequest,),
+                },
+                'attribute_map': {
+                    'app_key_id': 'app_key_id',
+                },
+                'location_map': {
+                    'app_key_id': 'path',
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__update_current_user_application_key
         )

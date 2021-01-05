@@ -50,13 +50,14 @@ Feature: Key Management
     When the request is sent
     Then the response status is 200 OK
 
-  @skip
+  @integration-only
   Scenario: Get all Application keys returns "OK" response
-    Given new "ListApplicationKeys" request
+    Given there is a valid "application_key" in the system
+    And new "ListApplicationKeys" request
     When the request is sent
     Then the response status is 200 OK
 
-  @skip
+  @integration-only
   Scenario: Delete an Application key returns "No Content" response
     Given there is a valid "application_key" in the system
     And new "DeleteApplicationKey" request
@@ -64,13 +65,13 @@ Feature: Key Management
     When the request is sent
     Then the response status is 204 No Content
 
-  @skip
+  @integration-only
   Scenario: Get all Application keys owned by current user returns "OK" response
     Given new "ListCurrentUserApplicationKeys" request
     When the request is sent
     Then the response status is 200 OK
 
-  @skip
+  @integration-only
   Scenario: Create an Application key for current user returns "Created" response
     Given new "CreateCurrentUserApplicationKey" request
     And body {"data": {"type": "application_keys", "attributes": {"name": "{{ unique }}"}}}
@@ -78,7 +79,7 @@ Feature: Key Management
     Then the response status is 201 Created
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
-  @skip
+  @integration-only
   Scenario: Delete an Application key owned by current user returns "No Content" response
     Given there is a valid "application_key" in the system
     And new "DeleteCurrentUserApplicationKey" request
@@ -86,7 +87,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 204 No Content
 
-  @skip
+  @integration-only
   Scenario: Get one Application key owned by current user returns "OK" response
     Given there is a valid "application_key" in the system
     And new "GetCurrentUserApplicationKey" request
@@ -95,7 +96,7 @@ Feature: Key Management
     Then the response status is 200 OK
     And the response "data.attributes.name" has the same value as "application_key.data.attributes.name"
 
-  @skip
+  @integration-only
   Scenario: Edit an application key owned by current user returns "OK" response
     Given there is a valid "application_key" in the system
     And new "UpdateCurrentUserApplicationKey" request
@@ -105,7 +106,7 @@ Feature: Key Management
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ application_key.data.attributes.name }}-updated"
 
-  @skip
+  @integration-only
   Scenario: Edit an application key returns "OK" response
     Given there is a valid "application_key" in the system
     And new "UpdateApplicationKey" request
@@ -114,3 +115,43 @@ Feature: Key Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ application_key.data.attributes.name }}-updated"
+
+  @generated @skip
+  Scenario: Get all application keys returns "OK" response
+    Given new "ListApplicationKeys" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Delete an application key returns "No Content" response
+    Given new "DeleteApplicationKey" request
+    And request contains "app_key_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip
+  Scenario: Get all application keys owned by current user returns "OK" response
+    Given new "ListCurrentUserApplicationKeys" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Create an application key for current user returns "Created" response
+    Given new "CreateCurrentUserApplicationKey" request
+    And body {}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip
+  Scenario: Delete an application key owned by current user returns "No Content" response
+    Given new "DeleteCurrentUserApplicationKey" request
+    And request contains "app_key_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip
+  Scenario: Get one application key owned by current user returns "OK" response
+    Given new "GetCurrentUserApplicationKey" request
+    And request contains "app_key_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
