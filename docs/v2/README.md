@@ -131,10 +131,18 @@ Class | Method | HTTP request | Description
 *IncidentsApi* | [**list_incidents**](IncidentsApi.md#list_incidents) | **GET** /api/v2/incidents | Get a list of incidents
 *IncidentsApi* | [**update_incident**](IncidentsApi.md#update_incident) | **PATCH** /api/v2/incidents/{incident_id} | Update an existing incident
 *KeyManagementApi* | [**create_api_key**](KeyManagementApi.md#create_api_key) | **POST** /api/v2/api_keys | Create an API key
+*KeyManagementApi* | [**create_current_user_application_key**](KeyManagementApi.md#create_current_user_application_key) | **POST** /api/v2/current_user/application_keys | Create an application key for current user
 *KeyManagementApi* | [**delete_api_key**](KeyManagementApi.md#delete_api_key) | **DELETE** /api/v2/api_keys/{api_key_id} | Delete an API key
+*KeyManagementApi* | [**delete_application_key**](KeyManagementApi.md#delete_application_key) | **DELETE** /api/v2/application_keys/{app_key_id} | Delete an application key
+*KeyManagementApi* | [**delete_current_user_application_key**](KeyManagementApi.md#delete_current_user_application_key) | **DELETE** /api/v2/current_user/application_keys/{app_key_id} | Delete an application key owned by current user
 *KeyManagementApi* | [**get_api_key**](KeyManagementApi.md#get_api_key) | **GET** /api/v2/api_keys/{api_key_id} | Get API key
+*KeyManagementApi* | [**get_current_user_application_key**](KeyManagementApi.md#get_current_user_application_key) | **GET** /api/v2/current_user/application_keys/{app_key_id} | Get one application key owned by current user
 *KeyManagementApi* | [**list_api_keys**](KeyManagementApi.md#list_api_keys) | **GET** /api/v2/api_keys | Get all API keys
+*KeyManagementApi* | [**list_application_keys**](KeyManagementApi.md#list_application_keys) | **GET** /api/v2/application_keys | Get all application keys
+*KeyManagementApi* | [**list_current_user_application_keys**](KeyManagementApi.md#list_current_user_application_keys) | **GET** /api/v2/current_user/application_keys | Get all application keys owned by current user
 *KeyManagementApi* | [**update_api_key**](KeyManagementApi.md#update_api_key) | **PATCH** /api/v2/api_keys/{api_key_id} | Edit an API key
+*KeyManagementApi* | [**update_application_key**](KeyManagementApi.md#update_application_key) | **PATCH** /api/v2/application_keys/{app_key_id} | Edit an application key
+*KeyManagementApi* | [**update_current_user_application_key**](KeyManagementApi.md#update_current_user_application_key) | **PATCH** /api/v2/current_user/application_keys/{app_key_id} | Edit an application key owned by current user
 *LogsApi* | [**aggregate_logs**](LogsApi.md#aggregate_logs) | **POST** /api/v2/logs/analytics/aggregate | Aggregate events
 *LogsApi* | [**list_logs**](LogsApi.md#list_logs) | **POST** /api/v2/logs/events/search | Get a list of logs
 *LogsApi* | [**list_logs_get**](LogsApi.md#list_logs_get) | **GET** /api/v2/logs/events | Get a quick list of logs
@@ -198,6 +206,16 @@ Class | Method | HTTP request | Description
  - [APIKeyUpdateRequest](APIKeyUpdateRequest.md)
  - [APIKeysResponse](APIKeysResponse.md)
  - [APIKeysType](APIKeysType.md)
+ - [ApplicationKeyCreateAttributes](ApplicationKeyCreateAttributes.md)
+ - [ApplicationKeyCreateData](ApplicationKeyCreateData.md)
+ - [ApplicationKeyCreateRequest](ApplicationKeyCreateRequest.md)
+ - [ApplicationKeyRelationships](ApplicationKeyRelationships.md)
+ - [ApplicationKeyResponse](ApplicationKeyResponse.md)
+ - [ApplicationKeyResponseIncludedItem](ApplicationKeyResponseIncludedItem.md)
+ - [ApplicationKeyUpdateAttributes](ApplicationKeyUpdateAttributes.md)
+ - [ApplicationKeyUpdateData](ApplicationKeyUpdateData.md)
+ - [ApplicationKeyUpdateRequest](ApplicationKeyUpdateRequest.md)
+ - [ApplicationKeysType](ApplicationKeysType.md)
  - [Creator](Creator.md)
  - [DashboardListAddItemsRequest](DashboardListAddItemsRequest.md)
  - [DashboardListAddItemsResponse](DashboardListAddItemsResponse.md)
@@ -212,6 +230,8 @@ Class | Method | HTTP request | Description
  - [DashboardType](DashboardType.md)
  - [FullAPIKey](FullAPIKey.md)
  - [FullAPIKeyAttributes](FullAPIKeyAttributes.md)
+ - [FullApplicationKey](FullApplicationKey.md)
+ - [FullApplicationKeyAttributes](FullApplicationKeyAttributes.md)
  - [IncidentCreateAttributes](IncidentCreateAttributes.md)
  - [IncidentCreateData](IncidentCreateData.md)
  - [IncidentCreateRelationships](IncidentCreateRelationships.md)
@@ -266,6 +286,7 @@ Class | Method | HTTP request | Description
  - [IncidentUpdateRelationships](IncidentUpdateRelationships.md)
  - [IncidentUpdateRequest](IncidentUpdateRequest.md)
  - [IncidentsResponse](IncidentsResponse.md)
+ - [ListApplicationKeysResponse](ListApplicationKeysResponse.md)
  - [Log](Log.md)
  - [LogAttributes](LogAttributes.md)
  - [LogType](LogType.md)
@@ -346,6 +367,8 @@ Class | Method | HTTP request | Description
  - [Pagination](Pagination.md)
  - [PartialAPIKey](PartialAPIKey.md)
  - [PartialAPIKeyAttributes](PartialAPIKeyAttributes.md)
+ - [PartialApplicationKey](PartialApplicationKey.md)
+ - [PartialApplicationKeyAttributes](PartialApplicationKeyAttributes.md)
  - [Permission](Permission.md)
  - [PermissionAttributes](PermissionAttributes.md)
  - [PermissionsResponse](PermissionsResponse.md)

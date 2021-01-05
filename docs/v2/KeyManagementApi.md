@@ -5,10 +5,18 @@ All URIs are relative to *https://api.datadoghq.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_api_key**](KeyManagementApi.md#create_api_key) | **POST** /api/v2/api_keys | Create an API key
+[**create_current_user_application_key**](KeyManagementApi.md#create_current_user_application_key) | **POST** /api/v2/current_user/application_keys | Create an application key for current user
 [**delete_api_key**](KeyManagementApi.md#delete_api_key) | **DELETE** /api/v2/api_keys/{api_key_id} | Delete an API key
+[**delete_application_key**](KeyManagementApi.md#delete_application_key) | **DELETE** /api/v2/application_keys/{app_key_id} | Delete an application key
+[**delete_current_user_application_key**](KeyManagementApi.md#delete_current_user_application_key) | **DELETE** /api/v2/current_user/application_keys/{app_key_id} | Delete an application key owned by current user
 [**get_api_key**](KeyManagementApi.md#get_api_key) | **GET** /api/v2/api_keys/{api_key_id} | Get API key
+[**get_current_user_application_key**](KeyManagementApi.md#get_current_user_application_key) | **GET** /api/v2/current_user/application_keys/{app_key_id} | Get one application key owned by current user
 [**list_api_keys**](KeyManagementApi.md#list_api_keys) | **GET** /api/v2/api_keys | Get all API keys
+[**list_application_keys**](KeyManagementApi.md#list_application_keys) | **GET** /api/v2/application_keys | Get all application keys
+[**list_current_user_application_keys**](KeyManagementApi.md#list_current_user_application_keys) | **GET** /api/v2/current_user/application_keys | Get all application keys owned by current user
 [**update_api_key**](KeyManagementApi.md#update_api_key) | **PATCH** /api/v2/api_keys/{api_key_id} | Edit an API key
+[**update_application_key**](KeyManagementApi.md#update_application_key) | **PATCH** /api/v2/application_keys/{app_key_id} | Edit an application key
+[**update_current_user_application_key**](KeyManagementApi.md#update_current_user_application_key) | **PATCH** /api/v2/current_user/application_keys/{app_key_id} | Edit an application key owned by current user
 
 
 # **create_api_key**
@@ -83,6 +91,97 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**APIKeyResponse**](APIKeyResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **create_current_user_application_key**
+> ApplicationKeyResponse create_current_user_application_key(body)
+
+Create an application key for current user
+
+Create an application key for current user
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+import datadog_api_client.v2
+from datadog_api_client.v2.api import key_management_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = key_management_api.KeyManagementApi(api_client)
+    body = ApplicationKeyCreateRequest(
+        data=ApplicationKeyCreateData(
+            attributes=ApplicationKeyCreateAttributes(
+                name="Application Key for submitting metrics",
+            ),
+            type=ApplicationKeysType("application_keys"),
+        ),
+    ) # ApplicationKeyCreateRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create an application key for current user
+        api_response = api_instance.create_current_user_application_key(body)
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling KeyManagementApi->create_current_user_application_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ApplicationKeyCreateRequest**](ApplicationKeyCreateRequest.md)|  |
+
+### Return type
+
+[**ApplicationKeyResponse**](ApplicationKeyResponse.md)
 
 ### Authorization
 
@@ -185,6 +284,172 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **delete_application_key**
+> delete_application_key(app_key_id)
+
+Delete an application key
+
+Delete an application key
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+import datadog_api_client.v2
+from datadog_api_client.v2.api import key_management_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = key_management_api.KeyManagementApi(api_client)
+    app_key_id = "app_key_id_example" # str | The ID of the application key.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete an application key
+        api_instance.delete_application_key(app_key_id)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling KeyManagementApi->delete_application_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **app_key_id** | **str**| The ID of the application key. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **delete_current_user_application_key**
+> delete_current_user_application_key(app_key_id)
+
+Delete an application key owned by current user
+
+Delete an application key owned by current user
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+import datadog_api_client.v2
+from datadog_api_client.v2.api import key_management_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = key_management_api.KeyManagementApi(api_client)
+    app_key_id = "app_key_id_example" # str | The ID of the application key.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete an application key owned by current user
+        api_instance.delete_current_user_application_key(app_key_id)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling KeyManagementApi->delete_current_user_application_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **app_key_id** | **str**| The ID of the application key. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **get_api_key**
 > APIKeyResponse get_api_key(api_key_id)
 
@@ -261,6 +526,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**APIKeyResponse**](APIKeyResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_current_user_application_key**
+> ApplicationKeyResponse get_current_user_application_key(app_key_id)
+
+Get one application key owned by current user
+
+Get an application key owned by current user
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+import datadog_api_client.v2
+from datadog_api_client.v2.api import key_management_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = key_management_api.KeyManagementApi(api_client)
+    app_key_id = "app_key_id_example" # str | The ID of the application key.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get one application key owned by current user
+        api_response = api_instance.get_current_user_application_key(app_key_id)
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling KeyManagementApi->get_current_user_application_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **app_key_id** | **str**| The ID of the application key. |
+
+### Return type
+
+[**ApplicationKeyResponse**](ApplicationKeyResponse.md)
 
 ### Authorization
 
@@ -381,6 +730,198 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **list_application_keys**
+> ListApplicationKeysResponse list_application_keys()
+
+Get all application keys
+
+List all application keys available for your org
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+import datadog_api_client.v2
+from datadog_api_client.v2.api import key_management_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = key_management_api.KeyManagementApi(api_client)
+    page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
+    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    sort = "name" # str | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional) if omitted the server will use the default value of "name"
+    filter = "filter_example" # str | Filter application keys by the specified string. (optional)
+    filter_created_at_start = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or after the specified date. (optional)
+    filter_created_at_end = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or before the specified date. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get all application keys
+        api_response = api_instance.list_application_keys(page_size=page_size, page_number=page_number, sort=sort, filter=filter, filter_created_at_start=filter_created_at_start, filter_created_at_end=filter_created_at_end)
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling KeyManagementApi->list_application_keys: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
+ **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
+ **sort** | **str**| Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional] if omitted the server will use the default value of "name"
+ **filter** | **str**| Filter application keys by the specified string. | [optional]
+ **filter_created_at_start** | **str**| Only include application keys created on or after the specified date. | [optional]
+ **filter_created_at_end** | **str**| Only include application keys created on or before the specified date. | [optional]
+
+### Return type
+
+[**ListApplicationKeysResponse**](ListApplicationKeysResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **list_current_user_application_keys**
+> ListApplicationKeysResponse list_current_user_application_keys()
+
+Get all application keys owned by current user
+
+List all application keys available for current user
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+import datadog_api_client.v2
+from datadog_api_client.v2.api import key_management_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = key_management_api.KeyManagementApi(api_client)
+    page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
+    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    sort = "name" # str | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional) if omitted the server will use the default value of "name"
+    filter = "filter_example" # str | Filter application keys by the specified string. (optional)
+    filter_created_at_start = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or after the specified date. (optional)
+    filter_created_at_end = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or before the specified date. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get all application keys owned by current user
+        api_response = api_instance.list_current_user_application_keys(page_size=page_size, page_number=page_number, sort=sort, filter=filter, filter_created_at_start=filter_created_at_start, filter_created_at_end=filter_created_at_end)
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling KeyManagementApi->list_current_user_application_keys: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
+ **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
+ **sort** | **str**| Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional] if omitted the server will use the default value of "name"
+ **filter** | **str**| Filter application keys by the specified string. | [optional]
+ **filter_created_at_start** | **str**| Only include application keys created on or after the specified date. | [optional]
+ **filter_created_at_end** | **str**| Only include application keys created on or before the specified date. | [optional]
+
+### Return type
+
+[**ListApplicationKeysResponse**](ListApplicationKeysResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **update_api_key**
 > APIKeyResponse update_api_key(api_key_id, body)
 
@@ -456,6 +997,196 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**APIKeyResponse**](APIKeyResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **update_application_key**
+> ApplicationKeyResponse update_application_key(app_key_id, body)
+
+Edit an application key
+
+Edit an application key
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+import datadog_api_client.v2
+from datadog_api_client.v2.api import key_management_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = key_management_api.KeyManagementApi(api_client)
+    app_key_id = "app_key_id_example" # str | The ID of the application key.
+    body = ApplicationKeyUpdateRequest(
+        data=ApplicationKeyUpdateData(
+            attributes=ApplicationKeyUpdateAttributes(
+                name="Application Key for submitting metrics",
+            ),
+            id="00112233-4455-6677-8899-aabbccddeeff",
+            type=ApplicationKeysType("application_keys"),
+        ),
+    ) # ApplicationKeyUpdateRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Edit an application key
+        api_response = api_instance.update_application_key(app_key_id, body)
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling KeyManagementApi->update_application_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **app_key_id** | **str**| The ID of the application key. |
+ **body** | [**ApplicationKeyUpdateRequest**](ApplicationKeyUpdateRequest.md)|  |
+
+### Return type
+
+[**ApplicationKeyResponse**](ApplicationKeyResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **update_current_user_application_key**
+> ApplicationKeyResponse update_current_user_application_key(app_key_id, body)
+
+Edit an application key owned by current user
+
+Edit an application key owned by current user
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+import datadog_api_client.v2
+from datadog_api_client.v2.api import key_management_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v2.Configuration(
+    host = "https://api.datadoghq.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with datadog_api_client.v2.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = key_management_api.KeyManagementApi(api_client)
+    app_key_id = "app_key_id_example" # str | The ID of the application key.
+    body = ApplicationKeyUpdateRequest(
+        data=ApplicationKeyUpdateData(
+            attributes=ApplicationKeyUpdateAttributes(
+                name="Application Key for submitting metrics",
+            ),
+            id="00112233-4455-6677-8899-aabbccddeeff",
+            type=ApplicationKeysType("application_keys"),
+        ),
+    ) # ApplicationKeyUpdateRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Edit an application key owned by current user
+        api_response = api_instance.update_current_user_application_key(app_key_id, body)
+        pprint(api_response)
+    except datadog_api_client.v2.ApiException as e:
+        print("Exception when calling KeyManagementApi->update_current_user_application_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **app_key_id** | **str**| The ID of the application key. |
+ **body** | [**ApplicationKeyUpdateRequest**](ApplicationKeyUpdateRequest.md)|  |
+
+### Return type
+
+[**ApplicationKeyResponse**](ApplicationKeyResponse.md)
 
 ### Authorization
 
