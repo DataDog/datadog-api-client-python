@@ -24,9 +24,11 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 )
 
 def lazy_import():
+    from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
+    globals()['SecurityMonitoringFilter'] = SecurityMonitoringFilter
     globals()['SecurityMonitoringRuleCaseCreate'] = SecurityMonitoringRuleCaseCreate
     globals()['SecurityMonitoringRuleOptions'] = SecurityMonitoringRuleOptions
     globals()['SecurityMonitoringRuleQueryCreate'] = SecurityMonitoringRuleQueryCreate
@@ -84,6 +86,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
             'name': (str,),  # noqa: E501
             'options': (SecurityMonitoringRuleOptions,),  # noqa: E501
             'queries': ([SecurityMonitoringRuleQueryCreate],),  # noqa: E501
+            'filters': ([SecurityMonitoringFilter],),  # noqa: E501
             'tags': ([str],),  # noqa: E501
         }
 
@@ -99,6 +102,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         'name': 'name',  # noqa: E501
         'options': 'options',  # noqa: E501
         'queries': 'queries',  # noqa: E501
+        'filters': 'filters',  # noqa: E501
         'tags': 'tags',  # noqa: E501
     }
 
@@ -156,6 +160,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            filters ([SecurityMonitoringFilter]): Additional queries to filter matched events before they are processed.. [optional]  # noqa: E501
             tags ([str]): Tags for generated signals.. [optional]  # noqa: E501
         """
 

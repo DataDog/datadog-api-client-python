@@ -75,6 +75,7 @@ class UsageSummaryResponse(ModelNormal):
         lazy_import()
         return {
             'agent_host_top99p_sum': (int,),  # noqa: E501
+            'apm_azure_app_service_host_top99p_sum': (int,),  # noqa: E501
             'apm_host_top99p_sum': (int,),  # noqa: E501
             'aws_host_top99p_sum': (int,),  # noqa: E501
             'aws_lambda_func_count': (int,),  # noqa: E501
@@ -95,11 +96,14 @@ class UsageSummaryResponse(ModelNormal):
             'ingested_events_bytes_agg_sum': (int,),  # noqa: E501
             'last_updated': (datetime,),  # noqa: E501
             'mobile_rum_session_count_agg_sum': (int,),  # noqa: E501
+            'mobile_rum_session_count_android_agg_sum': (int,),  # noqa: E501
+            'mobile_rum_session_count_ios_agg_sum': (int,),  # noqa: E501
             'netflow_indexed_events_count_agg_sum': (int,),  # noqa: E501
             'npm_host_top99p_sum': (int,),  # noqa: E501
             'profiling_container_agent_count_avg': (int,),  # noqa: E501
             'profiling_host_count_top99p_sum': (int,),  # noqa: E501
             'rum_session_count_agg_sum': (int,),  # noqa: E501
+            'rum_total_session_count_agg_sum': (int,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'synthetics_browser_check_calls_count_agg_sum': (int,),  # noqa: E501
             'synthetics_check_calls_count_agg_sum': (int,),  # noqa: E501
@@ -115,6 +119,7 @@ class UsageSummaryResponse(ModelNormal):
 
     attribute_map = {
         'agent_host_top99p_sum': 'agent_host_top99p_sum',  # noqa: E501
+        'apm_azure_app_service_host_top99p_sum': 'apm_azure_app_service_host_top99p_sum',  # noqa: E501
         'apm_host_top99p_sum': 'apm_host_top99p_sum',  # noqa: E501
         'aws_host_top99p_sum': 'aws_host_top99p_sum',  # noqa: E501
         'aws_lambda_func_count': 'aws_lambda_func_count',  # noqa: E501
@@ -135,11 +140,14 @@ class UsageSummaryResponse(ModelNormal):
         'ingested_events_bytes_agg_sum': 'ingested_events_bytes_agg_sum',  # noqa: E501
         'last_updated': 'last_updated',  # noqa: E501
         'mobile_rum_session_count_agg_sum': 'mobile_rum_session_count_agg_sum',  # noqa: E501
+        'mobile_rum_session_count_android_agg_sum': 'mobile_rum_session_count_android_agg_sum',  # noqa: E501
+        'mobile_rum_session_count_ios_agg_sum': 'mobile_rum_session_count_ios_agg_sum',  # noqa: E501
         'netflow_indexed_events_count_agg_sum': 'netflow_indexed_events_count_agg_sum',  # noqa: E501
         'npm_host_top99p_sum': 'npm_host_top99p_sum',  # noqa: E501
         'profiling_container_agent_count_avg': 'profiling_container_agent_count_avg',  # noqa: E501
         'profiling_host_count_top99p_sum': 'profiling_host_count_top99p_sum',  # noqa: E501
         'rum_session_count_agg_sum': 'rum_session_count_agg_sum',  # noqa: E501
+        'rum_total_session_count_agg_sum': 'rum_total_session_count_agg_sum',  # noqa: E501
         'start_date': 'start_date',  # noqa: E501
         'synthetics_browser_check_calls_count_agg_sum': 'synthetics_browser_check_calls_count_agg_sum',  # noqa: E501
         'synthetics_check_calls_count_agg_sum': 'synthetics_check_calls_count_agg_sum',  # noqa: E501
@@ -195,6 +203,7 @@ class UsageSummaryResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             agent_host_top99p_sum (int): Shows the 99th percentile of all agent hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            apm_azure_app_service_host_top99p_sum (int): Shows the 99th percentile of all Azure app services using APM over all hours in the current months all organizations.. [optional]  # noqa: E501
             apm_host_top99p_sum (int): Shows the 99th percentile of all distinct APM hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             aws_host_top99p_sum (int): Shows the 99th percentile of all AWS hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             aws_lambda_func_count (int): Shows the average of the number of functions that executed 1 or more times each hour in the current months for all organizations.. [optional]  # noqa: E501
@@ -215,11 +224,14 @@ class UsageSummaryResponse(ModelNormal):
             ingested_events_bytes_agg_sum (int): Shows the sum of all log bytes ingested over all hours in the current months for all organizations.. [optional]  # noqa: E501
             last_updated (datetime): Shows the the most recent hour in the current months for all organizations for which all usages were calculated.. [optional]  # noqa: E501
             mobile_rum_session_count_agg_sum (int): Shows the sum of all mobile RUM Sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            mobile_rum_session_count_android_agg_sum (int): Shows the sum of all mobile RUM Sessions on Android over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            mobile_rum_session_count_ios_agg_sum (int): Shows the sum of all mobile RUM Sessions on iOS over all hours in the current months for all organizations.. [optional]  # noqa: E501
             netflow_indexed_events_count_agg_sum (int): Shows the sum of all Network flows indexed over all hours in the current months for all organizations.. [optional]  # noqa: E501
             npm_host_top99p_sum (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             profiling_container_agent_count_avg (int): Shows the average number of profiled containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
             profiling_host_count_top99p_sum (int): Shows the 99th percentile of all profiled hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             rum_session_count_agg_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            rum_total_session_count_agg_sum (int): Shows the sum of RUM Sessions (browser and mobile) over all hours in the current months for all organizations.. [optional]  # noqa: E501
             start_date (datetime): Shows the first date of usage in the current months for all organizations.. [optional]  # noqa: E501
             synthetics_browser_check_calls_count_agg_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current months for all organizations.. [optional]  # noqa: E501
             synthetics_check_calls_count_agg_sum (int): Shows the sum of all Synthetic API tests over all hours in the current months for all organizations.. [optional]  # noqa: E501

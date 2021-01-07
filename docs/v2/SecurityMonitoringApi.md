@@ -60,6 +60,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
     body = SecurityMonitoringRuleCreatePayload(
         cases=[],
+        filters=[
+            SecurityMonitoringFilter(
+                action=SecurityMonitoringFilterAction("require"),
+                query="query_example",
+            ),
+        ],
         is_enabled=True,
         message="",
         name="",
@@ -609,6 +615,12 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
                     "notifications_example",
                 ],
                 status=SecurityMonitoringRuleSeverity("info"),
+            ),
+        ],
+        filters=[
+            SecurityMonitoringFilter(
+                action=SecurityMonitoringFilterAction("require"),
+                query="query_example",
             ),
         ],
         is_enabled=True,

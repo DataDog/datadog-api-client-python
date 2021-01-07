@@ -71,6 +71,7 @@ class UsageHostHour(ModelNormal):
         return {
             'agent_host_count': (int,),  # noqa: E501
             'alibaba_host_count': (int,),  # noqa: E501
+            'apm_azure_app_service_host_count': (int,),  # noqa: E501
             'apm_host_count': (int,),  # noqa: E501
             'aws_host_count': (int,),  # noqa: E501
             'azure_host_count': (int,),  # noqa: E501
@@ -78,6 +79,7 @@ class UsageHostHour(ModelNormal):
             'gcp_host_count': (int,),  # noqa: E501
             'host_count': (int,),  # noqa: E501
             'hour': (datetime,),  # noqa: E501
+            'infra_azure_app_service': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -88,6 +90,7 @@ class UsageHostHour(ModelNormal):
     attribute_map = {
         'agent_host_count': 'agent_host_count',  # noqa: E501
         'alibaba_host_count': 'alibaba_host_count',  # noqa: E501
+        'apm_azure_app_service_host_count': 'apm_azure_app_service_host_count',  # noqa: E501
         'apm_host_count': 'apm_host_count',  # noqa: E501
         'aws_host_count': 'aws_host_count',  # noqa: E501
         'azure_host_count': 'azure_host_count',  # noqa: E501
@@ -95,6 +98,7 @@ class UsageHostHour(ModelNormal):
         'gcp_host_count': 'gcp_host_count',  # noqa: E501
         'host_count': 'host_count',  # noqa: E501
         'hour': 'hour',  # noqa: E501
+        'infra_azure_app_service': 'infra_azure_app_service',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -145,6 +149,7 @@ class UsageHostHour(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             agent_host_count (int): Contains the total number of infrastructure hosts reporting during a given hour that were running the Datadog Agent.. [optional]  # noqa: E501
             alibaba_host_count (int): Contains the total number of hosts that reported via Alibaba integration (and were NOT running the Datadog Agent).. [optional]  # noqa: E501
+            apm_azure_app_service_host_count (int): Contains the total number of Azure App Services hosts using APM.. [optional]  # noqa: E501
             apm_host_count (int): Shows the total number of hosts using APM during the hour, these are counted as billable (except during trial periods).. [optional]  # noqa: E501
             aws_host_count (int): Contains the total number of hosts that reported via the AWS integration (and were NOT running the Datadog Agent).. [optional]  # noqa: E501
             azure_host_count (int): Contains the total number of hosts that reported via Azure integration (and were NOT running the Datadog Agent).. [optional]  # noqa: E501
@@ -152,6 +157,7 @@ class UsageHostHour(ModelNormal):
             gcp_host_count (int): Contains the total number of hosts that reported via the Google Cloud integration (and were NOT running the Datadog Agent).. [optional]  # noqa: E501
             host_count (int): Contains the total number of billable infrastructure hosts reporting during a given hour. This is the sum of `agent_host_count`, `aws_host_count`, and `gcp_host_count`.. [optional]  # noqa: E501
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
+            infra_azure_app_service (int): Contains the total number of hosts that reported via the Azure App Services integration (and were NOT running the Datadog Agent).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

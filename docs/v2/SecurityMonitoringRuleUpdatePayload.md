@@ -5,6 +5,7 @@ Update an existing rule.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cases** | [**[SecurityMonitoringRuleCase]**](SecurityMonitoringRuleCase.md) | Cases for generating signals. | [optional] 
+**filters** | [**[SecurityMonitoringFilter]**](SecurityMonitoringFilter.md) | Additional queries to filter matched events before they are processed. | [optional] 
 **is_enabled** | **bool** | Whether the rule is enabled. | [optional] 
 **message** | **str** | Message for generated signals. | [optional] 
 **name** | **str** | Name of the rule. | [optional] 
