@@ -28,4 +28,11 @@ if [ "$RERECORD_FAILED_TESTS" == "true" ] && [ "$RESULT" -ne 0 ]; then
     RECORD=true python -m pytest -vvv --last-failed
     RESULT=$?
 fi
+
+# Always run integration-only tests
+set -e
+if [ "$RECORD" != "none" ]; then
+  RECORD=none python -m pytest -m "integration-only" -vvv
+fi
+
 exit $RESULT
