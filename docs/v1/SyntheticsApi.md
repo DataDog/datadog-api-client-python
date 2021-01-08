@@ -76,6 +76,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         description="Example description",
         id="id_example",
         name="MY_VARIABLE",
+        parse_test_options=SyntheticsGlobalVariableParseTestOptions(
+            parser=SyntheticsGlobalVariableParseTestOptionsParser(
+                type=SyntheticsGlobalVariableParserType("raw"),
+                value="value_example",
+            ),
+            type=SyntheticsGlobalVariableParseTestOptionsType("http_body"),
+        ),
+        parse_test_public_id="abc-def-123",
         tags=["team:front","test:workflow-1"],
         value=SyntheticsGlobalVariableValue(
             secure=True,
@@ -696,6 +704,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         description="Example description",
         id="id_example",
         name="MY_VARIABLE",
+        parse_test_options=SyntheticsGlobalVariableParseTestOptions(
+            parser=SyntheticsGlobalVariableParseTestOptionsParser(
+                type=SyntheticsGlobalVariableParserType("raw"),
+                value="value_example",
+            ),
+            type=SyntheticsGlobalVariableParseTestOptionsType("http_body"),
+        ),
+        parse_test_public_id="abc-def-123",
         tags=["team:front","test:workflow-1"],
         value=SyntheticsGlobalVariableValue(
             secure=True,
