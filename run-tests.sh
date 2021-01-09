@@ -17,6 +17,9 @@ else
     echo "LICENSE-3rdparty.csv is up to date"
 fi
 
+# Explicitly install so we have the scm version.py file available
+python -m pip install -e .
+
 # Run tests
 set +e
 python -m pytest -vvv
