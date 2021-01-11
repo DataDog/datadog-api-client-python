@@ -676,7 +676,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     api_instance = key_management_api.KeyManagementApi(api_client)
     page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
     page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
-    sort = "name" # str | API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional) if omitted the server will use the default value of "name"
+    sort = APIKeysSort("name") # APIKeysSort | API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional)
     filter = "filter_example" # str | Filter API keys by the specified string. (optional)
     filter_created_at_start = "2020-11-24T18:46:21+00:00" # str | Only include API keys created on or after the specified date. (optional)
     filter_created_at_end = "2020-11-24T18:46:21+00:00" # str | Only include API keys created on or before the specified date. (optional)
@@ -700,7 +700,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
  **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
- **sort** | **str**| API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional] if omitted the server will use the default value of "name"
+ **sort** | **APIKeysSort**| API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional]
  **filter** | **str**| Filter API keys by the specified string. | [optional]
  **filter_created_at_start** | **str**| Only include API keys created on or after the specified date. | [optional]
  **filter_created_at_end** | **str**| Only include API keys created on or before the specified date. | [optional]
@@ -777,7 +777,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     api_instance = key_management_api.KeyManagementApi(api_client)
     page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
     page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
-    sort = "name" # str | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional) if omitted the server will use the default value of "name"
+    sort = ApplicationKeysSort("name") # ApplicationKeysSort | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional)
     filter = "filter_example" # str | Filter application keys by the specified string. (optional)
     filter_created_at_start = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or after the specified date. (optional)
     filter_created_at_end = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or before the specified date. (optional)
@@ -798,7 +798,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
  **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
- **sort** | **str**| Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional] if omitted the server will use the default value of "name"
+ **sort** | **ApplicationKeysSort**| Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional]
  **filter** | **str**| Filter application keys by the specified string. | [optional]
  **filter_created_at_start** | **str**| Only include application keys created on or after the specified date. | [optional]
  **filter_created_at_end** | **str**| Only include application keys created on or before the specified date. | [optional]
@@ -873,7 +873,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     api_instance = key_management_api.KeyManagementApi(api_client)
     page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
     page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
-    sort = "name" # str | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional) if omitted the server will use the default value of "name"
+    sort = ApplicationKeysSort("name") # ApplicationKeysSort | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional)
     filter = "filter_example" # str | Filter application keys by the specified string. (optional)
     filter_created_at_start = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or after the specified date. (optional)
     filter_created_at_end = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or before the specified date. (optional)
@@ -894,7 +894,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
  **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
- **sort** | **str**| Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional] if omitted the server will use the default value of "name"
+ **sort** | **ApplicationKeysSort**| Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional]
  **filter** | **str**| Filter application keys by the specified string. | [optional]
  **filter_created_at_start** | **str**| Only include application keys created on or after the specified date. | [optional]
  **filter_created_at_end** | **str**| Only include application keys created on or before the specified date. | [optional]

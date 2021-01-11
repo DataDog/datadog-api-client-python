@@ -20,6 +20,7 @@ from datadog_api_client.v2.model.api_key_update_attributes import APIKeyUpdateAt
 from datadog_api_client.v2.model.api_key_update_data import APIKeyUpdateData
 from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateRequest
 from datadog_api_client.v2.model.api_keys_response import APIKeysResponse
+from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
@@ -30,6 +31,7 @@ from datadog_api_client.v2.model.application_key_response_included_item import A
 from datadog_api_client.v2.model.application_key_update_attributes import ApplicationKeyUpdateAttributes
 from datadog_api_client.v2.model.application_key_update_data import ApplicationKeyUpdateData
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
+from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
 from datadog_api_client.v2.model.creator import Creator
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
