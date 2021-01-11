@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **parser** | [**SyntheticsGlobalVariableParseTestOptionsParser**](SyntheticsGlobalVariableParseTestOptionsParser.md) |  | 
 **type** | [**SyntheticsGlobalVariableParseTestOptionsType**](SyntheticsGlobalVariableParseTestOptionsType.md) |  | 
+**field** | **str** | When type is &#x60;http_header&#x60;, name of the header to use to extract the value. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
