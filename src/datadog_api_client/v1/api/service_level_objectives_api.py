@@ -788,7 +788,7 @@ class ServiceLevelObjectivesApi(object):
             callable=__get_slo_history
         )
 
-        def __list_sl_os(
+        def __list_slos(
             self,
             ids,
             **kwargs
@@ -799,7 +799,7 @@ class ServiceLevelObjectivesApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.list_sl_os(ids, async_req=True)
+            >>> thread = api.list_slos(ids, async_req=True)
             >>> result = thread.get()
 
             Args:
@@ -854,7 +854,7 @@ class ServiceLevelObjectivesApi(object):
                 ids
             return self.call_with_http_info(**kwargs)
 
-        self.list_sl_os = Endpoint(
+        self.list_slos = Endpoint(
             settings={
                 'response_type': (SLOListResponse,),
                 'auth': [
@@ -862,7 +862,7 @@ class ServiceLevelObjectivesApi(object):
                     'appKeyAuth'
                 ],
                 'endpoint_path': '/api/v1/slo',
-                'operation_id': 'list_sl_os',
+                'operation_id': 'list_slos',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -905,7 +905,7 @@ class ServiceLevelObjectivesApi(object):
                 'content_type': [],
             },
             api_client=api_client,
-            callable=__list_sl_os
+            callable=__list_slos
         )
 
         def __update_slo(
