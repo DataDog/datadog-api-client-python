@@ -18,6 +18,7 @@ datadog_api_client/v2/api_client.py
 datadog_api_client/v2/apis/__init__.py
 datadog_api_client/v2/configuration.py
 datadog_api_client/v2/exceptions.py
+datadog_api_client/v2/model/__init__.py
 datadog_api_client/v2/model/api_error_response.py
 datadog_api_client/v2/model/api_key_create_attributes.py
 datadog_api_client/v2/model/api_key_create_data.py

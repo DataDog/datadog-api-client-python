@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**delete_slo_timeframe_in_bulk**](ServiceLevelObjectivesApi.md#delete_slo_timeframe_in_bulk) | **POST** /api/v1/slo/bulk_delete | Bulk Delete SLO Timeframes
 [**get_slo**](ServiceLevelObjectivesApi.md#get_slo) | **GET** /api/v1/slo/{slo_id} | Get a SLO&#39;s details
 [**get_slo_history**](ServiceLevelObjectivesApi.md#get_slo_history) | **GET** /api/v1/slo/{slo_id}/history | Get an SLO&#39;s history
-[**list_sl_os**](ServiceLevelObjectivesApi.md#list_sl_os) | **GET** /api/v1/slo | Search SLOs
+[**list_slos**](ServiceLevelObjectivesApi.md#list_slos) | **GET** /api/v1/slo | Search SLOs
 [**update_slo**](ServiceLevelObjectivesApi.md#update_slo) | **PUT** /api/v1/slo/{slo_id} | Update a SLO
 
 
@@ -563,8 +563,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **list_sl_os**
-> SLOListResponse list_sl_os(ids)
+# **list_slos**
+> SLOListResponse list_slos(ids)
 
 Search SLOs
 
@@ -613,10 +613,10 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Search SLOs
-        api_response = api_instance.list_sl_os(ids)
+        api_response = api_instance.list_slos(ids)
         pprint(api_response)
     except datadog_api_client.v1.ApiException as e:
-        print("Exception when calling ServiceLevelObjectivesApi->list_sl_os: %s\n" % e)
+        print("Exception when calling ServiceLevelObjectivesApi->list_slos: %s\n" % e)
 ```
 
 ### Parameters
