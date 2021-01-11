@@ -21,9 +21,11 @@ from datadog_api_client.v2.model.api_key_create_request import APIKeyCreateReque
 from datadog_api_client.v2.model.api_key_response import APIKeyResponse
 from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateRequest
 from datadog_api_client.v2.model.api_keys_response import APIKeysResponse
+from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
 from datadog_api_client.v2.model.application_key_response import ApplicationKeyResponse
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
+from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
 
 
@@ -904,7 +906,7 @@ class KeyManagementApi(object):
             Keyword Args:
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (str): API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional] if omitted the server will use the default value of "name"
+                sort (APIKeysSort): API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
                 filter (str): Filter API keys by the specified string.. [optional]
                 filter_created_at_start (str): Only include API keys created on or after the specified date.. [optional]
                 filter_created_at_end (str): Only include API keys created on or before the specified date.. [optional]
@@ -985,7 +987,6 @@ class KeyManagementApi(object):
                 'nullable': [
                 ],
                 'enum': [
-                    'sort',
                 ],
                 'validation': [
                 ]
@@ -994,17 +995,6 @@ class KeyManagementApi(object):
                 'validations': {
                 },
                 'allowed_values': {
-                    ('sort',): {
-
-                        "CREATED_AT": "created_at",
-                        "-CREATED_AT": "-created_at",
-                        "LAST4": "last4",
-                        "-LAST4": "-last4",
-                        "MODIFIED_AT": "modified_at",
-                        "-MODIFIED_AT": "-modified_at",
-                        "NAME": "name",
-                        "-NAME": "-name"
-                    },
                 },
                 'openapi_types': {
                     'page_size':
@@ -1012,7 +1002,7 @@ class KeyManagementApi(object):
                     'page_number':
                         (int,),
                     'sort':
-                        (str,),
+                        (APIKeysSort,),
                     'filter':
                         (str,),
                     'filter_created_at_start':
@@ -1078,7 +1068,7 @@ class KeyManagementApi(object):
             Keyword Args:
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (str): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional] if omitted the server will use the default value of "name"
+                sort (ApplicationKeysSort): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
                 filter (str): Filter application keys by the specified string.. [optional]
                 filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
                 filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
@@ -1153,7 +1143,6 @@ class KeyManagementApi(object):
                 'nullable': [
                 ],
                 'enum': [
-                    'sort',
                 ],
                 'validation': [
                 ]
@@ -1162,15 +1151,6 @@ class KeyManagementApi(object):
                 'validations': {
                 },
                 'allowed_values': {
-                    ('sort',): {
-
-                        "CREATED_AT": "created_at",
-                        "-CREATED_AT": "-created_at",
-                        "LAST4": "last4",
-                        "-LAST4": "-last4",
-                        "NAME": "name",
-                        "-NAME": "-name"
-                    },
                 },
                 'openapi_types': {
                     'page_size':
@@ -1178,7 +1158,7 @@ class KeyManagementApi(object):
                     'page_number':
                         (int,),
                     'sort':
-                        (str,),
+                        (ApplicationKeysSort,),
                     'filter':
                         (str,),
                     'filter_created_at_start':
@@ -1232,7 +1212,7 @@ class KeyManagementApi(object):
             Keyword Args:
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (str): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional] if omitted the server will use the default value of "name"
+                sort (ApplicationKeysSort): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
                 filter (str): Filter application keys by the specified string.. [optional]
                 filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
                 filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
@@ -1307,7 +1287,6 @@ class KeyManagementApi(object):
                 'nullable': [
                 ],
                 'enum': [
-                    'sort',
                 ],
                 'validation': [
                 ]
@@ -1316,15 +1295,6 @@ class KeyManagementApi(object):
                 'validations': {
                 },
                 'allowed_values': {
-                    ('sort',): {
-
-                        "CREATED_AT": "created_at",
-                        "-CREATED_AT": "-created_at",
-                        "LAST4": "last4",
-                        "-LAST4": "-last4",
-                        "NAME": "name",
-                        "-NAME": "-name"
-                    },
                 },
                 'openapi_types': {
                     'page_size':
@@ -1332,7 +1302,7 @@ class KeyManagementApi(object):
                     'page_number':
                         (int,),
                     'sort':
-                        (str,),
+                        (ApplicationKeysSort,),
                     'filter':
                         (str,),
                     'filter_created_at_start':

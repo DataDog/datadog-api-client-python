@@ -30,6 +30,7 @@ datadog_api_client/v2/model/api_key_update_attributes.py
 datadog_api_client/v2/model/api_key_update_data.py
 datadog_api_client/v2/model/api_key_update_request.py
 datadog_api_client/v2/model/api_keys_response.py
+datadog_api_client/v2/model/api_keys_sort.py
 datadog_api_client/v2/model/api_keys_type.py
 datadog_api_client/v2/model/application_key_create_attributes.py
 datadog_api_client/v2/model/application_key_create_data.py
@@ -40,6 +41,7 @@ datadog_api_client/v2/model/application_key_response_included_item.py
 datadog_api_client/v2/model/application_key_update_attributes.py
 datadog_api_client/v2/model/application_key_update_data.py
 datadog_api_client/v2/model/application_key_update_request.py
+datadog_api_client/v2/model/application_keys_sort.py
 datadog_api_client/v2/model/application_keys_type.py
 datadog_api_client/v2/model/creator.py
 datadog_api_client/v2/model/dashboard_list_add_items_request.py
@@ -304,6 +306,7 @@ docs/APIKeyUpdateAttributes.md
 docs/APIKeyUpdateData.md
 docs/APIKeyUpdateRequest.md
 docs/APIKeysResponse.md
+docs/APIKeysSort.md
 docs/APIKeysType.md
 docs/ApplicationKeyCreateAttributes.md
 docs/ApplicationKeyCreateData.md
@@ -314,6 +317,7 @@ docs/ApplicationKeyResponseIncludedItem.md
 docs/ApplicationKeyUpdateAttributes.md
 docs/ApplicationKeyUpdateData.md
 docs/ApplicationKeyUpdateRequest.md
+docs/ApplicationKeysSort.md
 docs/ApplicationKeysType.md
 docs/Creator.md
 docs/DashboardListAddItemsRequest.md
@@ -587,6 +591,7 @@ test/test_api_key_update_attributes.py
 test/test_api_key_update_data.py
 test/test_api_key_update_request.py
 test/test_api_keys_response.py
+test/test_api_keys_sort.py
 test/test_api_keys_type.py
 test/test_application_key_create_attributes.py
 test/test_application_key_create_data.py
@@ -597,6 +602,7 @@ test/test_application_key_response_included_item.py
 test/test_application_key_update_attributes.py
 test/test_application_key_update_data.py
 test/test_application_key_update_request.py
+test/test_application_keys_sort.py
 test/test_application_keys_type.py
 test/test_creator.py
 test/test_dashboard_list_add_items_request.py
