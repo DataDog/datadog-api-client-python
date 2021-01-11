@@ -77,6 +77,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         id="id_example",
         name="MY_VARIABLE",
         parse_test_options=SyntheticsGlobalVariableParseTestOptions(
+            field="content-type",
             parser=SyntheticsGlobalVariableParseTestOptionsParser(
                 type=SyntheticsGlobalVariableParserType("raw"),
                 value="value_example",
@@ -705,6 +706,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         id="id_example",
         name="MY_VARIABLE",
         parse_test_options=SyntheticsGlobalVariableParseTestOptions(
+            field="content-type",
             parser=SyntheticsGlobalVariableParseTestOptionsParser(
                 type=SyntheticsGlobalVariableParserType("raw"),
                 value="value_example",
