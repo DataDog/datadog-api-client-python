@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - GetMonitor
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev24+dirty (python 3.7.9; os Darwin; arch
+        x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/monitor/12345
+  response:
+    body:
+      string: '{"errors":["Monitor not found"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '32'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 11 Jan 2021 17:06:26 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.3679038'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '3000'
+      x-ratelimit-period:
+      - '10'
+      x-ratelimit-remaining:
+      - '2999'
+      x-ratelimit-reset:
+      - '4'
+    status:
+      code: 404
+      message: Not Found
+version: 1

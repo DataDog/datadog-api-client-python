@@ -425,10 +425,21 @@ def undo(package_name, undo_operations, client):
 def execute_request(undo, context, client):
     """Execute the prepared request."""
     api_request = context["api_request"]
-    api_request["response"] = api_request["request"].call_with_http_info(
-        *api_request["args"], **api_request["kwargs"]
-    )
-    client.last_response.urllib3_response.close()
+    package_name = f"datadog_api_client.{version}"
+    exceptions = importlib.import_module(package_name + ".exceptions")
+
+    try:
+        api_request["response"] = api_request["request"].call_with_http_info(
+            *api_request["args"], **api_request["kwargs"]
+        )
+        client.last_response.urllib3_response.close()
+    except Exception as e:
+        # If we have an exception, make a stub response object to use for assertions
+        # Instead of finding the response class of the method, we use the fact that all
+        # responses returned have an ordered response of body|status|headers
+        # Each error type returns a different exception class (NotFound, Forbidden, ApiTypeError, etc)
+        # so just do a catch all here
+        api_request["response"] = [e.body, e.status, e.headers]
 
     api = api_request["api"]
     operation_id = api_request["request"].settings["operation_id"]
