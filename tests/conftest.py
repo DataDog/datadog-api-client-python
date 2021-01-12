@@ -276,6 +276,7 @@ def api(context, package_name, client, name):
     package = importlib.import_module(f"{package_name}.api.{module_name}_api")
     context["api"] = {
         "api": getattr(package, name + "Api")(client),
+        "package": package_name,
         "calls": [],
     }
 
@@ -425,8 +426,6 @@ def undo(package_name, undo_operations, client):
 def execute_request(undo, context, client):
     """Execute the prepared request."""
     api_request = context["api_request"]
-    package_name = f"datadog_api_client.{version}"
-    exceptions = importlib.import_module(package_name + ".exceptions")
 
     try:
         api_request["response"] = api_request["request"].call_with_http_info(
@@ -438,8 +437,12 @@ def execute_request(undo, context, client):
         # Instead of finding the response class of the method, we use the fact that all
         # responses returned have an ordered response of body|status|headers
         # Each error type returns a different exception class (NotFound, Forbidden, ApiTypeError, etc)
-        # so just do a catch all here
-        api_request["response"] = [e.body, e.status, e.headers]
+        # so we do a catch all and check if the superclass is `ApiException`
+        exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
+        if issubclass(e.__class__, exceptions.ApiException):
+            api_request["response"] = [e.body, e.status, e.headers]
+        else:
+            raise e
 
     api = api_request["api"]
     operation_id = api_request["request"].settings["operation_id"]
