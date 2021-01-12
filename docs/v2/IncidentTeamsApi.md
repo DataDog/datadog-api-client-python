@@ -252,7 +252,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_teams_api.IncidentTeamsApi(api_client)
     team_id = "team_id_example" # str | The ID of the incident team.
-    include = "users" # str | Specifies which types of related objects should be included in the response. (optional) if omitted the server will use the default value of "users"
+    include = IncidentRelatedObject("users") # IncidentRelatedObject | Specifies which types of related objects should be included in the response. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -277,7 +277,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **str**| The ID of the incident team. |
- **include** | **str**| Specifies which types of related objects should be included in the response. | [optional] if omitted the server will use the default value of "users"
+ **include** | **IncidentRelatedObject**| Specifies which types of related objects should be included in the response. | [optional]
 
 ### Return type
 
@@ -349,7 +349,7 @@ configuration.unstable_operations["list_incident_teams"] = True
 with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_teams_api.IncidentTeamsApi(api_client)
-    include = "users" # str | Specifies which types of related objects should be included in the response. (optional) if omitted the server will use the default value of "users"
+    include = IncidentRelatedObject("users") # IncidentRelatedObject | Specifies which types of related objects should be included in the response. (optional)
     page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
     page_offset = 0 # int | Specific offset to use as the beginning of the returned page. (optional) if omitted the server will use the default value of 0
     filter = "ExampleTeamName" # str | A search query that filters teams by name. (optional)
@@ -368,7 +368,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **include** | **str**| Specifies which types of related objects should be included in the response. | [optional] if omitted the server will use the default value of "users"
+ **include** | **IncidentRelatedObject**| Specifies which types of related objects should be included in the response. | [optional]
  **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
  **page_offset** | **int**| Specific offset to use as the beginning of the returned page. | [optional] if omitted the server will use the default value of 0
  **filter** | **str**| A search query that filters teams by name. | [optional]

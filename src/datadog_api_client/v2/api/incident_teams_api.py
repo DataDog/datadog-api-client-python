@@ -17,6 +17,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
 from datadog_api_client.v2.model.incident_team_create_request import IncidentTeamCreateRequest
 from datadog_api_client.v2.model.incident_team_response import IncidentTeamResponse
 from datadog_api_client.v2.model.incident_team_update_request import IncidentTeamUpdateRequest
@@ -294,7 +295,7 @@ class IncidentTeamsApi(object):
                 team_id (str): The ID of the incident team.
 
             Keyword Args:
-                include (str): Specifies which types of related objects should be included in the response.. [optional] if omitted the server will use the default value of "users"
+                include (IncidentRelatedObject): Specifies which types of related objects should be included in the response.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -366,7 +367,6 @@ class IncidentTeamsApi(object):
                 'nullable': [
                 ],
                 'enum': [
-                    'include',
                 ],
                 'validation': [
                 ]
@@ -375,16 +375,12 @@ class IncidentTeamsApi(object):
                 'validations': {
                 },
                 'allowed_values': {
-                    ('include',): {
-
-                        "USERS": "users"
-                    },
                 },
                 'openapi_types': {
                     'team_id':
                         (str,),
                     'include':
-                        (str,),
+                        (IncidentRelatedObject,),
                 },
                 'attribute_map': {
                     'team_id': 'team_id',
@@ -422,7 +418,7 @@ class IncidentTeamsApi(object):
 
 
             Keyword Args:
-                include (str): Specifies which types of related objects should be included in the response.. [optional] if omitted the server will use the default value of "users"
+                include (IncidentRelatedObject): Specifies which types of related objects should be included in the response.. [optional]
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_offset (int): Specific offset to use as the beginning of the returned page.. [optional] if omitted the server will use the default value of 0
                 filter (str): A search query that filters teams by name.. [optional]
@@ -495,7 +491,6 @@ class IncidentTeamsApi(object):
                 'nullable': [
                 ],
                 'enum': [
-                    'include',
                 ],
                 'validation': [
                 ]
@@ -504,14 +499,10 @@ class IncidentTeamsApi(object):
                 'validations': {
                 },
                 'allowed_values': {
-                    ('include',): {
-
-                        "USERS": "users"
-                    },
                 },
                 'openapi_types': {
                     'include':
-                        (str,),
+                        (IncidentRelatedObject,),
                     'page_size':
                         (int,),
                     'page_offset':

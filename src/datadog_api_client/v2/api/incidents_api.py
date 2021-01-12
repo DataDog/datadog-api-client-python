@@ -18,6 +18,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
+from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
@@ -294,7 +295,7 @@ class IncidentsApi(object):
                 incident_id (str): The UUID the incident.
 
             Keyword Args:
-                include ([str]): Specifies which types of related objects should be included in the response.. [optional]
+                include ([IncidentRelatedObject]): Specifies which types of related objects should be included in the response.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -366,7 +367,6 @@ class IncidentsApi(object):
                 'nullable': [
                 ],
                 'enum': [
-                    'include',
                 ],
                 'validation': [
                 ]
@@ -375,16 +375,12 @@ class IncidentsApi(object):
                 'validations': {
                 },
                 'allowed_values': {
-                    ('include',): {
-
-                        "USERS": "users"
-                    },
                 },
                 'openapi_types': {
                     'incident_id':
                         (str,),
                     'include':
-                        ([str],),
+                        ([IncidentRelatedObject],),
                 },
                 'attribute_map': {
                     'incident_id': 'incident_id',
@@ -423,7 +419,7 @@ class IncidentsApi(object):
 
 
             Keyword Args:
-                include ([str]): Specifies which types of related objects should be included in the response.. [optional]
+                include ([IncidentRelatedObject]): Specifies which types of related objects should be included in the response.. [optional]
                 page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
                 page_offset (int): Specific offset to use as the beginning of the returned page.. [optional] if omitted the server will use the default value of 0
                 _return_http_data_only (bool): response data without head status
@@ -494,7 +490,6 @@ class IncidentsApi(object):
                 'nullable': [
                 ],
                 'enum': [
-                    'include',
                 ],
                 'validation': [
                 ]
@@ -503,14 +498,10 @@ class IncidentsApi(object):
                 'validations': {
                 },
                 'allowed_values': {
-                    ('include',): {
-
-                        "USERS": "users"
-                    },
                 },
                 'openapi_types': {
                     'include':
-                        ([str],),
+                        ([IncidentRelatedObject],),
                     'page_size':
                         (int,),
                     'page_offset':
