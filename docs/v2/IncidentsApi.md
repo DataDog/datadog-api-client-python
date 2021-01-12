@@ -257,8 +257,8 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     api_instance = incidents_api.IncidentsApi(api_client)
     incident_id = "incident_id_example" # str | The UUID the incident.
     include = [
-        "users",
-    ] # [str] | Specifies which types of related objects should be included in the response. (optional)
+        IncidentRelatedObject("users"),
+    ] # [IncidentRelatedObject] | Specifies which types of related objects should be included in the response. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -283,7 +283,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **incident_id** | **str**| The UUID the incident. |
- **include** | **[str]**| Specifies which types of related objects should be included in the response. | [optional]
+ **include** | [**[IncidentRelatedObject]**](IncidentRelatedObject.md)| Specifies which types of related objects should be included in the response. | [optional]
 
 ### Return type
 
@@ -356,8 +356,8 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incidents_api.IncidentsApi(api_client)
     include = [
-        "users",
-    ] # [str] | Specifies which types of related objects should be included in the response. (optional)
+        IncidentRelatedObject("users"),
+    ] # [IncidentRelatedObject] | Specifies which types of related objects should be included in the response. (optional)
     page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
     page_offset = 0 # int | Specific offset to use as the beginning of the returned page. (optional) if omitted the server will use the default value of 0
 
@@ -375,7 +375,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **include** | **[str]**| Specifies which types of related objects should be included in the response. | [optional]
+ **include** | [**[IncidentRelatedObject]**](IncidentRelatedObject.md)| Specifies which types of related objects should be included in the response. | [optional]
  **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
  **page_offset** | **int**| Specific offset to use as the beginning of the returned page. | [optional] if omitted the server will use the default value of 0
 
