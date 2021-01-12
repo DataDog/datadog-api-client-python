@@ -78,6 +78,7 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         return {
             'parser': (SyntheticsGlobalVariableParseTestOptionsParser,),  # noqa: E501
             'type': (SyntheticsGlobalVariableParseTestOptionsType,),  # noqa: E501
+            'field': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -88,6 +89,7 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
     attribute_map = {
         'parser': 'parser',  # noqa: E501
         'type': 'type',  # noqa: E501
+        'field': 'field',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -140,6 +142,7 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            field (str): When type is `http_header`, name of the header to use to extract the value.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
