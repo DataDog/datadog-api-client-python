@@ -73,6 +73,10 @@ class UsageLogsHour(ModelNormal):
             'hour': (datetime,),  # noqa: E501
             'indexed_events_count': (int,),  # noqa: E501
             'ingested_events_bytes': (int,),  # noqa: E501
+            'logs_live_indexed_count': (int,),  # noqa: E501
+            'logs_live_ingested_bytes': (int,),  # noqa: E501
+            'logs_rehydrated_indexed_count': (int,),  # noqa: E501
+            'logs_rehydrated_ingested_bytes': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -85,6 +89,10 @@ class UsageLogsHour(ModelNormal):
         'hour': 'hour',  # noqa: E501
         'indexed_events_count': 'indexed_events_count',  # noqa: E501
         'ingested_events_bytes': 'ingested_events_bytes',  # noqa: E501
+        'logs_live_indexed_count': 'logs_live_indexed_count',  # noqa: E501
+        'logs_live_ingested_bytes': 'logs_live_ingested_bytes',  # noqa: E501
+        'logs_rehydrated_indexed_count': 'logs_rehydrated_indexed_count',  # noqa: E501
+        'logs_rehydrated_ingested_bytes': 'logs_rehydrated_ingested_bytes',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -137,6 +145,10 @@ class UsageLogsHour(ModelNormal):
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
             indexed_events_count (int): Contains the number of log events indexed.. [optional]  # noqa: E501
             ingested_events_bytes (int): Contains the number of log bytes ingested.. [optional]  # noqa: E501
+            logs_live_indexed_count (int): Contains the number of live log events indexed (data available as of December 1, 2020).. [optional]  # noqa: E501
+            logs_live_ingested_bytes (int): Contains the number of live log bytes ingested (data available as of December 1, 2020).. [optional]  # noqa: E501
+            logs_rehydrated_indexed_count (int): Contains the number of rehydrated log events indexed (data available as of December 1, 2020).. [optional]  # noqa: E501
+            logs_rehydrated_ingested_bytes (int): Contains the number of rehydrated log bytes ingested (data available as of December 1, 2020).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
