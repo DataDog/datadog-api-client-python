@@ -44,3 +44,82 @@ Feature: Logs Metrics
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.filter.query" is equal to "{{ logs_metric.data.attributes.filter.query }}-updated"
+
+  @generated @skip
+  Scenario: Get all log-based metrics returns "Too many requests" response
+    Given new "ListLogsMetrics" request
+    When the request is sent
+    Then the response status is 429 Too many requests
+
+  @generated @skip
+  Scenario: Create a log-based metric returns "Bad Request" response
+    Given new "CreateLogsMetric" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Create a log-based metric returns "Conflict" response
+    Given new "CreateLogsMetric" request
+    And body {}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip
+  Scenario: Create a log-based metric returns "Too many requests" response
+    Given new "CreateLogsMetric" request
+    And body {}
+    When the request is sent
+    Then the response status is 429 Too many requests
+
+  @generated @skip
+  Scenario: Delete a log-based metric returns "Not Found" response
+    Given new "DeleteLogsMetric" request
+    And request contains "metric_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Delete a log-based metric returns "Too many requests" response
+    Given new "DeleteLogsMetric" request
+    And request contains "metric_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 429 Too many requests
+
+  @generated @skip
+  Scenario: Get a log-based metric returns "Not Found" response
+    Given new "GetLogsMetric" request
+    And request contains "metric_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Get a log-based metric returns "Too many requests" response
+    Given new "GetLogsMetric" request
+    And request contains "metric_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 429 Too many requests
+
+  @generated @skip
+  Scenario: Update a log-based metric returns "Bad Request" response
+    Given new "UpdateLogsMetric" request
+    And request contains "metric_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update a log-based metric returns "Not Found" response
+    Given new "UpdateLogsMetric" request
+    And request contains "metric_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Update a log-based metric returns "Too many requests" response
+    Given new "UpdateLogsMetric" request
+    And request contains "metric_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 429 Too many requests

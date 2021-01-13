@@ -68,3 +68,78 @@ Feature: AWS Integration
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Delete an AWS integration returns "Bad Request" response
+    Given new "DeleteAWSAccount" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Delete an AWS integration returns "Conflict Error" response
+    Given new "DeleteAWSAccount" request
+    And body {}
+    When the request is sent
+    Then the response status is 409 Conflict Error
+
+  @generated @skip
+  Scenario: List all AWS integrations returns "Bad Request" response
+    Given new "ListAWSAccounts" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Create an AWS integration returns "Bad Request" response
+    Given new "CreateAWSAccount" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Create an AWS integration returns "Conflict Error" response
+    Given new "CreateAWSAccount" request
+    And body {}
+    When the request is sent
+    Then the response status is 409 Conflict Error
+
+  @generated @skip
+  Scenario: Update an AWS integration returns "Bad Request" response
+    Given new "UpdateAWSAccount" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update an AWS integration returns "Conflict Error" response
+    Given new "UpdateAWSAccount" request
+    And body {}
+    When the request is sent
+    Then the response status is 409 Conflict Error
+
+  @generated @skip
+  Scenario: Delete a tag filtering entry returns "Bad Request" response
+    Given new "DeleteAWSTagFilter" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get all AWS tag filters returns "Bad Request" response
+    Given new "ListAWSTagFilters" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Set an AWS tag filter returns "Bad Request" response
+    Given new "CreateAWSTagFilter" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Generate a new external ID returns "Bad Request" response
+    Given new "CreateNewAWSExternalID" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request

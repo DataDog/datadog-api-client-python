@@ -31,3 +31,25 @@ Feature: Logs
     And body {"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.{{ unique }}", "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"], "query": "datadog-agent", "to": "1600348600"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Aggregate events returns "Bad Request" response
+    Given new "AggregateLogs" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get a quick list of logs returns "Bad Request" response
+    Given operation "ListLogsGet" enabled
+    And new "ListLogsGet" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get a list of logs returns "Bad Request" response
+    Given operation "ListLogs" enabled
+    And new "ListLogs" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
