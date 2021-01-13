@@ -51,6 +51,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+configuration.unstable_operations["create_slo_correction"] = True
 
 # Enter a context with an instance of the API client
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
@@ -147,6 +148,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+configuration.unstable_operations["delete_slo_correction"] = True
 
 # Enter a context with an instance of the API client
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
@@ -230,6 +232,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+configuration.unstable_operations["get_slo_correction"] = True
 
 # Enter a context with an instance of the API client
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
@@ -314,6 +317,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+configuration.unstable_operations["list_slo_correction"] = True
 
 # Enter a context with an instance of the API client
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
@@ -393,6 +397,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
+configuration.unstable_operations["update_slo_correction"] = True
 
 # Enter a context with an instance of the API client
 with datadog_api_client.v1.ApiClient(configuration) as api_client:
