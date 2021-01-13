@@ -676,6 +676,43 @@
       "type": "safe"
     }
   },
+  "ListSLOCorrection": {
+    "tag": "Service Level Objective Corrections",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSLOCorrection": {
+    "tag": "Service Level Objective Corrections",
+    "undo": {
+      "operationId": "DeleteSLOCorrection",
+      "parameters": [
+        {
+          "name": "slo_correction_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSLOCorrection": {
+    "tag": "Service Level Objective Corrections",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSLOCorrection": {
+    "tag": "Service Level Objective Corrections",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSLOCorrection": {
+    "tag": "Service Level Objective Corrections",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteSLO": {
     "tag": "Service Level Objectives",
     "undo": {

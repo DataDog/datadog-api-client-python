@@ -1,0 +1,17 @@
+# SLOCorrectionResponseAttributes
+
+The attribute object associated with the SLO correction
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**category** | [**SLOCorrectionCategory**](SLOCorrectionCategory.md) |  | [optional] 
+**creator** | [**Creator**](Creator.md) |  | [optional] 
+**description** | **str** | Description of the correction being made. | [optional] 
+**end** | **int** | Ending time of the correction in epoch seconds | [optional] 
+**slo_id** | **str** | ID of the SLO that this correction will be applied to | [optional] 
+**start** | **int** | Starting time of the correction in epoch seconds | [optional] 
+**timezone** | **str** | Timezone of the timestamps provided | [optional] 
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+
+
