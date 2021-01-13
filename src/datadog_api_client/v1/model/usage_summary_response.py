@@ -95,6 +95,8 @@ class UsageSummaryResponse(ModelNormal):
             'infra_host_top99p_sum': (int,),  # noqa: E501
             'ingested_events_bytes_agg_sum': (int,),  # noqa: E501
             'last_updated': (datetime,),  # noqa: E501
+            'live_indexed_events_agg_sum': (int,),  # noqa: E501
+            'live_ingested_bytes_agg_sum': (int,),  # noqa: E501
             'mobile_rum_session_count_agg_sum': (int,),  # noqa: E501
             'mobile_rum_session_count_android_agg_sum': (int,),  # noqa: E501
             'mobile_rum_session_count_ios_agg_sum': (int,),  # noqa: E501
@@ -102,6 +104,8 @@ class UsageSummaryResponse(ModelNormal):
             'npm_host_top99p_sum': (int,),  # noqa: E501
             'profiling_container_agent_count_avg': (int,),  # noqa: E501
             'profiling_host_count_top99p_sum': (int,),  # noqa: E501
+            'rehydrated_indexed_events_agg_sum': (int,),  # noqa: E501
+            'rehydrated_ingested_bytes_agg_sum': (int,),  # noqa: E501
             'rum_session_count_agg_sum': (int,),  # noqa: E501
             'rum_total_session_count_agg_sum': (int,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
@@ -139,6 +143,8 @@ class UsageSummaryResponse(ModelNormal):
         'infra_host_top99p_sum': 'infra_host_top99p_sum',  # noqa: E501
         'ingested_events_bytes_agg_sum': 'ingested_events_bytes_agg_sum',  # noqa: E501
         'last_updated': 'last_updated',  # noqa: E501
+        'live_indexed_events_agg_sum': 'live_indexed_events_agg_sum',  # noqa: E501
+        'live_ingested_bytes_agg_sum': 'live_ingested_bytes_agg_sum',  # noqa: E501
         'mobile_rum_session_count_agg_sum': 'mobile_rum_session_count_agg_sum',  # noqa: E501
         'mobile_rum_session_count_android_agg_sum': 'mobile_rum_session_count_android_agg_sum',  # noqa: E501
         'mobile_rum_session_count_ios_agg_sum': 'mobile_rum_session_count_ios_agg_sum',  # noqa: E501
@@ -146,6 +152,8 @@ class UsageSummaryResponse(ModelNormal):
         'npm_host_top99p_sum': 'npm_host_top99p_sum',  # noqa: E501
         'profiling_container_agent_count_avg': 'profiling_container_agent_count_avg',  # noqa: E501
         'profiling_host_count_top99p_sum': 'profiling_host_count_top99p_sum',  # noqa: E501
+        'rehydrated_indexed_events_agg_sum': 'rehydrated_indexed_events_agg_sum',  # noqa: E501
+        'rehydrated_ingested_bytes_agg_sum': 'rehydrated_ingested_bytes_agg_sum',  # noqa: E501
         'rum_session_count_agg_sum': 'rum_session_count_agg_sum',  # noqa: E501
         'rum_total_session_count_agg_sum': 'rum_total_session_count_agg_sum',  # noqa: E501
         'start_date': 'start_date',  # noqa: E501
@@ -223,6 +231,8 @@ class UsageSummaryResponse(ModelNormal):
             infra_host_top99p_sum (int): Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             ingested_events_bytes_agg_sum (int): Shows the sum of all log bytes ingested over all hours in the current months for all organizations.. [optional]  # noqa: E501
             last_updated (datetime): Shows the the most recent hour in the current months for all organizations for which all usages were calculated.. [optional]  # noqa: E501
+            live_indexed_events_agg_sum (int): Shows the sum of all live logs indexed over all hours in the current months for all organizations (data available as of December 1, 2020).. [optional]  # noqa: E501
+            live_ingested_bytes_agg_sum (int): Shows the sum of all live logs bytes ingested over all hours in the current months for all organizations (data available as of December 1, 2020).. [optional]  # noqa: E501
             mobile_rum_session_count_agg_sum (int): Shows the sum of all mobile RUM Sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
             mobile_rum_session_count_android_agg_sum (int): Shows the sum of all mobile RUM Sessions on Android over all hours in the current months for all organizations.. [optional]  # noqa: E501
             mobile_rum_session_count_ios_agg_sum (int): Shows the sum of all mobile RUM Sessions on iOS over all hours in the current months for all organizations.. [optional]  # noqa: E501
@@ -230,6 +240,8 @@ class UsageSummaryResponse(ModelNormal):
             npm_host_top99p_sum (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             profiling_container_agent_count_avg (int): Shows the average number of profiled containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
             profiling_host_count_top99p_sum (int): Shows the 99th percentile of all profiled hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            rehydrated_indexed_events_agg_sum (int): Shows the sum of all rehydrated logs indexed over all hours in the current months for all organizations (data available as of December 1, 2020).. [optional]  # noqa: E501
+            rehydrated_ingested_bytes_agg_sum (int): Shows the sum of all rehydrated logs bytes ingested over all hours in the current months for all organizations (data available as of December 1, 2020).. [optional]  # noqa: E501
             rum_session_count_agg_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
             rum_total_session_count_agg_sum (int): Shows the sum of RUM Sessions (browser and mobile) over all hours in the current months for all organizations.. [optional]  # noqa: E501
             start_date (datetime): Shows the first date of usage in the current months for all organizations.. [optional]  # noqa: E501
