@@ -69,3 +69,46 @@ Feature: Logs Pipelines
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Update pipeline order returns "Bad Request" response
+    Given new "UpdateLogsPipelineOrder" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update pipeline order returns "Unprocessable Entity" response
+    Given new "UpdateLogsPipelineOrder" request
+    And body {}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip
+  Scenario: Create a pipeline returns "Bad Request" response
+    Given new "CreateLogsPipeline" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Delete a pipeline returns "Bad Request" response
+    Given new "DeleteLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get a pipeline returns "Bad Request" response
+    Given new "GetLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update a pipeline returns "Bad Request" response
+    Given new "UpdateLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request

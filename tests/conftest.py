@@ -276,6 +276,7 @@ def api(context, package_name, client, name):
     package = importlib.import_module(f"{package_name}.api.{module_name}_api")
     context["api"] = {
         "api": getattr(package, name + "Api")(client),
+        "package": package_name,
         "calls": [],
     }
 
@@ -425,10 +426,18 @@ def undo(package_name, undo_operations, client):
 def execute_request(undo, context, client):
     """Execute the prepared request."""
     api_request = context["api_request"]
-    api_request["response"] = api_request["request"].call_with_http_info(
-        *api_request["args"], **api_request["kwargs"]
-    )
-    client.last_response.urllib3_response.close()
+    exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
+
+    try:
+        api_request["response"] = api_request["request"].call_with_http_info(
+            *api_request["args"], **api_request["kwargs"]
+        )
+        client.last_response.urllib3_response.close()
+    except exceptions.ApiException as e:
+        # If we have an exception, make a stub response object to use for assertions
+        # Instead of finding the response class of the method, we use the fact that all
+        # responses returned have an ordered response of body|status|headers
+        api_request["response"] = [e.body, e.status, e.headers]
 
     api = api_request["api"]
     operation_id = api_request["request"].settings["operation_id"]

@@ -48,3 +48,83 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.title" is equal to "{{ incident.data.attributes.title }}-updated"
+
+  @generated @skip
+  Scenario: Get a list of incidents returns "Bad Request" response
+    Given operation "ListIncidents" enabled
+    And new "ListIncidents" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get a list of incidents returns "Not Found" response
+    Given operation "ListIncidents" enabled
+    And new "ListIncidents" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Create an incident returns "Bad Request" response
+    Given operation "CreateIncident" enabled
+    And new "CreateIncident" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Create an incident returns "Not Found" response
+    Given operation "CreateIncident" enabled
+    And new "CreateIncident" request
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Delete an existing incident returns "Bad Request" response
+    Given operation "DeleteIncident" enabled
+    And new "DeleteIncident" request
+    And request contains "incident_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Delete an existing incident returns "Not Found" response
+    Given operation "DeleteIncident" enabled
+    And new "DeleteIncident" request
+    And request contains "incident_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Get the details of an incident returns "Bad Request" response
+    Given operation "GetIncident" enabled
+    And new "GetIncident" request
+    And request contains "incident_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get the details of an incident returns "Not Found" response
+    Given operation "GetIncident" enabled
+    And new "GetIncident" request
+    And request contains "incident_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Update an existing incident returns "Bad Request" response
+    Given operation "UpdateIncident" enabled
+    And new "UpdateIncident" request
+    And request contains "incident_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update an existing incident returns "Not Found" response
+    Given operation "UpdateIncident" enabled
+    And new "UpdateIncident" request
+    And request contains "incident_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not Found

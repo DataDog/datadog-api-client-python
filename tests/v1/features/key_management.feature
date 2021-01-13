@@ -79,3 +79,99 @@ Feature: Key Management
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Create an API key returns "Bad Request" response
+    Given new "CreateAPIKey" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Delete an API key returns "Bad Request" response
+    Given new "DeleteAPIKey" request
+    And request contains "key" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Delete an API key returns "Not Found" response
+    Given new "DeleteAPIKey" request
+    And request contains "key" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Get API key returns "Not Found" response
+    Given new "GetAPIKey" request
+    And request contains "key" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Edit an API key returns "Bad Request" response
+    Given new "UpdateAPIKey" request
+    And request contains "key" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Edit an API key returns "Not Found" response
+    Given new "UpdateAPIKey" request
+    And request contains "key" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Create an application key returns "Bad Request" response
+    Given new "CreateApplicationKey" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Create an application key returns "Conflict" response
+    Given new "CreateApplicationKey" request
+    And body {}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip
+  Scenario: Delete an application key returns "Not Found" response
+    Given new "DeleteApplicationKey" request
+    And request contains "key" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Get an application key returns "Not Found" response
+    Given new "GetApplicationKey" request
+    And request contains "key" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Edit an application key returns "Bad Request" response
+    Given new "UpdateApplicationKey" request
+    And request contains "key" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Edit an application key returns "Not Found" response
+    Given new "UpdateApplicationKey" request
+    And request contains "key" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Edit an application key returns "Conflict" response
+    Given new "UpdateApplicationKey" request
+    And request contains "key" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 409 Conflict
