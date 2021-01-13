@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"id\": \"1\",\n    \"attributes\": {\n      \"slo_id\": \"{{ unique }}\",\n      \"start\": 1610034200,\n      \"end\": 1610034300,\n      \"category\": \"Other\",\n      \"timezone\": \"UTC\",\n      \"description\": \"Test Correction\"\n     },\n     \"type\": \"correction\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"correction\" in the system",
+    "key": "correction",
+    "tag": "Service Level Objective Corrections",
+    "operationId": "CreateSLOCorrection"
+  }
+]
