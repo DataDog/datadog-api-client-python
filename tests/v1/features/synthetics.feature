@@ -165,3 +165,192 @@ Feature: Synthetics
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Create a private location returns "Quota reached for private locations" response
+    Given new "CreatePrivateLocation" request
+    And body {}
+    When the request is sent
+    Then the response status is 402 Quota reached for private locations
+
+  @generated @skip
+  Scenario: Create a private location returns "Private locations are not activated for the user" response
+    Given new "CreatePrivateLocation" request
+    And body {}
+    When the request is sent
+    Then the response status is 404 Private locations are not activated for the user
+
+  @generated @skip
+  Scenario: Delete a private location returns "- Private locations are not activated for the user" response
+    Given new "DeletePrivateLocation" request
+    And request contains "location_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Private locations are not activated for the user
+
+  @generated @skip
+  Scenario: Get a private location returns "- Synthetic private locations are not activated for the user" response
+    Given new "GetPrivateLocation" request
+    And request contains "location_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic private locations are not activated for the user
+
+  @generated @skip
+  Scenario: Edit a private location returns "- Private locations are not activated for the user" response
+    Given new "UpdatePrivateLocation" request
+    And request contains "location_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 - Private locations are not activated for the user
+
+  @generated @skip
+  Scenario: Get the list of all tests returns "Synthetics is not activated for the user." response
+    Given new "ListTests" request
+    When the request is sent
+    Then the response status is 404 Synthetics is not activated for the user.
+
+  @generated @skip
+  Scenario: Create a test returns "- JSON format is wrong" response
+    Given new "CreateTest" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip
+  Scenario: Create a test returns "Test quota is reached" response
+    Given new "CreateTest" request
+    And body {}
+    When the request is sent
+    Then the response status is 402 Test quota is reached
+
+  @generated @skip
+  Scenario: Get a test configuration (browser) returns "- Synthetic is not activated for the user" response
+    Given new "GetBrowserTest" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Get the test's latest results summaries (browser) returns "- Synthetic is not activated for the user" response
+    Given new "GetBrowserTestLatestResults" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Get a test result (browser) returns "- Synthetic is not activated for the user" response
+    Given new "GetBrowserTestResult" request
+    And request contains "public_id" parameter from "<PATH>"
+    And request contains "result_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Delete tests returns "- JSON format is wrong" response
+    Given new "DeleteTests" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip
+  Scenario: Delete tests returns "- Tests to be deleted can't be found" response
+    Given new "DeleteTests" request
+    And body {}
+    When the request is sent
+    Then the response status is 404 - Tests to be deleted can't be found
+
+  @generated @skip
+  Scenario: Trigger some Synthetics tests for CI returns "JSON format is wrong" response
+    Given new "TriggerCITests" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 JSON format is wrong
+
+  @generated @skip
+  Scenario: Get a test configuration (API) returns "- Synthetic is not activated for the user" response
+    Given new "GetTest" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Edit a test returns "- JSON format is wrong" response
+    Given new "UpdateTest" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip
+  Scenario: Edit a test returns "- Synthetic is not activated for the user" response
+    Given new "UpdateTest" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Get the test's latest results summaries (API) returns "- Synthetic is not activated for the user" response
+    Given new "GetAPITestLatestResults" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Get a test result (API) returns "- Synthetic is not activated for the user" response
+    Given new "GetAPITestResult" request
+    And request contains "public_id" parameter from "<PATH>"
+    And request contains "result_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Pause or start a test returns "JSON format is wrong." response
+    Given new "UpdateTestPauseStatus" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 JSON format is wrong.
+
+  @generated @skip
+  Scenario: Pause or start a test returns "- Synthetic is not activated for the user" response
+    Given new "UpdateTestPauseStatus" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Create a global variable returns "Invalid request" response
+    Given new "CreateGlobalVariable" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Invalid request
+
+  @generated @skip
+  Scenario: Delete a global variable returns "JSON format is wrong" response
+    Given new "DeleteGlobalVariable" request
+    And request contains "variable_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 JSON format is wrong
+
+  @generated @skip
+  Scenario: Delete a global variable returns "Not found" response
+    Given new "DeleteGlobalVariable" request
+    And request contains "variable_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip
+  Scenario: Get a global variable returns "Not found" response
+    Given new "GetGlobalVariable" request
+    And request contains "variable_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip
+  Scenario: Edit a global variable returns "Invalid request" response
+    Given new "EditGlobalVariable" request
+    And request contains "variable_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Invalid request

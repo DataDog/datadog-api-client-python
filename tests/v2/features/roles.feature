@@ -115,3 +115,132 @@ Feature: Roles
     And body {"data": {"id": "{{ user.data.id}}", "type": "{{ user.data.type }}"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: List permissions returns "Bad Request" response
+    Given new "ListPermissions" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Create role returns "Bad Request" response
+    Given new "CreateRole" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Delete role returns "Not found" response
+    Given new "DeleteRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip
+  Scenario: Get a role returns "Not found" response
+    Given new "GetRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip
+  Scenario: Update a role returns "Bad Request" response
+    Given new "UpdateRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update a role returns "Not found" response
+    Given new "UpdateRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip
+  Scenario: Update a role returns "Unprocessable Entity" response
+    Given new "UpdateRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip
+  Scenario: Revoke permission returns "Bad Request" response
+    Given new "RemovePermissionFromRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Revoke permission returns "Not found" response
+    Given new "RemovePermissionFromRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip
+  Scenario: List permissions for a role returns "Not found" response
+    Given new "ListRolePermissions" request
+    And request contains "role_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip
+  Scenario: Grant permission to a role returns "Bad Request" response
+    Given new "AddPermissionToRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Grant permission to a role returns "Not found" response
+    Given new "AddPermissionToRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip
+  Scenario: Remove a user from a role returns "Bad Request" response
+    Given new "RemoveUserFromRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Remove a user from a role returns "Not found" response
+    Given new "RemoveUserFromRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip
+  Scenario: Get all users of a role returns "Not found" response
+    Given new "ListRoleUsers" request
+    And request contains "role_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip
+  Scenario: Add a user to a role returns "Bad Request" response
+    Given new "AddUserToRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Add a user to a role returns "Not found" response
+    Given new "AddUserToRole" request
+    And request contains "role_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not found

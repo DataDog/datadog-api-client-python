@@ -42,3 +42,40 @@ Feature: Dashboard Lists
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Create a dashboard list returns "Bad Request" response
+    Given new "CreateDashboardList" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Delete a dashboard list returns "Not Found" response
+    Given new "DeleteDashboardList" request
+    And request contains "list_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Get a dashboard list returns "Not Found" response
+    Given new "GetDashboardList" request
+    And request contains "list_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Update a dashboard list returns "Bad Request" response
+    Given new "UpdateDashboardList" request
+    And request contains "list_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update a dashboard list returns "Not Found" response
+    Given new "UpdateDashboardList" request
+    And request contains "list_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Not Found

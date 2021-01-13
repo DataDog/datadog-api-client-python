@@ -42,3 +42,37 @@ Feature: Azure Integration
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Delete an Azure integration returns "Bad Request" response
+    Given new "DeleteAzureIntegration" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: List all Azure integrations returns "Bad Request" response
+    Given new "ListAzureIntegration" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Create an Azure integration returns "Bad Request" response
+    Given new "CreateAzureIntegration" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update an Azure integration returns "Bad Request" response
+    Given new "UpdateAzureIntegration" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update Azure integration host filters returns "Bad Request" response
+    Given new "UpdateAzureHostFilters" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request

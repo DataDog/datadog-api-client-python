@@ -10,12 +10,19 @@ Feature: Logs
   your logs compressed. Add the `Content-Encoding: gzip` header to the
   request when sending compressed logs.
 
-  @generated @skip
-  Scenario: Get a list of logs returns "OK" response
+  Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
     And an instance of "Logs" API
     And new "ListLogs" request
     And body {}
+
+  @generated @skip
+  Scenario: Get a list of logs returns "OK" response
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get a list of logs returns "Bad Request" response
+    When the request is sent
+    Then the response status is 400 Bad Request

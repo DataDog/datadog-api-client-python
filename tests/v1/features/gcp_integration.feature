@@ -36,3 +36,30 @@ Feature: GCP Integration
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Delete a GCP integration returns "Bad Request" response
+    Given new "DeleteGCPIntegration" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: List all GCP integrations returns "Bad Request" response
+    Given new "ListGCPIntegration" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Create a GCP integration returns "Bad Request" response
+    Given new "CreateGCPIntegration" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update a GCP integration returns "Bad Request" response
+    Given new "UpdateGCPIntegration" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request

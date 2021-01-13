@@ -47,3 +47,37 @@ Feature: Logs Indexes
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Update indexes order returns "Bad Request" response
+    Given operation "UpdateLogsIndexOrder" enabled
+    And new "UpdateLogsIndexOrder" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get an index returns "Not Found" response
+    Given operation "GetLogsIndex" enabled
+    And new "GetLogsIndex" request
+    And request contains "name" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Update an index returns "Invalid Parameter Error" response
+    Given operation "UpdateLogsIndex" enabled
+    And new "UpdateLogsIndex" request
+    And request contains "name" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Invalid Parameter Error
+
+  @generated @skip
+  Scenario: Update an index returns "Too Many Requests" response
+    Given operation "UpdateLogsIndex" enabled
+    And new "UpdateLogsIndex" request
+    And request contains "name" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 429 Too Many Requests

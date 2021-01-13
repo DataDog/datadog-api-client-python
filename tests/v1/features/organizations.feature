@@ -42,3 +42,39 @@ Feature: Organizations
     And request contains "public_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Create a child organization returns "Bad Request" response
+    Given new "CreateChildOrg" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get organization information returns "Bad Request" response
+    Given new "GetOrg" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update your organization returns "Bad Request" response
+    Given new "UpdateOrg" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Upload IdP metadata returns "Bad Request" response
+    Given new "UploadIdPForOrg" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Upload IdP metadata returns "Unsupported Media Type" response
+    Given new "UploadIdPForOrg" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 415 Unsupported Media Type

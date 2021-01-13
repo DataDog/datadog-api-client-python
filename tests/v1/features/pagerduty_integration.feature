@@ -37,3 +37,40 @@ Feature: PagerDuty Integration
     And body {}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Create a new service object returns "Bad Request" response
+    Given new "CreatePagerDutyIntegrationService" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Delete a single service object returns "Item Not Found" response
+    Given new "DeletePagerDutyIntegrationService" request
+    And request contains "service_name" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Item Not Found
+
+  @generated @skip
+  Scenario: Get a single service object returns "Item Not Found" response
+    Given new "GetPagerDutyIntegrationService" request
+    And request contains "service_name" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Item Not Found
+
+  @generated @skip
+  Scenario: Update a single service object returns "Bad Request" response
+    Given new "UpdatePagerDutyIntegrationService" request
+    And request contains "service_name" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update a single service object returns "Item Not Found" response
+    Given new "UpdatePagerDutyIntegrationService" request
+    And request contains "service_name" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 Item Not Found
