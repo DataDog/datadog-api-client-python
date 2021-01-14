@@ -77,7 +77,7 @@ class SyntheticsStep(ModelNormal):
             'allow_failure': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'params': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            'timeout': (float,),  # noqa: E501
+            'timeout': (int,),  # noqa: E501
             'type': (SyntheticsStepType,),  # noqa: E501
         }
 
@@ -143,7 +143,7 @@ class SyntheticsStep(ModelNormal):
             allow_failure (bool): A boolean set to allow this step to fail.. [optional]  # noqa: E501
             name (str): The name of the step.. [optional]  # noqa: E501
             params ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): The parameters of the step.. [optional]  # noqa: E501
-            timeout (float): The time before declaring a step failed.. [optional]  # noqa: E501
+            timeout (int): The time before declaring a step failed.. [optional]  # noqa: E501
             type (SyntheticsStepType): [optional]  # noqa: E501
         """
 

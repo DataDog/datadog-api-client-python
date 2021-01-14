@@ -2421,6 +2421,7 @@ components:
         limit:
           default: 10
           description: The maximum buckets to return for this group by
+          format: int64
           type: integer
         missing:
           $ref: '#/components/schemas/LogsGroupByMissing'
@@ -2757,6 +2758,7 @@ components:
       properties:
         timeOffset:
           description: The time offset (in seconds) to apply to the query.
+          format: int64
           type: integer
         timezone:
           default: UTC
@@ -2771,6 +2773,7 @@ components:
         elapsed:
           description: The time elapsed in milliseconds
           example: 132
+          format: int64
           type: integer
         page:
           description: Paging attributes.
