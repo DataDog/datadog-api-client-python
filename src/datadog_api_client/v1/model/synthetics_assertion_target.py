@@ -79,7 +79,7 @@ class SyntheticsAssertionTarget(ModelNormal):
             'operator': (SyntheticsAssertionOperator,),  # noqa: E501
             'type': (SyntheticsAssertionType,),  # noqa: E501
             '_property': (str,),  # noqa: E501
-            'target': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'target': (bool, date, datetime, dict, float, int, list, str,),  # noqa: E501
         }
 
     @cached_property
@@ -145,7 +145,7 @@ class SyntheticsAssertionTarget(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             _property (str): The associated assertion property.. [optional]  # noqa: E501
-            target ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Value used by the operator.. [optional]  # noqa: E501
+            target (bool, date, datetime, dict, float, int, list, str): Value used by the operator.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
