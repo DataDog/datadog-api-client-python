@@ -69,7 +69,7 @@ class SyntheticsTriggerCITestsResponseLocations(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (float,),  # noqa: E501
+            'id': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
         }
 
@@ -129,7 +129,7 @@ class SyntheticsTriggerCITestsResponseLocations(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (float): Unique identifier of the location.. [optional]  # noqa: E501
+            id (int): Unique identifier of the location.. [optional]  # noqa: E501
             name (str): Name of the location.. [optional]  # noqa: E501
         """
 

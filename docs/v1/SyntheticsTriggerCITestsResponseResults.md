@@ -5,7 +5,7 @@ Information about a single test run.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **device** | [**SyntheticsDeviceID**](SyntheticsDeviceID.md) |  | [optional] 
-**location** | **float** | The location ID of the test run. | [optional] 
+**location** | **int** | The location ID of the test run. | [optional] 
 **public_id** | **str** | The public ID of the Synthetics test. | [optional] 
 **result_id** | **str** | ID of the result. | [optional] 
 

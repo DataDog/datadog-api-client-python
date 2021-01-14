@@ -75,7 +75,7 @@ class SyntheticsTriggerCITestsResponseResults(ModelNormal):
         lazy_import()
         return {
             'device': (SyntheticsDeviceID,),  # noqa: E501
-            'location': (float,),  # noqa: E501
+            'location': (int,),  # noqa: E501
             'public_id': (str,),  # noqa: E501
             'result_id': (str,),  # noqa: E501
         }
@@ -139,7 +139,7 @@ class SyntheticsTriggerCITestsResponseResults(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             device (SyntheticsDeviceID): [optional]  # noqa: E501
-            location (float): The location ID of the test run.. [optional]  # noqa: E501
+            location (int): The location ID of the test run.. [optional]  # noqa: E501
             public_id (str): The public ID of the Synthetics test.. [optional]  # noqa: E501
             result_id (str): ID of the result.. [optional]  # noqa: E501
         """
