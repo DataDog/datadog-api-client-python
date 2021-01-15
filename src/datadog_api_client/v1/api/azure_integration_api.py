@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -99,7 +99,7 @@ class AzureIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_azure_integration = Endpoint(
+        self.create_azure_integration = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [
@@ -220,7 +220,7 @@ class AzureIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.delete_azure_integration = Endpoint(
+        self.delete_azure_integration = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [
@@ -336,7 +336,7 @@ class AzureIntegrationApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_azure_integration = Endpoint(
+        self.list_azure_integration = _Endpoint(
             settings={
                 'response_type': (AzureAccountListResponse,),
                 'auth': [
@@ -449,7 +449,7 @@ class AzureIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_azure_host_filters = Endpoint(
+        self.update_azure_host_filters = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [
@@ -570,7 +570,7 @@ class AzureIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_azure_integration = Endpoint(
+        self.update_azure_integration = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [

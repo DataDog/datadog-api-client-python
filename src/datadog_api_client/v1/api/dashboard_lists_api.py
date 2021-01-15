@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -100,7 +100,7 @@ class DashboardListsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_dashboard_list = Endpoint(
+        self.create_dashboard_list = _Endpoint(
             settings={
                 'response_type': (DashboardList,),
                 'auth': [
@@ -221,7 +221,7 @@ class DashboardListsApi(object):
                 list_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_dashboard_list = Endpoint(
+        self.delete_dashboard_list = _Endpoint(
             settings={
                 'response_type': (DashboardListDeleteResponse,),
                 'auth': [
@@ -341,7 +341,7 @@ class DashboardListsApi(object):
                 list_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_dashboard_list = Endpoint(
+        self.get_dashboard_list = _Endpoint(
             settings={
                 'response_type': (DashboardList,),
                 'auth': [
@@ -456,7 +456,7 @@ class DashboardListsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_dashboard_lists = Endpoint(
+        self.list_dashboard_lists = _Endpoint(
             settings={
                 'response_type': (DashboardListListResponse,),
                 'auth': [
@@ -573,7 +573,7 @@ class DashboardListsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_dashboard_list = Endpoint(
+        self.update_dashboard_list = _Endpoint(
             settings={
                 'response_type': (DashboardList,),
                 'auth': [

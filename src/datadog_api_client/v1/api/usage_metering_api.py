@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -125,7 +125,7 @@ class UsageMeteringApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.get_daily_custom_reports = Endpoint(
+        self.get_daily_custom_reports = _Endpoint(
             settings={
                 'response_type': (UsageCustomReportsResponse,),
                 'auth': [
@@ -259,7 +259,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_incident_management = Endpoint(
+        self.get_incident_management = _Endpoint(
             settings={
                 'response_type': (UsageIncidentManagementResponse,),
                 'auth': [
@@ -385,7 +385,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_ingested_spans = Endpoint(
+        self.get_ingested_spans = _Endpoint(
             settings={
                 'response_type': (UsageIngestedSpansResponse,),
                 'auth': [
@@ -509,7 +509,7 @@ class UsageMeteringApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.get_monthly_custom_reports = Endpoint(
+        self.get_monthly_custom_reports = _Endpoint(
             settings={
                 'response_type': (UsageCustomReportsResponse,),
                 'auth': [
@@ -642,7 +642,7 @@ class UsageMeteringApi(object):
                 report_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_specified_daily_custom_reports = Endpoint(
+        self.get_specified_daily_custom_reports = _Endpoint(
             settings={
                 'response_type': (UsageSpecifiedCustomReportsResponse,),
                 'auth': [
@@ -762,7 +762,7 @@ class UsageMeteringApi(object):
                 report_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_specified_monthly_custom_reports = Endpoint(
+        self.get_specified_monthly_custom_reports = _Endpoint(
             settings={
                 'response_type': (UsageSpecifiedCustomReportsResponse,),
                 'auth': [
@@ -883,7 +883,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_tracing_without_limits = Endpoint(
+        self.get_tracing_without_limits = _Endpoint(
             settings={
                 'response_type': (UsageTracingWithoutLimitsResponse,),
                 'auth': [
@@ -1009,7 +1009,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_analyzed_logs = Endpoint(
+        self.get_usage_analyzed_logs = _Endpoint(
             settings={
                 'response_type': (UsageAnalyzedLogsResponse,),
                 'auth': [
@@ -1141,7 +1141,7 @@ class UsageMeteringApi(object):
                 fields
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_attribution = Endpoint(
+        self.get_usage_attribution = _Endpoint(
             settings={
                 'response_type': (UsageAttributionResponse,),
                 'auth': [
@@ -1278,7 +1278,7 @@ class UsageMeteringApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_billable_summary = Endpoint(
+        self.get_usage_billable_summary = _Endpoint(
             settings={
                 'response_type': (UsageBillableSummaryResponse,),
                 'auth': [
@@ -1397,7 +1397,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_fargate = Endpoint(
+        self.get_usage_fargate = _Endpoint(
             settings={
                 'response_type': (UsageFargateResponse,),
                 'auth': [
@@ -1523,7 +1523,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_hosts = Endpoint(
+        self.get_usage_hosts = _Endpoint(
             settings={
                 'response_type': (UsageHostsResponse,),
                 'auth': [
@@ -1649,7 +1649,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_indexed_spans = Endpoint(
+        self.get_usage_indexed_spans = _Endpoint(
             settings={
                 'response_type': (UsageIndexedSpansResponse,),
                 'auth': [
@@ -1775,7 +1775,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_lambda = Endpoint(
+        self.get_usage_lambda = _Endpoint(
             settings={
                 'response_type': (UsageLambdaResponse,),
                 'auth': [
@@ -1901,7 +1901,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_logs = Endpoint(
+        self.get_usage_logs = _Endpoint(
             settings={
                 'response_type': (UsageLogsResponse,),
                 'auth': [
@@ -2028,7 +2028,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_logs_by_index = Endpoint(
+        self.get_usage_logs_by_index = _Endpoint(
             settings={
                 'response_type': (UsageLogsByIndexResponse,),
                 'auth': [
@@ -2160,7 +2160,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_network_flows = Endpoint(
+        self.get_usage_network_flows = _Endpoint(
             settings={
                 'response_type': (UsageNetworkFlowsResponse,),
                 'auth': [
@@ -2286,7 +2286,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_network_hosts = Endpoint(
+        self.get_usage_network_hosts = _Endpoint(
             settings={
                 'response_type': (UsageNetworkHostsResponse,),
                 'auth': [
@@ -2412,7 +2412,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_profiling = Endpoint(
+        self.get_usage_profiling = _Endpoint(
             settings={
                 'response_type': (UsageProfilingResponse,),
                 'auth': [
@@ -2539,7 +2539,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_rum_sessions = Endpoint(
+        self.get_usage_rum_sessions = _Endpoint(
             settings={
                 'response_type': (UsageRumSessionsResponse,),
                 'auth': [
@@ -2670,7 +2670,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_snmp = Endpoint(
+        self.get_usage_snmp = _Endpoint(
             settings={
                 'response_type': (UsageSNMPResponse,),
                 'auth': [
@@ -2797,7 +2797,7 @@ class UsageMeteringApi(object):
                 start_month
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_summary = Endpoint(
+        self.get_usage_summary = _Endpoint(
             settings={
                 'response_type': (UsageSummaryResponse,),
                 'auth': [
@@ -2928,7 +2928,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_synthetics = Endpoint(
+        self.get_usage_synthetics = _Endpoint(
             settings={
                 'response_type': (UsageSyntheticsResponse,),
                 'auth': [
@@ -3054,7 +3054,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_synthetics_api = Endpoint(
+        self.get_usage_synthetics_api = _Endpoint(
             settings={
                 'response_type': (UsageSyntheticsAPIResponse,),
                 'auth': [
@@ -3180,7 +3180,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_synthetics_browser = Endpoint(
+        self.get_usage_synthetics_browser = _Endpoint(
             settings={
                 'response_type': (UsageSyntheticsBrowserResponse,),
                 'auth': [
@@ -3306,7 +3306,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_timeseries = Endpoint(
+        self.get_usage_timeseries = _Endpoint(
             settings={
                 'response_type': (UsageTimeseriesResponse,),
                 'auth': [
@@ -3433,7 +3433,7 @@ class UsageMeteringApi(object):
                 month
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_top_avg_metrics = Endpoint(
+        self.get_usage_top_avg_metrics = _Endpoint(
             settings={
                 'response_type': (UsageTopAvgMetricsResponse,),
                 'auth': [
@@ -3571,7 +3571,7 @@ class UsageMeteringApi(object):
                 start_hr
             return self.call_with_http_info(**kwargs)
 
-        self.get_usage_trace = Endpoint(
+        self.get_usage_trace = _Endpoint(
             settings={
                 'response_type': (UsageTraceResponse,),
                 'auth': [

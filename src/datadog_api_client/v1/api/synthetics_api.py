@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -112,7 +112,7 @@ class SyntheticsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_global_variable = Endpoint(
+        self.create_global_variable = _Endpoint(
             settings={
                 'response_type': (SyntheticsGlobalVariable,),
                 'auth': [
@@ -233,7 +233,7 @@ class SyntheticsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_private_location = Endpoint(
+        self.create_private_location = _Endpoint(
             settings={
                 'response_type': (SyntheticsPrivateLocationCreationResponse,),
                 'auth': [
@@ -354,7 +354,7 @@ class SyntheticsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_test = Endpoint(
+        self.create_test = _Endpoint(
             settings={
                 'response_type': (SyntheticsTestDetails,),
                 'auth': [
@@ -475,7 +475,7 @@ class SyntheticsApi(object):
                 variable_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_global_variable = Endpoint(
+        self.delete_global_variable = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -595,7 +595,7 @@ class SyntheticsApi(object):
                 location_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_private_location = Endpoint(
+        self.delete_private_location = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -715,7 +715,7 @@ class SyntheticsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.delete_tests = Endpoint(
+        self.delete_tests = _Endpoint(
             settings={
                 'response_type': (SyntheticsDeleteTestsResponse,),
                 'auth': [
@@ -840,7 +840,7 @@ class SyntheticsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.edit_global_variable = Endpoint(
+        self.edit_global_variable = _Endpoint(
             settings={
                 'response_type': (SyntheticsGlobalVariable,),
                 'auth': [
@@ -970,7 +970,7 @@ class SyntheticsApi(object):
                 public_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_api_test_latest_results = Endpoint(
+        self.get_api_test_latest_results = _Endpoint(
             settings={
                 'response_type': (SyntheticsGetAPITestLatestResultsResponse,),
                 'auth': [
@@ -1110,7 +1110,7 @@ class SyntheticsApi(object):
                 result_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_api_test_result = Endpoint(
+        self.get_api_test_result = _Endpoint(
             settings={
                 'response_type': (SyntheticsAPITestResultFull,),
                 'auth': [
@@ -1236,7 +1236,7 @@ class SyntheticsApi(object):
                 public_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_browser_test = Endpoint(
+        self.get_browser_test = _Endpoint(
             settings={
                 'response_type': (SyntheticsTestDetails,),
                 'auth': [
@@ -1359,7 +1359,7 @@ class SyntheticsApi(object):
                 public_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_browser_test_latest_results = Endpoint(
+        self.get_browser_test_latest_results = _Endpoint(
             settings={
                 'response_type': (SyntheticsGetBrowserTestLatestResultsResponse,),
                 'auth': [
@@ -1499,7 +1499,7 @@ class SyntheticsApi(object):
                 result_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_browser_test_result = Endpoint(
+        self.get_browser_test_result = _Endpoint(
             settings={
                 'response_type': (SyntheticsBrowserTestResultFull,),
                 'auth': [
@@ -1625,7 +1625,7 @@ class SyntheticsApi(object):
                 variable_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_global_variable = Endpoint(
+        self.get_global_variable = _Endpoint(
             settings={
                 'response_type': (SyntheticsGlobalVariable,),
                 'auth': [
@@ -1745,7 +1745,7 @@ class SyntheticsApi(object):
                 location_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_private_location = Endpoint(
+        self.get_private_location = _Endpoint(
             settings={
                 'response_type': (SyntheticsPrivateLocation,),
                 'auth': [
@@ -1865,7 +1865,7 @@ class SyntheticsApi(object):
                 public_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_test = Endpoint(
+        self.get_test = _Endpoint(
             settings={
                 'response_type': (SyntheticsTestDetails,),
                 'auth': [
@@ -1980,7 +1980,7 @@ class SyntheticsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_locations = Endpoint(
+        self.list_locations = _Endpoint(
             settings={
                 'response_type': (SyntheticsLocations,),
                 'auth': [
@@ -2088,7 +2088,7 @@ class SyntheticsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_tests = Endpoint(
+        self.list_tests = _Endpoint(
             settings={
                 'response_type': (SyntheticsListTestsResponse,),
                 'auth': [
@@ -2201,7 +2201,7 @@ class SyntheticsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.trigger_ci_tests = Endpoint(
+        self.trigger_ci_tests = _Endpoint(
             settings={
                 'response_type': (SyntheticsTriggerCITestsResponse,),
                 'auth': [
@@ -2326,7 +2326,7 @@ class SyntheticsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_private_location = Endpoint(
+        self.update_private_location = _Endpoint(
             settings={
                 'response_type': (SyntheticsPrivateLocation,),
                 'auth': [
@@ -2457,7 +2457,7 @@ class SyntheticsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_test = Endpoint(
+        self.update_test = _Endpoint(
             settings={
                 'response_type': (SyntheticsTestDetails,),
                 'auth': [
@@ -2588,7 +2588,7 @@ class SyntheticsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_test_pause_status = Endpoint(
+        self.update_test_pause_status = _Endpoint(
             settings={
                 'response_type': (bool,),
                 'auth': [

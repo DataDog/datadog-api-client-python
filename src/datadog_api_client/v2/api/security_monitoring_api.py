@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint
+from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -104,7 +104,7 @@ class SecurityMonitoringApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_security_monitoring_rule = Endpoint(
+        self.create_security_monitoring_rule = _Endpoint(
             settings={
                 'response_type': (SecurityMonitoringRuleResponse,),
                 'auth': [
@@ -225,7 +225,7 @@ class SecurityMonitoringApi(object):
                 rule_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_security_monitoring_rule = Endpoint(
+        self.delete_security_monitoring_rule = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -345,7 +345,7 @@ class SecurityMonitoringApi(object):
                 rule_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_security_monitoring_rule = Endpoint(
+        self.get_security_monitoring_rule = _Endpoint(
             settings={
                 'response_type': (SecurityMonitoringRuleResponse,),
                 'auth': [
@@ -462,7 +462,7 @@ class SecurityMonitoringApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_security_monitoring_rules = Endpoint(
+        self.list_security_monitoring_rules = _Endpoint(
             settings={
                 'response_type': (SecurityMonitoringListRulesResponse,),
                 'auth': [
@@ -586,7 +586,7 @@ class SecurityMonitoringApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_security_monitoring_signals = Endpoint(
+        self.list_security_monitoring_signals = _Endpoint(
             settings={
                 'response_type': (SecurityMonitoringSignalsListResponse,),
                 'auth': [
@@ -730,7 +730,7 @@ class SecurityMonitoringApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.search_security_monitoring_signals = Endpoint(
+        self.search_security_monitoring_signals = _Endpoint(
             settings={
                 'response_type': (SecurityMonitoringSignalsListResponse,),
                 'auth': [
@@ -853,7 +853,7 @@ class SecurityMonitoringApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_security_monitoring_rule = Endpoint(
+        self.update_security_monitoring_rule = _Endpoint(
             settings={
                 'response_type': (SecurityMonitoringRuleResponse,),
                 'auth': [

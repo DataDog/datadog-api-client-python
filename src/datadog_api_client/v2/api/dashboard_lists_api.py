@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint
+from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -108,7 +108,7 @@ class DashboardListsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_dashboard_list_items = Endpoint(
+        self.create_dashboard_list_items = _Endpoint(
             settings={
                 'response_type': (DashboardListAddItemsResponse,),
                 'auth': [
@@ -239,7 +239,7 @@ class DashboardListsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.delete_dashboard_list_items = Endpoint(
+        self.delete_dashboard_list_items = _Endpoint(
             settings={
                 'response_type': (DashboardListDeleteItemsResponse,),
                 'auth': [
@@ -366,7 +366,7 @@ class DashboardListsApi(object):
                 dashboard_list_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_dashboard_list_items = Endpoint(
+        self.get_dashboard_list_items = _Endpoint(
             settings={
                 'response_type': (DashboardListItems,),
                 'auth': [
@@ -490,7 +490,7 @@ class DashboardListsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_dashboard_list_items = Endpoint(
+        self.update_dashboard_list_items = _Endpoint(
             settings={
                 'response_type': (DashboardListUpdateItemsResponse,),
                 'auth': [

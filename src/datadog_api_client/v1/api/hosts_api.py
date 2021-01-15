@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -97,7 +97,7 @@ class HostsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.get_host_totals = Endpoint(
+        self.get_host_totals = _Endpoint(
             settings={
                 'response_type': (HostTotals,),
                 'auth': [
@@ -218,7 +218,7 @@ class HostsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_hosts = Endpoint(
+        self.list_hosts = _Endpoint(
             settings={
                 'response_type': (HostListResponse,),
                 'auth': [
@@ -375,7 +375,7 @@ class HostsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.mute_host = Endpoint(
+        self.mute_host = _Endpoint(
             settings={
                 'response_type': (HostMuteResponse,),
                 'auth': [
@@ -502,7 +502,7 @@ class HostsApi(object):
                 host_name
             return self.call_with_http_info(**kwargs)
 
-        self.unmute_host = Endpoint(
+        self.unmute_host = _Endpoint(
             settings={
                 'response_type': (HostMuteResponse,),
                 'auth': [

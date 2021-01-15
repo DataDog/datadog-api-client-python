@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint
+from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -102,7 +102,7 @@ class IncidentsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_incident = Endpoint(
+        self.create_incident = _Endpoint(
             settings={
                 'response_type': (IncidentResponse,),
                 'auth': [
@@ -223,7 +223,7 @@ class IncidentsApi(object):
                 incident_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_incident = Endpoint(
+        self.delete_incident = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -344,7 +344,7 @@ class IncidentsApi(object):
                 incident_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_incident = Endpoint(
+        self.get_incident = _Endpoint(
             settings={
                 'response_type': (IncidentResponse,),
                 'auth': [
@@ -468,7 +468,7 @@ class IncidentsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_incidents = Endpoint(
+        self.list_incidents = _Endpoint(
             settings={
                 'response_type': (IncidentsResponse,),
                 'auth': [
@@ -601,7 +601,7 @@ class IncidentsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_incident = Endpoint(
+        self.update_incident = _Endpoint(
             settings={
                 'response_type': (IncidentResponse,),
                 'auth': [

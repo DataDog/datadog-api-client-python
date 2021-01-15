@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -103,7 +103,7 @@ class OrganizationsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_child_org = Endpoint(
+        self.create_child_org = _Endpoint(
             settings={
                 'response_type': (OrganizationCreateResponse,),
                 'auth': [
@@ -224,7 +224,7 @@ class OrganizationsApi(object):
                 public_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_org = Endpoint(
+        self.get_org = _Endpoint(
             settings={
                 'response_type': (OrganizationResponse,),
                 'auth': [
@@ -339,7 +339,7 @@ class OrganizationsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_orgs = Endpoint(
+        self.list_orgs = _Endpoint(
             settings={
                 'response_type': (OrganizationListResponse,),
                 'auth': [
@@ -456,7 +456,7 @@ class OrganizationsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_org = Endpoint(
+        self.update_org = _Endpoint(
             settings={
                 'response_type': (OrganizationResponse,),
                 'auth': [
@@ -587,7 +587,7 @@ class OrganizationsApi(object):
                 idp_file
             return self.call_with_http_info(**kwargs)
 
-        self.upload_id_p_for_org = Endpoint(
+        self.upload_id_p_for_org = _Endpoint(
             settings={
                 'response_type': (IdpResponse,),
                 'auth': [

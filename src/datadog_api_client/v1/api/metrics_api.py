@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -101,7 +101,7 @@ class MetricsApi(object):
                 metric_name
             return self.call_with_http_info(**kwargs)
 
-        self.get_metric_metadata = Endpoint(
+        self.get_metric_metadata = _Endpoint(
             settings={
                 'response_type': (MetricMetadata,),
                 'auth': [
@@ -222,7 +222,7 @@ class MetricsApi(object):
                 _from
             return self.call_with_http_info(**kwargs)
 
-        self.list_active_metrics = Endpoint(
+        self.list_active_metrics = _Endpoint(
             settings={
                 'response_type': (MetricsListResponse,),
                 'auth': [
@@ -347,7 +347,7 @@ class MetricsApi(object):
                 q
             return self.call_with_http_info(**kwargs)
 
-        self.list_metrics = Endpoint(
+        self.list_metrics = _Endpoint(
             settings={
                 'response_type': (MetricSearchResponse,),
                 'auth': [
@@ -475,7 +475,7 @@ class MetricsApi(object):
                 query
             return self.call_with_http_info(**kwargs)
 
-        self.query_metrics = Endpoint(
+        self.query_metrics = _Endpoint(
             settings={
                 'response_type': (MetricsQueryResponse,),
                 'auth': [
@@ -611,7 +611,7 @@ class MetricsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_metric_metadata = Endpoint(
+        self.update_metric_metadata = _Endpoint(
             settings={
                 'response_type': (MetricMetadata,),
                 'auth': [

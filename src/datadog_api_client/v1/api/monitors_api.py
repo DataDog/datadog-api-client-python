@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -101,7 +101,7 @@ class MonitorsApi(object):
                 monitor_ids
             return self.call_with_http_info(**kwargs)
 
-        self.check_can_delete_monitor = Endpoint(
+        self.check_can_delete_monitor = _Endpoint(
             settings={
                 'response_type': (CheckCanDeleteMonitorResponse,),
                 'auth': [
@@ -222,7 +222,7 @@ class MonitorsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_monitor = Endpoint(
+        self.create_monitor = _Endpoint(
             settings={
                 'response_type': (Monitor,),
                 'auth': [
@@ -344,7 +344,7 @@ class MonitorsApi(object):
                 monitor_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_monitor = Endpoint(
+        self.delete_monitor = _Endpoint(
             settings={
                 'response_type': (DeletedMonitor,),
                 'auth': [
@@ -470,7 +470,7 @@ class MonitorsApi(object):
                 monitor_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_monitor = Endpoint(
+        self.get_monitor = _Endpoint(
             settings={
                 'response_type': (Monitor,),
                 'auth': [
@@ -598,7 +598,7 @@ class MonitorsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_monitors = Endpoint(
+        self.list_monitors = _Endpoint(
             settings={
                 'response_type': ([Monitor],),
                 'auth': [
@@ -760,7 +760,7 @@ class MonitorsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_monitor = Endpoint(
+        self.update_monitor = _Endpoint(
             settings={
                 'response_type': (Monitor,),
                 'auth': [
@@ -887,7 +887,7 @@ class MonitorsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.validate_monitor = Endpoint(
+        self.validate_monitor = _Endpoint(
             settings={
                 'response_type': (Monitor,),
                 'auth': [

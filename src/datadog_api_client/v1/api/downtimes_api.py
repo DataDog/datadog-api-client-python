@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -100,7 +100,7 @@ class DowntimesApi(object):
                 downtime_id
             return self.call_with_http_info(**kwargs)
 
-        self.cancel_downtime = Endpoint(
+        self.cancel_downtime = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -220,7 +220,7 @@ class DowntimesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.cancel_downtimes_by_scope = Endpoint(
+        self.cancel_downtimes_by_scope = _Endpoint(
             settings={
                 'response_type': (CanceledDowntimesIds,),
                 'auth': [
@@ -341,7 +341,7 @@ class DowntimesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_downtime = Endpoint(
+        self.create_downtime = _Endpoint(
             settings={
                 'response_type': (Downtime,),
                 'auth': [
@@ -462,7 +462,7 @@ class DowntimesApi(object):
                 downtime_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_downtime = Endpoint(
+        self.get_downtime = _Endpoint(
             settings={
                 'response_type': (Downtime,),
                 'auth': [
@@ -578,7 +578,7 @@ class DowntimesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_downtimes = Endpoint(
+        self.list_downtimes = _Endpoint(
             settings={
                 'response_type': ([Downtime],),
                 'auth': [
@@ -700,7 +700,7 @@ class DowntimesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_downtime = Endpoint(
+        self.update_downtime = _Endpoint(
             settings={
                 'response_type': (Downtime,),
                 'auth': [

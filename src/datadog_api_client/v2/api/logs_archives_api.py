@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint
+from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -107,7 +107,7 @@ class LogsArchivesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.add_read_role_to_archive = Endpoint(
+        self.add_read_role_to_archive = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -234,7 +234,7 @@ class LogsArchivesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_logs_archive = Endpoint(
+        self.create_logs_archive = _Endpoint(
             settings={
                 'response_type': (LogsArchive,),
                 'auth': [
@@ -355,7 +355,7 @@ class LogsArchivesApi(object):
                 archive_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_logs_archive = Endpoint(
+        self.delete_logs_archive = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -475,7 +475,7 @@ class LogsArchivesApi(object):
                 archive_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_logs_archive = Endpoint(
+        self.get_logs_archive = _Endpoint(
             settings={
                 'response_type': (LogsArchive,),
                 'auth': [
@@ -590,7 +590,7 @@ class LogsArchivesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.get_logs_archive_order = Endpoint(
+        self.get_logs_archive_order = _Endpoint(
             settings={
                 'response_type': (LogsArchiveOrder,),
                 'auth': [
@@ -703,7 +703,7 @@ class LogsArchivesApi(object):
                 archive_id
             return self.call_with_http_info(**kwargs)
 
-        self.list_archive_read_roles = Endpoint(
+        self.list_archive_read_roles = _Endpoint(
             settings={
                 'response_type': (RolesResponse,),
                 'auth': [
@@ -818,7 +818,7 @@ class LogsArchivesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_logs_archives = Endpoint(
+        self.list_logs_archives = _Endpoint(
             settings={
                 'response_type': (LogsArchives,),
                 'auth': [
@@ -935,7 +935,7 @@ class LogsArchivesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.remove_role_from_archive = Endpoint(
+        self.remove_role_from_archive = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -1066,7 +1066,7 @@ class LogsArchivesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_logs_archive = Endpoint(
+        self.update_logs_archive = _Endpoint(
             settings={
                 'response_type': (LogsArchive,),
                 'auth': [
@@ -1193,7 +1193,7 @@ class LogsArchivesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_logs_archive_order = Endpoint(
+        self.update_logs_archive_order = _Endpoint(
             settings={
                 'response_type': (LogsArchiveOrder,),
                 'auth': [
