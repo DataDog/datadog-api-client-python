@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -106,7 +106,7 @@ class ServiceLevelObjectivesApi(object):
                 ids
             return self.call_with_http_info(**kwargs)
 
-        self.check_can_delete_slo = Endpoint(
+        self.check_can_delete_slo = _Endpoint(
             settings={
                 'response_type': (CheckCanDeleteSLOResponse,),
                 'auth': [
@@ -226,7 +226,7 @@ class ServiceLevelObjectivesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_slo = Endpoint(
+        self.create_slo = _Endpoint(
             settings={
                 'response_type': (SLOListResponse,),
                 'auth': [
@@ -348,7 +348,7 @@ class ServiceLevelObjectivesApi(object):
                 slo_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_slo = Endpoint(
+        self.delete_slo = _Endpoint(
             settings={
                 'response_type': (SLODeleteResponse,),
                 'auth': [
@@ -473,7 +473,7 @@ class ServiceLevelObjectivesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.delete_slo_timeframe_in_bulk = Endpoint(
+        self.delete_slo_timeframe_in_bulk = _Endpoint(
             settings={
                 'response_type': (SLOBulkDeleteResponse,),
                 'auth': [
@@ -594,7 +594,7 @@ class ServiceLevelObjectivesApi(object):
                 slo_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_slo = Endpoint(
+        self.get_slo = _Endpoint(
             settings={
                 'response_type': (SLOResponse,),
                 'auth': [
@@ -722,7 +722,7 @@ class ServiceLevelObjectivesApi(object):
                 to_ts
             return self.call_with_http_info(**kwargs)
 
-        self.get_slo_history = Endpoint(
+        self.get_slo_history = _Endpoint(
             settings={
                 'response_type': (SLOHistoryResponse,),
                 'auth': [
@@ -854,7 +854,7 @@ class ServiceLevelObjectivesApi(object):
                 ids
             return self.call_with_http_info(**kwargs)
 
-        self.list_slos = Endpoint(
+        self.list_slos = _Endpoint(
             settings={
                 'response_type': (SLOListResponse,),
                 'auth': [
@@ -978,7 +978,7 @@ class ServiceLevelObjectivesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_slo = Endpoint(
+        self.update_slo = _Endpoint(
             settings={
                 'response_type': (SLOListResponse,),
                 'auth': [

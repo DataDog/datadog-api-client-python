@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -100,7 +100,7 @@ class EventsApi(object):
                 event_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_event = Endpoint(
+        self.get_event = _Endpoint(
             settings={
                 'response_type': (EventResponse,),
                 'auth': [
@@ -228,7 +228,7 @@ class EventsApi(object):
                 end
             return self.call_with_http_info(**kwargs)
 
-        self.list_events = Endpoint(
+        self.list_events = _Endpoint(
             settings={
                 'response_type': (EventListResponse,),
                 'auth': [

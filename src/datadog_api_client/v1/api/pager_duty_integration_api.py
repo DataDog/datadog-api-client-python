@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -100,7 +100,7 @@ class PagerDutyIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_pager_duty_integration_service = Endpoint(
+        self.create_pager_duty_integration_service = _Endpoint(
             settings={
                 'response_type': (PagerDutyServiceName,),
                 'auth': [
@@ -221,7 +221,7 @@ class PagerDutyIntegrationApi(object):
                 service_name
             return self.call_with_http_info(**kwargs)
 
-        self.delete_pager_duty_integration_service = Endpoint(
+        self.delete_pager_duty_integration_service = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -341,7 +341,7 @@ class PagerDutyIntegrationApi(object):
                 service_name
             return self.call_with_http_info(**kwargs)
 
-        self.get_pager_duty_integration_service = Endpoint(
+        self.get_pager_duty_integration_service = _Endpoint(
             settings={
                 'response_type': (PagerDutyServiceName,),
                 'auth': [
@@ -465,7 +465,7 @@ class PagerDutyIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_pager_duty_integration_service = Endpoint(
+        self.update_pager_duty_integration_service = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [

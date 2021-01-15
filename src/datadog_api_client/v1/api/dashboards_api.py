@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -100,7 +100,7 @@ class DashboardsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_dashboard = Endpoint(
+        self.create_dashboard = _Endpoint(
             settings={
                 'response_type': (Dashboard,),
                 'auth': [
@@ -221,7 +221,7 @@ class DashboardsApi(object):
                 dashboard_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_dashboard = Endpoint(
+        self.delete_dashboard = _Endpoint(
             settings={
                 'response_type': (DashboardDeleteResponse,),
                 'auth': [
@@ -341,7 +341,7 @@ class DashboardsApi(object):
                 dashboard_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_dashboard = Endpoint(
+        self.get_dashboard = _Endpoint(
             settings={
                 'response_type': (Dashboard,),
                 'auth': [
@@ -456,7 +456,7 @@ class DashboardsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_dashboards = Endpoint(
+        self.list_dashboards = _Endpoint(
             settings={
                 'response_type': (DashboardSummary,),
                 'auth': [
@@ -573,7 +573,7 @@ class DashboardsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_dashboard = Endpoint(
+        self.update_dashboard = _Endpoint(
             settings={
                 'response_type': (Dashboard,),
                 'auth': [

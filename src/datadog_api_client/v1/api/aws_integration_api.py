@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -103,7 +103,7 @@ class AWSIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_aws_account = Endpoint(
+        self.create_aws_account = _Endpoint(
             settings={
                 'response_type': (AWSAccountCreateResponse,),
                 'auth': [
@@ -224,7 +224,7 @@ class AWSIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_aws_tag_filter = Endpoint(
+        self.create_aws_tag_filter = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [
@@ -377,7 +377,7 @@ class AWSIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_new_aws_external_id = Endpoint(
+        self.create_new_aws_external_id = _Endpoint(
             settings={
                 'response_type': (AWSAccountCreateResponse,),
                 'auth': [
@@ -498,7 +498,7 @@ class AWSIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.delete_aws_account = Endpoint(
+        self.delete_aws_account = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [
@@ -619,7 +619,7 @@ class AWSIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.delete_aws_tag_filter = Endpoint(
+        self.delete_aws_tag_filter = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [
@@ -767,7 +767,7 @@ class AWSIntegrationApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_available_aws_namespaces = Endpoint(
+        self.list_available_aws_namespaces = _Endpoint(
             settings={
                 'response_type': ([str],),
                 'auth': [
@@ -878,7 +878,7 @@ class AWSIntegrationApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_aws_accounts = Endpoint(
+        self.list_aws_accounts = _Endpoint(
             settings={
                 'response_type': (AWSAccountListResponse,),
                 'auth': [
@@ -1006,7 +1006,7 @@ class AWSIntegrationApi(object):
                 account_id
             return self.call_with_http_info(**kwargs)
 
-        self.list_aws_tag_filters = Endpoint(
+        self.list_aws_tag_filters = _Endpoint(
             settings={
                 'response_type': (AWSTagFilterListResponse,),
                 'auth': [
@@ -1161,7 +1161,7 @@ class AWSIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_aws_account = Endpoint(
+        self.update_aws_account = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [

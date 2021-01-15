@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint
+from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -106,7 +106,7 @@ class UsersApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_user = Endpoint(
+        self.create_user = _Endpoint(
             settings={
                 'response_type': (UserResponse,),
                 'auth': [
@@ -227,7 +227,7 @@ class UsersApi(object):
                 user_id
             return self.call_with_http_info(**kwargs)
 
-        self.disable_user = Endpoint(
+        self.disable_user = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -347,7 +347,7 @@ class UsersApi(object):
                 user_invitation_uuid
             return self.call_with_http_info(**kwargs)
 
-        self.get_invitation = Endpoint(
+        self.get_invitation = _Endpoint(
             settings={
                 'response_type': (UserInvitationResponse,),
                 'auth': [
@@ -467,7 +467,7 @@ class UsersApi(object):
                 user_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_user = Endpoint(
+        self.get_user = _Endpoint(
             settings={
                 'response_type': (UserResponse,),
                 'auth': [
@@ -587,7 +587,7 @@ class UsersApi(object):
                 user_id
             return self.call_with_http_info(**kwargs)
 
-        self.list_user_organizations = Endpoint(
+        self.list_user_organizations = _Endpoint(
             settings={
                 'response_type': (UserResponse,),
                 'auth': [
@@ -707,7 +707,7 @@ class UsersApi(object):
                 user_id
             return self.call_with_http_info(**kwargs)
 
-        self.list_user_permissions = Endpoint(
+        self.list_user_permissions = _Endpoint(
             settings={
                 'response_type': (PermissionsResponse,),
                 'auth': [
@@ -828,7 +828,7 @@ class UsersApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_users = Endpoint(
+        self.list_users = _Endpoint(
             settings={
                 'response_type': (UsersResponse,),
                 'auth': [
@@ -971,7 +971,7 @@ class UsersApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.send_invitations = Endpoint(
+        self.send_invitations = _Endpoint(
             settings={
                 'response_type': (UserInvitationsResponse,),
                 'auth': [
@@ -1096,7 +1096,7 @@ class UsersApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_user = Endpoint(
+        self.update_user = _Endpoint(
             settings={
                 'response_type': (UserResponse,),
                 'auth': [

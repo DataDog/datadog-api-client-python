@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint
+from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -112,7 +112,7 @@ class RolesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.add_permission_to_role = Endpoint(
+        self.add_permission_to_role = _Endpoint(
             settings={
                 'response_type': (PermissionsResponse,),
                 'auth': [
@@ -243,7 +243,7 @@ class RolesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.add_user_to_role = Endpoint(
+        self.add_user_to_role = _Endpoint(
             settings={
                 'response_type': (UsersResponse,),
                 'auth': [
@@ -370,7 +370,7 @@ class RolesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_role = Endpoint(
+        self.create_role = _Endpoint(
             settings={
                 'response_type': (RoleCreateResponse,),
                 'auth': [
@@ -491,7 +491,7 @@ class RolesApi(object):
                 role_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_role = Endpoint(
+        self.delete_role = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -611,7 +611,7 @@ class RolesApi(object):
                 role_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_role = Endpoint(
+        self.get_role = _Endpoint(
             settings={
                 'response_type': (RoleResponse,),
                 'auth': [
@@ -726,7 +726,7 @@ class RolesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_permissions = Endpoint(
+        self.list_permissions = _Endpoint(
             settings={
                 'response_type': (PermissionsResponse,),
                 'auth': [
@@ -839,7 +839,7 @@ class RolesApi(object):
                 role_id
             return self.call_with_http_info(**kwargs)
 
-        self.list_role_permissions = Endpoint(
+        self.list_role_permissions = _Endpoint(
             settings={
                 'response_type': (PermissionsResponse,),
                 'auth': [
@@ -963,7 +963,7 @@ class RolesApi(object):
                 role_id
             return self.call_with_http_info(**kwargs)
 
-        self.list_role_users = Endpoint(
+        self.list_role_users = _Endpoint(
             settings={
                 'response_type': (UsersResponse,),
                 'auth': [
@@ -1102,7 +1102,7 @@ class RolesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_roles = Endpoint(
+        self.list_roles = _Endpoint(
             settings={
                 'response_type': (RolesResponse,),
                 'auth': [
@@ -1239,7 +1239,7 @@ class RolesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.remove_permission_from_role = Endpoint(
+        self.remove_permission_from_role = _Endpoint(
             settings={
                 'response_type': (PermissionsResponse,),
                 'auth': [
@@ -1370,7 +1370,7 @@ class RolesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.remove_user_from_role = Endpoint(
+        self.remove_user_from_role = _Endpoint(
             settings={
                 'response_type': (UsersResponse,),
                 'auth': [
@@ -1501,7 +1501,7 @@ class RolesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_role = Endpoint(
+        self.update_role = _Endpoint(
             settings={
                 'response_type': (RoleUpdateResponse,),
                 'auth': [

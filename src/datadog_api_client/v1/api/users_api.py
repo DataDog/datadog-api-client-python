@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -101,7 +101,7 @@ class UsersApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_user = Endpoint(
+        self.create_user = _Endpoint(
             settings={
                 'response_type': (UserResponse,),
                 'auth': [
@@ -222,7 +222,7 @@ class UsersApi(object):
                 user_handle
             return self.call_with_http_info(**kwargs)
 
-        self.disable_user = Endpoint(
+        self.disable_user = _Endpoint(
             settings={
                 'response_type': (UserDisableResponse,),
                 'auth': [
@@ -342,7 +342,7 @@ class UsersApi(object):
                 user_handle
             return self.call_with_http_info(**kwargs)
 
-        self.get_user = Endpoint(
+        self.get_user = _Endpoint(
             settings={
                 'response_type': (UserResponse,),
                 'auth': [
@@ -457,7 +457,7 @@ class UsersApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_users = Endpoint(
+        self.list_users = _Endpoint(
             settings={
                 'response_type': (UserListResponse,),
                 'auth': [
@@ -574,7 +574,7 @@ class UsersApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_user = Endpoint(
+        self.update_user = _Endpoint(
             settings={
                 'response_type': (UserResponse,),
                 'auth': [

@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -102,7 +102,7 @@ class AWSLogsIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.check_aws_logs_lambda_async = Endpoint(
+        self.check_aws_logs_lambda_async = _Endpoint(
             settings={
                 'response_type': (AWSLogsAsyncResponse,),
                 'auth': [
@@ -223,7 +223,7 @@ class AWSLogsIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.check_aws_logs_services_async = Endpoint(
+        self.check_aws_logs_services_async = _Endpoint(
             settings={
                 'response_type': (AWSLogsAsyncResponse,),
                 'auth': [
@@ -344,7 +344,7 @@ class AWSLogsIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_aws_lambda_arn = Endpoint(
+        self.create_aws_lambda_arn = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [
@@ -465,7 +465,7 @@ class AWSLogsIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.delete_aws_lambda_arn = Endpoint(
+        self.delete_aws_lambda_arn = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [
@@ -586,7 +586,7 @@ class AWSLogsIntegrationApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.enable_aws_log_services = Endpoint(
+        self.enable_aws_log_services = _Endpoint(
             settings={
                 'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 'auth': [
@@ -702,7 +702,7 @@ class AWSLogsIntegrationApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_aws_logs_integrations = Endpoint(
+        self.list_aws_logs_integrations = _Endpoint(
             settings={
                 'response_type': ([AWSLogsListResponse],),
                 'auth': [
@@ -810,7 +810,7 @@ class AWSLogsIntegrationApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_aws_logs_services = Endpoint(
+        self.list_aws_logs_services = _Endpoint(
             settings={
                 'response_type': ([AWSLogsListServicesResponse],),
                 'auth': [

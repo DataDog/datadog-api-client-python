@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint
+from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -102,7 +102,7 @@ class IncidentServicesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_incident_service = Endpoint(
+        self.create_incident_service = _Endpoint(
             settings={
                 'response_type': (IncidentServiceResponse,),
                 'auth': [
@@ -223,7 +223,7 @@ class IncidentServicesApi(object):
                 service_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_incident_service = Endpoint(
+        self.delete_incident_service = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -344,7 +344,7 @@ class IncidentServicesApi(object):
                 service_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_incident_service = Endpoint(
+        self.get_incident_service = _Endpoint(
             settings={
                 'response_type': (IncidentServiceResponse,),
                 'auth': [
@@ -468,7 +468,7 @@ class IncidentServicesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_incident_services = Endpoint(
+        self.list_incident_services = _Endpoint(
             settings={
                 'response_type': (IncidentServicesResponse,),
                 'auth': [
@@ -605,7 +605,7 @@ class IncidentServicesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_incident_service = Endpoint(
+        self.update_incident_service = _Endpoint(
             settings={
                 'response_type': (IncidentServiceResponse,),
                 'auth': [

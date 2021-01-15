@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v2.api_client import ApiClient, Endpoint
+from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -107,7 +107,7 @@ class KeyManagementApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_api_key = Endpoint(
+        self.create_api_key = _Endpoint(
             settings={
                 'response_type': (APIKeyResponse,),
                 'auth': [
@@ -228,7 +228,7 @@ class KeyManagementApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_current_user_application_key = Endpoint(
+        self.create_current_user_application_key = _Endpoint(
             settings={
                 'response_type': (ApplicationKeyResponse,),
                 'auth': [
@@ -349,7 +349,7 @@ class KeyManagementApi(object):
                 api_key_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_api_key = Endpoint(
+        self.delete_api_key = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -469,7 +469,7 @@ class KeyManagementApi(object):
                 app_key_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_application_key = Endpoint(
+        self.delete_application_key = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -589,7 +589,7 @@ class KeyManagementApi(object):
                 app_key_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_current_user_application_key = Endpoint(
+        self.delete_current_user_application_key = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -710,7 +710,7 @@ class KeyManagementApi(object):
                 api_key_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_api_key = Endpoint(
+        self.get_api_key = _Endpoint(
             settings={
                 'response_type': (APIKeyResponse,),
                 'auth': [
@@ -835,7 +835,7 @@ class KeyManagementApi(object):
                 app_key_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_current_user_application_key = Endpoint(
+        self.get_current_user_application_key = _Endpoint(
             settings={
                 'response_type': (ApplicationKeyResponse,),
                 'auth': [
@@ -959,7 +959,7 @@ class KeyManagementApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_api_keys = Endpoint(
+        self.list_api_keys = _Endpoint(
             settings={
                 'response_type': (APIKeysResponse,),
                 'auth': [
@@ -1118,7 +1118,7 @@ class KeyManagementApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_application_keys = Endpoint(
+        self.list_application_keys = _Endpoint(
             settings={
                 'response_type': (ListApplicationKeysResponse,),
                 'auth': [
@@ -1262,7 +1262,7 @@ class KeyManagementApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_current_user_application_keys = Endpoint(
+        self.list_current_user_application_keys = _Endpoint(
             settings={
                 'response_type': (ListApplicationKeysResponse,),
                 'auth': [
@@ -1409,7 +1409,7 @@ class KeyManagementApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_api_key = Endpoint(
+        self.update_api_key = _Endpoint(
             settings={
                 'response_type': (APIKeyResponse,),
                 'auth': [
@@ -1540,7 +1540,7 @@ class KeyManagementApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_application_key = Endpoint(
+        self.update_application_key = _Endpoint(
             settings={
                 'response_type': (ApplicationKeyResponse,),
                 'auth': [
@@ -1671,7 +1671,7 @@ class KeyManagementApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_current_user_application_key = Endpoint(
+        self.update_current_user_application_key = _Endpoint(
             settings={
                 'response_type': (ApplicationKeyResponse,),
                 'auth': [

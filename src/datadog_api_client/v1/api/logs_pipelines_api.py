@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -101,7 +101,7 @@ class LogsPipelinesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_logs_pipeline = Endpoint(
+        self.create_logs_pipeline = _Endpoint(
             settings={
                 'response_type': (LogsPipeline,),
                 'auth': [
@@ -222,7 +222,7 @@ class LogsPipelinesApi(object):
                 pipeline_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_logs_pipeline = Endpoint(
+        self.delete_logs_pipeline = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -342,7 +342,7 @@ class LogsPipelinesApi(object):
                 pipeline_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_logs_pipeline = Endpoint(
+        self.get_logs_pipeline = _Endpoint(
             settings={
                 'response_type': (LogsPipeline,),
                 'auth': [
@@ -457,7 +457,7 @@ class LogsPipelinesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.get_logs_pipeline_order = Endpoint(
+        self.get_logs_pipeline_order = _Endpoint(
             settings={
                 'response_type': (LogsPipelinesOrder,),
                 'auth': [
@@ -565,7 +565,7 @@ class LogsPipelinesApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_logs_pipelines = Endpoint(
+        self.list_logs_pipelines = _Endpoint(
             settings={
                 'response_type': (LogsPipelineList,),
                 'auth': [
@@ -682,7 +682,7 @@ class LogsPipelinesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_logs_pipeline = Endpoint(
+        self.update_logs_pipeline = _Endpoint(
             settings={
                 'response_type': (LogsPipeline,),
                 'auth': [
@@ -809,7 +809,7 @@ class LogsPipelinesApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_logs_pipeline_order = Endpoint(
+        self.update_logs_pipeline_order = _Endpoint(
             settings={
                 'response_type': (LogsPipelinesOrder,),
                 'auth': [

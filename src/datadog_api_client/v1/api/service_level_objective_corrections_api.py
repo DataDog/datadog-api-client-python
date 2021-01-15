@@ -6,7 +6,7 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-from datadog_api_client.v1.api_client import ApiClient, Endpoint
+from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -101,7 +101,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_slo_correction = Endpoint(
+        self.create_slo_correction = _Endpoint(
             settings={
                 'response_type': (SLOCorrectionResponse,),
                 'auth': [
@@ -222,7 +222,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 slo_correction_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_slo_correction = Endpoint(
+        self.delete_slo_correction = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -342,7 +342,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 slo_correction_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_slo_correction = Endpoint(
+        self.get_slo_correction = _Endpoint(
             settings={
                 'response_type': (SLOCorrectionResponse,),
                 'auth': [
@@ -457,7 +457,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.list_slo_correction = Endpoint(
+        self.list_slo_correction = _Endpoint(
             settings={
                 'response_type': (SLOCorrectionListResponse,),
                 'auth': [
@@ -574,7 +574,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_slo_correction = Endpoint(
+        self.update_slo_correction = _Endpoint(
             settings={
                 'response_type': (SLOCorrectionResponse,),
                 'auth': [
