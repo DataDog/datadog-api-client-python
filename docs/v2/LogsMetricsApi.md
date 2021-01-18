@@ -60,7 +60,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         data=LogsMetricCreateData(
             attributes=LogsMetricCreateAttributes(
                 compute=LogsMetricCompute(
-                    aggregation_type=LogsMetricComputeAggregationType("count"),
+                    aggregation_type=LogsMetricComputeAggregationType("distribution"),
                     path="@duration",
                 ),
                 filter=LogsMetricFilter(
