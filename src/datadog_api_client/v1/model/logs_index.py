@@ -77,10 +77,10 @@ class LogsIndex(ModelNormal):
         lazy_import()
         return {
             'filter': (LogsFilter,),  # noqa: E501
+            'name': (str,),  # noqa: E501
             'daily_limit': (int,),  # noqa: E501
             'exclusion_filters': ([LogsExclusion],),  # noqa: E501
             'is_rate_limited': (bool,),  # noqa: E501
-            'name': (str,),  # noqa: E501
             'num_retention_days': (int,),  # noqa: E501
         }
 
@@ -91,10 +91,10 @@ class LogsIndex(ModelNormal):
 
     attribute_map = {
         'filter': 'filter',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'daily_limit': 'daily_limit',  # noqa: E501
         'exclusion_filters': 'exclusion_filters',  # noqa: E501
         'is_rate_limited': 'is_rate_limited',  # noqa: E501
-        'name': 'name',  # noqa: E501
         'num_retention_days': 'num_retention_days',  # noqa: E501
     }
 
@@ -110,11 +110,12 @@ class LogsIndex(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, filter, *args, **kwargs):  # noqa: E501
+    def __init__(self, filter, name, *args, **kwargs):  # noqa: E501
         """LogsIndex - a model defined in OpenAPI
 
         Args:
             filter (LogsFilter):
+            name (str): The name of the index.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -150,7 +151,6 @@ class LogsIndex(ModelNormal):
             daily_limit (int): The number of log events you can send in this index per day before you are rate-limited.. [optional]  # noqa: E501
             exclusion_filters ([LogsExclusion]): An array of exclusion objects. The logs are tested against the query of each filter, following the order of the array. Only the first matching active exclusion matters, others (if any) are ignored.. [optional]  # noqa: E501
             is_rate_limited (bool): A boolean stating if the index is rate limited, meaning more logs than the daily limit have been sent. Rate limit is reset every-day at 2pm UTC.. [optional]  # noqa: E501
-            name (str): The name of the index.. [optional]  # noqa: E501
             num_retention_days (int): The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.. [optional]  # noqa: E501
         """
 
@@ -178,6 +178,7 @@ class LogsIndex(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.filter = filter
+        self.name = name
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

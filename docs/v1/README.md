@@ -173,6 +173,7 @@ Class | Method | HTTP request | Description
 *KeyManagementApi* | [**update_api_key**](KeyManagementApi.md#update_api_key) | **PUT** /api/v1/api_key/{key} | Edit an API key
 *KeyManagementApi* | [**update_application_key**](KeyManagementApi.md#update_application_key) | **PUT** /api/v1/application_key/{key} | Edit an application key
 *LogsApi* | [**list_logs**](LogsApi.md#list_logs) | **POST** /api/v1/logs-queries/list | Get a list of logs
+*LogsIndexesApi* | [**create_logs_index**](LogsIndexesApi.md#create_logs_index) | **POST** /api/v1/logs/config/indexes | Create an index
 *LogsIndexesApi* | [**get_logs_index**](LogsIndexesApi.md#get_logs_index) | **GET** /api/v1/logs/config/indexes/{name} | Get an index
 *LogsIndexesApi* | [**get_logs_index_order**](LogsIndexesApi.md#get_logs_index_order) | **GET** /api/v1/logs/config/index-order | Get indexes order
 *LogsIndexesApi* | [**list_log_indexes**](LogsIndexesApi.md#list_log_indexes) | **GET** /api/v1/logs/config/indexes | Get all indexes

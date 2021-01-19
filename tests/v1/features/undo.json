@@ -461,6 +461,14 @@
       "type": "safe"
     }
   },
+  "CreateLogsIndex": {
+    "tag": "Logs Indexes",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "GetLogsIndex": {
     "tag": "Logs Indexes",
     "undo": {

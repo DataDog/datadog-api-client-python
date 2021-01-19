@@ -81,3 +81,19 @@ Feature: Logs Indexes
     And body {}
     When the request is sent
     Then the response status is 429 Too Many Requests
+
+  @generated @skip
+  Scenario: Create an index returns "OK" response
+    Given operation "CreateLogsIndex" enabled
+    And new "CreateLogsIndex" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Create an index returns "Invalid Parameter Error" response
+    Given operation "CreateLogsIndex" enabled
+    And new "CreateLogsIndex" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Invalid Parameter Error
