@@ -209,6 +209,7 @@ conf = datadog_api_client.v1.Configuration(
 
         # Keep track of unstable operations
         self.unstable_operations = {
+            "create_logs_index": False,
             "get_logs_index": False,
             "get_logs_index_order": False,
             "list_log_indexes": False,
