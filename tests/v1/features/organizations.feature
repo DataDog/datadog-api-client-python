@@ -9,10 +9,11 @@ Feature: Organizations
     And an instance of "Organizations" API
 
   @generated @skip
-  Scenario: List your managed organizations returns "OK" response
-    Given new "ListOrgs" request
+  Scenario: Create a child organization returns "Bad Request" response
+    Given new "CreateChildOrg" request
+    And body {}
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Create a child organization returns "OK" response
@@ -22,6 +23,13 @@ Feature: Organizations
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get organization information returns "Bad Request" response
+    Given new "GetOrg" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
   Scenario: Get organization information returns "OK" response
     Given new "GetOrg" request
     And request contains "public_id" parameter from "<PATH>"
@@ -29,33 +37,10 @@ Feature: Organizations
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Update your organization returns "OK" response
-    Given new "UpdateOrg" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body {}
+  Scenario: List your managed organizations returns "OK" response
+    Given new "ListOrgs" request
     When the request is sent
     Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Upload IdP metadata returns "OK" response
-    Given new "UploadIdPForOrg" request
-    And request contains "public_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Create a child organization returns "Bad Request" response
-    Given new "CreateChildOrg" request
-    And body {}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
-  Scenario: Get organization information returns "Bad Request" response
-    Given new "GetOrg" request
-    And request contains "public_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Update your organization returns "Bad Request" response
@@ -66,11 +51,26 @@ Feature: Organizations
     Then the response status is 400 Bad Request
 
   @generated @skip
+  Scenario: Update your organization returns "OK" response
+    Given new "UpdateOrg" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Upload IdP metadata returns "Bad Request" response
     Given new "UploadIdPForOrg" request
     And request contains "public_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Upload IdP metadata returns "OK" response
+    Given new "UploadIdPForOrg" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip
   Scenario: Upload IdP metadata returns "Unsupported Media Type" response

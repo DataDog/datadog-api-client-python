@@ -11,10 +11,11 @@ Feature: Events
     And an instance of "Events" API
 
   @generated @skip
-  Scenario: Query the event stream returns "OK" response
-    Given new "ListEvents" request
+  Scenario: Get an event returns "Item Not Found" response
+    Given new "GetEvent" request
+    And request contains "event_id" parameter from "<PATH>"
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 404 Item Not Found
 
   @generated @skip
   Scenario: Get an event returns "OK" response
@@ -30,8 +31,7 @@ Feature: Events
     Then the response status is 400 Bad Request
 
   @generated @skip
-  Scenario: Get an event returns "Item Not Found" response
-    Given new "GetEvent" request
-    And request contains "event_id" parameter from "<PATH>"
+  Scenario: Query the event stream returns "OK" response
+    Given new "ListEvents" request
     When the request is sent
-    Then the response status is 404 Item Not Found
+    Then the response status is 200 OK

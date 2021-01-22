@@ -10,17 +10,18 @@ Feature: AWS Integration
     And an instance of "AWSIntegration" API
 
   @generated @skip
-  Scenario: Delete an AWS integration returns "OK" response
-    Given new "DeleteAWSAccount" request
+  Scenario: Create an AWS integration returns "Bad Request" response
+    Given new "CreateAWSAccount" request
     And body {}
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 400 Bad Request
 
   @generated @skip
-  Scenario: List all AWS integrations returns "OK" response
-    Given new "ListAWSAccounts" request
+  Scenario: Create an AWS integration returns "Conflict Error" response
+    Given new "CreateAWSAccount" request
+    And body {}
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 409 Conflict Error
 
   @generated @skip
   Scenario: Create an AWS integration returns "OK" response
@@ -30,41 +31,15 @@ Feature: AWS Integration
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Update an AWS integration returns "OK" response
-    Given new "UpdateAWSAccount" request
+  Scenario: Delete a tag filtering entry returns "Bad Request" response
+    Given new "DeleteAWSTagFilter" request
     And body {}
     When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: List namespace rules returns "OK" response
-    Given new "ListAvailableAWSNamespaces" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Generate a new external ID returns "OK" response
-    Given new "CreateNewAWSExternalID" request
-    And body {}
-    When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Delete a tag filtering entry returns "OK" response
     Given new "DeleteAWSTagFilter" request
-    And body {}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Get all AWS tag filters returns "OK" response
-    Given new "ListAWSTagFilters" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Set an AWS tag filter returns "OK" response
-    Given new "CreateAWSTagFilter" request
     And body {}
     When the request is sent
     Then the response status is 200 OK
@@ -84,24 +59,69 @@ Feature: AWS Integration
     Then the response status is 409 Conflict Error
 
   @generated @skip
+  Scenario: Delete an AWS integration returns "OK" response
+    Given new "DeleteAWSAccount" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Generate a new external ID returns "Bad Request" response
+    Given new "CreateNewAWSExternalID" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Generate a new external ID returns "OK" response
+    Given new "CreateNewAWSExternalID" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get all AWS tag filters returns "Bad Request" response
+    Given new "ListAWSTagFilters" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get all AWS tag filters returns "OK" response
+    Given new "ListAWSTagFilters" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: List all AWS integrations returns "Bad Request" response
     Given new "ListAWSAccounts" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
-  Scenario: Create an AWS integration returns "Bad Request" response
-    Given new "CreateAWSAccount" request
+  Scenario: List all AWS integrations returns "OK" response
+    Given new "ListAWSAccounts" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: List namespace rules returns "OK" response
+    Given new "ListAvailableAWSNamespaces" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Set an AWS tag filter returns "Bad Request" response
+    Given new "CreateAWSTagFilter" request
     And body {}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
-  Scenario: Create an AWS integration returns "Conflict Error" response
-    Given new "CreateAWSAccount" request
+  Scenario: Set an AWS tag filter returns "OK" response
+    Given new "CreateAWSTagFilter" request
     And body {}
     When the request is sent
-    Then the response status is 409 Conflict Error
+    Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update an AWS integration returns "Bad Request" response
@@ -118,28 +138,8 @@ Feature: AWS Integration
     Then the response status is 409 Conflict Error
 
   @generated @skip
-  Scenario: Delete a tag filtering entry returns "Bad Request" response
-    Given new "DeleteAWSTagFilter" request
+  Scenario: Update an AWS integration returns "OK" response
+    Given new "UpdateAWSAccount" request
     And body {}
     When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
-  Scenario: Get all AWS tag filters returns "Bad Request" response
-    Given new "ListAWSTagFilters" request
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
-  Scenario: Set an AWS tag filter returns "Bad Request" response
-    Given new "CreateAWSTagFilter" request
-    And body {}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
-  Scenario: Generate a new external ID returns "Bad Request" response
-    Given new "CreateNewAWSExternalID" request
-    And body {}
-    When the request is sent
-    Then the response status is 400 Bad Request
+    Then the response status is 200 OK
