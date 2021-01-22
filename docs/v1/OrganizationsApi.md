@@ -25,16 +25,15 @@ Create a child organization.  This endpoint requires the [multi-organization acc
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import organizations_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -43,7 +42,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = organizations_api.OrganizationsApi(api_client)
     body = OrganizationCreateBody(
@@ -54,14 +53,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         subscription=OrganizationSubscription(
             type="type_example",
         ),
-    ) # OrganizationCreateBody | Organization object that needs to be created
+    )  # OrganizationCreateBody | Organization object that needs to be created
 
     # example passing only required values which don't have defaults set
     try:
         # Create a child organization
         api_response = api_instance.create_child_org(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling OrganizationsApi->create_child_org: %s\n" % e)
 ```
 
@@ -107,16 +106,15 @@ Get organization information.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import organizations_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -125,17 +123,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = organizations_api.OrganizationsApi(api_client)
-    public_id = "abc123" # str | The `public_id` of the organization you are operating within.
+    public_id = "abc123"  # str | The `public_id` of the organization you are operating within.
 
     # example passing only required values which don't have defaults set
     try:
         # Get organization information
         api_response = api_instance.get_org(public_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling OrganizationsApi->get_org: %s\n" % e)
 ```
 
@@ -181,16 +179,15 @@ List your managed organizations.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import organizations_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -199,7 +196,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = organizations_api.OrganizationsApi(api_client)
 
@@ -208,7 +205,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # List your managed organizations
         api_response = api_instance.list_orgs()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling OrganizationsApi->list_orgs: %s\n" % e)
 ```
 
@@ -250,16 +247,15 @@ Update your organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import organizations_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -268,10 +264,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = organizations_api.OrganizationsApi(api_client)
-    public_id = "abc123" # str | The `public_id` of the organization you are operating within.
+    public_id = "abc123"  # str | The `public_id` of the organization you are operating within.
     body = Organization(
         billing=OrganizationBilling(
             type="type_example",
@@ -306,14 +302,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         subscription=OrganizationSubscription(
             type="type_example",
         ),
-    ) # Organization | 
+    )  # Organization | 
 
     # example passing only required values which don't have defaults set
     try:
         # Update your organization
         api_response = api_instance.update_org(public_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling OrganizationsApi->update_org: %s\n" % e)
 ```
 
@@ -360,16 +356,15 @@ There are a couple of options for updating the Identity Provider (IdP) metadata 
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import organizations_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -378,18 +373,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = organizations_api.OrganizationsApi(api_client)
-    public_id = "abc123" # str | The `public_id` of the organization you are operating with
-    idp_file = open('/path/to/file', 'rb') # file_type | The path to the XML metadata file you wish to upload.
+    public_id = "abc123"  # str | The `public_id` of the organization you are operating with
+    idp_file = open('/path/to/file', 'rb')  # file_type | The path to the XML metadata file you wish to upload.
 
     # example passing only required values which don't have defaults set
     try:
         # Upload IdP metadata
         api_response = api_instance.upload_id_p_for_org(public_id, idp_file)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling OrganizationsApi->upload_id_p_for_org: %s\n" % e)
 ```
 

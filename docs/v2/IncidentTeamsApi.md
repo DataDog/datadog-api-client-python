@@ -25,16 +25,15 @@ Creates a new incident team.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import incident_teams_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -44,7 +43,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["create_incident_team"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_teams_api.IncidentTeamsApi(api_client)
     body = IncidentTeamCreateRequest(
@@ -68,14 +67,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=IncidentTeamType("teams"),
         ),
-    ) # IncidentTeamCreateRequest | Incident Team Payload.
+    )  # IncidentTeamCreateRequest | Incident Team Payload.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a new incident team
         api_response = api_instance.create_incident_team(body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentTeamsApi->create_incident_team: %s\n" % e)
 ```
 
@@ -123,16 +122,15 @@ Deletes an existing incident team.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import incident_teams_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -142,16 +140,16 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["delete_incident_team"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_teams_api.IncidentTeamsApi(api_client)
-    team_id = "team_id_example" # str | The ID of the incident team.
+    team_id = "team_id_example"  # str | The ID of the incident team.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an existing incident team
         api_instance.delete_incident_team(team_id)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentTeamsApi->delete_incident_team: %s\n" % e)
 ```
 
@@ -199,16 +197,15 @@ Get details of an incident team. If the `include[users]` query parameter is prov
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import incident_teams_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -218,18 +215,18 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_incident_team"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_teams_api.IncidentTeamsApi(api_client)
-    team_id = "team_id_example" # str | The ID of the incident team.
-    include = IncidentRelatedObject("users") # IncidentRelatedObject | Specifies which types of related objects should be included in the response. (optional)
+    team_id = "team_id_example"  # str | The ID of the incident team.
+    include = IncidentRelatedObject("users")  # IncidentRelatedObject | Specifies which types of related objects should be included in the response. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get details of an incident team
         api_response = api_instance.get_incident_team(team_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentTeamsApi->get_incident_team: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -238,7 +235,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get details of an incident team
         api_response = api_instance.get_incident_team(team_id, include=include)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentTeamsApi->get_incident_team: %s\n" % e)
 ```
 
@@ -287,16 +284,15 @@ Get all incident teams for the requesting user's organization. If the `include[u
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import incident_teams_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -306,13 +302,13 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["list_incident_teams"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_teams_api.IncidentTeamsApi(api_client)
-    include = IncidentRelatedObject("users") # IncidentRelatedObject | Specifies which types of related objects should be included in the response. (optional)
-    page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-    page_offset = 0 # int | Specific offset to use as the beginning of the returned page. (optional) if omitted the server will use the default value of 0
-    filter = "ExampleTeamName" # str | A search query that filters teams by name. (optional)
+    include = IncidentRelatedObject("users")  # IncidentRelatedObject | Specifies which types of related objects should be included in the response. (optional)
+    page_size = 10  # int | Size for a given page. (optional) if omitted the server will use the default value of 10
+    page_offset = 0  # int | Specific offset to use as the beginning of the returned page. (optional) if omitted the server will use the default value of 0
+    filter = "ExampleTeamName"  # str | A search query that filters teams by name. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -320,7 +316,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get a list of all incident teams
         api_response = api_instance.list_incident_teams(include=include, page_size=page_size, page_offset=page_offset, filter=filter)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentTeamsApi->list_incident_teams: %s\n" % e)
 ```
 
@@ -371,16 +367,15 @@ Updates an existing incident team. Only provide the attributes which should be u
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import incident_teams_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -390,10 +385,10 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["update_incident_team"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_teams_api.IncidentTeamsApi(api_client)
-    team_id = "team_id_example" # str | The ID of the incident team.
+    team_id = "team_id_example"  # str | The ID of the incident team.
     body = IncidentTeamUpdateRequest(
         data=IncidentTeamUpdateData(
             attributes=IncidentTeamUpdateAttributes(
@@ -416,14 +411,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=IncidentTeamType("teams"),
         ),
-    ) # IncidentTeamUpdateRequest | Incident Team Payload.
+    )  # IncidentTeamUpdateRequest | Incident Team Payload.
 
     # example passing only required values which don't have defaults set
     try:
         # Update an existing incident team
         api_response = api_instance.update_incident_team(team_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentTeamsApi->update_incident_team: %s\n" % e)
 ```
 

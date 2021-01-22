@@ -26,16 +26,15 @@ Creates a new index. Returns the Index object passed in the request body when th
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_indexes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -45,7 +44,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["create_logs_index"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
     body = LogsIndex(
@@ -66,14 +65,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         is_rate_limited=False,
         name="main",
         num_retention_days=15,
-    ) # LogsIndex | Object containing the new index.
+    )  # LogsIndex | Object containing the new index.
 
     # example passing only required values which don't have defaults set
     try:
         # Create an index
         api_response = api_instance.create_logs_index(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsIndexesApi->create_logs_index: %s\n" % e)
 ```
 
@@ -119,16 +118,15 @@ Get one log index from your organization. This endpoint takes no JSON arguments.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_indexes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -138,17 +136,17 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_logs_index"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
-    name = "name_example" # str | Name of the log index.
+    name = "name_example"  # str | Name of the log index.
 
     # example passing only required values which don't have defaults set
     try:
         # Get an index
         api_response = api_instance.get_logs_index(name)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsIndexesApi->get_logs_index: %s\n" % e)
 ```
 
@@ -194,16 +192,15 @@ Get the current order of your log indexes. This endpoint takes no JSON arguments
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_indexes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -213,7 +210,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_logs_index_order"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
 
@@ -222,7 +219,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get indexes order
         api_response = api_instance.get_logs_index_order()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsIndexesApi->get_logs_index_order: %s\n" % e)
 ```
 
@@ -264,16 +261,15 @@ The Index object describes the configuration of a log index. This endpoint retur
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_indexes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -283,7 +279,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["list_log_indexes"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
 
@@ -292,7 +288,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get all indexes
         api_response = api_instance.list_log_indexes()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsIndexesApi->list_log_indexes: %s\n" % e)
 ```
 
@@ -334,16 +330,15 @@ Update an index as identified by its name. Returns the Index object passed in th
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_indexes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -353,10 +348,10 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["update_logs_index"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
-    name = "name_example" # str | Name of the log index.
+    name = "name_example"  # str | Name of the log index.
     body = LogsIndexUpdateRequest(
         daily_limit=1,
         disable_daily_limit=True,
@@ -374,14 +369,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             query="source:python",
         ),
         num_retention_days=1,
-    ) # LogsIndexUpdateRequest | Object containing the new `LogsIndexUpdateRequest`.
+    )  # LogsIndexUpdateRequest | Object containing the new `LogsIndexUpdateRequest`.
 
     # example passing only required values which don't have defaults set
     try:
         # Update an index
         api_response = api_instance.update_logs_index(name, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsIndexesApi->update_logs_index: %s\n" % e)
 ```
 
@@ -429,16 +424,15 @@ This endpoint updates the index order of your organization. It returns the index
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_indexes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -448,19 +442,19 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["update_logs_index_order"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_indexes_api.LogsIndexesApi(api_client)
     body = LogsIndexesOrder(
         index_names=["main","payments","web"],
-    ) # LogsIndexesOrder | Object containing the new ordered list of index names
+    )  # LogsIndexesOrder | Object containing the new ordered list of index names
 
     # example passing only required values which don't have defaults set
     try:
         # Update indexes order
         api_response = api_instance.update_logs_index_order(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsIndexesApi->update_logs_index_order: %s\n" % e)
 ```
 

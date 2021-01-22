@@ -33,16 +33,15 @@ Create an API key.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -51,7 +50,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
     body = APIKeyCreateRequest(
@@ -61,14 +60,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=APIKeysType("api_keys"),
         ),
-    ) # APIKeyCreateRequest | 
+    )  # APIKeyCreateRequest | 
 
     # example passing only required values which don't have defaults set
     try:
         # Create an API key
         api_response = api_instance.create_api_key(body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->create_api_key: %s\n" % e)
 ```
 
@@ -114,16 +113,15 @@ Create an application key for current user
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -132,7 +130,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
     body = ApplicationKeyCreateRequest(
@@ -142,14 +140,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=ApplicationKeysType("application_keys"),
         ),
-    ) # ApplicationKeyCreateRequest | 
+    )  # ApplicationKeyCreateRequest | 
 
     # example passing only required values which don't have defaults set
     try:
         # Create an application key for current user
         api_response = api_instance.create_current_user_application_key(body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->create_current_user_application_key: %s\n" % e)
 ```
 
@@ -195,16 +193,15 @@ Delete an API key.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -213,16 +210,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    api_key_id = "api_key_id_example" # str | The ID of the API key.
+    api_key_id = "api_key_id_example"  # str | The ID of the API key.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an API key
         api_instance.delete_api_key(api_key_id)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->delete_api_key: %s\n" % e)
 ```
 
@@ -268,16 +265,15 @@ Delete an application key
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -286,16 +282,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    app_key_id = "app_key_id_example" # str | The ID of the application key.
+    app_key_id = "app_key_id_example"  # str | The ID of the application key.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an application key
         api_instance.delete_application_key(app_key_id)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->delete_application_key: %s\n" % e)
 ```
 
@@ -341,16 +337,15 @@ Delete an application key owned by current user
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -359,16 +354,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    app_key_id = "app_key_id_example" # str | The ID of the application key.
+    app_key_id = "app_key_id_example"  # str | The ID of the application key.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an application key owned by current user
         api_instance.delete_current_user_application_key(app_key_id)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->delete_current_user_application_key: %s\n" % e)
 ```
 
@@ -414,16 +409,15 @@ Get an API key.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -432,18 +426,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    api_key_id = "api_key_id_example" # str | The ID of the API key.
-    include = "created_by,modified_by" # str | Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`. (optional)
+    api_key_id = "api_key_id_example"  # str | The ID of the API key.
+    include = "created_by,modified_by"  # str | Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get API key
         api_response = api_instance.get_api_key(api_key_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->get_api_key: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -452,7 +446,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get API key
         api_response = api_instance.get_api_key(api_key_id, include=include)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->get_api_key: %s\n" % e)
 ```
 
@@ -499,16 +493,15 @@ Get an application key owned by current user
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -517,17 +510,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    app_key_id = "app_key_id_example" # str | The ID of the application key.
+    app_key_id = "app_key_id_example"  # str | The ID of the application key.
 
     # example passing only required values which don't have defaults set
     try:
         # Get one application key owned by current user
         api_response = api_instance.get_current_user_application_key(app_key_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->get_current_user_application_key: %s\n" % e)
 ```
 
@@ -573,16 +566,15 @@ List all API keys available for your account.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -591,18 +583,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
-    sort = APIKeysSort("name") # APIKeysSort | API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional)
-    filter = "filter_example" # str | Filter API keys by the specified string. (optional)
-    filter_created_at_start = "2020-11-24T18:46:21+00:00" # str | Only include API keys created on or after the specified date. (optional)
-    filter_created_at_end = "2020-11-24T18:46:21+00:00" # str | Only include API keys created on or before the specified date. (optional)
-    filter_modified_at_start = "2020-11-24T18:46:21+00:00" # str | Only include API keys modified on or after the specified date. (optional)
-    filter_modified_at_end = "2020-11-24T18:46:21+00:00" # str | Only include API keys modified on or before the specified date. (optional)
-    include = "created_by,modified_by" # str | Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`. (optional)
+    page_size = 10  # int | Size for a given page. (optional) if omitted the server will use the default value of 10
+    page_number = 0  # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    sort = APIKeysSort("name")  # APIKeysSort | API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional)
+    filter = "filter_example"  # str | Filter API keys by the specified string. (optional)
+    filter_created_at_start = "2020-11-24T18:46:21+00:00"  # str | Only include API keys created on or after the specified date. (optional)
+    filter_created_at_end = "2020-11-24T18:46:21+00:00"  # str | Only include API keys created on or before the specified date. (optional)
+    filter_modified_at_start = "2020-11-24T18:46:21+00:00"  # str | Only include API keys modified on or after the specified date. (optional)
+    filter_modified_at_end = "2020-11-24T18:46:21+00:00"  # str | Only include API keys modified on or before the specified date. (optional)
+    include = "created_by,modified_by"  # str | Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -610,7 +602,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get all API keys
         api_response = api_instance.list_api_keys(page_size=page_size, page_number=page_number, sort=sort, filter=filter, filter_created_at_start=filter_created_at_start, filter_created_at_end=filter_created_at_end, filter_modified_at_start=filter_modified_at_start, filter_modified_at_end=filter_modified_at_end, include=include)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->list_api_keys: %s\n" % e)
 ```
 
@@ -664,16 +656,15 @@ List all application keys available for your org
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -682,15 +673,15 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
-    sort = ApplicationKeysSort("name") # ApplicationKeysSort | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional)
-    filter = "filter_example" # str | Filter application keys by the specified string. (optional)
-    filter_created_at_start = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or after the specified date. (optional)
-    filter_created_at_end = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or before the specified date. (optional)
+    page_size = 10  # int | Size for a given page. (optional) if omitted the server will use the default value of 10
+    page_number = 0  # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    sort = ApplicationKeysSort("name")  # ApplicationKeysSort | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional)
+    filter = "filter_example"  # str | Filter application keys by the specified string. (optional)
+    filter_created_at_start = "2020-11-24T18:46:21+00:00"  # str | Only include application keys created on or after the specified date. (optional)
+    filter_created_at_end = "2020-11-24T18:46:21+00:00"  # str | Only include application keys created on or before the specified date. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -698,7 +689,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get all application keys
         api_response = api_instance.list_application_keys(page_size=page_size, page_number=page_number, sort=sort, filter=filter, filter_created_at_start=filter_created_at_start, filter_created_at_end=filter_created_at_end)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->list_application_keys: %s\n" % e)
 ```
 
@@ -750,16 +741,15 @@ List all application keys available for current user
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -768,15 +758,15 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
-    sort = ApplicationKeysSort("name") # ApplicationKeysSort | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional)
-    filter = "filter_example" # str | Filter application keys by the specified string. (optional)
-    filter_created_at_start = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or after the specified date. (optional)
-    filter_created_at_end = "2020-11-24T18:46:21+00:00" # str | Only include application keys created on or before the specified date. (optional)
+    page_size = 10  # int | Size for a given page. (optional) if omitted the server will use the default value of 10
+    page_number = 0  # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    sort = ApplicationKeysSort("name")  # ApplicationKeysSort | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. (optional)
+    filter = "filter_example"  # str | Filter application keys by the specified string. (optional)
+    filter_created_at_start = "2020-11-24T18:46:21+00:00"  # str | Only include application keys created on or after the specified date. (optional)
+    filter_created_at_end = "2020-11-24T18:46:21+00:00"  # str | Only include application keys created on or before the specified date. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -784,7 +774,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get all application keys owned by current user
         api_response = api_instance.list_current_user_application_keys(page_size=page_size, page_number=page_number, sort=sort, filter=filter, filter_created_at_start=filter_created_at_start, filter_created_at_end=filter_created_at_end)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->list_current_user_application_keys: %s\n" % e)
 ```
 
@@ -836,16 +826,15 @@ Update an API key.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -854,10 +843,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    api_key_id = "api_key_id_example" # str | The ID of the API key.
+    api_key_id = "api_key_id_example"  # str | The ID of the API key.
     body = APIKeyUpdateRequest(
         data=APIKeyUpdateData(
             attributes=APIKeyUpdateAttributes(
@@ -866,14 +855,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="00112233-4455-6677-8899-aabbccddeeff",
             type=APIKeysType("api_keys"),
         ),
-    ) # APIKeyUpdateRequest | 
+    )  # APIKeyUpdateRequest | 
 
     # example passing only required values which don't have defaults set
     try:
         # Edit an API key
         api_response = api_instance.update_api_key(api_key_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->update_api_key: %s\n" % e)
 ```
 
@@ -921,16 +910,15 @@ Edit an application key
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -939,10 +927,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    app_key_id = "app_key_id_example" # str | The ID of the application key.
+    app_key_id = "app_key_id_example"  # str | The ID of the application key.
     body = ApplicationKeyUpdateRequest(
         data=ApplicationKeyUpdateData(
             attributes=ApplicationKeyUpdateAttributes(
@@ -951,14 +939,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="00112233-4455-6677-8899-aabbccddeeff",
             type=ApplicationKeysType("application_keys"),
         ),
-    ) # ApplicationKeyUpdateRequest | 
+    )  # ApplicationKeyUpdateRequest | 
 
     # example passing only required values which don't have defaults set
     try:
         # Edit an application key
         api_response = api_instance.update_application_key(app_key_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->update_application_key: %s\n" % e)
 ```
 
@@ -1006,16 +994,15 @@ Edit an application key owned by current user
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import key_management_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1024,10 +1011,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
-    app_key_id = "app_key_id_example" # str | The ID of the application key.
+    app_key_id = "app_key_id_example"  # str | The ID of the application key.
     body = ApplicationKeyUpdateRequest(
         data=ApplicationKeyUpdateData(
             attributes=ApplicationKeyUpdateAttributes(
@@ -1036,14 +1023,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="00112233-4455-6677-8899-aabbccddeeff",
             type=ApplicationKeysType("application_keys"),
         ),
-    ) # ApplicationKeyUpdateRequest | 
+    )  # ApplicationKeyUpdateRequest | 
 
     # example passing only required values which don't have defaults set
     try:
         # Edit an application key owned by current user
         api_response = api_instance.update_current_user_application_key(app_key_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling KeyManagementApi->update_current_user_application_key: %s\n" % e)
 ```
 

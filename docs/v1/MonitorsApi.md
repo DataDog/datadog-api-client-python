@@ -27,16 +27,15 @@ Check if the given monitors can be deleted.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -45,19 +44,19 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
     monitor_ids = [
         1,
-    ] # [int] | The IDs of the monitor to check.
+    ]  # [int] | The IDs of the monitor to check.
 
     # example passing only required values which don't have defaults set
     try:
         # Check if a monitor can be deleted
         api_response = api_instance.check_can_delete_monitor(monitor_ids)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MonitorsApi->check_can_delete_monitor: %s\n" % e)
 ```
 
@@ -104,16 +103,15 @@ Create a monitor using the specified options.  #### Monitor Types  The type of m
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -122,7 +120,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
     body = Monitor(
@@ -200,14 +198,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             "tags_example",
         ],
         type=MonitorType("composite"),
-    ) # Monitor | Create a monitor request body.
+    )  # Monitor | Create a monitor request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a monitor
         api_response = api_instance.create_monitor(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MonitorsApi->create_monitor: %s\n" % e)
 ```
 
@@ -253,16 +251,15 @@ Delete the specified monitor
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -271,18 +268,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    monitor_id = 1 # int | The ID of the monitor.
-    force = "force_example" # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
+    monitor_id = 1  # int | The ID of the monitor.
+    force = "force_example"  # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a monitor
         api_response = api_instance.delete_monitor(monitor_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MonitorsApi->delete_monitor: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -291,7 +288,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Delete a monitor
         api_response = api_instance.delete_monitor(monitor_id, force=force)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MonitorsApi->delete_monitor: %s\n" % e)
 ```
 
@@ -340,16 +337,15 @@ Get details about the specified monitor from your organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -358,18 +354,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    monitor_id = 1 # int | The ID of the monitor
-    group_states = "group_states_example" # str | When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`. (optional)
+    monitor_id = 1  # int | The ID of the monitor
+    group_states = "group_states_example"  # str | When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get a monitor's details
         api_response = api_instance.get_monitor(monitor_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MonitorsApi->get_monitor: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -378,7 +374,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get a monitor's details
         api_response = api_instance.get_monitor(monitor_id, group_states=group_states)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MonitorsApi->get_monitor: %s\n" % e)
 ```
 
@@ -426,16 +422,15 @@ Get details about the specified monitor from your organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -444,17 +439,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    group_states = "group_states_example" # str | When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`. (optional)
-    name = "name_example" # str | A string to filter monitors by name. (optional)
-    tags = "tags_example" # str | A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. For example, `host:host0`. (optional)
-    monitor_tags = "monitor_tags_example" # str | A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors. Tags created in the Datadog UI automatically have the service key prepended. For example, `service:my-app`. (optional)
-    with_downtimes = True # bool | If this argument is set to true, then the returned data includes all current downtimes for each monitor. (optional)
-    id_offset = 1 # int | Monitor ID offset. (optional)
-    page = 1 # int | The page to start paginating from. If this argument is not specified, the request returns all monitors without pagination. (optional)
-    page_size = 1 # int | The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a `page_size` limit. However, if page is specified and `page_size` is not, the argument defaults to 100. (optional)
+    group_states = "group_states_example"  # str | When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`. (optional)
+    name = "name_example"  # str | A string to filter monitors by name. (optional)
+    tags = "tags_example"  # str | A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. For example, `host:host0`. (optional)
+    monitor_tags = "monitor_tags_example"  # str | A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors. Tags created in the Datadog UI automatically have the service key prepended. For example, `service:my-app`. (optional)
+    with_downtimes = True  # bool | If this argument is set to true, then the returned data includes all current downtimes for each monitor. (optional)
+    id_offset = 1  # int | Monitor ID offset. (optional)
+    page = 1  # int | The page to start paginating from. If this argument is not specified, the request returns all monitors without pagination. (optional)
+    page_size = 1  # int | The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a `page_size` limit. However, if page is specified and `page_size` is not, the argument defaults to 100. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -462,7 +457,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get all monitor details
         api_response = api_instance.list_monitors(group_states=group_states, name=name, tags=tags, monitor_tags=monitor_tags, with_downtimes=with_downtimes, id_offset=id_offset, page=page, page_size=page_size)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MonitorsApi->list_monitors: %s\n" % e)
 ```
 
@@ -515,16 +510,15 @@ Edit the specified monitor.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -533,10 +527,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    monitor_id = 1 # int | The ID of the monitor.
+    monitor_id = 1  # int | The ID of the monitor.
     body = MonitorUpdateRequest(
         created=dateutil_parser('1970-01-01T00:00:00.00Z'),
         creator=Creator(
@@ -612,14 +606,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             "tags_example",
         ],
         type=MonitorType("composite"),
-    ) # MonitorUpdateRequest | Edit a monitor request body.
+    )  # MonitorUpdateRequest | Edit a monitor request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Edit a monitor
         api_response = api_instance.update_monitor(monitor_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MonitorsApi->update_monitor: %s\n" % e)
 ```
 
@@ -668,16 +662,15 @@ Validate the monitor provided in the request.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import monitors_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -686,7 +679,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
     body = Monitor(
@@ -764,14 +757,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             "tags_example",
         ],
         type=MonitorType("composite"),
-    ) # Monitor | Monitor request object
+    )  # Monitor | Monitor request object
 
     # example passing only required values which don't have defaults set
     try:
         # Validate a monitor
         api_response = api_instance.validate_monitor(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MonitorsApi->validate_monitor: %s\n" % e)
 ```
 

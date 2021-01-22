@@ -48,16 +48,15 @@ Get daily custom reports.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -67,13 +66,13 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_daily_custom_reports"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    page_size = 1 # int | The number of files to return in the response. `[default=60]`. (optional)
-    page_number = 1 # int | The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`. (optional)
-    sort_dir = UsageSortDirection("desc") # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
-    sort = UsageSort("start_date") # UsageSort | The field to sort by: `[computed_on, size, start_date, end_date]`. (optional)
+    page_size = 1  # int | The number of files to return in the response. `[default=60]`. (optional)
+    page_number = 1  # int | The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`. (optional)
+    sort_dir = UsageSortDirection("desc")  # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
+    sort = UsageSort("start_date")  # UsageSort | The field to sort by: `[computed_on, size, start_date, end_date]`. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -81,7 +80,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get the list of available daily custom reports
         api_response = api_instance.get_daily_custom_reports(page_size=page_size, page_number=page_number, sort_dir=sort_dir, sort=sort)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_daily_custom_reports: %s\n" % e)
 ```
 
@@ -129,16 +128,15 @@ Get hourly usage for incident management.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -147,18 +145,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for incident management
         api_response = api_instance.get_incident_management(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_incident_management: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -167,7 +165,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for incident management
         api_response = api_instance.get_incident_management(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_incident_management: %s\n" % e)
 ```
 
@@ -214,16 +212,15 @@ Get hourly usage for ingested spans.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -232,18 +229,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for ingested spans
         api_response = api_instance.get_ingested_spans(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_ingested_spans: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -252,7 +249,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for ingested spans
         api_response = api_instance.get_ingested_spans(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_ingested_spans: %s\n" % e)
 ```
 
@@ -299,16 +296,15 @@ Get monthly custom reports.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -318,13 +314,13 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_monthly_custom_reports"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    page_size = 1 # int | The number of files to return in the response `[default=60].` (optional)
-    page_number = 1 # int | The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`. (optional)
-    sort_dir = UsageSortDirection("desc") # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
-    sort = UsageSort("start_date") # UsageSort | The field to sort by: `[computed_on, size, start_date, end_date]`. (optional)
+    page_size = 1  # int | The number of files to return in the response `[default=60].` (optional)
+    page_number = 1  # int | The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`. (optional)
+    sort_dir = UsageSortDirection("desc")  # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
+    sort = UsageSort("start_date")  # UsageSort | The field to sort by: `[computed_on, size, start_date, end_date]`. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -332,7 +328,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get the list of available monthly custom reports
         api_response = api_instance.get_monthly_custom_reports(page_size=page_size, page_number=page_number, sort_dir=sort_dir, sort=sort)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_monthly_custom_reports: %s\n" % e)
 ```
 
@@ -380,16 +376,15 @@ Get specified daily custom reports.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -399,17 +394,17 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_specified_daily_custom_reports"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    report_id = "report_id_example" # str | The specified ID to search results for.
+    report_id = "report_id_example"  # str | The specified ID to search results for.
 
     # example passing only required values which don't have defaults set
     try:
         # Get specified daily custom reports
         api_response = api_instance.get_specified_daily_custom_reports(report_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_specified_daily_custom_reports: %s\n" % e)
 ```
 
@@ -455,16 +450,15 @@ Get specified monthly custom reports.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -474,17 +468,17 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_specified_monthly_custom_reports"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    report_id = "report_id_example" # str | The specified ID to search results for.
+    report_id = "report_id_example"  # str | The specified ID to search results for.
 
     # example passing only required values which don't have defaults set
     try:
         # Get specified monthly custom reports
         api_response = api_instance.get_specified_monthly_custom_reports(report_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_specified_monthly_custom_reports: %s\n" % e)
 ```
 
@@ -531,16 +525,15 @@ Get hourly usage for tracing without limits.  **Note** This endpoint has been re
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -549,18 +542,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for tracing without limits
         api_response = api_instance.get_tracing_without_limits(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_tracing_without_limits: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -569,7 +562,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for tracing without limits
         api_response = api_instance.get_tracing_without_limits(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_tracing_without_limits: %s\n" % e)
 ```
 
@@ -616,16 +609,15 @@ Get hourly usage for analyzed logs (Security Monitoring).
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -634,18 +626,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for analyzed logs
         api_response = api_instance.get_usage_analyzed_logs(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_analyzed_logs: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -654,7 +646,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for analyzed logs
         api_response = api_instance.get_usage_analyzed_logs(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_analyzed_logs: %s\n" % e)
 ```
 
@@ -701,16 +693,15 @@ Get Usage Attribution.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -720,21 +711,21 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_usage_attribution"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
-    fields = "fields_example" # str | The specified field to search results for.
-    end_month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month. (optional)
-    sort_direction = UsageSortDirection("desc") # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
-    sort_name = UsageAttributionSort("custom_timeseries_usage") # UsageAttributionSort | The field to sort by. (optional)
+    start_month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+    fields = "fields_example"  # str | The specified field to search results for.
+    end_month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month. (optional)
+    sort_direction = UsageSortDirection("desc")  # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
+    sort_name = UsageAttributionSort("custom_timeseries_usage")  # UsageAttributionSort | The field to sort by. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get Usage Attribution
         api_response = api_instance.get_usage_attribution(start_month, fields)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_attribution: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -743,7 +734,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get Usage Attribution
         api_response = api_instance.get_usage_attribution(start_month, fields, end_month=end_month, sort_direction=sort_direction, sort_name=sort_name)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_attribution: %s\n" % e)
 ```
 
@@ -792,16 +783,15 @@ Get billable usage across your account.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -810,10 +800,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month. (optional)
+    month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -821,7 +811,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get billable usage across your account
         api_response = api_instance.get_usage_billable_summary(month=month)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_billable_summary: %s\n" % e)
 ```
 
@@ -867,16 +857,15 @@ Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_farga
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -885,18 +874,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for Fargate
         api_response = api_instance.get_usage_fargate(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_fargate: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -905,7 +894,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for Fargate
         api_response = api_instance.get_usage_fargate(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_fargate: %s\n" % e)
 ```
 
@@ -952,16 +941,15 @@ Get hourly usage for hosts and containers.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -970,18 +958,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for hosts and containers
         api_response = api_instance.get_usage_hosts(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_hosts: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -990,7 +978,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for hosts and containers
         api_response = api_instance.get_usage_hosts(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_hosts: %s\n" % e)
 ```
 
@@ -1037,16 +1025,15 @@ Get hourly usage for indexed spans.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1055,18 +1042,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for indexed spans
         api_response = api_instance.get_usage_indexed_spans(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_indexed_spans: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1075,7 +1062,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for indexed spans
         api_response = api_instance.get_usage_indexed_spans(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_indexed_spans: %s\n" % e)
 ```
 
@@ -1122,16 +1109,15 @@ Get hourly usage for lambda.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1140,18 +1126,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for Lambda
         api_response = api_instance.get_usage_lambda(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_lambda: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1160,7 +1146,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for Lambda
         api_response = api_instance.get_usage_lambda(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_lambda: %s\n" % e)
 ```
 
@@ -1207,16 +1193,15 @@ Get hourly usage for logs.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1225,18 +1210,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for Logs
         api_response = api_instance.get_usage_logs(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_logs: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1245,7 +1230,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for Logs
         api_response = api_instance.get_usage_logs(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_logs: %s\n" % e)
 ```
 
@@ -1292,16 +1277,15 @@ Get hourly usage for logs by index.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1310,21 +1294,21 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
     index_name = [
         "index_name_example",
-    ] # [str] | Comma-separated list of log index names. (optional)
+    ]  # [str] | Comma-separated list of log index names. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for Logs by Index
         api_response = api_instance.get_usage_logs_by_index(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_logs_by_index: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1333,7 +1317,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for Logs by Index
         api_response = api_instance.get_usage_logs_by_index(start_hr, end_hr=end_hr, index_name=index_name)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_logs_by_index: %s\n" % e)
 ```
 
@@ -1381,16 +1365,15 @@ Get hourly usage for network flows.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1399,18 +1382,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for Network Flows
         api_response = api_instance.get_usage_network_flows(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_network_flows: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1419,7 +1402,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for Network Flows
         api_response = api_instance.get_usage_network_flows(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_network_flows: %s\n" % e)
 ```
 
@@ -1466,16 +1449,15 @@ Get hourly usage for network hosts.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1484,18 +1466,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for Network Hosts
         api_response = api_instance.get_usage_network_hosts(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_network_hosts: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1504,7 +1486,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for Network Hosts
         api_response = api_instance.get_usage_network_hosts(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_network_hosts: %s\n" % e)
 ```
 
@@ -1551,16 +1533,15 @@ Get hourly usage for profiled hosts.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1569,18 +1550,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for profiled hosts
         api_response = api_instance.get_usage_profiling(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_profiling: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1589,7 +1570,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for profiled hosts
         api_response = api_instance.get_usage_profiling(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_profiling: %s\n" % e)
 ```
 
@@ -1636,16 +1617,15 @@ Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Ses
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1654,19 +1634,19 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
-    type = "type_example" # str | RUM type: `[browser, mobile]`. Defaults to `browser`. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    type = "type_example"  # str | RUM type: `[browser, mobile]`. Defaults to `browser`. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for RUM Sessions
         api_response = api_instance.get_usage_rum_sessions(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_rum_sessions: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1675,7 +1655,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for RUM Sessions
         api_response = api_instance.get_usage_rum_sessions(start_hr, end_hr=end_hr, type=type)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_rum_sessions: %s\n" % e)
 ```
 
@@ -1723,16 +1703,15 @@ Get hourly usage for SNMP devices.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1741,18 +1720,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for SNMP devices
         api_response = api_instance.get_usage_snmp(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_snmp: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1761,7 +1740,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for SNMP devices
         api_response = api_instance.get_usage_snmp(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_snmp: %s\n" % e)
 ```
 
@@ -1808,16 +1787,15 @@ Get usage across your multi-org account. You must have the multi-org feature ena
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1826,19 +1804,19 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
-    end_month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month. (optional)
-    include_org_details = True # bool | Include usage summaries for each sub-org. (optional)
+    start_month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+    end_month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month. (optional)
+    include_org_details = True  # bool | Include usage summaries for each sub-org. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get usage across your multi-org account
         api_response = api_instance.get_usage_summary(start_month)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_summary: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1847,7 +1825,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get usage across your multi-org account
         api_response = api_instance.get_usage_summary(start_month, end_month=end_month, include_org_details=include_org_details)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_summary: %s\n" % e)
 ```
 
@@ -1895,16 +1873,15 @@ Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/)
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1913,18 +1890,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for Synthetics Checks
         api_response = api_instance.get_usage_synthetics(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_synthetics: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1933,7 +1910,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for Synthetics Checks
         api_response = api_instance.get_usage_synthetics(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_synthetics: %s\n" % e)
 ```
 
@@ -1980,16 +1957,15 @@ Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/syntheti
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1998,18 +1974,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for Synthetics API Checks
         api_response = api_instance.get_usage_synthetics_api(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_synthetics_api: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -2018,7 +1994,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for Synthetics API Checks
         api_response = api_instance.get_usage_synthetics_api(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_synthetics_api: %s\n" % e)
 ```
 
@@ -2065,16 +2041,15 @@ Get hourly usage for synthetics browser checks.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -2083,18 +2058,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for Synthetics Browser Checks
         api_response = api_instance.get_usage_synthetics_browser(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_synthetics_browser: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -2103,7 +2078,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for Synthetics Browser Checks
         api_response = api_instance.get_usage_synthetics_browser(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_synthetics_browser: %s\n" % e)
 ```
 
@@ -2150,16 +2125,15 @@ Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metr
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -2168,18 +2142,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for custom metrics
         api_response = api_instance.get_usage_timeseries(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_timeseries: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -2188,7 +2162,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for custom metrics
         api_response = api_instance.get_usage_timeseries(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_timeseries: %s\n" % e)
 ```
 
@@ -2235,16 +2209,15 @@ Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_me
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -2253,21 +2226,21 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    month = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour.
+    month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour.
     names = [
         "names_example",
-    ] # [str] | Comma-separated list of metric names. (optional)
-    limit = 500 # int | Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. (optional) if omitted the server will use the default value of 500
+    ]  # [str] | Comma-separated list of metric names. (optional)
+    limit = 500  # int | Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. (optional) if omitted the server will use the default value of 500
 
     # example passing only required values which don't have defaults set
     try:
         # Get top custom metrics by hourly average
         api_response = api_instance.get_usage_top_avg_metrics(month)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_top_avg_metrics: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -2276,7 +2249,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get top custom metrics by hourly average
         api_response = api_instance.get_usage_top_avg_metrics(month, names=names, limit=limit)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_top_avg_metrics: %s\n" % e)
 ```
 
@@ -2324,16 +2297,15 @@ Get hourly usage for trace search.  **Note** This endpoint has been renamed to `
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import usage_metering_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -2342,18 +2314,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get hourly usage for Trace Search
         api_response = api_instance.get_usage_trace(start_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_trace: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -2362,7 +2334,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get hourly usage for Trace Search
         api_response = api_instance.get_usage_trace(start_hr, end_hr=end_hr)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_trace: %s\n" % e)
 ```
 

@@ -28,16 +28,15 @@ Check if a SLO can be safely deleted. For example, assure an SLO can be deleted 
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -46,17 +45,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    ids = "id1, id2, id3" # str | A comma separated list of the IDs of the service level objectives objects.
+    ids = "id1, id2, id3"  # str | A comma separated list of the IDs of the service level objectives objects.
 
     # example passing only required values which don't have defaults set
     try:
         # Check if SLOs can be safely deleted
         api_response = api_instance.check_can_delete_slo(ids)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->check_can_delete_slo: %s\n" % e)
 ```
 
@@ -103,16 +102,15 @@ Create a service level objective object.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -121,7 +119,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
     body = ServiceLevelObjectiveRequest(
@@ -146,14 +144,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         tags=["env:prod","app:core"],
         thresholds=[],
         type=SLOType("metric"),
-    ) # ServiceLevelObjectiveRequest | Service level objective request object.
+    )  # ServiceLevelObjectiveRequest | Service level objective request object.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a SLO object
         api_response = api_instance.create_slo(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->create_slo: %s\n" % e)
 ```
 
@@ -199,16 +197,15 @@ Permanently delete the specified service level objective object.  If an SLO is u
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -217,18 +214,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    slo_id = "slo_id_example" # str | The ID of the service level objective.
-    force = "force_example" # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
+    slo_id = "slo_id_example"  # str | The ID of the service level objective.
+    force = "force_example"  # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a SLO
         api_response = api_instance.delete_slo(slo_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->delete_slo: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -237,7 +234,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Delete a SLO
         api_response = api_instance.delete_slo(slo_id, force=force)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->delete_slo: %s\n" % e)
 ```
 
@@ -285,16 +282,15 @@ Delete (or partially delete) multiple service level objective objects.  This end
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -303,21 +299,21 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
     body = SLOBulkDelete(
         key=[
             SLOTimeframe("7d"),
         ],
-    ) # SLOBulkDelete | Delete multiple service level objective objects request body.
+    )  # SLOBulkDelete | Delete multiple service level objective objects request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Bulk Delete SLO Timeframes
         api_response = api_instance.delete_slo_timeframe_in_bulk(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->delete_slo_timeframe_in_bulk: %s\n" % e)
 ```
 
@@ -363,16 +359,15 @@ Get a service level objective object.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -381,17 +376,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    slo_id = "slo_id_example" # str | The ID of the service level objective object.
+    slo_id = "slo_id_example"  # str | The ID of the service level objective object.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a SLO's details
         api_response = api_instance.get_slo(slo_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->get_slo: %s\n" % e)
 ```
 
@@ -437,16 +432,15 @@ Get a specific SLO’s history, regardless of its SLO type.  The detailed histor
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -456,19 +450,19 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_slo_history"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    slo_id = "slo_id_example" # str | The ID of the service level objective object.
-    from_ts = 1 # int | The `from` timestamp for the query window in epoch seconds.
-    to_ts = 1 # int | The `to` timestamp for the query window in epoch seconds.
+    slo_id = "slo_id_example"  # str | The ID of the service level objective object.
+    from_ts = 1  # int | The `from` timestamp for the query window in epoch seconds.
+    to_ts = 1  # int | The `to` timestamp for the query window in epoch seconds.
 
     # example passing only required values which don't have defaults set
     try:
         # Get an SLO's history
         api_response = api_instance.get_slo_history(slo_id, from_ts, to_ts)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->get_slo_history: %s\n" % e)
 ```
 
@@ -517,16 +511,15 @@ Get multiple service level objective objects by their IDs.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -535,17 +528,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    ids = "id1, id2, id3" # str | A comma separated list of the IDs of the service level objectives objects.
+    ids = "id1, id2, id3"  # str | A comma separated list of the IDs of the service level objectives objects.
 
     # example passing only required values which don't have defaults set
     try:
         # Search SLOs
         api_response = api_instance.list_slos(ids)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->list_slos: %s\n" % e)
 ```
 
@@ -592,16 +585,15 @@ Update the specified service level objective object.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -610,10 +602,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    slo_id = "slo_id_example" # str | The ID of the service level objective object.
+    slo_id = "slo_id_example"  # str | The ID of the service level objective object.
     body = ServiceLevelObjective(
         created_at=1,
         creator=Creator(
@@ -639,14 +631,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         tags=["env:prod","app:core"],
         thresholds=[],
         type=SLOType("metric"),
-    ) # ServiceLevelObjective | The edited service level objective request object.
+    )  # ServiceLevelObjective | The edited service level objective request object.
 
     # example passing only required values which don't have defaults set
     try:
         # Update a SLO
         api_response = api_instance.update_slo(slo_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->update_slo: %s\n" % e)
 ```
 

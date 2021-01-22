@@ -41,16 +41,15 @@ Create a Synthetics global variable.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -59,7 +58,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsGlobalVariable(
@@ -80,14 +79,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             secure=True,
             value="example-value",
         ),
-    ) # SyntheticsGlobalVariable | Details of the global variable to create.
+    )  # SyntheticsGlobalVariable | Details of the global variable to create.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a global variable
         api_response = api_instance.create_global_variable(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->create_global_variable: %s\n" % e)
 ```
 
@@ -133,16 +132,15 @@ Create a new Synthetics private location.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -151,7 +149,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsPrivateLocation(
@@ -168,14 +166,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             ),
         ),
         tags=["team:front"],
-    ) # SyntheticsPrivateLocation | Details of the private location to create.
+    )  # SyntheticsPrivateLocation | Details of the private location to create.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a private location
         api_response = api_instance.create_private_location(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->create_private_location: %s\n" % e)
 ```
 
@@ -221,16 +219,15 @@ Create a Synthetic test.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -239,7 +236,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsTestDetails(
@@ -332,14 +329,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             "tags_example",
         ],
         type=SyntheticsTestDetailsType("api"),
-    ) # SyntheticsTestDetails | Details of the test to create.
+    )  # SyntheticsTestDetails | Details of the test to create.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a test
         api_response = api_instance.create_test(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->create_test: %s\n" % e)
 ```
 
@@ -386,16 +383,15 @@ Delete a Synthetics global variable.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -404,16 +400,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    variable_id = "variable_id_example" # str | The ID of the global variable.
+    variable_id = "variable_id_example"  # str | The ID of the global variable.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a global variable
         api_instance.delete_global_variable(variable_id)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->delete_global_variable: %s\n" % e)
 ```
 
@@ -460,16 +456,15 @@ Delete a Synthetics private location.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -478,16 +473,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    location_id = "location_id_example" # str | The ID of the private location.
+    location_id = "location_id_example"  # str | The ID of the private location.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a private location
         api_instance.delete_private_location(location_id)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->delete_private_location: %s\n" % e)
 ```
 
@@ -532,16 +527,15 @@ Delete multiple Synthetic tests by ID.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -550,19 +544,19 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsDeleteTestsPayload(
         public_ids=[],
-    ) # SyntheticsDeleteTestsPayload | Public ID list of the Synthetic tests to be deleted.
+    )  # SyntheticsDeleteTestsPayload | Public ID list of the Synthetic tests to be deleted.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete tests
         api_response = api_instance.delete_tests(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->delete_tests: %s\n" % e)
 ```
 
@@ -609,16 +603,15 @@ Edit a Synthetics global variable.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -627,10 +620,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    variable_id = "variable_id_example" # str | The ID of the global variable.
+    variable_id = "variable_id_example"  # str | The ID of the global variable.
     body = SyntheticsGlobalVariable(
         description="Example description",
         id="id_example",
@@ -649,14 +642,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             secure=True,
             value="example-value",
         ),
-    ) # SyntheticsGlobalVariable | Details of the global variable to update.
+    )  # SyntheticsGlobalVariable | Details of the global variable to update.
 
     # example passing only required values which don't have defaults set
     try:
         # Edit a global variable
         api_response = api_instance.edit_global_variable(variable_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->edit_global_variable: %s\n" % e)
 ```
 
@@ -703,16 +696,15 @@ Get the last 50 test results summaries for a given Synthetics API test.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -721,22 +713,22 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = "public_id_example" # str | The public ID of the test for which to search results for.
-    from_ts = 1 # int | Timestamp from which to start querying results. (optional)
-    to_ts = 1 # int | Timestamp up to which to query results. (optional)
+    public_id = "public_id_example"  # str | The public ID of the test for which to search results for.
+    from_ts = 1  # int | Timestamp from which to start querying results. (optional)
+    to_ts = 1  # int | Timestamp up to which to query results. (optional)
     probe_dc = [
         "probe_dc_example",
-    ] # [str] | Locations for which to query results. (optional)
+    ]  # [str] | Locations for which to query results. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get the test's latest results summaries (API)
         api_response = api_instance.get_api_test_latest_results(public_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->get_api_test_latest_results: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -745,7 +737,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get the test's latest results summaries (API)
         api_response = api_instance.get_api_test_latest_results(public_id, from_ts=from_ts, to_ts=to_ts, probe_dc=probe_dc)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->get_api_test_latest_results: %s\n" % e)
 ```
 
@@ -794,16 +786,15 @@ Get a specific full result from a given (API) Synthetic test.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -812,18 +803,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = "public_id_example" # str | The public ID of the API test to which the target result belongs.
-    result_id = "result_id_example" # str | The ID of the result to get.
+    public_id = "public_id_example"  # str | The public ID of the API test to which the target result belongs.
+    result_id = "result_id_example"  # str | The ID of the result to get.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a test result (API)
         api_response = api_instance.get_api_test_result(public_id, result_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->get_api_test_result: %s\n" % e)
 ```
 
@@ -870,16 +861,15 @@ Get the detailed configuration (including steps) associated with a Synthetic bro
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -888,17 +878,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = "public_id_example" # str | The public ID of the test to get details from.
+    public_id = "public_id_example"  # str | The public ID of the test to get details from.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a test configuration (browser)
         api_response = api_instance.get_browser_test(public_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->get_browser_test: %s\n" % e)
 ```
 
@@ -944,16 +934,15 @@ Get the last 50 test results summaries for a given Synthetics Browser test.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -962,22 +951,22 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = "public_id_example" # str | The public ID of the browser test for which to search results for.
-    from_ts = 1 # int | Timestamp from which to start querying results. (optional)
-    to_ts = 1 # int | Timestamp up to which to query results. (optional)
+    public_id = "public_id_example"  # str | The public ID of the browser test for which to search results for.
+    from_ts = 1  # int | Timestamp from which to start querying results. (optional)
+    to_ts = 1  # int | Timestamp up to which to query results. (optional)
     probe_dc = [
         "probe_dc_example",
-    ] # [str] | Locations for which to query results. (optional)
+    ]  # [str] | Locations for which to query results. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get the test's latest results summaries (browser)
         api_response = api_instance.get_browser_test_latest_results(public_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->get_browser_test_latest_results: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -986,7 +975,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get the test's latest results summaries (browser)
         api_response = api_instance.get_browser_test_latest_results(public_id, from_ts=from_ts, to_ts=to_ts, probe_dc=probe_dc)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->get_browser_test_latest_results: %s\n" % e)
 ```
 
@@ -1035,16 +1024,15 @@ Get a specific full result from a given (browser) Synthetic test.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1053,18 +1041,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = "public_id_example" # str | The public ID of the browser test to which the target result belongs.
-    result_id = "result_id_example" # str | The ID of the result to get.
+    public_id = "public_id_example"  # str | The public ID of the browser test to which the target result belongs.
+    result_id = "result_id_example"  # str | The ID of the result to get.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a test result (browser)
         api_response = api_instance.get_browser_test_result(public_id, result_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->get_browser_test_result: %s\n" % e)
 ```
 
@@ -1111,16 +1099,15 @@ Get the detailed configuration of a global variable.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1129,17 +1116,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    variable_id = "variable_id_example" # str | The ID of the global variable.
+    variable_id = "variable_id_example"  # str | The ID of the global variable.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a global variable
         api_response = api_instance.get_global_variable(variable_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->get_global_variable: %s\n" % e)
 ```
 
@@ -1185,16 +1172,15 @@ Get a Synthetics private location.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1203,17 +1189,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    location_id = "location_id_example" # str | The ID of the private location.
+    location_id = "location_id_example"  # str | The ID of the private location.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a private location
         api_response = api_instance.get_private_location(location_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->get_private_location: %s\n" % e)
 ```
 
@@ -1258,16 +1244,15 @@ Get the detailed configuration associated with a Synthetics test.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1276,17 +1261,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = "public_id_example" # str | The public ID of the test to get details from.
+    public_id = "public_id_example"  # str | The public ID of the test to get details from.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a test configuration (API)
         api_response = api_instance.get_test(public_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->get_test: %s\n" % e)
 ```
 
@@ -1332,16 +1317,15 @@ Get the list of public and private locations available for Synthetic tests. No a
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1350,7 +1334,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
 
@@ -1359,7 +1343,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get all locations (public and private)
         api_response = api_instance.list_locations()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->list_locations: %s\n" % e)
 ```
 
@@ -1400,16 +1384,15 @@ Get the list of all Synthetic tests.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1418,7 +1401,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
 
@@ -1427,7 +1410,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get the list of all tests
         api_response = api_instance.list_tests()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->list_tests: %s\n" % e)
 ```
 
@@ -1470,16 +1453,15 @@ Trigger a set of Synthetics tests for continuous integration.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1488,7 +1470,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsCITestBody(
@@ -1533,14 +1515,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
                 },
             ),
         ],
-    ) # SyntheticsCITestBody | Details of the test to trigger.
+    )  # SyntheticsCITestBody | Details of the test to trigger.
 
     # example passing only required values which don't have defaults set
     try:
         # Trigger some Synthetics tests for CI
         api_response = api_instance.trigger_ci_tests(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->trigger_ci_tests: %s\n" % e)
 ```
 
@@ -1585,16 +1567,15 @@ Edit a Synthetics private location.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1603,10 +1584,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    location_id = "location_id_example" # str | The ID of the private location.
+    location_id = "location_id_example"  # str | The ID of the private location.
     body = SyntheticsPrivateLocation(
         description="Description of private location",
         id="id_example",
@@ -1621,14 +1602,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             ),
         ),
         tags=["team:front"],
-    ) # SyntheticsPrivateLocation | Details of the private location to be updated.
+    )  # SyntheticsPrivateLocation | Details of the private location to be updated.
 
     # example passing only required values which don't have defaults set
     try:
         # Edit a private location
         api_response = api_instance.update_private_location(location_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->update_private_location: %s\n" % e)
 ```
 
@@ -1674,16 +1655,15 @@ Edit the configuration of a Synthetic test.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1692,10 +1672,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = "public_id_example" # str | The public ID of the test to get details from.
+    public_id = "public_id_example"  # str | The public ID of the test to get details from.
     body = SyntheticsTestDetails(
         config=SyntheticsTestConfig(
             assertions=[],
@@ -1786,14 +1766,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             "tags_example",
         ],
         type=SyntheticsTestDetailsType("api"),
-    ) # SyntheticsTestDetails | New test details to be saved.
+    )  # SyntheticsTestDetails | New test details to be saved.
 
     # example passing only required values which don't have defaults set
     try:
         # Edit a test
         api_response = api_instance.update_test(public_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->update_test: %s\n" % e)
 ```
 
@@ -1841,16 +1821,15 @@ Pause or start a Synthetics test by changing the status.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import synthetics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -1859,20 +1838,20 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
-    public_id = "public_id_example" # str | The public ID of the Synthetic test to update.
+    public_id = "public_id_example"  # str | The public ID of the Synthetic test to update.
     body = SyntheticsUpdateTestPauseStatusPayload(
         new_status=SyntheticsTestPauseStatus("live"),
-    ) # SyntheticsUpdateTestPauseStatusPayload | Status to set the given Synthetic test to.
+    )  # SyntheticsUpdateTestPauseStatusPayload | Status to set the given Synthetic test to.
 
     # example passing only required values which don't have defaults set
     try:
         # Pause or start a test
         api_response = api_instance.update_test_pause_status(public_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SyntheticsApi->update_test_pause_status: %s\n" % e)
 ```
 

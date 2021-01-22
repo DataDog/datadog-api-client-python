@@ -25,16 +25,15 @@ Create an SLO Correction
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objective_corrections_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -44,7 +43,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["create_slo_correction"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objective_corrections_api.ServiceLevelObjectiveCorrectionsApi(api_client)
     body = SLOCorrectionCreateRequest(
@@ -59,14 +58,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             ),
             type="correction",
         ),
-    ) # SLOCorrectionCreateRequest | Create an SLO Correction
+    )  # SLOCorrectionCreateRequest | Create an SLO Correction
 
     # example passing only required values which don't have defaults set
     try:
         # Create an SLO correction
         api_response = api_instance.create_slo_correction(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectiveCorrectionsApi->create_slo_correction: %s\n" % e)
 ```
 
@@ -112,16 +111,15 @@ Permanently delete the specified SLO Correction object
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objective_corrections_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -131,16 +129,16 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["delete_slo_correction"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objective_corrections_api.ServiceLevelObjectiveCorrectionsApi(api_client)
-    slo_correction_id = "slo_correction_id_example" # str | The ID of the SLO correction object
+    slo_correction_id = "slo_correction_id_example"  # str | The ID of the SLO correction object
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an SLO Correction
         api_instance.delete_slo_correction(slo_correction_id)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectiveCorrectionsApi->delete_slo_correction: %s\n" % e)
 ```
 
@@ -186,16 +184,15 @@ Get an SLO Correction
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objective_corrections_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -205,17 +202,17 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_slo_correction"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objective_corrections_api.ServiceLevelObjectiveCorrectionsApi(api_client)
-    slo_correction_id = "slo_correction_id_example" # str | The ID of the SLO correction object
+    slo_correction_id = "slo_correction_id_example"  # str | The ID of the SLO correction object
 
     # example passing only required values which don't have defaults set
     try:
         # Get an SLO correction for an SLO
         api_response = api_instance.get_slo_correction(slo_correction_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectiveCorrectionsApi->get_slo_correction: %s\n" % e)
 ```
 
@@ -261,16 +258,15 @@ Get all Service Level Objective Corrections
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objective_corrections_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -280,7 +276,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["list_slo_correction"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objective_corrections_api.ServiceLevelObjectiveCorrectionsApi(api_client)
 
@@ -289,7 +285,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get all SLO corrections
         api_response = api_instance.list_slo_correction()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectiveCorrectionsApi->list_slo_correction: %s\n" % e)
 ```
 
@@ -331,16 +327,15 @@ Update the specified SLO correction object object
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objective_corrections_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -350,10 +345,10 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["update_slo_correction"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objective_corrections_api.ServiceLevelObjectiveCorrectionsApi(api_client)
-    slo_correction_id = "slo_correction_id_example" # str | The ID of the SLO correction object
+    slo_correction_id = "slo_correction_id_example"  # str | The ID of the SLO correction object
     body = SLOCorrectionUpdateRequest(
         data=SLOCorrectionUpdateRequestData(
             attributes=SLOCorrectionUpdateRequestAttributes(
@@ -365,14 +360,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             ),
             type="correction",
         ),
-    ) # SLOCorrectionUpdateRequest | The edited SLO correction object.
+    )  # SLOCorrectionUpdateRequest | The edited SLO correction object.
 
     # example passing only required values which don't have defaults set
     try:
         # Update an SLO Correction
         api_response = api_instance.update_slo_correction(slo_correction_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ServiceLevelObjectiveCorrectionsApi->update_slo_correction: %s\n" % e)
 ```
 

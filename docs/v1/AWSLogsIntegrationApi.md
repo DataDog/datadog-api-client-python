@@ -27,16 +27,15 @@ Test if permissions are present to add a log-forwarding triggers for the given s
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_logs_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -45,20 +44,20 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
     body = AWSAccountAndLambdaRequest(
         account_id="1234567",
         lambda_arn="arn:aws:lambda:us-east-1:1234567:function:LogsCollectionAPITest",
-    ) # AWSAccountAndLambdaRequest | Check AWS Log Lambda Async request body.
+    )  # AWSAccountAndLambdaRequest | Check AWS Log Lambda Async request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Check that an AWS Lambda Function exists
         api_response = api_instance.check_aws_logs_lambda_async(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSLogsIntegrationApi->check_aws_logs_lambda_async: %s\n" % e)
 ```
 
@@ -104,16 +103,15 @@ Test if permissions are present to add log-forwarding triggers for the given ser
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_logs_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -122,20 +120,20 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
     body = AWSLogsServicesRequest(
         account_id="1234567",
         services=["s3","elb","elbv2","cloudfront","redshift","lambda"],
-    ) # AWSLogsServicesRequest | Check AWS Logs Async Services request body.
+    )  # AWSLogsServicesRequest | Check AWS Logs Async Services request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Check permissions for log services
         api_response = api_instance.check_aws_logs_services_async(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSLogsIntegrationApi->check_aws_logs_services_async: %s\n" % e)
 ```
 
@@ -181,16 +179,15 @@ Attach the Lambda ARN of the Lambda created for the Datadog-AWS log collection t
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_logs_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -199,20 +196,20 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
     body = AWSAccountAndLambdaRequest(
         account_id="1234567",
         lambda_arn="arn:aws:lambda:us-east-1:1234567:function:LogsCollectionAPITest",
-    ) # AWSAccountAndLambdaRequest | AWS Log Lambda Async request body.
+    )  # AWSAccountAndLambdaRequest | AWS Log Lambda Async request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Add AWS Log Lambda ARN
         api_response = api_instance.create_aws_lambda_arn(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSLogsIntegrationApi->create_aws_lambda_arn: %s\n" % e)
 ```
 
@@ -258,16 +255,15 @@ Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN asso
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_logs_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -276,20 +272,20 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
     body = AWSAccountAndLambdaRequest(
         account_id="1234567",
         lambda_arn="arn:aws:lambda:us-east-1:1234567:function:LogsCollectionAPITest",
-    ) # AWSAccountAndLambdaRequest | Delete AWS Lambda ARN request body.
+    )  # AWSAccountAndLambdaRequest | Delete AWS Lambda ARN request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an AWS Logs integration
         api_response = api_instance.delete_aws_lambda_arn(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSLogsIntegrationApi->delete_aws_lambda_arn: %s\n" % e)
 ```
 
@@ -335,16 +331,15 @@ Enable automatic log collection for a list of services. This should be run after
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_logs_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -353,20 +348,20 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
     body = AWSLogsServicesRequest(
         account_id="1234567",
         services=["s3","elb","elbv2","cloudfront","redshift","lambda"],
-    ) # AWSLogsServicesRequest | Enable AWS Log Services request body.
+    )  # AWSLogsServicesRequest | Enable AWS Log Services request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Enable an AWS Logs integration
         api_response = api_instance.enable_aws_log_services(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSLogsIntegrationApi->enable_aws_log_services: %s\n" % e)
 ```
 
@@ -412,16 +407,15 @@ List all Datadog-AWS Logs integrations configured in your Datadog account.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_logs_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -430,7 +424,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
 
@@ -439,7 +433,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # List all AWS Logs integrations
         api_response = api_instance.list_aws_logs_integrations()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSLogsIntegrationApi->list_aws_logs_integrations: %s\n" % e)
 ```
 
@@ -482,16 +476,15 @@ Get the list of current AWS services that Datadog offers automatic log collectio
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_logs_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -500,7 +493,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_logs_integration_api.AWSLogsIntegrationApi(api_client)
 
@@ -509,7 +502,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get list of AWS log ready services
         api_response = api_instance.list_aws_logs_services()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSLogsIntegrationApi->list_aws_logs_services: %s\n" % e)
 ```
 

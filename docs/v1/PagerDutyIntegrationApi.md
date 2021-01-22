@@ -24,16 +24,15 @@ Create a new service object in the PagerDuty integration.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import pager_duty_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -42,20 +41,20 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pager_duty_integration_api.PagerDutyIntegrationApi(api_client)
     body = PagerDutyService(
         service_key="",
         service_name="",
-    ) # PagerDutyService | Create a new service object request body.
+    )  # PagerDutyService | Create a new service object request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a new service object
         api_response = api_instance.create_pager_duty_integration_service(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling PagerDutyIntegrationApi->create_pager_duty_integration_service: %s\n" % e)
 ```
 
@@ -101,16 +100,15 @@ Delete a single service object in the Datadog-PagerDuty integration.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import pager_duty_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -119,16 +117,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pager_duty_integration_api.PagerDutyIntegrationApi(api_client)
-    service_name = "service_name_example" # str | The service name
+    service_name = "service_name_example"  # str | The service name
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a single service object
         api_instance.delete_pager_duty_integration_service(service_name)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling PagerDutyIntegrationApi->delete_pager_duty_integration_service: %s\n" % e)
 ```
 
@@ -174,16 +172,15 @@ Get service name in the Datadog-PagerDuty integration.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import pager_duty_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -192,17 +189,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pager_duty_integration_api.PagerDutyIntegrationApi(api_client)
-    service_name = "service_name_example" # str | The service name.
+    service_name = "service_name_example"  # str | The service name.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a single service object
         api_response = api_instance.get_pager_duty_integration_service(service_name)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling PagerDutyIntegrationApi->get_pager_duty_integration_service: %s\n" % e)
 ```
 
@@ -248,16 +245,15 @@ Update a single service object in the Datadog-PagerDuty integration.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import pager_duty_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -266,19 +262,19 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pager_duty_integration_api.PagerDutyIntegrationApi(api_client)
-    service_name = "service_name_example" # str | The service name
+    service_name = "service_name_example"  # str | The service name
     body = PagerDutyServiceKey(
         service_key="",
-    ) # PagerDutyServiceKey | Update an existing service object request body.
+    )  # PagerDutyServiceKey | Update an existing service object request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Update a single service object
         api_instance.update_pager_duty_integration_service(service_name, body)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling PagerDutyIntegrationApi->update_pager_duty_integration_service: %s\n" % e)
 ```
 

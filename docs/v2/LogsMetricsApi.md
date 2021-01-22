@@ -25,16 +25,15 @@ Create a metric based on your ingested logs in your organization. Returns the lo
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_metrics_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -43,7 +42,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_metrics_api.LogsMetricsApi(api_client)
     body = LogsMetricCreateRequest(
@@ -66,14 +65,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="logs.page.load.count",
             type=LogsMetricType("logs_metrics"),
         ),
-    ) # LogsMetricCreateRequest | The definition of the new log-based metric.
+    )  # LogsMetricCreateRequest | The definition of the new log-based metric.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a log-based metric
         api_response = api_instance.create_logs_metric(body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsMetricsApi->create_logs_metric: %s\n" % e)
 ```
 
@@ -121,16 +120,15 @@ Delete a specific log-based metric from your organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_metrics_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -139,16 +137,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_metrics_api.LogsMetricsApi(api_client)
-    metric_id = "metric_id_example" # str | The name of the log-based metric.
+    metric_id = "metric_id_example"  # str | The name of the log-based metric.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a log-based metric
         api_instance.delete_logs_metric(metric_id)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsMetricsApi->delete_logs_metric: %s\n" % e)
 ```
 
@@ -195,16 +193,15 @@ Get a specific log-based metric from your organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_metrics_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -213,17 +210,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_metrics_api.LogsMetricsApi(api_client)
-    metric_id = "metric_id_example" # str | The name of the log-based metric.
+    metric_id = "metric_id_example"  # str | The name of the log-based metric.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a log-based metric
         api_response = api_instance.get_logs_metric(metric_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsMetricsApi->get_logs_metric: %s\n" % e)
 ```
 
@@ -270,16 +267,15 @@ Get the list of configured log-based metrics with their definitions.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_metrics_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -288,7 +284,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_metrics_api.LogsMetricsApi(api_client)
 
@@ -297,7 +293,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get all log-based metrics
         api_response = api_instance.list_logs_metrics()
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsMetricsApi->list_logs_metrics: %s\n" % e)
 ```
 
@@ -340,16 +336,15 @@ Update a specific log-based metric from your organization. Returns the log-based
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_metrics_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -358,10 +353,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_metrics_api.LogsMetricsApi(api_client)
-    metric_id = "metric_id_example" # str | The name of the log-based metric.
+    metric_id = "metric_id_example"  # str | The name of the log-based metric.
     body = LogsMetricUpdateRequest(
         data=LogsMetricUpdateData(
             attributes=LogsMetricUpdateAttributes(
@@ -377,14 +372,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=LogsMetricType("logs_metrics"),
         ),
-    ) # LogsMetricUpdateRequest | New definition of the log-based metric.
+    )  # LogsMetricUpdateRequest | New definition of the log-based metric.
 
     # example passing only required values which don't have defaults set
     try:
         # Update a log-based metric
         api_response = api_instance.update_logs_metric(metric_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsMetricsApi->update_logs_metric: %s\n" % e)
 ```
 

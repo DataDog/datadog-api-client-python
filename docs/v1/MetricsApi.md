@@ -25,16 +25,15 @@ Get metadata about a specific metric.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import metrics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -43,17 +42,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = metrics_api.MetricsApi(api_client)
-    metric_name = "metric_name_example" # str | Name of the metric for which to get metadata.
+    metric_name = "metric_name_example"  # str | Name of the metric for which to get metadata.
 
     # example passing only required values which don't have defaults set
     try:
         # Get metric metadata
         api_response = api_instance.get_metric_metadata(metric_name)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MetricsApi->get_metric_metadata: %s\n" % e)
 ```
 
@@ -99,16 +98,15 @@ Get the list of actively reporting metrics from a given time until now.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import metrics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -117,18 +115,18 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = metrics_api.MetricsApi(api_client)
-    _from = 1 # int | Seconds since the Unix epoch.
-    host = "host_example" # str | Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag. (optional)
+    _from = 1  # int | Seconds since the Unix epoch.
+    host = "host_example"  # str | Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get active metrics list
         api_response = api_instance.list_active_metrics(_from)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MetricsApi->list_active_metrics: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -137,7 +135,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get active metrics list
         api_response = api_instance.list_active_metrics(_from, host=host)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MetricsApi->list_active_metrics: %s\n" % e)
 ```
 
@@ -184,16 +182,15 @@ Search for metrics from the last 24 hours in Datadog.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import metrics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -202,17 +199,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = metrics_api.MetricsApi(api_client)
-    q = "q_example" # str | Query string to search metrics upon. Must be prefixed with `metrics:`.
+    q = "q_example"  # str | Query string to search metrics upon. Must be prefixed with `metrics:`.
 
     # example passing only required values which don't have defaults set
     try:
         # Search metrics
         api_response = api_instance.list_metrics(q)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MetricsApi->list_metrics: %s\n" % e)
 ```
 
@@ -258,16 +255,15 @@ Query timeseries points.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import metrics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -276,19 +272,19 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = metrics_api.MetricsApi(api_client)
-    _from = 1 # int | Start of the queried time period, seconds since the Unix epoch.
-    to = 1 # int | End of the queried time period, seconds since the Unix epoch.
-    query = "query_example" # str | Query string.
+    _from = 1  # int | Start of the queried time period, seconds since the Unix epoch.
+    to = 1  # int | End of the queried time period, seconds since the Unix epoch.
+    query = "query_example"  # str | Query string.
 
     # example passing only required values which don't have defaults set
     try:
         # Query timeseries points
         api_response = api_instance.query_metrics(_from, to, query)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MetricsApi->query_metrics: %s\n" % e)
 ```
 
@@ -336,16 +332,15 @@ Edit metadata of a specific metric. Find out more about [supported types](https:
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import metrics_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -354,10 +349,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = metrics_api.MetricsApi(api_client)
-    metric_name = "metric_name_example" # str | Name of the metric for which to edit metadata.
+    metric_name = "metric_name_example"  # str | Name of the metric for which to edit metadata.
     body = MetricMetadata(
         description="description_example",
         integration="integration_example",
@@ -366,14 +361,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         statsd_interval=1,
         type="count",
         unit="byte",
-    ) # MetricMetadata | New metadata.
+    )  # MetricMetadata | New metadata.
 
     # example passing only required values which don't have defaults set
     try:
         # Edit metric metadata
         api_response = api_instance.update_metric_metadata(metric_name, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling MetricsApi->update_metric_metadata: %s\n" % e)
 ```
 
