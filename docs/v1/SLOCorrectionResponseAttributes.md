@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **end** | **int** | Ending time of the correction in epoch seconds | [optional] 
 **slo_id** | **str** | ID of the SLO that this correction will be applied to | [optional] 
 **start** | **int** | Starting time of the correction in epoch seconds | [optional] 
-**timezone** | **str** | Timezone of the timestamps provided | [optional] 
+**timezone** | **str** | The timezone to display in the UI for the correction times (defaults to \&quot;UTC\&quot;) | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
