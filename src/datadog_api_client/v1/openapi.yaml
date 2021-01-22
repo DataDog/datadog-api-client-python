@@ -17440,8 +17440,11 @@ tags:
   externalDocs:
     url: https://docs.datadoghq.com/integrations/azure
   name: Azure Integration
-- description: This endpoint is deprecated. Use the [new dashboard list endpoint](https://docs.datadoghq.com/api/v2/dashboard-lists/)
-    instead.
+- description: 'Interact with your dashboard lists through the API to
+
+    organize, find, and share all of your dashboards with your team and
+
+    organization.'
   name: Dashboard Lists
   x-deprecated: true
 - description: 'Interact with your dashboard lists through the API to make it easier
@@ -17475,20 +17478,20 @@ tags:
   name: Hosts
 - description: Get a list of IP prefixes belonging to Datadog.
   name: IP Ranges
-- description: 'Manage your Datadog API and application keys.
+- description: 'Manage your Datadog API and application keys. You need an API key
+    and
 
+    an application key for a user with the required permissions to interact
 
-    You need an API and applications key with Admin rights
+    with these endpoints. The full list of API and application keys can be
 
-    to interact with this endpoint. The full list of keys can be seen on your
-
-    [Datadog API page](https://app.datadoghq.com/account/settings#api).'
+    seen on your [Datadog API page](https://app.datadoghq.com/account/settings#api).'
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/account_management/api-app-keys/
   name: Key Management
-- description: 'Send your logs to your Datadog platform over HTTP. Limits per HTTP
-    request are:
+- description: 'Search your logs and send them to your Datadog platform over HTTP.
+    Limits per HTTP request are:
 
 
     - Maximum content size per payload (uncompressed): 5MB
@@ -17506,13 +17509,13 @@ tags:
     than 1MB, and returns a 2xx.
 
 
-    We encourage you to send your logs compressed.
+    Datadog recommends sending your logs compressed.
 
     Add the `Content-Encoding: gzip` header to the request when sending compressed
     logs.
 
 
-    Status code answered by the HTTP API:
+    The status codes answered by the HTTP API are:
 
     - 200: OK
 
@@ -17644,9 +17647,8 @@ tags:
     description: Find out more at
     url: https://docs.datadoghq.com/account_management/billing/usage_details/
   name: Usage Metering
-- description: 'Create, edit, and disable users. [Read more about team management][1].
-
-
-    [1]: https://docs.datadoghq.com/account_management/team'
+- description: Create, edit, and disable users.
+  externalDocs:
+    url: https://docs.datadoghq.com/account_management/users
   name: Users
 x-group-parameters: true

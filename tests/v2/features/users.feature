@@ -74,18 +74,26 @@ Feature: Users
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Get a user organization returns "OK" response
-    Given new "ListUserOrganizations" request
-    And request contains "user_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
   Scenario: Get user details returns "OK for get user" response
     Given new "GetUser" request
     And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK for get user
+
+  @generated @skip
+  Scenario: Create a user returns "Bad Request" response
+    Given new "CreateUser" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update a user returns "Bad Request" response
+    Given new "UpdateUser" request
+    And request contains "user_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Send invitation emails returns "Bad Request" response
@@ -108,13 +116,6 @@ Feature: Users
     Then the response status is 400 Bad Request
 
   @generated @skip
-  Scenario: Create a user returns "Bad Request" response
-    Given new "CreateUser" request
-    And body {}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
   Scenario: Disable a user returns "Not found" response
     Given new "DisableUser" request
     And request contains "user_id" parameter from "<PATH>"
@@ -127,14 +128,6 @@ Feature: Users
     And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not found
-
-  @generated @skip
-  Scenario: Update a user returns "Bad Request" response
-    Given new "UpdateUser" request
-    And request contains "user_id" parameter from "<PATH>"
-    And body {}
-    When the request is sent
-    Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Update a user returns "Not found" response
@@ -151,6 +144,13 @@ Feature: Users
     And body {}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
+
+  @generated @skip
+  Scenario: Get a user organization returns "OK" response
+    Given new "ListUserOrganizations" request
+    And request contains "user_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a user organization returns "Not found" response

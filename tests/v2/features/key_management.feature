@@ -123,46 +123,6 @@ Feature: Key Management
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Delete an application key returns "No Content" response
-    Given new "DeleteApplicationKey" request
-    And request contains "app_key_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 204 No Content
-
-  @generated @skip
-  Scenario: Get all application keys owned by current user returns "OK" response
-    Given new "ListCurrentUserApplicationKeys" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Create an application key for current user returns "Created" response
-    Given new "CreateCurrentUserApplicationKey" request
-    And body {}
-    When the request is sent
-    Then the response status is 201 Created
-
-  @generated @skip
-  Scenario: Delete an application key owned by current user returns "No Content" response
-    Given new "DeleteCurrentUserApplicationKey" request
-    And request contains "app_key_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 204 No Content
-
-  @generated @skip
-  Scenario: Get one application key owned by current user returns "OK" response
-    Given new "GetCurrentUserApplicationKey" request
-    And request contains "app_key_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Get all API keys returns "Bad Request" response
-    Given new "ListAPIKeys" request
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
   Scenario: Create an API key returns "Bad Request" response
     Given new "CreateAPIKey" request
     And body {}
@@ -200,18 +160,6 @@ Feature: Key Management
     Then the response status is 404 Not Found
 
   @generated @skip
-  Scenario: Get all application keys returns "Bad Request" response
-    Given new "ListApplicationKeys" request
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
-  Scenario: Get all application keys returns "Not Found" response
-    Given new "ListApplicationKeys" request
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip
   Scenario: Delete an application key returns "Not Found" response
     Given new "DeleteApplicationKey" request
     And request contains "app_key_id" parameter from "<PATH>"
@@ -235,6 +183,37 @@ Feature: Key Management
     Then the response status is 404 Not Found
 
   @generated @skip
+  Scenario: Get all API keys returns "Bad Request" response
+    Given new "ListAPIKeys" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get all application keys returns "Bad Request" response
+    Given new "ListApplicationKeys" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get all application keys returns "Not Found" response
+    Given new "ListApplicationKeys" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Delete an application key returns "No Content" response
+    Given new "DeleteApplicationKey" request
+    And request contains "app_key_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip
+  Scenario: Get all application keys owned by current user returns "OK" response
+    Given new "ListCurrentUserApplicationKeys" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get all application keys owned by current user returns "Bad Request" response
     Given new "ListCurrentUserApplicationKeys" request
     When the request is sent
@@ -247,6 +226,13 @@ Feature: Key Management
     Then the response status is 404 Not Found
 
   @generated @skip
+  Scenario: Create an application key for current user returns "Created" response
+    Given new "CreateCurrentUserApplicationKey" request
+    And body {}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip
   Scenario: Create an application key for current user returns "Bad Request" response
     Given new "CreateCurrentUserApplicationKey" request
     And body {}
@@ -254,11 +240,25 @@ Feature: Key Management
     Then the response status is 400 Bad Request
 
   @generated @skip
+  Scenario: Delete an application key owned by current user returns "No Content" response
+    Given new "DeleteCurrentUserApplicationKey" request
+    And request contains "app_key_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip
   Scenario: Delete an application key owned by current user returns "Not Found" response
     Given new "DeleteCurrentUserApplicationKey" request
     And request contains "app_key_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Get one application key owned by current user returns "OK" response
+    Given new "GetCurrentUserApplicationKey" request
+    And request contains "app_key_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get one application key owned by current user returns "Not Found" response
