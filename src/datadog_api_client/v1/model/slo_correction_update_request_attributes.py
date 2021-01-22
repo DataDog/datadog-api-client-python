@@ -75,10 +75,10 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
         lazy_import()
         return {
             'category': (SLOCorrectionCategory,),  # noqa: E501
+            'description': (str,),  # noqa: E501
             'end': (int,),  # noqa: E501
             'start': (int,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -88,10 +88,10 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
 
     attribute_map = {
         'category': 'category',  # noqa: E501
+        'description': 'description',  # noqa: E501
         'end': 'end',  # noqa: E501
         'start': 'start',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
-        'description': 'description',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -106,14 +106,8 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, category, end, start, timezone, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """SLOCorrectionUpdateRequestAttributes - a model defined in OpenAPI
-
-        Args:
-            category (SLOCorrectionCategory):
-            end (int): Ending time of the correction in epoch seconds
-            start (int): Starting time of the correction in epoch seconds
-            timezone (str): Timezone of the timestamps provided
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -146,7 +140,11 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            category (SLOCorrectionCategory): [optional]  # noqa: E501
             description (str): Description of the correction being made.. [optional]  # noqa: E501
+            end (int): Ending time of the correction in epoch seconds. [optional]  # noqa: E501
+            start (int): Starting time of the correction in epoch seconds. [optional]  # noqa: E501
+            timezone (str): The timezone to display in the UI for the correction times (defaults to \"UTC\"). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -172,10 +170,6 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.category = category
-        self.end = end
-        self.start = start
-        self.timezone = timezone
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

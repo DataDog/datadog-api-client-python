@@ -4842,7 +4842,8 @@ components:
           format: int64
           type: integer
         timezone:
-          description: Timezone of the timestamps provided
+          description: The timezone to display in the UI for the correction times
+            (defaults to "UTC")
           example: UTC
           type: string
       required:
@@ -4850,7 +4851,6 @@ components:
       - start
       - end
       - category
-      - timezone
       type: object
     SLOCorrectionListResponse:
       description: A list of  SLO correction objects
@@ -4910,7 +4910,8 @@ components:
           format: int64
           type: integer
         timezone:
-          description: Timezone of the timestamps provided
+          description: The timezone to display in the UI for the correction times
+            (defaults to "UTC")
           type: string
       type: object
     SLOCorrectionUpdateRequest:
@@ -4946,14 +4947,10 @@ components:
           format: int64
           type: integer
         timezone:
-          description: Timezone of the timestamps provided
+          description: The timezone to display in the UI for the correction times
+            (defaults to "UTC")
           example: UTC
           type: string
-      required:
-      - start
-      - end
-      - category
-      - timezone
       type: object
     SLODeleteResponse:
       description: A response list of all service level objective deleted.

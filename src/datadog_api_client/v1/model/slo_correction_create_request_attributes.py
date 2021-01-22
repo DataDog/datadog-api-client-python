@@ -78,8 +78,8 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
             'end': (int,),  # noqa: E501
             'slo_id': (str,),  # noqa: E501
             'start': (int,),  # noqa: E501
-            'timezone': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
+            'timezone': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -92,8 +92,8 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         'end': 'end',  # noqa: E501
         'slo_id': 'slo_id',  # noqa: E501
         'start': 'start',  # noqa: E501
-        'timezone': 'timezone',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'timezone': 'timezone',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -108,7 +108,7 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, category, end, slo_id, start, timezone, *args, **kwargs):  # noqa: E501
+    def __init__(self, category, end, slo_id, start, *args, **kwargs):  # noqa: E501
         """SLOCorrectionCreateRequestAttributes - a model defined in OpenAPI
 
         Args:
@@ -116,7 +116,6 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
             end (int): Ending time of the correction in epoch seconds
             slo_id (str): ID of the SLO that this correction will be applied to
             start (int): Starting time of the correction in epoch seconds
-            timezone (str): Timezone of the timestamps provided
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -150,6 +149,7 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (str): Description of the correction being made.. [optional]  # noqa: E501
+            timezone (str): The timezone to display in the UI for the correction times (defaults to \"UTC\"). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -179,7 +179,6 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         self.end = end
         self.slo_id = slo_id
         self.start = start
-        self.timezone = timezone
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
