@@ -35,22 +35,12 @@ configuration = datadog_api_client.v1.Configuration(
     host = "https://api.datadoghq.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
-
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 configuration.unstable_operations["create_slo_correction"] = True
 
 # Enter a context with an instance of the API client
@@ -132,22 +122,12 @@ configuration = datadog_api_client.v1.Configuration(
     host = "https://api.datadoghq.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
-
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 configuration.unstable_operations["delete_slo_correction"] = True
 
 # Enter a context with an instance of the API client
@@ -216,22 +196,12 @@ configuration = datadog_api_client.v1.Configuration(
     host = "https://api.datadoghq.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
-
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 configuration.unstable_operations["get_slo_correction"] = True
 
 # Enter a context with an instance of the API client
@@ -301,22 +271,12 @@ configuration = datadog_api_client.v1.Configuration(
     host = "https://api.datadoghq.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
-
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 configuration.unstable_operations["list_slo_correction"] = True
 
 # Enter a context with an instance of the API client
@@ -381,22 +341,12 @@ configuration = datadog_api_client.v1.Configuration(
     host = "https://api.datadoghq.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKeyAuth'] = 'Bearer'
-
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['appKeyAuth'] = 'Bearer'
 configuration.unstable_operations["update_slo_correction"] = True
 
 # Enter a context with an instance of the API client
