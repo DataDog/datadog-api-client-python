@@ -12,24 +12,11 @@ Feature: Downtimes
     And an instance of "Downtimes" API
 
   @generated @skip
-  Scenario: Get all downtimes returns "OK" response
-    Given new "ListDowntimes" request
+  Scenario: Cancel a downtime returns "Downtime not found" response
+    Given new "CancelDowntime" request
+    And request contains "downtime_id" parameter from "<PATH>"
     When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Schedule a downtime returns "OK" response
-    Given new "CreateDowntime" request
-    And body {}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Cancel downtimes by scope returns "OK" response
-    Given new "CancelDowntimesByScope" request
-    And body {}
-    When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 404 Downtime not found
 
   @generated @skip
   Scenario: Cancel a downtime returns "OK" response
@@ -37,28 +24,6 @@ Feature: Downtimes
     And request contains "downtime_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 204 OK
-
-  @generated @skip
-  Scenario: Get a downtime returns "OK" response
-    Given new "GetDowntime" request
-    And request contains "downtime_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Update a downtime returns "OK" response
-    Given new "UpdateDowntime" request
-    And request contains "downtime_id" parameter from "<PATH>"
-    And body {}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Schedule a downtime returns "Bad Request" response
-    Given new "CreateDowntime" request
-    And body {}
-    When the request is sent
-    Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Cancel downtimes by scope returns "Bad Request" response
@@ -75,11 +40,11 @@ Feature: Downtimes
     Then the response status is 404 Downtimes not found
 
   @generated @skip
-  Scenario: Cancel a downtime returns "Downtime not found" response
-    Given new "CancelDowntime" request
-    And request contains "downtime_id" parameter from "<PATH>"
+  Scenario: Cancel downtimes by scope returns "OK" response
+    Given new "CancelDowntimesByScope" request
+    And body {}
     When the request is sent
-    Then the response status is 404 Downtime not found
+    Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get a downtime returns "Downtime not found" response
@@ -87,6 +52,33 @@ Feature: Downtimes
     And request contains "downtime_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Downtime not found
+
+  @generated @skip
+  Scenario: Get a downtime returns "OK" response
+    Given new "GetDowntime" request
+    And request contains "downtime_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get all downtimes returns "OK" response
+    Given new "ListDowntimes" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Schedule a downtime returns "Bad Request" response
+    Given new "CreateDowntime" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Schedule a downtime returns "OK" response
+    Given new "CreateDowntime" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update a downtime returns "Bad Request" response
@@ -103,3 +95,11 @@ Feature: Downtimes
     And body {}
     When the request is sent
     Then the response status is 404 Downtime not found
+
+  @generated @skip
+  Scenario: Update a downtime returns "OK" response
+    Given new "UpdateDowntime" request
+    And request contains "downtime_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK

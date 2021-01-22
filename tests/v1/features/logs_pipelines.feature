@@ -23,15 +23,44 @@ Feature: Logs Pipelines
     And an instance of "LogsPipelines" API
 
   @generated @skip
-  Scenario: Get pipeline order returns "OK" response
-    Given new "GetLogsPipelineOrder" request
+  Scenario: Create a pipeline returns "Bad Request" response
+    Given new "CreateLogsPipeline" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Create a pipeline returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body {}
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Update pipeline order returns "OK" response
-    Given new "UpdateLogsPipelineOrder" request
-    And body {}
+  Scenario: Delete a pipeline returns "Bad Request" response
+    Given new "DeleteLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Delete a pipeline returns "OK" response
+    Given new "DeleteLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get a pipeline returns "Bad Request" response
+    Given new "GetLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get a pipeline returns "OK" response
+    Given new "GetLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
@@ -42,25 +71,18 @@ Feature: Logs Pipelines
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Create a pipeline returns "OK" response
-    Given new "CreateLogsPipeline" request
+  Scenario: Get pipeline order returns "OK" response
+    Given new "GetLogsPipelineOrder" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Update a pipeline returns "Bad Request" response
+    Given new "UpdateLogsPipeline" request
+    And request contains "pipeline_id" parameter from "<PATH>"
     And body {}
     When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Delete a pipeline returns "OK" response
-    Given new "DeleteLogsPipeline" request
-    And request contains "pipeline_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Get a pipeline returns "OK" response
-    Given new "GetLogsPipeline" request
-    And request contains "pipeline_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Update a pipeline returns "OK" response
@@ -78,37 +100,15 @@ Feature: Logs Pipelines
     Then the response status is 400 Bad Request
 
   @generated @skip
+  Scenario: Update pipeline order returns "OK" response
+    Given new "UpdateLogsPipelineOrder" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Update pipeline order returns "Unprocessable Entity" response
     Given new "UpdateLogsPipelineOrder" request
     And body {}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
-
-  @generated @skip
-  Scenario: Create a pipeline returns "Bad Request" response
-    Given new "CreateLogsPipeline" request
-    And body {}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
-  Scenario: Delete a pipeline returns "Bad Request" response
-    Given new "DeleteLogsPipeline" request
-    And request contains "pipeline_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
-  Scenario: Get a pipeline returns "Bad Request" response
-    Given new "GetLogsPipeline" request
-    And request contains "pipeline_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
-  Scenario: Update a pipeline returns "Bad Request" response
-    Given new "UpdateLogsPipeline" request
-    And request contains "pipeline_id" parameter from "<PATH>"
-    And body {}
-    When the request is sent
-    Then the response status is 400 Bad Request

@@ -10,35 +10,15 @@ Feature: Azure Integration
     And an instance of "AzureIntegration" API
 
   @generated @skip
-  Scenario: Delete an Azure integration returns "OK" response
-    Given new "DeleteAzureIntegration" request
+  Scenario: Create an Azure integration returns "Bad Request" response
+    Given new "CreateAzureIntegration" request
     And body {}
     When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: List all Azure integrations returns "OK" response
-    Given new "ListAzureIntegration" request
-    When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Create an Azure integration returns "OK" response
     Given new "CreateAzureIntegration" request
-    And body {}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Update an Azure integration returns "OK" response
-    Given new "UpdateAzureIntegration" request
-    And body {}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Update Azure integration host filters returns "OK" response
-    Given new "UpdateAzureHostFilters" request
     And body {}
     When the request is sent
     Then the response status is 200 OK
@@ -51,17 +31,37 @@ Feature: Azure Integration
     Then the response status is 400 Bad Request
 
   @generated @skip
+  Scenario: Delete an Azure integration returns "OK" response
+    Given new "DeleteAzureIntegration" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: List all Azure integrations returns "Bad Request" response
     Given new "ListAzureIntegration" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
-  Scenario: Create an Azure integration returns "Bad Request" response
-    Given new "CreateAzureIntegration" request
+  Scenario: List all Azure integrations returns "OK" response
+    Given new "ListAzureIntegration" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Update Azure integration host filters returns "Bad Request" response
+    Given new "UpdateAzureHostFilters" request
     And body {}
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update Azure integration host filters returns "OK" response
+    Given new "UpdateAzureHostFilters" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip
   Scenario: Update an Azure integration returns "Bad Request" response
@@ -71,8 +71,8 @@ Feature: Azure Integration
     Then the response status is 400 Bad Request
 
   @generated @skip
-  Scenario: Update Azure integration host filters returns "Bad Request" response
-    Given new "UpdateAzureHostFilters" request
+  Scenario: Update an Azure integration returns "OK" response
+    Given new "UpdateAzureIntegration" request
     And body {}
     When the request is sent
-    Then the response status is 400 Bad Request
+    Then the response status is 200 OK

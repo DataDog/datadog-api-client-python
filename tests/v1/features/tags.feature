@@ -15,60 +15,12 @@ Feature: Tags
     And an instance of "Tags" API
 
   @generated @skip
-  Scenario: Get Tags returns "OK" response
-    Given new "ListHostTags" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Remove host tags returns "OK" response
-    Given new "DeleteHostTags" request
-    And request contains "host_name" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 204 OK
-
-  @generated @skip
-  Scenario: Get host tags returns "OK" response
-    Given new "GetHostTags" request
-    And request contains "host_name" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
   Scenario: Add tags to a host returns "Created" response
     Given new "CreateHostTags" request
     And request contains "host_name" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 201 Created
-
-  @generated @skip
-  Scenario: Update host tags returns "OK" response
-    Given new "UpdateHostTags" request
-    And request contains "host_name" parameter from "<PATH>"
-    And body {}
-    When the request is sent
-    Then the response status is 201 OK
-
-  @generated @skip
-  Scenario: Get Tags returns "Not Found" response
-    Given new "ListHostTags" request
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip
-  Scenario: Remove host tags returns "Not Found" response
-    Given new "DeleteHostTags" request
-    And request contains "host_name" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip
-  Scenario: Get host tags returns "Not Found" response
-    Given new "GetHostTags" request
-    And request contains "host_name" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 404 Not Found
 
   @generated @skip
   Scenario: Add tags to a host returns "Not Found" response
@@ -79,9 +31,57 @@ Feature: Tags
     Then the response status is 404 Not Found
 
   @generated @skip
+  Scenario: Get Tags returns "Not Found" response
+    Given new "ListHostTags" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Get Tags returns "OK" response
+    Given new "ListHostTags" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get host tags returns "Not Found" response
+    Given new "GetHostTags" request
+    And request contains "host_name" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Get host tags returns "OK" response
+    Given new "GetHostTags" request
+    And request contains "host_name" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Remove host tags returns "Not Found" response
+    Given new "DeleteHostTags" request
+    And request contains "host_name" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Remove host tags returns "OK" response
+    Given new "DeleteHostTags" request
+    And request contains "host_name" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 204 OK
+
+  @generated @skip
   Scenario: Update host tags returns "Not Found" response
     Given new "UpdateHostTags" request
     And request contains "host_name" parameter from "<PATH>"
     And body {}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Update host tags returns "OK" response
+    Given new "UpdateHostTags" request
+    And request contains "host_name" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 201 OK
