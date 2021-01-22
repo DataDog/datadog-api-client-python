@@ -1,7 +1,6 @@
 @endpoint(users)
 Feature: Users
-  Create, edit, and disable users. [Read more about team management][1].
-  [1]: https://docs.datadoghq.com/account_management/team
+  Create, edit, and disable users.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

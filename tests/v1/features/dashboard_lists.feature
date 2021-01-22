@@ -1,7 +1,7 @@
 @endpoint(dashboard-lists)
 Feature: Dashboard Lists
-  This endpoint is deprecated. Use the [new dashboard list
-  endpoint](https://docs.datadoghq.com/api/v2/dashboard-lists/) instead.
+  Interact with your dashboard lists through the API to organize, find, and
+  share all of your dashboards with your team and organization.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
