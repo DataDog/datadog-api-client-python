@@ -26,16 +26,15 @@ Cancel a downtime.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import downtimes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -44,16 +43,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = downtimes_api.DowntimesApi(api_client)
-    downtime_id = 123456 # int | ID of the downtime to cancel.
+    downtime_id = 123456  # int | ID of the downtime to cancel.
 
     # example passing only required values which don't have defaults set
     try:
         # Cancel a downtime
         api_instance.cancel_downtime(downtime_id)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DowntimesApi->cancel_downtime: %s\n" % e)
 ```
 
@@ -99,16 +98,15 @@ Delete all downtimes that match the scope of `X`.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import downtimes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -117,19 +115,19 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = downtimes_api.DowntimesApi(api_client)
     body = CancelDowntimesByScopeRequest(
         scope="host:myserver",
-    ) # CancelDowntimesByScopeRequest | Scope to cancel downtimes for.
+    )  # CancelDowntimesByScopeRequest | Scope to cancel downtimes for.
 
     # example passing only required values which don't have defaults set
     try:
         # Cancel downtimes by scope
         api_response = api_instance.cancel_downtimes_by_scope(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DowntimesApi->cancel_downtimes_by_scope: %s\n" % e)
 ```
 
@@ -176,16 +174,15 @@ Schedule a downtime.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import downtimes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -194,7 +191,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = downtimes_api.DowntimesApi(api_client)
     body = Downtime(
@@ -221,14 +218,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         start=1412792983,
         timezone="America/New_York",
         updater_id=123456,
-    ) # Downtime | Schedule a downtime request body.
+    )  # Downtime | Schedule a downtime request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Schedule a downtime
         api_response = api_instance.create_downtime(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DowntimesApi->create_downtime: %s\n" % e)
 ```
 
@@ -274,16 +271,15 @@ Get downtime detail by `downtime_id`.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import downtimes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -292,17 +288,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = downtimes_api.DowntimesApi(api_client)
-    downtime_id = 123456 # int | ID of the downtime to fetch.
+    downtime_id = 123456  # int | ID of the downtime to fetch.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a downtime
         api_response = api_instance.get_downtime(downtime_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DowntimesApi->get_downtime: %s\n" % e)
 ```
 
@@ -348,16 +344,15 @@ Get all scheduled downtimes.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import downtimes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -366,10 +361,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = downtimes_api.DowntimesApi(api_client)
-    current_only = True # bool | Only return downtimes that are active when the request is made. (optional)
+    current_only = True  # bool | Only return downtimes that are active when the request is made. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -377,7 +372,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get all downtimes
         api_response = api_instance.list_downtimes(current_only=current_only)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DowntimesApi->list_downtimes: %s\n" % e)
 ```
 
@@ -422,16 +417,15 @@ Update a single downtime by `downtime_id`.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import downtimes_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -440,10 +434,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = downtimes_api.DowntimesApi(api_client)
-    downtime_id = 123456 # int | ID of the downtime to update.
+    downtime_id = 123456  # int | ID of the downtime to update.
     body = Downtime(
         active=True,
         canceled=1412799983,
@@ -468,14 +462,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         start=1412792983,
         timezone="America/New_York",
         updater_id=123456,
-    ) # Downtime | Update a downtime request body.
+    )  # Downtime | Update a downtime request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Update a downtime
         api_response = api_instance.update_downtime(downtime_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DowntimesApi->update_downtime: %s\n" % e)
 ```
 

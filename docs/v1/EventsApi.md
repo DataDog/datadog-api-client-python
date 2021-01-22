@@ -22,16 +22,15 @@ This endpoint allows you to query for event details.  **Note**: If the event you
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import events_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -40,17 +39,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = events_api.EventsApi(api_client)
-    event_id = 1 # int | The ID of the event.
+    event_id = 1  # int | The ID of the event.
 
     # example passing only required values which don't have defaults set
     try:
         # Get an event
         api_response = api_instance.get_event(event_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling EventsApi->get_event: %s\n" % e)
 ```
 
@@ -96,16 +95,15 @@ The event stream can be queried and filtered by time, priority, sources and tags
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import events_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -114,22 +112,22 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = events_api.EventsApi(api_client)
-    start = 1 # int | POSIX timestamp.
-    end = 1 # int | POSIX timestamp.
-    priority = EventPriority("normal") # EventPriority | Priority of your events, either `low` or `normal`. (optional)
-    sources = "sources_example" # str | A comma separated string of sources. (optional)
-    tags = "host:host0" # str | A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. (optional)
-    unaggregated = True # bool | Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output. (optional)
+    start = 1  # int | POSIX timestamp.
+    end = 1  # int | POSIX timestamp.
+    priority = EventPriority("normal")  # EventPriority | Priority of your events, either `low` or `normal`. (optional)
+    sources = "sources_example"  # str | A comma separated string of sources. (optional)
+    tags = "host:host0"  # str | A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. (optional)
+    unaggregated = True  # bool | Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Query the event stream
         api_response = api_instance.list_events(start, end)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling EventsApi->list_events: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -138,7 +136,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Query the event stream
         api_response = api_instance.list_events(start, end, priority=priority, sources=sources, tags=tags, unaggregated=unaggregated)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling EventsApi->list_events: %s\n" % e)
 ```
 

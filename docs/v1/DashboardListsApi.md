@@ -25,16 +25,15 @@ Create an empty dashboard list.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import dashboard_lists_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -43,7 +42,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
     body = DashboardList(
@@ -59,14 +58,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         modified=dateutil_parser('1970-01-01T00:00:00.00Z'),
         name="My Dashboard",
         type="manual_dashboard_list",
-    ) # DashboardList | Create a dashboard list request body.
+    )  # DashboardList | Create a dashboard list request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a dashboard list
         api_response = api_instance.create_dashboard_list(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DashboardListsApi->create_dashboard_list: %s\n" % e)
 ```
 
@@ -112,16 +111,15 @@ Delete a dashboard list.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import dashboard_lists_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -130,17 +128,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
-    list_id = 1 # int | ID of the dashboard list to delete.
+    list_id = 1  # int | ID of the dashboard list to delete.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a dashboard list
         api_response = api_instance.delete_dashboard_list(list_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DashboardListsApi->delete_dashboard_list: %s\n" % e)
 ```
 
@@ -186,16 +184,15 @@ Fetch an existing dashboard list's definition.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import dashboard_lists_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -204,17 +201,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
-    list_id = 1 # int | ID of the dashboard list to fetch.
+    list_id = 1  # int | ID of the dashboard list to fetch.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a dashboard list
         api_response = api_instance.get_dashboard_list(list_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DashboardListsApi->get_dashboard_list: %s\n" % e)
 ```
 
@@ -260,16 +257,15 @@ Fetch all of your existing dashboard list definitions.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import dashboard_lists_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -278,7 +274,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
 
@@ -287,7 +283,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get all dashboard lists
         api_response = api_instance.list_dashboard_lists()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DashboardListsApi->list_dashboard_lists: %s\n" % e)
 ```
 
@@ -329,16 +325,15 @@ Update the name of a dashboard list.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import dashboard_lists_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -347,10 +342,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
-    list_id = 1 # int | ID of the dashboard list to update.
+    list_id = 1  # int | ID of the dashboard list to update.
     body = DashboardList(
         author=Creator(
             email="email_example",
@@ -364,14 +359,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         modified=dateutil_parser('1970-01-01T00:00:00.00Z'),
         name="My Dashboard",
         type="manual_dashboard_list",
-    ) # DashboardList | Update a dashboard list request body.
+    )  # DashboardList | Update a dashboard list request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Update a dashboard list
         api_response = api_instance.update_dashboard_list(list_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DashboardListsApi->update_dashboard_list: %s\n" % e)
 ```
 

@@ -24,16 +24,15 @@ This endpoint returns the total number of active and up hosts in your Datadog ac
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import hosts_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -42,10 +41,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hosts_api.HostsApi(api_client)
-    _from = 1 # int | Number of seconds from which you want to get total number of active hosts. (optional)
+    _from = 1  # int | Number of seconds from which you want to get total number of active hosts. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -53,7 +52,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get the total number of active hosts
         api_response = api_instance.get_host_totals(_from=_from)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling HostsApi->get_host_totals: %s\n" % e)
 ```
 
@@ -99,16 +98,15 @@ This endpoint allows searching for hosts by name, alias, or tag. Hosts live with
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import hosts_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -117,17 +115,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hosts_api.HostsApi(api_client)
-    filter = "filter_example" # str | String to filter search results. (optional)
-    sort_field = "sort_field_example" # str | Sort hosts by this field. (optional)
-    sort_dir = "sort_dir_example" # str | Direction of sort. Options include `asc` and `desc`. (optional)
-    start = 1 # int | Host result to start search from. (optional)
-    count = 1 # int | Number of hosts to return. Max 1000. (optional)
-    _from = 1 # int | Number of seconds since UNIX epoch from which you want to search your hosts. (optional)
-    include_muted_hosts_data = True # bool | Include information on the muted status of hosts and when the mute expires. (optional)
-    include_hosts_metadata = True # bool | Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.). (optional)
+    filter = "filter_example"  # str | String to filter search results. (optional)
+    sort_field = "sort_field_example"  # str | Sort hosts by this field. (optional)
+    sort_dir = "sort_dir_example"  # str | Direction of sort. Options include `asc` and `desc`. (optional)
+    start = 1  # int | Host result to start search from. (optional)
+    count = 1  # int | Number of hosts to return. Max 1000. (optional)
+    _from = 1  # int | Number of seconds since UNIX epoch from which you want to search your hosts. (optional)
+    include_muted_hosts_data = True  # bool | Include information on the muted status of hosts and when the mute expires. (optional)
+    include_hosts_metadata = True  # bool | Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.). (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -135,7 +133,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get all hosts for your organization
         api_response = api_instance.list_hosts(filter=filter, sort_field=sort_field, sort_dir=sort_dir, start=start, count=count, _from=_from, include_muted_hosts_data=include_muted_hosts_data, include_hosts_metadata=include_hosts_metadata)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling HostsApi->list_hosts: %s\n" % e)
 ```
 
@@ -188,16 +186,15 @@ Mute a host.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import hosts_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -206,22 +203,22 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hosts_api.HostsApi(api_client)
-    host_name = "host_name_example" # str | Name of the host to mute.
+    host_name = "host_name_example"  # str | Name of the host to mute.
     body = HostMuteSettings(
         end=1579098130,
         message="Muting this host for a test!",
         override=False,
-    ) # HostMuteSettings | Mute a host request body.
+    )  # HostMuteSettings | Mute a host request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Mute a host
         api_response = api_instance.mute_host(host_name, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling HostsApi->mute_host: %s\n" % e)
 ```
 
@@ -268,16 +265,15 @@ Unmutes a host. This endpoint takes no JSON arguments.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import hosts_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -286,17 +282,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hosts_api.HostsApi(api_client)
-    host_name = "host_name_example" # str | Name of the host to unmute.
+    host_name = "host_name_example"  # str | Name of the host to unmute.
 
     # example passing only required values which don't have defaults set
     try:
         # Unmute a host
         api_response = api_instance.unmute_host(host_name)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling HostsApi->unmute_host: %s\n" % e)
 ```
 

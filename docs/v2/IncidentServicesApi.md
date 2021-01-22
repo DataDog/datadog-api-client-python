@@ -25,16 +25,15 @@ Creates a new incident service.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import incident_services_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -44,7 +43,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["create_incident_service"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_services_api.IncidentServicesApi(api_client)
     body = IncidentServiceCreateRequest(
@@ -68,14 +67,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=IncidentServiceType("services"),
         ),
-    ) # IncidentServiceCreateRequest | Incident Service Payload.
+    )  # IncidentServiceCreateRequest | Incident Service Payload.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a new incident service
         api_response = api_instance.create_incident_service(body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentServicesApi->create_incident_service: %s\n" % e)
 ```
 
@@ -123,16 +122,15 @@ Deletes an existing incident service.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import incident_services_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -142,16 +140,16 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["delete_incident_service"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_services_api.IncidentServicesApi(api_client)
-    service_id = "service_id_example" # str | The ID of the incident service.
+    service_id = "service_id_example"  # str | The ID of the incident service.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an existing incident service
         api_instance.delete_incident_service(service_id)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentServicesApi->delete_incident_service: %s\n" % e)
 ```
 
@@ -199,16 +197,15 @@ Get details of an incident service. If the `include[users]` query parameter is p
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import incident_services_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -218,18 +215,18 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["get_incident_service"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_services_api.IncidentServicesApi(api_client)
-    service_id = "service_id_example" # str | The ID of the incident service.
-    include = IncidentRelatedObject("users") # IncidentRelatedObject | Specifies which types of related objects should be included in the response. (optional)
+    service_id = "service_id_example"  # str | The ID of the incident service.
+    include = IncidentRelatedObject("users")  # IncidentRelatedObject | Specifies which types of related objects should be included in the response. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get details of an incident service
         api_response = api_instance.get_incident_service(service_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentServicesApi->get_incident_service: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -238,7 +235,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get details of an incident service
         api_response = api_instance.get_incident_service(service_id, include=include)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentServicesApi->get_incident_service: %s\n" % e)
 ```
 
@@ -287,16 +284,15 @@ Get all incident services uploaded for the requesting user's organization. If th
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import incident_services_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -306,13 +302,13 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["list_incident_services"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_services_api.IncidentServicesApi(api_client)
-    include = IncidentRelatedObject("users") # IncidentRelatedObject | Specifies which types of related objects should be included in the response. (optional)
-    page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-    page_offset = 0 # int | Specific offset to use as the beginning of the returned page. (optional) if omitted the server will use the default value of 0
-    filter = "ExampleServiceName" # str | A search query that filters services by name. (optional)
+    include = IncidentRelatedObject("users")  # IncidentRelatedObject | Specifies which types of related objects should be included in the response. (optional)
+    page_size = 10  # int | Size for a given page. (optional) if omitted the server will use the default value of 10
+    page_offset = 0  # int | Specific offset to use as the beginning of the returned page. (optional) if omitted the server will use the default value of 0
+    filter = "ExampleServiceName"  # str | A search query that filters services by name. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -320,7 +316,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get a list of all incident services
         api_response = api_instance.list_incident_services(include=include, page_size=page_size, page_offset=page_offset, filter=filter)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentServicesApi->list_incident_services: %s\n" % e)
 ```
 
@@ -371,16 +367,15 @@ Updates an existing incident service. Only provide the attributes which should b
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import incident_services_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -390,10 +385,10 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["update_incident_service"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = incident_services_api.IncidentServicesApi(api_client)
-    service_id = "service_id_example" # str | The ID of the incident service.
+    service_id = "service_id_example"  # str | The ID of the incident service.
     body = IncidentServiceUpdateRequest(
         data=IncidentServiceUpdateData(
             attributes=IncidentServiceUpdateAttributes(
@@ -416,14 +411,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=IncidentServiceType("services"),
         ),
-    ) # IncidentServiceUpdateRequest | Incident Service Payload.
+    )  # IncidentServiceUpdateRequest | Incident Service Payload.
 
     # example passing only required values which don't have defaults set
     try:
         # Update an existing incident service
         api_response = api_instance.update_incident_service(service_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IncidentServicesApi->update_incident_service: %s\n" % e)
 ```
 

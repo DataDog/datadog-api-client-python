@@ -32,16 +32,15 @@ Adds a permission to a role.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -50,23 +49,23 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = "role_id_example" # str | The ID of the role.
+    role_id = "role_id_example"  # str | The ID of the role.
     body = RelationshipToPermission(
         data=RelationshipToPermissionData(
             id="id_example",
             type=PermissionsType("permissions"),
         ),
-    ) # RelationshipToPermission | 
+    )  # RelationshipToPermission | 
 
     # example passing only required values which don't have defaults set
     try:
         # Grant permission to a role
         api_response = api_instance.add_permission_to_role(role_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->add_permission_to_role: %s\n" % e)
 ```
 
@@ -114,16 +113,15 @@ Adds a user to a role.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -132,23 +130,23 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = "role_id_example" # str | The ID of the role.
+    role_id = "role_id_example"  # str | The ID of the role.
     body = RelationshipToUser(
         data=RelationshipToUserData(
             id="00000000-0000-0000-0000-000000000000",
             type=UsersType("users"),
         ),
-    ) # RelationshipToUser | 
+    )  # RelationshipToUser | 
 
     # example passing only required values which don't have defaults set
     try:
         # Add a user to a role
         api_response = api_instance.add_user_to_role(role_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->add_user_to_role: %s\n" % e)
 ```
 
@@ -196,16 +194,15 @@ Create a new role for your organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -214,7 +211,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
     body = RoleCreateRequest(
@@ -239,14 +236,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=RolesType("roles"),
         ),
-    ) # RoleCreateRequest | 
+    )  # RoleCreateRequest | 
 
     # example passing only required values which don't have defaults set
     try:
         # Create role
         api_response = api_instance.create_role(body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->create_role: %s\n" % e)
 ```
 
@@ -292,16 +289,15 @@ Disables a role.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -310,16 +306,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = "role_id_example" # str | The ID of the role.
+    role_id = "role_id_example"  # str | The ID of the role.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete role
         api_instance.delete_role(role_id)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->delete_role: %s\n" % e)
 ```
 
@@ -365,16 +361,15 @@ Get a role in the organization specified by the role’s `role_id`.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -383,17 +378,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = "role_id_example" # str | The ID of the role.
+    role_id = "role_id_example"  # str | The ID of the role.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a role
         api_response = api_instance.get_role(role_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->get_role: %s\n" % e)
 ```
 
@@ -439,16 +434,15 @@ Returns a list of all permissions, including name, description, and ID.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -457,7 +451,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
 
@@ -466,7 +460,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # List permissions
         api_response = api_instance.list_permissions()
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->list_permissions: %s\n" % e)
 ```
 
@@ -509,16 +503,15 @@ Returns a list of all permissions for a single role.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -527,17 +520,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = "role_id_example" # str | The ID of the role.
+    role_id = "role_id_example"  # str | The ID of the role.
 
     # example passing only required values which don't have defaults set
     try:
         # List permissions for a role
         api_response = api_instance.list_role_permissions(role_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->list_role_permissions: %s\n" % e)
 ```
 
@@ -583,16 +576,15 @@ Gets all users of a role.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -601,21 +593,21 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = "role_id_example" # str | The ID of the role.
-    page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
-    sort = "name" # str | User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`. (optional) if omitted the server will use the default value of "name"
-    filter = "filter_example" # str | Filter all users by the given string. Defaults to no filtering. (optional)
+    role_id = "role_id_example"  # str | The ID of the role.
+    page_size = 10  # int | Size for a given page. (optional) if omitted the server will use the default value of 10
+    page_number = 0  # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    sort = "name"  # str | User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`. (optional) if omitted the server will use the default value of "name"
+    filter = "filter_example"  # str | Filter all users by the given string. Defaults to no filtering. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get all users of a role
         api_response = api_instance.list_role_users(role_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->list_role_users: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -624,7 +616,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get all users of a role
         api_response = api_instance.list_role_users(role_id, page_size=page_size, page_number=page_number, sort=sort, filter=filter)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->list_role_users: %s\n" % e)
 ```
 
@@ -674,16 +666,15 @@ Returns all roles, including their names and IDs.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -692,13 +683,13 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
-    sort = RolesSort("name") # RolesSort | Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`. (optional)
-    filter = "filter_example" # str | Filter all roles by the given string. (optional)
+    page_size = 10  # int | Size for a given page. (optional) if omitted the server will use the default value of 10
+    page_number = 0  # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    sort = RolesSort("name")  # RolesSort | Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`. (optional)
+    filter = "filter_example"  # str | Filter all roles by the given string. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -706,7 +697,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # List roles
         api_response = api_instance.list_roles(page_size=page_size, page_number=page_number, sort=sort, filter=filter)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->list_roles: %s\n" % e)
 ```
 
@@ -754,16 +745,15 @@ Removes a permission from a role.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -772,23 +762,23 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = "role_id_example" # str | The ID of the role.
+    role_id = "role_id_example"  # str | The ID of the role.
     body = RelationshipToPermission(
         data=RelationshipToPermissionData(
             id="id_example",
             type=PermissionsType("permissions"),
         ),
-    ) # RelationshipToPermission | 
+    )  # RelationshipToPermission | 
 
     # example passing only required values which don't have defaults set
     try:
         # Revoke permission
         api_response = api_instance.remove_permission_from_role(role_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->remove_permission_from_role: %s\n" % e)
 ```
 
@@ -836,16 +826,15 @@ Removes a user from a role.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -854,23 +843,23 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = "role_id_example" # str | The ID of the role.
+    role_id = "role_id_example"  # str | The ID of the role.
     body = RelationshipToUser(
         data=RelationshipToUserData(
             id="00000000-0000-0000-0000-000000000000",
             type=UsersType("users"),
         ),
-    ) # RelationshipToUser | 
+    )  # RelationshipToUser | 
 
     # example passing only required values which don't have defaults set
     try:
         # Remove a user from a role
         api_response = api_instance.remove_user_from_role(role_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->remove_user_from_role: %s\n" % e)
 ```
 
@@ -918,16 +907,15 @@ Edit a role. Can only be used with application keys belonging to administrators.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import roles_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -936,10 +924,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = roles_api.RolesApi(api_client)
-    role_id = "role_id_example" # str | The ID of the role.
+    role_id = "role_id_example"  # str | The ID of the role.
     body = RoleUpdateRequest(
         data=RoleUpdateData(
             attributes=RoleUpdateAttributes(
@@ -950,14 +938,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             id="00000000-0000-0000-0000-000000000000",
             type=RolesType("roles"),
         ),
-    ) # RoleUpdateRequest | 
+    )  # RoleUpdateRequest | 
 
     # example passing only required values which don't have defaults set
     try:
         # Update a role
         api_response = api_instance.update_role(role_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling RolesApi->update_role: %s\n" % e)
 ```
 

@@ -25,16 +25,15 @@ Create a Datadog-Azure integration.  Using the `POST` method updates your integr
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import azure_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -43,7 +42,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
     body = AzureAccount(
@@ -54,14 +53,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         new_client_id="new1c7f6-1234-5678-9101-3fcbf464test",
         new_tenant_name="new1c44-1234-5678-9101-cc00736ftest",
         tenant_name="testc44-1234-5678-9101-cc00736ftest",
-    ) # AzureAccount | Create a Datadog-Azure integration for your Datadog account request body.
+    )  # AzureAccount | Create a Datadog-Azure integration for your Datadog account request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Create an Azure integration
         api_response = api_instance.create_azure_integration(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AzureIntegrationApi->create_azure_integration: %s\n" % e)
 ```
 
@@ -107,16 +106,15 @@ Delete a given Datadog-Azure integration from your Datadog account.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import azure_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -125,7 +123,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
     body = AzureAccount(
@@ -136,14 +134,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         new_client_id="new1c7f6-1234-5678-9101-3fcbf464test",
         new_tenant_name="new1c44-1234-5678-9101-cc00736ftest",
         tenant_name="testc44-1234-5678-9101-cc00736ftest",
-    ) # AzureAccount | Delete a given Datadog-Azure integration request body.
+    )  # AzureAccount | Delete a given Datadog-Azure integration request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an Azure integration
         api_response = api_instance.delete_azure_integration(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AzureIntegrationApi->delete_azure_integration: %s\n" % e)
 ```
 
@@ -189,16 +187,15 @@ List all Datadog-Azure integrations configured in your Datadog account.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import azure_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -207,7 +204,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
 
@@ -216,7 +213,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # List all Azure integrations
         api_response = api_instance.list_azure_integration()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AzureIntegrationApi->list_azure_integration: %s\n" % e)
 ```
 
@@ -259,16 +256,15 @@ Update the defined list of host filters for a given Datadog-Azure integration.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import azure_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -277,7 +273,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
     body = AzureAccount(
@@ -288,14 +284,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         new_client_id="new1c7f6-1234-5678-9101-3fcbf464test",
         new_tenant_name="new1c44-1234-5678-9101-cc00736ftest",
         tenant_name="testc44-1234-5678-9101-cc00736ftest",
-    ) # AzureAccount | Update a Datadog-Azure integration's host filters request body.
+    )  # AzureAccount | Update a Datadog-Azure integration's host filters request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Update Azure integration host filters
         api_response = api_instance.update_azure_host_filters(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AzureIntegrationApi->update_azure_host_filters: %s\n" % e)
 ```
 
@@ -341,16 +337,15 @@ Update a Datadog-Azure integration. Requires an existing `tenant_name` and `clie
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import azure_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -359,7 +354,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
     body = AzureAccount(
@@ -370,14 +365,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         new_client_id="new1c7f6-1234-5678-9101-3fcbf464test",
         new_tenant_name="new1c44-1234-5678-9101-cc00736ftest",
         tenant_name="testc44-1234-5678-9101-cc00736ftest",
-    ) # AzureAccount | Update a Datadog-Azure integration request body.
+    )  # AzureAccount | Update a Datadog-Azure integration request body.
 
     # example passing only required values which don't have defaults set
     try:
         # Update an Azure integration
         api_response = api_instance.update_azure_integration(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AzureIntegrationApi->update_azure_integration: %s\n" % e)
 ```
 

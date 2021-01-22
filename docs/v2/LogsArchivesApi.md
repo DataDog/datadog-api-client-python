@@ -30,16 +30,15 @@ Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/r
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_archives_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -49,22 +48,22 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["add_read_role_to_archive"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = "archive_id_example" # str | The ID of the archive.
+    archive_id = "archive_id_example"  # str | The ID of the archive.
     body = RelationshipToRole(
         data=RelationshipToRoleData(
             id="3653d3c6-0c75-11ea-ad28-fb5701eabc7d",
             type=RolesType("roles"),
         ),
-    ) # RelationshipToRole | 
+    )  # RelationshipToRole | 
 
     # example passing only required values which don't have defaults set
     try:
         # Grant role to an archive
         api_instance.add_read_role_to_archive(archive_id, body)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsArchivesApi->add_read_role_to_archive: %s\n" % e)
 ```
 
@@ -112,16 +111,15 @@ Create an archive in your organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_archives_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -130,7 +128,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
     body = LogsArchiveCreateRequest(
@@ -144,14 +142,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type="archives",
         ),
-    ) # LogsArchiveCreateRequest | The definition of the new archive.
+    )  # LogsArchiveCreateRequest | The definition of the new archive.
 
     # example passing only required values which don't have defaults set
     try:
         # Create an archive
         api_response = api_instance.create_logs_archive(body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsArchivesApi->create_logs_archive: %s\n" % e)
 ```
 
@@ -197,16 +195,15 @@ Delete a given archive from your organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_archives_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -215,16 +212,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = "archive_id_example" # str | The ID of the archive.
+    archive_id = "archive_id_example"  # str | The ID of the archive.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an archive
         api_instance.delete_logs_archive(archive_id)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsArchivesApi->delete_logs_archive: %s\n" % e)
 ```
 
@@ -271,16 +268,15 @@ Get a specific archive from your organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_archives_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -289,17 +285,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = "archive_id_example" # str | The ID of the archive.
+    archive_id = "archive_id_example"  # str | The ID of the archive.
 
     # example passing only required values which don't have defaults set
     try:
         # Get an archive
         api_response = api_instance.get_logs_archive(archive_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsArchivesApi->get_logs_archive: %s\n" % e)
 ```
 
@@ -346,16 +342,15 @@ Get the current order of your archives. This endpoint takes no JSON arguments.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_archives_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -364,7 +359,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
 
@@ -373,7 +368,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get archive order
         api_response = api_instance.get_logs_archive_order()
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsArchivesApi->get_logs_archive_order: %s\n" % e)
 ```
 
@@ -415,16 +410,15 @@ Returns all read roles a given archive is restricted to.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_archives_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -434,17 +428,17 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["list_archive_read_roles"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = "archive_id_example" # str | The ID of the archive.
+    archive_id = "archive_id_example"  # str | The ID of the archive.
 
     # example passing only required values which don't have defaults set
     try:
         # List read roles for an archive
         api_response = api_instance.list_archive_read_roles(archive_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsArchivesApi->list_archive_read_roles: %s\n" % e)
 ```
 
@@ -491,16 +485,15 @@ Get the list of configured logs archives with their definitions.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_archives_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -509,7 +502,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
 
@@ -518,7 +511,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get all archives
         api_response = api_instance.list_logs_archives()
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsArchivesApi->list_logs_archives: %s\n" % e)
 ```
 
@@ -560,16 +553,15 @@ Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/r
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_archives_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -579,22 +571,22 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["remove_role_from_archive"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = "archive_id_example" # str | The ID of the archive.
+    archive_id = "archive_id_example"  # str | The ID of the archive.
     body = RelationshipToRole(
         data=RelationshipToRoleData(
             id="3653d3c6-0c75-11ea-ad28-fb5701eabc7d",
             type=RolesType("roles"),
         ),
-    ) # RelationshipToRole | 
+    )  # RelationshipToRole | 
 
     # example passing only required values which don't have defaults set
     try:
         # Revoke role from an archive
         api_instance.remove_role_from_archive(archive_id, body)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsArchivesApi->remove_role_from_archive: %s\n" % e)
 ```
 
@@ -642,16 +634,15 @@ Update a given archive configuration.  **Note**: Using this method updates your 
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_archives_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -660,10 +651,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
-    archive_id = "archive_id_example" # str | The ID of the archive.
+    archive_id = "archive_id_example"  # str | The ID of the archive.
     body = LogsArchiveCreateRequest(
         data=LogsArchiveCreateRequestDefinition(
             attributes=LogsArchiveCreateRequestAttributes(
@@ -675,14 +666,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type="archives",
         ),
-    ) # LogsArchiveCreateRequest | New definition of the archive.
+    )  # LogsArchiveCreateRequest | New definition of the archive.
 
     # example passing only required values which don't have defaults set
     try:
         # Update an archive
         api_response = api_instance.update_logs_archive(archive_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsArchivesApi->update_logs_archive: %s\n" % e)
 ```
 
@@ -730,16 +721,15 @@ Update the order of your archives. Since logs are processed sequentially, reorde
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_archives_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -748,7 +738,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_archives_api.LogsArchivesApi(api_client)
     body = LogsArchiveOrder(
@@ -758,14 +748,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             ),
             type=LogsArchiveOrderDefinitionType("archive_order"),
         ),
-    ) # LogsArchiveOrder | An object containing the new ordered list of archive IDs.
+    )  # LogsArchiveOrder | An object containing the new ordered list of archive IDs.
 
     # example passing only required values which don't have defaults set
     try:
         # Update archive order
         api_response = api_instance.update_logs_archive_order(body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsArchivesApi->update_logs_archive_order: %s\n" % e)
 ```
 

@@ -19,19 +19,18 @@ Get information about Datadog IP ranges.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import ip_ranges_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
 
-
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient() as api_client:
+with ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = ip_ranges_api.IPRangesApi(api_client)
 
@@ -40,7 +39,7 @@ with datadog_api_client.v1.ApiClient() as api_client:
         # List IP Ranges
         api_response = api_instance.get_ip_ranges()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling IPRangesApi->get_ip_ranges: %s\n" % e)
 ```
 

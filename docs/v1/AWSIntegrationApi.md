@@ -29,16 +29,15 @@ Create a Datadog-Amazon Web Services integration. Using the `POST` method update
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -47,7 +46,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
     body = AWSAccount(
@@ -61,14 +60,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         host_tags=["<KEY>:<VALUE>"],
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
-    ) # AWSAccount | AWS Request Object
+    )  # AWSAccount | AWS Request Object
 
     # example passing only required values which don't have defaults set
     try:
         # Create an AWS integration
         api_response = api_instance.create_aws_account(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSIntegrationApi->create_aws_account: %s\n" % e)
 ```
 
@@ -115,16 +114,15 @@ Set an AWS tag filter.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -133,21 +131,21 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
     body = AWSTagFilterCreateRequest(
         account_id="1234567",
         namespace=AWSNamespace("elb"),
         tag_filter_str="prod*",
-    ) # AWSTagFilterCreateRequest | Set an AWS tag filter using an `aws_account_identifier`, `namespace`, and filtering string. Namespace options are `application_elb`, `elb`, `lambda`, `network_elb`, `rds`, `sqs`, and `custom`.
+    )  # AWSTagFilterCreateRequest | Set an AWS tag filter using an `aws_account_identifier`, `namespace`, and filtering string. Namespace options are `application_elb`, `elb`, `lambda`, `network_elb`, `rds`, `sqs`, and `custom`.
 
     # example passing only required values which don't have defaults set
     try:
         # Set an AWS tag filter
         api_response = api_instance.create_aws_tag_filter(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSIntegrationApi->create_aws_tag_filter: %s\n" % e)
 ```
 
@@ -193,16 +191,15 @@ Generate a new AWS external ID for a given AWS account ID and role name pair.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -211,7 +208,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
     body = AWSAccount(
@@ -225,14 +222,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         host_tags=["<KEY>:<VALUE>"],
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
-    ) # AWSAccount | Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation).
+    )  # AWSAccount | Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation).
 
     # example passing only required values which don't have defaults set
     try:
         # Generate a new external ID
         api_response = api_instance.create_new_aws_external_id(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSIntegrationApi->create_new_aws_external_id: %s\n" % e)
 ```
 
@@ -278,16 +275,15 @@ Delete a Datadog-AWS integration matching the specified `account_id` and `role_n
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -296,7 +292,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
     body = AWSAccount(
@@ -310,14 +306,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         host_tags=["<KEY>:<VALUE>"],
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
-    ) # AWSAccount | AWS request object
+    )  # AWSAccount | AWS request object
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an AWS integration
         api_response = api_instance.delete_aws_account(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSIntegrationApi->delete_aws_account: %s\n" % e)
 ```
 
@@ -364,16 +360,15 @@ Delete a tag filtering entry.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -382,20 +377,20 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
     body = AWSTagFilterDeleteRequest(
         aws_account_identifier="FAKEAC0FAKEAC2FAKEAC",
         namespace=AWSNamespace("elb"),
-    ) # AWSTagFilterDeleteRequest | Delete a tag filtering entry for a given AWS account and `dd-aws` namespace.
+    )  # AWSTagFilterDeleteRequest | Delete a tag filtering entry for a given AWS account and `dd-aws` namespace.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a tag filtering entry
         api_response = api_instance.delete_aws_tag_filter(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSIntegrationApi->delete_aws_tag_filter: %s\n" % e)
 ```
 
@@ -441,16 +436,15 @@ List all namespace rules for a given Datadog-AWS integration. This endpoint take
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -459,7 +453,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
 
@@ -468,7 +462,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # List namespace rules
         api_response = api_instance.list_available_aws_namespaces()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSIntegrationApi->list_available_aws_namespaces: %s\n" % e)
 ```
 
@@ -510,16 +504,15 @@ List all Datadog-AWS integrations available in your Datadog organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -528,12 +521,12 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
-    account_id = "account_id_example" # str | Only return AWS accounts that matches this `account_id`. (optional)
-    role_name = "role_name_example" # str | Only return AWS accounts that matches this role_name. (optional)
-    access_key_id = "access_key_id_example" # str | Only return AWS accounts that matches this `access_key_id`. (optional)
+    account_id = "account_id_example"  # str | Only return AWS accounts that matches this `account_id`. (optional)
+    role_name = "role_name_example"  # str | Only return AWS accounts that matches this role_name. (optional)
+    access_key_id = "access_key_id_example"  # str | Only return AWS accounts that matches this `access_key_id`. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -541,7 +534,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # List all AWS integrations
         api_response = api_instance.list_aws_accounts(account_id=account_id, role_name=role_name, access_key_id=access_key_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSIntegrationApi->list_aws_accounts: %s\n" % e)
 ```
 
@@ -589,16 +582,15 @@ Get all AWS tag filters.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -607,17 +599,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
-    account_id = "account_id_example" # str | Only return AWS filters that matches this `account_id`.
+    account_id = "account_id_example"  # str | Only return AWS filters that matches this `account_id`.
 
     # example passing only required values which don't have defaults set
     try:
         # Get all AWS tag filters
         api_response = api_instance.list_aws_tag_filters(account_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSIntegrationApi->list_aws_tag_filters: %s\n" % e)
 ```
 
@@ -663,16 +655,15 @@ Update a Datadog-Amazon Web Services integration.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import aws_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -681,7 +672,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
     body = AWSAccount(
@@ -695,17 +686,17 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         host_tags=["<KEY>:<VALUE>"],
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
-    ) # AWSAccount | AWS request object
-    account_id = "account_id_example" # str | Only return AWS accounts that matches this `account_id`. (optional)
-    role_name = "role_name_example" # str | Only return AWS accounts that match this `role_name`. Required if `account_id` is specified. (optional)
-    access_key_id = "access_key_id_example" # str | Only return AWS accounts that matches this `access_key_id`. Required if none of the other two options are specified. (optional)
+    )  # AWSAccount | AWS request object
+    account_id = "account_id_example"  # str | Only return AWS accounts that matches this `account_id`. (optional)
+    role_name = "role_name_example"  # str | Only return AWS accounts that match this `role_name`. Required if `account_id` is specified. (optional)
+    access_key_id = "access_key_id_example"  # str | Only return AWS accounts that matches this `access_key_id`. Required if none of the other two options are specified. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Update an AWS integration
         api_response = api_instance.update_aws_account(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSIntegrationApi->update_aws_account: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -714,7 +705,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Update an AWS integration
         api_response = api_instance.update_aws_account(body, account_id=account_id, role_name=role_name, access_key_id=access_key_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling AWSIntegrationApi->update_aws_account: %s\n" % e)
 ```
 

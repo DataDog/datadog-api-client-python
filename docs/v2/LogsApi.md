@@ -23,16 +23,15 @@ The API endpoint to aggregate events into buckets and compute metrics and timese
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -41,7 +40,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_api.LogsApi(api_client)
     body = LogsAggregateRequest(
@@ -85,14 +84,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         paging=LogsAggregateRequestPaging(
             after="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==",
         ),
-    ) # LogsAggregateRequest | 
+    )  # LogsAggregateRequest | 
 
     # example passing only required values which don't have defaults set
     try:
         # Aggregate events
         api_response = api_instance.aggregate_logs(body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsApi->aggregate_logs: %s\n" % e)
 ```
 
@@ -138,16 +137,15 @@ List endpoint returns logs that match a log search query. [Results are paginated
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -157,7 +155,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["list_logs"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_api.LogsApi(api_client)
     body = LogsListRequest(
@@ -176,7 +174,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             limit=25,
         ),
         sort=LogsSort("timestamp"),
-    ) # LogsListRequest |  (optional)
+    )  # LogsListRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -184,7 +182,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get a list of logs
         api_response = api_instance.list_logs(body=body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsApi->list_logs: %s\n" % e)
 ```
 
@@ -230,16 +228,15 @@ List endpoint returns logs that match a log search query. [Results are paginated
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import logs_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -249,16 +246,16 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["list_logs_get"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_api.LogsApi(api_client)
-    filter_query = "@datacenter:us @role:db" # str | Search query following logs syntax. (optional)
-    filter_index = "main" # str | For customers with multiple indexes, the indexes to search Defaults to '*' which means all indexes (optional)
-    filter_from = dateutil_parser('2019-01-02T09:42:36.320Z') # datetime | Minimum timestamp for requested logs. (optional)
-    filter_to = dateutil_parser('2019-01-03T09:42:36.320Z') # datetime | Maximum timestamp for requested logs. (optional)
-    sort = LogsSort("timestamp") # LogsSort | Order of logs in results. (optional)
-    page_cursor = "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==" # str | List following results with a cursor provided in the previous query. (optional)
-    page_limit = 25 # int | Maximum number of logs in the response. (optional) if omitted the server will use the default value of 10
+    filter_query = "@datacenter:us @role:db"  # str | Search query following logs syntax. (optional)
+    filter_index = "main"  # str | For customers with multiple indexes, the indexes to search Defaults to '*' which means all indexes (optional)
+    filter_from = dateutil_parser('2019-01-02T09:42:36.320Z')  # datetime | Minimum timestamp for requested logs. (optional)
+    filter_to = dateutil_parser('2019-01-03T09:42:36.320Z')  # datetime | Maximum timestamp for requested logs. (optional)
+    sort = LogsSort("timestamp")  # LogsSort | Order of logs in results. (optional)
+    page_cursor = "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ=="  # str | List following results with a cursor provided in the previous query. (optional)
+    page_limit = 25  # int | Maximum number of logs in the response. (optional) if omitted the server will use the default value of 10
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -266,7 +263,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get a quick list of logs
         api_response = api_instance.list_logs_get(filter_query=filter_query, filter_index=filter_index, filter_from=filter_from, filter_to=filter_to, sort=sort, page_cursor=page_cursor, page_limit=page_limit)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsApi->list_logs_get: %s\n" % e)
 ```
 

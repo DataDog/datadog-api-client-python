@@ -27,16 +27,15 @@ Create a detection rule.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import security_monitoring_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -45,7 +44,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
     body = SecurityMonitoringRuleCreatePayload(
@@ -66,14 +65,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         ),
         queries=[],
         tags=["env:prod","team:security"],
-    ) # SecurityMonitoringRuleCreatePayload | 
+    )  # SecurityMonitoringRuleCreatePayload | 
 
     # example passing only required values which don't have defaults set
     try:
         # Create a detection rule
         api_response = api_instance.create_security_monitoring_rule(body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SecurityMonitoringApi->create_security_monitoring_rule: %s\n" % e)
 ```
 
@@ -119,16 +118,15 @@ Delete an existing rule. Default rules cannot be deleted.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import security_monitoring_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -137,16 +135,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    rule_id = "rule_id_example" # str | The ID of the rule.
+    rule_id = "rule_id_example"  # str | The ID of the rule.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete an existing rule
         api_instance.delete_security_monitoring_rule(rule_id)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SecurityMonitoringApi->delete_security_monitoring_rule: %s\n" % e)
 ```
 
@@ -192,16 +190,15 @@ Get a rule's details.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import security_monitoring_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -210,17 +207,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    rule_id = "rule_id_example" # str | The ID of the rule.
+    rule_id = "rule_id_example"  # str | The ID of the rule.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a rule's details
         api_response = api_instance.get_security_monitoring_rule(rule_id)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SecurityMonitoringApi->get_security_monitoring_rule: %s\n" % e)
 ```
 
@@ -265,16 +262,15 @@ List rules.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import security_monitoring_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -283,11 +279,11 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    page_size = 10 # int | Size for a given page. (optional) if omitted the server will use the default value of 10
-    page_number = 0 # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
+    page_size = 10  # int | Size for a given page. (optional) if omitted the server will use the default value of 10
+    page_number = 0  # int | Specific page number to return. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -295,7 +291,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # List rules
         api_response = api_instance.list_security_monitoring_rules(page_size=page_size, page_number=page_number)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SecurityMonitoringApi->list_security_monitoring_rules: %s\n" % e)
 ```
 
@@ -341,16 +337,15 @@ The list endpoint returns security signals that match a search query. Both this 
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import security_monitoring_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -360,15 +355,15 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["list_security_monitoring_signals"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    filter_query = "security:attack status:high" # str | The search query for security signals. (optional)
-    filter_from = dateutil_parser('2019-01-02T09:42:36.320Z') # datetime | The minimum timestamp for requested security signals. (optional)
-    filter_to = dateutil_parser('2019-01-03T09:42:36.320Z') # datetime | The maximum timestamp for requested security signals. (optional)
-    sort = SecurityMonitoringSignalsSort("timestamp") # SecurityMonitoringSignalsSort | The order of the security signals in results. (optional)
-    page_cursor = "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==" # str | A list of results using the cursor provided in the previous query. (optional)
-    page_limit = 25 # int | The maximum number of security signals in the response. (optional) if omitted the server will use the default value of 10
+    filter_query = "security:attack status:high"  # str | The search query for security signals. (optional)
+    filter_from = dateutil_parser('2019-01-02T09:42:36.320Z')  # datetime | The minimum timestamp for requested security signals. (optional)
+    filter_to = dateutil_parser('2019-01-03T09:42:36.320Z')  # datetime | The maximum timestamp for requested security signals. (optional)
+    sort = SecurityMonitoringSignalsSort("timestamp")  # SecurityMonitoringSignalsSort | The order of the security signals in results. (optional)
+    page_cursor = "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ=="  # str | A list of results using the cursor provided in the previous query. (optional)
+    page_limit = 25  # int | The maximum number of security signals in the response. (optional) if omitted the server will use the default value of 10
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -376,7 +371,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get a quick list of security signals
         api_response = api_instance.list_security_monitoring_signals(filter_query=filter_query, filter_from=filter_from, filter_to=filter_to, sort=sort, page_cursor=page_cursor, page_limit=page_limit)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SecurityMonitoringApi->list_security_monitoring_signals: %s\n" % e)
 ```
 
@@ -427,16 +422,15 @@ Returns security signals that match a search query. Both this endpoint and the G
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import security_monitoring_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -446,7 +440,7 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 configuration.unstable_operations["search_security_monitoring_signals"] = True
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
     body = SecurityMonitoringSignalListRequest(
@@ -460,7 +454,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
             limit=25,
         ),
         sort=SecurityMonitoringSignalsSort("timestamp"),
-    ) # SecurityMonitoringSignalListRequest |  (optional)
+    )  # SecurityMonitoringSignalListRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -468,7 +462,7 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         # Get a list of security signals
         api_response = api_instance.search_security_monitoring_signals(body=body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SecurityMonitoringApi->search_security_monitoring_signals: %s\n" % e)
 ```
 
@@ -514,16 +508,15 @@ Update an existing rule. When updating `cases`, `queries` or `options`, the whol
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v2
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import security_monitoring_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v2.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -532,10 +525,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v2.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
-    rule_id = "rule_id_example" # str | The ID of the rule.
+    rule_id = "rule_id_example"  # str | The ID of the rule.
     body = SecurityMonitoringRuleUpdatePayload(
         cases=[
             SecurityMonitoringRuleCase(
@@ -578,14 +571,14 @@ with datadog_api_client.v2.ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-    ) # SecurityMonitoringRuleUpdatePayload | 
+    )  # SecurityMonitoringRuleUpdatePayload | 
 
     # example passing only required values which don't have defaults set
     try:
         # Update an existing rule
         api_response = api_instance.update_security_monitoring_rule(rule_id, body)
         pprint(api_response)
-    except datadog_api_client.v2.ApiException as e:
+    except ApiException as e:
         print("Exception when calling SecurityMonitoringApi->update_security_monitoring_rule: %s\n" % e)
 ```
 

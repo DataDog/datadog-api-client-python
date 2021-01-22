@@ -27,16 +27,15 @@ Create a pipeline in your organization.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_pipelines_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -45,7 +44,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
     body = LogsPipeline(
@@ -60,14 +59,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             LogsProcessor(),
         ],
         type="pipeline",
-    ) # LogsPipeline | Definition of the new pipeline.
+    )  # LogsPipeline | Definition of the new pipeline.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a pipeline
         api_response = api_instance.create_logs_pipeline(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsPipelinesApi->create_logs_pipeline: %s\n" % e)
 ```
 
@@ -113,16 +112,15 @@ Delete a given pipeline from your organization. This endpoint takes no JSON argu
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_pipelines_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -131,16 +129,16 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
-    pipeline_id = "pipeline_id_example" # str | ID of the pipeline to delete.
+    pipeline_id = "pipeline_id_example"  # str | ID of the pipeline to delete.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a pipeline
         api_instance.delete_logs_pipeline(pipeline_id)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsPipelinesApi->delete_logs_pipeline: %s\n" % e)
 ```
 
@@ -186,16 +184,15 @@ Get a specific pipeline from your organization. This endpoint takes no JSON argu
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_pipelines_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -204,17 +201,17 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
-    pipeline_id = "pipeline_id_example" # str | ID of the pipeline to get.
+    pipeline_id = "pipeline_id_example"  # str | ID of the pipeline to get.
 
     # example passing only required values which don't have defaults set
     try:
         # Get a pipeline
         api_response = api_instance.get_logs_pipeline(pipeline_id)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsPipelinesApi->get_logs_pipeline: %s\n" % e)
 ```
 
@@ -260,16 +257,15 @@ Get the current order of your pipelines. This endpoint takes no JSON arguments.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_pipelines_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -278,7 +274,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
 
@@ -287,7 +283,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get pipeline order
         api_response = api_instance.get_logs_pipeline_order()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsPipelinesApi->get_logs_pipeline_order: %s\n" % e)
 ```
 
@@ -329,16 +325,15 @@ Get all pipelines from your organization. This endpoint takes no JSON arguments.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_pipelines_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -347,7 +342,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
 
@@ -356,7 +351,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # Get all pipelines
         api_response = api_instance.list_logs_pipelines()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsPipelinesApi->list_logs_pipelines: %s\n" % e)
 ```
 
@@ -398,16 +393,15 @@ Update a given pipeline configuration to change it’s processors or their order
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_pipelines_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -416,10 +410,10 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
-    pipeline_id = "pipeline_id_example" # str | ID of the pipeline to delete.
+    pipeline_id = "pipeline_id_example"  # str | ID of the pipeline to delete.
     body = LogsPipeline(
         filter=LogsFilter(
             query="source:python",
@@ -432,14 +426,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
             LogsProcessor(),
         ],
         type="pipeline",
-    ) # LogsPipeline | New definition of the pipeline.
+    )  # LogsPipeline | New definition of the pipeline.
 
     # example passing only required values which don't have defaults set
     try:
         # Update a pipeline
         api_response = api_instance.update_logs_pipeline(pipeline_id, body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsPipelinesApi->update_logs_pipeline: %s\n" % e)
 ```
 
@@ -486,16 +480,15 @@ Update the order of your pipelines. Since logs are processed sequentially, reord
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import logs_pipelines_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -504,19 +497,19 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = logs_pipelines_api.LogsPipelinesApi(api_client)
     body = LogsPipelinesOrder(
         pipeline_ids=["tags","org_ids","products"],
-    ) # LogsPipelinesOrder | Object containing the new ordered list of pipeline IDs.
+    )  # LogsPipelinesOrder | Object containing the new ordered list of pipeline IDs.
 
     # example passing only required values which don't have defaults set
     try:
         # Update pipeline order
         api_response = api_instance.update_logs_pipeline_order(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling LogsPipelinesApi->update_logs_pipeline_order: %s\n" % e)
 ```
 

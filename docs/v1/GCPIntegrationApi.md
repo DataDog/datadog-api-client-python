@@ -24,16 +24,15 @@ Create a Datadog-GCP integration.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import gcp_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -42,7 +41,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gcp_integration_api.GCPIntegrationApi(api_client)
     body = GCPAccount(
@@ -59,14 +58,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         project_id="datadog-apitest",
         token_uri="https://accounts.google.com/o/oauth2/token",
         type="service_account",
-    ) # GCPAccount | Create a Datadog-GCP integration.
+    )  # GCPAccount | Create a Datadog-GCP integration.
 
     # example passing only required values which don't have defaults set
     try:
         # Create a GCP integration
         api_response = api_instance.create_gcp_integration(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling GCPIntegrationApi->create_gcp_integration: %s\n" % e)
 ```
 
@@ -112,16 +111,15 @@ Delete a given Datadog-GCP integration.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import gcp_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -130,7 +128,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gcp_integration_api.GCPIntegrationApi(api_client)
     body = GCPAccount(
@@ -147,14 +145,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         project_id="datadog-apitest",
         token_uri="https://accounts.google.com/o/oauth2/token",
         type="service_account",
-    ) # GCPAccount | Delete a given Datadog-GCP integration.
+    )  # GCPAccount | Delete a given Datadog-GCP integration.
 
     # example passing only required values which don't have defaults set
     try:
         # Delete a GCP integration
         api_response = api_instance.delete_gcp_integration(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling GCPIntegrationApi->delete_gcp_integration: %s\n" % e)
 ```
 
@@ -200,16 +198,15 @@ List all Datadog-GCP integrations configured in your Datadog account.
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import gcp_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -218,7 +215,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gcp_integration_api.GCPIntegrationApi(api_client)
 
@@ -227,7 +224,7 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         # List all GCP integrations
         api_response = api_instance.list_gcp_integration()
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling GCPIntegrationApi->list_gcp_integration: %s\n" % e)
 ```
 
@@ -270,16 +267,15 @@ Update a Datadog-GCP integrations host_filters and/or auto-mute. Requires a `pro
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
-import datadog_api_client.v1
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import gcp_integration_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = datadog_api_client.v1.Configuration(
-    host = "https://api.datadoghq.com"
+    host="https://api.datadoghq.com"
 )
-
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -288,7 +284,7 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
-with datadog_api_client.v1.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = gcp_integration_api.GCPIntegrationApi(api_client)
     body = GCPAccount(
@@ -305,14 +301,14 @@ with datadog_api_client.v1.ApiClient(configuration) as api_client:
         project_id="datadog-apitest",
         token_uri="https://accounts.google.com/o/oauth2/token",
         type="service_account",
-    ) # GCPAccount | Update a Datadog-GCP integration.
+    )  # GCPAccount | Update a Datadog-GCP integration.
 
     # example passing only required values which don't have defaults set
     try:
         # Update a GCP integration
         api_response = api_instance.update_gcp_integration(body)
         pprint(api_response)
-    except datadog_api_client.v1.ApiException as e:
+    except ApiException as e:
         print("Exception when calling GCPIntegrationApi->update_gcp_integration: %s\n" % e)
 ```
 
