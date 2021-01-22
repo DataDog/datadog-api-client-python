@@ -452,7 +452,8 @@ conf = datadog_api_client.v2.Configuration(
                         'default_value': "datadoghq.com",
                         'enum_values': [
                             "datadoghq.com",
-                            "datadoghq.eu"
+                            "datadoghq.eu",
+                            "ddog-gov.com"
                         ]
                         },
                     'subdomain': {
