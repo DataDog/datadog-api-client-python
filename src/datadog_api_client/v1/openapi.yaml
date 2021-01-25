@@ -9929,6 +9929,7 @@ components:
       - previous_week
       - month_to_date
       - previous_month
+      - global_time
       type: string
       x-enum-varnames:
       - SEVEN_DAYS
@@ -9938,6 +9939,7 @@ components:
       - PREVIOUS_WEEK
       - MONTH_TO_DATE
       - PREVIOUS_MONTH
+      - GLOBAL_TIME
     WidgetViewMode:
       description: Define how you want the SLO to be displayed.
       enum:
