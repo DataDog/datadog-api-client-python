@@ -1,0 +1,152 @@
+interactions:
+- request:
+    body: '{"data": {"attributes": {"login_method": "standard"}, "type": "org_login_methods"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateOrganizationLoginMethod
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev10+dirty (python 3.9.0; os Darwin; arch
+        x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/org_login_methods
+  response:
+    body:
+      string: '{"data":{"type":"org_login_methods","id":"9c13a611-a27f-447c-9526-a1111b11dbc3","attributes":{"created_at":"2020-12-23T12:17:17.746821+00:00","created_by":1445416,"login_method":"standard"},"relationships":{"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '284'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 23 Dec 2020 12:43:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Dec-2020 12:43:00 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - POuDbGLugqXrJfoVh1EySG2rrzsK54DWLRF5/pTAPkxizo7RlYf80RrCYTzc0hnv
+      X-DD-VERSION:
+      - '35.3592220'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteOrganizationLoginMethod
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev10+dirty (python 3.9.0; os Darwin; arch
+        x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/org_login_methods/9c13a611-a27f-447c-9526-a1111b11dbc3
+  response:
+    body:
+      string: ''
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 23 Dec 2020 12:43:01 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 30-Dec-2020 12:43:01 GMT;
+        secure; HttpOnly
+      Strict-Transport-Security:
+      - max-age=15724800;
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-Debug:
+      - 1cd0/X8iFjFNZXjpX11JpiLJbbxmicjztoLT0xgVCngh7XkSAjfiT2A4vALPTlNE
+      X-DD-VERSION:
+      - '35.3592220'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteOrganizationLoginMethod
+      User-Agent:
+      - datadog-api-client-python/1.0.0b5.dev10+dirty (python 3.9.0; os Darwin; arch
+        x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/org_login_methods/9c13a611-a27f-447c-9526-a1111b11dbc3
+  response:
+    body:
+      string: '{"errors": ["Org login method 9c13a611-a27f-447c-9526-a1111b11dbc3
+        not found"]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '79'
+      Content-Security-Policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      Content-Type:
+      - application/json
+      DD-POOL:
+      - dogweb
+      Date:
+      - Wed, 23 Dec 2020 12:43:01 GMT
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=15724800;
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DD-VERSION:
+      - '35.3592220'
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 404
+      message: Not Found
+version: 1
