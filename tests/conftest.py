@@ -5,14 +5,50 @@ import os
 
 # First patch httplib
 tracer = None
-if os.getenv("RECORD", "false") != "none":
-    try:
-        from ddtrace import config, patch, tracer
+try:
+    from ddtrace import config, patch, tracer
 
-        config.httplib["distributed_tracing"] = True
-        patch(httplib=True)
-    except ImportError:
-        pass
+    if os.getenv("RECORD", "false") != "none":
+        from ddtrace.internal.writer import AgentWriter
+        class Writer(AgentWriter):
+
+            def is_alive(self):
+                return True
+
+            def stop(self):
+                self.flush_queue()
+
+            def join(self, **kwargs):
+                """No thread is started therefore no join is needed."""
+
+            def write(self, *args, **kwargs):
+                # make sure the thread won't get started
+                self._started = True
+                super(Writer, self).write(*args, **kwargs)
+
+        tracer.writer.stop()
+        tracer.writer = Writer(
+            hostname=tracer.writer.api.hostname,
+            port=tracer.writer.api.port,
+            uds_path=tracer.writer.api.uds_path,
+            https=tracer.writer.api.https,
+        )
+
+        import pytest
+
+        @pytest.hookimpl(trylast=True)
+        def pytest_configure(config):
+            """Make sure the tracer on pin is the same as global one."""
+            from ddtrace.pin import Pin
+
+            pin = Pin.get_from(config)
+            if pin:
+                pin.tracer.writer = tracer.writer
+
+    config.httplib["distributed_tracing"] = True
+    patch(httplib=True)
+except ImportError:
+    pass
 
 import importlib
 import json
