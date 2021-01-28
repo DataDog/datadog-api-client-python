@@ -14652,7 +14652,7 @@ paths:
         type: safe
   /api/v1/slo:
     get:
-      description: Get multiple service level objective objects by their IDs.
+      description: Get a list of service level objective objects for your organization.
       operationId: ListSLOs
       parameters:
       - description: A comma separated list of the IDs of the service level objectives
@@ -14660,7 +14660,29 @@ paths:
         example: id1, id2, id3
         in: query
         name: ids
-        required: true
+        required: false
+        schema:
+          type: string
+      - description: The query string to filter results based on SLO names.
+        example: monitor
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+      - description: The query string to filter results based on SLO tags.
+        example: env:prod
+        in: query
+        name: tags_query
+        required: false
+        schema:
+          type: string
+      - description: The query string to filter results based on SLO numerator and
+          denominator.
+        example: aws.elb.request_count
+        in: query
+        name: metrics_query
+        required: false
         schema:
           type: string
       responses:
@@ -14688,7 +14710,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Not Found
-      summary: Search SLOs
+      summary: Get all SLOs
       tags:
       - Service Level Objectives
       x-undo:

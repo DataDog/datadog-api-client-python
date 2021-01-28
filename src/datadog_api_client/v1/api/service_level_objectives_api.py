@@ -790,22 +790,23 @@ class ServiceLevelObjectivesApi(object):
 
         def __list_slos(
             self,
-            ids,
             **kwargs
         ):
-            """Search SLOs  # noqa: E501
+            """Get all SLOs  # noqa: E501
 
-            Get multiple service level objective objects by their IDs.  # noqa: E501
+            Get a list of service level objective objects for your organization.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.list_slos(ids, async_req=True)
+            >>> thread = api.list_slos(async_req=True)
             >>> result = thread.get()
 
-            Args:
-                ids (str): A comma separated list of the IDs of the service level objectives objects.
 
             Keyword Args:
+                ids (str): A comma separated list of the IDs of the service level objectives objects.. [optional]
+                query (str): The query string to filter results based on SLO names.. [optional]
+                tags_query (str): The query string to filter results based on SLO tags.. [optional]
+                metrics_query (str): The query string to filter results based on SLO numerator and denominator.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -850,8 +851,6 @@ class ServiceLevelObjectivesApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['ids'] = \
-                ids
             return self.call_with_http_info(**kwargs)
 
         self.list_slos = _Endpoint(
@@ -869,10 +868,11 @@ class ServiceLevelObjectivesApi(object):
             params_map={
                 'all': [
                     'ids',
+                    'query',
+                    'tags_query',
+                    'metrics_query',
                 ],
-                'required': [
-                    'ids',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -888,12 +888,24 @@ class ServiceLevelObjectivesApi(object):
                 'openapi_types': {
                     'ids':
                         (str,),
+                    'query':
+                        (str,),
+                    'tags_query':
+                        (str,),
+                    'metrics_query':
+                        (str,),
                 },
                 'attribute_map': {
                     'ids': 'ids',
+                    'query': 'query',
+                    'tags_query': 'tags_query',
+                    'metrics_query': 'metrics_query',
                 },
                 'location_map': {
                     'ids': 'query',
+                    'query': 'query',
+                    'tags_query': 'query',
+                    'metrics_query': 'query',
                 },
                 'collection_format_map': {
                 }

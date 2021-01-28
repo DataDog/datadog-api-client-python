@@ -95,6 +95,24 @@ Feature: Service Level Objectives
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get all SLOs returns "Bad Request" response
+    Given new "ListSLOs" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get all SLOs returns "Not Found" response
+    Given new "ListSLOs" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip
+  Scenario: Get all SLOs returns "OK" response
+    Given new "ListSLOs" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get an SLO's history returns "Bad Request" response
     Given operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
@@ -115,24 +133,6 @@ Feature: Service Level Objectives
     Given operation "GetSLOHistory" enabled
     And new "GetSLOHistory" request
     And request contains "slo_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Search SLOs returns "Bad Request" response
-    Given new "ListSLOs" request
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip
-  Scenario: Search SLOs returns "Not Found" response
-    Given new "ListSLOs" request
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip
-  Scenario: Search SLOs returns "OK" response
-    Given new "ListSLOs" request
     When the request is sent
     Then the response status is 200 OK
 
