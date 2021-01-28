@@ -123,7 +123,7 @@ datadog_api_client/v2/model/logs_aggregate_bucket_value.py
 datadog_api_client/v2/model/logs_aggregate_bucket_value_timeseries.py
 datadog_api_client/v2/model/logs_aggregate_bucket_value_timeseries_point.py
 datadog_api_client/v2/model/logs_aggregate_request.py
-datadog_api_client/v2/model/logs_aggregate_request_paging.py
+datadog_api_client/v2/model/logs_aggregate_request_page.py
 datadog_api_client/v2/model/logs_aggregate_response.py
 datadog_api_client/v2/model/logs_aggregate_response_data.py
 datadog_api_client/v2/model/logs_aggregate_response_status.py
@@ -405,7 +405,7 @@ docs/LogsAggregateBucketValue.md
 docs/LogsAggregateBucketValueTimeseries.md
 docs/LogsAggregateBucketValueTimeseriesPoint.md
 docs/LogsAggregateRequest.md
-docs/LogsAggregateRequestPaging.md
+docs/LogsAggregateRequestPage.md
 docs/LogsAggregateResponse.md
 docs/LogsAggregateResponseData.md
 docs/LogsAggregateResponseStatus.md
@@ -691,7 +691,7 @@ test/test_logs_aggregate_bucket_value.py
 test/test_logs_aggregate_bucket_value_timeseries.py
 test/test_logs_aggregate_bucket_value_timeseries_point.py
 test/test_logs_aggregate_request.py
-test/test_logs_aggregate_request_paging.py
+test/test_logs_aggregate_request_page.py
 test/test_logs_aggregate_response.py
 test/test_logs_aggregate_response_data.py
 test/test_logs_aggregate_response_status.py
