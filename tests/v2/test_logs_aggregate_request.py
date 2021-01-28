@@ -11,10 +11,10 @@ import unittest
 
 import datadog_api_client.v2
 try:
-    from datadog_api_client.v2.model import logs_aggregate_request_page
+    from datadog_api_client.v2.model import logs_aggregate_request_paging
 except ImportError:
-    logs_aggregate_request_page = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregate_request_page']
+    logs_aggregate_request_paging = sys.modules[
+        'datadog_api_client.v2.model.logs_aggregate_request_paging']
 try:
     from datadog_api_client.v2.model import logs_compute
 except ImportError:
