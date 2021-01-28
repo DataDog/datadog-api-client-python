@@ -28,10 +28,10 @@ try:
 
         tracer.writer.stop()
         tracer.writer = Writer(
-            hostname=tracer.writer.api.hostname,
-            port=tracer.writer.api.port,
-            uds_path=tracer.writer.api.uds_path,
-            https=tracer.writer.api.https,
+            hostname=tracer.writer._hostname,
+            port=tracer.writer._port,
+            uds_path=tracer.writer._uds_path,
+            https=tracer.writer._https,
         )
 
         import pytest
@@ -229,7 +229,7 @@ def vcr_config():
         filter_query_parameters=("api_key", "application_key"),
     )
     if tracer:
-        config["ignore_hosts"] = [tracer.writer.api.hostname]
+        config["ignore_hosts"] = [tracer.writer._hostname]
 
     return config
 
