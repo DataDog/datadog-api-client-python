@@ -24,12 +24,12 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 )
 
 def lazy_import():
-    from datadog_api_client.v2.model.logs_aggregate_request_page import LogsAggregateRequestPage
+    from datadog_api_client.v2.model.logs_aggregate_request_paging import LogsAggregateRequestPaging
     from datadog_api_client.v2.model.logs_compute import LogsCompute
     from datadog_api_client.v2.model.logs_group_by import LogsGroupBy
     from datadog_api_client.v2.model.logs_query_filter import LogsQueryFilter
     from datadog_api_client.v2.model.logs_query_options import LogsQueryOptions
-    globals()['LogsAggregateRequestPage'] = LogsAggregateRequestPage
+    globals()['LogsAggregateRequestPaging'] = LogsAggregateRequestPaging
     globals()['LogsCompute'] = LogsCompute
     globals()['LogsGroupBy'] = LogsGroupBy
     globals()['LogsQueryFilter'] = LogsQueryFilter
@@ -86,7 +86,7 @@ class LogsAggregateRequest(ModelNormal):
             'filter': (LogsQueryFilter,),  # noqa: E501
             'group_by': ([LogsGroupBy],),  # noqa: E501
             'options': (LogsQueryOptions,),  # noqa: E501
-            'page': (LogsAggregateRequestPage,),  # noqa: E501
+            'paging': (LogsAggregateRequestPaging,),  # noqa: E501
         }
 
     @cached_property
@@ -99,7 +99,7 @@ class LogsAggregateRequest(ModelNormal):
         'filter': 'filter',  # noqa: E501
         'group_by': 'group_by',  # noqa: E501
         'options': 'options',  # noqa: E501
-        'page': 'page',  # noqa: E501
+        'paging': 'paging',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -152,7 +152,7 @@ class LogsAggregateRequest(ModelNormal):
             filter (LogsQueryFilter): [optional]  # noqa: E501
             group_by ([LogsGroupBy]): The rules for the group by. [optional]  # noqa: E501
             options (LogsQueryOptions): [optional]  # noqa: E501
-            page (LogsAggregateRequestPage): [optional]  # noqa: E501
+            paging (LogsAggregateRequestPaging): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

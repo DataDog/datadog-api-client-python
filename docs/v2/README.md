@@ -287,7 +287,7 @@ Class | Method | HTTP request | Description
  - [LogsAggregateBucketValueTimeseries](LogsAggregateBucketValueTimeseries.md)
  - [LogsAggregateBucketValueTimeseriesPoint](LogsAggregateBucketValueTimeseriesPoint.md)
  - [LogsAggregateRequest](LogsAggregateRequest.md)
- - [LogsAggregateRequestPage](LogsAggregateRequestPage.md)
+ - [LogsAggregateRequestPaging](LogsAggregateRequestPaging.md)
  - [LogsAggregateResponse](LogsAggregateResponse.md)
  - [LogsAggregateResponseData](LogsAggregateResponseData.md)
  - [LogsAggregateResponseStatus](LogsAggregateResponseStatus.md)

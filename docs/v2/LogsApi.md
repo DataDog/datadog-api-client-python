@@ -81,8 +81,8 @@ with ApiClient(configuration) as api_client:
             time_offset=1,
             timezone="GMT",
         ),
-        page=LogsAggregateRequestPage(
-            cursor="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==",
+        paging=LogsAggregateRequestPaging(
+            after="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==",
         ),
     )  # LogsAggregateRequest | 
 
