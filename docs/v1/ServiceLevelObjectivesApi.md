@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**delete_slo_timeframe_in_bulk**](ServiceLevelObjectivesApi.md#delete_slo_timeframe_in_bulk) | **POST** /api/v1/slo/bulk_delete | Bulk Delete SLO Timeframes
 [**get_slo**](ServiceLevelObjectivesApi.md#get_slo) | **GET** /api/v1/slo/{slo_id} | Get a SLO&#39;s details
 [**get_slo_history**](ServiceLevelObjectivesApi.md#get_slo_history) | **GET** /api/v1/slo/{slo_id}/history | Get an SLO&#39;s history
-[**list_slos**](ServiceLevelObjectivesApi.md#list_slos) | **GET** /api/v1/slo | Search SLOs
+[**list_slos**](ServiceLevelObjectivesApi.md#list_slos) | **GET** /api/v1/slo | Get all SLOs
 [**update_slo**](ServiceLevelObjectivesApi.md#update_slo) | **PUT** /api/v1/slo/{slo_id} | Update a SLO
 
 
@@ -498,11 +498,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_slos**
-> SLOListResponse list_slos(ids)
+> SLOListResponse list_slos()
 
-Search SLOs
+Get all SLOs
 
-Get multiple service level objective objects by their IDs.
+Get a list of service level objective objects for your organization.
 
 ### Example
 
@@ -531,12 +531,16 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
-    ids = "id1, id2, id3"  # str | A comma separated list of the IDs of the service level objectives objects.
+    ids = "id1, id2, id3"  # str | A comma separated list of the IDs of the service level objectives objects. (optional)
+    query = "monitor"  # str | The query string to filter results based on SLO names. (optional)
+    tags_query = "env:prod"  # str | The query string to filter results based on SLO tags. (optional)
+    metrics_query = "aws.elb.request_count"  # str | The query string to filter results based on SLO numerator and denominator. (optional)
 
     # example passing only required values which don't have defaults set
+    # and optional values
     try:
-        # Search SLOs
-        api_response = api_instance.list_slos(ids)
+        # Get all SLOs
+        api_response = api_instance.list_slos(ids=ids, query=query, tags_query=tags_query, metrics_query=metrics_query)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->list_slos: %s\n" % e)
@@ -546,7 +550,10 @@ with ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | **str**| A comma separated list of the IDs of the service level objectives objects. |
+ **ids** | **str**| A comma separated list of the IDs of the service level objectives objects. | [optional]
+ **query** | **str**| The query string to filter results based on SLO names. | [optional]
+ **tags_query** | **str**| The query string to filter results based on SLO tags. | [optional]
+ **metrics_query** | **str**| The query string to filter results based on SLO numerator and denominator. | [optional]
 
 ### Return type
 
