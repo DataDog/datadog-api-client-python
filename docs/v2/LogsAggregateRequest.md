@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **filter** | [**LogsQueryFilter**](LogsQueryFilter.md) |  | [optional] 
 **group_by** | [**[LogsGroupBy]**](LogsGroupBy.md) | The rules for the group by | [optional] 
 **options** | [**LogsQueryOptions**](LogsQueryOptions.md) |  | [optional] 
-**paging** | [**LogsAggregateRequestPaging**](LogsAggregateRequestPaging.md) |  | [optional] 
+**page** | [**LogsAggregateRequestPage**](LogsAggregateRequestPage.md) |  | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
