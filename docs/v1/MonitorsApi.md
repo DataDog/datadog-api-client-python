@@ -158,9 +158,6 @@ with ApiClient(configuration) as api_client:
             notify_no_data=False,
             renotify_interval=1,
             require_full_window=True,
-            restricted_roles=[
-                "restricted_roles_example",
-            ],
             silenced={
                 "key": 1,
             },
@@ -182,6 +179,9 @@ with ApiClient(configuration) as api_client:
         overall_state=MonitorOverallStates("Alert"),
         priority=1,
         query="query_example",
+        restricted_roles=[
+            "restricted_roles_example",
+        ],
         state=MonitorState(
             groups={
                 "key": MonitorStateGroup(
@@ -566,9 +566,6 @@ with ApiClient(configuration) as api_client:
             notify_no_data=False,
             renotify_interval=1,
             require_full_window=True,
-            restricted_roles=[
-                "restricted_roles_example",
-            ],
             silenced={
                 "key": 1,
             },
@@ -717,9 +714,6 @@ with ApiClient(configuration) as api_client:
             notify_no_data=False,
             renotify_interval=1,
             require_full_window=True,
-            restricted_roles=[
-                "restricted_roles_example",
-            ],
             silenced={
                 "key": 1,
             },
@@ -741,6 +735,9 @@ with ApiClient(configuration) as api_client:
         overall_state=MonitorOverallStates("Alert"),
         priority=1,
         query="query_example",
+        restricted_roles=[
+            "restricted_roles_example",
+        ],
         state=MonitorState(
             groups={
                 "key": MonitorStateGroup(
