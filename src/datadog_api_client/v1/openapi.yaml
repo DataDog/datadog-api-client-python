@@ -13056,7 +13056,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Authentication error
-      summary: Get a list of logs
+      summary: Search logs
       tags:
       - Logs
       x-codegen-request-body-name: body

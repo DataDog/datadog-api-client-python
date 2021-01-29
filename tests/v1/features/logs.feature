@@ -23,11 +23,11 @@ Feature: Logs
     And body {}
 
   @generated @skip
-  Scenario: Get a list of logs returns "Bad Request" response
+  Scenario: Search logs returns "Bad Request" response
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
-  Scenario: Get a list of logs returns "OK" response
+  Scenario: Search logs returns "OK" response
     When the request is sent
     Then the response status is 200 OK
