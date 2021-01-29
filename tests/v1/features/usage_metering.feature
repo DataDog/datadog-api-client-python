@@ -44,6 +44,18 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get hourly usage for IoT returns "Bad Request" response
+    Given new "GetUsageInternetOfThings" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get hourly usage for IoT returns "OK" response
+    Given new "GetUsageInternetOfThings" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get hourly usage for Lambda returns "Bad Request" response
     Given new "GetUsageLambda" request
     When the request is sent
