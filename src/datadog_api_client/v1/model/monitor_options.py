@@ -118,7 +118,6 @@ class MonitorOptions(ModelNormal):
                 none_type,
             ),  # noqa: E501
             "require_full_window": (bool,),  # noqa: E501
-            "restricted_roles": ([str],),  # noqa: E501
             "silenced": ({str: (int, none_type)},),  # noqa: E501
             "synthetics_check_id": (
                 str,
@@ -152,7 +151,6 @@ class MonitorOptions(ModelNormal):
         "notify_no_data": "notify_no_data",  # noqa: E501
         "renotify_interval": "renotify_interval",  # noqa: E501
         "require_full_window": "require_full_window",  # noqa: E501
-        "restricted_roles": "restricted_roles",  # noqa: E501
         "silenced": "silenced",  # noqa: E501
         "synthetics_check_id": "synthetics_check_id",  # noqa: E501
         "threshold_windows": "threshold_windows",  # noqa: E501
@@ -223,7 +221,6 @@ class MonitorOptions(ModelNormal):
             notify_no_data (bool): A Boolean indicating whether this monitor notifies when data stops reporting.. [optional] if omitted the server will use the default value of False  # noqa: E501
             renotify_interval (int, none_type): The number of minutes after the last notification before a monitor re-notifies on the current status. It only re-notifies if it’s not resolved.. [optional]  # noqa: E501
             require_full_window (bool): A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to `false` for sparse metrics, otherwise some evaluations are skipped. Default is false.. [optional]  # noqa: E501
-            restricted_roles ([str]): A list of role identifiers that can be pulled from the Roles API. Cannot be used with `locked`.. [optional]  # noqa: E501
             silenced ({str: (int, none_type)}): Information about the downtime applied to the monitor.. [optional]  # noqa: E501
             synthetics_check_id (str, none_type): ID of the corresponding Synthetic check.. [optional]  # noqa: E501
             threshold_windows (MonitorThresholdWindowOptions): [optional]  # noqa: E501
