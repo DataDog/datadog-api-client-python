@@ -10,8 +10,8 @@ try:
 
     if os.getenv("RECORD", "false") != "none":
         from ddtrace.internal.writer import AgentWriter
-        class Writer(AgentWriter):
 
+        class Writer(AgentWriter):
             def is_alive(self):
                 return True
 
@@ -92,9 +92,7 @@ def pytest_bdd_after_step(request, feature, scenario, step, step_func, step_func
         span.finish()
 
 
-def pytest_bdd_step_error(
-    request, feature, scenario, step, step_func, step_func_args, exception
-):
+def pytest_bdd_step_error(request, feature, scenario, step, step_func, step_func_args, exception):
     span = getattr(step_func, "__dd_span__", None)
     if span is not None:
         span.set_exc_info(type(exception), exception, exception.__traceback__)
@@ -153,9 +151,7 @@ def unique(request, freezer):
         @staticmethod
         def __call__():
             with freezer:
-                return (
-                    f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
-                )
+                return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
 
         def __str__(self):
             return self()
@@ -273,15 +269,10 @@ def _package(package_name):
 @pytest.fixture(scope="module")
 def undo_operations(package_name):
     version = package_name.split(".")[-1]
-    with open(
-        os.path.join(os.path.dirname(__file__), version, "features", "undo.json")
-    ) as fp:
+    with open(os.path.join(os.path.dirname(__file__), version, "features", "undo.json")) as fp:
         data = json.load(fp)
 
-    return {
-        snake_case(operation_id): settings.get("undo")
-        for operation_id, settings in data.items()
-    }
+    return {snake_case(operation_id): settings.get("undo") for operation_id, settings in data.items()}
 
 
 def build_configuration(package):
@@ -391,17 +382,12 @@ def build_given(version, operation):
                 if "source" in p:
                     return glom(context, p["source"])
 
-            kwargs = {
-                snake_case(p["name"]): build_param(p)
-                for p in operation.get("parameters", [])
-            }
+            kwargs = {snake_case(p["name"]): build_param(p) for p in operation.get("parameters", [])}
             result = operation_method(**kwargs)
             client.last_response.urllib3_response.close()
 
             # register undo method
-            context["undo_operations"].append(
-                lambda: undo(api, operation_name, result, client=client)
-            )
+            context["undo_operations"].append(lambda: undo(api, operation_name, result, client=client))
 
             # optional re-shaping
             if "source" in operation:
@@ -441,10 +427,7 @@ def undo(package_name, undo_operations, client):
 
         operation_name = snake_case(operation["operationId"])
         method = getattr(api, operation_name)
-        args = [
-            glom(response, parameter["source"])
-            for parameter in operation.get("parameters", [])
-        ]
+        args = [glom(response, parameter["source"]) for parameter in operation.get("parameters", [])]
 
         if operation_name in client.configuration.unstable_operations:
             client.configuration.unstable_operations[operation_name] = True
@@ -512,11 +495,7 @@ def expect_equal(context, response_path, value):
     assert test_value == response_value
 
 
-@then(
-    parsers.parse(
-        'the response "{response_path}" has the same value as "{fixture_path}"'
-    )
-)
+@then(parsers.parse('the response "{response_path}" has the same value as "{fixture_path}"'))
 def expect_equal_value(context, response_path, fixture_path):
     fixture_value = glom(context, fixture_path)
     response_value = glom(context["api_request"]["response"][0], response_path)
