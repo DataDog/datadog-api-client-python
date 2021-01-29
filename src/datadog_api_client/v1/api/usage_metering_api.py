@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
@@ -61,10 +61,7 @@ class UsageMeteringApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __get_daily_custom_reports(
-            self,
-            **kwargs
-        ):
+        def __get_daily_custom_reports(self, **kwargs):
             """Get the list of available daily custom reports  # noqa: E501
 
             Get daily custom reports.  # noqa: E501
@@ -105,99 +102,68 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.get_daily_custom_reports = _Endpoint(
             settings={
-                'response_type': (UsageCustomReportsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/daily_custom_reports',
-                'operation_id': 'get_daily_custom_reports',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageCustomReportsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/daily_custom_reports",
+                "operation_id": "get_daily_custom_reports",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'page_size',
-                    'page_number',
-                    'sort_dir',
-                    'sort',
+                "all": [
+                    "page_size",
+                    "page_number",
+                    "sort_dir",
+                    "sort",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "page_size": (int,),
+                    "page_number": (int,),
+                    "sort_dir": (UsageSortDirection,),
+                    "sort": (UsageSort,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "page_size": "page[size]",
+                    "page_number": "page[number]",
+                    "sort_dir": "sort_dir",
+                    "sort": "sort",
                 },
-                'openapi_types': {
-                    'page_size':
-                        (int,),
-                    'page_number':
-                        (int,),
-                    'sort_dir':
-                        (UsageSortDirection,),
-                    'sort':
-                        (UsageSort,),
+                "location_map": {
+                    "page_size": "query",
+                    "page_number": "query",
+                    "sort_dir": "query",
+                    "sort": "query",
                 },
-                'attribute_map': {
-                    'page_size': 'page[size]',
-                    'page_number': 'page[number]',
-                    'sort_dir': 'sort_dir',
-                    'sort': 'sort',
-                },
-                'location_map': {
-                    'page_size': 'query',
-                    'page_number': 'query',
-                    'sort_dir': 'query',
-                    'sort': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_daily_custom_reports
+            callable=__get_daily_custom_reports,
         )
 
-        def __get_incident_management(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_incident_management(self, start_hr, **kwargs):
             """Get hourly usage for incident management  # noqa: E501
 
             Get hourly usage for incident management.  # noqa: E501
@@ -237,93 +203,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_incident_management = _Endpoint(
             settings={
-                'response_type': (UsageIncidentManagementResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/incident-management',
-                'operation_id': 'get_incident_management',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageIncidentManagementResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/incident-management",
+                "operation_id": "get_incident_management",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_incident_management
+            callable=__get_incident_management,
         )
 
-        def __get_ingested_spans(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_ingested_spans(self, start_hr, **kwargs):
             """Get hourly usage for ingested spans  # noqa: E501
 
             Get hourly usage for ingested spans.  # noqa: E501
@@ -363,92 +299,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_ingested_spans = _Endpoint(
             settings={
-                'response_type': (UsageIngestedSpansResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/ingested-spans',
-                'operation_id': 'get_ingested_spans',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageIngestedSpansResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/ingested-spans",
+                "operation_id": "get_ingested_spans",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_ingested_spans
+            callable=__get_ingested_spans,
         )
 
-        def __get_monthly_custom_reports(
-            self,
-            **kwargs
-        ):
+        def __get_monthly_custom_reports(self, **kwargs):
             """Get the list of available monthly custom reports  # noqa: E501
 
             Get monthly custom reports.  # noqa: E501
@@ -489,99 +396,68 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.get_monthly_custom_reports = _Endpoint(
             settings={
-                'response_type': (UsageCustomReportsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/monthly_custom_reports',
-                'operation_id': 'get_monthly_custom_reports',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageCustomReportsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monthly_custom_reports",
+                "operation_id": "get_monthly_custom_reports",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'page_size',
-                    'page_number',
-                    'sort_dir',
-                    'sort',
+                "all": [
+                    "page_size",
+                    "page_number",
+                    "sort_dir",
+                    "sort",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "page_size": (int,),
+                    "page_number": (int,),
+                    "sort_dir": (UsageSortDirection,),
+                    "sort": (UsageSort,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "page_size": "page[size]",
+                    "page_number": "page[number]",
+                    "sort_dir": "sort_dir",
+                    "sort": "sort",
                 },
-                'openapi_types': {
-                    'page_size':
-                        (int,),
-                    'page_number':
-                        (int,),
-                    'sort_dir':
-                        (UsageSortDirection,),
-                    'sort':
-                        (UsageSort,),
+                "location_map": {
+                    "page_size": "query",
+                    "page_number": "query",
+                    "sort_dir": "query",
+                    "sort": "query",
                 },
-                'attribute_map': {
-                    'page_size': 'page[size]',
-                    'page_number': 'page[number]',
-                    'sort_dir': 'sort_dir',
-                    'sort': 'sort',
-                },
-                'location_map': {
-                    'page_size': 'query',
-                    'page_number': 'query',
-                    'sort_dir': 'query',
-                    'sort': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_monthly_custom_reports
+            callable=__get_monthly_custom_reports,
         )
 
-        def __get_specified_daily_custom_reports(
-            self,
-            report_id,
-            **kwargs
-        ):
+        def __get_specified_daily_custom_reports(self, report_id, **kwargs):
             """Get specified daily custom reports  # noqa: E501
 
             Get specified daily custom reports.  # noqa: E501
@@ -620,88 +496,59 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['report_id'] = \
-                report_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["report_id"] = report_id
             return self.call_with_http_info(**kwargs)
 
         self.get_specified_daily_custom_reports = _Endpoint(
             settings={
-                'response_type': (UsageSpecifiedCustomReportsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/daily_custom_reports/{report_id}',
-                'operation_id': 'get_specified_daily_custom_reports',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageSpecifiedCustomReportsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/daily_custom_reports/{report_id}",
+                "operation_id": "get_specified_daily_custom_reports",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'report_id',
+                "all": [
+                    "report_id",
                 ],
-                'required': [
-                    'report_id',
+                "required": [
+                    "report_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "report_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "report_id": "report_id",
                 },
-                'openapi_types': {
-                    'report_id':
-                        (str,),
+                "location_map": {
+                    "report_id": "path",
                 },
-                'attribute_map': {
-                    'report_id': 'report_id',
-                },
-                'location_map': {
-                    'report_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_specified_daily_custom_reports
+            callable=__get_specified_daily_custom_reports,
         )
 
-        def __get_specified_monthly_custom_reports(
-            self,
-            report_id,
-            **kwargs
-        ):
+        def __get_specified_monthly_custom_reports(self, report_id, **kwargs):
             """Get specified monthly custom reports  # noqa: E501
 
             Get specified monthly custom reports.  # noqa: E501
@@ -740,88 +587,59 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['report_id'] = \
-                report_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["report_id"] = report_id
             return self.call_with_http_info(**kwargs)
 
         self.get_specified_monthly_custom_reports = _Endpoint(
             settings={
-                'response_type': (UsageSpecifiedCustomReportsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/monthly_custom_reports/{report_id}',
-                'operation_id': 'get_specified_monthly_custom_reports',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageSpecifiedCustomReportsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monthly_custom_reports/{report_id}",
+                "operation_id": "get_specified_monthly_custom_reports",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'report_id',
+                "all": [
+                    "report_id",
                 ],
-                'required': [
-                    'report_id',
+                "required": [
+                    "report_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "report_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "report_id": "report_id",
                 },
-                'openapi_types': {
-                    'report_id':
-                        (str,),
+                "location_map": {
+                    "report_id": "path",
                 },
-                'attribute_map': {
-                    'report_id': 'report_id',
-                },
-                'location_map': {
-                    'report_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_specified_monthly_custom_reports
+            callable=__get_specified_monthly_custom_reports,
         )
 
-        def __get_tracing_without_limits(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_tracing_without_limits(self, start_hr, **kwargs):
             """Get hourly usage for tracing without limits  # noqa: E501
 
             Get hourly usage for tracing without limits.  **Note** This endpoint has been renamed to `/api/v1/usage/ingested-spans`.  # noqa: E501
@@ -861,93 +679,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_tracing_without_limits = _Endpoint(
             settings={
-                'response_type': (UsageTracingWithoutLimitsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/tracing-without-limits',
-                'operation_id': 'get_tracing_without_limits',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageTracingWithoutLimitsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/tracing-without-limits",
+                "operation_id": "get_tracing_without_limits",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_tracing_without_limits
+            callable=__get_tracing_without_limits,
         )
 
-        def __get_usage_analyzed_logs(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_analyzed_logs(self, start_hr, **kwargs):
             """Get hourly usage for analyzed logs  # noqa: E501
 
             Get hourly usage for analyzed logs (Security Monitoring).  # noqa: E501
@@ -987,94 +775,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_analyzed_logs = _Endpoint(
             settings={
-                'response_type': (UsageAnalyzedLogsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/analyzed_logs',
-                'operation_id': 'get_usage_analyzed_logs',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageAnalyzedLogsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/analyzed_logs",
+                "operation_id": "get_usage_analyzed_logs",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_analyzed_logs
+            callable=__get_usage_analyzed_logs,
         )
 
-        def __get_usage_attribution(
-            self,
-            start_month,
-            fields,
-            **kwargs
-        ):
+        def __get_usage_attribution(self, start_month, fields, **kwargs):
             """Get Usage Attribution  # noqa: E501
 
             Get Usage Attribution.  # noqa: E501
@@ -1117,110 +874,77 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_month'] = \
-                start_month
-            kwargs['fields'] = \
-                fields
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_month"] = start_month
+            kwargs["fields"] = fields
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_attribution = _Endpoint(
             settings={
-                'response_type': (UsageAttributionResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/attribution',
-                'operation_id': 'get_usage_attribution',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageAttributionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/attribution",
+                "operation_id": "get_usage_attribution",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_month',
-                    'fields',
-                    'end_month',
-                    'sort_direction',
-                    'sort_name',
+                "all": [
+                    "start_month",
+                    "fields",
+                    "end_month",
+                    "sort_direction",
+                    "sort_name",
                 ],
-                'required': [
-                    'start_month',
-                    'fields',
+                "required": [
+                    "start_month",
+                    "fields",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_month": (datetime,),
+                    "fields": (str,),
+                    "end_month": (datetime,),
+                    "sort_direction": (UsageSortDirection,),
+                    "sort_name": (UsageAttributionSort,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_month": "start_month",
+                    "fields": "fields",
+                    "end_month": "end_month",
+                    "sort_direction": "sort_direction",
+                    "sort_name": "sort_name",
                 },
-                'openapi_types': {
-                    'start_month':
-                        (datetime,),
-                    'fields':
-                        (str,),
-                    'end_month':
-                        (datetime,),
-                    'sort_direction':
-                        (UsageSortDirection,),
-                    'sort_name':
-                        (UsageAttributionSort,),
+                "location_map": {
+                    "start_month": "query",
+                    "fields": "query",
+                    "end_month": "query",
+                    "sort_direction": "query",
+                    "sort_name": "query",
                 },
-                'attribute_map': {
-                    'start_month': 'start_month',
-                    'fields': 'fields',
-                    'end_month': 'end_month',
-                    'sort_direction': 'sort_direction',
-                    'sort_name': 'sort_name',
-                },
-                'location_map': {
-                    'start_month': 'query',
-                    'fields': 'query',
-                    'end_month': 'query',
-                    'sort_direction': 'query',
-                    'sort_name': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_attribution
+            callable=__get_usage_attribution,
         )
 
-        def __get_usage_billable_summary(
-            self,
-            **kwargs
-        ):
+        def __get_usage_billable_summary(self, **kwargs):
             """Get billable usage across your account  # noqa: E501
 
             Get billable usage across your account.  # noqa: E501
@@ -1258,84 +982,56 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_billable_summary = _Endpoint(
             settings={
-                'response_type': (UsageBillableSummaryResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/billable-summary',
-                'operation_id': 'get_usage_billable_summary',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageBillableSummaryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/billable-summary",
+                "operation_id": "get_usage_billable_summary",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'month',
+                "all": [
+                    "month",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "month": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "month": "month",
                 },
-                'openapi_types': {
-                    'month':
-                        (datetime,),
+                "location_map": {
+                    "month": "query",
                 },
-                'attribute_map': {
-                    'month': 'month',
-                },
-                'location_map': {
-                    'month': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_billable_summary
+            callable=__get_usage_billable_summary,
         )
 
-        def __get_usage_fargate(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_fargate(self, start_hr, **kwargs):
             """Get hourly usage for Fargate  # noqa: E501
 
             Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_fargate/).  # noqa: E501
@@ -1375,93 +1071,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_fargate = _Endpoint(
             settings={
-                'response_type': (UsageFargateResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/fargate',
-                'operation_id': 'get_usage_fargate',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageFargateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/fargate",
+                "operation_id": "get_usage_fargate",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_fargate
+            callable=__get_usage_fargate,
         )
 
-        def __get_usage_hosts(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_hosts(self, start_hr, **kwargs):
             """Get hourly usage for hosts and containers  # noqa: E501
 
             Get hourly usage for hosts and containers.  # noqa: E501
@@ -1501,93 +1167,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_hosts = _Endpoint(
             settings={
-                'response_type': (UsageHostsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/hosts',
-                'operation_id': 'get_usage_hosts',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageHostsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/hosts",
+                "operation_id": "get_usage_hosts",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_hosts
+            callable=__get_usage_hosts,
         )
 
-        def __get_usage_indexed_spans(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_indexed_spans(self, start_hr, **kwargs):
             """Get hourly usage for indexed spans  # noqa: E501
 
             Get hourly usage for indexed spans.  # noqa: E501
@@ -1627,93 +1263,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_indexed_spans = _Endpoint(
             settings={
-                'response_type': (UsageIndexedSpansResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/indexed-spans',
-                'operation_id': 'get_usage_indexed_spans',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageIndexedSpansResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/indexed-spans",
+                "operation_id": "get_usage_indexed_spans",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_indexed_spans
+            callable=__get_usage_indexed_spans,
         )
 
-        def __get_usage_internet_of_things(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_internet_of_things(self, start_hr, **kwargs):
             """Get hourly usage for IoT  # noqa: E501
 
             Get hourly usage for IoT.  # noqa: E501
@@ -1753,93 +1359,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_internet_of_things = _Endpoint(
             settings={
-                'response_type': (UsageIoTResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/iot',
-                'operation_id': 'get_usage_internet_of_things',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageIoTResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/iot",
+                "operation_id": "get_usage_internet_of_things",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_internet_of_things
+            callable=__get_usage_internet_of_things,
         )
 
-        def __get_usage_lambda(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_lambda(self, start_hr, **kwargs):
             """Get hourly usage for Lambda  # noqa: E501
 
             Get hourly usage for lambda.  # noqa: E501
@@ -1879,93 +1455,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_lambda = _Endpoint(
             settings={
-                'response_type': (UsageLambdaResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/aws_lambda',
-                'operation_id': 'get_usage_lambda',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageLambdaResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/aws_lambda",
+                "operation_id": "get_usage_lambda",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_lambda
+            callable=__get_usage_lambda,
         )
 
-        def __get_usage_logs(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_logs(self, start_hr, **kwargs):
             """Get hourly usage for Logs  # noqa: E501
 
             Get hourly usage for logs.  # noqa: E501
@@ -2005,93 +1551,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_logs = _Endpoint(
             settings={
-                'response_type': (UsageLogsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/logs',
-                'operation_id': 'get_usage_logs',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageLogsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/logs",
+                "operation_id": "get_usage_logs",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_logs
+            callable=__get_usage_logs,
         )
 
-        def __get_usage_logs_by_index(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_logs_by_index(self, start_hr, **kwargs):
             """Get hourly usage for Logs by Index  # noqa: E501
 
             Get hourly usage for logs by index.  # noqa: E501
@@ -2132,99 +1648,69 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_logs_by_index = _Endpoint(
             settings={
-                'response_type': (UsageLogsByIndexResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/logs_by_index',
-                'operation_id': 'get_usage_logs_by_index',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageLogsByIndexResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/logs_by_index",
+                "operation_id": "get_usage_logs_by_index",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
-                    'index_name',
+                "all": [
+                    "start_hr",
+                    "end_hr",
+                    "index_name",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
+                    "index_name": ([str],),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
+                    "index_name": "index_name",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
-                    'index_name':
-                        ([str],),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
+                    "index_name": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                    'index_name': 'index_name',
+                "collection_format_map": {
+                    "index_name": "multi",
                 },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                    'index_name': 'query',
-                },
-                'collection_format_map': {
-                    'index_name': 'multi',
-                }
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_logs_by_index
+            callable=__get_usage_logs_by_index,
         )
 
-        def __get_usage_network_flows(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_network_flows(self, start_hr, **kwargs):
             """Get hourly usage for Network Flows  # noqa: E501
 
             Get hourly usage for network flows.  # noqa: E501
@@ -2264,93 +1750,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_network_flows = _Endpoint(
             settings={
-                'response_type': (UsageNetworkFlowsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/network_flows',
-                'operation_id': 'get_usage_network_flows',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageNetworkFlowsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/network_flows",
+                "operation_id": "get_usage_network_flows",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_network_flows
+            callable=__get_usage_network_flows,
         )
 
-        def __get_usage_network_hosts(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_network_hosts(self, start_hr, **kwargs):
             """Get hourly usage for Network Hosts  # noqa: E501
 
             Get hourly usage for network hosts.  # noqa: E501
@@ -2390,93 +1846,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_network_hosts = _Endpoint(
             settings={
-                'response_type': (UsageNetworkHostsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/network_hosts',
-                'operation_id': 'get_usage_network_hosts',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageNetworkHostsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/network_hosts",
+                "operation_id": "get_usage_network_hosts",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_network_hosts
+            callable=__get_usage_network_hosts,
         )
 
-        def __get_usage_profiling(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_profiling(self, start_hr, **kwargs):
             """Get hourly usage for profiled hosts  # noqa: E501
 
             Get hourly usage for profiled hosts.  # noqa: E501
@@ -2516,93 +1942,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_profiling = _Endpoint(
             settings={
-                'response_type': (UsageProfilingResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/profiling',
-                'operation_id': 'get_usage_profiling',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageProfilingResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/profiling",
+                "operation_id": "get_usage_profiling",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_profiling
+            callable=__get_usage_profiling,
         )
 
-        def __get_usage_rum_sessions(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_rum_sessions(self, start_hr, **kwargs):
             """Get hourly usage for RUM Sessions  # noqa: E501
 
             Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Sessions.  # noqa: E501
@@ -2643,98 +2039,67 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_rum_sessions = _Endpoint(
             settings={
-                'response_type': (UsageRumSessionsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/rum_sessions',
-                'operation_id': 'get_usage_rum_sessions',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageRumSessionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/rum_sessions",
+                "operation_id": "get_usage_rum_sessions",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
-                    'type',
+                "all": [
+                    "start_hr",
+                    "end_hr",
+                    "type",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
+                    "type": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
+                    "type": "type",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
-                    'type':
-                        (str,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
+                    "type": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                    'type': 'type',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                    'type': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_rum_sessions
+            callable=__get_usage_rum_sessions,
         )
 
-        def __get_usage_snmp(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_snmp(self, start_hr, **kwargs):
             """Get hourly usage for SNMP devices  # noqa: E501
 
             Get hourly usage for SNMP devices.  # noqa: E501
@@ -2774,93 +2139,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_snmp = _Endpoint(
             settings={
-                'response_type': (UsageSNMPResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/snmp',
-                'operation_id': 'get_usage_snmp',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageSNMPResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/snmp",
+                "operation_id": "get_usage_snmp",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_snmp
+            callable=__get_usage_snmp,
         )
 
-        def __get_usage_summary(
-            self,
-            start_month,
-            **kwargs
-        ):
+        def __get_usage_summary(self, start_month, **kwargs):
             """Get usage across your multi-org account  # noqa: E501
 
             Get usage across your multi-org account. You must have the multi-org feature enabled.  # noqa: E501
@@ -2901,98 +2236,67 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_month'] = \
-                start_month
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_month"] = start_month
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_summary = _Endpoint(
             settings={
-                'response_type': (UsageSummaryResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/summary',
-                'operation_id': 'get_usage_summary',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageSummaryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/summary",
+                "operation_id": "get_usage_summary",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_month',
-                    'end_month',
-                    'include_org_details',
+                "all": [
+                    "start_month",
+                    "end_month",
+                    "include_org_details",
                 ],
-                'required': [
-                    'start_month',
+                "required": [
+                    "start_month",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_month": (datetime,),
+                    "end_month": (datetime,),
+                    "include_org_details": (bool,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_month": "start_month",
+                    "end_month": "end_month",
+                    "include_org_details": "include_org_details",
                 },
-                'openapi_types': {
-                    'start_month':
-                        (datetime,),
-                    'end_month':
-                        (datetime,),
-                    'include_org_details':
-                        (bool,),
+                "location_map": {
+                    "start_month": "query",
+                    "end_month": "query",
+                    "include_org_details": "query",
                 },
-                'attribute_map': {
-                    'start_month': 'start_month',
-                    'end_month': 'end_month',
-                    'include_org_details': 'include_org_details',
-                },
-                'location_map': {
-                    'start_month': 'query',
-                    'end_month': 'query',
-                    'include_org_details': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_summary
+            callable=__get_usage_summary,
         )
 
-        def __get_usage_synthetics(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_synthetics(self, start_hr, **kwargs):
             """Get hourly usage for Synthetics Checks  # noqa: E501
 
             Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/).  # noqa: E501
@@ -3032,93 +2336,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_synthetics = _Endpoint(
             settings={
-                'response_type': (UsageSyntheticsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/synthetics',
-                'operation_id': 'get_usage_synthetics',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageSyntheticsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/synthetics",
+                "operation_id": "get_usage_synthetics",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_synthetics
+            callable=__get_usage_synthetics,
         )
 
-        def __get_usage_synthetics_api(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_synthetics_api(self, start_hr, **kwargs):
             """Get hourly usage for Synthetics API Checks  # noqa: E501
 
             Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/synthetics/).  # noqa: E501
@@ -3158,93 +2432,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_synthetics_api = _Endpoint(
             settings={
-                'response_type': (UsageSyntheticsAPIResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/synthetics_api',
-                'operation_id': 'get_usage_synthetics_api',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageSyntheticsAPIResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/synthetics_api",
+                "operation_id": "get_usage_synthetics_api",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_synthetics_api
+            callable=__get_usage_synthetics_api,
         )
 
-        def __get_usage_synthetics_browser(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_synthetics_browser(self, start_hr, **kwargs):
             """Get hourly usage for Synthetics Browser Checks  # noqa: E501
 
             Get hourly usage for synthetics browser checks.  # noqa: E501
@@ -3284,93 +2528,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_synthetics_browser = _Endpoint(
             settings={
-                'response_type': (UsageSyntheticsBrowserResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/synthetics_browser',
-                'operation_id': 'get_usage_synthetics_browser',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageSyntheticsBrowserResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/synthetics_browser",
+                "operation_id": "get_usage_synthetics_browser",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_synthetics_browser
+            callable=__get_usage_synthetics_browser,
         )
 
-        def __get_usage_timeseries(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_timeseries(self, start_hr, **kwargs):
             """Get hourly usage for custom metrics  # noqa: E501
 
             Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/).  # noqa: E501
@@ -3410,93 +2624,63 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_timeseries = _Endpoint(
             settings={
-                'response_type': (UsageTimeseriesResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/timeseries',
-                'operation_id': 'get_usage_timeseries',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageTimeseriesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/timeseries",
+                "operation_id": "get_usage_timeseries",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_timeseries
+            callable=__get_usage_timeseries,
         )
 
-        def __get_usage_top_avg_metrics(
-            self,
-            month,
-            **kwargs
-        ):
+        def __get_usage_top_avg_metrics(self, month, **kwargs):
             """Get top custom metrics by hourly average  # noqa: E501
 
             Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average.  # noqa: E501
@@ -3537,105 +2721,76 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['month'] = \
-                month
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["month"] = month
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_top_avg_metrics = _Endpoint(
             settings={
-                'response_type': (UsageTopAvgMetricsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/top_avg_metrics',
-                'operation_id': 'get_usage_top_avg_metrics',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageTopAvgMetricsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/top_avg_metrics",
+                "operation_id": "get_usage_top_avg_metrics",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'month',
-                    'names',
-                    'limit',
+                "all": [
+                    "month",
+                    "names",
+                    "limit",
                 ],
-                'required': [
-                    'month',
+                "required": [
+                    "month",
                 ],
-                'nullable': [
+                "nullable": [],
+                "enum": [],
+                "validation": [
+                    "limit",
                 ],
-                'enum': [
-                ],
-                'validation': [
-                    'limit',
-                ]
             },
             root_map={
-                'validations': {
-                    ('limit',): {
-
-                        'inclusive_maximum': 5000,
-                        'inclusive_minimum': 1,
+                "validations": {
+                    ("limit",): {
+                        "inclusive_maximum": 5000,
+                        "inclusive_minimum": 1,
                     },
                 },
-                'allowed_values': {
+                "allowed_values": {},
+                "openapi_types": {
+                    "month": (datetime,),
+                    "names": ([str],),
+                    "limit": (int,),
                 },
-                'openapi_types': {
-                    'month':
-                        (datetime,),
-                    'names':
-                        ([str],),
-                    'limit':
-                        (int,),
+                "attribute_map": {
+                    "month": "month",
+                    "names": "names",
+                    "limit": "limit",
                 },
-                'attribute_map': {
-                    'month': 'month',
-                    'names': 'names',
-                    'limit': 'limit',
+                "location_map": {
+                    "month": "query",
+                    "names": "query",
+                    "limit": "query",
                 },
-                'location_map': {
-                    'month': 'query',
-                    'names': 'query',
-                    'limit': 'query',
+                "collection_format_map": {
+                    "names": "multi",
                 },
-                'collection_format_map': {
-                    'names': 'multi',
-                }
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_top_avg_metrics
+            callable=__get_usage_top_avg_metrics,
         )
 
-        def __get_usage_trace(
-            self,
-            start_hr,
-            **kwargs
-        ):
+        def __get_usage_trace(self, start_hr, **kwargs):
             """Get hourly usage for Trace Search  # noqa: E501
 
             Get hourly usage for trace search.  **Note** This endpoint has been renamed to `/api/v1/usage/indexed-spans`.  # noqa: E501
@@ -3675,84 +2830,58 @@ class UsageMeteringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start_hr'] = \
-                start_hr
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start_hr"] = start_hr
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_trace = _Endpoint(
             settings={
-                'response_type': (UsageTraceResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/usage/traces',
-                'operation_id': 'get_usage_trace',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsageTraceResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/traces",
+                "operation_id": "get_usage_trace",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start_hr',
-                    'end_hr',
+                "all": [
+                    "start_hr",
+                    "end_hr",
                 ],
-                'required': [
-                    'start_hr',
+                "required": [
+                    "start_hr",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
                 },
-                'openapi_types': {
-                    'start_hr':
-                        (datetime,),
-                    'end_hr':
-                        (datetime,),
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
-                'attribute_map': {
-                    'start_hr': 'start_hr',
-                    'end_hr': 'end_hr',
-                },
-                'location_map': {
-                    'start_hr': 'query',
-                    'end_hr': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json;datetime-format=rfc3339'
-                ],
-                'content_type': [],
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_trace
+            callable=__get_usage_trace,
         )

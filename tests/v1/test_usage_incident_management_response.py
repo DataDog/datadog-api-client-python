@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.usage_incident_management_hour import UsageIncidentManagementHour
-globals()['UsageIncidentManagementHour'] = UsageIncidentManagementHour
+
+globals()["UsageIncidentManagementHour"] = UsageIncidentManagementHour
 from datadog_api_client.v1.model.usage_incident_management_response import UsageIncidentManagementResponse
 
 
@@ -30,5 +31,5 @@ class TestUsageIncidentManagementResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

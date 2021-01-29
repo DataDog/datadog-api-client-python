@@ -9,8 +9,9 @@ import unittest
 import datadog_api_client.v2
 from datadog_api_client.v2.model.api_key_response_included_item import APIKeyResponseIncludedItem
 from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
-globals()['APIKeyResponseIncludedItem'] = APIKeyResponseIncludedItem
-globals()['PartialAPIKey'] = PartialAPIKey
+
+globals()["APIKeyResponseIncludedItem"] = APIKeyResponseIncludedItem
+globals()["PartialAPIKey"] = PartialAPIKey
 from datadog_api_client.v2.model.api_keys_response import APIKeysResponse
 
 
@@ -30,5 +31,5 @@ class TestAPIKeysResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

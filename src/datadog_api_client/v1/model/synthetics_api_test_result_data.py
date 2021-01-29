@@ -23,15 +23,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_error_code import SyntheticsErrorCode
     from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
     from datadog_api_client.v1.model.synthetics_test_process_status import SyntheticsTestProcessStatus
     from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
-    globals()['SyntheticsErrorCode'] = SyntheticsErrorCode
-    globals()['SyntheticsSSLCertificate'] = SyntheticsSSLCertificate
-    globals()['SyntheticsTestProcessStatus'] = SyntheticsTestProcessStatus
-    globals()['SyntheticsTiming'] = SyntheticsTiming
+
+    globals()["SyntheticsErrorCode"] = SyntheticsErrorCode
+    globals()["SyntheticsSSLCertificate"] = SyntheticsSSLCertificate
+    globals()["SyntheticsTestProcessStatus"] = SyntheticsTestProcessStatus
+    globals()["SyntheticsTiming"] = SyntheticsTiming
 
 
 class SyntheticsAPITestResultData(ModelNormal):
@@ -58,11 +60,9 @@ class SyntheticsAPITestResultData(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -80,46 +80,51 @@ class SyntheticsAPITestResultData(ModelNormal):
         """
         lazy_import()
         return {
-            'cert': (SyntheticsSSLCertificate,),  # noqa: E501
-            'error_code': (SyntheticsErrorCode,),  # noqa: E501
-            'error_message': (str,),  # noqa: E501
-            'event_type': (SyntheticsTestProcessStatus,),  # noqa: E501
-            'http_status_code': (int,),  # noqa: E501
-            'request_headers': ({str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)},),  # noqa: E501
-            'response_body': (str,),  # noqa: E501
-            'response_headers': ({str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)},),  # noqa: E501
-            'response_size': (int,),  # noqa: E501
-            'timings': (SyntheticsTiming,),  # noqa: E501
+            "cert": (SyntheticsSSLCertificate,),  # noqa: E501
+            "error_code": (SyntheticsErrorCode,),  # noqa: E501
+            "error_message": (str,),  # noqa: E501
+            "event_type": (SyntheticsTestProcessStatus,),  # noqa: E501
+            "http_status_code": (int,),  # noqa: E501
+            "request_headers": (
+                {str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)},
+            ),  # noqa: E501
+            "response_body": (str,),  # noqa: E501
+            "response_headers": (
+                {str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)},
+            ),  # noqa: E501
+            "response_size": (int,),  # noqa: E501
+            "timings": (SyntheticsTiming,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'cert': 'cert',  # noqa: E501
-        'error_code': 'errorCode',  # noqa: E501
-        'error_message': 'errorMessage',  # noqa: E501
-        'event_type': 'eventType',  # noqa: E501
-        'http_status_code': 'httpStatusCode',  # noqa: E501
-        'request_headers': 'requestHeaders',  # noqa: E501
-        'response_body': 'responseBody',  # noqa: E501
-        'response_headers': 'responseHeaders',  # noqa: E501
-        'response_size': 'responseSize',  # noqa: E501
-        'timings': 'timings',  # noqa: E501
+        "cert": "cert",  # noqa: E501
+        "error_code": "errorCode",  # noqa: E501
+        "error_message": "errorMessage",  # noqa: E501
+        "event_type": "eventType",  # noqa: E501
+        "http_status_code": "httpStatusCode",  # noqa: E501
+        "request_headers": "requestHeaders",  # noqa: E501
+        "response_body": "responseBody",  # noqa: E501
+        "response_headers": "responseHeaders",  # noqa: E501
+        "response_size": "responseSize",  # noqa: E501
+        "timings": "timings",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -168,15 +173,16 @@ class SyntheticsAPITestResultData(ModelNormal):
             timings (SyntheticsTiming): [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -192,10 +198,12 @@ class SyntheticsAPITestResultData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

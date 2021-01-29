@@ -14,7 +14,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
@@ -38,11 +38,7 @@ class SecurityMonitoringApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_security_monitoring_rule(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_security_monitoring_rule(self, body, **kwargs):
             """Create a detection rule  # noqa: E501
 
             Create a detection rule.  # noqa: E501
@@ -81,89 +77,54 @@ class SecurityMonitoringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_security_monitoring_rule = _Endpoint(
             settings={
-                'response_type': (SecurityMonitoringRuleResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/security_monitoring/rules',
-                'operation_id': 'create_security_monitoring_rule',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (SecurityMonitoringRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/rules",
+                "operation_id": "create_security_monitoring_rule",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (SecurityMonitoringRuleCreatePayload,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (SecurityMonitoringRuleCreatePayload,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_security_monitoring_rule
+            callable=__create_security_monitoring_rule,
         )
 
-        def __delete_security_monitoring_rule(
-            self,
-            rule_id,
-            **kwargs
-        ):
+        def __delete_security_monitoring_rule(self, rule_id, **kwargs):
             """Delete an existing rule  # noqa: E501
 
             Delete an existing rule. Default rules cannot be deleted.  # noqa: E501
@@ -202,88 +163,59 @@ class SecurityMonitoringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['rule_id'] = \
-                rule_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["rule_id"] = rule_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_security_monitoring_rule = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/security_monitoring/rules/{rule_id}',
-                'operation_id': 'delete_security_monitoring_rule',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}",
+                "operation_id": "delete_security_monitoring_rule",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'rule_id',
+                "all": [
+                    "rule_id",
                 ],
-                'required': [
-                    'rule_id',
+                "required": [
+                    "rule_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "rule_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "rule_id": "rule_id",
                 },
-                'openapi_types': {
-                    'rule_id':
-                        (str,),
+                "location_map": {
+                    "rule_id": "path",
                 },
-                'attribute_map': {
-                    'rule_id': 'rule_id',
-                },
-                'location_map': {
-                    'rule_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_security_monitoring_rule
+            callable=__delete_security_monitoring_rule,
         )
 
-        def __get_security_monitoring_rule(
-            self,
-            rule_id,
-            **kwargs
-        ):
+        def __get_security_monitoring_rule(self, rule_id, **kwargs):
             """Get a rule's details  # noqa: E501
 
             Get a rule's details.  # noqa: E501
@@ -322,87 +254,59 @@ class SecurityMonitoringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['rule_id'] = \
-                rule_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["rule_id"] = rule_id
             return self.call_with_http_info(**kwargs)
 
         self.get_security_monitoring_rule = _Endpoint(
             settings={
-                'response_type': (SecurityMonitoringRuleResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/security_monitoring/rules/{rule_id}',
-                'operation_id': 'get_security_monitoring_rule',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SecurityMonitoringRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}",
+                "operation_id": "get_security_monitoring_rule",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'rule_id',
+                "all": [
+                    "rule_id",
                 ],
-                'required': [
-                    'rule_id',
+                "required": [
+                    "rule_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "rule_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "rule_id": "rule_id",
                 },
-                'openapi_types': {
-                    'rule_id':
-                        (str,),
+                "location_map": {
+                    "rule_id": "path",
                 },
-                'attribute_map': {
-                    'rule_id': 'rule_id',
-                },
-                'location_map': {
-                    'rule_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_security_monitoring_rule
+            callable=__get_security_monitoring_rule,
         )
 
-        def __list_security_monitoring_rules(
-            self,
-            **kwargs
-        ):
+        def __list_security_monitoring_rules(self, **kwargs):
             """List rules  # noqa: E501
 
             List rules.  # noqa: E501
@@ -441,88 +345,60 @@ class SecurityMonitoringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_security_monitoring_rules = _Endpoint(
             settings={
-                'response_type': (SecurityMonitoringListRulesResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/security_monitoring/rules',
-                'operation_id': 'list_security_monitoring_rules',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SecurityMonitoringListRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/rules",
+                "operation_id": "list_security_monitoring_rules",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'page_size',
-                    'page_number',
+                "all": [
+                    "page_size",
+                    "page_number",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "page_size": (int,),
+                    "page_number": (int,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "page_size": "page[size]",
+                    "page_number": "page[number]",
                 },
-                'openapi_types': {
-                    'page_size':
-                        (int,),
-                    'page_number':
-                        (int,),
+                "location_map": {
+                    "page_size": "query",
+                    "page_number": "query",
                 },
-                'attribute_map': {
-                    'page_size': 'page[size]',
-                    'page_number': 'page[number]',
-                },
-                'location_map': {
-                    'page_size': 'query',
-                    'page_number': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_security_monitoring_rules
+            callable=__list_security_monitoring_rules,
         )
 
-        def __list_security_monitoring_signals(
-            self,
-            **kwargs
-        ):
+        def __list_security_monitoring_signals(self, **kwargs):
             """Get a quick list of security signals  # noqa: E501
 
             The list endpoint returns security signals that match a search query. Both this endpoint and the POST endpoint can be used interchangeably when listing security signals.  # noqa: E501
@@ -565,113 +441,82 @@ class SecurityMonitoringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_security_monitoring_signals = _Endpoint(
             settings={
-                'response_type': (SecurityMonitoringSignalsListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/security_monitoring/signals',
-                'operation_id': 'list_security_monitoring_signals',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SecurityMonitoringSignalsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/signals",
+                "operation_id": "list_security_monitoring_signals",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'filter_query',
-                    'filter_from',
-                    'filter_to',
-                    'sort',
-                    'page_cursor',
-                    'page_limit',
+                "all": [
+                    "filter_query",
+                    "filter_from",
+                    "filter_to",
+                    "sort",
+                    "page_cursor",
+                    "page_limit",
                 ],
-                'required': [],
-                'nullable': [
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [
+                    "page_limit",
                 ],
-                'enum': [
-                ],
-                'validation': [
-                    'page_limit',
-                ]
             },
             root_map={
-                'validations': {
-                    ('page_limit',): {
-
-                        'inclusive_maximum': 1000,
+                "validations": {
+                    ("page_limit",): {
+                        "inclusive_maximum": 1000,
                     },
                 },
-                'allowed_values': {
+                "allowed_values": {},
+                "openapi_types": {
+                    "filter_query": (str,),
+                    "filter_from": (datetime,),
+                    "filter_to": (datetime,),
+                    "sort": (SecurityMonitoringSignalsSort,),
+                    "page_cursor": (str,),
+                    "page_limit": (int,),
                 },
-                'openapi_types': {
-                    'filter_query':
-                        (str,),
-                    'filter_from':
-                        (datetime,),
-                    'filter_to':
-                        (datetime,),
-                    'sort':
-                        (SecurityMonitoringSignalsSort,),
-                    'page_cursor':
-                        (str,),
-                    'page_limit':
-                        (int,),
+                "attribute_map": {
+                    "filter_query": "filter[query]",
+                    "filter_from": "filter[from]",
+                    "filter_to": "filter[to]",
+                    "sort": "sort",
+                    "page_cursor": "page[cursor]",
+                    "page_limit": "page[limit]",
                 },
-                'attribute_map': {
-                    'filter_query': 'filter[query]',
-                    'filter_from': 'filter[from]',
-                    'filter_to': 'filter[to]',
-                    'sort': 'sort',
-                    'page_cursor': 'page[cursor]',
-                    'page_limit': 'page[limit]',
+                "location_map": {
+                    "filter_query": "query",
+                    "filter_from": "query",
+                    "filter_to": "query",
+                    "sort": "query",
+                    "page_cursor": "query",
+                    "page_limit": "query",
                 },
-                'location_map': {
-                    'filter_query': 'query',
-                    'filter_from': 'query',
-                    'filter_to': 'query',
-                    'sort': 'query',
-                    'page_cursor': 'query',
-                    'page_limit': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_security_monitoring_signals
+            callable=__list_security_monitoring_signals,
         )
 
-        def __search_security_monitoring_signals(
-            self,
-            **kwargs
-        ):
+        def __search_security_monitoring_signals(self, **kwargs):
             """Get a list of security signals  # noqa: E501
 
             Returns security signals that match a search query. Both this endpoint and the GET endpoint can be used interchangeably for listing security signals.  # noqa: E501
@@ -709,86 +554,51 @@ class SecurityMonitoringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.search_security_monitoring_signals = _Endpoint(
             settings={
-                'response_type': (SecurityMonitoringSignalsListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/security_monitoring/signals/search',
-                'operation_id': 'search_security_monitoring_signals',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (SecurityMonitoringSignalsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/search",
+                "operation_id": "search_security_monitoring_signals",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (SecurityMonitoringSignalListRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (SecurityMonitoringSignalListRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__search_security_monitoring_signals
+            callable=__search_security_monitoring_signals,
         )
 
-        def __update_security_monitoring_rule(
-            self,
-            rule_id,
-            body,
-            **kwargs
-        ):
+        def __update_security_monitoring_rule(self, rule_id, body, **kwargs):
             """Update an existing rule  # noqa: E501
 
             Update an existing rule. When updating `cases`, `queries` or `options`, the whole field must be included. For example, when modifying a query all queries must be included. Default rules can only be updated to be enabled and to change notifications.  # noqa: E501
@@ -828,88 +638,56 @@ class SecurityMonitoringApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['rule_id'] = \
-                rule_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["rule_id"] = rule_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_security_monitoring_rule = _Endpoint(
             settings={
-                'response_type': (SecurityMonitoringRuleResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/security_monitoring/rules/{rule_id}',
-                'operation_id': 'update_security_monitoring_rule',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (SecurityMonitoringRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}",
+                "operation_id": "update_security_monitoring_rule",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'rule_id',
-                    'body',
+                "all": [
+                    "rule_id",
+                    "body",
                 ],
-                'required': [
-                    'rule_id',
-                    'body',
+                "required": [
+                    "rule_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "rule_id": (str,),
+                    "body": (SecurityMonitoringRuleUpdatePayload,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "rule_id": "rule_id",
                 },
-                'openapi_types': {
-                    'rule_id':
-                        (str,),
-                    'body':
-                        (SecurityMonitoringRuleUpdatePayload,),
+                "location_map": {
+                    "rule_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'rule_id': 'rule_id',
-                },
-                'location_map': {
-                    'rule_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_security_monitoring_rule
+            callable=__update_security_monitoring_rule,
         )

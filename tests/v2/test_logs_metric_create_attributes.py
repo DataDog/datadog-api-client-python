@@ -10,9 +10,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.logs_metric_compute import LogsMetricCompute
 from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
 from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
-globals()['LogsMetricCompute'] = LogsMetricCompute
-globals()['LogsMetricFilter'] = LogsMetricFilter
-globals()['LogsMetricGroupBy'] = LogsMetricGroupBy
+
+globals()["LogsMetricCompute"] = LogsMetricCompute
+globals()["LogsMetricFilter"] = LogsMetricFilter
+globals()["LogsMetricGroupBy"] = LogsMetricGroupBy
 from datadog_api_client.v2.model.logs_metric_create_attributes import LogsMetricCreateAttributes
 
 
@@ -32,5 +33,5 @@ class TestLogsMetricCreateAttributes(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

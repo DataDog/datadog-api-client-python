@@ -23,6 +23,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
     from datadog_api_client.v1.model.logs_attribute_remapper import LogsAttributeRemapper
@@ -44,26 +45,27 @@ def lazy_import():
     from datadog_api_client.v1.model.logs_url_parser import LogsURLParser
     from datadog_api_client.v1.model.logs_user_agent_parser import LogsUserAgentParser
     from datadog_api_client.v1.model.target_format_type import TargetFormatType
-    globals()['LogsArithmeticProcessor'] = LogsArithmeticProcessor
-    globals()['LogsAttributeRemapper'] = LogsAttributeRemapper
-    globals()['LogsCategoryProcessor'] = LogsCategoryProcessor
-    globals()['LogsCategoryProcessorCategories'] = LogsCategoryProcessorCategories
-    globals()['LogsDateRemapper'] = LogsDateRemapper
-    globals()['LogsFilter'] = LogsFilter
-    globals()['LogsGeoIPParser'] = LogsGeoIPParser
-    globals()['LogsGrokParser'] = LogsGrokParser
-    globals()['LogsGrokParserRules'] = LogsGrokParserRules
-    globals()['LogsLookupProcessor'] = LogsLookupProcessor
-    globals()['LogsMessageRemapper'] = LogsMessageRemapper
-    globals()['LogsPipelineProcessor'] = LogsPipelineProcessor
-    globals()['LogsServiceRemapper'] = LogsServiceRemapper
-    globals()['LogsStatusRemapper'] = LogsStatusRemapper
-    globals()['LogsStringBuilderProcessor'] = LogsStringBuilderProcessor
-    globals()['LogsTraceRemapper'] = LogsTraceRemapper
-    globals()['LogsTraceRemapperType'] = LogsTraceRemapperType
-    globals()['LogsURLParser'] = LogsURLParser
-    globals()['LogsUserAgentParser'] = LogsUserAgentParser
-    globals()['TargetFormatType'] = TargetFormatType
+
+    globals()["LogsArithmeticProcessor"] = LogsArithmeticProcessor
+    globals()["LogsAttributeRemapper"] = LogsAttributeRemapper
+    globals()["LogsCategoryProcessor"] = LogsCategoryProcessor
+    globals()["LogsCategoryProcessorCategories"] = LogsCategoryProcessorCategories
+    globals()["LogsDateRemapper"] = LogsDateRemapper
+    globals()["LogsFilter"] = LogsFilter
+    globals()["LogsGeoIPParser"] = LogsGeoIPParser
+    globals()["LogsGrokParser"] = LogsGrokParser
+    globals()["LogsGrokParserRules"] = LogsGrokParserRules
+    globals()["LogsLookupProcessor"] = LogsLookupProcessor
+    globals()["LogsMessageRemapper"] = LogsMessageRemapper
+    globals()["LogsPipelineProcessor"] = LogsPipelineProcessor
+    globals()["LogsServiceRemapper"] = LogsServiceRemapper
+    globals()["LogsStatusRemapper"] = LogsStatusRemapper
+    globals()["LogsStringBuilderProcessor"] = LogsStringBuilderProcessor
+    globals()["LogsTraceRemapper"] = LogsTraceRemapper
+    globals()["LogsTraceRemapperType"] = LogsTraceRemapperType
+    globals()["LogsURLParser"] = LogsURLParser
+    globals()["LogsUserAgentParser"] = LogsUserAgentParser
+    globals()["TargetFormatType"] = TargetFormatType
 
 
 class LogsProcessor(ModelComposed):
@@ -90,11 +92,9 @@ class LogsProcessor(ModelComposed):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     @cached_property
     def additional_properties_type():
@@ -103,7 +103,17 @@ class LogsProcessor(ModelComposed):
         of type self, this must run after the class is loaded
         """
         lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+        return (
+            bool,
+            date,
+            datetime,
+            dict,
+            float,
+            int,
+            list,
+            str,
+            none_type,
+        )  # noqa: E501
 
     _nullable = False
 
@@ -123,20 +133,21 @@ class LogsProcessor(ModelComposed):
     def discriminator():
         return None
 
-
     attribute_map = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-        '_composed_instances',
-        '_var_name_to_model_instances',
-        '_additional_properties_model_instances',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+            "_composed_instances",
+            "_var_name_to_model_instances",
+            "_additional_properties_model_instances",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -200,24 +211,25 @@ class LogsProcessor(ModelComposed):
             default_lookup (str): Value to set the target attribute if the source value is not found in the list.. [optional]  # noqa: E501
         """
 
-        grok = kwargs.get('grok', nulltype.Null)
-        source = kwargs.get('source', nulltype.Null)
-        type = kwargs.get('type', nulltype.Null)
-        sources = kwargs.get('sources', nulltype.Null)
-        target = kwargs.get('target', nulltype.Null)
-        categories = kwargs.get('categories', nulltype.Null)
-        expression = kwargs.get('expression', nulltype.Null)
-        template = kwargs.get('template', nulltype.Null)
-        lookup_table = kwargs.get('lookup_table', nulltype.Null)
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        grok = kwargs.get("grok", nulltype.Null)
+        source = kwargs.get("source", nulltype.Null)
+        type = kwargs.get("type", nulltype.Null)
+        sources = kwargs.get("sources", nulltype.Null)
+        target = kwargs.get("target", nulltype.Null)
+        categories = kwargs.get("categories", nulltype.Null)
+        expression = kwargs.get("expression", nulltype.Null)
+        template = kwargs.get("template", nulltype.Null)
+        lookup_table = kwargs.get("lookup_table", nulltype.Null)
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -233,22 +245,22 @@ class LogsProcessor(ModelComposed):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         constant_args = {
-            '_check_type': _check_type,
-            '_path_to_item': _path_to_item,
-            '_spec_property_naming': _spec_property_naming,
-            '_configuration': _configuration,
-            '_visited_composed_classes': self._visited_composed_classes,
+            "_check_type": _check_type,
+            "_path_to_item": _path_to_item,
+            "_spec_property_naming": _spec_property_naming,
+            "_configuration": _configuration,
+            "_visited_composed_classes": self._visited_composed_classes,
         }
         required_args = {
-            'grok': grok,
-            'source': source,
-            'type': type,
-            'sources': sources,
-            'target': target,
-            'categories': categories,
-            'expression': expression,
-            'template': template,
-            'lookup_table': lookup_table,
+            "grok": grok,
+            "source": source,
+            "type": type,
+            "sources": sources,
+            "target": target,
+            "categories": categories,
+            "expression": expression,
+            "template": template,
+            "lookup_table": lookup_table,
         }
         # remove args whose value is Null because they are unset
         required_arg_names = list(required_args.keys())
@@ -258,8 +270,7 @@ class LogsProcessor(ModelComposed):
         model_args = {}
         model_args.update(required_args)
         model_args.update(kwargs)
-        composed_info = validate_get_composed_info(
-            constant_args, model_args, self)
+        composed_info = validate_get_composed_info(constant_args, model_args, self)
         self._composed_instances = composed_info[0]
         self._var_name_to_model_instances = composed_info[1]
         self._additional_properties_model_instances = composed_info[2]
@@ -268,10 +279,12 @@ class LogsProcessor(ModelComposed):
         for var_name, var_value in required_args.items():
             setattr(self, var_name, var_value)
         for var_name, var_value in kwargs.items():
-            if var_name in unused_args and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        not self._additional_properties_model_instances:
+            if (
+                var_name in unused_args
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and not self._additional_properties_model_instances
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)
@@ -287,25 +300,23 @@ class LogsProcessor(ModelComposed):
         # loading
         lazy_import()
         return {
-          'anyOf': [
-          ],
-          'allOf': [
-          ],
-          'oneOf': [
-              LogsArithmeticProcessor,
-              LogsAttributeRemapper,
-              LogsCategoryProcessor,
-              LogsDateRemapper,
-              LogsGeoIPParser,
-              LogsGrokParser,
-              LogsLookupProcessor,
-              LogsMessageRemapper,
-              LogsPipelineProcessor,
-              LogsServiceRemapper,
-              LogsStatusRemapper,
-              LogsStringBuilderProcessor,
-              LogsTraceRemapper,
-              LogsURLParser,
-              LogsUserAgentParser,
-          ],
+            "anyOf": [],
+            "allOf": [],
+            "oneOf": [
+                LogsArithmeticProcessor,
+                LogsAttributeRemapper,
+                LogsCategoryProcessor,
+                LogsDateRemapper,
+                LogsGeoIPParser,
+                LogsGrokParser,
+                LogsLookupProcessor,
+                LogsMessageRemapper,
+                LogsPipelineProcessor,
+                LogsServiceRemapper,
+                LogsStatusRemapper,
+                LogsStringBuilderProcessor,
+                LogsTraceRemapper,
+                LogsURLParser,
+                LogsUserAgentParser,
+            ],
         }

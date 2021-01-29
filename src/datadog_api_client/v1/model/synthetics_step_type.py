@@ -45,37 +45,36 @@ class SyntheticsStepType(ModelSimple):
     """
 
     allowed_values = {
-        ('value',): {
-            'ASSERT_CURRENT_URL': "assertCurrentUrl",
-            'ASSERT_ELEMENT_ATTRIBUTE': "assertElementAttribute",
-            'ASSERT_ELEMENT_CONTENT': "assertElementContent",
-            'ASSERT_ELEMENT_PRESENT': "assertElementPresent",
-            'ASSERT_EMAIL': "assertEmail",
-            'ASSERT_FILE_DOWNLOAD': "assertFileDownload",
-            'ASSERT_FROM_JAVASCRIPT': "assertFromJavascript",
-            'ASSERT_PAGE_CONTAINS': "assertPageContains",
-            'ASSERT_PAGE_LACKS': "assertPageLacks",
-            'CLICK': "click",
-            'EXTRACT_FROM_JAVASCRIPT': "extractFromJavascript",
-            'EXTRACT_VARIABLE': "extractVariable",
-            'GO_TO_EMAIL_LINK': "goToEmailLink",
-            'GO_TO_URL': "goToUrl",
-            'GO_TO_URL_AND_MEASURE_TTI': "goToUrlAndMeasureTti",
-            'HOVER': "hover",
-            'PLAY_SUB_TEST': "playSubTest",
-            'PRESS_KEY': "pressKey",
-            'REFRESH': "refresh",
-            'RUN_API_TEST': "runApiTest",
-            'SCROLL': "scroll",
-            'SELECT_OPTION': "selectOption",
-            'TYPE_TEXT': "typeText",
-            'UPLOAD_FILES': "uploadFiles",
-            'WAIT': "wait",
+        ("value",): {
+            "ASSERT_CURRENT_URL": "assertCurrentUrl",
+            "ASSERT_ELEMENT_ATTRIBUTE": "assertElementAttribute",
+            "ASSERT_ELEMENT_CONTENT": "assertElementContent",
+            "ASSERT_ELEMENT_PRESENT": "assertElementPresent",
+            "ASSERT_EMAIL": "assertEmail",
+            "ASSERT_FILE_DOWNLOAD": "assertFileDownload",
+            "ASSERT_FROM_JAVASCRIPT": "assertFromJavascript",
+            "ASSERT_PAGE_CONTAINS": "assertPageContains",
+            "ASSERT_PAGE_LACKS": "assertPageLacks",
+            "CLICK": "click",
+            "EXTRACT_FROM_JAVASCRIPT": "extractFromJavascript",
+            "EXTRACT_VARIABLE": "extractVariable",
+            "GO_TO_EMAIL_LINK": "goToEmailLink",
+            "GO_TO_URL": "goToUrl",
+            "GO_TO_URL_AND_MEASURE_TTI": "goToUrlAndMeasureTti",
+            "HOVER": "hover",
+            "PLAY_SUB_TEST": "playSubTest",
+            "PRESS_KEY": "pressKey",
+            "REFRESH": "refresh",
+            "RUN_API_TEST": "runApiTest",
+            "SCROLL": "scroll",
+            "SELECT_OPTION": "selectOption",
+            "TYPE_TEXT": "typeText",
+            "UPLOAD_FILES": "uploadFiles",
+            "WAIT": "wait",
         },
     }
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -92,26 +91,27 @@ class SyntheticsStepType(ModelSimple):
                 and the value is attribute type.
         """
         return {
-            'value': (str,),
+            "value": (str,),
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {}
 
     _composed_schemas = None
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):
@@ -156,8 +156,8 @@ class SyntheticsStepType(ModelSimple):
                                 _visited_composed_classes = (Animal,)
         """
 
-        if 'value' in kwargs:
-            value = kwargs.pop('value')
+        if "value" in kwargs:
+            value = kwargs.pop("value")
         elif args:
             args = list(args)
             value = args.pop(0)
@@ -168,15 +168,16 @@ class SyntheticsStepType(ModelSimple):
                 valid_classes=(self.__class__,),
             )
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -193,7 +194,8 @@ class SyntheticsStepType(ModelSimple):
         self.value = value
         if kwargs:
             raise ApiTypeError(
-                "Invalid named arguments=%s passed to %s. Remove those invalid named arguments." % (
+                "Invalid named arguments=%s passed to %s. Remove those invalid named arguments."
+                % (
                     kwargs,
                     self.__class__.__name__,
                 ),

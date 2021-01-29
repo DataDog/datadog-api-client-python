@@ -10,31 +10,27 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import log_stream_widget_definition_type
 except ImportError:
-    log_stream_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.log_stream_widget_definition_type']
+    log_stream_widget_definition_type = sys.modules["datadog_api_client.v1.model.log_stream_widget_definition_type"]
 try:
     from datadog_api_client.v1.model import widget_field_sort
 except ImportError:
-    widget_field_sort = sys.modules[
-        'datadog_api_client.v1.model.widget_field_sort']
+    widget_field_sort = sys.modules["datadog_api_client.v1.model.widget_field_sort"]
 try:
     from datadog_api_client.v1.model import widget_message_display
 except ImportError:
-    widget_message_display = sys.modules[
-        'datadog_api_client.v1.model.widget_message_display']
+    widget_message_display = sys.modules["datadog_api_client.v1.model.widget_message_display"]
 try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+    widget_text_align = sys.modules["datadog_api_client.v1.model.widget_text_align"]
 try:
     from datadog_api_client.v1.model import widget_time
 except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+    widget_time = sys.modules["datadog_api_client.v1.model.widget_time"]
 from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
 
 
@@ -54,5 +50,5 @@ class TestLogStreamWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

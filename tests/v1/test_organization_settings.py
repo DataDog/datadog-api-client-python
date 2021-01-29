@@ -10,31 +10,33 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import access_role
 except ImportError:
-    access_role = sys.modules[
-        'datadog_api_client.v1.model.access_role']
+    access_role = sys.modules["datadog_api_client.v1.model.access_role"]
 try:
     from datadog_api_client.v1.model import organization_settings_saml
 except ImportError:
-    organization_settings_saml = sys.modules[
-        'datadog_api_client.v1.model.organization_settings_saml']
+    organization_settings_saml = sys.modules["datadog_api_client.v1.model.organization_settings_saml"]
 try:
     from datadog_api_client.v1.model import organization_settings_saml_autocreate_users_domains
 except ImportError:
     organization_settings_saml_autocreate_users_domains = sys.modules[
-        'datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains']
+        "datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains"
+    ]
 try:
     from datadog_api_client.v1.model import organization_settings_saml_idp_initiated_login
 except ImportError:
     organization_settings_saml_idp_initiated_login = sys.modules[
-        'datadog_api_client.v1.model.organization_settings_saml_idp_initiated_login']
+        "datadog_api_client.v1.model.organization_settings_saml_idp_initiated_login"
+    ]
 try:
     from datadog_api_client.v1.model import organization_settings_saml_strict_mode
 except ImportError:
     organization_settings_saml_strict_mode = sys.modules[
-        'datadog_api_client.v1.model.organization_settings_saml_strict_mode']
+        "datadog_api_client.v1.model.organization_settings_saml_strict_mode"
+    ]
 from datadog_api_client.v1.model.organization_settings import OrganizationSettings
 
 
@@ -54,5 +56,5 @@ class TestOrganizationSettings(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

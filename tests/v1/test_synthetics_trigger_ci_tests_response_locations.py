@@ -10,7 +10,9 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response_locations import SyntheticsTriggerCITestsResponseLocations
+from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response_locations import (
+    SyntheticsTriggerCITestsResponseLocations,
+)
 
 
 class TestSyntheticsTriggerCITestsResponseLocations(unittest.TestCase):
@@ -29,5 +31,5 @@ class TestSyntheticsTriggerCITestsResponseLocations(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

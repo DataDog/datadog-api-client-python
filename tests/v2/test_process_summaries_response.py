@@ -11,8 +11,9 @@ import unittest
 import datadog_api_client.v2
 from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
 from datadog_api_client.v2.model.process_summary import ProcessSummary
-globals()['ProcessSummariesMeta'] = ProcessSummariesMeta
-globals()['ProcessSummary'] = ProcessSummary
+
+globals()["ProcessSummariesMeta"] = ProcessSummariesMeta
+globals()["ProcessSummary"] = ProcessSummary
 from datadog_api_client.v2.model.process_summaries_response import ProcessSummariesResponse
 
 
@@ -32,5 +33,5 @@ class TestProcessSummariesResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

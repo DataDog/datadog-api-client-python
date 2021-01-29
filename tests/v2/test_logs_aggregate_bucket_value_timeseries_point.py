@@ -10,7 +10,9 @@ import sys
 import unittest
 
 import datadog_api_client.v2
-from datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries_point import LogsAggregateBucketValueTimeseriesPoint
+from datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries_point import (
+    LogsAggregateBucketValueTimeseriesPoint,
+)
 
 
 class TestLogsAggregateBucketValueTimeseriesPoint(unittest.TestCase):
@@ -29,5 +31,5 @@ class TestLogsAggregateBucketValueTimeseriesPoint(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

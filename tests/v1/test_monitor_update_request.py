@@ -10,31 +10,27 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import creator
 except ImportError:
-    creator = sys.modules[
-        'datadog_api_client.v1.model.creator']
+    creator = sys.modules["datadog_api_client.v1.model.creator"]
 try:
     from datadog_api_client.v1.model import monitor_options
 except ImportError:
-    monitor_options = sys.modules[
-        'datadog_api_client.v1.model.monitor_options']
+    monitor_options = sys.modules["datadog_api_client.v1.model.monitor_options"]
 try:
     from datadog_api_client.v1.model import monitor_overall_states
 except ImportError:
-    monitor_overall_states = sys.modules[
-        'datadog_api_client.v1.model.monitor_overall_states']
+    monitor_overall_states = sys.modules["datadog_api_client.v1.model.monitor_overall_states"]
 try:
     from datadog_api_client.v1.model import monitor_state
 except ImportError:
-    monitor_state = sys.modules[
-        'datadog_api_client.v1.model.monitor_state']
+    monitor_state = sys.modules["datadog_api_client.v1.model.monitor_state"]
 try:
     from datadog_api_client.v1.model import monitor_type
 except ImportError:
-    monitor_type = sys.modules[
-        'datadog_api_client.v1.model.monitor_type']
+    monitor_type = sys.modules["datadog_api_client.v1.model.monitor_type"]
 from datadog_api_client.v1.model.monitor_update_request import MonitorUpdateRequest
 
 
@@ -54,5 +50,5 @@ class TestMonitorUpdateRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

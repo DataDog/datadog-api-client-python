@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_device_id
 except ImportError:
-    synthetics_device_id = sys.modules[
-        'datadog_api_client.v1.model.synthetics_device_id']
+    synthetics_device_id = sys.modules["datadog_api_client.v1.model.synthetics_device_id"]
 try:
     from datadog_api_client.v1.model import synthetics_test_options_retry
 except ImportError:
-    synthetics_test_options_retry = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_options_retry']
+    synthetics_test_options_retry = sys.modules["datadog_api_client.v1.model.synthetics_test_options_retry"]
 try:
     from datadog_api_client.v1.model import synthetics_tick_interval
 except ImportError:
-    synthetics_tick_interval = sys.modules[
-        'datadog_api_client.v1.model.synthetics_tick_interval']
+    synthetics_tick_interval = sys.modules["datadog_api_client.v1.model.synthetics_tick_interval"]
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 
 
@@ -44,5 +42,5 @@ class TestSyntheticsTestOptions(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

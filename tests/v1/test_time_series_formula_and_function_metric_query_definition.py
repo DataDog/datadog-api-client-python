@@ -9,9 +9,12 @@ import unittest
 import datadog_api_client.v1
 from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
 from datadog_api_client.v1.model.formula_and_function_metric_data_source import FormulaAndFunctionMetricDataSource
-globals()['FormulaAndFunctionMetricAggregation'] = FormulaAndFunctionMetricAggregation
-globals()['FormulaAndFunctionMetricDataSource'] = FormulaAndFunctionMetricDataSource
-from datadog_api_client.v1.model.time_series_formula_and_function_metric_query_definition import TimeSeriesFormulaAndFunctionMetricQueryDefinition
+
+globals()["FormulaAndFunctionMetricAggregation"] = FormulaAndFunctionMetricAggregation
+globals()["FormulaAndFunctionMetricDataSource"] = FormulaAndFunctionMetricDataSource
+from datadog_api_client.v1.model.time_series_formula_and_function_metric_query_definition import (
+    TimeSeriesFormulaAndFunctionMetricQueryDefinition,
+)
 
 
 class TestTimeSeriesFormulaAndFunctionMetricQueryDefinition(unittest.TestCase):
@@ -30,5 +33,5 @@ class TestTimeSeriesFormulaAndFunctionMetricQueryDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

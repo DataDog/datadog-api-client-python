@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import logs_filter
 except ImportError:
-    logs_filter = sys.modules[
-        'datadog_api_client.v1.model.logs_filter']
+    logs_filter = sys.modules["datadog_api_client.v1.model.logs_filter"]
 try:
     from datadog_api_client.v1.model import logs_pipeline_processor_type
 except ImportError:
-    logs_pipeline_processor_type = sys.modules[
-        'datadog_api_client.v1.model.logs_pipeline_processor_type']
+    logs_pipeline_processor_type = sys.modules["datadog_api_client.v1.model.logs_pipeline_processor_type"]
 try:
     from datadog_api_client.v1.model import logs_processor
 except ImportError:
-    logs_processor = sys.modules[
-        'datadog_api_client.v1.model.logs_processor']
+    logs_processor = sys.modules["datadog_api_client.v1.model.logs_processor"]
 from datadog_api_client.v1.model.logs_pipeline_processor import LogsPipelineProcessor
 
 
@@ -44,5 +42,5 @@ class TestLogsPipelineProcessor(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

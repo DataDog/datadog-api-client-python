@@ -10,31 +10,27 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import slo_history_metrics
 except ImportError:
-    slo_history_metrics = sys.modules[
-        'datadog_api_client.v1.model.slo_history_metrics']
+    slo_history_metrics = sys.modules["datadog_api_client.v1.model.slo_history_metrics"]
 try:
     from datadog_api_client.v1.model import slo_history_sli_data
 except ImportError:
-    slo_history_sli_data = sys.modules[
-        'datadog_api_client.v1.model.slo_history_sli_data']
+    slo_history_sli_data = sys.modules["datadog_api_client.v1.model.slo_history_sli_data"]
 try:
     from datadog_api_client.v1.model import slo_threshold
 except ImportError:
-    slo_threshold = sys.modules[
-        'datadog_api_client.v1.model.slo_threshold']
+    slo_threshold = sys.modules["datadog_api_client.v1.model.slo_threshold"]
 try:
     from datadog_api_client.v1.model import slo_type
 except ImportError:
-    slo_type = sys.modules[
-        'datadog_api_client.v1.model.slo_type']
+    slo_type = sys.modules["datadog_api_client.v1.model.slo_type"]
 try:
     from datadog_api_client.v1.model import slo_type_numeric
 except ImportError:
-    slo_type_numeric = sys.modules[
-        'datadog_api_client.v1.model.slo_type_numeric']
+    slo_type_numeric = sys.modules["datadog_api_client.v1.model.slo_type_numeric"]
 from datadog_api_client.v1.model.slo_history_response_data import SLOHistoryResponseData
 
 
@@ -54,5 +50,5 @@ class TestSLOHistoryResponseData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

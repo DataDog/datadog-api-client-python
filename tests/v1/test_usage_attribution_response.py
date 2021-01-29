@@ -11,8 +11,9 @@ import unittest
 import datadog_api_client.v1
 from datadog_api_client.v1.model.usage_attribution_body import UsageAttributionBody
 from datadog_api_client.v1.model.usage_attribution_metadata import UsageAttributionMetadata
-globals()['UsageAttributionBody'] = UsageAttributionBody
-globals()['UsageAttributionMetadata'] = UsageAttributionMetadata
+
+globals()["UsageAttributionBody"] = UsageAttributionBody
+globals()["UsageAttributionMetadata"] = UsageAttributionMetadata
 from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
 
 
@@ -32,5 +33,5 @@ class TestUsageAttributionResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

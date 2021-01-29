@@ -8,7 +8,8 @@ import unittest
 
 import datadog_api_client.v2
 from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
-globals()['RelationshipToUser'] = RelationshipToUser
+
+globals()["RelationshipToUser"] = RelationshipToUser
 from datadog_api_client.v2.model.application_key_relationships import ApplicationKeyRelationships
 
 
@@ -28,5 +29,5 @@ class TestApplicationKeyRelationships(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

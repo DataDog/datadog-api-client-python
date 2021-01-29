@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDeleteSLOResponse
@@ -40,11 +40,7 @@ class ServiceLevelObjectivesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __check_can_delete_slo(
-            self,
-            ids,
-            **kwargs
-        ):
+        def __check_can_delete_slo(self, ids, **kwargs):
             """Check if SLOs can be safely deleted  # noqa: E501
 
             Check if a SLO can be safely deleted. For example, assure an SLO can be deleted without disrupting a dashboard.  # noqa: E501
@@ -83,88 +79,59 @@ class ServiceLevelObjectivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['ids'] = \
-                ids
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["ids"] = ids
             return self.call_with_http_info(**kwargs)
 
         self.check_can_delete_slo = _Endpoint(
             settings={
-                'response_type': (CheckCanDeleteSLOResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/slo/can_delete',
-                'operation_id': 'check_can_delete_slo',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (CheckCanDeleteSLOResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/slo/can_delete",
+                "operation_id": "check_can_delete_slo",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'ids',
+                "all": [
+                    "ids",
                 ],
-                'required': [
-                    'ids',
+                "required": [
+                    "ids",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "ids": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "ids": "ids",
                 },
-                'openapi_types': {
-                    'ids':
-                        (str,),
+                "location_map": {
+                    "ids": "query",
                 },
-                'attribute_map': {
-                    'ids': 'ids',
-                },
-                'location_map': {
-                    'ids': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__check_can_delete_slo
+            callable=__check_can_delete_slo,
         )
 
-        def __create_slo(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_slo(self, body, **kwargs):
             """Create a SLO object  # noqa: E501
 
             Create a service level objective object.  # noqa: E501
@@ -203,89 +170,54 @@ class ServiceLevelObjectivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_slo = _Endpoint(
             settings={
-                'response_type': (SLOListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/slo',
-                'operation_id': 'create_slo',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (SLOListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/slo",
+                "operation_id": "create_slo",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (ServiceLevelObjectiveRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (ServiceLevelObjectiveRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_slo
+            callable=__create_slo,
         )
 
-        def __delete_slo(
-            self,
-            slo_id,
-            **kwargs
-        ):
+        def __delete_slo(self, slo_id, **kwargs):
             """Delete a SLO  # noqa: E501
 
             Permanently delete the specified service level objective object.  If an SLO is used in a dashboard, the `DELETE /v1/slo/` endpoint returns a 409 conflict error because the SLO is referenced in a dashboard.  # noqa: E501
@@ -325,93 +257,63 @@ class ServiceLevelObjectivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['slo_id'] = \
-                slo_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["slo_id"] = slo_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_slo = _Endpoint(
             settings={
-                'response_type': (SLODeleteResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/slo/{slo_id}',
-                'operation_id': 'delete_slo',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": (SLODeleteResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/slo/{slo_id}",
+                "operation_id": "delete_slo",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'slo_id',
-                    'force',
+                "all": [
+                    "slo_id",
+                    "force",
                 ],
-                'required': [
-                    'slo_id',
+                "required": [
+                    "slo_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "slo_id": (str,),
+                    "force": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "slo_id": "slo_id",
+                    "force": "force",
                 },
-                'openapi_types': {
-                    'slo_id':
-                        (str,),
-                    'force':
-                        (str,),
+                "location_map": {
+                    "slo_id": "path",
+                    "force": "query",
                 },
-                'attribute_map': {
-                    'slo_id': 'slo_id',
-                    'force': 'force',
-                },
-                'location_map': {
-                    'slo_id': 'path',
-                    'force': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_slo
+            callable=__delete_slo,
         )
 
-        def __delete_slo_timeframe_in_bulk(
-            self,
-            body,
-            **kwargs
-        ):
+        def __delete_slo_timeframe_in_bulk(self, body, **kwargs):
             """Bulk Delete SLO Timeframes  # noqa: E501
 
             Delete (or partially delete) multiple service level objective objects.  This endpoint facilitates deletion of one or more thresholds for one or more service level objective objects. If all thresholds are deleted, the service level objective object is deleted as well.  # noqa: E501
@@ -450,89 +352,54 @@ class ServiceLevelObjectivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.delete_slo_timeframe_in_bulk = _Endpoint(
             settings={
-                'response_type': (SLOBulkDeleteResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/slo/bulk_delete',
-                'operation_id': 'delete_slo_timeframe_in_bulk',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (SLOBulkDeleteResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/slo/bulk_delete",
+                "operation_id": "delete_slo_timeframe_in_bulk",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (SLOBulkDelete,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (SLOBulkDelete,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__delete_slo_timeframe_in_bulk
+            callable=__delete_slo_timeframe_in_bulk,
         )
 
-        def __get_slo(
-            self,
-            slo_id,
-            **kwargs
-        ):
+        def __get_slo(self, slo_id, **kwargs):
             """Get a SLO's details  # noqa: E501
 
             Get a service level objective object.  # noqa: E501
@@ -571,90 +438,59 @@ class ServiceLevelObjectivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['slo_id'] = \
-                slo_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["slo_id"] = slo_id
             return self.call_with_http_info(**kwargs)
 
         self.get_slo = _Endpoint(
             settings={
-                'response_type': (SLOResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/slo/{slo_id}',
-                'operation_id': 'get_slo',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SLOResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/slo/{slo_id}",
+                "operation_id": "get_slo",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'slo_id',
+                "all": [
+                    "slo_id",
                 ],
-                'required': [
-                    'slo_id',
+                "required": [
+                    "slo_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "slo_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "slo_id": "slo_id",
                 },
-                'openapi_types': {
-                    'slo_id':
-                        (str,),
+                "location_map": {
+                    "slo_id": "path",
                 },
-                'attribute_map': {
-                    'slo_id': 'slo_id',
-                },
-                'location_map': {
-                    'slo_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_slo
+            callable=__get_slo,
         )
 
-        def __get_slo_history(
-            self,
-            slo_id,
-            from_ts,
-            to_ts,
-            **kwargs
-        ):
+        def __get_slo_history(self, slo_id, from_ts, to_ts, **kwargs):
             """Get an SLO's history  # noqa: E501
 
             Get a specific SLO’s history, regardless of its SLO type.  The detailed history data is structured according to the source data type. For example, metric data is included for event SLOs that use the metric source, and monitor SLO types include the monitor transition history.  **Note:** There are different response formats for event based and time based SLOs. Examples of both are shown.  # noqa: E501
@@ -695,103 +531,71 @@ class ServiceLevelObjectivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['slo_id'] = \
-                slo_id
-            kwargs['from_ts'] = \
-                from_ts
-            kwargs['to_ts'] = \
-                to_ts
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["slo_id"] = slo_id
+            kwargs["from_ts"] = from_ts
+            kwargs["to_ts"] = to_ts
             return self.call_with_http_info(**kwargs)
 
         self.get_slo_history = _Endpoint(
             settings={
-                'response_type': (SLOHistoryResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/slo/{slo_id}/history',
-                'operation_id': 'get_slo_history',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SLOHistoryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/slo/{slo_id}/history",
+                "operation_id": "get_slo_history",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'slo_id',
-                    'from_ts',
-                    'to_ts',
+                "all": [
+                    "slo_id",
+                    "from_ts",
+                    "to_ts",
                 ],
-                'required': [
-                    'slo_id',
-                    'from_ts',
-                    'to_ts',
+                "required": [
+                    "slo_id",
+                    "from_ts",
+                    "to_ts",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "slo_id": (str,),
+                    "from_ts": (int,),
+                    "to_ts": (int,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "slo_id": "slo_id",
+                    "from_ts": "from_ts",
+                    "to_ts": "to_ts",
                 },
-                'openapi_types': {
-                    'slo_id':
-                        (str,),
-                    'from_ts':
-                        (int,),
-                    'to_ts':
-                        (int,),
+                "location_map": {
+                    "slo_id": "path",
+                    "from_ts": "query",
+                    "to_ts": "query",
                 },
-                'attribute_map': {
-                    'slo_id': 'slo_id',
-                    'from_ts': 'from_ts',
-                    'to_ts': 'to_ts',
-                },
-                'location_map': {
-                    'slo_id': 'path',
-                    'from_ts': 'query',
-                    'to_ts': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_slo_history
+            callable=__get_slo_history,
         )
 
-        def __list_slos(
-            self,
-            **kwargs
-        ):
+        def __list_slos(self, **kwargs):
             """Get all SLOs  # noqa: E501
 
             Get a list of service level objective objects for your organization.  # noqa: E501
@@ -832,100 +636,68 @@ class ServiceLevelObjectivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_slos = _Endpoint(
             settings={
-                'response_type': (SLOListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/slo',
-                'operation_id': 'list_slos',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SLOListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/slo",
+                "operation_id": "list_slos",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'ids',
-                    'query',
-                    'tags_query',
-                    'metrics_query',
+                "all": [
+                    "ids",
+                    "query",
+                    "tags_query",
+                    "metrics_query",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "ids": (str,),
+                    "query": (str,),
+                    "tags_query": (str,),
+                    "metrics_query": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "ids": "ids",
+                    "query": "query",
+                    "tags_query": "tags_query",
+                    "metrics_query": "metrics_query",
                 },
-                'openapi_types': {
-                    'ids':
-                        (str,),
-                    'query':
-                        (str,),
-                    'tags_query':
-                        (str,),
-                    'metrics_query':
-                        (str,),
+                "location_map": {
+                    "ids": "query",
+                    "query": "query",
+                    "tags_query": "query",
+                    "metrics_query": "query",
                 },
-                'attribute_map': {
-                    'ids': 'ids',
-                    'query': 'query',
-                    'tags_query': 'tags_query',
-                    'metrics_query': 'metrics_query',
-                },
-                'location_map': {
-                    'ids': 'query',
-                    'query': 'query',
-                    'tags_query': 'query',
-                    'metrics_query': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_slos
+            callable=__list_slos,
         )
 
-        def __update_slo(
-            self,
-            slo_id,
-            body,
-            **kwargs
-        ):
+        def __update_slo(self, slo_id, body, **kwargs):
             """Update a SLO  # noqa: E501
 
             Update the specified service level objective object.  # noqa: E501
@@ -965,88 +737,56 @@ class ServiceLevelObjectivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['slo_id'] = \
-                slo_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["slo_id"] = slo_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_slo = _Endpoint(
             settings={
-                'response_type': (SLOListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/slo/{slo_id}',
-                'operation_id': 'update_slo',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (SLOListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/slo/{slo_id}",
+                "operation_id": "update_slo",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'slo_id',
-                    'body',
+                "all": [
+                    "slo_id",
+                    "body",
                 ],
-                'required': [
-                    'slo_id',
-                    'body',
+                "required": [
+                    "slo_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "slo_id": (str,),
+                    "body": (ServiceLevelObjective,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "slo_id": "slo_id",
                 },
-                'openapi_types': {
-                    'slo_id':
-                        (str,),
-                    'body':
-                        (ServiceLevelObjective,),
+                "location_map": {
+                    "slo_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'slo_id': 'slo_id',
-                },
-                'location_map': {
-                    'slo_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_slo
+            callable=__update_slo,
         )

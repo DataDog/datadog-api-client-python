@@ -8,7 +8,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.slo_correction_response_attributes import SLOCorrectionResponseAttributes
-globals()['SLOCorrectionResponseAttributes'] = SLOCorrectionResponseAttributes
+
+globals()["SLOCorrectionResponseAttributes"] = SLOCorrectionResponseAttributes
 from datadog_api_client.v1.model.slo_correction_list_response_data import SLOCorrectionListResponseData
 
 
@@ -28,5 +29,5 @@ class TestSLOCorrectionListResponseData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

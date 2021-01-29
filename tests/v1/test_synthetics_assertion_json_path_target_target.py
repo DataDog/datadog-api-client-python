@@ -10,7 +10,9 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import SyntheticsAssertionJSONPathTargetTarget
+from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import (
+    SyntheticsAssertionJSONPathTargetTarget,
+)
 
 
 class TestSyntheticsAssertionJSONPathTargetTarget(unittest.TestCase):
@@ -29,5 +31,5 @@ class TestSyntheticsAssertionJSONPathTargetTarget(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

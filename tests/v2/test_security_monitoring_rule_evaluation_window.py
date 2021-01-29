@@ -10,7 +10,9 @@ import sys
 import unittest
 
 import datadog_api_client.v2
-from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import SecurityMonitoringRuleEvaluationWindow
+from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
+    SecurityMonitoringRuleEvaluationWindow,
+)
 
 
 class TestSecurityMonitoringRuleEvaluationWindow(unittest.TestCase):
@@ -29,5 +31,5 @@ class TestSecurityMonitoringRuleEvaluationWindow(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

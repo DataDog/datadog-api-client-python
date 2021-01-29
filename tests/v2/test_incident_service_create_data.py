@@ -12,9 +12,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.incident_service_create_attributes import IncidentServiceCreateAttributes
 from datadog_api_client.v2.model.incident_service_relationships import IncidentServiceRelationships
 from datadog_api_client.v2.model.incident_service_type import IncidentServiceType
-globals()['IncidentServiceCreateAttributes'] = IncidentServiceCreateAttributes
-globals()['IncidentServiceRelationships'] = IncidentServiceRelationships
-globals()['IncidentServiceType'] = IncidentServiceType
+
+globals()["IncidentServiceCreateAttributes"] = IncidentServiceCreateAttributes
+globals()["IncidentServiceRelationships"] = IncidentServiceRelationships
+globals()["IncidentServiceType"] = IncidentServiceType
 from datadog_api_client.v2.model.incident_service_create_data import IncidentServiceCreateData
 
 
@@ -34,5 +35,5 @@ class TestIncidentServiceCreateData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import metrics_query_response_unit
 except ImportError:
-    metrics_query_response_unit = sys.modules[
-        'datadog_api_client.v1.model.metrics_query_response_unit']
+    metrics_query_response_unit = sys.modules["datadog_api_client.v1.model.metrics_query_response_unit"]
 try:
     from datadog_api_client.v1.model import point
 except ImportError:
-    point = sys.modules[
-        'datadog_api_client.v1.model.point']
+    point = sys.modules["datadog_api_client.v1.model.point"]
 from datadog_api_client.v1.model.metrics_query_response_series import MetricsQueryResponseSeries
 
 
@@ -39,5 +38,5 @@ class TestMetricsQueryResponseSeries(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

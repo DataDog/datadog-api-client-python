@@ -48,11 +48,9 @@ class SLOHistorySLIData(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -69,40 +67,41 @@ class SLOHistorySLIData(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'history': ([[float]],),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'precision': ({str: (float,)},),  # noqa: E501
-            'preview': (bool,),  # noqa: E501
-            'sli_value': (float,),  # noqa: E501
-            'span_precision': (float,),  # noqa: E501
-            'uptime': (float,),  # noqa: E501
+            "history": ([[float]],),  # noqa: E501
+            "name": (str,),  # noqa: E501
+            "precision": ({str: (float,)},),  # noqa: E501
+            "preview": (bool,),  # noqa: E501
+            "sli_value": (float,),  # noqa: E501
+            "span_precision": (float,),  # noqa: E501
+            "uptime": (float,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'history': 'history',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'precision': 'precision',  # noqa: E501
-        'preview': 'preview',  # noqa: E501
-        'sli_value': 'sli_value',  # noqa: E501
-        'span_precision': 'span_precision',  # noqa: E501
-        'uptime': 'uptime',  # noqa: E501
+        "history": "history",  # noqa: E501
+        "name": "name",  # noqa: E501
+        "precision": "precision",  # noqa: E501
+        "preview": "preview",  # noqa: E501
+        "sli_value": "sli_value",  # noqa: E501
+        "span_precision": "span_precision",  # noqa: E501
+        "uptime": "uptime",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -148,15 +147,16 @@ class SLOHistorySLIData(ModelNormal):
             uptime (float): Deprecated. Use `sli_value` instead.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -172,10 +172,12 @@ class SLOHistorySLIData(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

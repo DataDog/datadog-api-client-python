@@ -10,7 +10,9 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains import OrganizationSettingsSamlAutocreateUsersDomains
+from datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains import (
+    OrganizationSettingsSamlAutocreateUsersDomains,
+)
 
 
 class TestOrganizationSettingsSamlAutocreateUsersDomains(unittest.TestCase):
@@ -29,5 +31,5 @@ class TestOrganizationSettingsSamlAutocreateUsersDomains(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

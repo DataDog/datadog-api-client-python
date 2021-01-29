@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v2
 from datadog_api_client.v2.model.incident_field_attributes_value_type import IncidentFieldAttributesValueType
-globals()['IncidentFieldAttributesValueType'] = IncidentFieldAttributesValueType
+
+globals()["IncidentFieldAttributesValueType"] = IncidentFieldAttributesValueType
 from datadog_api_client.v2.model.incident_field_attributes_multiple_value import IncidentFieldAttributesMultipleValue
 
 
@@ -30,5 +31,5 @@ class TestIncidentFieldAttributesMultipleValue(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import log
 except ImportError:
-    log = sys.modules[
-        'datadog_api_client.v1.model.log']
+    log = sys.modules["datadog_api_client.v1.model.log"]
 from datadog_api_client.v1.model.logs_list_response import LogsListResponse
 
 
@@ -34,5 +34,5 @@ class TestLogsListResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

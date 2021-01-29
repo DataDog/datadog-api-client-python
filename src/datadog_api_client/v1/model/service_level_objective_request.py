@@ -23,15 +23,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.creator import Creator
     from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
     from datadog_api_client.v1.model.slo_threshold import SLOThreshold
     from datadog_api_client.v1.model.slo_type import SLOType
-    globals()['Creator'] = Creator
-    globals()['SLOThreshold'] = SLOThreshold
-    globals()['SLOType'] = SLOType
-    globals()['ServiceLevelObjectiveQuery'] = ServiceLevelObjectiveQuery
+
+    globals()["Creator"] = Creator
+    globals()["SLOThreshold"] = SLOThreshold
+    globals()["SLOType"] = SLOType
+    globals()["ServiceLevelObjectiveQuery"] = ServiceLevelObjectiveQuery
 
 
 class ServiceLevelObjectiveRequest(ModelNormal):
@@ -58,11 +60,9 @@ class ServiceLevelObjectiveRequest(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -80,50 +80,54 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'thresholds': ([SLOThreshold],),  # noqa: E501
-            'type': (SLOType,),  # noqa: E501
-            'created_at': (int,),  # noqa: E501
-            'creator': (Creator,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
-            'groups': ([str],),  # noqa: E501
-            'id': (str,),  # noqa: E501
-            'modified_at': (int,),  # noqa: E501
-            'monitor_ids': ([int],),  # noqa: E501
-            'query': (ServiceLevelObjectiveQuery,),  # noqa: E501
-            'tags': ([str],),  # noqa: E501
+            "name": (str,),  # noqa: E501
+            "thresholds": ([SLOThreshold],),  # noqa: E501
+            "type": (SLOType,),  # noqa: E501
+            "created_at": (int,),  # noqa: E501
+            "creator": (Creator,),  # noqa: E501
+            "description": (
+                str,
+                none_type,
+            ),  # noqa: E501
+            "groups": ([str],),  # noqa: E501
+            "id": (str,),  # noqa: E501
+            "modified_at": (int,),  # noqa: E501
+            "monitor_ids": ([int],),  # noqa: E501
+            "query": (ServiceLevelObjectiveQuery,),  # noqa: E501
+            "tags": ([str],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'thresholds': 'thresholds',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'created_at': 'created_at',  # noqa: E501
-        'creator': 'creator',  # noqa: E501
-        'description': 'description',  # noqa: E501
-        'groups': 'groups',  # noqa: E501
-        'id': 'id',  # noqa: E501
-        'modified_at': 'modified_at',  # noqa: E501
-        'monitor_ids': 'monitor_ids',  # noqa: E501
-        'query': 'query',  # noqa: E501
-        'tags': 'tags',  # noqa: E501
+        "name": "name",  # noqa: E501
+        "thresholds": "thresholds",  # noqa: E501
+        "type": "type",  # noqa: E501
+        "created_at": "created_at",  # noqa: E501
+        "creator": "creator",  # noqa: E501
+        "description": "description",  # noqa: E501
+        "groups": "groups",  # noqa: E501
+        "id": "id",  # noqa: E501
+        "modified_at": "modified_at",  # noqa: E501
+        "monitor_ids": "monitor_ids",  # noqa: E501
+        "query": "query",  # noqa: E501
+        "tags": "tags",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, name, thresholds, type, *args, **kwargs):  # noqa: E501
@@ -176,15 +180,16 @@ class ServiceLevelObjectiveRequest(ModelNormal):
             tags ([str]): A list of tags associated with this service level objective. Always included in service level objective responses (but may be empty). Optional in create/update requests.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -203,10 +208,12 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         self.thresholds = thresholds
         self.type = type
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

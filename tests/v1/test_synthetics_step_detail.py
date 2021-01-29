@@ -12,11 +12,12 @@ from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckTyp
 from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
 from datadog_api_client.v1.model.synthetics_step_detail_warnings import SyntheticsStepDetailWarnings
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
-globals()['SyntheticsBrowserError'] = SyntheticsBrowserError
-globals()['SyntheticsCheckType'] = SyntheticsCheckType
-globals()['SyntheticsPlayingTab'] = SyntheticsPlayingTab
-globals()['SyntheticsStepDetailWarnings'] = SyntheticsStepDetailWarnings
-globals()['SyntheticsStepType'] = SyntheticsStepType
+
+globals()["SyntheticsBrowserError"] = SyntheticsBrowserError
+globals()["SyntheticsCheckType"] = SyntheticsCheckType
+globals()["SyntheticsPlayingTab"] = SyntheticsPlayingTab
+globals()["SyntheticsStepDetailWarnings"] = SyntheticsStepDetailWarnings
+globals()["SyntheticsStepType"] = SyntheticsStepType
 from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
 
 
@@ -36,5 +37,5 @@ class TestSyntheticsStepDetail(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

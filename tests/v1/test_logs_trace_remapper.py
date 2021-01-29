@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import logs_trace_remapper_type
 except ImportError:
-    logs_trace_remapper_type = sys.modules[
-        'datadog_api_client.v1.model.logs_trace_remapper_type']
+    logs_trace_remapper_type = sys.modules["datadog_api_client.v1.model.logs_trace_remapper_type"]
 from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
 
 
@@ -34,5 +34,5 @@ class TestLogsTraceRemapper(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import usage_top_avg_metrics_hour
 except ImportError:
-    usage_top_avg_metrics_hour = sys.modules[
-        'datadog_api_client.v1.model.usage_top_avg_metrics_hour']
+    usage_top_avg_metrics_hour = sys.modules["datadog_api_client.v1.model.usage_top_avg_metrics_hour"]
 from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopAvgMetricsResponse
 
 
@@ -34,5 +34,5 @@ class TestUsageTopAvgMetricsResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import user_invitation_data
 except ImportError:
-    user_invitation_data = sys.modules[
-        'datadog_api_client.v2.model.user_invitation_data']
+    user_invitation_data = sys.modules["datadog_api_client.v2.model.user_invitation_data"]
 from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
 
 
@@ -34,5 +34,5 @@ class TestUserInvitationsRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

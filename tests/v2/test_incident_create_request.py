@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v2
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
-globals()['IncidentCreateData'] = IncidentCreateData
+
+globals()["IncidentCreateData"] = IncidentCreateData
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
 
 
@@ -30,5 +31,5 @@ class TestIncidentCreateRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

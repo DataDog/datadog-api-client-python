@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.aws_tag_filter_list_response_filters import AWSTagFilterListResponseFilters
-globals()['AWSTagFilterListResponseFilters'] = AWSTagFilterListResponseFilters
+
+globals()["AWSTagFilterListResponseFilters"] = AWSTagFilterListResponseFilters
 from datadog_api_client.v1.model.aws_tag_filter_list_response import AWSTagFilterListResponse
 
 
@@ -30,5 +31,5 @@ class TestAWSTagFilterListResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

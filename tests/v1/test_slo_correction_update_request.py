@@ -8,7 +8,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.slo_correction_update_request_data import SLOCorrectionUpdateRequestData
-globals()['SLOCorrectionUpdateRequestData'] = SLOCorrectionUpdateRequestData
+
+globals()["SLOCorrectionUpdateRequestData"] = SLOCorrectionUpdateRequestData
 from datadog_api_client.v1.model.slo_correction_update_request import SLOCorrectionUpdateRequest
 
 
@@ -28,5 +29,5 @@ class TestSLOCorrectionUpdateRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

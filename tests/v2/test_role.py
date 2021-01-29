@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import role_attributes
 except ImportError:
-    role_attributes = sys.modules[
-        'datadog_api_client.v2.model.role_attributes']
+    role_attributes = sys.modules["datadog_api_client.v2.model.role_attributes"]
 try:
     from datadog_api_client.v2.model import role_response_relationships
 except ImportError:
-    role_response_relationships = sys.modules[
-        'datadog_api_client.v2.model.role_response_relationships']
+    role_response_relationships = sys.modules["datadog_api_client.v2.model.role_response_relationships"]
 try:
     from datadog_api_client.v2.model import roles_type
 except ImportError:
-    roles_type = sys.modules[
-        'datadog_api_client.v2.model.roles_type']
+    roles_type = sys.modules["datadog_api_client.v2.model.roles_type"]
 from datadog_api_client.v2.model.role import Role
 
 
@@ -44,5 +42,5 @@ class TestRole(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

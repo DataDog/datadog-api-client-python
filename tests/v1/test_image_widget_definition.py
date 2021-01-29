@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import image_widget_definition_type
 except ImportError:
-    image_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.image_widget_definition_type']
+    image_widget_definition_type = sys.modules["datadog_api_client.v1.model.image_widget_definition_type"]
 try:
     from datadog_api_client.v1.model import widget_image_sizing
 except ImportError:
-    widget_image_sizing = sys.modules[
-        'datadog_api_client.v1.model.widget_image_sizing']
+    widget_image_sizing = sys.modules["datadog_api_client.v1.model.widget_image_sizing"]
 try:
     from datadog_api_client.v1.model import widget_margin
 except ImportError:
-    widget_margin = sys.modules[
-        'datadog_api_client.v1.model.widget_margin']
+    widget_margin = sys.modules["datadog_api_client.v1.model.widget_margin"]
 from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
 
 
@@ -44,5 +42,5 @@ class TestImageWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

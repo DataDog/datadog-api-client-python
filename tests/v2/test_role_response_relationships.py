@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import relationship_to_permissions
 except ImportError:
-    relationship_to_permissions = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_permissions']
+    relationship_to_permissions = sys.modules["datadog_api_client.v2.model.relationship_to_permissions"]
 from datadog_api_client.v2.model.role_response_relationships import RoleResponseRelationships
 
 
@@ -34,5 +34,5 @@ class TestRoleResponseRelationships(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

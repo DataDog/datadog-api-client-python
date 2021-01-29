@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import metric_search_response_results
 except ImportError:
-    metric_search_response_results = sys.modules[
-        'datadog_api_client.v1.model.metric_search_response_results']
+    metric_search_response_results = sys.modules["datadog_api_client.v1.model.metric_search_response_results"]
 from datadog_api_client.v1.model.metric_search_response import MetricSearchResponse
 
 
@@ -34,5 +34,5 @@ class TestMetricSearchResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

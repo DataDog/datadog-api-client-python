@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import logs_archive_destination_s3_type
 except ImportError:
-    logs_archive_destination_s3_type = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_destination_s3_type']
+    logs_archive_destination_s3_type = sys.modules["datadog_api_client.v2.model.logs_archive_destination_s3_type"]
 try:
     from datadog_api_client.v2.model import logs_archive_integration_s3
 except ImportError:
-    logs_archive_integration_s3 = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_integration_s3']
+    logs_archive_integration_s3 = sys.modules["datadog_api_client.v2.model.logs_archive_integration_s3"]
 from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
 
 
@@ -39,5 +38,5 @@ class TestLogsArchiveDestinationS3(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

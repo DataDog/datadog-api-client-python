@@ -12,9 +12,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.incident_service_included_items import IncidentServiceIncludedItems
 from datadog_api_client.v2.model.incident_service_response_data import IncidentServiceResponseData
 from datadog_api_client.v2.model.incident_services_response_meta import IncidentServicesResponseMeta
-globals()['IncidentServiceIncludedItems'] = IncidentServiceIncludedItems
-globals()['IncidentServiceResponseData'] = IncidentServiceResponseData
-globals()['IncidentServicesResponseMeta'] = IncidentServicesResponseMeta
+
+globals()["IncidentServiceIncludedItems"] = IncidentServiceIncludedItems
+globals()["IncidentServiceResponseData"] = IncidentServiceResponseData
+globals()["IncidentServicesResponseMeta"] = IncidentServicesResponseMeta
 from datadog_api_client.v2.model.incident_services_response import IncidentServicesResponse
 
 
@@ -34,5 +35,5 @@ class TestIncidentServicesResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

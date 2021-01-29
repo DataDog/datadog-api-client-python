@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import usage_specified_custom_reports_page
 except ImportError:
-    usage_specified_custom_reports_page = sys.modules[
-        'datadog_api_client.v1.model.usage_specified_custom_reports_page']
+    usage_specified_custom_reports_page = sys.modules["datadog_api_client.v1.model.usage_specified_custom_reports_page"]
 from datadog_api_client.v1.model.usage_specified_custom_reports_meta import UsageSpecifiedCustomReportsMeta
 
 
@@ -34,5 +34,5 @@ class TestUsageSpecifiedCustomReportsMeta(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

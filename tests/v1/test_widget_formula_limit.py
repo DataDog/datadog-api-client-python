@@ -8,7 +8,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
-globals()['QuerySortOrder'] = QuerySortOrder
+
+globals()["QuerySortOrder"] = QuerySortOrder
 from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
 
 
@@ -28,5 +29,5 @@ class TestWidgetFormulaLimit(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

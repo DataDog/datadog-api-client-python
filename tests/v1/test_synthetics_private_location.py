@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.synthetics_private_location_secrets import SyntheticsPrivateLocationSecrets
-globals()['SyntheticsPrivateLocationSecrets'] = SyntheticsPrivateLocationSecrets
+
+globals()["SyntheticsPrivateLocationSecrets"] = SyntheticsPrivateLocationSecrets
 from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
 
 
@@ -30,5 +31,5 @@ class TestSyntheticsPrivateLocation(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

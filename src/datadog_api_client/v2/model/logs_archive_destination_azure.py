@@ -23,11 +23,13 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v2.model.logs_archive_destination_azure_type import LogsArchiveDestinationAzureType
     from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchiveIntegrationAzure
-    globals()['LogsArchiveDestinationAzureType'] = LogsArchiveDestinationAzureType
-    globals()['LogsArchiveIntegrationAzure'] = LogsArchiveIntegrationAzure
+
+    globals()["LogsArchiveDestinationAzureType"] = LogsArchiveDestinationAzureType
+    globals()["LogsArchiveIntegrationAzure"] = LogsArchiveIntegrationAzure
 
 
 class LogsArchiveDestinationAzure(ModelNormal):
@@ -54,11 +56,9 @@ class LogsArchiveDestinationAzure(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -76,38 +76,39 @@ class LogsArchiveDestinationAzure(ModelNormal):
         """
         lazy_import()
         return {
-            'container': (str,),  # noqa: E501
-            'integration': (LogsArchiveIntegrationAzure,),  # noqa: E501
-            'storage_account': (str,),  # noqa: E501
-            'type': (LogsArchiveDestinationAzureType,),  # noqa: E501
-            'path': (str,),  # noqa: E501
-            'region': (str,),  # noqa: E501
+            "container": (str,),  # noqa: E501
+            "integration": (LogsArchiveIntegrationAzure,),  # noqa: E501
+            "storage_account": (str,),  # noqa: E501
+            "type": (LogsArchiveDestinationAzureType,),  # noqa: E501
+            "path": (str,),  # noqa: E501
+            "region": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'container': 'container',  # noqa: E501
-        'integration': 'integration',  # noqa: E501
-        'storage_account': 'storage_account',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'path': 'path',  # noqa: E501
-        'region': 'region',  # noqa: E501
+        "container": "container",  # noqa: E501
+        "integration": "integration",  # noqa: E501
+        "storage_account": "storage_account",  # noqa: E501
+        "type": "type",  # noqa: E501
+        "path": "path",  # noqa: E501
+        "region": "region",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, container, integration, storage_account, type, *args, **kwargs):  # noqa: E501
@@ -154,15 +155,16 @@ class LogsArchiveDestinationAzure(ModelNormal):
             region (str): The region where the archive will be stored.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -182,10 +184,12 @@ class LogsArchiveDestinationAzure(ModelNormal):
         self.storage_account = storage_account
         self.type = type
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

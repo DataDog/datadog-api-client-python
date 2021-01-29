@@ -10,9 +10,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.application_key_relationships import ApplicationKeyRelationships
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
 from datadog_api_client.v2.model.partial_application_key_attributes import PartialApplicationKeyAttributes
-globals()['ApplicationKeyRelationships'] = ApplicationKeyRelationships
-globals()['ApplicationKeysType'] = ApplicationKeysType
-globals()['PartialApplicationKeyAttributes'] = PartialApplicationKeyAttributes
+
+globals()["ApplicationKeyRelationships"] = ApplicationKeyRelationships
+globals()["ApplicationKeysType"] = ApplicationKeysType
+globals()["PartialApplicationKeyAttributes"] = PartialApplicationKeyAttributes
 from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
 
 
@@ -32,5 +33,5 @@ class TestPartialApplicationKey(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

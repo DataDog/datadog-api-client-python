@@ -7,9 +7,16 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by_sort import TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort
-globals()['TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort'] = TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by_sort import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort,
+)
+
+globals()[
+    "TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort"
+] = TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy,
+)
 
 
 class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy(unittest.TestCase):
@@ -28,5 +35,5 @@ class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy(unittest.TestC
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

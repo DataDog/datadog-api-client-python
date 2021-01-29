@@ -9,8 +9,9 @@ import unittest
 import datadog_api_client.v2
 from datadog_api_client.v2.model.application_key_response_included_item import ApplicationKeyResponseIncludedItem
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
-globals()['ApplicationKeyResponseIncludedItem'] = ApplicationKeyResponseIncludedItem
-globals()['FullApplicationKey'] = FullApplicationKey
+
+globals()["ApplicationKeyResponseIncludedItem"] = ApplicationKeyResponseIncludedItem
+globals()["FullApplicationKey"] = FullApplicationKey
 from datadog_api_client.v2.model.application_key_response import ApplicationKeyResponse
 
 
@@ -30,5 +31,5 @@ class TestApplicationKeyResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

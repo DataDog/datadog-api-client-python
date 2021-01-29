@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import api_key
 except ImportError:
-    api_key = sys.modules[
-        'datadog_api_client.v1.model.api_key']
+    api_key = sys.modules["datadog_api_client.v1.model.api_key"]
 from datadog_api_client.v1.model.api_key_list_response import ApiKeyListResponse
 
 
@@ -34,5 +34,5 @@ class TestApiKeyListResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

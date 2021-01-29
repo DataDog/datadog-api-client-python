@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import creator
 except ImportError:
-    creator = sys.modules[
-        'datadog_api_client.v1.model.creator']
+    creator = sys.modules["datadog_api_client.v1.model.creator"]
 from datadog_api_client.v1.model.dashboard_list import DashboardList
 
 
@@ -34,5 +34,5 @@ class TestDashboardList(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

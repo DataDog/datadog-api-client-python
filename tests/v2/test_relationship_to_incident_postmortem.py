@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v2
 from datadog_api_client.v2.model.relationship_to_incident_postmortem_data import RelationshipToIncidentPostmortemData
-globals()['RelationshipToIncidentPostmortemData'] = RelationshipToIncidentPostmortemData
+
+globals()["RelationshipToIncidentPostmortemData"] = RelationshipToIncidentPostmortemData
 from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
 
 
@@ -30,5 +31,5 @@ class TestRelationshipToIncidentPostmortem(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

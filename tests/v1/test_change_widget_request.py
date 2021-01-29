@@ -10,41 +10,35 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import event_query_definition
 except ImportError:
-    event_query_definition = sys.modules[
-        'datadog_api_client.v1.model.event_query_definition']
+    event_query_definition = sys.modules["datadog_api_client.v1.model.event_query_definition"]
 try:
     from datadog_api_client.v1.model import log_query_definition
 except ImportError:
-    log_query_definition = sys.modules[
-        'datadog_api_client.v1.model.log_query_definition']
+    log_query_definition = sys.modules["datadog_api_client.v1.model.log_query_definition"]
 try:
     from datadog_api_client.v1.model import process_query_definition
 except ImportError:
-    process_query_definition = sys.modules[
-        'datadog_api_client.v1.model.process_query_definition']
+    process_query_definition = sys.modules["datadog_api_client.v1.model.process_query_definition"]
 try:
     from datadog_api_client.v1.model import widget_change_type
 except ImportError:
-    widget_change_type = sys.modules[
-        'datadog_api_client.v1.model.widget_change_type']
+    widget_change_type = sys.modules["datadog_api_client.v1.model.widget_change_type"]
 try:
     from datadog_api_client.v1.model import widget_compare_to
 except ImportError:
-    widget_compare_to = sys.modules[
-        'datadog_api_client.v1.model.widget_compare_to']
+    widget_compare_to = sys.modules["datadog_api_client.v1.model.widget_compare_to"]
 try:
     from datadog_api_client.v1.model import widget_order_by
 except ImportError:
-    widget_order_by = sys.modules[
-        'datadog_api_client.v1.model.widget_order_by']
+    widget_order_by = sys.modules["datadog_api_client.v1.model.widget_order_by"]
 try:
     from datadog_api_client.v1.model import widget_sort
 except ImportError:
-    widget_sort = sys.modules[
-        'datadog_api_client.v1.model.widget_sort']
+    widget_sort = sys.modules["datadog_api_client.v1.model.widget_sort"]
 from datadog_api_client.v1.model.change_widget_request import ChangeWidgetRequest
 
 
@@ -64,5 +58,5 @@ class TestChangeWidgetRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

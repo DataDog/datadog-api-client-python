@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import group_widget_definition_type
 except ImportError:
-    group_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.group_widget_definition_type']
+    group_widget_definition_type = sys.modules["datadog_api_client.v1.model.group_widget_definition_type"]
 try:
     from datadog_api_client.v1.model import widget
 except ImportError:
-    widget = sys.modules[
-        'datadog_api_client.v1.model.widget']
+    widget = sys.modules["datadog_api_client.v1.model.widget"]
 try:
     from datadog_api_client.v1.model import widget_layout_type
 except ImportError:
-    widget_layout_type = sys.modules[
-        'datadog_api_client.v1.model.widget_layout_type']
+    widget_layout_type = sys.modules["datadog_api_client.v1.model.widget_layout_type"]
 from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
 
 
@@ -44,5 +42,5 @@ class TestGroupWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

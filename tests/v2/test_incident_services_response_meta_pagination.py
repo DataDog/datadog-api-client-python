@@ -9,7 +9,9 @@ import sys
 import unittest
 
 import datadog_api_client.v2
-from datadog_api_client.v2.model.incident_services_response_meta_pagination import IncidentServicesResponseMetaPagination
+from datadog_api_client.v2.model.incident_services_response_meta_pagination import (
+    IncidentServicesResponseMetaPagination,
+)
 
 
 class TestIncidentServicesResponseMetaPagination(unittest.TestCase):
@@ -28,5 +30,5 @@ class TestIncidentServicesResponseMetaPagination(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

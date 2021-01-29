@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import logs_list_request_time
 except ImportError:
-    logs_list_request_time = sys.modules[
-        'datadog_api_client.v1.model.logs_list_request_time']
+    logs_list_request_time = sys.modules["datadog_api_client.v1.model.logs_list_request_time"]
 try:
     from datadog_api_client.v1.model import logs_sort
 except ImportError:
-    logs_sort = sys.modules[
-        'datadog_api_client.v1.model.logs_sort']
+    logs_sort = sys.modules["datadog_api_client.v1.model.logs_sort"]
 from datadog_api_client.v1.model.logs_list_request import LogsListRequest
 
 
@@ -39,5 +38,5 @@ class TestLogsListRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

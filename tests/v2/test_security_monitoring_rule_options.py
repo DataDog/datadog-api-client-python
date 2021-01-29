@@ -10,21 +10,23 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import security_monitoring_rule_evaluation_window
 except ImportError:
     security_monitoring_rule_evaluation_window = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_evaluation_window']
+        "datadog_api_client.v2.model.security_monitoring_rule_evaluation_window"
+    ]
 try:
     from datadog_api_client.v2.model import security_monitoring_rule_keep_alive
 except ImportError:
-    security_monitoring_rule_keep_alive = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_keep_alive']
+    security_monitoring_rule_keep_alive = sys.modules["datadog_api_client.v2.model.security_monitoring_rule_keep_alive"]
 try:
     from datadog_api_client.v2.model import security_monitoring_rule_max_signal_duration
 except ImportError:
     security_monitoring_rule_max_signal_duration = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration']
+        "datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration"
+    ]
 from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
 
 
@@ -44,5 +46,5 @@ class TestSecurityMonitoringRuleOptions(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

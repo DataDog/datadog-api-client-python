@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import role_update_data
 except ImportError:
-    role_update_data = sys.modules[
-        'datadog_api_client.v2.model.role_update_data']
+    role_update_data = sys.modules["datadog_api_client.v2.model.role_update_data"]
 from datadog_api_client.v2.model.role_update_request import RoleUpdateRequest
 
 
@@ -34,5 +34,5 @@ class TestRoleUpdateRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

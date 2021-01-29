@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import aws_logs_list_response_lambdas
 except ImportError:
-    aws_logs_list_response_lambdas = sys.modules[
-        'datadog_api_client.v1.model.aws_logs_list_response_lambdas']
+    aws_logs_list_response_lambdas = sys.modules["datadog_api_client.v1.model.aws_logs_list_response_lambdas"]
 from datadog_api_client.v1.model.aws_logs_list_response import AWSLogsListResponse
 
 
@@ -34,5 +34,5 @@ class TestAWSLogsListResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

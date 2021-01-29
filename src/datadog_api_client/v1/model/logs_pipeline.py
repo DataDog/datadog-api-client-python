@@ -23,11 +23,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.logs_filter import LogsFilter
     from datadog_api_client.v1.model.logs_processor import LogsProcessor
-    globals()['LogsFilter'] = LogsFilter
-    globals()['LogsProcessor'] = LogsProcessor
+
+    globals()["LogsFilter"] = LogsFilter
+    globals()["LogsProcessor"] = LogsProcessor
 
 
 class LogsPipeline(ModelNormal):
@@ -54,11 +56,9 @@ class LogsPipeline(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -76,40 +76,41 @@ class LogsPipeline(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'filter': (LogsFilter,),  # noqa: E501
-            'id': (str,),  # noqa: E501
-            'is_enabled': (bool,),  # noqa: E501
-            'is_read_only': (bool,),  # noqa: E501
-            'processors': ([LogsProcessor],),  # noqa: E501
-            'type': (str,),  # noqa: E501
+            "name": (str,),  # noqa: E501
+            "filter": (LogsFilter,),  # noqa: E501
+            "id": (str,),  # noqa: E501
+            "is_enabled": (bool,),  # noqa: E501
+            "is_read_only": (bool,),  # noqa: E501
+            "processors": ([LogsProcessor],),  # noqa: E501
+            "type": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'filter': 'filter',  # noqa: E501
-        'id': 'id',  # noqa: E501
-        'is_enabled': 'is_enabled',  # noqa: E501
-        'is_read_only': 'is_read_only',  # noqa: E501
-        'processors': 'processors',  # noqa: E501
-        'type': 'type',  # noqa: E501
+        "name": "name",  # noqa: E501
+        "filter": "filter",  # noqa: E501
+        "id": "id",  # noqa: E501
+        "is_enabled": "is_enabled",  # noqa: E501
+        "is_read_only": "is_read_only",  # noqa: E501
+        "processors": "processors",  # noqa: E501
+        "type": "type",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, name, *args, **kwargs):  # noqa: E501
@@ -157,15 +158,16 @@ class LogsPipeline(ModelNormal):
             type (str): Type of pipeline.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -182,10 +184,12 @@ class LogsPipeline(ModelNormal):
 
         self.name = name
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

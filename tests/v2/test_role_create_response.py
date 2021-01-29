@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import role_create_response_data
 except ImportError:
-    role_create_response_data = sys.modules[
-        'datadog_api_client.v2.model.role_create_response_data']
+    role_create_response_data = sys.modules["datadog_api_client.v2.model.role_create_response_data"]
 from datadog_api_client.v2.model.role_create_response import RoleCreateResponse
 
 
@@ -34,5 +34,5 @@ class TestRoleCreateResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

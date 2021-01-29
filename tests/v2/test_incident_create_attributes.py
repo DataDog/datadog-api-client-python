@@ -11,8 +11,9 @@ import unittest
 import datadog_api_client.v2
 from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
 from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import IncidentTimelineCellCreateAttributes
-globals()['IncidentFieldAttributes'] = IncidentFieldAttributes
-globals()['IncidentTimelineCellCreateAttributes'] = IncidentTimelineCellCreateAttributes
+
+globals()["IncidentFieldAttributes"] = IncidentFieldAttributes
+globals()["IncidentTimelineCellCreateAttributes"] = IncidentTimelineCellCreateAttributes
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 
 
@@ -32,5 +33,5 @@ class TestIncidentCreateAttributes(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

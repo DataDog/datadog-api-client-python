@@ -23,15 +23,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
     from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
     from datadog_api_client.v1.model.monitor_threshold_window_options import MonitorThresholdWindowOptions
     from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
-    globals()['MonitorDeviceID'] = MonitorDeviceID
-    globals()['MonitorOptionsAggregation'] = MonitorOptionsAggregation
-    globals()['MonitorThresholdWindowOptions'] = MonitorThresholdWindowOptions
-    globals()['MonitorThresholds'] = MonitorThresholds
+
+    globals()["MonitorDeviceID"] = MonitorDeviceID
+    globals()["MonitorOptionsAggregation"] = MonitorOptionsAggregation
+    globals()["MonitorThresholdWindowOptions"] = MonitorThresholdWindowOptions
+    globals()["MonitorThresholds"] = MonitorThresholds
 
 
 class MonitorOptions(ModelNormal):
@@ -58,13 +60,12 @@ class MonitorOptions(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
     validations = {
-        ('min_failure_duration',): {
-            'inclusive_maximum': 7200,
-            'inclusive_minimum': 0,
+        ("min_failure_duration",): {
+            "inclusive_maximum": 7200,
+            "inclusive_minimum": 0,
         },
     }
 
@@ -84,68 +85,93 @@ class MonitorOptions(ModelNormal):
         """
         lazy_import()
         return {
-            'aggregation': (MonitorOptionsAggregation,),  # noqa: E501
-            'device_ids': ([MonitorDeviceID],),  # noqa: E501
-            'enable_logs_sample': (bool,),  # noqa: E501
-            'escalation_message': (str,),  # noqa: E501
-            'evaluation_delay': (int, none_type,),  # noqa: E501
-            'include_tags': (bool,),  # noqa: E501
-            'locked': (bool,),  # noqa: E501
-            'min_failure_duration': (int, none_type,),  # noqa: E501
-            'min_location_failed': (int, none_type,),  # noqa: E501
-            'new_host_delay': (int, none_type,),  # noqa: E501
-            'no_data_timeframe': (int, none_type,),  # noqa: E501
-            'notify_audit': (bool,),  # noqa: E501
-            'notify_no_data': (bool,),  # noqa: E501
-            'renotify_interval': (int, none_type,),  # noqa: E501
-            'require_full_window': (bool,),  # noqa: E501
-            'restricted_roles': ([str],),  # noqa: E501
-            'silenced': ({str: (int, none_type)},),  # noqa: E501
-            'synthetics_check_id': (str, none_type,),  # noqa: E501
-            'threshold_windows': (MonitorThresholdWindowOptions,),  # noqa: E501
-            'thresholds': (MonitorThresholds,),  # noqa: E501
-            'timeout_h': (int, none_type,),  # noqa: E501
+            "aggregation": (MonitorOptionsAggregation,),  # noqa: E501
+            "device_ids": ([MonitorDeviceID],),  # noqa: E501
+            "enable_logs_sample": (bool,),  # noqa: E501
+            "escalation_message": (str,),  # noqa: E501
+            "evaluation_delay": (
+                int,
+                none_type,
+            ),  # noqa: E501
+            "include_tags": (bool,),  # noqa: E501
+            "locked": (bool,),  # noqa: E501
+            "min_failure_duration": (
+                int,
+                none_type,
+            ),  # noqa: E501
+            "min_location_failed": (
+                int,
+                none_type,
+            ),  # noqa: E501
+            "new_host_delay": (
+                int,
+                none_type,
+            ),  # noqa: E501
+            "no_data_timeframe": (
+                int,
+                none_type,
+            ),  # noqa: E501
+            "notify_audit": (bool,),  # noqa: E501
+            "notify_no_data": (bool,),  # noqa: E501
+            "renotify_interval": (
+                int,
+                none_type,
+            ),  # noqa: E501
+            "require_full_window": (bool,),  # noqa: E501
+            "restricted_roles": ([str],),  # noqa: E501
+            "silenced": ({str: (int, none_type)},),  # noqa: E501
+            "synthetics_check_id": (
+                str,
+                none_type,
+            ),  # noqa: E501
+            "threshold_windows": (MonitorThresholdWindowOptions,),  # noqa: E501
+            "thresholds": (MonitorThresholds,),  # noqa: E501
+            "timeout_h": (
+                int,
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'aggregation': 'aggregation',  # noqa: E501
-        'device_ids': 'device_ids',  # noqa: E501
-        'enable_logs_sample': 'enable_logs_sample',  # noqa: E501
-        'escalation_message': 'escalation_message',  # noqa: E501
-        'evaluation_delay': 'evaluation_delay',  # noqa: E501
-        'include_tags': 'include_tags',  # noqa: E501
-        'locked': 'locked',  # noqa: E501
-        'min_failure_duration': 'min_failure_duration',  # noqa: E501
-        'min_location_failed': 'min_location_failed',  # noqa: E501
-        'new_host_delay': 'new_host_delay',  # noqa: E501
-        'no_data_timeframe': 'no_data_timeframe',  # noqa: E501
-        'notify_audit': 'notify_audit',  # noqa: E501
-        'notify_no_data': 'notify_no_data',  # noqa: E501
-        'renotify_interval': 'renotify_interval',  # noqa: E501
-        'require_full_window': 'require_full_window',  # noqa: E501
-        'restricted_roles': 'restricted_roles',  # noqa: E501
-        'silenced': 'silenced',  # noqa: E501
-        'synthetics_check_id': 'synthetics_check_id',  # noqa: E501
-        'threshold_windows': 'threshold_windows',  # noqa: E501
-        'thresholds': 'thresholds',  # noqa: E501
-        'timeout_h': 'timeout_h',  # noqa: E501
+        "aggregation": "aggregation",  # noqa: E501
+        "device_ids": "device_ids",  # noqa: E501
+        "enable_logs_sample": "enable_logs_sample",  # noqa: E501
+        "escalation_message": "escalation_message",  # noqa: E501
+        "evaluation_delay": "evaluation_delay",  # noqa: E501
+        "include_tags": "include_tags",  # noqa: E501
+        "locked": "locked",  # noqa: E501
+        "min_failure_duration": "min_failure_duration",  # noqa: E501
+        "min_location_failed": "min_location_failed",  # noqa: E501
+        "new_host_delay": "new_host_delay",  # noqa: E501
+        "no_data_timeframe": "no_data_timeframe",  # noqa: E501
+        "notify_audit": "notify_audit",  # noqa: E501
+        "notify_no_data": "notify_no_data",  # noqa: E501
+        "renotify_interval": "renotify_interval",  # noqa: E501
+        "require_full_window": "require_full_window",  # noqa: E501
+        "restricted_roles": "restricted_roles",  # noqa: E501
+        "silenced": "silenced",  # noqa: E501
+        "synthetics_check_id": "synthetics_check_id",  # noqa: E501
+        "threshold_windows": "threshold_windows",  # noqa: E501
+        "thresholds": "thresholds",  # noqa: E501
+        "timeout_h": "timeout_h",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -205,15 +231,16 @@ class MonitorOptions(ModelNormal):
             timeout_h (int, none_type): The number of hours of the monitor not reporting data before it automatically resolves from a triggered state.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -229,10 +256,12 @@ class MonitorOptions(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

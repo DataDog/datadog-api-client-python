@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import aws_logs_async_response_errors
 except ImportError:
-    aws_logs_async_response_errors = sys.modules[
-        'datadog_api_client.v1.model.aws_logs_async_response_errors']
+    aws_logs_async_response_errors = sys.modules["datadog_api_client.v1.model.aws_logs_async_response_errors"]
 from datadog_api_client.v1.model.aws_logs_async_response import AWSLogsAsyncResponse
 
 
@@ -34,5 +34,5 @@ class TestAWSLogsAsyncResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

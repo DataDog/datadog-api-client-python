@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v2
 from datadog_api_client.v2.model.logs_archive_order_definition import LogsArchiveOrderDefinition
-globals()['LogsArchiveOrderDefinition'] = LogsArchiveOrderDefinition
+
+globals()["LogsArchiveOrderDefinition"] = LogsArchiveOrderDefinition
 from datadog_api_client.v2.model.logs_archive_order import LogsArchiveOrder
 
 
@@ -30,5 +31,5 @@ class TestLogsArchiveOrder(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

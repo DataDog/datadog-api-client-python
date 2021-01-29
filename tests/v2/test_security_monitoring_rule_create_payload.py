@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import security_monitoring_rule_case
 except ImportError:
-    security_monitoring_rule_case = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_case']
+    security_monitoring_rule_case = sys.modules["datadog_api_client.v2.model.security_monitoring_rule_case"]
 try:
     from datadog_api_client.v2.model import security_monitoring_rule_options
 except ImportError:
-    security_monitoring_rule_options = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_options']
+    security_monitoring_rule_options = sys.modules["datadog_api_client.v2.model.security_monitoring_rule_options"]
 try:
     from datadog_api_client.v2.model import security_monitoring_rule_query
 except ImportError:
-    security_monitoring_rule_query = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_query']
+    security_monitoring_rule_query = sys.modules["datadog_api_client.v2.model.security_monitoring_rule_query"]
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
 
 
@@ -44,5 +42,5 @@ class TestSecurityMonitoringRuleCreatePayload(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

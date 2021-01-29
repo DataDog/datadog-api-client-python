@@ -23,6 +23,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.host_map_widget_definition_requests import HostMapWidgetDefinitionRequests
     from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
@@ -30,12 +31,13 @@ def lazy_import():
     from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
     from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    globals()['HostMapWidgetDefinitionRequests'] = HostMapWidgetDefinitionRequests
-    globals()['HostMapWidgetDefinitionStyle'] = HostMapWidgetDefinitionStyle
-    globals()['HostMapWidgetDefinitionType'] = HostMapWidgetDefinitionType
-    globals()['WidgetCustomLink'] = WidgetCustomLink
-    globals()['WidgetNodeType'] = WidgetNodeType
-    globals()['WidgetTextAlign'] = WidgetTextAlign
+
+    globals()["HostMapWidgetDefinitionRequests"] = HostMapWidgetDefinitionRequests
+    globals()["HostMapWidgetDefinitionStyle"] = HostMapWidgetDefinitionStyle
+    globals()["HostMapWidgetDefinitionType"] = HostMapWidgetDefinitionType
+    globals()["WidgetCustomLink"] = WidgetCustomLink
+    globals()["WidgetNodeType"] = WidgetNodeType
+    globals()["WidgetTextAlign"] = WidgetTextAlign
 
 
 class HostMapWidgetDefinition(ModelNormal):
@@ -62,11 +64,9 @@ class HostMapWidgetDefinition(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -84,52 +84,53 @@ class HostMapWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            'requests': (HostMapWidgetDefinitionRequests,),  # noqa: E501
-            'type': (HostMapWidgetDefinitionType,),  # noqa: E501
-            'custom_links': ([WidgetCustomLink],),  # noqa: E501
-            'group': ([str],),  # noqa: E501
-            'no_group_hosts': (bool,),  # noqa: E501
-            'no_metric_hosts': (bool,),  # noqa: E501
-            'node_type': (WidgetNodeType,),  # noqa: E501
-            'notes': (str,),  # noqa: E501
-            'scope': ([str],),  # noqa: E501
-            'style': (HostMapWidgetDefinitionStyle,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'title_align': (WidgetTextAlign,),  # noqa: E501
-            'title_size': (str,),  # noqa: E501
+            "requests": (HostMapWidgetDefinitionRequests,),  # noqa: E501
+            "type": (HostMapWidgetDefinitionType,),  # noqa: E501
+            "custom_links": ([WidgetCustomLink],),  # noqa: E501
+            "group": ([str],),  # noqa: E501
+            "no_group_hosts": (bool,),  # noqa: E501
+            "no_metric_hosts": (bool,),  # noqa: E501
+            "node_type": (WidgetNodeType,),  # noqa: E501
+            "notes": (str,),  # noqa: E501
+            "scope": ([str],),  # noqa: E501
+            "style": (HostMapWidgetDefinitionStyle,),  # noqa: E501
+            "title": (str,),  # noqa: E501
+            "title_align": (WidgetTextAlign,),  # noqa: E501
+            "title_size": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'requests': 'requests',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'custom_links': 'custom_links',  # noqa: E501
-        'group': 'group',  # noqa: E501
-        'no_group_hosts': 'no_group_hosts',  # noqa: E501
-        'no_metric_hosts': 'no_metric_hosts',  # noqa: E501
-        'node_type': 'node_type',  # noqa: E501
-        'notes': 'notes',  # noqa: E501
-        'scope': 'scope',  # noqa: E501
-        'style': 'style',  # noqa: E501
-        'title': 'title',  # noqa: E501
-        'title_align': 'title_align',  # noqa: E501
-        'title_size': 'title_size',  # noqa: E501
+        "requests": "requests",  # noqa: E501
+        "type": "type",  # noqa: E501
+        "custom_links": "custom_links",  # noqa: E501
+        "group": "group",  # noqa: E501
+        "no_group_hosts": "no_group_hosts",  # noqa: E501
+        "no_metric_hosts": "no_metric_hosts",  # noqa: E501
+        "node_type": "node_type",  # noqa: E501
+        "notes": "notes",  # noqa: E501
+        "scope": "scope",  # noqa: E501
+        "style": "style",  # noqa: E501
+        "title": "title",  # noqa: E501
+        "title_align": "title_align",  # noqa: E501
+        "title_size": "title_size",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, requests, type, *args, **kwargs):  # noqa: E501
@@ -183,15 +184,16 @@ class HostMapWidgetDefinition(ModelNormal):
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -209,10 +211,12 @@ class HostMapWidgetDefinition(ModelNormal):
         self.requests = requests
         self.type = type
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

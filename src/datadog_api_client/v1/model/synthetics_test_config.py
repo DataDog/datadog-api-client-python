@@ -23,15 +23,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
     from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
     from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
     from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
-    globals()['SyntheticsAssertion'] = SyntheticsAssertion
-    globals()['SyntheticsBrowserVariable'] = SyntheticsBrowserVariable
-    globals()['SyntheticsConfigVariable'] = SyntheticsConfigVariable
-    globals()['SyntheticsTestRequest'] = SyntheticsTestRequest
+
+    globals()["SyntheticsAssertion"] = SyntheticsAssertion
+    globals()["SyntheticsBrowserVariable"] = SyntheticsBrowserVariable
+    globals()["SyntheticsConfigVariable"] = SyntheticsConfigVariable
+    globals()["SyntheticsTestRequest"] = SyntheticsTestRequest
 
 
 class SyntheticsTestConfig(ModelNormal):
@@ -58,11 +60,9 @@ class SyntheticsTestConfig(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -80,34 +80,35 @@ class SyntheticsTestConfig(ModelNormal):
         """
         lazy_import()
         return {
-            'assertions': ([SyntheticsAssertion],),  # noqa: E501
-            'request': (SyntheticsTestRequest,),  # noqa: E501
-            'config_variables': ([SyntheticsConfigVariable],),  # noqa: E501
-            'variables': ([SyntheticsBrowserVariable],),  # noqa: E501
+            "assertions": ([SyntheticsAssertion],),  # noqa: E501
+            "request": (SyntheticsTestRequest,),  # noqa: E501
+            "config_variables": ([SyntheticsConfigVariable],),  # noqa: E501
+            "variables": ([SyntheticsBrowserVariable],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'assertions': 'assertions',  # noqa: E501
-        'request': 'request',  # noqa: E501
-        'config_variables': 'configVariables',  # noqa: E501
-        'variables': 'variables',  # noqa: E501
+        "assertions": "assertions",  # noqa: E501
+        "request": "request",  # noqa: E501
+        "config_variables": "configVariables",  # noqa: E501
+        "variables": "variables",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, request, *args, **kwargs):  # noqa: E501
@@ -152,16 +153,17 @@ class SyntheticsTestConfig(ModelNormal):
             variables ([SyntheticsBrowserVariable]): Browser tests only - array of variables used for the test steps.. [optional]  # noqa: E501
         """
 
-        assertions = kwargs.get('assertions', [])
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        assertions = kwargs.get("assertions", [])
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -179,10 +181,12 @@ class SyntheticsTestConfig(ModelNormal):
         self.assertions = assertions
         self.request = request
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

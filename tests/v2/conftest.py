@@ -5,6 +5,6 @@ import pytest
 from pytest_bdd import given
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def package_name():
-    return 'datadog_api_client.v2'
+    return "datadog_api_client.v2"

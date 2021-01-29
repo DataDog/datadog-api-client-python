@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_ssl_certificate_issuer
 except ImportError:
-    synthetics_ssl_certificate_issuer = sys.modules[
-        'datadog_api_client.v1.model.synthetics_ssl_certificate_issuer']
+    synthetics_ssl_certificate_issuer = sys.modules["datadog_api_client.v1.model.synthetics_ssl_certificate_issuer"]
 try:
     from datadog_api_client.v1.model import synthetics_ssl_certificate_subject
 except ImportError:
-    synthetics_ssl_certificate_subject = sys.modules[
-        'datadog_api_client.v1.model.synthetics_ssl_certificate_subject']
+    synthetics_ssl_certificate_subject = sys.modules["datadog_api_client.v1.model.synthetics_ssl_certificate_subject"]
 from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
 
 
@@ -39,5 +38,5 @@ class TestSyntheticsSSLCertificate(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

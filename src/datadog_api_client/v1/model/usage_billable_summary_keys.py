@@ -23,9 +23,11 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
-    globals()['UsageBillableSummaryBody'] = UsageBillableSummaryBody
+
+    globals()["UsageBillableSummaryBody"] = UsageBillableSummaryBody
 
 
 class UsageBillableSummaryKeys(ModelNormal):
@@ -52,11 +54,9 @@ class UsageBillableSummaryKeys(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -74,62 +74,63 @@ class UsageBillableSummaryKeys(ModelNormal):
         """
         lazy_import()
         return {
-            'apm_host_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'apm_host_top99p': (UsageBillableSummaryBody,),  # noqa: E501
-            'apm_trace_search_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'fargate_container_average': (UsageBillableSummaryBody,),  # noqa: E501
-            'infra_container_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'infra_host_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'infra_host_top99p': (UsageBillableSummaryBody,),  # noqa: E501
-            'iot_top99p': (UsageBillableSummaryBody,),  # noqa: E501
-            'lambda_function_average': (UsageBillableSummaryBody,),  # noqa: E501
-            'logs_indexed_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'logs_ingested_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'npm_flow_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'npm_host_top99p': (UsageBillableSummaryBody,),  # noqa: E501
-            'rum_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'siem_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'synthetics_api_tests_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'synthetics_browser_checks_sum': (UsageBillableSummaryBody,),  # noqa: E501
-            'timeseries_average': (UsageBillableSummaryBody,),  # noqa: E501
+            "apm_host_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "apm_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
+            "apm_trace_search_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "fargate_container_average": (UsageBillableSummaryBody,),  # noqa: E501
+            "infra_container_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "infra_host_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "infra_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
+            "iot_top99p": (UsageBillableSummaryBody,),  # noqa: E501
+            "lambda_function_average": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_indexed_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_ingested_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "npm_flow_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "npm_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
+            "rum_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "siem_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "synthetics_api_tests_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "synthetics_browser_checks_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "timeseries_average": (UsageBillableSummaryBody,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'apm_host_sum': 'apm_host_sum',  # noqa: E501
-        'apm_host_top99p': 'apm_host_top99p',  # noqa: E501
-        'apm_trace_search_sum': 'apm_trace_search_sum',  # noqa: E501
-        'fargate_container_average': 'fargate_container_average',  # noqa: E501
-        'infra_container_sum': 'infra_container_sum',  # noqa: E501
-        'infra_host_sum': 'infra_host_sum',  # noqa: E501
-        'infra_host_top99p': 'infra_host_top99p',  # noqa: E501
-        'iot_top99p': 'iot_top99p',  # noqa: E501
-        'lambda_function_average': 'lambda_function_average',  # noqa: E501
-        'logs_indexed_sum': 'logs_indexed_sum',  # noqa: E501
-        'logs_ingested_sum': 'logs_ingested_sum',  # noqa: E501
-        'npm_flow_sum': 'npm_flow_sum',  # noqa: E501
-        'npm_host_top99p': 'npm_host_top99p',  # noqa: E501
-        'rum_sum': 'rum_sum',  # noqa: E501
-        'siem_sum': 'siem_sum',  # noqa: E501
-        'synthetics_api_tests_sum': 'synthetics_api_tests_sum',  # noqa: E501
-        'synthetics_browser_checks_sum': 'synthetics_browser_checks_sum',  # noqa: E501
-        'timeseries_average': 'timeseries_average',  # noqa: E501
+        "apm_host_sum": "apm_host_sum",  # noqa: E501
+        "apm_host_top99p": "apm_host_top99p",  # noqa: E501
+        "apm_trace_search_sum": "apm_trace_search_sum",  # noqa: E501
+        "fargate_container_average": "fargate_container_average",  # noqa: E501
+        "infra_container_sum": "infra_container_sum",  # noqa: E501
+        "infra_host_sum": "infra_host_sum",  # noqa: E501
+        "infra_host_top99p": "infra_host_top99p",  # noqa: E501
+        "iot_top99p": "iot_top99p",  # noqa: E501
+        "lambda_function_average": "lambda_function_average",  # noqa: E501
+        "logs_indexed_sum": "logs_indexed_sum",  # noqa: E501
+        "logs_ingested_sum": "logs_ingested_sum",  # noqa: E501
+        "npm_flow_sum": "npm_flow_sum",  # noqa: E501
+        "npm_host_top99p": "npm_host_top99p",  # noqa: E501
+        "rum_sum": "rum_sum",  # noqa: E501
+        "siem_sum": "siem_sum",  # noqa: E501
+        "synthetics_api_tests_sum": "synthetics_api_tests_sum",  # noqa: E501
+        "synthetics_browser_checks_sum": "synthetics_browser_checks_sum",  # noqa: E501
+        "timeseries_average": "timeseries_average",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -186,15 +187,16 @@ class UsageBillableSummaryKeys(ModelNormal):
             timeseries_average (UsageBillableSummaryBody): [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -210,10 +212,12 @@ class UsageBillableSummaryKeys(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

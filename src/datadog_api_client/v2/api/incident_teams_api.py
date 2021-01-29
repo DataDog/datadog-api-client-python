@@ -14,7 +14,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
@@ -36,11 +36,7 @@ class IncidentTeamsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_incident_team(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_incident_team(self, body, **kwargs):
             """Create a new incident team  # noqa: E501
 
             Creates a new incident team.  # noqa: E501
@@ -79,89 +75,54 @@ class IncidentTeamsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_incident_team = _Endpoint(
             settings={
-                'response_type': (IncidentTeamResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/teams',
-                'operation_id': 'create_incident_team',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (IncidentTeamResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/teams",
+                "operation_id": "create_incident_team",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (IncidentTeamCreateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (IncidentTeamCreateRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_incident_team
+            callable=__create_incident_team,
         )
 
-        def __delete_incident_team(
-            self,
-            team_id,
-            **kwargs
-        ):
+        def __delete_incident_team(self, team_id, **kwargs):
             """Delete an existing incident team  # noqa: E501
 
             Deletes an existing incident team.  # noqa: E501
@@ -200,88 +161,59 @@ class IncidentTeamsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['team_id'] = \
-                team_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["team_id"] = team_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_incident_team = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/teams/{team_id}',
-                'operation_id': 'delete_incident_team',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/teams/{team_id}",
+                "operation_id": "delete_incident_team",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'team_id',
+                "all": [
+                    "team_id",
                 ],
-                'required': [
-                    'team_id',
+                "required": [
+                    "team_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "team_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "team_id": "team_id",
                 },
-                'openapi_types': {
-                    'team_id':
-                        (str,),
+                "location_map": {
+                    "team_id": "path",
                 },
-                'attribute_map': {
-                    'team_id': 'team_id',
-                },
-                'location_map': {
-                    'team_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_incident_team
+            callable=__delete_incident_team,
         )
 
-        def __get_incident_team(
-            self,
-            team_id,
-            **kwargs
-        ):
+        def __get_incident_team(self, team_id, **kwargs):
             """Get details of an incident team  # noqa: E501
 
             Get details of an incident team. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.  # noqa: E501
@@ -321,92 +253,63 @@ class IncidentTeamsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['team_id'] = \
-                team_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["team_id"] = team_id
             return self.call_with_http_info(**kwargs)
 
         self.get_incident_team = _Endpoint(
             settings={
-                'response_type': (IncidentTeamResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/teams/{team_id}',
-                'operation_id': 'get_incident_team',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (IncidentTeamResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/teams/{team_id}",
+                "operation_id": "get_incident_team",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'team_id',
-                    'include',
+                "all": [
+                    "team_id",
+                    "include",
                 ],
-                'required': [
-                    'team_id',
+                "required": [
+                    "team_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "team_id": (str,),
+                    "include": (IncidentRelatedObject,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "team_id": "team_id",
+                    "include": "include",
                 },
-                'openapi_types': {
-                    'team_id':
-                        (str,),
-                    'include':
-                        (IncidentRelatedObject,),
+                "location_map": {
+                    "team_id": "path",
+                    "include": "query",
                 },
-                'attribute_map': {
-                    'team_id': 'team_id',
-                    'include': 'include',
-                },
-                'location_map': {
-                    'team_id': 'path',
-                    'include': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_incident_team
+            callable=__get_incident_team,
         )
 
-        def __list_incident_teams(
-            self,
-            **kwargs
-        ):
+        def __list_incident_teams(self, **kwargs):
             """Get a list of all incident teams  # noqa: E501
 
             Get all incident teams for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.  # noqa: E501
@@ -447,100 +350,68 @@ class IncidentTeamsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_incident_teams = _Endpoint(
             settings={
-                'response_type': (IncidentTeamsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/teams',
-                'operation_id': 'list_incident_teams',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (IncidentTeamsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/teams",
+                "operation_id": "list_incident_teams",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'include',
-                    'page_size',
-                    'page_offset',
-                    'filter',
+                "all": [
+                    "include",
+                    "page_size",
+                    "page_offset",
+                    "filter",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "include": (IncidentRelatedObject,),
+                    "page_size": (int,),
+                    "page_offset": (int,),
+                    "filter": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "include": "include",
+                    "page_size": "page[size]",
+                    "page_offset": "page[offset]",
+                    "filter": "filter",
                 },
-                'openapi_types': {
-                    'include':
-                        (IncidentRelatedObject,),
-                    'page_size':
-                        (int,),
-                    'page_offset':
-                        (int,),
-                    'filter':
-                        (str,),
+                "location_map": {
+                    "include": "query",
+                    "page_size": "query",
+                    "page_offset": "query",
+                    "filter": "query",
                 },
-                'attribute_map': {
-                    'include': 'include',
-                    'page_size': 'page[size]',
-                    'page_offset': 'page[offset]',
-                    'filter': 'filter',
-                },
-                'location_map': {
-                    'include': 'query',
-                    'page_size': 'query',
-                    'page_offset': 'query',
-                    'filter': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_incident_teams
+            callable=__list_incident_teams,
         )
 
-        def __update_incident_team(
-            self,
-            team_id,
-            body,
-            **kwargs
-        ):
+        def __update_incident_team(self, team_id, body, **kwargs):
             """Update an existing incident team  # noqa: E501
 
             Updates an existing incident team. Only provide the attributes which should be updated as this request is a partial update.  # noqa: E501
@@ -580,88 +451,56 @@ class IncidentTeamsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['team_id'] = \
-                team_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["team_id"] = team_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_incident_team = _Endpoint(
             settings={
-                'response_type': (IncidentTeamResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/teams/{team_id}',
-                'operation_id': 'update_incident_team',
-                'http_method': 'PATCH',
-                'servers': None,
+                "response_type": (IncidentTeamResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/teams/{team_id}",
+                "operation_id": "update_incident_team",
+                "http_method": "PATCH",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'team_id',
-                    'body',
+                "all": [
+                    "team_id",
+                    "body",
                 ],
-                'required': [
-                    'team_id',
-                    'body',
+                "required": [
+                    "team_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "team_id": (str,),
+                    "body": (IncidentTeamUpdateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "team_id": "team_id",
                 },
-                'openapi_types': {
-                    'team_id':
-                        (str,),
-                    'body':
-                        (IncidentTeamUpdateRequest,),
+                "location_map": {
+                    "team_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'team_id': 'team_id',
-                },
-                'location_map': {
-                    'team_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_incident_team
+            callable=__update_incident_team,
         )

@@ -48,11 +48,9 @@ class UsageBillableSummaryBody(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -69,40 +67,41 @@ class UsageBillableSummaryBody(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'account_billable_usage': (int,),  # noqa: E501
-            'elapsed_usage_hours': (int,),  # noqa: E501
-            'first_billable_usage_hour': (datetime,),  # noqa: E501
-            'last_billable_usage_hour': (datetime,),  # noqa: E501
-            'org_billable_usage': (int,),  # noqa: E501
-            'percentage_in_account': (float,),  # noqa: E501
-            'usage_unit': (str,),  # noqa: E501
+            "account_billable_usage": (int,),  # noqa: E501
+            "elapsed_usage_hours": (int,),  # noqa: E501
+            "first_billable_usage_hour": (datetime,),  # noqa: E501
+            "last_billable_usage_hour": (datetime,),  # noqa: E501
+            "org_billable_usage": (int,),  # noqa: E501
+            "percentage_in_account": (float,),  # noqa: E501
+            "usage_unit": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'account_billable_usage': 'account_billable_usage',  # noqa: E501
-        'elapsed_usage_hours': 'elapsed_usage_hours',  # noqa: E501
-        'first_billable_usage_hour': 'first_billable_usage_hour',  # noqa: E501
-        'last_billable_usage_hour': 'last_billable_usage_hour',  # noqa: E501
-        'org_billable_usage': 'org_billable_usage',  # noqa: E501
-        'percentage_in_account': 'percentage_in_account',  # noqa: E501
-        'usage_unit': 'usage_unit',  # noqa: E501
+        "account_billable_usage": "account_billable_usage",  # noqa: E501
+        "elapsed_usage_hours": "elapsed_usage_hours",  # noqa: E501
+        "first_billable_usage_hour": "first_billable_usage_hour",  # noqa: E501
+        "last_billable_usage_hour": "last_billable_usage_hour",  # noqa: E501
+        "org_billable_usage": "org_billable_usage",  # noqa: E501
+        "percentage_in_account": "percentage_in_account",  # noqa: E501
+        "usage_unit": "usage_unit",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -148,15 +147,16 @@ class UsageBillableSummaryBody(ModelNormal):
             usage_unit (str): Units pertaining to the usage.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -172,10 +172,12 @@ class UsageBillableSummaryBody(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

@@ -23,17 +23,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.log_stream_widget_definition_type import LogStreamWidgetDefinitionType
     from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
     from datadog_api_client.v1.model.widget_message_display import WidgetMessageDisplay
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.widget_time import WidgetTime
-    globals()['LogStreamWidgetDefinitionType'] = LogStreamWidgetDefinitionType
-    globals()['WidgetFieldSort'] = WidgetFieldSort
-    globals()['WidgetMessageDisplay'] = WidgetMessageDisplay
-    globals()['WidgetTextAlign'] = WidgetTextAlign
-    globals()['WidgetTime'] = WidgetTime
+
+    globals()["LogStreamWidgetDefinitionType"] = LogStreamWidgetDefinitionType
+    globals()["WidgetFieldSort"] = WidgetFieldSort
+    globals()["WidgetMessageDisplay"] = WidgetMessageDisplay
+    globals()["WidgetTextAlign"] = WidgetTextAlign
+    globals()["WidgetTime"] = WidgetTime
 
 
 class LogStreamWidgetDefinition(ModelNormal):
@@ -60,11 +62,9 @@ class LogStreamWidgetDefinition(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -82,52 +82,53 @@ class LogStreamWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            'type': (LogStreamWidgetDefinitionType,),  # noqa: E501
-            'columns': ([str],),  # noqa: E501
-            'indexes': ([str],),  # noqa: E501
-            'logset': (str,),  # noqa: E501
-            'message_display': (WidgetMessageDisplay,),  # noqa: E501
-            'query': (str,),  # noqa: E501
-            'show_date_column': (bool,),  # noqa: E501
-            'show_message_column': (bool,),  # noqa: E501
-            'sort': (WidgetFieldSort,),  # noqa: E501
-            'time': (WidgetTime,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'title_align': (WidgetTextAlign,),  # noqa: E501
-            'title_size': (str,),  # noqa: E501
+            "type": (LogStreamWidgetDefinitionType,),  # noqa: E501
+            "columns": ([str],),  # noqa: E501
+            "indexes": ([str],),  # noqa: E501
+            "logset": (str,),  # noqa: E501
+            "message_display": (WidgetMessageDisplay,),  # noqa: E501
+            "query": (str,),  # noqa: E501
+            "show_date_column": (bool,),  # noqa: E501
+            "show_message_column": (bool,),  # noqa: E501
+            "sort": (WidgetFieldSort,),  # noqa: E501
+            "time": (WidgetTime,),  # noqa: E501
+            "title": (str,),  # noqa: E501
+            "title_align": (WidgetTextAlign,),  # noqa: E501
+            "title_size": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'type': 'type',  # noqa: E501
-        'columns': 'columns',  # noqa: E501
-        'indexes': 'indexes',  # noqa: E501
-        'logset': 'logset',  # noqa: E501
-        'message_display': 'message_display',  # noqa: E501
-        'query': 'query',  # noqa: E501
-        'show_date_column': 'show_date_column',  # noqa: E501
-        'show_message_column': 'show_message_column',  # noqa: E501
-        'sort': 'sort',  # noqa: E501
-        'time': 'time',  # noqa: E501
-        'title': 'title',  # noqa: E501
-        'title_align': 'title_align',  # noqa: E501
-        'title_size': 'title_size',  # noqa: E501
+        "type": "type",  # noqa: E501
+        "columns": "columns",  # noqa: E501
+        "indexes": "indexes",  # noqa: E501
+        "logset": "logset",  # noqa: E501
+        "message_display": "message_display",  # noqa: E501
+        "query": "query",  # noqa: E501
+        "show_date_column": "show_date_column",  # noqa: E501
+        "show_message_column": "show_message_column",  # noqa: E501
+        "sort": "sort",  # noqa: E501
+        "time": "time",  # noqa: E501
+        "title": "title",  # noqa: E501
+        "title_align": "title_align",  # noqa: E501
+        "title_size": "title_size",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, type, *args, **kwargs):  # noqa: E501
@@ -181,15 +182,16 @@ class LogStreamWidgetDefinition(ModelNormal):
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -206,10 +208,12 @@ class LogStreamWidgetDefinition(ModelNormal):
 
         self.type = type
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

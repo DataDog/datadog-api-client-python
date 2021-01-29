@@ -48,11 +48,9 @@ class UsageAttributionValues(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -69,62 +67,63 @@ class UsageAttributionValues(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'api_percentage': (float,),  # noqa: E501
-            'api_usage': (float,),  # noqa: E501
-            'apm_host_percentage': (float,),  # noqa: E501
-            'apm_host_usage': (float,),  # noqa: E501
-            'browser_percentage': (float,),  # noqa: E501
-            'browser_usage': (float,),  # noqa: E501
-            'container_percentage': (float,),  # noqa: E501
-            'container_usage': (float,),  # noqa: E501
-            'custom_timeseries_percentage': (float,),  # noqa: E501
-            'custom_timeseries_usage': (float,),  # noqa: E501
-            'infra_host_percentage': (float,),  # noqa: E501
-            'infra_host_usage': (float,),  # noqa: E501
-            'lambda_percentage': (float,),  # noqa: E501
-            'lambda_usage': (float,),  # noqa: E501
-            'npm_host_percentage': (float,),  # noqa: E501
-            'npm_host_usage': (float,),  # noqa: E501
-            'snmp_percentage': (float,),  # noqa: E501
-            'snmp_usage': (float,),  # noqa: E501
+            "api_percentage": (float,),  # noqa: E501
+            "api_usage": (float,),  # noqa: E501
+            "apm_host_percentage": (float,),  # noqa: E501
+            "apm_host_usage": (float,),  # noqa: E501
+            "browser_percentage": (float,),  # noqa: E501
+            "browser_usage": (float,),  # noqa: E501
+            "container_percentage": (float,),  # noqa: E501
+            "container_usage": (float,),  # noqa: E501
+            "custom_timeseries_percentage": (float,),  # noqa: E501
+            "custom_timeseries_usage": (float,),  # noqa: E501
+            "infra_host_percentage": (float,),  # noqa: E501
+            "infra_host_usage": (float,),  # noqa: E501
+            "lambda_percentage": (float,),  # noqa: E501
+            "lambda_usage": (float,),  # noqa: E501
+            "npm_host_percentage": (float,),  # noqa: E501
+            "npm_host_usage": (float,),  # noqa: E501
+            "snmp_percentage": (float,),  # noqa: E501
+            "snmp_usage": (float,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'api_percentage': 'api_percentage',  # noqa: E501
-        'api_usage': 'api_usage',  # noqa: E501
-        'apm_host_percentage': 'apm_host_percentage',  # noqa: E501
-        'apm_host_usage': 'apm_host_usage',  # noqa: E501
-        'browser_percentage': 'browser_percentage',  # noqa: E501
-        'browser_usage': 'browser_usage',  # noqa: E501
-        'container_percentage': 'container_percentage',  # noqa: E501
-        'container_usage': 'container_usage',  # noqa: E501
-        'custom_timeseries_percentage': 'custom_timeseries_percentage',  # noqa: E501
-        'custom_timeseries_usage': 'custom_timeseries_usage',  # noqa: E501
-        'infra_host_percentage': 'infra_host_percentage',  # noqa: E501
-        'infra_host_usage': 'infra_host_usage',  # noqa: E501
-        'lambda_percentage': 'lambda_percentage',  # noqa: E501
-        'lambda_usage': 'lambda_usage',  # noqa: E501
-        'npm_host_percentage': 'npm_host_percentage',  # noqa: E501
-        'npm_host_usage': 'npm_host_usage',  # noqa: E501
-        'snmp_percentage': 'snmp_percentage',  # noqa: E501
-        'snmp_usage': 'snmp_usage',  # noqa: E501
+        "api_percentage": "api_percentage",  # noqa: E501
+        "api_usage": "api_usage",  # noqa: E501
+        "apm_host_percentage": "apm_host_percentage",  # noqa: E501
+        "apm_host_usage": "apm_host_usage",  # noqa: E501
+        "browser_percentage": "browser_percentage",  # noqa: E501
+        "browser_usage": "browser_usage",  # noqa: E501
+        "container_percentage": "container_percentage",  # noqa: E501
+        "container_usage": "container_usage",  # noqa: E501
+        "custom_timeseries_percentage": "custom_timeseries_percentage",  # noqa: E501
+        "custom_timeseries_usage": "custom_timeseries_usage",  # noqa: E501
+        "infra_host_percentage": "infra_host_percentage",  # noqa: E501
+        "infra_host_usage": "infra_host_usage",  # noqa: E501
+        "lambda_percentage": "lambda_percentage",  # noqa: E501
+        "lambda_usage": "lambda_usage",  # noqa: E501
+        "npm_host_percentage": "npm_host_percentage",  # noqa: E501
+        "npm_host_usage": "npm_host_usage",  # noqa: E501
+        "snmp_percentage": "snmp_percentage",  # noqa: E501
+        "snmp_usage": "snmp_usage",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -181,15 +180,16 @@ class UsageAttributionValues(ModelNormal):
             snmp_usage (float): The network device usage by tag(s).. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -205,10 +205,12 @@ class UsageAttributionValues(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

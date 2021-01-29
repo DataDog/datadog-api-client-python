@@ -8,7 +8,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
-globals()['SyntheticsConfigVariableType'] = SyntheticsConfigVariableType
+
+globals()["SyntheticsConfigVariableType"] = SyntheticsConfigVariableType
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 
 
@@ -28,5 +29,5 @@ class TestSyntheticsConfigVariable(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -8,7 +8,8 @@ import unittest
 
 import datadog_api_client.v2
 from datadog_api_client.v2.model.logs_metric_create_data import LogsMetricCreateData
-globals()['LogsMetricCreateData'] = LogsMetricCreateData
+
+globals()["LogsMetricCreateData"] = LogsMetricCreateData
 from datadog_api_client.v2.model.logs_metric_create_request import LogsMetricCreateRequest
 
 
@@ -28,5 +29,5 @@ class TestLogsMetricCreateRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

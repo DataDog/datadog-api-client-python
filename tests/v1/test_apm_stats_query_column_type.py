@@ -11,8 +11,9 @@ import unittest
 import datadog_api_client.v1
 from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
 from datadog_api_client.v1.model.widget_sort import WidgetSort
-globals()['TableWidgetCellDisplayMode'] = TableWidgetCellDisplayMode
-globals()['WidgetSort'] = WidgetSort
+
+globals()["TableWidgetCellDisplayMode"] = TableWidgetCellDisplayMode
+globals()["WidgetSort"] = WidgetSort
 from datadog_api_client.v1.model.apm_stats_query_column_type import ApmStatsQueryColumnType
 
 
@@ -32,5 +33,5 @@ class TestApmStatsQueryColumnType(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

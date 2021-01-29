@@ -8,8 +8,11 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
-globals()['FormulaAndFunctionEventAggregation'] = FormulaAndFunctionEventAggregation
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute
+
+globals()["FormulaAndFunctionEventAggregation"] = FormulaAndFunctionEventAggregation
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute,
+)
 
 
 class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionCompute(unittest.TestCase):
@@ -28,5 +31,5 @@ class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionCompute(unittest.TestC
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

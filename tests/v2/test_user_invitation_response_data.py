@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import user_invitation_data_attributes
 except ImportError:
-    user_invitation_data_attributes = sys.modules[
-        'datadog_api_client.v2.model.user_invitation_data_attributes']
+    user_invitation_data_attributes = sys.modules["datadog_api_client.v2.model.user_invitation_data_attributes"]
 try:
     from datadog_api_client.v2.model import user_invitations_type
 except ImportError:
-    user_invitations_type = sys.modules[
-        'datadog_api_client.v2.model.user_invitations_type']
+    user_invitations_type = sys.modules["datadog_api_client.v2.model.user_invitations_type"]
 from datadog_api_client.v2.model.user_invitation_response_data import UserInvitationResponseData
 
 
@@ -39,5 +38,5 @@ class TestUserInvitationResponseData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

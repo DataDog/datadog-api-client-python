@@ -10,36 +10,31 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_step
 except ImportError:
-    synthetics_step = sys.modules[
-        'datadog_api_client.v1.model.synthetics_step']
+    synthetics_step = sys.modules["datadog_api_client.v1.model.synthetics_step"]
 try:
     from datadog_api_client.v1.model import synthetics_test_config
 except ImportError:
-    synthetics_test_config = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_config']
+    synthetics_test_config = sys.modules["datadog_api_client.v1.model.synthetics_test_config"]
 try:
     from datadog_api_client.v1.model import synthetics_test_details_sub_type
 except ImportError:
-    synthetics_test_details_sub_type = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_details_sub_type']
+    synthetics_test_details_sub_type = sys.modules["datadog_api_client.v1.model.synthetics_test_details_sub_type"]
 try:
     from datadog_api_client.v1.model import synthetics_test_details_type
 except ImportError:
-    synthetics_test_details_type = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_details_type']
+    synthetics_test_details_type = sys.modules["datadog_api_client.v1.model.synthetics_test_details_type"]
 try:
     from datadog_api_client.v1.model import synthetics_test_options
 except ImportError:
-    synthetics_test_options = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_options']
+    synthetics_test_options = sys.modules["datadog_api_client.v1.model.synthetics_test_options"]
 try:
     from datadog_api_client.v1.model import synthetics_test_pause_status
 except ImportError:
-    synthetics_test_pause_status = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_pause_status']
+    synthetics_test_pause_status = sys.modules["datadog_api_client.v1.model.synthetics_test_pause_status"]
 from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 
 
@@ -59,5 +54,5 @@ class TestSyntheticsTestDetails(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

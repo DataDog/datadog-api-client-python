@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import usage_summary_date_org
 except ImportError:
-    usage_summary_date_org = sys.modules[
-        'datadog_api_client.v1.model.usage_summary_date_org']
+    usage_summary_date_org = sys.modules["datadog_api_client.v1.model.usage_summary_date_org"]
 from datadog_api_client.v1.model.usage_summary_date import UsageSummaryDate
 
 
@@ -34,5 +34,5 @@ class TestUsageSummaryDate(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import logs_aggregation_function
 except ImportError:
-    logs_aggregation_function = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregation_function']
+    logs_aggregation_function = sys.modules["datadog_api_client.v2.model.logs_aggregation_function"]
 try:
     from datadog_api_client.v2.model import logs_compute_type
 except ImportError:
-    logs_compute_type = sys.modules[
-        'datadog_api_client.v2.model.logs_compute_type']
+    logs_compute_type = sys.modules["datadog_api_client.v2.model.logs_compute_type"]
 from datadog_api_client.v2.model.logs_compute import LogsCompute
 
 
@@ -39,5 +38,5 @@ class TestLogsCompute(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

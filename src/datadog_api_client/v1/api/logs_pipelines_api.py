@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
@@ -35,11 +35,7 @@ class LogsPipelinesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_logs_pipeline(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_logs_pipeline(self, body, **kwargs):
             """Create a pipeline  # noqa: E501
 
             Create a pipeline in your organization.  # noqa: E501
@@ -78,89 +74,54 @@ class LogsPipelinesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_logs_pipeline = _Endpoint(
             settings={
-                'response_type': (LogsPipeline,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/logs/config/pipelines',
-                'operation_id': 'create_logs_pipeline',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (LogsPipeline,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/logs/config/pipelines",
+                "operation_id": "create_logs_pipeline",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (LogsPipeline,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (LogsPipeline,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_logs_pipeline
+            callable=__create_logs_pipeline,
         )
 
-        def __delete_logs_pipeline(
-            self,
-            pipeline_id,
-            **kwargs
-        ):
+        def __delete_logs_pipeline(self, pipeline_id, **kwargs):
             """Delete a pipeline  # noqa: E501
 
             Delete a given pipeline from your organization. This endpoint takes no JSON arguments.  # noqa: E501
@@ -199,88 +160,59 @@ class LogsPipelinesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['pipeline_id'] = \
-                pipeline_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["pipeline_id"] = pipeline_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_logs_pipeline = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/logs/config/pipelines/{pipeline_id}',
-                'operation_id': 'delete_logs_pipeline',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/logs/config/pipelines/{pipeline_id}",
+                "operation_id": "delete_logs_pipeline",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'pipeline_id',
+                "all": [
+                    "pipeline_id",
                 ],
-                'required': [
-                    'pipeline_id',
+                "required": [
+                    "pipeline_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "pipeline_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "pipeline_id": "pipeline_id",
                 },
-                'openapi_types': {
-                    'pipeline_id':
-                        (str,),
+                "location_map": {
+                    "pipeline_id": "path",
                 },
-                'attribute_map': {
-                    'pipeline_id': 'pipeline_id',
-                },
-                'location_map': {
-                    'pipeline_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_logs_pipeline
+            callable=__delete_logs_pipeline,
         )
 
-        def __get_logs_pipeline(
-            self,
-            pipeline_id,
-            **kwargs
-        ):
+        def __get_logs_pipeline(self, pipeline_id, **kwargs):
             """Get a pipeline  # noqa: E501
 
             Get a specific pipeline from your organization. This endpoint takes no JSON arguments.  # noqa: E501
@@ -319,87 +251,59 @@ class LogsPipelinesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['pipeline_id'] = \
-                pipeline_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["pipeline_id"] = pipeline_id
             return self.call_with_http_info(**kwargs)
 
         self.get_logs_pipeline = _Endpoint(
             settings={
-                'response_type': (LogsPipeline,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/logs/config/pipelines/{pipeline_id}',
-                'operation_id': 'get_logs_pipeline',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (LogsPipeline,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/logs/config/pipelines/{pipeline_id}",
+                "operation_id": "get_logs_pipeline",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'pipeline_id',
+                "all": [
+                    "pipeline_id",
                 ],
-                'required': [
-                    'pipeline_id',
+                "required": [
+                    "pipeline_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "pipeline_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "pipeline_id": "pipeline_id",
                 },
-                'openapi_types': {
-                    'pipeline_id':
-                        (str,),
+                "location_map": {
+                    "pipeline_id": "path",
                 },
-                'attribute_map': {
-                    'pipeline_id': 'pipeline_id',
-                },
-                'location_map': {
-                    'pipeline_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_logs_pipeline
+            callable=__get_logs_pipeline,
         )
 
-        def __get_logs_pipeline_order(
-            self,
-            **kwargs
-        ):
+        def __get_logs_pipeline_order(self, **kwargs):
             """Get pipeline order  # noqa: E501
 
             Get the current order of your pipelines. This endpoint takes no JSON arguments.  # noqa: E501
@@ -436,78 +340,42 @@ class LogsPipelinesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.get_logs_pipeline_order = _Endpoint(
             settings={
-                'response_type': (LogsPipelinesOrder,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/logs/config/pipeline-order',
-                'operation_id': 'get_logs_pipeline_order',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (LogsPipelinesOrder,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/logs/config/pipeline-order",
+                "operation_id": "get_logs_pipeline_order",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_logs_pipeline_order
+            callable=__get_logs_pipeline_order,
         )
 
-        def __list_logs_pipelines(
-            self,
-            **kwargs
-        ):
+        def __list_logs_pipelines(self, **kwargs):
             """Get all pipelines  # noqa: E501
 
             Get all pipelines from your organization. This endpoint takes no JSON arguments.  # noqa: E501
@@ -544,80 +412,42 @@ class LogsPipelinesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_logs_pipelines = _Endpoint(
             settings={
-                'response_type': (LogsPipelineList,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/logs/config/pipelines',
-                'operation_id': 'list_logs_pipelines',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (LogsPipelineList,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/logs/config/pipelines",
+                "operation_id": "list_logs_pipelines",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_logs_pipelines
+            callable=__list_logs_pipelines,
         )
 
-        def __update_logs_pipeline(
-            self,
-            pipeline_id,
-            body,
-            **kwargs
-        ):
+        def __update_logs_pipeline(self, pipeline_id, body, **kwargs):
             """Update a pipeline  # noqa: E501
 
             Update a given pipeline configuration to change it’s processors or their order.  **Note**: Using this method updates your pipeline configuration by **replacing** your current configuration with the new one sent to your Datadog organization.  # noqa: E501
@@ -657,97 +487,61 @@ class LogsPipelinesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['pipeline_id'] = \
-                pipeline_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["pipeline_id"] = pipeline_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_logs_pipeline = _Endpoint(
             settings={
-                'response_type': (LogsPipeline,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/logs/config/pipelines/{pipeline_id}',
-                'operation_id': 'update_logs_pipeline',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (LogsPipeline,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/logs/config/pipelines/{pipeline_id}",
+                "operation_id": "update_logs_pipeline",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'pipeline_id',
-                    'body',
+                "all": [
+                    "pipeline_id",
+                    "body",
                 ],
-                'required': [
-                    'pipeline_id',
-                    'body',
+                "required": [
+                    "pipeline_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "pipeline_id": (str,),
+                    "body": (LogsPipeline,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "pipeline_id": "pipeline_id",
                 },
-                'openapi_types': {
-                    'pipeline_id':
-                        (str,),
-                    'body':
-                        (LogsPipeline,),
+                "location_map": {
+                    "pipeline_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'pipeline_id': 'pipeline_id',
-                },
-                'location_map': {
-                    'pipeline_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_logs_pipeline
+            callable=__update_logs_pipeline,
         )
 
-        def __update_logs_pipeline_order(
-            self,
-            body,
-            **kwargs
-        ):
+        def __update_logs_pipeline_order(self, body, **kwargs):
             """Update pipeline order  # noqa: E501
 
             Update the order of your pipelines. Since logs are processed sequentially, reordering a pipeline may change the structure and content of the data processed by other pipelines and their processors.  **Note**: Using the `PUT` method updates your pipeline order by replacing your current order with the new one sent to your Datadog organization.  # noqa: E501
@@ -786,80 +580,49 @@ class LogsPipelinesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_logs_pipeline_order = _Endpoint(
             settings={
-                'response_type': (LogsPipelinesOrder,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/logs/config/pipeline-order',
-                'operation_id': 'update_logs_pipeline_order',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (LogsPipelinesOrder,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/logs/config/pipeline-order",
+                "operation_id": "update_logs_pipeline_order",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (LogsPipelinesOrder,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (LogsPipelinesOrder,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_logs_pipeline_order
+            callable=__update_logs_pipeline_order,
         )

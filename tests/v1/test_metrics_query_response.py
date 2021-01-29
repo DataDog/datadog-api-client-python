@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import metrics_query_response_series
 except ImportError:
-    metrics_query_response_series = sys.modules[
-        'datadog_api_client.v1.model.metrics_query_response_series']
+    metrics_query_response_series = sys.modules["datadog_api_client.v1.model.metrics_query_response_series"]
 from datadog_api_client.v1.model.metrics_query_response import MetricsQueryResponse
 
 
@@ -34,5 +34,5 @@ class TestMetricsQueryResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

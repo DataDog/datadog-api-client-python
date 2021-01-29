@@ -10,12 +10,14 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_device_id
 except ImportError:
-    synthetics_device_id = sys.modules[
-        'datadog_api_client.v1.model.synthetics_device_id']
-from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response_results import SyntheticsTriggerCITestsResponseResults
+    synthetics_device_id = sys.modules["datadog_api_client.v1.model.synthetics_device_id"]
+from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response_results import (
+    SyntheticsTriggerCITestsResponseResults,
+)
 
 
 class TestSyntheticsTriggerCITestsResponseResults(unittest.TestCase):
@@ -34,5 +36,5 @@ class TestSyntheticsTriggerCITestsResponseResults(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

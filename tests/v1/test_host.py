@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import host_meta
 except ImportError:
-    host_meta = sys.modules[
-        'datadog_api_client.v1.model.host_meta']
+    host_meta = sys.modules["datadog_api_client.v1.model.host_meta"]
 try:
     from datadog_api_client.v1.model import host_metrics
 except ImportError:
-    host_metrics = sys.modules[
-        'datadog_api_client.v1.model.host_metrics']
+    host_metrics = sys.modules["datadog_api_client.v1.model.host_metrics"]
 from datadog_api_client.v1.model.host import Host
 
 
@@ -39,5 +38,5 @@ class TestHost(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

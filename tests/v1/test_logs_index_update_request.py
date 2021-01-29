@@ -11,8 +11,9 @@ import unittest
 import datadog_api_client.v1
 from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
 from datadog_api_client.v1.model.logs_filter import LogsFilter
-globals()['LogsExclusion'] = LogsExclusion
-globals()['LogsFilter'] = LogsFilter
+
+globals()["LogsExclusion"] = LogsExclusion
+globals()["LogsFilter"] = LogsFilter
 from datadog_api_client.v1.model.logs_index_update_request import LogsIndexUpdateRequest
 
 
@@ -32,5 +33,5 @@ class TestLogsIndexUpdateRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

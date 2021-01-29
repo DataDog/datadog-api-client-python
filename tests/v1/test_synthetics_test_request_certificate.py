@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
-globals()['SyntheticsTestRequestCertificateItem'] = SyntheticsTestRequestCertificateItem
+
+globals()["SyntheticsTestRequestCertificateItem"] = SyntheticsTestRequestCertificateItem
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 
 
@@ -30,5 +31,5 @@ class TestSyntheticsTestRequestCertificate(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

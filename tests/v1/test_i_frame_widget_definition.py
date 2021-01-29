@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import i_frame_widget_definition_type
 except ImportError:
-    i_frame_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.i_frame_widget_definition_type']
+    i_frame_widget_definition_type = sys.modules["datadog_api_client.v1.model.i_frame_widget_definition_type"]
 from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
 
 
@@ -34,5 +34,5 @@ class TestIFrameWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

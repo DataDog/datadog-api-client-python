@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import slo_history_metrics_series_metadata
 except ImportError:
-    slo_history_metrics_series_metadata = sys.modules[
-        'datadog_api_client.v1.model.slo_history_metrics_series_metadata']
+    slo_history_metrics_series_metadata = sys.modules["datadog_api_client.v1.model.slo_history_metrics_series_metadata"]
 from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
 
 
@@ -34,5 +34,5 @@ class TestSLOHistoryMetricsSeries(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

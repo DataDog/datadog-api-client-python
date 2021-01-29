@@ -10,26 +10,23 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import logs_aggregate_sort
 except ImportError:
-    logs_aggregate_sort = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregate_sort']
+    logs_aggregate_sort = sys.modules["datadog_api_client.v2.model.logs_aggregate_sort"]
 try:
     from datadog_api_client.v2.model import logs_group_by_histogram
 except ImportError:
-    logs_group_by_histogram = sys.modules[
-        'datadog_api_client.v2.model.logs_group_by_histogram']
+    logs_group_by_histogram = sys.modules["datadog_api_client.v2.model.logs_group_by_histogram"]
 try:
     from datadog_api_client.v2.model import logs_group_by_missing
 except ImportError:
-    logs_group_by_missing = sys.modules[
-        'datadog_api_client.v2.model.logs_group_by_missing']
+    logs_group_by_missing = sys.modules["datadog_api_client.v2.model.logs_group_by_missing"]
 try:
     from datadog_api_client.v2.model import logs_group_by_total
 except ImportError:
-    logs_group_by_total = sys.modules[
-        'datadog_api_client.v2.model.logs_group_by_total']
+    logs_group_by_total = sys.modules["datadog_api_client.v2.model.logs_group_by_total"]
 from datadog_api_client.v2.model.logs_group_by import LogsGroupBy
 
 
@@ -49,5 +46,5 @@ class TestLogsGroupBy(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,26 +10,23 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import monitor_device_id
 except ImportError:
-    monitor_device_id = sys.modules[
-        'datadog_api_client.v1.model.monitor_device_id']
+    monitor_device_id = sys.modules["datadog_api_client.v1.model.monitor_device_id"]
 try:
     from datadog_api_client.v1.model import monitor_options_aggregation
 except ImportError:
-    monitor_options_aggregation = sys.modules[
-        'datadog_api_client.v1.model.monitor_options_aggregation']
+    monitor_options_aggregation = sys.modules["datadog_api_client.v1.model.monitor_options_aggregation"]
 try:
     from datadog_api_client.v1.model import monitor_threshold_window_options
 except ImportError:
-    monitor_threshold_window_options = sys.modules[
-        'datadog_api_client.v1.model.monitor_threshold_window_options']
+    monitor_threshold_window_options = sys.modules["datadog_api_client.v1.model.monitor_threshold_window_options"]
 try:
     from datadog_api_client.v1.model import monitor_thresholds
 except ImportError:
-    monitor_thresholds = sys.modules[
-        'datadog_api_client.v1.model.monitor_thresholds']
+    monitor_thresholds = sys.modules["datadog_api_client.v1.model.monitor_thresholds"]
 from datadog_api_client.v1.model.monitor_options import MonitorOptions
 
 
@@ -49,5 +46,5 @@ class TestMonitorOptions(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

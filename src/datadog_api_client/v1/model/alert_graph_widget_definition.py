@@ -23,15 +23,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.alert_graph_widget_definition_type import AlertGraphWidgetDefinitionType
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.widget_viz_type import WidgetVizType
-    globals()['AlertGraphWidgetDefinitionType'] = AlertGraphWidgetDefinitionType
-    globals()['WidgetTextAlign'] = WidgetTextAlign
-    globals()['WidgetTime'] = WidgetTime
-    globals()['WidgetVizType'] = WidgetVizType
+
+    globals()["AlertGraphWidgetDefinitionType"] = AlertGraphWidgetDefinitionType
+    globals()["WidgetTextAlign"] = WidgetTextAlign
+    globals()["WidgetTime"] = WidgetTime
+    globals()["WidgetVizType"] = WidgetVizType
 
 
 class AlertGraphWidgetDefinition(ModelNormal):
@@ -58,11 +60,9 @@ class AlertGraphWidgetDefinition(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -80,40 +80,41 @@ class AlertGraphWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            'alert_id': (str,),  # noqa: E501
-            'type': (AlertGraphWidgetDefinitionType,),  # noqa: E501
-            'viz_type': (WidgetVizType,),  # noqa: E501
-            'time': (WidgetTime,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'title_align': (WidgetTextAlign,),  # noqa: E501
-            'title_size': (str,),  # noqa: E501
+            "alert_id": (str,),  # noqa: E501
+            "type": (AlertGraphWidgetDefinitionType,),  # noqa: E501
+            "viz_type": (WidgetVizType,),  # noqa: E501
+            "time": (WidgetTime,),  # noqa: E501
+            "title": (str,),  # noqa: E501
+            "title_align": (WidgetTextAlign,),  # noqa: E501
+            "title_size": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'alert_id': 'alert_id',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'viz_type': 'viz_type',  # noqa: E501
-        'time': 'time',  # noqa: E501
-        'title': 'title',  # noqa: E501
-        'title_align': 'title_align',  # noqa: E501
-        'title_size': 'title_size',  # noqa: E501
+        "alert_id": "alert_id",  # noqa: E501
+        "type": "type",  # noqa: E501
+        "viz_type": "viz_type",  # noqa: E501
+        "time": "time",  # noqa: E501
+        "title": "title",  # noqa: E501
+        "title_align": "title_align",  # noqa: E501
+        "title_size": "title_size",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, alert_id, type, viz_type, *args, **kwargs):  # noqa: E501
@@ -161,15 +162,16 @@ class AlertGraphWidgetDefinition(ModelNormal):
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -188,10 +190,12 @@ class AlertGraphWidgetDefinition(ModelNormal):
         self.type = type
         self.viz_type = viz_type
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

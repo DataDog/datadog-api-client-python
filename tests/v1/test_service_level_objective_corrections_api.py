@@ -6,7 +6,9 @@
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.api.service_level_objective_corrections_api import ServiceLevelObjectiveCorrectionsApi  # noqa: E501
+from datadog_api_client.v1.api.service_level_objective_corrections_api import (
+    ServiceLevelObjectiveCorrectionsApi,
+)  # noqa: E501
 
 
 class TestServiceLevelObjectiveCorrectionsApi(unittest.TestCase):
@@ -54,5 +56,5 @@ class TestServiceLevelObjectiveCorrectionsApi(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_timing
 except ImportError:
-    synthetics_timing = sys.modules[
-        'datadog_api_client.v1.model.synthetics_timing']
+    synthetics_timing = sys.modules["datadog_api_client.v1.model.synthetics_timing"]
 from datadog_api_client.v1.model.synthetics_api_test_result_short_result import SyntheticsAPITestResultShortResult
 
 
@@ -34,5 +34,5 @@ class TestSyntheticsAPITestResultShortResult(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

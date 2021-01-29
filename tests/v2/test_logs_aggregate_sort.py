@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import logs_aggregate_sort_type
 except ImportError:
-    logs_aggregate_sort_type = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregate_sort_type']
+    logs_aggregate_sort_type = sys.modules["datadog_api_client.v2.model.logs_aggregate_sort_type"]
 try:
     from datadog_api_client.v2.model import logs_aggregation_function
 except ImportError:
-    logs_aggregation_function = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregation_function']
+    logs_aggregation_function = sys.modules["datadog_api_client.v2.model.logs_aggregation_function"]
 try:
     from datadog_api_client.v2.model import logs_sort_order
 except ImportError:
-    logs_sort_order = sys.modules[
-        'datadog_api_client.v2.model.logs_sort_order']
+    logs_sort_order = sys.modules["datadog_api_client.v2.model.logs_sort_order"]
 from datadog_api_client.v2.model.logs_aggregate_sort import LogsAggregateSort
 
 
@@ -44,5 +42,5 @@ class TestLogsAggregateSort(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

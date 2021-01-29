@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.apm_stats_query_row_type import ApmStatsQueryRowType
-globals()['ApmStatsQueryRowType'] = ApmStatsQueryRowType
+
+globals()["ApmStatsQueryRowType"] = ApmStatsQueryRowType
 from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
 
 
@@ -30,5 +31,5 @@ class TestApmStatsQueryDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

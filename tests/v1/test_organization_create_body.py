@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import organization_billing
 except ImportError:
-    organization_billing = sys.modules[
-        'datadog_api_client.v1.model.organization_billing']
+    organization_billing = sys.modules["datadog_api_client.v1.model.organization_billing"]
 try:
     from datadog_api_client.v1.model import organization_subscription
 except ImportError:
-    organization_subscription = sys.modules[
-        'datadog_api_client.v1.model.organization_subscription']
+    organization_subscription = sys.modules["datadog_api_client.v1.model.organization_subscription"]
 from datadog_api_client.v1.model.organization_create_body import OrganizationCreateBody
 
 
@@ -39,5 +38,5 @@ class TestOrganizationCreateBody(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

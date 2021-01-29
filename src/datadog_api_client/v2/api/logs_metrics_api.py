@@ -14,7 +14,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.logs_metric_create_request import LogsMetricCreateRequest
@@ -35,11 +35,7 @@ class LogsMetricsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_logs_metric(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_logs_metric(self, body, **kwargs):
             """Create a log-based metric  # noqa: E501
 
             Create a metric based on your ingested logs in your organization. Returns the log-based metric object from the request body when the request is successful.  # noqa: E501
@@ -78,89 +74,54 @@ class LogsMetricsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_logs_metric = _Endpoint(
             settings={
-                'response_type': (LogsMetricResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/metrics',
-                'operation_id': 'create_logs_metric',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (LogsMetricResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/metrics",
+                "operation_id": "create_logs_metric",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (LogsMetricCreateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (LogsMetricCreateRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_logs_metric
+            callable=__create_logs_metric,
         )
 
-        def __delete_logs_metric(
-            self,
-            metric_id,
-            **kwargs
-        ):
+        def __delete_logs_metric(self, metric_id, **kwargs):
             """Delete a log-based metric  # noqa: E501
 
             Delete a specific log-based metric from your organization.  # noqa: E501
@@ -199,88 +160,59 @@ class LogsMetricsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['metric_id'] = \
-                metric_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["metric_id"] = metric_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_logs_metric = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/metrics/{metric_id}',
-                'operation_id': 'delete_logs_metric',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/metrics/{metric_id}",
+                "operation_id": "delete_logs_metric",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'metric_id',
+                "all": [
+                    "metric_id",
                 ],
-                'required': [
-                    'metric_id',
+                "required": [
+                    "metric_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "metric_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "metric_id": "metric_id",
                 },
-                'openapi_types': {
-                    'metric_id':
-                        (str,),
+                "location_map": {
+                    "metric_id": "path",
                 },
-                'attribute_map': {
-                    'metric_id': 'metric_id',
-                },
-                'location_map': {
-                    'metric_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_logs_metric
+            callable=__delete_logs_metric,
         )
 
-        def __get_logs_metric(
-            self,
-            metric_id,
-            **kwargs
-        ):
+        def __get_logs_metric(self, metric_id, **kwargs):
             """Get a log-based metric  # noqa: E501
 
             Get a specific log-based metric from your organization.  # noqa: E501
@@ -319,87 +251,59 @@ class LogsMetricsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['metric_id'] = \
-                metric_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["metric_id"] = metric_id
             return self.call_with_http_info(**kwargs)
 
         self.get_logs_metric = _Endpoint(
             settings={
-                'response_type': (LogsMetricResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/metrics/{metric_id}',
-                'operation_id': 'get_logs_metric',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (LogsMetricResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/metrics/{metric_id}",
+                "operation_id": "get_logs_metric",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'metric_id',
+                "all": [
+                    "metric_id",
                 ],
-                'required': [
-                    'metric_id',
+                "required": [
+                    "metric_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "metric_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "metric_id": "metric_id",
                 },
-                'openapi_types': {
-                    'metric_id':
-                        (str,),
+                "location_map": {
+                    "metric_id": "path",
                 },
-                'attribute_map': {
-                    'metric_id': 'metric_id',
-                },
-                'location_map': {
-                    'metric_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_logs_metric
+            callable=__get_logs_metric,
         )
 
-        def __list_logs_metrics(
-            self,
-            **kwargs
-        ):
+        def __list_logs_metrics(self, **kwargs):
             """Get all log-based metrics  # noqa: E501
 
             Get the list of configured log-based metrics with their definitions.  # noqa: E501
@@ -436,80 +340,42 @@ class LogsMetricsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_logs_metrics = _Endpoint(
             settings={
-                'response_type': (LogsMetricsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/metrics',
-                'operation_id': 'list_logs_metrics',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (LogsMetricsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/metrics",
+                "operation_id": "list_logs_metrics",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_logs_metrics
+            callable=__list_logs_metrics,
         )
 
-        def __update_logs_metric(
-            self,
-            metric_id,
-            body,
-            **kwargs
-        ):
+        def __update_logs_metric(self, metric_id, body, **kwargs):
             """Update a log-based metric  # noqa: E501
 
             Update a specific log-based metric from your organization. Returns the log-based metric object from the request body when the request is successful.  # noqa: E501
@@ -549,88 +415,56 @@ class LogsMetricsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['metric_id'] = \
-                metric_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["metric_id"] = metric_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_logs_metric = _Endpoint(
             settings={
-                'response_type': (LogsMetricResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/metrics/{metric_id}',
-                'operation_id': 'update_logs_metric',
-                'http_method': 'PATCH',
-                'servers': None,
+                "response_type": (LogsMetricResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/metrics/{metric_id}",
+                "operation_id": "update_logs_metric",
+                "http_method": "PATCH",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'metric_id',
-                    'body',
+                "all": [
+                    "metric_id",
+                    "body",
                 ],
-                'required': [
-                    'metric_id',
-                    'body',
+                "required": [
+                    "metric_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "metric_id": (str,),
+                    "body": (LogsMetricUpdateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "metric_id": "metric_id",
                 },
-                'openapi_types': {
-                    'metric_id':
-                        (str,),
-                    'body':
-                        (LogsMetricUpdateRequest,),
+                "location_map": {
+                    "metric_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'metric_id': 'metric_id',
-                },
-                'location_map': {
-                    'metric_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_logs_metric
+            callable=__update_logs_metric,
         )

@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.metric_metadata import MetricMetadata
@@ -35,11 +35,7 @@ class MetricsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __get_metric_metadata(
-            self,
-            metric_name,
-            **kwargs
-        ):
+        def __get_metric_metadata(self, metric_name, **kwargs):
             """Get metric metadata  # noqa: E501
 
             Get metadata about a specific metric.  # noqa: E501
@@ -78,88 +74,59 @@ class MetricsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['metric_name'] = \
-                metric_name
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["metric_name"] = metric_name
             return self.call_with_http_info(**kwargs)
 
         self.get_metric_metadata = _Endpoint(
             settings={
-                'response_type': (MetricMetadata,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/metrics/{metric_name}',
-                'operation_id': 'get_metric_metadata',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (MetricMetadata,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/metrics/{metric_name}",
+                "operation_id": "get_metric_metadata",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'metric_name',
+                "all": [
+                    "metric_name",
                 ],
-                'required': [
-                    'metric_name',
+                "required": [
+                    "metric_name",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "metric_name": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "metric_name": "metric_name",
                 },
-                'openapi_types': {
-                    'metric_name':
-                        (str,),
+                "location_map": {
+                    "metric_name": "path",
                 },
-                'attribute_map': {
-                    'metric_name': 'metric_name',
-                },
-                'location_map': {
-                    'metric_name': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_metric_metadata
+            callable=__get_metric_metadata,
         )
 
-        def __list_active_metrics(
-            self,
-            _from,
-            **kwargs
-        ):
+        def __list_active_metrics(self, _from, **kwargs):
             """Get active metrics list  # noqa: E501
 
             Get the list of actively reporting metrics from a given time until now.  # noqa: E501
@@ -199,93 +166,63 @@ class MetricsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['_from'] = \
-                _from
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["_from"] = _from
             return self.call_with_http_info(**kwargs)
 
         self.list_active_metrics = _Endpoint(
             settings={
-                'response_type': (MetricsListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/metrics',
-                'operation_id': 'list_active_metrics',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (MetricsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/metrics",
+                "operation_id": "list_active_metrics",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    '_from',
-                    'host',
+                "all": [
+                    "_from",
+                    "host",
                 ],
-                'required': [
-                    '_from',
+                "required": [
+                    "_from",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "_from": (int,),
+                    "host": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "_from": "from",
+                    "host": "host",
                 },
-                'openapi_types': {
-                    '_from':
-                        (int,),
-                    'host':
-                        (str,),
+                "location_map": {
+                    "_from": "query",
+                    "host": "query",
                 },
-                'attribute_map': {
-                    '_from': 'from',
-                    'host': 'host',
-                },
-                'location_map': {
-                    '_from': 'query',
-                    'host': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_active_metrics
+            callable=__list_active_metrics,
         )
 
-        def __list_metrics(
-            self,
-            q,
-            **kwargs
-        ):
+        def __list_metrics(self, q, **kwargs):
             """Search metrics  # noqa: E501
 
             Search for metrics from the last 24 hours in Datadog.  # noqa: E501
@@ -324,90 +261,59 @@ class MetricsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['q'] = \
-                q
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["q"] = q
             return self.call_with_http_info(**kwargs)
 
         self.list_metrics = _Endpoint(
             settings={
-                'response_type': (MetricSearchResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/search',
-                'operation_id': 'list_metrics',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (MetricSearchResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/search",
+                "operation_id": "list_metrics",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'q',
+                "all": [
+                    "q",
                 ],
-                'required': [
-                    'q',
+                "required": [
+                    "q",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "q": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "q": "q",
                 },
-                'openapi_types': {
-                    'q':
-                        (str,),
+                "location_map": {
+                    "q": "query",
                 },
-                'attribute_map': {
-                    'q': 'q',
-                },
-                'location_map': {
-                    'q': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_metrics
+            callable=__list_metrics,
         )
 
-        def __query_metrics(
-            self,
-            _from,
-            to,
-            query,
-            **kwargs
-        ):
+        def __query_metrics(self, _from, to, query, **kwargs):
             """Query timeseries points  # noqa: E501
 
             Query timeseries points.  # noqa: E501
@@ -448,105 +354,71 @@ class MetricsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['_from'] = \
-                _from
-            kwargs['to'] = \
-                to
-            kwargs['query'] = \
-                query
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["_from"] = _from
+            kwargs["to"] = to
+            kwargs["query"] = query
             return self.call_with_http_info(**kwargs)
 
         self.query_metrics = _Endpoint(
             settings={
-                'response_type': (MetricsQueryResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/query',
-                'operation_id': 'query_metrics',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (MetricsQueryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/query",
+                "operation_id": "query_metrics",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    '_from',
-                    'to',
-                    'query',
+                "all": [
+                    "_from",
+                    "to",
+                    "query",
                 ],
-                'required': [
-                    '_from',
-                    'to',
-                    'query',
+                "required": [
+                    "_from",
+                    "to",
+                    "query",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "_from": (int,),
+                    "to": (int,),
+                    "query": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "_from": "from",
+                    "to": "to",
+                    "query": "query",
                 },
-                'openapi_types': {
-                    '_from':
-                        (int,),
-                    'to':
-                        (int,),
-                    'query':
-                        (str,),
+                "location_map": {
+                    "_from": "query",
+                    "to": "query",
+                    "query": "query",
                 },
-                'attribute_map': {
-                    '_from': 'from',
-                    'to': 'to',
-                    'query': 'query',
-                },
-                'location_map': {
-                    '_from': 'query',
-                    'to': 'query',
-                    'query': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__query_metrics
+            callable=__query_metrics,
         )
 
-        def __update_metric_metadata(
-            self,
-            metric_name,
-            body,
-            **kwargs
-        ):
+        def __update_metric_metadata(self, metric_name, body, **kwargs):
             """Edit metric metadata  # noqa: E501
 
             Edit metadata of a specific metric. Find out more about [supported types](https://docs.datadoghq.com/developers/metrics).  # noqa: E501
@@ -586,88 +458,56 @@ class MetricsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['metric_name'] = \
-                metric_name
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["metric_name"] = metric_name
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_metric_metadata = _Endpoint(
             settings={
-                'response_type': (MetricMetadata,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/metrics/{metric_name}',
-                'operation_id': 'update_metric_metadata',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (MetricMetadata,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/metrics/{metric_name}",
+                "operation_id": "update_metric_metadata",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'metric_name',
-                    'body',
+                "all": [
+                    "metric_name",
+                    "body",
                 ],
-                'required': [
-                    'metric_name',
-                    'body',
+                "required": [
+                    "metric_name",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "metric_name": (str,),
+                    "body": (MetricMetadata,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "metric_name": "metric_name",
                 },
-                'openapi_types': {
-                    'metric_name':
-                        (str,),
-                    'body':
-                        (MetricMetadata,),
+                "location_map": {
+                    "metric_name": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'metric_name': 'metric_name',
-                },
-                'location_map': {
-                    'metric_name': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_metric_metadata
+            callable=__update_metric_metadata,
         )

@@ -10,26 +10,23 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import creator
 except ImportError:
-    creator = sys.modules[
-        'datadog_api_client.v1.model.creator']
+    creator = sys.modules["datadog_api_client.v1.model.creator"]
 try:
     from datadog_api_client.v1.model import service_level_objective_query
 except ImportError:
-    service_level_objective_query = sys.modules[
-        'datadog_api_client.v1.model.service_level_objective_query']
+    service_level_objective_query = sys.modules["datadog_api_client.v1.model.service_level_objective_query"]
 try:
     from datadog_api_client.v1.model import slo_threshold
 except ImportError:
-    slo_threshold = sys.modules[
-        'datadog_api_client.v1.model.slo_threshold']
+    slo_threshold = sys.modules["datadog_api_client.v1.model.slo_threshold"]
 try:
     from datadog_api_client.v1.model import slo_type
 except ImportError:
-    slo_type = sys.modules[
-        'datadog_api_client.v1.model.slo_type']
+    slo_type = sys.modules["datadog_api_client.v1.model.slo_type"]
 from datadog_api_client.v1.model.service_level_objective_request import ServiceLevelObjectiveRequest
 
 
@@ -49,5 +46,5 @@ class TestServiceLevelObjectiveRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

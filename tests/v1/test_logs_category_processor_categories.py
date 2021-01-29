@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import logs_filter
 except ImportError:
-    logs_filter = sys.modules[
-        'datadog_api_client.v1.model.logs_filter']
+    logs_filter = sys.modules["datadog_api_client.v1.model.logs_filter"]
 from datadog_api_client.v1.model.logs_category_processor_categories import LogsCategoryProcessorCategories
 
 
@@ -34,5 +34,5 @@ class TestLogsCategoryProcessorCategories(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

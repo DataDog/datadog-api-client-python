@@ -10,16 +10,17 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import security_monitoring_signal_attributes
 except ImportError:
     security_monitoring_signal_attributes = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signal_attributes']
+        "datadog_api_client.v2.model.security_monitoring_signal_attributes"
+    ]
 try:
     from datadog_api_client.v2.model import security_monitoring_signal_type
 except ImportError:
-    security_monitoring_signal_type = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signal_type']
+    security_monitoring_signal_type = sys.modules["datadog_api_client.v2.model.security_monitoring_signal_type"]
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 
 
@@ -39,5 +40,5 @@ class TestSecurityMonitoringSignal(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

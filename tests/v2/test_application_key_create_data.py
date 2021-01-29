@@ -9,8 +9,9 @@ import unittest
 import datadog_api_client.v2
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
-globals()['ApplicationKeyCreateAttributes'] = ApplicationKeyCreateAttributes
-globals()['ApplicationKeysType'] = ApplicationKeysType
+
+globals()["ApplicationKeyCreateAttributes"] = ApplicationKeyCreateAttributes
+globals()["ApplicationKeysType"] = ApplicationKeysType
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
 
 
@@ -30,5 +31,5 @@ class TestApplicationKeyCreateData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

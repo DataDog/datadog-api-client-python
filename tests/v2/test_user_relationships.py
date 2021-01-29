@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v2
 from datadog_api_client.v2.model.relationship_to_roles import RelationshipToRoles
-globals()['RelationshipToRoles'] = RelationshipToRoles
+
+globals()["RelationshipToRoles"] = RelationshipToRoles
 from datadog_api_client.v2.model.user_relationships import UserRelationships
 
 
@@ -30,5 +31,5 @@ class TestUserRelationships(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

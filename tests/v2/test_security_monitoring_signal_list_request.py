@@ -10,21 +10,23 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import security_monitoring_signal_list_request_filter
 except ImportError:
     security_monitoring_signal_list_request_filter = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signal_list_request_filter']
+        "datadog_api_client.v2.model.security_monitoring_signal_list_request_filter"
+    ]
 try:
     from datadog_api_client.v2.model import security_monitoring_signal_list_request_page
 except ImportError:
     security_monitoring_signal_list_request_page = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signal_list_request_page']
+        "datadog_api_client.v2.model.security_monitoring_signal_list_request_page"
+    ]
 try:
     from datadog_api_client.v2.model import security_monitoring_signals_sort
 except ImportError:
-    security_monitoring_signals_sort = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signals_sort']
+    security_monitoring_signals_sort = sys.modules["datadog_api_client.v2.model.security_monitoring_signals_sort"]
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
 
 
@@ -44,5 +46,5 @@ class TestSecurityMonitoringSignalListRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

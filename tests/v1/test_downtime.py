@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import downtime_recurrence
 except ImportError:
-    downtime_recurrence = sys.modules[
-        'datadog_api_client.v1.model.downtime_recurrence']
+    downtime_recurrence = sys.modules["datadog_api_client.v1.model.downtime_recurrence"]
 from datadog_api_client.v1.model.downtime import Downtime
 
 
@@ -34,5 +34,5 @@ class TestDowntime(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import logs_aggregate_response_status
 except ImportError:
-    logs_aggregate_response_status = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregate_response_status']
+    logs_aggregate_response_status = sys.modules["datadog_api_client.v2.model.logs_aggregate_response_status"]
 try:
     from datadog_api_client.v2.model import logs_response_metadata_page
 except ImportError:
-    logs_response_metadata_page = sys.modules[
-        'datadog_api_client.v2.model.logs_response_metadata_page']
+    logs_response_metadata_page = sys.modules["datadog_api_client.v2.model.logs_response_metadata_page"]
 try:
     from datadog_api_client.v2.model import logs_warning
 except ImportError:
-    logs_warning = sys.modules[
-        'datadog_api_client.v2.model.logs_warning']
+    logs_warning = sys.modules["datadog_api_client.v2.model.logs_warning"]
 from datadog_api_client.v2.model.logs_response_metadata import LogsResponseMetadata
 
 
@@ -44,5 +42,5 @@ class TestLogsResponseMetadata(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

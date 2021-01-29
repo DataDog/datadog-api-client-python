@@ -23,11 +23,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
-    from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_parser import SyntheticsGlobalVariableParseTestOptionsParser
-    from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import SyntheticsGlobalVariableParseTestOptionsType
-    globals()['SyntheticsGlobalVariableParseTestOptionsParser'] = SyntheticsGlobalVariableParseTestOptionsParser
-    globals()['SyntheticsGlobalVariableParseTestOptionsType'] = SyntheticsGlobalVariableParseTestOptionsType
+    from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_parser import (
+        SyntheticsGlobalVariableParseTestOptionsParser,
+    )
+    from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
+        SyntheticsGlobalVariableParseTestOptionsType,
+    )
+
+    globals()["SyntheticsGlobalVariableParseTestOptionsParser"] = SyntheticsGlobalVariableParseTestOptionsParser
+    globals()["SyntheticsGlobalVariableParseTestOptionsType"] = SyntheticsGlobalVariableParseTestOptionsType
 
 
 class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
@@ -54,11 +60,9 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -76,32 +80,33 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         """
         lazy_import()
         return {
-            'parser': (SyntheticsGlobalVariableParseTestOptionsParser,),  # noqa: E501
-            'type': (SyntheticsGlobalVariableParseTestOptionsType,),  # noqa: E501
-            'field': (str,),  # noqa: E501
+            "parser": (SyntheticsGlobalVariableParseTestOptionsParser,),  # noqa: E501
+            "type": (SyntheticsGlobalVariableParseTestOptionsType,),  # noqa: E501
+            "field": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'parser': 'parser',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'field': 'field',  # noqa: E501
+        "parser": "parser",  # noqa: E501
+        "type": "type",  # noqa: E501
+        "field": "field",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, parser, type, *args, **kwargs):  # noqa: E501
@@ -145,15 +150,16 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
             field (str): When type is `http_header`, name of the header to use to extract the value.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -171,10 +177,12 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         self.parser = parser
         self.type = type
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

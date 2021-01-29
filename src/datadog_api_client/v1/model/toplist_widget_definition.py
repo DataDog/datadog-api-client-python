@@ -23,17 +23,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
     from datadog_api_client.v1.model.toplist_widget_request import ToplistWidgetRequest
     from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.widget_time import WidgetTime
-    globals()['ToplistWidgetDefinitionType'] = ToplistWidgetDefinitionType
-    globals()['ToplistWidgetRequest'] = ToplistWidgetRequest
-    globals()['WidgetCustomLink'] = WidgetCustomLink
-    globals()['WidgetTextAlign'] = WidgetTextAlign
-    globals()['WidgetTime'] = WidgetTime
+
+    globals()["ToplistWidgetDefinitionType"] = ToplistWidgetDefinitionType
+    globals()["ToplistWidgetRequest"] = ToplistWidgetRequest
+    globals()["WidgetCustomLink"] = WidgetCustomLink
+    globals()["WidgetTextAlign"] = WidgetTextAlign
+    globals()["WidgetTime"] = WidgetTime
 
 
 class ToplistWidgetDefinition(ModelNormal):
@@ -60,11 +62,9 @@ class ToplistWidgetDefinition(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -82,40 +82,41 @@ class ToplistWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            'requests': ([ToplistWidgetRequest],),  # noqa: E501
-            'type': (ToplistWidgetDefinitionType,),  # noqa: E501
-            'custom_links': ([WidgetCustomLink],),  # noqa: E501
-            'time': (WidgetTime,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'title_align': (WidgetTextAlign,),  # noqa: E501
-            'title_size': (str,),  # noqa: E501
+            "requests": ([ToplistWidgetRequest],),  # noqa: E501
+            "type": (ToplistWidgetDefinitionType,),  # noqa: E501
+            "custom_links": ([WidgetCustomLink],),  # noqa: E501
+            "time": (WidgetTime,),  # noqa: E501
+            "title": (str,),  # noqa: E501
+            "title_align": (WidgetTextAlign,),  # noqa: E501
+            "title_size": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'requests': 'requests',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'custom_links': 'custom_links',  # noqa: E501
-        'time': 'time',  # noqa: E501
-        'title': 'title',  # noqa: E501
-        'title_align': 'title_align',  # noqa: E501
-        'title_size': 'title_size',  # noqa: E501
+        "requests": "requests",  # noqa: E501
+        "type": "type",  # noqa: E501
+        "custom_links": "custom_links",  # noqa: E501
+        "time": "time",  # noqa: E501
+        "title": "title",  # noqa: E501
+        "title_align": "title_align",  # noqa: E501
+        "title_size": "title_size",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, requests, type, *args, **kwargs):  # noqa: E501
@@ -163,15 +164,16 @@ class ToplistWidgetDefinition(ModelNormal):
             title_size (str): Size of the title.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -189,10 +191,12 @@ class ToplistWidgetDefinition(ModelNormal):
         self.requests = requests
         self.type = type
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import usage_network_flows_hour
 except ImportError:
-    usage_network_flows_hour = sys.modules[
-        'datadog_api_client.v1.model.usage_network_flows_hour']
+    usage_network_flows_hour = sys.modules["datadog_api_client.v1.model.usage_network_flows_hour"]
 from datadog_api_client.v1.model.usage_network_flows_response import UsageNetworkFlowsResponse
 
 
@@ -34,5 +34,5 @@ class TestUsageNetworkFlowsResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

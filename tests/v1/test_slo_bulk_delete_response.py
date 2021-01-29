@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import slo_bulk_delete_response_data
 except ImportError:
-    slo_bulk_delete_response_data = sys.modules[
-        'datadog_api_client.v1.model.slo_bulk_delete_response_data']
+    slo_bulk_delete_response_data = sys.modules["datadog_api_client.v1.model.slo_bulk_delete_response_data"]
 try:
     from datadog_api_client.v1.model import slo_bulk_delete_response_errors
 except ImportError:
-    slo_bulk_delete_response_errors = sys.modules[
-        'datadog_api_client.v1.model.slo_bulk_delete_response_errors']
+    slo_bulk_delete_response_errors = sys.modules["datadog_api_client.v1.model.slo_bulk_delete_response_errors"]
 from datadog_api_client.v1.model.slo_bulk_delete_response import SLOBulkDeleteResponse
 
 
@@ -39,5 +38,5 @@ class TestSLOBulkDeleteResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

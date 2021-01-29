@@ -23,9 +23,13 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
-    from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import SecurityMonitoringRuleQueryAggregation
-    globals()['SecurityMonitoringRuleQueryAggregation'] = SecurityMonitoringRuleQueryAggregation
+    from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
+        SecurityMonitoringRuleQueryAggregation,
+    )
+
+    globals()["SecurityMonitoringRuleQueryAggregation"] = SecurityMonitoringRuleQueryAggregation
 
 
 class SecurityMonitoringRuleQuery(ModelNormal):
@@ -52,11 +56,9 @@ class SecurityMonitoringRuleQuery(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -74,38 +76,39 @@ class SecurityMonitoringRuleQuery(ModelNormal):
         """
         lazy_import()
         return {
-            'aggregation': (SecurityMonitoringRuleQueryAggregation,),  # noqa: E501
-            'distinct_fields': ([str],),  # noqa: E501
-            'group_by_fields': ([str],),  # noqa: E501
-            'metric': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'query': (str,),  # noqa: E501
+            "aggregation": (SecurityMonitoringRuleQueryAggregation,),  # noqa: E501
+            "distinct_fields": ([str],),  # noqa: E501
+            "group_by_fields": ([str],),  # noqa: E501
+            "metric": (str,),  # noqa: E501
+            "name": (str,),  # noqa: E501
+            "query": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'aggregation': 'aggregation',  # noqa: E501
-        'distinct_fields': 'distinctFields',  # noqa: E501
-        'group_by_fields': 'groupByFields',  # noqa: E501
-        'metric': 'metric',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'query': 'query',  # noqa: E501
+        "aggregation": "aggregation",  # noqa: E501
+        "distinct_fields": "distinctFields",  # noqa: E501
+        "group_by_fields": "groupByFields",  # noqa: E501
+        "metric": "metric",  # noqa: E501
+        "name": "name",  # noqa: E501
+        "query": "query",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -150,15 +153,16 @@ class SecurityMonitoringRuleQuery(ModelNormal):
             query (str): Query to run on logs.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -174,10 +178,12 @@ class SecurityMonitoringRuleQuery(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

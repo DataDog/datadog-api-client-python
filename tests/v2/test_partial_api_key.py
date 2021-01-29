@@ -10,9 +10,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.api_key_relationships import APIKeyRelationships
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
 from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKeyAttributes
-globals()['APIKeyRelationships'] = APIKeyRelationships
-globals()['APIKeysType'] = APIKeysType
-globals()['PartialAPIKeyAttributes'] = PartialAPIKeyAttributes
+
+globals()["APIKeyRelationships"] = APIKeyRelationships
+globals()["APIKeysType"] = APIKeysType
+globals()["PartialAPIKeyAttributes"] = PartialAPIKeyAttributes
 from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
 
 
@@ -32,5 +33,5 @@ class TestPartialAPIKey(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

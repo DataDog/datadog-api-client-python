@@ -23,6 +23,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
@@ -32,14 +33,15 @@ def lazy_import():
     from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
     from datadog_api_client.v1.model.widget_formula import WidgetFormula
     from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
-    globals()['FormulaAndFunctionQueryDefinition'] = FormulaAndFunctionQueryDefinition
-    globals()['FormulaAndFunctionResponseFormat'] = FormulaAndFunctionResponseFormat
-    globals()['LogQueryDefinition'] = LogQueryDefinition
-    globals()['ProcessQueryDefinition'] = ProcessQueryDefinition
-    globals()['TimeseriesWidgetRequestMetadata'] = TimeseriesWidgetRequestMetadata
-    globals()['WidgetDisplayType'] = WidgetDisplayType
-    globals()['WidgetFormula'] = WidgetFormula
-    globals()['WidgetRequestStyle'] = WidgetRequestStyle
+
+    globals()["FormulaAndFunctionQueryDefinition"] = FormulaAndFunctionQueryDefinition
+    globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
+    globals()["LogQueryDefinition"] = LogQueryDefinition
+    globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
+    globals()["TimeseriesWidgetRequestMetadata"] = TimeseriesWidgetRequestMetadata
+    globals()["WidgetDisplayType"] = WidgetDisplayType
+    globals()["WidgetFormula"] = WidgetFormula
+    globals()["WidgetRequestStyle"] = WidgetRequestStyle
 
 
 class TimeseriesWidgetRequest(ModelNormal):
@@ -66,11 +68,9 @@ class TimeseriesWidgetRequest(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -88,56 +88,57 @@ class TimeseriesWidgetRequest(ModelNormal):
         """
         lazy_import()
         return {
-            'apm_query': (LogQueryDefinition,),  # noqa: E501
-            'display_type': (WidgetDisplayType,),  # noqa: E501
-            'event_query': (LogQueryDefinition,),  # noqa: E501
-            'formulas': ([WidgetFormula],),  # noqa: E501
-            'log_query': (LogQueryDefinition,),  # noqa: E501
-            'metadata': ([TimeseriesWidgetRequestMetadata],),  # noqa: E501
-            'network_query': (LogQueryDefinition,),  # noqa: E501
-            'on_right_yaxis': (bool,),  # noqa: E501
-            'process_query': (ProcessQueryDefinition,),  # noqa: E501
-            'q': (str,),  # noqa: E501
-            'queries': ([FormulaAndFunctionQueryDefinition],),  # noqa: E501
-            'response_format': (FormulaAndFunctionResponseFormat,),  # noqa: E501
-            'rum_query': (LogQueryDefinition,),  # noqa: E501
-            'security_query': (LogQueryDefinition,),  # noqa: E501
-            'style': (WidgetRequestStyle,),  # noqa: E501
+            "apm_query": (LogQueryDefinition,),  # noqa: E501
+            "display_type": (WidgetDisplayType,),  # noqa: E501
+            "event_query": (LogQueryDefinition,),  # noqa: E501
+            "formulas": ([WidgetFormula],),  # noqa: E501
+            "log_query": (LogQueryDefinition,),  # noqa: E501
+            "metadata": ([TimeseriesWidgetRequestMetadata],),  # noqa: E501
+            "network_query": (LogQueryDefinition,),  # noqa: E501
+            "on_right_yaxis": (bool,),  # noqa: E501
+            "process_query": (ProcessQueryDefinition,),  # noqa: E501
+            "q": (str,),  # noqa: E501
+            "queries": ([FormulaAndFunctionQueryDefinition],),  # noqa: E501
+            "response_format": (FormulaAndFunctionResponseFormat,),  # noqa: E501
+            "rum_query": (LogQueryDefinition,),  # noqa: E501
+            "security_query": (LogQueryDefinition,),  # noqa: E501
+            "style": (WidgetRequestStyle,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'apm_query': 'apm_query',  # noqa: E501
-        'display_type': 'display_type',  # noqa: E501
-        'event_query': 'event_query',  # noqa: E501
-        'formulas': 'formulas',  # noqa: E501
-        'log_query': 'log_query',  # noqa: E501
-        'metadata': 'metadata',  # noqa: E501
-        'network_query': 'network_query',  # noqa: E501
-        'on_right_yaxis': 'on_right_yaxis',  # noqa: E501
-        'process_query': 'process_query',  # noqa: E501
-        'q': 'q',  # noqa: E501
-        'queries': 'queries',  # noqa: E501
-        'response_format': 'response_format',  # noqa: E501
-        'rum_query': 'rum_query',  # noqa: E501
-        'security_query': 'security_query',  # noqa: E501
-        'style': 'style',  # noqa: E501
+        "apm_query": "apm_query",  # noqa: E501
+        "display_type": "display_type",  # noqa: E501
+        "event_query": "event_query",  # noqa: E501
+        "formulas": "formulas",  # noqa: E501
+        "log_query": "log_query",  # noqa: E501
+        "metadata": "metadata",  # noqa: E501
+        "network_query": "network_query",  # noqa: E501
+        "on_right_yaxis": "on_right_yaxis",  # noqa: E501
+        "process_query": "process_query",  # noqa: E501
+        "q": "q",  # noqa: E501
+        "queries": "queries",  # noqa: E501
+        "response_format": "response_format",  # noqa: E501
+        "rum_query": "rum_query",  # noqa: E501
+        "security_query": "security_query",  # noqa: E501
+        "style": "style",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -191,15 +192,16 @@ class TimeseriesWidgetRequest(ModelNormal):
             style (WidgetRequestStyle): [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -215,10 +217,12 @@ class TimeseriesWidgetRequest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

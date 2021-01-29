@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v2
 from datadog_api_client.v2.model.incident_service_update_data import IncidentServiceUpdateData
-globals()['IncidentServiceUpdateData'] = IncidentServiceUpdateData
+
+globals()["IncidentServiceUpdateData"] = IncidentServiceUpdateData
 from datadog_api_client.v2.model.incident_service_update_request import IncidentServiceUpdateRequest
 
 
@@ -30,5 +31,5 @@ class TestIncidentServiceUpdateRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

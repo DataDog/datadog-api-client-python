@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import widget_live_span
 except ImportError:
-    widget_live_span = sys.modules[
-        'datadog_api_client.v1.model.widget_live_span']
+    widget_live_span = sys.modules["datadog_api_client.v1.model.widget_live_span"]
 from datadog_api_client.v1.model.widget_time import WidgetTime
 
 
@@ -34,5 +34,5 @@ class TestWidgetTime(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

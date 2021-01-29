@@ -10,31 +10,27 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import host_map_widget_definition_requests
 except ImportError:
-    host_map_widget_definition_requests = sys.modules[
-        'datadog_api_client.v1.model.host_map_widget_definition_requests']
+    host_map_widget_definition_requests = sys.modules["datadog_api_client.v1.model.host_map_widget_definition_requests"]
 try:
     from datadog_api_client.v1.model import host_map_widget_definition_style
 except ImportError:
-    host_map_widget_definition_style = sys.modules[
-        'datadog_api_client.v1.model.host_map_widget_definition_style']
+    host_map_widget_definition_style = sys.modules["datadog_api_client.v1.model.host_map_widget_definition_style"]
 try:
     from datadog_api_client.v1.model import host_map_widget_definition_type
 except ImportError:
-    host_map_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.host_map_widget_definition_type']
+    host_map_widget_definition_type = sys.modules["datadog_api_client.v1.model.host_map_widget_definition_type"]
 try:
     from datadog_api_client.v1.model import widget_node_type
 except ImportError:
-    widget_node_type = sys.modules[
-        'datadog_api_client.v1.model.widget_node_type']
+    widget_node_type = sys.modules["datadog_api_client.v1.model.widget_node_type"]
 try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+    widget_text_align = sys.modules["datadog_api_client.v1.model.widget_text_align"]
 from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
 
 
@@ -54,5 +50,5 @@ class TestHostMapWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

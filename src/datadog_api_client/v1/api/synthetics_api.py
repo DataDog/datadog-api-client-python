@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.synthetics_api_test_result_full import SyntheticsAPITestResultFull
@@ -22,16 +22,24 @@ from datadog_api_client.v1.model.synthetics_browser_test_result_full import Synt
 from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
 from datadog_api_client.v1.model.synthetics_delete_tests_payload import SyntheticsDeleteTestsPayload
 from datadog_api_client.v1.model.synthetics_delete_tests_response import SyntheticsDeleteTestsResponse
-from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import SyntheticsGetAPITestLatestResultsResponse
-from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_response import SyntheticsGetBrowserTestLatestResultsResponse
+from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import (
+    SyntheticsGetAPITestLatestResultsResponse,
+)
+from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_response import (
+    SyntheticsGetBrowserTestLatestResultsResponse,
+)
 from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
 from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
-from datadog_api_client.v1.model.synthetics_private_location_creation_response import SyntheticsPrivateLocationCreationResponse
+from datadog_api_client.v1.model.synthetics_private_location_creation_response import (
+    SyntheticsPrivateLocationCreationResponse,
+)
 from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
-from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import SyntheticsUpdateTestPauseStatusPayload
+from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import (
+    SyntheticsUpdateTestPauseStatusPayload,
+)
 
 
 class SyntheticsApi(object):
@@ -46,11 +54,7 @@ class SyntheticsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_global_variable(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_global_variable(self, body, **kwargs):
             """Create a global variable  # noqa: E501
 
             Create a Synthetics global variable.  # noqa: E501
@@ -89,89 +93,54 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_global_variable = _Endpoint(
             settings={
-                'response_type': (SyntheticsGlobalVariable,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/variables',
-                'operation_id': 'create_global_variable',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (SyntheticsGlobalVariable,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/variables",
+                "operation_id": "create_global_variable",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (SyntheticsGlobalVariable,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (SyntheticsGlobalVariable,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_global_variable
+            callable=__create_global_variable,
         )
 
-        def __create_private_location(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_private_location(self, body, **kwargs):
             """Create a private location  # noqa: E501
 
             Create a new Synthetics private location.  # noqa: E501
@@ -210,89 +179,54 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_private_location = _Endpoint(
             settings={
-                'response_type': (SyntheticsPrivateLocationCreationResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/private-locations',
-                'operation_id': 'create_private_location',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (SyntheticsPrivateLocationCreationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/private-locations",
+                "operation_id": "create_private_location",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (SyntheticsPrivateLocation,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (SyntheticsPrivateLocation,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_private_location
+            callable=__create_private_location,
         )
 
-        def __create_test(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_test(self, body, **kwargs):
             """Create a test  # noqa: E501
 
             Create a Synthetic test.  # noqa: E501
@@ -331,89 +265,54 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_test = _Endpoint(
             settings={
-                'response_type': (SyntheticsTestDetails,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests',
-                'operation_id': 'create_test',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (SyntheticsTestDetails,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests",
+                "operation_id": "create_test",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (SyntheticsTestDetails,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (SyntheticsTestDetails,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_test
+            callable=__create_test,
         )
 
-        def __delete_global_variable(
-            self,
-            variable_id,
-            **kwargs
-        ):
+        def __delete_global_variable(self, variable_id, **kwargs):
             """Delete a global variable  # noqa: E501
 
             Delete a Synthetics global variable.  # noqa: E501
@@ -452,88 +351,59 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['variable_id'] = \
-                variable_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["variable_id"] = variable_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_global_variable = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/variables/{variable_id}',
-                'operation_id': 'delete_global_variable',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/variables/{variable_id}",
+                "operation_id": "delete_global_variable",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'variable_id',
+                "all": [
+                    "variable_id",
                 ],
-                'required': [
-                    'variable_id',
+                "required": [
+                    "variable_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "variable_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "variable_id": "variable_id",
                 },
-                'openapi_types': {
-                    'variable_id':
-                        (str,),
+                "location_map": {
+                    "variable_id": "path",
                 },
-                'attribute_map': {
-                    'variable_id': 'variable_id',
-                },
-                'location_map': {
-                    'variable_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_global_variable
+            callable=__delete_global_variable,
         )
 
-        def __delete_private_location(
-            self,
-            location_id,
-            **kwargs
-        ):
+        def __delete_private_location(self, location_id, **kwargs):
             """Delete a private location  # noqa: E501
 
             Delete a Synthetics private location.  # noqa: E501
@@ -572,88 +442,59 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['location_id'] = \
-                location_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["location_id"] = location_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_private_location = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/private-locations/{location_id}',
-                'operation_id': 'delete_private_location',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/private-locations/{location_id}",
+                "operation_id": "delete_private_location",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'location_id',
+                "all": [
+                    "location_id",
                 ],
-                'required': [
-                    'location_id',
+                "required": [
+                    "location_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "location_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "location_id": "location_id",
                 },
-                'openapi_types': {
-                    'location_id':
-                        (str,),
+                "location_map": {
+                    "location_id": "path",
                 },
-                'attribute_map': {
-                    'location_id': 'location_id',
-                },
-                'location_map': {
-                    'location_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_private_location
+            callable=__delete_private_location,
         )
 
-        def __delete_tests(
-            self,
-            body,
-            **kwargs
-        ):
+        def __delete_tests(self, body, **kwargs):
             """Delete tests  # noqa: E501
 
             Delete multiple Synthetic tests by ID.  # noqa: E501
@@ -692,90 +533,54 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.delete_tests = _Endpoint(
             settings={
-                'response_type': (SyntheticsDeleteTestsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests/delete',
-                'operation_id': 'delete_tests',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (SyntheticsDeleteTestsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/delete",
+                "operation_id": "delete_tests",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (SyntheticsDeleteTestsPayload,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (SyntheticsDeleteTestsPayload,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__delete_tests
+            callable=__delete_tests,
         )
 
-        def __edit_global_variable(
-            self,
-            variable_id,
-            body,
-            **kwargs
-        ):
+        def __edit_global_variable(self, variable_id, body, **kwargs):
             """Edit a global variable  # noqa: E501
 
             Edit a Synthetics global variable.  # noqa: E501
@@ -815,97 +620,61 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['variable_id'] = \
-                variable_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["variable_id"] = variable_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.edit_global_variable = _Endpoint(
             settings={
-                'response_type': (SyntheticsGlobalVariable,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/variables/{variable_id}',
-                'operation_id': 'edit_global_variable',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (SyntheticsGlobalVariable,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/variables/{variable_id}",
+                "operation_id": "edit_global_variable",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'variable_id',
-                    'body',
+                "all": [
+                    "variable_id",
+                    "body",
                 ],
-                'required': [
-                    'variable_id',
-                    'body',
+                "required": [
+                    "variable_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "variable_id": (str,),
+                    "body": (SyntheticsGlobalVariable,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "variable_id": "variable_id",
                 },
-                'openapi_types': {
-                    'variable_id':
-                        (str,),
-                    'body':
-                        (SyntheticsGlobalVariable,),
+                "location_map": {
+                    "variable_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'variable_id': 'variable_id',
-                },
-                'location_map': {
-                    'variable_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__edit_global_variable
+            callable=__edit_global_variable,
         )
 
-        def __get_api_test_latest_results(
-            self,
-            public_id,
-            **kwargs
-        ):
+        def __get_api_test_latest_results(self, public_id, **kwargs):
             """Get the test's latest results summaries (API)  # noqa: E501
 
             Get the last 50 test results summaries for a given Synthetics API test.  # noqa: E501
@@ -947,105 +716,73 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
             return self.call_with_http_info(**kwargs)
 
         self.get_api_test_latest_results = _Endpoint(
             settings={
-                'response_type': (SyntheticsGetAPITestLatestResultsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests/{public_id}/results',
-                'operation_id': 'get_api_test_latest_results',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SyntheticsGetAPITestLatestResultsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/{public_id}/results",
+                "operation_id": "get_api_test_latest_results",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
-                    'from_ts',
-                    'to_ts',
-                    'probe_dc',
+                "all": [
+                    "public_id",
+                    "from_ts",
+                    "to_ts",
+                    "probe_dc",
                 ],
-                'required': [
-                    'public_id',
+                "required": [
+                    "public_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
+                    "from_ts": (int,),
+                    "to_ts": (int,),
+                    "probe_dc": ([str],),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
+                    "from_ts": "from_ts",
+                    "to_ts": "to_ts",
+                    "probe_dc": "probe_dc",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
-                    'from_ts':
-                        (int,),
-                    'to_ts':
-                        (int,),
-                    'probe_dc':
-                        ([str],),
+                "location_map": {
+                    "public_id": "path",
+                    "from_ts": "query",
+                    "to_ts": "query",
+                    "probe_dc": "query",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                    'from_ts': 'from_ts',
-                    'to_ts': 'to_ts',
-                    'probe_dc': 'probe_dc',
+                "collection_format_map": {
+                    "probe_dc": "multi",
                 },
-                'location_map': {
-                    'public_id': 'path',
-                    'from_ts': 'query',
-                    'to_ts': 'query',
-                    'probe_dc': 'query',
-                },
-                'collection_format_map': {
-                    'probe_dc': 'multi',
-                }
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_api_test_latest_results
+            callable=__get_api_test_latest_results,
         )
 
-        def __get_api_test_result(
-            self,
-            public_id,
-            result_id,
-            **kwargs
-        ):
+        def __get_api_test_result(self, public_id, result_id, **kwargs):
             """Get a test result (API)  # noqa: E501
 
             Get a specific full result from a given (API) Synthetic test.  # noqa: E501
@@ -1085,96 +822,65 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
-            kwargs['result_id'] = \
-                result_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
+            kwargs["result_id"] = result_id
             return self.call_with_http_info(**kwargs)
 
         self.get_api_test_result = _Endpoint(
             settings={
-                'response_type': (SyntheticsAPITestResultFull,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests/{public_id}/results/{result_id}',
-                'operation_id': 'get_api_test_result',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SyntheticsAPITestResultFull,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/{public_id}/results/{result_id}",
+                "operation_id": "get_api_test_result",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
-                    'result_id',
+                "all": [
+                    "public_id",
+                    "result_id",
                 ],
-                'required': [
-                    'public_id',
-                    'result_id',
+                "required": [
+                    "public_id",
+                    "result_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
+                    "result_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
+                    "result_id": "result_id",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
-                    'result_id':
-                        (str,),
+                "location_map": {
+                    "public_id": "path",
+                    "result_id": "path",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                    'result_id': 'result_id',
-                },
-                'location_map': {
-                    'public_id': 'path',
-                    'result_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_api_test_result
+            callable=__get_api_test_result,
         )
 
-        def __get_browser_test(
-            self,
-            public_id,
-            **kwargs
-        ):
+        def __get_browser_test(self, public_id, **kwargs):
             """Get a test configuration (browser)  # noqa: E501
 
             Get the detailed configuration (including steps) associated with a Synthetic browser test.  # noqa: E501
@@ -1213,88 +919,59 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
             return self.call_with_http_info(**kwargs)
 
         self.get_browser_test = _Endpoint(
             settings={
-                'response_type': (SyntheticsTestDetails,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests/browser/{public_id}',
-                'operation_id': 'get_browser_test',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SyntheticsTestDetails,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}",
+                "operation_id": "get_browser_test",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
+                "all": [
+                    "public_id",
                 ],
-                'required': [
-                    'public_id',
+                "required": [
+                    "public_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
+                "location_map": {
+                    "public_id": "path",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                },
-                'location_map': {
-                    'public_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_browser_test
+            callable=__get_browser_test,
         )
 
-        def __get_browser_test_latest_results(
-            self,
-            public_id,
-            **kwargs
-        ):
+        def __get_browser_test_latest_results(self, public_id, **kwargs):
             """Get the test's latest results summaries (browser)  # noqa: E501
 
             Get the last 50 test results summaries for a given Synthetics Browser test.  # noqa: E501
@@ -1336,105 +1013,73 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
             return self.call_with_http_info(**kwargs)
 
         self.get_browser_test_latest_results = _Endpoint(
             settings={
-                'response_type': (SyntheticsGetBrowserTestLatestResultsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests/browser/{public_id}/results',
-                'operation_id': 'get_browser_test_latest_results',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SyntheticsGetBrowserTestLatestResultsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}/results",
+                "operation_id": "get_browser_test_latest_results",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
-                    'from_ts',
-                    'to_ts',
-                    'probe_dc',
+                "all": [
+                    "public_id",
+                    "from_ts",
+                    "to_ts",
+                    "probe_dc",
                 ],
-                'required': [
-                    'public_id',
+                "required": [
+                    "public_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
+                    "from_ts": (int,),
+                    "to_ts": (int,),
+                    "probe_dc": ([str],),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
+                    "from_ts": "from_ts",
+                    "to_ts": "to_ts",
+                    "probe_dc": "probe_dc",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
-                    'from_ts':
-                        (int,),
-                    'to_ts':
-                        (int,),
-                    'probe_dc':
-                        ([str],),
+                "location_map": {
+                    "public_id": "path",
+                    "from_ts": "query",
+                    "to_ts": "query",
+                    "probe_dc": "query",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                    'from_ts': 'from_ts',
-                    'to_ts': 'to_ts',
-                    'probe_dc': 'probe_dc',
+                "collection_format_map": {
+                    "probe_dc": "multi",
                 },
-                'location_map': {
-                    'public_id': 'path',
-                    'from_ts': 'query',
-                    'to_ts': 'query',
-                    'probe_dc': 'query',
-                },
-                'collection_format_map': {
-                    'probe_dc': 'multi',
-                }
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_browser_test_latest_results
+            callable=__get_browser_test_latest_results,
         )
 
-        def __get_browser_test_result(
-            self,
-            public_id,
-            result_id,
-            **kwargs
-        ):
+        def __get_browser_test_result(self, public_id, result_id, **kwargs):
             """Get a test result (browser)  # noqa: E501
 
             Get a specific full result from a given (browser) Synthetic test.  # noqa: E501
@@ -1474,96 +1119,65 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
-            kwargs['result_id'] = \
-                result_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
+            kwargs["result_id"] = result_id
             return self.call_with_http_info(**kwargs)
 
         self.get_browser_test_result = _Endpoint(
             settings={
-                'response_type': (SyntheticsBrowserTestResultFull,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests/browser/{public_id}/results/{result_id}',
-                'operation_id': 'get_browser_test_result',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SyntheticsBrowserTestResultFull,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}/results/{result_id}",
+                "operation_id": "get_browser_test_result",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
-                    'result_id',
+                "all": [
+                    "public_id",
+                    "result_id",
                 ],
-                'required': [
-                    'public_id',
-                    'result_id',
+                "required": [
+                    "public_id",
+                    "result_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
+                    "result_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
+                    "result_id": "result_id",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
-                    'result_id':
-                        (str,),
+                "location_map": {
+                    "public_id": "path",
+                    "result_id": "path",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                    'result_id': 'result_id',
-                },
-                'location_map': {
-                    'public_id': 'path',
-                    'result_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_browser_test_result
+            callable=__get_browser_test_result,
         )
 
-        def __get_global_variable(
-            self,
-            variable_id,
-            **kwargs
-        ):
+        def __get_global_variable(self, variable_id, **kwargs):
             """Get a global variable  # noqa: E501
 
             Get the detailed configuration of a global variable.  # noqa: E501
@@ -1602,88 +1216,59 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['variable_id'] = \
-                variable_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["variable_id"] = variable_id
             return self.call_with_http_info(**kwargs)
 
         self.get_global_variable = _Endpoint(
             settings={
-                'response_type': (SyntheticsGlobalVariable,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/variables/{variable_id}',
-                'operation_id': 'get_global_variable',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SyntheticsGlobalVariable,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/variables/{variable_id}",
+                "operation_id": "get_global_variable",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'variable_id',
+                "all": [
+                    "variable_id",
                 ],
-                'required': [
-                    'variable_id',
+                "required": [
+                    "variable_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "variable_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "variable_id": "variable_id",
                 },
-                'openapi_types': {
-                    'variable_id':
-                        (str,),
+                "location_map": {
+                    "variable_id": "path",
                 },
-                'attribute_map': {
-                    'variable_id': 'variable_id',
-                },
-                'location_map': {
-                    'variable_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_global_variable
+            callable=__get_global_variable,
         )
 
-        def __get_private_location(
-            self,
-            location_id,
-            **kwargs
-        ):
+        def __get_private_location(self, location_id, **kwargs):
             """Get a private location  # noqa: E501
 
             Get a Synthetics private location.  # noqa: E501
@@ -1722,88 +1307,59 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['location_id'] = \
-                location_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["location_id"] = location_id
             return self.call_with_http_info(**kwargs)
 
         self.get_private_location = _Endpoint(
             settings={
-                'response_type': (SyntheticsPrivateLocation,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/private-locations/{location_id}',
-                'operation_id': 'get_private_location',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SyntheticsPrivateLocation,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/private-locations/{location_id}",
+                "operation_id": "get_private_location",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'location_id',
+                "all": [
+                    "location_id",
                 ],
-                'required': [
-                    'location_id',
+                "required": [
+                    "location_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "location_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "location_id": "location_id",
                 },
-                'openapi_types': {
-                    'location_id':
-                        (str,),
+                "location_map": {
+                    "location_id": "path",
                 },
-                'attribute_map': {
-                    'location_id': 'location_id',
-                },
-                'location_map': {
-                    'location_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_private_location
+            callable=__get_private_location,
         )
 
-        def __get_test(
-            self,
-            public_id,
-            **kwargs
-        ):
+        def __get_test(self, public_id, **kwargs):
             """Get a test configuration (API)  # noqa: E501
 
             Get the detailed configuration associated with a Synthetics test.  # noqa: E501
@@ -1842,87 +1398,59 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
             return self.call_with_http_info(**kwargs)
 
         self.get_test = _Endpoint(
             settings={
-                'response_type': (SyntheticsTestDetails,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests/{public_id}',
-                'operation_id': 'get_test',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SyntheticsTestDetails,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/{public_id}",
+                "operation_id": "get_test",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
+                "all": [
+                    "public_id",
                 ],
-                'required': [
-                    'public_id',
+                "required": [
+                    "public_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
+                "location_map": {
+                    "public_id": "path",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                },
-                'location_map': {
-                    'public_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_test
+            callable=__get_test,
         )
 
-        def __list_locations(
-            self,
-            **kwargs
-        ):
+        def __list_locations(self, **kwargs):
             """Get all locations (public and private)  # noqa: E501
 
             Get the list of public and private locations available for Synthetic tests. No arguments required.  # noqa: E501
@@ -1959,78 +1487,42 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_locations = _Endpoint(
             settings={
-                'response_type': (SyntheticsLocations,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/locations',
-                'operation_id': 'list_locations',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SyntheticsLocations,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/locations",
+                "operation_id": "list_locations",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_locations
+            callable=__list_locations,
         )
 
-        def __list_tests(
-            self,
-            **kwargs
-        ):
+        def __list_tests(self, **kwargs):
             """Get the list of all tests  # noqa: E501
 
             Get the list of all Synthetic tests.  # noqa: E501
@@ -2067,79 +1559,42 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_tests = _Endpoint(
             settings={
-                'response_type': (SyntheticsListTestsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests',
-                'operation_id': 'list_tests',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (SyntheticsListTestsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests",
+                "operation_id": "list_tests",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_tests
+            callable=__list_tests,
         )
 
-        def __trigger_ci_tests(
-            self,
-            body,
-            **kwargs
-        ):
+        def __trigger_ci_tests(self, body, **kwargs):
             """Trigger some Synthetics tests for CI  # noqa: E501
 
             Trigger a set of Synthetics tests for continuous integration.  # noqa: E501
@@ -2178,90 +1633,54 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.trigger_ci_tests = _Endpoint(
             settings={
-                'response_type': (SyntheticsTriggerCITestsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests/trigger/ci',
-                'operation_id': 'trigger_ci_tests',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (SyntheticsTriggerCITestsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/trigger/ci",
+                "operation_id": "trigger_ci_tests",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (SyntheticsCITestBody,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (SyntheticsCITestBody,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__trigger_ci_tests
+            callable=__trigger_ci_tests,
         )
 
-        def __update_private_location(
-            self,
-            location_id,
-            body,
-            **kwargs
-        ):
+        def __update_private_location(self, location_id, body, **kwargs):
             """Edit a private location  # noqa: E501
 
             Edit a Synthetics private location.  # noqa: E501
@@ -2301,98 +1720,61 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['location_id'] = \
-                location_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["location_id"] = location_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_private_location = _Endpoint(
             settings={
-                'response_type': (SyntheticsPrivateLocation,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/private-locations/{location_id}',
-                'operation_id': 'update_private_location',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (SyntheticsPrivateLocation,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/private-locations/{location_id}",
+                "operation_id": "update_private_location",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'location_id',
-                    'body',
+                "all": [
+                    "location_id",
+                    "body",
                 ],
-                'required': [
-                    'location_id',
-                    'body',
+                "required": [
+                    "location_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "location_id": (str,),
+                    "body": (SyntheticsPrivateLocation,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "location_id": "location_id",
                 },
-                'openapi_types': {
-                    'location_id':
-                        (str,),
-                    'body':
-                        (SyntheticsPrivateLocation,),
+                "location_map": {
+                    "location_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'location_id': 'location_id',
-                },
-                'location_map': {
-                    'location_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_private_location
+            callable=__update_private_location,
         )
 
-        def __update_test(
-            self,
-            public_id,
-            body,
-            **kwargs
-        ):
+        def __update_test(self, public_id, body, **kwargs):
             """Edit a test  # noqa: E501
 
             Edit the configuration of a Synthetic test.  # noqa: E501
@@ -2432,98 +1814,61 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_test = _Endpoint(
             settings={
-                'response_type': (SyntheticsTestDetails,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests/{public_id}',
-                'operation_id': 'update_test',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (SyntheticsTestDetails,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/{public_id}",
+                "operation_id": "update_test",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
-                    'body',
+                "all": [
+                    "public_id",
+                    "body",
                 ],
-                'required': [
-                    'public_id',
-                    'body',
+                "required": [
+                    "public_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
+                    "body": (SyntheticsTestDetails,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
-                    'body':
-                        (SyntheticsTestDetails,),
+                "location_map": {
+                    "public_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                },
-                'location_map': {
-                    'public_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_test
+            callable=__update_test,
         )
 
-        def __update_test_pause_status(
-            self,
-            public_id,
-            body,
-            **kwargs
-        ):
+        def __update_test_pause_status(self, public_id, body, **kwargs):
             """Pause or start a test  # noqa: E501
 
             Pause or start a Synthetics test by changing the status.  # noqa: E501
@@ -2563,88 +1908,56 @@ class SyntheticsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_test_pause_status = _Endpoint(
             settings={
-                'response_type': (bool,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/synthetics/tests/{public_id}/status',
-                'operation_id': 'update_test_pause_status',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (bool,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/{public_id}/status",
+                "operation_id": "update_test_pause_status",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
-                    'body',
+                "all": [
+                    "public_id",
+                    "body",
                 ],
-                'required': [
-                    'public_id',
-                    'body',
+                "required": [
+                    "public_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
+                    "body": (SyntheticsUpdateTestPauseStatusPayload,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
-                    'body':
-                        (SyntheticsUpdateTestPauseStatusPayload,),
+                "location_map": {
+                    "public_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                },
-                'location_map': {
-                    'public_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_test_pause_status
+            callable=__update_test_pause_status,
         )

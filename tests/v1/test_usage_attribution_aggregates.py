@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.usage_attribution_aggregates_body import UsageAttributionAggregatesBody
-globals()['UsageAttributionAggregatesBody'] = UsageAttributionAggregatesBody
+
+globals()["UsageAttributionAggregatesBody"] = UsageAttributionAggregatesBody
 from datadog_api_client.v1.model.usage_attribution_aggregates import UsageAttributionAggregates
 
 
@@ -30,5 +31,5 @@ class TestUsageAttributionAggregates(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

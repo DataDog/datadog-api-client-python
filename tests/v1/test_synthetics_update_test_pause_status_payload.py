@@ -10,12 +10,14 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_test_pause_status
 except ImportError:
-    synthetics_test_pause_status = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_pause_status']
-from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import SyntheticsUpdateTestPauseStatusPayload
+    synthetics_test_pause_status = sys.modules["datadog_api_client.v1.model.synthetics_test_pause_status"]
+from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import (
+    SyntheticsUpdateTestPauseStatusPayload,
+)
 
 
 class TestSyntheticsUpdateTestPauseStatusPayload(unittest.TestCase):
@@ -34,5 +36,5 @@ class TestSyntheticsUpdateTestPauseStatusPayload(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

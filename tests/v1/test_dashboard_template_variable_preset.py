@@ -10,11 +10,13 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import dashboard_template_variable_preset_value
 except ImportError:
     dashboard_template_variable_preset_value = sys.modules[
-        'datadog_api_client.v1.model.dashboard_template_variable_preset_value']
+        "datadog_api_client.v1.model.dashboard_template_variable_preset_value"
+    ]
 from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
 
 
@@ -34,5 +36,5 @@ class TestDashboardTemplateVariablePreset(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

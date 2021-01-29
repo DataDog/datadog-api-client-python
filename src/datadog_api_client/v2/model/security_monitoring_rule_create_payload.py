@@ -23,15 +23,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_rule_query_create import SecurityMonitoringRuleQueryCreate
-    globals()['SecurityMonitoringFilter'] = SecurityMonitoringFilter
-    globals()['SecurityMonitoringRuleCaseCreate'] = SecurityMonitoringRuleCaseCreate
-    globals()['SecurityMonitoringRuleOptions'] = SecurityMonitoringRuleOptions
-    globals()['SecurityMonitoringRuleQueryCreate'] = SecurityMonitoringRuleQueryCreate
+
+    globals()["SecurityMonitoringFilter"] = SecurityMonitoringFilter
+    globals()["SecurityMonitoringRuleCaseCreate"] = SecurityMonitoringRuleCaseCreate
+    globals()["SecurityMonitoringRuleOptions"] = SecurityMonitoringRuleOptions
+    globals()["SecurityMonitoringRuleQueryCreate"] = SecurityMonitoringRuleQueryCreate
 
 
 class SecurityMonitoringRuleCreatePayload(ModelNormal):
@@ -58,11 +60,9 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -80,42 +80,43 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         """
         lazy_import()
         return {
-            'cases': ([SecurityMonitoringRuleCaseCreate],),  # noqa: E501
-            'is_enabled': (bool,),  # noqa: E501
-            'message': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'options': (SecurityMonitoringRuleOptions,),  # noqa: E501
-            'queries': ([SecurityMonitoringRuleQueryCreate],),  # noqa: E501
-            'filters': ([SecurityMonitoringFilter],),  # noqa: E501
-            'tags': ([str],),  # noqa: E501
+            "cases": ([SecurityMonitoringRuleCaseCreate],),  # noqa: E501
+            "is_enabled": (bool,),  # noqa: E501
+            "message": (str,),  # noqa: E501
+            "name": (str,),  # noqa: E501
+            "options": (SecurityMonitoringRuleOptions,),  # noqa: E501
+            "queries": ([SecurityMonitoringRuleQueryCreate],),  # noqa: E501
+            "filters": ([SecurityMonitoringFilter],),  # noqa: E501
+            "tags": ([str],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'cases': 'cases',  # noqa: E501
-        'is_enabled': 'isEnabled',  # noqa: E501
-        'message': 'message',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'options': 'options',  # noqa: E501
-        'queries': 'queries',  # noqa: E501
-        'filters': 'filters',  # noqa: E501
-        'tags': 'tags',  # noqa: E501
+        "cases": "cases",  # noqa: E501
+        "is_enabled": "isEnabled",  # noqa: E501
+        "message": "message",  # noqa: E501
+        "name": "name",  # noqa: E501
+        "options": "options",  # noqa: E501
+        "queries": "queries",  # noqa: E501
+        "filters": "filters",  # noqa: E501
+        "tags": "tags",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, cases, is_enabled, message, name, options, queries, *args, **kwargs):  # noqa: E501
@@ -164,15 +165,16 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
             tags ([str]): Tags for generated signals.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -194,10 +196,12 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         self.options = options
         self.queries = queries
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

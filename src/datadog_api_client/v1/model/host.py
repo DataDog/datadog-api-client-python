@@ -23,11 +23,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.host_meta import HostMeta
     from datadog_api_client.v1.model.host_metrics import HostMetrics
-    globals()['HostMeta'] = HostMeta
-    globals()['HostMetrics'] = HostMetrics
+
+    globals()["HostMeta"] = HostMeta
+    globals()["HostMetrics"] = HostMetrics
 
 
 class Host(ModelNormal):
@@ -54,11 +56,9 @@ class Host(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -76,54 +76,55 @@ class Host(ModelNormal):
         """
         lazy_import()
         return {
-            'aliases': ([str],),  # noqa: E501
-            'apps': ([str],),  # noqa: E501
-            'aws_name': (str,),  # noqa: E501
-            'host_name': (str,),  # noqa: E501
-            'id': (int,),  # noqa: E501
-            'is_muted': (bool,),  # noqa: E501
-            'last_reported_time': (int,),  # noqa: E501
-            'meta': (HostMeta,),  # noqa: E501
-            'metrics': (HostMetrics,),  # noqa: E501
-            'mute_timeout': (int,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'sources': ([str],),  # noqa: E501
-            'tags_by_source': ({str: ([str],)},),  # noqa: E501
-            'up': (bool,),  # noqa: E501
+            "aliases": ([str],),  # noqa: E501
+            "apps": ([str],),  # noqa: E501
+            "aws_name": (str,),  # noqa: E501
+            "host_name": (str,),  # noqa: E501
+            "id": (int,),  # noqa: E501
+            "is_muted": (bool,),  # noqa: E501
+            "last_reported_time": (int,),  # noqa: E501
+            "meta": (HostMeta,),  # noqa: E501
+            "metrics": (HostMetrics,),  # noqa: E501
+            "mute_timeout": (int,),  # noqa: E501
+            "name": (str,),  # noqa: E501
+            "sources": ([str],),  # noqa: E501
+            "tags_by_source": ({str: ([str],)},),  # noqa: E501
+            "up": (bool,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'aliases': 'aliases',  # noqa: E501
-        'apps': 'apps',  # noqa: E501
-        'aws_name': 'aws_name',  # noqa: E501
-        'host_name': 'host_name',  # noqa: E501
-        'id': 'id',  # noqa: E501
-        'is_muted': 'is_muted',  # noqa: E501
-        'last_reported_time': 'last_reported_time',  # noqa: E501
-        'meta': 'meta',  # noqa: E501
-        'metrics': 'metrics',  # noqa: E501
-        'mute_timeout': 'mute_timeout',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'sources': 'sources',  # noqa: E501
-        'tags_by_source': 'tags_by_source',  # noqa: E501
-        'up': 'up',  # noqa: E501
+        "aliases": "aliases",  # noqa: E501
+        "apps": "apps",  # noqa: E501
+        "aws_name": "aws_name",  # noqa: E501
+        "host_name": "host_name",  # noqa: E501
+        "id": "id",  # noqa: E501
+        "is_muted": "is_muted",  # noqa: E501
+        "last_reported_time": "last_reported_time",  # noqa: E501
+        "meta": "meta",  # noqa: E501
+        "metrics": "metrics",  # noqa: E501
+        "mute_timeout": "mute_timeout",  # noqa: E501
+        "name": "name",  # noqa: E501
+        "sources": "sources",  # noqa: E501
+        "tags_by_source": "tags_by_source",  # noqa: E501
+        "up": "up",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -176,15 +177,16 @@ class Host(ModelNormal):
             up (bool): Displays UP when the expected metrics are received and displays `???` if no metrics are received.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -200,10 +202,12 @@ class Host(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

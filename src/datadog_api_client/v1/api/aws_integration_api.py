@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
@@ -37,11 +37,7 @@ class AWSIntegrationApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_aws_account(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_aws_account(self, body, **kwargs):
             """Create an AWS integration  # noqa: E501
 
             Create a Datadog-Amazon Web Services integration. Using the `POST` method updates your integration configuration by adding your new configuration to the existing one in your Datadog organization. A unique AWS Account ID for role based authentication.  # noqa: E501
@@ -80,89 +76,54 @@ class AWSIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_aws_account = _Endpoint(
             settings={
-                'response_type': (AWSAccountCreateResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/integration/aws',
-                'operation_id': 'create_aws_account',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (AWSAccountCreateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws",
+                "operation_id": "create_aws_account",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (AWSAccount,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (AWSAccount,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_aws_account
+            callable=__create_aws_account,
         )
 
-        def __create_aws_tag_filter(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_aws_tag_filter(self, body, **kwargs):
             """Set an AWS tag filter  # noqa: E501
 
             Set an AWS tag filter.  # noqa: E501
@@ -201,121 +162,84 @@ class AWSIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_aws_tag_filter = _Endpoint(
             settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
+                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws/filtering",
+                "operation_id": "create_aws_tag_filter",
+                "http_method": "POST",
+                "servers": [
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "description": "No description provided",
+                        "variables": {
+                            "site": {
+                                "description": "The regional site for our customers.",
+                                "default_value": "datadoghq.com",
+                                "enum_values": ["datadoghq.com"],
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "api",
+                            },
+                        },
+                    },
+                    {
+                        "url": "{protocol}://{name}",
+                        "description": "No description provided",
+                        "variables": {
+                            "name": {
+                                "description": "Full site DNS name.",
+                                "default_value": "api.datadoghq.com",
+                            },
+                            "protocol": {
+                                "description": "The protocol for accessing the API.",
+                                "default_value": "https",
+                            },
+                        },
+                    },
                 ],
-                'endpoint_path': '/api/v1/integration/aws/filtering',
-                'operation_id': 'create_aws_tag_filter',
-                'http_method': 'POST',
-                'servers': [
-                    {
-                        'url': "https://{subdomain}.{site}",
-                        'description': "No description provided",
-                        'variables': {
-                            'site': {
-                                'description': "The regional site for our customers.",
-                                'default_value': "datadoghq.com",
-                                'enum_values': [
-                                    "datadoghq.com"
-                                ]
-                                },
-                            'subdomain': {
-                                'description': "The subdomain where the API is deployed.",
-                                'default_value': "api",
-                                }
-                            }
-                    },
-                    {
-                        'url': "{protocol}://{name}",
-                        'description': "No description provided",
-                        'variables': {
-                            'name': {
-                                'description': "Full site DNS name.",
-                                'default_value': "api.datadoghq.com",
-                                },
-                            'protocol': {
-                                'description': "The protocol for accessing the API.",
-                                'default_value': "https",
-                                }
-                            }
-                    },
-                ]
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (AWSTagFilterCreateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (AWSTagFilterCreateRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_aws_tag_filter
+            callable=__create_aws_tag_filter,
         )
 
-        def __create_new_aws_external_id(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_new_aws_external_id(self, body, **kwargs):
             """Generate a new external ID  # noqa: E501
 
             Generate a new AWS external ID for a given AWS account ID and role name pair.  # noqa: E501
@@ -354,89 +278,54 @@ class AWSIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_new_aws_external_id = _Endpoint(
             settings={
-                'response_type': (AWSAccountCreateResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/integration/aws/generate_new_external_id',
-                'operation_id': 'create_new_aws_external_id',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (AWSAccountCreateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws/generate_new_external_id",
+                "operation_id": "create_new_aws_external_id",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (AWSAccount,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (AWSAccount,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_new_aws_external_id
+            callable=__create_new_aws_external_id,
         )
 
-        def __delete_aws_account(
-            self,
-            body,
-            **kwargs
-        ):
+        def __delete_aws_account(self, body, **kwargs):
             """Delete an AWS integration  # noqa: E501
 
             Delete a Datadog-AWS integration matching the specified `account_id` and `role_name parameters`.  # noqa: E501
@@ -475,89 +364,54 @@ class AWSIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.delete_aws_account = _Endpoint(
             settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/integration/aws',
-                'operation_id': 'delete_aws_account',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws",
+                "operation_id": "delete_aws_account",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (AWSAccount,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (AWSAccount,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__delete_aws_account
+            callable=__delete_aws_account,
         )
 
-        def __delete_aws_tag_filter(
-            self,
-            body,
-            **kwargs
-        ):
+        def __delete_aws_tag_filter(self, body, **kwargs):
             """Delete a tag filtering entry  # noqa: E501
 
             Delete a tag filtering entry.  # noqa: E501
@@ -596,120 +450,84 @@ class AWSIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.delete_aws_tag_filter = _Endpoint(
             settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
+                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws/filtering",
+                "operation_id": "delete_aws_tag_filter",
+                "http_method": "DELETE",
+                "servers": [
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "description": "No description provided",
+                        "variables": {
+                            "site": {
+                                "description": "The regional site for our customers.",
+                                "default_value": "datadoghq.com",
+                                "enum_values": ["datadoghq.com"],
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "api",
+                            },
+                        },
+                    },
+                    {
+                        "url": "{protocol}://{name}",
+                        "description": "No description provided",
+                        "variables": {
+                            "name": {
+                                "description": "Full site DNS name.",
+                                "default_value": "api.datadoghq.com",
+                            },
+                            "protocol": {
+                                "description": "The protocol for accessing the API.",
+                                "default_value": "https",
+                            },
+                        },
+                    },
                 ],
-                'endpoint_path': '/api/v1/integration/aws/filtering',
-                'operation_id': 'delete_aws_tag_filter',
-                'http_method': 'DELETE',
-                'servers': [
-                    {
-                        'url': "https://{subdomain}.{site}",
-                        'description': "No description provided",
-                        'variables': {
-                            'site': {
-                                'description': "The regional site for our customers.",
-                                'default_value': "datadoghq.com",
-                                'enum_values': [
-                                    "datadoghq.com"
-                                ]
-                                },
-                            'subdomain': {
-                                'description': "The subdomain where the API is deployed.",
-                                'default_value': "api",
-                                }
-                            }
-                    },
-                    {
-                        'url': "{protocol}://{name}",
-                        'description': "No description provided",
-                        'variables': {
-                            'name': {
-                                'description': "Full site DNS name.",
-                                'default_value': "api.datadoghq.com",
-                                },
-                            'protocol': {
-                                'description': "The protocol for accessing the API.",
-                                'default_value': "https",
-                                }
-                            }
-                    },
-                ]
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (AWSTagFilterDeleteRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (AWSTagFilterDeleteRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__delete_aws_tag_filter
+            callable=__delete_aws_tag_filter,
         )
 
-        def __list_available_aws_namespaces(
-            self,
-            **kwargs
-        ):
+        def __list_available_aws_namespaces(self, **kwargs):
             """List namespace rules  # noqa: E501
 
             List all namespace rules for a given Datadog-AWS integration. This endpoint takes no arguments.  # noqa: E501
@@ -746,78 +564,42 @@ class AWSIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_available_aws_namespaces = _Endpoint(
             settings={
-                'response_type': ([str],),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/integration/aws/available_namespace_rules',
-                'operation_id': 'list_available_aws_namespaces',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": ([str],),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws/available_namespace_rules",
+                "operation_id": "list_available_aws_namespaces",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_available_aws_namespaces
+            callable=__list_available_aws_namespaces,
         )
 
-        def __list_aws_accounts(
-            self,
-            **kwargs
-        ):
+        def __list_aws_accounts(self, **kwargs):
             """List all AWS integrations  # noqa: E501
 
             List all Datadog-AWS integrations available in your Datadog organization.  # noqa: E501
@@ -857,94 +639,64 @@ class AWSIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_aws_accounts = _Endpoint(
             settings={
-                'response_type': (AWSAccountListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/integration/aws',
-                'operation_id': 'list_aws_accounts',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (AWSAccountListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws",
+                "operation_id": "list_aws_accounts",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'account_id',
-                    'role_name',
-                    'access_key_id',
+                "all": [
+                    "account_id",
+                    "role_name",
+                    "access_key_id",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "account_id": (str,),
+                    "role_name": (str,),
+                    "access_key_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "account_id": "account_id",
+                    "role_name": "role_name",
+                    "access_key_id": "access_key_id",
                 },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'role_name':
-                        (str,),
-                    'access_key_id':
-                        (str,),
+                "location_map": {
+                    "account_id": "query",
+                    "role_name": "query",
+                    "access_key_id": "query",
                 },
-                'attribute_map': {
-                    'account_id': 'account_id',
-                    'role_name': 'role_name',
-                    'access_key_id': 'access_key_id',
-                },
-                'location_map': {
-                    'account_id': 'query',
-                    'role_name': 'query',
-                    'access_key_id': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_aws_accounts
+            callable=__list_aws_accounts,
         )
 
-        def __list_aws_tag_filters(
-            self,
-            account_id,
-            **kwargs
-        ):
+        def __list_aws_tag_filters(self, account_id, **kwargs):
             """Get all AWS tag filters  # noqa: E501
 
             Get all AWS tag filters.  # noqa: E501
@@ -983,120 +735,89 @@ class AWSIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['account_id'] = \
-                account_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["account_id"] = account_id
             return self.call_with_http_info(**kwargs)
 
         self.list_aws_tag_filters = _Endpoint(
             settings={
-                'response_type': (AWSTagFilterListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
+                "response_type": (AWSTagFilterListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws/filtering",
+                "operation_id": "list_aws_tag_filters",
+                "http_method": "GET",
+                "servers": [
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "description": "No description provided",
+                        "variables": {
+                            "site": {
+                                "description": "The regional site for our customers.",
+                                "default_value": "datadoghq.com",
+                                "enum_values": ["datadoghq.com"],
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "api",
+                            },
+                        },
+                    },
+                    {
+                        "url": "{protocol}://{name}",
+                        "description": "No description provided",
+                        "variables": {
+                            "name": {
+                                "description": "Full site DNS name.",
+                                "default_value": "api.datadoghq.com",
+                            },
+                            "protocol": {
+                                "description": "The protocol for accessing the API.",
+                                "default_value": "https",
+                            },
+                        },
+                    },
                 ],
-                'endpoint_path': '/api/v1/integration/aws/filtering',
-                'operation_id': 'list_aws_tag_filters',
-                'http_method': 'GET',
-                'servers': [
-                    {
-                        'url': "https://{subdomain}.{site}",
-                        'description': "No description provided",
-                        'variables': {
-                            'site': {
-                                'description': "The regional site for our customers.",
-                                'default_value': "datadoghq.com",
-                                'enum_values': [
-                                    "datadoghq.com"
-                                ]
-                                },
-                            'subdomain': {
-                                'description': "The subdomain where the API is deployed.",
-                                'default_value': "api",
-                                }
-                            }
-                    },
-                    {
-                        'url': "{protocol}://{name}",
-                        'description': "No description provided",
-                        'variables': {
-                            'name': {
-                                'description': "Full site DNS name.",
-                                'default_value': "api.datadoghq.com",
-                                },
-                            'protocol': {
-                                'description': "The protocol for accessing the API.",
-                                'default_value': "https",
-                                }
-                            }
-                    },
-                ]
             },
             params_map={
-                'all': [
-                    'account_id',
+                "all": [
+                    "account_id",
                 ],
-                'required': [
-                    'account_id',
+                "required": [
+                    "account_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "account_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "account_id": "account_id",
                 },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
+                "location_map": {
+                    "account_id": "query",
                 },
-                'attribute_map': {
-                    'account_id': 'account_id',
-                },
-                'location_map': {
-                    'account_id': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_aws_tag_filters
+            callable=__list_aws_tag_filters,
         )
 
-        def __update_aws_account(
-            self,
-            body,
-            **kwargs
-        ):
+        def __update_aws_account(self, body, **kwargs):
             """Update an AWS integration  # noqa: E501
 
             Update a Datadog-Amazon Web Services integration.  # noqa: E501
@@ -1138,95 +859,62 @@ class AWSIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_aws_account = _Endpoint(
             settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/integration/aws',
-                'operation_id': 'update_aws_account',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws",
+                "operation_id": "update_aws_account",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
-                    'account_id',
-                    'role_name',
-                    'access_key_id',
+                "all": [
+                    "body",
+                    "account_id",
+                    "role_name",
+                    "access_key_id",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (AWSAccount,),
+                    "account_id": (str,),
+                    "role_name": (str,),
+                    "access_key_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "account_id": "account_id",
+                    "role_name": "role_name",
+                    "access_key_id": "access_key_id",
                 },
-                'openapi_types': {
-                    'body':
-                        (AWSAccount,),
-                    'account_id':
-                        (str,),
-                    'role_name':
-                        (str,),
-                    'access_key_id':
-                        (str,),
+                "location_map": {
+                    "body": "body",
+                    "account_id": "query",
+                    "role_name": "query",
+                    "access_key_id": "query",
                 },
-                'attribute_map': {
-                    'account_id': 'account_id',
-                    'role_name': 'role_name',
-                    'access_key_id': 'access_key_id',
-                },
-                'location_map': {
-                    'body': 'body',
-                    'account_id': 'query',
-                    'role_name': 'query',
-                    'access_key_id': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_aws_account
+            callable=__update_aws_account,
         )

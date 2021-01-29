@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v2
 from datadog_api_client.v2.model.process_summaries_meta_page import ProcessSummariesMetaPage
-globals()['ProcessSummariesMetaPage'] = ProcessSummariesMetaPage
+
+globals()["ProcessSummariesMetaPage"] = ProcessSummariesMetaPage
 from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
 
 
@@ -30,5 +31,5 @@ class TestProcessSummariesMeta(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

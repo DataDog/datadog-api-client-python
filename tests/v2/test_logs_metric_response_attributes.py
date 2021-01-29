@@ -10,9 +10,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.logs_metric_response_compute import LogsMetricResponseCompute
 from datadog_api_client.v2.model.logs_metric_response_filter import LogsMetricResponseFilter
 from datadog_api_client.v2.model.logs_metric_response_group_by import LogsMetricResponseGroupBy
-globals()['LogsMetricResponseCompute'] = LogsMetricResponseCompute
-globals()['LogsMetricResponseFilter'] = LogsMetricResponseFilter
-globals()['LogsMetricResponseGroupBy'] = LogsMetricResponseGroupBy
+
+globals()["LogsMetricResponseCompute"] = LogsMetricResponseCompute
+globals()["LogsMetricResponseFilter"] = LogsMetricResponseFilter
+globals()["LogsMetricResponseGroupBy"] = LogsMetricResponseGroupBy
 from datadog_api_client.v2.model.logs_metric_response_attributes import LogsMetricResponseAttributes
 
 
@@ -32,5 +33,5 @@ class TestLogsMetricResponseAttributes(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

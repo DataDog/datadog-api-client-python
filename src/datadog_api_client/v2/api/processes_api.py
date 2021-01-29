@@ -14,7 +14,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.process_summaries_response import ProcessSummariesResponse
@@ -32,10 +32,7 @@ class ProcessesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __list_processes(
-            self,
-            **kwargs
-        ):
+        def __list_processes(self, **kwargs):
             """Get all processes  # noqa: E501
 
             Get all processes for your organization.  # noqa: E501
@@ -78,106 +75,78 @@ class ProcessesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_processes = _Endpoint(
             settings={
-                'response_type': (ProcessSummariesResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/processes',
-                'operation_id': 'list_processes',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (ProcessSummariesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/processes",
+                "operation_id": "list_processes",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'search',
-                    'tags',
-                    '_from',
-                    'to',
-                    'page_limit',
-                    'page_cursor',
+                "all": [
+                    "search",
+                    "tags",
+                    "_from",
+                    "to",
+                    "page_limit",
+                    "page_cursor",
                 ],
-                'required': [],
-                'nullable': [
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [
+                    "page_limit",
                 ],
-                'enum': [
-                ],
-                'validation': [
-                    'page_limit',
-                ]
             },
             root_map={
-                'validations': {
-                    ('page_limit',): {
-
-                        'inclusive_maximum': 10000,
-                        'inclusive_minimum': 1,
+                "validations": {
+                    ("page_limit",): {
+                        "inclusive_maximum": 10000,
+                        "inclusive_minimum": 1,
                     },
                 },
-                'allowed_values': {
+                "allowed_values": {},
+                "openapi_types": {
+                    "search": (str,),
+                    "tags": (str,),
+                    "_from": (int,),
+                    "to": (int,),
+                    "page_limit": (int,),
+                    "page_cursor": (str,),
                 },
-                'openapi_types': {
-                    'search':
-                        (str,),
-                    'tags':
-                        (str,),
-                    '_from':
-                        (int,),
-                    'to':
-                        (int,),
-                    'page_limit':
-                        (int,),
-                    'page_cursor':
-                        (str,),
+                "attribute_map": {
+                    "search": "search",
+                    "tags": "tags",
+                    "_from": "from",
+                    "to": "to",
+                    "page_limit": "page[limit]",
+                    "page_cursor": "page[cursor]",
                 },
-                'attribute_map': {
-                    'search': 'search',
-                    'tags': 'tags',
-                    '_from': 'from',
-                    'to': 'to',
-                    'page_limit': 'page[limit]',
-                    'page_cursor': 'page[cursor]',
+                "location_map": {
+                    "search": "query",
+                    "tags": "query",
+                    "_from": "query",
+                    "to": "query",
+                    "page_limit": "query",
+                    "page_cursor": "query",
                 },
-                'location_map': {
-                    'search': 'query',
-                    'tags': 'query',
-                    '_from': 'query',
-                    'to': 'query',
-                    'page_limit': 'query',
-                    'page_cursor': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_processes
+            callable=__list_processes,
         )

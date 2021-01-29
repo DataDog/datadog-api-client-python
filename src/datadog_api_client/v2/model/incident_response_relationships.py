@@ -23,13 +23,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
-    from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import RelationshipToIncidentIntegrationMetadatas
+    from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
+        RelationshipToIncidentIntegrationMetadatas,
+    )
     from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
     from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
-    globals()['RelationshipToIncidentIntegrationMetadatas'] = RelationshipToIncidentIntegrationMetadatas
-    globals()['RelationshipToIncidentPostmortem'] = RelationshipToIncidentPostmortem
-    globals()['RelationshipToUser'] = RelationshipToUser
+
+    globals()["RelationshipToIncidentIntegrationMetadatas"] = RelationshipToIncidentIntegrationMetadatas
+    globals()["RelationshipToIncidentPostmortem"] = RelationshipToIncidentPostmortem
+    globals()["RelationshipToUser"] = RelationshipToUser
 
 
 class IncidentResponseRelationships(ModelNormal):
@@ -56,11 +60,9 @@ class IncidentResponseRelationships(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -78,36 +80,37 @@ class IncidentResponseRelationships(ModelNormal):
         """
         lazy_import()
         return {
-            'commander_user': (RelationshipToUser,),  # noqa: E501
-            'created_by_user': (RelationshipToUser,),  # noqa: E501
-            'integrations': (RelationshipToIncidentIntegrationMetadatas,),  # noqa: E501
-            'last_modified_by_user': (RelationshipToUser,),  # noqa: E501
-            'postmortem': (RelationshipToIncidentPostmortem,),  # noqa: E501
+            "commander_user": (RelationshipToUser,),  # noqa: E501
+            "created_by_user": (RelationshipToUser,),  # noqa: E501
+            "integrations": (RelationshipToIncidentIntegrationMetadatas,),  # noqa: E501
+            "last_modified_by_user": (RelationshipToUser,),  # noqa: E501
+            "postmortem": (RelationshipToIncidentPostmortem,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'commander_user': 'commander_user',  # noqa: E501
-        'created_by_user': 'created_by_user',  # noqa: E501
-        'integrations': 'integrations',  # noqa: E501
-        'last_modified_by_user': 'last_modified_by_user',  # noqa: E501
-        'postmortem': 'postmortem',  # noqa: E501
+        "commander_user": "commander_user",  # noqa: E501
+        "created_by_user": "created_by_user",  # noqa: E501
+        "integrations": "integrations",  # noqa: E501
+        "last_modified_by_user": "last_modified_by_user",  # noqa: E501
+        "postmortem": "postmortem",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -151,15 +154,16 @@ class IncidentResponseRelationships(ModelNormal):
             postmortem (RelationshipToIncidentPostmortem): [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -175,10 +179,12 @@ class IncidentResponseRelationships(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

@@ -10,9 +10,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.application_key_relationships import ApplicationKeyRelationships
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
-globals()['ApplicationKeyRelationships'] = ApplicationKeyRelationships
-globals()['ApplicationKeysType'] = ApplicationKeysType
-globals()['FullApplicationKeyAttributes'] = FullApplicationKeyAttributes
+
+globals()["ApplicationKeyRelationships"] = ApplicationKeyRelationships
+globals()["ApplicationKeysType"] = ApplicationKeysType
+globals()["FullApplicationKeyAttributes"] = FullApplicationKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 
 
@@ -32,5 +33,5 @@ class TestFullApplicationKey(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
