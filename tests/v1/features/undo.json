@@ -982,6 +982,12 @@
       "type": "safe"
     }
   },
+  "GetUsageInternetOfThings": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageLogs": {
     "tag": "Usage Metering",
     "undo": {

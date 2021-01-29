@@ -249,6 +249,7 @@ Class | Method | HTTP request | Description
 *UsageMeteringApi* | [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 *UsageMeteringApi* | [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
 *UsageMeteringApi* | [**get_usage_indexed_spans**](UsageMeteringApi.md#get_usage_indexed_spans) | **GET** /api/v1/usage/indexed-spans | Get hourly usage for indexed spans
+*UsageMeteringApi* | [**get_usage_internet_of_things**](UsageMeteringApi.md#get_usage_internet_of_things) | **GET** /api/v1/usage/iot | Get hourly usage for IoT
 *UsageMeteringApi* | [**get_usage_lambda**](UsageMeteringApi.md#get_usage_lambda) | **GET** /api/v1/usage/aws_lambda | Get hourly usage for Lambda
 *UsageMeteringApi* | [**get_usage_logs**](UsageMeteringApi.md#get_usage_logs) | **GET** /api/v1/usage/logs | Get hourly usage for Logs
 *UsageMeteringApi* | [**get_usage_logs_by_index**](UsageMeteringApi.md#get_usage_logs_by_index) | **GET** /api/v1/usage/logs_by_index | Get hourly usage for Logs by Index
@@ -669,6 +670,8 @@ Class | Method | HTTP request | Description
  - [UsageIndexedSpansResponse](UsageIndexedSpansResponse.md)
  - [UsageIngestedSpansHour](UsageIngestedSpansHour.md)
  - [UsageIngestedSpansResponse](UsageIngestedSpansResponse.md)
+ - [UsageIoTHour](UsageIoTHour.md)
+ - [UsageIoTResponse](UsageIoTResponse.md)
  - [UsageLambdaHour](UsageLambdaHour.md)
  - [UsageLambdaResponse](UsageLambdaResponse.md)
  - [UsageLogsByIndexHour](UsageLogsByIndexHour.md)

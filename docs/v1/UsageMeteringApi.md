@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
 [**get_usage_indexed_spans**](UsageMeteringApi.md#get_usage_indexed_spans) | **GET** /api/v1/usage/indexed-spans | Get hourly usage for indexed spans
+[**get_usage_internet_of_things**](UsageMeteringApi.md#get_usage_internet_of_things) | **GET** /api/v1/usage/iot | Get hourly usage for IoT
 [**get_usage_lambda**](UsageMeteringApi.md#get_usage_lambda) | **GET** /api/v1/usage/aws_lambda | Get hourly usage for Lambda
 [**get_usage_logs**](UsageMeteringApi.md#get_usage_logs) | **GET** /api/v1/usage/logs | Get hourly usage for Logs
 [**get_usage_logs_by_index**](UsageMeteringApi.md#get_usage_logs_by_index) | **GET** /api/v1/usage/logs_by_index | Get hourly usage for Logs by Index
@@ -1076,6 +1077,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UsageIndexedSpansResponse**](UsageIndexedSpansResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;datetime-format=rfc3339
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden - User is not authorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_usage_internet_of_things**
+> UsageIoTResponse get_usage_internet_of_things(start_hr)
+
+Get hourly usage for IoT
+
+Get hourly usage for IoT.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.datadoghq.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = datadog_api_client.v1.Configuration(
+    host="https://api.datadoghq.com"
+)
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get hourly usage for IoT
+        api_response = api_instance.get_usage_internet_of_things(start_hr)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_usage_internet_of_things: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get hourly usage for IoT
+        api_response = api_instance.get_usage_internet_of_things(start_hr, end_hr=end_hr)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_usage_internet_of_things: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour. |
+ **end_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour. | [optional]
+
+### Return type
+
+[**UsageIoTResponse**](UsageIoTResponse.md)
 
 ### Authorization
 
