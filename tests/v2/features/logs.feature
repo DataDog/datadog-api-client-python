@@ -35,9 +35,8 @@ Feature: Logs
 
   @generated @skip
   Scenario: Get a list of logs returns "Bad Request" response
-    Given operation "ListLogs" enabled
-    And new "ListLogs" request
-    And body {}
+    Given operation "ListLogsGet" enabled
+    And new "ListLogsGet" request
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -48,13 +47,6 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
-  Scenario: Get a quick list of logs returns "Bad Request" response
-    Given operation "ListLogsGet" enabled
-    And new "ListLogsGet" request
-    When the request is sent
-    Then the response status is 400 Bad Request
-
   Scenario: Get a quick list of logs returns "OK" response
     Given operation "ListLogsGet" enabled
     And new "ListLogsGet" request
@@ -63,5 +55,21 @@ Feature: Logs
     And request contains "filter[from]" parameter with value "2020-09-17T11:48:36+01:00"
     And request contains "filter[to]" parameter with value "2020-09-17T12:48:36+01:00"
     And request contains "page[limit]" parameter with value 5
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Search logs returns "Bad Request" response
+    Given operation "ListLogs" enabled
+    And new "ListLogs" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Search logs returns "OK" response
+    Given operation "ListLogs" enabled
+    And new "ListLogs" request
+    And body {}
     When the request is sent
     Then the response status is 200 OK
