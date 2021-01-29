@@ -8,14 +8,29 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
-globals()['FormulaAndFunctionEventsDataSource'] = FormulaAndFunctionEventsDataSource
-globals()['TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute'] = TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute
-globals()['TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy'] = TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy
-globals()['TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch'] = TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition import TimeSeriesFormulaAndFunctionEventQueryDefinition
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute,
+)
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy,
+)
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,
+)
+
+globals()["FormulaAndFunctionEventsDataSource"] = FormulaAndFunctionEventsDataSource
+globals()[
+    "TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute"
+] = TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute
+globals()[
+    "TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy"
+] = TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy
+globals()[
+    "TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch"
+] = TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinition,
+)
 
 
 class TestTimeSeriesFormulaAndFunctionEventQueryDefinition(unittest.TestCase):
@@ -34,5 +49,5 @@ class TestTimeSeriesFormulaAndFunctionEventQueryDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.host_list_response import HostListResponse
@@ -35,10 +35,7 @@ class HostsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __get_host_totals(
-            self,
-            **kwargs
-        ):
+        def __get_host_totals(self, **kwargs):
             """Get the total number of active hosts  # noqa: E501
 
             This endpoint returns the total number of active and up hosts in your Datadog account. Active means the host has reported in the past hour, and up means it has reported in the past two hours.  # noqa: E501
@@ -76,83 +73,56 @@ class HostsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.get_host_totals = _Endpoint(
             settings={
-                'response_type': (HostTotals,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/hosts/totals',
-                'operation_id': 'get_host_totals',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (HostTotals,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/hosts/totals",
+                "operation_id": "get_host_totals",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    '_from',
+                "all": [
+                    "_from",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "_from": (int,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "_from": "from",
                 },
-                'openapi_types': {
-                    '_from':
-                        (int,),
+                "location_map": {
+                    "_from": "query",
                 },
-                'attribute_map': {
-                    '_from': 'from',
-                },
-                'location_map': {
-                    '_from': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_host_totals
+            callable=__get_host_totals,
         )
 
-        def __list_hosts(
-            self,
-            **kwargs
-        ):
+        def __list_hosts(self, **kwargs):
             """Get all hosts for your organization  # noqa: E501
 
             This endpoint allows searching for hosts by name, alias, or tag. Hosts live within the past 3 hours are included by default. Retention is 7 days. Results are paginated with a max of 1000 results at a time.  # noqa: E501
@@ -197,120 +167,84 @@ class HostsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_hosts = _Endpoint(
             settings={
-                'response_type': (HostListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/hosts',
-                'operation_id': 'list_hosts',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (HostListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/hosts",
+                "operation_id": "list_hosts",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'filter',
-                    'sort_field',
-                    'sort_dir',
-                    'start',
-                    'count',
-                    '_from',
-                    'include_muted_hosts_data',
-                    'include_hosts_metadata',
+                "all": [
+                    "filter",
+                    "sort_field",
+                    "sort_dir",
+                    "start",
+                    "count",
+                    "_from",
+                    "include_muted_hosts_data",
+                    "include_hosts_metadata",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "filter": (str,),
+                    "sort_field": (str,),
+                    "sort_dir": (str,),
+                    "start": (int,),
+                    "count": (int,),
+                    "_from": (int,),
+                    "include_muted_hosts_data": (bool,),
+                    "include_hosts_metadata": (bool,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "filter": "filter",
+                    "sort_field": "sort_field",
+                    "sort_dir": "sort_dir",
+                    "start": "start",
+                    "count": "count",
+                    "_from": "from",
+                    "include_muted_hosts_data": "include_muted_hosts_data",
+                    "include_hosts_metadata": "include_hosts_metadata",
                 },
-                'openapi_types': {
-                    'filter':
-                        (str,),
-                    'sort_field':
-                        (str,),
-                    'sort_dir':
-                        (str,),
-                    'start':
-                        (int,),
-                    'count':
-                        (int,),
-                    '_from':
-                        (int,),
-                    'include_muted_hosts_data':
-                        (bool,),
-                    'include_hosts_metadata':
-                        (bool,),
+                "location_map": {
+                    "filter": "query",
+                    "sort_field": "query",
+                    "sort_dir": "query",
+                    "start": "query",
+                    "count": "query",
+                    "_from": "query",
+                    "include_muted_hosts_data": "query",
+                    "include_hosts_metadata": "query",
                 },
-                'attribute_map': {
-                    'filter': 'filter',
-                    'sort_field': 'sort_field',
-                    'sort_dir': 'sort_dir',
-                    'start': 'start',
-                    'count': 'count',
-                    '_from': 'from',
-                    'include_muted_hosts_data': 'include_muted_hosts_data',
-                    'include_hosts_metadata': 'include_hosts_metadata',
-                },
-                'location_map': {
-                    'filter': 'query',
-                    'sort_field': 'query',
-                    'sort_dir': 'query',
-                    'start': 'query',
-                    'count': 'query',
-                    '_from': 'query',
-                    'include_muted_hosts_data': 'query',
-                    'include_hosts_metadata': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_hosts
+            callable=__list_hosts,
         )
 
-        def __mute_host(
-            self,
-            host_name,
-            body,
-            **kwargs
-        ):
+        def __mute_host(self, host_name, body, **kwargs):
             """Mute a host  # noqa: E501
 
             Mute a host.  # noqa: E501
@@ -350,97 +284,61 @@ class HostsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['host_name'] = \
-                host_name
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["host_name"] = host_name
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.mute_host = _Endpoint(
             settings={
-                'response_type': (HostMuteResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/host/{host_name}/mute',
-                'operation_id': 'mute_host',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (HostMuteResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/host/{host_name}/mute",
+                "operation_id": "mute_host",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'host_name',
-                    'body',
+                "all": [
+                    "host_name",
+                    "body",
                 ],
-                'required': [
-                    'host_name',
-                    'body',
+                "required": [
+                    "host_name",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "host_name": (str,),
+                    "body": (HostMuteSettings,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "host_name": "host_name",
                 },
-                'openapi_types': {
-                    'host_name':
-                        (str,),
-                    'body':
-                        (HostMuteSettings,),
+                "location_map": {
+                    "host_name": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'host_name': 'host_name',
-                },
-                'location_map': {
-                    'host_name': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__mute_host
+            callable=__mute_host,
         )
 
-        def __unmute_host(
-            self,
-            host_name,
-            **kwargs
-        ):
+        def __unmute_host(self, host_name, **kwargs):
             """Unmute a host  # noqa: E501
 
             Unmutes a host. This endpoint takes no JSON arguments.  # noqa: E501
@@ -479,79 +377,54 @@ class HostsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['host_name'] = \
-                host_name
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["host_name"] = host_name
             return self.call_with_http_info(**kwargs)
 
         self.unmute_host = _Endpoint(
             settings={
-                'response_type': (HostMuteResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/host/{host_name}/unmute',
-                'operation_id': 'unmute_host',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (HostMuteResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/host/{host_name}/unmute",
+                "operation_id": "unmute_host",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'host_name',
+                "all": [
+                    "host_name",
                 ],
-                'required': [
-                    'host_name',
+                "required": [
+                    "host_name",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "host_name": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "host_name": "host_name",
                 },
-                'openapi_types': {
-                    'host_name':
-                        (str,),
+                "location_map": {
+                    "host_name": "path",
                 },
-                'attribute_map': {
-                    'host_name': 'host_name',
-                },
-                'location_map': {
-                    'host_name': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__unmute_host
+            callable=__unmute_host,
         )

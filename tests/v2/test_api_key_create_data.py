@@ -9,8 +9,9 @@ import unittest
 import datadog_api_client.v2
 from datadog_api_client.v2.model.api_key_create_attributes import APIKeyCreateAttributes
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
-globals()['APIKeyCreateAttributes'] = APIKeyCreateAttributes
-globals()['APIKeysType'] = APIKeysType
+
+globals()["APIKeyCreateAttributes"] = APIKeyCreateAttributes
+globals()["APIKeysType"] = APIKeysType
 from datadog_api_client.v2.model.api_key_create_data import APIKeyCreateData
 
 
@@ -30,5 +31,5 @@ class TestAPIKeyCreateData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

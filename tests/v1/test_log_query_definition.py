@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import log_query_definition_group_by
 except ImportError:
-    log_query_definition_group_by = sys.modules[
-        'datadog_api_client.v1.model.log_query_definition_group_by']
+    log_query_definition_group_by = sys.modules["datadog_api_client.v1.model.log_query_definition_group_by"]
 try:
     from datadog_api_client.v1.model import log_query_definition_search
 except ImportError:
-    log_query_definition_search = sys.modules[
-        'datadog_api_client.v1.model.log_query_definition_search']
+    log_query_definition_search = sys.modules["datadog_api_client.v1.model.log_query_definition_search"]
 try:
     from datadog_api_client.v1.model import logs_query_compute
 except ImportError:
-    logs_query_compute = sys.modules[
-        'datadog_api_client.v1.model.logs_query_compute']
+    logs_query_compute = sys.modules["datadog_api_client.v1.model.logs_query_compute"]
 from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
 
 
@@ -44,5 +42,5 @@ class TestLogQueryDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

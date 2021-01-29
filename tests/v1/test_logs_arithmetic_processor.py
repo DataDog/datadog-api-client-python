@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import logs_arithmetic_processor_type
 except ImportError:
-    logs_arithmetic_processor_type = sys.modules[
-        'datadog_api_client.v1.model.logs_arithmetic_processor_type']
+    logs_arithmetic_processor_type = sys.modules["datadog_api_client.v1.model.logs_arithmetic_processor_type"]
 from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
 
 
@@ -34,5 +34,5 @@ class TestLogsArithmeticProcessor(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

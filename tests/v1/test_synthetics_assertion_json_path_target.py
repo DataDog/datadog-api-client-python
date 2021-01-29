@@ -10,21 +10,23 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_assertion_json_path_operator
 except ImportError:
     synthetics_assertion_json_path_operator = sys.modules[
-        'datadog_api_client.v1.model.synthetics_assertion_json_path_operator']
+        "datadog_api_client.v1.model.synthetics_assertion_json_path_operator"
+    ]
 try:
     from datadog_api_client.v1.model import synthetics_assertion_json_path_target_target
 except ImportError:
     synthetics_assertion_json_path_target_target = sys.modules[
-        'datadog_api_client.v1.model.synthetics_assertion_json_path_target_target']
+        "datadog_api_client.v1.model.synthetics_assertion_json_path_target_target"
+    ]
 try:
     from datadog_api_client.v1.model import synthetics_assertion_type
 except ImportError:
-    synthetics_assertion_type = sys.modules[
-        'datadog_api_client.v1.model.synthetics_assertion_type']
+    synthetics_assertion_type = sys.modules["datadog_api_client.v1.model.synthetics_assertion_type"]
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
 
 
@@ -44,5 +46,5 @@ class TestSyntheticsAssertionJSONPathTarget(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

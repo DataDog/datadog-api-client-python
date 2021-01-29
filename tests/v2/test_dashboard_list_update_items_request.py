@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import dashboard_list_item_request
 except ImportError:
-    dashboard_list_item_request = sys.modules[
-        'datadog_api_client.v2.model.dashboard_list_item_request']
+    dashboard_list_item_request = sys.modules["datadog_api_client.v2.model.dashboard_list_item_request"]
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 
 
@@ -34,5 +34,5 @@ class TestDashboardListUpdateItemsRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

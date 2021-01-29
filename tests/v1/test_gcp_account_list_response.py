@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import gcp_account
 except ImportError:
-    gcp_account = sys.modules[
-        'datadog_api_client.v1.model.gcp_account']
+    gcp_account = sys.modules["datadog_api_client.v1.model.gcp_account"]
 from datadog_api_client.v1.model.gcp_account_list_response import GCPAccountListResponse
 
 
@@ -34,5 +34,5 @@ class TestGCPAccountListResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

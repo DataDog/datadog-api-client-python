@@ -10,9 +10,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.api_key_relationships import APIKeyRelationships
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
-globals()['APIKeyRelationships'] = APIKeyRelationships
-globals()['APIKeysType'] = APIKeysType
-globals()['FullAPIKeyAttributes'] = FullAPIKeyAttributes
+
+globals()["APIKeyRelationships"] = APIKeyRelationships
+globals()["APIKeysType"] = APIKeysType
+globals()["FullAPIKeyAttributes"] = FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_api_key import FullAPIKey
 
 
@@ -32,5 +33,5 @@ class TestFullAPIKey(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

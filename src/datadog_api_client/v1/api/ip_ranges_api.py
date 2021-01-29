@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.ip_ranges import IPRanges
 
@@ -31,10 +31,7 @@ class IPRangesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __get_ip_ranges(
-            self,
-            **kwargs
-        ):
+        def __get_ip_ranges(self, **kwargs):
             """List IP Ranges  # noqa: E501
 
             Get information about Datadog IP ranges.  # noqa: E501
@@ -71,101 +68,67 @@ class IPRangesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.get_ip_ranges = _Endpoint(
             settings={
-                'response_type': (IPRanges,),
-                'auth': [],
-                'endpoint_path': '/',
-                'operation_id': 'get_ip_ranges',
-                'http_method': 'GET',
-                'servers': [
+                "response_type": (IPRanges,),
+                "auth": [],
+                "endpoint_path": "/",
+                "operation_id": "get_ip_ranges",
+                "http_method": "GET",
+                "servers": [
                     {
-                        'url': "https://{subdomain}.{site}",
-                        'description': "No description provided",
-                        'variables': {
-                            'site': {
-                                'description': "The regional site for our customers.",
-                                'default_value': "datadoghq.com",
-                                'enum_values': [
-                                    "datadoghq.com",
-                                    "datadoghq.eu",
-                                    "ddog-gov.com"
-                                ]
-                                },
-                            'subdomain': {
-                                'description': "The subdomain where the API is deployed.",
-                                'default_value': "ip-ranges",
-                                }
-                            }
+                        "url": "https://{subdomain}.{site}",
+                        "description": "No description provided",
+                        "variables": {
+                            "site": {
+                                "description": "The regional site for our customers.",
+                                "default_value": "datadoghq.com",
+                                "enum_values": ["datadoghq.com", "datadoghq.eu", "ddog-gov.com"],
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "ip-ranges",
+                            },
+                        },
                     },
                     {
-                        'url': "{protocol}://{name}",
-                        'description': "No description provided",
-                        'variables': {
-                            'name': {
-                                'description': "Full site DNS name.",
-                                'default_value': "ip-ranges.datadoghq.com",
-                                },
-                            'protocol': {
-                                'description': "The protocol for accessing the API.",
-                                'default_value': "https",
-                                }
-                            }
+                        "url": "{protocol}://{name}",
+                        "description": "No description provided",
+                        "variables": {
+                            "name": {
+                                "description": "Full site DNS name.",
+                                "default_value": "ip-ranges.datadoghq.com",
+                            },
+                            "protocol": {
+                                "description": "The protocol for accessing the API.",
+                                "default_value": "https",
+                            },
+                        },
                     },
-                ]
+                ],
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_ip_ranges
+            callable=__get_ip_ranges,
         )

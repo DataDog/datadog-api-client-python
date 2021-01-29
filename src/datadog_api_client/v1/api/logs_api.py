@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
@@ -34,11 +34,7 @@ class LogsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __list_logs(
-            self,
-            body,
-            **kwargs
-        ):
+        def __list_logs(self, body, **kwargs):
             """Search logs  # noqa: E501
 
             List endpoint returns logs that match a log search query. [Results are paginated][1].  **If you are considering archiving logs for your organization, consider use of the Datadog archive capabilities instead of the log list API. See [Datadog Logs Archive documentation][2].**  [1]: /logs/guide/collect-multiple-logs-with-pagination [2]: https://docs.datadoghq.com/logs/archives  # noqa: E501
@@ -77,80 +73,49 @@ class LogsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.list_logs = _Endpoint(
             settings={
-                'response_type': (LogsListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/logs-queries/list',
-                'operation_id': 'list_logs',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (LogsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/logs-queries/list",
+                "operation_id": "list_logs",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (LogsListRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (LogsListRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__list_logs
+            callable=__list_logs,
         )

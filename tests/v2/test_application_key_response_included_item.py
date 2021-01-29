@@ -12,11 +12,12 @@ from datadog_api_client.v2.model.role_attributes import RoleAttributes
 from datadog_api_client.v2.model.role_response_relationships import RoleResponseRelationships
 from datadog_api_client.v2.model.roles_type import RolesType
 from datadog_api_client.v2.model.user import User
-globals()['Role'] = Role
-globals()['RoleAttributes'] = RoleAttributes
-globals()['RoleResponseRelationships'] = RoleResponseRelationships
-globals()['RolesType'] = RolesType
-globals()['User'] = User
+
+globals()["Role"] = Role
+globals()["RoleAttributes"] = RoleAttributes
+globals()["RoleResponseRelationships"] = RoleResponseRelationships
+globals()["RolesType"] = RolesType
+globals()["User"] = User
 from datadog_api_client.v2.model.application_key_response_included_item import ApplicationKeyResponseIncludedItem
 
 
@@ -36,5 +37,5 @@ class TestApplicationKeyResponseIncludedItem(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

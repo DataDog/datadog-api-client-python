@@ -12,9 +12,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.incident_team_create_attributes import IncidentTeamCreateAttributes
 from datadog_api_client.v2.model.incident_team_relationships import IncidentTeamRelationships
 from datadog_api_client.v2.model.incident_team_type import IncidentTeamType
-globals()['IncidentTeamCreateAttributes'] = IncidentTeamCreateAttributes
-globals()['IncidentTeamRelationships'] = IncidentTeamRelationships
-globals()['IncidentTeamType'] = IncidentTeamType
+
+globals()["IncidentTeamCreateAttributes"] = IncidentTeamCreateAttributes
+globals()["IncidentTeamRelationships"] = IncidentTeamRelationships
+globals()["IncidentTeamType"] = IncidentTeamType
 from datadog_api_client.v2.model.incident_team_create_data import IncidentTeamCreateData
 
 
@@ -34,5 +35,5 @@ class TestIncidentTeamCreateData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

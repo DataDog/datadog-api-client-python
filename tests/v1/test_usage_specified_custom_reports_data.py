@@ -10,16 +10,17 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import usage_reports_type
 except ImportError:
-    usage_reports_type = sys.modules[
-        'datadog_api_client.v1.model.usage_reports_type']
+    usage_reports_type = sys.modules["datadog_api_client.v1.model.usage_reports_type"]
 try:
     from datadog_api_client.v1.model import usage_specified_custom_reports_attributes
 except ImportError:
     usage_specified_custom_reports_attributes = sys.modules[
-        'datadog_api_client.v1.model.usage_specified_custom_reports_attributes']
+        "datadog_api_client.v1.model.usage_specified_custom_reports_attributes"
+    ]
 from datadog_api_client.v1.model.usage_specified_custom_reports_data import UsageSpecifiedCustomReportsData
 
 
@@ -39,5 +40,5 @@ class TestUsageSpecifiedCustomReportsData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

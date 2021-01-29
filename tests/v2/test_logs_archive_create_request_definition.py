@@ -10,11 +10,13 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import logs_archive_create_request_attributes
 except ImportError:
     logs_archive_create_request_attributes = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_create_request_attributes']
+        "datadog_api_client.v2.model.logs_archive_create_request_attributes"
+    ]
 from datadog_api_client.v2.model.logs_archive_create_request_definition import LogsArchiveCreateRequestDefinition
 
 
@@ -34,5 +36,5 @@ class TestLogsArchiveCreateRequestDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

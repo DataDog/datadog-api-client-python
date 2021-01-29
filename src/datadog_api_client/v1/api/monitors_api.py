@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.check_can_delete_monitor_response import CheckCanDeleteMonitorResponse
@@ -35,11 +35,7 @@ class MonitorsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __check_can_delete_monitor(
-            self,
-            monitor_ids,
-            **kwargs
-        ):
+        def __check_can_delete_monitor(self, monitor_ids, **kwargs):
             """Check if a monitor can be deleted  # noqa: E501
 
             Check if the given monitors can be deleted.  # noqa: E501
@@ -78,89 +74,61 @@ class MonitorsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['monitor_ids'] = \
-                monitor_ids
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["monitor_ids"] = monitor_ids
             return self.call_with_http_info(**kwargs)
 
         self.check_can_delete_monitor = _Endpoint(
             settings={
-                'response_type': (CheckCanDeleteMonitorResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/monitor/can_delete',
-                'operation_id': 'check_can_delete_monitor',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (CheckCanDeleteMonitorResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor/can_delete",
+                "operation_id": "check_can_delete_monitor",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'monitor_ids',
+                "all": [
+                    "monitor_ids",
                 ],
-                'required': [
-                    'monitor_ids',
+                "required": [
+                    "monitor_ids",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "monitor_ids": ([int],),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "monitor_ids": "monitor_ids",
                 },
-                'openapi_types': {
-                    'monitor_ids':
-                        ([int],),
+                "location_map": {
+                    "monitor_ids": "query",
                 },
-                'attribute_map': {
-                    'monitor_ids': 'monitor_ids',
+                "collection_format_map": {
+                    "monitor_ids": "multi",
                 },
-                'location_map': {
-                    'monitor_ids': 'query',
-                },
-                'collection_format_map': {
-                    'monitor_ids': 'multi',
-                }
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__check_can_delete_monitor
+            callable=__check_can_delete_monitor,
         )
 
-        def __create_monitor(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_monitor(self, body, **kwargs):
             """Create a monitor  # noqa: E501
 
             Create a monitor using the specified options.  #### Monitor Types  The type of monitor chosen from:  - anomaly: `query alert` - APM: `query alert` or `trace-analytics alert` - composite: `composite` - custom: `service check` - event: `event alert` - forecast: `query alert` - host: `service check` - integration: `query alert` or `service check` - live process: `process alert` - logs: `log alert` - metric: `metric alert` - network: `service check` - outlier: `query alert` - process: `service check` - rum: `rum alert` - watchdog: `event alert`  #### Query Types  **Metric Alert Query**  Example: `time_aggr(time_window):space_aggr:metric{tags} [by {key}] operator #`  - `time_aggr`: avg, sum, max, min, change, or pct_change - `time_window`: `last_#m` (with `#` between 1 and 2880 depending on the monitor type) or `last_#h`(with `#` between 1 and 48 depending on the monitor type), or `last_1d` - `space_aggr`: avg, sum, min, or max - `tags`: one or more tags (comma-separated), or * - `key`: a 'key' in key:value tag syntax; defines a separate alert for each tag in the group (multi-alert) - `operator`: <, <=, >, >=, ==, or != - `#`: an integer or decimal number used to set the threshold  If you are using the `_change_` or `_pct_change_` time aggregator, instead use `change_aggr(time_aggr(time_window), timeshift):space_aggr:metric{tags} [by {key}] operator #` with:  - `change_aggr` change, pct_change - `time_aggr` avg, sum, max, min [Learn more](https://docs.datadoghq.com/monitors/monitor_types/#define-the-conditions) - `time_window` last\\_#m (between 1 and 2880 depending on the monitor type), last\\_#h (between 1 and 48 depending on the monitor type), or last_#d (1 or 2) - `timeshift` #m_ago (5, 10, 15, or 30), #h_ago (1, 2, or 4), or 1d_ago  Use this to create an outlier monitor using the following query: `avg(last_30m):outliers(avg:system.cpu.user{role:es-events-data} by {host}, 'dbscan', 7) > 0`  **Service Check Query**  Example: `\"check\".over(tags).last(count).count_by_status()`  - **`check`** name of the check, e.g. `datadog.agent.up` - **`tags`** one or more quoted tags (comma-separated), or \"*\". e.g.: `.over(\"env:prod\", \"role:db\")` - **`count`** must be at >= your max threshold (defined in the `options`). e.g. if you want to notify on 1 critical, 3 ok and 2 warn statuses count should be 3. It is limited to 100.  **Event Alert Query**  Example: `events('sources:nagios status:error,warning priority:normal tags: \"string query\"').rollup(\"count\").last(\"1h\")\"`  - **`event`**, the event query string: - **`string_query`** free text query to match against event title and text. - **`sources`** event sources (comma-separated). - **`status`** event statuses (comma-separated). Valid options: error, warn, and info. - **`priority`** event priorities (comma-separated). Valid options: low, normal, all. - **`host`** event reporting host (comma-separated). - **`tags`** event tags (comma-separated). - **`excluded_tags`** excluded event tags (comma-separated). - **`rollup`** the stats roll-up method. `count` is the only supported method now. - **`last`** the timeframe to roll up the counts. Examples: 45m, 4h. Supported timeframes: m, h and d. This value should not exceed 48 hours.  **Process Alert Query**  Example: `processes(search).over(tags).rollup('count').last(timeframe) operator #`  - **`search`** free text search string for querying processes. Matching processes match results on the [Live Processes](https://docs.datadoghq.com/infrastructure/process/?tab=linuxwindows) page. - **`tags`** one or more tags (comma-separated) - **`timeframe`** the timeframe to roll up the counts. Examples: 10m, 4h. Supported timeframes: s, m, h and d - **`operator`** <, <=, >, >=, ==, or != - **`#`** an integer or decimal number used to set the threshold  **Logs Alert Query**  Example: `logs(query).index(index_name).rollup(rollup_method[, measure]).last(time_window) operator #`  - **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/). - **`index_name`** For multi-index organizations, the log index in which the request is performed. - **`rollup_method`** The stats roll-up method - supports `count`, `avg` and `cardinality`. - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use. - **`time_window`** #m (between 1 and 1440), #h (between 1 and 24) - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`. - **`#`** an integer or decimal number used to set the threshold.  **Composite Query**  Example: `12345 && 67890`, where `12345` and `67890` are the IDs of non-composite monitors  * **`name`** [*required*, *default* = **dynamic, based on query**]: The name of the alert. * **`message`** [*required*, *default* = **dynamic, based on query**]: A message to include with notifications for this monitor. Email notifications can be sent to specific users by using the same '@username' notation as events. * **`tags`** [*optional*, *default* = **empty list**]: A list of tags to associate with your monitor. When getting all monitor details via the API, use the `monitor_tags` argument to filter results by these tags. It is only available via the API and isn't visible or editable in the Datadog UI.  # noqa: E501
@@ -199,89 +167,54 @@ class MonitorsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_monitor = _Endpoint(
             settings={
-                'response_type': (Monitor,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/monitor',
-                'operation_id': 'create_monitor',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (Monitor,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor",
+                "operation_id": "create_monitor",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (Monitor,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (Monitor,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_monitor
+            callable=__create_monitor,
         )
 
-        def __delete_monitor(
-            self,
-            monitor_id,
-            **kwargs
-        ):
+        def __delete_monitor(self, monitor_id, **kwargs):
             """Delete a monitor  # noqa: E501
 
             Delete the specified monitor  # noqa: E501
@@ -321,93 +254,63 @@ class MonitorsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['monitor_id'] = \
-                monitor_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["monitor_id"] = monitor_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_monitor = _Endpoint(
             settings={
-                'response_type': (DeletedMonitor,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/monitor/{monitor_id}',
-                'operation_id': 'delete_monitor',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": (DeletedMonitor,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor/{monitor_id}",
+                "operation_id": "delete_monitor",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'monitor_id',
-                    'force',
+                "all": [
+                    "monitor_id",
+                    "force",
                 ],
-                'required': [
-                    'monitor_id',
+                "required": [
+                    "monitor_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "monitor_id": (int,),
+                    "force": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "monitor_id": "monitor_id",
+                    "force": "force",
                 },
-                'openapi_types': {
-                    'monitor_id':
-                        (int,),
-                    'force':
-                        (str,),
+                "location_map": {
+                    "monitor_id": "path",
+                    "force": "query",
                 },
-                'attribute_map': {
-                    'monitor_id': 'monitor_id',
-                    'force': 'force',
-                },
-                'location_map': {
-                    'monitor_id': 'path',
-                    'force': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_monitor
+            callable=__delete_monitor,
         )
 
-        def __get_monitor(
-            self,
-            monitor_id,
-            **kwargs
-        ):
+        def __get_monitor(self, monitor_id, **kwargs):
             """Get a monitor's details  # noqa: E501
 
             Get details about the specified monitor from your organization.  # noqa: E501
@@ -447,92 +350,63 @@ class MonitorsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['monitor_id'] = \
-                monitor_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["monitor_id"] = monitor_id
             return self.call_with_http_info(**kwargs)
 
         self.get_monitor = _Endpoint(
             settings={
-                'response_type': (Monitor,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/monitor/{monitor_id}',
-                'operation_id': 'get_monitor',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (Monitor,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor/{monitor_id}",
+                "operation_id": "get_monitor",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'monitor_id',
-                    'group_states',
+                "all": [
+                    "monitor_id",
+                    "group_states",
                 ],
-                'required': [
-                    'monitor_id',
+                "required": [
+                    "monitor_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "monitor_id": (int,),
+                    "group_states": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "monitor_id": "monitor_id",
+                    "group_states": "group_states",
                 },
-                'openapi_types': {
-                    'monitor_id':
-                        (int,),
-                    'group_states':
-                        (str,),
+                "location_map": {
+                    "monitor_id": "path",
+                    "group_states": "query",
                 },
-                'attribute_map': {
-                    'monitor_id': 'monitor_id',
-                    'group_states': 'group_states',
-                },
-                'location_map': {
-                    'monitor_id': 'path',
-                    'group_states': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_monitor
+            callable=__get_monitor,
         )
 
-        def __list_monitors(
-            self,
-            **kwargs
-        ):
+        def __list_monitors(self, **kwargs):
             """Get all monitor details  # noqa: E501
 
             Get details about the specified monitor from your organization.  # noqa: E501
@@ -577,125 +451,90 @@ class MonitorsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_monitors = _Endpoint(
             settings={
-                'response_type': ([Monitor],),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/monitor',
-                'operation_id': 'list_monitors',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": ([Monitor],),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor",
+                "operation_id": "list_monitors",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'group_states',
-                    'name',
-                    'tags',
-                    'monitor_tags',
-                    'with_downtimes',
-                    'id_offset',
-                    'page',
-                    'page_size',
+                "all": [
+                    "group_states",
+                    "name",
+                    "tags",
+                    "monitor_tags",
+                    "with_downtimes",
+                    "id_offset",
+                    "page",
+                    "page_size",
                 ],
-                'required': [],
-                'nullable': [
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [
+                    "page_size",
                 ],
-                'enum': [
-                ],
-                'validation': [
-                    'page_size',
-                ]
             },
             root_map={
-                'validations': {
-                    ('page_size',): {
-
-                        'inclusive_maximum': 1000,
+                "validations": {
+                    ("page_size",): {
+                        "inclusive_maximum": 1000,
                     },
                 },
-                'allowed_values': {
+                "allowed_values": {},
+                "openapi_types": {
+                    "group_states": (str,),
+                    "name": (str,),
+                    "tags": (str,),
+                    "monitor_tags": (str,),
+                    "with_downtimes": (bool,),
+                    "id_offset": (int,),
+                    "page": (int,),
+                    "page_size": (int,),
                 },
-                'openapi_types': {
-                    'group_states':
-                        (str,),
-                    'name':
-                        (str,),
-                    'tags':
-                        (str,),
-                    'monitor_tags':
-                        (str,),
-                    'with_downtimes':
-                        (bool,),
-                    'id_offset':
-                        (int,),
-                    'page':
-                        (int,),
-                    'page_size':
-                        (int,),
+                "attribute_map": {
+                    "group_states": "group_states",
+                    "name": "name",
+                    "tags": "tags",
+                    "monitor_tags": "monitor_tags",
+                    "with_downtimes": "with_downtimes",
+                    "id_offset": "id_offset",
+                    "page": "page",
+                    "page_size": "page_size",
                 },
-                'attribute_map': {
-                    'group_states': 'group_states',
-                    'name': 'name',
-                    'tags': 'tags',
-                    'monitor_tags': 'monitor_tags',
-                    'with_downtimes': 'with_downtimes',
-                    'id_offset': 'id_offset',
-                    'page': 'page',
-                    'page_size': 'page_size',
+                "location_map": {
+                    "group_states": "query",
+                    "name": "query",
+                    "tags": "query",
+                    "monitor_tags": "query",
+                    "with_downtimes": "query",
+                    "id_offset": "query",
+                    "page": "query",
+                    "page_size": "query",
                 },
-                'location_map': {
-                    'group_states': 'query',
-                    'name': 'query',
-                    'tags': 'query',
-                    'monitor_tags': 'query',
-                    'with_downtimes': 'query',
-                    'id_offset': 'query',
-                    'page': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_monitors
+            callable=__list_monitors,
         )
 
-        def __update_monitor(
-            self,
-            monitor_id,
-            body,
-            **kwargs
-        ):
+        def __update_monitor(self, monitor_id, body, **kwargs):
             """Edit a monitor  # noqa: E501
 
             Edit the specified monitor.  # noqa: E501
@@ -735,97 +574,61 @@ class MonitorsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['monitor_id'] = \
-                monitor_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["monitor_id"] = monitor_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_monitor = _Endpoint(
             settings={
-                'response_type': (Monitor,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/monitor/{monitor_id}',
-                'operation_id': 'update_monitor',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (Monitor,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor/{monitor_id}",
+                "operation_id": "update_monitor",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'monitor_id',
-                    'body',
+                "all": [
+                    "monitor_id",
+                    "body",
                 ],
-                'required': [
-                    'monitor_id',
-                    'body',
+                "required": [
+                    "monitor_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "monitor_id": (int,),
+                    "body": (MonitorUpdateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "monitor_id": "monitor_id",
                 },
-                'openapi_types': {
-                    'monitor_id':
-                        (int,),
-                    'body':
-                        (MonitorUpdateRequest,),
+                "location_map": {
+                    "monitor_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'monitor_id': 'monitor_id',
-                },
-                'location_map': {
-                    'monitor_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_monitor
+            callable=__update_monitor,
         )
 
-        def __validate_monitor(
-            self,
-            body,
-            **kwargs
-        ):
+        def __validate_monitor(self, body, **kwargs):
             """Validate a monitor  # noqa: E501
 
             Validate the monitor provided in the request.  # noqa: E501
@@ -864,80 +667,49 @@ class MonitorsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.validate_monitor = _Endpoint(
             settings={
-                'response_type': (Monitor,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/monitor/validate',
-                'operation_id': 'validate_monitor',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (Monitor,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor/validate",
+                "operation_id": "validate_monitor",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (Monitor,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (Monitor,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__validate_monitor
+            callable=__validate_monitor,
         )

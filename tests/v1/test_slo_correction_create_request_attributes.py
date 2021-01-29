@@ -8,7 +8,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
-globals()['SLOCorrectionCategory'] = SLOCorrectionCategory
+
+globals()["SLOCorrectionCategory"] = SLOCorrectionCategory
 from datadog_api_client.v1.model.slo_correction_create_request_attributes import SLOCorrectionCreateRequestAttributes
 
 
@@ -28,5 +29,5 @@ class TestSLOCorrectionCreateRequestAttributes(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

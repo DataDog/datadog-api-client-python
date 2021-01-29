@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import aws_account
 except ImportError:
-    aws_account = sys.modules[
-        'datadog_api_client.v1.model.aws_account']
+    aws_account = sys.modules["datadog_api_client.v1.model.aws_account"]
 from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
 
 
@@ -34,5 +34,5 @@ class TestAWSAccountListResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

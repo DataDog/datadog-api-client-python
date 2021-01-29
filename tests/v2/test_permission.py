@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import permission_attributes
 except ImportError:
-    permission_attributes = sys.modules[
-        'datadog_api_client.v2.model.permission_attributes']
+    permission_attributes = sys.modules["datadog_api_client.v2.model.permission_attributes"]
 try:
     from datadog_api_client.v2.model import permissions_type
 except ImportError:
-    permissions_type = sys.modules[
-        'datadog_api_client.v2.model.permissions_type']
+    permissions_type = sys.modules["datadog_api_client.v2.model.permissions_type"]
 from datadog_api_client.v2.model.permission import Permission
 
 
@@ -39,5 +38,5 @@ class TestPermission(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

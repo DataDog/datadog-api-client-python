@@ -23,17 +23,19 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
     from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckType
     from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
     from datadog_api_client.v1.model.synthetics_step_detail_warnings import SyntheticsStepDetailWarnings
     from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
-    globals()['SyntheticsBrowserError'] = SyntheticsBrowserError
-    globals()['SyntheticsCheckType'] = SyntheticsCheckType
-    globals()['SyntheticsPlayingTab'] = SyntheticsPlayingTab
-    globals()['SyntheticsStepDetailWarnings'] = SyntheticsStepDetailWarnings
-    globals()['SyntheticsStepType'] = SyntheticsStepType
+
+    globals()["SyntheticsBrowserError"] = SyntheticsBrowserError
+    globals()["SyntheticsCheckType"] = SyntheticsCheckType
+    globals()["SyntheticsPlayingTab"] = SyntheticsPlayingTab
+    globals()["SyntheticsStepDetailWarnings"] = SyntheticsStepDetailWarnings
+    globals()["SyntheticsStepType"] = SyntheticsStepType
 
 
 class SyntheticsStepDetail(ModelNormal):
@@ -60,11 +62,9 @@ class SyntheticsStepDetail(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -82,58 +82,59 @@ class SyntheticsStepDetail(ModelNormal):
         """
         lazy_import()
         return {
-            'browser_errors': ([SyntheticsBrowserError],),  # noqa: E501
-            'check_type': (SyntheticsCheckType,),  # noqa: E501
-            'description': (str,),  # noqa: E501
-            'duration': (float,),  # noqa: E501
-            'error': (str,),  # noqa: E501
-            'playing_tab': (SyntheticsPlayingTab,),  # noqa: E501
-            'screenshot_bucket_key': (bool,),  # noqa: E501
-            'skipped': (bool,),  # noqa: E501
-            'snapshot_bucket_key': (bool,),  # noqa: E501
-            'step_id': (int,),  # noqa: E501
-            'sub_test_step_details': ([SyntheticsStepDetail],),  # noqa: E501
-            'time_to_interactive': (float,),  # noqa: E501
-            'type': (SyntheticsStepType,),  # noqa: E501
-            'url': (str,),  # noqa: E501
-            'value': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            'warnings': ([SyntheticsStepDetailWarnings],),  # noqa: E501
+            "browser_errors": ([SyntheticsBrowserError],),  # noqa: E501
+            "check_type": (SyntheticsCheckType,),  # noqa: E501
+            "description": (str,),  # noqa: E501
+            "duration": (float,),  # noqa: E501
+            "error": (str,),  # noqa: E501
+            "playing_tab": (SyntheticsPlayingTab,),  # noqa: E501
+            "screenshot_bucket_key": (bool,),  # noqa: E501
+            "skipped": (bool,),  # noqa: E501
+            "snapshot_bucket_key": (bool,),  # noqa: E501
+            "step_id": (int,),  # noqa: E501
+            "sub_test_step_details": ([SyntheticsStepDetail],),  # noqa: E501
+            "time_to_interactive": (float,),  # noqa: E501
+            "type": (SyntheticsStepType,),  # noqa: E501
+            "url": (str,),  # noqa: E501
+            "value": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            "warnings": ([SyntheticsStepDetailWarnings],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'browser_errors': 'browserErrors',  # noqa: E501
-        'check_type': 'checkType',  # noqa: E501
-        'description': 'description',  # noqa: E501
-        'duration': 'duration',  # noqa: E501
-        'error': 'error',  # noqa: E501
-        'playing_tab': 'playingTab',  # noqa: E501
-        'screenshot_bucket_key': 'screenshotBucketKey',  # noqa: E501
-        'skipped': 'skipped',  # noqa: E501
-        'snapshot_bucket_key': 'snapshotBucketKey',  # noqa: E501
-        'step_id': 'stepId',  # noqa: E501
-        'sub_test_step_details': 'subTestStepDetails',  # noqa: E501
-        'time_to_interactive': 'timeToInteractive',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'url': 'url',  # noqa: E501
-        'value': 'value',  # noqa: E501
-        'warnings': 'warnings',  # noqa: E501
+        "browser_errors": "browserErrors",  # noqa: E501
+        "check_type": "checkType",  # noqa: E501
+        "description": "description",  # noqa: E501
+        "duration": "duration",  # noqa: E501
+        "error": "error",  # noqa: E501
+        "playing_tab": "playingTab",  # noqa: E501
+        "screenshot_bucket_key": "screenshotBucketKey",  # noqa: E501
+        "skipped": "skipped",  # noqa: E501
+        "snapshot_bucket_key": "snapshotBucketKey",  # noqa: E501
+        "step_id": "stepId",  # noqa: E501
+        "sub_test_step_details": "subTestStepDetails",  # noqa: E501
+        "time_to_interactive": "timeToInteractive",  # noqa: E501
+        "type": "type",  # noqa: E501
+        "url": "url",  # noqa: E501
+        "value": "value",  # noqa: E501
+        "warnings": "warnings",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -188,15 +189,16 @@ class SyntheticsStepDetail(ModelNormal):
             warnings ([SyntheticsStepDetailWarnings]): Warning collected that didn't failed the step.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -212,10 +214,12 @@ class SyntheticsStepDetail(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

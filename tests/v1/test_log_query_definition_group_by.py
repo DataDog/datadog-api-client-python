@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import log_query_definition_sort
 except ImportError:
-    log_query_definition_sort = sys.modules[
-        'datadog_api_client.v1.model.log_query_definition_sort']
+    log_query_definition_sort = sys.modules["datadog_api_client.v1.model.log_query_definition_sort"]
 from datadog_api_client.v1.model.log_query_definition_group_by import LogQueryDefinitionGroupBy
 
 
@@ -34,5 +34,5 @@ class TestLogQueryDefinitionGroupBy(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

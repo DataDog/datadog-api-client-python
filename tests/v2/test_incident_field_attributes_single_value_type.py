@@ -9,7 +9,9 @@ import sys
 import unittest
 
 import datadog_api_client.v2
-from datadog_api_client.v2.model.incident_field_attributes_single_value_type import IncidentFieldAttributesSingleValueType
+from datadog_api_client.v2.model.incident_field_attributes_single_value_type import (
+    IncidentFieldAttributesSingleValueType,
+)
 
 
 class TestIncidentFieldAttributesSingleValueType(unittest.TestCase):
@@ -28,5 +30,5 @@ class TestIncidentFieldAttributesSingleValueType(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

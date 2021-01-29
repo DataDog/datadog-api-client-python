@@ -9,8 +9,9 @@ import unittest
 import datadog_api_client.v1
 from datadog_api_client.v1.model.creator import Creator
 from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
-globals()['Creator'] = Creator
-globals()['SLOCorrectionCategory'] = SLOCorrectionCategory
+
+globals()["Creator"] = Creator
+globals()["SLOCorrectionCategory"] = SLOCorrectionCategory
 from datadog_api_client.v1.model.slo_correction_response_attributes import SLOCorrectionResponseAttributes
 
 
@@ -30,5 +31,5 @@ class TestSLOCorrectionResponseAttributes(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

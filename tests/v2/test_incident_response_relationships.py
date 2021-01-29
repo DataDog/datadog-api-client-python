@@ -9,12 +9,15 @@ import sys
 import unittest
 
 import datadog_api_client.v2
-from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import RelationshipToIncidentIntegrationMetadatas
+from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
+    RelationshipToIncidentIntegrationMetadatas,
+)
 from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
 from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
-globals()['RelationshipToIncidentIntegrationMetadatas'] = RelationshipToIncidentIntegrationMetadatas
-globals()['RelationshipToIncidentPostmortem'] = RelationshipToIncidentPostmortem
-globals()['RelationshipToUser'] = RelationshipToUser
+
+globals()["RelationshipToIncidentIntegrationMetadatas"] = RelationshipToIncidentIntegrationMetadatas
+globals()["RelationshipToIncidentPostmortem"] = RelationshipToIncidentPostmortem
+globals()["RelationshipToUser"] = RelationshipToUser
 from datadog_api_client.v2.model.incident_response_relationships import IncidentResponseRelationships
 
 
@@ -34,5 +37,5 @@ class TestIncidentResponseRelationships(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

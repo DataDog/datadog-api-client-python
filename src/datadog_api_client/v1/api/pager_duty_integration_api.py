@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.pager_duty_service import PagerDutyService
@@ -34,11 +34,7 @@ class PagerDutyIntegrationApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_pager_duty_integration_service(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_pager_duty_integration_service(self, body, **kwargs):
             """Create a new service object  # noqa: E501
 
             Create a new service object in the PagerDuty integration.  # noqa: E501
@@ -77,89 +73,54 @@ class PagerDutyIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_pager_duty_integration_service = _Endpoint(
             settings={
-                'response_type': (PagerDutyServiceName,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/integration/pagerduty/configuration/services',
-                'operation_id': 'create_pager_duty_integration_service',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (PagerDutyServiceName,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/pagerduty/configuration/services",
+                "operation_id": "create_pager_duty_integration_service",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (PagerDutyService,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (PagerDutyService,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_pager_duty_integration_service
+            callable=__create_pager_duty_integration_service,
         )
 
-        def __delete_pager_duty_integration_service(
-            self,
-            service_name,
-            **kwargs
-        ):
+        def __delete_pager_duty_integration_service(self, service_name, **kwargs):
             """Delete a single service object  # noqa: E501
 
             Delete a single service object in the Datadog-PagerDuty integration.  # noqa: E501
@@ -198,88 +159,59 @@ class PagerDutyIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['service_name'] = \
-                service_name
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["service_name"] = service_name
             return self.call_with_http_info(**kwargs)
 
         self.delete_pager_duty_integration_service = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/integration/pagerduty/configuration/services/{service_name}',
-                'operation_id': 'delete_pager_duty_integration_service',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/pagerduty/configuration/services/{service_name}",
+                "operation_id": "delete_pager_duty_integration_service",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'service_name',
+                "all": [
+                    "service_name",
                 ],
-                'required': [
-                    'service_name',
+                "required": [
+                    "service_name",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "service_name": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "service_name": "service_name",
                 },
-                'openapi_types': {
-                    'service_name':
-                        (str,),
+                "location_map": {
+                    "service_name": "path",
                 },
-                'attribute_map': {
-                    'service_name': 'service_name',
-                },
-                'location_map': {
-                    'service_name': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_pager_duty_integration_service
+            callable=__delete_pager_duty_integration_service,
         )
 
-        def __get_pager_duty_integration_service(
-            self,
-            service_name,
-            **kwargs
-        ):
+        def __get_pager_duty_integration_service(self, service_name, **kwargs):
             """Get a single service object  # noqa: E501
 
             Get service name in the Datadog-PagerDuty integration.  # noqa: E501
@@ -318,89 +250,59 @@ class PagerDutyIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['service_name'] = \
-                service_name
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["service_name"] = service_name
             return self.call_with_http_info(**kwargs)
 
         self.get_pager_duty_integration_service = _Endpoint(
             settings={
-                'response_type': (PagerDutyServiceName,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/integration/pagerduty/configuration/services/{service_name}',
-                'operation_id': 'get_pager_duty_integration_service',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (PagerDutyServiceName,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/pagerduty/configuration/services/{service_name}",
+                "operation_id": "get_pager_duty_integration_service",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'service_name',
+                "all": [
+                    "service_name",
                 ],
-                'required': [
-                    'service_name',
+                "required": [
+                    "service_name",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "service_name": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "service_name": "service_name",
                 },
-                'openapi_types': {
-                    'service_name':
-                        (str,),
+                "location_map": {
+                    "service_name": "path",
                 },
-                'attribute_map': {
-                    'service_name': 'service_name',
-                },
-                'location_map': {
-                    'service_name': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_pager_duty_integration_service
+            callable=__get_pager_duty_integration_service,
         )
 
-        def __update_pager_duty_integration_service(
-            self,
-            service_name,
-            body,
-            **kwargs
-        ):
+        def __update_pager_duty_integration_service(self, service_name, body, **kwargs):
             """Update a single service object  # noqa: E501
 
             Update a single service object in the Datadog-PagerDuty integration.  # noqa: E501
@@ -440,88 +342,56 @@ class PagerDutyIntegrationApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['service_name'] = \
-                service_name
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["service_name"] = service_name
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_pager_duty_integration_service = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/integration/pagerduty/configuration/services/{service_name}',
-                'operation_id': 'update_pager_duty_integration_service',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/pagerduty/configuration/services/{service_name}",
+                "operation_id": "update_pager_duty_integration_service",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'service_name',
-                    'body',
+                "all": [
+                    "service_name",
+                    "body",
                 ],
-                'required': [
-                    'service_name',
-                    'body',
+                "required": [
+                    "service_name",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "service_name": (str,),
+                    "body": (PagerDutyServiceKey,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "service_name": "service_name",
                 },
-                'openapi_types': {
-                    'service_name':
-                        (str,),
-                    'body':
-                        (PagerDutyServiceKey,),
+                "location_map": {
+                    "service_name": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'service_name': 'service_name',
-                },
-                'location_map': {
-                    'service_name': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_pager_duty_integration_service
+            callable=__update_pager_duty_integration_service,
         )

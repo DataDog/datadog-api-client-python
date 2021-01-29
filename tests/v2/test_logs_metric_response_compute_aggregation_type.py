@@ -7,7 +7,9 @@ import sys
 import unittest
 
 import datadog_api_client.v2
-from datadog_api_client.v2.model.logs_metric_response_compute_aggregation_type import LogsMetricResponseComputeAggregationType
+from datadog_api_client.v2.model.logs_metric_response_compute_aggregation_type import (
+    LogsMetricResponseComputeAggregationType,
+)
 
 
 class TestLogsMetricResponseComputeAggregationType(unittest.TestCase):
@@ -26,5 +28,5 @@ class TestLogsMetricResponseComputeAggregationType(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

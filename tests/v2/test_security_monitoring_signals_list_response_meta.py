@@ -10,12 +10,16 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import security_monitoring_signals_list_response_meta_page
 except ImportError:
     security_monitoring_signals_list_response_meta_page = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_page']
-from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta import SecurityMonitoringSignalsListResponseMeta
+        "datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_page"
+    ]
+from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta import (
+    SecurityMonitoringSignalsListResponseMeta,
+)
 
 
 class TestSecurityMonitoringSignalsListResponseMeta(unittest.TestCase):
@@ -34,5 +38,5 @@ class TestSecurityMonitoringSignalsListResponseMeta(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

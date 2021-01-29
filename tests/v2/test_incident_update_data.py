@@ -12,9 +12,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.incident_type import IncidentType
 from datadog_api_client.v2.model.incident_update_attributes import IncidentUpdateAttributes
 from datadog_api_client.v2.model.incident_update_relationships import IncidentUpdateRelationships
-globals()['IncidentType'] = IncidentType
-globals()['IncidentUpdateAttributes'] = IncidentUpdateAttributes
-globals()['IncidentUpdateRelationships'] = IncidentUpdateRelationships
+
+globals()["IncidentType"] = IncidentType
+globals()["IncidentUpdateAttributes"] = IncidentUpdateAttributes
+globals()["IncidentUpdateRelationships"] = IncidentUpdateRelationships
 from datadog_api_client.v2.model.incident_update_data import IncidentUpdateData
 
 
@@ -34,5 +35,5 @@ class TestIncidentUpdateData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

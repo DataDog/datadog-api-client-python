@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import usage_timeseries_hour
 except ImportError:
-    usage_timeseries_hour = sys.modules[
-        'datadog_api_client.v1.model.usage_timeseries_hour']
+    usage_timeseries_hour = sys.modules["datadog_api_client.v1.model.usage_timeseries_hour"]
 from datadog_api_client.v1.model.usage_timeseries_response import UsageTimeseriesResponse
 
 
@@ -34,5 +34,5 @@ class TestUsageTimeseriesResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

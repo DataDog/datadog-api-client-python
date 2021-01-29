@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import widget_definition
 except ImportError:
-    widget_definition = sys.modules[
-        'datadog_api_client.v1.model.widget_definition']
+    widget_definition = sys.modules["datadog_api_client.v1.model.widget_definition"]
 try:
     from datadog_api_client.v1.model import widget_layout
 except ImportError:
-    widget_layout = sys.modules[
-        'datadog_api_client.v1.model.widget_layout']
+    widget_layout = sys.modules["datadog_api_client.v1.model.widget_layout"]
 from datadog_api_client.v1.model.widget import Widget
 
 
@@ -39,5 +38,5 @@ class TestWidget(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

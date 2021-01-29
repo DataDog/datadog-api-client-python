@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_assertion
 except ImportError:
-    synthetics_assertion = sys.modules[
-        'datadog_api_client.v1.model.synthetics_assertion']
+    synthetics_assertion = sys.modules["datadog_api_client.v1.model.synthetics_assertion"]
 try:
     from datadog_api_client.v1.model import synthetics_browser_variable
 except ImportError:
-    synthetics_browser_variable = sys.modules[
-        'datadog_api_client.v1.model.synthetics_browser_variable']
+    synthetics_browser_variable = sys.modules["datadog_api_client.v1.model.synthetics_browser_variable"]
 try:
     from datadog_api_client.v1.model import synthetics_test_request
 except ImportError:
-    synthetics_test_request = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_request']
+    synthetics_test_request = sys.modules["datadog_api_client.v1.model.synthetics_test_request"]
 from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestConfig
 
 
@@ -44,5 +42,5 @@ class TestSyntheticsTestConfig(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

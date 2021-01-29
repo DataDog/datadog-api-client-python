@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import logs_category_processor_categories
 except ImportError:
-    logs_category_processor_categories = sys.modules[
-        'datadog_api_client.v1.model.logs_category_processor_categories']
+    logs_category_processor_categories = sys.modules["datadog_api_client.v1.model.logs_category_processor_categories"]
 try:
     from datadog_api_client.v1.model import logs_category_processor_type
 except ImportError:
-    logs_category_processor_type = sys.modules[
-        'datadog_api_client.v1.model.logs_category_processor_type']
+    logs_category_processor_type = sys.modules["datadog_api_client.v1.model.logs_category_processor_type"]
 from datadog_api_client.v1.model.logs_category_processor import LogsCategoryProcessor
 
 
@@ -39,5 +38,5 @@ class TestLogsCategoryProcessor(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -23,11 +23,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.event_alert_type import EventAlertType
     from datadog_api_client.v1.model.event_priority import EventPriority
-    globals()['EventAlertType'] = EventAlertType
-    globals()['EventPriority'] = EventPriority
+
+    globals()["EventAlertType"] = EventAlertType
+    globals()["EventPriority"] = EventPriority
 
 
 class Event(ModelNormal):
@@ -54,15 +56,14 @@ class Event(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
     validations = {
-        ('text',): {
-            'max_length': 4000,
+        ("text",): {
+            "max_length": 4000,
         },
-        ('title',): {
-            'max_length': 100,
+        ("title",): {
+            "max_length": 100,
         },
     }
 
@@ -82,50 +83,51 @@ class Event(ModelNormal):
         """
         lazy_import()
         return {
-            'alert_type': (EventAlertType,),  # noqa: E501
-            'date_happened': (int,),  # noqa: E501
-            'device_name': (str,),  # noqa: E501
-            'host': (str,),  # noqa: E501
-            'id': (int,),  # noqa: E501
-            'payload': (str,),  # noqa: E501
-            'priority': (EventPriority,),  # noqa: E501
-            'source_type_name': (str,),  # noqa: E501
-            'tags': ([str],),  # noqa: E501
-            'text': (str,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'url': (str,),  # noqa: E501
+            "alert_type": (EventAlertType,),  # noqa: E501
+            "date_happened": (int,),  # noqa: E501
+            "device_name": (str,),  # noqa: E501
+            "host": (str,),  # noqa: E501
+            "id": (int,),  # noqa: E501
+            "payload": (str,),  # noqa: E501
+            "priority": (EventPriority,),  # noqa: E501
+            "source_type_name": (str,),  # noqa: E501
+            "tags": ([str],),  # noqa: E501
+            "text": (str,),  # noqa: E501
+            "title": (str,),  # noqa: E501
+            "url": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'alert_type': 'alert_type',  # noqa: E501
-        'date_happened': 'date_happened',  # noqa: E501
-        'device_name': 'device_name',  # noqa: E501
-        'host': 'host',  # noqa: E501
-        'id': 'id',  # noqa: E501
-        'payload': 'payload',  # noqa: E501
-        'priority': 'priority',  # noqa: E501
-        'source_type_name': 'source_type_name',  # noqa: E501
-        'tags': 'tags',  # noqa: E501
-        'text': 'text',  # noqa: E501
-        'title': 'title',  # noqa: E501
-        'url': 'url',  # noqa: E501
+        "alert_type": "alert_type",  # noqa: E501
+        "date_happened": "date_happened",  # noqa: E501
+        "device_name": "device_name",  # noqa: E501
+        "host": "host",  # noqa: E501
+        "id": "id",  # noqa: E501
+        "payload": "payload",  # noqa: E501
+        "priority": "priority",  # noqa: E501
+        "source_type_name": "source_type_name",  # noqa: E501
+        "tags": "tags",  # noqa: E501
+        "text": "text",  # noqa: E501
+        "title": "title",  # noqa: E501
+        "url": "url",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -176,15 +178,16 @@ class Event(ModelNormal):
             url (str): URL of the event.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -200,10 +203,12 @@ class Event(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

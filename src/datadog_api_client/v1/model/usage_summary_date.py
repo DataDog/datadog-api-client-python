@@ -23,9 +23,11 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.usage_summary_date_org import UsageSummaryDateOrg
-    globals()['UsageSummaryDateOrg'] = UsageSummaryDateOrg
+
+    globals()["UsageSummaryDateOrg"] = UsageSummaryDateOrg
 
 
 class UsageSummaryDate(ModelNormal):
@@ -52,11 +54,9 @@ class UsageSummaryDate(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -74,94 +74,95 @@ class UsageSummaryDate(ModelNormal):
         """
         lazy_import()
         return {
-            'agent_host_top99p': (int,),  # noqa: E501
-            'apm_azure_app_service_host_top99p': (int,),  # noqa: E501
-            'apm_host_top99p': (int,),  # noqa: E501
-            'aws_host_top99p': (int,),  # noqa: E501
-            'aws_lambda_func_count': (int,),  # noqa: E501
-            'aws_lambda_invocations_sum': (int,),  # noqa: E501
-            'azure_app_service_top99p': (int,),  # noqa: E501
-            'billable_ingested_bytes_sum': (int,),  # noqa: E501
-            'container_avg': (int,),  # noqa: E501
-            'container_hwm': (int,),  # noqa: E501
-            'custom_ts_avg': (int,),  # noqa: E501
-            'date': (datetime,),  # noqa: E501
-            'fargate_tasks_count_avg': (int,),  # noqa: E501
-            'fargate_tasks_count_hwm': (int,),  # noqa: E501
-            'gcp_host_top99p': (int,),  # noqa: E501
-            'incident_management_monthly_active_users_hwm': (int,),  # noqa: E501
-            'indexed_events_count_sum': (int,),  # noqa: E501
-            'infra_host_top99p': (int,),  # noqa: E501
-            'ingested_events_bytes_sum': (int,),  # noqa: E501
-            'iot_device_agg_sum': (int,),  # noqa: E501
-            'iot_device_top99p_sum': (int,),  # noqa: E501
-            'mobile_rum_session_count_android_sum': (int,),  # noqa: E501
-            'mobile_rum_session_count_ios_sum': (int,),  # noqa: E501
-            'mobile_rum_session_count_sum': (int,),  # noqa: E501
-            'netflow_indexed_events_count_sum': (int,),  # noqa: E501
-            'npm_host_top99p': (int,),  # noqa: E501
-            'orgs': ([UsageSummaryDateOrg],),  # noqa: E501
-            'profiling_host_top99p': (int,),  # noqa: E501
-            'rum_session_count_sum': (int,),  # noqa: E501
-            'rum_total_session_count_sum': (int,),  # noqa: E501
-            'synthetics_browser_check_calls_count_sum': (int,),  # noqa: E501
-            'synthetics_check_calls_count_sum': (int,),  # noqa: E501
-            'trace_search_indexed_events_count_sum': (int,),  # noqa: E501
-            'twol_ingested_events_bytes_sum': (int,),  # noqa: E501
+            "agent_host_top99p": (int,),  # noqa: E501
+            "apm_azure_app_service_host_top99p": (int,),  # noqa: E501
+            "apm_host_top99p": (int,),  # noqa: E501
+            "aws_host_top99p": (int,),  # noqa: E501
+            "aws_lambda_func_count": (int,),  # noqa: E501
+            "aws_lambda_invocations_sum": (int,),  # noqa: E501
+            "azure_app_service_top99p": (int,),  # noqa: E501
+            "billable_ingested_bytes_sum": (int,),  # noqa: E501
+            "container_avg": (int,),  # noqa: E501
+            "container_hwm": (int,),  # noqa: E501
+            "custom_ts_avg": (int,),  # noqa: E501
+            "date": (datetime,),  # noqa: E501
+            "fargate_tasks_count_avg": (int,),  # noqa: E501
+            "fargate_tasks_count_hwm": (int,),  # noqa: E501
+            "gcp_host_top99p": (int,),  # noqa: E501
+            "incident_management_monthly_active_users_hwm": (int,),  # noqa: E501
+            "indexed_events_count_sum": (int,),  # noqa: E501
+            "infra_host_top99p": (int,),  # noqa: E501
+            "ingested_events_bytes_sum": (int,),  # noqa: E501
+            "iot_device_agg_sum": (int,),  # noqa: E501
+            "iot_device_top99p_sum": (int,),  # noqa: E501
+            "mobile_rum_session_count_android_sum": (int,),  # noqa: E501
+            "mobile_rum_session_count_ios_sum": (int,),  # noqa: E501
+            "mobile_rum_session_count_sum": (int,),  # noqa: E501
+            "netflow_indexed_events_count_sum": (int,),  # noqa: E501
+            "npm_host_top99p": (int,),  # noqa: E501
+            "orgs": ([UsageSummaryDateOrg],),  # noqa: E501
+            "profiling_host_top99p": (int,),  # noqa: E501
+            "rum_session_count_sum": (int,),  # noqa: E501
+            "rum_total_session_count_sum": (int,),  # noqa: E501
+            "synthetics_browser_check_calls_count_sum": (int,),  # noqa: E501
+            "synthetics_check_calls_count_sum": (int,),  # noqa: E501
+            "trace_search_indexed_events_count_sum": (int,),  # noqa: E501
+            "twol_ingested_events_bytes_sum": (int,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'agent_host_top99p': 'agent_host_top99p',  # noqa: E501
-        'apm_azure_app_service_host_top99p': 'apm_azure_app_service_host_top99p',  # noqa: E501
-        'apm_host_top99p': 'apm_host_top99p',  # noqa: E501
-        'aws_host_top99p': 'aws_host_top99p',  # noqa: E501
-        'aws_lambda_func_count': 'aws_lambda_func_count',  # noqa: E501
-        'aws_lambda_invocations_sum': 'aws_lambda_invocations_sum',  # noqa: E501
-        'azure_app_service_top99p': 'azure_app_service_top99p',  # noqa: E501
-        'billable_ingested_bytes_sum': 'billable_ingested_bytes_sum',  # noqa: E501
-        'container_avg': 'container_avg',  # noqa: E501
-        'container_hwm': 'container_hwm',  # noqa: E501
-        'custom_ts_avg': 'custom_ts_avg',  # noqa: E501
-        'date': 'date',  # noqa: E501
-        'fargate_tasks_count_avg': 'fargate_tasks_count_avg',  # noqa: E501
-        'fargate_tasks_count_hwm': 'fargate_tasks_count_hwm',  # noqa: E501
-        'gcp_host_top99p': 'gcp_host_top99p',  # noqa: E501
-        'incident_management_monthly_active_users_hwm': 'incident_management_monthly_active_users_hwm',  # noqa: E501
-        'indexed_events_count_sum': 'indexed_events_count_sum',  # noqa: E501
-        'infra_host_top99p': 'infra_host_top99p',  # noqa: E501
-        'ingested_events_bytes_sum': 'ingested_events_bytes_sum',  # noqa: E501
-        'iot_device_agg_sum': 'iot_device_agg_sum',  # noqa: E501
-        'iot_device_top99p_sum': 'iot_device_top99p_sum',  # noqa: E501
-        'mobile_rum_session_count_android_sum': 'mobile_rum_session_count_android_sum',  # noqa: E501
-        'mobile_rum_session_count_ios_sum': 'mobile_rum_session_count_ios_sum',  # noqa: E501
-        'mobile_rum_session_count_sum': 'mobile_rum_session_count_sum',  # noqa: E501
-        'netflow_indexed_events_count_sum': 'netflow_indexed_events_count_sum',  # noqa: E501
-        'npm_host_top99p': 'npm_host_top99p',  # noqa: E501
-        'orgs': 'orgs',  # noqa: E501
-        'profiling_host_top99p': 'profiling_host_top99p',  # noqa: E501
-        'rum_session_count_sum': 'rum_session_count_sum',  # noqa: E501
-        'rum_total_session_count_sum': 'rum_total_session_count_sum',  # noqa: E501
-        'synthetics_browser_check_calls_count_sum': 'synthetics_browser_check_calls_count_sum',  # noqa: E501
-        'synthetics_check_calls_count_sum': 'synthetics_check_calls_count_sum',  # noqa: E501
-        'trace_search_indexed_events_count_sum': 'trace_search_indexed_events_count_sum',  # noqa: E501
-        'twol_ingested_events_bytes_sum': 'twol_ingested_events_bytes_sum',  # noqa: E501
+        "agent_host_top99p": "agent_host_top99p",  # noqa: E501
+        "apm_azure_app_service_host_top99p": "apm_azure_app_service_host_top99p",  # noqa: E501
+        "apm_host_top99p": "apm_host_top99p",  # noqa: E501
+        "aws_host_top99p": "aws_host_top99p",  # noqa: E501
+        "aws_lambda_func_count": "aws_lambda_func_count",  # noqa: E501
+        "aws_lambda_invocations_sum": "aws_lambda_invocations_sum",  # noqa: E501
+        "azure_app_service_top99p": "azure_app_service_top99p",  # noqa: E501
+        "billable_ingested_bytes_sum": "billable_ingested_bytes_sum",  # noqa: E501
+        "container_avg": "container_avg",  # noqa: E501
+        "container_hwm": "container_hwm",  # noqa: E501
+        "custom_ts_avg": "custom_ts_avg",  # noqa: E501
+        "date": "date",  # noqa: E501
+        "fargate_tasks_count_avg": "fargate_tasks_count_avg",  # noqa: E501
+        "fargate_tasks_count_hwm": "fargate_tasks_count_hwm",  # noqa: E501
+        "gcp_host_top99p": "gcp_host_top99p",  # noqa: E501
+        "incident_management_monthly_active_users_hwm": "incident_management_monthly_active_users_hwm",  # noqa: E501
+        "indexed_events_count_sum": "indexed_events_count_sum",  # noqa: E501
+        "infra_host_top99p": "infra_host_top99p",  # noqa: E501
+        "ingested_events_bytes_sum": "ingested_events_bytes_sum",  # noqa: E501
+        "iot_device_agg_sum": "iot_device_agg_sum",  # noqa: E501
+        "iot_device_top99p_sum": "iot_device_top99p_sum",  # noqa: E501
+        "mobile_rum_session_count_android_sum": "mobile_rum_session_count_android_sum",  # noqa: E501
+        "mobile_rum_session_count_ios_sum": "mobile_rum_session_count_ios_sum",  # noqa: E501
+        "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",  # noqa: E501
+        "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",  # noqa: E501
+        "npm_host_top99p": "npm_host_top99p",  # noqa: E501
+        "orgs": "orgs",  # noqa: E501
+        "profiling_host_top99p": "profiling_host_top99p",  # noqa: E501
+        "rum_session_count_sum": "rum_session_count_sum",  # noqa: E501
+        "rum_total_session_count_sum": "rum_total_session_count_sum",  # noqa: E501
+        "synthetics_browser_check_calls_count_sum": "synthetics_browser_check_calls_count_sum",  # noqa: E501
+        "synthetics_check_calls_count_sum": "synthetics_check_calls_count_sum",  # noqa: E501
+        "trace_search_indexed_events_count_sum": "trace_search_indexed_events_count_sum",  # noqa: E501
+        "twol_ingested_events_bytes_sum": "twol_ingested_events_bytes_sum",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -234,15 +235,16 @@ class UsageSummaryDate(ModelNormal):
             twol_ingested_events_bytes_sum (int): Shows the sum of all tracing without limits bytes ingested over all hours in the current date for all organizations.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -258,10 +260,12 @@ class UsageSummaryDate(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

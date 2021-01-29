@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.graph_snapshot import GraphSnapshot
@@ -32,12 +32,7 @@ class SnapshotsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __get_graph_snapshot(
-            self,
-            start,
-            end,
-            **kwargs
-        ):
+        def __get_graph_snapshot(self, start, end, **kwargs):
             """Take graph snapshots  # noqa: E501
 
             Take graph snapshots. **Note**: When a snapshot is created, there is some delay before it is available.  # noqa: E501
@@ -81,107 +76,76 @@ class SnapshotsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start'] = \
-                start
-            kwargs['end'] = \
-                end
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start"] = start
+            kwargs["end"] = end
             return self.call_with_http_info(**kwargs)
 
         self.get_graph_snapshot = _Endpoint(
             settings={
-                'response_type': (GraphSnapshot,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/graph/snapshot',
-                'operation_id': 'get_graph_snapshot',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (GraphSnapshot,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/graph/snapshot",
+                "operation_id": "get_graph_snapshot",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start',
-                    'end',
-                    'metric_query',
-                    'event_query',
-                    'graph_def',
-                    'title',
+                "all": [
+                    "start",
+                    "end",
+                    "metric_query",
+                    "event_query",
+                    "graph_def",
+                    "title",
                 ],
-                'required': [
-                    'start',
-                    'end',
+                "required": [
+                    "start",
+                    "end",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start": (int,),
+                    "end": (int,),
+                    "metric_query": (str,),
+                    "event_query": (str,),
+                    "graph_def": (str,),
+                    "title": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start": "start",
+                    "end": "end",
+                    "metric_query": "metric_query",
+                    "event_query": "event_query",
+                    "graph_def": "graph_def",
+                    "title": "title",
                 },
-                'openapi_types': {
-                    'start':
-                        (int,),
-                    'end':
-                        (int,),
-                    'metric_query':
-                        (str,),
-                    'event_query':
-                        (str,),
-                    'graph_def':
-                        (str,),
-                    'title':
-                        (str,),
+                "location_map": {
+                    "start": "query",
+                    "end": "query",
+                    "metric_query": "query",
+                    "event_query": "query",
+                    "graph_def": "query",
+                    "title": "query",
                 },
-                'attribute_map': {
-                    'start': 'start',
-                    'end': 'end',
-                    'metric_query': 'metric_query',
-                    'event_query': 'event_query',
-                    'graph_def': 'graph_def',
-                    'title': 'title',
-                },
-                'location_map': {
-                    'start': 'query',
-                    'end': 'query',
-                    'metric_query': 'query',
-                    'event_query': 'query',
-                    'graph_def': 'query',
-                    'title': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_graph_snapshot
+            callable=__get_graph_snapshot,
         )

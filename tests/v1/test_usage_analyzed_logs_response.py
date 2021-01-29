@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import usage_analyzed_logs_hour
 except ImportError:
-    usage_analyzed_logs_hour = sys.modules[
-        'datadog_api_client.v1.model.usage_analyzed_logs_hour']
+    usage_analyzed_logs_hour = sys.modules["datadog_api_client.v1.model.usage_analyzed_logs_hour"]
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
 
 
@@ -34,5 +34,5 @@ class TestUsageAnalyzedLogsResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,12 +10,14 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_device
 except ImportError:
-    synthetics_device = sys.modules[
-        'datadog_api_client.v1.model.synthetics_device']
-from datadog_api_client.v1.model.synthetics_browser_test_result_short_result import SyntheticsBrowserTestResultShortResult
+    synthetics_device = sys.modules["datadog_api_client.v1.model.synthetics_device"]
+from datadog_api_client.v1.model.synthetics_browser_test_result_short_result import (
+    SyntheticsBrowserTestResultShortResult,
+)
 
 
 class TestSyntheticsBrowserTestResultShortResult(unittest.TestCase):
@@ -34,5 +36,5 @@ class TestSyntheticsBrowserTestResultShortResult(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

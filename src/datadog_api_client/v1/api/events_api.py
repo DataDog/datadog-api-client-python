@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.event_list_response import EventListResponse
@@ -34,11 +34,7 @@ class EventsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __get_event(
-            self,
-            event_id,
-            **kwargs
-        ):
+        def __get_event(self, event_id, **kwargs):
             """Get an event  # noqa: E501
 
             This endpoint allows you to query for event details.  **Note**: If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  # noqa: E501
@@ -77,89 +73,59 @@ class EventsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['event_id'] = \
-                event_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["event_id"] = event_id
             return self.call_with_http_info(**kwargs)
 
         self.get_event = _Endpoint(
             settings={
-                'response_type': (EventResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/events/{event_id}',
-                'operation_id': 'get_event',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (EventResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/events/{event_id}",
+                "operation_id": "get_event",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'event_id',
+                "all": [
+                    "event_id",
                 ],
-                'required': [
-                    'event_id',
+                "required": [
+                    "event_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "event_id": (int,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "event_id": "event_id",
                 },
-                'openapi_types': {
-                    'event_id':
-                        (int,),
+                "location_map": {
+                    "event_id": "path",
                 },
-                'attribute_map': {
-                    'event_id': 'event_id',
-                },
-                'location_map': {
-                    'event_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_event
+            callable=__get_event,
         )
 
-        def __list_events(
-            self,
-            start,
-            end,
-            **kwargs
-        ):
+        def __list_events(self, start, end, **kwargs):
             """Query the event stream  # noqa: E501
 
             The event stream can be queried and filtered by time, priority, sources and tags.  **Notes**: - If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  - This endpoint returns a maximum of `1000` most recent results. To return additional results, identify the last timestamp of the last result and set that as the `end` query time to paginate the results.  # noqa: E501
@@ -203,107 +169,76 @@ class EventsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['start'] = \
-                start
-            kwargs['end'] = \
-                end
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["start"] = start
+            kwargs["end"] = end
             return self.call_with_http_info(**kwargs)
 
         self.list_events = _Endpoint(
             settings={
-                'response_type': (EventListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/events',
-                'operation_id': 'list_events',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (EventListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/events",
+                "operation_id": "list_events",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'start',
-                    'end',
-                    'priority',
-                    'sources',
-                    'tags',
-                    'unaggregated',
+                "all": [
+                    "start",
+                    "end",
+                    "priority",
+                    "sources",
+                    "tags",
+                    "unaggregated",
                 ],
-                'required': [
-                    'start',
-                    'end',
+                "required": [
+                    "start",
+                    "end",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start": (int,),
+                    "end": (int,),
+                    "priority": (EventPriority,),
+                    "sources": (str,),
+                    "tags": (str,),
+                    "unaggregated": (bool,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "start": "start",
+                    "end": "end",
+                    "priority": "priority",
+                    "sources": "sources",
+                    "tags": "tags",
+                    "unaggregated": "unaggregated",
                 },
-                'openapi_types': {
-                    'start':
-                        (int,),
-                    'end':
-                        (int,),
-                    'priority':
-                        (EventPriority,),
-                    'sources':
-                        (str,),
-                    'tags':
-                        (str,),
-                    'unaggregated':
-                        (bool,),
+                "location_map": {
+                    "start": "query",
+                    "end": "query",
+                    "priority": "query",
+                    "sources": "query",
+                    "tags": "query",
+                    "unaggregated": "query",
                 },
-                'attribute_map': {
-                    'start': 'start',
-                    'end': 'end',
-                    'priority': 'priority',
-                    'sources': 'sources',
-                    'tags': 'tags',
-                    'unaggregated': 'unaggregated',
-                },
-                'location_map': {
-                    'start': 'query',
-                    'end': 'query',
-                    'priority': 'query',
-                    'sources': 'query',
-                    'tags': 'query',
-                    'unaggregated': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_events
+            callable=__list_events,
         )

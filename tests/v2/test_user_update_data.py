@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import user_update_attributes
 except ImportError:
-    user_update_attributes = sys.modules[
-        'datadog_api_client.v2.model.user_update_attributes']
+    user_update_attributes = sys.modules["datadog_api_client.v2.model.user_update_attributes"]
 try:
     from datadog_api_client.v2.model import users_type
 except ImportError:
-    users_type = sys.modules[
-        'datadog_api_client.v2.model.users_type']
+    users_type = sys.modules["datadog_api_client.v2.model.users_type"]
 from datadog_api_client.v2.model.user_update_data import UserUpdateData
 
 
@@ -39,5 +38,5 @@ class TestUserUpdateData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

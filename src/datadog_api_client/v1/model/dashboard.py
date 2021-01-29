@@ -23,15 +23,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
     from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
     from datadog_api_client.v1.model.dashboard_template_variables import DashboardTemplateVariables
     from datadog_api_client.v1.model.widget import Widget
-    globals()['DashboardLayoutType'] = DashboardLayoutType
-    globals()['DashboardTemplateVariablePreset'] = DashboardTemplateVariablePreset
-    globals()['DashboardTemplateVariables'] = DashboardTemplateVariables
-    globals()['Widget'] = Widget
+
+    globals()["DashboardLayoutType"] = DashboardLayoutType
+    globals()["DashboardTemplateVariablePreset"] = DashboardTemplateVariablePreset
+    globals()["DashboardTemplateVariables"] = DashboardTemplateVariables
+    globals()["Widget"] = Widget
 
 
 class Dashboard(ModelNormal):
@@ -58,11 +60,9 @@ class Dashboard(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -80,52 +80,65 @@ class Dashboard(ModelNormal):
         """
         lazy_import()
         return {
-            'layout_type': (DashboardLayoutType,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'widgets': ([Widget],),  # noqa: E501
-            'author_handle': (str,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
-            'id': (str,),  # noqa: E501
-            'is_read_only': (bool,),  # noqa: E501
-            'modified_at': (datetime,),  # noqa: E501
-            'notify_list': ([str], none_type,),  # noqa: E501
-            'template_variable_presets': ([DashboardTemplateVariablePreset], none_type,),  # noqa: E501
-            'template_variables': ([DashboardTemplateVariables], none_type,),  # noqa: E501
-            'url': (str,),  # noqa: E501
+            "layout_type": (DashboardLayoutType,),  # noqa: E501
+            "title": (str,),  # noqa: E501
+            "widgets": ([Widget],),  # noqa: E501
+            "author_handle": (str,),  # noqa: E501
+            "created_at": (datetime,),  # noqa: E501
+            "description": (
+                str,
+                none_type,
+            ),  # noqa: E501
+            "id": (str,),  # noqa: E501
+            "is_read_only": (bool,),  # noqa: E501
+            "modified_at": (datetime,),  # noqa: E501
+            "notify_list": (
+                [str],
+                none_type,
+            ),  # noqa: E501
+            "template_variable_presets": (
+                [DashboardTemplateVariablePreset],
+                none_type,
+            ),  # noqa: E501
+            "template_variables": (
+                [DashboardTemplateVariables],
+                none_type,
+            ),  # noqa: E501
+            "url": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'layout_type': 'layout_type',  # noqa: E501
-        'title': 'title',  # noqa: E501
-        'widgets': 'widgets',  # noqa: E501
-        'author_handle': 'author_handle',  # noqa: E501
-        'created_at': 'created_at',  # noqa: E501
-        'description': 'description',  # noqa: E501
-        'id': 'id',  # noqa: E501
-        'is_read_only': 'is_read_only',  # noqa: E501
-        'modified_at': 'modified_at',  # noqa: E501
-        'notify_list': 'notify_list',  # noqa: E501
-        'template_variable_presets': 'template_variable_presets',  # noqa: E501
-        'template_variables': 'template_variables',  # noqa: E501
-        'url': 'url',  # noqa: E501
+        "layout_type": "layout_type",  # noqa: E501
+        "title": "title",  # noqa: E501
+        "widgets": "widgets",  # noqa: E501
+        "author_handle": "author_handle",  # noqa: E501
+        "created_at": "created_at",  # noqa: E501
+        "description": "description",  # noqa: E501
+        "id": "id",  # noqa: E501
+        "is_read_only": "is_read_only",  # noqa: E501
+        "modified_at": "modified_at",  # noqa: E501
+        "notify_list": "notify_list",  # noqa: E501
+        "template_variable_presets": "template_variable_presets",  # noqa: E501
+        "template_variables": "template_variables",  # noqa: E501
+        "url": "url",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, layout_type, title, widgets, *args, **kwargs):  # noqa: E501
@@ -179,15 +192,16 @@ class Dashboard(ModelNormal):
             url (str): The URL of the dashboard.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -206,10 +220,12 @@ class Dashboard(ModelNormal):
         self.title = title
         self.widgets = widgets
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

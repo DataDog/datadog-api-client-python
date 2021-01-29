@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.api_key import ApiKey
@@ -37,11 +37,7 @@ class KeyManagementApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_api_key(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_api_key(self, body, **kwargs):
             """Create an API key  # noqa: E501
 
             Creates an API key with a given name.  # noqa: E501
@@ -80,89 +76,54 @@ class KeyManagementApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_api_key = _Endpoint(
             settings={
-                'response_type': (ApiKeyResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/api_key',
-                'operation_id': 'create_api_key',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (ApiKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/api_key",
+                "operation_id": "create_api_key",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (ApiKey,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (ApiKey,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_api_key
+            callable=__create_api_key,
         )
 
-        def __create_application_key(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_application_key(self, body, **kwargs):
             """Create an application key  # noqa: E501
 
             Create an application key with a given name.  # noqa: E501
@@ -201,89 +162,54 @@ class KeyManagementApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_application_key = _Endpoint(
             settings={
-                'response_type': (ApplicationKeyResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/application_key',
-                'operation_id': 'create_application_key',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (ApplicationKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/application_key",
+                "operation_id": "create_application_key",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (ApplicationKey,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (ApplicationKey,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_application_key
+            callable=__create_application_key,
         )
 
-        def __delete_api_key(
-            self,
-            key,
-            **kwargs
-        ):
+        def __delete_api_key(self, key, **kwargs):
             """Delete an API key  # noqa: E501
 
             Delete a given API key.  # noqa: E501
@@ -322,88 +248,59 @@ class KeyManagementApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['key'] = \
-                key
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["key"] = key
             return self.call_with_http_info(**kwargs)
 
         self.delete_api_key = _Endpoint(
             settings={
-                'response_type': (ApiKeyResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/api_key/{key}',
-                'operation_id': 'delete_api_key',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": (ApiKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/api_key/{key}",
+                "operation_id": "delete_api_key",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'key',
+                "all": [
+                    "key",
                 ],
-                'required': [
-                    'key',
+                "required": [
+                    "key",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "key": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "key": "key",
                 },
-                'openapi_types': {
-                    'key':
-                        (str,),
+                "location_map": {
+                    "key": "path",
                 },
-                'attribute_map': {
-                    'key': 'key',
-                },
-                'location_map': {
-                    'key': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_api_key
+            callable=__delete_api_key,
         )
 
-        def __delete_application_key(
-            self,
-            key,
-            **kwargs
-        ):
+        def __delete_application_key(self, key, **kwargs):
             """Delete an application key  # noqa: E501
 
             Delete a given application key.  # noqa: E501
@@ -442,88 +339,59 @@ class KeyManagementApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['key'] = \
-                key
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["key"] = key
             return self.call_with_http_info(**kwargs)
 
         self.delete_application_key = _Endpoint(
             settings={
-                'response_type': (ApplicationKeyResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/application_key/{key}',
-                'operation_id': 'delete_application_key',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": (ApplicationKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/application_key/{key}",
+                "operation_id": "delete_application_key",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'key',
+                "all": [
+                    "key",
                 ],
-                'required': [
-                    'key',
+                "required": [
+                    "key",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "key": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "key": "key",
                 },
-                'openapi_types': {
-                    'key':
-                        (str,),
+                "location_map": {
+                    "key": "path",
                 },
-                'attribute_map': {
-                    'key': 'key',
-                },
-                'location_map': {
-                    'key': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_application_key
+            callable=__delete_application_key,
         )
 
-        def __get_api_key(
-            self,
-            key,
-            **kwargs
-        ):
+        def __get_api_key(self, key, **kwargs):
             """Get API key  # noqa: E501
 
             Get a given API key.  # noqa: E501
@@ -562,88 +430,59 @@ class KeyManagementApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['key'] = \
-                key
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["key"] = key
             return self.call_with_http_info(**kwargs)
 
         self.get_api_key = _Endpoint(
             settings={
-                'response_type': (ApiKeyResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/api_key/{key}',
-                'operation_id': 'get_api_key',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (ApiKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/api_key/{key}",
+                "operation_id": "get_api_key",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'key',
+                "all": [
+                    "key",
                 ],
-                'required': [
-                    'key',
+                "required": [
+                    "key",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "key": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "key": "key",
                 },
-                'openapi_types': {
-                    'key':
-                        (str,),
+                "location_map": {
+                    "key": "path",
                 },
-                'attribute_map': {
-                    'key': 'key',
-                },
-                'location_map': {
-                    'key': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_api_key
+            callable=__get_api_key,
         )
 
-        def __get_application_key(
-            self,
-            key,
-            **kwargs
-        ):
+        def __get_application_key(self, key, **kwargs):
             """Get an application key  # noqa: E501
 
             Get a given application key.  # noqa: E501
@@ -682,87 +521,59 @@ class KeyManagementApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['key'] = \
-                key
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["key"] = key
             return self.call_with_http_info(**kwargs)
 
         self.get_application_key = _Endpoint(
             settings={
-                'response_type': (ApplicationKeyResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/application_key/{key}',
-                'operation_id': 'get_application_key',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (ApplicationKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/application_key/{key}",
+                "operation_id": "get_application_key",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'key',
+                "all": [
+                    "key",
                 ],
-                'required': [
-                    'key',
+                "required": [
+                    "key",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "key": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "key": "key",
                 },
-                'openapi_types': {
-                    'key':
-                        (str,),
+                "location_map": {
+                    "key": "path",
                 },
-                'attribute_map': {
-                    'key': 'key',
-                },
-                'location_map': {
-                    'key': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_application_key
+            callable=__get_application_key,
         )
 
-        def __list_api_keys(
-            self,
-            **kwargs
-        ):
+        def __list_api_keys(self, **kwargs):
             """Get all API keys  # noqa: E501
 
             Get all API keys available for your account.  # noqa: E501
@@ -799,78 +610,42 @@ class KeyManagementApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_api_keys = _Endpoint(
             settings={
-                'response_type': (ApiKeyListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/api_key',
-                'operation_id': 'list_api_keys',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (ApiKeyListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/api_key",
+                "operation_id": "list_api_keys",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_api_keys
+            callable=__list_api_keys,
         )
 
-        def __list_application_keys(
-            self,
-            **kwargs
-        ):
+        def __list_application_keys(self, **kwargs):
             """Get all application keys  # noqa: E501
 
             Get all application keys available for your Datadog account.  # noqa: E501
@@ -907,80 +682,42 @@ class KeyManagementApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_application_keys = _Endpoint(
             settings={
-                'response_type': (ApplicationKeyListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/application_key',
-                'operation_id': 'list_application_keys',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (ApplicationKeyListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/application_key",
+                "operation_id": "list_application_keys",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_application_keys
+            callable=__list_application_keys,
         )
 
-        def __update_api_key(
-            self,
-            key,
-            body,
-            **kwargs
-        ):
+        def __update_api_key(self, key, body, **kwargs):
             """Edit an API key  # noqa: E501
 
             Edit an API key name.  # noqa: E501
@@ -1020,98 +757,61 @@ class KeyManagementApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['key'] = \
-                key
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["key"] = key
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_api_key = _Endpoint(
             settings={
-                'response_type': (ApiKeyResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/api_key/{key}',
-                'operation_id': 'update_api_key',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (ApiKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/api_key/{key}",
+                "operation_id": "update_api_key",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'key',
-                    'body',
+                "all": [
+                    "key",
+                    "body",
                 ],
-                'required': [
-                    'key',
-                    'body',
+                "required": [
+                    "key",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "key": (str,),
+                    "body": (ApiKey,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "key": "key",
                 },
-                'openapi_types': {
-                    'key':
-                        (str,),
-                    'body':
-                        (ApiKey,),
+                "location_map": {
+                    "key": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'key': 'key',
-                },
-                'location_map': {
-                    'key': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_api_key
+            callable=__update_api_key,
         )
 
-        def __update_application_key(
-            self,
-            key,
-            body,
-            **kwargs
-        ):
+        def __update_application_key(self, key, body, **kwargs):
             """Edit an application key  # noqa: E501
 
             Edit an application key name.  # noqa: E501
@@ -1151,88 +851,56 @@ class KeyManagementApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['key'] = \
-                key
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["key"] = key
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_application_key = _Endpoint(
             settings={
-                'response_type': (ApplicationKeyResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/application_key/{key}',
-                'operation_id': 'update_application_key',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (ApplicationKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/application_key/{key}",
+                "operation_id": "update_application_key",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'key',
-                    'body',
+                "all": [
+                    "key",
+                    "body",
                 ],
-                'required': [
-                    'key',
-                    'body',
+                "required": [
+                    "key",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "key": (str,),
+                    "body": (ApplicationKey,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "key": "key",
                 },
-                'openapi_types': {
-                    'key':
-                        (str,),
-                    'body':
-                        (ApplicationKey,),
+                "location_map": {
+                    "key": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'key': 'key',
-                },
-                'location_map': {
-                    'key': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_application_key
+            callable=__update_application_key,
         )

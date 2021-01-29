@@ -9,11 +9,18 @@ import sys
 import unittest
 
 import datadog_api_client.v2
-from datadog_api_client.v2.model.incident_timeline_cell_markdown_content_type import IncidentTimelineCellMarkdownContentType
-from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes_content import IncidentTimelineCellMarkdownCreateAttributesContent
-globals()['IncidentTimelineCellMarkdownContentType'] = IncidentTimelineCellMarkdownContentType
-globals()['IncidentTimelineCellMarkdownCreateAttributesContent'] = IncidentTimelineCellMarkdownCreateAttributesContent
-from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes import IncidentTimelineCellMarkdownCreateAttributes
+from datadog_api_client.v2.model.incident_timeline_cell_markdown_content_type import (
+    IncidentTimelineCellMarkdownContentType,
+)
+from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes_content import (
+    IncidentTimelineCellMarkdownCreateAttributesContent,
+)
+
+globals()["IncidentTimelineCellMarkdownContentType"] = IncidentTimelineCellMarkdownContentType
+globals()["IncidentTimelineCellMarkdownCreateAttributesContent"] = IncidentTimelineCellMarkdownCreateAttributesContent
+from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes import (
+    IncidentTimelineCellMarkdownCreateAttributes,
+)
 
 
 class TestIncidentTimelineCellMarkdownCreateAttributes(unittest.TestCase):
@@ -32,5 +39,5 @@ class TestIncidentTimelineCellMarkdownCreateAttributes(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

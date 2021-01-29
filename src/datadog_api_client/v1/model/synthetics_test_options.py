@@ -23,15 +23,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
     from datadog_api_client.v1.model.synthetics_tick_interval import SyntheticsTickInterval
-    globals()['SyntheticsDeviceID'] = SyntheticsDeviceID
-    globals()['SyntheticsTestOptionsMonitorOptions'] = SyntheticsTestOptionsMonitorOptions
-    globals()['SyntheticsTestOptionsRetry'] = SyntheticsTestOptionsRetry
-    globals()['SyntheticsTickInterval'] = SyntheticsTickInterval
+
+    globals()["SyntheticsDeviceID"] = SyntheticsDeviceID
+    globals()["SyntheticsTestOptionsMonitorOptions"] = SyntheticsTestOptionsMonitorOptions
+    globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
+    globals()["SyntheticsTickInterval"] = SyntheticsTickInterval
 
 
 class SyntheticsTestOptions(ModelNormal):
@@ -58,11 +60,9 @@ class SyntheticsTestOptions(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -80,44 +80,45 @@ class SyntheticsTestOptions(ModelNormal):
         """
         lazy_import()
         return {
-            'accept_self_signed': (bool,),  # noqa: E501
-            'allow_insecure': (bool,),  # noqa: E501
-            'device_ids': ([SyntheticsDeviceID],),  # noqa: E501
-            'follow_redirects': (bool,),  # noqa: E501
-            'min_failure_duration': (int,),  # noqa: E501
-            'min_location_failed': (int,),  # noqa: E501
-            'monitor_options': (SyntheticsTestOptionsMonitorOptions,),  # noqa: E501
-            'retry': (SyntheticsTestOptionsRetry,),  # noqa: E501
-            'tick_every': (SyntheticsTickInterval,),  # noqa: E501
+            "accept_self_signed": (bool,),  # noqa: E501
+            "allow_insecure": (bool,),  # noqa: E501
+            "device_ids": ([SyntheticsDeviceID],),  # noqa: E501
+            "follow_redirects": (bool,),  # noqa: E501
+            "min_failure_duration": (int,),  # noqa: E501
+            "min_location_failed": (int,),  # noqa: E501
+            "monitor_options": (SyntheticsTestOptionsMonitorOptions,),  # noqa: E501
+            "retry": (SyntheticsTestOptionsRetry,),  # noqa: E501
+            "tick_every": (SyntheticsTickInterval,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'accept_self_signed': 'accept_self_signed',  # noqa: E501
-        'allow_insecure': 'allow_insecure',  # noqa: E501
-        'device_ids': 'device_ids',  # noqa: E501
-        'follow_redirects': 'follow_redirects',  # noqa: E501
-        'min_failure_duration': 'min_failure_duration',  # noqa: E501
-        'min_location_failed': 'min_location_failed',  # noqa: E501
-        'monitor_options': 'monitor_options',  # noqa: E501
-        'retry': 'retry',  # noqa: E501
-        'tick_every': 'tick_every',  # noqa: E501
+        "accept_self_signed": "accept_self_signed",  # noqa: E501
+        "allow_insecure": "allow_insecure",  # noqa: E501
+        "device_ids": "device_ids",  # noqa: E501
+        "follow_redirects": "follow_redirects",  # noqa: E501
+        "min_failure_duration": "min_failure_duration",  # noqa: E501
+        "min_location_failed": "min_location_failed",  # noqa: E501
+        "monitor_options": "monitor_options",  # noqa: E501
+        "retry": "retry",  # noqa: E501
+        "tick_every": "tick_every",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -165,15 +166,16 @@ class SyntheticsTestOptions(ModelNormal):
             tick_every (SyntheticsTickInterval): [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -189,10 +191,12 @@ class SyntheticsTestOptions(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

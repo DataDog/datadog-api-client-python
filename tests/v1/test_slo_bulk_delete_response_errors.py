@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import slo_error_timeframe
 except ImportError:
-    slo_error_timeframe = sys.modules[
-        'datadog_api_client.v1.model.slo_error_timeframe']
+    slo_error_timeframe = sys.modules["datadog_api_client.v1.model.slo_error_timeframe"]
 from datadog_api_client.v1.model.slo_bulk_delete_response_errors import SLOBulkDeleteResponseErrors
 
 
@@ -34,5 +34,5 @@ class TestSLOBulkDeleteResponseErrors(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

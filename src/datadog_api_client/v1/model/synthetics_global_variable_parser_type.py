@@ -45,15 +45,14 @@ class SyntheticsGlobalVariableParserType(ModelSimple):
     """
 
     allowed_values = {
-        ('value',): {
-            'RAW': "raw",
-            'JSON_PATH': "json_path",
-            'REGEX': "regex",
+        ("value",): {
+            "RAW": "raw",
+            "JSON_PATH": "json_path",
+            "REGEX": "regex",
         },
     }
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -70,26 +69,27 @@ class SyntheticsGlobalVariableParserType(ModelSimple):
                 and the value is attribute type.
         """
         return {
-            'value': (str,),
+            "value": (str,),
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {}
 
     _composed_schemas = None
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):
@@ -134,8 +134,8 @@ class SyntheticsGlobalVariableParserType(ModelSimple):
                                 _visited_composed_classes = (Animal,)
         """
 
-        if 'value' in kwargs:
-            value = kwargs.pop('value')
+        if "value" in kwargs:
+            value = kwargs.pop("value")
         elif args:
             args = list(args)
             value = args.pop(0)
@@ -146,15 +146,16 @@ class SyntheticsGlobalVariableParserType(ModelSimple):
                 valid_classes=(self.__class__,),
             )
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -171,7 +172,8 @@ class SyntheticsGlobalVariableParserType(ModelSimple):
         self.value = value
         if kwargs:
             raise ApiTypeError(
-                "Invalid named arguments=%s passed to %s. Remove those invalid named arguments." % (
+                "Invalid named arguments=%s passed to %s. Remove those invalid named arguments."
+                % (
                     kwargs,
                     self.__class__.__name__,
                 ),

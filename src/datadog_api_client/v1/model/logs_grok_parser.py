@@ -23,11 +23,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.logs_grok_parser_rules import LogsGrokParserRules
     from datadog_api_client.v1.model.logs_grok_parser_type import LogsGrokParserType
-    globals()['LogsGrokParserRules'] = LogsGrokParserRules
-    globals()['LogsGrokParserType'] = LogsGrokParserType
+
+    globals()["LogsGrokParserRules"] = LogsGrokParserRules
+    globals()["LogsGrokParserType"] = LogsGrokParserType
 
 
 class LogsGrokParser(ModelNormal):
@@ -54,11 +56,9 @@ class LogsGrokParser(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -76,38 +76,39 @@ class LogsGrokParser(ModelNormal):
         """
         lazy_import()
         return {
-            'grok': (LogsGrokParserRules,),  # noqa: E501
-            'source': (str,),  # noqa: E501
-            'type': (LogsGrokParserType,),  # noqa: E501
-            'is_enabled': (bool,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'samples': ([str],),  # noqa: E501
+            "grok": (LogsGrokParserRules,),  # noqa: E501
+            "source": (str,),  # noqa: E501
+            "type": (LogsGrokParserType,),  # noqa: E501
+            "is_enabled": (bool,),  # noqa: E501
+            "name": (str,),  # noqa: E501
+            "samples": ([str],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'grok': 'grok',  # noqa: E501
-        'source': 'source',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'is_enabled': 'is_enabled',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'samples': 'samples',  # noqa: E501
+        "grok": "grok",  # noqa: E501
+        "source": "source",  # noqa: E501
+        "type": "type",  # noqa: E501
+        "is_enabled": "is_enabled",  # noqa: E501
+        "name": "name",  # noqa: E501
+        "samples": "samples",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, grok, type, *args, **kwargs):  # noqa: E501
@@ -154,16 +155,17 @@ class LogsGrokParser(ModelNormal):
             samples ([str]): List of sample logs to test this grok parser.. [optional]  # noqa: E501
         """
 
-        source = kwargs.get('source', "message")
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        source = kwargs.get("source", "message")
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -182,10 +184,12 @@ class LogsGrokParser(ModelNormal):
         self.source = source
         self.type = type
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

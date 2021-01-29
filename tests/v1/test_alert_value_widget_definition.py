@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import alert_value_widget_definition_type
 except ImportError:
-    alert_value_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.alert_value_widget_definition_type']
+    alert_value_widget_definition_type = sys.modules["datadog_api_client.v1.model.alert_value_widget_definition_type"]
 try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+    widget_text_align = sys.modules["datadog_api_client.v1.model.widget_text_align"]
 from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
 
 
@@ -39,5 +38,5 @@ class TestAlertValueWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

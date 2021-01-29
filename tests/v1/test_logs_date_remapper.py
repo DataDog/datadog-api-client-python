@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import logs_date_remapper_type
 except ImportError:
-    logs_date_remapper_type = sys.modules[
-        'datadog_api_client.v1.model.logs_date_remapper_type']
+    logs_date_remapper_type = sys.modules["datadog_api_client.v1.model.logs_date_remapper_type"]
 from datadog_api_client.v1.model.logs_date_remapper import LogsDateRemapper
 
 
@@ -34,5 +34,5 @@ class TestLogsDateRemapper(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -48,11 +48,9 @@ class ProcessSummaryAttributes(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -69,42 +67,43 @@ class ProcessSummaryAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'cmdline': (str,),  # noqa: E501
-            'host': (str,),  # noqa: E501
-            'pid': (int,),  # noqa: E501
-            'ppid': (int,),  # noqa: E501
-            'start': (str,),  # noqa: E501
-            'tags': ([str],),  # noqa: E501
-            'timestamp': (str,),  # noqa: E501
-            'user': (str,),  # noqa: E501
+            "cmdline": (str,),  # noqa: E501
+            "host": (str,),  # noqa: E501
+            "pid": (int,),  # noqa: E501
+            "ppid": (int,),  # noqa: E501
+            "start": (str,),  # noqa: E501
+            "tags": ([str],),  # noqa: E501
+            "timestamp": (str,),  # noqa: E501
+            "user": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'cmdline': 'cmdline',  # noqa: E501
-        'host': 'host',  # noqa: E501
-        'pid': 'pid',  # noqa: E501
-        'ppid': 'ppid',  # noqa: E501
-        'start': 'start',  # noqa: E501
-        'tags': 'tags',  # noqa: E501
-        'timestamp': 'timestamp',  # noqa: E501
-        'user': 'user',  # noqa: E501
+        "cmdline": "cmdline",  # noqa: E501
+        "host": "host",  # noqa: E501
+        "pid": "pid",  # noqa: E501
+        "ppid": "ppid",  # noqa: E501
+        "start": "start",  # noqa: E501
+        "tags": "tags",  # noqa: E501
+        "timestamp": "timestamp",  # noqa: E501
+        "user": "user",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -151,15 +150,16 @@ class ProcessSummaryAttributes(ModelNormal):
             user (str): Process owner.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -175,10 +175,12 @@ class ProcessSummaryAttributes(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

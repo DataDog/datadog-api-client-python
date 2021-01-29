@@ -14,7 +14,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
@@ -36,11 +36,7 @@ class IncidentsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_incident(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_incident(self, body, **kwargs):
             """Create an incident  # noqa: E501
 
             Create an incident.  # noqa: E501
@@ -79,89 +75,54 @@ class IncidentsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_incident = _Endpoint(
             settings={
-                'response_type': (IncidentResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/incidents',
-                'operation_id': 'create_incident',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (IncidentResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents",
+                "operation_id": "create_incident",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (IncidentCreateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (IncidentCreateRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_incident
+            callable=__create_incident,
         )
 
-        def __delete_incident(
-            self,
-            incident_id,
-            **kwargs
-        ):
+        def __delete_incident(self, incident_id, **kwargs):
             """Delete an existing incident  # noqa: E501
 
             Deletes an existing incident from the users organization.  # noqa: E501
@@ -200,88 +161,59 @@ class IncidentsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['incident_id'] = \
-                incident_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["incident_id"] = incident_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_incident = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/incidents/{incident_id}',
-                'operation_id': 'delete_incident',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}",
+                "operation_id": "delete_incident",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'incident_id',
+                "all": [
+                    "incident_id",
                 ],
-                'required': [
-                    'incident_id',
+                "required": [
+                    "incident_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "incident_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "incident_id": "incident_id",
                 },
-                'openapi_types': {
-                    'incident_id':
-                        (str,),
+                "location_map": {
+                    "incident_id": "path",
                 },
-                'attribute_map': {
-                    'incident_id': 'incident_id',
-                },
-                'location_map': {
-                    'incident_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_incident
+            callable=__delete_incident,
         )
 
-        def __get_incident(
-            self,
-            incident_id,
-            **kwargs
-        ):
+        def __get_incident(self, incident_id, **kwargs):
             """Get the details of an incident  # noqa: E501
 
             Get the details of an incident by `incident_id`.  # noqa: E501
@@ -321,93 +253,65 @@ class IncidentsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['incident_id'] = \
-                incident_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["incident_id"] = incident_id
             return self.call_with_http_info(**kwargs)
 
         self.get_incident = _Endpoint(
             settings={
-                'response_type': (IncidentResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/incidents/{incident_id}',
-                'operation_id': 'get_incident',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (IncidentResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}",
+                "operation_id": "get_incident",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'incident_id',
-                    'include',
+                "all": [
+                    "incident_id",
+                    "include",
                 ],
-                'required': [
-                    'incident_id',
+                "required": [
+                    "incident_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "incident_id": (str,),
+                    "include": ([IncidentRelatedObject],),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "incident_id": "incident_id",
+                    "include": "include",
                 },
-                'openapi_types': {
-                    'incident_id':
-                        (str,),
-                    'include':
-                        ([IncidentRelatedObject],),
+                "location_map": {
+                    "incident_id": "path",
+                    "include": "query",
                 },
-                'attribute_map': {
-                    'incident_id': 'incident_id',
-                    'include': 'include',
+                "collection_format_map": {
+                    "include": "csv",
                 },
-                'location_map': {
-                    'incident_id': 'path',
-                    'include': 'query',
-                },
-                'collection_format_map': {
-                    'include': 'csv',
-                }
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_incident
+            callable=__get_incident,
         )
 
-        def __list_incidents(
-            self,
-            **kwargs
-        ):
+        def __list_incidents(self, **kwargs):
             """Get a list of incidents  # noqa: E501
 
             Get all incidents for the user's organization.  # noqa: E501
@@ -447,96 +351,66 @@ class IncidentsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_incidents = _Endpoint(
             settings={
-                'response_type': (IncidentsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/incidents',
-                'operation_id': 'list_incidents',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (IncidentsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents",
+                "operation_id": "list_incidents",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'include',
-                    'page_size',
-                    'page_offset',
+                "all": [
+                    "include",
+                    "page_size",
+                    "page_offset",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "include": ([IncidentRelatedObject],),
+                    "page_size": (int,),
+                    "page_offset": (int,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "include": "include",
+                    "page_size": "page[size]",
+                    "page_offset": "page[offset]",
                 },
-                'openapi_types': {
-                    'include':
-                        ([IncidentRelatedObject],),
-                    'page_size':
-                        (int,),
-                    'page_offset':
-                        (int,),
+                "location_map": {
+                    "include": "query",
+                    "page_size": "query",
+                    "page_offset": "query",
                 },
-                'attribute_map': {
-                    'include': 'include',
-                    'page_size': 'page[size]',
-                    'page_offset': 'page[offset]',
+                "collection_format_map": {
+                    "include": "csv",
                 },
-                'location_map': {
-                    'include': 'query',
-                    'page_size': 'query',
-                    'page_offset': 'query',
-                },
-                'collection_format_map': {
-                    'include': 'csv',
-                }
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_incidents
+            callable=__list_incidents,
         )
 
-        def __update_incident(
-            self,
-            incident_id,
-            body,
-            **kwargs
-        ):
+        def __update_incident(self, incident_id, body, **kwargs):
             """Update an existing incident  # noqa: E501
 
             Updates an incident. Provide only the attributes that should be updated as this request is a partial update.  # noqa: E501
@@ -576,88 +450,56 @@ class IncidentsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['incident_id'] = \
-                incident_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["incident_id"] = incident_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_incident = _Endpoint(
             settings={
-                'response_type': (IncidentResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/incidents/{incident_id}',
-                'operation_id': 'update_incident',
-                'http_method': 'PATCH',
-                'servers': None,
+                "response_type": (IncidentResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}",
+                "operation_id": "update_incident",
+                "http_method": "PATCH",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'incident_id',
-                    'body',
+                "all": [
+                    "incident_id",
+                    "body",
                 ],
-                'required': [
-                    'incident_id',
-                    'body',
+                "required": [
+                    "incident_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "incident_id": (str,),
+                    "body": (IncidentUpdateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "incident_id": "incident_id",
                 },
-                'openapi_types': {
-                    'incident_id':
-                        (str,),
-                    'body':
-                        (IncidentUpdateRequest,),
+                "location_map": {
+                    "incident_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'incident_id': 'incident_id',
-                },
-                'location_map': {
-                    'incident_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_incident
+            callable=__update_incident,
         )

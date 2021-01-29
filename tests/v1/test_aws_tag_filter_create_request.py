@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.aws_namespace import AWSNamespace
-globals()['AWSNamespace'] = AWSNamespace
+
+globals()["AWSNamespace"] = AWSNamespace
 from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilterCreateRequest
 
 
@@ -30,5 +31,5 @@ class TestAWSTagFilterCreateRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

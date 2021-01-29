@@ -10,26 +10,23 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import alert_graph_widget_definition_type
 except ImportError:
-    alert_graph_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.alert_graph_widget_definition_type']
+    alert_graph_widget_definition_type = sys.modules["datadog_api_client.v1.model.alert_graph_widget_definition_type"]
 try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+    widget_text_align = sys.modules["datadog_api_client.v1.model.widget_text_align"]
 try:
     from datadog_api_client.v1.model import widget_time
 except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+    widget_time = sys.modules["datadog_api_client.v1.model.widget_time"]
 try:
     from datadog_api_client.v1.model import widget_viz_type
 except ImportError:
-    widget_viz_type = sys.modules[
-        'datadog_api_client.v1.model.widget_viz_type']
+    widget_viz_type = sys.modules["datadog_api_client.v1.model.widget_viz_type"]
 from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
 
 
@@ -49,5 +46,5 @@ class TestAlertGraphWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

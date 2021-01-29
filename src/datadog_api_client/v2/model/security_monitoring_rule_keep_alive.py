@@ -45,22 +45,21 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
     """
 
     allowed_values = {
-        ('value',): {
-            'ZERO_MINUTES': 0,
-            'ONE_MINUTE': 60,
-            'FIVE_MINUTES': 300,
-            'TEN_MINUTES': 600,
-            'FIFTEEN_MINUTES': 900,
-            'THIRTY_MINUTES': 1800,
-            'ONE_HOUR': 3600,
-            'TWO_HOURS': 7200,
-            'THREE_HOURS': 10800,
-            'SIX_HOURS': 21600,
+        ("value",): {
+            "ZERO_MINUTES": 0,
+            "ONE_MINUTE": 60,
+            "FIVE_MINUTES": 300,
+            "TEN_MINUTES": 600,
+            "FIFTEEN_MINUTES": 900,
+            "THIRTY_MINUTES": 1800,
+            "ONE_HOUR": 3600,
+            "TWO_HOURS": 7200,
+            "THREE_HOURS": 10800,
+            "SIX_HOURS": 21600,
         },
     }
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -77,26 +76,27 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
                 and the value is attribute type.
         """
         return {
-            'value': (int,),
+            "value": (int,),
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {}
 
     _composed_schemas = None
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):
@@ -141,8 +141,8 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
                                 _visited_composed_classes = (Animal,)
         """
 
-        if 'value' in kwargs:
-            value = kwargs.pop('value')
+        if "value" in kwargs:
+            value = kwargs.pop("value")
         elif args:
             args = list(args)
             value = args.pop(0)
@@ -153,15 +153,16 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
                 valid_classes=(self.__class__,),
             )
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -178,7 +179,8 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
         self.value = value
         if kwargs:
             raise ApiTypeError(
-                "Invalid named arguments=%s passed to %s. Remove those invalid named arguments." % (
+                "Invalid named arguments=%s passed to %s. Remove those invalid named arguments."
+                % (
                     kwargs,
                     self.__class__.__name__,
                 ),

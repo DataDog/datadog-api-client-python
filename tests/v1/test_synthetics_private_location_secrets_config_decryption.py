@@ -9,7 +9,9 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.synthetics_private_location_secrets_config_decryption import SyntheticsPrivateLocationSecretsConfigDecryption
+from datadog_api_client.v1.model.synthetics_private_location_secrets_config_decryption import (
+    SyntheticsPrivateLocationSecretsConfigDecryption,
+)
 
 
 class TestSyntheticsPrivateLocationSecretsConfigDecryption(unittest.TestCase):
@@ -28,5 +30,5 @@ class TestSyntheticsPrivateLocationSecretsConfigDecryption(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

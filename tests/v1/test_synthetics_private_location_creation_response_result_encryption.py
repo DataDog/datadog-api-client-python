@@ -9,7 +9,9 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.synthetics_private_location_creation_response_result_encryption import SyntheticsPrivateLocationCreationResponseResultEncryption
+from datadog_api_client.v1.model.synthetics_private_location_creation_response_result_encryption import (
+    SyntheticsPrivateLocationCreationResponseResultEncryption,
+)
 
 
 class TestSyntheticsPrivateLocationCreationResponseResultEncryption(unittest.TestCase):
@@ -28,5 +30,5 @@ class TestSyntheticsPrivateLocationCreationResponseResultEncryption(unittest.Tes
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

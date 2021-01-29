@@ -23,15 +23,29 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
-    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute
-    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy
-    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
-    globals()['FormulaAndFunctionEventsDataSource'] = FormulaAndFunctionEventsDataSource
-    globals()['TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute'] = TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute
-    globals()['TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy'] = TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy
-    globals()['TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch'] = TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
+    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import (
+        TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute,
+    )
+    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import (
+        TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy,
+    )
+    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import (
+        TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,
+    )
+
+    globals()["FormulaAndFunctionEventsDataSource"] = FormulaAndFunctionEventsDataSource
+    globals()[
+        "TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute"
+    ] = TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute
+    globals()[
+        "TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy"
+    ] = TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy
+    globals()[
+        "TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch"
+    ] = TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
 
 
 class TimeSeriesFormulaAndFunctionEventQueryDefinition(ModelNormal):
@@ -58,11 +72,9 @@ class TimeSeriesFormulaAndFunctionEventQueryDefinition(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -80,38 +92,39 @@ class TimeSeriesFormulaAndFunctionEventQueryDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            'compute': (TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute,),  # noqa: E501
-            'data_source': (FormulaAndFunctionEventsDataSource,),  # noqa: E501
-            'group_by': (TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy,),  # noqa: E501
-            'indexes': ([str],),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'search': (TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,),  # noqa: E501
+            "compute": (TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute,),  # noqa: E501
+            "data_source": (FormulaAndFunctionEventsDataSource,),  # noqa: E501
+            "group_by": (TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy,),  # noqa: E501
+            "indexes": ([str],),  # noqa: E501
+            "name": (str,),  # noqa: E501
+            "search": (TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'compute': 'compute',  # noqa: E501
-        'data_source': 'data_source',  # noqa: E501
-        'group_by': 'group_by',  # noqa: E501
-        'indexes': 'indexes',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'search': 'search',  # noqa: E501
+        "compute": "compute",  # noqa: E501
+        "data_source": "data_source",  # noqa: E501
+        "group_by": "group_by",  # noqa: E501
+        "indexes": "indexes",  # noqa: E501
+        "name": "name",  # noqa: E501
+        "search": "search",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, compute, data_source, *args, **kwargs):  # noqa: E501
@@ -158,15 +171,16 @@ class TimeSeriesFormulaAndFunctionEventQueryDefinition(ModelNormal):
             search (TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch): [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -184,10 +198,12 @@ class TimeSeriesFormulaAndFunctionEventQueryDefinition(ModelNormal):
         self.compute = compute
         self.data_source = data_source
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

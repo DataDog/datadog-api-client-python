@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import widget_line_type
 except ImportError:
-    widget_line_type = sys.modules[
-        'datadog_api_client.v1.model.widget_line_type']
+    widget_line_type = sys.modules["datadog_api_client.v1.model.widget_line_type"]
 try:
     from datadog_api_client.v1.model import widget_line_width
 except ImportError:
-    widget_line_width = sys.modules[
-        'datadog_api_client.v1.model.widget_line_width']
+    widget_line_width = sys.modules["datadog_api_client.v1.model.widget_line_width"]
 from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
 
@@ -39,5 +38,5 @@ class TestWidgetRequestStyle(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

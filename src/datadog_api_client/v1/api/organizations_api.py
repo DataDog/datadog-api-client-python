@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.idp_response import IdpResponse
@@ -37,11 +37,7 @@ class OrganizationsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_child_org(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_child_org(self, body, **kwargs):
             """Create a child organization  # noqa: E501
 
             Create a child organization.  This endpoint requires the [multi-organization account](https://docs.datadoghq.com/account_management/multi_organization/) feature and must be enabled by [contacting support](https://docs.datadoghq.com/help/).  Once a new child organization is created, you can interact with it by using the `org.public_id`, `pi_key.key`, and `application_key.hash` provided in the response.  # noqa: E501
@@ -80,89 +76,54 @@ class OrganizationsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_child_org = _Endpoint(
             settings={
-                'response_type': (OrganizationCreateResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/org',
-                'operation_id': 'create_child_org',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (OrganizationCreateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/org",
+                "operation_id": "create_child_org",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (OrganizationCreateBody,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (OrganizationCreateBody,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_child_org
+            callable=__create_child_org,
         )
 
-        def __get_org(
-            self,
-            public_id,
-            **kwargs
-        ):
+        def __get_org(self, public_id, **kwargs):
             """Get organization information  # noqa: E501
 
             Get organization information.  # noqa: E501
@@ -201,87 +162,59 @@ class OrganizationsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
             return self.call_with_http_info(**kwargs)
 
         self.get_org = _Endpoint(
             settings={
-                'response_type': (OrganizationResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/org/{public_id}',
-                'operation_id': 'get_org',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (OrganizationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/org/{public_id}",
+                "operation_id": "get_org",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
+                "all": [
+                    "public_id",
                 ],
-                'required': [
-                    'public_id',
+                "required": [
+                    "public_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
+                "location_map": {
+                    "public_id": "path",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                },
-                'location_map': {
-                    'public_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_org
+            callable=__get_org,
         )
 
-        def __list_orgs(
-            self,
-            **kwargs
-        ):
+        def __list_orgs(self, **kwargs):
             """List your managed organizations  # noqa: E501
 
             List your managed organizations.  # noqa: E501
@@ -318,80 +251,42 @@ class OrganizationsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_orgs = _Endpoint(
             settings={
-                'response_type': (OrganizationListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/org',
-                'operation_id': 'list_orgs',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (OrganizationListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/org",
+                "operation_id": "list_orgs",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_orgs
+            callable=__list_orgs,
         )
 
-        def __update_org(
-            self,
-            public_id,
-            body,
-            **kwargs
-        ):
+        def __update_org(self, public_id, body, **kwargs):
             """Update your organization  # noqa: E501
 
             Update your organization.  # noqa: E501
@@ -431,98 +326,61 @@ class OrganizationsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_org = _Endpoint(
             settings={
-                'response_type': (OrganizationResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/org/{public_id}',
-                'operation_id': 'update_org',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (OrganizationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/org/{public_id}",
+                "operation_id": "update_org",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
-                    'body',
+                "all": [
+                    "public_id",
+                    "body",
                 ],
-                'required': [
-                    'public_id',
-                    'body',
+                "required": [
+                    "public_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
+                    "body": (Organization,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
-                    'body':
-                        (Organization,),
+                "location_map": {
+                    "public_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                },
-                'location_map': {
-                    'public_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_org
+            callable=__update_org,
         )
 
-        def __upload_id_p_for_org(
-            self,
-            public_id,
-            idp_file,
-            **kwargs
-        ):
+        def __upload_id_p_for_org(self, public_id, idp_file, **kwargs):
             """Upload IdP metadata  # noqa: E501
 
             There are a couple of options for updating the Identity Provider (IdP) metadata from your SAML IdP.  * **Multipart Form-Data**: Post the IdP metadata file using a form post.  * **XML Body:** Post the IdP metadata file as the body of the request.  # noqa: E501
@@ -562,89 +420,57 @@ class OrganizationsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['public_id'] = \
-                public_id
-            kwargs['idp_file'] = \
-                idp_file
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["public_id"] = public_id
+            kwargs["idp_file"] = idp_file
             return self.call_with_http_info(**kwargs)
 
         self.upload_id_p_for_org = _Endpoint(
             settings={
-                'response_type': (IdpResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/org/{public_id}/idp_metadata',
-                'operation_id': 'upload_id_p_for_org',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (IdpResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/org/{public_id}/idp_metadata",
+                "operation_id": "upload_id_p_for_org",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'public_id',
-                    'idp_file',
+                "all": [
+                    "public_id",
+                    "idp_file",
                 ],
-                'required': [
-                    'public_id',
-                    'idp_file',
+                "required": [
+                    "public_id",
+                    "idp_file",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "public_id": (str,),
+                    "idp_file": (file_type,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "public_id": "public_id",
+                    "idp_file": "idp_file",
                 },
-                'openapi_types': {
-                    'public_id':
-                        (str,),
-                    'idp_file':
-                        (file_type,),
+                "location_map": {
+                    "public_id": "path",
+                    "idp_file": "form",
                 },
-                'attribute_map': {
-                    'public_id': 'public_id',
-                    'idp_file': 'idp_file',
-                },
-                'location_map': {
-                    'public_id': 'path',
-                    'idp_file': 'form',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'multipart/form-data'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["multipart/form-data"]},
             api_client=api_client,
-            callable=__upload_id_p_for_org
+            callable=__upload_id_p_for_org,
         )

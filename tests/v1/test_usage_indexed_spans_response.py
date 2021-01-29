@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.usage_indexed_spans_hour import UsageIndexedSpansHour
-globals()['UsageIndexedSpansHour'] = UsageIndexedSpansHour
+
+globals()["UsageIndexedSpansHour"] = UsageIndexedSpansHour
 from datadog_api_client.v1.model.usage_indexed_spans_response import UsageIndexedSpansResponse
 
 
@@ -30,5 +31,5 @@ class TestUsageIndexedSpansResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

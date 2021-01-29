@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_test_config
 except ImportError:
-    synthetics_test_config = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_config']
+    synthetics_test_config = sys.modules["datadog_api_client.v1.model.synthetics_test_config"]
 from datadog_api_client.v1.model.synthetics_browser_test_result_full_check import SyntheticsBrowserTestResultFullCheck
 
 
@@ -34,5 +34,5 @@ class TestSyntheticsBrowserTestResultFullCheck(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

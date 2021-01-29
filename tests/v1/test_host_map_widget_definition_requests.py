@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import host_map_request
 except ImportError:
-    host_map_request = sys.modules[
-        'datadog_api_client.v1.model.host_map_request']
+    host_map_request = sys.modules["datadog_api_client.v1.model.host_map_request"]
 from datadog_api_client.v1.model.host_map_widget_definition_requests import HostMapWidgetDefinitionRequests
 
 
@@ -34,5 +34,5 @@ class TestHostMapWidgetDefinitionRequests(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

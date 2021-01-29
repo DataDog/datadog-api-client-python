@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import pagination
 except ImportError:
-    pagination = sys.modules[
-        'datadog_api_client.v2.model.pagination']
+    pagination = sys.modules["datadog_api_client.v2.model.pagination"]
 from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
 
 
@@ -34,5 +34,5 @@ class TestResponseMetaAttributes(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,26 +10,23 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import event_stream_widget_definition_type
 except ImportError:
-    event_stream_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.event_stream_widget_definition_type']
+    event_stream_widget_definition_type = sys.modules["datadog_api_client.v1.model.event_stream_widget_definition_type"]
 try:
     from datadog_api_client.v1.model import widget_event_size
 except ImportError:
-    widget_event_size = sys.modules[
-        'datadog_api_client.v1.model.widget_event_size']
+    widget_event_size = sys.modules["datadog_api_client.v1.model.widget_event_size"]
 try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+    widget_text_align = sys.modules["datadog_api_client.v1.model.widget_text_align"]
 try:
     from datadog_api_client.v1.model import widget_time
 except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+    widget_time = sys.modules["datadog_api_client.v1.model.widget_time"]
 from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
 
 
@@ -49,5 +46,5 @@ class TestEventStreamWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

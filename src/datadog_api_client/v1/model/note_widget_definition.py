@@ -23,13 +23,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.note_widget_definition_type import NoteWidgetDefinitionType
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
-    globals()['NoteWidgetDefinitionType'] = NoteWidgetDefinitionType
-    globals()['WidgetTextAlign'] = WidgetTextAlign
-    globals()['WidgetTickEdge'] = WidgetTickEdge
+
+    globals()["NoteWidgetDefinitionType"] = NoteWidgetDefinitionType
+    globals()["WidgetTextAlign"] = WidgetTextAlign
+    globals()["WidgetTickEdge"] = WidgetTickEdge
 
 
 class NoteWidgetDefinition(ModelNormal):
@@ -56,11 +58,9 @@ class NoteWidgetDefinition(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -78,42 +78,43 @@ class NoteWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            'content': (str,),  # noqa: E501
-            'type': (NoteWidgetDefinitionType,),  # noqa: E501
-            'background_color': (str,),  # noqa: E501
-            'font_size': (str,),  # noqa: E501
-            'show_tick': (bool,),  # noqa: E501
-            'text_align': (WidgetTextAlign,),  # noqa: E501
-            'tick_edge': (WidgetTickEdge,),  # noqa: E501
-            'tick_pos': (str,),  # noqa: E501
+            "content": (str,),  # noqa: E501
+            "type": (NoteWidgetDefinitionType,),  # noqa: E501
+            "background_color": (str,),  # noqa: E501
+            "font_size": (str,),  # noqa: E501
+            "show_tick": (bool,),  # noqa: E501
+            "text_align": (WidgetTextAlign,),  # noqa: E501
+            "tick_edge": (WidgetTickEdge,),  # noqa: E501
+            "tick_pos": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'content': 'content',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'background_color': 'background_color',  # noqa: E501
-        'font_size': 'font_size',  # noqa: E501
-        'show_tick': 'show_tick',  # noqa: E501
-        'text_align': 'text_align',  # noqa: E501
-        'tick_edge': 'tick_edge',  # noqa: E501
-        'tick_pos': 'tick_pos',  # noqa: E501
+        "content": "content",  # noqa: E501
+        "type": "type",  # noqa: E501
+        "background_color": "background_color",  # noqa: E501
+        "font_size": "font_size",  # noqa: E501
+        "show_tick": "show_tick",  # noqa: E501
+        "text_align": "text_align",  # noqa: E501
+        "tick_edge": "tick_edge",  # noqa: E501
+        "tick_pos": "tick_pos",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, content, type, *args, **kwargs):  # noqa: E501
@@ -162,15 +163,16 @@ class NoteWidgetDefinition(ModelNormal):
             tick_pos (str): Where to position the tick on an edge.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -188,10 +190,12 @@ class NoteWidgetDefinition(ModelNormal):
         self.content = content
         self.type = type
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

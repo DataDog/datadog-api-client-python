@@ -10,7 +10,9 @@ import sys
 import unittest
 
 import datadog_api_client.v2
-from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_page import SecurityMonitoringSignalsListResponseMetaPage
+from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_page import (
+    SecurityMonitoringSignalsListResponseMetaPage,
+)
 
 
 class TestSecurityMonitoringSignalsListResponseMetaPage(unittest.TestCase):
@@ -29,5 +31,5 @@ class TestSecurityMonitoringSignalsListResponseMetaPage(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

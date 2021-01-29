@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import http_method
 except ImportError:
-    http_method = sys.modules[
-        'datadog_api_client.v1.model.http_method']
+    http_method = sys.modules["datadog_api_client.v1.model.http_method"]
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
 
 
@@ -34,5 +34,5 @@ class TestSyntheticsTestRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,11 +10,13 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_delete_tests_response_deleted_tests
 except ImportError:
     synthetics_delete_tests_response_deleted_tests = sys.modules[
-        'datadog_api_client.v1.model.synthetics_delete_tests_response_deleted_tests']
+        "datadog_api_client.v1.model.synthetics_delete_tests_response_deleted_tests"
+    ]
 from datadog_api_client.v1.model.synthetics_delete_tests_response import SyntheticsDeleteTestsResponse
 
 
@@ -34,5 +36,5 @@ class TestSyntheticsDeleteTestsResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

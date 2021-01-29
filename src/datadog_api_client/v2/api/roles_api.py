@@ -14,7 +14,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
@@ -42,12 +42,7 @@ class RolesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __add_permission_to_role(
-            self,
-            role_id,
-            body,
-            **kwargs
-        ):
+        def __add_permission_to_role(self, role_id, body, **kwargs):
             """Grant permission to a role  # noqa: E501
 
             Adds a permission to a role.  # noqa: E501
@@ -87,98 +82,61 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['role_id'] = \
-                role_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["role_id"] = role_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.add_permission_to_role = _Endpoint(
             settings={
-                'response_type': (PermissionsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles/{role_id}/permissions',
-                'operation_id': 'add_permission_to_role',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (PermissionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles/{role_id}/permissions",
+                "operation_id": "add_permission_to_role",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'role_id',
-                    'body',
+                "all": [
+                    "role_id",
+                    "body",
                 ],
-                'required': [
-                    'role_id',
-                    'body',
+                "required": [
+                    "role_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "role_id": (str,),
+                    "body": (RelationshipToPermission,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "role_id": "role_id",
                 },
-                'openapi_types': {
-                    'role_id':
-                        (str,),
-                    'body':
-                        (RelationshipToPermission,),
+                "location_map": {
+                    "role_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'role_id': 'role_id',
-                },
-                'location_map': {
-                    'role_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__add_permission_to_role
+            callable=__add_permission_to_role,
         )
 
-        def __add_user_to_role(
-            self,
-            role_id,
-            body,
-            **kwargs
-        ):
+        def __add_user_to_role(self, role_id, body, **kwargs):
             """Add a user to a role  # noqa: E501
 
             Adds a user to a role.  # noqa: E501
@@ -218,97 +176,61 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['role_id'] = \
-                role_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["role_id"] = role_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.add_user_to_role = _Endpoint(
             settings={
-                'response_type': (UsersResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles/{role_id}/users',
-                'operation_id': 'add_user_to_role',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (UsersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles/{role_id}/users",
+                "operation_id": "add_user_to_role",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'role_id',
-                    'body',
+                "all": [
+                    "role_id",
+                    "body",
                 ],
-                'required': [
-                    'role_id',
-                    'body',
+                "required": [
+                    "role_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "role_id": (str,),
+                    "body": (RelationshipToUser,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "role_id": "role_id",
                 },
-                'openapi_types': {
-                    'role_id':
-                        (str,),
-                    'body':
-                        (RelationshipToUser,),
+                "location_map": {
+                    "role_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'role_id': 'role_id',
-                },
-                'location_map': {
-                    'role_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__add_user_to_role
+            callable=__add_user_to_role,
         )
 
-        def __create_role(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_role(self, body, **kwargs):
             """Create role  # noqa: E501
 
             Create a new role for your organization.  # noqa: E501
@@ -347,89 +269,54 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_role = _Endpoint(
             settings={
-                'response_type': (RoleCreateResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles',
-                'operation_id': 'create_role',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (RoleCreateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles",
+                "operation_id": "create_role",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (RoleCreateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (RoleCreateRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_role
+            callable=__create_role,
         )
 
-        def __delete_role(
-            self,
-            role_id,
-            **kwargs
-        ):
+        def __delete_role(self, role_id, **kwargs):
             """Delete role  # noqa: E501
 
             Disables a role.  # noqa: E501
@@ -468,88 +355,59 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['role_id'] = \
-                role_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["role_id"] = role_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_role = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles/{role_id}',
-                'operation_id': 'delete_role',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles/{role_id}",
+                "operation_id": "delete_role",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'role_id',
+                "all": [
+                    "role_id",
                 ],
-                'required': [
-                    'role_id',
+                "required": [
+                    "role_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "role_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "role_id": "role_id",
                 },
-                'openapi_types': {
-                    'role_id':
-                        (str,),
+                "location_map": {
+                    "role_id": "path",
                 },
-                'attribute_map': {
-                    'role_id': 'role_id',
-                },
-                'location_map': {
-                    'role_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_role
+            callable=__delete_role,
         )
 
-        def __get_role(
-            self,
-            role_id,
-            **kwargs
-        ):
+        def __get_role(self, role_id, **kwargs):
             """Get a role  # noqa: E501
 
             Get a role in the organization specified by the role’s `role_id`.  # noqa: E501
@@ -588,87 +446,59 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['role_id'] = \
-                role_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["role_id"] = role_id
             return self.call_with_http_info(**kwargs)
 
         self.get_role = _Endpoint(
             settings={
-                'response_type': (RoleResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles/{role_id}',
-                'operation_id': 'get_role',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (RoleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles/{role_id}",
+                "operation_id": "get_role",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'role_id',
+                "all": [
+                    "role_id",
                 ],
-                'required': [
-                    'role_id',
+                "required": [
+                    "role_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "role_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "role_id": "role_id",
                 },
-                'openapi_types': {
-                    'role_id':
-                        (str,),
+                "location_map": {
+                    "role_id": "path",
                 },
-                'attribute_map': {
-                    'role_id': 'role_id',
-                },
-                'location_map': {
-                    'role_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_role
+            callable=__get_role,
         )
 
-        def __list_permissions(
-            self,
-            **kwargs
-        ):
+        def __list_permissions(self, **kwargs):
             """List permissions  # noqa: E501
 
             Returns a list of all permissions, including name, description, and ID.  # noqa: E501
@@ -705,79 +535,42 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_permissions = _Endpoint(
             settings={
-                'response_type': (PermissionsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/permissions',
-                'operation_id': 'list_permissions',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (PermissionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/permissions",
+                "operation_id": "list_permissions",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_permissions
+            callable=__list_permissions,
         )
 
-        def __list_role_permissions(
-            self,
-            role_id,
-            **kwargs
-        ):
+        def __list_role_permissions(self, role_id, **kwargs):
             """List permissions for a role  # noqa: E501
 
             Returns a list of all permissions for a single role.  # noqa: E501
@@ -816,88 +609,59 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['role_id'] = \
-                role_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["role_id"] = role_id
             return self.call_with_http_info(**kwargs)
 
         self.list_role_permissions = _Endpoint(
             settings={
-                'response_type': (PermissionsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles/{role_id}/permissions',
-                'operation_id': 'list_role_permissions',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (PermissionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles/{role_id}/permissions",
+                "operation_id": "list_role_permissions",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'role_id',
+                "all": [
+                    "role_id",
                 ],
-                'required': [
-                    'role_id',
+                "required": [
+                    "role_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "role_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "role_id": "role_id",
                 },
-                'openapi_types': {
-                    'role_id':
-                        (str,),
+                "location_map": {
+                    "role_id": "path",
                 },
-                'attribute_map': {
-                    'role_id': 'role_id',
-                },
-                'location_map': {
-                    'role_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_role_permissions
+            callable=__list_role_permissions,
         )
 
-        def __list_role_users(
-            self,
-            role_id,
-            **kwargs
-        ):
+        def __list_role_users(self, role_id, **kwargs):
             """Get all users of a role  # noqa: E501
 
             Gets all users of a role.  # noqa: E501
@@ -940,107 +704,75 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['role_id'] = \
-                role_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["role_id"] = role_id
             return self.call_with_http_info(**kwargs)
 
         self.list_role_users = _Endpoint(
             settings={
-                'response_type': (UsersResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles/{role_id}/users',
-                'operation_id': 'list_role_users',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (UsersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles/{role_id}/users",
+                "operation_id": "list_role_users",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'role_id',
-                    'page_size',
-                    'page_number',
-                    'sort',
-                    'filter',
+                "all": [
+                    "role_id",
+                    "page_size",
+                    "page_number",
+                    "sort",
+                    "filter",
                 ],
-                'required': [
-                    'role_id',
+                "required": [
+                    "role_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "role_id": (str,),
+                    "page_size": (int,),
+                    "page_number": (int,),
+                    "sort": (str,),
+                    "filter": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "role_id": "role_id",
+                    "page_size": "page[size]",
+                    "page_number": "page[number]",
+                    "sort": "sort",
+                    "filter": "filter",
                 },
-                'openapi_types': {
-                    'role_id':
-                        (str,),
-                    'page_size':
-                        (int,),
-                    'page_number':
-                        (int,),
-                    'sort':
-                        (str,),
-                    'filter':
-                        (str,),
+                "location_map": {
+                    "role_id": "path",
+                    "page_size": "query",
+                    "page_number": "query",
+                    "sort": "query",
+                    "filter": "query",
                 },
-                'attribute_map': {
-                    'role_id': 'role_id',
-                    'page_size': 'page[size]',
-                    'page_number': 'page[number]',
-                    'sort': 'sort',
-                    'filter': 'filter',
-                },
-                'location_map': {
-                    'role_id': 'path',
-                    'page_size': 'query',
-                    'page_number': 'query',
-                    'sort': 'query',
-                    'filter': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_role_users
+            callable=__list_role_users,
         )
 
-        def __list_roles(
-            self,
-            **kwargs
-        ):
+        def __list_roles(self, **kwargs):
             """List roles  # noqa: E501
 
             Returns all roles, including their names and IDs.  # noqa: E501
@@ -1081,100 +813,68 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_roles = _Endpoint(
             settings={
-                'response_type': (RolesResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles',
-                'operation_id': 'list_roles',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (RolesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles",
+                "operation_id": "list_roles",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'page_size',
-                    'page_number',
-                    'sort',
-                    'filter',
+                "all": [
+                    "page_size",
+                    "page_number",
+                    "sort",
+                    "filter",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "page_size": (int,),
+                    "page_number": (int,),
+                    "sort": (RolesSort,),
+                    "filter": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "page_size": "page[size]",
+                    "page_number": "page[number]",
+                    "sort": "sort",
+                    "filter": "filter",
                 },
-                'openapi_types': {
-                    'page_size':
-                        (int,),
-                    'page_number':
-                        (int,),
-                    'sort':
-                        (RolesSort,),
-                    'filter':
-                        (str,),
+                "location_map": {
+                    "page_size": "query",
+                    "page_number": "query",
+                    "sort": "query",
+                    "filter": "query",
                 },
-                'attribute_map': {
-                    'page_size': 'page[size]',
-                    'page_number': 'page[number]',
-                    'sort': 'sort',
-                    'filter': 'filter',
-                },
-                'location_map': {
-                    'page_size': 'query',
-                    'page_number': 'query',
-                    'sort': 'query',
-                    'filter': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_roles
+            callable=__list_roles,
         )
 
-        def __remove_permission_from_role(
-            self,
-            role_id,
-            body,
-            **kwargs
-        ):
+        def __remove_permission_from_role(self, role_id, body, **kwargs):
             """Revoke permission  # noqa: E501
 
             Removes a permission from a role.  # noqa: E501
@@ -1214,98 +914,61 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['role_id'] = \
-                role_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["role_id"] = role_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.remove_permission_from_role = _Endpoint(
             settings={
-                'response_type': (PermissionsResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles/{role_id}/permissions',
-                'operation_id': 'remove_permission_from_role',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": (PermissionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles/{role_id}/permissions",
+                "operation_id": "remove_permission_from_role",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'role_id',
-                    'body',
+                "all": [
+                    "role_id",
+                    "body",
                 ],
-                'required': [
-                    'role_id',
-                    'body',
+                "required": [
+                    "role_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "role_id": (str,),
+                    "body": (RelationshipToPermission,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "role_id": "role_id",
                 },
-                'openapi_types': {
-                    'role_id':
-                        (str,),
-                    'body':
-                        (RelationshipToPermission,),
+                "location_map": {
+                    "role_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'role_id': 'role_id',
-                },
-                'location_map': {
-                    'role_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__remove_permission_from_role
+            callable=__remove_permission_from_role,
         )
 
-        def __remove_user_from_role(
-            self,
-            role_id,
-            body,
-            **kwargs
-        ):
+        def __remove_user_from_role(self, role_id, body, **kwargs):
             """Remove a user from a role  # noqa: E501
 
             Removes a user from a role.  # noqa: E501
@@ -1345,98 +1008,61 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['role_id'] = \
-                role_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["role_id"] = role_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.remove_user_from_role = _Endpoint(
             settings={
-                'response_type': (UsersResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles/{role_id}/users',
-                'operation_id': 'remove_user_from_role',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": (UsersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles/{role_id}/users",
+                "operation_id": "remove_user_from_role",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'role_id',
-                    'body',
+                "all": [
+                    "role_id",
+                    "body",
                 ],
-                'required': [
-                    'role_id',
-                    'body',
+                "required": [
+                    "role_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "role_id": (str,),
+                    "body": (RelationshipToUser,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "role_id": "role_id",
                 },
-                'openapi_types': {
-                    'role_id':
-                        (str,),
-                    'body':
-                        (RelationshipToUser,),
+                "location_map": {
+                    "role_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'role_id': 'role_id',
-                },
-                'location_map': {
-                    'role_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__remove_user_from_role
+            callable=__remove_user_from_role,
         )
 
-        def __update_role(
-            self,
-            role_id,
-            body,
-            **kwargs
-        ):
+        def __update_role(self, role_id, body, **kwargs):
             """Update a role  # noqa: E501
 
             Edit a role. Can only be used with application keys belonging to administrators.  # noqa: E501
@@ -1476,88 +1102,56 @@ class RolesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['role_id'] = \
-                role_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["role_id"] = role_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_role = _Endpoint(
             settings={
-                'response_type': (RoleUpdateResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/roles/{role_id}',
-                'operation_id': 'update_role',
-                'http_method': 'PATCH',
-                'servers': None,
+                "response_type": (RoleUpdateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/roles/{role_id}",
+                "operation_id": "update_role",
+                "http_method": "PATCH",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'role_id',
-                    'body',
+                "all": [
+                    "role_id",
+                    "body",
                 ],
-                'required': [
-                    'role_id',
-                    'body',
+                "required": [
+                    "role_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "role_id": (str,),
+                    "body": (RoleUpdateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "role_id": "role_id",
                 },
-                'openapi_types': {
-                    'role_id':
-                        (str,),
-                    'body':
-                        (RoleUpdateRequest,),
+                "location_map": {
+                    "role_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'role_id': 'role_id',
-                },
-                'location_map': {
-                    'role_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_role
+            callable=__update_role,
         )

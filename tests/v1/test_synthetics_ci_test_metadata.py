@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_ci_test_metadata_ci
 except ImportError:
-    synthetics_ci_test_metadata_ci = sys.modules[
-        'datadog_api_client.v1.model.synthetics_ci_test_metadata_ci']
+    synthetics_ci_test_metadata_ci = sys.modules["datadog_api_client.v1.model.synthetics_ci_test_metadata_ci"]
 try:
     from datadog_api_client.v1.model import synthetics_ci_test_metadata_git
 except ImportError:
-    synthetics_ci_test_metadata_git = sys.modules[
-        'datadog_api_client.v1.model.synthetics_ci_test_metadata_git']
+    synthetics_ci_test_metadata_git = sys.modules["datadog_api_client.v1.model.synthetics_ci_test_metadata_git"]
 from datadog_api_client.v1.model.synthetics_ci_test_metadata import SyntheticsCITestMetadata
 
 
@@ -39,5 +38,5 @@ class TestSyntheticsCITestMetadata(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

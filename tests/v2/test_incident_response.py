@@ -11,8 +11,9 @@ import unittest
 import datadog_api_client.v2
 from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
 from datadog_api_client.v2.model.incident_response_included_item import IncidentResponseIncludedItem
-globals()['IncidentResponseData'] = IncidentResponseData
-globals()['IncidentResponseIncludedItem'] = IncidentResponseIncludedItem
+
+globals()["IncidentResponseData"] = IncidentResponseData
+globals()["IncidentResponseIncludedItem"] = IncidentResponseIncludedItem
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 
 
@@ -32,5 +33,5 @@ class TestIncidentResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

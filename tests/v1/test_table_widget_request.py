@@ -10,36 +10,31 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import event_query_definition
 except ImportError:
-    event_query_definition = sys.modules[
-        'datadog_api_client.v1.model.event_query_definition']
+    event_query_definition = sys.modules["datadog_api_client.v1.model.event_query_definition"]
 try:
     from datadog_api_client.v1.model import log_query_definition
 except ImportError:
-    log_query_definition = sys.modules[
-        'datadog_api_client.v1.model.log_query_definition']
+    log_query_definition = sys.modules["datadog_api_client.v1.model.log_query_definition"]
 try:
     from datadog_api_client.v1.model import process_query_definition
 except ImportError:
-    process_query_definition = sys.modules[
-        'datadog_api_client.v1.model.process_query_definition']
+    process_query_definition = sys.modules["datadog_api_client.v1.model.process_query_definition"]
 try:
     from datadog_api_client.v1.model import widget_aggregator
 except ImportError:
-    widget_aggregator = sys.modules[
-        'datadog_api_client.v1.model.widget_aggregator']
+    widget_aggregator = sys.modules["datadog_api_client.v1.model.widget_aggregator"]
 try:
     from datadog_api_client.v1.model import widget_conditional_format
 except ImportError:
-    widget_conditional_format = sys.modules[
-        'datadog_api_client.v1.model.widget_conditional_format']
+    widget_conditional_format = sys.modules["datadog_api_client.v1.model.widget_conditional_format"]
 try:
     from datadog_api_client.v1.model import widget_sort
 except ImportError:
-    widget_sort = sys.modules[
-        'datadog_api_client.v1.model.widget_sort']
+    widget_sort = sys.modules["datadog_api_client.v1.model.widget_sort"]
 from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
 
 
@@ -59,5 +54,5 @@ class TestTableWidgetRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

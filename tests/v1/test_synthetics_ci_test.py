@@ -10,31 +10,27 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_basic_auth
 except ImportError:
-    synthetics_basic_auth = sys.modules[
-        'datadog_api_client.v1.model.synthetics_basic_auth']
+    synthetics_basic_auth = sys.modules["datadog_api_client.v1.model.synthetics_basic_auth"]
 try:
     from datadog_api_client.v1.model import synthetics_ci_test_metadata
 except ImportError:
-    synthetics_ci_test_metadata = sys.modules[
-        'datadog_api_client.v1.model.synthetics_ci_test_metadata']
+    synthetics_ci_test_metadata = sys.modules["datadog_api_client.v1.model.synthetics_ci_test_metadata"]
 try:
     from datadog_api_client.v1.model import synthetics_device_id
 except ImportError:
-    synthetics_device_id = sys.modules[
-        'datadog_api_client.v1.model.synthetics_device_id']
+    synthetics_device_id = sys.modules["datadog_api_client.v1.model.synthetics_device_id"]
 try:
     from datadog_api_client.v1.model import synthetics_test_headers
 except ImportError:
-    synthetics_test_headers = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_headers']
+    synthetics_test_headers = sys.modules["datadog_api_client.v1.model.synthetics_test_headers"]
 try:
     from datadog_api_client.v1.model import synthetics_test_options_retry
 except ImportError:
-    synthetics_test_options_retry = sys.modules[
-        'datadog_api_client.v1.model.synthetics_test_options_retry']
+    synthetics_test_options_retry = sys.modules["datadog_api_client.v1.model.synthetics_test_options_retry"]
 from datadog_api_client.v1.model.synthetics_ci_test import SyntheticsCITest
 
 
@@ -54,5 +50,5 @@ class TestSyntheticsCITest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

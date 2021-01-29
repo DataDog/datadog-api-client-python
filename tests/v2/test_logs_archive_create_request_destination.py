@@ -10,31 +10,27 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import logs_archive_destination_azure
 except ImportError:
-    logs_archive_destination_azure = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_destination_azure']
+    logs_archive_destination_azure = sys.modules["datadog_api_client.v2.model.logs_archive_destination_azure"]
 try:
     from datadog_api_client.v2.model import logs_archive_destination_gcs
 except ImportError:
-    logs_archive_destination_gcs = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_destination_gcs']
+    logs_archive_destination_gcs = sys.modules["datadog_api_client.v2.model.logs_archive_destination_gcs"]
 try:
     from datadog_api_client.v2.model import logs_archive_destination_s3
 except ImportError:
-    logs_archive_destination_s3 = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_destination_s3']
+    logs_archive_destination_s3 = sys.modules["datadog_api_client.v2.model.logs_archive_destination_s3"]
 try:
     from datadog_api_client.v2.model import logs_archive_destination_s3_type
 except ImportError:
-    logs_archive_destination_s3_type = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_destination_s3_type']
+    logs_archive_destination_s3_type = sys.modules["datadog_api_client.v2.model.logs_archive_destination_s3_type"]
 try:
     from datadog_api_client.v2.model import logs_archive_integration_s3
 except ImportError:
-    logs_archive_integration_s3 = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_integration_s3']
+    logs_archive_integration_s3 = sys.modules["datadog_api_client.v2.model.logs_archive_integration_s3"]
 from datadog_api_client.v2.model.logs_archive_create_request_destination import LogsArchiveCreateRequestDestination
 
 
@@ -54,5 +50,5 @@ class TestLogsArchiveCreateRequestDestination(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

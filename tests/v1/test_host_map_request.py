@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import event_query_definition
 except ImportError:
-    event_query_definition = sys.modules[
-        'datadog_api_client.v1.model.event_query_definition']
+    event_query_definition = sys.modules["datadog_api_client.v1.model.event_query_definition"]
 try:
     from datadog_api_client.v1.model import log_query_definition
 except ImportError:
-    log_query_definition = sys.modules[
-        'datadog_api_client.v1.model.log_query_definition']
+    log_query_definition = sys.modules["datadog_api_client.v1.model.log_query_definition"]
 try:
     from datadog_api_client.v1.model import process_query_definition
 except ImportError:
-    process_query_definition = sys.modules[
-        'datadog_api_client.v1.model.process_query_definition']
+    process_query_definition = sys.modules["datadog_api_client.v1.model.process_query_definition"]
 from datadog_api_client.v1.model.host_map_request import HostMapRequest
 
 
@@ -44,5 +42,5 @@ class TestHostMapRequest(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -8,7 +8,8 @@ import unittest
 
 import datadog_api_client.v2
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
-globals()['SecurityMonitoringFilterAction'] = SecurityMonitoringFilterAction
+
+globals()["SecurityMonitoringFilterAction"] = SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 
 
@@ -28,5 +29,5 @@ class TestSecurityMonitoringFilter(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

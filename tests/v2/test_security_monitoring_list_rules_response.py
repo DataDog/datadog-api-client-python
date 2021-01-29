@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import response_meta_attributes
 except ImportError:
-    response_meta_attributes = sys.modules[
-        'datadog_api_client.v2.model.response_meta_attributes']
+    response_meta_attributes = sys.modules["datadog_api_client.v2.model.response_meta_attributes"]
 try:
     from datadog_api_client.v2.model import security_monitoring_rule_response
 except ImportError:
-    security_monitoring_rule_response = sys.modules[
-        'datadog_api_client.v2.model.security_monitoring_rule_response']
+    security_monitoring_rule_response = sys.modules["datadog_api_client.v2.model.security_monitoring_rule_response"]
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 
 
@@ -39,5 +38,5 @@ class TestSecurityMonitoringListRulesResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

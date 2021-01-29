@@ -10,36 +10,35 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import monitor_summary_widget_definition_type
 except ImportError:
     monitor_summary_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.monitor_summary_widget_definition_type']
+        "datadog_api_client.v1.model.monitor_summary_widget_definition_type"
+    ]
 try:
     from datadog_api_client.v1.model import widget_color_preference
 except ImportError:
-    widget_color_preference = sys.modules[
-        'datadog_api_client.v1.model.widget_color_preference']
+    widget_color_preference = sys.modules["datadog_api_client.v1.model.widget_color_preference"]
 try:
     from datadog_api_client.v1.model import widget_monitor_summary_display_format
 except ImportError:
     widget_monitor_summary_display_format = sys.modules[
-        'datadog_api_client.v1.model.widget_monitor_summary_display_format']
+        "datadog_api_client.v1.model.widget_monitor_summary_display_format"
+    ]
 try:
     from datadog_api_client.v1.model import widget_monitor_summary_sort
 except ImportError:
-    widget_monitor_summary_sort = sys.modules[
-        'datadog_api_client.v1.model.widget_monitor_summary_sort']
+    widget_monitor_summary_sort = sys.modules["datadog_api_client.v1.model.widget_monitor_summary_sort"]
 try:
     from datadog_api_client.v1.model import widget_summary_type
 except ImportError:
-    widget_summary_type = sys.modules[
-        'datadog_api_client.v1.model.widget_summary_type']
+    widget_summary_type = sys.modules["datadog_api_client.v1.model.widget_summary_type"]
 try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+    widget_text_align = sys.modules["datadog_api_client.v1.model.widget_text_align"]
 from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
 
 
@@ -59,5 +58,5 @@ class TestMonitorSummaryWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

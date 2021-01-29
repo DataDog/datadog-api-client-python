@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import usage_synthetics_browser_hour
 except ImportError:
-    usage_synthetics_browser_hour = sys.modules[
-        'datadog_api_client.v1.model.usage_synthetics_browser_hour']
+    usage_synthetics_browser_hour = sys.modules["datadog_api_client.v1.model.usage_synthetics_browser_hour"]
 from datadog_api_client.v1.model.usage_synthetics_browser_response import UsageSyntheticsBrowserResponse
 
 
@@ -34,5 +34,5 @@ class TestUsageSyntheticsBrowserResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

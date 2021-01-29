@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import CancelDowntimesByScopeRequest
@@ -34,11 +34,7 @@ class DowntimesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __cancel_downtime(
-            self,
-            downtime_id,
-            **kwargs
-        ):
+        def __cancel_downtime(self, downtime_id, **kwargs):
             """Cancel a downtime  # noqa: E501
 
             Cancel a downtime.  # noqa: E501
@@ -77,88 +73,59 @@ class DowntimesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['downtime_id'] = \
-                downtime_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["downtime_id"] = downtime_id
             return self.call_with_http_info(**kwargs)
 
         self.cancel_downtime = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/downtime/{downtime_id}',
-                'operation_id': 'cancel_downtime',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/downtime/{downtime_id}",
+                "operation_id": "cancel_downtime",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'downtime_id',
+                "all": [
+                    "downtime_id",
                 ],
-                'required': [
-                    'downtime_id',
+                "required": [
+                    "downtime_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "downtime_id": (int,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "downtime_id": "downtime_id",
                 },
-                'openapi_types': {
-                    'downtime_id':
-                        (int,),
+                "location_map": {
+                    "downtime_id": "path",
                 },
-                'attribute_map': {
-                    'downtime_id': 'downtime_id',
-                },
-                'location_map': {
-                    'downtime_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__cancel_downtime
+            callable=__cancel_downtime,
         )
 
-        def __cancel_downtimes_by_scope(
-            self,
-            body,
-            **kwargs
-        ):
+        def __cancel_downtimes_by_scope(self, body, **kwargs):
             """Cancel downtimes by scope  # noqa: E501
 
             Delete all downtimes that match the scope of `X`.  # noqa: E501
@@ -197,89 +164,54 @@ class DowntimesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.cancel_downtimes_by_scope = _Endpoint(
             settings={
-                'response_type': (CanceledDowntimesIds,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/downtime/cancel/by_scope',
-                'operation_id': 'cancel_downtimes_by_scope',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (CanceledDowntimesIds,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/downtime/cancel/by_scope",
+                "operation_id": "cancel_downtimes_by_scope",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (CancelDowntimesByScopeRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (CancelDowntimesByScopeRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__cancel_downtimes_by_scope
+            callable=__cancel_downtimes_by_scope,
         )
 
-        def __create_downtime(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_downtime(self, body, **kwargs):
             """Schedule a downtime  # noqa: E501
 
             Schedule a downtime.  # noqa: E501
@@ -318,89 +250,54 @@ class DowntimesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_downtime = _Endpoint(
             settings={
-                'response_type': (Downtime,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/downtime',
-                'operation_id': 'create_downtime',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (Downtime,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/downtime",
+                "operation_id": "create_downtime",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (Downtime,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (Downtime,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_downtime
+            callable=__create_downtime,
         )
 
-        def __get_downtime(
-            self,
-            downtime_id,
-            **kwargs
-        ):
+        def __get_downtime(self, downtime_id, **kwargs):
             """Get a downtime  # noqa: E501
 
             Get downtime detail by `downtime_id`.  # noqa: E501
@@ -439,87 +336,59 @@ class DowntimesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['downtime_id'] = \
-                downtime_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["downtime_id"] = downtime_id
             return self.call_with_http_info(**kwargs)
 
         self.get_downtime = _Endpoint(
             settings={
-                'response_type': (Downtime,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/downtime/{downtime_id}',
-                'operation_id': 'get_downtime',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (Downtime,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/downtime/{downtime_id}",
+                "operation_id": "get_downtime",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'downtime_id',
+                "all": [
+                    "downtime_id",
                 ],
-                'required': [
-                    'downtime_id',
+                "required": [
+                    "downtime_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "downtime_id": (int,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "downtime_id": "downtime_id",
                 },
-                'openapi_types': {
-                    'downtime_id':
-                        (int,),
+                "location_map": {
+                    "downtime_id": "path",
                 },
-                'attribute_map': {
-                    'downtime_id': 'downtime_id',
-                },
-                'location_map': {
-                    'downtime_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_downtime
+            callable=__get_downtime,
         )
 
-        def __list_downtimes(
-            self,
-            **kwargs
-        ):
+        def __list_downtimes(self, **kwargs):
             """Get all downtimes  # noqa: E501
 
             Get all scheduled downtimes.  # noqa: E501
@@ -557,85 +426,56 @@ class DowntimesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_downtimes = _Endpoint(
             settings={
-                'response_type': ([Downtime],),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/downtime',
-                'operation_id': 'list_downtimes',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": ([Downtime],),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/downtime",
+                "operation_id": "list_downtimes",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'current_only',
+                "all": [
+                    "current_only",
                 ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "current_only": (bool,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "current_only": "current_only",
                 },
-                'openapi_types': {
-                    'current_only':
-                        (bool,),
+                "location_map": {
+                    "current_only": "query",
                 },
-                'attribute_map': {
-                    'current_only': 'current_only',
-                },
-                'location_map': {
-                    'current_only': 'query',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_downtimes
+            callable=__list_downtimes,
         )
 
-        def __update_downtime(
-            self,
-            downtime_id,
-            body,
-            **kwargs
-        ):
+        def __update_downtime(self, downtime_id, body, **kwargs):
             """Update a downtime  # noqa: E501
 
             Update a single downtime by `downtime_id`.  # noqa: E501
@@ -675,88 +515,56 @@ class DowntimesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['downtime_id'] = \
-                downtime_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["downtime_id"] = downtime_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_downtime = _Endpoint(
             settings={
-                'response_type': (Downtime,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/downtime/{downtime_id}',
-                'operation_id': 'update_downtime',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (Downtime,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/downtime/{downtime_id}",
+                "operation_id": "update_downtime",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'downtime_id',
-                    'body',
+                "all": [
+                    "downtime_id",
+                    "body",
                 ],
-                'required': [
-                    'downtime_id',
-                    'body',
+                "required": [
+                    "downtime_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "downtime_id": (int,),
+                    "body": (Downtime,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "downtime_id": "downtime_id",
                 },
-                'openapi_types': {
-                    'downtime_id':
-                        (int,),
-                    'body':
-                        (Downtime,),
+                "location_map": {
+                    "downtime_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'downtime_id': 'downtime_id',
-                },
-                'location_map': {
-                    'downtime_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_downtime
+            callable=__update_downtime,
         )

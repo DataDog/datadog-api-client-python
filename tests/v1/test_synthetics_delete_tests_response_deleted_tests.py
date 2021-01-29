@@ -10,7 +10,9 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.synthetics_delete_tests_response_deleted_tests import SyntheticsDeleteTestsResponseDeletedTests
+from datadog_api_client.v1.model.synthetics_delete_tests_response_deleted_tests import (
+    SyntheticsDeleteTestsResponseDeletedTests,
+)
 
 
 class TestSyntheticsDeleteTestsResponseDeletedTests(unittest.TestCase):
@@ -29,5 +31,5 @@ class TestSyntheticsDeleteTestsResponseDeletedTests(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

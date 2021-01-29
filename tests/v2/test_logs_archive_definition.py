@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import logs_archive_attributes
 except ImportError:
-    logs_archive_attributes = sys.modules[
-        'datadog_api_client.v2.model.logs_archive_attributes']
+    logs_archive_attributes = sys.modules["datadog_api_client.v2.model.logs_archive_attributes"]
 from datadog_api_client.v2.model.logs_archive_definition import LogsArchiveDefinition
 
 
@@ -34,5 +34,5 @@ class TestLogsArchiveDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

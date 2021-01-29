@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import logs_grok_parser_rules
 except ImportError:
-    logs_grok_parser_rules = sys.modules[
-        'datadog_api_client.v1.model.logs_grok_parser_rules']
+    logs_grok_parser_rules = sys.modules["datadog_api_client.v1.model.logs_grok_parser_rules"]
 try:
     from datadog_api_client.v1.model import logs_grok_parser_type
 except ImportError:
-    logs_grok_parser_type = sys.modules[
-        'datadog_api_client.v1.model.logs_grok_parser_type']
+    logs_grok_parser_type = sys.modules["datadog_api_client.v1.model.logs_grok_parser_type"]
 from datadog_api_client.v1.model.logs_grok_parser import LogsGrokParser
 
 
@@ -39,5 +38,5 @@ class TestLogsGrokParser(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

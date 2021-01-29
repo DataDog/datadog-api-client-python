@@ -23,11 +23,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
     from datadog_api_client.v1.model.logs_filter import LogsFilter
-    globals()['LogsExclusion'] = LogsExclusion
-    globals()['LogsFilter'] = LogsFilter
+
+    globals()["LogsExclusion"] = LogsExclusion
+    globals()["LogsFilter"] = LogsFilter
 
 
 class LogsIndexUpdateRequest(ModelNormal):
@@ -54,11 +56,9 @@ class LogsIndexUpdateRequest(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -76,36 +76,37 @@ class LogsIndexUpdateRequest(ModelNormal):
         """
         lazy_import()
         return {
-            'filter': (LogsFilter,),  # noqa: E501
-            'daily_limit': (int,),  # noqa: E501
-            'disable_daily_limit': (bool,),  # noqa: E501
-            'exclusion_filters': ([LogsExclusion],),  # noqa: E501
-            'num_retention_days': (int,),  # noqa: E501
+            "filter": (LogsFilter,),  # noqa: E501
+            "daily_limit": (int,),  # noqa: E501
+            "disable_daily_limit": (bool,),  # noqa: E501
+            "exclusion_filters": ([LogsExclusion],),  # noqa: E501
+            "num_retention_days": (int,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'filter': 'filter',  # noqa: E501
-        'daily_limit': 'daily_limit',  # noqa: E501
-        'disable_daily_limit': 'disable_daily_limit',  # noqa: E501
-        'exclusion_filters': 'exclusion_filters',  # noqa: E501
-        'num_retention_days': 'num_retention_days',  # noqa: E501
+        "filter": "filter",  # noqa: E501
+        "daily_limit": "daily_limit",  # noqa: E501
+        "disable_daily_limit": "disable_daily_limit",  # noqa: E501
+        "exclusion_filters": "exclusion_filters",  # noqa: E501
+        "num_retention_days": "num_retention_days",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, filter, *args, **kwargs):  # noqa: E501
@@ -151,15 +152,16 @@ class LogsIndexUpdateRequest(ModelNormal):
             num_retention_days (int): The number of days before logs are deleted from this index. Available values depend on retention plans specified in your organization's contract/subscriptions.  **Note:** Changing the retention for an index adjusts the length of retention for all logs already in this index. It may also affect billing.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -176,10 +178,12 @@ class LogsIndexUpdateRequest(ModelNormal):
 
         self.filter = filter
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

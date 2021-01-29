@@ -11,8 +11,9 @@ import unittest
 import datadog_api_client.v1
 from datadog_api_client.v1.model.usage_attribution_aggregates import UsageAttributionAggregates
 from datadog_api_client.v1.model.usage_attribution_pagination import UsageAttributionPagination
-globals()['UsageAttributionAggregates'] = UsageAttributionAggregates
-globals()['UsageAttributionPagination'] = UsageAttributionPagination
+
+globals()["UsageAttributionAggregates"] = UsageAttributionAggregates
+globals()["UsageAttributionPagination"] = UsageAttributionPagination
 from datadog_api_client.v1.model.usage_attribution_metadata import UsageAttributionMetadata
 
 
@@ -32,5 +33,5 @@ class TestUsageAttributionMetadata(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

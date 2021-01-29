@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import usage_billable_summary_keys
 except ImportError:
-    usage_billable_summary_keys = sys.modules[
-        'datadog_api_client.v1.model.usage_billable_summary_keys']
+    usage_billable_summary_keys = sys.modules["datadog_api_client.v1.model.usage_billable_summary_keys"]
 from datadog_api_client.v1.model.usage_billable_summary_hour import UsageBillableSummaryHour
 
 
@@ -34,5 +34,5 @@ class TestUsageBillableSummaryHour(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

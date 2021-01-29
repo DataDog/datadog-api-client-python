@@ -7,7 +7,9 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,
+)
 
 
 class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionSearch(unittest.TestCase):
@@ -26,5 +28,5 @@ class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionSearch(unittest.TestCa
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

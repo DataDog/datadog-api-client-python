@@ -14,7 +14,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
@@ -37,12 +37,7 @@ class LogsArchivesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __add_read_role_to_archive(
-            self,
-            archive_id,
-            body,
-            **kwargs
-        ):
+        def __add_read_role_to_archive(self, archive_id, body, **kwargs):
             """Grant role to an archive  # noqa: E501
 
             Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))  # noqa: E501
@@ -82,97 +77,61 @@ class LogsArchivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['archive_id'] = \
-                archive_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["archive_id"] = archive_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.add_read_role_to_archive = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/archives/{archive_id}/readers',
-                'operation_id': 'add_read_role_to_archive',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/archives/{archive_id}/readers",
+                "operation_id": "add_read_role_to_archive",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'archive_id',
-                    'body',
+                "all": [
+                    "archive_id",
+                    "body",
                 ],
-                'required': [
-                    'archive_id',
-                    'body',
+                "required": [
+                    "archive_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "archive_id": (str,),
+                    "body": (RelationshipToRole,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "archive_id": "archive_id",
                 },
-                'openapi_types': {
-                    'archive_id':
-                        (str,),
-                    'body':
-                        (RelationshipToRole,),
+                "location_map": {
+                    "archive_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'archive_id': 'archive_id',
-                },
-                'location_map': {
-                    'archive_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__add_read_role_to_archive
+            callable=__add_read_role_to_archive,
         )
 
-        def __create_logs_archive(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_logs_archive(self, body, **kwargs):
             """Create an archive  # noqa: E501
 
             Create an archive in your organization.  # noqa: E501
@@ -211,89 +170,54 @@ class LogsArchivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_logs_archive = _Endpoint(
             settings={
-                'response_type': (LogsArchive,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/archives',
-                'operation_id': 'create_logs_archive',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (LogsArchive,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/archives",
+                "operation_id": "create_logs_archive",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (LogsArchiveCreateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (LogsArchiveCreateRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_logs_archive
+            callable=__create_logs_archive,
         )
 
-        def __delete_logs_archive(
-            self,
-            archive_id,
-            **kwargs
-        ):
+        def __delete_logs_archive(self, archive_id, **kwargs):
             """Delete an archive  # noqa: E501
 
             Delete a given archive from your organization.  # noqa: E501
@@ -332,88 +256,59 @@ class LogsArchivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['archive_id'] = \
-                archive_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["archive_id"] = archive_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_logs_archive = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/archives/{archive_id}',
-                'operation_id': 'delete_logs_archive',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/archives/{archive_id}",
+                "operation_id": "delete_logs_archive",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'archive_id',
+                "all": [
+                    "archive_id",
                 ],
-                'required': [
-                    'archive_id',
+                "required": [
+                    "archive_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "archive_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "archive_id": "archive_id",
                 },
-                'openapi_types': {
-                    'archive_id':
-                        (str,),
+                "location_map": {
+                    "archive_id": "path",
                 },
-                'attribute_map': {
-                    'archive_id': 'archive_id',
-                },
-                'location_map': {
-                    'archive_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_logs_archive
+            callable=__delete_logs_archive,
         )
 
-        def __get_logs_archive(
-            self,
-            archive_id,
-            **kwargs
-        ):
+        def __get_logs_archive(self, archive_id, **kwargs):
             """Get an archive  # noqa: E501
 
             Get a specific archive from your organization.  # noqa: E501
@@ -452,87 +347,59 @@ class LogsArchivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['archive_id'] = \
-                archive_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["archive_id"] = archive_id
             return self.call_with_http_info(**kwargs)
 
         self.get_logs_archive = _Endpoint(
             settings={
-                'response_type': (LogsArchive,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/archives/{archive_id}',
-                'operation_id': 'get_logs_archive',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (LogsArchive,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/archives/{archive_id}",
+                "operation_id": "get_logs_archive",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'archive_id',
+                "all": [
+                    "archive_id",
                 ],
-                'required': [
-                    'archive_id',
+                "required": [
+                    "archive_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "archive_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "archive_id": "archive_id",
                 },
-                'openapi_types': {
-                    'archive_id':
-                        (str,),
+                "location_map": {
+                    "archive_id": "path",
                 },
-                'attribute_map': {
-                    'archive_id': 'archive_id',
-                },
-                'location_map': {
-                    'archive_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_logs_archive
+            callable=__get_logs_archive,
         )
 
-        def __get_logs_archive_order(
-            self,
-            **kwargs
-        ):
+        def __get_logs_archive_order(self, **kwargs):
             """Get archive order  # noqa: E501
 
             Get the current order of your archives. This endpoint takes no JSON arguments.  # noqa: E501
@@ -569,79 +436,42 @@ class LogsArchivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.get_logs_archive_order = _Endpoint(
             settings={
-                'response_type': (LogsArchiveOrder,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/archive-order',
-                'operation_id': 'get_logs_archive_order',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (LogsArchiveOrder,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/archive-order",
+                "operation_id": "get_logs_archive_order",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_logs_archive_order
+            callable=__get_logs_archive_order,
         )
 
-        def __list_archive_read_roles(
-            self,
-            archive_id,
-            **kwargs
-        ):
+        def __list_archive_read_roles(self, archive_id, **kwargs):
             """List read roles for an archive  # noqa: E501
 
             Returns all read roles a given archive is restricted to.  # noqa: E501
@@ -680,87 +510,59 @@ class LogsArchivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['archive_id'] = \
-                archive_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["archive_id"] = archive_id
             return self.call_with_http_info(**kwargs)
 
         self.list_archive_read_roles = _Endpoint(
             settings={
-                'response_type': (RolesResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/archives/{archive_id}/readers',
-                'operation_id': 'list_archive_read_roles',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (RolesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/archives/{archive_id}/readers",
+                "operation_id": "list_archive_read_roles",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'archive_id',
+                "all": [
+                    "archive_id",
                 ],
-                'required': [
-                    'archive_id',
+                "required": [
+                    "archive_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "archive_id": (str,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "archive_id": "archive_id",
                 },
-                'openapi_types': {
-                    'archive_id':
-                        (str,),
+                "location_map": {
+                    "archive_id": "path",
                 },
-                'attribute_map': {
-                    'archive_id': 'archive_id',
-                },
-                'location_map': {
-                    'archive_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_archive_read_roles
+            callable=__list_archive_read_roles,
         )
 
-        def __list_logs_archives(
-            self,
-            **kwargs
-        ):
+        def __list_logs_archives(self, **kwargs):
             """Get all archives  # noqa: E501
 
             Get the list of configured logs archives with their definitions.  # noqa: E501
@@ -797,80 +599,42 @@ class LogsArchivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_logs_archives = _Endpoint(
             settings={
-                'response_type': (LogsArchives,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/archives',
-                'operation_id': 'list_logs_archives',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (LogsArchives,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/archives",
+                "operation_id": "list_logs_archives",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_logs_archives
+            callable=__list_logs_archives,
         )
 
-        def __remove_role_from_archive(
-            self,
-            archive_id,
-            body,
-            **kwargs
-        ):
+        def __remove_role_from_archive(self, archive_id, body, **kwargs):
             """Revoke role from an archive  # noqa: E501
 
             Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))  # noqa: E501
@@ -910,98 +674,61 @@ class LogsArchivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['archive_id'] = \
-                archive_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["archive_id"] = archive_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.remove_role_from_archive = _Endpoint(
             settings={
-                'response_type': None,
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/archives/{archive_id}/readers',
-                'operation_id': 'remove_role_from_archive',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/archives/{archive_id}/readers",
+                "operation_id": "remove_role_from_archive",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'archive_id',
-                    'body',
+                "all": [
+                    "archive_id",
+                    "body",
                 ],
-                'required': [
-                    'archive_id',
-                    'body',
+                "required": [
+                    "archive_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "archive_id": (str,),
+                    "body": (RelationshipToRole,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "archive_id": "archive_id",
                 },
-                'openapi_types': {
-                    'archive_id':
-                        (str,),
-                    'body':
-                        (RelationshipToRole,),
+                "location_map": {
+                    "archive_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'archive_id': 'archive_id',
-                },
-                'location_map': {
-                    'archive_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__remove_role_from_archive
+            callable=__remove_role_from_archive,
         )
 
-        def __update_logs_archive(
-            self,
-            archive_id,
-            body,
-            **kwargs
-        ):
+        def __update_logs_archive(self, archive_id, body, **kwargs):
             """Update an archive  # noqa: E501
 
             Update a given archive configuration.  **Note**: Using this method updates your archive configuration by **replacing** your current configuration with the new one sent to your Datadog organization.  # noqa: E501
@@ -1041,97 +768,61 @@ class LogsArchivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['archive_id'] = \
-                archive_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["archive_id"] = archive_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_logs_archive = _Endpoint(
             settings={
-                'response_type': (LogsArchive,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/archives/{archive_id}',
-                'operation_id': 'update_logs_archive',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (LogsArchive,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/archives/{archive_id}",
+                "operation_id": "update_logs_archive",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'archive_id',
-                    'body',
+                "all": [
+                    "archive_id",
+                    "body",
                 ],
-                'required': [
-                    'archive_id',
-                    'body',
+                "required": [
+                    "archive_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "archive_id": (str,),
+                    "body": (LogsArchiveCreateRequest,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "archive_id": "archive_id",
                 },
-                'openapi_types': {
-                    'archive_id':
-                        (str,),
-                    'body':
-                        (LogsArchiveCreateRequest,),
+                "location_map": {
+                    "archive_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'archive_id': 'archive_id',
-                },
-                'location_map': {
-                    'archive_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_logs_archive
+            callable=__update_logs_archive,
         )
 
-        def __update_logs_archive_order(
-            self,
-            body,
-            **kwargs
-        ):
+        def __update_logs_archive_order(self, body, **kwargs):
             """Update archive order  # noqa: E501
 
             Update the order of your archives. Since logs are processed sequentially, reordering an archive may change the structure and content of the data processed by other archives.  **Note**: Using the `PUT` method updates your archive's order by replacing the current order with the new one.  # noqa: E501
@@ -1170,80 +861,49 @@ class LogsArchivesApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_logs_archive_order = _Endpoint(
             settings={
-                'response_type': (LogsArchiveOrder,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v2/logs/config/archive-order',
-                'operation_id': 'update_logs_archive_order',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (LogsArchiveOrder,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/logs/config/archive-order",
+                "operation_id": "update_logs_archive_order",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (LogsArchiveOrder,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (LogsArchiveOrder,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_logs_archive_order
+            callable=__update_logs_archive_order,
         )

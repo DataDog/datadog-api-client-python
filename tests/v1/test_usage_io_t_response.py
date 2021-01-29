@@ -8,7 +8,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.usage_io_t_hour import UsageIoTHour
-globals()['UsageIoTHour'] = UsageIoTHour
+
+globals()["UsageIoTHour"] = UsageIoTHour
 from datadog_api_client.v1.model.usage_io_t_response import UsageIoTResponse
 
 
@@ -28,5 +29,5 @@ class TestUsageIoTResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

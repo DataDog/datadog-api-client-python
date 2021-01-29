@@ -23,15 +23,17 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v2.model.logs_aggregate_sort import LogsAggregateSort
     from datadog_api_client.v2.model.logs_group_by_histogram import LogsGroupByHistogram
     from datadog_api_client.v2.model.logs_group_by_missing import LogsGroupByMissing
     from datadog_api_client.v2.model.logs_group_by_total import LogsGroupByTotal
-    globals()['LogsAggregateSort'] = LogsAggregateSort
-    globals()['LogsGroupByHistogram'] = LogsGroupByHistogram
-    globals()['LogsGroupByMissing'] = LogsGroupByMissing
-    globals()['LogsGroupByTotal'] = LogsGroupByTotal
+
+    globals()["LogsAggregateSort"] = LogsAggregateSort
+    globals()["LogsGroupByHistogram"] = LogsGroupByHistogram
+    globals()["LogsGroupByMissing"] = LogsGroupByMissing
+    globals()["LogsGroupByTotal"] = LogsGroupByTotal
 
 
 class LogsGroupBy(ModelNormal):
@@ -58,11 +60,9 @@ class LogsGroupBy(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -80,38 +80,39 @@ class LogsGroupBy(ModelNormal):
         """
         lazy_import()
         return {
-            'facet': (str,),  # noqa: E501
-            'histogram': (LogsGroupByHistogram,),  # noqa: E501
-            'limit': (int,),  # noqa: E501
-            'missing': (LogsGroupByMissing,),  # noqa: E501
-            'sort': (LogsAggregateSort,),  # noqa: E501
-            'total': (LogsGroupByTotal,),  # noqa: E501
+            "facet": (str,),  # noqa: E501
+            "histogram": (LogsGroupByHistogram,),  # noqa: E501
+            "limit": (int,),  # noqa: E501
+            "missing": (LogsGroupByMissing,),  # noqa: E501
+            "sort": (LogsAggregateSort,),  # noqa: E501
+            "total": (LogsGroupByTotal,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'facet': 'facet',  # noqa: E501
-        'histogram': 'histogram',  # noqa: E501
-        'limit': 'limit',  # noqa: E501
-        'missing': 'missing',  # noqa: E501
-        'sort': 'sort',  # noqa: E501
-        'total': 'total',  # noqa: E501
+        "facet": "facet",  # noqa: E501
+        "histogram": "histogram",  # noqa: E501
+        "limit": "limit",  # noqa: E501
+        "missing": "missing",  # noqa: E501
+        "sort": "sort",  # noqa: E501
+        "total": "total",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, facet, *args, **kwargs):  # noqa: E501
@@ -158,15 +159,16 @@ class LogsGroupBy(ModelNormal):
             total (LogsGroupByTotal): [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -183,10 +185,12 @@ class LogsGroupBy(ModelNormal):
 
         self.facet = facet
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

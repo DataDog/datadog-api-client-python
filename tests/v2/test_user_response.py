@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import user
 except ImportError:
-    user = sys.modules[
-        'datadog_api_client.v2.model.user']
+    user = sys.modules["datadog_api_client.v2.model.user"]
 try:
     from datadog_api_client.v2.model import user_response_included_item
 except ImportError:
-    user_response_included_item = sys.modules[
-        'datadog_api_client.v2.model.user_response_included_item']
+    user_response_included_item = sys.modules["datadog_api_client.v2.model.user_response_included_item"]
 from datadog_api_client.v2.model.user_response import UserResponse
 
 
@@ -39,5 +38,5 @@ class TestUserResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

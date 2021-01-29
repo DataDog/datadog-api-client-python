@@ -7,7 +7,9 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import SyntheticsGlobalVariableParseTestOptionsType
+from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
+    SyntheticsGlobalVariableParseTestOptionsType,
+)
 
 
 class TestSyntheticsGlobalVariableParseTestOptionsType(unittest.TestCase):
@@ -26,5 +28,5 @@ class TestSyntheticsGlobalVariableParseTestOptionsType(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

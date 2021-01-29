@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import slo_history_response_data
 except ImportError:
-    slo_history_response_data = sys.modules[
-        'datadog_api_client.v1.model.slo_history_response_data']
+    slo_history_response_data = sys.modules["datadog_api_client.v1.model.slo_history_response_data"]
 try:
     from datadog_api_client.v1.model import slo_history_response_error
 except ImportError:
-    slo_history_response_error = sys.modules[
-        'datadog_api_client.v1.model.slo_history_response_error']
+    slo_history_response_error = sys.modules["datadog_api_client.v1.model.slo_history_response_error"]
 from datadog_api_client.v1.model.slo_history_response import SLOHistoryResponse
 
 
@@ -39,5 +38,5 @@ class TestSLOHistoryResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

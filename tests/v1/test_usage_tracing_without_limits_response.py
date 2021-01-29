@@ -10,7 +10,8 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.usage_tracing_without_limits_hour import UsageTracingWithoutLimitsHour
-globals()['UsageTracingWithoutLimitsHour'] = UsageTracingWithoutLimitsHour
+
+globals()["UsageTracingWithoutLimitsHour"] = UsageTracingWithoutLimitsHour
 from datadog_api_client.v1.model.usage_tracing_without_limits_response import UsageTracingWithoutLimitsResponse
 
 
@@ -30,5 +31,5 @@ class TestUsageTracingWithoutLimitsResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

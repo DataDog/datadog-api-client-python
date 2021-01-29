@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import synthetics_assertion_operator
 except ImportError:
-    synthetics_assertion_operator = sys.modules[
-        'datadog_api_client.v1.model.synthetics_assertion_operator']
+    synthetics_assertion_operator = sys.modules["datadog_api_client.v1.model.synthetics_assertion_operator"]
 try:
     from datadog_api_client.v1.model import synthetics_assertion_type
 except ImportError:
-    synthetics_assertion_type = sys.modules[
-        'datadog_api_client.v1.model.synthetics_assertion_type']
+    synthetics_assertion_type = sys.modules["datadog_api_client.v1.model.synthetics_assertion_type"]
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
 
 
@@ -39,5 +38,5 @@ class TestSyntheticsAssertion(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

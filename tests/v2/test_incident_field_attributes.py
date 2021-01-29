@@ -12,9 +12,10 @@ import datadog_api_client.v2
 from datadog_api_client.v2.model.incident_field_attributes_multiple_value import IncidentFieldAttributesMultipleValue
 from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
 from datadog_api_client.v2.model.incident_field_attributes_value_type import IncidentFieldAttributesValueType
-globals()['IncidentFieldAttributesMultipleValue'] = IncidentFieldAttributesMultipleValue
-globals()['IncidentFieldAttributesSingleValue'] = IncidentFieldAttributesSingleValue
-globals()['IncidentFieldAttributesValueType'] = IncidentFieldAttributesValueType
+
+globals()["IncidentFieldAttributesMultipleValue"] = IncidentFieldAttributesMultipleValue
+globals()["IncidentFieldAttributesSingleValue"] = IncidentFieldAttributesSingleValue
+globals()["IncidentFieldAttributesValueType"] = IncidentFieldAttributesValueType
 from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
 
 
@@ -34,5 +35,5 @@ class TestIncidentFieldAttributes(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

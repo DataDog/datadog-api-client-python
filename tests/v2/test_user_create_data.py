@@ -10,21 +10,19 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import user_create_attributes
 except ImportError:
-    user_create_attributes = sys.modules[
-        'datadog_api_client.v2.model.user_create_attributes']
+    user_create_attributes = sys.modules["datadog_api_client.v2.model.user_create_attributes"]
 try:
     from datadog_api_client.v2.model import user_relationships
 except ImportError:
-    user_relationships = sys.modules[
-        'datadog_api_client.v2.model.user_relationships']
+    user_relationships = sys.modules["datadog_api_client.v2.model.user_relationships"]
 try:
     from datadog_api_client.v2.model import users_type
 except ImportError:
-    users_type = sys.modules[
-        'datadog_api_client.v2.model.users_type']
+    users_type = sys.modules["datadog_api_client.v2.model.users_type"]
 from datadog_api_client.v2.model.user_create_data import UserCreateData
 
 
@@ -44,5 +42,5 @@ class TestUserCreateData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

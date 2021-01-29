@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import access_role
 except ImportError:
-    access_role = sys.modules[
-        'datadog_api_client.v1.model.access_role']
+    access_role = sys.modules["datadog_api_client.v1.model.access_role"]
 from datadog_api_client.v1.model.user import User
 
 
@@ -34,5 +34,5 @@ class TestUser(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

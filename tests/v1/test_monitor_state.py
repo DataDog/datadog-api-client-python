@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import monitor_state_group
 except ImportError:
-    monitor_state_group = sys.modules[
-        'datadog_api_client.v1.model.monitor_state_group']
+    monitor_state_group = sys.modules["datadog_api_client.v1.model.monitor_state_group"]
 from datadog_api_client.v1.model.monitor_state import MonitorState
 
 
@@ -34,5 +34,5 @@ class TestMonitorState(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

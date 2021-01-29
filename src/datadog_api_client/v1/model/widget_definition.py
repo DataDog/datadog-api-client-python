@@ -23,6 +23,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
     from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
@@ -75,57 +76,58 @@ def lazy_import():
     from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
     from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
     from datadog_api_client.v1.model.widget_viz_type import WidgetVizType
-    globals()['AlertGraphWidgetDefinition'] = AlertGraphWidgetDefinition
-    globals()['AlertValueWidgetDefinition'] = AlertValueWidgetDefinition
-    globals()['ChangeWidgetDefinition'] = ChangeWidgetDefinition
-    globals()['CheckStatusWidgetDefinition'] = CheckStatusWidgetDefinition
-    globals()['DistributionWidgetDefinition'] = DistributionWidgetDefinition
-    globals()['EventStreamWidgetDefinition'] = EventStreamWidgetDefinition
-    globals()['EventTimelineWidgetDefinition'] = EventTimelineWidgetDefinition
-    globals()['FreeTextWidgetDefinition'] = FreeTextWidgetDefinition
-    globals()['GroupWidgetDefinition'] = GroupWidgetDefinition
-    globals()['HeatMapWidgetDefinition'] = HeatMapWidgetDefinition
-    globals()['HostMapWidgetDefinition'] = HostMapWidgetDefinition
-    globals()['HostMapWidgetDefinitionStyle'] = HostMapWidgetDefinitionStyle
-    globals()['IFrameWidgetDefinition'] = IFrameWidgetDefinition
-    globals()['ImageWidgetDefinition'] = ImageWidgetDefinition
-    globals()['LogStreamWidgetDefinition'] = LogStreamWidgetDefinition
-    globals()['MonitorSummaryWidgetDefinition'] = MonitorSummaryWidgetDefinition
-    globals()['NoteWidgetDefinition'] = NoteWidgetDefinition
-    globals()['QueryValueWidgetDefinition'] = QueryValueWidgetDefinition
-    globals()['SLOWidgetDefinition'] = SLOWidgetDefinition
-    globals()['ScatterPlotWidgetDefinition'] = ScatterPlotWidgetDefinition
-    globals()['ServiceMapWidgetDefinition'] = ServiceMapWidgetDefinition
-    globals()['ServiceSummaryWidgetDefinition'] = ServiceSummaryWidgetDefinition
-    globals()['TableWidgetDefinition'] = TableWidgetDefinition
-    globals()['TableWidgetHasSearchBar'] = TableWidgetHasSearchBar
-    globals()['TimeseriesWidgetDefinition'] = TimeseriesWidgetDefinition
-    globals()['ToplistWidgetDefinition'] = ToplistWidgetDefinition
-    globals()['ToplistWidgetDefinitionType'] = ToplistWidgetDefinitionType
-    globals()['ToplistWidgetRequest'] = ToplistWidgetRequest
-    globals()['Widget'] = Widget
-    globals()['WidgetAxis'] = WidgetAxis
-    globals()['WidgetColorPreference'] = WidgetColorPreference
-    globals()['WidgetCustomLink'] = WidgetCustomLink
-    globals()['WidgetEvent'] = WidgetEvent
-    globals()['WidgetEventSize'] = WidgetEventSize
-    globals()['WidgetGrouping'] = WidgetGrouping
-    globals()['WidgetImageSizing'] = WidgetImageSizing
-    globals()['WidgetLayoutType'] = WidgetLayoutType
-    globals()['WidgetMargin'] = WidgetMargin
-    globals()['WidgetMarker'] = WidgetMarker
-    globals()['WidgetMessageDisplay'] = WidgetMessageDisplay
-    globals()['WidgetMonitorSummarySort'] = WidgetMonitorSummarySort
-    globals()['WidgetNodeType'] = WidgetNodeType
-    globals()['WidgetServiceSummaryDisplayFormat'] = WidgetServiceSummaryDisplayFormat
-    globals()['WidgetSizeFormat'] = WidgetSizeFormat
-    globals()['WidgetSummaryType'] = WidgetSummaryType
-    globals()['WidgetTextAlign'] = WidgetTextAlign
-    globals()['WidgetTickEdge'] = WidgetTickEdge
-    globals()['WidgetTime'] = WidgetTime
-    globals()['WidgetTimeWindows'] = WidgetTimeWindows
-    globals()['WidgetViewMode'] = WidgetViewMode
-    globals()['WidgetVizType'] = WidgetVizType
+
+    globals()["AlertGraphWidgetDefinition"] = AlertGraphWidgetDefinition
+    globals()["AlertValueWidgetDefinition"] = AlertValueWidgetDefinition
+    globals()["ChangeWidgetDefinition"] = ChangeWidgetDefinition
+    globals()["CheckStatusWidgetDefinition"] = CheckStatusWidgetDefinition
+    globals()["DistributionWidgetDefinition"] = DistributionWidgetDefinition
+    globals()["EventStreamWidgetDefinition"] = EventStreamWidgetDefinition
+    globals()["EventTimelineWidgetDefinition"] = EventTimelineWidgetDefinition
+    globals()["FreeTextWidgetDefinition"] = FreeTextWidgetDefinition
+    globals()["GroupWidgetDefinition"] = GroupWidgetDefinition
+    globals()["HeatMapWidgetDefinition"] = HeatMapWidgetDefinition
+    globals()["HostMapWidgetDefinition"] = HostMapWidgetDefinition
+    globals()["HostMapWidgetDefinitionStyle"] = HostMapWidgetDefinitionStyle
+    globals()["IFrameWidgetDefinition"] = IFrameWidgetDefinition
+    globals()["ImageWidgetDefinition"] = ImageWidgetDefinition
+    globals()["LogStreamWidgetDefinition"] = LogStreamWidgetDefinition
+    globals()["MonitorSummaryWidgetDefinition"] = MonitorSummaryWidgetDefinition
+    globals()["NoteWidgetDefinition"] = NoteWidgetDefinition
+    globals()["QueryValueWidgetDefinition"] = QueryValueWidgetDefinition
+    globals()["SLOWidgetDefinition"] = SLOWidgetDefinition
+    globals()["ScatterPlotWidgetDefinition"] = ScatterPlotWidgetDefinition
+    globals()["ServiceMapWidgetDefinition"] = ServiceMapWidgetDefinition
+    globals()["ServiceSummaryWidgetDefinition"] = ServiceSummaryWidgetDefinition
+    globals()["TableWidgetDefinition"] = TableWidgetDefinition
+    globals()["TableWidgetHasSearchBar"] = TableWidgetHasSearchBar
+    globals()["TimeseriesWidgetDefinition"] = TimeseriesWidgetDefinition
+    globals()["ToplistWidgetDefinition"] = ToplistWidgetDefinition
+    globals()["ToplistWidgetDefinitionType"] = ToplistWidgetDefinitionType
+    globals()["ToplistWidgetRequest"] = ToplistWidgetRequest
+    globals()["Widget"] = Widget
+    globals()["WidgetAxis"] = WidgetAxis
+    globals()["WidgetColorPreference"] = WidgetColorPreference
+    globals()["WidgetCustomLink"] = WidgetCustomLink
+    globals()["WidgetEvent"] = WidgetEvent
+    globals()["WidgetEventSize"] = WidgetEventSize
+    globals()["WidgetGrouping"] = WidgetGrouping
+    globals()["WidgetImageSizing"] = WidgetImageSizing
+    globals()["WidgetLayoutType"] = WidgetLayoutType
+    globals()["WidgetMargin"] = WidgetMargin
+    globals()["WidgetMarker"] = WidgetMarker
+    globals()["WidgetMessageDisplay"] = WidgetMessageDisplay
+    globals()["WidgetMonitorSummarySort"] = WidgetMonitorSummarySort
+    globals()["WidgetNodeType"] = WidgetNodeType
+    globals()["WidgetServiceSummaryDisplayFormat"] = WidgetServiceSummaryDisplayFormat
+    globals()["WidgetSizeFormat"] = WidgetSizeFormat
+    globals()["WidgetSummaryType"] = WidgetSummaryType
+    globals()["WidgetTextAlign"] = WidgetTextAlign
+    globals()["WidgetTickEdge"] = WidgetTickEdge
+    globals()["WidgetTime"] = WidgetTime
+    globals()["WidgetTimeWindows"] = WidgetTimeWindows
+    globals()["WidgetViewMode"] = WidgetViewMode
+    globals()["WidgetVizType"] = WidgetVizType
 
 
 class WidgetDefinition(ModelComposed):
@@ -152,11 +154,9 @@ class WidgetDefinition(ModelComposed):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     @cached_property
     def additional_properties_type():
@@ -165,7 +165,17 @@ class WidgetDefinition(ModelComposed):
         of type self, this must run after the class is loaded
         """
         lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+        return (
+            bool,
+            date,
+            datetime,
+            dict,
+            float,
+            int,
+            list,
+            str,
+            none_type,
+        )  # noqa: E501
 
     _nullable = False
 
@@ -185,20 +195,21 @@ class WidgetDefinition(ModelComposed):
     def discriminator():
         return None
 
-
     attribute_map = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-        '_composed_instances',
-        '_var_name_to_model_instances',
-        '_additional_properties_model_instances',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+            "_composed_instances",
+            "_var_name_to_model_instances",
+            "_additional_properties_model_instances",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -319,32 +330,33 @@ class WidgetDefinition(ModelComposed):
             right_yaxis (WidgetAxis): [optional]  # noqa: E501
         """
 
-        alert_id = kwargs.get('alert_id', nulltype.Null)
-        type = kwargs.get('type', nulltype.Null)
-        viz_type = kwargs.get('viz_type', nulltype.Null)
-        requests = kwargs.get('requests', nulltype.Null)
-        check = kwargs.get('check', nulltype.Null)
-        grouping = kwargs.get('grouping', nulltype.Null)
-        query = kwargs.get('query', nulltype.Null)
-        text = kwargs.get('text', nulltype.Null)
-        layout_type = kwargs.get('layout_type', nulltype.Null)
-        widgets = kwargs.get('widgets', nulltype.Null)
-        url = kwargs.get('url', nulltype.Null)
-        content = kwargs.get('content', nulltype.Null)
-        view_type = kwargs.get('view_type', nulltype.Null)
-        filters = kwargs.get('filters', nulltype.Null)
-        service = kwargs.get('service', nulltype.Null)
-        env = kwargs.get('env', nulltype.Null)
-        span_name = kwargs.get('span_name', nulltype.Null)
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        alert_id = kwargs.get("alert_id", nulltype.Null)
+        type = kwargs.get("type", nulltype.Null)
+        viz_type = kwargs.get("viz_type", nulltype.Null)
+        requests = kwargs.get("requests", nulltype.Null)
+        check = kwargs.get("check", nulltype.Null)
+        grouping = kwargs.get("grouping", nulltype.Null)
+        query = kwargs.get("query", nulltype.Null)
+        text = kwargs.get("text", nulltype.Null)
+        layout_type = kwargs.get("layout_type", nulltype.Null)
+        widgets = kwargs.get("widgets", nulltype.Null)
+        url = kwargs.get("url", nulltype.Null)
+        content = kwargs.get("content", nulltype.Null)
+        view_type = kwargs.get("view_type", nulltype.Null)
+        filters = kwargs.get("filters", nulltype.Null)
+        service = kwargs.get("service", nulltype.Null)
+        env = kwargs.get("env", nulltype.Null)
+        span_name = kwargs.get("span_name", nulltype.Null)
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -360,30 +372,30 @@ class WidgetDefinition(ModelComposed):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         constant_args = {
-            '_check_type': _check_type,
-            '_path_to_item': _path_to_item,
-            '_spec_property_naming': _spec_property_naming,
-            '_configuration': _configuration,
-            '_visited_composed_classes': self._visited_composed_classes,
+            "_check_type": _check_type,
+            "_path_to_item": _path_to_item,
+            "_spec_property_naming": _spec_property_naming,
+            "_configuration": _configuration,
+            "_visited_composed_classes": self._visited_composed_classes,
         }
         required_args = {
-            'alert_id': alert_id,
-            'type': type,
-            'viz_type': viz_type,
-            'requests': requests,
-            'check': check,
-            'grouping': grouping,
-            'query': query,
-            'text': text,
-            'layout_type': layout_type,
-            'widgets': widgets,
-            'url': url,
-            'content': content,
-            'view_type': view_type,
-            'filters': filters,
-            'service': service,
-            'env': env,
-            'span_name': span_name,
+            "alert_id": alert_id,
+            "type": type,
+            "viz_type": viz_type,
+            "requests": requests,
+            "check": check,
+            "grouping": grouping,
+            "query": query,
+            "text": text,
+            "layout_type": layout_type,
+            "widgets": widgets,
+            "url": url,
+            "content": content,
+            "view_type": view_type,
+            "filters": filters,
+            "service": service,
+            "env": env,
+            "span_name": span_name,
         }
         # remove args whose value is Null because they are unset
         required_arg_names = list(required_args.keys())
@@ -393,8 +405,7 @@ class WidgetDefinition(ModelComposed):
         model_args = {}
         model_args.update(required_args)
         model_args.update(kwargs)
-        composed_info = validate_get_composed_info(
-            constant_args, model_args, self)
+        composed_info = validate_get_composed_info(constant_args, model_args, self)
         self._composed_instances = composed_info[0]
         self._var_name_to_model_instances = composed_info[1]
         self._additional_properties_model_instances = composed_info[2]
@@ -403,10 +414,12 @@ class WidgetDefinition(ModelComposed):
         for var_name, var_value in required_args.items():
             setattr(self, var_name, var_value)
         for var_name, var_value in kwargs.items():
-            if var_name in unused_args and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        not self._additional_properties_model_instances:
+            if (
+                var_name in unused_args
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and not self._additional_properties_model_instances
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)
@@ -422,34 +435,32 @@ class WidgetDefinition(ModelComposed):
         # loading
         lazy_import()
         return {
-          'anyOf': [
-          ],
-          'allOf': [
-          ],
-          'oneOf': [
-              AlertGraphWidgetDefinition,
-              AlertValueWidgetDefinition,
-              ChangeWidgetDefinition,
-              CheckStatusWidgetDefinition,
-              DistributionWidgetDefinition,
-              EventStreamWidgetDefinition,
-              EventTimelineWidgetDefinition,
-              FreeTextWidgetDefinition,
-              GroupWidgetDefinition,
-              HeatMapWidgetDefinition,
-              HostMapWidgetDefinition,
-              IFrameWidgetDefinition,
-              ImageWidgetDefinition,
-              LogStreamWidgetDefinition,
-              MonitorSummaryWidgetDefinition,
-              NoteWidgetDefinition,
-              QueryValueWidgetDefinition,
-              SLOWidgetDefinition,
-              ScatterPlotWidgetDefinition,
-              ServiceMapWidgetDefinition,
-              ServiceSummaryWidgetDefinition,
-              TableWidgetDefinition,
-              TimeseriesWidgetDefinition,
-              ToplistWidgetDefinition,
-          ],
+            "anyOf": [],
+            "allOf": [],
+            "oneOf": [
+                AlertGraphWidgetDefinition,
+                AlertValueWidgetDefinition,
+                ChangeWidgetDefinition,
+                CheckStatusWidgetDefinition,
+                DistributionWidgetDefinition,
+                EventStreamWidgetDefinition,
+                EventTimelineWidgetDefinition,
+                FreeTextWidgetDefinition,
+                GroupWidgetDefinition,
+                HeatMapWidgetDefinition,
+                HostMapWidgetDefinition,
+                IFrameWidgetDefinition,
+                ImageWidgetDefinition,
+                LogStreamWidgetDefinition,
+                MonitorSummaryWidgetDefinition,
+                NoteWidgetDefinition,
+                QueryValueWidgetDefinition,
+                SLOWidgetDefinition,
+                ScatterPlotWidgetDefinition,
+                ServiceMapWidgetDefinition,
+                ServiceSummaryWidgetDefinition,
+                TableWidgetDefinition,
+                TimeseriesWidgetDefinition,
+                ToplistWidgetDefinition,
+            ],
         }

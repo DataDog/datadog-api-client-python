@@ -10,26 +10,23 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import relationship_to_organization
 except ImportError:
-    relationship_to_organization = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_organization']
+    relationship_to_organization = sys.modules["datadog_api_client.v2.model.relationship_to_organization"]
 try:
     from datadog_api_client.v2.model import relationship_to_organizations
 except ImportError:
-    relationship_to_organizations = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_organizations']
+    relationship_to_organizations = sys.modules["datadog_api_client.v2.model.relationship_to_organizations"]
 try:
     from datadog_api_client.v2.model import relationship_to_roles
 except ImportError:
-    relationship_to_roles = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_roles']
+    relationship_to_roles = sys.modules["datadog_api_client.v2.model.relationship_to_roles"]
 try:
     from datadog_api_client.v2.model import relationship_to_users
 except ImportError:
-    relationship_to_users = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_users']
+    relationship_to_users = sys.modules["datadog_api_client.v2.model.relationship_to_users"]
 from datadog_api_client.v2.model.user_response_relationships import UserResponseRelationships
 
 
@@ -49,5 +46,5 @@ class TestUserResponseRelationships(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

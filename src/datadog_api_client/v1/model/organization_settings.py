@@ -23,17 +23,23 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.access_role import AccessRole
     from datadog_api_client.v1.model.organization_settings_saml import OrganizationSettingsSaml
-    from datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains import OrganizationSettingsSamlAutocreateUsersDomains
-    from datadog_api_client.v1.model.organization_settings_saml_idp_initiated_login import OrganizationSettingsSamlIdpInitiatedLogin
+    from datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains import (
+        OrganizationSettingsSamlAutocreateUsersDomains,
+    )
+    from datadog_api_client.v1.model.organization_settings_saml_idp_initiated_login import (
+        OrganizationSettingsSamlIdpInitiatedLogin,
+    )
     from datadog_api_client.v1.model.organization_settings_saml_strict_mode import OrganizationSettingsSamlStrictMode
-    globals()['AccessRole'] = AccessRole
-    globals()['OrganizationSettingsSaml'] = OrganizationSettingsSaml
-    globals()['OrganizationSettingsSamlAutocreateUsersDomains'] = OrganizationSettingsSamlAutocreateUsersDomains
-    globals()['OrganizationSettingsSamlIdpInitiatedLogin'] = OrganizationSettingsSamlIdpInitiatedLogin
-    globals()['OrganizationSettingsSamlStrictMode'] = OrganizationSettingsSamlStrictMode
+
+    globals()["AccessRole"] = AccessRole
+    globals()["OrganizationSettingsSaml"] = OrganizationSettingsSaml
+    globals()["OrganizationSettingsSamlAutocreateUsersDomains"] = OrganizationSettingsSamlAutocreateUsersDomains
+    globals()["OrganizationSettingsSamlIdpInitiatedLogin"] = OrganizationSettingsSamlIdpInitiatedLogin
+    globals()["OrganizationSettingsSamlStrictMode"] = OrganizationSettingsSamlStrictMode
 
 
 class OrganizationSettings(ModelNormal):
@@ -60,11 +66,9 @@ class OrganizationSettings(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -82,46 +86,47 @@ class OrganizationSettings(ModelNormal):
         """
         lazy_import()
         return {
-            'private_widget_share': (bool,),  # noqa: E501
-            'saml': (OrganizationSettingsSaml,),  # noqa: E501
-            'saml_autocreate_access_role': (AccessRole,),  # noqa: E501
-            'saml_autocreate_users_domains': (OrganizationSettingsSamlAutocreateUsersDomains,),  # noqa: E501
-            'saml_can_be_enabled': (bool,),  # noqa: E501
-            'saml_idp_endpoint': (str,),  # noqa: E501
-            'saml_idp_initiated_login': (OrganizationSettingsSamlIdpInitiatedLogin,),  # noqa: E501
-            'saml_idp_metadata_uploaded': (bool,),  # noqa: E501
-            'saml_login_url': (str,),  # noqa: E501
-            'saml_strict_mode': (OrganizationSettingsSamlStrictMode,),  # noqa: E501
+            "private_widget_share": (bool,),  # noqa: E501
+            "saml": (OrganizationSettingsSaml,),  # noqa: E501
+            "saml_autocreate_access_role": (AccessRole,),  # noqa: E501
+            "saml_autocreate_users_domains": (OrganizationSettingsSamlAutocreateUsersDomains,),  # noqa: E501
+            "saml_can_be_enabled": (bool,),  # noqa: E501
+            "saml_idp_endpoint": (str,),  # noqa: E501
+            "saml_idp_initiated_login": (OrganizationSettingsSamlIdpInitiatedLogin,),  # noqa: E501
+            "saml_idp_metadata_uploaded": (bool,),  # noqa: E501
+            "saml_login_url": (str,),  # noqa: E501
+            "saml_strict_mode": (OrganizationSettingsSamlStrictMode,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'private_widget_share': 'private_widget_share',  # noqa: E501
-        'saml': 'saml',  # noqa: E501
-        'saml_autocreate_access_role': 'saml_autocreate_access_role',  # noqa: E501
-        'saml_autocreate_users_domains': 'saml_autocreate_users_domains',  # noqa: E501
-        'saml_can_be_enabled': 'saml_can_be_enabled',  # noqa: E501
-        'saml_idp_endpoint': 'saml_idp_endpoint',  # noqa: E501
-        'saml_idp_initiated_login': 'saml_idp_initiated_login',  # noqa: E501
-        'saml_idp_metadata_uploaded': 'saml_idp_metadata_uploaded',  # noqa: E501
-        'saml_login_url': 'saml_login_url',  # noqa: E501
-        'saml_strict_mode': 'saml_strict_mode',  # noqa: E501
+        "private_widget_share": "private_widget_share",  # noqa: E501
+        "saml": "saml",  # noqa: E501
+        "saml_autocreate_access_role": "saml_autocreate_access_role",  # noqa: E501
+        "saml_autocreate_users_domains": "saml_autocreate_users_domains",  # noqa: E501
+        "saml_can_be_enabled": "saml_can_be_enabled",  # noqa: E501
+        "saml_idp_endpoint": "saml_idp_endpoint",  # noqa: E501
+        "saml_idp_initiated_login": "saml_idp_initiated_login",  # noqa: E501
+        "saml_idp_metadata_uploaded": "saml_idp_metadata_uploaded",  # noqa: E501
+        "saml_login_url": "saml_login_url",  # noqa: E501
+        "saml_strict_mode": "saml_strict_mode",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -170,15 +175,16 @@ class OrganizationSettings(ModelNormal):
             saml_strict_mode (OrganizationSettingsSamlStrictMode): [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -194,10 +200,12 @@ class OrganizationSettings(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

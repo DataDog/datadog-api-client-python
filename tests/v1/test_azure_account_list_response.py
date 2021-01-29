@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import azure_account
 except ImportError:
-    azure_account = sys.modules[
-        'datadog_api_client.v1.model.azure_account']
+    azure_account = sys.modules["datadog_api_client.v1.model.azure_account"]
 from datadog_api_client.v1.model.azure_account_list_response import AzureAccountListResponse
 
 
@@ -34,5 +34,5 @@ class TestAzureAccountListResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

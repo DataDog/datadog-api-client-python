@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import relationship_to_organization_data
 except ImportError:
-    relationship_to_organization_data = sys.modules[
-        'datadog_api_client.v2.model.relationship_to_organization_data']
+    relationship_to_organization_data = sys.modules["datadog_api_client.v2.model.relationship_to_organization_data"]
 from datadog_api_client.v2.model.relationship_to_organizations import RelationshipToOrganizations
 
 
@@ -34,5 +34,5 @@ class TestRelationshipToOrganizations(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

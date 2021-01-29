@@ -23,11 +23,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.metrics_query_response_unit import MetricsQueryResponseUnit
     from datadog_api_client.v1.model.point import Point
-    globals()['MetricsQueryResponseUnit'] = MetricsQueryResponseUnit
-    globals()['Point'] = Point
+
+    globals()["MetricsQueryResponseUnit"] = MetricsQueryResponseUnit
+    globals()["Point"] = Point
 
 
 class MetricsQueryResponseSeries(ModelNormal):
@@ -54,11 +56,9 @@ class MetricsQueryResponseSeries(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -76,48 +76,49 @@ class MetricsQueryResponseSeries(ModelNormal):
         """
         lazy_import()
         return {
-            'aggr': (str,),  # noqa: E501
-            'display_name': (str,),  # noqa: E501
-            'end': (int,),  # noqa: E501
-            'expression': (str,),  # noqa: E501
-            'interval': (int,),  # noqa: E501
-            'length': (int,),  # noqa: E501
-            'metric': (str,),  # noqa: E501
-            'pointlist': ([Point],),  # noqa: E501
-            'scope': (str,),  # noqa: E501
-            'start': (int,),  # noqa: E501
-            'unit': ([MetricsQueryResponseUnit],),  # noqa: E501
+            "aggr": (str,),  # noqa: E501
+            "display_name": (str,),  # noqa: E501
+            "end": (int,),  # noqa: E501
+            "expression": (str,),  # noqa: E501
+            "interval": (int,),  # noqa: E501
+            "length": (int,),  # noqa: E501
+            "metric": (str,),  # noqa: E501
+            "pointlist": ([Point],),  # noqa: E501
+            "scope": (str,),  # noqa: E501
+            "start": (int,),  # noqa: E501
+            "unit": ([MetricsQueryResponseUnit],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'aggr': 'aggr',  # noqa: E501
-        'display_name': 'display_name',  # noqa: E501
-        'end': 'end',  # noqa: E501
-        'expression': 'expression',  # noqa: E501
-        'interval': 'interval',  # noqa: E501
-        'length': 'length',  # noqa: E501
-        'metric': 'metric',  # noqa: E501
-        'pointlist': 'pointlist',  # noqa: E501
-        'scope': 'scope',  # noqa: E501
-        'start': 'start',  # noqa: E501
-        'unit': 'unit',  # noqa: E501
+        "aggr": "aggr",  # noqa: E501
+        "display_name": "display_name",  # noqa: E501
+        "end": "end",  # noqa: E501
+        "expression": "expression",  # noqa: E501
+        "interval": "interval",  # noqa: E501
+        "length": "length",  # noqa: E501
+        "metric": "metric",  # noqa: E501
+        "pointlist": "pointlist",  # noqa: E501
+        "scope": "scope",  # noqa: E501
+        "start": "start",  # noqa: E501
+        "unit": "unit",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -167,15 +168,16 @@ class MetricsQueryResponseSeries(ModelNormal):
             unit ([MetricsQueryResponseUnit]): Detailed information about the metric unit. First element describes the \"primary unit\" (for example, `bytes` in `bytes per second`), second describes the \"per unit\" (for example, `second` in `bytes per second`).. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -191,10 +193,12 @@ class MetricsQueryResponseSeries(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

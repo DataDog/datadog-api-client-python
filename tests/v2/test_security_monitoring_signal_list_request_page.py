@@ -10,7 +10,9 @@ import sys
 import unittest
 
 import datadog_api_client.v2
-from datadog_api_client.v2.model.security_monitoring_signal_list_request_page import SecurityMonitoringSignalListRequestPage
+from datadog_api_client.v2.model.security_monitoring_signal_list_request_page import (
+    SecurityMonitoringSignalListRequestPage,
+)
 
 
 class TestSecurityMonitoringSignalListRequestPage(unittest.TestCase):
@@ -29,5 +31,5 @@ class TestSecurityMonitoringSignalListRequestPage(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

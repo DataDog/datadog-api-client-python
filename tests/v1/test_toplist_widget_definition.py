@@ -10,26 +10,23 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import toplist_widget_definition_type
 except ImportError:
-    toplist_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.toplist_widget_definition_type']
+    toplist_widget_definition_type = sys.modules["datadog_api_client.v1.model.toplist_widget_definition_type"]
 try:
     from datadog_api_client.v1.model import toplist_widget_request
 except ImportError:
-    toplist_widget_request = sys.modules[
-        'datadog_api_client.v1.model.toplist_widget_request']
+    toplist_widget_request = sys.modules["datadog_api_client.v1.model.toplist_widget_request"]
 try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+    widget_text_align = sys.modules["datadog_api_client.v1.model.widget_text_align"]
 try:
     from datadog_api_client.v1.model import widget_time
 except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+    widget_time = sys.modules["datadog_api_client.v1.model.widget_time"]
 from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
 
 
@@ -49,5 +46,5 @@ class TestToplistWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

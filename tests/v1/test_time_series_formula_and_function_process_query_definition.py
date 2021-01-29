@@ -8,12 +8,17 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
-from datadog_api_client.v1.model.formula_and_function_process_query_data_source import FormulaAndFunctionProcessQueryDataSource
+from datadog_api_client.v1.model.formula_and_function_process_query_data_source import (
+    FormulaAndFunctionProcessQueryDataSource,
+)
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
-globals()['FormulaAndFunctionMetricAggregation'] = FormulaAndFunctionMetricAggregation
-globals()['FormulaAndFunctionProcessQueryDataSource'] = FormulaAndFunctionProcessQueryDataSource
-globals()['QuerySortOrder'] = QuerySortOrder
-from datadog_api_client.v1.model.time_series_formula_and_function_process_query_definition import TimeSeriesFormulaAndFunctionProcessQueryDefinition
+
+globals()["FormulaAndFunctionMetricAggregation"] = FormulaAndFunctionMetricAggregation
+globals()["FormulaAndFunctionProcessQueryDataSource"] = FormulaAndFunctionProcessQueryDataSource
+globals()["QuerySortOrder"] = QuerySortOrder
+from datadog_api_client.v1.model.time_series_formula_and_function_process_query_definition import (
+    TimeSeriesFormulaAndFunctionProcessQueryDefinition,
+)
 
 
 class TestTimeSeriesFormulaAndFunctionProcessQueryDefinition(unittest.TestCase):
@@ -32,5 +37,5 @@ class TestTimeSeriesFormulaAndFunctionProcessQueryDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

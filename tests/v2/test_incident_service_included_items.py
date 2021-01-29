@@ -13,10 +13,11 @@ from datadog_api_client.v2.model.user import User
 from datadog_api_client.v2.model.user_attributes import UserAttributes
 from datadog_api_client.v2.model.user_response_relationships import UserResponseRelationships
 from datadog_api_client.v2.model.users_type import UsersType
-globals()['User'] = User
-globals()['UserAttributes'] = UserAttributes
-globals()['UserResponseRelationships'] = UserResponseRelationships
-globals()['UsersType'] = UsersType
+
+globals()["User"] = User
+globals()["UserAttributes"] = UserAttributes
+globals()["UserResponseRelationships"] = UserResponseRelationships
+globals()["UsersType"] = UsersType
 from datadog_api_client.v2.model.incident_service_included_items import IncidentServiceIncludedItems
 
 
@@ -36,5 +37,5 @@ class TestIncidentServiceIncludedItems(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

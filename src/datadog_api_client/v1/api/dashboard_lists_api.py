@@ -14,7 +14,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types
+    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.dashboard_list import DashboardList
@@ -34,11 +34,7 @@ class DashboardListsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_dashboard_list(
-            self,
-            body,
-            **kwargs
-        ):
+        def __create_dashboard_list(self, body, **kwargs):
             """Create a dashboard list  # noqa: E501
 
             Create an empty dashboard list.  # noqa: E501
@@ -77,89 +73,54 @@ class DashboardListsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.create_dashboard_list = _Endpoint(
             settings={
-                'response_type': (DashboardList,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/dashboard/lists/manual',
-                'operation_id': 'create_dashboard_list',
-                'http_method': 'POST',
-                'servers': None,
+                "response_type": (DashboardList,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/dashboard/lists/manual",
+                "operation_id": "create_dashboard_list",
+                "http_method": "POST",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'body',
+                "all": [
+                    "body",
                 ],
-                'required': [
-                    'body',
+                "required": [
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (DashboardList,),
                 },
-                'allowed_values': {
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
                 },
-                'openapi_types': {
-                    'body':
-                        (DashboardList,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_dashboard_list
+            callable=__create_dashboard_list,
         )
 
-        def __delete_dashboard_list(
-            self,
-            list_id,
-            **kwargs
-        ):
+        def __delete_dashboard_list(self, list_id, **kwargs):
             """Delete a dashboard list  # noqa: E501
 
             Delete a dashboard list.  # noqa: E501
@@ -198,88 +159,59 @@ class DashboardListsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['list_id'] = \
-                list_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["list_id"] = list_id
             return self.call_with_http_info(**kwargs)
 
         self.delete_dashboard_list = _Endpoint(
             settings={
-                'response_type': (DashboardListDeleteResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/dashboard/lists/manual/{list_id}',
-                'operation_id': 'delete_dashboard_list',
-                'http_method': 'DELETE',
-                'servers': None,
+                "response_type": (DashboardListDeleteResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/dashboard/lists/manual/{list_id}",
+                "operation_id": "delete_dashboard_list",
+                "http_method": "DELETE",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'list_id',
+                "all": [
+                    "list_id",
                 ],
-                'required': [
-                    'list_id',
+                "required": [
+                    "list_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "list_id": (int,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "list_id": "list_id",
                 },
-                'openapi_types': {
-                    'list_id':
-                        (int,),
+                "location_map": {
+                    "list_id": "path",
                 },
-                'attribute_map': {
-                    'list_id': 'list_id',
-                },
-                'location_map': {
-                    'list_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_dashboard_list
+            callable=__delete_dashboard_list,
         )
 
-        def __get_dashboard_list(
-            self,
-            list_id,
-            **kwargs
-        ):
+        def __get_dashboard_list(self, list_id, **kwargs):
             """Get a dashboard list  # noqa: E501
 
             Fetch an existing dashboard list's definition.  # noqa: E501
@@ -318,87 +250,59 @@ class DashboardListsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['list_id'] = \
-                list_id
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["list_id"] = list_id
             return self.call_with_http_info(**kwargs)
 
         self.get_dashboard_list = _Endpoint(
             settings={
-                'response_type': (DashboardList,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/dashboard/lists/manual/{list_id}',
-                'operation_id': 'get_dashboard_list',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (DashboardList,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/dashboard/lists/manual/{list_id}",
+                "operation_id": "get_dashboard_list",
+                "http_method": "GET",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'list_id',
+                "all": [
+                    "list_id",
                 ],
-                'required': [
-                    'list_id',
+                "required": [
+                    "list_id",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "list_id": (int,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "list_id": "list_id",
                 },
-                'openapi_types': {
-                    'list_id':
-                        (int,),
+                "location_map": {
+                    "list_id": "path",
                 },
-                'attribute_map': {
-                    'list_id': 'list_id',
-                },
-                'location_map': {
-                    'list_id': 'path',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__get_dashboard_list
+            callable=__get_dashboard_list,
         )
 
-        def __list_dashboard_lists(
-            self,
-            **kwargs
-        ):
+        def __list_dashboard_lists(self, **kwargs):
             """Get all dashboard lists  # noqa: E501
 
             Fetch all of your existing dashboard list definitions.  # noqa: E501
@@ -435,80 +339,42 @@ class DashboardListsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
             return self.call_with_http_info(**kwargs)
 
         self.list_dashboard_lists = _Endpoint(
             settings={
-                'response_type': (DashboardListListResponse,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/dashboard/lists/manual',
-                'operation_id': 'list_dashboard_lists',
-                'http_method': 'GET',
-                'servers': None,
+                "response_type": (DashboardListListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/dashboard/lists/manual",
+                "operation_id": "list_dashboard_lists",
+                "http_method": "GET",
+                "servers": None,
             },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
             root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
+                "collection_format_map": {},
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
+                "accept": ["application/json"],
+                "content_type": [],
             },
             api_client=api_client,
-            callable=__list_dashboard_lists
+            callable=__list_dashboard_lists,
         )
 
-        def __update_dashboard_list(
-            self,
-            list_id,
-            body,
-            **kwargs
-        ):
+        def __update_dashboard_list(self, list_id, body, **kwargs):
             """Update a dashboard list  # noqa: E501
 
             Update the name of a dashboard list.  # noqa: E501
@@ -548,88 +414,56 @@ class DashboardListsApi(object):
                     If the method is called asynchronously, returns the request
                     thread.
             """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['list_id'] = \
-                list_id
-            kwargs['body'] = \
-                body
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["list_id"] = list_id
+            kwargs["body"] = body
             return self.call_with_http_info(**kwargs)
 
         self.update_dashboard_list = _Endpoint(
             settings={
-                'response_type': (DashboardList,),
-                'auth': [
-                    'apiKeyAuth',
-                    'appKeyAuth'
-                ],
-                'endpoint_path': '/api/v1/dashboard/lists/manual/{list_id}',
-                'operation_id': 'update_dashboard_list',
-                'http_method': 'PUT',
-                'servers': None,
+                "response_type": (DashboardList,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/dashboard/lists/manual/{list_id}",
+                "operation_id": "update_dashboard_list",
+                "http_method": "PUT",
+                "servers": None,
             },
             params_map={
-                'all': [
-                    'list_id',
-                    'body',
+                "all": [
+                    "list_id",
+                    "body",
                 ],
-                'required': [
-                    'list_id',
-                    'body',
+                "required": [
+                    "list_id",
+                    "body",
                 ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
+                "nullable": [],
+                "enum": [],
+                "validation": [],
             },
             root_map={
-                'validations': {
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "list_id": (int,),
+                    "body": (DashboardList,),
                 },
-                'allowed_values': {
+                "attribute_map": {
+                    "list_id": "list_id",
                 },
-                'openapi_types': {
-                    'list_id':
-                        (int,),
-                    'body':
-                        (DashboardList,),
+                "location_map": {
+                    "list_id": "path",
+                    "body": "body",
                 },
-                'attribute_map': {
-                    'list_id': 'list_id',
-                },
-                'location_map': {
-                    'list_id': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
+                "collection_format_map": {},
             },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_dashboard_list
+            callable=__update_dashboard_list,
         )

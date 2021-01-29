@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import dashboard_layout_type
 except ImportError:
-    dashboard_layout_type = sys.modules[
-        'datadog_api_client.v1.model.dashboard_layout_type']
+    dashboard_layout_type = sys.modules["datadog_api_client.v1.model.dashboard_layout_type"]
 from datadog_api_client.v1.model.dashboard_summary_dashboards import DashboardSummaryDashboards
 
 
@@ -34,5 +34,5 @@ class TestDashboardSummaryDashboards(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

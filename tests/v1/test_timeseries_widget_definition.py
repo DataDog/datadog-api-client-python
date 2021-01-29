@@ -10,41 +10,35 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import timeseries_widget_definition_type
 except ImportError:
-    timeseries_widget_definition_type = sys.modules[
-        'datadog_api_client.v1.model.timeseries_widget_definition_type']
+    timeseries_widget_definition_type = sys.modules["datadog_api_client.v1.model.timeseries_widget_definition_type"]
 try:
     from datadog_api_client.v1.model import timeseries_widget_request
 except ImportError:
-    timeseries_widget_request = sys.modules[
-        'datadog_api_client.v1.model.timeseries_widget_request']
+    timeseries_widget_request = sys.modules["datadog_api_client.v1.model.timeseries_widget_request"]
 try:
     from datadog_api_client.v1.model import widget_axis
 except ImportError:
-    widget_axis = sys.modules[
-        'datadog_api_client.v1.model.widget_axis']
+    widget_axis = sys.modules["datadog_api_client.v1.model.widget_axis"]
 try:
     from datadog_api_client.v1.model import widget_event
 except ImportError:
-    widget_event = sys.modules[
-        'datadog_api_client.v1.model.widget_event']
+    widget_event = sys.modules["datadog_api_client.v1.model.widget_event"]
 try:
     from datadog_api_client.v1.model import widget_marker
 except ImportError:
-    widget_marker = sys.modules[
-        'datadog_api_client.v1.model.widget_marker']
+    widget_marker = sys.modules["datadog_api_client.v1.model.widget_marker"]
 try:
     from datadog_api_client.v1.model import widget_text_align
 except ImportError:
-    widget_text_align = sys.modules[
-        'datadog_api_client.v1.model.widget_text_align']
+    widget_text_align = sys.modules["datadog_api_client.v1.model.widget_text_align"]
 try:
     from datadog_api_client.v1.model import widget_time
 except ImportError:
-    widget_time = sys.modules[
-        'datadog_api_client.v1.model.widget_time']
+    widget_time = sys.modules["datadog_api_client.v1.model.widget_time"]
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 
 
@@ -64,5 +58,5 @@ class TestTimeseriesWidgetDefinition(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

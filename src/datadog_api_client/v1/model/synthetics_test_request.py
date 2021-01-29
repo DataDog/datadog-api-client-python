@@ -23,15 +23,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_get_composed_info,
 )
 
+
 def lazy_import():
     from datadog_api_client.v1.model.http_method import HTTPMethod
     from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
-    globals()['HTTPMethod'] = HTTPMethod
-    globals()['SyntheticsBasicAuth'] = SyntheticsBasicAuth
-    globals()['SyntheticsTestHeaders'] = SyntheticsTestHeaders
-    globals()['SyntheticsTestRequestCertificate'] = SyntheticsTestRequestCertificate
+
+    globals()["HTTPMethod"] = HTTPMethod
+    globals()["SyntheticsBasicAuth"] = SyntheticsBasicAuth
+    globals()["SyntheticsTestHeaders"] = SyntheticsTestHeaders
+    globals()["SyntheticsTestRequestCertificate"] = SyntheticsTestRequestCertificate
 
 
 class SyntheticsTestRequest(ModelNormal):
@@ -58,11 +60,9 @@ class SyntheticsTestRequest(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -80,48 +80,49 @@ class SyntheticsTestRequest(ModelNormal):
         """
         lazy_import()
         return {
-            'basic_auth': (SyntheticsBasicAuth,),  # noqa: E501
-            'body': (str,),  # noqa: E501
-            'certificate': (SyntheticsTestRequestCertificate,),  # noqa: E501
-            'dns_server': (str,),  # noqa: E501
-            'headers': (SyntheticsTestHeaders,),  # noqa: E501
-            'host': (str,),  # noqa: E501
-            'method': (HTTPMethod,),  # noqa: E501
-            'port': (int,),  # noqa: E501
-            'query': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            'timeout': (float,),  # noqa: E501
-            'url': (str,),  # noqa: E501
+            "basic_auth": (SyntheticsBasicAuth,),  # noqa: E501
+            "body": (str,),  # noqa: E501
+            "certificate": (SyntheticsTestRequestCertificate,),  # noqa: E501
+            "dns_server": (str,),  # noqa: E501
+            "headers": (SyntheticsTestHeaders,),  # noqa: E501
+            "host": (str,),  # noqa: E501
+            "method": (HTTPMethod,),  # noqa: E501
+            "port": (int,),  # noqa: E501
+            "query": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            "timeout": (float,),  # noqa: E501
+            "url": (str,),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
         return None
 
-
     attribute_map = {
-        'basic_auth': 'basicAuth',  # noqa: E501
-        'body': 'body',  # noqa: E501
-        'certificate': 'certificate',  # noqa: E501
-        'dns_server': 'dnsServer',  # noqa: E501
-        'headers': 'headers',  # noqa: E501
-        'host': 'host',  # noqa: E501
-        'method': 'method',  # noqa: E501
-        'port': 'port',  # noqa: E501
-        'query': 'query',  # noqa: E501
-        'timeout': 'timeout',  # noqa: E501
-        'url': 'url',  # noqa: E501
+        "basic_auth": "basicAuth",  # noqa: E501
+        "body": "body",  # noqa: E501
+        "certificate": "certificate",  # noqa: E501
+        "dns_server": "dnsServer",  # noqa: E501
+        "headers": "headers",  # noqa: E501
+        "host": "host",  # noqa: E501
+        "method": "method",  # noqa: E501
+        "port": "port",  # noqa: E501
+        "query": "query",  # noqa: E501
+        "timeout": "timeout",  # noqa: E501
+        "url": "url",  # noqa: E501
     }
 
     _composed_schemas = {}
 
-    required_properties = set([
-        '_data_store',
-        '_check_type',
-        '_spec_property_naming',
-        '_path_to_item',
-        '_configuration',
-        '_visited_composed_classes',
-    ])
+    required_properties = set(
+        [
+            "_data_store",
+            "_check_type",
+            "_spec_property_naming",
+            "_path_to_item",
+            "_configuration",
+            "_visited_composed_classes",
+        ]
+    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -171,15 +172,16 @@ class SyntheticsTestRequest(ModelNormal):
             url (str): URL to perform the test with.. [optional]  # noqa: E501
         """
 
-        _check_type = kwargs.pop('_check_type', True)
-        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
-        _path_to_item = kwargs.pop('_path_to_item', ())
-        _configuration = kwargs.pop('_configuration', None)
-        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
 
         if args:
             raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
                     args,
                     self.__class__.__name__,
                 ),
@@ -195,10 +197,12 @@ class SyntheticsTestRequest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         for var_name, var_value in kwargs.items():
-            if var_name not in self.attribute_map and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self.additional_properties_type is None:
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)

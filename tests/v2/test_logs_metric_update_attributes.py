@@ -9,8 +9,9 @@ import unittest
 import datadog_api_client.v2
 from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
 from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
-globals()['LogsMetricFilter'] = LogsMetricFilter
-globals()['LogsMetricGroupBy'] = LogsMetricGroupBy
+
+globals()["LogsMetricFilter"] = LogsMetricFilter
+globals()["LogsMetricGroupBy"] = LogsMetricGroupBy
 from datadog_api_client.v2.model.logs_metric_update_attributes import LogsMetricUpdateAttributes
 
 
@@ -30,5 +31,5 @@ class TestLogsMetricUpdateAttributes(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

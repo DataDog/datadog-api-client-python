@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import logs_aggregate_bucket
 except ImportError:
-    logs_aggregate_bucket = sys.modules[
-        'datadog_api_client.v2.model.logs_aggregate_bucket']
+    logs_aggregate_bucket = sys.modules["datadog_api_client.v2.model.logs_aggregate_bucket"]
 from datadog_api_client.v2.model.logs_aggregate_response_data import LogsAggregateResponseData
 
 
@@ -34,5 +34,5 @@ class TestLogsAggregateResponseData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

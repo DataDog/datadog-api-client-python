@@ -10,11 +10,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import logs_exclusion_filter
 except ImportError:
-    logs_exclusion_filter = sys.modules[
-        'datadog_api_client.v1.model.logs_exclusion_filter']
+    logs_exclusion_filter = sys.modules["datadog_api_client.v1.model.logs_exclusion_filter"]
 from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
 
 
@@ -34,5 +34,5 @@ class TestLogsExclusion(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

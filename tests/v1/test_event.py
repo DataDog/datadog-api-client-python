@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+
 try:
     from datadog_api_client.v1.model import event_alert_type
 except ImportError:
-    event_alert_type = sys.modules[
-        'datadog_api_client.v1.model.event_alert_type']
+    event_alert_type = sys.modules["datadog_api_client.v1.model.event_alert_type"]
 try:
     from datadog_api_client.v1.model import event_priority
 except ImportError:
-    event_priority = sys.modules[
-        'datadog_api_client.v1.model.event_priority']
+    event_priority = sys.modules["datadog_api_client.v1.model.event_priority"]
 from datadog_api_client.v1.model.event import Event
 
 
@@ -39,5 +38,5 @@ class TestEvent(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -10,16 +10,15 @@ import sys
 import unittest
 
 import datadog_api_client.v2
+
 try:
     from datadog_api_client.v2.model import organization_attributes
 except ImportError:
-    organization_attributes = sys.modules[
-        'datadog_api_client.v2.model.organization_attributes']
+    organization_attributes = sys.modules["datadog_api_client.v2.model.organization_attributes"]
 try:
     from datadog_api_client.v2.model import organizations_type
 except ImportError:
-    organizations_type = sys.modules[
-        'datadog_api_client.v2.model.organizations_type']
+    organizations_type = sys.modules["datadog_api_client.v2.model.organizations_type"]
 from datadog_api_client.v2.model.organization import Organization
 
 
@@ -39,5 +38,5 @@ class TestOrganization(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

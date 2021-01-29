@@ -10,10 +10,17 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
-from datadog_api_client.v1.model.synthetics_private_location_creation_response_result_encryption import SyntheticsPrivateLocationCreationResponseResultEncryption
-globals()['SyntheticsPrivateLocation'] = SyntheticsPrivateLocation
-globals()['SyntheticsPrivateLocationCreationResponseResultEncryption'] = SyntheticsPrivateLocationCreationResponseResultEncryption
-from datadog_api_client.v1.model.synthetics_private_location_creation_response import SyntheticsPrivateLocationCreationResponse
+from datadog_api_client.v1.model.synthetics_private_location_creation_response_result_encryption import (
+    SyntheticsPrivateLocationCreationResponseResultEncryption,
+)
+
+globals()["SyntheticsPrivateLocation"] = SyntheticsPrivateLocation
+globals()[
+    "SyntheticsPrivateLocationCreationResponseResultEncryption"
+] = SyntheticsPrivateLocationCreationResponseResultEncryption
+from datadog_api_client.v1.model.synthetics_private_location_creation_response import (
+    SyntheticsPrivateLocationCreationResponse,
+)
 
 
 class TestSyntheticsPrivateLocationCreationResponse(unittest.TestCase):
@@ -32,5 +39,5 @@ class TestSyntheticsPrivateLocationCreationResponse(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

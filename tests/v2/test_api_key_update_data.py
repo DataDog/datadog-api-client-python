@@ -9,8 +9,9 @@ import unittest
 import datadog_api_client.v2
 from datadog_api_client.v2.model.api_key_update_attributes import APIKeyUpdateAttributes
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
-globals()['APIKeyUpdateAttributes'] = APIKeyUpdateAttributes
-globals()['APIKeysType'] = APIKeysType
+
+globals()["APIKeyUpdateAttributes"] = APIKeyUpdateAttributes
+globals()["APIKeysType"] = APIKeysType
 from datadog_api_client.v2.model.api_key_update_data import APIKeyUpdateData
 
 
@@ -30,5 +31,5 @@ class TestAPIKeyUpdateData(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
