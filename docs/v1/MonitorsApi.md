@@ -587,6 +587,9 @@ with ApiClient(configuration) as api_client:
         overall_state=MonitorOverallStates("Alert"),
         priority=1,
         query="query_example",
+        restricted_roles=[
+            "restricted_roles_example",
+        ],
         state=MonitorState(
             groups={
                 "key": MonitorStateGroup(

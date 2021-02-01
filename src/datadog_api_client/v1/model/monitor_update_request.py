@@ -102,6 +102,7 @@ class MonitorUpdateRequest(ModelNormal):
             "overall_state": (MonitorOverallStates,),  # noqa: E501
             "priority": (int,),  # noqa: E501
             "query": (str,),  # noqa: E501
+            "restricted_roles": ([str],),  # noqa: E501
             "state": (MonitorState,),  # noqa: E501
             "tags": ([str],),  # noqa: E501
             "type": (MonitorType,),  # noqa: E501
@@ -124,6 +125,7 @@ class MonitorUpdateRequest(ModelNormal):
         "overall_state": "overall_state",  # noqa: E501
         "priority": "priority",  # noqa: E501
         "query": "query",  # noqa: E501
+        "restricted_roles": "restricted_roles",  # noqa: E501
         "state": "state",  # noqa: E501
         "tags": "tags",  # noqa: E501
         "type": "type",  # noqa: E501
@@ -189,6 +191,7 @@ class MonitorUpdateRequest(ModelNormal):
             overall_state (MonitorOverallStates): [optional]  # noqa: E501
             priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]  # noqa: E501
             query (str): The monitor query.. [optional]  # noqa: E501
+            restricted_roles ([str]): A list of role identifiers that can be pulled from the Roles API. Cannot be used with `locked` option.. [optional]  # noqa: E501
             state (MonitorState): [optional]  # noqa: E501
             tags ([str]): Tags associated to your monitor.. [optional]  # noqa: E501
             type (MonitorType): [optional]  # noqa: E501

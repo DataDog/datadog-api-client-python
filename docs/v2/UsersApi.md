@@ -52,7 +52,7 @@ with ApiClient(configuration) as api_client:
     body = UserCreateRequest(
         data=UserCreateData(
             attributes=UserCreateAttributes(
-                email="joe.doe@example.com",
+                email="jane.doe@example.com",
                 name="name_example",
                 title="title_example",
             ),
