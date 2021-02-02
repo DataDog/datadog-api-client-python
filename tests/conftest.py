@@ -163,10 +163,10 @@ def now_ts(freezer):
         @staticmethod
         def __call__():
             with freezer:
-                return datetime.now().timestamp()
+                return int(datetime.now().timestamp())
 
         def __str__(self):
-            return self()
+            return str(self())
 
     return Lazy()
 
@@ -191,10 +191,10 @@ def hour_later_ts(freezer):
         @staticmethod
         def __call__():
             with freezer:
-                return (datetime.now() + timedelta(hours=1)).timestamp()
+                return int((datetime.now() + timedelta(hours=1)).timestamp())
 
         def __str__(self):
-            return self()
+            return str(self())
 
     return Lazy()
 
@@ -219,10 +219,10 @@ def hour_ago_ts(freezer):
         @staticmethod
         def __call__():
             with freezer:
-                return (datetime.now() + timedelta(hours=-1)).timestamp()
+                return int((datetime.now() + timedelta(hours=-1)).timestamp())
 
         def __str__(self):
-            return self()
+            return str(self())
 
     return Lazy()
 
@@ -262,7 +262,7 @@ def unique_lower(request, freezer):
 
 
 @pytest.fixture
-def context(vcr, unique, unique_lower):
+def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_later_iso, hour_ago_ts, hour_ago_iso):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
@@ -271,6 +271,12 @@ def context(vcr, unique, unique_lower):
         "undo_operations": [],
         "unique": unique,
         "unique_lower": unique_lower,
+        "now_ts": now_ts,
+        "now_iso": now_iso,
+        "hour_later_ts": hour_later_ts,
+        "hour_later_iso": hour_later_iso,
+        "hour_ago_ts": hour_ago_ts,
+        "hour_ago_iso": hour_ago_iso,
     }
 
     yield ctx
