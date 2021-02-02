@@ -61,7 +61,7 @@ from datadog_api_client.v2.model.dashboard_list_update_items_request import Dash
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v2.Configuration(
+configuration = Configuration(
     host="https://api.datadoghq.com"
 )
 

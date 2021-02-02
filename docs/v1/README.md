@@ -60,7 +60,7 @@ from datadog_api_client.v1.model.aws_tag_filter_delete_request import AWSTagFilt
 from datadog_api_client.v1.model.aws_tag_filter_list_response import AWSTagFilterListResponse
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v1.Configuration(
+configuration = Configuration(
     host="https://api.datadoghq.com"
 )
 

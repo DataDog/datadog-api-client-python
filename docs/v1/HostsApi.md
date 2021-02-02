@@ -30,7 +30,7 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v1.Configuration(
+configuration = Configuration(
     host="https://api.datadoghq.com"
 )
 
@@ -104,7 +104,7 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v1.Configuration(
+configuration = Configuration(
     host="https://api.datadoghq.com"
 )
 
@@ -192,7 +192,7 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v1.Configuration(
+configuration = Configuration(
     host="https://api.datadoghq.com"
 )
 
@@ -271,7 +271,7 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v1.Configuration(
+configuration = Configuration(
     host="https://api.datadoghq.com"
 )
 
