@@ -55,10 +55,8 @@ import json
 import logging
 import pathlib
 import re
-import sys
-import time
 import warnings
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import pytest
 from jinja2 import Template
@@ -152,6 +150,90 @@ def unique(request, freezer):
         def __call__():
             with freezer:
                 return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+
+        def __str__(self):
+            return self()
+
+    return Lazy()
+
+
+@pytest.fixture
+def now_ts(freezer):
+    class Lazy:
+        @staticmethod
+        def __call__():
+            with freezer:
+                return datetime.now().timestamp()
+
+        def __str__(self):
+            return self()
+
+    return Lazy()
+
+
+@pytest.fixture
+def now_iso(freezer):
+    class Lazy:
+        @staticmethod
+        def __call__():
+            with freezer:
+                return datetime.now().isoformat(timespec="seconds")
+
+        def __str__(self):
+            return self()
+
+    return Lazy()
+
+
+@pytest.fixture
+def hour_later_ts(freezer):
+    class Lazy:
+        @staticmethod
+        def __call__():
+            with freezer:
+                return (datetime.now() + timedelta(hours=1)).timestamp()
+
+        def __str__(self):
+            return self()
+
+    return Lazy()
+
+
+@pytest.fixture
+def hour_later_iso(freezer):
+    class Lazy:
+        @staticmethod
+        def __call__():
+            with freezer:
+                return (datetime.now() + timedelta(hours=1)).isoformat(timespec="seconds")
+
+        def __str__(self):
+            return self()
+
+    return Lazy()
+
+
+@pytest.fixture
+def hour_ago_ts(freezer):
+    class Lazy:
+        @staticmethod
+        def __call__():
+            with freezer:
+                return (datetime.now() + timedelta(hours=-1)).timestamp()
+
+        def __str__(self):
+            return self()
+
+    return Lazy()
+
+
+@pytest.fixture
+def hour_ago_iso(freezer):
+    class Lazy:
+        @staticmethod
+        def __call__():
+            with freezer:
+                return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
 
         def __str__(self):
             return self()
