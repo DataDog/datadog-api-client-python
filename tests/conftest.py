@@ -123,8 +123,8 @@ def pytest_bdd_apply_tag(tag, function):
 
 
 def snake_case(value):
-    s1 = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", value)
-    s1 = re.sub("([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
+    s1 = re.sub(r"(.)([A-Z][a-z]+)", r"\1_\2", value)
+    s1 = re.sub(r"([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
     s1 = re.sub(r"\W", "_", s1)
     s1 = re.sub(r"_+$", "", s1)
     return re.sub(r"__+", "_", s1)
@@ -134,7 +134,7 @@ def glom(value, path):
     from glom import glom as g
 
     # replace foo[index].bar by foo.index.bar
-    return g(value, re.sub("\[([0-9]*)\]", ".\\1", path))
+    return g(value, re.sub(r"\[([0-9]*)\]", r".\1", path))
 
 
 @pytest.fixture
