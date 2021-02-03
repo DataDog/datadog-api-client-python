@@ -79,7 +79,10 @@ class SLOHistoryMetricsSeriesMetadata(ModelNormal):
             "metric": (str,),  # noqa: E501
             "query_index": (int,),  # noqa: E501
             "scope": (str,),  # noqa: E501
-            "unit": (SLOHistoryMetricsSeriesMetadataUnit,),  # noqa: E501
+            "unit": (
+                [SLOHistoryMetricsSeriesMetadataUnit],
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
@@ -148,7 +151,7 @@ class SLOHistoryMetricsSeriesMetadata(ModelNormal):
             metric (str): Query metric used.. [optional]  # noqa: E501
             query_index (int): Query index from original combined query.. [optional]  # noqa: E501
             scope (str): Query scope.. [optional]  # noqa: E501
-            unit (SLOHistoryMetricsSeriesMetadataUnit): [optional]  # noqa: E501
+            unit ([SLOHistoryMetricsSeriesMetadataUnit], none_type): An array of metric units that contains up to two unit objects. For example, bytes represents one unit object and bytes per second represents two unit objects. If a metric query only has one unit object, the second array element is null.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
