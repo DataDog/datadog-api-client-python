@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **metric** | **str** | Query metric used. | [optional] 
 **query_index** | **int** | Query index from original combined query. | [optional] 
 **scope** | **str** | Query scope. | [optional] 
-**unit** | **str** | Query units (if available). | [optional] 
+**unit** | [**SLOHistoryMetricsSeriesMetadataUnit**](SLOHistoryMetricsSeriesMetadataUnit.md) |  | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
