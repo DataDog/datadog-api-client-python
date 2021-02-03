@@ -406,11 +406,11 @@ from datadog_api_client.v1.model.time_series_formula_and_function_event_query_de
 from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import (
     TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy,
 )
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by_sort import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort,
-)
 from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import (
     TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,
+)
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_sort import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionSort,
 )
 from datadog_api_client.v1.model.time_series_formula_and_function_metric_query_definition import (
     TimeSeriesFormulaAndFunctionMetricQueryDefinition,
