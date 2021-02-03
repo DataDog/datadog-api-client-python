@@ -14,13 +14,13 @@ from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 globals()["FormulaAndFunctionEventAggregation"] = FormulaAndFunctionEventAggregation
 globals()["FormulaAndFunctionEventsSortType"] = FormulaAndFunctionEventsSortType
 globals()["QuerySortOrder"] = QuerySortOrder
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by_sort import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort,
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_sort import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionSort,
 )
 
 
-class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort(unittest.TestCase):
-    """TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort unit test stubs"""
+class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionSort(unittest.TestCase):
+    """TimeSeriesFormulaAndFunctionEventQueryDefinitionSort unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort(unittest.T
     def tearDown(self):
         pass
 
-    def testTimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort(self):
-        """Test TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort"""
+    def testTimeSeriesFormulaAndFunctionEventQueryDefinitionSort(self):
+        """Test TimeSeriesFormulaAndFunctionEventQueryDefinitionSort"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort()  # noqa: E501
+        # model = TimeSeriesFormulaAndFunctionEventQueryDefinitionSort()  # noqa: E501
         pass
 
 
