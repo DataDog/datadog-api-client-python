@@ -145,100 +145,37 @@ def unique(request, freezer):
     else:
         prefix = request.node.name
 
-    class Lazy:
-        @staticmethod
-        def __call__():
-            with freezer:
-                return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
-
-        def __str__(self):
-            return self()
-
-    return Lazy()
+    return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
 
 
 @pytest.fixture
 def now_ts(freezer):
-    class Lazy:
-        @staticmethod
-        def __call__():
-            with freezer:
-                return int(datetime.now().timestamp())
-
-        def __str__(self):
-            return str(self())
-
-    return Lazy()
+    return int(datetime.now().timestamp())
 
 
 @pytest.fixture
 def now_iso(freezer):
-    class Lazy:
-        @staticmethod
-        def __call__():
-            with freezer:
-                return datetime.now().isoformat(timespec="seconds")
-
-        def __str__(self):
-            return self()
-
-    return Lazy()
+    return datetime.now().isoformat(timespec="seconds")
 
 
 @pytest.fixture
 def hour_later_ts(freezer):
-    class Lazy:
-        @staticmethod
-        def __call__():
-            with freezer:
-                return int((datetime.now() + timedelta(hours=1)).timestamp())
-
-        def __str__(self):
-            return str(self())
-
-    return Lazy()
+    return int((datetime.now() + timedelta(hours=1)).timestamp())
 
 
 @pytest.fixture
 def hour_later_iso(freezer):
-    class Lazy:
-        @staticmethod
-        def __call__():
-            with freezer:
-                return (datetime.now() + timedelta(hours=1)).isoformat(timespec="seconds")
-
-        def __str__(self):
-            return self()
-
-    return Lazy()
+    return (datetime.now() + timedelta(hours=1)).isoformat(timespec="seconds")
 
 
 @pytest.fixture
 def hour_ago_ts(freezer):
-    class Lazy:
-        @staticmethod
-        def __call__():
-            with freezer:
-                return int((datetime.now() + timedelta(hours=-1)).timestamp())
-
-        def __str__(self):
-            return str(self())
-
-    return Lazy()
+    return int((datetime.now() + timedelta(hours=-1)).timestamp())
 
 
 @pytest.fixture
 def hour_ago_iso(freezer):
-    class Lazy:
-        @staticmethod
-        def __call__():
-            with freezer:
-                return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
-
-        def __str__(self):
-            return self()
-
-    return Lazy()
+    return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
 
 
 @pytest.fixture
@@ -249,16 +186,7 @@ def unique_lower(request, freezer):
     else:
         prefix = request.node.name
 
-    class Lazy:
-        @staticmethod
-        def __call__():
-            with freezer:
-                return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}".lower()
-
-        def __str__(self):
-            return self()
-
-    return Lazy()
+    return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}".lower()
 
 
 @pytest.fixture
