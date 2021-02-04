@@ -666,7 +666,7 @@
       "parameters": [
         {
           "name": "slo_id",
-          "source": "data.id"
+          "source": "data[0].id"
         }
       ],
       "type": "unsafe"
