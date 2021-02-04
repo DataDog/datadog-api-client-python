@@ -163,32 +163,38 @@ def unique_lower(request, freezer):
 
 @pytest.fixture
 def now_ts(freezer):
-    return int(datetime.now().timestamp())
+    with freezer:
+        return int(datetime.now().timestamp())
 
 
 @pytest.fixture
 def now_iso(freezer):
-    return datetime.now().isoformat(timespec="seconds")
+    with freezer:
+        return datetime.now().isoformat(timespec="seconds")
 
 
 @pytest.fixture
 def hour_later_ts(freezer):
-    return int((datetime.now() + timedelta(hours=1)).timestamp())
+    with freezer:
+        return int((datetime.now() + timedelta(hours=1)).timestamp())
 
 
 @pytest.fixture
 def hour_later_iso(freezer):
-    return (datetime.now() + timedelta(hours=1)).isoformat(timespec="seconds")
+    with freezer:
+        return (datetime.now() + timedelta(hours=1)).isoformat(timespec="seconds")
 
 
 @pytest.fixture
 def hour_ago_ts(freezer):
-    return int((datetime.now() + timedelta(hours=-1)).timestamp())
+    with freezer:
+        return int((datetime.now() + timedelta(hours=-1)).timestamp())
 
 
 @pytest.fixture
 def hour_ago_iso(freezer):
-    return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
+    with freezer:
+        return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
 
 @pytest.fixture
 def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_later_iso, hour_ago_ts, hour_ago_iso):
