@@ -55,10 +55,8 @@ import json
 import logging
 import pathlib
 import re
-import sys
-import time
 import warnings
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import pytest
 from jinja2 import Template
@@ -125,8 +123,8 @@ def pytest_bdd_apply_tag(tag, function):
 
 
 def snake_case(value):
-    s1 = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", value)
-    s1 = re.sub("([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
+    s1 = re.sub(r"(.)([A-Z][a-z]+)", r"\1_\2", value)
+    s1 = re.sub(r"([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
     s1 = re.sub(r"\W", "_", s1)
     s1 = re.sub(r"_+$", "", s1)
     return re.sub(r"__+", "_", s1)
@@ -136,7 +134,7 @@ def glom(value, path):
     from glom import glom as g
 
     # replace foo[index].bar by foo.index.bar
-    return g(value, re.sub("\[([0-9]*)\]", ".\\1", path))
+    return g(value, re.sub(r"\[([0-9]*)\]", r".\1", path))
 
 
 @pytest.fixture
@@ -147,16 +145,8 @@ def unique(request, freezer):
     else:
         prefix = request.node.name
 
-    class Lazy:
-        @staticmethod
-        def __call__():
-            with freezer:
-                return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
-
-        def __str__(self):
-            return self()
-
-    return Lazy()
+    with freezer:
+        return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
 
 
 @pytest.fixture
@@ -167,20 +157,47 @@ def unique_lower(request, freezer):
     else:
         prefix = request.node.name
 
-    class Lazy:
-        @staticmethod
-        def __call__():
-            with freezer:
-                return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}".lower()
-
-        def __str__(self):
-            return self()
-
-    return Lazy()
+    with freezer:
+        return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}".lower()
 
 
 @pytest.fixture
-def context(vcr, unique, unique_lower):
+def now_ts(freezer):
+    with freezer:
+        return int(datetime.now().timestamp())
+
+
+@pytest.fixture
+def now_iso(freezer):
+    with freezer:
+        return datetime.now().isoformat(timespec="seconds")
+
+
+@pytest.fixture
+def hour_later_ts(freezer):
+    with freezer:
+        return int((datetime.now() + timedelta(hours=1)).timestamp())
+
+
+@pytest.fixture
+def hour_later_iso(freezer):
+    with freezer:
+        return (datetime.now() + timedelta(hours=1)).isoformat(timespec="seconds")
+
+
+@pytest.fixture
+def hour_ago_ts(freezer):
+    with freezer:
+        return int((datetime.now() + timedelta(hours=-1)).timestamp())
+
+
+@pytest.fixture
+def hour_ago_iso(freezer):
+    with freezer:
+        return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
+
+@pytest.fixture
+def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_later_iso, hour_ago_ts, hour_ago_iso):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
@@ -189,6 +206,12 @@ def context(vcr, unique, unique_lower):
         "undo_operations": [],
         "unique": unique,
         "unique_lower": unique_lower,
+        "now_ts": now_ts,
+        "now_iso": now_iso,
+        "hour_later_ts": hour_later_ts,
+        "hour_later_iso": hour_later_iso,
+        "hour_ago_ts": hour_ago_ts,
+        "hour_ago_iso": hour_ago_iso,
     }
 
     yield ctx

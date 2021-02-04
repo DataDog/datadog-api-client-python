@@ -58,11 +58,12 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
   Scenario: Get an SLO correction for an SLO returns "OK" response
     Given operation "GetSLOCorrection" enabled
+    And there is a valid "slo" in the system
+    And there is a valid "correction" for "slo"
     And new "GetSLOCorrection" request
-    And request contains "slo_correction_id" parameter from "<PATH>"
+    And request contains "slo_correction_id" parameter from "correction.data.id"
     When the request is sent
     Then the response status is 200 OK
 
