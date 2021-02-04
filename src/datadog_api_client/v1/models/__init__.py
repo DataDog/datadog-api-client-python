@@ -83,6 +83,7 @@ from datadog_api_client.v1.model.event_timeline_widget_definition import EventTi
 from datadog_api_client.v1.model.event_timeline_widget_definition_type import EventTimelineWidgetDefinitionType
 from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
 from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
+from datadog_api_client.v1.model.formula_and_function_events_sort_type import FormulaAndFunctionEventsSortType
 from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
 from datadog_api_client.v1.model.formula_and_function_metric_data_source import FormulaAndFunctionMetricDataSource
 from datadog_api_client.v1.model.formula_and_function_process_query_data_source import (
@@ -254,7 +255,6 @@ from datadog_api_client.v1.model.slo_error_timeframe import SLOErrorTimeframe
 from datadog_api_client.v1.model.slo_history_metrics import SLOHistoryMetrics
 from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
 from datadog_api_client.v1.model.slo_history_metrics_series_metadata import SLOHistoryMetricsSeriesMetadata
-from datadog_api_client.v1.model.slo_history_metrics_series_metadata_unit import SLOHistoryMetricsSeriesMetadataUnit
 from datadog_api_client.v1.model.slo_history_response import SLOHistoryResponse
 from datadog_api_client.v1.model.slo_history_response_data import SLOHistoryResponseData
 from datadog_api_client.v1.model.slo_history_response_error import SLOHistoryResponseError
@@ -406,11 +406,11 @@ from datadog_api_client.v1.model.time_series_formula_and_function_event_query_de
 from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import (
     TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy,
 )
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by_sort import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort,
+)
 from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import (
     TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_sort import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinitionSort,
 )
 from datadog_api_client.v1.model.time_series_formula_and_function_metric_query_definition import (
     TimeSeriesFormulaAndFunctionMetricQueryDefinition,

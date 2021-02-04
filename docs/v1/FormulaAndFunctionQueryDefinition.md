@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **metric** | **str** | Process metric name. | defaults to nulltype.Null
 **aggregator** | [**FormulaAndFunctionMetricAggregation**](FormulaAndFunctionMetricAggregation.md) |  | [optional] 
 **name** | **str** | Name of query for use in formulas. | [optional] 
-**group_by** | [**[TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy]**](TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy.md) | Group by options. | [optional] 
+**group_by** | [**TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy**](TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy.md) |  | [optional] 
 **indexes** | **[str]** | An array of index names to query in the stream. Omit or use &#x60;[]&#x60; to query all indexes at once. | [optional] 
 **search** | [**TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch**](TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch.md) |  | [optional] 
 **is_normalized_cpu** | **bool** | Whether to normalize the CPU percentages. | [optional] 

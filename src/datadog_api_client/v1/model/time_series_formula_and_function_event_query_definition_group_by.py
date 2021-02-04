@@ -25,13 +25,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_sort import (
-        TimeSeriesFormulaAndFunctionEventQueryDefinitionSort,
+    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by_sort import (
+        TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort,
     )
 
     globals()[
-        "TimeSeriesFormulaAndFunctionEventQueryDefinitionSort"
-    ] = TimeSeriesFormulaAndFunctionEventQueryDefinitionSort
+        "TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort"
+    ] = TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort
 
 
 class TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy(ModelNormal):
@@ -80,7 +80,7 @@ class TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy(ModelNormal):
         return {
             "facet": (str,),  # noqa: E501
             "limit": (int,),  # noqa: E501
-            "sort": (TimeSeriesFormulaAndFunctionEventQueryDefinitionSort,),  # noqa: E501
+            "sort": (TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort,),  # noqa: E501
         }
 
     @cached_property
@@ -145,7 +145,7 @@ class TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             limit (int): Number of groups to return.. [optional]  # noqa: E501
-            sort (TimeSeriesFormulaAndFunctionEventQueryDefinitionSort): [optional]  # noqa: E501
+            sort (TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
