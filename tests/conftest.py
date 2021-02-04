@@ -145,7 +145,20 @@ def unique(request, freezer):
     else:
         prefix = request.node.name
 
-    return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+    with freezer:
+        return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+
+
+@pytest.fixture
+def unique_lower(request, freezer):
+    test_class = request.cls
+    if test_class:
+        prefix = "{}.{}".format(test_class.__name__, request.node.name)
+    else:
+        prefix = request.node.name
+
+    with freezer:
+        return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}".lower()
 
 
 @pytest.fixture
@@ -176,18 +189,6 @@ def hour_ago_ts(freezer):
 @pytest.fixture
 def hour_ago_iso(freezer):
     return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
-
-
-@pytest.fixture
-def unique_lower(request, freezer):
-    test_class = request.cls
-    if test_class:
-        prefix = "{}.{}".format(test_class.__name__, request.node.name)
-    else:
-        prefix = request.node.name
-
-    return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}".lower()
-
 
 @pytest.fixture
 def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_later_iso, hour_ago_ts, hour_ago_iso):
