@@ -7,13 +7,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by_sort import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort,
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_sort import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionSort,
 )
 
-globals()[
-    "TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort"
-] = TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort
+globals()["TimeSeriesFormulaAndFunctionEventQueryDefinitionSort"] = TimeSeriesFormulaAndFunctionEventQueryDefinitionSort
 from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import (
     TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy,
 )
