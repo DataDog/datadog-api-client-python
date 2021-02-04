@@ -255,6 +255,7 @@ from datadog_api_client.v1.model.slo_error_timeframe import SLOErrorTimeframe
 from datadog_api_client.v1.model.slo_history_metrics import SLOHistoryMetrics
 from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
 from datadog_api_client.v1.model.slo_history_metrics_series_metadata import SLOHistoryMetricsSeriesMetadata
+from datadog_api_client.v1.model.slo_history_metrics_series_metadata_unit import SLOHistoryMetricsSeriesMetadataUnit
 from datadog_api_client.v1.model.slo_history_response import SLOHistoryResponse
 from datadog_api_client.v1.model.slo_history_response_data import SLOHistoryResponseData
 from datadog_api_client.v1.model.slo_history_response_error import SLOHistoryResponseError
@@ -406,11 +407,11 @@ from datadog_api_client.v1.model.time_series_formula_and_function_event_query_de
 from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import (
     TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy,
 )
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by_sort import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBySort,
-)
 from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import (
     TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,
+)
+from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_sort import (
+    TimeSeriesFormulaAndFunctionEventQueryDefinitionSort,
 )
 from datadog_api_client.v1.model.time_series_formula_and_function_metric_query_definition import (
     TimeSeriesFormulaAndFunctionMetricQueryDefinition,
