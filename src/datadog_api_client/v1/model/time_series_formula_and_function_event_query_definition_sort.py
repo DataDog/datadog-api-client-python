@@ -26,11 +26,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
-    from datadog_api_client.v1.model.formula_and_function_events_sort_type import FormulaAndFunctionEventsSortType
     from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 
     globals()["FormulaAndFunctionEventAggregation"] = FormulaAndFunctionEventAggregation
-    globals()["FormulaAndFunctionEventsSortType"] = FormulaAndFunctionEventsSortType
     globals()["QuerySortOrder"] = QuerySortOrder
 
 
@@ -81,7 +79,6 @@ class TimeSeriesFormulaAndFunctionEventQueryDefinitionSort(ModelNormal):
             "aggregation": (FormulaAndFunctionEventAggregation,),  # noqa: E501
             "metric": (str,),  # noqa: E501
             "order": (QuerySortOrder,),  # noqa: E501
-            "type": (FormulaAndFunctionEventsSortType,),  # noqa: E501
         }
 
     @cached_property
@@ -92,7 +89,6 @@ class TimeSeriesFormulaAndFunctionEventQueryDefinitionSort(ModelNormal):
         "aggregation": "aggregation",  # noqa: E501
         "metric": "metric",  # noqa: E501
         "order": "order",  # noqa: E501
-        "type": "type",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -148,7 +144,6 @@ class TimeSeriesFormulaAndFunctionEventQueryDefinitionSort(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             metric (str): Metric used for sorting group by results.. [optional]  # noqa: E501
             order (QuerySortOrder): [optional]  # noqa: E501
-            type (FormulaAndFunctionEventsSortType): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

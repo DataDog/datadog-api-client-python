@@ -8,11 +8,9 @@ import unittest
 
 import datadog_api_client.v1
 from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
-from datadog_api_client.v1.model.formula_and_function_events_sort_type import FormulaAndFunctionEventsSortType
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 
 globals()["FormulaAndFunctionEventAggregation"] = FormulaAndFunctionEventAggregation
-globals()["FormulaAndFunctionEventsSortType"] = FormulaAndFunctionEventsSortType
 globals()["QuerySortOrder"] = QuerySortOrder
 from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_sort import (
     TimeSeriesFormulaAndFunctionEventQueryDefinitionSort,

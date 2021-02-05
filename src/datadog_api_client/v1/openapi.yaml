@@ -1589,15 +1589,6 @@ components:
       - RUM
       - SECURITY_SIGNALS
       - PROFILES
-    FormulaAndFunctionEventsSortType:
-      description: Method for sorting event platform results.
-      enum:
-      - alphabetical
-      - measure
-      type: string
-      x-enum-varnames:
-      - ALPHABETICAL
-      - MEASURE
     FormulaAndFunctionMetricAggregation:
       description: The aggregation methods available for metrics queries.
       enum:
@@ -7666,8 +7657,6 @@ components:
                     type: string
                   order:
                     $ref: '#/components/schemas/QuerySortOrder'
-                  type:
-                    $ref: '#/components/schemas/FormulaAndFunctionEventsSortType'
                 required:
                 - aggregation
                 type: object
