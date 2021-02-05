@@ -74,7 +74,7 @@ class AWSTagFilterDeleteRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "aws_account_identifier": (str,),  # noqa: E501
+            "account_id": (str,),  # noqa: E501
             "namespace": (AWSNamespace,),  # noqa: E501
         }
 
@@ -83,7 +83,7 @@ class AWSTagFilterDeleteRequest(ModelNormal):
         return None
 
     attribute_map = {
-        "aws_account_identifier": "aws_account_identifier",  # noqa: E501
+        "account_id": "account_id",  # noqa: E501
         "namespace": "namespace",  # noqa: E501
     }
 
@@ -135,7 +135,7 @@ class AWSTagFilterDeleteRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aws_account_identifier (str): The unique identifier of your AWS account.. [optional]  # noqa: E501
+            account_id (str): The unique identifier of your AWS account.. [optional]  # noqa: E501
             namespace (AWSNamespace): [optional]  # noqa: E501
         """
 

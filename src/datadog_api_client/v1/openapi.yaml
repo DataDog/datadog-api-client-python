@@ -260,7 +260,7 @@ components:
     AWSTagFilterDeleteRequest:
       description: The objects used to delete an AWS tag filter entry.
       properties:
-        aws_account_identifier:
+        account_id:
           description: The unique identifier of your AWS account.
           example: FAKEAC0FAKEAC2FAKEAC
           type: string
