@@ -381,7 +381,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
     body = AWSTagFilterDeleteRequest(
-        aws_account_identifier="FAKEAC0FAKEAC2FAKEAC",
+        account_id="FAKEAC0FAKEAC2FAKEAC",
         namespace=AWSNamespace("elb"),
     )  # AWSTagFilterDeleteRequest | Delete a tag filtering entry for a given AWS account and `dd-aws` namespace.
 
