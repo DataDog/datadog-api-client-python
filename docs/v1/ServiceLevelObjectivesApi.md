@@ -533,7 +533,7 @@ with ApiClient(configuration) as api_client:
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
     ids = "id1, id2, id3"  # str | A comma separated list of the IDs of the service level objectives objects. (optional)
     query = "monitor"  # str | The query string to filter results based on SLO names. (optional)
-    tags_query = "env:prod"  # str | The query string to filter results based on SLO tags. (optional)
+    tags_query = "env:prod"  # str | The query string to filter results based on a single SLO tag. (optional)
     metrics_query = "aws.elb.request_count"  # str | The query string to filter results based on SLO numerator and denominator. (optional)
 
     # example passing only required values which don't have defaults set
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ids** | **str**| A comma separated list of the IDs of the service level objectives objects. | [optional]
  **query** | **str**| The query string to filter results based on SLO names. | [optional]
- **tags_query** | **str**| The query string to filter results based on SLO tags. | [optional]
+ **tags_query** | **str**| The query string to filter results based on a single SLO tag. | [optional]
  **metrics_query** | **str**| The query string to filter results based on SLO numerator and denominator. | [optional]
 
 ### Return type
