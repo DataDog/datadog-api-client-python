@@ -35,8 +35,7 @@ Feature: Logs
 
   @generated @skip
   Scenario: Get a list of logs returns "Bad Request" response
-    Given operation "ListLogsGet" enabled
-    And new "ListLogsGet" request
+    Given new "ListLogsGet" request
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -60,16 +59,14 @@ Feature: Logs
 
   @generated @skip
   Scenario: Search logs returns "Bad Request" response
-    Given operation "ListLogs" enabled
-    And new "ListLogs" request
+    Given new "ListLogs" request
     And body {}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Search logs returns "OK" response
-    Given operation "ListLogs" enabled
-    And new "ListLogs" request
+    Given new "ListLogs" request
     And body {}
     When the request is sent
     Then the response status is 200 OK

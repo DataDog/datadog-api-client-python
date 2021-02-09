@@ -152,7 +152,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["list_logs"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -243,7 +242,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["list_logs_get"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:

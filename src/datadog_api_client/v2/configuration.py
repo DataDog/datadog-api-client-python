@@ -237,11 +237,6 @@ class Configuration(object):
             "get_incident": False,
             "list_incidents": False,
             "update_incident": False,
-            "list_logs": False,
-            "list_logs_get": False,
-            "add_read_role_to_archive": False,
-            "list_archive_read_roles": False,
-            "remove_role_from_archive": False,
             "list_security_monitoring_signals": False,
             "search_security_monitoring_signals": False,
         }

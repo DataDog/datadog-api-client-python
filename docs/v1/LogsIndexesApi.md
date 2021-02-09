@@ -41,7 +41,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["create_logs_index"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -133,7 +132,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["get_logs_index"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -207,7 +205,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["get_logs_index_order"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -276,7 +273,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["list_log_indexes"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -345,7 +341,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["update_logs_index"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -439,7 +434,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["update_logs_index_order"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:

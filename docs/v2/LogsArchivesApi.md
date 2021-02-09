@@ -45,7 +45,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["add_read_role_to_archive"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -425,7 +424,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["list_archive_read_roles"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -568,7 +566,6 @@ configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-configuration.unstable_operations["remove_role_from_archive"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
