@@ -1575,7 +1575,7 @@ components:
       description: Data source for event platform-based queries.
       enum:
       - logs
-      - analyzed_spans
+      - spans
       - network
       - rum
       - security_signals
@@ -1584,7 +1584,7 @@ components:
       type: string
       x-enum-varnames:
       - LOGS
-      - ANALYZED_SPANS
+      - SPANS
       - NETWORK
       - RUM
       - SECURITY_SIGNALS
