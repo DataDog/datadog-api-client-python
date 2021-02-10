@@ -162,11 +162,6 @@ def unique_lower(request, freezer):
 
 
 @pytest.fixture
-def unique_alnum(request, freezer):
-    return re.sub(r"[^A-Za-z0-9]+", "", unique(request, freezer))
-
-
-@pytest.fixture
 def now_ts(freezer):
     with freezer:
         return int(datetime.now().timestamp())
@@ -202,7 +197,7 @@ def hour_ago_iso(freezer):
         return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
 
 @pytest.fixture
-def context(vcr, unique, unique_lower, unique_alnum, now_ts, now_iso, hour_later_ts, hour_later_iso, hour_ago_ts, hour_ago_iso):
+def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_later_iso, hour_ago_ts, hour_ago_iso):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
@@ -211,7 +206,7 @@ def context(vcr, unique, unique_lower, unique_alnum, now_ts, now_iso, hour_later
         "undo_operations": [],
         "unique": unique,
         "unique_lower": unique_lower,
-        "unique_alnum": unique_alnum,
+        "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique),
         "now_ts": now_ts,
         "now_iso": now_iso,
         "hour_later_ts": hour_later_ts,
