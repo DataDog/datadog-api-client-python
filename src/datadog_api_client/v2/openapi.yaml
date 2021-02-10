@@ -4918,7 +4918,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Not Found
-      summary: Get a Dashboard List
+      summary: Get items of a Dashboard List
       tags:
       - Dashboard Lists
       x-undo:
