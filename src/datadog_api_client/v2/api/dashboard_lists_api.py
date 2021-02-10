@@ -227,7 +227,7 @@ class DashboardListsApi(object):
         )
 
         def __get_dashboard_list_items(self, dashboard_list_id, **kwargs):
-            """Get a Dashboard List  # noqa: E501
+            """Get items of a Dashboard List  # noqa: E501
 
             Fetch the dashboard list’s dashboard definitions.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
