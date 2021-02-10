@@ -202,7 +202,7 @@ def hour_ago_iso(freezer):
         return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
 
 @pytest.fixture
-def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_later_iso, hour_ago_ts, hour_ago_iso):
+def context(vcr, unique, unique_lower, unique_alnum, now_ts, now_iso, hour_later_ts, hour_later_iso, hour_ago_ts, hour_ago_iso):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
