@@ -1,7 +1,7 @@
 site_name: Datadog API Client for Python
 site_description: The home of Datadog API Python Client documentation
 site_author: Datadog
-site_url: https://datadoghq.dev/datadog-api-client-python/
+site_url: https://docs.datadoghq.com/api/
 repo_name: datadog/datadog-api-client-python
 repo_url: https://github.com/DataDog/datadog-api-client-python
 edit_uri: blob/master/docs
