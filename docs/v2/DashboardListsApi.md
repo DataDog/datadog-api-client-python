@@ -28,11 +28,12 @@ from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import dashboard_lists_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v2.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -111,11 +112,12 @@ from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import dashboard_lists_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v2.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -194,11 +196,12 @@ from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import dashboard_lists_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v2.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -267,11 +270,12 @@ from datadog_api_client.v2 import ApiClient, ApiException, Configuration
 from datadog_api_client.v2.api import dashboard_lists_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v2.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
