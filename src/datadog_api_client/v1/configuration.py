@@ -222,12 +222,6 @@ class Configuration(object):
 
         # Keep track of unstable operations
         self.unstable_operations = {
-            "create_logs_index": False,
-            "get_logs_index": False,
-            "get_logs_index_order": False,
-            "list_log_indexes": False,
-            "update_logs_index": False,
-            "update_logs_index_order": False,
             "create_slo_correction": False,
             "delete_slo_correction": False,
             "get_slo_correction": False,

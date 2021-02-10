@@ -609,7 +609,7 @@ class ServiceLevelObjectivesApi(object):
             Keyword Args:
                 ids (str): A comma separated list of the IDs of the service level objectives objects.. [optional]
                 query (str): The query string to filter results based on SLO names.. [optional]
-                tags_query (str): The query string to filter results based on SLO tags.. [optional]
+                tags_query (str): The query string to filter results based on a single SLO tag.. [optional]
                 metrics_query (str): The query string to filter results based on SLO numerator and denominator.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.

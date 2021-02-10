@@ -79,8 +79,7 @@ Feature: Logs Archives
 
   @generated @skip
   Scenario: Grant role to an archive returns "Bad Request" response
-    Given operation "AddReadRoleToArchive" enabled
-    And new "AddReadRoleToArchive" request
+    Given new "AddReadRoleToArchive" request
     And request contains "archive_id" parameter from "<PATH>"
     And body {}
     When the request is sent
@@ -88,8 +87,7 @@ Feature: Logs Archives
 
   @generated @skip
   Scenario: Grant role to an archive returns "Not found" response
-    Given operation "AddReadRoleToArchive" enabled
-    And new "AddReadRoleToArchive" request
+    Given new "AddReadRoleToArchive" request
     And request contains "archive_id" parameter from "<PATH>"
     And body {}
     When the request is sent
@@ -97,8 +95,7 @@ Feature: Logs Archives
 
   @generated @skip
   Scenario: Grant role to an archive returns "OK" response
-    Given operation "AddReadRoleToArchive" enabled
-    And new "AddReadRoleToArchive" request
+    Given new "AddReadRoleToArchive" request
     And request contains "archive_id" parameter from "<PATH>"
     And body {}
     When the request is sent
@@ -106,32 +103,28 @@ Feature: Logs Archives
 
   @generated @skip
   Scenario: List read roles for an archive returns "Bad Request" response
-    Given operation "ListArchiveReadRoles" enabled
-    And new "ListArchiveReadRoles" request
+    Given new "ListArchiveReadRoles" request
     And request contains "archive_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: List read roles for an archive returns "Not found" response
-    Given operation "ListArchiveReadRoles" enabled
-    And new "ListArchiveReadRoles" request
+    Given new "ListArchiveReadRoles" request
     And request contains "archive_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not found
 
   @generated @skip
   Scenario: List read roles for an archive returns "OK" response
-    Given operation "ListArchiveReadRoles" enabled
-    And new "ListArchiveReadRoles" request
+    Given new "ListArchiveReadRoles" request
     And request contains "archive_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Revoke role from an archive returns "Bad Request" response
-    Given operation "RemoveRoleFromArchive" enabled
-    And new "RemoveRoleFromArchive" request
+    Given new "RemoveRoleFromArchive" request
     And request contains "archive_id" parameter from "<PATH>"
     And body {}
     When the request is sent
@@ -139,8 +132,7 @@ Feature: Logs Archives
 
   @generated @skip
   Scenario: Revoke role from an archive returns "Not found" response
-    Given operation "RemoveRoleFromArchive" enabled
-    And new "RemoveRoleFromArchive" request
+    Given new "RemoveRoleFromArchive" request
     And request contains "archive_id" parameter from "<PATH>"
     And body {}
     When the request is sent
@@ -148,8 +140,7 @@ Feature: Logs Archives
 
   @generated @skip
   Scenario: Revoke role from an archive returns "OK" response
-    Given operation "RemoveRoleFromArchive" enabled
-    And new "RemoveRoleFromArchive" request
+    Given new "RemoveRoleFromArchive" request
     And request contains "archive_id" parameter from "<PATH>"
     And body {}
     When the request is sent

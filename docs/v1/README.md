@@ -58,11 +58,12 @@ from datadog_api_client.v1.model.aws_account_list_response import AWSAccountList
 from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilterCreateRequest
 from datadog_api_client.v1.model.aws_tag_filter_delete_request import AWSTagFilterDeleteRequest
 from datadog_api_client.v1.model.aws_tag_filter_list_response import AWSTagFilterListResponse
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v1.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -348,7 +349,6 @@ Class | Method | HTTP request | Description
  - [EventTimelineWidgetDefinitionType](EventTimelineWidgetDefinitionType.md)
  - [FormulaAndFunctionEventAggregation](FormulaAndFunctionEventAggregation.md)
  - [FormulaAndFunctionEventsDataSource](FormulaAndFunctionEventsDataSource.md)
- - [FormulaAndFunctionEventsSortType](FormulaAndFunctionEventsSortType.md)
  - [FormulaAndFunctionMetricAggregation](FormulaAndFunctionMetricAggregation.md)
  - [FormulaAndFunctionMetricDataSource](FormulaAndFunctionMetricDataSource.md)
  - [FormulaAndFunctionProcessQueryDataSource](FormulaAndFunctionProcessQueryDataSource.md)

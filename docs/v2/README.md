@@ -59,11 +59,12 @@ from datadog_api_client.v2.model.dashboard_list_delete_items_response import Das
 from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v2.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')

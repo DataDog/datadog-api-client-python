@@ -32,11 +32,12 @@ from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v1.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -106,11 +107,12 @@ from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v1.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -201,11 +203,12 @@ from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v1.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -286,11 +289,12 @@ from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v1.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -363,11 +367,12 @@ from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v1.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -436,11 +441,12 @@ from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v1.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -515,11 +521,12 @@ from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v1.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
@@ -533,7 +540,7 @@ with ApiClient(configuration) as api_client:
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
     ids = "id1, id2, id3"  # str | A comma separated list of the IDs of the service level objectives objects. (optional)
     query = "monitor"  # str | The query string to filter results based on SLO names. (optional)
-    tags_query = "env:prod"  # str | The query string to filter results based on SLO tags. (optional)
+    tags_query = "env:prod"  # str | The query string to filter results based on a single SLO tag. (optional)
     metrics_query = "aws.elb.request_count"  # str | The query string to filter results based on SLO numerator and denominator. (optional)
 
     # example passing only required values which don't have defaults set
@@ -552,7 +559,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ids** | **str**| A comma separated list of the IDs of the service level objectives objects. | [optional]
  **query** | **str**| The query string to filter results based on SLO names. | [optional]
- **tags_query** | **str**| The query string to filter results based on SLO tags. | [optional]
+ **tags_query** | **str**| The query string to filter results based on a single SLO tag. | [optional]
  **metrics_query** | **str**| The query string to filter results based on SLO numerator and denominator. | [optional]
 
 ### Return type
@@ -596,11 +603,12 @@ from datadog_api_client.v1 import ApiClient, ApiException, Configuration
 from datadog_api_client.v1.api import service_level_objectives_api
 from datadog_api_client.v1.models import *
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.datadoghq.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="https://api.datadoghq.com"
-)
+configuration = datadog_api_client.v1.Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
