@@ -52,13 +52,13 @@ Feature: Dashboard Lists
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Get a Dashboard List returns "Not Found" response
+  Scenario: Get items of a Dashboard List returns "Not Found" response
     Given new "GetDashboardListItems" request
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip
-  Scenario: Get a Dashboard List returns "OK" response
+  Scenario: Get items of a Dashboard List returns "OK" response
     Given new "GetDashboardListItems" request
     When the request is sent
     Then the response status is 200 OK
