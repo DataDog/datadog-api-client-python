@@ -162,6 +162,11 @@ def unique_lower(request, freezer):
 
 
 @pytest.fixture
+def unique_alnum(request, freezer):
+    return re.sub(r"[^A-Za-z0-9]+", "", unique(request, freezer))
+
+
+@pytest.fixture
 def now_ts(freezer):
     with freezer:
         return int(datetime.now().timestamp())
@@ -206,6 +211,7 @@ def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_late
         "undo_operations": [],
         "unique": unique,
         "unique_lower": unique_lower,
+        "unique_alnum": unique_alnum,
         "now_ts": now_ts,
         "now_iso": now_iso,
         "hour_later_ts": hour_later_ts,
