@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **npm_flow_sum** | [**UsageBillableSummaryBody**](UsageBillableSummaryBody.md) |  | [optional] 
 **npm_host_top99p** | [**UsageBillableSummaryBody**](UsageBillableSummaryBody.md) |  | [optional] 
 **rum_sum** | [**UsageBillableSummaryBody**](UsageBillableSummaryBody.md) |  | [optional] 
+**serverless_invocation_sum** | [**UsageBillableSummaryBody**](UsageBillableSummaryBody.md) |  | [optional] 
 **siem_sum** | [**UsageBillableSummaryBody**](UsageBillableSummaryBody.md) |  | [optional] 
 **synthetics_api_tests_sum** | [**UsageBillableSummaryBody**](UsageBillableSummaryBody.md) |  | [optional] 
 **synthetics_browser_checks_sum** | [**UsageBillableSummaryBody**](UsageBillableSummaryBody.md) |  | [optional] 
