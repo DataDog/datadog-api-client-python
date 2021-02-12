@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **grouping** | [**WidgetGrouping**](WidgetGrouping.md) |  | defaults to nulltype.Null
 **query** | **str** | Query to filter the monitors with. | defaults to nulltype.Null
 **text** | **str** | Text to display. | defaults to nulltype.Null
+**style** | [**HostMapWidgetDefinitionStyle**](HostMapWidgetDefinitionStyle.md) |  | defaults to nulltype.Null
+**view** | [**GeomapWidgetDefinitionView**](GeomapWidgetDefinitionView.md) |  | defaults to nulltype.Null
 **layout_type** | [**WidgetLayoutType**](WidgetLayoutType.md) |  | defaults to nulltype.Null
 **widgets** | [**[Widget]**](Widget.md) | List of widget groups. | defaults to nulltype.Null
 **url** | **str** | URL of the image. | defaults to nulltype.Null
@@ -45,7 +47,6 @@ Name | Type | Description | Notes
 **node_type** | [**WidgetNodeType**](WidgetNodeType.md) |  | [optional] 
 **notes** | **str** | Notes on the title. | [optional] 
 **scope** | **[str]** | List of tags used to filter the map. | [optional] 
-**style** | [**HostMapWidgetDefinitionStyle**](HostMapWidgetDefinitionStyle.md) |  | [optional] 
 **margin** | [**WidgetMargin**](WidgetMargin.md) |  | [optional] 
 **sizing** | [**WidgetImageSizing**](WidgetImageSizing.md) |  | [optional] 
 **columns** | **[str]** | Which columns to display on the widget. | [optional] 
