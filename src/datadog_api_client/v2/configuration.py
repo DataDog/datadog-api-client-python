@@ -237,6 +237,11 @@ class Configuration(object):
             "get_incident": False,
             "list_incidents": False,
             "update_incident": False,
+            "create_tag_configuration": False,
+            "delete_tag_configuration": False,
+            "list_tag_configuration_by_name": False,
+            "list_tag_configurations": False,
+            "update_tag_configuration": False,
             "list_security_monitoring_signals": False,
             "search_security_monitoring_signals": False,
         }
