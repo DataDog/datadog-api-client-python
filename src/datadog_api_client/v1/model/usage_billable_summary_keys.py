@@ -88,6 +88,7 @@ class UsageBillableSummaryKeys(ModelNormal):
             "npm_flow_sum": (UsageBillableSummaryBody,),  # noqa: E501
             "npm_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
             "rum_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "serverless_invocation_sum": (UsageBillableSummaryBody,),  # noqa: E501
             "siem_sum": (UsageBillableSummaryBody,),  # noqa: E501
             "synthetics_api_tests_sum": (UsageBillableSummaryBody,),  # noqa: E501
             "synthetics_browser_checks_sum": (UsageBillableSummaryBody,),  # noqa: E501
@@ -113,6 +114,7 @@ class UsageBillableSummaryKeys(ModelNormal):
         "npm_flow_sum": "npm_flow_sum",  # noqa: E501
         "npm_host_top99p": "npm_host_top99p",  # noqa: E501
         "rum_sum": "rum_sum",  # noqa: E501
+        "serverless_invocation_sum": "serverless_invocation_sum",  # noqa: E501
         "siem_sum": "siem_sum",  # noqa: E501
         "synthetics_api_tests_sum": "synthetics_api_tests_sum",  # noqa: E501
         "synthetics_browser_checks_sum": "synthetics_browser_checks_sum",  # noqa: E501
@@ -181,6 +183,7 @@ class UsageBillableSummaryKeys(ModelNormal):
             npm_flow_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
             npm_host_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
             rum_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            serverless_invocation_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
             siem_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
             synthetics_api_tests_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
             synthetics_browser_checks_sum (UsageBillableSummaryBody): [optional]  # noqa: E501

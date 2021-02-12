@@ -1,0 +1,171 @@
+interactions:
+- request:
+    body: '{"data": {"id": "datadogapiclientpythontestlisttagconfigurationsreturnssuccessresponse1612987675260358",
+      "type": "manage_tags", "attributes": {"metric_type": "distribution", "tags":
+      ["app", "datacenter", "datadogapiclientpythontestlisttagconfigurationsreturnssuccessresponse1612987675260358"]}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateTagConfiguration
+      User-Agent:
+      - datadog-api-client-python/0.1.dev229 (python 3.9.1; os Linux; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/metrics/datadogapiclientpythontestlisttagconfigurationsreturnssuccessresponse1612987675260358/tags
+  response:
+    body:
+      string: '{"data":{"type":"manage_tags","id":"datadogapiclientpythontestlisttagconfigurationsreturnssuccessresponse1612987675260358","attributes":{"tags":["datacenter","app","datadogapiclientpythontestlisttagconfigurationsreturnssuccessresponse1612987675260358"],"include_percentiles":false,"created_at":"2021-02-10T20:07:55.559669+00:00","updated_at":"2021-02-10T20:07:55.559669+00:00","metric_type":"distribution"}}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '408'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Feb 2021 20:07:55 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      set-cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 17-Feb-2021 20:07:55 GMT;
+        secure; HttpOnly
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - twvpGlmuom5y6A0pjGtXzTf554cmwJgTcCZ71fK4H/RDi+v5ehBK0zQiRcTJQG5C
+      x-dd-version:
+      - '35.3884965'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '50'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '46'
+      x-ratelimit-reset:
+      - '5'
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - ListTagConfigurations
+      User-Agent:
+      - datadog-api-client-python/0.1.dev229 (python 3.9.1; os Linux; arch x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/metrics?filter%5Btags_configured%5D=datadogapiclientpythontestlisttagconfigurationsreturnssuccessresponse1612987675260358
+  response:
+    body:
+      string: '{"data":[{"type":"manage_tags","id":"datadogapiclientpythontestlisttagconfigurationsreturnssuccessresponse1612987675260358","attributes":{"tags":["datacenter","app","datadogapiclientpythontestlisttagconfigurationsreturnssuccessresponse1612987675260358"],"include_percentiles":false,"created_at":"2021-02-10T20:07:55.559669+00:00","updated_at":"2021-02-10T20:07:55.559669+00:00","metric_type":"distribution"}}]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '410'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Feb 2021 20:07:58 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      set-cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 17-Feb-2021 20:07:55 GMT;
+        secure; HttpOnly
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - nLnnBNvlCFDECRnZvzDb0z4sAO35G+IMidcAs8vrCKyjvsKWE8Yd9S3n6OjZ1qRN
+      x-dd-version:
+      - '35.3884965'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '50'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '45'
+      x-ratelimit-reset:
+      - '5'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteTagConfiguration
+      User-Agent:
+      - datadog-api-client-python/0.1.dev229 (python 3.9.1; os Linux; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/metrics/datadogapiclientpythontestlisttagconfigurationsreturnssuccessresponse1612987675260358/tags
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Feb 2021 20:07:58 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      set-cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 17-Feb-2021 20:07:58 GMT;
+        secure; HttpOnly
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - JpIJLwIH2nFlZOC+u71rq7aAOL43MLZN3MUsL+gpYHdZz5QLUOG8Jysf8kVK6tPU
+      x-dd-version:
+      - '35.3884965'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '50'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '44'
+      x-ratelimit-reset:
+      - '2'
+    status:
+      code: 204
+      message: No Content
+version: 1

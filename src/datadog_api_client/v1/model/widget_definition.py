@@ -33,6 +33,8 @@ def lazy_import():
     from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
     from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
     from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
+    from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
+    from datadog_api_client.v1.model.geomap_widget_definition_view import GeomapWidgetDefinitionView
     from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
     from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
     from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
@@ -85,6 +87,8 @@ def lazy_import():
     globals()["EventStreamWidgetDefinition"] = EventStreamWidgetDefinition
     globals()["EventTimelineWidgetDefinition"] = EventTimelineWidgetDefinition
     globals()["FreeTextWidgetDefinition"] = FreeTextWidgetDefinition
+    globals()["GeomapWidgetDefinition"] = GeomapWidgetDefinition
+    globals()["GeomapWidgetDefinitionView"] = GeomapWidgetDefinitionView
     globals()["GroupWidgetDefinition"] = GroupWidgetDefinition
     globals()["HeatMapWidgetDefinition"] = HeatMapWidgetDefinition
     globals()["HostMapWidgetDefinition"] = HostMapWidgetDefinition
@@ -226,6 +230,8 @@ class WidgetDefinition(ModelComposed):
             grouping (WidgetGrouping): defaults to nulltype.Null, must be one of ["check", "cluster", ]  # noqa: E501
             query (str): Query to filter the monitors with.. defaults to nulltype.Null  # noqa: E501
             text (str): Text to display.. defaults to nulltype.Null  # noqa: E501
+            style (HostMapWidgetDefinitionStyle): defaults to nulltype.Null  # noqa: E501
+            view (GeomapWidgetDefinitionView): defaults to nulltype.Null  # noqa: E501
             layout_type (WidgetLayoutType): defaults to nulltype.Null, must be one of ["ordered", ]  # noqa: E501
             widgets ([Widget]): List of widget groups.. defaults to nulltype.Null  # noqa: E501
             url (str): URL of the image.. defaults to nulltype.Null  # noqa: E501
@@ -289,7 +295,6 @@ class WidgetDefinition(ModelComposed):
             node_type (WidgetNodeType): [optional]  # noqa: E501
             notes (str): Notes on the title.. [optional]  # noqa: E501
             scope ([str]): List of tags used to filter the map.. [optional]  # noqa: E501
-            style (HostMapWidgetDefinitionStyle): [optional]  # noqa: E501
             margin (WidgetMargin): [optional]  # noqa: E501
             sizing (WidgetImageSizing): [optional]  # noqa: E501
             columns ([str]): Which columns to display on the widget.. [optional]  # noqa: E501
@@ -338,6 +343,8 @@ class WidgetDefinition(ModelComposed):
         grouping = kwargs.get("grouping", nulltype.Null)
         query = kwargs.get("query", nulltype.Null)
         text = kwargs.get("text", nulltype.Null)
+        style = kwargs.get("style", nulltype.Null)
+        view = kwargs.get("view", nulltype.Null)
         layout_type = kwargs.get("layout_type", nulltype.Null)
         widgets = kwargs.get("widgets", nulltype.Null)
         url = kwargs.get("url", nulltype.Null)
@@ -387,6 +394,8 @@ class WidgetDefinition(ModelComposed):
             "grouping": grouping,
             "query": query,
             "text": text,
+            "style": style,
+            "view": view,
             "layout_type": layout_type,
             "widgets": widgets,
             "url": url,
@@ -446,6 +455,7 @@ class WidgetDefinition(ModelComposed):
                 EventStreamWidgetDefinition,
                 EventTimelineWidgetDefinition,
                 FreeTextWidgetDefinition,
+                GeomapWidgetDefinition,
                 GroupWidgetDefinition,
                 HeatMapWidgetDefinition,
                 HostMapWidgetDefinition,
