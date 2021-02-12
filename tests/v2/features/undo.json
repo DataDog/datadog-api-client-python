@@ -274,6 +274,43 @@
       "type": "safe"
     }
   },
+  "ListTagConfigurations": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteTagConfiguration": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListTagConfigurationByName": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTagConfiguration": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateTagConfiguration": {
+    "tag": "Metrics",
+    "undo": {
+      "operationId": "DeleteTagConfiguration",
+      "parameters": [
+        {
+          "name": "metric_name",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "ListPermissions": {
     "tag": "Roles",
     "undo": {
