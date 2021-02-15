@@ -83,6 +83,7 @@ class DistributionWidgetRequest(ModelNormal):
             "log_query": (LogQueryDefinition,),  # noqa: E501
             "network_query": (LogQueryDefinition,),  # noqa: E501
             "process_query": (ProcessQueryDefinition,),  # noqa: E501
+            "profile_metrics_query": (LogQueryDefinition,),  # noqa: E501
             "q": (str,),  # noqa: E501
             "rum_query": (LogQueryDefinition,),  # noqa: E501
             "security_query": (LogQueryDefinition,),  # noqa: E501
@@ -99,6 +100,7 @@ class DistributionWidgetRequest(ModelNormal):
         "log_query": "log_query",  # noqa: E501
         "network_query": "network_query",  # noqa: E501
         "process_query": "process_query",  # noqa: E501
+        "profile_metrics_query": "profile_metrics_query",  # noqa: E501
         "q": "q",  # noqa: E501
         "rum_query": "rum_query",  # noqa: E501
         "security_query": "security_query",  # noqa: E501
@@ -158,6 +160,7 @@ class DistributionWidgetRequest(ModelNormal):
             log_query (LogQueryDefinition): [optional]  # noqa: E501
             network_query (LogQueryDefinition): [optional]  # noqa: E501
             process_query (ProcessQueryDefinition): [optional]  # noqa: E501
+            profile_metrics_query (LogQueryDefinition): [optional]  # noqa: E501
             q (str): Widget query.. [optional]  # noqa: E501
             rum_query (LogQueryDefinition): [optional]  # noqa: E501
             security_query (LogQueryDefinition): [optional]  # noqa: E501
