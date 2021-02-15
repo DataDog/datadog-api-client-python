@@ -1,20 +1,15 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v1
+from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 
-try:
-    from datadog_api_client.v1.model import synthetics_test_details
-except ImportError:
-    synthetics_test_details = sys.modules["datadog_api_client.v1.model.synthetics_test_details"]
+globals()["SyntheticsTestDetails"] = SyntheticsTestDetails
 from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
 
 

@@ -25,9 +25,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.slo_correction_list_response_data import SLOCorrectionListResponseData
+    from datadog_api_client.v1.model.slo_correction import SLOCorrection
 
-    globals()["SLOCorrectionListResponseData"] = SLOCorrectionListResponseData
+    globals()["SLOCorrection"] = SLOCorrection
 
 
 class SLOCorrectionListResponse(ModelNormal):
@@ -74,7 +74,7 @@ class SLOCorrectionListResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "data": ([SLOCorrectionListResponseData],),  # noqa: E501
+            "data": ([SLOCorrection],),  # noqa: E501
         }
 
     @cached_property
@@ -133,7 +133,7 @@ class SLOCorrectionListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([SLOCorrectionListResponseData]): The list of of SLO corrections objects. [optional]  # noqa: E501
+            data ([SLOCorrection]): The list of of SLO corrections objects. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

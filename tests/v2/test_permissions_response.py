@@ -1,20 +1,15 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v2
+from datadog_api_client.v2.model.permission import Permission
 
-try:
-    from datadog_api_client.v2.model import permission
-except ImportError:
-    permission = sys.modules["datadog_api_client.v2.model.permission"]
+globals()["Permission"] = Permission
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 
 

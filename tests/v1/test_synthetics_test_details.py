@@ -1,40 +1,25 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v1
+from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
+from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestConfig
+from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
+from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
+from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
+from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
 
-try:
-    from datadog_api_client.v1.model import synthetics_step
-except ImportError:
-    synthetics_step = sys.modules["datadog_api_client.v1.model.synthetics_step"]
-try:
-    from datadog_api_client.v1.model import synthetics_test_config
-except ImportError:
-    synthetics_test_config = sys.modules["datadog_api_client.v1.model.synthetics_test_config"]
-try:
-    from datadog_api_client.v1.model import synthetics_test_details_sub_type
-except ImportError:
-    synthetics_test_details_sub_type = sys.modules["datadog_api_client.v1.model.synthetics_test_details_sub_type"]
-try:
-    from datadog_api_client.v1.model import synthetics_test_details_type
-except ImportError:
-    synthetics_test_details_type = sys.modules["datadog_api_client.v1.model.synthetics_test_details_type"]
-try:
-    from datadog_api_client.v1.model import synthetics_test_options
-except ImportError:
-    synthetics_test_options = sys.modules["datadog_api_client.v1.model.synthetics_test_options"]
-try:
-    from datadog_api_client.v1.model import synthetics_test_pause_status
-except ImportError:
-    synthetics_test_pause_status = sys.modules["datadog_api_client.v1.model.synthetics_test_pause_status"]
+globals()["SyntheticsStep"] = SyntheticsStep
+globals()["SyntheticsTestConfig"] = SyntheticsTestConfig
+globals()["SyntheticsTestDetailsSubType"] = SyntheticsTestDetailsSubType
+globals()["SyntheticsTestDetailsType"] = SyntheticsTestDetailsType
+globals()["SyntheticsTestOptions"] = SyntheticsTestOptions
+globals()["SyntheticsTestPauseStatus"] = SyntheticsTestPauseStatus
 from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 
 

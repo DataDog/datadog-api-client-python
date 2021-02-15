@@ -1,11 +1,7 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
-
-from __future__ import absolute_import
 
 import unittest
 
@@ -22,10 +18,73 @@ class TestUsageMeteringApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_get_daily_custom_reports(self):
+        """Test case for get_daily_custom_reports
+
+        Get the list of available daily custom reports  # noqa: E501
+        """
+        pass
+
+    def test_get_incident_management(self):
+        """Test case for get_incident_management
+
+        Get hourly usage for incident management  # noqa: E501
+        """
+        pass
+
+    def test_get_ingested_spans(self):
+        """Test case for get_ingested_spans
+
+        Get hourly usage for ingested spans  # noqa: E501
+        """
+        pass
+
+    def test_get_monthly_custom_reports(self):
+        """Test case for get_monthly_custom_reports
+
+        Get the list of available monthly custom reports  # noqa: E501
+        """
+        pass
+
+    def test_get_specified_daily_custom_reports(self):
+        """Test case for get_specified_daily_custom_reports
+
+        Get specified daily custom reports  # noqa: E501
+        """
+        pass
+
+    def test_get_specified_monthly_custom_reports(self):
+        """Test case for get_specified_monthly_custom_reports
+
+        Get specified monthly custom reports  # noqa: E501
+        """
+        pass
+
+    def test_get_tracing_without_limits(self):
+        """Test case for get_tracing_without_limits
+
+        Get hourly usage for tracing without limits  # noqa: E501
+        """
+        pass
+
     def test_get_usage_analyzed_logs(self):
         """Test case for get_usage_analyzed_logs
 
         Get hourly usage for analyzed logs  # noqa: E501
+        """
+        pass
+
+    def test_get_usage_attribution(self):
+        """Test case for get_usage_attribution
+
+        Get Usage Attribution  # noqa: E501
+        """
+        pass
+
+    def test_get_usage_billable_summary(self):
+        """Test case for get_usage_billable_summary
+
+        Get billable usage across your account  # noqa: E501
         """
         pass
 
@@ -40,6 +99,20 @@ class TestUsageMeteringApi(unittest.TestCase):
         """Test case for get_usage_hosts
 
         Get hourly usage for hosts and containers  # noqa: E501
+        """
+        pass
+
+    def test_get_usage_indexed_spans(self):
+        """Test case for get_usage_indexed_spans
+
+        Get hourly usage for indexed spans  # noqa: E501
+        """
+        pass
+
+    def test_get_usage_internet_of_things(self):
+        """Test case for get_usage_internet_of_things
+
+        Get hourly usage for IoT  # noqa: E501
         """
         pass
 
@@ -78,6 +151,13 @@ class TestUsageMeteringApi(unittest.TestCase):
         """
         pass
 
+    def test_get_usage_profiling(self):
+        """Test case for get_usage_profiling
+
+        Get hourly usage for profiled hosts  # noqa: E501
+        """
+        pass
+
     def test_get_usage_rum_sessions(self):
         """Test case for get_usage_rum_sessions
 
@@ -102,7 +182,7 @@ class TestUsageMeteringApi(unittest.TestCase):
     def test_get_usage_synthetics(self):
         """Test case for get_usage_synthetics
 
-        Get hourly usage for Synthetics API Checks  # noqa: E501
+        Get hourly usage for Synthetics Checks  # noqa: E501
         """
         pass
 
@@ -130,7 +210,7 @@ class TestUsageMeteringApi(unittest.TestCase):
     def test_get_usage_top_avg_metrics(self):
         """Test case for get_usage_top_avg_metrics
 
-        Get top 500 custom metrics by hourly average  # noqa: E501
+        Get top custom metrics by hourly average  # noqa: E501
         """
         pass
 

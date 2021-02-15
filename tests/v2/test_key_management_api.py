@@ -25,10 +25,31 @@ class TestKeyManagementApi(unittest.TestCase):
         """
         pass
 
+    def test_create_current_user_application_key(self):
+        """Test case for create_current_user_application_key
+
+        Create an application key for current user  # noqa: E501
+        """
+        pass
+
     def test_delete_api_key(self):
         """Test case for delete_api_key
 
         Delete an API key  # noqa: E501
+        """
+        pass
+
+    def test_delete_application_key(self):
+        """Test case for delete_application_key
+
+        Delete an application key  # noqa: E501
+        """
+        pass
+
+    def test_delete_current_user_application_key(self):
+        """Test case for delete_current_user_application_key
+
+        Delete an application key owned by current user  # noqa: E501
         """
         pass
 
@@ -39,6 +60,13 @@ class TestKeyManagementApi(unittest.TestCase):
         """
         pass
 
+    def test_get_current_user_application_key(self):
+        """Test case for get_current_user_application_key
+
+        Get one application key owned by current user  # noqa: E501
+        """
+        pass
+
     def test_list_api_keys(self):
         """Test case for list_api_keys
 
@@ -46,10 +74,38 @@ class TestKeyManagementApi(unittest.TestCase):
         """
         pass
 
+    def test_list_application_keys(self):
+        """Test case for list_application_keys
+
+        Get all application keys  # noqa: E501
+        """
+        pass
+
+    def test_list_current_user_application_keys(self):
+        """Test case for list_current_user_application_keys
+
+        Get all application keys owned by current user  # noqa: E501
+        """
+        pass
+
     def test_update_api_key(self):
         """Test case for update_api_key
 
         Edit an API key  # noqa: E501
+        """
+        pass
+
+    def test_update_application_key(self):
+        """Test case for update_application_key
+
+        Edit an application key  # noqa: E501
+        """
+        pass
+
+    def test_update_current_user_application_key(self):
+        """Test case for update_current_user_application_key
+
+        Edit an application key owned by current user  # noqa: E501
         """
         pass
 

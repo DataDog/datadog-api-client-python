@@ -7,9 +7,9 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.slo_correction_create_request_data import SLOCorrectionCreateRequestData
+from datadog_api_client.v1.model.slo_correction_create_data import SLOCorrectionCreateData
 
-globals()["SLOCorrectionCreateRequestData"] = SLOCorrectionCreateRequestData
+globals()["SLOCorrectionCreateData"] = SLOCorrectionCreateData
 from datadog_api_client.v1.model.slo_correction_create_request import SLOCorrectionCreateRequest
 
 

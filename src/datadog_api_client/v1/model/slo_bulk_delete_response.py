@@ -25,11 +25,11 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.slo_bulk_delete_error import SLOBulkDeleteError
     from datadog_api_client.v1.model.slo_bulk_delete_response_data import SLOBulkDeleteResponseData
-    from datadog_api_client.v1.model.slo_bulk_delete_response_errors import SLOBulkDeleteResponseErrors
 
+    globals()["SLOBulkDeleteError"] = SLOBulkDeleteError
     globals()["SLOBulkDeleteResponseData"] = SLOBulkDeleteResponseData
-    globals()["SLOBulkDeleteResponseErrors"] = SLOBulkDeleteResponseErrors
 
 
 class SLOBulkDeleteResponse(ModelNormal):
@@ -77,7 +77,7 @@ class SLOBulkDeleteResponse(ModelNormal):
         lazy_import()
         return {
             "data": (SLOBulkDeleteResponseData,),  # noqa: E501
-            "errors": ([SLOBulkDeleteResponseErrors],),  # noqa: E501
+            "errors": ([SLOBulkDeleteError],),  # noqa: E501
         }
 
     @cached_property
@@ -138,7 +138,7 @@ class SLOBulkDeleteResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (SLOBulkDeleteResponseData): [optional]  # noqa: E501
-            errors ([SLOBulkDeleteResponseErrors]): Array of errors object returned.. [optional]  # noqa: E501
+            errors ([SLOBulkDeleteError]): Array of errors object returned.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

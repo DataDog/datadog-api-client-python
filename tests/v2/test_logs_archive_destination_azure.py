@@ -1,24 +1,17 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v2
+from datadog_api_client.v2.model.logs_archive_destination_azure_type import LogsArchiveDestinationAzureType
+from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchiveIntegrationAzure
 
-try:
-    from datadog_api_client.v2.model import logs_archive_destination_azure_type
-except ImportError:
-    logs_archive_destination_azure_type = sys.modules["datadog_api_client.v2.model.logs_archive_destination_azure_type"]
-try:
-    from datadog_api_client.v2.model import logs_archive_integration_azure
-except ImportError:
-    logs_archive_integration_azure = sys.modules["datadog_api_client.v2.model.logs_archive_integration_azure"]
+globals()["LogsArchiveDestinationAzureType"] = LogsArchiveDestinationAzureType
+globals()["LogsArchiveIntegrationAzure"] = LogsArchiveIntegrationAzure
 from datadog_api_client.v2.model.logs_archive_destination_azure import LogsArchiveDestinationAzure
 
 

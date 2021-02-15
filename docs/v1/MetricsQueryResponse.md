@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **message** | **str** | Message indicating &#x60;success&#x60; if status is &#x60;ok&#x60;. | [optional] [readonly] 
 **query** | **str** | Query string | [optional] [readonly] 
 **res_type** | **str** | Type of response. | [optional] [readonly] 
-**series** | [**[MetricsQueryResponseSeries]**](MetricsQueryResponseSeries.md) | List of timeseries queried. | [optional] [readonly] 
+**series** | [**[MetricsQueryMetadata]**](MetricsQueryMetadata.md) | List of timeseries queried. | [optional] [readonly] 
 **status** | **str** | Status of the query. | [optional] [readonly] 
 **to_date** | **int** | End of requested time window, milliseconds since Unix epoch. | [optional] [readonly] 
 

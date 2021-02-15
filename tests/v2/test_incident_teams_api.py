@@ -1,5 +1,3 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
@@ -41,8 +39,8 @@ class TestIncidentTeamsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_incident_teams(self):
-        """Test case for get_incident_teams
+    def test_list_incident_teams(self):
+        """Test case for list_incident_teams
 
         Get a list of all incident teams  # noqa: E501
         """

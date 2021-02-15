@@ -7,9 +7,9 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.slo_correction_list_response_data import SLOCorrectionListResponseData
+from datadog_api_client.v1.model.slo_correction import SLOCorrection
 
-globals()["SLOCorrectionListResponseData"] = SLOCorrectionListResponseData
+globals()["SLOCorrection"] = SLOCorrection
 from datadog_api_client.v1.model.slo_correction_list_response import SLOCorrectionListResponse
 
 

@@ -25,9 +25,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.aws_logs_async_response_errors import AWSLogsAsyncResponseErrors
+    from datadog_api_client.v1.model.aws_logs_async_error import AWSLogsAsyncError
 
-    globals()["AWSLogsAsyncResponseErrors"] = AWSLogsAsyncResponseErrors
+    globals()["AWSLogsAsyncError"] = AWSLogsAsyncError
 
 
 class AWSLogsAsyncResponse(ModelNormal):
@@ -74,7 +74,7 @@ class AWSLogsAsyncResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "errors": ([AWSLogsAsyncResponseErrors],),  # noqa: E501
+            "errors": ([AWSLogsAsyncError],),  # noqa: E501
             "status": (str,),  # noqa: E501
         }
 
@@ -135,7 +135,7 @@ class AWSLogsAsyncResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([AWSLogsAsyncResponseErrors]): List of errors.. [optional]  # noqa: E501
+            errors ([AWSLogsAsyncError]): List of errors.. [optional]  # noqa: E501
             status (str): Status of the properties.. [optional]  # noqa: E501
         """
 

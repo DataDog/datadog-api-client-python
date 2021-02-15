@@ -69,7 +69,7 @@ with ApiClient(configuration) as api_client:
             ),
         ],
         template_variables=[
-            DashboardTemplateVariables(
+            DashboardTemplateVariable(
                 default="my-host",
                 name="host1",
                 prefix="host",
@@ -393,7 +393,7 @@ with ApiClient(configuration) as api_client:
             ),
         ],
         template_variables=[
-            DashboardTemplateVariables(
+            DashboardTemplateVariable(
                 default="my-host",
                 name="host1",
                 prefix="host",

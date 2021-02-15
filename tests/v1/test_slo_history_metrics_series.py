@@ -1,20 +1,15 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v1
+from datadog_api_client.v1.model.slo_history_metrics_series_metadata import SLOHistoryMetricsSeriesMetadata
 
-try:
-    from datadog_api_client.v1.model import slo_history_metrics_series_metadata
-except ImportError:
-    slo_history_metrics_series_metadata = sys.modules["datadog_api_client.v1.model.slo_history_metrics_series_metadata"]
+globals()["SLOHistoryMetricsSeriesMetadata"] = SLOHistoryMetricsSeriesMetadata
 from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
 
 

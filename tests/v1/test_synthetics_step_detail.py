@@ -10,13 +10,13 @@ import datadog_api_client.v1
 from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
 from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckType
 from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
-from datadog_api_client.v1.model.synthetics_step_detail_warnings import SyntheticsStepDetailWarnings
+from datadog_api_client.v1.model.synthetics_step_detail_warning import SyntheticsStepDetailWarning
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
 
 globals()["SyntheticsBrowserError"] = SyntheticsBrowserError
 globals()["SyntheticsCheckType"] = SyntheticsCheckType
 globals()["SyntheticsPlayingTab"] = SyntheticsPlayingTab
-globals()["SyntheticsStepDetailWarnings"] = SyntheticsStepDetailWarnings
+globals()["SyntheticsStepDetailWarning"] = SyntheticsStepDetailWarning
 globals()["SyntheticsStepType"] = SyntheticsStepType
 from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
 

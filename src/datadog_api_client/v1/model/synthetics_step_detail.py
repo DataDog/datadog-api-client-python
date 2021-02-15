@@ -28,13 +28,13 @@ def lazy_import():
     from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
     from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckType
     from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
-    from datadog_api_client.v1.model.synthetics_step_detail_warnings import SyntheticsStepDetailWarnings
+    from datadog_api_client.v1.model.synthetics_step_detail_warning import SyntheticsStepDetailWarning
     from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
 
     globals()["SyntheticsBrowserError"] = SyntheticsBrowserError
     globals()["SyntheticsCheckType"] = SyntheticsCheckType
     globals()["SyntheticsPlayingTab"] = SyntheticsPlayingTab
-    globals()["SyntheticsStepDetailWarnings"] = SyntheticsStepDetailWarnings
+    globals()["SyntheticsStepDetailWarning"] = SyntheticsStepDetailWarning
     globals()["SyntheticsStepType"] = SyntheticsStepType
 
 
@@ -97,7 +97,7 @@ class SyntheticsStepDetail(ModelNormal):
             "type": (SyntheticsStepType,),  # noqa: E501
             "url": (str,),  # noqa: E501
             "value": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            "warnings": ([SyntheticsStepDetailWarnings],),  # noqa: E501
+            "warnings": ([SyntheticsStepDetailWarning],),  # noqa: E501
         }
 
     @cached_property
@@ -186,7 +186,7 @@ class SyntheticsStepDetail(ModelNormal):
             type (SyntheticsStepType): [optional]  # noqa: E501
             url (str): URL to perform the step against.. [optional]  # noqa: E501
             value ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Value for the step.. [optional]  # noqa: E501
-            warnings ([SyntheticsStepDetailWarnings]): Warning collected that didn't failed the step.. [optional]  # noqa: E501
+            warnings ([SyntheticsStepDetailWarning]): Warning collected that didn't failed the step.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

@@ -1,20 +1,15 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v1
+from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
 
-try:
-    from datadog_api_client.v1.model import synthetics_test_pause_status
-except ImportError:
-    synthetics_test_pause_status = sys.modules["datadog_api_client.v1.model.synthetics_test_pause_status"]
+globals()["SyntheticsTestPauseStatus"] = SyntheticsTestPauseStatus
 from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import (
     SyntheticsUpdateTestPauseStatusPayload,
 )

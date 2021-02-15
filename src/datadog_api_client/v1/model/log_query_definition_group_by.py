@@ -25,9 +25,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.log_query_definition_sort import LogQueryDefinitionSort
+    from datadog_api_client.v1.model.log_query_definition_group_by_sort import LogQueryDefinitionGroupBySort
 
-    globals()["LogQueryDefinitionSort"] = LogQueryDefinitionSort
+    globals()["LogQueryDefinitionGroupBySort"] = LogQueryDefinitionGroupBySort
 
 
 class LogQueryDefinitionGroupBy(ModelNormal):
@@ -76,7 +76,7 @@ class LogQueryDefinitionGroupBy(ModelNormal):
         return {
             "facet": (str,),  # noqa: E501
             "limit": (int,),  # noqa: E501
-            "sort": (LogQueryDefinitionSort,),  # noqa: E501
+            "sort": (LogQueryDefinitionGroupBySort,),  # noqa: E501
         }
 
     @cached_property
@@ -141,7 +141,7 @@ class LogQueryDefinitionGroupBy(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             limit (int): Maximum number of items in the group.. [optional]  # noqa: E501
-            sort (LogQueryDefinitionSort): [optional]  # noqa: E501
+            sort (LogQueryDefinitionGroupBySort): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

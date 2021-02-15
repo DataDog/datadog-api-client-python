@@ -1,24 +1,21 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v2
+from datadog_api_client.v2.model.logs_list_request_page import LogsListRequestPage
+from datadog_api_client.v2.model.logs_query_filter import LogsQueryFilter
+from datadog_api_client.v2.model.logs_query_options import LogsQueryOptions
+from datadog_api_client.v2.model.logs_sort import LogsSort
 
-try:
-    from datadog_api_client.v2.model import logs_list_request_page
-except ImportError:
-    logs_list_request_page = sys.modules["datadog_api_client.v2.model.logs_list_request_page"]
-try:
-    from datadog_api_client.v2.model import logs_sort
-except ImportError:
-    logs_sort = sys.modules["datadog_api_client.v2.model.logs_sort"]
+globals()["LogsListRequestPage"] = LogsListRequestPage
+globals()["LogsQueryFilter"] = LogsQueryFilter
+globals()["LogsQueryOptions"] = LogsQueryOptions
+globals()["LogsSort"] = LogsSort
 from datadog_api_client.v2.model.logs_list_request import LogsListRequest
 
 

@@ -1,28 +1,17 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v1
+from datadog_api_client.v1.model.synthetics_trigger_ci_test_location import SyntheticsTriggerCITestLocation
+from datadog_api_client.v1.model.synthetics_trigger_ci_test_run_result import SyntheticsTriggerCITestRunResult
 
-try:
-    from datadog_api_client.v1.model import synthetics_trigger_ci_tests_response_locations
-except ImportError:
-    synthetics_trigger_ci_tests_response_locations = sys.modules[
-        "datadog_api_client.v1.model.synthetics_trigger_ci_tests_response_locations"
-    ]
-try:
-    from datadog_api_client.v1.model import synthetics_trigger_ci_tests_response_results
-except ImportError:
-    synthetics_trigger_ci_tests_response_results = sys.modules[
-        "datadog_api_client.v1.model.synthetics_trigger_ci_tests_response_results"
-    ]
+globals()["SyntheticsTriggerCITestLocation"] = SyntheticsTriggerCITestLocation
+globals()["SyntheticsTriggerCITestRunResult"] = SyntheticsTriggerCITestRunResult
 from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
 
 

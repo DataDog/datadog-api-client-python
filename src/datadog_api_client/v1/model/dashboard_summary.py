@@ -25,9 +25,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.dashboard_summary_dashboards import DashboardSummaryDashboards
+    from datadog_api_client.v1.model.dashboard_summary_definition import DashboardSummaryDefinition
 
-    globals()["DashboardSummaryDashboards"] = DashboardSummaryDashboards
+    globals()["DashboardSummaryDefinition"] = DashboardSummaryDefinition
 
 
 class DashboardSummary(ModelNormal):
@@ -74,7 +74,7 @@ class DashboardSummary(ModelNormal):
         """
         lazy_import()
         return {
-            "dashboards": ([DashboardSummaryDashboards],),  # noqa: E501
+            "dashboards": ([DashboardSummaryDefinition],),  # noqa: E501
         }
 
     @cached_property
@@ -133,7 +133,7 @@ class DashboardSummary(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            dashboards ([DashboardSummaryDashboards]): List of dashboard definitions.. [optional]  # noqa: E501
+            dashboards ([DashboardSummaryDefinition]): List of dashboard definitions.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

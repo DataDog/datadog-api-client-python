@@ -25,9 +25,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.metrics_query_response_series import MetricsQueryResponseSeries
+    from datadog_api_client.v1.model.metrics_query_metadata import MetricsQueryMetadata
 
-    globals()["MetricsQueryResponseSeries"] = MetricsQueryResponseSeries
+    globals()["MetricsQueryMetadata"] = MetricsQueryMetadata
 
 
 class MetricsQueryResponse(ModelNormal):
@@ -80,7 +80,7 @@ class MetricsQueryResponse(ModelNormal):
             "message": (str,),  # noqa: E501
             "query": (str,),  # noqa: E501
             "res_type": (str,),  # noqa: E501
-            "series": ([MetricsQueryResponseSeries],),  # noqa: E501
+            "series": ([MetricsQueryMetadata],),  # noqa: E501
             "status": (str,),  # noqa: E501
             "to_date": (int,),  # noqa: E501
         }
@@ -155,7 +155,7 @@ class MetricsQueryResponse(ModelNormal):
             message (str): Message indicating `success` if status is `ok`.. [optional]  # noqa: E501
             query (str): Query string. [optional]  # noqa: E501
             res_type (str): Type of response.. [optional]  # noqa: E501
-            series ([MetricsQueryResponseSeries]): List of timeseries queried.. [optional]  # noqa: E501
+            series ([MetricsQueryMetadata]): List of timeseries queried.. [optional]  # noqa: E501
             status (str): Status of the query.. [optional]  # noqa: E501
             to_date (int): End of requested time window, milliseconds since Unix epoch.. [optional]  # noqa: E501
         """

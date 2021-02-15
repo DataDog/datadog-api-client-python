@@ -1,24 +1,17 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v1
+from datadog_api_client.v1.model.synthetics_ssl_certificate_issuer import SyntheticsSSLCertificateIssuer
+from datadog_api_client.v1.model.synthetics_ssl_certificate_subject import SyntheticsSSLCertificateSubject
 
-try:
-    from datadog_api_client.v1.model import synthetics_ssl_certificate_issuer
-except ImportError:
-    synthetics_ssl_certificate_issuer = sys.modules["datadog_api_client.v1.model.synthetics_ssl_certificate_issuer"]
-try:
-    from datadog_api_client.v1.model import synthetics_ssl_certificate_subject
-except ImportError:
-    synthetics_ssl_certificate_subject = sys.modules["datadog_api_client.v1.model.synthetics_ssl_certificate_subject"]
+globals()["SyntheticsSSLCertificateIssuer"] = SyntheticsSSLCertificateIssuer
+globals()["SyntheticsSSLCertificateSubject"] = SyntheticsSSLCertificateSubject
 from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
 
 

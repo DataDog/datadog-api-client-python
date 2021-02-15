@@ -1,11 +1,7 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
-
-from __future__ import absolute_import
 
 import unittest
 
@@ -47,6 +43,20 @@ class TestSecurityMonitoringApi(unittest.TestCase):
         """Test case for list_security_monitoring_rules
 
         List rules  # noqa: E501
+        """
+        pass
+
+    def test_list_security_monitoring_signals(self):
+        """Test case for list_security_monitoring_signals
+
+        Get a quick list of security signals  # noqa: E501
+        """
+        pass
+
+    def test_search_security_monitoring_signals(self):
+        """Test case for search_security_monitoring_signals
+
+        Get a list of security signals  # noqa: E501
         """
         pass
 

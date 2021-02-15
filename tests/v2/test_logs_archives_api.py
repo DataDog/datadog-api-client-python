@@ -1,11 +1,7 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
-
-from __future__ import absolute_import
 
 import unittest
 
@@ -50,6 +46,13 @@ class TestLogsArchivesApi(unittest.TestCase):
         """
         pass
 
+    def test_get_logs_archive_order(self):
+        """Test case for get_logs_archive_order
+
+        Get archive order  # noqa: E501
+        """
+        pass
+
     def test_list_archive_read_roles(self):
         """Test case for list_archive_read_roles
 
@@ -75,6 +78,13 @@ class TestLogsArchivesApi(unittest.TestCase):
         """Test case for update_logs_archive
 
         Update an archive  # noqa: E501
+        """
+        pass
+
+    def test_update_logs_archive_order(self):
+        """Test case for update_logs_archive_order
+
+        Update archive order  # noqa: E501
         """
         pass
 

@@ -29,7 +29,7 @@ def lazy_import():
     from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-    from datadog_api_client.v1.model.timeseries_widget_request_metadata import TimeseriesWidgetRequestMetadata
+    from datadog_api_client.v1.model.timeseries_widget_expression_alias import TimeseriesWidgetExpressionAlias
     from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
     from datadog_api_client.v1.model.widget_formula import WidgetFormula
     from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
@@ -38,7 +38,7 @@ def lazy_import():
     globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
     globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-    globals()["TimeseriesWidgetRequestMetadata"] = TimeseriesWidgetRequestMetadata
+    globals()["TimeseriesWidgetExpressionAlias"] = TimeseriesWidgetExpressionAlias
     globals()["WidgetDisplayType"] = WidgetDisplayType
     globals()["WidgetFormula"] = WidgetFormula
     globals()["WidgetRequestStyle"] = WidgetRequestStyle
@@ -93,7 +93,7 @@ class TimeseriesWidgetRequest(ModelNormal):
             "event_query": (LogQueryDefinition,),  # noqa: E501
             "formulas": ([WidgetFormula],),  # noqa: E501
             "log_query": (LogQueryDefinition,),  # noqa: E501
-            "metadata": ([TimeseriesWidgetRequestMetadata],),  # noqa: E501
+            "metadata": ([TimeseriesWidgetExpressionAlias],),  # noqa: E501
             "network_query": (LogQueryDefinition,),  # noqa: E501
             "on_right_yaxis": (bool,),  # noqa: E501
             "process_query": (ProcessQueryDefinition,),  # noqa: E501
@@ -180,7 +180,7 @@ class TimeseriesWidgetRequest(ModelNormal):
             event_query (LogQueryDefinition): [optional]  # noqa: E501
             formulas ([WidgetFormula]): List of formulas that operate on queries. This feature is currently in beta.. [optional]  # noqa: E501
             log_query (LogQueryDefinition): [optional]  # noqa: E501
-            metadata ([TimeseriesWidgetRequestMetadata]): Used to define expression aliases.. [optional]  # noqa: E501
+            metadata ([TimeseriesWidgetExpressionAlias]): Used to define expression aliases.. [optional]  # noqa: E501
             network_query (LogQueryDefinition): [optional]  # noqa: E501
             on_right_yaxis (bool): Whether or not to display a second y-axis on the right.. [optional]  # noqa: E501
             process_query (ProcessQueryDefinition): [optional]  # noqa: E501

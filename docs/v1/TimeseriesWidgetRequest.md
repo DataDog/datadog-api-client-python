@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **event_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **formulas** | [**[WidgetFormula]**](WidgetFormula.md) | List of formulas that operate on queries. This feature is currently in beta. | [optional] 
 **log_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
-**metadata** | [**[TimeseriesWidgetRequestMetadata]**](TimeseriesWidgetRequestMetadata.md) | Used to define expression aliases. | [optional] 
+**metadata** | [**[TimeseriesWidgetExpressionAlias]**](TimeseriesWidgetExpressionAlias.md) | Used to define expression aliases. | [optional] 
 **network_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **on_right_yaxis** | **bool** | Whether or not to display a second y-axis on the right. | [optional] 
 **process_query** | [**ProcessQueryDefinition**](ProcessQueryDefinition.md) |  | [optional] 

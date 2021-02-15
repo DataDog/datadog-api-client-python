@@ -1,20 +1,15 @@
-# coding: utf-8
-
 # Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
 
-from __future__ import absolute_import
 import sys
 import unittest
 
 import datadog_api_client.v1
+from datadog_api_client.v1.model.logs_api_error import LogsAPIError
 
-try:
-    from datadog_api_client.v1.model import logs_api_error
-except ImportError:
-    logs_api_error = sys.modules["datadog_api_client.v1.model.logs_api_error"]
+globals()["LogsAPIError"] = LogsAPIError
 from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
 
 
