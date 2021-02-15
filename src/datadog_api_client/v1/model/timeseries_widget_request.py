@@ -97,6 +97,7 @@ class TimeseriesWidgetRequest(ModelNormal):
             "network_query": (LogQueryDefinition,),  # noqa: E501
             "on_right_yaxis": (bool,),  # noqa: E501
             "process_query": (ProcessQueryDefinition,),  # noqa: E501
+            "profile_metrics_query": (LogQueryDefinition,),  # noqa: E501
             "q": (str,),  # noqa: E501
             "queries": ([FormulaAndFunctionQueryDefinition],),  # noqa: E501
             "response_format": (FormulaAndFunctionResponseFormat,),  # noqa: E501
@@ -119,6 +120,7 @@ class TimeseriesWidgetRequest(ModelNormal):
         "network_query": "network_query",  # noqa: E501
         "on_right_yaxis": "on_right_yaxis",  # noqa: E501
         "process_query": "process_query",  # noqa: E501
+        "profile_metrics_query": "profile_metrics_query",  # noqa: E501
         "q": "q",  # noqa: E501
         "queries": "queries",  # noqa: E501
         "response_format": "response_format",  # noqa: E501
@@ -184,6 +186,7 @@ class TimeseriesWidgetRequest(ModelNormal):
             network_query (LogQueryDefinition): [optional]  # noqa: E501
             on_right_yaxis (bool): Whether or not to display a second y-axis on the right.. [optional]  # noqa: E501
             process_query (ProcessQueryDefinition): [optional]  # noqa: E501
+            profile_metrics_query (LogQueryDefinition): [optional]  # noqa: E501
             q (str): Widget query.. [optional]  # noqa: E501
             queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. This feature is currently in beta.. [optional]  # noqa: E501
             response_format (FormulaAndFunctionResponseFormat): [optional]  # noqa: E501

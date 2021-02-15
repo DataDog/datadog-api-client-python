@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **log_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **network_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **process_query** | [**ProcessQueryDefinition**](ProcessQueryDefinition.md) |  | [optional] 
+**profile_metrics_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **q** | **str** | Widget query. | [optional] 
 **rum_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **security_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 

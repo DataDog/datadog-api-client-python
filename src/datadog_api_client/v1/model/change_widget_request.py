@@ -94,6 +94,7 @@ class ChangeWidgetRequest(ModelNormal):
             "order_by": (WidgetOrderBy,),  # noqa: E501
             "order_dir": (WidgetSort,),  # noqa: E501
             "process_query": (ProcessQueryDefinition,),  # noqa: E501
+            "profile_metrics_query": (LogQueryDefinition,),  # noqa: E501
             "q": (str,),  # noqa: E501
             "rum_query": (LogQueryDefinition,),  # noqa: E501
             "security_query": (LogQueryDefinition,),  # noqa: E501
@@ -115,6 +116,7 @@ class ChangeWidgetRequest(ModelNormal):
         "order_by": "order_by",  # noqa: E501
         "order_dir": "order_dir",  # noqa: E501
         "process_query": "process_query",  # noqa: E501
+        "profile_metrics_query": "profile_metrics_query",  # noqa: E501
         "q": "q",  # noqa: E501
         "rum_query": "rum_query",  # noqa: E501
         "security_query": "security_query",  # noqa: E501
@@ -179,6 +181,7 @@ class ChangeWidgetRequest(ModelNormal):
             order_by (WidgetOrderBy): [optional]  # noqa: E501
             order_dir (WidgetSort): [optional]  # noqa: E501
             process_query (ProcessQueryDefinition): [optional]  # noqa: E501
+            profile_metrics_query (LogQueryDefinition): [optional]  # noqa: E501
             q (str): Query definition.. [optional]  # noqa: E501
             rum_query (LogQueryDefinition): [optional]  # noqa: E501
             security_query (LogQueryDefinition): [optional]  # noqa: E501
