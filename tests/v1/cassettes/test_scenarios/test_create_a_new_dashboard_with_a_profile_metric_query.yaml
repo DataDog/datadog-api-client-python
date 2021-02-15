@@ -1,0 +1,108 @@
+interactions:
+- request:
+    body: '{"layout_type": "ordered", "title": "datadog-api-client-python-test_create_a_new_dashboard_with_a_profile_metric_query-1613391769.949769
+      with Profile Metrics Query", "widgets": [{"definition": {"type": "timeseries",
+      "requests": [{"profile_metrics_query": {"compute": {"aggregation": "sum", "facet":
+      "@prof_core_cpu_cores"}, "search": {"query": "runtime:jvm"}, "group_by": [{"facet":
+      "service", "limit": 10, "sort": {"aggregation": "sum", "order": "desc", "facet":
+      "@prof_core_cpu_cores"}}]}}]}}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateDashboard
+      User-Agent:
+      - datadog-api-client-python/1.0.0b6.dev47+dirty (python 3.9.0; os Darwin; arch
+        x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"5cv-nzz-3h5","title":"datadog-api-client-python-test_create_a_new_dashboard_with_a_profile_metric_query-1613391769.949769
+        with Profile Metrics Query","url":"/dashboard/5cv-nzz-3h5/datadog-api-client-python-testcreateanewdashboardwithaprofilemetricquery-1613391","created_at":"2021-02-15T12:22:50.516001+00:00","modified_at":"2021-02-15T12:22:50.516001+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":83318320383855}],"layout_type":"ordered"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '856'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 15 Feb 2021 12:22:50 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      set-cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Mon, 22-Feb-2021 12:22:50 GMT;
+        secure; HttpOnly
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - fIO2C4qGDheGHy4YbS+r3a3CXbh4cbRo7roILOimQyiHGjQdOat0cIpWCkupM1uX
+      x-dd-version:
+      - '35.3909333'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteDashboard
+      User-Agent:
+      - datadog-api-client-python/1.0.0b6.dev47+dirty (python 3.9.0; os Darwin; arch
+        x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/5cv-nzz-3h5
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"5cv-nzz-3h5"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '38'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 15 Feb 2021 12:22:50 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      set-cookie:
+      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Mon, 22-Feb-2021 12:22:50 GMT;
+        secure; HttpOnly
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - S1wfaMZOKGT/IoMw6fqAwAwGWo2vQ44sjF3YzuETnQfxZO2T5eJbs0aX3UKb9Dwu
+      x-dd-version:
+      - '35.3909333'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1
