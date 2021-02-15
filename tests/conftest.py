@@ -206,6 +206,7 @@ def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_late
         "undo_operations": [],
         "unique": unique,
         "unique_lower": unique_lower,
+        "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique),
         "now_ts": now_ts,
         "now_iso": now_iso,
         "hour_later_ts": hour_later_ts,

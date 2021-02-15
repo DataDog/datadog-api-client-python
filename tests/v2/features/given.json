@@ -48,6 +48,22 @@
     "operationId": "CreateLogsMetric"
   },
   {
+    "parameters": [
+      {
+        "name": "metric_name",
+        "value": "\"{{ unique_alnum }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"tags\":[\"app\", \"datacenter\", \"{{ unique_alnum }}\"],\n      \"metric_type\":\"distribution\"\n     },\n     \"type\": \"manage_tags\",\n     \"id\": \"{{ unique_alnum }}\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"metric_tag_configuration\" in the system",
+    "key": "metric_tag_configuration",
+    "tag": "Metrics",
+    "operationId": "CreateTagConfiguration"
+  },
+  {
     "source": "data[0]",
     "step": "there is a valid \"permission\" in the system",
     "key": "permission",
