@@ -25,11 +25,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.synthetics_delete_tests_response_deleted_tests import (
-        SyntheticsDeleteTestsResponseDeletedTests,
-    )
+    from datadog_api_client.v1.model.synthetics_deleted_test import SyntheticsDeletedTest
 
-    globals()["SyntheticsDeleteTestsResponseDeletedTests"] = SyntheticsDeleteTestsResponseDeletedTests
+    globals()["SyntheticsDeletedTest"] = SyntheticsDeletedTest
 
 
 class SyntheticsDeleteTestsResponse(ModelNormal):
@@ -76,7 +74,7 @@ class SyntheticsDeleteTestsResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "deleted_tests": ([SyntheticsDeleteTestsResponseDeletedTests],),  # noqa: E501
+            "deleted_tests": ([SyntheticsDeletedTest],),  # noqa: E501
         }
 
     @cached_property
@@ -135,7 +133,7 @@ class SyntheticsDeleteTestsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            deleted_tests ([SyntheticsDeleteTestsResponseDeletedTests]): Array of objects containing a deleted Synthetic test ID with the associated deletion timestamp.. [optional]  # noqa: E501
+            deleted_tests ([SyntheticsDeletedTest]): Array of objects containing a deleted Synthetic test ID with the associated deletion timestamp.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

@@ -25,15 +25,11 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response_locations import (
-        SyntheticsTriggerCITestsResponseLocations,
-    )
-    from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response_results import (
-        SyntheticsTriggerCITestsResponseResults,
-    )
+    from datadog_api_client.v1.model.synthetics_trigger_ci_test_location import SyntheticsTriggerCITestLocation
+    from datadog_api_client.v1.model.synthetics_trigger_ci_test_run_result import SyntheticsTriggerCITestRunResult
 
-    globals()["SyntheticsTriggerCITestsResponseLocations"] = SyntheticsTriggerCITestsResponseLocations
-    globals()["SyntheticsTriggerCITestsResponseResults"] = SyntheticsTriggerCITestsResponseResults
+    globals()["SyntheticsTriggerCITestLocation"] = SyntheticsTriggerCITestLocation
+    globals()["SyntheticsTriggerCITestRunResult"] = SyntheticsTriggerCITestRunResult
 
 
 class SyntheticsTriggerCITestsResponse(ModelNormal):
@@ -80,8 +76,8 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "locations": ([SyntheticsTriggerCITestsResponseLocations],),  # noqa: E501
-            "results": ([SyntheticsTriggerCITestsResponseResults],),  # noqa: E501
+            "locations": ([SyntheticsTriggerCITestLocation],),  # noqa: E501
+            "results": ([SyntheticsTriggerCITestRunResult],),  # noqa: E501
             "triggered_check_ids": ([str],),  # noqa: E501
         }
 
@@ -143,8 +139,8 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            locations ([SyntheticsTriggerCITestsResponseLocations]): List of Synthetics locations.. [optional]  # noqa: E501
-            results ([SyntheticsTriggerCITestsResponseResults]): Information about the tests runs.. [optional]  # noqa: E501
+            locations ([SyntheticsTriggerCITestLocation]): List of Synthetics locations.. [optional]  # noqa: E501
+            results ([SyntheticsTriggerCITestRunResult]): Information about the tests runs.. [optional]  # noqa: E501
             triggered_check_ids ([str]): The public IDs of the Synthetics test triggered.. [optional]  # noqa: E501
         """
 

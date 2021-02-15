@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **type** | [**LogsTraceRemapperType**](LogsTraceRemapperType.md) |  | defaults to nulltype.Null
 **sources** | **[str]** | Array of source attributes. | defaults to nulltype.Null
 **target** | **str** | Name of the attribute that contains the corresponding value in the mapping list or the &#x60;default_lookup&#x60; if not found in the mapping list. | defaults to nulltype.Null
-**categories** | [**[LogsCategoryProcessorCategories]**](LogsCategoryProcessorCategories.md) | Array of filters to match or not a log and their corresponding &#x60;name&#x60;to assign a custom value to the log. | defaults to nulltype.Null
+**categories** | [**[LogsCategoryProcessorCategory]**](LogsCategoryProcessorCategory.md) | Array of filters to match or not a log and their corresponding &#x60;name&#x60;to assign a custom value to the log. | defaults to nulltype.Null
 **expression** | **str** | Arithmetic operation between one or more log attributes. | defaults to nulltype.Null
 **template** | **str** | A formula with one or more attributes and raw text. | defaults to nulltype.Null
 **lookup_table** | **[str]** | Mapping table of values for the source attribute and their associated target attribute values, formatted as &#x60;[\&quot;source_key1,target_value1\&quot;, \&quot;source_key2,target_value2\&quot;]&#x60; | defaults to nulltype.Null

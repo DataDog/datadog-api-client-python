@@ -25,10 +25,10 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.logs_category_processor_categories import LogsCategoryProcessorCategories
+    from datadog_api_client.v1.model.logs_category_processor_category import LogsCategoryProcessorCategory
     from datadog_api_client.v1.model.logs_category_processor_type import LogsCategoryProcessorType
 
-    globals()["LogsCategoryProcessorCategories"] = LogsCategoryProcessorCategories
+    globals()["LogsCategoryProcessorCategory"] = LogsCategoryProcessorCategory
     globals()["LogsCategoryProcessorType"] = LogsCategoryProcessorType
 
 
@@ -76,7 +76,7 @@ class LogsCategoryProcessor(ModelNormal):
         """
         lazy_import()
         return {
-            "categories": ([LogsCategoryProcessorCategories],),  # noqa: E501
+            "categories": ([LogsCategoryProcessorCategory],),  # noqa: E501
             "target": (str,),  # noqa: E501
             "type": (LogsCategoryProcessorType,),  # noqa: E501
             "is_enabled": (bool,),  # noqa: E501
@@ -113,7 +113,7 @@ class LogsCategoryProcessor(ModelNormal):
         """LogsCategoryProcessor - a model defined in OpenAPI
 
         Args:
-            categories ([LogsCategoryProcessorCategories]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.
+            categories ([LogsCategoryProcessorCategory]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.
             target (str): Name of the target attribute which value is defined by the matching category.
             type (LogsCategoryProcessorType):
 

@@ -36,11 +36,11 @@ def lazy_import():
     from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import (
         TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute,
     )
-    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_group_by import (
-        TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy,
-    )
     from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import (
         TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,
+    )
+    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_group_by import (
+        TimeSeriesFormulaAndFunctionEventQueryGroupBy,
     )
     from datadog_api_client.v1.model.time_series_formula_and_function_metric_query_definition import (
         TimeSeriesFormulaAndFunctionMetricQueryDefinition,
@@ -57,11 +57,9 @@ def lazy_import():
         "TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute"
     ] = TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute
     globals()[
-        "TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy"
-    ] = TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy
-    globals()[
         "TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch"
     ] = TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
+    globals()["TimeSeriesFormulaAndFunctionEventQueryGroupBy"] = TimeSeriesFormulaAndFunctionEventQueryGroupBy
     globals()["TimeSeriesFormulaAndFunctionMetricQueryDefinition"] = TimeSeriesFormulaAndFunctionMetricQueryDefinition
     globals()["TimeSeriesFormulaAndFunctionProcessQueryDefinition"] = TimeSeriesFormulaAndFunctionProcessQueryDefinition
 
@@ -190,7 +188,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
                                 _visited_composed_classes = (Animal,)
             aggregator (FormulaAndFunctionMetricAggregation): [optional]  # noqa: E501
             name (str): Name of query for use in formulas.. [optional]  # noqa: E501
-            group_by ([TimeSeriesFormulaAndFunctionEventQueryDefinitionGroupBy]): Group by options.. [optional]  # noqa: E501
+            group_by ([TimeSeriesFormulaAndFunctionEventQueryGroupBy]): Group by options.. [optional]  # noqa: E501
             indexes ([str]): An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.. [optional]  # noqa: E501
             search (TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch): [optional]  # noqa: E501
             is_normalized_cpu (bool): Whether to normalize the CPU percentages.. [optional]  # noqa: E501

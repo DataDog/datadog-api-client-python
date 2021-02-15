@@ -48,7 +48,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objective_corrections_api.ServiceLevelObjectiveCorrectionsApi(api_client)
     body = SLOCorrectionCreateRequest(
-        data=SLOCorrectionCreateRequestData(
+        data=SLOCorrectionCreateData(
             attributes=SLOCorrectionCreateRequestAttributes(
                 category=SLOCorrectionCategory("Scheduled Maintenance"),
                 description="description_example",
@@ -57,7 +57,7 @@ with ApiClient(configuration) as api_client:
                 start=1600000000,
                 timezone="UTC",
             ),
-            type="correction",
+            type=SLOCorrectionType("correction"),
         ),
     )  # SLOCorrectionCreateRequest | Create an SLO Correction
 
@@ -355,7 +355,7 @@ with ApiClient(configuration) as api_client:
     api_instance = service_level_objective_corrections_api.ServiceLevelObjectiveCorrectionsApi(api_client)
     slo_correction_id = "slo_correction_id_example"  # str | The ID of the SLO correction object
     body = SLOCorrectionUpdateRequest(
-        data=SLOCorrectionUpdateRequestData(
+        data=SLOCorrectionUpdateData(
             attributes=SLOCorrectionUpdateRequestAttributes(
                 category=SLOCorrectionCategory("Scheduled Maintenance"),
                 description="description_example",
@@ -363,7 +363,7 @@ with ApiClient(configuration) as api_client:
                 start=1600000000,
                 timezone="UTC",
             ),
-            type="correction",
+            type=SLOCorrectionType("correction"),
         ),
     )  # SLOCorrectionUpdateRequest | The edited SLO correction object.
 

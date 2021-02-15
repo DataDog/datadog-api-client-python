@@ -28,7 +28,7 @@ def lazy_import():
     from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
     from datadog_api_client.v1.model.logs_attribute_remapper import LogsAttributeRemapper
     from datadog_api_client.v1.model.logs_category_processor import LogsCategoryProcessor
-    from datadog_api_client.v1.model.logs_category_processor_categories import LogsCategoryProcessorCategories
+    from datadog_api_client.v1.model.logs_category_processor_category import LogsCategoryProcessorCategory
     from datadog_api_client.v1.model.logs_date_remapper import LogsDateRemapper
     from datadog_api_client.v1.model.logs_filter import LogsFilter
     from datadog_api_client.v1.model.logs_geo_ip_parser import LogsGeoIPParser
@@ -49,7 +49,7 @@ def lazy_import():
     globals()["LogsArithmeticProcessor"] = LogsArithmeticProcessor
     globals()["LogsAttributeRemapper"] = LogsAttributeRemapper
     globals()["LogsCategoryProcessor"] = LogsCategoryProcessor
-    globals()["LogsCategoryProcessorCategories"] = LogsCategoryProcessorCategories
+    globals()["LogsCategoryProcessorCategory"] = LogsCategoryProcessorCategory
     globals()["LogsDateRemapper"] = LogsDateRemapper
     globals()["LogsFilter"] = LogsFilter
     globals()["LogsGeoIPParser"] = LogsGeoIPParser
@@ -161,7 +161,7 @@ class LogsProcessor(ModelComposed):
             type (LogsTraceRemapperType): defaults to nulltype.Null, must be one of ["trace-id-remapper", ]  # noqa: E501
             sources ([str]): Array of source attributes.. defaults to nulltype.Null  # noqa: E501
             target (str): Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.. defaults to nulltype.Null  # noqa: E501
-            categories ([LogsCategoryProcessorCategories]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.. defaults to nulltype.Null  # noqa: E501
+            categories ([LogsCategoryProcessorCategory]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.. defaults to nulltype.Null  # noqa: E501
             expression (str): Arithmetic operation between one or more log attributes.. defaults to nulltype.Null  # noqa: E501
             template (str): A formula with one or more attributes and raw text.. defaults to nulltype.Null  # noqa: E501
             lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`. defaults to nulltype.Null  # noqa: E501

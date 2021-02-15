@@ -25,9 +25,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.aws_logs_list_response_lambdas import AWSLogsListResponseLambdas
+    from datadog_api_client.v1.model.aws_logs_lambda import AWSLogsLambda
 
-    globals()["AWSLogsListResponseLambdas"] = AWSLogsListResponseLambdas
+    globals()["AWSLogsLambda"] = AWSLogsLambda
 
 
 class AWSLogsListResponse(ModelNormal):
@@ -75,7 +75,7 @@ class AWSLogsListResponse(ModelNormal):
         lazy_import()
         return {
             "account_id": (str,),  # noqa: E501
-            "lambdas": ([AWSLogsListResponseLambdas],),  # noqa: E501
+            "lambdas": ([AWSLogsLambda],),  # noqa: E501
             "services": ([str],),  # noqa: E501
         }
 
@@ -138,7 +138,7 @@ class AWSLogsListResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_id (str): Your AWS Account ID without dashes.. [optional]  # noqa: E501
-            lambdas ([AWSLogsListResponseLambdas]): List of ARNs configured in your Datadog account.. [optional]  # noqa: E501
+            lambdas ([AWSLogsLambda]): List of ARNs configured in your Datadog account.. [optional]  # noqa: E501
             services ([str]): Array of services IDs.. [optional]  # noqa: E501
         """
 

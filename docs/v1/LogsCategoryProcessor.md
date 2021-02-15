@@ -4,7 +4,7 @@ Use the Category Processor to add a new attribute (without spaces or special cha
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**categories** | [**[LogsCategoryProcessorCategories]**](LogsCategoryProcessorCategories.md) | Array of filters to match or not a log and their corresponding &#x60;name&#x60;to assign a custom value to the log. | 
+**categories** | [**[LogsCategoryProcessorCategory]**](LogsCategoryProcessorCategory.md) | Array of filters to match or not a log and their corresponding &#x60;name&#x60;to assign a custom value to the log. | 
 **target** | **str** | Name of the target attribute which value is defined by the matching category. | 
 **type** | [**LogsCategoryProcessorType**](LogsCategoryProcessorType.md) |  | 
 **is_enabled** | **bool** | Whether or not the processor is enabled. | [optional]  if omitted the server will use the default value of False

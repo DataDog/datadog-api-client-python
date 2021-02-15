@@ -25,9 +25,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.aws_tag_filter_list_response_filters import AWSTagFilterListResponseFilters
+    from datadog_api_client.v1.model.aws_tag_filter import AWSTagFilter
 
-    globals()["AWSTagFilterListResponseFilters"] = AWSTagFilterListResponseFilters
+    globals()["AWSTagFilter"] = AWSTagFilter
 
 
 class AWSTagFilterListResponse(ModelNormal):
@@ -74,7 +74,7 @@ class AWSTagFilterListResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "filters": ([AWSTagFilterListResponseFilters],),  # noqa: E501
+            "filters": ([AWSTagFilter],),  # noqa: E501
         }
 
     @cached_property
@@ -133,7 +133,7 @@ class AWSTagFilterListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            filters ([AWSTagFilterListResponseFilters]): An array of tag filters.. [optional]  # noqa: E501
+            filters ([AWSTagFilter]): An array of tag filters.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

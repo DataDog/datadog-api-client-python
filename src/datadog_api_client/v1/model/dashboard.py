@@ -26,13 +26,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
+    from datadog_api_client.v1.model.dashboard_template_variable import DashboardTemplateVariable
     from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
-    from datadog_api_client.v1.model.dashboard_template_variables import DashboardTemplateVariables
     from datadog_api_client.v1.model.widget import Widget
 
     globals()["DashboardLayoutType"] = DashboardLayoutType
+    globals()["DashboardTemplateVariable"] = DashboardTemplateVariable
     globals()["DashboardTemplateVariablePreset"] = DashboardTemplateVariablePreset
-    globals()["DashboardTemplateVariables"] = DashboardTemplateVariables
     globals()["Widget"] = Widget
 
 
@@ -101,7 +101,7 @@ class Dashboard(ModelNormal):
                 none_type,
             ),  # noqa: E501
             "template_variables": (
-                [DashboardTemplateVariables],
+                [DashboardTemplateVariable],
                 none_type,
             ),  # noqa: E501
             "url": (str,),  # noqa: E501
@@ -188,7 +188,7 @@ class Dashboard(ModelNormal):
             modified_at (datetime): Modification date of the dashboard.. [optional]  # noqa: E501
             notify_list ([str], none_type): List of handles of users to notify when changes are made to this dashboard.. [optional]  # noqa: E501
             template_variable_presets ([DashboardTemplateVariablePreset], none_type): Array of template variables saved views.. [optional]  # noqa: E501
-            template_variables ([DashboardTemplateVariables], none_type): List of template variables for this dashboard.. [optional]  # noqa: E501
+            template_variables ([DashboardTemplateVariable], none_type): List of template variables for this dashboard.. [optional]  # noqa: E501
             url (str): The URL of the dashboard.. [optional]  # noqa: E501
         """
 

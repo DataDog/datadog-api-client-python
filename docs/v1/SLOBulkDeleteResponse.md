@@ -5,7 +5,7 @@ The bulk partial delete service level objective object endpoint response.  This 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**SLOBulkDeleteResponseData**](SLOBulkDeleteResponseData.md) |  | [optional] 
-**errors** | [**[SLOBulkDeleteResponseErrors]**](SLOBulkDeleteResponseErrors.md) | Array of errors object returned. | [optional] 
+**errors** | [**[SLOBulkDeleteError]**](SLOBulkDeleteError.md) | Array of errors object returned. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
