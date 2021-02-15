@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create a Tag Configuration
 
-Create and define a list of queryable tag keys for a count/gauge/rate/distribution metric. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
+Create and define a list of queryable tag keys for a count/gauge/rate/distribution metric. Optionally, include percentile aggregations on any distribution metric. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
 
 ### Example
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 Update a Tag Configuration
 
-Update the tag configuration of a metric. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.
+Update the tag configuration of a metric or percentile aggregations of a distribution metric. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.
 
 ### Example
 
