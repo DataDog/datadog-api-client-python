@@ -48,13 +48,11 @@ class UsageAttributionSort(ModelSimple):
         ("value",): {
             "API_PERCENTAGE": "api_percentage",
             "SNMP_USAGE": "snmp_usage",
-            "LAMBDA_PERCENTAGE": "lambda_percentage",
             "APM_HOST_USAGE": "apm_host_usage",
             "API_USAGE": "api_usage",
             "CONTAINER_USAGE": "container_usage",
             "CUSTOM_TIMESERIES_PERCENTAGE": "custom_timeseries_percentage",
             "CONTAINER_PERCENTAGE": "container_percentage",
-            "LAMBDA_USAGE": "lambda_usage",
             "APM_HOST_PERCENTAGE": "apm_host_percentage",
             "NPM_HOST_PERCENTAGE": "npm_host_percentage",
             "BROWSER_PERCENTAGE": "browser_percentage",
@@ -64,6 +62,12 @@ class UsageAttributionSort(ModelSimple):
             "NPM_HOST_USAGE": "npm_host_usage",
             "INFRA_HOST_USAGE": "infra_host_usage",
             "CUSTOM_TIMESERIES_USAGE": "custom_timeseries_usage",
+            "LAMBDA_FUNCTIONS_USAGE": "lambda_functions_usage",
+            "LAMBDA_FUNCTIONS_PERCENTAGE": "lambda_functions_percentage",
+            "LAMBDA_INVOCATIONS_USAGE": "lambda_invocations_usage",
+            "LAMBDA_INVOCATIONS_PERCENTAGE": "lambda_invocations_percentage",
+            "LAMBDA_USAGE": "lambda_usage",
+            "LAMBDA_PERCENTAGE": "lambda_percentage",
         },
     }
 
@@ -113,10 +117,10 @@ class UsageAttributionSort(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): The field to sort by.. if omitted defaults to "custom_timeseries_usage", must be one of ["api_percentage", "snmp_usage", "lambda_percentage", "apm_host_usage", "api_usage", "container_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "apm_host_percentage", "npm_host_percentage", "browser_percentage", "browser_usage", "infra_host_percentage", "snmp_percentage", "npm_host_usage", "infra_host_usage", "custom_timeseries_usage", ]  # noqa: E501
+            args[0] (str): The field to sort by.. if omitted defaults to "custom_timeseries_usage", must be one of ["api_percentage", "snmp_usage", "apm_host_usage", "api_usage", "container_usage", "custom_timeseries_percentage", "container_percentage", "apm_host_percentage", "npm_host_percentage", "browser_percentage", "browser_usage", "infra_host_percentage", "snmp_percentage", "npm_host_usage", "infra_host_usage", "custom_timeseries_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "lambda_usage", "lambda_percentage", ]  # noqa: E501
 
         Keyword Args:
-            value (str): The field to sort by.. if omitted defaults to "custom_timeseries_usage", must be one of ["api_percentage", "snmp_usage", "lambda_percentage", "apm_host_usage", "api_usage", "container_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "apm_host_percentage", "npm_host_percentage", "browser_percentage", "browser_usage", "infra_host_percentage", "snmp_percentage", "npm_host_usage", "infra_host_usage", "custom_timeseries_usage", ]  # noqa: E501
+            value (str): The field to sort by.. if omitted defaults to "custom_timeseries_usage", must be one of ["api_percentage", "snmp_usage", "apm_host_usage", "api_usage", "container_usage", "custom_timeseries_percentage", "container_percentage", "apm_host_percentage", "npm_host_percentage", "browser_percentage", "browser_usage", "infra_host_percentage", "snmp_percentage", "npm_host_usage", "infra_host_usage", "custom_timeseries_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "lambda_usage", "lambda_percentage", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

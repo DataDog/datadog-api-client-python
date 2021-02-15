@@ -79,6 +79,10 @@ class UsageAttributionValues(ModelNormal):
             "custom_timeseries_usage": (float,),  # noqa: E501
             "infra_host_percentage": (float,),  # noqa: E501
             "infra_host_usage": (float,),  # noqa: E501
+            "lambda_functions_percentage": (float,),  # noqa: E501
+            "lambda_functions_usage": (float,),  # noqa: E501
+            "lambda_invocations_percentage": (float,),  # noqa: E501
+            "lambda_invocations_usage": (float,),  # noqa: E501
             "lambda_percentage": (float,),  # noqa: E501
             "lambda_usage": (float,),  # noqa: E501
             "npm_host_percentage": (float,),  # noqa: E501
@@ -104,6 +108,10 @@ class UsageAttributionValues(ModelNormal):
         "custom_timeseries_usage": "custom_timeseries_usage",  # noqa: E501
         "infra_host_percentage": "infra_host_percentage",  # noqa: E501
         "infra_host_usage": "infra_host_usage",  # noqa: E501
+        "lambda_functions_percentage": "lambda_functions_percentage",  # noqa: E501
+        "lambda_functions_usage": "lambda_functions_usage",  # noqa: E501
+        "lambda_invocations_percentage": "lambda_invocations_percentage",  # noqa: E501
+        "lambda_invocations_usage": "lambda_invocations_usage",  # noqa: E501
         "lambda_percentage": "lambda_percentage",  # noqa: E501
         "lambda_usage": "lambda_usage",  # noqa: E501
         "npm_host_percentage": "npm_host_percentage",  # noqa: E501
@@ -172,8 +180,12 @@ class UsageAttributionValues(ModelNormal):
             custom_timeseries_usage (float): The custom metrics usage by tag(s).. [optional]  # noqa: E501
             infra_host_percentage (float): The percentage of infrastructure host usage by tag(s).. [optional]  # noqa: E501
             infra_host_usage (float): The infrastructure host usage by tag(s).. [optional]  # noqa: E501
-            lambda_percentage (float): The percentage of lambda function usage by tag(s).. [optional]  # noqa: E501
-            lambda_usage (float): The lambda function usage by tag(s).. [optional]  # noqa: E501
+            lambda_functions_percentage (float): The percentage of Lambda function usage by tag(s).. [optional]  # noqa: E501
+            lambda_functions_usage (float): The Lambda function usage by tag(s).. [optional]  # noqa: E501
+            lambda_invocations_percentage (float): The percentage of Lambda invocation usage by tag(s).. [optional]  # noqa: E501
+            lambda_invocations_usage (float): The Lambda invocation usage by tag(s).. [optional]  # noqa: E501
+            lambda_percentage (float): The percentage of Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_percentage instead.. [optional]  # noqa: E501
+            lambda_usage (float): The Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_usage instead.. [optional]  # noqa: E501
             npm_host_percentage (float): The percentage of network host usage by tag(s).. [optional]  # noqa: E501
             npm_host_usage (float): The network host usage by tag(s).. [optional]  # noqa: E501
             snmp_percentage (float): The percentage of network device usage by tag(s).. [optional]  # noqa: E501

@@ -193,6 +193,27 @@ from datadog_api_client.v2.model.logs_response_metadata_page import LogsResponse
 from datadog_api_client.v2.model.logs_sort import LogsSort
 from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
 from datadog_api_client.v2.model.logs_warning import LogsWarning
+from datadog_api_client.v2.model.metric import Metric
+from datadog_api_client.v2.model.metric_tag_configuration import MetricTagConfiguration
+from datadog_api_client.v2.model.metric_tag_configuration_attributes import MetricTagConfigurationAttributes
+from datadog_api_client.v2.model.metric_tag_configuration_create_attributes import (
+    MetricTagConfigurationCreateAttributes,
+)
+from datadog_api_client.v2.model.metric_tag_configuration_create_data import MetricTagConfigurationCreateData
+from datadog_api_client.v2.model.metric_tag_configuration_create_request import MetricTagConfigurationCreateRequest
+from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
+from datadog_api_client.v2.model.metric_tag_configuration_response import MetricTagConfigurationResponse
+from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagConfigurationType
+from datadog_api_client.v2.model.metric_tag_configuration_update_attributes import (
+    MetricTagConfigurationUpdateAttributes,
+)
+from datadog_api_client.v2.model.metric_tag_configuration_update_data import MetricTagConfigurationUpdateData
+from datadog_api_client.v2.model.metric_tag_configuration_update_request import MetricTagConfigurationUpdateRequest
+from datadog_api_client.v2.model.metric_type import MetricType
+from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import MetricsAndMetricTagConfigurations
+from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response import (
+    MetricsAndMetricTagConfigurationsResponse,
+)
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
