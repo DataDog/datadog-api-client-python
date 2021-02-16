@@ -129,7 +129,7 @@ class SyntheticsAssertion(ModelComposed):
 
         Keyword Args:
             operator (SyntheticsAssertionJSONPathOperator): defaults to nulltype.Null, must be one of ["validatesJSONPath", ]  # noqa: E501
-            type (SyntheticsAssertionType): defaults to nulltype.Null, must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", ]  # noqa: E501
+            type (SyntheticsAssertionType): defaults to nulltype.Null, must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", "tlsVersion", "minTlsVersion", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
