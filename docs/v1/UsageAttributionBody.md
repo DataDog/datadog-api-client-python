@@ -5,6 +5,7 @@ Usage Summary by tag for a given organization.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **month** | **datetime** | Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM]. | [optional] 
+**org_name** | **str** | The name of the organization. | [optional] 
 **public_id** | **str** | The organization public ID. | [optional] 
 **tags** | [**UsageAttributionTagNames**](UsageAttributionTagNames.md) |  | [optional] 
 **updated_at** | **str** | Shows the the most recent hour in the current months for all organizations for which all usages were calculated. | [optional] 
