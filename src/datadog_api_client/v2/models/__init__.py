@@ -278,12 +278,20 @@ from datadog_api_client.v2.model.security_monitoring_list_rules_response import 
 from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
+from datadog_api_client.v2.model.security_monitoring_rule_detection_method import SecurityMonitoringRuleDetectionMethod
 from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
     SecurityMonitoringRuleEvaluationWindow,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_keep_alive import SecurityMonitoringRuleKeepAlive
 from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration import (
     SecurityMonitoringRuleMaxSignalDuration,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import SecurityMonitoringRuleNewValueOptions
+from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forget_after import (
+    SecurityMonitoringRuleNewValueOptionsForgetAfter,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration import (
+    SecurityMonitoringRuleNewValueOptionsLearningDuration,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
 from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery

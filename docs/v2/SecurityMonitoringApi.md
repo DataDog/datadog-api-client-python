@@ -60,9 +60,14 @@ with ApiClient(configuration) as api_client:
         message="",
         name="",
         options=SecurityMonitoringRuleOptions(
+            detection_method=SecurityMonitoringRuleDetectionMethod("threshold"),
             evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
             keep_alive=SecurityMonitoringRuleKeepAlive(0),
             max_signal_duration=SecurityMonitoringRuleMaxSignalDuration(0),
+            new_value_options=SecurityMonitoringRuleNewValueOptions(
+                forget_after=SecurityMonitoringRuleNewValueOptionsForgetAfter(1),
+                learning_duration=SecurityMonitoringRuleNewValueOptionsLearningDuration(0),
+            ),
         ),
         queries=[],
         tags=["env:prod","team:security"],
@@ -557,9 +562,14 @@ with ApiClient(configuration) as api_client:
         message="message_example",
         name="name_example",
         options=SecurityMonitoringRuleOptions(
+            detection_method=SecurityMonitoringRuleDetectionMethod("threshold"),
             evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
             keep_alive=SecurityMonitoringRuleKeepAlive(0),
             max_signal_duration=SecurityMonitoringRuleMaxSignalDuration(0),
+            new_value_options=SecurityMonitoringRuleNewValueOptions(
+                forget_after=SecurityMonitoringRuleNewValueOptionsForgetAfter(1),
+                learning_duration=SecurityMonitoringRuleNewValueOptionsLearningDuration(0),
+            ),
         ),
         queries=[
             SecurityMonitoringRuleQuery(
