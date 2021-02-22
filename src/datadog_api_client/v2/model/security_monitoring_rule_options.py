@@ -25,6 +25,9 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (
+        SecurityMonitoringRuleDetectionMethod,
+    )
     from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
         SecurityMonitoringRuleEvaluationWindow,
     )
@@ -32,10 +35,15 @@ def lazy_import():
     from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration import (
         SecurityMonitoringRuleMaxSignalDuration,
     )
+    from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import (
+        SecurityMonitoringRuleNewValueOptions,
+    )
 
+    globals()["SecurityMonitoringRuleDetectionMethod"] = SecurityMonitoringRuleDetectionMethod
     globals()["SecurityMonitoringRuleEvaluationWindow"] = SecurityMonitoringRuleEvaluationWindow
     globals()["SecurityMonitoringRuleKeepAlive"] = SecurityMonitoringRuleKeepAlive
     globals()["SecurityMonitoringRuleMaxSignalDuration"] = SecurityMonitoringRuleMaxSignalDuration
+    globals()["SecurityMonitoringRuleNewValueOptions"] = SecurityMonitoringRuleNewValueOptions
 
 
 class SecurityMonitoringRuleOptions(ModelNormal):
@@ -82,9 +90,11 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         """
         lazy_import()
         return {
+            "detection_method": (SecurityMonitoringRuleDetectionMethod,),  # noqa: E501
             "evaluation_window": (SecurityMonitoringRuleEvaluationWindow,),  # noqa: E501
             "keep_alive": (SecurityMonitoringRuleKeepAlive,),  # noqa: E501
             "max_signal_duration": (SecurityMonitoringRuleMaxSignalDuration,),  # noqa: E501
+            "new_value_options": (SecurityMonitoringRuleNewValueOptions,),  # noqa: E501
         }
 
     @cached_property
@@ -92,9 +102,11 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         return None
 
     attribute_map = {
+        "detection_method": "detectionMethod",  # noqa: E501
         "evaluation_window": "evaluationWindow",  # noqa: E501
         "keep_alive": "keepAlive",  # noqa: E501
         "max_signal_duration": "maxSignalDuration",  # noqa: E501
+        "new_value_options": "newValueOptions",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -145,9 +157,11 @@ class SecurityMonitoringRuleOptions(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            detection_method (SecurityMonitoringRuleDetectionMethod): [optional]  # noqa: E501
             evaluation_window (SecurityMonitoringRuleEvaluationWindow): [optional]  # noqa: E501
             keep_alive (SecurityMonitoringRuleKeepAlive): [optional]  # noqa: E501
             max_signal_duration (SecurityMonitoringRuleMaxSignalDuration): [optional]  # noqa: E501
+            new_value_options (SecurityMonitoringRuleNewValueOptions): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
