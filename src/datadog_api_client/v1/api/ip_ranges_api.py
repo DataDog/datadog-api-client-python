@@ -92,7 +92,7 @@ class IPRangesApi(object):
                             "site": {
                                 "description": "The regional site for our customers.",
                                 "default_value": "datadoghq.com",
-                                "enum_values": ["datadoghq.com", "datadoghq.eu", "ddog-gov.com"],
+                                "enum_values": ["datadoghq.com", "us3.datadoghq.com", "datadoghq.eu", "ddog-gov.com"],
                             },
                             "subdomain": {
                                 "description": "The subdomain where the API is deployed.",
