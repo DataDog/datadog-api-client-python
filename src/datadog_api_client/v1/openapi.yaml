@@ -3,7 +3,21 @@ components:
   examples: {}
   headers: {}
   links: {}
-  parameters: {}
+  parameters:
+    SlackAccountNamePathParameter:
+      description: Your Slack account name.
+      in: path
+      name: account_name
+      required: true
+      schema:
+        type: string
+    SlackChannelNamePathParameter:
+      description: The name of the Slack channel being operated on.
+      in: path
+      name: channel_name
+      required: true
+      schema:
+        type: string
   requestBodies: {}
   responses: {}
   schemas:
@@ -6067,6 +6081,52 @@ components:
       type: string
       x-enum-varnames:
       - TRACE_SERVICE
+    SlackIntegrationChannel:
+      description: The Slack channel configuration.
+      properties:
+        display:
+          description: Configuration options for what is shown in an alert event message.
+          properties:
+            message:
+              default: true
+              description: Show the main body of the alert event.
+              type: boolean
+            notified:
+              default: true
+              description: Show the list of @-handles in the alert event.
+              type: boolean
+            snapshot:
+              default: true
+              description: Show the alert event's snapshot image.
+              type: boolean
+            tags:
+              default: true
+              description: Show the scopes on which the monitor alerted.
+              type: boolean
+          type: object
+        name:
+          description: Your channel name.
+          example: '#general'
+          type: string
+      type: object
+    SlackIntegrationChannels:
+      description: A list of configured Slack channels.
+      example:
+      - display:
+          message: true
+          notified: true
+          snapshot: true
+          tags: true
+        name: '#channel_name_main_account'
+      - display:
+          message: true
+          notified: true
+          snapshot: false
+          tags: true
+        name: '#channel_name_doghouse'
+      items:
+        $ref: '#/components/schemas/SlackIntegrationChannel'
+      type: array
     SyntheticsAPITestResultData:
       description: Object containing results for your Synthetic API test.
       properties:
@@ -13284,6 +13344,198 @@ paths:
       x-codegen-request-body-name: body
       x-undo:
         type: idempotent
+  /api/v1/integration/slack/configuration/accounts/{account_name}/channels:
+    get:
+      description: Get a list of all channels configured for your Datadog-Slack integration.
+      operationId: GetSlackIntegrationChannels
+      parameters:
+      - $ref: '#/components/parameters/SlackAccountNamePathParameter'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SlackIntegrationChannels'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Authentication error
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Item Not Found
+      summary: Get all channels in a Slack integration
+      tags:
+      - Slack Integration
+      x-undo:
+        type: safe
+    post:
+      description: Add a channel to your Datadog-Slack integration.
+      operationId: CreateSlackIntegrationChannel
+      parameters:
+      - $ref: '#/components/parameters/SlackAccountNamePathParameter'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SlackIntegrationChannel'
+        description: Payload describing Slack channel to be created
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SlackIntegrationChannel'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Authentication error
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Item Not Found
+      summary: Create a Slack integration channel
+      tags:
+      - Slack Integration
+      x-codegen-request-body-name: body
+      x-undo:
+        type: unsafe
+  /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name}:
+    delete:
+      description: Remove a channel from your Datadog-Slack integration.
+      operationId: RemoveSlackIntegrationChannel
+      parameters:
+      - $ref: '#/components/parameters/SlackAccountNamePathParameter'
+      - $ref: '#/components/parameters/SlackChannelNamePathParameter'
+      responses:
+        '204':
+          description: The channel was removed successfully.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Authentication error
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Item Not Found
+      summary: Remove a Slack integration channel
+      tags:
+      - Slack Integration
+      x-undo:
+        type: idempotent
+    get:
+      description: Get a channel configured for your Datadog-Slack integration.
+      operationId: GetSlackIntegrationChannel
+      parameters:
+      - $ref: '#/components/parameters/SlackAccountNamePathParameter'
+      - $ref: '#/components/parameters/SlackChannelNamePathParameter'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SlackIntegrationChannel'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Authentication error
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Item Not Found
+      summary: Get a Slack integration channel
+      tags:
+      - Slack Integration
+      x-undo:
+        type: safe
+    patch:
+      description: Update a channel used in your Datadog-Slack integration.
+      operationId: UpdateSlackIntegrationChannel
+      parameters:
+      - $ref: '#/components/parameters/SlackAccountNamePathParameter'
+      - $ref: '#/components/parameters/SlackChannelNamePathParameter'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SlackIntegrationChannel'
+        description: Payload describing fields and values to be updated.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SlackIntegrationChannel'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Authentication error
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Item Not Found
+      summary: Update a Slack integration channel
+      tags:
+      - Slack Integration
+      x-codegen-request-body-name: body
+      x-undo:
+        type: idempotent
   /api/v1/logs-queries/list:
     post:
       description: 'List endpoint returns logs that match a log search query.
@@ -18228,6 +18480,14 @@ tags:
 
     and improve communication with internal and external users.'
   name: Service Level Objectives
+- description: 'Configure your [Datadog-Slack integration](https://docs.datadoghq.com/integrations/slack)
+
+    directly through the Datadog API.'
+  externalDocs:
+    description: For more information about the Datadog-Slack integration, see the
+      integration page.
+    url: https://docs.datadoghq.com/integrations/slack
+  name: Slack Integration
 - description: Take graph snapshots using the API.
   name: Snapshots
 - description: "Datadog Synthetics uses simulated user requests and browser rendering\

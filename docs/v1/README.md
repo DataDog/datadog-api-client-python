@@ -210,6 +210,11 @@ Class | Method | HTTP request | Description
 *ServiceLevelObjectivesApi* | [**get_slo_history**](ServiceLevelObjectivesApi.md#get_slo_history) | **GET** /api/v1/slo/{slo_id}/history | Get an SLO&#39;s history
 *ServiceLevelObjectivesApi* | [**list_slos**](ServiceLevelObjectivesApi.md#list_slos) | **GET** /api/v1/slo | Get all SLOs
 *ServiceLevelObjectivesApi* | [**update_slo**](ServiceLevelObjectivesApi.md#update_slo) | **PUT** /api/v1/slo/{slo_id} | Update a SLO
+*SlackIntegrationApi* | [**create_slack_integration_channel**](SlackIntegrationApi.md#create_slack_integration_channel) | **POST** /api/v1/integration/slack/configuration/accounts/{account_name}/channels | Create a Slack integration channel
+*SlackIntegrationApi* | [**get_slack_integration_channel**](SlackIntegrationApi.md#get_slack_integration_channel) | **GET** /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name} | Get a Slack integration channel
+*SlackIntegrationApi* | [**get_slack_integration_channels**](SlackIntegrationApi.md#get_slack_integration_channels) | **GET** /api/v1/integration/slack/configuration/accounts/{account_name}/channels | Get all channels in a Slack integration
+*SlackIntegrationApi* | [**remove_slack_integration_channel**](SlackIntegrationApi.md#remove_slack_integration_channel) | **DELETE** /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name} | Remove a Slack integration channel
+*SlackIntegrationApi* | [**update_slack_integration_channel**](SlackIntegrationApi.md#update_slack_integration_channel) | **PATCH** /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name} | Update a Slack integration channel
 *SnapshotsApi* | [**get_graph_snapshot**](SnapshotsApi.md#get_graph_snapshot) | **GET** /api/v1/graph/snapshot | Take graph snapshots
 *SyntheticsApi* | [**create_global_variable**](SyntheticsApi.md#create_global_variable) | **POST** /api/v1/synthetics/variables | Create a global variable
 *SyntheticsApi* | [**create_private_location**](SyntheticsApi.md#create_private_location) | **POST** /api/v1/synthetics/private-locations | Create a private location
@@ -543,6 +548,9 @@ Class | Method | HTTP request | Description
  - [ServiceMapWidgetDefinitionType](ServiceMapWidgetDefinitionType.md)
  - [ServiceSummaryWidgetDefinition](ServiceSummaryWidgetDefinition.md)
  - [ServiceSummaryWidgetDefinitionType](ServiceSummaryWidgetDefinitionType.md)
+ - [SlackIntegrationChannel](SlackIntegrationChannel.md)
+ - [SlackIntegrationChannelDisplay](SlackIntegrationChannelDisplay.md)
+ - [SlackIntegrationChannels](SlackIntegrationChannels.md)
  - [SyntheticsAPITestResultData](SyntheticsAPITestResultData.md)
  - [SyntheticsAPITestResultFull](SyntheticsAPITestResultFull.md)
  - [SyntheticsAPITestResultFullCheck](SyntheticsAPITestResultFullCheck.md)
