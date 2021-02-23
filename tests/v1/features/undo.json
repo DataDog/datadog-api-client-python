@@ -437,6 +437,36 @@
       "type": "idempotent"
     }
   },
+  "GetSlackIntegrationChannels": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSlackIntegrationChannel": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "RemoveSlackIntegrationChannel": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSlackIntegrationChannel": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSlackIntegrationChannel": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListLogs": {
     "tag": "Logs",
     "undo": {

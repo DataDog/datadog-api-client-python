@@ -34,6 +34,7 @@ from datadog_api_client.v1.api.organizations_api import OrganizationsApi
 from datadog_api_client.v1.api.pager_duty_integration_api import PagerDutyIntegrationApi
 from datadog_api_client.v1.api.service_level_objective_corrections_api import ServiceLevelObjectiveCorrectionsApi
 from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelObjectivesApi
+from datadog_api_client.v1.api.slack_integration_api import SlackIntegrationApi
 from datadog_api_client.v1.api.snapshots_api import SnapshotsApi
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.api.tags_api import TagsApi
