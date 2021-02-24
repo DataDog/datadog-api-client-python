@@ -82,11 +82,30 @@ from datadog_api_client.v1.model.event_stream_widget_definition_type import Even
 from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
 from datadog_api_client.v1.model.event_timeline_widget_definition_type import EventTimelineWidgetDefinitionType
 from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
+from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
+    FormulaAndFunctionEventQueryDefinition,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_definition_compute import (
+    FormulaAndFunctionEventQueryDefinitionCompute,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
+    FormulaAndFunctionEventQueryDefinitionSearch,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by import FormulaAndFunctionEventQueryGroupBy
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by_sort import (
+    FormulaAndFunctionEventQueryGroupBySort,
+)
 from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
 from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
 from datadog_api_client.v1.model.formula_and_function_metric_data_source import FormulaAndFunctionMetricDataSource
+from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
+    FormulaAndFunctionMetricQueryDefinition,
+)
 from datadog_api_client.v1.model.formula_and_function_process_query_data_source import (
     FormulaAndFunctionProcessQueryDataSource,
+)
+from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
+    FormulaAndFunctionProcessQueryDefinition,
 )
 from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
@@ -399,27 +418,6 @@ from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetH
 from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
 from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
 from datadog_api_client.v1.model.target_format_type import TargetFormatType
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinition,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_group_by import (
-    TimeSeriesFormulaAndFunctionEventQueryGroupBy,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_group_by_sort import (
-    TimeSeriesFormulaAndFunctionEventQueryGroupBySort,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_metric_query_definition import (
-    TimeSeriesFormulaAndFunctionMetricQueryDefinition,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_process_query_definition import (
-    TimeSeriesFormulaAndFunctionProcessQueryDefinition,
-)
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 from datadog_api_client.v1.model.timeseries_widget_expression_alias import TimeseriesWidgetExpressionAlias

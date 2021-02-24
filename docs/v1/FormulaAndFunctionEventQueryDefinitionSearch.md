@@ -1,4 +1,4 @@
-# TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
+# FormulaAndFunctionEventQueryDefinitionSearch
 
 Search options.
 ## Properties
