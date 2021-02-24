@@ -25,43 +25,39 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
+        FormulaAndFunctionEventQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_event_query_definition_compute import (
+        FormulaAndFunctionEventQueryDefinitionCompute,
+    )
+    from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
+        FormulaAndFunctionEventQueryDefinitionSearch,
+    )
+    from datadog_api_client.v1.model.formula_and_function_event_query_group_by import (
+        FormulaAndFunctionEventQueryGroupBy,
+    )
     from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
+    from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
+        FormulaAndFunctionMetricQueryDefinition,
+    )
     from datadog_api_client.v1.model.formula_and_function_process_query_data_source import (
         FormulaAndFunctionProcessQueryDataSource,
     )
+    from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
+        FormulaAndFunctionProcessQueryDefinition,
+    )
     from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
-    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition import (
-        TimeSeriesFormulaAndFunctionEventQueryDefinition,
-    )
-    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import (
-        TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute,
-    )
-    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import (
-        TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,
-    )
-    from datadog_api_client.v1.model.time_series_formula_and_function_event_query_group_by import (
-        TimeSeriesFormulaAndFunctionEventQueryGroupBy,
-    )
-    from datadog_api_client.v1.model.time_series_formula_and_function_metric_query_definition import (
-        TimeSeriesFormulaAndFunctionMetricQueryDefinition,
-    )
-    from datadog_api_client.v1.model.time_series_formula_and_function_process_query_definition import (
-        TimeSeriesFormulaAndFunctionProcessQueryDefinition,
-    )
 
+    globals()["FormulaAndFunctionEventQueryDefinition"] = FormulaAndFunctionEventQueryDefinition
+    globals()["FormulaAndFunctionEventQueryDefinitionCompute"] = FormulaAndFunctionEventQueryDefinitionCompute
+    globals()["FormulaAndFunctionEventQueryDefinitionSearch"] = FormulaAndFunctionEventQueryDefinitionSearch
+    globals()["FormulaAndFunctionEventQueryGroupBy"] = FormulaAndFunctionEventQueryGroupBy
     globals()["FormulaAndFunctionMetricAggregation"] = FormulaAndFunctionMetricAggregation
+    globals()["FormulaAndFunctionMetricQueryDefinition"] = FormulaAndFunctionMetricQueryDefinition
     globals()["FormulaAndFunctionProcessQueryDataSource"] = FormulaAndFunctionProcessQueryDataSource
+    globals()["FormulaAndFunctionProcessQueryDefinition"] = FormulaAndFunctionProcessQueryDefinition
     globals()["QuerySortOrder"] = QuerySortOrder
-    globals()["TimeSeriesFormulaAndFunctionEventQueryDefinition"] = TimeSeriesFormulaAndFunctionEventQueryDefinition
-    globals()[
-        "TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute"
-    ] = TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute
-    globals()[
-        "TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch"
-    ] = TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
-    globals()["TimeSeriesFormulaAndFunctionEventQueryGroupBy"] = TimeSeriesFormulaAndFunctionEventQueryGroupBy
-    globals()["TimeSeriesFormulaAndFunctionMetricQueryDefinition"] = TimeSeriesFormulaAndFunctionMetricQueryDefinition
-    globals()["TimeSeriesFormulaAndFunctionProcessQueryDefinition"] = TimeSeriesFormulaAndFunctionProcessQueryDefinition
 
 
 class FormulaAndFunctionQueryDefinition(ModelComposed):
@@ -154,7 +150,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         Keyword Args:
             data_source (FormulaAndFunctionProcessQueryDataSource): defaults to nulltype.Null, must be one of ["process", "container", ]  # noqa: E501
             query (str): Metrics query definition.. defaults to nulltype.Null  # noqa: E501
-            compute (TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute): defaults to nulltype.Null  # noqa: E501
+            compute (FormulaAndFunctionEventQueryDefinitionCompute): defaults to nulltype.Null  # noqa: E501
             metric (str): Process metric name.. defaults to nulltype.Null  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
@@ -188,9 +184,9 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
                                 _visited_composed_classes = (Animal,)
             aggregator (FormulaAndFunctionMetricAggregation): [optional]  # noqa: E501
             name (str): Name of query for use in formulas.. [optional]  # noqa: E501
-            group_by ([TimeSeriesFormulaAndFunctionEventQueryGroupBy]): Group by options.. [optional]  # noqa: E501
+            group_by ([FormulaAndFunctionEventQueryGroupBy]): Group by options.. [optional]  # noqa: E501
             indexes ([str]): An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.. [optional]  # noqa: E501
-            search (TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch): [optional]  # noqa: E501
+            search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]  # noqa: E501
             is_normalized_cpu (bool): Whether to normalize the CPU percentages.. [optional]  # noqa: E501
             limit (int): Number of hits to return.. [optional]  # noqa: E501
             sort (QuerySortOrder): [optional]  # noqa: E501
@@ -280,8 +276,8 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
             "anyOf": [],
             "allOf": [],
             "oneOf": [
-                TimeSeriesFormulaAndFunctionEventQueryDefinition,
-                TimeSeriesFormulaAndFunctionMetricQueryDefinition,
-                TimeSeriesFormulaAndFunctionProcessQueryDefinition,
+                FormulaAndFunctionEventQueryDefinition,
+                FormulaAndFunctionMetricQueryDefinition,
+                FormulaAndFunctionProcessQueryDefinition,
             ],
         }

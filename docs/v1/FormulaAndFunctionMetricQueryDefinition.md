@@ -1,6 +1,6 @@
-# TimeSeriesFormulaAndFunctionMetricQueryDefinition
+# FormulaAndFunctionMetricQueryDefinition
 
-A timeseries formula and functions metrics query.
+A formula and functions metrics query.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

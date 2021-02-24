@@ -1,4 +1,4 @@
-# TimeSeriesFormulaAndFunctionProcessQueryDefinition
+# FormulaAndFunctionProcessQueryDefinition
 
 Process query using formulas and functions.
 ## Properties

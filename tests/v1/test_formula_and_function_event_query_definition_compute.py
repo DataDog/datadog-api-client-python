@@ -10,13 +10,13 @@ import datadog_api_client.v1
 from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
 
 globals()["FormulaAndFunctionEventAggregation"] = FormulaAndFunctionEventAggregation
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute,
+from datadog_api_client.v1.model.formula_and_function_event_query_definition_compute import (
+    FormulaAndFunctionEventQueryDefinitionCompute,
 )
 
 
-class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionCompute(unittest.TestCase):
-    """TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute unit test stubs"""
+class TestFormulaAndFunctionEventQueryDefinitionCompute(unittest.TestCase):
+    """FormulaAndFunctionEventQueryDefinitionCompute unit test stubs"""
 
     def setUp(self):
         pass
@@ -24,10 +24,10 @@ class TestTimeSeriesFormulaAndFunctionEventQueryDefinitionCompute(unittest.TestC
     def tearDown(self):
         pass
 
-    def testTimeSeriesFormulaAndFunctionEventQueryDefinitionCompute(self):
-        """Test TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute"""
+    def testFormulaAndFunctionEventQueryDefinitionCompute(self):
+        """Test FormulaAndFunctionEventQueryDefinitionCompute"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute()  # noqa: E501
+        # model = FormulaAndFunctionEventQueryDefinitionCompute()  # noqa: E501
         pass
 
 

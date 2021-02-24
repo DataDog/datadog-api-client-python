@@ -16,13 +16,13 @@ from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 globals()["FormulaAndFunctionMetricAggregation"] = FormulaAndFunctionMetricAggregation
 globals()["FormulaAndFunctionProcessQueryDataSource"] = FormulaAndFunctionProcessQueryDataSource
 globals()["QuerySortOrder"] = QuerySortOrder
-from datadog_api_client.v1.model.time_series_formula_and_function_process_query_definition import (
-    TimeSeriesFormulaAndFunctionProcessQueryDefinition,
+from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
+    FormulaAndFunctionProcessQueryDefinition,
 )
 
 
-class TestTimeSeriesFormulaAndFunctionProcessQueryDefinition(unittest.TestCase):
-    """TimeSeriesFormulaAndFunctionProcessQueryDefinition unit test stubs"""
+class TestFormulaAndFunctionProcessQueryDefinition(unittest.TestCase):
+    """FormulaAndFunctionProcessQueryDefinition unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,10 +30,10 @@ class TestTimeSeriesFormulaAndFunctionProcessQueryDefinition(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTimeSeriesFormulaAndFunctionProcessQueryDefinition(self):
-        """Test TimeSeriesFormulaAndFunctionProcessQueryDefinition"""
+    def testFormulaAndFunctionProcessQueryDefinition(self):
+        """Test FormulaAndFunctionProcessQueryDefinition"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = TimeSeriesFormulaAndFunctionProcessQueryDefinition()  # noqa: E501
+        # model = FormulaAndFunctionProcessQueryDefinition()  # noqa: E501
         pass
 
 

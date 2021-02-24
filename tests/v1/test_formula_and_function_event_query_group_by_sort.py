@@ -12,13 +12,13 @@ from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 
 globals()["FormulaAndFunctionEventAggregation"] = FormulaAndFunctionEventAggregation
 globals()["QuerySortOrder"] = QuerySortOrder
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_group_by_sort import (
-    TimeSeriesFormulaAndFunctionEventQueryGroupBySort,
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by_sort import (
+    FormulaAndFunctionEventQueryGroupBySort,
 )
 
 
-class TestTimeSeriesFormulaAndFunctionEventQueryGroupBySort(unittest.TestCase):
-    """TimeSeriesFormulaAndFunctionEventQueryGroupBySort unit test stubs"""
+class TestFormulaAndFunctionEventQueryGroupBySort(unittest.TestCase):
+    """FormulaAndFunctionEventQueryGroupBySort unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,10 +26,10 @@ class TestTimeSeriesFormulaAndFunctionEventQueryGroupBySort(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTimeSeriesFormulaAndFunctionEventQueryGroupBySort(self):
-        """Test TimeSeriesFormulaAndFunctionEventQueryGroupBySort"""
+    def testFormulaAndFunctionEventQueryGroupBySort(self):
+        """Test FormulaAndFunctionEventQueryGroupBySort"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = TimeSeriesFormulaAndFunctionEventQueryGroupBySort()  # noqa: E501
+        # model = FormulaAndFunctionEventQueryGroupBySort()  # noqa: E501
         pass
 
 

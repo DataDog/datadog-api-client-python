@@ -12,13 +12,13 @@ from datadog_api_client.v1.model.formula_and_function_metric_data_source import 
 
 globals()["FormulaAndFunctionMetricAggregation"] = FormulaAndFunctionMetricAggregation
 globals()["FormulaAndFunctionMetricDataSource"] = FormulaAndFunctionMetricDataSource
-from datadog_api_client.v1.model.time_series_formula_and_function_metric_query_definition import (
-    TimeSeriesFormulaAndFunctionMetricQueryDefinition,
+from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
+    FormulaAndFunctionMetricQueryDefinition,
 )
 
 
-class TestTimeSeriesFormulaAndFunctionMetricQueryDefinition(unittest.TestCase):
-    """TimeSeriesFormulaAndFunctionMetricQueryDefinition unit test stubs"""
+class TestFormulaAndFunctionMetricQueryDefinition(unittest.TestCase):
+    """FormulaAndFunctionMetricQueryDefinition unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,10 +26,10 @@ class TestTimeSeriesFormulaAndFunctionMetricQueryDefinition(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTimeSeriesFormulaAndFunctionMetricQueryDefinition(self):
-        """Test TimeSeriesFormulaAndFunctionMetricQueryDefinition"""
+    def testFormulaAndFunctionMetricQueryDefinition(self):
+        """Test FormulaAndFunctionMetricQueryDefinition"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = TimeSeriesFormulaAndFunctionMetricQueryDefinition()  # noqa: E501
+        # model = FormulaAndFunctionMetricQueryDefinition()  # noqa: E501
         pass
 
 

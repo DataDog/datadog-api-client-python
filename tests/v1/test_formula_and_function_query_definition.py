@@ -7,43 +7,37 @@ import sys
 import unittest
 
 import datadog_api_client.v1
+from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
+    FormulaAndFunctionEventQueryDefinition,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_definition_compute import (
+    FormulaAndFunctionEventQueryDefinitionCompute,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
+    FormulaAndFunctionEventQueryDefinitionSearch,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by import FormulaAndFunctionEventQueryGroupBy
 from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
+from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
+    FormulaAndFunctionMetricQueryDefinition,
+)
 from datadog_api_client.v1.model.formula_and_function_process_query_data_source import (
     FormulaAndFunctionProcessQueryDataSource,
 )
+from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
+    FormulaAndFunctionProcessQueryDefinition,
+)
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinition,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_compute import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_definition_search import (
-    TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_event_query_group_by import (
-    TimeSeriesFormulaAndFunctionEventQueryGroupBy,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_metric_query_definition import (
-    TimeSeriesFormulaAndFunctionMetricQueryDefinition,
-)
-from datadog_api_client.v1.model.time_series_formula_and_function_process_query_definition import (
-    TimeSeriesFormulaAndFunctionProcessQueryDefinition,
-)
 
+globals()["FormulaAndFunctionEventQueryDefinition"] = FormulaAndFunctionEventQueryDefinition
+globals()["FormulaAndFunctionEventQueryDefinitionCompute"] = FormulaAndFunctionEventQueryDefinitionCompute
+globals()["FormulaAndFunctionEventQueryDefinitionSearch"] = FormulaAndFunctionEventQueryDefinitionSearch
+globals()["FormulaAndFunctionEventQueryGroupBy"] = FormulaAndFunctionEventQueryGroupBy
 globals()["FormulaAndFunctionMetricAggregation"] = FormulaAndFunctionMetricAggregation
+globals()["FormulaAndFunctionMetricQueryDefinition"] = FormulaAndFunctionMetricQueryDefinition
 globals()["FormulaAndFunctionProcessQueryDataSource"] = FormulaAndFunctionProcessQueryDataSource
+globals()["FormulaAndFunctionProcessQueryDefinition"] = FormulaAndFunctionProcessQueryDefinition
 globals()["QuerySortOrder"] = QuerySortOrder
-globals()["TimeSeriesFormulaAndFunctionEventQueryDefinition"] = TimeSeriesFormulaAndFunctionEventQueryDefinition
-globals()[
-    "TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute"
-] = TimeSeriesFormulaAndFunctionEventQueryDefinitionCompute
-globals()[
-    "TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch"
-] = TimeSeriesFormulaAndFunctionEventQueryDefinitionSearch
-globals()["TimeSeriesFormulaAndFunctionEventQueryGroupBy"] = TimeSeriesFormulaAndFunctionEventQueryGroupBy
-globals()["TimeSeriesFormulaAndFunctionMetricQueryDefinition"] = TimeSeriesFormulaAndFunctionMetricQueryDefinition
-globals()["TimeSeriesFormulaAndFunctionProcessQueryDefinition"] = TimeSeriesFormulaAndFunctionProcessQueryDefinition
 from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
 
 
