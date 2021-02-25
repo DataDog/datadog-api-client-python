@@ -25,14 +25,20 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+    from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
     from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
+    from datadog_api_client.v1.model.widget_formula import WidgetFormula
     from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
+    globals()["FormulaAndFunctionQueryDefinition"] = FormulaAndFunctionQueryDefinition
+    globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
     globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
     globals()["WidgetConditionalFormat"] = WidgetConditionalFormat
+    globals()["WidgetFormula"] = WidgetFormula
     globals()["WidgetRequestStyle"] = WidgetRequestStyle
 
 
@@ -83,11 +89,14 @@ class ToplistWidgetRequest(ModelNormal):
             "apm_query": (LogQueryDefinition,),  # noqa: E501
             "conditional_formats": ([WidgetConditionalFormat],),  # noqa: E501
             "event_query": (LogQueryDefinition,),  # noqa: E501
+            "formulas": ([WidgetFormula],),  # noqa: E501
             "log_query": (LogQueryDefinition,),  # noqa: E501
             "network_query": (LogQueryDefinition,),  # noqa: E501
             "process_query": (ProcessQueryDefinition,),  # noqa: E501
             "profile_metrics_query": (LogQueryDefinition,),  # noqa: E501
             "q": (str,),  # noqa: E501
+            "queries": ([FormulaAndFunctionQueryDefinition],),  # noqa: E501
+            "response_format": (FormulaAndFunctionResponseFormat,),  # noqa: E501
             "rum_query": (LogQueryDefinition,),  # noqa: E501
             "security_query": (LogQueryDefinition,),  # noqa: E501
             "style": (WidgetRequestStyle,),  # noqa: E501
@@ -101,11 +110,14 @@ class ToplistWidgetRequest(ModelNormal):
         "apm_query": "apm_query",  # noqa: E501
         "conditional_formats": "conditional_formats",  # noqa: E501
         "event_query": "event_query",  # noqa: E501
+        "formulas": "formulas",  # noqa: E501
         "log_query": "log_query",  # noqa: E501
         "network_query": "network_query",  # noqa: E501
         "process_query": "process_query",  # noqa: E501
         "profile_metrics_query": "profile_metrics_query",  # noqa: E501
         "q": "q",  # noqa: E501
+        "queries": "queries",  # noqa: E501
+        "response_format": "response_format",  # noqa: E501
         "rum_query": "rum_query",  # noqa: E501
         "security_query": "security_query",  # noqa: E501
         "style": "style",  # noqa: E501
@@ -162,11 +174,14 @@ class ToplistWidgetRequest(ModelNormal):
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
             conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
             event_query (LogQueryDefinition): [optional]  # noqa: E501
+            formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]  # noqa: E501
             log_query (LogQueryDefinition): [optional]  # noqa: E501
             network_query (LogQueryDefinition): [optional]  # noqa: E501
             process_query (ProcessQueryDefinition): [optional]  # noqa: E501
             profile_metrics_query (LogQueryDefinition): [optional]  # noqa: E501
             q (str): Widget query.. [optional]  # noqa: E501
+            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**. [optional]  # noqa: E501
+            response_format (FormulaAndFunctionResponseFormat): [optional]  # noqa: E501
             rum_query (LogQueryDefinition): [optional]  # noqa: E501
             security_query (LogQueryDefinition): [optional]  # noqa: E501
             style (WidgetRequestStyle): [optional]  # noqa: E501

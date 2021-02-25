@@ -180,7 +180,7 @@ class TimeseriesWidgetRequest(ModelNormal):
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
             display_type (WidgetDisplayType): [optional]  # noqa: E501
             event_query (LogQueryDefinition): [optional]  # noqa: E501
-            formulas ([WidgetFormula]): List of formulas that operate on queries. This feature is currently in beta.. [optional]  # noqa: E501
+            formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]  # noqa: E501
             log_query (LogQueryDefinition): [optional]  # noqa: E501
             metadata ([TimeseriesWidgetExpressionAlias]): Used to define expression aliases.. [optional]  # noqa: E501
             network_query (LogQueryDefinition): [optional]  # noqa: E501
@@ -188,7 +188,7 @@ class TimeseriesWidgetRequest(ModelNormal):
             process_query (ProcessQueryDefinition): [optional]  # noqa: E501
             profile_metrics_query (LogQueryDefinition): [optional]  # noqa: E501
             q (str): Widget query.. [optional]  # noqa: E501
-            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. This feature is currently in beta.. [optional]  # noqa: E501
+            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**. [optional]  # noqa: E501
             response_format (FormulaAndFunctionResponseFormat): [optional]  # noqa: E501
             rum_query (LogQueryDefinition): [optional]  # noqa: E501
             security_query (LogQueryDefinition): [optional]  # noqa: E501
