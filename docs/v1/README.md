@@ -59,7 +59,7 @@ from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilt
 from datadog_api_client.v1.model.aws_tag_filter_delete_request import AWSTagFilterDeleteRequest
 from datadog_api_client.v1.model.aws_tag_filter_list_response import AWSTagFilterListResponse
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v1.Configuration()
+configuration = Configuration()
 
 # Defining the site is optional and defaults to datadoghq.com
 if "DD_SITE" in os.environ:

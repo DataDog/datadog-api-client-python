@@ -30,7 +30,7 @@ from datadog_api_client.v2.api import incident_teams_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v2.Configuration()
+configuration = Configuration()
 
 # Defining the site is optional and defaults to datadoghq.com
 if "DD_SITE" in os.environ:
@@ -128,7 +128,7 @@ from datadog_api_client.v2.api import incident_teams_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v2.Configuration()
+configuration = Configuration()
 
 # Defining the site is optional and defaults to datadoghq.com
 if "DD_SITE" in os.environ:
@@ -204,7 +204,7 @@ from datadog_api_client.v2.api import incident_teams_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v2.Configuration()
+configuration = Configuration()
 
 # Defining the site is optional and defaults to datadoghq.com
 if "DD_SITE" in os.environ:
@@ -292,7 +292,7 @@ from datadog_api_client.v2.api import incident_teams_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v2.Configuration()
+configuration = Configuration()
 
 # Defining the site is optional and defaults to datadoghq.com
 if "DD_SITE" in os.environ:
@@ -376,7 +376,7 @@ from datadog_api_client.v2.api import incident_teams_api
 from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v2.Configuration()
+configuration = Configuration()
 
 # Defining the site is optional and defaults to datadoghq.com
 if "DD_SITE" in os.environ:
