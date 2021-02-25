@@ -218,6 +218,8 @@ Class | Method | HTTP request | Description
 *SnapshotsApi* | [**get_graph_snapshot**](SnapshotsApi.md#get_graph_snapshot) | **GET** /api/v1/graph/snapshot | Take graph snapshots
 *SyntheticsApi* | [**create_global_variable**](SyntheticsApi.md#create_global_variable) | **POST** /api/v1/synthetics/variables | Create a global variable
 *SyntheticsApi* | [**create_private_location**](SyntheticsApi.md#create_private_location) | **POST** /api/v1/synthetics/private-locations | Create a private location
+*SyntheticsApi* | [**create_synthetics_api_test**](SyntheticsApi.md#create_synthetics_api_test) | **POST** /api/v1/synthetics/tests/api | Create an API test
+*SyntheticsApi* | [**create_synthetics_browser_test**](SyntheticsApi.md#create_synthetics_browser_test) | **POST** /api/v1/synthetics/tests/browser | Create a browser test
 *SyntheticsApi* | [**create_test**](SyntheticsApi.md#create_test) | **POST** /api/v1/synthetics/tests | Create a test
 *SyntheticsApi* | [**delete_global_variable**](SyntheticsApi.md#delete_global_variable) | **DELETE** /api/v1/synthetics/variables/{variable_id} | Delete a global variable
 *SyntheticsApi* | [**delete_private_location**](SyntheticsApi.md#delete_private_location) | **DELETE** /api/v1/synthetics/private-locations/{location_id} | Delete a private location
@@ -234,6 +236,8 @@ Class | Method | HTTP request | Description
 *SyntheticsApi* | [**list_locations**](SyntheticsApi.md#list_locations) | **GET** /api/v1/synthetics/locations | Get all locations (public and private)
 *SyntheticsApi* | [**list_tests**](SyntheticsApi.md#list_tests) | **GET** /api/v1/synthetics/tests | Get the list of all tests
 *SyntheticsApi* | [**trigger_ci_tests**](SyntheticsApi.md#trigger_ci_tests) | **POST** /api/v1/synthetics/tests/trigger/ci | Trigger some Synthetics tests for CI
+*SyntheticsApi* | [**update_api_test**](SyntheticsApi.md#update_api_test) | **PUT** /api/v1/synthetics/tests/api/{public_id} | Edit an API test
+*SyntheticsApi* | [**update_browser_test**](SyntheticsApi.md#update_browser_test) | **PUT** /api/v1/synthetics/tests/browser/{public_id} | Edit a browser test
 *SyntheticsApi* | [**update_private_location**](SyntheticsApi.md#update_private_location) | **PUT** /api/v1/synthetics/private-locations/{location_id} | Edit a private location
 *SyntheticsApi* | [**update_test**](SyntheticsApi.md#update_test) | **PUT** /api/v1/synthetics/tests/{public_id} | Edit a test
 *SyntheticsApi* | [**update_test_pause_status**](SyntheticsApi.md#update_test_pause_status) | **PUT** /api/v1/synthetics/tests/{public_id}/status | Pause or start a test
@@ -558,11 +562,14 @@ Class | Method | HTTP request | Description
  - [SlackIntegrationChannel](SlackIntegrationChannel.md)
  - [SlackIntegrationChannelDisplay](SlackIntegrationChannelDisplay.md)
  - [SlackIntegrationChannels](SlackIntegrationChannels.md)
+ - [SyntheticsAPITest](SyntheticsAPITest.md)
+ - [SyntheticsAPITestConfig](SyntheticsAPITestConfig.md)
  - [SyntheticsAPITestResultData](SyntheticsAPITestResultData.md)
  - [SyntheticsAPITestResultFull](SyntheticsAPITestResultFull.md)
  - [SyntheticsAPITestResultFullCheck](SyntheticsAPITestResultFullCheck.md)
  - [SyntheticsAPITestResultShort](SyntheticsAPITestResultShort.md)
  - [SyntheticsAPITestResultShortResult](SyntheticsAPITestResultShortResult.md)
+ - [SyntheticsAPITestType](SyntheticsAPITestType.md)
  - [SyntheticsAssertion](SyntheticsAssertion.md)
  - [SyntheticsAssertionJSONPathOperator](SyntheticsAssertionJSONPathOperator.md)
  - [SyntheticsAssertionJSONPathTarget](SyntheticsAssertionJSONPathTarget.md)
@@ -573,11 +580,14 @@ Class | Method | HTTP request | Description
  - [SyntheticsBasicAuth](SyntheticsBasicAuth.md)
  - [SyntheticsBrowserError](SyntheticsBrowserError.md)
  - [SyntheticsBrowserErrorType](SyntheticsBrowserErrorType.md)
+ - [SyntheticsBrowserTest](SyntheticsBrowserTest.md)
+ - [SyntheticsBrowserTestConfig](SyntheticsBrowserTestConfig.md)
  - [SyntheticsBrowserTestResultData](SyntheticsBrowserTestResultData.md)
  - [SyntheticsBrowserTestResultFull](SyntheticsBrowserTestResultFull.md)
  - [SyntheticsBrowserTestResultFullCheck](SyntheticsBrowserTestResultFullCheck.md)
  - [SyntheticsBrowserTestResultShort](SyntheticsBrowserTestResultShort.md)
  - [SyntheticsBrowserTestResultShortResult](SyntheticsBrowserTestResultShortResult.md)
+ - [SyntheticsBrowserTestType](SyntheticsBrowserTestType.md)
  - [SyntheticsBrowserVariable](SyntheticsBrowserVariable.md)
  - [SyntheticsBrowserVariableType](SyntheticsBrowserVariableType.md)
  - [SyntheticsCITest](SyntheticsCITest.md)
