@@ -60,7 +60,7 @@ from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 # See configuration.py for a list of all supported configuration parameters.
-configuration = datadog_api_client.v2.Configuration()
+configuration = Configuration()
 
 # Defining the site is optional and defaults to datadoghq.com
 if "DD_SITE" in os.environ:
