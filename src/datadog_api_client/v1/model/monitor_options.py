@@ -93,6 +93,7 @@ class MonitorOptions(ModelNormal):
                 int,
                 none_type,
             ),  # noqa: E501
+            "groupby_simple_monitor": (bool,),  # noqa: E501
             "include_tags": (bool,),  # noqa: E501
             "locked": (bool,),  # noqa: E501
             "min_failure_duration": (
@@ -141,6 +142,7 @@ class MonitorOptions(ModelNormal):
         "enable_logs_sample": "enable_logs_sample",  # noqa: E501
         "escalation_message": "escalation_message",  # noqa: E501
         "evaluation_delay": "evaluation_delay",  # noqa: E501
+        "groupby_simple_monitor": "groupby_simple_monitor",  # noqa: E501
         "include_tags": "include_tags",  # noqa: E501
         "locked": "locked",  # noqa: E501
         "min_failure_duration": "min_failure_duration",  # noqa: E501
@@ -211,6 +213,7 @@ class MonitorOptions(ModelNormal):
             enable_logs_sample (bool): Whether or not to send a log sample when the log monitor triggers.. [optional]  # noqa: E501
             escalation_message (str): A message to include with a re-notification. Supports the `@username` notification we allow elsewhere. Not applicable if `renotify_interval` is `None`.. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             evaluation_delay (int, none_type): Time (in seconds) to delay evaluation, as a non-negative integer. For example, if the value is set to `300` (5min), the timeframe is set to `last_5m` and the time is 7:00, the monitor evaluates data from 6:50 to 6:55. This is useful for AWS CloudWatch and other backfilled metrics to ensure the monitor always has data during evaluation.. [optional]  # noqa: E501
+            groupby_simple_monitor (bool): Whether the log alert monitor triggers a single alert or multiple alerts when any group breaches a threshold.. [optional]  # noqa: E501
             include_tags (bool): A Boolean indicating whether notifications from this monitor automatically inserts its triggering tags into the title.  **Examples** - If `True`, `[Triggered on {host:h1}] Monitor Title` - If `False`, `[Triggered] Monitor Title`. [optional] if omitted the server will use the default value of True  # noqa: E501
             locked (bool): Whether or not the monitor is locked (only editable by creator and admins).. [optional]  # noqa: E501
             min_failure_duration (int, none_type): How long the test should be in failure before alerting (integer, number of seconds, max 7200).. [optional] if omitted the server will use the default value of 0  # noqa: E501
