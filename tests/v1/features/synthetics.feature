@@ -16,6 +16,27 @@ Feature: Synthetics
     And an instance of "Synthetics" API
 
   @generated @skip
+  Scenario: Create a browser test returns "- JSON format is wrong" response
+    Given new "CreateSyntheticsBrowserTest" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip
+  Scenario: Create a browser test returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsBrowserTest" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+
+  @generated @skip
+  Scenario: Create a browser test returns "Test quota is reached" response
+    Given new "CreateSyntheticsBrowserTest" request
+    And body {}
+    When the request is sent
+    Then the response status is 402 Test quota is reached
+
+  @generated @skip
   Scenario: Create a global variable returns "Invalid request" response
     Given new "CreateGlobalVariable" request
     And body {}
@@ -67,6 +88,27 @@ Feature: Synthetics
   @generated @skip
   Scenario: Create a test returns "Test quota is reached" response
     Given new "CreateTest" request
+    And body {}
+    When the request is sent
+    Then the response status is 402 Test quota is reached
+
+  @generated @skip
+  Scenario: Create an API test returns "- JSON format is wrong" response
+    Given new "CreateSyntheticsAPITest" request
+    And body {}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip
+  Scenario: Create an API test returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+
+  @generated @skip
+  Scenario: Create an API test returns "Test quota is reached" response
+    Given new "CreateSyntheticsAPITest" request
     And body {}
     When the request is sent
     Then the response status is 402 Test quota is reached
@@ -128,6 +170,30 @@ Feature: Synthetics
     Then the response status is 200 OK.
 
   @generated @skip
+  Scenario: Edit a browser test returns "- JSON format is wrong" response
+    Given new "UpdateBrowserTest" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip
+  Scenario: Edit a browser test returns "- Synthetic Monitoring is not activated for the user" response
+    Given new "UpdateBrowserTest" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
+
+  @generated @skip
+  Scenario: Edit a browser test returns "OK" response
+    Given new "UpdateBrowserTest" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Edit a global variable returns "Invalid request" response
     Given new "EditGlobalVariable" request
     And request contains "variable_id" parameter from "<PATH>"
@@ -178,6 +244,30 @@ Feature: Synthetics
   @generated @skip
   Scenario: Edit a test returns "OK" response
     Given new "UpdateTest" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Edit an API test returns "- JSON format is wrong" response
+    Given new "UpdateAPITest" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip
+  Scenario: Edit an API test returns "- Synthetic Monitoring is not activated for the user" response
+    Given new "UpdateAPITest" request
+    And request contains "public_id" parameter from "<PATH>"
+    And body {}
+    When the request is sent
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
+
+  @generated @skip
+  Scenario: Edit an API test returns "OK" response
+    Given new "UpdateAPITest" request
     And request contains "public_id" parameter from "<PATH>"
     And body {}
     When the request is sent
