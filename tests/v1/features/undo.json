@@ -826,10 +826,28 @@
       "type": "unsafe"
     }
   },
+  "CreateSyntheticsAPITest": {
+    "tag": "Synthetics"
+  },
+  "UpdateAPITest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateSyntheticsBrowserTest": {
+    "tag": "Synthetics"
+  },
   "GetBrowserTest": {
     "tag": "Synthetics",
     "undo": {
       "type": "safe"
+    }
+  },
+  "UpdateBrowserTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "GetBrowserTestLatestResults": {

@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_global_variable**](SyntheticsApi.md#create_global_variable) | **POST** /api/v1/synthetics/variables | Create a global variable
 [**create_private_location**](SyntheticsApi.md#create_private_location) | **POST** /api/v1/synthetics/private-locations | Create a private location
+[**create_synthetics_api_test**](SyntheticsApi.md#create_synthetics_api_test) | **POST** /api/v1/synthetics/tests/api | Create an API test
+[**create_synthetics_browser_test**](SyntheticsApi.md#create_synthetics_browser_test) | **POST** /api/v1/synthetics/tests/browser | Create a browser test
 [**create_test**](SyntheticsApi.md#create_test) | **POST** /api/v1/synthetics/tests | Create a test
 [**delete_global_variable**](SyntheticsApi.md#delete_global_variable) | **DELETE** /api/v1/synthetics/variables/{variable_id} | Delete a global variable
 [**delete_private_location**](SyntheticsApi.md#delete_private_location) | **DELETE** /api/v1/synthetics/private-locations/{location_id} | Delete a private location
@@ -22,6 +24,8 @@ Method | HTTP request | Description
 [**list_locations**](SyntheticsApi.md#list_locations) | **GET** /api/v1/synthetics/locations | Get all locations (public and private)
 [**list_tests**](SyntheticsApi.md#list_tests) | **GET** /api/v1/synthetics/tests | Get the list of all tests
 [**trigger_ci_tests**](SyntheticsApi.md#trigger_ci_tests) | **POST** /api/v1/synthetics/tests/trigger/ci | Trigger some Synthetics tests for CI
+[**update_api_test**](SyntheticsApi.md#update_api_test) | **PUT** /api/v1/synthetics/tests/api/{public_id} | Edit an API test
+[**update_browser_test**](SyntheticsApi.md#update_browser_test) | **PUT** /api/v1/synthetics/tests/browser/{public_id} | Edit a browser test
 [**update_private_location**](SyntheticsApi.md#update_private_location) | **PUT** /api/v1/synthetics/private-locations/{location_id} | Edit a private location
 [**update_test**](SyntheticsApi.md#update_test) | **PUT** /api/v1/synthetics/tests/{public_id} | Edit a test
 [**update_test_pause_status**](SyntheticsApi.md#update_test_pause_status) | **PUT** /api/v1/synthetics/tests/{public_id}/status | Pause or start a test
@@ -204,6 +208,309 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **402** | Quota reached for private locations |  -  |
 **404** | Private locations are not activated for the user |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **create_synthetics_api_test**
+> SyntheticsAPITest create_synthetics_api_test(body)
+
+Create an API test
+
+Create a Synthetic API test.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import synthetics_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = synthetics_api.SyntheticsApi(api_client)
+    body = SyntheticsAPITest(
+        config=SyntheticsAPITestConfig(
+            assertions=[],
+            config_variables=[
+                SyntheticsConfigVariable(
+                    example="example_example",
+                    name="VARIABLE_NAME",
+                    pattern="pattern_example",
+                    type=SyntheticsConfigVariableType("text"),
+                ),
+            ],
+            request=SyntheticsTestRequest(
+                basic_auth=SyntheticsBasicAuth(
+                    password="",
+                    username="",
+                ),
+                body="body_example",
+                certificate=SyntheticsTestRequestCertificate(
+                    cert=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                    key=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                ),
+                dns_server="dns_server_example",
+                headers=SyntheticsTestHeaders(
+                    key="key_example",
+                ),
+                host="host_example",
+                method=HTTPMethod("GET"),
+                port=1,
+                query={},
+                timeout=3.14,
+                url="url_example",
+            ),
+        ),
+        locations=[
+            "locations_example",
+        ],
+        message="message_example",
+        monitor_id=1,
+        name="name_example",
+        options=SyntheticsTestOptions(
+            accept_self_signed=True,
+            allow_insecure=True,
+            device_ids=[
+                SyntheticsDeviceID("laptop_large"),
+            ],
+            follow_redirects=True,
+            min_failure_duration=1,
+            min_location_failed=1,
+            monitor_options=SyntheticsTestOptionsMonitorOptions(
+                renotify_interval=0,
+            ),
+            retry=SyntheticsTestOptionsRetry(
+                count=1,
+                interval=3.14,
+            ),
+            tick_every=SyntheticsTickInterval(60),
+        ),
+        public_id="public_id_example",
+        status=SyntheticsTestPauseStatus("live"),
+        subtype=SyntheticsTestDetailsSubType("http"),
+        tags=[
+            "tags_example",
+        ],
+        type=SyntheticsAPITestType("api"),
+    )  # SyntheticsAPITest | Details of the test to create.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create an API test
+        api_response = api_instance.create_synthetics_api_test(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SyntheticsApi->create_synthetics_api_test: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SyntheticsAPITest**](SyntheticsAPITest.md)| Details of the test to create. |
+
+### Return type
+
+[**SyntheticsAPITest**](SyntheticsAPITest.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK - Returns the created test details. |  -  |
+**400** | - JSON format is wrong - Creation failed |  -  |
+**402** | Test quota is reached |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **create_synthetics_browser_test**
+> SyntheticsBrowserTest create_synthetics_browser_test(body)
+
+Create a browser test
+
+Create a Synthetic browser test.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import synthetics_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = synthetics_api.SyntheticsApi(api_client)
+    body = SyntheticsBrowserTest(
+        config=SyntheticsBrowserTestConfig(
+            assertions=[],
+            request=SyntheticsTestRequest(
+                basic_auth=SyntheticsBasicAuth(
+                    password="",
+                    username="",
+                ),
+                body="body_example",
+                certificate=SyntheticsTestRequestCertificate(
+                    cert=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                    key=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                ),
+                dns_server="dns_server_example",
+                headers=SyntheticsTestHeaders(
+                    key="key_example",
+                ),
+                host="host_example",
+                method=HTTPMethod("GET"),
+                port=1,
+                query={},
+                timeout=3.14,
+                url="url_example",
+            ),
+            variables=[
+                SyntheticsBrowserVariable(
+                    example="example_example",
+                    id="id_example",
+                    name="VARIABLE_NAME",
+                    pattern="pattern_example",
+                    type=SyntheticsBrowserVariableType("element"),
+                ),
+            ],
+        ),
+        locations=[
+            "locations_example",
+        ],
+        message="message_example",
+        monitor_id=1,
+        name="name_example",
+        options=SyntheticsTestOptions(
+            accept_self_signed=True,
+            allow_insecure=True,
+            device_ids=[
+                SyntheticsDeviceID("laptop_large"),
+            ],
+            follow_redirects=True,
+            min_failure_duration=1,
+            min_location_failed=1,
+            monitor_options=SyntheticsTestOptionsMonitorOptions(
+                renotify_interval=0,
+            ),
+            retry=SyntheticsTestOptionsRetry(
+                count=1,
+                interval=3.14,
+            ),
+            tick_every=SyntheticsTickInterval(60),
+        ),
+        public_id="public_id_example",
+        status=SyntheticsTestPauseStatus("live"),
+        steps=[
+            SyntheticsStep(
+                allow_failure=True,
+                name="name_example",
+                params={},
+                timeout=1,
+                type=SyntheticsStepType("assertCurrentUrl"),
+            ),
+        ],
+        tags=[
+            "tags_example",
+        ],
+        type=SyntheticsBrowserTestType("browser"),
+    )  # SyntheticsBrowserTest | Details of the test to create.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create a browser test
+        api_response = api_instance.create_synthetics_browser_test(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SyntheticsApi->create_synthetics_browser_test: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SyntheticsBrowserTest**](SyntheticsBrowserTest.md)| Details of the test to create. |
+
+### Return type
+
+[**SyntheticsBrowserTest**](SyntheticsBrowserTest.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK - Returns the created test details. |  -  |
+**400** | - JSON format is wrong - Creation failed |  -  |
+**402** | Test quota is reached |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1568,6 +1875,313 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **400** | JSON format is wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **update_api_test**
+> SyntheticsAPITest update_api_test(public_id, body)
+
+Edit an API test
+
+Edit the configuration of a Synthetic API test.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import synthetics_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = synthetics_api.SyntheticsApi(api_client)
+    public_id = "public_id_example"  # str | The public ID of the test to get details from.
+    body = SyntheticsAPITest(
+        config=SyntheticsAPITestConfig(
+            assertions=[],
+            config_variables=[
+                SyntheticsConfigVariable(
+                    example="example_example",
+                    name="VARIABLE_NAME",
+                    pattern="pattern_example",
+                    type=SyntheticsConfigVariableType("text"),
+                ),
+            ],
+            request=SyntheticsTestRequest(
+                basic_auth=SyntheticsBasicAuth(
+                    password="",
+                    username="",
+                ),
+                body="body_example",
+                certificate=SyntheticsTestRequestCertificate(
+                    cert=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                    key=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                ),
+                dns_server="dns_server_example",
+                headers=SyntheticsTestHeaders(
+                    key="key_example",
+                ),
+                host="host_example",
+                method=HTTPMethod("GET"),
+                port=1,
+                query={},
+                timeout=3.14,
+                url="url_example",
+            ),
+        ),
+        locations=[
+            "locations_example",
+        ],
+        message="message_example",
+        monitor_id=1,
+        name="name_example",
+        options=SyntheticsTestOptions(
+            accept_self_signed=True,
+            allow_insecure=True,
+            device_ids=[
+                SyntheticsDeviceID("laptop_large"),
+            ],
+            follow_redirects=True,
+            min_failure_duration=1,
+            min_location_failed=1,
+            monitor_options=SyntheticsTestOptionsMonitorOptions(
+                renotify_interval=0,
+            ),
+            retry=SyntheticsTestOptionsRetry(
+                count=1,
+                interval=3.14,
+            ),
+            tick_every=SyntheticsTickInterval(60),
+        ),
+        public_id="public_id_example",
+        status=SyntheticsTestPauseStatus("live"),
+        subtype=SyntheticsTestDetailsSubType("http"),
+        tags=[
+            "tags_example",
+        ],
+        type=SyntheticsAPITestType("api"),
+    )  # SyntheticsAPITest | New test details to be saved.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Edit an API test
+        api_response = api_instance.update_api_test(public_id, body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SyntheticsApi->update_api_test: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **public_id** | **str**| The public ID of the test to get details from. |
+ **body** | [**SyntheticsAPITest**](SyntheticsAPITest.md)| New test details to be saved. |
+
+### Return type
+
+[**SyntheticsAPITest**](SyntheticsAPITest.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | - JSON format is wrong - Updating sub-type is forbidden |  -  |
+**403** | Forbidden |  -  |
+**404** | - Synthetic Monitoring is not activated for the user - Test is not owned by the user - Test can&#39;t be found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **update_browser_test**
+> SyntheticsBrowserTest update_browser_test(public_id, body)
+
+Edit a browser test
+
+Edit the configuration of a Synthetic browser test.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import synthetics_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
+
+# Configure API key authorization: apiKeyAuth
+configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
+
+# Configure API key authorization: appKeyAuth
+configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = synthetics_api.SyntheticsApi(api_client)
+    public_id = "public_id_example"  # str | The public ID of the test to get details from.
+    body = SyntheticsBrowserTest(
+        config=SyntheticsBrowserTestConfig(
+            assertions=[],
+            request=SyntheticsTestRequest(
+                basic_auth=SyntheticsBasicAuth(
+                    password="",
+                    username="",
+                ),
+                body="body_example",
+                certificate=SyntheticsTestRequestCertificate(
+                    cert=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                    key=SyntheticsTestRequestCertificateItem(
+                        content="content_example",
+                        filename="filename_example",
+                        updated_at="updated_at_example",
+                    ),
+                ),
+                dns_server="dns_server_example",
+                headers=SyntheticsTestHeaders(
+                    key="key_example",
+                ),
+                host="host_example",
+                method=HTTPMethod("GET"),
+                port=1,
+                query={},
+                timeout=3.14,
+                url="url_example",
+            ),
+            variables=[
+                SyntheticsBrowserVariable(
+                    example="example_example",
+                    id="id_example",
+                    name="VARIABLE_NAME",
+                    pattern="pattern_example",
+                    type=SyntheticsBrowserVariableType("element"),
+                ),
+            ],
+        ),
+        locations=[
+            "locations_example",
+        ],
+        message="message_example",
+        monitor_id=1,
+        name="name_example",
+        options=SyntheticsTestOptions(
+            accept_self_signed=True,
+            allow_insecure=True,
+            device_ids=[
+                SyntheticsDeviceID("laptop_large"),
+            ],
+            follow_redirects=True,
+            min_failure_duration=1,
+            min_location_failed=1,
+            monitor_options=SyntheticsTestOptionsMonitorOptions(
+                renotify_interval=0,
+            ),
+            retry=SyntheticsTestOptionsRetry(
+                count=1,
+                interval=3.14,
+            ),
+            tick_every=SyntheticsTickInterval(60),
+        ),
+        public_id="public_id_example",
+        status=SyntheticsTestPauseStatus("live"),
+        steps=[
+            SyntheticsStep(
+                allow_failure=True,
+                name="name_example",
+                params={},
+                timeout=1,
+                type=SyntheticsStepType("assertCurrentUrl"),
+            ),
+        ],
+        tags=[
+            "tags_example",
+        ],
+        type=SyntheticsBrowserTestType("browser"),
+    )  # SyntheticsBrowserTest | New test details to be saved.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Edit a browser test
+        api_response = api_instance.update_browser_test(public_id, body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SyntheticsApi->update_browser_test: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **public_id** | **str**| The public ID of the test to get details from. |
+ **body** | [**SyntheticsBrowserTest**](SyntheticsBrowserTest.md)| New test details to be saved. |
+
+### Return type
+
+[**SyntheticsBrowserTest**](SyntheticsBrowserTest.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | - JSON format is wrong - Updating sub-type is forbidden |  -  |
+**403** | Forbidden |  -  |
+**404** | - Synthetic Monitoring is not activated for the user - Test is not owned by the user - Test can&#39;t be found |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
