@@ -14493,7 +14493,7 @@ paths:
 
         - watchdog: `event alert`
 
-        - event-v2: `event-2 alert`
+        - event-v2: `event-v2 alert`
 
 
         #### Query Types
