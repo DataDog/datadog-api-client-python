@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"check": "app.ok", "host_name": "host", "status": 0}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - SubmitServiceCheck
+      User-Agent:
+      - datadog-api-client-python/0.1.dev246 (python 3.9.2; os Linux; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/check_run
+  response:
+    body:
+      string: '{"status": "ok"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '16'
+      Content-Type:
+      - text/json
+      Date:
+      - Wed, 03 Mar 2021 12:48:49 GMT
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 202
+      message: Accepted
+version: 1

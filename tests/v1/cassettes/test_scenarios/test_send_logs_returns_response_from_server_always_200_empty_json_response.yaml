@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: '[{"message": "test"}]'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - SubmitLog
+      User-Agent:
+      - datadog-api-client-python/0.1.dev246 (python 3.9.2; os Linux; arch x86_64)
+    method: POST
+    uri: https://http-intake.logs.datadoghq.com/v1/input
+  response:
+    body:
+      string: '{}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 03 Mar 2021 12:48:50 GMT
+    status:
+      code: 200
+      message: OK
+version: 1

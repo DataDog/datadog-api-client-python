@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"title": "Testing event", "text": "A text message."}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateEvent
+      User-Agent:
+      - datadog-api-client-python/0.1.dev246 (python 3.9.2; os Linux; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/events
+  response:
+    body:
+      string: '{"status":"ok","event":{"id":5880630020768841848,"title":"Testing event","text":"A
+        text message.","date_happened":1614775729,"handle":null,"priority":null,"related_event_id":null,"tags":null,"url":"https://app.datadoghq.com/event/event?id=5880630020768841848"}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '261'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 03 Mar 2021 12:48:49 GMT
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 202
+      message: Accepted
+version: 1
