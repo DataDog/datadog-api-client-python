@@ -280,6 +280,12 @@
       "type": "safe"
     }
   },
+  "ListTagsByMetricName": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteTagConfiguration": {
     "tag": "Metrics",
     "undo": {
@@ -309,6 +315,12 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "ListVolumesByMetricName": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListPermissions": {

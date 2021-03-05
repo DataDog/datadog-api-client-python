@@ -1,0 +1,165 @@
+interactions:
+- request:
+    body: '{"data": {"id": "datadogapiclientpythontestlistdistinctmetricvolumesbymetricnamereturnssuccessresponse1614877824877072",
+      "type": "manage_tags", "attributes": {"metric_type": "distribution", "tags":
+      ["app", "datacenter", "datadogapiclientpythontestlistdistinctmetricvolumesbymetricnamereturnssuccessresponse1614877824877072"]}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateTagConfiguration
+      User-Agent:
+      - datadog-api-client-python/1.0.0b7.dev15+dirty (python 3.9.0; os Darwin; arch
+        x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/metrics/datadogapiclientpythontestlistdistinctmetricvolumesbymetricnamereturnssuccessresponse1614877824877072/tags
+  response:
+    body:
+      string: '{"data":{"type":"manage_tags","id":"datadogapiclientpythontestlistdistinctmetricvolumesbymetricnamereturnssuccessresponse1614877824877072","attributes":{"tags":["datacenter","app","datadogapiclientpythontestlistdistinctmetricvolumesbymetricnamereturnssuccessresponse1614877824877072"],"include_percentiles":false,"created_at":"2021-03-04T17:10:25.408162+00:00","updated_at":"2021-03-04T17:10:25.408162+00:00","metric_type":"distribution"}}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '440'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 04 Mar 2021 17:10:25 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - B1nwy/pPNqX+q4pQT22cdp1QCexE35IF8qwSHy0Nf7IW0Y881qtn4tXN1lpmzaKc
+      x-dd-version:
+      - '35.4030770'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '50'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '47'
+      x-ratelimit-reset:
+      - '35'
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - ListVolumesByMetricName
+      User-Agent:
+      - datadog-api-client-python/1.0.0b7.dev15+dirty (python 3.9.0; os Darwin; arch
+        x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/metrics/datadogapiclientpythontestlistdistinctmetricvolumesbymetricnamereturnssuccessresponse1614877824877072/volumes
+  response:
+    body:
+      string: '{"data":{"type":"metric_volumes","id":"datadogapiclientpythontestlistdistinctmetricvolumesbymetricnamereturnssuccessresponse1614877824877072","attributes":{"indexed_volume":0,"ingested_volume":0}}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '197'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 04 Mar 2021 17:10:25 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
+      x-dd-version:
+      - '35.4030770'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '600'
+      x-ratelimit-period:
+      - '3600'
+      x-ratelimit-remaining:
+      - '598'
+      x-ratelimit-reset:
+      - '2975'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteTagConfiguration
+      User-Agent:
+      - datadog-api-client-python/1.0.0b7.dev15+dirty (python 3.9.0; os Darwin; arch
+        x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/metrics/datadogapiclientpythontestlistdistinctmetricvolumesbymetricnamereturnssuccessresponse1614877824877072/tags
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 04 Mar 2021 17:10:26 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
+      x-dd-version:
+      - '35.4030770'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '50'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '46'
+      x-ratelimit-reset:
+      - '34'
+    status:
+      code: 204
+      message: No Content
+version: 1

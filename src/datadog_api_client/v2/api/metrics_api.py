@@ -17,10 +17,12 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.metric_all_tags_response import MetricAllTagsResponse
 from datadog_api_client.v2.model.metric_tag_configuration_create_request import MetricTagConfigurationCreateRequest
 from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 from datadog_api_client.v2.model.metric_tag_configuration_response import MetricTagConfigurationResponse
 from datadog_api_client.v2.model.metric_tag_configuration_update_request import MetricTagConfigurationUpdateRequest
+from datadog_api_client.v2.model.metric_volumes_response import MetricVolumesResponse
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response import (
     MetricsAndMetricTagConfigurationsResponse,
 )
@@ -39,7 +41,7 @@ class MetricsApi(object):
         self.api_client = api_client
 
         def __create_tag_configuration(self, metric_name, body, **kwargs):
-            """Create a Tag Configuration  # noqa: E501
+            """Create a tag configuration  # noqa: E501
 
             Create and define a list of queryable tag keys for a count/gauge/rate/distribution metric. Optionally, include percentile aggregations on any distribution metric. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
@@ -133,7 +135,7 @@ class MetricsApi(object):
         )
 
         def __delete_tag_configuration(self, metric_name, **kwargs):
-            """Delete a Tag Configuration  # noqa: E501
+            """Delete a tag configuration  # noqa: E501
 
             Deletes a metric's tag configuration. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
@@ -224,7 +226,7 @@ class MetricsApi(object):
         )
 
         def __list_tag_configuration_by_name(self, metric_name, **kwargs):
-            """List Tag Configuration by Name  # noqa: E501
+            """List tag configuration by name  # noqa: E501
 
             Returns the tag configuration for the given metric name.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
@@ -315,7 +317,7 @@ class MetricsApi(object):
         )
 
         def __list_tag_configurations(self, **kwargs):
-            """List Tag Configurations  # noqa: E501
+            """List tag configurations  # noqa: E501
 
             Returns all configured count/gauge/rate/distribution metric names (with additional filters if specified).  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
@@ -416,8 +418,190 @@ class MetricsApi(object):
             callable=__list_tag_configurations,
         )
 
+        def __list_tags_by_metric_name(self, metric_name, **kwargs):
+            """List tags by metric name  # noqa: E501
+
+            View indexed tag key-value pairs for a given metric name.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.list_tags_by_metric_name(metric_name, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                metric_name (str): The name of the metric.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                MetricAllTagsResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["metric_name"] = metric_name
+            return self.call_with_http_info(**kwargs)
+
+        self.list_tags_by_metric_name = _Endpoint(
+            settings={
+                "response_type": (MetricAllTagsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/metrics/{metric_name}/all-tags",
+                "operation_id": "list_tags_by_metric_name",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "metric_name",
+                ],
+                "required": [
+                    "metric_name",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "metric_name": (str,),
+                },
+                "attribute_map": {
+                    "metric_name": "metric_name",
+                },
+                "location_map": {
+                    "metric_name": "path",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+            callable=__list_tags_by_metric_name,
+        )
+
+        def __list_volumes_by_metric_name(self, metric_name, **kwargs):
+            """List distinct metric volumes by metric name  # noqa: E501
+
+            View distinct metrics volumes for the given metric name.  Custom distribution metrics will return both ingested and indexed custom metrics. For Metrics without Limits beta customers, all metrics will return both ingested/indexed volumes. Custom metrics generated in-app from other products will return `null` for ingested volumes.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.list_volumes_by_metric_name(metric_name, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                metric_name (str): The name of the metric.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (float/tuple): timeout setting for this request. If one
+                    number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                MetricVolumesResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs["async_req"] = kwargs.get("async_req", False)
+            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+            kwargs["_host_index"] = kwargs.get("_host_index")
+            kwargs["metric_name"] = metric_name
+            return self.call_with_http_info(**kwargs)
+
+        self.list_volumes_by_metric_name = _Endpoint(
+            settings={
+                "response_type": (MetricVolumesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/metrics/{metric_name}/volumes",
+                "operation_id": "list_volumes_by_metric_name",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "metric_name",
+                ],
+                "required": [
+                    "metric_name",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "metric_name": (str,),
+                },
+                "attribute_map": {
+                    "metric_name": "metric_name",
+                },
+                "location_map": {
+                    "metric_name": "path",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+            callable=__list_volumes_by_metric_name,
+        )
+
         def __update_tag_configuration(self, metric_name, body, **kwargs):
-            """Update a Tag Configuration  # noqa: E501
+            """Update a tag configuration  # noqa: E501
 
             Update the tag configuration of a metric or percentile aggregations of a distribution metric. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an

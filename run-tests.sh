@@ -24,14 +24,14 @@ python -m pip install -e .
 set +e
 python -m pytest -vvv
 RESULT=$?
-if [ "$RERECORD_FAILED_TESTS" == "true" ] && [ "$RESULT" -ne 0 ]; then
+if [ "$RERECORD_FAILED_TESTS" == "true" ] && [ "$RESULT" -ne "0" ]; then
     RECORD=true python -m pytest -vvv --last-failed
     RESULT=$?
 fi
 
 # Always run integration-only tests
 set -e
-if [ "$RECORD" != "none" -a -n $DD_TEST_CLIENT_API_KEY -a -n $DD_TEST_CLIENT_APP_KEY ]; then
+if [ "$RECORD" != "none" ] && [ -n "$DD_TEST_CLIENT_API_KEY" ] && [ -n "$DD_TEST_CLIENT_APP_KEY" ]; then
   RECORD=none python -m pytest -m "integration-only" -vvv
 fi
 

@@ -1,8 +1,8 @@
 interactions:
 - request:
     body: '{"data": {"attributes": {"compute": {"aggregation_type": "count"}, "filter":
-      {"query": "source:datadog-api-client-python-test_get_a_logbased_metric_returns_ok_response-1608595669.067374"}},
-      "id": "datadog-api-client-python-test_get_a_logbased_metric_returns_ok_response-1608595669.067374",
+      {"query": "source:datadog-api-client-python-test_get_a_logbased_metric_returns_ok_response-1614879855.138607"}},
+      "id": "datadog-api-client-python-test_get_a_logbased_metric_returns_ok_response-1614879855.138607",
       "type": "logs_metrics"}}'
     headers:
       Accept:
@@ -12,55 +12,50 @@ interactions:
       Dd-Operation-Id:
       - CreateLogsMetric
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev10+dirty (python 3.9.0; os Darwin; arch
+      - datadog-api-client-python/1.0.0b7.dev16+dirty (python 3.9.0; os Darwin; arch
         x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics
   response:
     body:
-      string: '{"data":{"id":"datadog_api_client_python_test_get_a_logbased_metric_returns_ok_response_1608595669.067374","attributes":{"filter":{"query":"source:datadog-api-client-python-test_get_a_logbased_metric_returns_ok_response-1608595669.067374"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
+      string: '{"data":{"id":"datadog_api_client_python_test_get_a_logbased_metric_returns_ok_response_1614879855.138607","attributes":{"filter":{"query":"source:datadog-api-client-python-test_get_a_logbased_metric_returns_ok_response-1614879855.138607"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
     headers:
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
-      Content-Disposition:
-      - inline
       Content-Length:
       - '317'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       Content-Type:
       - application/json;charset=utf-8
-      DD-POOL:
-      - dogweb
       Date:
-      - Tue, 22 Dec 2020 00:07:49 GMT
-      Pragma:
+      - Thu, 04 Mar 2021 17:44:15 GMT
+      cache-control:
       - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Dec-2020 00:07:49 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
       - max-age=15724800;
-      Vary:
+      vary:
       - Accept-Encoding
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-DD-Debug:
-      - pU+5spIfOFTru2RhY1ezKdt9iD04gzaa+zDs5x6Ik5VkXfw5rZx6HoPylEAvTInE
-      X-DD-VERSION:
-      - '35.3583277'
-      X-Frame-Options:
+      x-dd-debug:
+      - 2328yjLSqI4XmR1pVqrPRR/SFcQsbafjEpPmZx7/3PfxUK1nJQQsX+wrMelyVyj+
+      x-dd-version:
+      - '35.4031769'
+      x-frame-options:
       - SAMEORIGIN
-      X-RateLimit-Limit:
-      - '100'
-      X-RateLimit-Period:
-      - '3600'
-      X-RateLimit-Remaining:
-      - '98'
-      X-RateLimit-Reset:
-      - '3131'
+      x-ratelimit-limit:
+      - '300'
+      x-ratelimit-period:
+      - '300'
+      x-ratelimit-remaining:
+      - '299'
+      x-ratelimit-reset:
+      - '45'
     status:
       code: 200
       message: OK
@@ -74,55 +69,50 @@ interactions:
       Dd-Operation-Id:
       - GetLogsMetric
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev10+dirty (python 3.9.0; os Darwin; arch
+      - datadog-api-client-python/1.0.0b7.dev16+dirty (python 3.9.0; os Darwin; arch
         x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/datadog_api_client_python_test_get_a_logbased_metric_returns_ok_response_1608595669.067374
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/datadog_api_client_python_test_get_a_logbased_metric_returns_ok_response_1614879855.138607
   response:
     body:
-      string: '{"data":{"id":"datadog_api_client_python_test_get_a_logbased_metric_returns_ok_response_1608595669.067374","attributes":{"filter":{"query":"source:datadog-api-client-python-test_get_a_logbased_metric_returns_ok_response-1608595669.067374"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
+      string: '{"data":{"id":"datadog_api_client_python_test_get_a_logbased_metric_returns_ok_response_1614879855.138607","attributes":{"filter":{"query":"source:datadog-api-client-python-test_get_a_logbased_metric_returns_ok_response-1614879855.138607"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
     headers:
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
-      Content-Disposition:
-      - inline
       Content-Length:
       - '317'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       Content-Type:
       - application/json;charset=utf-8
-      DD-POOL:
-      - dogweb
       Date:
-      - Tue, 22 Dec 2020 00:07:50 GMT
-      Pragma:
+      - Thu, 04 Mar 2021 17:44:16 GMT
+      cache-control:
       - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Dec-2020 00:07:50 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
       - max-age=15724800;
-      Vary:
+      vary:
       - Accept-Encoding
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-DD-Debug:
-      - qKfjlUOd47rTL8Zfe+ult0NC1XrJJZn5FzZo3l0g8EiEJqsLoAxULWUGtB1CS4r/
-      X-DD-VERSION:
-      - '35.3583123'
-      X-Frame-Options:
+      x-dd-debug:
+      - S1wfaMZOKGT/IoMw6fqAwAwGWo2vQ44sjF3YzuETnQfxZO2T5eJbs0aX3UKb9Dwu
+      x-dd-version:
+      - '35.4031769'
+      x-frame-options:
       - SAMEORIGIN
-      X-RateLimit-Limit:
+      x-ratelimit-limit:
       - '5000'
-      X-RateLimit-Period:
+      x-ratelimit-period:
       - '3600'
-      X-RateLimit-Remaining:
-      - '4998'
-      X-RateLimit-Reset:
-      - '3130'
+      x-ratelimit-remaining:
+      - '4932'
+      x-ratelimit-reset:
+      - '944'
     status:
       code: 200
       message: OK
@@ -136,53 +126,48 @@ interactions:
       Dd-Operation-Id:
       - DeleteLogsMetric
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev10+dirty (python 3.9.0; os Darwin; arch
+      - datadog-api-client-python/1.0.0b7.dev16+dirty (python 3.9.0; os Darwin; arch
         x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/datadog_api_client_python_test_get_a_logbased_metric_returns_ok_response_1608595669.067374
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/datadog_api_client_python_test_get_a_logbased_metric_returns_ok_response_1614879855.138607
   response:
     body:
       string: '{}'
     headers:
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
-      Content-Disposition:
-      - inline
       Content-Length:
       - '2'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       Content-Type:
       - application/json;charset=utf-8
-      DD-POOL:
-      - dogweb
       Date:
-      - Tue, 22 Dec 2020 00:07:50 GMT
-      Pragma:
+      - Thu, 04 Mar 2021 17:44:16 GMT
+      cache-control:
       - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 29-Dec-2020 00:07:50 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
       - max-age=15724800;
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-DD-Debug:
-      - 4zw1NnYiZt4wp0syhFEidO9Mcjc6rfPz6lIvXBSwWuplBSXLVyoWV6VIuyPxYSUD
-      X-DD-VERSION:
-      - '35.3583123'
-      X-Frame-Options:
+      x-dd-debug:
+      - twvpGlmuom5y6A0pjGtXzTf554cmwJgTcCZ71fK4H/RDi+v5ehBK0zQiRcTJQG5C
+      x-dd-version:
+      - '35.4031769'
+      x-frame-options:
       - SAMEORIGIN
-      X-RateLimit-Limit:
+      x-ratelimit-limit:
       - '5000'
-      X-RateLimit-Period:
+      x-ratelimit-period:
       - '3600'
-      X-RateLimit-Remaining:
-      - '4997'
-      X-RateLimit-Reset:
-      - '3130'
+      x-ratelimit-remaining:
+      - '4931'
+      x-ratelimit-reset:
+      - '944'
     status:
       code: 200
       message: OK
