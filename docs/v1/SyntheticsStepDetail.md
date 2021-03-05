@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **type** | [**SyntheticsStepType**](SyntheticsStepType.md) |  | [optional] 
 **url** | **str** | URL to perform the step against. | [optional] 
 **value** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** | Value for the step. | [optional] 
+**vitals_metrics** | [**[SyntheticsCoreWebVitals]**](SyntheticsCoreWebVitals.md) | Array of Core Web Vitals metrics for the step. | [optional] 
 **warnings** | [**[SyntheticsStepDetailWarning]**](SyntheticsStepDetailWarning.md) | Warning collected that didn&#39;t failed the step. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
