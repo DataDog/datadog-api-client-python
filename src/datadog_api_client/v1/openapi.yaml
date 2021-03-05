@@ -6975,6 +6975,21 @@ components:
       type: string
       x-enum-varnames:
       - TEXT
+    SyntheticsCoreWebVitals:
+      description: Core Web Vitals attached to a browser test step.
+      properties:
+        cls:
+          description: Cumulative Layout Shift.
+          format: int64
+          type: integer
+        lcp:
+          description: Largest Contentful Paint in milliseconds.
+          format: int64
+          type: integer
+        url:
+          description: URL attached to the metrics.
+          type: string
+      type: object
     SyntheticsDeleteTestsPayload:
       description: 'A JSON list of the ID or IDs of the Synthetic tests that you want
 
@@ -7497,6 +7512,11 @@ components:
         value:
           description: Value for the step.
           type: object
+        vitalsMetrics:
+          description: Array of Core Web Vitals metrics for the step.
+          items:
+            $ref: '#/components/schemas/SyntheticsCoreWebVitals'
+          type: array
         warnings:
           description: Warning collected that didn't failed the step.
           items:
