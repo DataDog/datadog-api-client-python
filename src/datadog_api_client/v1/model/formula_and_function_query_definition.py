@@ -175,7 +175,6 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregator (FormulaAndFunctionMetricAggregation): [optional]  # noqa: E501
-            name (str): Name of query for use in formulas.. [optional]  # noqa: E501
             group_by ([FormulaAndFunctionEventQueryGroupBy]): Group by options.. [optional]  # noqa: E501
             indexes ([str]): An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.. [optional]  # noqa: E501
             search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]  # noqa: E501
@@ -185,6 +184,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
             tag_filters ([str]): An array of tags to filter by.. [optional]  # noqa: E501
             text_filter (str): Text to use as filter.. [optional]  # noqa: E501
             data_source (FormulaAndFunctionProcessQueryDataSource): [optional]  # noqa: E501
+            name (str): Name of query for use in formulas.. [optional]  # noqa: E501
             query (str): Metrics query definition.. [optional]  # noqa: E501
             compute (FormulaAndFunctionEventQueryDefinitionCompute): [optional]  # noqa: E501
             metric (str): Process metric name.. [optional]  # noqa: E501

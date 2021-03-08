@@ -86,9 +86,9 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         return {
             "compute": (FormulaAndFunctionEventQueryDefinitionCompute,),  # noqa: E501
             "data_source": (FormulaAndFunctionEventsDataSource,),  # noqa: E501
+            "name": (str,),  # noqa: E501
             "group_by": ([FormulaAndFunctionEventQueryGroupBy],),  # noqa: E501
             "indexes": ([str],),  # noqa: E501
-            "name": (str,),  # noqa: E501
             "search": (FormulaAndFunctionEventQueryDefinitionSearch,),  # noqa: E501
         }
 
@@ -99,9 +99,9 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
     attribute_map = {
         "compute": "compute",  # noqa: E501
         "data_source": "data_source",  # noqa: E501
+        "name": "name",  # noqa: E501
         "group_by": "group_by",  # noqa: E501
         "indexes": "indexes",  # noqa: E501
-        "name": "name",  # noqa: E501
         "search": "search",  # noqa: E501
     }
 
@@ -119,12 +119,13 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, compute, data_source, *args, **kwargs):  # noqa: E501
+    def __init__(self, compute, data_source, name, *args, **kwargs):  # noqa: E501
         """FormulaAndFunctionEventQueryDefinition - a model defined in OpenAPI
 
         Args:
             compute (FormulaAndFunctionEventQueryDefinitionCompute):
             data_source (FormulaAndFunctionEventsDataSource):
+            name (str): Name of the query for use in formulas.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -159,7 +160,6 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             group_by ([FormulaAndFunctionEventQueryGroupBy]): Group by options.. [optional]  # noqa: E501
             indexes ([str]): An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.. [optional]  # noqa: E501
-            name (str): Name of the query for use in formulas.. [optional]  # noqa: E501
             search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]  # noqa: E501
         """
 
@@ -189,6 +189,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
 
         self.compute = compute
         self.data_source = data_source
+        self.name = name
         for var_name, var_value in kwargs.items():
             if (
                 var_name not in self.attribute_map
