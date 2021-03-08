@@ -6,8 +6,6 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import nulltype  # noqa: F401
-
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -27,12 +25,14 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
     from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckType
+    from datadog_api_client.v1.model.synthetics_core_web_vitals import SyntheticsCoreWebVitals
     from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
     from datadog_api_client.v1.model.synthetics_step_detail_warning import SyntheticsStepDetailWarning
     from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
 
     globals()["SyntheticsBrowserError"] = SyntheticsBrowserError
     globals()["SyntheticsCheckType"] = SyntheticsCheckType
+    globals()["SyntheticsCoreWebVitals"] = SyntheticsCoreWebVitals
     globals()["SyntheticsPlayingTab"] = SyntheticsPlayingTab
     globals()["SyntheticsStepDetailWarning"] = SyntheticsStepDetailWarning
     globals()["SyntheticsStepType"] = SyntheticsStepType
@@ -97,6 +97,7 @@ class SyntheticsStepDetail(ModelNormal):
             "type": (SyntheticsStepType,),  # noqa: E501
             "url": (str,),  # noqa: E501
             "value": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            "vitals_metrics": ([SyntheticsCoreWebVitals],),  # noqa: E501
             "warnings": ([SyntheticsStepDetailWarning],),  # noqa: E501
         }
 
@@ -120,6 +121,7 @@ class SyntheticsStepDetail(ModelNormal):
         "type": "type",  # noqa: E501
         "url": "url",  # noqa: E501
         "value": "value",  # noqa: E501
+        "vitals_metrics": "vitalsMetrics",  # noqa: E501
         "warnings": "warnings",  # noqa: E501
     }
 
@@ -186,6 +188,7 @@ class SyntheticsStepDetail(ModelNormal):
             type (SyntheticsStepType): [optional]  # noqa: E501
             url (str): URL to perform the step against.. [optional]  # noqa: E501
             value ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Value for the step.. [optional]  # noqa: E501
+            vitals_metrics ([SyntheticsCoreWebVitals]): Array of Core Web Vitals metrics for the step.. [optional]  # noqa: E501
             warnings ([SyntheticsStepDetailWarning]): Warning collected that didn't failed the step.. [optional]  # noqa: E501
         """
 

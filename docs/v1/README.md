@@ -598,6 +598,7 @@ Class | Method | HTTP request | Description
  - [SyntheticsCheckType](SyntheticsCheckType.md)
  - [SyntheticsConfigVariable](SyntheticsConfigVariable.md)
  - [SyntheticsConfigVariableType](SyntheticsConfigVariableType.md)
+ - [SyntheticsCoreWebVitals](SyntheticsCoreWebVitals.md)
  - [SyntheticsDeleteTestsPayload](SyntheticsDeleteTestsPayload.md)
  - [SyntheticsDeleteTestsResponse](SyntheticsDeleteTestsResponse.md)
  - [SyntheticsDeletedTest](SyntheticsDeletedTest.md)
@@ -832,7 +833,7 @@ Use specific imports for apis and models like:
 - `from datadog_api_client.v1.api.default_api import DefaultApi`
 - `from datadog_api_client.v1.model.pet import Pet`
 
-Solution 1:
+Solution 2:
 Before importing the package, adjust the maximum recursion limit as shown below:
 ```
 import sys
