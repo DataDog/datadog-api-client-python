@@ -14,13 +14,11 @@ from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVar
 
 globals()["SyntheticsGlobalVariableParseTestOptionsType"] = SyntheticsGlobalVariableParseTestOptionsType
 globals()["SyntheticsVariableParser"] = SyntheticsVariableParser
-from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
-    SyntheticsGlobalVariableParseTestOptions,
-)
+from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
 
 
-class TestSyntheticsGlobalVariableParseTestOptions(unittest.TestCase):
-    """SyntheticsGlobalVariableParseTestOptions unit test stubs"""
+class TestSyntheticsParsingOptions(unittest.TestCase):
+    """SyntheticsParsingOptions unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +26,10 @@ class TestSyntheticsGlobalVariableParseTestOptions(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSyntheticsGlobalVariableParseTestOptions(self):
-        """Test SyntheticsGlobalVariableParseTestOptions"""
+    def testSyntheticsParsingOptions(self):
+        """Test SyntheticsParsingOptions"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = SyntheticsGlobalVariableParseTestOptions()  # noqa: E501
+        # model = SyntheticsParsingOptions()  # noqa: E501
         pass
 
 
