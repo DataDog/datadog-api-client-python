@@ -72,7 +72,7 @@ with ApiClient(configuration) as api_client:
         name="MY_VARIABLE",
         parse_test_options=SyntheticsGlobalVariableParseTestOptions(
             field="content-type",
-            parser=SyntheticsGlobalVariableParseTestOptionsParser(
+            parser=SyntheticsVariableParser(
                 type=SyntheticsGlobalVariableParserType("raw"),
                 value="value_example",
             ),
@@ -286,6 +286,51 @@ with ApiClient(configuration) as api_client:
                 timeout=3.14,
                 url="url_example",
             ),
+            steps=[
+                SyntheticsAPIStep(
+                    assertions=[],
+                    extracted_values=[
+                        SyntheticsParsingOptions(
+                            field="content-type",
+                            name="name_example",
+                            parser=SyntheticsVariableParser(
+                                type=SyntheticsGlobalVariableParserType("raw"),
+                                value="value_example",
+                            ),
+                            type=SyntheticsGlobalVariableParseTestOptionsType("http_body"),
+                        ),
+                    ],
+                    name="name_example",
+                    request=SyntheticsTestRequest(
+                        basic_auth=SyntheticsBasicAuth(
+                            password="",
+                            username="",
+                        ),
+                        body="body_example",
+                        certificate=SyntheticsTestRequestCertificate(
+                            cert=SyntheticsTestRequestCertificateItem(
+                                content="content_example",
+                                filename="filename_example",
+                                updated_at="updated_at_example",
+                            ),
+                            key=SyntheticsTestRequestCertificateItem(
+                                content="content_example",
+                                filename="filename_example",
+                                updated_at="updated_at_example",
+                            ),
+                        ),
+                        dns_server="dns_server_example",
+                        headers=SyntheticsTestHeaders(SyntheticsTestHeaders),
+                        host="host_example",
+                        method=HTTPMethod("GET"),
+                        port=1,
+                        query={},
+                        timeout=3.14,
+                        url="url_example",
+                    ),
+                    subtype=SyntheticsAPIStepSubtype("http"),
+                ),
+            ],
         ),
         locations=[
             "locations_example",
@@ -944,7 +989,7 @@ with ApiClient(configuration) as api_client:
         name="MY_VARIABLE",
         parse_test_options=SyntheticsGlobalVariableParseTestOptions(
             field="content-type",
-            parser=SyntheticsGlobalVariableParseTestOptionsParser(
+            parser=SyntheticsVariableParser(
                 type=SyntheticsGlobalVariableParserType("raw"),
                 value="value_example",
             ),
@@ -1954,6 +1999,51 @@ with ApiClient(configuration) as api_client:
                 timeout=3.14,
                 url="url_example",
             ),
+            steps=[
+                SyntheticsAPIStep(
+                    assertions=[],
+                    extracted_values=[
+                        SyntheticsParsingOptions(
+                            field="content-type",
+                            name="name_example",
+                            parser=SyntheticsVariableParser(
+                                type=SyntheticsGlobalVariableParserType("raw"),
+                                value="value_example",
+                            ),
+                            type=SyntheticsGlobalVariableParseTestOptionsType("http_body"),
+                        ),
+                    ],
+                    name="name_example",
+                    request=SyntheticsTestRequest(
+                        basic_auth=SyntheticsBasicAuth(
+                            password="",
+                            username="",
+                        ),
+                        body="body_example",
+                        certificate=SyntheticsTestRequestCertificate(
+                            cert=SyntheticsTestRequestCertificateItem(
+                                content="content_example",
+                                filename="filename_example",
+                                updated_at="updated_at_example",
+                            ),
+                            key=SyntheticsTestRequestCertificateItem(
+                                content="content_example",
+                                filename="filename_example",
+                                updated_at="updated_at_example",
+                            ),
+                        ),
+                        dns_server="dns_server_example",
+                        headers=SyntheticsTestHeaders(SyntheticsTestHeaders),
+                        host="host_example",
+                        method=HTTPMethod("GET"),
+                        port=1,
+                        query={},
+                        timeout=3.14,
+                        url="url_example",
+                    ),
+                    subtype=SyntheticsAPIStepSubtype("http"),
+                ),
+            ],
         ),
         locations=[
             "locations_example",
