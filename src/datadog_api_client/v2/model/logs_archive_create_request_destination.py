@@ -6,8 +6,6 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import nulltype  # noqa: F401
-
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -123,14 +121,7 @@ class LogsArchiveCreateRequestDestination(ModelComposed):
     def __init__(self, *args, **kwargs):  # noqa: E501
         """LogsArchiveCreateRequestDestination - a model defined in OpenAPI
 
-        Args:
-
         Keyword Args:
-            container (str): The container where the archive will be stored.. defaults to nulltype.Null  # noqa: E501
-            integration (LogsArchiveIntegrationS3): defaults to nulltype.Null  # noqa: E501
-            storage_account (str): The associated storage account.. defaults to nulltype.Null  # noqa: E501
-            type (LogsArchiveDestinationS3Type): defaults to nulltype.Null, must be one of ["s3", ]  # noqa: E501
-            bucket (str): The bucket where the archive will be stored.. defaults to nulltype.Null  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -163,13 +154,13 @@ class LogsArchiveCreateRequestDestination(ModelComposed):
                                 _visited_composed_classes = (Animal,)
             path (str): The archive path.. [optional]  # noqa: E501
             region (str): The region where the archive will be stored.. [optional]  # noqa: E501
+            container (str): The container where the archive will be stored.. [optional]  # noqa: E501
+            integration (LogsArchiveIntegrationS3): [optional]  # noqa: E501
+            storage_account (str): The associated storage account.. [optional]  # noqa: E501
+            type (LogsArchiveDestinationS3Type): [optional]  # noqa: E501
+            bucket (str): The bucket where the archive will be stored.. [optional]  # noqa: E501
         """
 
-        container = kwargs.get("container", nulltype.Null)
-        integration = kwargs.get("integration", nulltype.Null)
-        storage_account = kwargs.get("storage_account", nulltype.Null)
-        type = kwargs.get("type", nulltype.Null)
-        bucket = kwargs.get("bucket", nulltype.Null)
         _check_type = kwargs.pop("_check_type", True)
         _spec_property_naming = kwargs.pop("_spec_property_naming", False)
         _path_to_item = kwargs.pop("_path_to_item", ())
@@ -201,18 +192,7 @@ class LogsArchiveCreateRequestDestination(ModelComposed):
             "_configuration": _configuration,
             "_visited_composed_classes": self._visited_composed_classes,
         }
-        required_args = {
-            "container": container,
-            "integration": integration,
-            "storage_account": storage_account,
-            "type": type,
-            "bucket": bucket,
-        }
-        # remove args whose value is Null because they are unset
-        required_arg_names = list(required_args.keys())
-        for required_arg_name in required_arg_names:
-            if required_args[required_arg_name] is nulltype.Null:
-                del required_args[required_arg_name]
+        required_args = {}
         model_args = {}
         model_args.update(required_args)
         model_args.update(kwargs)

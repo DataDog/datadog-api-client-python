@@ -6,8 +6,6 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import nulltype  # noqa: F401
-
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -145,13 +143,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
     def __init__(self, *args, **kwargs):  # noqa: E501
         """FormulaAndFunctionQueryDefinition - a model defined in OpenAPI
 
-        Args:
-
         Keyword Args:
-            data_source (FormulaAndFunctionProcessQueryDataSource): defaults to nulltype.Null, must be one of ["process", "container", ]  # noqa: E501
-            query (str): Metrics query definition.. defaults to nulltype.Null  # noqa: E501
-            compute (FormulaAndFunctionEventQueryDefinitionCompute): defaults to nulltype.Null  # noqa: E501
-            metric (str): Process metric name.. defaults to nulltype.Null  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -192,12 +184,12 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
             sort (QuerySortOrder): [optional]  # noqa: E501
             tag_filters ([str]): An array of tags to filter by.. [optional]  # noqa: E501
             text_filter (str): Text to use as filter.. [optional]  # noqa: E501
+            data_source (FormulaAndFunctionProcessQueryDataSource): [optional]  # noqa: E501
+            query (str): Metrics query definition.. [optional]  # noqa: E501
+            compute (FormulaAndFunctionEventQueryDefinitionCompute): [optional]  # noqa: E501
+            metric (str): Process metric name.. [optional]  # noqa: E501
         """
 
-        data_source = kwargs.get("data_source", nulltype.Null)
-        query = kwargs.get("query", nulltype.Null)
-        compute = kwargs.get("compute", nulltype.Null)
-        metric = kwargs.get("metric", nulltype.Null)
         _check_type = kwargs.pop("_check_type", True)
         _spec_property_naming = kwargs.pop("_spec_property_naming", False)
         _path_to_item = kwargs.pop("_path_to_item", ())
@@ -229,17 +221,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
             "_configuration": _configuration,
             "_visited_composed_classes": self._visited_composed_classes,
         }
-        required_args = {
-            "data_source": data_source,
-            "query": query,
-            "compute": compute,
-            "metric": metric,
-        }
-        # remove args whose value is Null because they are unset
-        required_arg_names = list(required_args.keys())
-        for required_arg_name in required_arg_names:
-            if required_args[required_arg_name] is nulltype.Null:
-                del required_args[required_arg_name]
+        required_args = {}
         model_args = {}
         model_args.update(required_args)
         model_args.update(kwargs)

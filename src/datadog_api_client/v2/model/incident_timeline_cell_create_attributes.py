@@ -6,8 +6,6 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import nulltype  # noqa: F401
-
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -127,11 +125,7 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
     def __init__(self, *args, **kwargs):  # noqa: E501
         """IncidentTimelineCellCreateAttributes - a model defined in OpenAPI
 
-        Args:
-
         Keyword Args:
-            cell_type (IncidentTimelineCellMarkdownContentType): defaults to nulltype.Null, must be one of ["markdown", ]  # noqa: E501
-            content (IncidentTimelineCellMarkdownCreateAttributesContent): defaults to nulltype.Null  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -163,10 +157,10 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             important (bool): A flag indicating whether the timeline cell is important and should be highlighted.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            cell_type (IncidentTimelineCellMarkdownContentType): [optional]  # noqa: E501
+            content (IncidentTimelineCellMarkdownCreateAttributesContent): [optional]  # noqa: E501
         """
 
-        cell_type = kwargs.get("cell_type", nulltype.Null)
-        content = kwargs.get("content", nulltype.Null)
         _check_type = kwargs.pop("_check_type", True)
         _spec_property_naming = kwargs.pop("_spec_property_naming", False)
         _path_to_item = kwargs.pop("_path_to_item", ())
@@ -198,15 +192,7 @@ class IncidentTimelineCellCreateAttributes(ModelComposed):
             "_configuration": _configuration,
             "_visited_composed_classes": self._visited_composed_classes,
         }
-        required_args = {
-            "cell_type": cell_type,
-            "content": content,
-        }
-        # remove args whose value is Null because they are unset
-        required_arg_names = list(required_args.keys())
-        for required_arg_name in required_arg_names:
-            if required_args[required_arg_name] is nulltype.Null:
-                del required_args[required_arg_name]
+        required_args = {}
         model_args = {}
         model_args.update(required_args)
         model_args.update(kwargs)

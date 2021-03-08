@@ -6,8 +6,6 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import nulltype  # noqa: F401
-
 from datadog_api_client.v2.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -123,10 +121,7 @@ class ApplicationKeyResponseIncludedItem(ModelComposed):
     def __init__(self, *args, **kwargs):  # noqa: E501
         """ApplicationKeyResponseIncludedItem - a model defined in OpenAPI
 
-        Args:
-
         Keyword Args:
-            type (RolesType): defaults to nulltype.Null, must be one of ["roles", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -160,9 +155,9 @@ class ApplicationKeyResponseIncludedItem(ModelComposed):
             attributes (RoleAttributes): [optional]  # noqa: E501
             id (str): ID of the role.. [optional]  # noqa: E501
             relationships (RoleResponseRelationships): [optional]  # noqa: E501
+            type (RolesType): [optional]  # noqa: E501
         """
 
-        type = kwargs.get("type", nulltype.Null)
         _check_type = kwargs.pop("_check_type", True)
         _spec_property_naming = kwargs.pop("_spec_property_naming", False)
         _path_to_item = kwargs.pop("_path_to_item", ())
@@ -194,14 +189,7 @@ class ApplicationKeyResponseIncludedItem(ModelComposed):
             "_configuration": _configuration,
             "_visited_composed_classes": self._visited_composed_classes,
         }
-        required_args = {
-            "type": type,
-        }
-        # remove args whose value is Null because they are unset
-        required_arg_names = list(required_args.keys())
-        for required_arg_name in required_arg_names:
-            if required_args[required_arg_name] is nulltype.Null:
-                del required_args[required_arg_name]
+        required_args = {}
         model_args = {}
         model_args.update(required_args)
         model_args.update(kwargs)

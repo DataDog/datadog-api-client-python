@@ -6,8 +6,6 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import nulltype  # noqa: F401
-
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -68,7 +66,12 @@ class HeatMapWidgetDefinition(ModelNormal):
 
     allowed_values = {}
 
-    validations = {}
+    validations = {
+        ("requests",): {
+            "max_items": 1,
+            "min_items": 1,
+        },
+    }
 
     additional_properties_type = None
 
