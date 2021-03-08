@@ -6,8 +6,6 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import nulltype  # noqa: F401
-
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -160,7 +158,11 @@ class WidgetDefinition(ModelComposed):
 
     allowed_values = {}
 
-    validations = {}
+    validations = {
+        ("filters",): {
+            "min_items": 1,
+        },
+    }
 
     @cached_property
     def additional_properties_type():
@@ -219,28 +221,7 @@ class WidgetDefinition(ModelComposed):
     def __init__(self, *args, **kwargs):  # noqa: E501
         """WidgetDefinition - a model defined in OpenAPI
 
-        Args:
-
         Keyword Args:
-            alert_id (str): ID of the alert to use in the widget.. defaults to nulltype.Null  # noqa: E501
-            type (ToplistWidgetDefinitionType): defaults to nulltype.Null, must be one of ["toplist", ]  # noqa: E501
-            viz_type (WidgetVizType): defaults to nulltype.Null, must be one of ["timeseries", "toplist", ]  # noqa: E501
-            requests ([ToplistWidgetRequest]): List of top list widget requests.. defaults to nulltype.Null  # noqa: E501
-            check (str): Name of the check to use in the widget.. defaults to nulltype.Null  # noqa: E501
-            grouping (WidgetGrouping): defaults to nulltype.Null, must be one of ["check", "cluster", ]  # noqa: E501
-            query (str): Query to filter the monitors with.. defaults to nulltype.Null  # noqa: E501
-            text (str): Text to display.. defaults to nulltype.Null  # noqa: E501
-            style (HostMapWidgetDefinitionStyle): defaults to nulltype.Null  # noqa: E501
-            view (GeomapWidgetDefinitionView): defaults to nulltype.Null  # noqa: E501
-            layout_type (WidgetLayoutType): defaults to nulltype.Null, must be one of ["ordered", ]  # noqa: E501
-            widgets ([Widget]): List of widget groups.. defaults to nulltype.Null  # noqa: E501
-            url (str): URL of the image.. defaults to nulltype.Null  # noqa: E501
-            content (str): Content of the note.. defaults to nulltype.Null  # noqa: E501
-            view_type (str): Type of view displayed by the widget.. defaults to nulltype.Null  # noqa: E501
-            filters ([str]): Your environment and primary tag (or * if enabled for your account).. defaults to nulltype.Null  # noqa: E501
-            service (str): APM service.. defaults to nulltype.Null  # noqa: E501
-            env (str): APM environment.. defaults to nulltype.Null  # noqa: E501
-            span_name (str): APM span name.. defaults to nulltype.Null  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -333,27 +314,27 @@ class WidgetDefinition(ModelComposed):
             has_search_bar (TableWidgetHasSearchBar): [optional]  # noqa: E501
             markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
             right_yaxis (WidgetAxis): [optional]  # noqa: E501
+            alert_id (str): ID of the alert to use in the widget.. [optional]  # noqa: E501
+            type (ToplistWidgetDefinitionType): [optional]  # noqa: E501
+            viz_type (WidgetVizType): [optional]  # noqa: E501
+            requests ([ToplistWidgetRequest]): List of top list widget requests.. [optional]  # noqa: E501
+            check (str): Name of the check to use in the widget.. [optional]  # noqa: E501
+            grouping (WidgetGrouping): [optional]  # noqa: E501
+            query (str): Query to filter the monitors with.. [optional]  # noqa: E501
+            text (str): Text to display.. [optional]  # noqa: E501
+            style (HostMapWidgetDefinitionStyle): [optional]  # noqa: E501
+            view (GeomapWidgetDefinitionView): [optional]  # noqa: E501
+            layout_type (WidgetLayoutType): [optional]  # noqa: E501
+            widgets ([Widget]): List of widget groups.. [optional]  # noqa: E501
+            url (str): URL of the image.. [optional]  # noqa: E501
+            content (str): Content of the note.. [optional]  # noqa: E501
+            view_type (str): Type of view displayed by the widget.. [optional] if omitted the server will use the default value of "detail"  # noqa: E501
+            filters ([str]): Your environment and primary tag (or * if enabled for your account).. [optional]  # noqa: E501
+            service (str): APM service.. [optional]  # noqa: E501
+            env (str): APM environment.. [optional]  # noqa: E501
+            span_name (str): APM span name.. [optional]  # noqa: E501
         """
 
-        alert_id = kwargs.get("alert_id", nulltype.Null)
-        type = kwargs.get("type", nulltype.Null)
-        viz_type = kwargs.get("viz_type", nulltype.Null)
-        requests = kwargs.get("requests", nulltype.Null)
-        check = kwargs.get("check", nulltype.Null)
-        grouping = kwargs.get("grouping", nulltype.Null)
-        query = kwargs.get("query", nulltype.Null)
-        text = kwargs.get("text", nulltype.Null)
-        style = kwargs.get("style", nulltype.Null)
-        view = kwargs.get("view", nulltype.Null)
-        layout_type = kwargs.get("layout_type", nulltype.Null)
-        widgets = kwargs.get("widgets", nulltype.Null)
-        url = kwargs.get("url", nulltype.Null)
-        content = kwargs.get("content", nulltype.Null)
-        view_type = kwargs.get("view_type", nulltype.Null)
-        filters = kwargs.get("filters", nulltype.Null)
-        service = kwargs.get("service", nulltype.Null)
-        env = kwargs.get("env", nulltype.Null)
-        span_name = kwargs.get("span_name", nulltype.Null)
         _check_type = kwargs.pop("_check_type", True)
         _spec_property_naming = kwargs.pop("_spec_property_naming", False)
         _path_to_item = kwargs.pop("_path_to_item", ())
@@ -385,32 +366,7 @@ class WidgetDefinition(ModelComposed):
             "_configuration": _configuration,
             "_visited_composed_classes": self._visited_composed_classes,
         }
-        required_args = {
-            "alert_id": alert_id,
-            "type": type,
-            "viz_type": viz_type,
-            "requests": requests,
-            "check": check,
-            "grouping": grouping,
-            "query": query,
-            "text": text,
-            "style": style,
-            "view": view,
-            "layout_type": layout_type,
-            "widgets": widgets,
-            "url": url,
-            "content": content,
-            "view_type": view_type,
-            "filters": filters,
-            "service": service,
-            "env": env,
-            "span_name": span_name,
-        }
-        # remove args whose value is Null because they are unset
-        required_arg_names = list(required_args.keys())
-        for required_arg_name in required_arg_names:
-            if required_args[required_arg_name] is nulltype.Null:
-                del required_args[required_arg_name]
+        required_args = {}
         model_args = {}
         model_args.update(required_args)
         model_args.update(kwargs)

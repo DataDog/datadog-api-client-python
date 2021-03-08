@@ -6,8 +6,6 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import nulltype  # noqa: F401
-
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -125,11 +123,7 @@ class SyntheticsAssertion(ModelComposed):
     def __init__(self, *args, **kwargs):  # noqa: E501
         """SyntheticsAssertion - a model defined in OpenAPI
 
-        Args:
-
         Keyword Args:
-            operator (SyntheticsAssertionJSONPathOperator): defaults to nulltype.Null, must be one of ["validatesJSONPath", ]  # noqa: E501
-            type (SyntheticsAssertionType): defaults to nulltype.Null, must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", "tlsVersion", "minTlsVersion", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -162,10 +156,10 @@ class SyntheticsAssertion(ModelComposed):
                                 _visited_composed_classes = (Animal,)
             _property (str): The associated assertion property.. [optional]  # noqa: E501
             target (SyntheticsAssertionJSONPathTargetTarget): [optional]  # noqa: E501
+            operator (SyntheticsAssertionJSONPathOperator): [optional]  # noqa: E501
+            type (SyntheticsAssertionType): [optional]  # noqa: E501
         """
 
-        operator = kwargs.get("operator", nulltype.Null)
-        type = kwargs.get("type", nulltype.Null)
         _check_type = kwargs.pop("_check_type", True)
         _spec_property_naming = kwargs.pop("_spec_property_naming", False)
         _path_to_item = kwargs.pop("_path_to_item", ())
@@ -197,15 +191,7 @@ class SyntheticsAssertion(ModelComposed):
             "_configuration": _configuration,
             "_visited_composed_classes": self._visited_composed_classes,
         }
-        required_args = {
-            "operator": operator,
-            "type": type,
-        }
-        # remove args whose value is Null because they are unset
-        required_arg_names = list(required_args.keys())
-        for required_arg_name in required_arg_names:
-            if required_args[required_arg_name] is nulltype.Null:
-                del required_args[required_arg_name]
+        required_args = {}
         model_args = {}
         model_args.update(required_args)
         model_args.update(kwargs)

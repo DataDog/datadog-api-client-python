@@ -4,25 +4,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**alert_id** | **str** | ID of the alert to use in the widget. | defaults to nulltype.Null
-**type** | [**ToplistWidgetDefinitionType**](ToplistWidgetDefinitionType.md) |  | defaults to nulltype.Null
-**viz_type** | [**WidgetVizType**](WidgetVizType.md) |  | defaults to nulltype.Null
-**requests** | [**[ToplistWidgetRequest]**](ToplistWidgetRequest.md) | List of top list widget requests. | defaults to nulltype.Null
-**check** | **str** | Name of the check to use in the widget. | defaults to nulltype.Null
-**grouping** | [**WidgetGrouping**](WidgetGrouping.md) |  | defaults to nulltype.Null
-**query** | **str** | Query to filter the monitors with. | defaults to nulltype.Null
-**text** | **str** | Text to display. | defaults to nulltype.Null
-**style** | [**HostMapWidgetDefinitionStyle**](HostMapWidgetDefinitionStyle.md) |  | defaults to nulltype.Null
-**view** | [**GeomapWidgetDefinitionView**](GeomapWidgetDefinitionView.md) |  | defaults to nulltype.Null
-**layout_type** | [**WidgetLayoutType**](WidgetLayoutType.md) |  | defaults to nulltype.Null
-**widgets** | [**[Widget]**](Widget.md) | List of widget groups. | defaults to nulltype.Null
-**url** | **str** | URL of the image. | defaults to nulltype.Null
-**content** | **str** | Content of the note. | defaults to nulltype.Null
-**view_type** | **str** | Type of view displayed by the widget. | defaults to nulltype.Null
-**filters** | **[str]** | Your environment and primary tag (or * if enabled for your account). | defaults to nulltype.Null
-**service** | **str** | APM service. | defaults to nulltype.Null
-**env** | **str** | APM environment. | defaults to nulltype.Null
-**span_name** | **str** | APM span name. | defaults to nulltype.Null
 **time** | [**WidgetTime**](WidgetTime.md) |  | [optional] 
 **title** | **str** | Title of your widget. | [optional] 
 **title_align** | [**WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
@@ -85,6 +66,25 @@ Name | Type | Description | Notes
 **has_search_bar** | [**TableWidgetHasSearchBar**](TableWidgetHasSearchBar.md) |  | [optional] 
 **markers** | [**[WidgetMarker]**](WidgetMarker.md) | List of markers. | [optional] 
 **right_yaxis** | [**WidgetAxis**](WidgetAxis.md) |  | [optional] 
+**alert_id** | **str** | ID of the alert to use in the widget. | [optional] 
+**type** | [**ToplistWidgetDefinitionType**](ToplistWidgetDefinitionType.md) |  | [optional] 
+**viz_type** | [**WidgetVizType**](WidgetVizType.md) |  | [optional] 
+**requests** | [**[ToplistWidgetRequest]**](ToplistWidgetRequest.md) | List of top list widget requests. | [optional] 
+**check** | **str** | Name of the check to use in the widget. | [optional] 
+**grouping** | [**WidgetGrouping**](WidgetGrouping.md) |  | [optional] 
+**query** | **str** | Query to filter the monitors with. | [optional] 
+**text** | **str** | Text to display. | [optional] 
+**style** | [**HostMapWidgetDefinitionStyle**](HostMapWidgetDefinitionStyle.md) |  | [optional] 
+**view** | [**GeomapWidgetDefinitionView**](GeomapWidgetDefinitionView.md) |  | [optional] 
+**layout_type** | [**WidgetLayoutType**](WidgetLayoutType.md) |  | [optional] 
+**widgets** | [**[Widget]**](Widget.md) | List of widget groups. | [optional] 
+**url** | **str** | URL of the image. | [optional] 
+**content** | **str** | Content of the note. | [optional] 
+**view_type** | **str** | Type of view displayed by the widget. | [optional]  if omitted the server will use the default value of "detail"
+**filters** | **[str]** | Your environment and primary tag (or * if enabled for your account). | [optional] 
+**service** | **str** | APM service. | [optional] 
+**env** | **str** | APM environment. | [optional] 
+**span_name** | **str** | APM span name. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)

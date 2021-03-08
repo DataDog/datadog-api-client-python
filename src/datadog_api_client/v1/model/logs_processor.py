@@ -6,8 +6,6 @@
 import re  # noqa: F401
 import sys  # noqa: F401
 
-import nulltype  # noqa: F401
-
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -94,7 +92,11 @@ class LogsProcessor(ModelComposed):
 
     allowed_values = {}
 
-    validations = {}
+    validations = {
+        ("samples",): {
+            "max_items": 5,
+        },
+    }
 
     @cached_property
     def additional_properties_type():
@@ -153,18 +155,7 @@ class LogsProcessor(ModelComposed):
     def __init__(self, *args, **kwargs):  # noqa: E501
         """LogsProcessor - a model defined in OpenAPI
 
-        Args:
-
         Keyword Args:
-            grok (LogsGrokParserRules): defaults to nulltype.Null  # noqa: E501
-            source (str): Source attribute used to perform the lookup.. defaults to nulltype.Null  # noqa: E501
-            type (LogsTraceRemapperType): defaults to nulltype.Null, must be one of ["trace-id-remapper", ]  # noqa: E501
-            sources ([str]): Array of source attributes.. defaults to nulltype.Null  # noqa: E501
-            target (str): Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.. defaults to nulltype.Null  # noqa: E501
-            categories ([LogsCategoryProcessorCategory]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.. defaults to nulltype.Null  # noqa: E501
-            expression (str): Arithmetic operation between one or more log attributes.. defaults to nulltype.Null  # noqa: E501
-            template (str): A formula with one or more attributes and raw text.. defaults to nulltype.Null  # noqa: E501
-            lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`. defaults to nulltype.Null  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -209,17 +200,17 @@ class LogsProcessor(ModelComposed):
             filter (LogsFilter): [optional]  # noqa: E501
             processors ([LogsProcessor]): Ordered list of processors in this pipeline.. [optional]  # noqa: E501
             default_lookup (str): Value to set the target attribute if the source value is not found in the list.. [optional]  # noqa: E501
+            grok (LogsGrokParserRules): [optional]  # noqa: E501
+            source (str): Source attribute used to perform the lookup.. [optional]  # noqa: E501
+            type (LogsTraceRemapperType): [optional]  # noqa: E501
+            sources ([str]): Array of source attributes.. [optional] if omitted the server will use the default value of ["dd.trace_id"]  # noqa: E501
+            target (str): Name of the attribute that contains the corresponding value in the mapping list or the `default_lookup` if not found in the mapping list.. [optional]  # noqa: E501
+            categories ([LogsCategoryProcessorCategory]): Array of filters to match or not a log and their corresponding `name`to assign a custom value to the log.. [optional]  # noqa: E501
+            expression (str): Arithmetic operation between one or more log attributes.. [optional]  # noqa: E501
+            template (str): A formula with one or more attributes and raw text.. [optional]  # noqa: E501
+            lookup_table ([str]): Mapping table of values for the source attribute and their associated target attribute values, formatted as `[\"source_key1,target_value1\", \"source_key2,target_value2\"]`. [optional]  # noqa: E501
         """
 
-        grok = kwargs.get("grok", nulltype.Null)
-        source = kwargs.get("source", nulltype.Null)
-        type = kwargs.get("type", nulltype.Null)
-        sources = kwargs.get("sources", nulltype.Null)
-        target = kwargs.get("target", nulltype.Null)
-        categories = kwargs.get("categories", nulltype.Null)
-        expression = kwargs.get("expression", nulltype.Null)
-        template = kwargs.get("template", nulltype.Null)
-        lookup_table = kwargs.get("lookup_table", nulltype.Null)
         _check_type = kwargs.pop("_check_type", True)
         _spec_property_naming = kwargs.pop("_spec_property_naming", False)
         _path_to_item = kwargs.pop("_path_to_item", ())
@@ -251,22 +242,7 @@ class LogsProcessor(ModelComposed):
             "_configuration": _configuration,
             "_visited_composed_classes": self._visited_composed_classes,
         }
-        required_args = {
-            "grok": grok,
-            "source": source,
-            "type": type,
-            "sources": sources,
-            "target": target,
-            "categories": categories,
-            "expression": expression,
-            "template": template,
-            "lookup_table": lookup_table,
-        }
-        # remove args whose value is Null because they are unset
-        required_arg_names = list(required_args.keys())
-        for required_arg_name in required_arg_names:
-            if required_args[required_arg_name] is nulltype.Null:
-                del required_args[required_arg_name]
+        required_args = {}
         model_args = {}
         model_args.update(required_args)
         model_args.update(kwargs)

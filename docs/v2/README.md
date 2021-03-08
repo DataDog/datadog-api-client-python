@@ -527,7 +527,7 @@ Use specific imports for apis and models like:
 - `from datadog_api_client.v2.api.default_api import DefaultApi`
 - `from datadog_api_client.v2.model.pet import Pet`
 
-Solution 1:
+Solution 2:
 Before importing the package, adjust the maximum recursion limit as shown below:
 ```
 import sys
