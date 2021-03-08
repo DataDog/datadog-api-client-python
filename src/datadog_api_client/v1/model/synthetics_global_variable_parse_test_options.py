@@ -23,15 +23,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_parser import (
-        SyntheticsGlobalVariableParseTestOptionsParser,
-    )
     from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
         SyntheticsGlobalVariableParseTestOptionsType,
     )
+    from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
 
-    globals()["SyntheticsGlobalVariableParseTestOptionsParser"] = SyntheticsGlobalVariableParseTestOptionsParser
     globals()["SyntheticsGlobalVariableParseTestOptionsType"] = SyntheticsGlobalVariableParseTestOptionsType
+    globals()["SyntheticsVariableParser"] = SyntheticsVariableParser
 
 
 class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
@@ -78,7 +76,7 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         """
         lazy_import()
         return {
-            "parser": (SyntheticsGlobalVariableParseTestOptionsParser,),  # noqa: E501
+            "parser": (SyntheticsVariableParser,),  # noqa: E501
             "type": (SyntheticsGlobalVariableParseTestOptionsType,),  # noqa: E501
             "field": (str,),  # noqa: E501
         }
@@ -111,7 +109,7 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         """SyntheticsGlobalVariableParseTestOptions - a model defined in OpenAPI
 
         Args:
-            parser (SyntheticsGlobalVariableParseTestOptionsParser):
+            parser (SyntheticsVariableParser):
             type (SyntheticsGlobalVariableParseTestOptionsType):
 
         Keyword Args:

@@ -305,6 +305,8 @@ from datadog_api_client.v1.model.service_summary_widget_definition_type import S
 from datadog_api_client.v1.model.slack_integration_channel import SlackIntegrationChannel
 from datadog_api_client.v1.model.slack_integration_channel_display import SlackIntegrationChannelDisplay
 from datadog_api_client.v1.model.slack_integration_channels import SlackIntegrationChannels
+from datadog_api_client.v1.model.synthetics_api_step import SyntheticsAPIStep
+from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
 from datadog_api_client.v1.model.synthetics_api_test_result_data import SyntheticsAPITestResultData
@@ -362,9 +364,6 @@ from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlo
 from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
     SyntheticsGlobalVariableParseTestOptions,
 )
-from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_parser import (
-    SyntheticsGlobalVariableParseTestOptionsParser,
-)
 from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
     SyntheticsGlobalVariableParseTestOptionsType,
 )
@@ -373,6 +372,7 @@ from datadog_api_client.v1.model.synthetics_global_variable_value import Synthet
 from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
 from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
+from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
 from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
 from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
 from datadog_api_client.v1.model.synthetics_private_location_creation_response import (
@@ -417,6 +417,7 @@ from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import Syn
 from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import (
     SyntheticsUpdateTestPauseStatusPayload,
 )
+from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
 from datadog_api_client.v1.model.synthetics_warning_type import SyntheticsWarningType
 from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
 from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
