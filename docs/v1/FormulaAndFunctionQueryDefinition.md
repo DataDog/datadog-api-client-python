@@ -5,7 +5,6 @@ A formula and function query.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregator** | [**FormulaAndFunctionMetricAggregation**](FormulaAndFunctionMetricAggregation.md) |  | [optional] 
-**name** | **str** | Name of query for use in formulas. | [optional] 
 **group_by** | [**[FormulaAndFunctionEventQueryGroupBy]**](FormulaAndFunctionEventQueryGroupBy.md) | Group by options. | [optional] 
 **indexes** | **[str]** | An array of index names to query in the stream. Omit or use &#x60;[]&#x60; to query all indexes at once. | [optional] 
 **search** | [**FormulaAndFunctionEventQueryDefinitionSearch**](FormulaAndFunctionEventQueryDefinitionSearch.md) |  | [optional] 
@@ -15,6 +14,7 @@ Name | Type | Description | Notes
 **tag_filters** | **[str]** | An array of tags to filter by. | [optional] 
 **text_filter** | **str** | Text to use as filter. | [optional] 
 **data_source** | [**FormulaAndFunctionProcessQueryDataSource**](FormulaAndFunctionProcessQueryDataSource.md) |  | [optional] 
+**name** | **str** | Name of query for use in formulas. | [optional] 
 **query** | **str** | Metrics query definition. | [optional] 
 **compute** | [**FormulaAndFunctionEventQueryDefinitionCompute**](FormulaAndFunctionEventQueryDefinitionCompute.md) |  | [optional] 
 **metric** | **str** | Process metric name. | [optional] 

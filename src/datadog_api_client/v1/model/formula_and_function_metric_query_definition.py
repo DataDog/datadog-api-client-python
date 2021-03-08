@@ -75,9 +75,9 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         lazy_import()
         return {
             "data_source": (FormulaAndFunctionMetricDataSource,),  # noqa: E501
+            "name": (str,),  # noqa: E501
             "query": (str,),  # noqa: E501
             "aggregator": (FormulaAndFunctionMetricAggregation,),  # noqa: E501
-            "name": (str,),  # noqa: E501
         }
 
     @cached_property
@@ -86,9 +86,9 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
 
     attribute_map = {
         "data_source": "data_source",  # noqa: E501
+        "name": "name",  # noqa: E501
         "query": "query",  # noqa: E501
         "aggregator": "aggregator",  # noqa: E501
-        "name": "name",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -105,11 +105,12 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, data_source, query, *args, **kwargs):  # noqa: E501
+    def __init__(self, data_source, name, query, *args, **kwargs):  # noqa: E501
         """FormulaAndFunctionMetricQueryDefinition - a model defined in OpenAPI
 
         Args:
             data_source (FormulaAndFunctionMetricDataSource):
+            name (str): Name of the query for use in formulas.
             query (str): Metrics query definition.
 
         Keyword Args:
@@ -144,7 +145,6 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregator (FormulaAndFunctionMetricAggregation): [optional]  # noqa: E501
-            name (str): Name of the query for use in formulas.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
@@ -172,6 +172,7 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.data_source = data_source
+        self.name = name
         self.query = query
         for var_name, var_value in kwargs.items():
             if (

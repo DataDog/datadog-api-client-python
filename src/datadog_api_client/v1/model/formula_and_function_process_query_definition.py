@@ -80,10 +80,10 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         return {
             "data_source": (FormulaAndFunctionProcessQueryDataSource,),  # noqa: E501
             "metric": (str,),  # noqa: E501
+            "name": (str,),  # noqa: E501
             "aggregator": (FormulaAndFunctionMetricAggregation,),  # noqa: E501
             "is_normalized_cpu": (bool,),  # noqa: E501
             "limit": (int,),  # noqa: E501
-            "name": (str,),  # noqa: E501
             "sort": (QuerySortOrder,),  # noqa: E501
             "tag_filters": ([str],),  # noqa: E501
             "text_filter": (str,),  # noqa: E501
@@ -96,10 +96,10 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
     attribute_map = {
         "data_source": "data_source",  # noqa: E501
         "metric": "metric",  # noqa: E501
+        "name": "name",  # noqa: E501
         "aggregator": "aggregator",  # noqa: E501
         "is_normalized_cpu": "is_normalized_cpu",  # noqa: E501
         "limit": "limit",  # noqa: E501
-        "name": "name",  # noqa: E501
         "sort": "sort",  # noqa: E501
         "tag_filters": "tag_filters",  # noqa: E501
         "text_filter": "text_filter",  # noqa: E501
@@ -119,12 +119,13 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, data_source, metric, *args, **kwargs):  # noqa: E501
+    def __init__(self, data_source, metric, name, *args, **kwargs):  # noqa: E501
         """FormulaAndFunctionProcessQueryDefinition - a model defined in OpenAPI
 
         Args:
             data_source (FormulaAndFunctionProcessQueryDataSource):
             metric (str): Process metric name.
+            name (str): Name of query for use in formulas.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -160,7 +161,6 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
             aggregator (FormulaAndFunctionMetricAggregation): [optional]  # noqa: E501
             is_normalized_cpu (bool): Whether to normalize the CPU percentages.. [optional]  # noqa: E501
             limit (int): Number of hits to return.. [optional]  # noqa: E501
-            name (str): Name of query for use in formulas.. [optional]  # noqa: E501
             sort (QuerySortOrder): [optional]  # noqa: E501
             tag_filters ([str]): An array of tags to filter by.. [optional]  # noqa: E501
             text_filter (str): Text to use as filter.. [optional]  # noqa: E501
@@ -192,6 +192,7 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
 
         self.data_source = data_source
         self.metric = metric
+        self.name = name
         for var_name, var_value in kwargs.items():
             if (
                 var_name not in self.attribute_map
