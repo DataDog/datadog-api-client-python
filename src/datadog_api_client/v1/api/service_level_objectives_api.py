@@ -43,7 +43,7 @@ class ServiceLevelObjectivesApi(object):
         def __check_can_delete_slo(self, ids, **kwargs):
             """Check if SLOs can be safely deleted  # noqa: E501
 
-            Check if a SLO can be safely deleted. For example, assure an SLO can be deleted without disrupting a dashboard.  # noqa: E501
+            Check if an SLO can be safely deleted. For example, assure an SLO can be deleted without disrupting a dashboard.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
@@ -132,7 +132,7 @@ class ServiceLevelObjectivesApi(object):
         )
 
         def __create_slo(self, body, **kwargs):
-            """Create a SLO object  # noqa: E501
+            """Create an SLO object  # noqa: E501
 
             Create a service level objective object.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
@@ -218,7 +218,7 @@ class ServiceLevelObjectivesApi(object):
         )
 
         def __delete_slo(self, slo_id, **kwargs):
-            """Delete a SLO  # noqa: E501
+            """Delete an SLO  # noqa: E501
 
             Permanently delete the specified service level objective object.  If an SLO is used in a dashboard, the `DELETE /v1/slo/` endpoint returns a 409 conflict error because the SLO is referenced in a dashboard.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
@@ -400,7 +400,7 @@ class ServiceLevelObjectivesApi(object):
         )
 
         def __get_slo(self, slo_id, **kwargs):
-            """Get a SLO's details  # noqa: E501
+            """Get an SLO's details  # noqa: E501
 
             Get a service level objective object.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
@@ -698,7 +698,7 @@ class ServiceLevelObjectivesApi(object):
         )
 
         def __update_slo(self, slo_id, body, **kwargs):
-            """Update a SLO  # noqa: E501
+            """Update an SLO  # noqa: E501
 
             Update the specified service level objective object.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
