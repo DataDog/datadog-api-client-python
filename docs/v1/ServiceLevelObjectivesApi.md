@@ -5,13 +5,13 @@ All URIs are relative to *https://api.datadoghq.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**check_can_delete_slo**](ServiceLevelObjectivesApi.md#check_can_delete_slo) | **GET** /api/v1/slo/can_delete | Check if SLOs can be safely deleted
-[**create_slo**](ServiceLevelObjectivesApi.md#create_slo) | **POST** /api/v1/slo | Create a SLO object
-[**delete_slo**](ServiceLevelObjectivesApi.md#delete_slo) | **DELETE** /api/v1/slo/{slo_id} | Delete a SLO
+[**create_slo**](ServiceLevelObjectivesApi.md#create_slo) | **POST** /api/v1/slo | Create an SLO object
+[**delete_slo**](ServiceLevelObjectivesApi.md#delete_slo) | **DELETE** /api/v1/slo/{slo_id} | Delete an SLO
 [**delete_slo_timeframe_in_bulk**](ServiceLevelObjectivesApi.md#delete_slo_timeframe_in_bulk) | **POST** /api/v1/slo/bulk_delete | Bulk Delete SLO Timeframes
-[**get_slo**](ServiceLevelObjectivesApi.md#get_slo) | **GET** /api/v1/slo/{slo_id} | Get a SLO&#39;s details
+[**get_slo**](ServiceLevelObjectivesApi.md#get_slo) | **GET** /api/v1/slo/{slo_id} | Get an SLO&#39;s details
 [**get_slo_history**](ServiceLevelObjectivesApi.md#get_slo_history) | **GET** /api/v1/slo/{slo_id}/history | Get an SLO&#39;s history
 [**list_slos**](ServiceLevelObjectivesApi.md#list_slos) | **GET** /api/v1/slo | Get all SLOs
-[**update_slo**](ServiceLevelObjectivesApi.md#update_slo) | **PUT** /api/v1/slo/{slo_id} | Update a SLO
+[**update_slo**](ServiceLevelObjectivesApi.md#update_slo) | **PUT** /api/v1/slo/{slo_id} | Update an SLO
 
 
 # **check_can_delete_slo**
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 Check if SLOs can be safely deleted
 
-Check if a SLO can be safely deleted. For example, assure an SLO can be deleted without disrupting a dashboard.
+Check if an SLO can be safely deleted. For example, assure an SLO can be deleted without disrupting a dashboard.
 
 ### Example
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 # **create_slo**
 > SLOListResponse create_slo(body)
 
-Create a SLO object
+Create an SLO object
 
 Create a service level objective object.
 
@@ -150,7 +150,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Create a SLO object
+        # Create an SLO object
         api_response = api_instance.create_slo(body)
         pprint(api_response)
     except ApiException as e:
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 # **delete_slo**
 > SLODeleteResponse delete_slo(slo_id)
 
-Delete a SLO
+Delete an SLO
 
 Permanently delete the specified service level objective object.  If an SLO is used in a dashboard, the `DELETE /v1/slo/` endpoint returns a 409 conflict error because the SLO is referenced in a dashboard.
 
@@ -225,7 +225,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Delete a SLO
+        # Delete an SLO
         api_response = api_instance.delete_slo(slo_id)
         pprint(api_response)
     except ApiException as e:
@@ -234,7 +234,7 @@ with ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Delete a SLO
+        # Delete an SLO
         api_response = api_instance.delete_slo(slo_id, force=force)
         pprint(api_response)
     except ApiException as e:
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 # **get_slo**
 > SLOResponse get_slo(slo_id)
 
-Get a SLO's details
+Get an SLO's details
 
 Get a service level objective object.
 
@@ -388,7 +388,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get a SLO's details
+        # Get an SLO's details
         api_response = api_instance.get_slo(slo_id)
         pprint(api_response)
     except ApiException as e:
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 # **update_slo**
 > SLOListResponse update_slo(slo_id, body)
 
-Update a SLO
+Update an SLO
 
 Update the specified service level objective object.
 
@@ -650,7 +650,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Update a SLO
+        # Update an SLO
         api_response = api_instance.update_slo(slo_id, body)
         pprint(api_response)
     except ApiException as e:

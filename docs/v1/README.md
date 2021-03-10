@@ -203,13 +203,13 @@ Class | Method | HTTP request | Description
 *ServiceLevelObjectiveCorrectionsApi* | [**list_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#list_slo_correction) | **GET** /api/v1/slo/correction | Get all SLO corrections
 *ServiceLevelObjectiveCorrectionsApi* | [**update_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#update_slo_correction) | **PATCH** /api/v1/slo/correction/{slo_correction_id} | Update an SLO Correction
 *ServiceLevelObjectivesApi* | [**check_can_delete_slo**](ServiceLevelObjectivesApi.md#check_can_delete_slo) | **GET** /api/v1/slo/can_delete | Check if SLOs can be safely deleted
-*ServiceLevelObjectivesApi* | [**create_slo**](ServiceLevelObjectivesApi.md#create_slo) | **POST** /api/v1/slo | Create a SLO object
-*ServiceLevelObjectivesApi* | [**delete_slo**](ServiceLevelObjectivesApi.md#delete_slo) | **DELETE** /api/v1/slo/{slo_id} | Delete a SLO
+*ServiceLevelObjectivesApi* | [**create_slo**](ServiceLevelObjectivesApi.md#create_slo) | **POST** /api/v1/slo | Create an SLO object
+*ServiceLevelObjectivesApi* | [**delete_slo**](ServiceLevelObjectivesApi.md#delete_slo) | **DELETE** /api/v1/slo/{slo_id} | Delete an SLO
 *ServiceLevelObjectivesApi* | [**delete_slo_timeframe_in_bulk**](ServiceLevelObjectivesApi.md#delete_slo_timeframe_in_bulk) | **POST** /api/v1/slo/bulk_delete | Bulk Delete SLO Timeframes
-*ServiceLevelObjectivesApi* | [**get_slo**](ServiceLevelObjectivesApi.md#get_slo) | **GET** /api/v1/slo/{slo_id} | Get a SLO&#39;s details
+*ServiceLevelObjectivesApi* | [**get_slo**](ServiceLevelObjectivesApi.md#get_slo) | **GET** /api/v1/slo/{slo_id} | Get an SLO&#39;s details
 *ServiceLevelObjectivesApi* | [**get_slo_history**](ServiceLevelObjectivesApi.md#get_slo_history) | **GET** /api/v1/slo/{slo_id}/history | Get an SLO&#39;s history
 *ServiceLevelObjectivesApi* | [**list_slos**](ServiceLevelObjectivesApi.md#list_slos) | **GET** /api/v1/slo | Get all SLOs
-*ServiceLevelObjectivesApi* | [**update_slo**](ServiceLevelObjectivesApi.md#update_slo) | **PUT** /api/v1/slo/{slo_id} | Update a SLO
+*ServiceLevelObjectivesApi* | [**update_slo**](ServiceLevelObjectivesApi.md#update_slo) | **PUT** /api/v1/slo/{slo_id} | Update an SLO
 *SlackIntegrationApi* | [**create_slack_integration_channel**](SlackIntegrationApi.md#create_slack_integration_channel) | **POST** /api/v1/integration/slack/configuration/accounts/{account_name}/channels | Create a Slack integration channel
 *SlackIntegrationApi* | [**get_slack_integration_channel**](SlackIntegrationApi.md#get_slack_integration_channel) | **GET** /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name} | Get a Slack integration channel
 *SlackIntegrationApi* | [**get_slack_integration_channels**](SlackIntegrationApi.md#get_slack_integration_channels) | **GET** /api/v1/integration/slack/configuration/accounts/{account_name}/channels | Get all channels in a Slack integration
@@ -562,6 +562,8 @@ Class | Method | HTTP request | Description
  - [SlackIntegrationChannel](SlackIntegrationChannel.md)
  - [SlackIntegrationChannelDisplay](SlackIntegrationChannelDisplay.md)
  - [SlackIntegrationChannels](SlackIntegrationChannels.md)
+ - [SyntheticsAPIStep](SyntheticsAPIStep.md)
+ - [SyntheticsAPIStepSubtype](SyntheticsAPIStepSubtype.md)
  - [SyntheticsAPITest](SyntheticsAPITest.md)
  - [SyntheticsAPITestConfig](SyntheticsAPITestConfig.md)
  - [SyntheticsAPITestResultData](SyntheticsAPITestResultData.md)
@@ -609,13 +611,13 @@ Class | Method | HTTP request | Description
  - [SyntheticsGetBrowserTestLatestResultsResponse](SyntheticsGetBrowserTestLatestResultsResponse.md)
  - [SyntheticsGlobalVariable](SyntheticsGlobalVariable.md)
  - [SyntheticsGlobalVariableParseTestOptions](SyntheticsGlobalVariableParseTestOptions.md)
- - [SyntheticsGlobalVariableParseTestOptionsParser](SyntheticsGlobalVariableParseTestOptionsParser.md)
  - [SyntheticsGlobalVariableParseTestOptionsType](SyntheticsGlobalVariableParseTestOptionsType.md)
  - [SyntheticsGlobalVariableParserType](SyntheticsGlobalVariableParserType.md)
  - [SyntheticsGlobalVariableValue](SyntheticsGlobalVariableValue.md)
  - [SyntheticsListTestsResponse](SyntheticsListTestsResponse.md)
  - [SyntheticsLocation](SyntheticsLocation.md)
  - [SyntheticsLocations](SyntheticsLocations.md)
+ - [SyntheticsParsingOptions](SyntheticsParsingOptions.md)
  - [SyntheticsPlayingTab](SyntheticsPlayingTab.md)
  - [SyntheticsPrivateLocation](SyntheticsPrivateLocation.md)
  - [SyntheticsPrivateLocationCreationResponse](SyntheticsPrivateLocationCreationResponse.md)
@@ -650,6 +652,7 @@ Class | Method | HTTP request | Description
  - [SyntheticsTriggerCITestRunResult](SyntheticsTriggerCITestRunResult.md)
  - [SyntheticsTriggerCITestsResponse](SyntheticsTriggerCITestsResponse.md)
  - [SyntheticsUpdateTestPauseStatusPayload](SyntheticsUpdateTestPauseStatusPayload.md)
+ - [SyntheticsVariableParser](SyntheticsVariableParser.md)
  - [SyntheticsWarningType](SyntheticsWarningType.md)
  - [TableWidgetCellDisplayMode](TableWidgetCellDisplayMode.md)
  - [TableWidgetDefinition](TableWidgetDefinition.md)
