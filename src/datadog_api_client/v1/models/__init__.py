@@ -274,6 +274,7 @@ from datadog_api_client.v1.model.slo_correction_update_data import SLOCorrection
 from datadog_api_client.v1.model.slo_correction_update_request import SLOCorrectionUpdateRequest
 from datadog_api_client.v1.model.slo_correction_update_request_attributes import SLOCorrectionUpdateRequestAttributes
 from datadog_api_client.v1.model.slo_delete_response import SLODeleteResponse
+from datadog_api_client.v1.model.slo_error_budget_remaining_data import SLOErrorBudgetRemainingData
 from datadog_api_client.v1.model.slo_error_timeframe import SLOErrorTimeframe
 from datadog_api_client.v1.model.slo_history_metrics import SLOHistoryMetrics
 from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
