@@ -531,6 +531,7 @@ Class | Method | HTTP request | Description
  - [SLOCorrectionUpdateRequest](SLOCorrectionUpdateRequest.md)
  - [SLOCorrectionUpdateRequestAttributes](SLOCorrectionUpdateRequestAttributes.md)
  - [SLODeleteResponse](SLODeleteResponse.md)
+ - [SLOErrorBudgetRemainingData](SLOErrorBudgetRemainingData.md)
  - [SLOErrorTimeframe](SLOErrorTimeframe.md)
  - [SLOHistoryMetrics](SLOHistoryMetrics.md)
  - [SLOHistoryMetricsSeries](SLOHistoryMetricsSeries.md)
