@@ -20,21 +20,12 @@ resources:
   containers:
   - container: datadog-agent
     image: datadog/agent:latest
-    options: --health-cmd="exit 0" --health-interval=1s
     ports:
-    - 8125:8125
     - 8126:8126
     env:
       DD_API_KEY: $(ddAPIKey)
-      DD_APM_ENABLED: "true"
-      DD_APM_NON_LOCAL_TRAFFIC: "true"
-      DD_LOGS_ENABLED: "true"
-      DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL: "true"
-      DD_AC_EXCLUDE: "name:datadog-agent"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /proc/:/host/proc/:ro
-      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+      DD_HOSTNAME: "none"
+      DD_INSIDE_CI: "true"
 jobs:
 - job: IntegrationTests
   pool:
