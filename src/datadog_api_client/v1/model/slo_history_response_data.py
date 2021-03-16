@@ -81,7 +81,9 @@ class SLOHistoryResponseData(ModelNormal):
         lazy_import()
         return {
             "from_ts": (int,),  # noqa: E501
-            "groups": (SLOHistorySLIData,),  # noqa: E501
+            "group_by": ([str],),  # noqa: E501
+            "groups": ([SLOHistorySLIData],),  # noqa: E501
+            "monitors": ([SLOHistorySLIData],),  # noqa: E501
             "overall": (SLOHistorySLIData,),  # noqa: E501
             "series": (SLOHistoryMetrics,),  # noqa: E501
             "thresholds": ({str: (SLOThreshold,)},),  # noqa: E501
@@ -96,7 +98,9 @@ class SLOHistoryResponseData(ModelNormal):
 
     attribute_map = {
         "from_ts": "from_ts",  # noqa: E501
+        "group_by": "group_by",  # noqa: E501
         "groups": "groups",  # noqa: E501
+        "monitors": "monitors",  # noqa: E501
         "overall": "overall",  # noqa: E501
         "series": "series",  # noqa: E501
         "thresholds": "thresholds",  # noqa: E501
@@ -154,7 +158,9 @@ class SLOHistoryResponseData(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             from_ts (int): The `from` timestamp in epoch seconds.. [optional]  # noqa: E501
-            groups (SLOHistorySLIData): [optional]  # noqa: E501
+            group_by ([str]): For `metric` based SLOs where the query includes a group-by clause, this represents the list of grouping parameters.  This is not included in responses for `monitor` based SLOs.. [optional]  # noqa: E501
+            groups ([SLOHistorySLIData]): For grouped SLOs, this represents SLI data for specific groups.  This is not included in the responses for `metric` based SLOs.. [optional]  # noqa: E501
+            monitors ([SLOHistorySLIData]): For multi-monitor SLOs, this represents SLI data for specific monitors.  This is not included in the responses for `metric` based SLOs.. [optional]  # noqa: E501
             overall (SLOHistorySLIData): [optional]  # noqa: E501
             series (SLOHistoryMetrics): [optional]  # noqa: E501
             thresholds ({str: (SLOThreshold,)}): mapping of string timeframe to the SLO threshold.. [optional]  # noqa: E501
