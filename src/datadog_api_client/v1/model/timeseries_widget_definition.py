@@ -24,7 +24,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
-    from datadog_api_client.v1.model.timeseries_widget_legend_columns import TimeseriesWidgetLegendColumns
+    from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
     from datadog_api_client.v1.model.timeseries_widget_legend_layout import TimeseriesWidgetLegendLayout
     from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
     from datadog_api_client.v1.model.widget_axis import WidgetAxis
@@ -35,7 +35,7 @@ def lazy_import():
     from datadog_api_client.v1.model.widget_time import WidgetTime
 
     globals()["TimeseriesWidgetDefinitionType"] = TimeseriesWidgetDefinitionType
-    globals()["TimeseriesWidgetLegendColumns"] = TimeseriesWidgetLegendColumns
+    globals()["TimeseriesWidgetLegendColumn"] = TimeseriesWidgetLegendColumn
     globals()["TimeseriesWidgetLegendLayout"] = TimeseriesWidgetLegendLayout
     globals()["TimeseriesWidgetRequest"] = TimeseriesWidgetRequest
     globals()["WidgetAxis"] = WidgetAxis
@@ -98,7 +98,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
             "type": (TimeseriesWidgetDefinitionType,),  # noqa: E501
             "custom_links": ([WidgetCustomLink],),  # noqa: E501
             "events": ([WidgetEvent],),  # noqa: E501
-            "legend_columns": (TimeseriesWidgetLegendColumns,),  # noqa: E501
+            "legend_columns": ([TimeseriesWidgetLegendColumn],),  # noqa: E501
             "legend_layout": (TimeseriesWidgetLegendLayout,),  # noqa: E501
             "legend_size": (str,),  # noqa: E501
             "markers": ([WidgetMarker],),  # noqa: E501
@@ -187,7 +187,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
-            legend_columns (TimeseriesWidgetLegendColumns): [optional]  # noqa: E501
+            legend_columns ([TimeseriesWidgetLegendColumn]): Columns displayed in the legend.. [optional]  # noqa: E501
             legend_layout (TimeseriesWidgetLegendLayout): [optional]  # noqa: E501
             legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
             markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501

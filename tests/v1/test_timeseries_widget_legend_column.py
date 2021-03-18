@@ -7,11 +7,11 @@ import sys
 import unittest
 
 import datadog_api_client.v1
-from datadog_api_client.v1.model.timeseries_widget_legend_columns import TimeseriesWidgetLegendColumns
+from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
 
 
-class TestTimeseriesWidgetLegendColumns(unittest.TestCase):
-    """TimeseriesWidgetLegendColumns unit test stubs"""
+class TestTimeseriesWidgetLegendColumn(unittest.TestCase):
+    """TimeseriesWidgetLegendColumn unit test stubs"""
 
     def setUp(self):
         pass
@@ -19,10 +19,10 @@ class TestTimeseriesWidgetLegendColumns(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTimeseriesWidgetLegendColumns(self):
-        """Test TimeseriesWidgetLegendColumns"""
+    def testTimeseriesWidgetLegendColumn(self):
+        """Test TimeseriesWidgetLegendColumn"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = TimeseriesWidgetLegendColumns()  # noqa: E501
+        # model = TimeseriesWidgetLegendColumn()  # noqa: E501
         pass
 
 

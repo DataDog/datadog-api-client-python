@@ -1,10 +1,10 @@
-# TimeseriesWidgetLegendColumns
+# TimeseriesWidgetLegendColumn
 
-Columns displayed in the legend.
+Legend column.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **[str]** | Columns displayed in the legend. | 
+**value** | **str** | Legend column. |  must be one of ["value", "avg", "sum", "min", "max", ]
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
