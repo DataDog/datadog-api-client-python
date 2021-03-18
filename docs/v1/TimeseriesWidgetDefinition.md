@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **type** | [**TimeseriesWidgetDefinitionType**](TimeseriesWidgetDefinitionType.md) |  | 
 **custom_links** | [**[WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
 **events** | [**[WidgetEvent]**](WidgetEvent.md) | List of widget events. | [optional] 
-**legend_columns** | [**TimeseriesWidgetLegendColumns**](TimeseriesWidgetLegendColumns.md) |  | [optional] 
+**legend_columns** | [**[TimeseriesWidgetLegendColumn]**](TimeseriesWidgetLegendColumn.md) | Columns displayed in the legend. | [optional] 
 **legend_layout** | [**TimeseriesWidgetLegendLayout**](TimeseriesWidgetLegendLayout.md) |  | [optional] 
 **legend_size** | **str** | Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;. | [optional] 
 **markers** | [**[WidgetMarker]**](WidgetMarker.md) | List of markers. | [optional] 

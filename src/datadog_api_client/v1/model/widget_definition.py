@@ -50,7 +50,7 @@ def lazy_import():
     from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
     from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
     from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
-    from datadog_api_client.v1.model.timeseries_widget_legend_columns import TimeseriesWidgetLegendColumns
+    from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
     from datadog_api_client.v1.model.timeseries_widget_legend_layout import TimeseriesWidgetLegendLayout
     from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
     from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
@@ -106,7 +106,7 @@ def lazy_import():
     globals()["TableWidgetDefinition"] = TableWidgetDefinition
     globals()["TableWidgetHasSearchBar"] = TableWidgetHasSearchBar
     globals()["TimeseriesWidgetDefinition"] = TimeseriesWidgetDefinition
-    globals()["TimeseriesWidgetLegendColumns"] = TimeseriesWidgetLegendColumns
+    globals()["TimeseriesWidgetLegendColumn"] = TimeseriesWidgetLegendColumn
     globals()["TimeseriesWidgetLegendLayout"] = TimeseriesWidgetLegendLayout
     globals()["ToplistWidgetDefinition"] = ToplistWidgetDefinition
     globals()["ToplistWidgetDefinitionType"] = ToplistWidgetDefinitionType
@@ -316,7 +316,7 @@ class WidgetDefinition(ModelComposed):
             show_resource_list (bool): Whether to show the resource list or not.. [optional]  # noqa: E501
             size_format (WidgetSizeFormat): [optional]  # noqa: E501
             has_search_bar (TableWidgetHasSearchBar): [optional]  # noqa: E501
-            legend_columns (TimeseriesWidgetLegendColumns): [optional]  # noqa: E501
+            legend_columns ([TimeseriesWidgetLegendColumn]): Columns displayed in the legend.. [optional]  # noqa: E501
             legend_layout (TimeseriesWidgetLegendLayout): [optional]  # noqa: E501
             markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
             right_yaxis (WidgetAxis): [optional]  # noqa: E501
