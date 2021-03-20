@@ -64,7 +64,7 @@ Name | Type | Description | Notes
 **show_resource_list** | **bool** | Whether to show the resource list or not. | [optional] 
 **size_format** | [**WidgetSizeFormat**](WidgetSizeFormat.md) |  | [optional] 
 **has_search_bar** | [**TableWidgetHasSearchBar**](TableWidgetHasSearchBar.md) |  | [optional] 
-**legend_columns** | [**TimeseriesWidgetLegendColumns**](TimeseriesWidgetLegendColumns.md) |  | [optional] 
+**legend_columns** | [**[TimeseriesWidgetLegendColumn]**](TimeseriesWidgetLegendColumn.md) | Columns displayed in the legend. | [optional] 
 **legend_layout** | [**TimeseriesWidgetLegendLayout**](TimeseriesWidgetLegendLayout.md) |  | [optional] 
 **markers** | [**[WidgetMarker]**](WidgetMarker.md) | List of markers. | [optional] 
 **right_yaxis** | [**WidgetAxis**](WidgetAxis.md) |  | [optional] 
