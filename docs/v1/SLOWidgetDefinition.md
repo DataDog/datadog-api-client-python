@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**SLOWidgetDefinitionType**](SLOWidgetDefinitionType.md) |  | 
 **view_type** | **str** | Type of view displayed by the widget. | defaults to "detail"
+**global_time_target** | **str** | Defined global time target. | [optional] 
 **show_error_budget** | **bool** | Defined error budget. | [optional] 
 **slo_id** | **str** | ID of the SLO displayed. | [optional] 
 **time_windows** | [**[WidgetTimeWindows]**](WidgetTimeWindows.md) | Times being monitored. | [optional] 
