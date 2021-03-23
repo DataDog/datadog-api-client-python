@@ -1,6 +1,7 @@
 # WidgetLiveSpan
 
 The available timeframes depend on the widget you are using.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # APIErrorResponse
 
 API error response.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

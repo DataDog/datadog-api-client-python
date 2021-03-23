@@ -1,6 +1,7 @@
 # GroupWidgetDefinitionType
 
 Type of the group widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

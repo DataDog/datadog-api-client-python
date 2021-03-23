@@ -1,6 +1,7 @@
 # LogsMetricType
 
 The type of the resource. The value should always be logs_metrics.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

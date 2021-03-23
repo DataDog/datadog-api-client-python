@@ -1,6 +1,7 @@
 # DashboardSummary
 
 Dashboard summary response.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

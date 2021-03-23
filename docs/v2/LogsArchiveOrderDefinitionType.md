@@ -1,6 +1,7 @@
 # LogsArchiveOrderDefinitionType
 
 Type of the archive order definition.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

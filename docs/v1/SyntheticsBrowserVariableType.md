@@ -1,6 +1,7 @@
 # SyntheticsBrowserVariableType
 
 Type of browser test variable.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

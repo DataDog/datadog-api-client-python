@@ -1,6 +1,7 @@
 # IncidentUpdateRelationships
 
 The incident's relationships for an update request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

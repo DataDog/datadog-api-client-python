@@ -1,6 +1,7 @@
 # SLOType
 
 The type of the service level objective.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

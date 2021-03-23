@@ -1,6 +1,7 @@
 # LogsIndexesOrder
 
 Object containing the ordered list of log index names.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

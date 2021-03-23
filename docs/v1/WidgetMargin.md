@@ -1,6 +1,7 @@
 # WidgetMargin
 
 Size of the margins around the image.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

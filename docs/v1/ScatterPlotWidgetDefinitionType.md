@@ -1,6 +1,7 @@
 # ScatterPlotWidgetDefinitionType
 
 Type of the scatter plot widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

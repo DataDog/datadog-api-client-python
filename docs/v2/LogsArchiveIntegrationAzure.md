@@ -1,6 +1,7 @@
 # LogsArchiveIntegrationAzure
 
 The Azure archive's integration destination.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

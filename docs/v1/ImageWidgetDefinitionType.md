@@ -1,6 +1,7 @@
 # ImageWidgetDefinitionType
 
 Type of the image widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

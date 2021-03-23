@@ -1,6 +1,7 @@
 # SyntheticsGlobalVariableParseTestOptionsType
 
 Property of the Synthetics Test Response to use for a Synthetics global variable.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

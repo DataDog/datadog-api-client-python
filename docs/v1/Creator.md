@@ -1,6 +1,7 @@
 # Creator
 
 Object describing the creator of the shared element.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # LogQueryDefinitionGroupBySort
 
 Define a sorting method.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

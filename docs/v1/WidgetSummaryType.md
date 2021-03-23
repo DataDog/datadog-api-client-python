@@ -1,6 +1,7 @@
 # WidgetSummaryType
 
 Which summary type should be used.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

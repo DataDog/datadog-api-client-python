@@ -1,6 +1,7 @@
 # NoteWidgetDefinition
 
 The notes and links widget is similar to free text widget, but allows for more formatting options.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

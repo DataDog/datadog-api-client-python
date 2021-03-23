@@ -1,6 +1,7 @@
 # FormulaAndFunctionMetricDataSource
 
 Data source for metrics queries.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

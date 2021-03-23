@@ -1,6 +1,7 @@
 # LogsAggregateSortType
 
 The type of sorting algorithm
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # ServiceMapWidgetDefinitionType
 
 Type of the service map widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

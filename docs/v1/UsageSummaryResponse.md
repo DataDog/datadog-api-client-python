@@ -1,6 +1,7 @@
 # UsageSummaryResponse
 
 Response with hourly report of all data billed by Datadog all organizations.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

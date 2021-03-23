@@ -1,6 +1,7 @@
 # LogsArchiveDestinationS3Type
 
 Type of the S3 archive destination.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # LogsArchiveDestinationS3
 
 The S3 archive destination.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

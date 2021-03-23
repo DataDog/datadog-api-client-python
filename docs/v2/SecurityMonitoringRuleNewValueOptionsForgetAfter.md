@@ -1,6 +1,7 @@
 # SecurityMonitoringRuleNewValueOptionsForgetAfter
 
 The duration in days after which a learned value is forgotten.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

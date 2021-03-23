@@ -1,6 +1,7 @@
 # LogsStatusRemapperType
 
 Type of logs status remapper.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

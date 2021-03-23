@@ -1,6 +1,7 @@
 # SyntheticsLocation
 
 Synthetic location that can be used when creating or editing a test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

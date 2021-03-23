@@ -1,6 +1,7 @@
 # AlertGraphWidgetDefinition
 
 Alert graphs are timeseries graphs showing the current status of any monitor defined on your system.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

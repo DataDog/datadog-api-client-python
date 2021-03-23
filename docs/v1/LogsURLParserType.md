@@ -1,6 +1,7 @@
 # LogsURLParserType
 
 Type of logs URL parser.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

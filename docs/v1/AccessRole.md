@@ -1,6 +1,7 @@
 # AccessRole
 
 The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only user).
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

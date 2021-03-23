@@ -1,6 +1,7 @@
 # SLOWidgetDefinitionType
 
 Type of the SLO widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

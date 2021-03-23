@@ -1,6 +1,7 @@
 # UsageBillableSummaryKeys
 
 Response with aggregated usage types.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # WidgetSizeFormat
 
 Size of the widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

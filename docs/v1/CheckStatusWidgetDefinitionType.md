@@ -1,6 +1,7 @@
 # CheckStatusWidgetDefinitionType
 
 Type of the check status widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # DashboardSummaryDefinition
 
 Dashboard definition.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # IncidentServiceCreateData
 
 Incident Service payload for create requests.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

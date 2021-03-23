@@ -1,6 +1,7 @@
 # LogsComputeType
 
 The type of compute
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

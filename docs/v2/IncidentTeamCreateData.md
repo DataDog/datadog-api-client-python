@@ -1,6 +1,7 @@
 # IncidentTeamCreateData
 
 Incident Team data for a create request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

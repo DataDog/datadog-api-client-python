@@ -57,6 +57,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->cancel_downtime: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -75,6 +76,7 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -133,6 +135,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->cancel_downtimes_by_scope: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -151,6 +154,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -232,6 +236,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->create_downtime: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -250,6 +255,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -306,6 +312,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->get_downtime: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -324,6 +331,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -381,6 +389,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->list_downtimes: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -399,6 +408,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -479,6 +489,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->update_downtime: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -498,6 +509,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

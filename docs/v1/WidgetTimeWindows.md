@@ -1,6 +1,7 @@
 # WidgetTimeWindows
 
 Define a time window.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

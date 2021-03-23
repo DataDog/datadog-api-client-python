@@ -1,6 +1,7 @@
 # UsageIndexedSpansHour
 
 The hours of indexed spans usage.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

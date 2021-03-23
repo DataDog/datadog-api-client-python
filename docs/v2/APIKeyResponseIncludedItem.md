@@ -1,6 +1,7 @@
 # APIKeyResponseIncludedItem
 
 An object related to an API key.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

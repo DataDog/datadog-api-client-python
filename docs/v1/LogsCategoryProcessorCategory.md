@@ -1,6 +1,7 @@
 # LogsCategoryProcessorCategory
 
 Object describing the logs filter.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

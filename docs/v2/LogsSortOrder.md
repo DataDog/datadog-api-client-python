@@ -1,6 +1,7 @@
 # LogsSortOrder
 
 The order to use, ascending or descending
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

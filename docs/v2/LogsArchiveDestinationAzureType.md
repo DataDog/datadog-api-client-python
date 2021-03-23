@@ -1,6 +1,7 @@
 # LogsArchiveDestinationAzureType
 
 Type of the Azure archive destination.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

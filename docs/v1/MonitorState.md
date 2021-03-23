@@ -1,6 +1,7 @@
 # MonitorState
 
 Wrapper object with the different monitor states.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

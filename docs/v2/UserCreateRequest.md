@@ -1,6 +1,7 @@
 # UserCreateRequest
 
 Create a user.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

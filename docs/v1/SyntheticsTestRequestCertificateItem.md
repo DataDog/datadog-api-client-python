@@ -1,6 +1,7 @@
 # SyntheticsTestRequestCertificateItem
 
 Define a request certificate.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

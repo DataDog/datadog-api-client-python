@@ -1,6 +1,7 @@
 # SyntheticsPrivateLocationCreationResponse
 
 Object that contains the new private location, the public key for result encryption, and the configuration skeleton.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

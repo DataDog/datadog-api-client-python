@@ -1,6 +1,7 @@
 # GeomapWidgetDefinitionType
 
 Type of the geomap widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

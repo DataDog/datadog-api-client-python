@@ -1,6 +1,7 @@
 # MonitorSummaryWidgetDefinitionType
 
 Type of the monitor summary widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

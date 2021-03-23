@@ -1,6 +1,7 @@
 # HostMeta
 
 Metadata associated with your host.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

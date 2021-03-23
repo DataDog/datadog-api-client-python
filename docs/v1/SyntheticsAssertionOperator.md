@@ -1,6 +1,7 @@
 # SyntheticsAssertionOperator
 
 Assertion operator to apply.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

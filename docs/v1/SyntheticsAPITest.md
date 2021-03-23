@@ -1,6 +1,7 @@
 # SyntheticsAPITest
 
 Object containing details about a Synthetic API test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

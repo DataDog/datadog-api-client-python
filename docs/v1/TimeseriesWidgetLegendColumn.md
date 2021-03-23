@@ -1,6 +1,7 @@
 # TimeseriesWidgetLegendColumn
 
 Legend column.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

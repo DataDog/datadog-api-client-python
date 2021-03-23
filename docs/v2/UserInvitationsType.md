@@ -1,6 +1,7 @@
 # UserInvitationsType
 
 User invitations type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

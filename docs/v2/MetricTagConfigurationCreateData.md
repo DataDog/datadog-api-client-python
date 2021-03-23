@@ -1,6 +1,7 @@
 # MetricTagConfigurationCreateData
 
 Object for a single metric to be configure tags on.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

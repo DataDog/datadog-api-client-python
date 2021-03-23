@@ -1,6 +1,7 @@
 # SyntheticsCITestMetadata
 
 Metadata for the Synthetics tests run
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # IncidentCreateData
 
 Incident data for a create request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

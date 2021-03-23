@@ -1,6 +1,7 @@
 # SlackIntegrationChannel
 
 The Slack channel configuration.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

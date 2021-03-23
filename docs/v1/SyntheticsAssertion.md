@@ -1,6 +1,7 @@
 # SyntheticsAssertion
 
 Object describing the assertions type, their associated operator, which property they apply, and upon which target.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

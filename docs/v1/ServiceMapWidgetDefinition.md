@@ -1,6 +1,7 @@
 # ServiceMapWidgetDefinition
 
 This widget displays a map of a service to all of the services that call it, and all of the services that it calls.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

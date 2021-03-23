@@ -1,6 +1,7 @@
 # FullApplicationKey
 
 Datadog application key.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

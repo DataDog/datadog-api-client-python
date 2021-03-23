@@ -1,6 +1,7 @@
 # MetricTagConfigurationMetricTypes
 
 The metric's type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

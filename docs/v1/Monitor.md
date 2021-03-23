@@ -1,6 +1,7 @@
 # Monitor
 
 Object describing a monitor.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

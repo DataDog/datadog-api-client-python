@@ -1,6 +1,7 @@
 # SyntheticsStepType
 
 Step type used in your Synthetic test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

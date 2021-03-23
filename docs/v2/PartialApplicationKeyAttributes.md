@@ -1,6 +1,7 @@
 # PartialApplicationKeyAttributes
 
 Attributes of a partial application key.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

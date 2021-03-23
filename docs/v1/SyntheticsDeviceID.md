@@ -1,6 +1,7 @@
 # SyntheticsDeviceID
 
 The device ID.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

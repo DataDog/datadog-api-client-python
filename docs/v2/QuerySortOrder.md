@@ -1,6 +1,7 @@
 # QuerySortOrder
 
 Direction of sort.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

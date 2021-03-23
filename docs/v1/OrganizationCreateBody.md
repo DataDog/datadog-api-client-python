@@ -1,6 +1,7 @@
 # OrganizationCreateBody
 
 Object describing an organization to create.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

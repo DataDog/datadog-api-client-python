@@ -1,6 +1,7 @@
 # EventPriority
 
 The priority of the event. For example, `normal` or `low`.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # AWSAccountListResponse
 
 List of enabled AWS accounts.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

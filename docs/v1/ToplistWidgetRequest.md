@@ -1,6 +1,7 @@
 # ToplistWidgetRequest
 
 Updated top list widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

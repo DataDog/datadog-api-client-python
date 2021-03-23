@@ -1,6 +1,7 @@
 # MetricTagConfigurationUpdateAttributes
 
 Object containing the definition of a metric tag configuration to be updated.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

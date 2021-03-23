@@ -1,6 +1,7 @@
 # PermissionAttributes
 
 Attributes of a permission.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

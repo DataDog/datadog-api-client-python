@@ -1,6 +1,7 @@
 # IncidentTeamUpdateData
 
 Incident Team data for an update request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

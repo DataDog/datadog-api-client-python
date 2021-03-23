@@ -1,6 +1,7 @@
 # SyntheticsAPITestType
 
 Type of the Synthetic test, `api`.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

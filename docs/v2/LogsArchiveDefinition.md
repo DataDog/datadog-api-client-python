@@ -1,6 +1,7 @@
 # LogsArchiveDefinition
 
 The definition of an archive.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

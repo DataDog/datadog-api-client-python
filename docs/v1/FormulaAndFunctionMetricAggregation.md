@@ -1,6 +1,7 @@
 # FormulaAndFunctionMetricAggregation
 
 The aggregation methods available for metrics queries.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

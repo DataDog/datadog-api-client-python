@@ -1,6 +1,7 @@
 # RolesSort
 
 Sorting options for roles.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

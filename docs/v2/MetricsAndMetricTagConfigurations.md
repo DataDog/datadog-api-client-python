@@ -1,6 +1,7 @@
 # MetricsAndMetricTagConfigurations
 
 Object for a metrics and metric tag configurations.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsTestProcessStatus
 
 Status of a Synthetic test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsBrowserTestResultData
 
 Object containing results for your Synthetic browser test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

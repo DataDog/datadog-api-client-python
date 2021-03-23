@@ -1,6 +1,7 @@
 # UsageTimeseriesResponse
 
 Response containing hourly usage of timeseries.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

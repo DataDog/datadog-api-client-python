@@ -1,6 +1,7 @@
 # EventTimelineWidgetDefinitionType
 
 Type of the event timeline widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

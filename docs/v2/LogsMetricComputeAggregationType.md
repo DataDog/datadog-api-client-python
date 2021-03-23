@@ -1,6 +1,7 @@
 # LogsMetricComputeAggregationType
 
 The type of aggregation to use.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SLOHistoryMetricsSeriesMetadataUnit
 
 An Object of metric units.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

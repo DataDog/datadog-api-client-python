@@ -1,6 +1,7 @@
 # TableWidgetHasSearchBar
 
 Controls the display of the search bar.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

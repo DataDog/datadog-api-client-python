@@ -1,6 +1,7 @@
 # LogsGrokParserType
 
 Type of logs grok parser.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

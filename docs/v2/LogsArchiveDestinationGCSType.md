@@ -1,6 +1,7 @@
 # LogsArchiveDestinationGCSType
 
 Type of the GCS archive destination.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -64,6 +64,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardListsApi->create_dashboard_list_items: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -83,6 +84,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -148,6 +150,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardListsApi->delete_dashboard_list_items: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -167,6 +170,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -224,6 +228,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardListsApi->get_dashboard_list_items: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -242,6 +247,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -306,6 +312,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardListsApi->update_dashboard_list_items: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -325,6 +332,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

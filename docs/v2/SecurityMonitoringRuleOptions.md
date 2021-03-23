@@ -1,6 +1,7 @@
 # SecurityMonitoringRuleOptions
 
 Options on rules.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

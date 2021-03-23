@@ -1,6 +1,7 @@
 # LogsArchives
 
 The available archives.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

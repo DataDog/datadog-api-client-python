@@ -1,6 +1,7 @@
 # WidgetDisplayType
 
 Type of display to use for the request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

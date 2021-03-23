@@ -1,6 +1,7 @@
 # LogsGrokParserRules
 
 Set of rules for the grok parser.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

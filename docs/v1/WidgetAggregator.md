@@ -1,6 +1,7 @@
 # WidgetAggregator
 
 Aggregator used for the request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

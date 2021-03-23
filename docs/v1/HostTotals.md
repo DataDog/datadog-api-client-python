@@ -1,6 +1,7 @@
 # HostTotals
 
 Total number of host currently monitored by Datadog.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

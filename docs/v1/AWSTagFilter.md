@@ -1,6 +1,7 @@
 # AWSTagFilter
 
 A tag filter.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

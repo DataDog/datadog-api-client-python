@@ -1,6 +1,7 @@
 # RelationshipToUsers
 
 Relationship to users.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

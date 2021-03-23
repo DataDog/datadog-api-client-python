@@ -1,6 +1,7 @@
 # LogsTraceRemapperType
 
 Type of logs trace remapper.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

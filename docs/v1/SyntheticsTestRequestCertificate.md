@@ -1,6 +1,7 @@
 # SyntheticsTestRequestCertificate
 
 Client certificate to use when performing the test request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

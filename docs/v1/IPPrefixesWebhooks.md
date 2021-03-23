@@ -1,6 +1,7 @@
 # IPPrefixesWebhooks
 
 Available prefix information for the Webhook endpoints.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

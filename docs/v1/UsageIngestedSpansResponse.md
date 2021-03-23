@@ -1,6 +1,7 @@
 # UsageIngestedSpansResponse
 
 Response containing the ingested spans usage for each hour for a given organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

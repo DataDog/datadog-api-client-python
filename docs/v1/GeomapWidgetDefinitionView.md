@@ -1,6 +1,7 @@
 # GeomapWidgetDefinitionView
 
 The view of the world that the map should render.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

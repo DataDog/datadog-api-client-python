@@ -1,6 +1,7 @@
 # UsageAttributionBody
 
 Usage Summary by tag for a given organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

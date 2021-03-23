@@ -1,6 +1,7 @@
 # AWSLogsAsyncError
 
 Description of errors.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
