@@ -483,7 +483,7 @@ with ApiClient(configuration) as api_client:
         locations=[
             "locations_example",
         ],
-        message="message_example",
+        message="",
         monitor_id=1,
         name="name_example",
         options=SyntheticsTestOptions(
@@ -2198,7 +2198,7 @@ with ApiClient(configuration) as api_client:
         locations=[
             "locations_example",
         ],
-        message="message_example",
+        message="",
         monitor_id=1,
         name="name_example",
         options=SyntheticsTestOptions(
