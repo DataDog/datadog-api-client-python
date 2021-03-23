@@ -98,4 +98,7 @@ configuration = {{{packageName}}}.Configuration(
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 {{/isOAuth}}
 {{/authMethods}}
+{{#vendorExtensions.x-unstable}}
+configuration.unstable_operations["{{operationId}}"] = True
+{{/vendorExtensions.x-unstable}}
 {{/hasAuthMethods}}
