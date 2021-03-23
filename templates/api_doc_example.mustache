@@ -1,28 +1,27 @@
 ```python
-import time
-import {{{packageName}}}
+import os
+from dateutil.parser import parse as dateutil_parser
+from {{{packageName}}} import ApiClient, ApiException, Configuration
 from {{apiPackage}} import {{classVarName}}
-{{#imports}}
-{{{.}}}
-{{/imports}}
+from {{{packageName}}}.models import *
 from pprint import pprint
 {{> python_doc_auth_partial}}
 # Enter a context with an instance of the API client
 {{#hasAuthMethods}}
-with {{{packageName}}}.ApiClient(configuration) as api_client:
+with ApiClient(configuration) as api_client:
 {{/hasAuthMethods}}
 {{^hasAuthMethods}}
-with {{{packageName}}}.ApiClient() as api_client:
+with ApiClient() as api_client:
 {{/hasAuthMethods}}
     # Create an instance of the API class
     api_instance = {{classVarName}}.{{{classname}}}(api_client)
 {{#requiredParams}}
 {{^defaultValue}}
-    {{paramName}} = {{{example}}} # {{{dataType}}} | {{{description}}}
+    {{paramName}} = {{{example}}}  # {{{dataType}}} | {{{description}}}
 {{/defaultValue}}
 {{/requiredParams}}
 {{#optionalParams}}
-    {{paramName}} = {{{example}}} # {{{dataType}}} | {{{description}}}{{^required}} (optional){{/required}}{{#defaultValue}} if omitted the server will use the default value of {{{defaultValue}}}{{/defaultValue}}
+    {{paramName}} = {{{example}}}  # {{{dataType}}} | {{{description}}}{{^required}} (optional){{/required}}{{#defaultValue}} if omitted the server will use the default value of {{{defaultValue}}}{{/defaultValue}}
 {{/optionalParams}}
 {{#requiredParams}}
 {{#-last}}
@@ -36,7 +35,7 @@ with {{{packageName}}}.ApiClient() as api_client:
 {{#returnType}}
         pprint(api_response)
 {{/returnType}}
-    except {{{packageName}}}.ApiException as e:
+    except ApiException as e:
         print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
 {{/-last}}
 {{/requiredParams}}
@@ -53,7 +52,7 @@ with {{{packageName}}}.ApiClient() as api_client:
 {{#returnType}}
         pprint(api_response)
 {{/returnType}}
-    except {{{packageName}}}.ApiException as e:
+    except ApiException as e:
         print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
 {{/-last}}
 {{/optionalParams}}
@@ -69,7 +68,7 @@ with {{{packageName}}}.ApiClient() as api_client:
 {{#returnType}}
         pprint(api_response)
 {{/returnType}}
-    except {{{packageName}}}.ApiException as e:
+    except ApiException as e:
         print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
 {{/optionalParams}}
 {{/requiredParams}}
