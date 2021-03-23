@@ -1,6 +1,7 @@
 # SLOCorrectionCategory
 
 Category the SLO correction belongs to
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

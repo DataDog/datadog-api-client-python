@@ -1,6 +1,7 @@
 # UsageAttributionValues
 
 Fields in Usage Summary by tag(s).
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

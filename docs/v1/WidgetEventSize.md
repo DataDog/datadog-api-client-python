@@ -1,6 +1,7 @@
 # WidgetEventSize
 
 Size to use to display an event.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

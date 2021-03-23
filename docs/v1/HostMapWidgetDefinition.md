@@ -1,6 +1,7 @@
 # HostMapWidgetDefinition
 
 The host map widget graphs any metric across your hosts using the same visualization available from the main Host Map page.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

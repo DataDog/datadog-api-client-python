@@ -1,6 +1,7 @@
 # IncidentServiceIncludedItems
 
 An object related to an incident service which is present in the included payload.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

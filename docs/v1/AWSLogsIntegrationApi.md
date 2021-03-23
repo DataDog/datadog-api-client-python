@@ -62,6 +62,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSLogsIntegrationApi->check_aws_logs_lambda_async: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -80,6 +81,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -139,6 +141,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSLogsIntegrationApi->check_aws_logs_services_async: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -157,6 +160,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -216,6 +220,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSLogsIntegrationApi->create_aws_lambda_arn: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -234,6 +239,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -293,6 +299,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSLogsIntegrationApi->delete_aws_lambda_arn: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -311,6 +318,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -370,6 +378,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSLogsIntegrationApi->enable_aws_log_services: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -388,6 +397,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -443,6 +453,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSLogsIntegrationApi->list_aws_logs_integrations: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -458,6 +469,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -513,6 +525,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSLogsIntegrationApi->list_aws_logs_services: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -528,6 +541,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

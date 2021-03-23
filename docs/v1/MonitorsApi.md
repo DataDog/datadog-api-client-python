@@ -61,6 +61,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MonitorsApi->check_can_delete_monitor: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -79,6 +80,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -212,6 +214,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MonitorsApi->create_monitor: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -230,6 +233,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -296,6 +300,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MonitorsApi->delete_monitor: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -315,6 +320,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -383,6 +389,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MonitorsApi->get_monitor: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -402,6 +409,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -467,6 +475,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MonitorsApi->list_monitors: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -492,6 +501,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -625,6 +635,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MonitorsApi->update_monitor: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -644,6 +655,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -778,6 +790,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MonitorsApi->validate_monitor: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -796,6 +809,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -1,6 +1,7 @@
 # UsageAttributionTagNames
 
 Usage Summary by tag name.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

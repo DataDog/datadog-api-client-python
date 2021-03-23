@@ -1,6 +1,7 @@
 # IncidentServiceCreateAttributes
 
 The incident service's attributes for a create request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

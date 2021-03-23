@@ -1,6 +1,7 @@
 # UsageReportsType
 
 The type of reports.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # LogsAttributeRemapperType
 
 Type of logs attribute remapper.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

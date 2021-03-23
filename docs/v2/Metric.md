@@ -1,6 +1,7 @@
 # Metric
 
 Object for a single metric tag configuration.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

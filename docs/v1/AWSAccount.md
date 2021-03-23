@@ -1,6 +1,7 @@
 # AWSAccount
 
 Returns the AWS account associated with this integration.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # MonitorOverallStates
 
 The different states your monitor can be in.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # WidgetComparator
 
 Comparator to apply.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # LogsCategoryProcessorType
 
 Type of logs category processor.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

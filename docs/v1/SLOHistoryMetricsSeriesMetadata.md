@@ -1,6 +1,7 @@
 # SLOHistoryMetricsSeriesMetadata
 
 Query metadata.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

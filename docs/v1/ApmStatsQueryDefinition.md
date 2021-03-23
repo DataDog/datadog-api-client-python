@@ -1,6 +1,7 @@
 # ApmStatsQueryDefinition
 
 The APM stats query for table and distributions widgets.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

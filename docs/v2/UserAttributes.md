@@ -1,6 +1,7 @@
 # UserAttributes
 
 Attributes of user object returned by the API.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

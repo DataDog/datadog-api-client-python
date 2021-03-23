@@ -1,6 +1,7 @@
 # IncidentTeamIncludedItems
 
 An object related to an incident team which is present in the included payload.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

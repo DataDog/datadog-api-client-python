@@ -1,6 +1,7 @@
 # DashboardListItemResponse
 
 A dashboard within a list.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

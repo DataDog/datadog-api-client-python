@@ -1,6 +1,7 @@
 # SLOErrorTimeframe
 
 The timeframe of the threshold associated with this error or \"all\" if all thresholds are affected.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

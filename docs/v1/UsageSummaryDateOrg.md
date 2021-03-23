@@ -1,6 +1,7 @@
 # UsageSummaryDateOrg
 
 Global hourly report of all data billed by Datadog for a given organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # UsageAttributionAggregates
 
 An array of available aggregates.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

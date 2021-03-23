@@ -1,6 +1,7 @@
 # LogsPipelinesOrder
 
 Object containing the ordered list of pipeline IDs.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # NoteWidgetDefinitionType
 
 Type of the note widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

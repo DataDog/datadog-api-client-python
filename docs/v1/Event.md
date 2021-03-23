@@ -1,6 +1,7 @@
 # Event
 
 Object representing an event.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

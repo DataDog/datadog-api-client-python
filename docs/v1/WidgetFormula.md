@@ -1,6 +1,7 @@
 # WidgetFormula
 
 Formula to be used in a widget query.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

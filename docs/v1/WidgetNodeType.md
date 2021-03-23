@@ -1,6 +1,7 @@
 # WidgetNodeType
 
 Which type of node to use in the map.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

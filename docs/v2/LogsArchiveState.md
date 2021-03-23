@@ -1,6 +1,7 @@
 # LogsArchiveState
 
 The state of the archive.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

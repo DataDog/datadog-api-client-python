@@ -1,6 +1,7 @@
 # LogsGeoIPParserType
 
 Type of GeoIP parser.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

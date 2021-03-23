@@ -1,6 +1,7 @@
 # WidgetConditionalFormat
 
 Define a conditional format for the widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

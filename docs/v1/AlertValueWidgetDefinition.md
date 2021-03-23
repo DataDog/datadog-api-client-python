@@ -1,6 +1,7 @@
 # AlertValueWidgetDefinition
 
 Alert values are query values showing the current value of the metric in any monitor defined on your system.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

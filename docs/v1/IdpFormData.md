@@ -1,6 +1,7 @@
 # IdpFormData
 
 Object describing the IdP configuration.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SecurityMonitoringSignalType
 
 The type of event.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

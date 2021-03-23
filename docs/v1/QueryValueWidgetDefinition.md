@@ -1,6 +1,7 @@
 # QueryValueWidgetDefinition
 
 Query values display the current value of a given metric, APM, or log query.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

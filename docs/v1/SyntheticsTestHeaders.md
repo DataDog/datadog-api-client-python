@@ -1,6 +1,7 @@
 # SyntheticsTestHeaders
 
 Headers to include when performing the test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

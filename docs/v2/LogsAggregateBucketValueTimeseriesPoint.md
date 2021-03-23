@@ -1,6 +1,7 @@
 # LogsAggregateBucketValueTimeseriesPoint
 
 A timeseries point
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

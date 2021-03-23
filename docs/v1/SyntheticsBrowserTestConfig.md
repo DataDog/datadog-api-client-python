@@ -1,6 +1,7 @@
 # SyntheticsBrowserTestConfig
 
 Configuration object for a Synthetic browser test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

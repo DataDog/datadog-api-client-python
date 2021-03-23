@@ -1,6 +1,7 @@
 # LogsIndexUpdateRequest
 
 Object for updating a Datadog Log index.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

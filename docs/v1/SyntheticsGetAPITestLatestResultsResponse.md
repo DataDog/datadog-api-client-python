@@ -1,6 +1,7 @@
 # SyntheticsGetAPITestLatestResultsResponse
 
 Object with the latest Synthetic API test run.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

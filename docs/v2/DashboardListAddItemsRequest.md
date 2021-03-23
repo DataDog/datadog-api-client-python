@@ -1,6 +1,7 @@
 # DashboardListAddItemsRequest
 
 Request containing a list of dashboards to add.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

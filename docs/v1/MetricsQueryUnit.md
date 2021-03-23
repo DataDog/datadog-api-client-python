@@ -1,6 +1,7 @@
 # MetricsQueryUnit
 
 Object containing the metric unit family, scale factor, name, and short name.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

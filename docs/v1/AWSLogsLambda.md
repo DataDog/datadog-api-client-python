@@ -1,6 +1,7 @@
 # AWSLogsLambda
 
 Description of the Lambdas.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

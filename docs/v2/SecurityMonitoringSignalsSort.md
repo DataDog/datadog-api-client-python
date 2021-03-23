@@ -1,6 +1,7 @@
 # SecurityMonitoringSignalsSort
 
 The sort parameters used for querying security signals.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

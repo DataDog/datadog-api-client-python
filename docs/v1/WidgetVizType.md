@@ -1,6 +1,7 @@
 # WidgetVizType
 
 Whether to display the Alert Graph as a timeseries or a top list.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

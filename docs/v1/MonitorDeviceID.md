@@ -1,6 +1,7 @@
 # MonitorDeviceID
 
 ID of the device the Synthetics monitor is running on. Same as `SyntheticsDeviceID`.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

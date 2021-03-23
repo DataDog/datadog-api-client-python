@@ -1,6 +1,7 @@
 # APIKeysType
 
 API Keys resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

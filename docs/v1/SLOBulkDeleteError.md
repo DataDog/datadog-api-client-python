@@ -1,6 +1,7 @@
 # SLOBulkDeleteError
 
 Object describing the error.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

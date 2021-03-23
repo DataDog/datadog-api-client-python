@@ -1,6 +1,7 @@
 # AuthenticationValidationResponse
 
 Represent validation endpoint responses.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

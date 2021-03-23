@@ -1,6 +1,7 @@
 # WidgetServiceSummaryDisplayFormat
 
 Number of columns to display.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -95,6 +95,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->create_global_variable: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -113,6 +114,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -183,6 +185,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->create_private_location: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -201,6 +204,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -374,6 +378,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->create_synthetics_api_test: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -392,6 +397,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -530,6 +536,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->create_synthetics_browser_test: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -548,6 +555,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -695,6 +703,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->create_test: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -713,6 +722,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -769,6 +779,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->delete_global_variable: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -787,6 +798,7 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -843,6 +855,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->delete_private_location: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -861,6 +874,7 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -918,6 +932,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->delete_tests: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -936,6 +951,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1012,6 +1028,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->edit_global_variable: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1031,6 +1048,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1101,6 +1119,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->get_api_test_latest_results: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1122,6 +1141,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1179,6 +1199,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->get_api_test_result: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1198,6 +1219,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1254,6 +1276,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->get_browser_test: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1272,6 +1295,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1342,6 +1366,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->get_browser_test_latest_results: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1363,6 +1388,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1420,6 +1446,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->get_browser_test_result: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1439,6 +1466,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1495,6 +1523,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->get_global_variable: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1513,6 +1542,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1569,6 +1599,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->get_private_location: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1587,6 +1618,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1642,6 +1674,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->get_test: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1660,6 +1693,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1715,6 +1749,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->list_locations: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -1730,6 +1765,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1783,6 +1819,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->list_tests: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -1798,6 +1835,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1896,6 +1934,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->trigger_ci_tests: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1914,6 +1953,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -2087,6 +2127,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->update_api_test: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -2106,6 +2147,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -2245,6 +2287,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->update_browser_test: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -2264,6 +2307,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -2336,6 +2380,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->update_private_location: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -2355,6 +2400,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -2501,6 +2547,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->update_test: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -2520,6 +2567,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -2580,6 +2628,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SyntheticsApi->update_test_pause_status: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -2599,6 +2648,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

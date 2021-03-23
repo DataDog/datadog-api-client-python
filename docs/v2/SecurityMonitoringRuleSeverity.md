@@ -1,6 +1,7 @@
 # SecurityMonitoringRuleSeverity
 
 Severity of the Security Signal.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

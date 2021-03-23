@@ -1,6 +1,7 @@
 # SyntheticsCheckType
 
 Type of assertion to apply in an API test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsBrowserError
 
 Error response object for a browser test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

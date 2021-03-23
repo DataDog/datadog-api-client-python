@@ -1,6 +1,7 @@
 # LogsListRequest
 
 Object to send with the request to retrieve a list of logs from your Organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

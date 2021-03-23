@@ -1,6 +1,7 @@
 # SlackIntegrationChannelDisplay
 
 Configuration options for what is shown in an alert event message.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

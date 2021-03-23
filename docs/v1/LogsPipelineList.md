@@ -1,6 +1,7 @@
 # LogsPipelineList
 
 Array of pipeline ID strings.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

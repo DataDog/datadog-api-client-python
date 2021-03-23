@@ -1,6 +1,7 @@
 # UserCreateAttributes
 
 Attributes of the created user.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

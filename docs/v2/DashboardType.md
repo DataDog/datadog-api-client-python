@@ -1,6 +1,7 @@
 # DashboardType
 
 The type of the dashboard.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

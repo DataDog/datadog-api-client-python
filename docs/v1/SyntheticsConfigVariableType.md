@@ -1,6 +1,7 @@
 # SyntheticsConfigVariableType
 
 Type of the configuration variable.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

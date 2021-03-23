@@ -1,6 +1,7 @@
 # MetricTagConfigurationUpdateData
 
 Object for a single tag configuration to be edited.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # UsageLogsHour
 
 Hour usage for logs.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

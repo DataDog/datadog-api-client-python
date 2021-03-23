@@ -1,6 +1,7 @@
 # PagerDutyServiceName
 
 PagerDuty service object name.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

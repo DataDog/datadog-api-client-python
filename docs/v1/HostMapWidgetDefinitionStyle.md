@@ -1,6 +1,7 @@
 # HostMapWidgetDefinitionStyle
 
 The style to apply to the widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

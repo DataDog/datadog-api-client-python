@@ -1,6 +1,7 @@
 # ChangeWidgetDefinition
 
 The Change graph shows you the change in a value over the time period chosen.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

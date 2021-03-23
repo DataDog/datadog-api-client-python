@@ -1,6 +1,7 @@
 # IncidentTeamCreateAttributes
 
 The incident team's attributes for a create request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

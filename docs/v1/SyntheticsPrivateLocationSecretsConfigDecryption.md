@@ -1,6 +1,7 @@
 # SyntheticsPrivateLocationSecretsConfigDecryption
 
 Private key for the private location.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

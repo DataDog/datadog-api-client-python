@@ -1,6 +1,7 @@
 # ApplicationKey
 
 An application key with its associated metadata.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

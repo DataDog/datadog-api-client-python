@@ -1,6 +1,7 @@
 # ScatterPlotRequest
 
 Updated scatter plot.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

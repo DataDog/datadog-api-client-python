@@ -1,6 +1,7 @@
 # SyntheticsGlobalVariable
 
 Synthetics global variable.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

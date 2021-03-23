@@ -1,6 +1,7 @@
 # TableWidgetDefinition
 
 The table visualization is available on timeboards and screenboards. It displays columns of metrics grouped by tag key.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # GeomapWidgetRequest
 
 An updated geomap widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

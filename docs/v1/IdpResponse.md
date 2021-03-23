@@ -1,6 +1,7 @@
 # IdpResponse
 
 The IdP response object.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

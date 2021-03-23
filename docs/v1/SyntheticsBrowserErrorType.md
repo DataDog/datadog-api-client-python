@@ -1,6 +1,7 @@
 # SyntheticsBrowserErrorType
 
 Error type returned by a browser test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

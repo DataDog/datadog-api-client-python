@@ -65,6 +65,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling OrganizationsApi->create_child_org: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -83,6 +84,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -139,6 +141,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling OrganizationsApi->get_org: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -157,6 +160,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -212,6 +216,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling OrganizationsApi->list_orgs: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -227,6 +232,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -317,6 +323,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling OrganizationsApi->update_org: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -336,6 +343,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -393,6 +401,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling OrganizationsApi->upload_id_p_for_org: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -412,6 +421,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

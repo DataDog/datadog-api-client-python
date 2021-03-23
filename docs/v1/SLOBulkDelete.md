@@ -1,6 +1,7 @@
 # SLOBulkDelete
 
 A map of service level objective object IDs to arrays of timeframes, which indicate the thresholds to delete for each ID.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

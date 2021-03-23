@@ -1,6 +1,7 @@
 # LogsServiceRemapperType
 
 Type of logs service remapper.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

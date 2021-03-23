@@ -1,6 +1,7 @@
 # TableWidgetCellDisplayMode
 
 Define a display mode for the table cell.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # HostMuteResponse
 
 Response with the list of muted host for your organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

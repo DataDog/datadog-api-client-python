@@ -1,6 +1,7 @@
 # FormulaAndFunctionEventQueryDefinition
 
 A formula and functions events query.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsWarningType
 
 User locator used.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # FormulaAndFunctionEventAggregation
 
 Aggregation methods for event platform queries.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # LogsQueryFilter
 
 The search and filter query settings
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

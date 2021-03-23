@@ -1,6 +1,7 @@
 # RelationshipToIncidentIntegrationMetadataData
 
 A relationship reference for an integration metadata object.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

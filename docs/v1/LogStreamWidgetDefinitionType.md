@@ -1,6 +1,7 @@
 # LogStreamWidgetDefinitionType
 
 Type of the log stream widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

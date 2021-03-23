@@ -1,6 +1,7 @@
 # MetricsAndMetricTagConfigurationsResponse
 
 Response object that includes metrics and metric tag configurations.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsSSLCertificate
 
 Object describing the SSL certificate used for a Synthetic test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

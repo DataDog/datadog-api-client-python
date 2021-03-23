@@ -1,6 +1,7 @@
 # RoleUpdateResponseData
 
 Role object returned by the API.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

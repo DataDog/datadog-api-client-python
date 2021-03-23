@@ -1,6 +1,7 @@
 # LogsArchiveIntegrationGCS
 
 The GCS archive's integration destination.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

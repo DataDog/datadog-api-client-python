@@ -1,6 +1,7 @@
 # WidgetFormulaLimit
 
 Options for limiting results returned.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

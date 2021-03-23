@@ -1,6 +1,7 @@
 # UsageMetricCategory
 
 Contains the metric category.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

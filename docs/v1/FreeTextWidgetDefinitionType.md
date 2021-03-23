@@ -1,6 +1,7 @@
 # FreeTextWidgetDefinitionType
 
 Type of the free text widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

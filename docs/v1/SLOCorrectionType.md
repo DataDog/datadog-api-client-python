@@ -1,6 +1,7 @@
 # SLOCorrectionType
 
 SLO correction resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # IFrameWidgetDefinitionType
 
 Type of the iframe widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
