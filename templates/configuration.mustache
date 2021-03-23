@@ -293,6 +293,21 @@ conf = {{{packageName}}}.Configuration(
         # Options to pass down to the underlying urllib3 socket
         self.socket_options = None
 
+        # Keep track of unstable operations
+        self.unstable_operations = {
+        {{#apiInfo}}
+        {{#apis}}
+        {{#operations}}
+        {{#operation}}
+        {{#vendorExtensions.x-unstable}}
+            "{{operationId}}": False,
+        {{/vendorExtensions.x-unstable}}
+        {{/operation}}
+        {{/operations}}
+        {{/apis}}
+        {{/apiInfo}}
+        }
+
     def __deepcopy__(self, memo):
         cls = self.__class__
         result = cls.__new__(cls)

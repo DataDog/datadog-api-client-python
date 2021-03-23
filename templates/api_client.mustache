@@ -3,6 +3,7 @@
 import json
 import atexit
 import mimetypes
+import warnings
 from multiprocessing.pool import ThreadPool
 import io
 import os
@@ -792,6 +793,12 @@ class Endpoint(object):
         return self.callable(self, *args, **kwargs)
 
     def call_with_http_info(self, **kwargs):
+
+        is_unstable = self.api_client.configuration.unstable_operations.get(self.settings['operation_id'])
+        if is_unstable:
+            warnings.warn("Using unstable operation '{0}'".format(self.settings['operation_id']))
+        elif is_unstable is False:
+            raise ApiValueError("Unstable operation '{0}' is disabled".format(self.settings['operation_id']))
 
         try:
             index = self.api_client.configuration.server_operation_index.get(
