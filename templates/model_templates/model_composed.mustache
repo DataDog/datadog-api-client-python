@@ -15,14 +15,7 @@ class {{classname}}(ModelComposed):
 
 {{> model_templates/classvars }}
 
-    attribute_map = {
-{{#requiredVars}}
-        '{{name}}': '{{baseName}}',  # noqa: E501
-{{/requiredVars}}
-{{#optionalVars}}
-        '{{name}}': '{{baseName}}',  # noqa: E501
-{{/optionalVars}}
-    }
+    attribute_map = {}
 
 {{> model_templates/method_init_composed }}
 

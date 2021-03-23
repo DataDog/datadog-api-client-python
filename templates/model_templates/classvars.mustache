@@ -90,6 +90,12 @@
             openapi_types (dict): The key is attribute name
                 and the value is attribute type.
         """
+{{#oneOf}}
+{{#-first}}
+        return {}
+{{/-first}}
+{{/oneOf}}
+{{^oneOf}}
 {{#imports}}
 {{#-first}}
         lazy_import()
@@ -112,6 +118,7 @@
             '{{name}}': ({{{dataType}}},),  # noqa: E501
 {{/optionalVars}}
         }
+{{/oneOf}}
 
     @cached_property
     def discriminator():
