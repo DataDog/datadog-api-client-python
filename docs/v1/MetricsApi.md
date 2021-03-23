@@ -57,6 +57,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->get_metric_metadata: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -75,6 +76,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -141,6 +143,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->list_active_metrics: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -160,6 +163,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -216,6 +220,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->list_metrics: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -234,6 +239,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -292,6 +298,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->query_metrics: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -312,6 +319,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -377,6 +385,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->update_metric_metadata: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -396,6 +405,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

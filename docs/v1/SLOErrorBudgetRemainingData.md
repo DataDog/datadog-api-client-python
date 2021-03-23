@@ -1,6 +1,7 @@
 # SLOErrorBudgetRemainingData
 
 A mapping of threshold `timeframe` to the remaining error budget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

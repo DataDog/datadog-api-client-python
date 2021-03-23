@@ -1,6 +1,7 @@
 # SyntheticsBrowserTestType
 
 Type of the Synthetic test, `browser`.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

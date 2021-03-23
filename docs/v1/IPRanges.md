@@ -1,6 +1,7 @@
 # IPRanges
 
 IP ranges.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

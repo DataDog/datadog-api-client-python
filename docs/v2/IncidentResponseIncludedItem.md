@@ -1,6 +1,7 @@
 # IncidentResponseIncludedItem
 
 An object related to an incident that is included in the response.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # HostMapWidgetDefinitionRequests
 
 List of definitions.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

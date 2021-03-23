@@ -1,6 +1,7 @@
 # LogsStringBuilderProcessorType
 
 Type of logs string builder processor.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

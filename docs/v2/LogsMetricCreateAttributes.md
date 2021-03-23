@@ -1,6 +1,7 @@
 # LogsMetricCreateAttributes
 
 The object describing the Datadog log-based metric to create.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

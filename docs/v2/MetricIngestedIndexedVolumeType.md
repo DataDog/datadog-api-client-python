@@ -1,6 +1,7 @@
 # MetricIngestedIndexedVolumeType
 
 The metric ingested and indexed volume type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

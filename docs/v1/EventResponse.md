@@ -1,6 +1,7 @@
 # EventResponse
 
 Object containing an event response.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

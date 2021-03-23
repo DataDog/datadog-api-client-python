@@ -1,6 +1,7 @@
 # IPPrefixesProcess
 
 Available prefix information for the Process endpoints.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

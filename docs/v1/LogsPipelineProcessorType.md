@@ -1,6 +1,7 @@
 # LogsPipelineProcessorType
 
 Type of logs pipeline processor.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

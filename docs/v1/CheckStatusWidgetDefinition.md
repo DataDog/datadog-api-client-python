@@ -1,6 +1,7 @@
 # CheckStatusWidgetDefinition
 
 Check status shows the current status or number of results for any check performed.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

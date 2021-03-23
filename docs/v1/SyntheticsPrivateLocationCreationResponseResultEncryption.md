@@ -1,6 +1,7 @@
 # SyntheticsPrivateLocationCreationResponseResultEncryption
 
 Public key for the result encryption.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # IncidentIntegrationMetadataType
 
 Integration metadata resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

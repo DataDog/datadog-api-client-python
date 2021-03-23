@@ -1,6 +1,7 @@
 # QueryValueWidgetDefinitionType
 
 Type of the query value widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

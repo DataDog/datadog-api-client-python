@@ -1,6 +1,7 @@
 # LogQueryDefinition
 
 The log query.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

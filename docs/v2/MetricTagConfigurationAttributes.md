@@ -1,6 +1,7 @@
 # MetricTagConfigurationAttributes
 
 Object containing the definition of a metric tag configuration attributes.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

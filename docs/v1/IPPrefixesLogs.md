@@ -1,6 +1,7 @@
 # IPPrefixesLogs
 
 Available prefix information for the Logs endpoints.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

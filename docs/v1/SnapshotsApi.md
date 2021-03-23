@@ -67,6 +67,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SnapshotsApi->get_graph_snapshot: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -90,6 +91,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

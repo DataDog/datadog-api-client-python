@@ -1,6 +1,7 @@
 # UserResponseIncludedItem
 
 An object related to a user.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

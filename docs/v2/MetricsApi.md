@@ -71,6 +71,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->create_tag_configuration: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -90,6 +91,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -148,6 +150,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->delete_tag_configuration: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -166,6 +169,7 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -224,6 +228,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->list_tag_configuration_by_name: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -242,6 +247,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -304,6 +310,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->list_tag_configurations: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -325,6 +332,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -383,6 +391,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->list_tags_by_metric_name: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -402,6 +411,7 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -418,7 +428,7 @@ Name | Type | Description  | Notes
 
 List distinct metric volumes by metric name
 
-View distinct metrics volumes for the given metric name.  Custom distribution metrics will return both ingested and indexed custom metric volumes. For Metrics without Limits beta customers, all metrics will return both ingested/indexed volumes. Custom metrics generated in-app from other products will return `null` for ingested volumes.
+View distinct metrics volumes for the given metric name.  Custom distribution metrics will return both ingested and indexed custom metric volumes. For Metrics without Limits&trade; beta customers, all metrics will return both ingested/indexed volumes. Custom metrics generated in-app from other products will return `null` for ingested volumes.
 
 ### Example
 
@@ -460,6 +470,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->list_volumes_by_metric_name: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -478,6 +489,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -547,6 +559,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->update_tag_configuration: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -566,6 +579,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.0.0b7 / 2021-03-22
+
+* [Added] Add `legend_layout` and `legend_columns` to timeseries widget definition. See [#320](https://github.com/DataDog/datadog-api-client-python/pull/320).
+* [Added] Add support for multistep tests in Synthetics. See [#313](https://github.com/DataDog/datadog-api-client-python/pull/313).
+* [Added] Add core web vitals to synthetics browser test results. See [#308](https://github.com/DataDog/datadog-api-client-python/pull/308).
+* [Added] Add v2 metric tags and metric volumes endpoints. See [#307](https://github.com/DataDog/datadog-api-client-python/pull/307).
+* [Added] Add new endpoints for browser and API tests in Synthetics. See [#301](https://github.com/DataDog/datadog-api-client-python/pull/301).
+* [Added] Add `groupby_simple_monitor` option to monitors. See [#300](https://github.com/DataDog/datadog-api-client-python/pull/300).
+* [Added] Allow formula and functions in query value requests. See [#299](https://github.com/DataDog/datadog-api-client-python/pull/299).
+* [Added] Allow formula and functions in toplist requests. See [#298](https://github.com/DataDog/datadog-api-client-python/pull/298).
+* [Added] Add slack resource. See [#292](https://github.com/DataDog/datadog-api-client-python/pull/292).
+* [Added] Add `detectionMethod` and `newValueOptions` fields to security monitoring rules. See [#290](https://github.com/DataDog/datadog-api-client-python/pull/290).
+* [Added] Expose "event-v2 alert" monitor type. See [#289](https://github.com/DataDog/datadog-api-client-python/pull/289).
+* [Added] Add new US3 region. See [#288](https://github.com/DataDog/datadog-api-client-python/pull/288).
+* [Added] Add `org_name` field to usage attribution response. See [#287](https://github.com/DataDog/datadog-api-client-python/pull/287).
+* [Changed] Make query name required in formulas and functions queries. See [#311](https://github.com/DataDog/datadog-api-client-python/pull/311).
+* [Changed] Rename objects for formulas and functions to be more generic. See [#294](https://github.com/DataDog/datadog-api-client-python/pull/294).
+* [Changed] Update response schema for service level objective operation `GetSLOHistory`. See [#319](https://github.com/DataDog/datadog-api-client-python/pull/319).
+
 ## 1.0.0b6 / 2021-02-16
 
 * [Added] Add profile_metrics_query properties to dashboard widget requests. See [#282](https://github.com/DataDog/datadog-api-client-python/pull/282).

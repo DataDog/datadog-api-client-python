@@ -1,6 +1,7 @@
 # SyntheticsAssertionTarget
 
 An assertion which uses a simple target.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

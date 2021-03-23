@@ -1,6 +1,7 @@
 # Widget
 
 Information about widget.  Note: The `layout` property is required for widgets in dashboards with `free` `layout_type` only.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # IncidentServiceType
 
 Incident service resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

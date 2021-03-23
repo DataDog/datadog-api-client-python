@@ -1,6 +1,7 @@
 # SyntheticsGetBrowserTestLatestResultsResponse
 
 Object with the latest Synthetic browser test run.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

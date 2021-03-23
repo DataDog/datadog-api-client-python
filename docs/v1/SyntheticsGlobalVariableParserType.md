@@ -1,6 +1,7 @@
 # SyntheticsGlobalVariableParserType
 
 Type of parser for a Synthetics global variable from a synthetics test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

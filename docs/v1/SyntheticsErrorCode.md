@@ -1,6 +1,7 @@
 # SyntheticsErrorCode
 
 Error code that can be returned by a Synthetic test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

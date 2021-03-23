@@ -1,6 +1,7 @@
 # WidgetCompareTo
 
 Timeframe used for the change comparison.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

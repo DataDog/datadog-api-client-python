@@ -1,6 +1,7 @@
 # SyntheticsTestPauseStatus
 
 Define whether you want to start (`live`) or pause (`paused`) a Synthetic test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

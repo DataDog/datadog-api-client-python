@@ -1,6 +1,7 @@
 # LogsGroupBy
 
 A group by rule
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

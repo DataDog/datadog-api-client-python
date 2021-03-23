@@ -1,6 +1,7 @@
 # FormulaAndFunctionResponseFormat
 
 Timeseries or Scalar response. **This feature is currently in beta.**
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

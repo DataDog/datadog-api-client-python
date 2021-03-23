@@ -1,6 +1,7 @@
 # SecurityMonitoringFilterAction
 
 The type of filtering action.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

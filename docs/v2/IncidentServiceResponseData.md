@@ -1,6 +1,7 @@
 # IncidentServiceResponseData
 
 Incident Service data from responses.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

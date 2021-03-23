@@ -1,6 +1,7 @@
 # WidgetLineWidth
 
 Width of line displayed.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

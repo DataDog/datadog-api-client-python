@@ -1,6 +1,7 @@
 # HeatMapWidgetDefinitionType
 
 Type of the heat map widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # ApplicationKeysType
 
 Application Keys resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

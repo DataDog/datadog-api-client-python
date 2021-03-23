@@ -1,6 +1,7 @@
 # UsageSNMPResponse
 
 Response containing the number of SNMP devices for each hour for a given organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

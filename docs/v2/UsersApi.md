@@ -80,6 +80,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->create_user: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -98,6 +99,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -153,6 +155,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->disable_user: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -171,6 +174,7 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -227,6 +231,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->get_invitation: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -245,6 +250,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -301,6 +307,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->get_user: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -319,6 +326,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -375,6 +383,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->list_user_organizations: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -393,6 +402,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -449,6 +459,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->list_user_permissions: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -467,6 +478,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -529,6 +541,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->list_users: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -552,6 +565,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -610,6 +624,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->send_invitations: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -628,6 +643,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -695,6 +711,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->update_user: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -714,6 +731,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

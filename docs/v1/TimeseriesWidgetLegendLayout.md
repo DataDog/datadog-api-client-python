@@ -1,6 +1,7 @@
 # TimeseriesWidgetLegendLayout
 
 Layout of the legend.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

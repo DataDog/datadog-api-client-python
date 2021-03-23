@@ -1,6 +1,7 @@
 # LogsAggregateResponseStatus
 
 The status of the response
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

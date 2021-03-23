@@ -1,6 +1,7 @@
 # SyntheticsPlayingTab
 
 Navigate between different tabs for your browser test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

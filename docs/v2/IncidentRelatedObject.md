@@ -1,6 +1,7 @@
 # IncidentRelatedObject
 
 Object related to an incident.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

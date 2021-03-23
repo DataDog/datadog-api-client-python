@@ -1,6 +1,7 @@
 # MonitorOptionsAggregation
 
 Type of aggregation performed in the monitor query.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

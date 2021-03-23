@@ -1,6 +1,7 @@
 # LogsArithmeticProcessorType
 
 Type of logs arithmetic processor.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

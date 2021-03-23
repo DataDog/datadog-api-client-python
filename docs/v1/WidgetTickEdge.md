@@ -1,6 +1,7 @@
 # WidgetTickEdge
 
 Define how you want to align the text on the widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

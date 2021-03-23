@@ -1,6 +1,7 @@
 # UsageNetworkHostsHour
 
 Number of active NPM hosts for each hour for a given organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

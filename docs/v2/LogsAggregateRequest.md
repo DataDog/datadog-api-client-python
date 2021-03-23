@@ -1,6 +1,7 @@
 # LogsAggregateRequest
 
 The object sent with the request to retrieve a list of logs from your organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

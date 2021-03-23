@@ -1,6 +1,7 @@
 # SecurityMonitoringSignalAttributes
 
 The object containing all signal attributes and their associated values.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

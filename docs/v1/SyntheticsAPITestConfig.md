@@ -1,6 +1,7 @@
 # SyntheticsAPITestConfig
 
 Configuration object for a Synthetic API test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

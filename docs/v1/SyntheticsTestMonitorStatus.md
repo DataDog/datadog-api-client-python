@@ -1,6 +1,7 @@
 # SyntheticsTestMonitorStatus
 
 The status of your Synthetic monitor. * `O` for not triggered * `1` for triggered * `2` for no data
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

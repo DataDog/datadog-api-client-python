@@ -1,6 +1,7 @@
 # ApmStatsQueryRowType
 
 The level of detail for the request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

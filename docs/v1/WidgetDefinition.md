@@ -1,6 +1,7 @@
 # WidgetDefinition
 
 [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/).
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

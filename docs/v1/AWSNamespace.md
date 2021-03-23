@@ -1,6 +1,7 @@
 # AWSNamespace
 
 The namespace associated with the tag filter entry.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

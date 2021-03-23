@@ -1,6 +1,7 @@
 # LogType
 
 Type of the event.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

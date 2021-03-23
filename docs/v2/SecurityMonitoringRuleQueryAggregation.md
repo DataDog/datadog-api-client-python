@@ -1,6 +1,7 @@
 # SecurityMonitoringRuleQueryAggregation
 
 The aggregation type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

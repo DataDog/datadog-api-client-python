@@ -1,6 +1,7 @@
 # SyntheticsTestOptionsMonitorOptions
 
 Object containing the options for a Synthetic test as a monitor (for example, renotification).
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

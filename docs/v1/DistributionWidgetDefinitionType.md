@@ -1,6 +1,7 @@
 # DistributionWidgetDefinitionType
 
 Type of the distribution widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

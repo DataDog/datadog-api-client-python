@@ -1,6 +1,7 @@
 # HostMapWidgetDefinitionType
 
 Type of the host map widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

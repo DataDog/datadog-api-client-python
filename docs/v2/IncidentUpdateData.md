@@ -1,6 +1,7 @@
 # IncidentUpdateData
 
 Incident data for an update request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

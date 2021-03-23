@@ -1,6 +1,7 @@
 # UsageSortDirection
 
 The direction to sort by.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

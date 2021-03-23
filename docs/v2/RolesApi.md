@@ -70,6 +70,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->add_permission_to_role: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -89,6 +90,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -152,6 +154,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->add_user_to_role: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -171,6 +174,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -250,6 +254,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->create_role: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -268,6 +273,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -323,6 +329,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->delete_role: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -341,6 +348,7 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -397,6 +405,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->get_role: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -415,6 +424,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -470,6 +480,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->list_permissions: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -485,6 +496,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -541,6 +553,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->list_role_permissions: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -559,6 +572,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -628,6 +642,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->list_role_users: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -650,6 +665,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -710,6 +726,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->list_roles: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -731,6 +748,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -792,6 +810,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->remove_permission_from_role: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -811,6 +830,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -874,6 +894,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->remove_user_from_role: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -893,6 +914,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -961,6 +983,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling RolesApi->update_role: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -980,6 +1003,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

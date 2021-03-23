@@ -1,6 +1,7 @@
 # CheckCanDeleteMonitorResponseData
 
 Wrapper object with the list of monitor IDs.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

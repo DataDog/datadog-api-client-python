@@ -1,6 +1,7 @@
 # IncidentPostmortemType
 
 Incident postmortem resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

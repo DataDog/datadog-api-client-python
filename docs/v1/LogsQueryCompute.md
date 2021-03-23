@@ -1,6 +1,7 @@
 # LogsQueryCompute
 
 Define computation for a log query.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # LogsMessageRemapperType
 
 Type of logs message remapper.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

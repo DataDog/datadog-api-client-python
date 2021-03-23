@@ -1,6 +1,7 @@
 # LogsUserAgentParserType
 
 Type of logs User-Agent parser.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

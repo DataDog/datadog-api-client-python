@@ -1,6 +1,7 @@
 # ProcessSummariesResponse
 
 List of process summaries.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

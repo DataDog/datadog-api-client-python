@@ -1,6 +1,7 @@
 # WidgetPalette
 
 Color palette to apply.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

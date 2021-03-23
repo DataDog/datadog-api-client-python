@@ -1,6 +1,7 @@
 # SyntheticsStep
 
 The steps used in a Synthetics browser test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

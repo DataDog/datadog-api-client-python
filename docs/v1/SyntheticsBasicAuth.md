@@ -1,6 +1,7 @@
 # SyntheticsBasicAuth
 
 Object to handle basic authentication when performing the test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

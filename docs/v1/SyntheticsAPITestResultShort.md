@@ -1,6 +1,7 @@
 # SyntheticsAPITestResultShort
 
 Object with the results of a single Synthetic API test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

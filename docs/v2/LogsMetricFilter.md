@@ -1,6 +1,7 @@
 # LogsMetricFilter
 
 The log-based metric filter. Logs matching this filter will be aggregated in this metric.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

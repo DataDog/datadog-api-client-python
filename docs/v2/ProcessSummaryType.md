@@ -1,6 +1,7 @@
 # ProcessSummaryType
 
 Type of process summary.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

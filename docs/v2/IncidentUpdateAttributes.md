@@ -1,6 +1,7 @@
 # IncidentUpdateAttributes
 
 The incident's attributes for an update request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

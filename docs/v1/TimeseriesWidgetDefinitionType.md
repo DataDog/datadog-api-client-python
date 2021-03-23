@@ -1,6 +1,7 @@
 # TimeseriesWidgetDefinitionType
 
 Type of the timeseries widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsCoreWebVitals
 
 Core Web Vitals attached to a browser test step.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

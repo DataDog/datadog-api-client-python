@@ -1,6 +1,7 @@
 # LogsArchiveCreateRequestAttributes
 
 The attributes associated with the archive.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

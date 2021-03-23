@@ -1,6 +1,7 @@
 # Point
 
 Array of timeseries points.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

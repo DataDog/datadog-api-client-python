@@ -1,6 +1,7 @@
 # LogsAggregationFunction
 
 An aggregation function
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

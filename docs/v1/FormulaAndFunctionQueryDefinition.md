@@ -1,6 +1,7 @@
 # FormulaAndFunctionQueryDefinition
 
 A formula and function query.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # LogStreamWidgetDefinition
 
 The Log Stream displays a log flow matching the defined query. Only available on FREE layout dashboards.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

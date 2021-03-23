@@ -1,6 +1,7 @@
 # UsageTopAvgMetricsResponse
 
 Response containing the number of hourly recorded custom metrics for a given organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

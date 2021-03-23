@@ -1,6 +1,7 @@
 # MetricAllTagsAttributes
 
 Object containing the definition of a metric's tags.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

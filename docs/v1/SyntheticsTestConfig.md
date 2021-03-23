@@ -1,6 +1,7 @@
 # SyntheticsTestConfig
 
 Configuration object for a Synthetic test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

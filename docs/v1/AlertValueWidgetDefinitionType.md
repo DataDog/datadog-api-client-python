@@ -1,6 +1,7 @@
 # AlertValueWidgetDefinitionType
 
 Type of the alert value widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsAPITestResultData
 
 Object containing results for your Synthetic API test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

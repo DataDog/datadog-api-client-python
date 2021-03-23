@@ -1,6 +1,7 @@
 # UserResponse
 
 A Datadog User.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

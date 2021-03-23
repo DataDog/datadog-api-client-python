@@ -1,6 +1,7 @@
 # IncidentCreateAttributes
 
 The incident's attributes for a create request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

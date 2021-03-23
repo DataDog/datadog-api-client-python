@@ -1,6 +1,7 @@
 # MonitorStateGroup
 
 Monitor state for a single group.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

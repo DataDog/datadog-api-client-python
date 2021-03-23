@@ -1,6 +1,7 @@
 # IncidentFieldAttributesSingleValueType
 
 Type of the single value field definitions.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

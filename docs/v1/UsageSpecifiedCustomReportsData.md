@@ -1,6 +1,7 @@
 # UsageSpecifiedCustomReportsData
 
 Response containing date and type for specified custom reports.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

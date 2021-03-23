@@ -1,6 +1,7 @@
 # MonitorOptions
 
 List of options associated with your monitor.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

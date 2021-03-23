@@ -72,6 +72,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->create_aws_account: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -90,6 +91,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -151,6 +153,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->create_aws_tag_filter: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -169,6 +172,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -236,6 +240,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->create_new_aws_external_id: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -254,6 +259,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -321,6 +327,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->delete_aws_account: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -339,6 +346,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -399,6 +407,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->delete_aws_tag_filter: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -417,6 +426,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -472,6 +482,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->list_available_aws_namespaces: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -487,6 +498,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -545,6 +557,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->list_aws_accounts: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -565,6 +578,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -621,6 +635,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->list_aws_tag_filters: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -639,6 +654,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -718,6 +734,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->update_aws_account: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -739,6 +756,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

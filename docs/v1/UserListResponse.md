@@ -1,6 +1,7 @@
 # UserListResponse
 
 Array of Datadog users for a given organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

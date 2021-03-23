@@ -1,6 +1,7 @@
 # SyntheticsSSLCertificateSubject
 
 Object describing the SSL certificate used for the test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

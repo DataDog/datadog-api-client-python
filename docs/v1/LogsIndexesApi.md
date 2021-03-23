@@ -76,6 +76,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->create_logs_index: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -94,6 +95,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -150,6 +152,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->get_logs_index: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -168,6 +171,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -223,6 +227,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->get_logs_index_order: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -238,6 +243,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -292,6 +298,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->list_log_indexes: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -307,6 +314,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -380,6 +388,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->update_logs_index: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -399,6 +408,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -458,6 +468,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->update_logs_index_order: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -476,6 +487,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

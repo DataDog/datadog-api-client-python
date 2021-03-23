@@ -1,6 +1,7 @@
 # LogsGroupByTotal
 
 A resulting object to put the given computes in over all the matching records.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # IncidentFieldAttributes
 
 Dynamic fields for which selections can be made, with field names as keys.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

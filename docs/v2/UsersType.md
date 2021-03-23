@@ -1,6 +1,7 @@
 # UsersType
 
 Users resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsAPIStepSubtype
 
 The subtype of the Synthetic multistep API test step, currently only supporting `http`.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
