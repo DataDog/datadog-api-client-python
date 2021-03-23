@@ -2680,20 +2680,20 @@ class UsageMeteringApi(object):
             callable=__get_usage_timeseries,
         )
 
-        def __get_usage_top_avg_metrics(self, month, **kwargs):
+        def __get_usage_top_avg_metrics(self, **kwargs):
             """Get top custom metrics by hourly average  # noqa: E501
 
-            Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average.  # noqa: E501
+            Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.get_usage_top_avg_metrics(month, async_req=True)
+            >>> thread = api.get_usage_top_avg_metrics(async_req=True)
             >>> result = thread.get()
 
-            Args:
-                month (datetime): Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour.
 
             Keyword Args:
+                month (datetime): Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. (Either month or day should be specified, but not both). [optional]
+                day (datetime): Datetime in ISO-8601 format, UTC, precise to day: [YYYY-MM-DD] for usage beginning at this hour. (Either month or day should be specified, but not both). [optional]
                 names ([str]): Comma-separated list of metric names.. [optional]
                 limit (int): Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified.. [optional] if omitted the server will use the default value of 500
                 _return_http_data_only (bool): response data without head status
@@ -2728,7 +2728,6 @@ class UsageMeteringApi(object):
             kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
             kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
             kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["month"] = month
             return self.call_with_http_info(**kwargs)
 
         self.get_usage_top_avg_metrics = _Endpoint(
@@ -2743,12 +2742,11 @@ class UsageMeteringApi(object):
             params_map={
                 "all": [
                     "month",
+                    "day",
                     "names",
                     "limit",
                 ],
-                "required": [
-                    "month",
-                ],
+                "required": [],
                 "nullable": [],
                 "enum": [],
                 "validation": [
@@ -2765,16 +2763,19 @@ class UsageMeteringApi(object):
                 "allowed_values": {},
                 "openapi_types": {
                     "month": (datetime,),
+                    "day": (datetime,),
                     "names": ([str],),
                     "limit": (int,),
                 },
                 "attribute_map": {
                     "month": "month",
+                    "day": "day",
                     "names": "names",
                     "limit": "limit",
                 },
                 "location_map": {
                     "month": "query",
+                    "day": "query",
                     "names": "query",
                     "limit": "query",
                 },

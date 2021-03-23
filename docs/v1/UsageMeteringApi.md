@@ -2362,11 +2362,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_usage_top_avg_metrics**
-> UsageTopAvgMetricsResponse get_usage_top_avg_metrics(month)
+> UsageTopAvgMetricsResponse get_usage_top_avg_metrics()
 
 Get top custom metrics by hourly average
 
-Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average.
+Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.
 
 ### Example
 
@@ -2396,25 +2396,18 @@ configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour.
+    month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. (Either month or day should be specified, but not both) (optional)
+    day = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to day: [YYYY-MM-DD] for usage beginning at this hour. (Either month or day should be specified, but not both) (optional)
     names = [
         "names_example",
     ]  # [str] | Comma-separated list of metric names. (optional)
     limit = 500  # int | Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. (optional) if omitted the server will use the default value of 500
 
     # example passing only required values which don't have defaults set
-    try:
-        # Get top custom metrics by hourly average
-        api_response = api_instance.get_usage_top_avg_metrics(month)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UsageMeteringApi->get_usage_top_avg_metrics: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get top custom metrics by hourly average
-        api_response = api_instance.get_usage_top_avg_metrics(month, names=names, limit=limit)
+        api_response = api_instance.get_usage_top_avg_metrics(month=month, day=day, names=names, limit=limit)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_top_avg_metrics: %s\n" % e)
@@ -2425,7 +2418,8 @@ with ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **month** | **datetime**| Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. |
+ **month** | **datetime**| Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. (Either month or day should be specified, but not both) | [optional]
+ **day** | **datetime**| Datetime in ISO-8601 format, UTC, precise to day: [YYYY-MM-DD] for usage beginning at this hour. (Either month or day should be specified, but not both) | [optional]
  **names** | **[str]**| Comma-separated list of metric names. | [optional]
  **limit** | **int**| Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. | [optional] if omitted the server will use the default value of 500
 

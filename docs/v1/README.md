@@ -740,6 +740,7 @@ Class | Method | HTTP request | Description
  - [UsageTimeseriesHour](UsageTimeseriesHour.md)
  - [UsageTimeseriesResponse](UsageTimeseriesResponse.md)
  - [UsageTopAvgMetricsHour](UsageTopAvgMetricsHour.md)
+ - [UsageTopAvgMetricsMetadata](UsageTopAvgMetricsMetadata.md)
  - [UsageTopAvgMetricsResponse](UsageTopAvgMetricsResponse.md)
  - [UsageTraceHour](UsageTraceHour.md)
  - [UsageTraceResponse](UsageTraceResponse.md)
