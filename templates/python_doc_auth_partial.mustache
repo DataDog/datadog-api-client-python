@@ -1,8 +1,9 @@
-# Defining the host is optional and defaults to {{{basePath}}}
 # See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration(
-    host="{{{basePath}}}"
-)
+configuration = Configuration()
+
+# Defining the site is optional and defaults to datadoghq.com
+if "DD_SITE" in os.environ:
+    configuration.server_variables["site"] = os.environ["DD_SITE"]
 {{#hasAuthMethods}}
 {{#authMethods}}
 {{#isBasic}}
