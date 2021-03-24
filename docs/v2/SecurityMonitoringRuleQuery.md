@@ -5,6 +5,7 @@ Query for matching rule.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**agent_rule** | [**SecurityMonitoringRuntimeAgentRule**](SecurityMonitoringRuntimeAgentRule.md) |  | [optional] 
 **aggregation** | [**SecurityMonitoringRuleQueryAggregation**](SecurityMonitoringRuleQueryAggregation.md) |  | [optional] 
 **distinct_fields** | **[str]** | Field for which the cardinality is measured. Sent as an array. | [optional] 
 **group_by_fields** | **[str]** | Fields to group by. | [optional] 
