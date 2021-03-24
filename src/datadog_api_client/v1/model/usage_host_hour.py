@@ -73,9 +73,11 @@ class UsageHostHour(ModelNormal):
             "azure_host_count": (int,),  # noqa: E501
             "container_count": (int,),  # noqa: E501
             "gcp_host_count": (int,),  # noqa: E501
+            "heroku_host_count": (int,),  # noqa: E501
             "host_count": (int,),  # noqa: E501
             "hour": (datetime,),  # noqa: E501
             "infra_azure_app_service": (int,),  # noqa: E501
+            "opentelemetry_host_count": (int,),  # noqa: E501
         }
 
     @cached_property
@@ -91,9 +93,11 @@ class UsageHostHour(ModelNormal):
         "azure_host_count": "azure_host_count",  # noqa: E501
         "container_count": "container_count",  # noqa: E501
         "gcp_host_count": "gcp_host_count",  # noqa: E501
+        "heroku_host_count": "heroku_host_count",  # noqa: E501
         "host_count": "host_count",  # noqa: E501
         "hour": "hour",  # noqa: E501
         "infra_azure_app_service": "infra_azure_app_service",  # noqa: E501
+        "opentelemetry_host_count": "opentelemetry_host_count",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -152,9 +156,11 @@ class UsageHostHour(ModelNormal):
             azure_host_count (int): Contains the total number of hosts that reported via Azure integration (and were NOT running the Datadog Agent).. [optional]  # noqa: E501
             container_count (int): Shows the total number of containers reported by the Docker integration during the hour.. [optional]  # noqa: E501
             gcp_host_count (int): Contains the total number of hosts that reported via the Google Cloud integration (and were NOT running the Datadog Agent).. [optional]  # noqa: E501
+            heroku_host_count (int): Contains the total number of Heroku dynos reported by the Datadog Agent.. [optional]  # noqa: E501
             host_count (int): Contains the total number of billable infrastructure hosts reporting during a given hour. This is the sum of `agent_host_count`, `aws_host_count`, and `gcp_host_count`.. [optional]  # noqa: E501
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
             infra_azure_app_service (int): Contains the total number of hosts that reported via the Azure App Services integration (and were NOT running the Datadog Agent).. [optional]  # noqa: E501
+            opentelemetry_host_count (int): Contains the total number of hosts reported by Datadog exporter for the OpenTelemetry Collector.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
