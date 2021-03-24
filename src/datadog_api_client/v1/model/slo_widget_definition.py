@@ -80,6 +80,7 @@ class SLOWidgetDefinition(ModelNormal):
         return {
             "type": (SLOWidgetDefinitionType,),  # noqa: E501
             "view_type": (str,),  # noqa: E501
+            "global_time_target": (str,),  # noqa: E501
             "show_error_budget": (bool,),  # noqa: E501
             "slo_id": (str,),  # noqa: E501
             "time_windows": ([WidgetTimeWindows],),  # noqa: E501
@@ -96,6 +97,7 @@ class SLOWidgetDefinition(ModelNormal):
     attribute_map = {
         "type": "type",  # noqa: E501
         "view_type": "view_type",  # noqa: E501
+        "global_time_target": "global_time_target",  # noqa: E501
         "show_error_budget": "show_error_budget",  # noqa: E501
         "slo_id": "slo_id",  # noqa: E501
         "time_windows": "time_windows",  # noqa: E501
@@ -157,6 +159,7 @@ class SLOWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            global_time_target (str): Defined global time target.. [optional]  # noqa: E501
             show_error_budget (bool): Defined error budget.. [optional]  # noqa: E501
             slo_id (str): ID of the SLO displayed.. [optional]  # noqa: E501
             time_windows ([WidgetTimeWindows]): Times being monitored.. [optional]  # noqa: E501

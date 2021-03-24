@@ -87,6 +87,7 @@ class UsageSummaryDate(ModelNormal):
             "fargate_tasks_count_avg": (int,),  # noqa: E501
             "fargate_tasks_count_hwm": (int,),  # noqa: E501
             "gcp_host_top99p": (int,),  # noqa: E501
+            "heroku_host_top99p_sum": (int,),  # noqa: E501
             "incident_management_monthly_active_users_hwm": (int,),  # noqa: E501
             "indexed_events_count_sum": (int,),  # noqa: E501
             "infra_host_top99p": (int,),  # noqa: E501
@@ -98,6 +99,7 @@ class UsageSummaryDate(ModelNormal):
             "mobile_rum_session_count_sum": (int,),  # noqa: E501
             "netflow_indexed_events_count_sum": (int,),  # noqa: E501
             "npm_host_top99p": (int,),  # noqa: E501
+            "opentelemetry_host_top99p_sum": (int,),  # noqa: E501
             "orgs": ([UsageSummaryDateOrg],),  # noqa: E501
             "profiling_host_top99p": (int,),  # noqa: E501
             "rum_session_count_sum": (int,),  # noqa: E501
@@ -128,6 +130,7 @@ class UsageSummaryDate(ModelNormal):
         "fargate_tasks_count_avg": "fargate_tasks_count_avg",  # noqa: E501
         "fargate_tasks_count_hwm": "fargate_tasks_count_hwm",  # noqa: E501
         "gcp_host_top99p": "gcp_host_top99p",  # noqa: E501
+        "heroku_host_top99p_sum": "heroku_host_top99p_sum",  # noqa: E501
         "incident_management_monthly_active_users_hwm": "incident_management_monthly_active_users_hwm",  # noqa: E501
         "indexed_events_count_sum": "indexed_events_count_sum",  # noqa: E501
         "infra_host_top99p": "infra_host_top99p",  # noqa: E501
@@ -139,6 +142,7 @@ class UsageSummaryDate(ModelNormal):
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",  # noqa: E501
         "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",  # noqa: E501
         "npm_host_top99p": "npm_host_top99p",  # noqa: E501
+        "opentelemetry_host_top99p_sum": "opentelemetry_host_top99p_sum",  # noqa: E501
         "orgs": "orgs",  # noqa: E501
         "profiling_host_top99p": "profiling_host_top99p",  # noqa: E501
         "rum_session_count_sum": "rum_session_count_sum",  # noqa: E501
@@ -212,6 +216,7 @@ class UsageSummaryDate(ModelNormal):
             fargate_tasks_count_avg (int): Shows the high-watermark of all Fargate tasks over all hours in the current date for all organizations.. [optional]  # noqa: E501
             fargate_tasks_count_hwm (int): Shows the average of all Fargate tasks over all hours in the current date for all organizations.. [optional]  # noqa: E501
             gcp_host_top99p (int): Shows the 99th percentile of all GCP hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
+            heroku_host_top99p_sum (int): Shows the 99th percentile of all Heroku dynos over all hours in the current date for all organizations.. [optional]  # noqa: E501
             incident_management_monthly_active_users_hwm (int): Shows the high-water mark of incident management monthly active users over all hours in the current date for all organizations.. [optional]  # noqa: E501
             indexed_events_count_sum (int): Shows the sum of all log events indexed over all hours in the current date for all organizations.. [optional]  # noqa: E501
             infra_host_top99p (int): Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
@@ -223,6 +228,7 @@ class UsageSummaryDate(ModelNormal):
             mobile_rum_session_count_sum (int): Shows the sum of all mobile RUM Sessions over all hours in the current date for all organizations. [optional]  # noqa: E501
             netflow_indexed_events_count_sum (int): Shows the sum of all Network flows indexed over all hours in the current date for all organizations.. [optional]  # noqa: E501
             npm_host_top99p (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
+            opentelemetry_host_top99p_sum (int): Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for all organizations.. [optional]  # noqa: E501
             orgs ([UsageSummaryDateOrg]): Organizations associated with a user.. [optional]  # noqa: E501
             profiling_host_top99p (int): Shows the 99th percentile of all profiled hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
             rum_session_count_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current date for all organizations. [optional]  # noqa: E501

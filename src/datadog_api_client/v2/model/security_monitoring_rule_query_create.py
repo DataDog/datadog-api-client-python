@@ -26,8 +26,10 @@ def lazy_import():
     from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
         SecurityMonitoringRuleQueryAggregation,
     )
+    from datadog_api_client.v2.model.security_monitoring_runtime_agent_rule import SecurityMonitoringRuntimeAgentRule
 
     globals()["SecurityMonitoringRuleQueryAggregation"] = SecurityMonitoringRuleQueryAggregation
+    globals()["SecurityMonitoringRuntimeAgentRule"] = SecurityMonitoringRuntimeAgentRule
 
 
 class SecurityMonitoringRuleQueryCreate(ModelNormal):
@@ -75,6 +77,7 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
         lazy_import()
         return {
             "query": (str,),  # noqa: E501
+            "agent_rule": (SecurityMonitoringRuntimeAgentRule,),  # noqa: E501
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),  # noqa: E501
             "distinct_fields": ([str],),  # noqa: E501
             "group_by_fields": ([str],),  # noqa: E501
@@ -88,6 +91,7 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
 
     attribute_map = {
         "query": "query",  # noqa: E501
+        "agent_rule": "agentRule",  # noqa: E501
         "aggregation": "aggregation",  # noqa: E501
         "distinct_fields": "distinctFields",  # noqa: E501
         "group_by_fields": "groupByFields",  # noqa: E501
@@ -146,6 +150,7 @@ class SecurityMonitoringRuleQueryCreate(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            agent_rule (SecurityMonitoringRuntimeAgentRule): [optional]  # noqa: E501
             aggregation (SecurityMonitoringRuleQueryAggregation): [optional]  # noqa: E501
             distinct_fields ([str]): Field for which the cardinality is measured. Sent as an array.. [optional]  # noqa: E501
             group_by_fields ([str]): Fields to group by.. [optional]  # noqa: E501
