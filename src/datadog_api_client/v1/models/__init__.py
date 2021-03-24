@@ -505,6 +505,7 @@ from datadog_api_client.v1.model.usage_synthetics_response import UsageSynthetic
 from datadog_api_client.v1.model.usage_timeseries_hour import UsageTimeseriesHour
 from datadog_api_client.v1.model.usage_timeseries_response import UsageTimeseriesResponse
 from datadog_api_client.v1.model.usage_top_avg_metrics_hour import UsageTopAvgMetricsHour
+from datadog_api_client.v1.model.usage_top_avg_metrics_metadata import UsageTopAvgMetricsMetadata
 from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopAvgMetricsResponse
 from datadog_api_client.v1.model.usage_trace_hour import UsageTraceHour
 from datadog_api_client.v1.model.usage_trace_response import UsageTraceResponse

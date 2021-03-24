@@ -368,6 +368,20 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get an API test returns "- Synthetic Monitoring is not activated for the user" response
+    Given new "GetAPITest" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
+
+  @generated @skip
+  Scenario: Get an API test returns "OK" response
+    Given new "GetAPITest" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get the list of all tests returns "OK - Returns the list of all Synthetic tests." response
     Given new "ListTests" request
     When the request is sent

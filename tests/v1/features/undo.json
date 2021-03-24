@@ -834,6 +834,12 @@
       "type": "unsafe"
     }
   },
+  "GetAPITest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpdateAPITest": {
     "tag": "Synthetics",
     "undo": {
