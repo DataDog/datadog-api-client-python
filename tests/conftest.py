@@ -136,6 +136,16 @@ def glom(value, path):
     # replace foo[index].bar by foo.index.bar
     return g(value, re.sub(r"\[([0-9]*)\]", r".\1", path))
 
+def change_keys_to_snake_case(data):
+    if isinstance(data, dict):
+        result = {}
+        for key, value in data.items():
+            result[snake_case(key)] = change_keys_to_snake_case(value)
+        return result
+    elif isinstance(data, list):
+        return [change_keys_to_snake_case(item) for item in data]
+    return data
+
 
 @pytest.fixture
 def unique(request, freezer):
@@ -399,16 +409,6 @@ def build_given(version, operation):
             api = getattr(package, name + "Api")(client)
             operation_method = getattr(api, operation_name)
 
-            def change_keys_to_snake_case(data):
-                if isinstance(data, dict):
-                    result = {}
-                    for key, value in data.items():
-                        result[snake_case(key)] = change_keys_to_snake_case(value)
-                    return result
-                elif isinstance(data, list):
-                    return [change_keys_to_snake_case(item) for item in data]
-                return data
-
             # perform operation
             def build_param(p):
                 if "value" in p:
@@ -491,11 +491,13 @@ def execute_request(undo, context, client):
         # Instead of finding the response class of the method, we use the fact that all
         # responses returned have an ordered response of body|status|headers
         api_request["response"] = [e.body, e.status, e.headers]
-    else:
-        api = api_request["api"]
-        operation_id = api_request["request"].settings["operation_id"]
-        response = api_request["response"][0]
-        context["undo_operations"].append(lambda: undo(api, operation_id, response))
+        return
+
+    api = api_request["api"]
+    operation_id = api_request["request"].settings["operation_id"]
+    response = api_request["response"][0]
+
+    context["undo_operations"].append(lambda: undo(api, operation_id, response))
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))
