@@ -332,6 +332,8 @@ class MetricsApi(object):
                 filter_tags_configured (str): Filter tag configurations by configured tags.. [optional]
                 filter_metric_type (MetricTagConfigurationMetricTypes): Filter tag configurations by metric type.. [optional]
                 filter_include_percentiles (bool): Filter distributions with additional percentile aggregations enabled or disabled.. [optional]
+                filter_tags (str): Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.. [optional]
+                window_seconds (int): The number of seconds of look back (from now) to apply to a filter[tag] query. Defaults value is 3600 (1 hour), maximum value is 172,800 (2 days).. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -381,6 +383,8 @@ class MetricsApi(object):
                     "filter_tags_configured",
                     "filter_metric_type",
                     "filter_include_percentiles",
+                    "filter_tags",
+                    "window_seconds",
                 ],
                 "required": [],
                 "nullable": [],
@@ -395,18 +399,24 @@ class MetricsApi(object):
                     "filter_tags_configured": (str,),
                     "filter_metric_type": (MetricTagConfigurationMetricTypes,),
                     "filter_include_percentiles": (bool,),
+                    "filter_tags": (str,),
+                    "window_seconds": (int,),
                 },
                 "attribute_map": {
                     "filter_configured": "filter[configured]",
                     "filter_tags_configured": "filter[tags_configured]",
                     "filter_metric_type": "filter[metric_type]",
                     "filter_include_percentiles": "filter[include_percentiles]",
+                    "filter_tags": "filter[tags]",
+                    "window_seconds": "window[seconds]",
                 },
                 "location_map": {
                     "filter_configured": "query",
                     "filter_tags_configured": "query",
                     "filter_metric_type": "query",
                     "filter_include_percentiles": "query",
+                    "filter_tags": "query",
+                    "window_seconds": "query",
                 },
                 "collection_format_map": {},
             },

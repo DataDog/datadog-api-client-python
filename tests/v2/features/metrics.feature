@@ -154,6 +154,13 @@ Feature: Metrics
     When the request is sent
     Then the response status is 429 Too Many Requests
 
+  Scenario: List tag configurations with a tag filter returns "Success" response
+    Given operation "ListTagConfigurations" enabled
+    And new "ListTagConfigurations" request
+    And request contains "filter[tags]" parameter with value "{{ unique_alnum }}"
+    When the request is sent
+    Then the response status is 200 Success
+
   @generated @skip
   Scenario: List tags by metric name returns "Bad Request" response
     Given operation "ListTagsByMetricName" enabled
