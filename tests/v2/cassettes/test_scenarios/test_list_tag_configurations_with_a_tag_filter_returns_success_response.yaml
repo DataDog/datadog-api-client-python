@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - ListTagConfigurations
+      User-Agent:
+      - datadog-api-client-python/0.1.dev273 (python 3.9.2; os Linux; arch x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/metrics?filter%5Btags%5D=datadogapiclientpythontestlisttagconfigurationswithatagfilterreturnssuccessresponse1616604331438729
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 24 Mar 2021 16:45:31 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - twvpGlmuom5y6A0pjGtXzTf554cmwJgTcCZ71fK4H/RDi+v5ehBK0zQiRcTJQG5C
+      x-dd-version:
+      - '35.4165979'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '50'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '49'
+      x-ratelimit-reset:
+      - '29'
+    status:
+      code: 200
+      message: OK
+version: 1
