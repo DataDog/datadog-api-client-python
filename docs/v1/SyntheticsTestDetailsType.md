@@ -1,6 +1,7 @@
 # SyntheticsTestDetailsType
 
 Type of the Synthetic test, either `api` or `browser`.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

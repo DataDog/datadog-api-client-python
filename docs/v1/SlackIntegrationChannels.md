@@ -1,6 +1,7 @@
 # SlackIntegrationChannels
 
 A list of configured Slack channels.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

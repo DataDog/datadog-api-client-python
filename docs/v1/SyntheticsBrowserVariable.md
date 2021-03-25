@@ -1,6 +1,7 @@
 # SyntheticsBrowserVariable
 
 Object defining a variable that can be used in your browser test. Learn more in the [Browser test Actions documentation](https://docs.datadoghq.com/synthetics/browser_tests/actions#variable).
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

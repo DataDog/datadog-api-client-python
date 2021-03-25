@@ -82,6 +82,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->create_security_monitoring_rule: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -100,6 +101,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -155,6 +157,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->delete_security_monitoring_rule: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -173,6 +176,7 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -229,6 +233,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->get_security_monitoring_rule: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -247,6 +252,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -304,6 +310,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->list_security_monitoring_rules: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -323,6 +330,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -385,6 +393,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->list_security_monitoring_signals: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -408,6 +417,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -477,6 +487,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->search_security_monitoring_signals: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -495,6 +506,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -573,6 +585,10 @@ with ApiClient(configuration) as api_client:
         ),
         queries=[
             SecurityMonitoringRuleQuery(
+                agent_rule=SecurityMonitoringRuntimeAgentRule(
+                    agent_rule_id="etc_shadow",
+                    expression="expression_example",
+                ),
                 aggregation=SecurityMonitoringRuleQueryAggregation("count"),
                 distinct_fields=[
                     "distinct_fields_example",
@@ -599,6 +615,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->update_security_monitoring_rule: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -618,6 +635,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

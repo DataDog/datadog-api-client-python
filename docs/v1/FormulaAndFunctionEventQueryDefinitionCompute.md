@@ -1,6 +1,7 @@
 # FormulaAndFunctionEventQueryDefinitionCompute
 
 Compute options.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

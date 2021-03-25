@@ -1,6 +1,7 @@
 # IncidentServiceUpdateData
 
 Incident Service payload for update requests.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

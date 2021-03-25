@@ -1,6 +1,7 @@
 # LogsResponseMetadata
 
 The metadata associated with a request
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

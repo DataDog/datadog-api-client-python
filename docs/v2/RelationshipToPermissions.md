@@ -1,6 +1,7 @@
 # RelationshipToPermissions
 
 Relationship to multiple permissions objects.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

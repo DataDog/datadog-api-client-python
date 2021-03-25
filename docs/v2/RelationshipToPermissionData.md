@@ -1,6 +1,7 @@
 # RelationshipToPermissionData
 
 Relationship to permission object.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

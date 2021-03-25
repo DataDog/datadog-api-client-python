@@ -24,8 +24,10 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.usage_top_avg_metrics_hour import UsageTopAvgMetricsHour
+    from datadog_api_client.v1.model.usage_top_avg_metrics_metadata import UsageTopAvgMetricsMetadata
 
     globals()["UsageTopAvgMetricsHour"] = UsageTopAvgMetricsHour
+    globals()["UsageTopAvgMetricsMetadata"] = UsageTopAvgMetricsMetadata
 
 
 class UsageTopAvgMetricsResponse(ModelNormal):
@@ -72,6 +74,7 @@ class UsageTopAvgMetricsResponse(ModelNormal):
         """
         lazy_import()
         return {
+            "metadata": (UsageTopAvgMetricsMetadata,),  # noqa: E501
             "usage": ([UsageTopAvgMetricsHour],),  # noqa: E501
         }
 
@@ -80,6 +83,7 @@ class UsageTopAvgMetricsResponse(ModelNormal):
         return None
 
     attribute_map = {
+        "metadata": "metadata",  # noqa: E501
         "usage": "usage",  # noqa: E501
     }
 
@@ -131,6 +135,7 @@ class UsageTopAvgMetricsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            metadata (UsageTopAvgMetricsMetadata): [optional]  # noqa: E501
             usage ([UsageTopAvgMetricsHour]): Number of hourly recorded custom metrics for a given organization.. [optional]  # noqa: E501
         """
 

@@ -1,6 +1,7 @@
 # CancelDowntimesByScopeRequest
 
 Cancel downtimes according to scope.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

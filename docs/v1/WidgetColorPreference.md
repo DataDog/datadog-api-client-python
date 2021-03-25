@@ -1,6 +1,7 @@
 # WidgetColorPreference
 
 Which color to use on the widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

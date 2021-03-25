@@ -1,6 +1,7 @@
 # UsageSort
 
 The field to sort by.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

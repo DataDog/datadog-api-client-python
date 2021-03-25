@@ -1,6 +1,7 @@
 # SyntheticsCITestBody
 
 Object describing the synthetics tests to trigger.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

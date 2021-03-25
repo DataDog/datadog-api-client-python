@@ -1,6 +1,7 @@
 # AlertGraphWidgetDefinitionType
 
 Type of the alert graph widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

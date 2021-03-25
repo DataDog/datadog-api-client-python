@@ -1,6 +1,7 @@
 # WidgetMarker
 
 Markers allow you to add visual conditional formatting for your graphs.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # WidgetGrouping
 
 The kind of grouping to use.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

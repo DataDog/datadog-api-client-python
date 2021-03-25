@@ -1,6 +1,7 @@
 # IncidentsResponse
 
 Response with a list of incidents.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

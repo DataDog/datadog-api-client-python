@@ -1,6 +1,7 @@
 # SecurityMonitoringRuleEvaluationWindow
 
 A time window is specified to match when at least one of the cases matches true. This is a sliding window and evaluates in real time.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

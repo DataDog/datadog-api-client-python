@@ -1,6 +1,7 @@
 # LogsURLParser
 
 This processor extracts query parameters and other important parameters from a URL.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

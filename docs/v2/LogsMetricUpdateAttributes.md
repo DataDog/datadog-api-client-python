@@ -1,6 +1,7 @@
 # LogsMetricUpdateAttributes
 
 The log-based metric properties that will be updated.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

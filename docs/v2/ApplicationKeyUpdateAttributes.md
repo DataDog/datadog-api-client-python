@@ -1,6 +1,7 @@
 # ApplicationKeyUpdateAttributes
 
 Attributes used to update an application Key.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

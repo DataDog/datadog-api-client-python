@@ -1,6 +1,7 @@
 # ServiceSummaryWidgetDefinition
 
 The service summary displays the graphs of a chosen service in your screenboard. Only available on FREE layout dashboards.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

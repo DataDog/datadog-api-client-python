@@ -1,6 +1,7 @@
 # ChangeWidgetDefinitionType
 
 Type of the change widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

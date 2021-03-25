@@ -1,6 +1,7 @@
 # ToplistWidgetDefinitionType
 
 Type of the top list widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

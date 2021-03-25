@@ -1,6 +1,7 @@
 # IPPrefixesSynthetics
 
 Available prefix information for the Synthetics endpoints.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

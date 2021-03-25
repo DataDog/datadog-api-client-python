@@ -304,6 +304,7 @@ class WidgetDefinition(ModelComposed):
             custom_unit (str): Display a unit of your choice on the widget.. [optional]  # noqa: E501
             color_by_groups ([str]): List of groups used for colors.. [optional]  # noqa: E501
             xaxis (WidgetAxis): [optional]  # noqa: E501
+            global_time_target (str): Defined global time target.. [optional]  # noqa: E501
             show_error_budget (bool): Defined error budget.. [optional]  # noqa: E501
             slo_id (str): ID of the SLO displayed.. [optional]  # noqa: E501
             time_windows ([WidgetTimeWindows]): Times being monitored.. [optional]  # noqa: E501

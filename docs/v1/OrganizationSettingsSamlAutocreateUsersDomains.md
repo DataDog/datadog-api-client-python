@@ -1,6 +1,7 @@
 # OrganizationSettingsSamlAutocreateUsersDomains
 
 Has two properties, `enabled` (boolean) and `domains`, which is a list of domains without the @ symbol.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

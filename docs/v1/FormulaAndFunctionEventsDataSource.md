@@ -1,6 +1,7 @@
 # FormulaAndFunctionEventsDataSource
 
 Data source for event platform-based queries.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsAssertionType
 
 Type of the assertion.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

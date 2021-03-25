@@ -1,6 +1,7 @@
 # MetricDistinctVolumeType
 
 The metric distinct volume type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

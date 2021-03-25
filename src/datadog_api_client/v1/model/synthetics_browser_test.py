@@ -80,9 +80,9 @@ class SyntheticsBrowserTest(ModelNormal):
         """
         lazy_import()
         return {
+            "message": (str,),  # noqa: E501
             "config": (SyntheticsBrowserTestConfig,),  # noqa: E501
             "locations": ([str],),  # noqa: E501
-            "message": (str,),  # noqa: E501
             "monitor_id": (int,),  # noqa: E501
             "name": (str,),  # noqa: E501
             "options": (SyntheticsTestOptions,),  # noqa: E501
@@ -98,9 +98,9 @@ class SyntheticsBrowserTest(ModelNormal):
         return None
 
     attribute_map = {
+        "message": "message",  # noqa: E501
         "config": "config",  # noqa: E501
         "locations": "locations",  # noqa: E501
-        "message": "message",  # noqa: E501
         "monitor_id": "monitor_id",  # noqa: E501
         "name": "name",  # noqa: E501
         "options": "options",  # noqa: E501
@@ -125,8 +125,11 @@ class SyntheticsBrowserTest(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, message, *args, **kwargs):  # noqa: E501
         """SyntheticsBrowserTest - a model defined in OpenAPI
+
+        Args:
+            message (str): Notification message associated with the test. Message can either be text or an empty string.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -161,7 +164,6 @@ class SyntheticsBrowserTest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             config (SyntheticsBrowserTestConfig): [optional]  # noqa: E501
             locations ([str]): Array of locations used to run the test.. [optional]  # noqa: E501
-            message (str): Notification message associated with the test.. [optional]  # noqa: E501
             monitor_id (int): The associated monitor ID.. [optional]  # noqa: E501
             name (str): Name of the test.. [optional]  # noqa: E501
             options (SyntheticsTestOptions): [optional]  # noqa: E501
@@ -196,6 +198,7 @@ class SyntheticsBrowserTest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.message = message
         for var_name, var_value in kwargs.items():
             if (
                 var_name not in self.attribute_map

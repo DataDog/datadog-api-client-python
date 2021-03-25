@@ -1,6 +1,7 @@
 # LogsAggregateResponse
 
 The response object for the logs aggregate API endpoint
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

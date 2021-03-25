@@ -1,6 +1,7 @@
 # LogsProcessor
 
 Definition of a logs processor.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

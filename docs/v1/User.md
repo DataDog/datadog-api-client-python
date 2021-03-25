@@ -1,6 +1,7 @@
 # User
 
 Create, edit, and disable users.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

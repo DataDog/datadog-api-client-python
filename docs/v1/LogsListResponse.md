@@ -1,6 +1,7 @@
 # LogsListResponse
 
 Response object with all logs matching the request and pagination information.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

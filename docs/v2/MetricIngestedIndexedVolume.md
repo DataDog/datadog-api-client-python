@@ -1,6 +1,7 @@
 # MetricIngestedIndexedVolume
 
 Object for a single metric's ingested and indexed volume.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

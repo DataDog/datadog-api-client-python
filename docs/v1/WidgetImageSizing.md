@@ -1,6 +1,7 @@
 # WidgetImageSizing
 
 How to size the image on the widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

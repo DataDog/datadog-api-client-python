@@ -1,6 +1,7 @@
 # LogsDateRemapperType
 
 Type of logs date remapper.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

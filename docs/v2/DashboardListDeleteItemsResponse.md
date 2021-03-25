@@ -1,6 +1,7 @@
 # DashboardListDeleteItemsResponse
 
 Response containing a list of deleted dashboards.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

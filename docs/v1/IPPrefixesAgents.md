@@ -1,6 +1,7 @@
 # IPPrefixesAgents
 
 Available prefix information for the Agent endpoints.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

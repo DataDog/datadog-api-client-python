@@ -1,6 +1,7 @@
 # EventStreamWidgetDefinitionType
 
 Type of the event stream widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

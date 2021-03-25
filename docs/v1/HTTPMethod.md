@@ -1,6 +1,7 @@
 # HTTPMethod
 
 The HTTP method.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

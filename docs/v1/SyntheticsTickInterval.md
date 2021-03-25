@@ -1,6 +1,7 @@
 # SyntheticsTickInterval
 
 The frequency at which to run the Synthetic test (in seconds).
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

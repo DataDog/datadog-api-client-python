@@ -1,6 +1,7 @@
 # WidgetOrderBy
 
 What to order by.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

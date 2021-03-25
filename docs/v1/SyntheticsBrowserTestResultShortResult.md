@@ -1,6 +1,7 @@
 # SyntheticsBrowserTestResultShortResult
 
 Object with the result of the last browser test run.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

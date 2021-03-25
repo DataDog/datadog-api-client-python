@@ -141,6 +141,7 @@ class MetricsApi(object):
 
             Keyword Args:
                 host (str): Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag.. [optional]
+                tag_filter (str): Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -189,6 +190,7 @@ class MetricsApi(object):
                 "all": [
                     "_from",
                     "host",
+                    "tag_filter",
                 ],
                 "required": [
                     "_from",
@@ -203,14 +205,17 @@ class MetricsApi(object):
                 "openapi_types": {
                     "_from": (int,),
                     "host": (str,),
+                    "tag_filter": (str,),
                 },
                 "attribute_map": {
                     "_from": "from",
                     "host": "host",
+                    "tag_filter": "tag_filter",
                 },
                 "location_map": {
                     "_from": "query",
                     "host": "query",
+                    "tag_filter": "query",
                 },
                 "collection_format_map": {},
             },

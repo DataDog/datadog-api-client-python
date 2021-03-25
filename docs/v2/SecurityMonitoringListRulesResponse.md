@@ -1,6 +1,7 @@
 # SecurityMonitoringListRulesResponse
 
 List of rules.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # WidgetViewMode
 
 Define how you want the SLO to be displayed.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsCITestMetadataGit
 
 Git information.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

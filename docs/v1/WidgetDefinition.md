@@ -1,6 +1,7 @@
 # WidgetDefinition
 
 [Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/).
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -52,6 +53,7 @@ Name | Type | Description | Notes
 **custom_unit** | **str** | Display a unit of your choice on the widget. | [optional] 
 **color_by_groups** | **[str]** | List of groups used for colors. | [optional] 
 **xaxis** | [**WidgetAxis**](WidgetAxis.md) |  | [optional] 
+**global_time_target** | **str** | Defined global time target. | [optional] 
 **show_error_budget** | **bool** | Defined error budget. | [optional] 
 **slo_id** | **str** | ID of the SLO displayed. | [optional] 
 **time_windows** | [**[WidgetTimeWindows]**](WidgetTimeWindows.md) | Times being monitored. | [optional] 

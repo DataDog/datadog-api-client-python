@@ -1,6 +1,7 @@
 # WidgetSort
 
 Widget sorting methods.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

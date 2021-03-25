@@ -1,6 +1,7 @@
 # SyntheticsAPITestResultFull
 
 Object returned describing a API test result.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

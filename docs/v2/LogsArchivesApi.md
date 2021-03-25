@@ -67,6 +67,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->add_read_role_to_archive: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -86,6 +87,7 @@ void (empty response body)
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -154,6 +156,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->create_logs_archive: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -172,6 +175,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -227,6 +231,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->delete_logs_archive: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -245,6 +250,7 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -302,6 +308,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->get_logs_archive: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -320,6 +327,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -376,6 +384,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->get_logs_archive_order: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -391,6 +400,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -446,6 +456,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->list_archive_read_roles: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -464,6 +475,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -520,6 +532,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->list_logs_archives: %s\n" % e)
 ```
 
+
 ### Parameters
 This endpoint does not need any parameter.
 
@@ -535,6 +548,7 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -595,6 +609,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->remove_role_from_archive: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -614,6 +629,7 @@ void (empty response body)
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -683,6 +699,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->update_logs_archive: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -702,6 +719,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -766,6 +784,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->update_logs_archive_order: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -784,6 +803,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

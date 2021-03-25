@@ -1,6 +1,7 @@
 # GeomapWidgetDefinition
 
 This visualization displays a series of values by country on a world map.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

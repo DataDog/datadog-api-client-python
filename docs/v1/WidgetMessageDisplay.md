@@ -1,6 +1,7 @@
 # WidgetMessageDisplay
 
 Amount of log lines to display
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

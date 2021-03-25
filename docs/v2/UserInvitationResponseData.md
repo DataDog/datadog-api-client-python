@@ -1,6 +1,7 @@
 # UserInvitationResponseData
 
 Object of a user invitation returned by the API.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

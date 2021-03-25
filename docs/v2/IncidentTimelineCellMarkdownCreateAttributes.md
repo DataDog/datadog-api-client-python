@@ -1,6 +1,7 @@
 # IncidentTimelineCellMarkdownCreateAttributes
 
 Timeline cell data for Markdown timeline cells for a create request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

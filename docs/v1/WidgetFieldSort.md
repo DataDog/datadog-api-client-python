@@ -1,6 +1,7 @@
 # WidgetFieldSort
 
 Which column and order to sort by
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

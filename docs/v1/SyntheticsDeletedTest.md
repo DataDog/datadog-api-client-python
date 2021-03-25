@@ -1,6 +1,7 @@
 # SyntheticsDeletedTest
 
 Object containing a deleted Synthetic test ID with the associated deletion timestamp.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

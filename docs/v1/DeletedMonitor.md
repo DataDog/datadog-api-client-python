@@ -1,6 +1,7 @@
 # DeletedMonitor
 
 Response from the delete monitor call.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

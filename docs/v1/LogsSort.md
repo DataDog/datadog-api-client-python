@@ -1,6 +1,7 @@
 # LogsSort
 
 Time-ascending `asc` or time-descending `desc`results.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

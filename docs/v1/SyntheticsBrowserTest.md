@@ -1,12 +1,13 @@
 # SyntheticsBrowserTest
 
 Object containing details about a Synthetic browser test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**message** | **str** | Notification message associated with the test. Message can either be text or an empty string. | 
 **config** | [**SyntheticsBrowserTestConfig**](SyntheticsBrowserTestConfig.md) |  | [optional] 
 **locations** | **[str]** | Array of locations used to run the test. | [optional] 
-**message** | **str** | Notification message associated with the test. | [optional] 
 **monitor_id** | **int** | The associated monitor ID. | [optional] 
 **name** | **str** | Name of the test. | [optional] 
 **options** | [**SyntheticsTestOptions**](SyntheticsTestOptions.md) |  | [optional] 

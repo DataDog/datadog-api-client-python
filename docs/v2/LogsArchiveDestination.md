@@ -1,6 +1,7 @@
 # LogsArchiveDestination
 
 An archive's destination.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

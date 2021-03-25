@@ -1,6 +1,7 @@
 # OrganizationsType
 
 Organizations resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

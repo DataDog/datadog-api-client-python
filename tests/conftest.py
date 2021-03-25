@@ -399,20 +399,20 @@ def build_given(version, operation):
             api = getattr(package, name + "Api")(client)
             operation_method = getattr(api, operation_name)
 
-            def change_keys_to_snake_keys(data):
+            def change_keys_to_snake_case(data):
                 if isinstance(data, dict):
                     result = {}
                     for key, value in data.items():
-                        result[snake_case(key)] = change_keys_to_snake_keys(value)
+                        result[snake_case(key)] = change_keys_to_snake_case(value)
                     return result
                 elif isinstance(data, list):
-                    return [change_keys_to_snake_keys(item) for item in data]
+                    return [change_keys_to_snake_case(item) for item in data]
                 return data
 
             # perform operation
             def build_param(p):
                 if "value" in p:
-                    return change_keys_to_snake_keys(json.loads(Template(p["value"]).render(**context)))
+                    return change_keys_to_snake_case(json.loads(Template(p["value"]).render(**context)))
                 if "source" in p:
                     return glom(context, p["source"])
 

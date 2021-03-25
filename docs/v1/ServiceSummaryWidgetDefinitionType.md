@@ -1,6 +1,7 @@
 # ServiceSummaryWidgetDefinitionType
 
 Type of the service summary widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

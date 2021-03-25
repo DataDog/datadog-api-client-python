@@ -1,6 +1,7 @@
 # FormulaAndFunctionEventQueryGroupBy
 
 List of objects used to group by.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

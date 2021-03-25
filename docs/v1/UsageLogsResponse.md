@@ -1,6 +1,7 @@
 # UsageLogsResponse
 
 Response containing the number of logs for each hour.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

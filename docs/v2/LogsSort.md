@@ -1,6 +1,7 @@
 # LogsSort
 
 Sort parameters when querying logs.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

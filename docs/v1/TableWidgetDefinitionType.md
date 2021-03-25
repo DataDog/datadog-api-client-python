@@ -1,6 +1,7 @@
 # TableWidgetDefinitionType
 
 Type of the table widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

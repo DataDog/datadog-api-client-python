@@ -1,6 +1,7 @@
 # UsageSummaryResponse
 
 Response with hourly report of all data billed by Datadog all organizations.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **fargate_tasks_count_avg_sum** | **int** | Shows the average of all Fargate tasks over all hours in the current months for all organizations. | [optional] 
 **fargate_tasks_count_hwm_sum** | **int** | Shows the sum of the high-water marks of all Fargate tasks over all hours in the current months for all organizations. | [optional] 
 **gcp_host_top99p_sum** | **int** | Shows the 99th percentile of all GCP hosts over all hours in the current months for all organizations. | [optional] 
+**heroku_host_top99p_sum** | **int** | Shows the 99th percentile of all Heroku dynos over all hours in the current months for all organizations. | [optional] 
 **incident_management_monthly_active_users_hwm_sum** | **int** | Shows sum of the the high-water marks of incident management monthly active users in the current months for all organizations. | [optional] 
 **indexed_events_count_agg_sum** | **int** | Shows the sum of all log events indexed over all hours in the current months for all organizations. | [optional] 
 **infra_host_top99p_sum** | **int** | Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current months for all organizations. | [optional] 
@@ -34,6 +36,7 @@ Name | Type | Description | Notes
 **mobile_rum_session_count_ios_agg_sum** | **int** | Shows the sum of all mobile RUM Sessions on iOS over all hours in the current months for all organizations. | [optional] 
 **netflow_indexed_events_count_agg_sum** | **int** | Shows the sum of all Network flows indexed over all hours in the current months for all organizations. | [optional] 
 **npm_host_top99p_sum** | **int** | Shows the 99th percentile of all distinct Networks hosts over all hours in the current months for all organizations. | [optional] 
+**opentelemetry_host_top99p_sum** | **int** | Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current months for all organizations. | [optional] 
 **profiling_container_agent_count_avg** | **int** | Shows the average number of profiled containers over all hours in the current months for all organizations. | [optional] 
 **profiling_host_count_top99p_sum** | **int** | Shows the 99th percentile of all profiled hosts over all hours in the current months for all organizations. | [optional] 
 **rehydrated_indexed_events_agg_sum** | **int** | Shows the sum of all rehydrated logs indexed over all hours in the current months for all organizations (data available as of December 1, 2020). | [optional] 

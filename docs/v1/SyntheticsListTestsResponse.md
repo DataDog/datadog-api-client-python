@@ -1,6 +1,7 @@
 # SyntheticsListTestsResponse
 
 Object containing an array of Synthetic tests configuration.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

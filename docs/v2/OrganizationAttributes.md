@@ -1,6 +1,7 @@
 # OrganizationAttributes
 
 Attributes of the organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

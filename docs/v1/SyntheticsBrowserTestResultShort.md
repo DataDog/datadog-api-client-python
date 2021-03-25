@@ -1,6 +1,7 @@
 # SyntheticsBrowserTestResultShort
 
 Object with the results of a single Synthetic browser test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

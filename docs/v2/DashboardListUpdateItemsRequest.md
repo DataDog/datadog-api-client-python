@@ -1,6 +1,7 @@
 # DashboardListUpdateItemsRequest
 
 Request containing the list of dashboards to update to.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

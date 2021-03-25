@@ -1,6 +1,7 @@
 # SyntheticsVariableParser
 
 Details of the parser to use for the global variable.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

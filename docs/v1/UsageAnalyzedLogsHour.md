@@ -1,6 +1,7 @@
 # UsageAnalyzedLogsHour
 
 The number of analyzed logs for each hour for a given organization.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # WidgetLayout
 
 The layout for a widget on a free dashboard.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

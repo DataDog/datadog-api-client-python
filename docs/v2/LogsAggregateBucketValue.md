@@ -1,6 +1,7 @@
 # LogsAggregateBucketValue
 
 A bucket value, can be either a timeseries or a single value
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

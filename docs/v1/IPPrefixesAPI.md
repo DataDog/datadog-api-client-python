@@ -1,6 +1,7 @@
 # IPPrefixesAPI
 
 Available prefix information for the API endpoints.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

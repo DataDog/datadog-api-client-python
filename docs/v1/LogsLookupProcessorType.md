@@ -1,6 +1,7 @@
 # LogsLookupProcessorType
 
 Type of logs lookup processor.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

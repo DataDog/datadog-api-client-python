@@ -57,6 +57,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->get_metric_metadata: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -75,6 +76,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -122,6 +124,7 @@ with ApiClient(configuration) as api_client:
     api_instance = metrics_api.MetricsApi(api_client)
     _from = 1  # int | Seconds since the Unix epoch.
     host = "host_example"  # str | Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag. (optional)
+    tag_filter = "env IN (staging,test) AND service:web"  # str | Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -135,11 +138,12 @@ with ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get active metrics list
-        api_response = api_instance.list_active_metrics(_from, host=host)
+        api_response = api_instance.list_active_metrics(_from, host=host, tag_filter=tag_filter)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling MetricsApi->list_active_metrics: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -147,6 +151,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_from** | **int**| Seconds since the Unix epoch. |
  **host** | **str**| Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag. | [optional]
+ **tag_filter** | **str**| Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters. | [optional]
 
 ### Return type
 
@@ -160,6 +165,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -216,6 +222,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->list_metrics: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -234,6 +241,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -292,6 +300,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->query_metrics: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -312,6 +321,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -377,6 +387,7 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling MetricsApi->update_metric_metadata: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -396,6 +407,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

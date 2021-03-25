@@ -1,6 +1,7 @@
 # IncidentType
 
 Incident resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

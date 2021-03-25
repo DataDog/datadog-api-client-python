@@ -1,6 +1,7 @@
 # WidgetLineType
 
 Type of lines displayed.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # IncidentTimelineCellCreateAttributes
 
 The timeline cell's attributes for a create request.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

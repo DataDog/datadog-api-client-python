@@ -1,6 +1,7 @@
 # IncidentTimelineCellMarkdownContentType
 
 Type of the Markdown timeline cell.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

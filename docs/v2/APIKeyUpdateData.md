@@ -1,6 +1,7 @@
 # APIKeyUpdateData
 
 Object used to update an API key.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

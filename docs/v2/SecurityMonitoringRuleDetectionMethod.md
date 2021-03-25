@@ -1,6 +1,7 @@
 # SecurityMonitoringRuleDetectionMethod
 
 The detection method.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

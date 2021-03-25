@@ -1,6 +1,7 @@
 # SLOTimeframe
 
 The SLO time window options.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # LogsArchiveCreateRequest
 
 The logs archive.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

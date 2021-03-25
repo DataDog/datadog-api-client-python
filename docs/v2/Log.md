@@ -1,6 +1,7 @@
 # Log
 
 Object description of a log after being processed and stored by Datadog.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

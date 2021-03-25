@@ -1,6 +1,7 @@
 # WidgetAxis
 
 Axis controls for the widget.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

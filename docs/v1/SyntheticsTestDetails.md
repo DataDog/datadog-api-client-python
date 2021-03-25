@@ -1,6 +1,7 @@
 # SyntheticsTestDetails
 
 Object containing details about your Synthetic test.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

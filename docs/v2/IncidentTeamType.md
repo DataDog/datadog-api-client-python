@@ -1,6 +1,7 @@
 # IncidentTeamType
 
 Incident Team resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

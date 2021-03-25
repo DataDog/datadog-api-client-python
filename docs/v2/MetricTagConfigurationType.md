@@ -1,6 +1,7 @@
 # MetricTagConfigurationType
 
 The metric tag configuration resource type.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # SyntheticsTestDetailsSubType
 
 The subtype of the Synthetic API test, `http`, `ssl`, `tcp`, `dns` or `multi`.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

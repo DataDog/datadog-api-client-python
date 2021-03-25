@@ -1,6 +1,7 @@
 # MetricSearchResponseResults
 
 Search result.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,7 @@
 # UsageIndexedSpansResponse
 
 A response containing indexed spans usage.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

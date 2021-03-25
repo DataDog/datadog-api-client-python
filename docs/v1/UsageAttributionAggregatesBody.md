@@ -1,6 +1,7 @@
 # UsageAttributionAggregatesBody
 
 The object containing the aggregates.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
