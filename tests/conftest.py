@@ -399,10 +399,20 @@ def build_given(version, operation):
             api = getattr(package, name + "Api")(client)
             operation_method = getattr(api, operation_name)
 
+            def change_keys_to_snake_keys(data):
+                if isinstance(data, dict):
+                    result = {}
+                    for key, value in data.items():
+                        result[snake_case(key)] = change_keys_to_snake_keys(value)
+                    return result
+                elif isinstance(data, list):
+                    return [change_keys_to_snake_keys(item) for item in data]
+                return data
+
             # perform operation
             def build_param(p):
                 if "value" in p:
-                    return json.loads(Template(p["value"]).render(**context))
+                    return change_keys_to_snake_keys(json.loads(Template(p["value"]).render(**context)))
                 if "source" in p:
                     return glom(context, p["source"])
 
@@ -481,17 +491,16 @@ def execute_request(undo, context, client):
         # Instead of finding the response class of the method, we use the fact that all
         # responses returned have an ordered response of body|status|headers
         api_request["response"] = [e.body, e.status, e.headers]
-
-    api = api_request["api"]
-    operation_id = api_request["request"].settings["operation_id"]
-    response = api_request["response"][0]
-
-    context["undo_operations"].append(lambda: undo(api, operation_id, response))
+    else:
+        api = api_request["api"]
+        operation_id = api_request["request"].settings["operation_id"]
+        response = api_request["response"][0]
+        context["undo_operations"].append(lambda: undo(api, operation_id, response))
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))
-def i_should_get_an_instace_of(context, package_name, name):
-    """I should get an instace."""
+def i_should_get_an_instance_of(context, package_name, name):
+    """I should get an instance."""
     module_name = snake_case(name)
     package = importlib.import_module(f"{package_name}.model.{module_name}")
     assert isinstance(context["api_request"]["response"][0], getattr(package, name))
@@ -499,7 +508,7 @@ def i_should_get_an_instace_of(context, package_name, name):
 
 @then(parsers.parse('I should get a list of "{name}" objects'))
 def i_should_get_a_list_of_objects(context, package_name, name):
-    """I should get an instace."""
+    """I should get a list of objects."""
     module_name = snake_case(name)
     package = importlib.import_module(f"{package_name}.model.{module_name}")
     cls = getattr(package, name)
