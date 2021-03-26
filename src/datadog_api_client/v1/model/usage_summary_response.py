@@ -81,6 +81,18 @@ class UsageSummaryResponse(ModelNormal):
             "azure_app_service_top99p_sum": (int,),  # noqa: E501
             "azure_host_top99p_sum": (int,),  # noqa: E501
             "billable_ingested_bytes_agg_sum": (int,),  # noqa: E501
+            "compliance_container_agg_sum": (
+                bool,
+                date,
+                datetime,
+                dict,
+                float,
+                int,
+                list,
+                str,
+                none_type,
+            ),  # noqa: E501
+            "compliance_host_agg_sum": (int,),  # noqa: E501
             "container_avg_sum": (int,),  # noqa: E501
             "container_hwm_sum": (int,),  # noqa: E501
             "custom_ts_sum": (int,),  # noqa: E501
@@ -132,6 +144,8 @@ class UsageSummaryResponse(ModelNormal):
         "azure_app_service_top99p_sum": "azure_app_service_top99p_sum",  # noqa: E501
         "azure_host_top99p_sum": "azure_host_top99p_sum",  # noqa: E501
         "billable_ingested_bytes_agg_sum": "billable_ingested_bytes_agg_sum",  # noqa: E501
+        "compliance_container_agg_sum": "compliance_container_agg_sum",  # noqa: E501
+        "compliance_host_agg_sum": "compliance_host_agg_sum",  # noqa: E501
         "container_avg_sum": "container_avg_sum",  # noqa: E501
         "container_hwm_sum": "container_hwm_sum",  # noqa: E501
         "custom_ts_sum": "custom_ts_sum",  # noqa: E501
@@ -226,6 +240,8 @@ class UsageSummaryResponse(ModelNormal):
             azure_app_service_top99p_sum (int): Shows the 99th percentile of all Azure app services over all hours in the current months for all organizations.. [optional]  # noqa: E501
             azure_host_top99p_sum (int): Shows the 99th percentile of all Azure hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             billable_ingested_bytes_agg_sum (int): Shows the sum of all log bytes ingested over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            compliance_container_agg_sum (bool, date, datetime, dict, float, int, list, str, none_type): Shows the sum of all compliance containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            compliance_host_agg_sum (int): Shows the sum of all compliance hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             container_avg_sum (int): Shows the average of all distinct containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
             container_hwm_sum (int): Shows the sum of the high-water marks of all distinct containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
             custom_ts_sum (int): Shows the average number of distinct custom metrics over all hours in the current months for all organizations.. [optional]  # noqa: E501
