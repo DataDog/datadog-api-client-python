@@ -373,7 +373,7 @@ def api_request(context, name):
 def request_body(context, data):
     """Set request body."""
     tpl = Template(data).render(**context)
-    context["api_request"]["kwargs"]["body"] = json.loads(tpl)
+    context["api_request"]["kwargs"]["body"] = change_keys_to_snake_case(json.loads(tpl))
 
 
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
@@ -386,7 +386,7 @@ def request_parameter(context, name, path):
 def request_parameter_with_value(context, name, value):
     """Set request parameter."""
     tpl = Template(value).render(**context)
-    context["api_request"]["kwargs"][snake_case(name)] = json.loads(tpl)
+    context["api_request"]["kwargs"][snake_case(name)] = change_keys_to_snake_case(json.loads(tpl))
 
 
 def build_given(version, operation):
