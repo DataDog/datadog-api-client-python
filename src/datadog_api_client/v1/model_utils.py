@@ -1347,27 +1347,32 @@ def validate_and_convert_types(
         if input_value == []:
             # allow an empty list
             return input_value
+        result = []
         for index, inner_value in enumerate(input_value):
             inner_path = list(path_to_item)
             inner_path.append(index)
-            input_value[index] = validate_and_convert_types(
-                inner_value,
-                inner_required_types,
-                inner_path,
-                spec_property_naming,
-                _check_type,
-                configuration=configuration,
+            result.append(
+                validate_and_convert_types(
+                    inner_value,
+                    inner_required_types,
+                    inner_path,
+                    spec_property_naming,
+                    _check_type,
+                    configuration=configuration,
+                )
             )
+        return result
     elif isinstance(input_value, dict):
         if input_value == {}:
             # allow an empty dict
             return input_value
+        result = {}
         for inner_key, inner_val in input_value.items():
             inner_path = list(path_to_item)
             inner_path.append(inner_key)
             if get_simple_class(inner_key) != str:
                 raise get_type_error(inner_key, inner_path, valid_classes, key_type=True)
-            input_value[inner_key] = validate_and_convert_types(
+            result[inner_key] = validate_and_convert_types(
                 inner_val,
                 inner_required_types,
                 inner_path,
@@ -1375,6 +1380,7 @@ def validate_and_convert_types(
                 _check_type,
                 configuration=configuration,
             )
+        return result
     return input_value
 
 
