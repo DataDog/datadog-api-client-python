@@ -286,6 +286,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -328,6 +329,7 @@ with ApiClient(configuration) as api_client:
                         headers=SyntheticsTestHeaders(SyntheticsTestHeaders),
                         host="host_example",
                         method=HTTPMethod("GET"),
+                        no_saving_response_body=True,
                         port=1,
                         query={},
                         timeout=3.14,
@@ -349,12 +351,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -472,6 +476,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -499,12 +504,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -638,6 +645,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -665,12 +673,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -2111,6 +2121,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -2153,6 +2164,7 @@ with ApiClient(configuration) as api_client:
                         headers=SyntheticsTestHeaders(SyntheticsTestHeaders),
                         host="host_example",
                         method=HTTPMethod("GET"),
+                        no_saving_response_body=True,
                         port=1,
                         query={},
                         timeout=3.14,
@@ -2174,12 +2186,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -2299,6 +2313,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -2326,12 +2341,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -2558,6 +2575,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -2585,12 +2603,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
