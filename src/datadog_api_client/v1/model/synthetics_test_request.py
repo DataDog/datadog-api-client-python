@@ -85,6 +85,7 @@ class SyntheticsTestRequest(ModelNormal):
             "headers": (SyntheticsTestHeaders,),  # noqa: E501
             "host": (str,),  # noqa: E501
             "method": (HTTPMethod,),  # noqa: E501
+            "no_saving_response_body": (bool,),  # noqa: E501
             "port": (int,),  # noqa: E501
             "query": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             "timeout": (float,),  # noqa: E501
@@ -103,6 +104,7 @@ class SyntheticsTestRequest(ModelNormal):
         "headers": "headers",  # noqa: E501
         "host": "host",  # noqa: E501
         "method": "method",  # noqa: E501
+        "no_saving_response_body": "noSavingResponseBody",  # noqa: E501
         "port": "port",  # noqa: E501
         "query": "query",  # noqa: E501
         "timeout": "timeout",  # noqa: E501
@@ -164,6 +166,7 @@ class SyntheticsTestRequest(ModelNormal):
             headers (SyntheticsTestHeaders): [optional]  # noqa: E501
             host (str): Host name to perform the test with.. [optional]  # noqa: E501
             method (HTTPMethod): [optional]  # noqa: E501
+            no_saving_response_body (bool): Determines whether or not to save the response body.. [optional]  # noqa: E501
             port (int): Port to use when performing the test.. [optional]  # noqa: E501
             query ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Query to use for the test.. [optional]  # noqa: E501
             timeout (float): Timeout in seconds for the test.. [optional]  # noqa: E501

@@ -55,6 +55,9 @@ class SyntheticsCheckType(ModelSimple):
             "GREATER_EQUALS": "greaterEquals",
             "LOWER_EQUALS": "lowerEquals",
             "MATCH_REGEX": "matchRegex",
+            "BETWEEN": "between",
+            "IS_EMPTY": "isEmpty",
+            "NOT_IS_EMPTY": "notIsEmpty",
         },
     }
 
@@ -104,10 +107,10 @@ class SyntheticsCheckType(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Type of assertion to apply in an API test.., must be one of ["equals", "notEquals", "contains", "notContains", "startsWith", "notStartsWith", "greater", "lower", "greaterEquals", "lowerEquals", "matchRegex", ]  # noqa: E501
+            args[0] (str): Type of assertion to apply in an API test.., must be one of ["equals", "notEquals", "contains", "notContains", "startsWith", "notStartsWith", "greater", "lower", "greaterEquals", "lowerEquals", "matchRegex", "between", "isEmpty", "notIsEmpty", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Type of assertion to apply in an API test.., must be one of ["equals", "notEquals", "contains", "notContains", "startsWith", "notStartsWith", "greater", "lower", "greaterEquals", "lowerEquals", "matchRegex", ]  # noqa: E501
+            value (str): Type of assertion to apply in an API test.., must be one of ["equals", "notEquals", "contains", "notContains", "startsWith", "notStartsWith", "greater", "lower", "greaterEquals", "lowerEquals", "matchRegex", "between", "isEmpty", "notIsEmpty", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
