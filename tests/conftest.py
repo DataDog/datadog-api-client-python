@@ -2,6 +2,7 @@
 """Define basic fixtures."""
 
 import os
+from datadog_api_client.v1.api_client import ApiClient
 
 # First patch httplib
 tracer = None
@@ -476,6 +477,9 @@ def execute_request(undo, context, client):
             *api_request["args"], **api_request["kwargs"]
         )
         client.last_response.urllib3_response.close()
+        # Reserialise the response body to JSON to facilitate test assertions
+        response_body_json = ApiClient.sanitize_for_serialization(response[0])
+        api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions
         # Instead of finding the response class of the method, we use the fact that all
