@@ -81,10 +81,12 @@ class SyntheticsTestOptions(ModelNormal):
             "accept_self_signed": (bool,),  # noqa: E501
             "allow_insecure": (bool,),  # noqa: E501
             "device_ids": ([SyntheticsDeviceID],),  # noqa: E501
+            "disable_cors": (bool,),  # noqa: E501
             "follow_redirects": (bool,),  # noqa: E501
             "min_failure_duration": (int,),  # noqa: E501
             "min_location_failed": (int,),  # noqa: E501
             "monitor_options": (SyntheticsTestOptionsMonitorOptions,),  # noqa: E501
+            "no_screenshot": (bool,),  # noqa: E501
             "retry": (SyntheticsTestOptionsRetry,),  # noqa: E501
             "tick_every": (SyntheticsTickInterval,),  # noqa: E501
         }
@@ -97,10 +99,12 @@ class SyntheticsTestOptions(ModelNormal):
         "accept_self_signed": "accept_self_signed",  # noqa: E501
         "allow_insecure": "allow_insecure",  # noqa: E501
         "device_ids": "device_ids",  # noqa: E501
+        "disable_cors": "disableCors",  # noqa: E501
         "follow_redirects": "follow_redirects",  # noqa: E501
         "min_failure_duration": "min_failure_duration",  # noqa: E501
         "min_location_failed": "min_location_failed",  # noqa: E501
         "monitor_options": "monitor_options",  # noqa: E501
+        "no_screenshot": "noScreenshot",  # noqa: E501
         "retry": "retry",  # noqa: E501
         "tick_every": "tick_every",  # noqa: E501
     }
@@ -156,10 +160,12 @@ class SyntheticsTestOptions(ModelNormal):
             accept_self_signed (bool): For SSL test, whether or not the test should allow self signed certificates.. [optional]  # noqa: E501
             allow_insecure (bool): Allows loading insecure content for an HTTP request.. [optional]  # noqa: E501
             device_ids ([SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]  # noqa: E501
+            disable_cors (bool): Whether or not to disable CORS mechanism.. [optional]  # noqa: E501
             follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]  # noqa: E501
             min_failure_duration (int): Minimum amount of time in failure required to trigger an alert.. [optional]  # noqa: E501
             min_location_failed (int): Minimum number of locations in failure required to trigger an alert.. [optional]  # noqa: E501
             monitor_options (SyntheticsTestOptionsMonitorOptions): [optional]  # noqa: E501
+            no_screenshot (bool): Prevents saving screenshots of the steps.. [optional]  # noqa: E501
             retry (SyntheticsTestOptionsRetry): [optional]  # noqa: E501
             tick_every (SyntheticsTickInterval): [optional]  # noqa: E501
         """

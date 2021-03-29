@@ -72,6 +72,7 @@ class SyntheticsAPITestResultShortResult(ModelNormal):
         """
         lazy_import()
         return {
+            "passed": (bool,),  # noqa: E501
             "timings": (SyntheticsTiming,),  # noqa: E501
         }
 
@@ -80,6 +81,7 @@ class SyntheticsAPITestResultShortResult(ModelNormal):
         return None
 
     attribute_map = {
+        "passed": "passed",  # noqa: E501
         "timings": "timings",  # noqa: E501
     }
 
@@ -131,6 +133,7 @@ class SyntheticsAPITestResultShortResult(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            passed (bool): Describes if the test run has passed or failed.. [optional]  # noqa: E501
             timings (SyntheticsTiming): [optional]  # noqa: E501
         """
 
