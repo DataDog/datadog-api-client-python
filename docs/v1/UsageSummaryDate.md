@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **aws_lambda_invocations_sum** | **int** | Shows the sum of all AWS Lambda invocations over all hours in the current date for all organizations. | [optional] 
 **azure_app_service_top99p** | **int** | Shows the 99th percentile of all Azure app services over all hours in the current date for all organizations. | [optional] 
 **billable_ingested_bytes_sum** | **int** | Shows the sum of all log bytes ingested over all hours in the current date for all organizations. | [optional] 
+**compliance_container_count_sum** | **bool, date, datetime, dict, float, int, list, str, none_type** | Shows the sum of compliance containers over all hours in the current date for all organizations. | [optional] 
+**compliance_host_count_sum** | **int** | Shows the sum of compliance hosts over all hours in the current date for all organizations. | [optional] 
 **container_avg** | **int** | Shows the average of all distinct containers over all hours in the current date for all organizations. | [optional] 
 **container_hwm** | **int** | Shows the high-water mark of all distinct containers over all hours in the current date for all organizations. | [optional] 
 **custom_ts_avg** | **int** | Shows the average number of distinct custom metrics over all hours in the current date for all organizations. | [optional] 
