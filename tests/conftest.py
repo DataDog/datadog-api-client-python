@@ -286,13 +286,13 @@ def freezer(default_cassette_name, record_mode, vcr):
 @given('a valid "apiKeyAuth" key in the system')
 def a_valid_api_key(configuration):
     """a valid API key."""
-    configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "")
+    configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
 
 
 @given('a valid "appKeyAuth" key in the system')
 def a_valid_application_key(configuration):
     """a valid Application key."""
-    configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "")
+    configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
 
 
 @pytest.fixture
@@ -398,8 +398,8 @@ def build_given(version, operation):
 
         # make sure we have a fresh instance of API client and configuration
         configuration = build_configuration(importlib.import_module(package_name))
-        configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "")
-        configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "")
+        configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
+        configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
 
         # enable unstable operation
         configuration.unstable_operations[operation_name] = True
@@ -482,7 +482,7 @@ def execute_request(undo, context, client):
     exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
 
     try:
-        api_request["response"] = api_request["request"].call_with_http_info(
+        api_request["response"] = api_request["request"](
             *api_request["args"], **api_request["kwargs"]
         )
         client.last_response.urllib3_response.close()
@@ -494,7 +494,7 @@ def execute_request(undo, context, client):
         return
 
     api = api_request["api"]
-    operation_id = api_request["request"].settings["operation_id"]
+    operation_id = api_request["request"].__name__
     response = api_request["response"][0]
 
     context["undo_operations"].append(lambda: undo(api, operation_id, response))

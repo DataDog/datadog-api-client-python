@@ -53,16 +53,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -147,16 +137,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -237,16 +217,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -286,6 +256,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -328,6 +299,7 @@ with ApiClient(configuration) as api_client:
                         headers=SyntheticsTestHeaders(SyntheticsTestHeaders),
                         host="host_example",
                         method=HTTPMethod("GET"),
+                        no_saving_response_body=True,
                         port=1,
                         query={},
                         timeout=3.14,
@@ -349,12 +321,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -431,16 +405,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -472,6 +436,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -499,12 +464,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -589,16 +556,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -638,6 +595,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -665,12 +623,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -756,16 +716,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -832,16 +782,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -905,16 +845,6 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -984,16 +914,6 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -1081,16 +1001,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1156,16 +1066,6 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -1250,16 +1150,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1328,16 +1218,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1403,16 +1283,6 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -1497,16 +1367,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1575,16 +1435,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1651,16 +1501,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1725,16 +1565,6 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -1802,16 +1632,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1871,16 +1691,6 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -1943,16 +1753,6 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -2061,16 +1861,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -2111,6 +1901,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -2153,6 +1944,7 @@ with ApiClient(configuration) as api_client:
                         headers=SyntheticsTestHeaders(SyntheticsTestHeaders),
                         host="host_example",
                         method=HTTPMethod("GET"),
+                        no_saving_response_body=True,
                         port=1,
                         query={},
                         timeout=3.14,
@@ -2174,12 +1966,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -2257,16 +2051,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -2299,6 +2083,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -2326,12 +2111,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -2417,16 +2204,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -2508,16 +2285,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -2558,6 +2325,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 host="host_example",
                 method=HTTPMethod("GET"),
+                no_saving_response_body=True,
                 port=1,
                 query={},
                 timeout=3.14,
@@ -2585,12 +2353,14 @@ with ApiClient(configuration) as api_client:
             device_ids=[
                 SyntheticsDeviceID("laptop_large"),
             ],
+            disable_cors=True,
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
@@ -2676,16 +2446,6 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:

@@ -36,56 +36,7 @@ class IncidentTeamsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_incident_team(self, body, **kwargs):
-            """Create a new incident team  # noqa: E501
-
-            Creates a new incident team.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_incident_team(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (IncidentTeamCreateRequest): Incident Team Payload.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                IncidentTeamResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_incident_team = _Endpoint(
+        self._create_incident_team_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTeamResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -119,59 +70,9 @@ class IncidentTeamsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_incident_team,
         )
 
-        def __delete_incident_team(self, team_id, **kwargs):
-            """Delete an existing incident team  # noqa: E501
-
-            Deletes an existing incident team.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_incident_team(team_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                team_id (str): The ID of the incident team.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["team_id"] = team_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_incident_team = _Endpoint(
+        self._delete_incident_team_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -210,60 +111,9 @@ class IncidentTeamsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_incident_team,
         )
 
-        def __get_incident_team(self, team_id, **kwargs):
-            """Get details of an incident team  # noqa: E501
-
-            Get details of an incident team. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_incident_team(team_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                team_id (str): The ID of the incident team.
-
-            Keyword Args:
-                include (IncidentRelatedObject): Specifies which types of related objects should be included in the response.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                IncidentTeamResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["team_id"] = team_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_incident_team = _Endpoint(
+        self._get_incident_team_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTeamResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -306,60 +156,9 @@ class IncidentTeamsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_incident_team,
         )
 
-        def __list_incident_teams(self, **kwargs):
-            """Get a list of all incident teams  # noqa: E501
-
-            Get all incident teams for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_incident_teams(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                include (IncidentRelatedObject): Specifies which types of related objects should be included in the response.. [optional]
-                page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-                page_offset (int): Specific offset to use as the beginning of the returned page.. [optional] if omitted the server will use the default value of 0
-                filter (str): A search query that filters teams by name.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                IncidentTeamsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_incident_teams = _Endpoint(
+        self._list_incident_teams_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTeamsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -408,61 +207,9 @@ class IncidentTeamsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_incident_teams,
         )
 
-        def __update_incident_team(self, team_id, body, **kwargs):
-            """Update an existing incident team  # noqa: E501
-
-            Updates an existing incident team. Only provide the attributes which should be updated as this request is a partial update.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_incident_team(team_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                team_id (str): The ID of the incident team.
-                body (IncidentTeamUpdateRequest): Incident Team Payload.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                IncidentTeamResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["team_id"] = team_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_incident_team = _Endpoint(
+        self._update_incident_team_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTeamResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -502,5 +249,223 @@ class IncidentTeamsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_incident_team,
         )
+
+    def create_incident_team(self, body, **kwargs):
+        """Create a new incident team  # noqa: E501
+
+        Creates a new incident team.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_incident_team(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (IncidentTeamCreateRequest): Incident Team Payload.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            IncidentTeamResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_incident_team_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_incident_team_endpoint.call_with_http_info(**kwargs)
+
+    def delete_incident_team(self, team_id, **kwargs):
+        """Delete an existing incident team  # noqa: E501
+
+        Deletes an existing incident team.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_incident_team(team_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            team_id (str): The ID of the incident team.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_incident_team_endpoint.default_arguments(kwargs)
+        kwargs["team_id"] = team_id
+        return self._delete_incident_team_endpoint.call_with_http_info(**kwargs)
+
+    def get_incident_team(self, team_id, **kwargs):
+        """Get details of an incident team  # noqa: E501
+
+        Get details of an incident team. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_incident_team(team_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            team_id (str): The ID of the incident team.
+
+        Keyword Args:
+            include (IncidentRelatedObject): Specifies which types of related objects should be included in the response.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            IncidentTeamResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_incident_team_endpoint.default_arguments(kwargs)
+        kwargs["team_id"] = team_id
+        return self._get_incident_team_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_teams(self, **kwargs):
+        """Get a list of all incident teams  # noqa: E501
+
+        Get all incident teams for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident teams.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_incident_teams(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            include (IncidentRelatedObject): Specifies which types of related objects should be included in the response.. [optional]
+            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
+            page_offset (int): Specific offset to use as the beginning of the returned page.. [optional] if omitted the server will use the default value of 0
+            filter (str): A search query that filters teams by name.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            IncidentTeamsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_incident_teams_endpoint.default_arguments(kwargs)
+        return self._list_incident_teams_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_team(self, team_id, body, **kwargs):
+        """Update an existing incident team  # noqa: E501
+
+        Updates an existing incident team. Only provide the attributes which should be updated as this request is a partial update.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_incident_team(team_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            team_id (str): The ID of the incident team.
+            body (IncidentTeamUpdateRequest): Incident Team Payload.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            IncidentTeamResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_incident_team_endpoint.default_arguments(kwargs)
+        kwargs["team_id"] = team_id
+        kwargs["body"] = body
+        return self._update_incident_team_endpoint.call_with_http_info(**kwargs)

@@ -34,56 +34,7 @@ class EventsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __get_event(self, event_id, **kwargs):
-            """Get an event  # noqa: E501
-
-            This endpoint allows you to query for event details.  **Note**: If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_event(event_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                event_id (int): The ID of the event.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                EventResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["event_id"] = event_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_event = _Endpoint(
+        self._get_event_endpoint = _Endpoint(
             settings={
                 "response_type": (EventResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -122,65 +73,9 @@ class EventsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_event,
         )
 
-        def __list_events(self, start, end, **kwargs):
-            """Query the event stream  # noqa: E501
-
-            The event stream can be queried and filtered by time, priority, sources and tags.  **Notes**: - If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  - This endpoint returns a maximum of `1000` most recent results. To return additional results, identify the last timestamp of the last result and set that as the `end` query time to paginate the results.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_events(start, end, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start (int): POSIX timestamp.
-                end (int): POSIX timestamp.
-
-            Keyword Args:
-                priority (EventPriority): Priority of your events, either `low` or `normal`.. [optional]
-                sources (str): A comma separated string of sources.. [optional]
-                tags (str): A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.. [optional]
-                unaggregated (bool): Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                EventListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start"] = start
-            kwargs["end"] = end
-            return self.call_with_http_info(**kwargs)
-
-        self.list_events = _Endpoint(
+        self._list_events_endpoint = _Endpoint(
             settings={
                 "response_type": (EventListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -240,5 +135,96 @@ class EventsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_events,
         )
+
+    def get_event(self, event_id, **kwargs):
+        """Get an event  # noqa: E501
+
+        This endpoint allows you to query for event details.  **Note**: If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_event(event_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            event_id (int): The ID of the event.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EventResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_event_endpoint.default_arguments(kwargs)
+        kwargs["event_id"] = event_id
+        return self._get_event_endpoint.call_with_http_info(**kwargs)
+
+    def list_events(self, start, end, **kwargs):
+        """Query the event stream  # noqa: E501
+
+        The event stream can be queried and filtered by time, priority, sources and tags.  **Notes**: - If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  - This endpoint returns a maximum of `1000` most recent results. To return additional results, identify the last timestamp of the last result and set that as the `end` query time to paginate the results.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_events(start, end, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start (int): POSIX timestamp.
+            end (int): POSIX timestamp.
+
+        Keyword Args:
+            priority (EventPriority): Priority of your events, either `low` or `normal`.. [optional]
+            sources (str): A comma separated string of sources.. [optional]
+            tags (str): A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.. [optional]
+            unaggregated (bool): Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EventListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_events_endpoint.default_arguments(kwargs)
+        kwargs["start"] = start
+        kwargs["end"] = end
+        return self._list_events_endpoint.call_with_http_info(**kwargs)

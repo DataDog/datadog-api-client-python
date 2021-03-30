@@ -62,57 +62,7 @@ class UsageMeteringApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __get_daily_custom_reports(self, **kwargs):
-            """Get the list of available daily custom reports  # noqa: E501
-
-            Get daily custom reports.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_daily_custom_reports(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                page_size (int): The number of files to return in the response. `[default=60]`.. [optional]
-                page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.. [optional]
-                sort_dir (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
-                sort (UsageSort): The field to sort by: `[computed_on, size, start_date, end_date]`.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageCustomReportsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.get_daily_custom_reports = _Endpoint(
+        self._get_daily_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCustomReportsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -161,60 +111,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_daily_custom_reports,
         )
 
-        def __get_incident_management(self, start_hr, **kwargs):
-            """Get hourly usage for incident management  # noqa: E501
-
-            Get hourly usage for incident management.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_incident_management(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageIncidentManagementResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_incident_management = _Endpoint(
+        self._get_incident_management_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIncidentManagementResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -257,60 +156,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_incident_management,
         )
 
-        def __get_ingested_spans(self, start_hr, **kwargs):
-            """Get hourly usage for ingested spans  # noqa: E501
-
-            Get hourly usage for ingested spans.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_ingested_spans(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageIngestedSpansResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_ingested_spans = _Endpoint(
+        self._get_ingested_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIngestedSpansResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -353,60 +201,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_ingested_spans,
         )
 
-        def __get_monthly_custom_reports(self, **kwargs):
-            """Get the list of available monthly custom reports  # noqa: E501
-
-            Get monthly custom reports.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_monthly_custom_reports(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                page_size (int): The number of files to return in the response `[default=60].`. [optional]
-                page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.. [optional]
-                sort_dir (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
-                sort (UsageSort): The field to sort by: `[computed_on, size, start_date, end_date]`.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageCustomReportsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.get_monthly_custom_reports = _Endpoint(
+        self._get_monthly_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCustomReportsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -455,59 +252,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_monthly_custom_reports,
         )
 
-        def __get_specified_daily_custom_reports(self, report_id, **kwargs):
-            """Get specified daily custom reports  # noqa: E501
-
-            Get specified daily custom reports.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_specified_daily_custom_reports(report_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                report_id (str): The specified ID to search results for.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageSpecifiedCustomReportsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["report_id"] = report_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_specified_daily_custom_reports = _Endpoint(
+        self._get_specified_daily_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSpecifiedCustomReportsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -546,59 +293,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_specified_daily_custom_reports,
         )
 
-        def __get_specified_monthly_custom_reports(self, report_id, **kwargs):
-            """Get specified monthly custom reports  # noqa: E501
-
-            Get specified monthly custom reports.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_specified_monthly_custom_reports(report_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                report_id (str): The specified ID to search results for.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageSpecifiedCustomReportsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["report_id"] = report_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_specified_monthly_custom_reports = _Endpoint(
+        self._get_specified_monthly_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSpecifiedCustomReportsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -637,60 +334,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_specified_monthly_custom_reports,
         )
 
-        def __get_tracing_without_limits(self, start_hr, **kwargs):
-            """Get hourly usage for tracing without limits  # noqa: E501
-
-            Get hourly usage for tracing without limits.  **Note** This endpoint has been renamed to `/api/v1/usage/ingested-spans`.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_tracing_without_limits(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageTracingWithoutLimitsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_tracing_without_limits = _Endpoint(
+        self._get_tracing_without_limits_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageTracingWithoutLimitsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -733,60 +379,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_tracing_without_limits,
         )
 
-        def __get_usage_analyzed_logs(self, start_hr, **kwargs):
-            """Get hourly usage for analyzed logs  # noqa: E501
-
-            Get hourly usage for analyzed logs (Security Monitoring).  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_analyzed_logs(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageAnalyzedLogsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_analyzed_logs = _Endpoint(
+        self._get_usage_analyzed_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageAnalyzedLogsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -829,64 +424,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_analyzed_logs,
         )
 
-        def __get_usage_attribution(self, start_month, fields, **kwargs):
-            """Get Usage Attribution  # noqa: E501
-
-            Get Usage Attribution.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_attribution(start_month, fields, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
-                fields (str): The specified field to search results for.
-
-            Keyword Args:
-                end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
-                sort_direction (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
-                sort_name (UsageAttributionSort): The field to sort by.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageAttributionResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_month"] = start_month
-            kwargs["fields"] = fields
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_attribution = _Endpoint(
+        self._get_usage_attribution_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageAttributionResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -942,57 +482,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_attribution,
         )
 
-        def __get_usage_billable_summary(self, **kwargs):
-            """Get billable usage across your account  # noqa: E501
-
-            Get billable usage across your account.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_billable_summary(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageBillableSummaryResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_billable_summary = _Endpoint(
+        self._get_usage_billable_summary_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageBillableSummaryResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1029,60 +521,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_billable_summary,
         )
 
-        def __get_usage_compliance_monitoring(self, start_hr, **kwargs):
-            """Get hourly usage for Compliance Monitoring  # noqa: E501
-
-            Get hourly usage for Compliance Monitoring.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_compliance_monitoring(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageComplianceResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_compliance_monitoring = _Endpoint(
+        self._get_usage_compliance_monitoring_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageComplianceResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1125,60 +566,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_compliance_monitoring,
         )
 
-        def __get_usage_fargate(self, start_hr, **kwargs):
-            """Get hourly usage for Fargate  # noqa: E501
-
-            Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_fargate/).  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_fargate(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageFargateResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_fargate = _Endpoint(
+        self._get_usage_fargate_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageFargateResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1221,60 +611,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_fargate,
         )
 
-        def __get_usage_hosts(self, start_hr, **kwargs):
-            """Get hourly usage for hosts and containers  # noqa: E501
-
-            Get hourly usage for hosts and containers.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_hosts(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageHostsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_hosts = _Endpoint(
+        self._get_usage_hosts_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageHostsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1317,60 +656,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_hosts,
         )
 
-        def __get_usage_indexed_spans(self, start_hr, **kwargs):
-            """Get hourly usage for indexed spans  # noqa: E501
-
-            Get hourly usage for indexed spans.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_indexed_spans(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageIndexedSpansResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_indexed_spans = _Endpoint(
+        self._get_usage_indexed_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIndexedSpansResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1413,60 +701,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_indexed_spans,
         )
 
-        def __get_usage_internet_of_things(self, start_hr, **kwargs):
-            """Get hourly usage for IoT  # noqa: E501
-
-            Get hourly usage for IoT.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_internet_of_things(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageIoTResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_internet_of_things = _Endpoint(
+        self._get_usage_internet_of_things_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIoTResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1509,60 +746,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_internet_of_things,
         )
 
-        def __get_usage_lambda(self, start_hr, **kwargs):
-            """Get hourly usage for Lambda  # noqa: E501
-
-            Get hourly usage for lambda.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_lambda(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageLambdaResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_lambda = _Endpoint(
+        self._get_usage_lambda_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLambdaResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1605,60 +791,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_lambda,
         )
 
-        def __get_usage_logs(self, start_hr, **kwargs):
-            """Get hourly usage for Logs  # noqa: E501
-
-            Get hourly usage for logs.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_logs(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageLogsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_logs = _Endpoint(
+        self._get_usage_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLogsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1701,61 +836,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_logs,
         )
 
-        def __get_usage_logs_by_index(self, start_hr, **kwargs):
-            """Get hourly usage for Logs by Index  # noqa: E501
-
-            Get hourly usage for logs by index.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_logs_by_index(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                index_name ([str]): Comma-separated list of log index names.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageLogsByIndexResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_logs_by_index = _Endpoint(
+        self._get_usage_logs_by_index_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLogsByIndexResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1804,60 +887,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_logs_by_index,
         )
 
-        def __get_usage_network_flows(self, start_hr, **kwargs):
-            """Get hourly usage for Network Flows  # noqa: E501
-
-            Get hourly usage for network flows.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_network_flows(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageNetworkFlowsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_network_flows = _Endpoint(
+        self._get_usage_network_flows_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageNetworkFlowsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1900,60 +932,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_network_flows,
         )
 
-        def __get_usage_network_hosts(self, start_hr, **kwargs):
-            """Get hourly usage for Network Hosts  # noqa: E501
-
-            Get hourly usage for network hosts.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_network_hosts(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageNetworkHostsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_network_hosts = _Endpoint(
+        self._get_usage_network_hosts_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageNetworkHostsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1996,60 +977,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_network_hosts,
         )
 
-        def __get_usage_profiling(self, start_hr, **kwargs):
-            """Get hourly usage for profiled hosts  # noqa: E501
-
-            Get hourly usage for profiled hosts.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_profiling(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageProfilingResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_profiling = _Endpoint(
+        self._get_usage_profiling_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageProfilingResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -2092,61 +1022,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_profiling,
         )
 
-        def __get_usage_rum_sessions(self, start_hr, **kwargs):
-            """Get hourly usage for RUM Sessions  # noqa: E501
-
-            Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Sessions.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_rum_sessions(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                type (str): RUM type: `[browser, mobile]`. Defaults to `browser`.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageRumSessionsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_rum_sessions = _Endpoint(
+        self._get_usage_rum_sessions_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageRumSessionsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -2193,60 +1071,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_rum_sessions,
         )
 
-        def __get_usage_snmp(self, start_hr, **kwargs):
-            """Get hourly usage for SNMP devices  # noqa: E501
-
-            Get hourly usage for SNMP devices.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_snmp(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageSNMPResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_snmp = _Endpoint(
+        self._get_usage_snmp_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSNMPResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -2289,61 +1116,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_snmp,
         )
 
-        def __get_usage_summary(self, start_month, **kwargs):
-            """Get usage across your multi-org account  # noqa: E501
-
-            Get usage across your multi-org account. You must have the multi-org feature enabled.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_summary(start_month, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
-
-            Keyword Args:
-                end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
-                include_org_details (bool): Include usage summaries for each sub-org.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageSummaryResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_month"] = start_month
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_summary = _Endpoint(
+        self._get_usage_summary_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSummaryResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -2390,60 +1165,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_summary,
         )
 
-        def __get_usage_synthetics(self, start_hr, **kwargs):
-            """Get hourly usage for Synthetics Checks  # noqa: E501
-
-            Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/).  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_synthetics(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageSyntheticsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_synthetics = _Endpoint(
+        self._get_usage_synthetics_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSyntheticsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -2486,60 +1210,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_synthetics,
         )
 
-        def __get_usage_synthetics_api(self, start_hr, **kwargs):
-            """Get hourly usage for Synthetics API Checks  # noqa: E501
-
-            Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/synthetics/).  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_synthetics_api(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageSyntheticsAPIResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_synthetics_api = _Endpoint(
+        self._get_usage_synthetics_api_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSyntheticsAPIResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -2582,60 +1255,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_synthetics_api,
         )
 
-        def __get_usage_synthetics_browser(self, start_hr, **kwargs):
-            """Get hourly usage for Synthetics Browser Checks  # noqa: E501
-
-            Get hourly usage for synthetics browser checks.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_synthetics_browser(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageSyntheticsBrowserResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_synthetics_browser = _Endpoint(
+        self._get_usage_synthetics_browser_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSyntheticsBrowserResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -2678,60 +1300,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_synthetics_browser,
         )
 
-        def __get_usage_timeseries(self, start_hr, **kwargs):
-            """Get hourly usage for custom metrics  # noqa: E501
-
-            Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/).  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_timeseries(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageTimeseriesResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_timeseries = _Endpoint(
+        self._get_usage_timeseries_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageTimeseriesResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -2774,60 +1345,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_timeseries,
         )
 
-        def __get_usage_top_avg_metrics(self, **kwargs):
-            """Get top custom metrics by hourly average  # noqa: E501
-
-            Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_top_avg_metrics(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                month (datetime): Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. (Either month or day should be specified, but not both). [optional]
-                day (datetime): Datetime in ISO-8601 format, UTC, precise to day: [YYYY-MM-DD] for usage beginning at this hour. (Either month or day should be specified, but not both). [optional]
-                names ([str]): Comma-separated list of metric names.. [optional]
-                limit (int): Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified.. [optional] if omitted the server will use the default value of 500
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageTopAvgMetricsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_top_avg_metrics = _Endpoint(
+        self._get_usage_top_avg_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageTopAvgMetricsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -2885,60 +1405,9 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_top_avg_metrics,
         )
 
-        def __get_usage_trace(self, start_hr, **kwargs):
-            """Get hourly usage for Trace Search  # noqa: E501
-
-            Get hourly usage for trace search.  **Note** This endpoint has been renamed to `/api/v1/usage/indexed-spans`.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_usage_trace(start_hr, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-            Keyword Args:
-                end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsageTraceResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["start_hr"] = start_hr
-            return self.call_with_http_info(**kwargs)
-
-        self.get_usage_trace = _Endpoint(
+        self._get_usage_trace_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageTraceResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -2981,5 +1450,1326 @@ class UsageMeteringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_usage_trace,
         )
+
+    def get_daily_custom_reports(self, **kwargs):
+        """Get the list of available daily custom reports  # noqa: E501
+
+        Get daily custom reports.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_daily_custom_reports(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            page_size (int): The number of files to return in the response. `[default=60]`.. [optional]
+            page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.. [optional]
+            sort_dir (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
+            sort (UsageSort): The field to sort by: `[computed_on, size, start_date, end_date]`.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageCustomReportsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_daily_custom_reports_endpoint.default_arguments(kwargs)
+        return self._get_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
+
+    def get_incident_management(self, start_hr, **kwargs):
+        """Get hourly usage for incident management  # noqa: E501
+
+        Get hourly usage for incident management.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_incident_management(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageIncidentManagementResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_incident_management_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_incident_management_endpoint.call_with_http_info(**kwargs)
+
+    def get_ingested_spans(self, start_hr, **kwargs):
+        """Get hourly usage for ingested spans  # noqa: E501
+
+        Get hourly usage for ingested spans.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_ingested_spans(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageIngestedSpansResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_ingested_spans_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_ingested_spans_endpoint.call_with_http_info(**kwargs)
+
+    def get_monthly_custom_reports(self, **kwargs):
+        """Get the list of available monthly custom reports  # noqa: E501
+
+        Get monthly custom reports.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_monthly_custom_reports(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            page_size (int): The number of files to return in the response `[default=60].`. [optional]
+            page_number (int): The identifier of the first page to return. This parameter is used for the pagination feature `[default=0]`.. [optional]
+            sort_dir (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
+            sort (UsageSort): The field to sort by: `[computed_on, size, start_date, end_date]`.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageCustomReportsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_monthly_custom_reports_endpoint.default_arguments(kwargs)
+        return self._get_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
+
+    def get_specified_daily_custom_reports(self, report_id, **kwargs):
+        """Get specified daily custom reports  # noqa: E501
+
+        Get specified daily custom reports.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_specified_daily_custom_reports(report_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            report_id (str): The specified ID to search results for.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageSpecifiedCustomReportsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_specified_daily_custom_reports_endpoint.default_arguments(kwargs)
+        kwargs["report_id"] = report_id
+        return self._get_specified_daily_custom_reports_endpoint.call_with_http_info(**kwargs)
+
+    def get_specified_monthly_custom_reports(self, report_id, **kwargs):
+        """Get specified monthly custom reports  # noqa: E501
+
+        Get specified monthly custom reports.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_specified_monthly_custom_reports(report_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            report_id (str): The specified ID to search results for.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageSpecifiedCustomReportsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_specified_monthly_custom_reports_endpoint.default_arguments(kwargs)
+        kwargs["report_id"] = report_id
+        return self._get_specified_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
+
+    def get_tracing_without_limits(self, start_hr, **kwargs):
+        """Get hourly usage for tracing without limits  # noqa: E501
+
+        Get hourly usage for tracing without limits.  **Note** This endpoint has been renamed to `/api/v1/usage/ingested-spans`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_tracing_without_limits(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageTracingWithoutLimitsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_tracing_without_limits_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_tracing_without_limits_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_analyzed_logs(self, start_hr, **kwargs):
+        """Get hourly usage for analyzed logs  # noqa: E501
+
+        Get hourly usage for analyzed logs (Security Monitoring).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_analyzed_logs(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageAnalyzedLogsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_analyzed_logs_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_analyzed_logs_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_attribution(self, start_month, fields, **kwargs):
+        """Get Usage Attribution  # noqa: E501
+
+        Get Usage Attribution.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_attribution(start_month, fields, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+            fields (str): The specified field to search results for.
+
+        Keyword Args:
+            end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
+            sort_direction (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
+            sort_name (UsageAttributionSort): The field to sort by.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageAttributionResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_attribution_endpoint.default_arguments(kwargs)
+        kwargs["start_month"] = start_month
+        kwargs["fields"] = fields
+        return self._get_usage_attribution_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_billable_summary(self, **kwargs):
+        """Get billable usage across your account  # noqa: E501
+
+        Get billable usage across your account.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_billable_summary(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage starting this month.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageBillableSummaryResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_billable_summary_endpoint.default_arguments(kwargs)
+        return self._get_usage_billable_summary_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_compliance_monitoring(self, start_hr, **kwargs):
+        """Get hourly usage for Compliance Monitoring  # noqa: E501
+
+        Get hourly usage for Compliance Monitoring.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_compliance_monitoring(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageComplianceResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_compliance_monitoring_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_compliance_monitoring_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_fargate(self, start_hr, **kwargs):
+        """Get hourly usage for Fargate  # noqa: E501
+
+        Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_fargate/).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_fargate(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageFargateResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_fargate_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_fargate_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_hosts(self, start_hr, **kwargs):
+        """Get hourly usage for hosts and containers  # noqa: E501
+
+        Get hourly usage for hosts and containers.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_hosts(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageHostsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_hosts_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_hosts_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_indexed_spans(self, start_hr, **kwargs):
+        """Get hourly usage for indexed spans  # noqa: E501
+
+        Get hourly usage for indexed spans.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_indexed_spans(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageIndexedSpansResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_indexed_spans_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_indexed_spans_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_internet_of_things(self, start_hr, **kwargs):
+        """Get hourly usage for IoT  # noqa: E501
+
+        Get hourly usage for IoT.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_internet_of_things(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageIoTResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_internet_of_things_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_internet_of_things_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_lambda(self, start_hr, **kwargs):
+        """Get hourly usage for Lambda  # noqa: E501
+
+        Get hourly usage for lambda.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_lambda(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageLambdaResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_lambda_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_lambda_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_logs(self, start_hr, **kwargs):
+        """Get hourly usage for Logs  # noqa: E501
+
+        Get hourly usage for logs.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_logs(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageLogsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_logs_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_logs_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_logs_by_index(self, start_hr, **kwargs):
+        """Get hourly usage for Logs by Index  # noqa: E501
+
+        Get hourly usage for logs by index.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_logs_by_index(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            index_name ([str]): Comma-separated list of log index names.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageLogsByIndexResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_logs_by_index_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_logs_by_index_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_network_flows(self, start_hr, **kwargs):
+        """Get hourly usage for Network Flows  # noqa: E501
+
+        Get hourly usage for network flows.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_network_flows(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageNetworkFlowsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_network_flows_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_network_flows_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_network_hosts(self, start_hr, **kwargs):
+        """Get hourly usage for Network Hosts  # noqa: E501
+
+        Get hourly usage for network hosts.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_network_hosts(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageNetworkHostsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_network_hosts_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_network_hosts_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_profiling(self, start_hr, **kwargs):
+        """Get hourly usage for profiled hosts  # noqa: E501
+
+        Get hourly usage for profiled hosts.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_profiling(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageProfilingResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_profiling_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_profiling_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_rum_sessions(self, start_hr, **kwargs):
+        """Get hourly usage for RUM Sessions  # noqa: E501
+
+        Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/) Sessions.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_rum_sessions(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            type (str): RUM type: `[browser, mobile]`. Defaults to `browser`.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageRumSessionsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_rum_sessions_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_rum_sessions_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_snmp(self, start_hr, **kwargs):
+        """Get hourly usage for SNMP devices  # noqa: E501
+
+        Get hourly usage for SNMP devices.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_snmp(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageSNMPResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_snmp_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_snmp_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_summary(self, start_month, **kwargs):
+        """Get usage across your multi-org account  # noqa: E501
+
+        Get usage across your multi-org account. You must have the multi-org feature enabled.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_summary(start_month, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+
+        Keyword Args:
+            end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
+            include_org_details (bool): Include usage summaries for each sub-org.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageSummaryResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_summary_endpoint.default_arguments(kwargs)
+        kwargs["start_month"] = start_month
+        return self._get_usage_summary_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_synthetics(self, start_hr, **kwargs):
+        """Get hourly usage for Synthetics Checks  # noqa: E501
+
+        Get hourly usage for [Synthetics checks](https://docs.datadoghq.com/synthetics/).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_synthetics(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageSyntheticsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_synthetics_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_synthetics_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_synthetics_api(self, start_hr, **kwargs):
+        """Get hourly usage for Synthetics API Checks  # noqa: E501
+
+        Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/synthetics/).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_synthetics_api(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageSyntheticsAPIResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_synthetics_api_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_synthetics_api_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_synthetics_browser(self, start_hr, **kwargs):
+        """Get hourly usage for Synthetics Browser Checks  # noqa: E501
+
+        Get hourly usage for synthetics browser checks.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_synthetics_browser(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageSyntheticsBrowserResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_synthetics_browser_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_synthetics_browser_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_timeseries(self, start_hr, **kwargs):
+        """Get hourly usage for custom metrics  # noqa: E501
+
+        Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_timeseries(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageTimeseriesResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_timeseries_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_timeseries_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_top_avg_metrics(self, **kwargs):
+        """Get top custom metrics by hourly average  # noqa: E501
+
+        Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_top_avg_metrics(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            month (datetime): Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for usage beginning at this hour. (Either month or day should be specified, but not both). [optional]
+            day (datetime): Datetime in ISO-8601 format, UTC, precise to day: [YYYY-MM-DD] for usage beginning at this hour. (Either month or day should be specified, but not both). [optional]
+            names ([str]): Comma-separated list of metric names.. [optional]
+            limit (int): Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified.. [optional] if omitted the server will use the default value of 500
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageTopAvgMetricsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_top_avg_metrics_endpoint.default_arguments(kwargs)
+        return self._get_usage_top_avg_metrics_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_trace(self, start_hr, **kwargs):
+        """Get hourly usage for Trace Search  # noqa: E501
+
+        Get hourly usage for trace search.  **Note** This endpoint has been renamed to `/api/v1/usage/indexed-spans`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_trace(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageTraceResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_trace_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_trace_endpoint.call_with_http_info(**kwargs)

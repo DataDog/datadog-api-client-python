@@ -35,54 +35,7 @@ class HostsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __get_host_totals(self, **kwargs):
-            """Get the total number of active hosts  # noqa: E501
-
-            This endpoint returns the total number of active and up hosts in your Datadog account. Active means the host has reported in the past hour, and up means it has reported in the past two hours.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_host_totals(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                _from (int): Number of seconds from which you want to get total number of active hosts.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                HostTotals
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.get_host_totals = _Endpoint(
+        self._get_host_totals_endpoint = _Endpoint(
             settings={
                 "response_type": (HostTotals,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -119,64 +72,9 @@ class HostsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_host_totals,
         )
 
-        def __list_hosts(self, **kwargs):
-            """Get all hosts for your organization  # noqa: E501
-
-            This endpoint allows searching for hosts by name, alias, or tag. Hosts live within the past 3 hours are included by default. Retention is 7 days. Results are paginated with a max of 1000 results at a time.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_hosts(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                filter (str): String to filter search results.. [optional]
-                sort_field (str): Sort hosts by this field.. [optional]
-                sort_dir (str): Direction of sort. Options include `asc` and `desc`.. [optional]
-                start (int): Host result to start search from.. [optional]
-                count (int): Number of hosts to return. Max 1000.. [optional]
-                _from (int): Number of seconds since UNIX epoch from which you want to search your hosts.. [optional]
-                include_muted_hosts_data (bool): Include information on the muted status of hosts and when the mute expires.. [optional]
-                include_hosts_metadata (bool): Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.).. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                HostListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_hosts = _Endpoint(
+        self._list_hosts_endpoint = _Endpoint(
             settings={
                 "response_type": (HostListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -241,61 +139,9 @@ class HostsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_hosts,
         )
 
-        def __mute_host(self, host_name, body, **kwargs):
-            """Mute a host  # noqa: E501
-
-            Mute a host.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.mute_host(host_name, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                host_name (str): Name of the host to mute.
-                body (HostMuteSettings): Mute a host request body.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                HostMuteResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["host_name"] = host_name
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.mute_host = _Endpoint(
+        self._mute_host_endpoint = _Endpoint(
             settings={
                 "response_type": (HostMuteResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -335,59 +181,9 @@ class HostsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__mute_host,
         )
 
-        def __unmute_host(self, host_name, **kwargs):
-            """Unmute a host  # noqa: E501
-
-            Unmutes a host. This endpoint takes no JSON arguments.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.unmute_host(host_name, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                host_name (str): Name of the host to unmute.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                HostMuteResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["host_name"] = host_name
-            return self.call_with_http_info(**kwargs)
-
-        self.unmute_host = _Endpoint(
+        self._unmute_host_endpoint = _Endpoint(
             settings={
                 "response_type": (HostMuteResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -426,5 +222,181 @@ class HostsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__unmute_host,
         )
+
+    def get_host_totals(self, **kwargs):
+        """Get the total number of active hosts  # noqa: E501
+
+        This endpoint returns the total number of active and up hosts in your Datadog account. Active means the host has reported in the past hour, and up means it has reported in the past two hours.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_host_totals(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _from (int): Number of seconds from which you want to get total number of active hosts.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            HostTotals
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_host_totals_endpoint.default_arguments(kwargs)
+        return self._get_host_totals_endpoint.call_with_http_info(**kwargs)
+
+    def list_hosts(self, **kwargs):
+        """Get all hosts for your organization  # noqa: E501
+
+        This endpoint allows searching for hosts by name, alias, or tag. Hosts live within the past 3 hours are included by default. Retention is 7 days. Results are paginated with a max of 1000 results at a time.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_hosts(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            filter (str): String to filter search results.. [optional]
+            sort_field (str): Sort hosts by this field.. [optional]
+            sort_dir (str): Direction of sort. Options include `asc` and `desc`.. [optional]
+            start (int): Host result to start search from.. [optional]
+            count (int): Number of hosts to return. Max 1000.. [optional]
+            _from (int): Number of seconds since UNIX epoch from which you want to search your hosts.. [optional]
+            include_muted_hosts_data (bool): Include information on the muted status of hosts and when the mute expires.. [optional]
+            include_hosts_metadata (bool): Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.).. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            HostListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_hosts_endpoint.default_arguments(kwargs)
+        return self._list_hosts_endpoint.call_with_http_info(**kwargs)
+
+    def mute_host(self, host_name, body, **kwargs):
+        """Mute a host  # noqa: E501
+
+        Mute a host.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.mute_host(host_name, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            host_name (str): Name of the host to mute.
+            body (HostMuteSettings): Mute a host request body.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            HostMuteResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._mute_host_endpoint.default_arguments(kwargs)
+        kwargs["host_name"] = host_name
+        kwargs["body"] = body
+        return self._mute_host_endpoint.call_with_http_info(**kwargs)
+
+    def unmute_host(self, host_name, **kwargs):
+        """Unmute a host  # noqa: E501
+
+        Unmutes a host. This endpoint takes no JSON arguments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.unmute_host(host_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            host_name (str): Name of the host to unmute.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            HostMuteResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._unmute_host_endpoint.default_arguments(kwargs)
+        kwargs["host_name"] = host_name
+        return self._unmute_host_endpoint.call_with_http_info(**kwargs)

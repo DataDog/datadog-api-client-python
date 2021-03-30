@@ -34,56 +34,7 @@ class DashboardsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_dashboard(self, body, **kwargs):
-            """Create a new dashboard  # noqa: E501
-
-            Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the `as_count()` or `as_rate()` modifiers appended. Refer to the following [documentation](https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers) for more information on these modifiers.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_dashboard(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (Dashboard): Create a dashboard request body.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                Dashboard
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_dashboard = _Endpoint(
+        self._create_dashboard_endpoint = _Endpoint(
             settings={
                 "response_type": (Dashboard,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -117,59 +68,9 @@ class DashboardsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_dashboard,
         )
 
-        def __delete_dashboard(self, dashboard_id, **kwargs):
-            """Delete a dashboard  # noqa: E501
-
-            Delete a dashboard using the specified ID.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_dashboard(dashboard_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                dashboard_id (str): The ID of the dashboard.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                DashboardDeleteResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["dashboard_id"] = dashboard_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_dashboard = _Endpoint(
+        self._delete_dashboard_endpoint = _Endpoint(
             settings={
                 "response_type": (DashboardDeleteResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -208,59 +109,9 @@ class DashboardsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_dashboard,
         )
 
-        def __get_dashboard(self, dashboard_id, **kwargs):
-            """Get a dashboard  # noqa: E501
-
-            Get a dashboard using the specified ID.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_dashboard(dashboard_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                dashboard_id (str): The ID of the dashboard.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                Dashboard
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["dashboard_id"] = dashboard_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_dashboard = _Endpoint(
+        self._get_dashboard_endpoint = _Endpoint(
             settings={
                 "response_type": (Dashboard,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -299,56 +150,9 @@ class DashboardsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_dashboard,
         )
 
-        def __list_dashboards(self, **kwargs):
-            """Get all dashboards  # noqa: E501
-
-            Get all dashboards.  **Note**: This query will only return custom created or cloned dashboards. This query will not return preset dashboards.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_dashboards(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                DashboardSummary
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_dashboards = _Endpoint(
+        self._list_dashboards_endpoint = _Endpoint(
             settings={
                 "response_type": (DashboardSummary,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -371,61 +175,9 @@ class DashboardsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_dashboards,
         )
 
-        def __update_dashboard(self, dashboard_id, body, **kwargs):
-            """Update a dashboard  # noqa: E501
-
-            Update a dashboard using the specified ID.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_dashboard(dashboard_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                dashboard_id (str): The ID of the dashboard.
-                body (Dashboard): Update Dashboard request body.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                Dashboard
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["dashboard_id"] = dashboard_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_dashboard = _Endpoint(
+        self._update_dashboard_endpoint = _Endpoint(
             settings={
                 "response_type": (Dashboard,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -465,5 +217,218 @@ class DashboardsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_dashboard,
         )
+
+    def create_dashboard(self, body, **kwargs):
+        """Create a new dashboard  # noqa: E501
+
+        Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the `as_count()` or `as_rate()` modifiers appended. Refer to the following [documentation](https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers) for more information on these modifiers.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_dashboard(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (Dashboard): Create a dashboard request body.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Dashboard
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_dashboard_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_dashboard_endpoint.call_with_http_info(**kwargs)
+
+    def delete_dashboard(self, dashboard_id, **kwargs):
+        """Delete a dashboard  # noqa: E501
+
+        Delete a dashboard using the specified ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_dashboard(dashboard_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            dashboard_id (str): The ID of the dashboard.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            DashboardDeleteResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_dashboard_endpoint.default_arguments(kwargs)
+        kwargs["dashboard_id"] = dashboard_id
+        return self._delete_dashboard_endpoint.call_with_http_info(**kwargs)
+
+    def get_dashboard(self, dashboard_id, **kwargs):
+        """Get a dashboard  # noqa: E501
+
+        Get a dashboard using the specified ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_dashboard(dashboard_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            dashboard_id (str): The ID of the dashboard.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Dashboard
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_dashboard_endpoint.default_arguments(kwargs)
+        kwargs["dashboard_id"] = dashboard_id
+        return self._get_dashboard_endpoint.call_with_http_info(**kwargs)
+
+    def list_dashboards(self, **kwargs):
+        """Get all dashboards  # noqa: E501
+
+        Get all dashboards.  **Note**: This query will only return custom created or cloned dashboards. This query will not return preset dashboards.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_dashboards(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            DashboardSummary
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_dashboards_endpoint.default_arguments(kwargs)
+        return self._list_dashboards_endpoint.call_with_http_info(**kwargs)
+
+    def update_dashboard(self, dashboard_id, body, **kwargs):
+        """Update a dashboard  # noqa: E501
+
+        Update a dashboard using the specified ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_dashboard(dashboard_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            dashboard_id (str): The ID of the dashboard.
+            body (Dashboard): Update Dashboard request body.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Dashboard
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_dashboard_endpoint.default_arguments(kwargs)
+        kwargs["dashboard_id"] = dashboard_id
+        kwargs["body"] = body
+        return self._update_dashboard_endpoint.call_with_http_info(**kwargs)
