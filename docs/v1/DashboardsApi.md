@@ -32,16 +32,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -140,16 +130,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -215,16 +195,6 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -292,16 +262,6 @@ from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
 
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
-
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -362,16 +322,6 @@ from datadog_api_client.v1.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
-
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
-# Configure API key authorization: appKeyAuth
-configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
