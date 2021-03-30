@@ -2,6 +2,7 @@
 
 import copy
 import logging
+import os
 {{^asyncio}}
 import multiprocessing
 {{/asyncio}}
@@ -307,6 +308,18 @@ conf = {{{packageName}}}.Configuration(
         {{/apis}}
         {{/apiInfo}}
         }
+
+        # Load default values from environment
+        if "DD_SITE" in os.environ:
+            self.server_variables["site"] = os.environ["DD_SITE"]
+        {{#authMethods}}
+        {{#isApiKey}}
+        {{#isKeyInHeader}}
+        if "{{vendorExtensions.x-env-name}}" in os.environ:
+            self.api_key["{{name}}"] = os.environ["{{vendorExtensions.x-env-name}}"]
+        {{/isKeyInHeader}}
+        {{/isApiKey}}
+        {{/authMethods}}
 
     def __deepcopy__(self, memo):
         cls = self.__class__
