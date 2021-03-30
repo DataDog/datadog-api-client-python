@@ -5,6 +5,7 @@
 
 import copy
 import logging
+import os
 import multiprocessing
 import sys
 import urllib3
@@ -236,6 +237,14 @@ class Configuration(object):
             "get_specified_monthly_custom_reports": False,
             "get_usage_attribution": False,
         }
+
+        # Load default values from environment
+        if "DD_SITE" in os.environ:
+            self.server_variables["site"] = os.environ["DD_SITE"]
+        if "DD_API_KEY" in os.environ:
+            self.api_key["apiKeyAuth"] = os.environ["DD_API_KEY"]
+        if "DD_APP_KEY" in os.environ:
+            self.api_key["appKeyAuth"] = os.environ["DD_APP_KEY"]
 
     def __deepcopy__(self, memo):
         cls = self.__class__
