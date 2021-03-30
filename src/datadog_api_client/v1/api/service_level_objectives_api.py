@@ -40,56 +40,7 @@ class ServiceLevelObjectivesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __check_can_delete_slo(self, ids, **kwargs):
-            """Check if SLOs can be safely deleted  # noqa: E501
-
-            Check if an SLO can be safely deleted. For example, assure an SLO can be deleted without disrupting a dashboard.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.check_can_delete_slo(ids, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                ids (str): A comma separated list of the IDs of the service level objectives objects.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                CheckCanDeleteSLOResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["ids"] = ids
-            return self.call_with_http_info(**kwargs)
-
-        self.check_can_delete_slo = _Endpoint(
+        self._check_can_delete_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (CheckCanDeleteSLOResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -128,59 +79,9 @@ class ServiceLevelObjectivesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__check_can_delete_slo,
         )
 
-        def __create_slo(self, body, **kwargs):
-            """Create an SLO object  # noqa: E501
-
-            Create a service level objective object.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_slo(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (ServiceLevelObjectiveRequest): Service level objective request object.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLOListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_slo = _Endpoint(
+        self._create_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -214,60 +115,9 @@ class ServiceLevelObjectivesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_slo,
         )
 
-        def __delete_slo(self, slo_id, **kwargs):
-            """Delete an SLO  # noqa: E501
-
-            Permanently delete the specified service level objective object.  If an SLO is used in a dashboard, the `DELETE /v1/slo/` endpoint returns a 409 conflict error because the SLO is referenced in a dashboard.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_slo(slo_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                slo_id (str): The ID of the service level objective.
-
-            Keyword Args:
-                force (str): Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor).. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLODeleteResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["slo_id"] = slo_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_slo = _Endpoint(
+        self._delete_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (SLODeleteResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -310,59 +160,9 @@ class ServiceLevelObjectivesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_slo,
         )
 
-        def __delete_slo_timeframe_in_bulk(self, body, **kwargs):
-            """Bulk Delete SLO Timeframes  # noqa: E501
-
-            Delete (or partially delete) multiple service level objective objects.  This endpoint facilitates deletion of one or more thresholds for one or more service level objective objects. If all thresholds are deleted, the service level objective object is deleted as well.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_slo_timeframe_in_bulk(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (SLOBulkDelete): Delete multiple service level objective objects request body.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLOBulkDeleteResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_slo_timeframe_in_bulk = _Endpoint(
+        self._delete_slo_timeframe_in_bulk_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOBulkDeleteResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -396,59 +196,9 @@ class ServiceLevelObjectivesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__delete_slo_timeframe_in_bulk,
         )
 
-        def __get_slo(self, slo_id, **kwargs):
-            """Get an SLO's details  # noqa: E501
-
-            Get a service level objective object.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_slo(slo_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                slo_id (str): The ID of the service level objective object.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLOResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["slo_id"] = slo_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_slo = _Endpoint(
+        self._get_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -487,63 +237,9 @@ class ServiceLevelObjectivesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_slo,
         )
 
-        def __get_slo_history(self, slo_id, from_ts, to_ts, **kwargs):
-            """Get an SLO's history  # noqa: E501
-
-            Get a specific SLO’s history, regardless of its SLO type.  The detailed history data is structured according to the source data type. For example, metric data is included for event SLOs that use the metric source, and monitor SLO types include the monitor transition history.  **Note:** There are different response formats for event based and time based SLOs. Examples of both are shown.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_slo_history(slo_id, from_ts, to_ts, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                slo_id (str): The ID of the service level objective object.
-                from_ts (int): The `from` timestamp for the query window in epoch seconds.
-                to_ts (int): The `to` timestamp for the query window in epoch seconds.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLOHistoryResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["slo_id"] = slo_id
-            kwargs["from_ts"] = from_ts
-            kwargs["to_ts"] = to_ts
-            return self.call_with_http_info(**kwargs)
-
-        self.get_slo_history = _Endpoint(
+        self._get_slo_history_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOHistoryResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -592,60 +288,9 @@ class ServiceLevelObjectivesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_slo_history,
         )
 
-        def __list_slos(self, **kwargs):
-            """Get all SLOs  # noqa: E501
-
-            Get a list of service level objective objects for your organization.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_slos(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                ids (str): A comma separated list of the IDs of the service level objectives objects.. [optional]
-                query (str): The query string to filter results based on SLO names.. [optional]
-                tags_query (str): The query string to filter results based on a single SLO tag.. [optional]
-                metrics_query (str): The query string to filter results based on SLO numerator and denominator.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLOListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_slos = _Endpoint(
+        self._list_slos_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -694,61 +339,9 @@ class ServiceLevelObjectivesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_slos,
         )
 
-        def __update_slo(self, slo_id, body, **kwargs):
-            """Update an SLO  # noqa: E501
-
-            Update the specified service level objective object.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_slo(slo_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                slo_id (str): The ID of the service level objective object.
-                body (ServiceLevelObjective): The edited service level objective request object.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLOListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["slo_id"] = slo_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_slo = _Endpoint(
+        self._update_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -788,5 +381,356 @@ class ServiceLevelObjectivesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_slo,
         )
+
+    def check_can_delete_slo(self, ids, **kwargs):
+        """Check if SLOs can be safely deleted  # noqa: E501
+
+        Check if an SLO can be safely deleted. For example, assure an SLO can be deleted without disrupting a dashboard.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.check_can_delete_slo(ids, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            ids (str): A comma separated list of the IDs of the service level objectives objects.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CheckCanDeleteSLOResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._check_can_delete_slo_endpoint.default_arguments(kwargs)
+        kwargs["ids"] = ids
+        return self._check_can_delete_slo_endpoint.call_with_http_info(**kwargs)
+
+    def create_slo(self, body, **kwargs):
+        """Create an SLO object  # noqa: E501
+
+        Create a service level objective object.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_slo(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (ServiceLevelObjectiveRequest): Service level objective request object.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_slo_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_slo_endpoint.call_with_http_info(**kwargs)
+
+    def delete_slo(self, slo_id, **kwargs):
+        """Delete an SLO  # noqa: E501
+
+        Permanently delete the specified service level objective object.  If an SLO is used in a dashboard, the `DELETE /v1/slo/` endpoint returns a 409 conflict error because the SLO is referenced in a dashboard.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_slo(slo_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            slo_id (str): The ID of the service level objective.
+
+        Keyword Args:
+            force (str): Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor).. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLODeleteResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_slo_endpoint.default_arguments(kwargs)
+        kwargs["slo_id"] = slo_id
+        return self._delete_slo_endpoint.call_with_http_info(**kwargs)
+
+    def delete_slo_timeframe_in_bulk(self, body, **kwargs):
+        """Bulk Delete SLO Timeframes  # noqa: E501
+
+        Delete (or partially delete) multiple service level objective objects.  This endpoint facilitates deletion of one or more thresholds for one or more service level objective objects. If all thresholds are deleted, the service level objective object is deleted as well.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_slo_timeframe_in_bulk(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (SLOBulkDelete): Delete multiple service level objective objects request body.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOBulkDeleteResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_slo_timeframe_in_bulk_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._delete_slo_timeframe_in_bulk_endpoint.call_with_http_info(**kwargs)
+
+    def get_slo(self, slo_id, **kwargs):
+        """Get an SLO's details  # noqa: E501
+
+        Get a service level objective object.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_slo(slo_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            slo_id (str): The ID of the service level objective object.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_slo_endpoint.default_arguments(kwargs)
+        kwargs["slo_id"] = slo_id
+        return self._get_slo_endpoint.call_with_http_info(**kwargs)
+
+    def get_slo_history(self, slo_id, from_ts, to_ts, **kwargs):
+        """Get an SLO's history  # noqa: E501
+
+        Get a specific SLO’s history, regardless of its SLO type.  The detailed history data is structured according to the source data type. For example, metric data is included for event SLOs that use the metric source, and monitor SLO types include the monitor transition history.  **Note:** There are different response formats for event based and time based SLOs. Examples of both are shown.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_slo_history(slo_id, from_ts, to_ts, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            slo_id (str): The ID of the service level objective object.
+            from_ts (int): The `from` timestamp for the query window in epoch seconds.
+            to_ts (int): The `to` timestamp for the query window in epoch seconds.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOHistoryResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_slo_history_endpoint.default_arguments(kwargs)
+        kwargs["slo_id"] = slo_id
+        kwargs["from_ts"] = from_ts
+        kwargs["to_ts"] = to_ts
+        return self._get_slo_history_endpoint.call_with_http_info(**kwargs)
+
+    def list_slos(self, **kwargs):
+        """Get all SLOs  # noqa: E501
+
+        Get a list of service level objective objects for your organization.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_slos(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            ids (str): A comma separated list of the IDs of the service level objectives objects.. [optional]
+            query (str): The query string to filter results based on SLO names.. [optional]
+            tags_query (str): The query string to filter results based on a single SLO tag.. [optional]
+            metrics_query (str): The query string to filter results based on SLO numerator and denominator.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_slos_endpoint.default_arguments(kwargs)
+        return self._list_slos_endpoint.call_with_http_info(**kwargs)
+
+    def update_slo(self, slo_id, body, **kwargs):
+        """Update an SLO  # noqa: E501
+
+        Update the specified service level objective object.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_slo(slo_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            slo_id (str): The ID of the service level objective object.
+            body (ServiceLevelObjective): The edited service level objective request object.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_slo_endpoint.default_arguments(kwargs)
+        kwargs["slo_id"] = slo_id
+        kwargs["body"] = body
+        return self._update_slo_endpoint.call_with_http_info(**kwargs)

@@ -34,56 +34,7 @@ class PagerDutyIntegrationApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_pager_duty_integration_service(self, body, **kwargs):
-            """Create a new service object  # noqa: E501
-
-            Create a new service object in the PagerDuty integration.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_pager_duty_integration_service(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (PagerDutyService): Create a new service object request body.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                PagerDutyServiceName
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_pager_duty_integration_service = _Endpoint(
+        self._create_pager_duty_integration_service_endpoint = _Endpoint(
             settings={
                 "response_type": (PagerDutyServiceName,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -117,59 +68,9 @@ class PagerDutyIntegrationApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_pager_duty_integration_service,
         )
 
-        def __delete_pager_duty_integration_service(self, service_name, **kwargs):
-            """Delete a single service object  # noqa: E501
-
-            Delete a single service object in the Datadog-PagerDuty integration.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_pager_duty_integration_service(service_name, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                service_name (str): The service name
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["service_name"] = service_name
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_pager_duty_integration_service = _Endpoint(
+        self._delete_pager_duty_integration_service_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -208,59 +109,9 @@ class PagerDutyIntegrationApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_pager_duty_integration_service,
         )
 
-        def __get_pager_duty_integration_service(self, service_name, **kwargs):
-            """Get a single service object  # noqa: E501
-
-            Get service name in the Datadog-PagerDuty integration.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_pager_duty_integration_service(service_name, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                service_name (str): The service name.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                PagerDutyServiceName
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["service_name"] = service_name
-            return self.call_with_http_info(**kwargs)
-
-        self.get_pager_duty_integration_service = _Endpoint(
+        self._get_pager_duty_integration_service_endpoint = _Endpoint(
             settings={
                 "response_type": (PagerDutyServiceName,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -299,61 +150,9 @@ class PagerDutyIntegrationApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_pager_duty_integration_service,
         )
 
-        def __update_pager_duty_integration_service(self, service_name, body, **kwargs):
-            """Update a single service object  # noqa: E501
-
-            Update a single service object in the Datadog-PagerDuty integration.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_pager_duty_integration_service(service_name, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                service_name (str): The service name
-                body (PagerDutyServiceKey): Update an existing service object request body.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["service_name"] = service_name
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_pager_duty_integration_service = _Endpoint(
+        self._update_pager_duty_integration_service_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -393,5 +192,178 @@ class PagerDutyIntegrationApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_pager_duty_integration_service,
         )
+
+    def create_pager_duty_integration_service(self, body, **kwargs):
+        """Create a new service object  # noqa: E501
+
+        Create a new service object in the PagerDuty integration.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_pager_duty_integration_service(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (PagerDutyService): Create a new service object request body.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PagerDutyServiceName
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_pager_duty_integration_service_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_pager_duty_integration_service_endpoint.call_with_http_info(**kwargs)
+
+    def delete_pager_duty_integration_service(self, service_name, **kwargs):
+        """Delete a single service object  # noqa: E501
+
+        Delete a single service object in the Datadog-PagerDuty integration.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_pager_duty_integration_service(service_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            service_name (str): The service name
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_pager_duty_integration_service_endpoint.default_arguments(kwargs)
+        kwargs["service_name"] = service_name
+        return self._delete_pager_duty_integration_service_endpoint.call_with_http_info(**kwargs)
+
+    def get_pager_duty_integration_service(self, service_name, **kwargs):
+        """Get a single service object  # noqa: E501
+
+        Get service name in the Datadog-PagerDuty integration.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_pager_duty_integration_service(service_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            service_name (str): The service name.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PagerDutyServiceName
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_pager_duty_integration_service_endpoint.default_arguments(kwargs)
+        kwargs["service_name"] = service_name
+        return self._get_pager_duty_integration_service_endpoint.call_with_http_info(**kwargs)
+
+    def update_pager_duty_integration_service(self, service_name, body, **kwargs):
+        """Update a single service object  # noqa: E501
+
+        Update a single service object in the Datadog-PagerDuty integration.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_pager_duty_integration_service(service_name, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            service_name (str): The service name
+            body (PagerDutyServiceKey): Update an existing service object request body.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_pager_duty_integration_service_endpoint.default_arguments(kwargs)
+        kwargs["service_name"] = service_name
+        kwargs["body"] = body
+        return self._update_pager_duty_integration_service_endpoint.call_with_http_info(**kwargs)

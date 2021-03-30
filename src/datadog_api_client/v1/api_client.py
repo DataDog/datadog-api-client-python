@@ -766,6 +766,18 @@ class Endpoint(object):
         """
         return self.callable(self, *args, **kwargs)
 
+    def default_arguments(self, kwargs):
+        """Helper setting default arguments to call_with_http_info."""
+        default_kwargs = kwargs.copy()
+        default_kwargs["async_req"] = kwargs.get("async_req", False)
+        default_kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+        default_kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+        default_kwargs["_request_timeout"] = kwargs.get("_request_timeout")
+        default_kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+        default_kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+        default_kwargs["_host_index"] = kwargs.get("_host_index")
+        return default_kwargs
+
     def call_with_http_info(self, **kwargs):
 
         is_unstable = self.api_client.configuration.unstable_operations.get(self.settings["operation_id"])

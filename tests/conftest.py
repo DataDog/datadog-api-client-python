@@ -472,7 +472,7 @@ def execute_request(undo, context, client):
     exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
 
     try:
-        api_request["response"] = api_request["request"].call_with_http_info(
+        api_request["response"] = api_request["request"](
             *api_request["args"], **api_request["kwargs"]
         )
         client.last_response.urllib3_response.close()
@@ -483,7 +483,7 @@ def execute_request(undo, context, client):
         api_request["response"] = [e.body, e.status, e.headers]
 
     api = api_request["api"]
-    operation_id = api_request["request"].settings["operation_id"]
+    operation_id = api_request["request"].__name__
     response = api_request["response"][0]
 
     context["undo_operations"].append(lambda: undo(api, operation_id, response))
