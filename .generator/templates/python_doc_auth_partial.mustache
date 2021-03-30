@@ -1,9 +1,5 @@
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-
-# Defining the site is optional and defaults to datadoghq.com
-if "DD_SITE" in os.environ:
-    configuration.server_variables["site"] = os.environ["DD_SITE"]
 {{#hasAuthMethods}}
 {{#authMethods}}
 {{#isBasic}}
@@ -85,11 +81,6 @@ configuration = {{{packageName}}}.Configuration(
 )
 {{/isHttpSignature}}
 {{/isBasic}}
-{{#isApiKey}}
-
-# Configure API key authorization: {{{name}}}
-configuration.api_key['{{{name}}}'] = os.getenv('{{{vendorExtensions.x-env-name}}}')
-{{/isApiKey}}
 {{#isOAuth}}
 
 # Configure OAuth2 access token for authorization: {{{name}}}
