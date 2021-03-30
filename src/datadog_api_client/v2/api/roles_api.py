@@ -42,58 +42,7 @@ class RolesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __add_permission_to_role(self, role_id, body, **kwargs):
-            """Grant permission to a role  # noqa: E501
-
-            Adds a permission to a role.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.add_permission_to_role(role_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                role_id (str): The ID of the role.
-                body (RelationshipToPermission):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                PermissionsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["role_id"] = role_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.add_permission_to_role = _Endpoint(
+        self._add_permission_to_role_endpoint = _Endpoint(
             settings={
                 "response_type": (PermissionsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -133,61 +82,9 @@ class RolesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__add_permission_to_role,
         )
 
-        def __add_user_to_role(self, role_id, body, **kwargs):
-            """Add a user to a role  # noqa: E501
-
-            Adds a user to a role.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.add_user_to_role(role_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                role_id (str): The ID of the role.
-                body (RelationshipToUser):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsersResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["role_id"] = role_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.add_user_to_role = _Endpoint(
+        self._add_user_to_role_endpoint = _Endpoint(
             settings={
                 "response_type": (UsersResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -227,59 +124,9 @@ class RolesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__add_user_to_role,
         )
 
-        def __create_role(self, body, **kwargs):
-            """Create role  # noqa: E501
-
-            Create a new role for your organization.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_role(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (RoleCreateRequest):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                RoleCreateResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_role = _Endpoint(
+        self._create_role_endpoint = _Endpoint(
             settings={
                 "response_type": (RoleCreateResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -313,59 +160,9 @@ class RolesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_role,
         )
 
-        def __delete_role(self, role_id, **kwargs):
-            """Delete role  # noqa: E501
-
-            Disables a role.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_role(role_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                role_id (str): The ID of the role.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["role_id"] = role_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_role = _Endpoint(
+        self._delete_role_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -404,59 +201,9 @@ class RolesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_role,
         )
 
-        def __get_role(self, role_id, **kwargs):
-            """Get a role  # noqa: E501
-
-            Get a role in the organization specified by the role’s `role_id`.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_role(role_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                role_id (str): The ID of the role.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                RoleResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["role_id"] = role_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_role = _Endpoint(
+        self._get_role_endpoint = _Endpoint(
             settings={
                 "response_type": (RoleResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -495,56 +242,9 @@ class RolesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_role,
         )
 
-        def __list_permissions(self, **kwargs):
-            """List permissions  # noqa: E501
-
-            Returns a list of all permissions, including name, description, and ID.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_permissions(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                PermissionsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_permissions = _Endpoint(
+        self._list_permissions_endpoint = _Endpoint(
             settings={
                 "response_type": (PermissionsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -567,59 +267,9 @@ class RolesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_permissions,
         )
 
-        def __list_role_permissions(self, role_id, **kwargs):
-            """List permissions for a role  # noqa: E501
-
-            Returns a list of all permissions for a single role.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_role_permissions(role_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                role_id (str): The ID of the role.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                PermissionsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["role_id"] = role_id
-            return self.call_with_http_info(**kwargs)
-
-        self.list_role_permissions = _Endpoint(
+        self._list_role_permissions_endpoint = _Endpoint(
             settings={
                 "response_type": (PermissionsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -658,63 +308,9 @@ class RolesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_role_permissions,
         )
 
-        def __list_role_users(self, role_id, **kwargs):
-            """Get all users of a role  # noqa: E501
-
-            Gets all users of a role.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_role_users(role_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                role_id (str): The ID of the role.
-
-            Keyword Args:
-                page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-                page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (str): User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`.. [optional] if omitted the server will use the default value of "name"
-                filter (str): Filter all users by the given string. Defaults to no filtering.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsersResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["role_id"] = role_id
-            return self.call_with_http_info(**kwargs)
-
-        self.list_role_users = _Endpoint(
+        self._list_role_users_endpoint = _Endpoint(
             settings={
                 "response_type": (UsersResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -769,60 +365,9 @@ class RolesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_role_users,
         )
 
-        def __list_roles(self, **kwargs):
-            """List roles  # noqa: E501
-
-            Returns all roles, including their names and IDs.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_roles(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-                page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (RolesSort): Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`.. [optional]
-                filter (str): Filter all roles by the given string.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                RolesResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_roles = _Endpoint(
+        self._list_roles_endpoint = _Endpoint(
             settings={
                 "response_type": (RolesResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -871,61 +416,9 @@ class RolesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_roles,
         )
 
-        def __remove_permission_from_role(self, role_id, body, **kwargs):
-            """Revoke permission  # noqa: E501
-
-            Removes a permission from a role.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.remove_permission_from_role(role_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                role_id (str): The ID of the role.
-                body (RelationshipToPermission):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                PermissionsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["role_id"] = role_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.remove_permission_from_role = _Endpoint(
+        self._remove_permission_from_role_endpoint = _Endpoint(
             settings={
                 "response_type": (PermissionsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -965,61 +458,9 @@ class RolesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__remove_permission_from_role,
         )
 
-        def __remove_user_from_role(self, role_id, body, **kwargs):
-            """Remove a user from a role  # noqa: E501
-
-            Removes a user from a role.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.remove_user_from_role(role_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                role_id (str): The ID of the role.
-                body (RelationshipToUser):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                UsersResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["role_id"] = role_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.remove_user_from_role = _Endpoint(
+        self._remove_user_from_role_endpoint = _Endpoint(
             settings={
                 "response_type": (UsersResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1059,61 +500,9 @@ class RolesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__remove_user_from_role,
         )
 
-        def __update_role(self, role_id, body, **kwargs):
-            """Update a role  # noqa: E501
-
-            Edit a role. Can only be used with application keys belonging to administrators.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_role(role_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                role_id (str): The ID of the role.
-                body (RoleUpdateRequest):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                RoleUpdateResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["role_id"] = role_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_role = _Endpoint(
+        self._update_role_endpoint = _Endpoint(
             settings={
                 "response_type": (RoleUpdateResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1153,5 +542,532 @@ class RolesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_role,
         )
+
+    def add_permission_to_role(self, role_id, body, **kwargs):
+        """Grant permission to a role  # noqa: E501
+
+        Adds a permission to a role.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.add_permission_to_role(role_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            role_id (str): The ID of the role.
+            body (RelationshipToPermission):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PermissionsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._add_permission_to_role_endpoint.default_arguments(kwargs)
+        kwargs["role_id"] = role_id
+        kwargs["body"] = body
+        return self._add_permission_to_role_endpoint.call_with_http_info(**kwargs)
+
+    def add_user_to_role(self, role_id, body, **kwargs):
+        """Add a user to a role  # noqa: E501
+
+        Adds a user to a role.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.add_user_to_role(role_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            role_id (str): The ID of the role.
+            body (RelationshipToUser):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsersResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._add_user_to_role_endpoint.default_arguments(kwargs)
+        kwargs["role_id"] = role_id
+        kwargs["body"] = body
+        return self._add_user_to_role_endpoint.call_with_http_info(**kwargs)
+
+    def create_role(self, body, **kwargs):
+        """Create role  # noqa: E501
+
+        Create a new role for your organization.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_role(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (RoleCreateRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RoleCreateResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_role_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_role_endpoint.call_with_http_info(**kwargs)
+
+    def delete_role(self, role_id, **kwargs):
+        """Delete role  # noqa: E501
+
+        Disables a role.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_role(role_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            role_id (str): The ID of the role.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_role_endpoint.default_arguments(kwargs)
+        kwargs["role_id"] = role_id
+        return self._delete_role_endpoint.call_with_http_info(**kwargs)
+
+    def get_role(self, role_id, **kwargs):
+        """Get a role  # noqa: E501
+
+        Get a role in the organization specified by the role’s `role_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_role(role_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            role_id (str): The ID of the role.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RoleResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_role_endpoint.default_arguments(kwargs)
+        kwargs["role_id"] = role_id
+        return self._get_role_endpoint.call_with_http_info(**kwargs)
+
+    def list_permissions(self, **kwargs):
+        """List permissions  # noqa: E501
+
+        Returns a list of all permissions, including name, description, and ID.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_permissions(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PermissionsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_permissions_endpoint.default_arguments(kwargs)
+        return self._list_permissions_endpoint.call_with_http_info(**kwargs)
+
+    def list_role_permissions(self, role_id, **kwargs):
+        """List permissions for a role  # noqa: E501
+
+        Returns a list of all permissions for a single role.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_role_permissions(role_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            role_id (str): The ID of the role.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PermissionsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_role_permissions_endpoint.default_arguments(kwargs)
+        kwargs["role_id"] = role_id
+        return self._list_role_permissions_endpoint.call_with_http_info(**kwargs)
+
+    def list_role_users(self, role_id, **kwargs):
+        """Get all users of a role  # noqa: E501
+
+        Gets all users of a role.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_role_users(role_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            role_id (str): The ID of the role.
+
+        Keyword Args:
+            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
+            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
+            sort (str): User attribute to order results by. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `email`, `status`.. [optional] if omitted the server will use the default value of "name"
+            filter (str): Filter all users by the given string. Defaults to no filtering.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsersResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_role_users_endpoint.default_arguments(kwargs)
+        kwargs["role_id"] = role_id
+        return self._list_role_users_endpoint.call_with_http_info(**kwargs)
+
+    def list_roles(self, **kwargs):
+        """List roles  # noqa: E501
+
+        Returns all roles, including their names and IDs.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_roles(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
+            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
+            sort (RolesSort): Sort roles depending on the given field. Sort order is **ascending** by default. Sort order is **descending** if the field is prefixed by a negative sign, for example: `sort=-name`.. [optional]
+            filter (str): Filter all roles by the given string.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RolesResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_roles_endpoint.default_arguments(kwargs)
+        return self._list_roles_endpoint.call_with_http_info(**kwargs)
+
+    def remove_permission_from_role(self, role_id, body, **kwargs):
+        """Revoke permission  # noqa: E501
+
+        Removes a permission from a role.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.remove_permission_from_role(role_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            role_id (str): The ID of the role.
+            body (RelationshipToPermission):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PermissionsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._remove_permission_from_role_endpoint.default_arguments(kwargs)
+        kwargs["role_id"] = role_id
+        kwargs["body"] = body
+        return self._remove_permission_from_role_endpoint.call_with_http_info(**kwargs)
+
+    def remove_user_from_role(self, role_id, body, **kwargs):
+        """Remove a user from a role  # noqa: E501
+
+        Removes a user from a role.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.remove_user_from_role(role_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            role_id (str): The ID of the role.
+            body (RelationshipToUser):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsersResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._remove_user_from_role_endpoint.default_arguments(kwargs)
+        kwargs["role_id"] = role_id
+        kwargs["body"] = body
+        return self._remove_user_from_role_endpoint.call_with_http_info(**kwargs)
+
+    def update_role(self, role_id, body, **kwargs):
+        """Update a role  # noqa: E501
+
+        Edit a role. Can only be used with application keys belonging to administrators.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_role(role_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            role_id (str): The ID of the role.
+            body (RoleUpdateRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RoleUpdateResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_role_endpoint.default_arguments(kwargs)
+        kwargs["role_id"] = role_id
+        kwargs["body"] = body
+        return self._update_role_endpoint.call_with_http_info(**kwargs)

@@ -41,56 +41,7 @@ class KeyManagementApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_api_key(self, body, **kwargs):
-            """Create an API key  # noqa: E501
-
-            Create an API key.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_api_key(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (APIKeyCreateRequest):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                APIKeyResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_api_key = _Endpoint(
+        self._create_api_key_endpoint = _Endpoint(
             settings={
                 "response_type": (APIKeyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -124,59 +75,9 @@ class KeyManagementApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_api_key,
         )
 
-        def __create_current_user_application_key(self, body, **kwargs):
-            """Create an application key for current user  # noqa: E501
-
-            Create an application key for current user  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_current_user_application_key(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (ApplicationKeyCreateRequest):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                ApplicationKeyResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_current_user_application_key = _Endpoint(
+        self._create_current_user_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -210,59 +111,9 @@ class KeyManagementApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_current_user_application_key,
         )
 
-        def __delete_api_key(self, api_key_id, **kwargs):
-            """Delete an API key  # noqa: E501
-
-            Delete an API key.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_api_key(api_key_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                api_key_id (str): The ID of the API key.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["api_key_id"] = api_key_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_api_key = _Endpoint(
+        self._delete_api_key_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -301,59 +152,9 @@ class KeyManagementApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_api_key,
         )
 
-        def __delete_application_key(self, app_key_id, **kwargs):
-            """Delete an application key  # noqa: E501
-
-            Delete an application key  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_application_key(app_key_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                app_key_id (str): The ID of the application key.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["app_key_id"] = app_key_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_application_key = _Endpoint(
+        self._delete_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -392,59 +193,9 @@ class KeyManagementApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_application_key,
         )
 
-        def __delete_current_user_application_key(self, app_key_id, **kwargs):
-            """Delete an application key owned by current user  # noqa: E501
-
-            Delete an application key owned by current user  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_current_user_application_key(app_key_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                app_key_id (str): The ID of the application key.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["app_key_id"] = app_key_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_current_user_application_key = _Endpoint(
+        self._delete_current_user_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -483,60 +234,9 @@ class KeyManagementApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_current_user_application_key,
         )
 
-        def __get_api_key(self, api_key_id, **kwargs):
-            """Get API key  # noqa: E501
-
-            Get an API key.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_api_key(api_key_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                api_key_id (str): The ID of the API key.
-
-            Keyword Args:
-                include (str): Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                APIKeyResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["api_key_id"] = api_key_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_api_key = _Endpoint(
+        self._get_api_key_endpoint = _Endpoint(
             settings={
                 "response_type": (APIKeyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -579,59 +279,9 @@ class KeyManagementApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_api_key,
         )
 
-        def __get_current_user_application_key(self, app_key_id, **kwargs):
-            """Get one application key owned by current user  # noqa: E501
-
-            Get an application key owned by current user  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_current_user_application_key(app_key_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                app_key_id (str): The ID of the application key.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                ApplicationKeyResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["app_key_id"] = app_key_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_current_user_application_key = _Endpoint(
+        self._get_current_user_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -670,65 +320,9 @@ class KeyManagementApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_current_user_application_key,
         )
 
-        def __list_api_keys(self, **kwargs):
-            """Get all API keys  # noqa: E501
-
-            List all API keys available for your account.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_api_keys(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-                page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (APIKeysSort): API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
-                filter (str): Filter API keys by the specified string.. [optional]
-                filter_created_at_start (str): Only include API keys created on or after the specified date.. [optional]
-                filter_created_at_end (str): Only include API keys created on or before the specified date.. [optional]
-                filter_modified_at_start (str): Only include API keys modified on or after the specified date.. [optional]
-                filter_modified_at_end (str): Only include API keys modified on or before the specified date.. [optional]
-                include (str): Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                APIKeysResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_api_keys = _Endpoint(
+        self._list_api_keys_endpoint = _Endpoint(
             settings={
                 "response_type": (APIKeysResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -797,62 +391,9 @@ class KeyManagementApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_api_keys,
         )
 
-        def __list_application_keys(self, **kwargs):
-            """Get all application keys  # noqa: E501
-
-            List all application keys available for your org  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_application_keys(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-                page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (ApplicationKeysSort): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
-                filter (str): Filter application keys by the specified string.. [optional]
-                filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
-                filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                ListApplicationKeysResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_application_keys = _Endpoint(
+        self._list_application_keys_endpoint = _Endpoint(
             settings={
                 "response_type": (ListApplicationKeysResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -909,62 +450,9 @@ class KeyManagementApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_application_keys,
         )
 
-        def __list_current_user_application_keys(self, **kwargs):
-            """Get all application keys owned by current user  # noqa: E501
-
-            List all application keys available for current user  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_current_user_application_keys(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-                page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                sort (ApplicationKeysSort): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
-                filter (str): Filter application keys by the specified string.. [optional]
-                filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
-                filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                ListApplicationKeysResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_current_user_application_keys = _Endpoint(
+        self._list_current_user_application_keys_endpoint = _Endpoint(
             settings={
                 "response_type": (ListApplicationKeysResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1021,61 +509,9 @@ class KeyManagementApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_current_user_application_keys,
         )
 
-        def __update_api_key(self, api_key_id, body, **kwargs):
-            """Edit an API key  # noqa: E501
-
-            Update an API key.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_api_key(api_key_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                api_key_id (str): The ID of the API key.
-                body (APIKeyUpdateRequest):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                APIKeyResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["api_key_id"] = api_key_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_api_key = _Endpoint(
+        self._update_api_key_endpoint = _Endpoint(
             settings={
                 "response_type": (APIKeyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1115,61 +551,9 @@ class KeyManagementApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_api_key,
         )
 
-        def __update_application_key(self, app_key_id, body, **kwargs):
-            """Edit an application key  # noqa: E501
-
-            Edit an application key  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_application_key(app_key_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                app_key_id (str): The ID of the application key.
-                body (ApplicationKeyUpdateRequest):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                ApplicationKeyResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["app_key_id"] = app_key_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_application_key = _Endpoint(
+        self._update_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1209,61 +593,9 @@ class KeyManagementApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_application_key,
         )
 
-        def __update_current_user_application_key(self, app_key_id, body, **kwargs):
-            """Edit an application key owned by current user  # noqa: E501
-
-            Edit an application key owned by current user  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_current_user_application_key(app_key_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                app_key_id (str): The ID of the application key.
-                body (ApplicationKeyUpdateRequest):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                ApplicationKeyResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["app_key_id"] = app_key_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_current_user_application_key = _Endpoint(
+        self._update_current_user_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -1303,5 +635,582 @@ class KeyManagementApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_current_user_application_key,
         )
+
+    def create_api_key(self, body, **kwargs):
+        """Create an API key  # noqa: E501
+
+        Create an API key.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_api_key(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (APIKeyCreateRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            APIKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_api_key_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_api_key_endpoint.call_with_http_info(**kwargs)
+
+    def create_current_user_application_key(self, body, **kwargs):
+        """Create an application key for current user  # noqa: E501
+
+        Create an application key for current user  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_current_user_application_key(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (ApplicationKeyCreateRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ApplicationKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_current_user_application_key_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_current_user_application_key_endpoint.call_with_http_info(**kwargs)
+
+    def delete_api_key(self, api_key_id, **kwargs):
+        """Delete an API key  # noqa: E501
+
+        Delete an API key.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_api_key(api_key_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_key_id (str): The ID of the API key.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_api_key_endpoint.default_arguments(kwargs)
+        kwargs["api_key_id"] = api_key_id
+        return self._delete_api_key_endpoint.call_with_http_info(**kwargs)
+
+    def delete_application_key(self, app_key_id, **kwargs):
+        """Delete an application key  # noqa: E501
+
+        Delete an application key  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_application_key(app_key_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            app_key_id (str): The ID of the application key.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_application_key_endpoint.default_arguments(kwargs)
+        kwargs["app_key_id"] = app_key_id
+        return self._delete_application_key_endpoint.call_with_http_info(**kwargs)
+
+    def delete_current_user_application_key(self, app_key_id, **kwargs):
+        """Delete an application key owned by current user  # noqa: E501
+
+        Delete an application key owned by current user  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_current_user_application_key(app_key_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            app_key_id (str): The ID of the application key.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_current_user_application_key_endpoint.default_arguments(kwargs)
+        kwargs["app_key_id"] = app_key_id
+        return self._delete_current_user_application_key_endpoint.call_with_http_info(**kwargs)
+
+    def get_api_key(self, api_key_id, **kwargs):
+        """Get API key  # noqa: E501
+
+        Get an API key.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_api_key(api_key_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_key_id (str): The ID of the API key.
+
+        Keyword Args:
+            include (str): Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            APIKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_api_key_endpoint.default_arguments(kwargs)
+        kwargs["api_key_id"] = api_key_id
+        return self._get_api_key_endpoint.call_with_http_info(**kwargs)
+
+    def get_current_user_application_key(self, app_key_id, **kwargs):
+        """Get one application key owned by current user  # noqa: E501
+
+        Get an application key owned by current user  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_current_user_application_key(app_key_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            app_key_id (str): The ID of the application key.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ApplicationKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_current_user_application_key_endpoint.default_arguments(kwargs)
+        kwargs["app_key_id"] = app_key_id
+        return self._get_current_user_application_key_endpoint.call_with_http_info(**kwargs)
+
+    def list_api_keys(self, **kwargs):
+        """Get all API keys  # noqa: E501
+
+        List all API keys available for your account.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_api_keys(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
+            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
+            sort (APIKeysSort): API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
+            filter (str): Filter API keys by the specified string.. [optional]
+            filter_created_at_start (str): Only include API keys created on or after the specified date.. [optional]
+            filter_created_at_end (str): Only include API keys created on or before the specified date.. [optional]
+            filter_modified_at_start (str): Only include API keys modified on or after the specified date.. [optional]
+            filter_modified_at_end (str): Only include API keys modified on or before the specified date.. [optional]
+            include (str): Comma separated list of resource paths for related resources to include in the response. Supported resource paths are `created_by` and `modified_by`.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            APIKeysResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_api_keys_endpoint.default_arguments(kwargs)
+        return self._list_api_keys_endpoint.call_with_http_info(**kwargs)
+
+    def list_application_keys(self, **kwargs):
+        """Get all application keys  # noqa: E501
+
+        List all application keys available for your org  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_application_keys(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
+            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
+            sort (ApplicationKeysSort): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
+            filter (str): Filter application keys by the specified string.. [optional]
+            filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
+            filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ListApplicationKeysResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_application_keys_endpoint.default_arguments(kwargs)
+        return self._list_application_keys_endpoint.call_with_http_info(**kwargs)
+
+    def list_current_user_application_keys(self, **kwargs):
+        """Get all application keys owned by current user  # noqa: E501
+
+        List all application keys available for current user  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_current_user_application_keys(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
+            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
+            sort (ApplicationKeysSort): Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.. [optional]
+            filter (str): Filter application keys by the specified string.. [optional]
+            filter_created_at_start (str): Only include application keys created on or after the specified date.. [optional]
+            filter_created_at_end (str): Only include application keys created on or before the specified date.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ListApplicationKeysResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_current_user_application_keys_endpoint.default_arguments(kwargs)
+        return self._list_current_user_application_keys_endpoint.call_with_http_info(**kwargs)
+
+    def update_api_key(self, api_key_id, body, **kwargs):
+        """Edit an API key  # noqa: E501
+
+        Update an API key.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_api_key(api_key_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            api_key_id (str): The ID of the API key.
+            body (APIKeyUpdateRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            APIKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_api_key_endpoint.default_arguments(kwargs)
+        kwargs["api_key_id"] = api_key_id
+        kwargs["body"] = body
+        return self._update_api_key_endpoint.call_with_http_info(**kwargs)
+
+    def update_application_key(self, app_key_id, body, **kwargs):
+        """Edit an application key  # noqa: E501
+
+        Edit an application key  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_application_key(app_key_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            app_key_id (str): The ID of the application key.
+            body (ApplicationKeyUpdateRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ApplicationKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_application_key_endpoint.default_arguments(kwargs)
+        kwargs["app_key_id"] = app_key_id
+        kwargs["body"] = body
+        return self._update_application_key_endpoint.call_with_http_info(**kwargs)
+
+    def update_current_user_application_key(self, app_key_id, body, **kwargs):
+        """Edit an application key owned by current user  # noqa: E501
+
+        Edit an application key owned by current user  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_current_user_application_key(app_key_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            app_key_id (str): The ID of the application key.
+            body (ApplicationKeyUpdateRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ApplicationKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_current_user_application_key_endpoint.default_arguments(kwargs)
+        kwargs["app_key_id"] = app_key_id
+        kwargs["body"] = body
+        return self._update_current_user_application_key_endpoint.call_with_http_info(**kwargs)

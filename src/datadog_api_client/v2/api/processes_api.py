@@ -32,59 +32,7 @@ class ProcessesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __list_processes(self, **kwargs):
-            """Get all processes  # noqa: E501
-
-            Get all processes for your organization.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_processes(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                search (str): String to search processes by.. [optional]
-                tags (str): Comma-separated list of tags to filter processes by.. [optional]
-                _from (int): Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window will be 15 minutes before the `to` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.. [optional]
-                to (int): Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window will be 15 minutes after the `from` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.. [optional]
-                page_limit (int): Maximum number of results returned.. [optional] if omitted the server will use the default value of 1000
-                page_cursor (str): String to query the next page of results. This key is provided with each valid response from the API in `meta.page.after`.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                ProcessSummariesResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_processes = _Endpoint(
+        self._list_processes_endpoint = _Endpoint(
             settings={
                 "response_type": (ProcessSummariesResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -148,5 +96,50 @@ class ProcessesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_processes,
         )
+
+    def list_processes(self, **kwargs):
+        """Get all processes  # noqa: E501
+
+        Get all processes for your organization.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_processes(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            search (str): String to search processes by.. [optional]
+            tags (str): Comma-separated list of tags to filter processes by.. [optional]
+            _from (int): Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window will be 15 minutes before the `to` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.. [optional]
+            to (int): Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window will be 15 minutes after the `from` timestamp. If neither `from` nor `to` are provided, the query window will be `[now - 15m, now]`.. [optional]
+            page_limit (int): Maximum number of results returned.. [optional] if omitted the server will use the default value of 1000
+            page_cursor (str): String to query the next page of results. This key is provided with each valid response from the API in `meta.page.after`.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ProcessSummariesResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_processes_endpoint.default_arguments(kwargs)
+        return self._list_processes_endpoint.call_with_http_info(**kwargs)
