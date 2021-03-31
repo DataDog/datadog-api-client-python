@@ -70,6 +70,7 @@ class UserAttributes(ModelNormal):
             "email": (str,),  # noqa: E501
             "handle": (str,),  # noqa: E501
             "icon": (str,),  # noqa: E501
+            "modified_at": (datetime,),  # noqa: E501
             "name": (str,),  # noqa: E501
             "status": (str,),  # noqa: E501
             "title": (str,),  # noqa: E501
@@ -86,6 +87,7 @@ class UserAttributes(ModelNormal):
         "email": "email",  # noqa: E501
         "handle": "handle",  # noqa: E501
         "icon": "icon",  # noqa: E501
+        "modified_at": "modified_at",  # noqa: E501
         "name": "name",  # noqa: E501
         "status": "status",  # noqa: E501
         "title": "title",  # noqa: E501
@@ -145,6 +147,7 @@ class UserAttributes(ModelNormal):
             email (str): Email of the user.. [optional]  # noqa: E501
             handle (str): Handle of the user.. [optional]  # noqa: E501
             icon (str): URL of the user's icon.. [optional]  # noqa: E501
+            modified_at (datetime): Time that the user was last modified.. [optional]  # noqa: E501
             name (str): Name of the user.. [optional]  # noqa: E501
             status (str): Status of the user.. [optional]  # noqa: E501
             title (str): Title of the user.. [optional]  # noqa: E501

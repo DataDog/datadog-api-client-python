@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **email** | **str** | Email of the user. | [optional] 
 **handle** | **str** | Handle of the user. | [optional] 
 **icon** | **str** | URL of the user&#39;s icon. | [optional] 
+**modified_at** | **datetime** | Time that the user was last modified. | [optional] 
 **name** | **str** | Name of the user. | [optional] 
 **status** | **str** | Status of the user. | [optional] 
 **title** | **str** | Title of the user. | [optional] 
