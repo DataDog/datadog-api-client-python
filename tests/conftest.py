@@ -306,6 +306,9 @@ def build_configuration(package):
     if debug:  # enable vcr logs for DEBUG=true
         vcr_log = logging.getLogger("vcr")
         vcr_log.setLevel(logging.INFO)
+    if "DD_TEST_SITE" in os.environ:
+        c.server_index = 2
+        c.server_variables["site"] = os.environ["DD_TEST_SITE"]
     return c
 
 
@@ -339,7 +342,7 @@ def operation_enabled(client, name):
 
 
 @given(parsers.parse('new "{name}" request'))
-def api_request(context, name):
+def api_request(configuration, context, name):
     """Call an endpoint."""
     api = context["api"]
     context["api_request"] = {
@@ -347,7 +350,7 @@ def api_request(context, name):
         "request": getattr(api["api"], snake_case(name)),
         "args": [],
         "kwargs": {
-            "_host_index": 0,
+            "_host_index": configuration.server_index,
             "_check_input_type": False,
             "async_req": False,
             "_check_return_type": True,
