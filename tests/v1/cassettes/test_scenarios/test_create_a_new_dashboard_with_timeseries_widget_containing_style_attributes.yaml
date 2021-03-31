@@ -1,10 +1,10 @@
 interactions:
 - request:
-    body: '{"layout_type": "ordered", "title": "datadog-api-client-python-test_create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617011397.392518
-      with Profile Metrics Query", "widgets": [{"definition": {"type": "timeseries",
-      "requests": [{"q": "sum:trace.test.errors{env:prod,service:datadog-api-client-python}
-      by {resource_name}.as_count()", "on_right_yaxis": false, "style": {"palette":
-      "warm", "line_type": "solid", "line_width": "normal"}, "display_type": "bars"}]}}]}'
+    body: '{"layout_type": "ordered", "title": "datadog-api-client-python-test_create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617193835.623828
+      with timeseries widget", "widgets": [{"definition": {"type": "timeseries", "requests":
+      [{"q": "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()",
+      "on_right_yaxis": false, "style": {"palette": "warm", "line_type": "solid",
+      "line_width": "normal"}, "display_type": "bars"}]}}]}'
     headers:
       Accept:
       - application/json
@@ -13,24 +13,23 @@ interactions:
       Dd-Operation-Id:
       - CreateDashboard
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev13+dirty (python 3.9.2; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/0.1.dev287 (python 3.9.2; os Linux; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"6jm-4bb-uaw","title":"datadog-api-client-python-test_create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617011397.392518
-        with Profile Metrics Query","url":"/dashboard/6jm-4bb-uaw/datadog-api-client-python-testcreateanewdashboardwithtimeserieswidgetcontainings","created_at":"2021-03-29T09:49:58.059034+00:00","modified_at":"2021-03-29T09:49:58.059034+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-client-python}
-        by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":3715330415355652}],"layout_type":"ordered"}'
+      string: '{"notify_list":null,"description":null,"author_name":"CI Account","template_variables":null,"is_read_only":false,"id":"trw-iyd-udn","title":"datadog-api-client-python-test_create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617193835.623828
+        with timeseries widget","url":"/dashboard/trw-iyd-udn/datadog-api-client-python-testcreateanewdashboardwithtimeserieswidgetcontainings","created_at":"2021-03-31T12:30:35.953532+00:00","modified_at":"2021-03-31T12:30:35.953532+00:00","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
+        by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":2527848781153118}],"layout_type":"ordered"}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '856'
+      - '869'
       Content-Type:
       - application/json
       Date:
-      - Mon, 29 Mar 2021 09:49:58 GMT
+      - Wed, 31 Mar 2021 12:30:35 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -44,9 +43,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - dCmL/3rURV6BPeaqeP3Rxigq41m5CAb17XjrRE42uZ01zpr07HVhbL5/3TWMkvgu
+      - nLnnBNvlCFDECRnZvzDb0z4sAO35G+IMidcAs8vrCKyjvsKWE8Yd9S3n6OjZ1qRN
       x-dd-version:
-      - '35.4188350'
+      - '35.4208184'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -62,13 +61,12 @@ interactions:
       Dd-Operation-Id:
       - DeleteDashboard
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev13+dirty (python 3.9.2; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/0.1.dev287 (python 3.9.2; os Linux; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/6jm-4bb-uaw
+    uri: https://api.datadoghq.com/api/v1/dashboard/trw-iyd-udn
   response:
     body:
-      string: '{"deleted_dashboard_id":"6jm-4bb-uaw"}'
+      string: '{"deleted_dashboard_id":"trw-iyd-udn"}'
     headers:
       Connection:
       - keep-alive
@@ -77,7 +75,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 29 Mar 2021 09:49:58 GMT
+      - Wed, 31 Mar 2021 12:30:36 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -91,9 +89,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
+      - HbtaOKlJ6OCrx9tMXO6ivMTrEM+g0c93HDp08trmOmgdHozC5J+vn10F0H4WPjCU
       x-dd-version:
-      - '35.4188350'
+      - '35.4208184'
       x-frame-options:
       - SAMEORIGIN
     status:
