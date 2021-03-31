@@ -472,7 +472,7 @@ def execute_request(undo, context, client, _package):
     exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
 
     try:
-        api_request["response"] = api_request["request"](
+        response = api_request["request"](
             *api_request["args"], **api_request["kwargs"]
         )
         client.last_response.urllib3_response.close()
