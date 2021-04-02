@@ -29,6 +29,16 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
 
+  Scenario: Create a new dashboard with timeseries widget containing style attributes
+    Given new "CreateDashboard" request
+    And body {"layout_type": "ordered", "title": "{{ unique }} with timeseries widget","widgets": [{"definition": {"type": "timeseries","requests": [{"q": "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()","on_right_yaxis": false,"style": {"palette": "warm","line_type": "solid","line_width": "normal"},"display_type": "bars"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].on_right_yaxis" is false
+    And the response "widgets[0].definition.requests[0].style" is equal to {"palette": "warm","line_type": "solid","line_width": "normal"}
+    And the response "widgets[0].definition.requests[0].display_type" is equal to "bars"
+    And the response "widgets[0].definition.requests[0].q" is equal to "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()"
+
   @generated @skip
   Scenario: Delete a dashboard returns "Dashboards Not Found" response
     Given new "DeleteDashboard" request
