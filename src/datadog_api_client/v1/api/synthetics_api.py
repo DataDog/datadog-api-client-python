@@ -540,7 +540,7 @@ class SyntheticsApi(object):
 
         self._get_browser_test_endpoint = _Endpoint(
             settings={
-                "response_type": (SyntheticsTestDetails,),
+                "response_type": (SyntheticsBrowserTest,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}",
                 "operation_id": "get_browser_test",
@@ -1657,7 +1657,7 @@ class SyntheticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SyntheticsTestDetails
+            SyntheticsBrowserTest
                 If the method is called asynchronously, returns the request
                 thread.
         """

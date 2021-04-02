@@ -1198,7 +1198,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_browser_test**
-> SyntheticsTestDetails get_browser_test(public_id)
+> SyntheticsBrowserTest get_browser_test(public_id)
 
 Get a test configuration (browser)
 
@@ -1242,7 +1242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SyntheticsTestDetails**](SyntheticsTestDetails.md)
+[**SyntheticsBrowserTest**](SyntheticsBrowserTest.md)
 
 ### Authorization
 
