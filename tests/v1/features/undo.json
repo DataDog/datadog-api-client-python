@@ -627,6 +627,12 @@
       "type": "idempotent"
     }
   },
+  "ListMonitorDowntimes": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetMonthlyCustomReports": {
     "tag": "Usage Metering",
     "undo": {
