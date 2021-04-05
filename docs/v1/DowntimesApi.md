@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**create_downtime**](DowntimesApi.md#create_downtime) | **POST** /api/v1/downtime | Schedule a downtime
 [**get_downtime**](DowntimesApi.md#get_downtime) | **GET** /api/v1/downtime/{downtime_id} | Get a downtime
 [**list_downtimes**](DowntimesApi.md#list_downtimes) | **GET** /api/v1/downtime | Get all downtimes
+[**list_monitor_downtimes**](DowntimesApi.md#list_monitor_downtimes) | **GET** /api/v1/monitor/{monitor_id}/downtimes | Get all downtimes for a monitor
 [**update_downtime**](DowntimesApi.md#update_downtime) | **PUT** /api/v1/downtime/{downtime_id} | Update a downtime
 
 
@@ -365,6 +366,72 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **list_monitor_downtimes**
+> [Downtime] list_monitor_downtimes(monitor_id)
+
+Get all downtimes for a monitor
+
+Get all downtimes for the specified monitor
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import downtimes_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = downtimes_api.DowntimesApi(api_client)
+    monitor_id = 1  # int | The id of the monitor
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get all downtimes for a monitor
+        api_response = api_instance.list_monitor_downtimes(monitor_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DowntimesApi->list_monitor_downtimes: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **monitor_id** | **int**| The id of the monitor |
+
+### Return type
+
+[**[Downtime]**](Downtime.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**404** | Monitor Not Found error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

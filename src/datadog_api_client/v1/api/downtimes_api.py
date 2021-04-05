@@ -227,6 +227,47 @@ class DowntimesApi(object):
             api_client=api_client,
         )
 
+        self._list_monitor_downtimes_endpoint = _Endpoint(
+            settings={
+                "response_type": ([Downtime],),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor/{monitor_id}/downtimes",
+                "operation_id": "list_monitor_downtimes",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "monitor_id",
+                ],
+                "required": [
+                    "monitor_id",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "monitor_id": (int,),
+                },
+                "attribute_map": {
+                    "monitor_id": "monitor_id",
+                },
+                "location_map": {
+                    "monitor_id": "path",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._update_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (Downtime,),
@@ -481,6 +522,49 @@ class DowntimesApi(object):
         """
         kwargs = self._list_downtimes_endpoint.default_arguments(kwargs)
         return self._list_downtimes_endpoint.call_with_http_info(**kwargs)
+
+    def list_monitor_downtimes(self, monitor_id, **kwargs):
+        """Get all downtimes for a monitor  # noqa: E501
+
+        Get all downtimes for the specified monitor  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_monitor_downtimes(monitor_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            monitor_id (int): The id of the monitor
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            [Downtime]
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_monitor_downtimes_endpoint.default_arguments(kwargs)
+        kwargs["monitor_id"] = monitor_id
+        return self._list_monitor_downtimes_endpoint.call_with_http_info(**kwargs)
 
     def update_downtime(self, downtime_id, body, **kwargs):
         """Update a downtime  # noqa: E501
