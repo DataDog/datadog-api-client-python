@@ -68,6 +68,16 @@ class IPRangesApi(object):
                             },
                         },
                     },
+                    {
+                        "url": "https://{subdomain}.datadoghq.com",
+                        "description": "No description provided",
+                        "variables": {
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "ip-ranges",
+                            }
+                        },
+                    },
                 ],
             },
             params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},

@@ -496,6 +496,20 @@ class Configuration(object):
                     },
                 },
             },
+            {
+                "url": "https://{subdomain}.{site}",
+                "description": "No description provided",
+                "variables": {
+                    "site": {
+                        "description": "Any Datadog deployment.",
+                        "default_value": "datadoghq.com",
+                    },
+                    "subdomain": {
+                        "description": "The subdomain where the API is deployed.",
+                        "default_value": "api",
+                    },
+                },
+            },
         ]
 
     def get_host_from_settings(self, index, variables=None, servers=None):
