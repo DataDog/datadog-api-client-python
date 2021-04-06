@@ -306,6 +306,9 @@ def build_configuration(package):
     if debug:  # enable vcr logs for DEBUG=true
         vcr_log = logging.getLogger("vcr")
         vcr_log.setLevel(logging.INFO)
+    if "DD_TEST_SITE" in os.environ:
+        c.server_index = 2
+        c.server_variables["site"] = os.environ["DD_TEST_SITE"]
     return c
 
 
@@ -339,7 +342,7 @@ def operation_enabled(client, name):
 
 
 @given(parsers.parse('new "{name}" request'))
-def api_request(context, name):
+def api_request(configuration, context, name):
     """Call an endpoint."""
     api = context["api"]
     context["api_request"] = {
@@ -347,7 +350,7 @@ def api_request(context, name):
         "request": getattr(api["api"], snake_case(name)),
         "args": [],
         "kwargs": {
-            "_host_index": 0,
+            "_host_index": configuration.server_index,
             "_check_input_type": False,
             "async_req": False,
             "_check_return_type": True,
@@ -467,16 +470,19 @@ def undo(package_name, undo_operations, client):
 
 
 @when("the request is sent")
-def execute_request(undo, context, client):
+def execute_request(undo, context, client, _package):
     """Execute the prepared request."""
     api_request = context["api_request"]
     exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
 
     try:
-        api_request["response"] = api_request["request"](
+        response = api_request["request"](
             *api_request["args"], **api_request["kwargs"]
         )
         client.last_response.urllib3_response.close()
+        # Reserialise the response body to JSON to facilitate test assertions
+        response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(response[0])
+        api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions
         # Instead of finding the response class of the method, we use the fact that all
