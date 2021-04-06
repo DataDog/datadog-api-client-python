@@ -110,6 +110,20 @@ class AWSIntegrationApi(object):
                             },
                         },
                     },
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "description": "No description provided",
+                        "variables": {
+                            "site": {
+                                "description": "Any Datadog deployment.",
+                                "default_value": "datadoghq.com",
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "api",
+                            },
+                        },
+                    },
                 ],
             },
             params_map={
@@ -248,6 +262,20 @@ class AWSIntegrationApi(object):
                             },
                         },
                     },
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "description": "No description provided",
+                        "variables": {
+                            "site": {
+                                "description": "Any Datadog deployment.",
+                                "default_value": "datadoghq.com",
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "api",
+                            },
+                        },
+                    },
                 ],
             },
             params_map={
@@ -383,6 +411,20 @@ class AWSIntegrationApi(object):
                             "protocol": {
                                 "description": "The protocol for accessing the API.",
                                 "default_value": "https",
+                            },
+                        },
+                    },
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "description": "No description provided",
+                        "variables": {
+                            "site": {
+                                "description": "Any Datadog deployment.",
+                                "default_value": "datadoghq.com",
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "api",
                             },
                         },
                     },
