@@ -469,16 +469,19 @@ def undo(package_name, undo_operations, client):
 
 
 @when("the request is sent")
-def execute_request(undo, context, client):
+def execute_request(undo, context, client, _package):
     """Execute the prepared request."""
     api_request = context["api_request"]
     exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
 
     try:
-        api_request["response"] = api_request["request"](
+        response = api_request["request"](
             *api_request["args"], **api_request["kwargs"]
         )
         client.last_response.urllib3_response.close()
+        # Reserialise the response body to JSON to facilitate test assertions
+        response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(response[0])
+        api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions
         # Instead of finding the response class of the method, we use the fact that all

@@ -61,6 +61,27 @@ Feature: Downtimes
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get all downtimes for a monitor returns "Bad Request" response
+    Given new "ListMonitorDowntimes" request
+    And request contains "monitor_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get all downtimes for a monitor returns "Monitor Not Found error" response
+    Given new "ListMonitorDowntimes" request
+    And request contains "monitor_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Monitor Not Found error
+
+  @generated @skip
+  Scenario: Get all downtimes for a monitor returns "OK" response
+    Given new "ListMonitorDowntimes" request
+    And request contains "monitor_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get all downtimes returns "OK" response
     Given new "ListDowntimes" request
     When the request is sent
