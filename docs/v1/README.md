@@ -130,6 +130,7 @@ Class | Method | HTTP request | Description
 *DowntimesApi* | [**create_downtime**](DowntimesApi.md#create_downtime) | **POST** /api/v1/downtime | Schedule a downtime
 *DowntimesApi* | [**get_downtime**](DowntimesApi.md#get_downtime) | **GET** /api/v1/downtime/{downtime_id} | Get a downtime
 *DowntimesApi* | [**list_downtimes**](DowntimesApi.md#list_downtimes) | **GET** /api/v1/downtime | Get all downtimes
+*DowntimesApi* | [**list_monitor_downtimes**](DowntimesApi.md#list_monitor_downtimes) | **GET** /api/v1/monitor/{monitor_id}/downtimes | Get all downtimes for a monitor
 *DowntimesApi* | [**update_downtime**](DowntimesApi.md#update_downtime) | **PUT** /api/v1/downtime/{downtime_id} | Update a downtime
 *EventsApi* | [**get_event**](EventsApi.md#get_event) | **GET** /api/v1/events/{event_id} | Get an event
 *EventsApi* | [**list_events**](EventsApi.md#list_events) | **GET** /api/v1/events | Query the event stream

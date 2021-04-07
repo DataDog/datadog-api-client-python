@@ -40,58 +40,7 @@ class MetricsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_tag_configuration(self, metric_name, body, **kwargs):
-            """Create a tag configuration  # noqa: E501
-
-            Create and define a list of queryable tag keys for a count/gauge/rate/distribution metric. Optionally, include percentile aggregations on any distribution metric. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_tag_configuration(metric_name, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_name (str): The name of the metric.
-                body (MetricTagConfigurationCreateRequest):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricTagConfigurationResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_name"] = metric_name
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_tag_configuration = _Endpoint(
+        self._create_tag_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricTagConfigurationResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -131,59 +80,9 @@ class MetricsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_tag_configuration,
         )
 
-        def __delete_tag_configuration(self, metric_name, **kwargs):
-            """Delete a tag configuration  # noqa: E501
-
-            Deletes a metric's tag configuration. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_tag_configuration(metric_name, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_name (str): The name of the metric.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_name"] = metric_name
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_tag_configuration = _Endpoint(
+        self._delete_tag_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -222,59 +121,9 @@ class MetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_tag_configuration,
         )
 
-        def __list_tag_configuration_by_name(self, metric_name, **kwargs):
-            """List tag configuration by name  # noqa: E501
-
-            Returns the tag configuration for the given metric name.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_tag_configuration_by_name(metric_name, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_name (str): The name of the metric.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricTagConfigurationResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_name"] = metric_name
-            return self.call_with_http_info(**kwargs)
-
-        self.list_tag_configuration_by_name = _Endpoint(
+        self._list_tag_configuration_by_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricTagConfigurationResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -313,62 +162,9 @@ class MetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_tag_configuration_by_name,
         )
 
-        def __list_tag_configurations(self, **kwargs):
-            """List tag configurations  # noqa: E501
-
-            Returns all configured count/gauge/rate/distribution metric names (with additional filters if specified).  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_tag_configurations(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                filter_configured (bool): Filter metrics that have configured tags.. [optional]
-                filter_tags_configured (str): Filter tag configurations by configured tags.. [optional]
-                filter_metric_type (MetricTagConfigurationMetricTypes): Filter tag configurations by metric type.. [optional]
-                filter_include_percentiles (bool): Filter distributions with additional percentile aggregations enabled or disabled.. [optional]
-                filter_tags (str): Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.. [optional]
-                window_seconds (int): The number of seconds of look back (from now) to apply to a filter[tag] query. Defaults value is 3600 (1 hour), maximum value is 172,800 (2 days).. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricsAndMetricTagConfigurationsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_tag_configurations = _Endpoint(
+        self._list_tag_configurations_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricsAndMetricTagConfigurationsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -425,59 +221,9 @@ class MetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_tag_configurations,
         )
 
-        def __list_tags_by_metric_name(self, metric_name, **kwargs):
-            """List tags by metric name  # noqa: E501
-
-            View indexed tag key-value pairs for a given metric name.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_tags_by_metric_name(metric_name, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_name (str): The name of the metric.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricAllTagsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_name"] = metric_name
-            return self.call_with_http_info(**kwargs)
-
-        self.list_tags_by_metric_name = _Endpoint(
+        self._list_tags_by_metric_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricAllTagsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -516,59 +262,9 @@ class MetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_tags_by_metric_name,
         )
 
-        def __list_volumes_by_metric_name(self, metric_name, **kwargs):
-            """List distinct metric volumes by metric name  # noqa: E501
-
-            View distinct metrics volumes for the given metric name.  Custom distribution metrics will return both ingested and indexed custom metric volumes. For Metrics without Limits&trade; beta customers, all metrics will return both ingested/indexed volumes. Custom metrics generated in-app from other products will return `null` for ingested volumes.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_volumes_by_metric_name(metric_name, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_name (str): The name of the metric.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricVolumesResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_name"] = metric_name
-            return self.call_with_http_info(**kwargs)
-
-        self.list_volumes_by_metric_name = _Endpoint(
+        self._list_volumes_by_metric_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricVolumesResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -607,61 +303,9 @@ class MetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_volumes_by_metric_name,
         )
 
-        def __update_tag_configuration(self, metric_name, body, **kwargs):
-            """Update a tag configuration  # noqa: E501
-
-            Update the tag configuration of a metric or percentile aggregations of a distribution metric. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_tag_configuration(metric_name, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_name (str): The name of the metric.
-                body (MetricTagConfigurationUpdateRequest):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricTagConfigurationResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_name"] = metric_name
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_tag_configuration = _Endpoint(
+        self._update_tag_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricTagConfigurationResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -701,5 +345,312 @@ class MetricsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_tag_configuration,
         )
+
+    def create_tag_configuration(self, metric_name, body, **kwargs):
+        """Create a tag configuration  # noqa: E501
+
+        Create and define a list of queryable tag keys for a count/gauge/rate/distribution metric. Optionally, include percentile aggregations on any distribution metric. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_tag_configuration(metric_name, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_name (str): The name of the metric.
+            body (MetricTagConfigurationCreateRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricTagConfigurationResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_tag_configuration_endpoint.default_arguments(kwargs)
+        kwargs["metric_name"] = metric_name
+        kwargs["body"] = body
+        return self._create_tag_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def delete_tag_configuration(self, metric_name, **kwargs):
+        """Delete a tag configuration  # noqa: E501
+
+        Deletes a metric's tag configuration. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_tag_configuration(metric_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_name (str): The name of the metric.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_tag_configuration_endpoint.default_arguments(kwargs)
+        kwargs["metric_name"] = metric_name
+        return self._delete_tag_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def list_tag_configuration_by_name(self, metric_name, **kwargs):
+        """List tag configuration by name  # noqa: E501
+
+        Returns the tag configuration for the given metric name.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_tag_configuration_by_name(metric_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_name (str): The name of the metric.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricTagConfigurationResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_tag_configuration_by_name_endpoint.default_arguments(kwargs)
+        kwargs["metric_name"] = metric_name
+        return self._list_tag_configuration_by_name_endpoint.call_with_http_info(**kwargs)
+
+    def list_tag_configurations(self, **kwargs):
+        """List tag configurations  # noqa: E501
+
+        Returns all configured count/gauge/rate/distribution metric names (with additional filters if specified).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_tag_configurations(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            filter_configured (bool): Filter metrics that have configured tags.. [optional]
+            filter_tags_configured (str): Filter tag configurations by configured tags.. [optional]
+            filter_metric_type (MetricTagConfigurationMetricTypes): Filter tag configurations by metric type.. [optional]
+            filter_include_percentiles (bool): Filter distributions with additional percentile aggregations enabled or disabled.. [optional]
+            filter_tags (str): Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.. [optional]
+            window_seconds (int): The number of seconds of look back (from now) to apply to a filter[tag] query. Defaults value is 3600 (1 hour), maximum value is 172,800 (2 days).. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricsAndMetricTagConfigurationsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_tag_configurations_endpoint.default_arguments(kwargs)
+        return self._list_tag_configurations_endpoint.call_with_http_info(**kwargs)
+
+    def list_tags_by_metric_name(self, metric_name, **kwargs):
+        """List tags by metric name  # noqa: E501
+
+        View indexed tag key-value pairs for a given metric name.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_tags_by_metric_name(metric_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_name (str): The name of the metric.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricAllTagsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_tags_by_metric_name_endpoint.default_arguments(kwargs)
+        kwargs["metric_name"] = metric_name
+        return self._list_tags_by_metric_name_endpoint.call_with_http_info(**kwargs)
+
+    def list_volumes_by_metric_name(self, metric_name, **kwargs):
+        """List distinct metric volumes by metric name  # noqa: E501
+
+        View distinct metrics volumes for the given metric name.  Custom distribution metrics will return both ingested and indexed custom metric volumes. For Metrics without Limits&trade; beta customers, all metrics will return both ingested/indexed volumes. Custom metrics generated in-app from other products will return `null` for ingested volumes.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_volumes_by_metric_name(metric_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_name (str): The name of the metric.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricVolumesResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_volumes_by_metric_name_endpoint.default_arguments(kwargs)
+        kwargs["metric_name"] = metric_name
+        return self._list_volumes_by_metric_name_endpoint.call_with_http_info(**kwargs)
+
+    def update_tag_configuration(self, metric_name, body, **kwargs):
+        """Update a tag configuration  # noqa: E501
+
+        Update the tag configuration of a metric or percentile aggregations of a distribution metric. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_tag_configuration(metric_name, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_name (str): The name of the metric.
+            body (MetricTagConfigurationUpdateRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricTagConfigurationResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_tag_configuration_endpoint.default_arguments(kwargs)
+        kwargs["metric_name"] = metric_name
+        kwargs["body"] = body
+        return self._update_tag_configuration_endpoint.call_with_http_info(**kwargs)

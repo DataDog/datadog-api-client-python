@@ -35,56 +35,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_slo_correction(self, body, **kwargs):
-            """Create an SLO correction  # noqa: E501
-
-            Create an SLO Correction  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_slo_correction(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (SLOCorrectionCreateRequest): Create an SLO Correction
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLOCorrectionResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_slo_correction = _Endpoint(
+        self._create_slo_correction_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOCorrectionResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -118,59 +69,9 @@ class ServiceLevelObjectiveCorrectionsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_slo_correction,
         )
 
-        def __delete_slo_correction(self, slo_correction_id, **kwargs):
-            """Delete an SLO Correction  # noqa: E501
-
-            Permanently delete the specified SLO Correction object  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_slo_correction(slo_correction_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                slo_correction_id (str): The ID of the SLO correction object
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["slo_correction_id"] = slo_correction_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_slo_correction = _Endpoint(
+        self._delete_slo_correction_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -209,59 +110,9 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_slo_correction,
         )
 
-        def __get_slo_correction(self, slo_correction_id, **kwargs):
-            """Get an SLO correction for an SLO  # noqa: E501
-
-            Get an SLO Correction  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_slo_correction(slo_correction_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                slo_correction_id (str): The ID of the SLO correction object
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLOCorrectionResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["slo_correction_id"] = slo_correction_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_slo_correction = _Endpoint(
+        self._get_slo_correction_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOCorrectionResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -300,56 +151,9 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_slo_correction,
         )
 
-        def __list_slo_correction(self, **kwargs):
-            """Get all SLO corrections  # noqa: E501
-
-            Get all Service Level Objective Corrections  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_slo_correction(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLOCorrectionListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_slo_correction = _Endpoint(
+        self._list_slo_correction_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOCorrectionListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -372,61 +176,9 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_slo_correction,
         )
 
-        def __update_slo_correction(self, slo_correction_id, body, **kwargs):
-            """Update an SLO Correction  # noqa: E501
-
-            Update the specified SLO correction object object  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_slo_correction(slo_correction_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                slo_correction_id (str): The ID of the SLO correction object
-                body (SLOCorrectionUpdateRequest): The edited SLO correction object.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SLOCorrectionResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["slo_correction_id"] = slo_correction_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_slo_correction = _Endpoint(
+        self._update_slo_correction_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOCorrectionResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -466,5 +218,218 @@ class ServiceLevelObjectiveCorrectionsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_slo_correction,
         )
+
+    def create_slo_correction(self, body, **kwargs):
+        """Create an SLO correction  # noqa: E501
+
+        Create an SLO Correction  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_slo_correction(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (SLOCorrectionCreateRequest): Create an SLO Correction
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOCorrectionResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_slo_correction_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_slo_correction_endpoint.call_with_http_info(**kwargs)
+
+    def delete_slo_correction(self, slo_correction_id, **kwargs):
+        """Delete an SLO Correction  # noqa: E501
+
+        Permanently delete the specified SLO Correction object  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_slo_correction(slo_correction_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            slo_correction_id (str): The ID of the SLO correction object
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_slo_correction_endpoint.default_arguments(kwargs)
+        kwargs["slo_correction_id"] = slo_correction_id
+        return self._delete_slo_correction_endpoint.call_with_http_info(**kwargs)
+
+    def get_slo_correction(self, slo_correction_id, **kwargs):
+        """Get an SLO correction for an SLO  # noqa: E501
+
+        Get an SLO Correction  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_slo_correction(slo_correction_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            slo_correction_id (str): The ID of the SLO correction object
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOCorrectionResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_slo_correction_endpoint.default_arguments(kwargs)
+        kwargs["slo_correction_id"] = slo_correction_id
+        return self._get_slo_correction_endpoint.call_with_http_info(**kwargs)
+
+    def list_slo_correction(self, **kwargs):
+        """Get all SLO corrections  # noqa: E501
+
+        Get all Service Level Objective Corrections  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_slo_correction(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOCorrectionListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_slo_correction_endpoint.default_arguments(kwargs)
+        return self._list_slo_correction_endpoint.call_with_http_info(**kwargs)
+
+    def update_slo_correction(self, slo_correction_id, body, **kwargs):
+        """Update an SLO Correction  # noqa: E501
+
+        Update the specified SLO correction object object  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_slo_correction(slo_correction_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            slo_correction_id (str): The ID of the SLO correction object
+            body (SLOCorrectionUpdateRequest): The edited SLO correction object.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOCorrectionResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_slo_correction_endpoint.default_arguments(kwargs)
+        kwargs["slo_correction_id"] = slo_correction_id
+        kwargs["body"] = body
+        return self._update_slo_correction_endpoint.call_with_http_info(**kwargs)

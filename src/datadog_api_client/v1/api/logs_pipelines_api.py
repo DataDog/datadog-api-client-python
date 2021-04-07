@@ -35,56 +35,7 @@ class LogsPipelinesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_logs_pipeline(self, body, **kwargs):
-            """Create a pipeline  # noqa: E501
-
-            Create a pipeline in your organization.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_logs_pipeline(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (LogsPipeline): Definition of the new pipeline.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                LogsPipeline
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_logs_pipeline = _Endpoint(
+        self._create_logs_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsPipeline,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -118,59 +69,9 @@ class LogsPipelinesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_logs_pipeline,
         )
 
-        def __delete_logs_pipeline(self, pipeline_id, **kwargs):
-            """Delete a pipeline  # noqa: E501
-
-            Delete a given pipeline from your organization. This endpoint takes no JSON arguments.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_logs_pipeline(pipeline_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                pipeline_id (str): ID of the pipeline to delete.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["pipeline_id"] = pipeline_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_logs_pipeline = _Endpoint(
+        self._delete_logs_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -209,59 +110,9 @@ class LogsPipelinesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_logs_pipeline,
         )
 
-        def __get_logs_pipeline(self, pipeline_id, **kwargs):
-            """Get a pipeline  # noqa: E501
-
-            Get a specific pipeline from your organization. This endpoint takes no JSON arguments.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_logs_pipeline(pipeline_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                pipeline_id (str): ID of the pipeline to get.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                LogsPipeline
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["pipeline_id"] = pipeline_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_logs_pipeline = _Endpoint(
+        self._get_logs_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsPipeline,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -300,56 +151,9 @@ class LogsPipelinesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_logs_pipeline,
         )
 
-        def __get_logs_pipeline_order(self, **kwargs):
-            """Get pipeline order  # noqa: E501
-
-            Get the current order of your pipelines. This endpoint takes no JSON arguments.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_logs_pipeline_order(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                LogsPipelinesOrder
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.get_logs_pipeline_order = _Endpoint(
+        self._get_logs_pipeline_order_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsPipelinesOrder,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -372,56 +176,9 @@ class LogsPipelinesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_logs_pipeline_order,
         )
 
-        def __list_logs_pipelines(self, **kwargs):
-            """Get all pipelines  # noqa: E501
-
-            Get all pipelines from your organization. This endpoint takes no JSON arguments.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_logs_pipelines(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                LogsPipelineList
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_logs_pipelines = _Endpoint(
+        self._list_logs_pipelines_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsPipelineList,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -444,61 +201,9 @@ class LogsPipelinesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_logs_pipelines,
         )
 
-        def __update_logs_pipeline(self, pipeline_id, body, **kwargs):
-            """Update a pipeline  # noqa: E501
-
-            Update a given pipeline configuration to change it’s processors or their order.  **Note**: Using this method updates your pipeline configuration by **replacing** your current configuration with the new one sent to your Datadog organization.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_logs_pipeline(pipeline_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                pipeline_id (str): ID of the pipeline to delete.
-                body (LogsPipeline): New definition of the pipeline.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                LogsPipeline
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["pipeline_id"] = pipeline_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_logs_pipeline = _Endpoint(
+        self._update_logs_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsPipeline,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -538,59 +243,9 @@ class LogsPipelinesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_logs_pipeline,
         )
 
-        def __update_logs_pipeline_order(self, body, **kwargs):
-            """Update pipeline order  # noqa: E501
-
-            Update the order of your pipelines. Since logs are processed sequentially, reordering a pipeline may change the structure and content of the data processed by other pipelines and their processors.  **Note**: Using the `PUT` method updates your pipeline order by replacing your current order with the new one sent to your Datadog organization.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_logs_pipeline_order(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (LogsPipelinesOrder): Object containing the new ordered list of pipeline IDs.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                LogsPipelinesOrder
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_logs_pipeline_order = _Endpoint(
+        self._update_logs_pipeline_order_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsPipelinesOrder,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -624,5 +279,301 @@ class LogsPipelinesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_logs_pipeline_order,
         )
+
+    def create_logs_pipeline(self, body, **kwargs):
+        """Create a pipeline  # noqa: E501
+
+        Create a pipeline in your organization.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_logs_pipeline(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (LogsPipeline): Definition of the new pipeline.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LogsPipeline
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_logs_pipeline_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_logs_pipeline_endpoint.call_with_http_info(**kwargs)
+
+    def delete_logs_pipeline(self, pipeline_id, **kwargs):
+        """Delete a pipeline  # noqa: E501
+
+        Delete a given pipeline from your organization. This endpoint takes no JSON arguments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_logs_pipeline(pipeline_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            pipeline_id (str): ID of the pipeline to delete.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_logs_pipeline_endpoint.default_arguments(kwargs)
+        kwargs["pipeline_id"] = pipeline_id
+        return self._delete_logs_pipeline_endpoint.call_with_http_info(**kwargs)
+
+    def get_logs_pipeline(self, pipeline_id, **kwargs):
+        """Get a pipeline  # noqa: E501
+
+        Get a specific pipeline from your organization. This endpoint takes no JSON arguments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_logs_pipeline(pipeline_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            pipeline_id (str): ID of the pipeline to get.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LogsPipeline
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_logs_pipeline_endpoint.default_arguments(kwargs)
+        kwargs["pipeline_id"] = pipeline_id
+        return self._get_logs_pipeline_endpoint.call_with_http_info(**kwargs)
+
+    def get_logs_pipeline_order(self, **kwargs):
+        """Get pipeline order  # noqa: E501
+
+        Get the current order of your pipelines. This endpoint takes no JSON arguments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_logs_pipeline_order(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LogsPipelinesOrder
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_logs_pipeline_order_endpoint.default_arguments(kwargs)
+        return self._get_logs_pipeline_order_endpoint.call_with_http_info(**kwargs)
+
+    def list_logs_pipelines(self, **kwargs):
+        """Get all pipelines  # noqa: E501
+
+        Get all pipelines from your organization. This endpoint takes no JSON arguments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_logs_pipelines(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LogsPipelineList
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_logs_pipelines_endpoint.default_arguments(kwargs)
+        return self._list_logs_pipelines_endpoint.call_with_http_info(**kwargs)
+
+    def update_logs_pipeline(self, pipeline_id, body, **kwargs):
+        """Update a pipeline  # noqa: E501
+
+        Update a given pipeline configuration to change it’s processors or their order.  **Note**: Using this method updates your pipeline configuration by **replacing** your current configuration with the new one sent to your Datadog organization.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_logs_pipeline(pipeline_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            pipeline_id (str): ID of the pipeline to delete.
+            body (LogsPipeline): New definition of the pipeline.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LogsPipeline
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_logs_pipeline_endpoint.default_arguments(kwargs)
+        kwargs["pipeline_id"] = pipeline_id
+        kwargs["body"] = body
+        return self._update_logs_pipeline_endpoint.call_with_http_info(**kwargs)
+
+    def update_logs_pipeline_order(self, body, **kwargs):
+        """Update pipeline order  # noqa: E501
+
+        Update the order of your pipelines. Since logs are processed sequentially, reordering a pipeline may change the structure and content of the data processed by other pipelines and their processors.  **Note**: Using the `PUT` method updates your pipeline order by replacing your current order with the new one sent to your Datadog organization.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_logs_pipeline_order(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (LogsPipelinesOrder): Object containing the new ordered list of pipeline IDs.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LogsPipelinesOrder
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_logs_pipeline_order_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._update_logs_pipeline_order_endpoint.call_with_http_info(**kwargs)

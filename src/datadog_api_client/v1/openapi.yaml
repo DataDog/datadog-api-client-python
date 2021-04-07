@@ -7871,7 +7871,8 @@ components:
             $ref: '#/components/schemas/SyntheticsDeviceID'
           type: array
         disableCors:
-          description: Whether or not to disable CORS mechanism.
+          description: Whether or not to disable CORS mechanism. Currently only available
+            for Chrome.
           type: boolean
         follow_redirects:
           description: For API HTTP test, whether or not the test should follow redirects.
@@ -11164,6 +11165,11 @@ paths:
           protocol:
             default: https
             description: The protocol for accessing the API.
+      - url: https://{subdomain}.datadoghq.com
+        variables:
+          subdomain:
+            default: ip-ranges
+            description: The subdomain where the API is deployed.
       summary: List IP Ranges
       tags:
       - IP Ranges
@@ -12913,6 +12919,14 @@ paths:
           protocol:
             default: https
             description: The protocol for accessing the API.
+      - url: https://{subdomain}.{site}
+        variables:
+          site:
+            default: datadoghq.com
+            description: Any Datadog deployment.
+          subdomain:
+            default: api
+            description: The subdomain where the API is deployed.
       summary: Delete a tag filtering entry
       tags:
       - AWS Integration
@@ -12967,6 +12981,14 @@ paths:
           protocol:
             default: https
             description: The protocol for accessing the API.
+      - url: https://{subdomain}.{site}
+        variables:
+          site:
+            default: datadoghq.com
+            description: Any Datadog deployment.
+          subdomain:
+            default: api
+            description: The subdomain where the API is deployed.
       summary: Get all AWS tag filters
       tags:
       - AWS Integration
@@ -13025,6 +13047,14 @@ paths:
           protocol:
             default: https
             description: The protocol for accessing the API.
+      - url: https://{subdomain}.{site}
+        variables:
+          site:
+            default: datadoghq.com
+            description: Any Datadog deployment.
+          subdomain:
+            default: api
+            description: The subdomain where the API is deployed.
       summary: Set an AWS tag filter
       tags:
       - AWS Integration
@@ -14899,10 +14929,11 @@ paths:
         - **`tags`** one or more quoted tags (comma-separated), or "*". e.g.: `.over("env:prod",
         "role:db")`
 
-        - **`count`** must be at >= your max threshold (defined in the `options`).
+        - **`count`** must be at greater than or equal to your max threshold (defined
+        in the `options`). It is limited to 100.
 
-        e.g. if you want to notify on 1 critical, 3 ok and 2 warn statuses count should
-        be 3. It is limited to 100.
+        For example, if you''ve specified to notify on 1 critical, 3 ok, and 2 warn
+        statuses, `count` should be 3.
 
 
         **Event Alert Query**
@@ -15311,6 +15342,45 @@ paths:
       x-codegen-request-body-name: body
       x-undo:
         type: idempotent
+  /api/v1/monitor/{monitor_id}/downtimes:
+    get:
+      description: Get all downtimes for the specified monitor
+      operationId: ListMonitorDowntimes
+      parameters:
+      - description: The id of the monitor
+        in: path
+        name: monitor_id
+        required: true
+        schema:
+          format: int64
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Downtime'
+                type: array
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Monitor Not Found error
+      summary: Get all downtimes for a monitor
+      tags:
+      - Downtimes
+      x-codegen-request-body-name: body
+      x-undo:
+        type: safe
   /api/v1/monthly_custom_reports:
     get:
       description: Get monthly custom reports.
@@ -16734,7 +16804,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SyntheticsTestDetails'
+                $ref: '#/components/schemas/SyntheticsBrowserTest'
           description: OK
         '403':
           content:
@@ -19139,6 +19209,14 @@ servers:
     protocol:
       default: https
       description: The protocol for accessing the API.
+- url: https://{subdomain}.{site}
+  variables:
+    site:
+      default: datadoghq.com
+      description: Any Datadog deployment.
+    subdomain:
+      default: api
+      description: The subdomain where the API is deployed.
 tags:
 - description: 'Configure your Datadog-AWS integration directly through the Datadog
     API.

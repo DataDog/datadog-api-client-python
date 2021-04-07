@@ -34,56 +34,7 @@ class DowntimesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __cancel_downtime(self, downtime_id, **kwargs):
-            """Cancel a downtime  # noqa: E501
-
-            Cancel a downtime.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.cancel_downtime(downtime_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                downtime_id (int): ID of the downtime to cancel.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["downtime_id"] = downtime_id
-            return self.call_with_http_info(**kwargs)
-
-        self.cancel_downtime = _Endpoint(
+        self._cancel_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -122,59 +73,9 @@ class DowntimesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__cancel_downtime,
         )
 
-        def __cancel_downtimes_by_scope(self, body, **kwargs):
-            """Cancel downtimes by scope  # noqa: E501
-
-            Delete all downtimes that match the scope of `X`.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.cancel_downtimes_by_scope(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (CancelDowntimesByScopeRequest): Scope to cancel downtimes for.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                CanceledDowntimesIds
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.cancel_downtimes_by_scope = _Endpoint(
+        self._cancel_downtimes_by_scope_endpoint = _Endpoint(
             settings={
                 "response_type": (CanceledDowntimesIds,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -208,59 +109,9 @@ class DowntimesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__cancel_downtimes_by_scope,
         )
 
-        def __create_downtime(self, body, **kwargs):
-            """Schedule a downtime  # noqa: E501
-
-            Schedule a downtime.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_downtime(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (Downtime): Schedule a downtime request body.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                Downtime
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_downtime = _Endpoint(
+        self._create_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (Downtime,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -294,59 +145,9 @@ class DowntimesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_downtime,
         )
 
-        def __get_downtime(self, downtime_id, **kwargs):
-            """Get a downtime  # noqa: E501
-
-            Get downtime detail by `downtime_id`.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_downtime(downtime_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                downtime_id (int): ID of the downtime to fetch.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                Downtime
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["downtime_id"] = downtime_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_downtime = _Endpoint(
+        self._get_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (Downtime,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -385,57 +186,9 @@ class DowntimesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_downtime,
         )
 
-        def __list_downtimes(self, **kwargs):
-            """Get all downtimes  # noqa: E501
-
-            Get all scheduled downtimes.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_downtimes(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                current_only (bool): Only return downtimes that are active when the request is made.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                [Downtime]
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_downtimes = _Endpoint(
+        self._list_downtimes_endpoint = _Endpoint(
             settings={
                 "response_type": ([Downtime],),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -472,61 +225,50 @@ class DowntimesApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_downtimes,
         )
 
-        def __update_downtime(self, downtime_id, body, **kwargs):
-            """Update a downtime  # noqa: E501
+        self._list_monitor_downtimes_endpoint = _Endpoint(
+            settings={
+                "response_type": ([Downtime],),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor/{monitor_id}/downtimes",
+                "operation_id": "list_monitor_downtimes",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "monitor_id",
+                ],
+                "required": [
+                    "monitor_id",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "monitor_id": (int,),
+                },
+                "attribute_map": {
+                    "monitor_id": "monitor_id",
+                },
+                "location_map": {
+                    "monitor_id": "path",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
 
-            Update a single downtime by `downtime_id`.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_downtime(downtime_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                downtime_id (int): ID of the downtime to update.
-                body (Downtime): Update a downtime request body.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                Downtime
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["downtime_id"] = downtime_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_downtime = _Endpoint(
+        self._update_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (Downtime,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -566,5 +308,305 @@ class DowntimesApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_downtime,
         )
+
+    def cancel_downtime(self, downtime_id, **kwargs):
+        """Cancel a downtime  # noqa: E501
+
+        Cancel a downtime.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.cancel_downtime(downtime_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            downtime_id (int): ID of the downtime to cancel.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._cancel_downtime_endpoint.default_arguments(kwargs)
+        kwargs["downtime_id"] = downtime_id
+        return self._cancel_downtime_endpoint.call_with_http_info(**kwargs)
+
+    def cancel_downtimes_by_scope(self, body, **kwargs):
+        """Cancel downtimes by scope  # noqa: E501
+
+        Delete all downtimes that match the scope of `X`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.cancel_downtimes_by_scope(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (CancelDowntimesByScopeRequest): Scope to cancel downtimes for.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CanceledDowntimesIds
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._cancel_downtimes_by_scope_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._cancel_downtimes_by_scope_endpoint.call_with_http_info(**kwargs)
+
+    def create_downtime(self, body, **kwargs):
+        """Schedule a downtime  # noqa: E501
+
+        Schedule a downtime.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_downtime(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (Downtime): Schedule a downtime request body.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Downtime
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_downtime_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_downtime_endpoint.call_with_http_info(**kwargs)
+
+    def get_downtime(self, downtime_id, **kwargs):
+        """Get a downtime  # noqa: E501
+
+        Get downtime detail by `downtime_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_downtime(downtime_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            downtime_id (int): ID of the downtime to fetch.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Downtime
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_downtime_endpoint.default_arguments(kwargs)
+        kwargs["downtime_id"] = downtime_id
+        return self._get_downtime_endpoint.call_with_http_info(**kwargs)
+
+    def list_downtimes(self, **kwargs):
+        """Get all downtimes  # noqa: E501
+
+        Get all scheduled downtimes.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_downtimes(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            current_only (bool): Only return downtimes that are active when the request is made.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            [Downtime]
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_downtimes_endpoint.default_arguments(kwargs)
+        return self._list_downtimes_endpoint.call_with_http_info(**kwargs)
+
+    def list_monitor_downtimes(self, monitor_id, **kwargs):
+        """Get all downtimes for a monitor  # noqa: E501
+
+        Get all downtimes for the specified monitor  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_monitor_downtimes(monitor_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            monitor_id (int): The id of the monitor
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            [Downtime]
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_monitor_downtimes_endpoint.default_arguments(kwargs)
+        kwargs["monitor_id"] = monitor_id
+        return self._list_monitor_downtimes_endpoint.call_with_http_info(**kwargs)
+
+    def update_downtime(self, downtime_id, body, **kwargs):
+        """Update a downtime  # noqa: E501
+
+        Update a single downtime by `downtime_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_downtime(downtime_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            downtime_id (int): ID of the downtime to update.
+            body (Downtime): Update a downtime request body.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Downtime
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_downtime_endpoint.default_arguments(kwargs)
+        kwargs["downtime_id"] = downtime_id
+        kwargs["body"] = body
+        return self._update_downtime_endpoint.call_with_http_info(**kwargs)

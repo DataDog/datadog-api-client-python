@@ -37,56 +37,7 @@ class OrganizationsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_child_org(self, body, **kwargs):
-            """Create a child organization  # noqa: E501
-
-            Create a child organization.  This endpoint requires the [multi-organization account](https://docs.datadoghq.com/account_management/multi_organization/) feature and must be enabled by [contacting support](https://docs.datadoghq.com/help/).  Once a new child organization is created, you can interact with it by using the `org.public_id`, `pi_key.key`, and `application_key.hash` provided in the response.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_child_org(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (OrganizationCreateBody): Organization object that needs to be created
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                OrganizationCreateResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_child_org = _Endpoint(
+        self._create_child_org_endpoint = _Endpoint(
             settings={
                 "response_type": (OrganizationCreateResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -120,59 +71,9 @@ class OrganizationsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_child_org,
         )
 
-        def __get_org(self, public_id, **kwargs):
-            """Get organization information  # noqa: E501
-
-            Get organization information.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_org(public_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                public_id (str): The `public_id` of the organization you are operating within.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                OrganizationResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["public_id"] = public_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_org = _Endpoint(
+        self._get_org_endpoint = _Endpoint(
             settings={
                 "response_type": (OrganizationResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -211,56 +112,9 @@ class OrganizationsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_org,
         )
 
-        def __list_orgs(self, **kwargs):
-            """List your managed organizations  # noqa: E501
-
-            List your managed organizations.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_orgs(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                OrganizationListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_orgs = _Endpoint(
+        self._list_orgs_endpoint = _Endpoint(
             settings={
                 "response_type": (OrganizationListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -283,61 +137,9 @@ class OrganizationsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_orgs,
         )
 
-        def __update_org(self, public_id, body, **kwargs):
-            """Update your organization  # noqa: E501
-
-            Update your organization.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_org(public_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                public_id (str): The `public_id` of the organization you are operating within.
-                body (Organization):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                OrganizationResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["public_id"] = public_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_org = _Endpoint(
+        self._update_org_endpoint = _Endpoint(
             settings={
                 "response_type": (OrganizationResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -377,61 +179,9 @@ class OrganizationsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_org,
         )
 
-        def __upload_id_p_for_org(self, public_id, idp_file, **kwargs):
-            """Upload IdP metadata  # noqa: E501
-
-            There are a couple of options for updating the Identity Provider (IdP) metadata from your SAML IdP.  * **Multipart Form-Data**: Post the IdP metadata file using a form post.  * **XML Body:** Post the IdP metadata file as the body of the request.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.upload_id_p_for_org(public_id, idp_file, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                public_id (str): The `public_id` of the organization you are operating with
-                idp_file (file_type): The path to the XML metadata file you wish to upload.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                IdpResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["public_id"] = public_id
-            kwargs["idp_file"] = idp_file
-            return self.call_with_http_info(**kwargs)
-
-        self.upload_id_p_for_org = _Endpoint(
+        self._upload_id_p_for_org_endpoint = _Endpoint(
             settings={
                 "response_type": (IdpResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -472,5 +222,220 @@ class OrganizationsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["multipart/form-data"]},
             api_client=api_client,
-            callable=__upload_id_p_for_org,
         )
+
+    def create_child_org(self, body, **kwargs):
+        """Create a child organization  # noqa: E501
+
+        Create a child organization.  This endpoint requires the [multi-organization account](https://docs.datadoghq.com/account_management/multi_organization/) feature and must be enabled by [contacting support](https://docs.datadoghq.com/help/).  Once a new child organization is created, you can interact with it by using the `org.public_id`, `pi_key.key`, and `application_key.hash` provided in the response.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_child_org(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (OrganizationCreateBody): Organization object that needs to be created
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            OrganizationCreateResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_child_org_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_child_org_endpoint.call_with_http_info(**kwargs)
+
+    def get_org(self, public_id, **kwargs):
+        """Get organization information  # noqa: E501
+
+        Get organization information.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_org(public_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            public_id (str): The `public_id` of the organization you are operating within.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            OrganizationResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_org_endpoint.default_arguments(kwargs)
+        kwargs["public_id"] = public_id
+        return self._get_org_endpoint.call_with_http_info(**kwargs)
+
+    def list_orgs(self, **kwargs):
+        """List your managed organizations  # noqa: E501
+
+        List your managed organizations.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_orgs(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            OrganizationListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_orgs_endpoint.default_arguments(kwargs)
+        return self._list_orgs_endpoint.call_with_http_info(**kwargs)
+
+    def update_org(self, public_id, body, **kwargs):
+        """Update your organization  # noqa: E501
+
+        Update your organization.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_org(public_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            public_id (str): The `public_id` of the organization you are operating within.
+            body (Organization):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            OrganizationResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_org_endpoint.default_arguments(kwargs)
+        kwargs["public_id"] = public_id
+        kwargs["body"] = body
+        return self._update_org_endpoint.call_with_http_info(**kwargs)
+
+    def upload_id_p_for_org(self, public_id, idp_file, **kwargs):
+        """Upload IdP metadata  # noqa: E501
+
+        There are a couple of options for updating the Identity Provider (IdP) metadata from your SAML IdP.  * **Multipart Form-Data**: Post the IdP metadata file using a form post.  * **XML Body:** Post the IdP metadata file as the body of the request.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.upload_id_p_for_org(public_id, idp_file, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            public_id (str): The `public_id` of the organization you are operating with
+            idp_file (file_type): The path to the XML metadata file you wish to upload.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            IdpResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._upload_id_p_for_org_endpoint.default_arguments(kwargs)
+        kwargs["public_id"] = public_id
+        kwargs["idp_file"] = idp_file
+        return self._upload_id_p_for_org_endpoint.call_with_http_info(**kwargs)

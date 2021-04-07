@@ -38,56 +38,7 @@ class SecurityMonitoringApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_security_monitoring_rule(self, body, **kwargs):
-            """Create a detection rule  # noqa: E501
-
-            Create a detection rule.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_security_monitoring_rule(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (SecurityMonitoringRuleCreatePayload):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SecurityMonitoringRuleResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_security_monitoring_rule = _Endpoint(
+        self._create_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -121,59 +72,9 @@ class SecurityMonitoringApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_security_monitoring_rule,
         )
 
-        def __delete_security_monitoring_rule(self, rule_id, **kwargs):
-            """Delete an existing rule  # noqa: E501
-
-            Delete an existing rule. Default rules cannot be deleted.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_security_monitoring_rule(rule_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                rule_id (str): The ID of the rule.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["rule_id"] = rule_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_security_monitoring_rule = _Endpoint(
+        self._delete_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -212,59 +113,9 @@ class SecurityMonitoringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_security_monitoring_rule,
         )
 
-        def __get_security_monitoring_rule(self, rule_id, **kwargs):
-            """Get a rule's details  # noqa: E501
-
-            Get a rule's details.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_security_monitoring_rule(rule_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                rule_id (str): The ID of the rule.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SecurityMonitoringRuleResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["rule_id"] = rule_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_security_monitoring_rule = _Endpoint(
+        self._get_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -303,58 +154,9 @@ class SecurityMonitoringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_security_monitoring_rule,
         )
 
-        def __list_security_monitoring_rules(self, **kwargs):
-            """List rules  # noqa: E501
-
-            List rules.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_security_monitoring_rules(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
-                page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SecurityMonitoringListRulesResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_security_monitoring_rules = _Endpoint(
+        self._list_security_monitoring_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringListRulesResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -395,62 +197,9 @@ class SecurityMonitoringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_security_monitoring_rules,
         )
 
-        def __list_security_monitoring_signals(self, **kwargs):
-            """Get a quick list of security signals  # noqa: E501
-
-            The list endpoint returns security signals that match a search query. Both this endpoint and the POST endpoint can be used interchangeably when listing security signals.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_security_monitoring_signals(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                filter_query (str): The search query for security signals.. [optional]
-                filter_from (datetime): The minimum timestamp for requested security signals.. [optional]
-                filter_to (datetime): The maximum timestamp for requested security signals.. [optional]
-                sort (SecurityMonitoringSignalsSort): The order of the security signals in results.. [optional]
-                page_cursor (str): A list of results using the cursor provided in the previous query.. [optional]
-                page_limit (int): The maximum number of security signals in the response.. [optional] if omitted the server will use the default value of 10
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SecurityMonitoringSignalsListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_security_monitoring_signals = _Endpoint(
+        self._list_security_monitoring_signals_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalsListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -513,57 +262,9 @@ class SecurityMonitoringApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_security_monitoring_signals,
         )
 
-        def __search_security_monitoring_signals(self, **kwargs):
-            """Get a list of security signals  # noqa: E501
-
-            Returns security signals that match a search query. Both this endpoint and the GET endpoint can be used interchangeably for listing security signals.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.search_security_monitoring_signals(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                body (SecurityMonitoringSignalListRequest): [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SecurityMonitoringSignalsListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.search_security_monitoring_signals = _Endpoint(
+        self._search_security_monitoring_signals_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalsListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -595,61 +296,9 @@ class SecurityMonitoringApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__search_security_monitoring_signals,
         )
 
-        def __update_security_monitoring_rule(self, rule_id, body, **kwargs):
-            """Update an existing rule  # noqa: E501
-
-            Update an existing rule. When updating `cases`, `queries` or `options`, the whole field must be included. For example, when modifying a query all queries must be included. Default rules can only be updated to be enabled and to change notifications.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_security_monitoring_rule(rule_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                rule_id (str): The ID of the rule.
-                body (SecurityMonitoringRuleUpdatePayload):
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                SecurityMonitoringRuleResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["rule_id"] = rule_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_security_monitoring_rule = _Endpoint(
+        self._update_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -689,5 +338,307 @@ class SecurityMonitoringApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_security_monitoring_rule,
         )
+
+    def create_security_monitoring_rule(self, body, **kwargs):
+        """Create a detection rule  # noqa: E501
+
+        Create a detection rule.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_security_monitoring_rule(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (SecurityMonitoringRuleCreatePayload):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityMonitoringRuleResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_security_monitoring_rule_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_security_monitoring_rule(self, rule_id, **kwargs):
+        """Delete an existing rule  # noqa: E501
+
+        Delete an existing rule. Default rules cannot be deleted.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_security_monitoring_rule(rule_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            rule_id (str): The ID of the rule.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_security_monitoring_rule_endpoint.default_arguments(kwargs)
+        kwargs["rule_id"] = rule_id
+        return self._delete_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_security_monitoring_rule(self, rule_id, **kwargs):
+        """Get a rule's details  # noqa: E501
+
+        Get a rule's details.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_security_monitoring_rule(rule_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            rule_id (str): The ID of the rule.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityMonitoringRuleResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_security_monitoring_rule_endpoint.default_arguments(kwargs)
+        kwargs["rule_id"] = rule_id
+        return self._get_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def list_security_monitoring_rules(self, **kwargs):
+        """List rules  # noqa: E501
+
+        List rules.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_security_monitoring_rules(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            page_size (int): Size for a given page.. [optional] if omitted the server will use the default value of 10
+            page_number (int): Specific page number to return.. [optional] if omitted the server will use the default value of 0
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityMonitoringListRulesResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_security_monitoring_rules_endpoint.default_arguments(kwargs)
+        return self._list_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
+
+    def list_security_monitoring_signals(self, **kwargs):
+        """Get a quick list of security signals  # noqa: E501
+
+        The list endpoint returns security signals that match a search query. Both this endpoint and the POST endpoint can be used interchangeably when listing security signals.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_security_monitoring_signals(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            filter_query (str): The search query for security signals.. [optional]
+            filter_from (datetime): The minimum timestamp for requested security signals.. [optional]
+            filter_to (datetime): The maximum timestamp for requested security signals.. [optional]
+            sort (SecurityMonitoringSignalsSort): The order of the security signals in results.. [optional]
+            page_cursor (str): A list of results using the cursor provided in the previous query.. [optional]
+            page_limit (int): The maximum number of security signals in the response.. [optional] if omitted the server will use the default value of 10
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityMonitoringSignalsListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_security_monitoring_signals_endpoint.default_arguments(kwargs)
+        return self._list_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
+
+    def search_security_monitoring_signals(self, **kwargs):
+        """Get a list of security signals  # noqa: E501
+
+        Returns security signals that match a search query. Both this endpoint and the GET endpoint can be used interchangeably for listing security signals.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_security_monitoring_signals(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            body (SecurityMonitoringSignalListRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityMonitoringSignalsListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._search_security_monitoring_signals_endpoint.default_arguments(kwargs)
+        return self._search_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
+
+    def update_security_monitoring_rule(self, rule_id, body, **kwargs):
+        """Update an existing rule  # noqa: E501
+
+        Update an existing rule. When updating `cases`, `queries` or `options`, the whole field must be included. For example, when modifying a query all queries must be included. Default rules can only be updated to be enabled and to change notifications.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_security_monitoring_rule(rule_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            rule_id (str): The ID of the rule.
+            body (SecurityMonitoringRuleUpdatePayload):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityMonitoringRuleResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_security_monitoring_rule_endpoint.default_arguments(kwargs)
+        kwargs["rule_id"] = rule_id
+        kwargs["body"] = body
+        return self._update_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)

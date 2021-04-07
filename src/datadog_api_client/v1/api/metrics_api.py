@@ -35,56 +35,7 @@ class MetricsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __get_metric_metadata(self, metric_name, **kwargs):
-            """Get metric metadata  # noqa: E501
-
-            Get metadata about a specific metric.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_metric_metadata(metric_name, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_name (str): Name of the metric for which to get metadata.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricMetadata
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_name"] = metric_name
-            return self.call_with_http_info(**kwargs)
-
-        self.get_metric_metadata = _Endpoint(
+        self._get_metric_metadata_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricMetadata,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -123,61 +74,9 @@ class MetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_metric_metadata,
         )
 
-        def __list_active_metrics(self, _from, **kwargs):
-            """Get active metrics list  # noqa: E501
-
-            Get the list of actively reporting metrics from a given time until now.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_active_metrics(_from, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                _from (int): Seconds since the Unix epoch.
-
-            Keyword Args:
-                host (str): Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag.. [optional]
-                tag_filter (str): Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricsListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["_from"] = _from
-            return self.call_with_http_info(**kwargs)
-
-        self.list_active_metrics = _Endpoint(
+        self._list_active_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricsListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -224,59 +123,9 @@ class MetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_active_metrics,
         )
 
-        def __list_metrics(self, q, **kwargs):
-            """Search metrics  # noqa: E501
-
-            Search for metrics from the last 24 hours in Datadog.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_metrics(q, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                q (str): Query string to search metrics upon. Must be prefixed with `metrics:`.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricSearchResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["q"] = q
-            return self.call_with_http_info(**kwargs)
-
-        self.list_metrics = _Endpoint(
+        self._list_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricSearchResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -315,63 +164,9 @@ class MetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_metrics,
         )
 
-        def __query_metrics(self, _from, to, query, **kwargs):
-            """Query timeseries points  # noqa: E501
-
-            Query timeseries points.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.query_metrics(_from, to, query, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                _from (int): Start of the queried time period, seconds since the Unix epoch.
-                to (int): End of the queried time period, seconds since the Unix epoch.
-                query (str): Query string.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricsQueryResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["_from"] = _from
-            kwargs["to"] = to
-            kwargs["query"] = query
-            return self.call_with_http_info(**kwargs)
-
-        self.query_metrics = _Endpoint(
+        self._query_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricsQueryResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -420,61 +215,9 @@ class MetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__query_metrics,
         )
 
-        def __update_metric_metadata(self, metric_name, body, **kwargs):
-            """Edit metric metadata  # noqa: E501
-
-            Edit metadata of a specific metric. Find out more about [supported types](https://docs.datadoghq.com/developers/metrics).  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_metric_metadata(metric_name, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_name (str): Name of the metric for which to edit metadata.
-                body (MetricMetadata): New metadata.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                MetricMetadata
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_name"] = metric_name
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_metric_metadata = _Endpoint(
+        self._update_metric_metadata_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricMetadata,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -514,5 +257,227 @@ class MetricsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_metric_metadata,
         )
+
+    def get_metric_metadata(self, metric_name, **kwargs):
+        """Get metric metadata  # noqa: E501
+
+        Get metadata about a specific metric.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_metric_metadata(metric_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_name (str): Name of the metric for which to get metadata.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_metric_metadata_endpoint.default_arguments(kwargs)
+        kwargs["metric_name"] = metric_name
+        return self._get_metric_metadata_endpoint.call_with_http_info(**kwargs)
+
+    def list_active_metrics(self, _from, **kwargs):
+        """Get active metrics list  # noqa: E501
+
+        Get the list of actively reporting metrics from a given time until now.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_active_metrics(_from, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            _from (int): Seconds since the Unix epoch.
+
+        Keyword Args:
+            host (str): Hostname for filtering the list of metrics returned. If set, metrics retrieved are those with the corresponding hostname tag.. [optional]
+            tag_filter (str): Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions. Cannot be combined with other filters.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricsListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_active_metrics_endpoint.default_arguments(kwargs)
+        kwargs["_from"] = _from
+        return self._list_active_metrics_endpoint.call_with_http_info(**kwargs)
+
+    def list_metrics(self, q, **kwargs):
+        """Search metrics  # noqa: E501
+
+        Search for metrics from the last 24 hours in Datadog.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_metrics(q, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            q (str): Query string to search metrics upon. Must be prefixed with `metrics:`.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricSearchResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_metrics_endpoint.default_arguments(kwargs)
+        kwargs["q"] = q
+        return self._list_metrics_endpoint.call_with_http_info(**kwargs)
+
+    def query_metrics(self, _from, to, query, **kwargs):
+        """Query timeseries points  # noqa: E501
+
+        Query timeseries points.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.query_metrics(_from, to, query, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            _from (int): Start of the queried time period, seconds since the Unix epoch.
+            to (int): End of the queried time period, seconds since the Unix epoch.
+            query (str): Query string.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricsQueryResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._query_metrics_endpoint.default_arguments(kwargs)
+        kwargs["_from"] = _from
+        kwargs["to"] = to
+        kwargs["query"] = query
+        return self._query_metrics_endpoint.call_with_http_info(**kwargs)
+
+    def update_metric_metadata(self, metric_name, body, **kwargs):
+        """Edit metric metadata  # noqa: E501
+
+        Edit metadata of a specific metric. Find out more about [supported types](https://docs.datadoghq.com/developers/metrics).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_metric_metadata(metric_name, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_name (str): Name of the metric for which to edit metadata.
+            body (MetricMetadata): New metadata.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetricMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_metric_metadata_endpoint.default_arguments(kwargs)
+        kwargs["metric_name"] = metric_name
+        kwargs["body"] = body
+        return self._update_metric_metadata_endpoint.call_with_http_info(**kwargs)

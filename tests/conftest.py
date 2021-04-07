@@ -276,13 +276,13 @@ def freezer(default_cassette_name, record_mode, vcr):
 @given('a valid "apiKeyAuth" key in the system')
 def a_valid_api_key(configuration):
     """a valid API key."""
-    configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "")
+    configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
 
 
 @given('a valid "appKeyAuth" key in the system')
 def a_valid_application_key(configuration):
     """a valid Application key."""
-    configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "")
+    configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
 
 
 @pytest.fixture
@@ -306,6 +306,9 @@ def build_configuration(package):
     if debug:  # enable vcr logs for DEBUG=true
         vcr_log = logging.getLogger("vcr")
         vcr_log.setLevel(logging.INFO)
+    if "DD_TEST_SITE" in os.environ:
+        c.server_index = 2
+        c.server_variables["site"] = os.environ["DD_TEST_SITE"]
     return c
 
 
@@ -339,7 +342,7 @@ def operation_enabled(client, name):
 
 
 @given(parsers.parse('new "{name}" request'))
-def api_request(context, name):
+def api_request(configuration, context, name):
     """Call an endpoint."""
     api = context["api"]
     context["api_request"] = {
@@ -347,7 +350,7 @@ def api_request(context, name):
         "request": getattr(api["api"], snake_case(name)),
         "args": [],
         "kwargs": {
-            "_host_index": 0,
+            "_host_index": configuration.server_index,
             "_check_input_type": False,
             "async_req": False,
             "_check_return_type": True,
@@ -388,8 +391,8 @@ def build_given(version, operation):
 
         # make sure we have a fresh instance of API client and configuration
         configuration = build_configuration(importlib.import_module(package_name))
-        configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "")
-        configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "")
+        configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
+        configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
 
         # enable unstable operation
         configuration.unstable_operations[operation_name] = True
@@ -466,16 +469,19 @@ def undo(package_name, undo_operations, client):
 
 
 @when("the request is sent")
-def execute_request(undo, context, client):
+def execute_request(undo, context, client, _package):
     """Execute the prepared request."""
     api_request = context["api_request"]
     exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
 
     try:
-        api_request["response"] = api_request["request"].call_with_http_info(
+        response = api_request["request"](
             *api_request["args"], **api_request["kwargs"]
         )
         client.last_response.urllib3_response.close()
+        # Reserialise the response body to JSON to facilitate test assertions
+        response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(response[0])
+        api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions
         # Instead of finding the response class of the method, we use the fact that all
@@ -483,7 +489,7 @@ def execute_request(undo, context, client):
         api_request["response"] = [e.body, e.status, e.headers]
 
     api = api_request["api"]
-    operation_id = api_request["request"].settings["operation_id"]
+    operation_id = api_request["request"].__name__
     response = api_request["response"][0]
 
     context["undo_operations"].append(lambda: undo(api, operation_id, response))

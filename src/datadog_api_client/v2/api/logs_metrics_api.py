@@ -35,56 +35,7 @@ class LogsMetricsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_logs_metric(self, body, **kwargs):
-            """Create a log-based metric  # noqa: E501
-
-            Create a metric based on your ingested logs in your organization. Returns the log-based metric object from the request body when the request is successful.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_logs_metric(body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                body (LogsMetricCreateRequest): The definition of the new log-based metric.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                LogsMetricResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.create_logs_metric = _Endpoint(
+        self._create_logs_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsMetricResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -118,59 +69,9 @@ class LogsMetricsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__create_logs_metric,
         )
 
-        def __delete_logs_metric(self, metric_id, **kwargs):
-            """Delete a log-based metric  # noqa: E501
-
-            Delete a specific log-based metric from your organization.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.delete_logs_metric(metric_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_id (str): The name of the log-based metric.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                None
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_id"] = metric_id
-            return self.call_with_http_info(**kwargs)
-
-        self.delete_logs_metric = _Endpoint(
+        self._delete_logs_metric_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -209,59 +110,9 @@ class LogsMetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__delete_logs_metric,
         )
 
-        def __get_logs_metric(self, metric_id, **kwargs):
-            """Get a log-based metric  # noqa: E501
-
-            Get a specific log-based metric from your organization.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_logs_metric(metric_id, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_id (str): The name of the log-based metric.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                LogsMetricResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_id"] = metric_id
-            return self.call_with_http_info(**kwargs)
-
-        self.get_logs_metric = _Endpoint(
+        self._get_logs_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsMetricResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -300,56 +151,9 @@ class LogsMetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__get_logs_metric,
         )
 
-        def __list_logs_metrics(self, **kwargs):
-            """Get all log-based metrics  # noqa: E501
-
-            Get the list of configured log-based metrics with their definitions.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.list_logs_metrics(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                LogsMetricsResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            return self.call_with_http_info(**kwargs)
-
-        self.list_logs_metrics = _Endpoint(
+        self._list_logs_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsMetricsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -372,61 +176,9 @@ class LogsMetricsApi(object):
                 "content_type": [],
             },
             api_client=api_client,
-            callable=__list_logs_metrics,
         )
 
-        def __update_logs_metric(self, metric_id, body, **kwargs):
-            """Update a log-based metric  # noqa: E501
-
-            Update a specific log-based metric from your organization. Returns the log-based metric object from the request body when the request is successful.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.update_logs_metric(metric_id, body, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                metric_id (str): The name of the log-based metric.
-                body (LogsMetricUpdateRequest): New definition of the log-based metric.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (float/tuple): timeout setting for this request. If one
-                    number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                LogsMetricResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs["async_req"] = kwargs.get("async_req", False)
-            kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
-            kwargs["_preload_content"] = kwargs.get("_preload_content", True)
-            kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
-            kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
-            kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
-            kwargs["_host_index"] = kwargs.get("_host_index")
-            kwargs["metric_id"] = metric_id
-            kwargs["body"] = body
-            return self.call_with_http_info(**kwargs)
-
-        self.update_logs_metric = _Endpoint(
+        self._update_logs_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsMetricResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
@@ -466,5 +218,218 @@ class LogsMetricsApi(object):
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
-            callable=__update_logs_metric,
         )
+
+    def create_logs_metric(self, body, **kwargs):
+        """Create a log-based metric  # noqa: E501
+
+        Create a metric based on your ingested logs in your organization. Returns the log-based metric object from the request body when the request is successful.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_logs_metric(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (LogsMetricCreateRequest): The definition of the new log-based metric.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LogsMetricResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_logs_metric_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_logs_metric_endpoint.call_with_http_info(**kwargs)
+
+    def delete_logs_metric(self, metric_id, **kwargs):
+        """Delete a log-based metric  # noqa: E501
+
+        Delete a specific log-based metric from your organization.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_logs_metric(metric_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_id (str): The name of the log-based metric.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_logs_metric_endpoint.default_arguments(kwargs)
+        kwargs["metric_id"] = metric_id
+        return self._delete_logs_metric_endpoint.call_with_http_info(**kwargs)
+
+    def get_logs_metric(self, metric_id, **kwargs):
+        """Get a log-based metric  # noqa: E501
+
+        Get a specific log-based metric from your organization.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_logs_metric(metric_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_id (str): The name of the log-based metric.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LogsMetricResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_logs_metric_endpoint.default_arguments(kwargs)
+        kwargs["metric_id"] = metric_id
+        return self._get_logs_metric_endpoint.call_with_http_info(**kwargs)
+
+    def list_logs_metrics(self, **kwargs):
+        """Get all log-based metrics  # noqa: E501
+
+        Get the list of configured log-based metrics with their definitions.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_logs_metrics(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LogsMetricsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_logs_metrics_endpoint.default_arguments(kwargs)
+        return self._list_logs_metrics_endpoint.call_with_http_info(**kwargs)
+
+    def update_logs_metric(self, metric_id, body, **kwargs):
+        """Update a log-based metric  # noqa: E501
+
+        Update a specific log-based metric from your organization. Returns the log-based metric object from the request body when the request is successful.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_logs_metric(metric_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            metric_id (str): The name of the log-based metric.
+            body (LogsMetricUpdateRequest): New definition of the log-based metric.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LogsMetricResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_logs_metric_endpoint.default_arguments(kwargs)
+        kwargs["metric_id"] = metric_id
+        kwargs["body"] = body
+        return self._update_logs_metric_endpoint.call_with_http_info(**kwargs)
