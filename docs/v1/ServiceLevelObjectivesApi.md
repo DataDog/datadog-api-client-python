@@ -107,26 +107,18 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
     body = ServiceLevelObjectiveRequest(
-        created_at=1,
-        creator=Creator(
-            email="email_example",
-            handle="handle_example",
-            name="name_example",
-        ),
         description="description_example",
         groups=["env:prod","role:mysql"],
-        id="id_example",
-        modified_at=1,
         monitor_ids=[
             1,
         ],
-        name="",
+        name="Custom Metric SLO",
         query=ServiceLevelObjectiveQuery(
-            denominator="",
-            numerator="",
+            denominator="sum:my.custom.metric{*}.as_count()",
+            numerator="sum:my.custom.metric{type:good}.as_count()",
         ),
         tags=["env:prod","app:core"],
-        thresholds=[],
+        thresholds=[{"target":95,"timeframe":"7d"},{"target":95,"timeframe":"30d","warning":97}],
         type=SLOType("metric"),
     )  # ServiceLevelObjectiveRequest | Service level objective request object.
 
@@ -572,13 +564,13 @@ with ApiClient(configuration) as api_client:
         monitor_tags=[
             "monitor_tags_example",
         ],
-        name="",
+        name="Custom Metric SLO",
         query=ServiceLevelObjectiveQuery(
-            denominator="",
-            numerator="",
+            denominator="sum:my.custom.metric{*}.as_count()",
+            numerator="sum:my.custom.metric{type:good}.as_count()",
         ),
         tags=["env:prod","app:core"],
-        thresholds=[],
+        thresholds=[{"target":95,"timeframe":"7d"},{"target":95,"timeframe":"30d","warning":97}],
         type=SLOType("metric"),
     )  # ServiceLevelObjective | The edited service level objective request object.
 
