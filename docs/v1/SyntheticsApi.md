@@ -223,7 +223,9 @@ with ApiClient(configuration) as api_client:
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsAPITest(
         config=SyntheticsAPITestConfig(
-            assertions=[],
+            assertions=[
+                SyntheticsAssertion(),
+            ],
             config_variables=[
                 SyntheticsConfigVariable(
                     example="example_example",
@@ -411,7 +413,9 @@ with ApiClient(configuration) as api_client:
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsBrowserTest(
         config=SyntheticsBrowserTestConfig(
-            assertions=[],
+            assertions=[
+                SyntheticsAssertion(),
+            ],
             request=SyntheticsTestRequest(
                 basic_auth=SyntheticsBasicAuth(
                     password="",
@@ -562,7 +566,9 @@ with ApiClient(configuration) as api_client:
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsTestDetails(
         config=SyntheticsTestConfig(
-            assertions=[],
+            assertions=[
+                SyntheticsAssertion(),
+            ],
             config_variables=[
                 SyntheticsConfigVariable(
                     example="example_example",
@@ -1868,7 +1874,9 @@ with ApiClient(configuration) as api_client:
     public_id = "public_id_example"  # str | The public ID of the test to get details from.
     body = SyntheticsAPITest(
         config=SyntheticsAPITestConfig(
-            assertions=[],
+            assertions=[
+                SyntheticsAssertion(),
+            ],
             config_variables=[
                 SyntheticsConfigVariable(
                     example="example_example",
@@ -2058,7 +2066,9 @@ with ApiClient(configuration) as api_client:
     public_id = "public_id_example"  # str | The public ID of the test to get details from.
     body = SyntheticsBrowserTest(
         config=SyntheticsBrowserTestConfig(
-            assertions=[],
+            assertions=[
+                SyntheticsAssertion(),
+            ],
             request=SyntheticsTestRequest(
                 basic_auth=SyntheticsBasicAuth(
                     password="",
@@ -2292,7 +2302,9 @@ with ApiClient(configuration) as api_client:
     public_id = "public_id_example"  # str | The public ID of the test to get details from.
     body = SyntheticsTestDetails(
         config=SyntheticsTestConfig(
-            assertions=[],
+            assertions=[
+                SyntheticsAssertion(),
+            ],
             config_variables=[
                 SyntheticsConfigVariable(
                     example="example_example",
