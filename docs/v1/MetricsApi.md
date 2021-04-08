@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**list_active_metrics**](MetricsApi.md#list_active_metrics) | **GET** /api/v1/metrics | Get active metrics list
 [**list_metrics**](MetricsApi.md#list_metrics) | **GET** /api/v1/search | Search metrics
 [**query_metrics**](MetricsApi.md#query_metrics) | **GET** /api/v1/query | Query timeseries points
+[**submit_metrics**](MetricsApi.md#submit_metrics) | **POST** /api/v1/series | Submit metrics
 [**update_metric_metadata**](MetricsApi.md#update_metric_metadata) | **PUT** /api/v1/metrics/{metric_name} | Edit metric metadata
 
 
@@ -289,6 +290,86 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Bad Request |  -  |
 **403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **submit_metrics**
+> IntakePayloadAccepted submit_metrics(body)
+
+Submit metrics
+
+The metrics end-point allows you to post time-series data that can be graphed on Datadog’s dashboards. The maximum payload size is 3.2 megabytes (3200000). Compressed payloads must have a decompressed size of up to 62 megabytes (62914560).  If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect  - 64 bits for the timestamp - 32 bits for the value - 20 bytes for the metric names - 50 bytes for the timeseries - The full payload is approximately ~ 100 bytes. However, with the DogStatsD API, compression is applied, which reduces the payload size.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import metrics_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = metrics_api.MetricsApi(api_client)
+    body = MetricsPayload(
+        series=[
+            Series(
+                host="test.example.com",
+                interval=20,
+                metric="system.load.1",
+                points=[
+                    Point([[1575317847,0.5]]),
+                ],
+                tags=["environment:test"],
+                type="rate",
+            ),
+        ],
+    )  # MetricsPayload | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Submit metrics
+        api_response = api_instance.submit_metrics(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling MetricsApi->submit_metrics: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MetricsPayload**](MetricsPayload.md)|  |
+
+### Return type
+
+[**IntakePayloadAccepted**](IntakePayloadAccepted.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Payload accepted |  -  |
+**400** | Bad Request |  -  |
+**403** | Authentication error |  -  |
+**408** | Request timeout |  -  |
+**413** | Payload too large |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

@@ -11,12 +11,12 @@ Feature: Metrics
 
   Background:
     Given a valid "apiKeyAuth" key in the system
-    And a valid "appKeyAuth" key in the system
     And an instance of "Metrics" API
 
   @generated @skip
   Scenario: Edit metric metadata returns "Bad Request" response
-    Given new "UpdateMetricMetadata" request
+    Given a valid "appKeyAuth" key in the system
+    And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
     And body {}
     When the request is sent
@@ -24,7 +24,8 @@ Feature: Metrics
 
   @generated @skip
   Scenario: Edit metric metadata returns "Not Found" response
-    Given new "UpdateMetricMetadata" request
+    Given a valid "appKeyAuth" key in the system
+    And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
     And body {}
     When the request is sent
@@ -32,7 +33,8 @@ Feature: Metrics
 
   @generated @skip
   Scenario: Edit metric metadata returns "OK" response
-    Given new "UpdateMetricMetadata" request
+    Given a valid "appKeyAuth" key in the system
+    And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
     And body {}
     When the request is sent
@@ -40,50 +42,85 @@ Feature: Metrics
 
   @generated @skip
   Scenario: Get active metrics list returns "Bad Request" response
-    Given new "ListActiveMetrics" request
+    Given a valid "appKeyAuth" key in the system
+    And new "ListActiveMetrics" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Get active metrics list returns "OK" response
-    Given new "ListActiveMetrics" request
+    Given a valid "appKeyAuth" key in the system
+    And new "ListActiveMetrics" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Get metric metadata returns "Not Found" response
-    Given new "GetMetricMetadata" request
+    Given a valid "appKeyAuth" key in the system
+    And new "GetMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip
   Scenario: Get metric metadata returns "OK" response
-    Given new "GetMetricMetadata" request
+    Given a valid "appKeyAuth" key in the system
+    And new "GetMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Query timeseries points returns "Bad Request" response
-    Given new "QueryMetrics" request
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryMetrics" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Query timeseries points returns "OK" response
-    Given new "QueryMetrics" request
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryMetrics" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Search metrics returns "Bad Request" response
-    Given new "ListMetrics" request
+    Given a valid "appKeyAuth" key in the system
+    And new "ListMetrics" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Search metrics returns "OK" response
-    Given new "ListMetrics" request
+    Given a valid "appKeyAuth" key in the system
+    And new "ListMetrics" request
     When the request is sent
     Then the response status is 200 OK
+
+  @skip
+  Scenario: Submit metrics returns "Bad Request" response
+    Given new "SubmitMetrics" request
+    And body "invalid"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  Scenario: Submit metrics returns "Payload accepted" response
+    Given new "SubmitMetrics" request
+    And body {"series": [{"metric": "system.load.1", "points": [[1600348600, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}
+    When the request is sent
+    Then the response status is 202 Payload accepted
+
+  @generated @skip
+  Scenario: Submit metrics returns "Payload too large" response
+    Given new "SubmitMetrics" request
+    And body {}
+    When the request is sent
+    Then the response status is 413 Payload too large
+
+  @generated @skip
+  Scenario: Submit metrics returns "Request timeout" response
+    Given new "SubmitMetrics" request
+    And body {}
+    When the request is sent
+    Then the response status is 408 Request timeout

@@ -53,6 +53,7 @@ from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDe
 from datadog_api_client.v1.model.check_can_delete_slo_response_data import CheckCanDeleteSLOResponseData
 from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
 from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
+from datadog_api_client.v1.model.content_encoding import ContentEncoding
 from datadog_api_client.v1.model.creator import Creator
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_delete_response import DashboardDeleteResponse
@@ -73,6 +74,8 @@ from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 from datadog_api_client.v1.model.event import Event
 from datadog_api_client.v1.model.event_alert_type import EventAlertType
+from datadog_api_client.v1.model.event_create_request import EventCreateRequest
+from datadog_api_client.v1.model.event_create_response import EventCreateResponse
 from datadog_api_client.v1.model.event_list_response import EventListResponse
 from datadog_api_client.v1.model.event_priority import EventPriority
 from datadog_api_client.v1.model.event_query_definition import EventQueryDefinition
@@ -121,6 +124,9 @@ from datadog_api_client.v1.model.geomap_widget_request import GeomapWidgetReques
 from datadog_api_client.v1.model.graph_snapshot import GraphSnapshot
 from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
 from datadog_api_client.v1.model.group_widget_definition_type import GroupWidgetDefinitionType
+from datadog_api_client.v1.model.http_log import HTTPLog
+from datadog_api_client.v1.model.http_log_error import HTTPLogError
+from datadog_api_client.v1.model.http_log_item import HTTPLogItem
 from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
 from datadog_api_client.v1.model.heat_map_widget_definition_type import HeatMapWidgetDefinitionType
@@ -152,6 +158,7 @@ from datadog_api_client.v1.model.idp_form_data import IdpFormData
 from datadog_api_client.v1.model.idp_response import IdpResponse
 from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
 from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
+from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v1.model.log import Log
 from datadog_api_client.v1.model.log_content import LogContent
 from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
@@ -214,6 +221,7 @@ from datadog_api_client.v1.model.metric_metadata import MetricMetadata
 from datadog_api_client.v1.model.metric_search_response import MetricSearchResponse
 from datadog_api_client.v1.model.metric_search_response_results import MetricSearchResponseResults
 from datadog_api_client.v1.model.metrics_list_response import MetricsListResponse
+from datadog_api_client.v1.model.metrics_payload import MetricsPayload
 from datadog_api_client.v1.model.metrics_query_metadata import MetricsQueryMetadata
 from datadog_api_client.v1.model.metrics_query_response import MetricsQueryResponse
 from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
@@ -296,6 +304,10 @@ from datadog_api_client.v1.model.scatter_plot_request import ScatterPlotRequest
 from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
 from datadog_api_client.v1.model.scatter_plot_widget_definition_requests import ScatterPlotWidgetDefinitionRequests
 from datadog_api_client.v1.model.scatter_plot_widget_definition_type import ScatterPlotWidgetDefinitionType
+from datadog_api_client.v1.model.series import Series
+from datadog_api_client.v1.model.service_check import ServiceCheck
+from datadog_api_client.v1.model.service_check_status import ServiceCheckStatus
+from datadog_api_client.v1.model.service_checks import ServiceChecks
 from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
 from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
 from datadog_api_client.v1.model.service_level_objective_request import ServiceLevelObjectiveRequest
