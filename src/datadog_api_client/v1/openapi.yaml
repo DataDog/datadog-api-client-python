@@ -6068,7 +6068,7 @@ components:
           type: array
         name:
           description: The name of the service level objective object.
-          example: ''
+          example: Custom Metric SLO
           type: string
         query:
           $ref: '#/components/schemas/ServiceLevelObjectiveQuery'
@@ -6090,7 +6090,12 @@ components:
             service level
 
             objective object.'
-          example: []
+          example:
+          - target: 95
+            timeframe: 7d
+          - target: 95
+            timeframe: 30d
+            warning: 97
           items:
             $ref: '#/components/schemas/SLOThreshold'
           type: array
@@ -6111,11 +6116,11 @@ components:
       properties:
         denominator:
           description: A Datadog metric query for total (valid) events.
-          example: ''
+          example: sum:my.custom.metric{*}.as_count()
           type: string
         numerator:
           description: A Datadog metric query for good events.
-          example: ''
+          example: sum:my.custom.metric{type:good}.as_count()
           type: string
       required:
       - numerator
@@ -6127,16 +6132,6 @@ components:
 
         for one or more timeframes, and metadata (`name`, `description`, `tags`, etc.).'
       properties:
-        created_at:
-          description: 'Creation timestamp (UNIX time in seconds)
-
-
-            Always included in service level objective responses.'
-          format: int64
-          readOnly: true
-          type: integer
-        creator:
-          $ref: '#/components/schemas/Creator'
         description:
           description: 'A user-defined description of the service level objective.
 
@@ -6165,21 +6160,6 @@ components:
             description: A group name, for instance `env:prod`.
             type: string
           type: array
-        id:
-          description: 'A unique identifier for the service level objective object.
-
-
-            Always included in service level objective responses.'
-          readOnly: true
-          type: string
-        modified_at:
-          description: 'Modification timestamp (UNIX time in seconds)
-
-
-            Always included in service level objective responses.'
-          format: int64
-          readOnly: true
-          type: integer
         monitor_ids:
           description: 'A list of monitor ids that defines the scope of a monitor
             service level
@@ -6192,7 +6172,7 @@ components:
           type: array
         name:
           description: The name of the service level objective object.
-          example: ''
+          example: Custom Metric SLO
           type: string
         query:
           $ref: '#/components/schemas/ServiceLevelObjectiveQuery'
@@ -6214,7 +6194,12 @@ components:
             service level
 
             objective object.'
-          example: []
+          example:
+          - target: 95
+            timeframe: 7d
+          - target: 95
+            timeframe: 30d
+            warning: 97
           items:
             $ref: '#/components/schemas/SLOThreshold'
           type: array

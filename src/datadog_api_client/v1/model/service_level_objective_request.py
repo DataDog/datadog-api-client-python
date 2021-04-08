@@ -23,12 +23,10 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.creator import Creator
     from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
     from datadog_api_client.v1.model.slo_threshold import SLOThreshold
     from datadog_api_client.v1.model.slo_type import SLOType
 
-    globals()["Creator"] = Creator
     globals()["SLOThreshold"] = SLOThreshold
     globals()["SLOType"] = SLOType
     globals()["ServiceLevelObjectiveQuery"] = ServiceLevelObjectiveQuery
@@ -81,15 +79,11 @@ class ServiceLevelObjectiveRequest(ModelNormal):
             "name": (str,),  # noqa: E501
             "thresholds": ([SLOThreshold],),  # noqa: E501
             "type": (SLOType,),  # noqa: E501
-            "created_at": (int,),  # noqa: E501
-            "creator": (Creator,),  # noqa: E501
             "description": (
                 str,
                 none_type,
             ),  # noqa: E501
             "groups": ([str],),  # noqa: E501
-            "id": (str,),  # noqa: E501
-            "modified_at": (int,),  # noqa: E501
             "monitor_ids": ([int],),  # noqa: E501
             "query": (ServiceLevelObjectiveQuery,),  # noqa: E501
             "tags": ([str],),  # noqa: E501
@@ -103,12 +97,8 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         "name": "name",  # noqa: E501
         "thresholds": "thresholds",  # noqa: E501
         "type": "type",  # noqa: E501
-        "created_at": "created_at",  # noqa: E501
-        "creator": "creator",  # noqa: E501
         "description": "description",  # noqa: E501
         "groups": "groups",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "modified_at": "modified_at",  # noqa: E501
         "monitor_ids": "monitor_ids",  # noqa: E501
         "query": "query",  # noqa: E501
         "tags": "tags",  # noqa: E501
@@ -167,12 +157,8 @@ class ServiceLevelObjectiveRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_at (int): Creation timestamp (UNIX time in seconds)  Always included in service level objective responses.. [optional]  # noqa: E501
-            creator (Creator): [optional]  # noqa: E501
             description (str, none_type): A user-defined description of the service level objective.  Always included in service level objective responses (but may be `null`). Optional in create/update requests.. [optional]  # noqa: E501
             groups ([str]): A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective.  Included in service level objective responses if it is not empty. Optional in create/update requests for monitor service level objectives, but may only be used when then length of the `monitor_ids` field is one.. [optional]  # noqa: E501
-            id (str): A unique identifier for the service level objective object.  Always included in service level objective responses.. [optional]  # noqa: E501
-            modified_at (int): Modification timestamp (UNIX time in seconds)  Always included in service level objective responses.. [optional]  # noqa: E501
             monitor_ids ([int]): A list of monitor ids that defines the scope of a monitor service level objective. **Required if type is `monitor`**.. [optional]  # noqa: E501
             query (ServiceLevelObjectiveQuery): [optional]  # noqa: E501
             tags ([str]): A list of tags associated with this service level objective. Always included in service level objective responses (but may be empty). Optional in create/update requests.. [optional]  # noqa: E501
