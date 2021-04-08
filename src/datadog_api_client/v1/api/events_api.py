@@ -17,6 +17,8 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.event_create_request import EventCreateRequest
+from datadog_api_client.v1.model.event_create_response import EventCreateResponse
 from datadog_api_client.v1.model.event_list_response import EventListResponse
 from datadog_api_client.v1.model.event_priority import EventPriority
 from datadog_api_client.v1.model.event_response import EventResponse
@@ -33,6 +35,42 @@ class EventsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        self._create_event_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventCreateResponse,),
+                "auth": ["apiKeyAuth"],
+                "endpoint_path": "/api/v1/events",
+                "operation_id": "create_event",
+                "http_method": "POST",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "body",
+                ],
+                "required": [
+                    "body",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (EventCreateRequest,),
+                },
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._get_event_endpoint = _Endpoint(
             settings={
@@ -136,6 +174,49 @@ class EventsApi(object):
             },
             api_client=api_client,
         )
+
+    def create_event(self, body, **kwargs):
+        """Post an event  # noqa: E501
+
+        This endpoint allows you to post events to the stream. Tag them, set priority and event aggregate them with other events.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_event(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (EventCreateRequest): Event request object
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EventCreateResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_event_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_event_endpoint.call_with_http_info(**kwargs)
 
     def get_event(self, event_id, **kwargs):
         """Get an event  # noqa: E501

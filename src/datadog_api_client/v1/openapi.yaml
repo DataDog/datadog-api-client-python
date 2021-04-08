@@ -823,6 +823,15 @@ components:
       type: string
       x-enum-varnames:
       - CHECK_STATUS
+    ContentEncoding:
+      description: HTTP header used to compress the media-type
+      enum:
+      - gzip
+      - deflate
+      type: string
+      x-enum-varnames:
+      - gzip
+      - deflate
     Creator:
       description: Object describing the creator of the shared element.
       properties:
@@ -1449,6 +1458,163 @@ components:
       - USER_UPDATE
       - RECOMMENDATION
       - SNAPSHOT
+    EventCreateRequest:
+      description: Object representing an event.
+      properties:
+        aggregation_key:
+          description: 'An arbitrary string to use for aggregation. Limited to 100
+            characters.
+
+            If you specify a key, all events using that key are grouped together in
+            the Event Stream.'
+          maxLength: 100
+          type: string
+        alert_type:
+          $ref: '#/components/schemas/EventAlertType'
+        date_happened:
+          description: 'POSIX timestamp of the event. Must be sent as an integer (i.e.
+            no quotes).
+
+            Limited to events no older than 7 days.'
+          format: int64
+          type: integer
+        device_name:
+          description: A device name.
+          type: string
+        host:
+          description: 'Host name to associate with the event.
+
+            Any tags associated with the host are also applied to this event.'
+          type: string
+        id:
+          description: Integer ID of the event.
+          format: int64
+          readOnly: true
+          type: integer
+        payload:
+          description: Payload of the event.
+          example: '{}'
+          readOnly: true
+          type: string
+        priority:
+          $ref: '#/components/schemas/EventPriority'
+        related_event_id:
+          description: ID of the parent event. Must be sent as an integer (i.e. no
+            quotes).
+          format: int64
+          type: integer
+        source_type_name:
+          description: 'The type of event being posted. Option examples include nagios,
+            hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc.
+
+            A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).'
+          type: string
+        tags:
+          description: A list of tags to apply to the event.
+          example:
+          - environment:test
+          items:
+            description: A tag.
+            type: string
+          type: array
+        text:
+          description: 'The body of the event. Limited to 4000 characters. The text
+            supports markdown.
+
+            To use markdown in the event text, start the text block with `%%% \n`
+            and end the text block with `\n %%%`.
+
+            Use `msg_text` with the Datadog Ruby library.'
+          example: Oh boy!
+          maxLength: 4000
+          type: string
+        title:
+          description: The event title. Limited to 100 characters. Use `msg_title`
+            with the Datadog Ruby library.
+          example: Did you hear the news today?
+          maxLength: 100
+          type: string
+        url:
+          description: URL of the event.
+          readOnly: true
+          type: string
+      required:
+      - title
+      - text
+      type: object
+    EventCreateResponse:
+      description: Object containing an event response.
+      properties:
+        alert_type:
+          $ref: '#/components/schemas/EventAlertType'
+        date_happened:
+          description: 'POSIX timestamp of the event. Must be sent as an integer (i.e.
+            no quotes).
+
+            Limited to events no older than 7 days.'
+          format: int64
+          type: integer
+        device_name:
+          description: A device name.
+          type: string
+        host:
+          description: 'Host name to associate with the event.
+
+            Any tags associated with the host are also applied to this event.'
+          type: string
+        id:
+          description: Integer ID of the event.
+          format: int64
+          readOnly: true
+          type: integer
+        payload:
+          description: Payload of the event.
+          example: '{}'
+          readOnly: true
+          type: string
+        priority:
+          $ref: '#/components/schemas/EventPriority'
+        related_event_id:
+          description: ID of the parent event. Must be sent as an integer (i.e. no
+            quotes).
+          format: int64
+          type: integer
+        source_type_name:
+          description: 'The type of event being posted. Option examples include nagios,
+            hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc.
+
+            A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).'
+          type: string
+        status:
+          description: A status.
+          type: string
+        tags:
+          description: A list of tags to apply to the event.
+          example:
+          - environment:test
+          items:
+            description: A tag.
+            type: string
+          type: array
+        text:
+          description: 'The body of the event. Limited to 4000 characters. The text
+            supports markdown.
+
+            Use `msg_text` with the Datadog Ruby library.'
+          example: Oh boy!
+          maxLength: 4000
+          type: string
+        title:
+          description: The event title. Limited to 100 characters. Use `msg_title`
+            with the Datadog Ruby library.
+          example: Did you hear the news today?
+          maxLength: 100
+          type: string
+        url:
+          description: URL of the event.
+          readOnly: true
+          type: string
+      type: object
     EventListResponse:
       description: An event list response.
       properties:
@@ -2075,6 +2241,72 @@ components:
       type: string
       x-enum-varnames:
       - GROUP
+    HTTPLog:
+      description: Structured log message.
+      items:
+        $ref: '#/components/schemas/HTTPLogItem'
+      type: array
+    HTTPLogError:
+      description: Invalid query performed.
+      properties:
+        code:
+          description: Error code.
+          example: 0
+          format: int32
+          maximum: 2147483647
+          type: integer
+        message:
+          description: Error message.
+          example: ''
+          type: string
+      required:
+      - code
+      - message
+      type: object
+    HTTPLogItem:
+      description: Logs that are sent over HTTP.
+      properties:
+        ddsource:
+          description: 'The integration name associated with your log: the technology
+            from which the log originated.
+
+            When it matches an integration name, Datadog automatically installs the
+            corresponding parsers and facets.
+
+            See [reserved attributes](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes).'
+          example: nginx
+          type: string
+        ddtags:
+          description: Tags associated with your logs.
+          example: env:staging,version:5.1
+          type: string
+        hostname:
+          description: The name of the originating host of the log.
+          example: i-012345678
+          type: string
+        message:
+          description: 'The message [reserved attribute](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes)
+
+            of your log. By default, Datadog ingests the value of the message attribute
+            as the body of the log entry.
+
+            That value is then highlighted and displayed in the Logstream, where it
+            is indexed for full text search.'
+          example: 2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World
+          type: string
+        service:
+          description: 'The name of the application or service generating the log
+            events.
+
+            It is used to switch from Logs to APM, so make sure you define the same
+            value when you use both products.
+
+            See [reserved attributes](https://docs.datadoghq.com/logs/log_collection/#reserved-attributes).'
+          example: payment
+          type: string
+      required:
+      - name
+      type: object
     HTTPMethod:
       description: The HTTP method.
       enum:
@@ -2694,6 +2926,14 @@ components:
       type: string
       x-enum-varnames:
       - IMAGE
+    IntakePayloadAccepted:
+      description: The payload accepted for intake.
+      properties:
+        status:
+          description: The status of the intake payload.
+          example: ok
+          type: string
+      type: object
     Log:
       description: Object describing a log after being processed and stored by Datadog.
       properties:
@@ -4075,6 +4315,22 @@ components:
             description: A metric name.
             type: string
           type: array
+      type: object
+    MetricsPayload:
+      description: The metrics' payload.
+      properties:
+        series:
+          description: A list of time series to submit to Datadog.
+          example:
+          - metric: system.load.1
+            points:
+            - - 1475317847
+              - 0.7
+          items:
+            $ref: '#/components/schemas/Series'
+          type: array
+      required:
+      - series
       type: object
     MetricsQueryMetadata:
       description: Object containing all metric names returned and their associated
@@ -5977,6 +6233,110 @@ components:
       type: string
       x-enum-varnames:
       - SCATTERPLOT
+    Series:
+      description: 'A metric to submit to Datadog.
+
+        See [Datadog metrics](https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties).'
+      properties:
+        host:
+          description: The name of the host that produced the metric.
+          example: test.example.com
+          type: string
+        interval:
+          default: null
+          description: If the type of the metric is rate or count, define the corresponding
+            interval.
+          example: 20
+          format: int64
+          nullable: true
+          type: integer
+        metric:
+          description: The name of the timeseries.
+          example: system.load.1
+          type: string
+        points:
+          description: Points relating to a metric. All points must be tuples with
+            timestamp and a scalar value (cannot be a string). Timestamps should be
+            in POSIX time in seconds, and cannot be more than ten minutes in the future
+            or more than one hour in the past.
+          example:
+          - - 1575317847
+            - 0.5
+          items:
+            $ref: '#/components/schemas/Point'
+          type: array
+        tags:
+          description: A list of tags associated with the metric.
+          example:
+          - environment:test
+          items:
+            description: Individual tags.
+            type: string
+          type: array
+        type:
+          default: gauge
+          description: The type of the metric either `count`, `gauge`, or `rate`.
+          example: rate
+          type: string
+      required:
+      - metric
+      - points
+      type: object
+    ServiceCheck:
+      description: An object containing service check and status.
+      properties:
+        check:
+          description: The check.
+          example: app.ok
+          type: string
+        host_name:
+          description: The host name correlated with the check.
+          example: app.host1
+          type: string
+        message:
+          description: Message containing check status.
+          example: app is running
+          type: string
+        status:
+          $ref: '#/components/schemas/ServiceCheckStatus'
+        tags:
+          description: Tags related to a check.
+          example:
+          - environment:test
+          items:
+            description: Items related to a check.
+            type: string
+          type: array
+        timestamp:
+          description: Time of check.
+          format: int64
+          type: integer
+      required:
+      - check
+      - status
+      - tags
+      - host_name
+      type: object
+    ServiceCheckStatus:
+      description: The status of a service check.
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      example: 0
+      format: int32
+      type: integer
+      x-enum-varnames:
+      - OK
+      - WARNING
+      - CRITICAL
+      - UNKNOWN
+    ServiceChecks:
+      description: The service checks.
+      items:
+        $ref: '#/components/schemas/ServiceCheck'
+      type: array
     ServiceLevelObjective:
       description: 'A service level objective object includes a service level indicator,
         thresholds
@@ -11530,6 +11890,59 @@ paths:
       x-codegen-request-body-name: body
       x-undo:
         type: idempotent
+  /api/v1/check_run:
+    post:
+      description: 'Submit a list of Service Checks.
+
+
+        **Note**: A valid API key is required.'
+      operationId: SubmitServiceCheck
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceChecks'
+        description: Service Check request body.
+        required: true
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntakePayloadAccepted'
+          description: Payload accepted
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Authentication Error
+        '408':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Request timeout
+        '413':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Payload too large
+      security:
+      - apiKeyAuth: []
+      summary: Submit a Service Check
+      tags:
+      - Service Checks
+      x-codegen-request-body-name: body
+      x-undo:
+        type: safe
   /api/v1/daily_custom_reports:
     get:
       description: Get daily custom reports.
@@ -12298,6 +12711,39 @@ paths:
       summary: Query the event stream
       tags:
       - Events
+      x-undo:
+        type: safe
+    post:
+      description: 'This endpoint allows you to post events to the stream.
+
+        Tag them, set priority and event aggregate them with other events.'
+      operationId: CreateEvent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EventCreateRequest'
+        description: Event request object
+        required: true
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventCreateResponse'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+      security:
+      - apiKeyAuth: []
+      summary: Post an event
+      tags:
+      - Events
+      x-codegen-request-body-name: body
       x-undo:
         type: safe
   /api/v1/events/{event_id}:
@@ -15758,6 +16204,75 @@ paths:
       - Metrics
       x-undo:
         type: safe
+  /api/v1/series:
+    post:
+      description: "The metrics end-point allows you to post time-series data that\
+        \ can be graphed on Datadog\u2019s dashboards.\nThe maximum payload size is\
+        \ 3.2 megabytes (3200000). Compressed payloads must have a decompressed size\
+        \ of up to 62 megabytes (62914560).\n\nIf you\u2019re submitting metrics directly\
+        \ to the Datadog API without using DogStatsD, expect\n\n- 64 bits for the\
+        \ timestamp\n- 32 bits for the value\n- 20 bytes for the metric names\n- 50\
+        \ bytes for the timeseries\n- The full payload is approximately ~ 100 bytes.\
+        \ However, with the DogStatsD API,\ncompression is applied, which reduces\
+        \ the payload size."
+      operationId: SubmitMetrics
+      requestBody:
+        content:
+          application/json:
+            examples:
+              dynamic-points:
+                description: TODO.
+                summary: Dynamic Points
+                value:
+                  series:
+                  - metric: system.load.1
+                    points:
+                    - - ${NOW}
+                      - '1234.5'
+                x-variables:
+                  NOW: $(date +%s)
+            schema:
+              $ref: '#/components/schemas/MetricsPayload'
+        required: true
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntakePayloadAccepted'
+          description: Payload accepted
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Authentication error
+        '408':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Request timeout
+        '413':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Payload too large
+      security:
+      - apiKeyAuth: []
+      summary: Submit metrics
+      tags:
+      - Metrics
+      x-codegen-request-body-name: body
+      x-undo:
+        type: safe
   /api/v1/slo:
     get:
       description: Get a list of service level objective objects for your organization.
@@ -19169,6 +19684,167 @@ paths:
       - Authentication
       x-undo:
         type: safe
+  /v1/input:
+    post:
+      description: 'Send your logs to your Datadog platform over HTTP. Limits per
+        HTTP request are:
+
+
+        - Maximum content size per payload (uncompressed): 5MB
+
+        - Maximum size for a single log: 1MB
+
+        - Maximum array size if sending multiple logs in an array: 1000 entries
+
+
+        Any log exceeding 1MB is accepted and truncated by Datadog:
+
+        - For a single log request, the API truncates the log at 1MB and returns a
+        2xx.
+
+        - For a multi-logs request, the API processes all logs, truncates only logs
+        larger than 1MB, and returns a 2xx.
+
+
+        Datadog recommends sending your logs compressed.
+
+        Add the `Content-Encoding: gzip` header to the request when sending compressed
+        logs.
+
+
+        The status codes answered by the HTTP API are:
+
+        - 200: OK
+
+        - 400: Bad request (likely an issue in the payload formatting)
+
+        - 403: Permission issue (likely using an invalid API Key)
+
+        - 413: Payload too large (batch is above 5MB uncompressed)
+
+        - 5xx: Internal error, request should be retried after some time'
+      operationId: SubmitLog
+      parameters:
+      - description: HTTP header used to compress the media-type.
+        in: header
+        name: Content-Encoding
+        required: false
+        schema:
+          $ref: '#/components/schemas/ContentEncoding'
+      - description: Log tags can be passed as query parameters with `text/plain`
+          content type.
+        example: env:prod,user:my-user
+        in: query
+        name: ddtags
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            examples:
+              multi-json-messages:
+                description: Pass multiple log objects at once.
+                summary: Multi JSON Messages
+                value:
+                - message: hello
+                - message: world
+              simple-json-message:
+                description: Log attributes can be passed as `key:value` pairs in
+                  valid JSON messages.
+                summary: Simple JSON Message
+                value:
+                  ddsource: agent
+                  ddtags: env:prod,user:joe.doe
+                  hostname: fa1e1e739d95
+                  message: hello world
+            schema:
+              $ref: '#/components/schemas/HTTPLog'
+          application/logplex-1:
+            examples:
+              multi-raw-message:
+                description: Submit log messages.
+                summary: Multi Logplex Messages
+                value: 'hello
+
+                  world'
+              simple-logplex-message:
+                description: Submit log string.
+                summary: Simple Logplex Message
+                value: hello world
+            schema:
+              type: string
+          text/plain:
+            examples:
+              multi-raw-message:
+                description: Submit log string.
+                summary: Multi Raw Messages
+                value: 'hello
+
+                  world
+
+                  '
+              simple-raw-message:
+                description: 'Submit log string. Log attributes can be passed as query
+                  parameters in the URL. This enables the addition of tags or the
+                  source by using the `ddtags` and `ddsource` parameters: `?host=my-hostname&service=my-service&ddsource=my-source&ddtags=env:prod,user:my-user`.'
+                summary: Simple Raw Message
+                value: hello world
+            schema:
+              type: string
+        description: Log to send (JSON format).
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Response from server (always 200 empty JSON).
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPLogError'
+          description: unexpected error
+      security:
+      - apiKeyAuth: []
+      servers:
+      - url: https://{subdomain}.{site}
+        variables:
+          site:
+            default: datadoghq.com
+            description: The regional site for our customers.
+            enum:
+            - datadoghq.com
+            - us3.datadoghq.com
+            - datadoghq.eu
+            - ddog-gov.com
+          subdomain:
+            default: http-intake.logs
+            description: The subdomain where the API is deployed.
+      - url: '{protocol}://{name}'
+        variables:
+          name:
+            default: http-intake.logs.datadoghq.com
+            description: Full site DNS name.
+          protocol:
+            default: https
+            description: The protocol for accessing the API.
+      - url: https://{subdomain}.{site}
+        variables:
+          site:
+            default: datadoghq.com
+            description: Any Datadog deployment.
+          subdomain:
+            default: http-intake.logs
+            description: The subdomain where the API is deployed.
+      summary: Send logs
+      tags:
+      - Logs
+      x-codegen-request-body-name: body
+      x-undo:
+        type: safe
 security:
 - apiKeyAuth: []
   appKeyAuth: []
@@ -19339,6 +20015,32 @@ tags:
   externalDocs:
     url: https://docs.datadoghq.com/api/?lang=bash#integration-pagerduty
   name: PagerDuty Integration
+- description: 'The service check endpoint allows you to post check statuses for use
+    with monitors.
+
+    Service check messages are limited to 500 characters. If a check is posted with
+    a message
+
+    containing more than 500 characters, only the first 500 characters are displayed.
+
+
+    - [Read more about Service Check monitors.][1]
+
+    - [Read more about Process Check monitors.][2]
+
+    - [Read more about Network Check monitors.][3]
+
+    - [Read more about Custom Check monitors.][4]
+
+
+    [1]: https://docs.datadoghq.com/monitors/monitor_types/host/?tab=checkalert
+
+    [2]: https://docs.datadoghq.com/monitors/monitor_types/process_check/?tab=checkalert
+
+    [3]: https://docs.datadoghq.com/monitors/monitor_types/network/?tab=checkalert
+
+    [4]: https://docs.datadoghq.com/monitors/monitor_types/custom_check/?tab=checkalert'
+  name: Service Checks
 - description: "SLO Status Corrections allow you to prevent specific time periods\
     \ from negatively impacting\nyour SLO\u2019s status and error budget. You can\
     \ use Status Corrections for various purposes, such\nas removing planned maintenance\
