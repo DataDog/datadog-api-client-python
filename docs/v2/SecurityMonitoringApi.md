@@ -39,7 +39,16 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
     body = SecurityMonitoringRuleCreatePayload(
-        cases=[],
+        cases=[
+            SecurityMonitoringRuleCaseCreate(
+                condition="condition_example",
+                name="name_example",
+                notifications=[
+                    "notifications_example",
+                ],
+                status=SecurityMonitoringRuleSeverity("info"),
+            ),
+        ],
         filters=[
             SecurityMonitoringFilter(
                 action=SecurityMonitoringFilterAction("require"),
@@ -59,7 +68,24 @@ with ApiClient(configuration) as api_client:
                 learning_duration=SecurityMonitoringRuleNewValueOptionsLearningDuration(0),
             ),
         ),
-        queries=[],
+        queries=[
+            SecurityMonitoringRuleQueryCreate(
+                agent_rule=SecurityMonitoringRuntimeAgentRule(
+                    agent_rule_id="etc_shadow",
+                    expression="expression_example",
+                ),
+                aggregation=SecurityMonitoringRuleQueryAggregation("count"),
+                distinct_fields=[
+                    "distinct_fields_example",
+                ],
+                group_by_fields=[
+                    "group_by_fields_example",
+                ],
+                metric="metric_example",
+                name="name_example",
+                query="a < 3",
+            ),
+        ],
         tags=["env:prod","team:security"],
     )  # SecurityMonitoringRuleCreatePayload | 
 

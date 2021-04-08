@@ -67,7 +67,18 @@ with ApiClient(configuration) as api_client:
         ],
         title="",
         url="/dashboard/123-abc-456/example-dashboard-title",
-        widgets=[{"definition":{"requests":{"fill":{"q":"system.cpu.user"}},"type":"hostmap"}}],
+        widgets=[
+            Widget(
+                definition=WidgetDefinition(),
+                id=1,
+                layout=WidgetLayout(
+                    height=0,
+                    width=0,
+                    x=0,
+                    y=0,
+                ),
+            ),
+        ],
     )  # Dashboard | Create a dashboard request body.
 
     # example passing only required values which don't have defaults set
@@ -359,7 +370,18 @@ with ApiClient(configuration) as api_client:
         ],
         title="",
         url="/dashboard/123-abc-456/example-dashboard-title",
-        widgets=[{"definition":{"requests":{"fill":{"q":"system.cpu.user"}},"type":"hostmap"}}],
+        widgets=[
+            Widget(
+                definition=WidgetDefinition(),
+                id=1,
+                layout=WidgetLayout(
+                    height=0,
+                    width=0,
+                    x=0,
+                    y=0,
+                ),
+            ),
+        ],
     )  # Dashboard | Update Dashboard request body.
 
     # example passing only required values which don't have defaults set

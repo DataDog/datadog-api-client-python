@@ -4,9 +4,89 @@ All URIs are relative to *https://api.datadoghq.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_event**](EventsApi.md#create_event) | **POST** /api/v1/events | Post an event
 [**get_event**](EventsApi.md#get_event) | **GET** /api/v1/events/{event_id} | Get an event
 [**list_events**](EventsApi.md#list_events) | **GET** /api/v1/events | Query the event stream
 
+
+# **create_event**
+> EventCreateResponse create_event(body)
+
+Post an event
+
+This endpoint allows you to post events to the stream. Tag them, set priority and event aggregate them with other events.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import events_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = events_api.EventsApi(api_client)
+    body = EventCreateRequest(
+        aggregation_key="aggregation_key_example",
+        alert_type=EventAlertType("info"),
+        date_happened=1,
+        device_name="device_name_example",
+        host="host_example",
+        id=1,
+        payload="{}",
+        priority=EventPriority("normal"),
+        related_event_id=1,
+        source_type_name="source_type_name_example",
+        tags=["environment:test"],
+        text="Oh boy!",
+        title="Did you hear the news today?",
+        url="url_example",
+    )  # EventCreateRequest | Event request object
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Post an event
+        api_response = api_instance.create_event(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling EventsApi->create_event: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EventCreateRequest**](EventCreateRequest.md)| Event request object |
+
+### Return type
+
+[**EventCreateResponse**](EventCreateResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | OK |  -  |
+**400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_event**
 > EventResponse get_event(event_id)

@@ -17,9 +17,11 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v1.model.metric_metadata import MetricMetadata
 from datadog_api_client.v1.model.metric_search_response import MetricSearchResponse
 from datadog_api_client.v1.model.metrics_list_response import MetricsListResponse
+from datadog_api_client.v1.model.metrics_payload import MetricsPayload
 from datadog_api_client.v1.model.metrics_query_response import MetricsQueryResponse
 
 
@@ -214,6 +216,42 @@ class MetricsApi(object):
                 "accept": ["application/json"],
                 "content_type": [],
             },
+            api_client=api_client,
+        )
+
+        self._submit_metrics_endpoint = _Endpoint(
+            settings={
+                "response_type": (IntakePayloadAccepted,),
+                "auth": ["apiKeyAuth"],
+                "endpoint_path": "/api/v1/series",
+                "operation_id": "submit_metrics",
+                "http_method": "POST",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "body",
+                ],
+                "required": [
+                    "body",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (MetricsPayload,),
+                },
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -436,6 +474,49 @@ class MetricsApi(object):
         kwargs["to"] = to
         kwargs["query"] = query
         return self._query_metrics_endpoint.call_with_http_info(**kwargs)
+
+    def submit_metrics(self, body, **kwargs):
+        """Submit metrics  # noqa: E501
+
+        The metrics end-point allows you to post time-series data that can be graphed on Datadog’s dashboards. The maximum payload size is 3.2 megabytes (3200000). Compressed payloads must have a decompressed size of up to 62 megabytes (62914560).  If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect  - 64 bits for the timestamp - 32 bits for the value - 20 bytes for the metric names - 50 bytes for the timeseries - The full payload is approximately ~ 100 bytes. However, with the DogStatsD API, compression is applied, which reduces the payload size.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.submit_metrics(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (MetricsPayload):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            IntakePayloadAccepted
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._submit_metrics_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._submit_metrics_endpoint.call_with_http_info(**kwargs)
 
     def update_metric_metadata(self, metric_name, body, **kwargs):
         """Edit metric metadata  # noqa: E501
