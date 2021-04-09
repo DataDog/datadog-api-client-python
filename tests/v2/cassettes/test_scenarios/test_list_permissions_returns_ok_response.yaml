@@ -9,13 +9,7 @@ interactions:
       Dd-Operation-Id:
       - ListPermissions
       User-Agent:
-      - datadog-api-client-python/1.0.0b4.dev20 (python 3.9.0; os Darwin; arch x86_64)
-      x-datadog-parent-id:
-      - '4938755882259964785'
-      x-datadog-sampling-priority:
-      - '1'
-      x-datadog-trace-id:
-      - '12986333942498043176'
+      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
     uri: https://api.datadoghq.com/api/v2/permissions
   response:
@@ -23,11 +17,12 @@ interactions:
       string: '{"data":[{"type":"permissions","id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","attributes":{"name":"admin","display_name":"Privileged
         Access","description":"This permission gives you the ability to view and edit
         everything in your Datadog organization that does not have an explicitly defined
-        permission. This includes billing and usage, key, and organization management.
-        This permission is inclusive of all Standard access permissions.","created":"2018-10-19T15:35:23.734317+00:00","group_name":"General","display_type":"other","restricted":false}},{"type":"permissions","id":"984d2f00-d3b4-11e8-a200-bb47109e9987","attributes":{"name":"standard","display_name":"Standard
+        permission. This includes organization settings and SAML management. This
+        permission is inclusive of all Standard access permissions.","created":"2018-10-19T15:35:23.734317+00:00","group_name":"General","display_type":"other","restricted":false}},{"type":"permissions","id":"984d2f00-d3b4-11e8-a200-bb47109e9987","attributes":{"name":"standard","display_name":"Standard
         Access","description":"This permission gives you the ability to view and edit
         components in your Datadog organization that do not have explicitly defined
-        permissions. This includes APM, Events, and other non-Account Management functionality.","created":"2018-10-19T15:35:23.756736+00:00","group_name":"General","display_type":"other","restricted":false}},{"type":"permissions","id":"5e605652-dd12-11e8-9e53-375565b8970e","attributes":{"name":"logs_read_index_data","display_name":"Logs
+        permissions. This includes Notebooks, Events, and other non-Account Management
+        functionality.","created":"2018-10-19T15:35:23.756736+00:00","group_name":"General","display_type":"other","restricted":false}},{"type":"permissions","id":"5e605652-dd12-11e8-9e53-375565b8970e","attributes":{"name":"logs_read_index_data","display_name":"Logs
         Read Index Data","description":"The ability to read all or some log indexes.
         Can be granted in a limited capacity per index from the Logs interface or
         APIs. If granted via the Roles interface or API the permission has global
@@ -74,47 +69,119 @@ interactions:
         Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"80de1ec0-aa58-11ea-95e2-aff381626d5d","attributes":{"name":"security_monitoring_signals_read","display_name":"Security
         Signals","description":"The ability to view Security signals.","created":"2020-06-09T13:52:48.410398+00:00","group_name":"Security
         Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"9ac1d8cc-e707-11ea-aa2d-73d37e989a9d","attributes":{"name":"user_access_invite","display_name":"Invite
-        User","description":"Allows users to invite other users to your organization.","created":"2020-08-25T19:17:23.539701+00:00","group_name":"User
-        Access","display_type":"other","restricted":false}},{"type":"permissions","id":"9de604d8-e707-11ea-aa2d-93f1a783b3a3","attributes":{"name":"user_access_manage","display_name":"Access
+        User","description":"Allows users to invite other users to your organization.","created":"2020-08-25T19:17:23.539701+00:00","group_name":"Access
+        Management","display_type":"other","restricted":false}},{"type":"permissions","id":"9de604d8-e707-11ea-aa2d-93f1a783b3a3","attributes":{"name":"user_access_manage","display_name":"Access
         Management","description":"Grants the permission to disable users, manage
-        user roles and SAML-to-role mappings.","created":"2020-08-25T19:17:28.810412+00:00","group_name":"User
-        Access","display_type":"other","restricted":false}},{"type":"permissions","id":"07c3c146-f7f8-11ea-acf6-0bd62b9ae60e","attributes":{"name":"logs_write_historical_view","display_name":"Logs
-        Historical View","description":"The capability to rehydrate logs from Archives.","created":"2020-09-16T08:38:44.242076+00:00","group_name":"Logs","display_type":"write","restricted":false}},{"type":"permissions","id":"6ba32d22-0e1a-11eb-ba44-bf9a5aafaa39","attributes":{"name":"logs_write_facets","display_name":"Logs
+        user roles and SAML-to-role mappings.","created":"2020-08-25T19:17:28.810412+00:00","group_name":"Access
+        Management","display_type":"other","restricted":false}},{"type":"permissions","id":"46a301da-ec5c-11ea-aa9f-73bedeab67ee","attributes":{"name":"user_app_keys","display_name":"User
+        Application Keys","description":"The ability to view and manage Application
+        Keys owned by the user.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"API
+        and Application Keys","display_type":"other","restricted":false}},{"type":"permissions","id":"46a301db-ec5c-11ea-aa9f-2fe72193d60e","attributes":{"name":"org_app_keys_read","display_name":"Organization
+        Application Keys","description":"The ability to view Application Keys owned
+        by all users in the organization.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"API
+        and Application Keys","display_type":"read","restricted":false}},{"type":"permissions","id":"46a301dc-ec5c-11ea-aa9f-13b33f8f46ea","attributes":{"name":"org_app_keys_write","display_name":"Organization
+        Application Keys","description":"The ability to manage Application Keys owned
+        by all users in the organization.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"API
+        and Application Keys","display_type":"write","restricted":false}},{"type":"permissions","id":"46a301dd-ec5c-11ea-aa9f-97edfb345bc9","attributes":{"name":"synthetics_private_location_read","display_name":"Private
+        Locations","description":"The ability to view the list of private locations
+        available.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"Synthetic
+        Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"46a301de-ec5c-11ea-aa9f-a73252c24806","attributes":{"name":"synthetics_private_location_write","display_name":"Private
+        Locations","description":"The ability to create and delete private locations
+        as well as seeing the associated installation guidelines.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"Synthetic
+        Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"46a301df-ec5c-11ea-aa9f-970a9ae645e5","attributes":{"name":"billing_read","display_name":"Billing","description":"The
+        ability to view your organization''s subscription and payment method but not
+        make edits.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"Billing
+        and Usage","display_type":"read","restricted":false}},{"type":"permissions","id":"46a301e0-ec5c-11ea-aa9f-6ba6cc675d8c","attributes":{"name":"billing_edit","display_name":"Billing","description":"The
+        ability to manage your organization''s subscription and payment method.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"Billing
+        and Usage","display_type":"write","restricted":false}},{"type":"permissions","id":"46a301e1-ec5c-11ea-aa9f-afa39f6f3e36","attributes":{"name":"usage_read","display_name":"Usage","description":"The
+        ability to view your organization''s usage and usage attribution.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"Billing
+        and Usage","display_type":"read","restricted":false}},{"type":"permissions","id":"46a301e2-ec5c-11ea-aa9f-1f511b7305fd","attributes":{"name":"usage_edit","display_name":"Usage","description":"The
+        ability to manage your organization''s usage attribution set-up.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"Billing
+        and Usage","display_type":"write","restricted":false}},{"type":"permissions","id":"46a301e4-ec5c-11ea-aa9f-87282b3a50cc","attributes":{"name":"metric_tags_write","display_name":"Manage
+        Tags for Metrics","description":"The ability to edit and save tag configurations
+        for custom metrics.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"Metrics","display_type":"write","restricted":false}},{"type":"permissions","id":"07c3c146-f7f8-11ea-acf6-0bd62b9ae60e","attributes":{"name":"logs_write_historical_view","display_name":"Logs
+        Historical View","description":"The capability to rehydrate logs from Archives.","created":"2020-09-16T08:38:44.242076+00:00","group_name":"Logs","display_type":"write","restricted":false}},{"type":"permissions","id":"372896c4-f923-11ea-adbc-4fecd107156d","attributes":{"name":"api_keys_read","display_name":"API
+        Keys","description":"The ability to list and retrive the key values of all
+        API Keys in your organization.","created":"2020-09-17T20:20:23.279769+00:00","group_name":"API
+        and Application Keys","display_type":"read","restricted":false}},{"type":"permissions","id":"3e4d4d28-f923-11ea-adbc-e3565938c12e","attributes":{"name":"api_keys_write","display_name":"API
+        Keys","description":"The ability to create, rename, and revoke API Keys for
+        your organization.","created":"2020-09-17T20:20:35.264430+00:00","group_name":"API
+        and Application Keys","display_type":"write","restricted":false}},{"type":"permissions","id":"4628ca54-f923-11ea-adbc-4b2b7f88c5e9","attributes":{"name":"synthetics_global_variable_read","display_name":"Global
+        Variables","description":"The ability to view and search through all the existing
+        global variables for Synthetics.","created":"2020-09-17T20:20:48.446916+00:00","group_name":"Synthetic
+        Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"4ada6e36-f923-11ea-adbc-0788e5c5e3cf","attributes":{"name":"synthetics_global_variable_write","display_name":"Global
+        Variables","description":"The ability to create, edit, and delete global variables
+        for Synthetics.","created":"2020-09-17T20:20:56.322003+00:00","group_name":"Synthetic
+        Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"5025ee24-f923-11ea-adbc-576ea241df8d","attributes":{"name":"synthetics_read","display_name":"Synthetic
+        Tests","description":"The ability to list and view configured Synthetic tests.","created":"2020-09-17T20:21:05.205361+00:00","group_name":"Synthetic
+        Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"55f4b5ec-f923-11ea-adbc-1bfa2334a755","attributes":{"name":"synthetics_write","display_name":"Synthetic
+        Tests","description":"The ability to create, edit, and delete Synthetic tests.","created":"2020-09-17T20:21:14.949140+00:00","group_name":"Synthetic
+        Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"5c6b88e2-f923-11ea-adbc-abf57d079420","attributes":{"name":"synthetics_default_settings_read","display_name":"Default
+        Settings","description":"The ability to view default settings for Synthetics
+        Monitoring.","created":"2020-09-17T20:21:25.794160+00:00","group_name":"Synthetic
+        Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"642eebe6-f923-11ea-adbc-eb617674ea04","attributes":{"name":"synthetics_default_settings_write","display_name":"Default
+        Settings","description":"The ability to edit default settings for Synthetics
+        Monitoring.","created":"2020-09-17T20:21:38.818771+00:00","group_name":"Synthetic
+        Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"6ba32d22-0e1a-11eb-ba44-bf9a5aafaa39","attributes":{"name":"logs_write_facets","display_name":"Logs
         Facets","description":"The capability to create or edit logs facets.","created":"2020-10-14T12:40:20.271908+00:00","group_name":"Logs","display_type":"write","restricted":false}},{"type":"permissions","id":"fcac2ad8-2843-11eb-8315-0fe47949d625","attributes":{"name":"integrations_api","display_name":"Integrations
         API Access","description":"The ability to use the Integrations APIs to configure
         Integrations that the user has access to. This permission does not restrict
-        or grant access to Integrations.","created":"2020-11-16T19:43:23.198568+00:00","group_name":"Integrations","display_type":"other","restricted":false}}]}'
+        or grant access to Integrations.","created":"2020-11-16T19:43:23.198568+00:00","group_name":"Integrations","display_type":"other","restricted":false}},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0","attributes":{"name":"apm_read","display_name":"APM
+        Read Access","description":"The ability to read and query APM and Trace Analytics.","created":"2020-11-23T20:55:45.006110+00:00","group_name":"APM","display_type":"read","restricted":true}},{"type":"permissions","id":"43fa188e-2dce-11eb-84c0-835ad1fd6287","attributes":{"name":"apm_retention_filter_read","display_name":"Manage
+        Retention Filters","description":"The ability to read trace retention filters.
+        A user with this permission can view the retention filters page, list of filters,
+        their statistics, and creation info.","created":"2020-11-23T20:55:49.190595+00:00","group_name":"APM","display_type":"read","restricted":false}},{"type":"permissions","id":"465cfe66-2dce-11eb-84c0-6baa888239fa","attributes":{"name":"apm_retention_filter_write","display_name":"Manage
+        Retention Filters","description":"The ability to create, edit and delete trace
+        retention filters. A user with this permission can create new retention filters,
+        and update or delete to existing retention filters.","created":"2020-11-23T20:55:53.194236+00:00","group_name":"APM","display_type":"write","restricted":false}},{"type":"permissions","id":"4916eebe-2dce-11eb-84c0-271cb2c672e8","attributes":{"name":"apm_service_ingest_read","display_name":"Manage
+        Service Ingestion","description":"The ability to access Service Ingestion
+        pages. A user with this permission can view the service ingestion page, list
+        of root service, their statistics, and creation info.","created":"2020-11-23T20:55:57.768261+00:00","group_name":"APM","display_type":"read","restricted":false}},{"type":"permissions","id":"4e3f02b4-2dce-11eb-84c0-2fca946a6efc","attributes":{"name":"apm_service_ingest_write","display_name":"Manage
+        Service Ingestion","description":"The ability to edit Service Ingestion pages
+        root services. A user with this permission can edit the root service ingestion
+        and generate a code snippet to increase ingestion per service.","created":"2020-11-23T20:56:06.419518+00:00","group_name":"APM","display_type":"write","restricted":false}},{"type":"permissions","id":"53950c54-2dce-11eb-84c0-a79ae108f6f8","attributes":{"name":"apm_apdex_manage_write","display_name":"Apdex
+        Management","description":"The ability to set Apdex T value on any service.
+        A user with this permission can set the T value from the Apdex graph on the
+        service page.","created":"2020-11-23T20:56:15.371926+00:00","group_name":"APM","display_type":"write","restricted":false}},{"type":"permissions","id":"5cbe5f9c-2dce-11eb-84c0-872d3e9f1076","attributes":{"name":"apm_tag_management_write","display_name":"Primary
+        Tag Management","description":"The ability to edit second primary tag selection.
+        A user with this permission can modify the second primary tag dropdown in
+        the APM settings page.","created":"2020-11-23T20:56:30.742299+00:00","group_name":"APM","display_type":"write","restricted":false}},{"type":"permissions","id":"61765026-2dce-11eb-84c0-833e230d1b8f","attributes":{"name":"apm_primary_operation_write","display_name":"Primary
+        Operation","description":"The ability to edit the operation name value selection.
+        A user with this permission can modify the operation name list in the APM
+        settings page and can modify the operation name controller on the service
+        page.","created":"2020-11-23T20:56:38.658649+00:00","group_name":"APM","display_type":"write","restricted":false}},{"type":"permissions","id":"8106300a-54f7-11eb-8cbc-7781a434a67b","attributes":{"name":"rum_apps_write","display_name":"RUM
+        Applications","description":"The ability to create, edit, and delete RUM Applications.","created":"2021-01-12T16:59:16.324480+00:00","group_name":"Real
+        User Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"bf0dcf7c-90af-11eb-9b82-da7ad0900002","attributes":{"name":"data_scanner_read","display_name":"Data
+        Scanner","description":"View data scanner configuration.","created":"2021-03-29T16:56:46.394971+00:00","group_name":"Access
+        Management","display_type":"read","restricted":false}},{"type":"permissions","id":"bf0dcf7d-90af-11eb-9b82-da7ad0900002","attributes":{"name":"data_scanner_write","display_name":"Data
+        Scanner","description":"Edit data scanner configuration.","created":"2021-03-29T16:56:46.398584+00:00","group_name":"Access
+        Management","display_type":"write","restricted":false}}]}'
     headers:
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
       Content-Length:
-      - '10436'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      - '21271'
       Content-Type:
       - application/json
-      DD-POOL:
-      - dogweb
       Date:
-      - Wed, 16 Dec 2020 00:51:36 GMT
-      Pragma:
+      - Fri, 09 Apr 2021 07:34:09 GMT
+      cache-control:
       - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 00:51:36 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
       - max-age=15724800;
-      Vary:
+      vary:
       - Accept-Encoding
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-DD-Debug:
-      - fbpub1YRPbOoyJvhJBk1iFu2e+h0/QC0EzprMcQ+j5QBEVxUjSwBwj1+J3+NnpX8
-      X-DD-VERSION:
-      - '35.3548464'
-      X-Frame-Options:
+      x-dd-debug:
+      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
+      x-dd-version:
+      - '35.4272858'
+      x-frame-options:
       - SAMEORIGIN
     status:
       code: 200

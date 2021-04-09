@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"email": "datadog-api-client-python-test_disable_a_user_returns_ok_response-1608079934.757328@datadoghq.com"},
-      "type": "users"}}'
+    body: '{"data": {"attributes": {"email": "Test-test_disable_a_user_returns_ok_response-1617953634.139874@datadoghq.com",
+      "title": "user title"}, "type": "users"}}'
     headers:
       Accept:
       - application/json
@@ -10,47 +10,37 @@ interactions:
       Dd-Operation-Id:
       - CreateUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b4.dev20 (python 3.9.0; os Darwin; arch x86_64)
-      x-datadog-parent-id:
-      - '9825223980688511917'
-      x-datadog-sampling-priority:
-      - '1'
-      x-datadog-trace-id:
-      - '9932743484649855555'
+      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"f0a0a460-3f38-11eb-89bd-c78fa7cfa6c7","attributes":{"name":null,"handle":"datadog-api-client-python-test_disable_a_user_returns_ok_response-1608079934.757328@datadoghq.com","created_at":"2020-12-16T00:52:15.268589+00:00","email":"datadog-api-client-python-test_disable_a_user_returns_ok_response-1608079934.757328@datadoghq.com","icon":"https://secure.gravatar.com/avatar/12c1f8a86ec8bb8a53def720153db38e?s=48&d=retro","title":null,"verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
+      string: '{"data":{"type":"users","id":"f01924c8-9905-11eb-9ce8-da7ad0900002","attributes":{"name":null,"handle":"test-test_disable_a_user_returns_ok_response-1617953634.139874@datadoghq.com","created_at":"2021-04-09T07:33:54.698010+00:00","modified_at":"2021-04-09T07:33:54.731838+00:00","email":"test-test_disable_a_user_returns_ok_response-1617953634.139874@datadoghq.com","icon":"https://secure.gravatar.com/avatar/5ec4e8de18acf050f0c6ae0498218116?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
       Content-Length:
-      - '681'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      - '696'
       Content-Type:
       - application/json
-      DD-POOL:
-      - dogweb
       Date:
-      - Wed, 16 Dec 2020 00:52:15 GMT
-      Pragma:
+      - Fri, 09 Apr 2021 07:33:54 GMT
+      cache-control:
       - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 00:52:15 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
       - max-age=15724800;
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-DD-Debug:
-      - 1rlggRfE73pEFFllgZfChM1RZODDnKFUyVMEk3an2/a5+lJByU7Porp1iIMqRaO7
-      X-DD-VERSION:
-      - '35.3548464'
-      X-Frame-Options:
+      x-dd-debug:
+      - 2328yjLSqI4XmR1pVqrPRR/SFcQsbafjEpPmZx7/3PfxUK1nJQQsX+wrMelyVyj+
+      x-dd-version:
+      - '35.4272858'
+      x-frame-options:
       - SAMEORIGIN
     status:
       code: 201
@@ -65,47 +55,36 @@ interactions:
       Dd-Operation-Id:
       - DisableUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b4.dev20 (python 3.9.0; os Darwin; arch x86_64)
-      x-datadog-parent-id:
-      - '13151305537321051865'
-      x-datadog-sampling-priority:
-      - '1'
-      x-datadog-trace-id:
-      - '9635353288383036850'
+      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/f0a0a460-3f38-11eb-89bd-c78fa7cfa6c7
+    uri: https://api.datadoghq.com/api/v2/users/f01924c8-9905-11eb-9ce8-da7ad0900002
   response:
     body:
       string: ''
     headers:
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
       Content-Length:
       - '0'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       Content-Type:
       - application/json
-      DD-POOL:
-      - dogweb
       Date:
-      - Wed, 16 Dec 2020 00:52:16 GMT
-      Pragma:
+      - Fri, 09 Apr 2021 07:33:56 GMT
+      cache-control:
       - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 00:52:15 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
       - max-age=15724800;
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-DD-Debug:
-      - 91aMs4Xd/NaPhGMoIvSvdd0mjw6sy0ZqzVUdTt9hqt35qwhu0snxCQESFXt90Pzi
-      X-DD-VERSION:
-      - '35.3548464'
-      X-Frame-Options:
+      x-dd-debug:
+      - dPySkcOzIZtKyMKDAAzuysY3gNGGj6RtYogGuSb76E8mPvoqzREyRp6lPYm91hQU
+      x-dd-version:
+      - '35.4272858'
+      x-frame-options:
       - SAMEORIGIN
     status:
       code: 204
@@ -120,44 +99,36 @@ interactions:
       Dd-Operation-Id:
       - DisableUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b4.dev20 (python 3.9.0; os Darwin; arch x86_64)
-      x-datadog-parent-id:
-      - '10003644538113603900'
-      x-datadog-sampling-priority:
-      - '1'
-      x-datadog-trace-id:
-      - '16951518676278439436'
+      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/f0a0a460-3f38-11eb-89bd-c78fa7cfa6c7
+    uri: https://api.datadoghq.com/api/v2/users/f01924c8-9905-11eb-9ce8-da7ad0900002
   response:
     body:
-      string: '{"errors": ["f0a0a460-3f38-11eb-89bd-c78fa7cfa6c7 not found"]}'
+      string: '{"errors": ["f01924c8-9905-11eb-9ce8-da7ad0900002 not found"]}'
     headers:
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
       Content-Length:
       - '62'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       Content-Type:
       - application/json
-      DD-POOL:
-      - dogweb
       Date:
-      - Wed, 16 Dec 2020 00:52:16 GMT
-      Pragma:
+      - Fri, 09 Apr 2021 07:33:56 GMT
+      cache-control:
       - no-cache
-      Strict-Transport-Security:
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
       - max-age=15724800;
-      Vary:
+      vary:
       - Accept-Encoding
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-DD-VERSION:
-      - '35.3548464'
-      X-Frame-Options:
+      x-dd-version:
+      - '35.4272858'
+      x-frame-options:
       - SAMEORIGIN
     status:
       code: 404

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '[{"check": "app.ok", "host_name": "host", "status": 0, "tags": ["test:datadogapiclientpythontestsubmitaservicecheckreturnspayloadacceptedresponse1614854119738488"]}]'
+    body: '[{"check": "app.ok", "host_name": "host", "status": 0, "tags": ["test:TestSubmitaServiceCheckreturnsPayloadacceptedresponse1617953612606439"]}]'
     headers:
       Accept:
       - application/json
@@ -9,7 +9,7 @@ interactions:
       Dd-Operation-Id:
       - SubmitServiceCheck
       User-Agent:
-      - datadog-api-client-python/0.1.dev247 (python 3.9.2; os Linux; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/check_run
   response:
@@ -23,7 +23,7 @@ interactions:
       Content-Type:
       - text/json
       Date:
-      - Thu, 04 Mar 2021 10:35:20 GMT
+      - Fri, 09 Apr 2021 07:33:33 GMT
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       strict-transport-security:

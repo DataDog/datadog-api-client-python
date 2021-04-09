@@ -137,28 +137,31 @@ def glom(value, path):
     return g(value, re.sub(r"\[([0-9]*)\]", r".\1", path))
 
 
-@pytest.fixture
-def unique(request, freezer):
+def _get_prefix(request):
     test_class = request.cls
     if test_class:
         prefix = "{}.{}".format(test_class.__name__, request.node.name)
     else:
-        prefix = request.node.name
+        try:
+            base_name = request.node.__scenario_report__.scenario.name
+            prefix = re.sub(r"\W", "", base_name.replace(" ", "_"))
+        except AttributeError:
+            prefix = request.node.name
+    return prefix
 
+
+@pytest.fixture
+def unique(request, freezer):
+    prefix = _get_prefix(request)
     with freezer:
-        return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+        return f"Test-{prefix}-{datetime.now().timestamp()}"
 
 
 @pytest.fixture
 def unique_lower(request, freezer):
-    test_class = request.cls
-    if test_class:
-        prefix = "{}.{}".format(test_class.__name__, request.node.name)
-    else:
-        prefix = request.node.name
-
+    prefix = _get_prefix(request).lower()
     with freezer:
-        return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}".lower()
+        return f"test-{prefix}-{datetime.now().timestamp()}"
 
 
 @pytest.fixture

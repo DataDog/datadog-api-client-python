@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '[{"message": "datadog-api-client-python-test_send_logs_returns_response_from_server_always_200_empty_json_response-1615201331.093284",
-      "tags": "host:datadogapiclientpythontestsendlogsreturnsresponsefromserveralways200emptyjsonresponse1615201331093284"}]'
+    body: '[{"message": "Test-Send_logs_returns_Response_from_server_always_200_empty_JSON_response-1617953610.881066",
+      "tags": "host:TestSendlogsreturnsResponsefromserveralways200emptyJSONresponse1617953610881066"}]'
     headers:
       Accept:
       - application/json
@@ -10,8 +10,7 @@ interactions:
       Dd-Operation-Id:
       - SubmitLog
       User-Agent:
-      - datadog-api-client-python/1.0.0b7.dev24+dirty (python 3.9.0; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://http-intake.logs.datadoghq.com/v1/input
   response:
@@ -25,7 +24,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 08 Mar 2021 11:02:12 GMT
+      - Fri, 09 Apr 2021 07:33:31 GMT
     status:
       code: 200
       message: OK

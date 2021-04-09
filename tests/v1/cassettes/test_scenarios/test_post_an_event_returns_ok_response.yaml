@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"title": "datadog-api-client-python-test_post_an_event_returns_ok_response-1615971518.466498",
-      "text": "A text message.", "tags": ["test:datadogapiclientpythontestpostaneventreturnsokresponse1615971518466498"]}'
+    body: '{"title": "Test-Post_an_event_returns_OK_response-1617953610.253599", "text":
+      "A text message.", "tags": ["test:TestPostaneventreturnsOKresponse1617953610253599"]}'
     headers:
       Accept:
       - application/json
@@ -10,22 +10,22 @@ interactions:
       Dd-Operation-Id:
       - CreateEvent
       User-Agent:
-      - datadog-api-client-python/1.0.0b7.dev43 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/events
   response:
     body:
-      string: '{"status":"ok","event":{"id":5900692038016605201,"title":"datadog-api-client-python-test_post_an_event_returns_ok_response-1615971518.466498","text":"A
-        text message.","date_happened":1615971518,"handle":null,"priority":null,"related_event_id":null,"tags":["test:datadogapiclientpythontestpostaneventreturnsokresponse1615971518466498"],"url":"https://app.datadoghq.com/event/event?id=5900692038016605201"}}'
+      string: '{"status":"ok","event":{"id":5933946021934033345,"title":"Test-Post_an_event_returns_OK_response-1617953610.253599","text":"A
+        text message.","date_happened":1617953610,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventreturnsOKresponse1617953610253599"],"url":"https://app.datadoghq.com/event/event?id=5933946021934033345"}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '405'
+      - '357'
       Content-Type:
       - application/json
       Date:
-      - Wed, 17 Mar 2021 08:58:38 GMT
+      - Fri, 09 Apr 2021 07:33:30 GMT
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       strict-transport-security:
