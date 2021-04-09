@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"title": "Test-Post_an_event_returns_OK_response-1617954851.395", "text":
-      "A text message.", "tags": ["test:TestPostaneventreturnsOKresponse1617954851395"]}'
+    body: '{"title": "Test-Post_an_event_returns_OK_response-1617968268", "text":
+      "A text message.", "tags": ["test:TestPostaneventreturnsOKresponse1617968268"]}'
     headers:
       Accept:
       - application/json
@@ -10,22 +10,22 @@ interactions:
       Dd-Operation-Id:
       - CreateEvent
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/events
   response:
     body:
-      string: '{"status":"ok","event":{"id":5933966845591714564,"title":"Test-Post_an_event_returns_OK_response-1617954851.395","text":"A
-        text message.","date_happened":1617954851,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventreturnsOKresponse1617954851395"],"url":"https://app.datadoghq.com/event/event?id=5933966845591714564"}}'
+      string: '{"status":"ok","event":{"id":5934191931573274750,"title":"Test-Post_an_event_returns_OK_response-1617968268","text":"A
+        text message.","date_happened":1617968268,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventreturnsOKresponse1617968268"],"url":"https://app.datadoghq.com/event/event?id=5934191931573274750"}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '351'
+      - '344'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:11 GMT
+      - Fri, 09 Apr 2021 11:37:48 GMT
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       strict-transport-security:

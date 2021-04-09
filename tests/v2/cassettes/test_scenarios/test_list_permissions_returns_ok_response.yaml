@@ -9,7 +9,7 @@ interactions:
       Dd-Operation-Id:
       - ListPermissions
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
     uri: https://api.datadoghq.com/api/v2/permissions
   response:
@@ -164,7 +164,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:33 GMT
+      - Fri, 09 Apr 2021 11:37:42 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -178,9 +178,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - HbtaOKlJ6OCrx9tMXO6ivMTrEM+g0c93HDp08trmOmgdHozC5J+vn10F0H4WPjCU
+      - mNzaoDhdDKO7t4QSrAe5X7pHd0bJND187D+vRbwoluXouE2m1UaQQX0RGCvRpLVE
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
     status:

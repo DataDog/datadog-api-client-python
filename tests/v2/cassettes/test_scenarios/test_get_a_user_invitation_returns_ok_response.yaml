@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"email": "Test-test_get_a_user_invitation_returns_ok_response-1617954924.390@datadoghq.com",
+    body: '{"data": {"attributes": {"email": "Test-test_get_a_user_invitation_returns_ok_response-1617968199@datadoghq.com",
       "title": "user title"}, "type": "users"}}'
     headers:
       Accept:
@@ -10,22 +10,22 @@ interactions:
       Dd-Operation-Id:
       - CreateUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"f12968c0-9908-11eb-9ce8-da7ad0900002","attributes":{"name":null,"handle":"test-test_get_a_user_invitation_returns_ok_response-1617954924.390@datadoghq.com","created_at":"2021-04-09T07:55:24.971478+00:00","modified_at":"2021-04-09T07:55:26.947719+00:00","email":"test-test_get_a_user_invitation_returns_ok_response-1617954924.390@datadoghq.com","icon":"https://secure.gravatar.com/avatar/f1716d3e76a3ce5e8986ed108b8d32e5?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"d9347f06-9927-11eb-9ceb-da7ad0900002","attributes":{"name":null,"handle":"test-test_get_a_user_invitation_returns_ok_response-1617968199@datadoghq.com","created_at":"2021-04-09T11:36:39.178448+00:00","modified_at":"2021-04-09T11:36:39.209696+00:00","email":"test-test_get_a_user_invitation_returns_ok_response-1617968199@datadoghq.com","icon":"https://secure.gravatar.com/avatar/da1e1dd4e8125d81cc6694ad5df1ac81?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '704'
+      - '696'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:55:26 GMT
+      - Fri, 09 Apr 2021 11:36:39 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -37,16 +37,16 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - dCmL/3rURV6BPeaqeP3Rxigq41m5CAb17XjrRE42uZ01zpr07HVhbL5/3TWMkvgu
+      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
     status:
       code: 201
       message: Created
 - request:
-    body: '{"data": [{"relationships": {"user": {"data": {"id": "f12968c0-9908-11eb-9ce8-da7ad0900002",
+    body: '{"data": [{"relationships": {"user": {"data": {"id": "d9347f06-9927-11eb-9ceb-da7ad0900002",
       "type": "users"}}}, "type": "user_invitations"}]}'
     headers:
       Accept:
@@ -56,12 +56,12 @@ interactions:
       Dd-Operation-Id:
       - SendInvitations
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/user_invitations
   response:
     body:
-      string: '{"data":[{"type":"user_invitations","id":"f2b05a14-9908-11eb-9ce8-da7ad0900002","attributes":{"uuid":"f2b05a14-9908-11eb-9ce8-da7ad0900002","login_method":null,"invite_type":"openid_invite","created_at":"2021-04-09T07:55:27.535751+00:00","expires_at":"2021-04-11T07:55:27.397155+00:00"},"relationships":{"user":{"data":{"type":"users","id":"f12968c0-9908-11eb-9ce8-da7ad0900002"}}}}]}'
+      string: '{"data":[{"type":"user_invitations","id":"d991d50c-9927-11eb-9ceb-da7ad0900002","attributes":{"uuid":"d991d50c-9927-11eb-9ceb-da7ad0900002","login_method":null,"invite_type":"openid_invite","created_at":"2021-04-09T11:36:39.790491+00:00","expires_at":"2021-04-11T11:36:39.654518+00:00"},"relationships":{"user":{"data":{"type":"users","id":"d9347f06-9927-11eb-9ceb-da7ad0900002"}}}}]}'
     headers:
       Connection:
       - keep-alive
@@ -70,7 +70,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:55:27 GMT
+      - Fri, 09 Apr 2021 11:36:39 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -82,9 +82,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - HbtaOKlJ6OCrx9tMXO6ivMTrEM+g0c93HDp08trmOmgdHozC5J+vn10F0H4WPjCU
+      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -100,12 +100,12 @@ interactions:
       Dd-Operation-Id:
       - GetInvitation
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v2/user_invitations/f2b05a14-9908-11eb-9ce8-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/user_invitations/d991d50c-9927-11eb-9ceb-da7ad0900002
   response:
     body:
-      string: '{"data":{"type":"user_invitations","id":"f2b05a14-9908-11eb-9ce8-da7ad0900002","attributes":{"uuid":"f2b05a14-9908-11eb-9ce8-da7ad0900002","login_method":null,"invite_type":"openid_invite","created_at":"2021-04-09T07:55:27.535751+00:00","expires_at":"2021-04-11T07:55:27.397155+00:00"},"relationships":{"user":{"data":{"type":"users","id":"f12968c0-9908-11eb-9ce8-da7ad0900002"}}}}}'
+      string: '{"data":{"type":"user_invitations","id":"d991d50c-9927-11eb-9ceb-da7ad0900002","attributes":{"uuid":"d991d50c-9927-11eb-9ceb-da7ad0900002","login_method":null,"invite_type":"openid_invite","created_at":"2021-04-09T11:36:39.790491+00:00","expires_at":"2021-04-11T11:36:39.654518+00:00"},"relationships":{"user":{"data":{"type":"users","id":"d9347f06-9927-11eb-9ceb-da7ad0900002"}}}}}'
     headers:
       Connection:
       - keep-alive
@@ -114,7 +114,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:55:28 GMT
+      - Fri, 09 Apr 2021 11:36:40 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -128,9 +128,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - mNzaoDhdDKO7t4QSrAe5X7pHd0bJND187D+vRbwoluXouE2m1UaQQX0RGCvRpLVE
+      - twvpGlmuom5y6A0pjGtXzTf554cmwJgTcCZ71fK4H/RDi+v5ehBK0zQiRcTJQG5C
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -146,9 +146,9 @@ interactions:
       Dd-Operation-Id:
       - DisableUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/f12968c0-9908-11eb-9ce8-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/d9347f06-9927-11eb-9ceb-da7ad0900002
   response:
     body:
       string: ''
@@ -160,7 +160,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:55:28 GMT
+      - Fri, 09 Apr 2021 11:36:40 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -172,9 +172,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - F5gm0Rce1/Abr9/0Fw8HAqWfiz0FdiH8er/AXnN6lOn3L6KyGgbsLCwgPlob1No8
+      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
     status:

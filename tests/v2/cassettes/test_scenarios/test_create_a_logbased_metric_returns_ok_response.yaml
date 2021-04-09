@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"id": "Test-test_create_a_logbased_metric_returns_ok_response-1617954931.666",
+    body: '{"data": {"id": "Test-test_create_a_logbased_metric_returns_ok_response-1617968164",
       "type": "logs_metrics", "attributes": {"compute": {"aggregation_type": "count"}}}}'
     headers:
       Accept:
@@ -10,21 +10,21 @@ interactions:
       Dd-Operation-Id:
       - CreateLogsMetric
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_test_create_a_logbased_metric_returns_ok_response_1617954931.666","attributes":{"filter":{"query":"*"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
+      string: '{"data":{"id":"Test_test_create_a_logbased_metric_returns_ok_response_1617968164","attributes":{"filter":{"query":"*"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '200'
+      - '196'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 07:55:32 GMT
+      - Fri, 09 Apr 2021 11:36:04 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -40,19 +40,19 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - Wjq53IVIwnB4SiR238oOYgHFMq/ZYP0LQ/Dv8C2fFLBwTje/dWJHu6pI6vIOK1zG
+      - dPySkcOzIZtKyMKDAAzuysY3gNGGj6RtYogGuSb76E8mPvoqzREyRp6lPYm91hQU
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
-      - '300'
+      - '100'
       x-ratelimit-period:
-      - '300'
+      - '3600'
       x-ratelimit-remaining:
-      - '297'
+      - '87'
       x-ratelimit-reset:
-      - '268'
+      - '1436'
     status:
       code: 200
       message: OK
@@ -66,9 +66,9 @@ interactions:
       Dd-Operation-Id:
       - DeleteLogsMetric
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_test_create_a_logbased_metric_returns_ok_response_1617954931.666
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_test_create_a_logbased_metric_returns_ok_response_1617968164
   response:
     body:
       string: '{}'
@@ -80,7 +80,7 @@ interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 07:55:32 GMT
+      - Fri, 09 Apr 2021 11:36:05 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -94,19 +94,19 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - B1nwy/pPNqX+q4pQT22cdp1QCexE35IF8qwSHy0Nf7IW0Y881qtn4tXN1lpmzaKc
+      - Wjq53IVIwnB4SiR238oOYgHFMq/ZYP0LQ/Dv8C2fFLBwTje/dWJHu6pI6vIOK1zG
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
-      - '5000'
+      - '100'
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '4936'
+      - '86'
       x-ratelimit-reset:
-      - '268'
+      - '1435'
     status:
       code: 200
       message: OK

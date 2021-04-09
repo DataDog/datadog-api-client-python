@@ -9,7 +9,7 @@ interactions:
       Dd-Operation-Id:
       - ListLogsGet
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
     uri: https://api.datadoghq.com/api/v2/logs/events?filter%5Bfrom%5D=2020-09-17T11%3A48%3A36%2B01%3A00&filter%5Bindex%5D=main&filter%5Bquery%5D=datadog-agent&filter%5Bto%5D=2020-09-17T12%3A48%3A36%2B01%3A00&page%5Blimit%5D=5
   response:
@@ -23,7 +23,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:34 GMT
+      - Fri, 09 Apr 2021 11:36:12 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -35,9 +35,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - mNzaoDhdDKO7t4QSrAe5X7pHd0bJND187D+vRbwoluXouE2m1UaQQX0RGCvRpLVE
+      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -45,9 +45,9 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '285'
+      - '297'
       x-ratelimit-reset:
-      - '326'
+      - '1428'
     status:
       code: 200
       message: OK

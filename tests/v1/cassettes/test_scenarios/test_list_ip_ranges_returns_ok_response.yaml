@@ -9,7 +9,7 @@ interactions:
       Dd-Operation-Id:
       - GetIpRanges
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
     uri: https://ip-ranges.datadoghq.com/
   response:
@@ -159,7 +159,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:07 GMT
+      - Fri, 09 Apr 2021 11:37:48 GMT
       ETag:
       - '"ecb4ed42838b56fe91b86d372e2f1b0e"'
       Last-Modified:
@@ -169,11 +169,11 @@ interactions:
       Vary:
       - Accept-Encoding
       Via:
-      - 1.1 cfe504a64f6a3eed0237f039e09f6185.cloudfront.net (CloudFront)
+      - 1.1 3e206dcbbb3d5f0cbfa80cebfd0de62d.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - -vQYQ9ov5KKrArUtiEnkrIVdHk8mQSOnYbVM1OJV8thII8Eo35kV3Q==
+      - Hykro-0K55Ws_TotvHfQjtc_W9I6b9NBvr7vdVxumEwJlRzRjT_OOQ==
       X-Amz-Cf-Pop:
-      - AMS1-C1
+      - MAD51-C1
       X-Cache:
       - RefreshHit from cloudfront
     status:

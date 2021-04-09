@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"email": "Test-test_get_a_user_permissions_returns_ok_response-1617954940.621@datadoghq.com",
+    body: '{"data": {"attributes": {"email": "Test-test_get_a_user_permissions_returns_ok_response-1617968167@datadoghq.com",
       "title": "user title"}, "type": "users"}}'
     headers:
       Accept:
@@ -10,22 +10,22 @@ interactions:
       Dd-Operation-Id:
       - CreateUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"fad50884-9908-11eb-9ce8-da7ad0900002","attributes":{"name":null,"handle":"test-test_get_a_user_permissions_returns_ok_response-1617954940.621@datadoghq.com","created_at":"2021-04-09T07:55:41.196849+00:00","modified_at":"2021-04-09T07:55:41.228967+00:00","email":"test-test_get_a_user_permissions_returns_ok_response-1617954940.621@datadoghq.com","icon":"https://secure.gravatar.com/avatar/d5eee841fe71895129f2bccd91727721?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"c620aba6-9927-11eb-9ceb-da7ad0900002","attributes":{"name":null,"handle":"test-test_get_a_user_permissions_returns_ok_response-1617968167@datadoghq.com","created_at":"2021-04-09T11:36:07.171494+00:00","modified_at":"2021-04-09T11:36:07.204824+00:00","email":"test-test_get_a_user_permissions_returns_ok_response-1617968167@datadoghq.com","icon":"https://secure.gravatar.com/avatar/8cad41be1fb33db0b6f0d7be5c240c64?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '706'
+      - '698'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:55:41 GMT
+      - Fri, 09 Apr 2021 11:36:07 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -37,9 +37,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - dPySkcOzIZtKyMKDAAzuysY3gNGGj6RtYogGuSb76E8mPvoqzREyRp6lPYm91hQU
+      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -55,9 +55,9 @@ interactions:
       Dd-Operation-Id:
       - ListUserPermissions
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v2/users/fad50884-9908-11eb-9ce8-da7ad0900002/permissions
+    uri: https://api.datadoghq.com/api/v2/users/c620aba6-9927-11eb-9ceb-da7ad0900002/permissions
   response:
     body:
       string: '{"data":[]}'
@@ -69,7 +69,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:55:41 GMT
+      - Fri, 09 Apr 2021 11:36:07 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -81,9 +81,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
+      - Wjq53IVIwnB4SiR238oOYgHFMq/ZYP0LQ/Dv8C2fFLBwTje/dWJHu6pI6vIOK1zG
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -99,9 +99,9 @@ interactions:
       Dd-Operation-Id:
       - DisableUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/fad50884-9908-11eb-9ce8-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/c620aba6-9927-11eb-9ceb-da7ad0900002
   response:
     body:
       string: ''
@@ -113,7 +113,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:55:43 GMT
+      - Fri, 09 Apr 2021 11:36:08 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -125,9 +125,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - mNzaoDhdDKO7t4QSrAe5X7pHd0bJND187D+vRbwoluXouE2m1UaQQX0RGCvRpLVE
+      - fIO2C4qGDheGHy4YbS+r3a3CXbh4cbRo7roILOimQyiHGjQdOat0cIpWCkupM1uX
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
     status:

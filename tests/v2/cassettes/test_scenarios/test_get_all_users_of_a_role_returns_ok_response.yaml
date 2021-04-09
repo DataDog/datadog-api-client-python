@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"name": "Test-test_get_all_users_of_a_role_returns_ok_response-1617954891.733"},
+    body: '{"data": {"attributes": {"name": "Test-test_get_all_users_of_a_role_returns_ok_response-1617968206"},
       "type": "roles"}}'
     headers:
       Accept:
@@ -10,21 +10,21 @@ interactions:
       Dd-Operation-Id:
       - CreateRole
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
-      string: '{"data":{"type":"roles","id":"ddad93b6-9908-11eb-9ce8-da7ad0900002","attributes":{"name":"Test-test_get_all_users_of_a_role_returns_ok_response-1617954891.733","created_at":"2021-04-09T07:54:52.285046+00:00","modified_at":"2021-04-09T07:54:52.285046+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
+      string: '{"data":{"type":"roles","id":"ddb61a58-9927-11eb-9ceb-da7ad0900002","attributes":{"name":"Test-test_get_all_users_of_a_role_returns_ok_response-1617968206","created_at":"2021-04-09T11:36:46.739275+00:00","modified_at":"2021-04-09T11:36:46.739275+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '503'
+      - '499'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:52 GMT
+      - Fri, 09 Apr 2021 11:36:46 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -38,9 +38,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 2328yjLSqI4XmR1pVqrPRR/SFcQsbafjEpPmZx7/3PfxUK1nJQQsX+wrMelyVyj+
+      - SY1h8ScsWq+kYmtbh63ltMLFAZsQjqfrgvdfAoRX+9TzT1sgMBRYaFRwfWWRRe9a
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -48,14 +48,14 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '491'
+      - '479'
       x-ratelimit-reset:
-      - '8'
+      - '14'
     status:
       code: 200
       message: OK
 - request:
-    body: '{"data": {"attributes": {"email": "Test-test_get_all_users_of_a_role_returns_ok_response-1617954891.733@datadoghq.com",
+    body: '{"data": {"attributes": {"email": "Test-test_get_all_users_of_a_role_returns_ok_response-1617968206@datadoghq.com",
       "title": "user title"}, "type": "users"}}'
     headers:
       Accept:
@@ -65,22 +65,22 @@ interactions:
       Dd-Operation-Id:
       - CreateUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"ddf66c30-9908-11eb-9ce8-da7ad0900002","attributes":{"name":null,"handle":"test-test_get_all_users_of_a_role_returns_ok_response-1617954891.733@datadoghq.com","created_at":"2021-04-09T07:54:52.761851+00:00","modified_at":"2021-04-09T07:54:52.793804+00:00","email":"test-test_get_all_users_of_a_role_returns_ok_response-1617954891.733@datadoghq.com","icon":"https://secure.gravatar.com/avatar/0a5038186ae929870dc5f4b68820e794?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"ddfcf4c8-9927-11eb-9ceb-da7ad0900002","attributes":{"name":null,"handle":"test-test_get_all_users_of_a_role_returns_ok_response-1617968206@datadoghq.com","created_at":"2021-04-09T11:36:47.203691+00:00","modified_at":"2021-04-09T11:36:47.234809+00:00","email":"test-test_get_all_users_of_a_role_returns_ok_response-1617968206@datadoghq.com","icon":"https://secure.gravatar.com/avatar/d82fe0d258162f769d572d9b06d3b309?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '708'
+      - '700'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:52 GMT
+      - Fri, 09 Apr 2021 11:36:47 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -92,16 +92,16 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
+      - HbtaOKlJ6OCrx9tMXO6ivMTrEM+g0c93HDp08trmOmgdHozC5J+vn10F0H4WPjCU
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
     status:
       code: 201
       message: Created
 - request:
-    body: '{"data": {"id": "ddf66c30-9908-11eb-9ce8-da7ad0900002", "type": "users"}}'
+    body: '{"data": {"id": "ddfcf4c8-9927-11eb-9ceb-da7ad0900002", "type": "users"}}'
     headers:
       Accept:
       - application/json
@@ -110,22 +110,22 @@ interactions:
       Dd-Operation-Id:
       - AddUserToRole
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
-    uri: https://api.datadoghq.com/api/v2/roles/ddad93b6-9908-11eb-9ce8-da7ad0900002/users
+    uri: https://api.datadoghq.com/api/v2/roles/ddb61a58-9927-11eb-9ceb-da7ad0900002/users
   response:
     body:
-      string: '{"meta":{"page":{"total_count":1}},"data":[{"type":"users","id":"ddf66c30-9908-11eb-9ce8-da7ad0900002","attributes":{"name":null,"handle":"test-test_get_all_users_of_a_role_returns_ok_response-1617954891.733@datadoghq.com","created_at":"2021-04-09T07:54:52.761851+00:00","modified_at":"2021-04-09T07:54:52.793804+00:00","email":"test-test_get_all_users_of_a_role_returns_ok_response-1617954891.733@datadoghq.com","icon":"https://secure.gravatar.com/avatar/0a5038186ae929870dc5f4b68820e794?s=48&d=retro","title":"user
-        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[{"type":"roles","id":"ddad93b6-9908-11eb-9ce8-da7ad0900002"}]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}]}'
+      string: '{"meta":{"page":{"total_count":1}},"data":[{"type":"users","id":"ddfcf4c8-9927-11eb-9ceb-da7ad0900002","attributes":{"name":null,"handle":"test-test_get_all_users_of_a_role_returns_ok_response-1617968206@datadoghq.com","created_at":"2021-04-09T11:36:47.203691+00:00","modified_at":"2021-04-09T11:36:47.234809+00:00","email":"test-test_get_all_users_of_a_role_returns_ok_response-1617968206@datadoghq.com","icon":"https://secure.gravatar.com/avatar/d82fe0d258162f769d572d9b06d3b309?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[{"type":"roles","id":"ddb61a58-9927-11eb-9ceb-da7ad0900002"}]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}]}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '804'
+      - '796'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:53 GMT
+      - Fri, 09 Apr 2021 11:36:47 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -139,9 +139,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - mNzaoDhdDKO7t4QSrAe5X7pHd0bJND187D+vRbwoluXouE2m1UaQQX0RGCvRpLVE
+      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -149,9 +149,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '490'
+      - '478'
       x-ratelimit-reset:
-      - '7'
+      - '13'
     status:
       code: 200
       message: OK
@@ -165,9 +165,9 @@ interactions:
       Dd-Operation-Id:
       - ListRoleUsers
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v2/roles/ddad93b6-9908-11eb-9ce8-da7ad0900002/users
+    uri: https://api.datadoghq.com/api/v2/roles/ddb61a58-9927-11eb-9ceb-da7ad0900002/users
   response:
     body:
       string: '{"included":[{"type":"permissions","id":"61765026-2dce-11eb-84c0-833e230d1b8f","attributes":{"name":"apm_primary_operation_write","display_name":"Primary
@@ -191,11 +191,7 @@ interactions:
         and Usage","display_type":"write","restricted":false}},{"type":"permissions","id":"4e3f02b4-2dce-11eb-84c0-2fca946a6efc","attributes":{"name":"apm_service_ingest_write","display_name":"Manage
         Service Ingestion","description":"The ability to edit Service Ingestion pages
         root services. A user with this permission can edit the root service ingestion
-        and generate a code snippet to increase ingestion per service.","created":"2020-11-23T20:56:06.419518+00:00","group_name":"APM","display_type":"write","restricted":false}},{"type":"permissions","id":"984d2f00-d3b4-11e8-a200-bb47109e9987","attributes":{"name":"standard","display_name":"Standard
-        Access","description":"This permission gives you the ability to view and edit
-        components in your Datadog organization that do not have explicitly defined
-        permissions. This includes Notebooks, Events, and other non-Account Management
-        functionality.","created":"2018-10-19T15:35:23.756736+00:00","group_name":"General","display_type":"other","restricted":false}},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0","attributes":{"name":"apm_read","display_name":"APM
+        and generate a code snippet to increase ingestion per service.","created":"2020-11-23T20:56:06.419518+00:00","group_name":"APM","display_type":"write","restricted":false}},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0","attributes":{"name":"apm_read","display_name":"APM
         Read Access","description":"The ability to read and query APM and Trace Analytics.","created":"2020-11-23T20:55:45.006110+00:00","group_name":"APM","display_type":"read","restricted":true}},{"type":"permissions","id":"62cc036c-dd12-11e8-9e54-db9995643092","attributes":{"name":"logs_modify_indexes","display_name":"Logs
         Modify Indexes","description":"The ability to read and modify all indexes
         in your account. This includes the ability to grant the Logs Read Index Data
@@ -221,11 +217,7 @@ interactions:
         Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"4d87d5f8-d8b1-11e9-a77a-eb9c8350d04f","attributes":{"name":"monitors_downtime","display_name":"Monitors
         Manage Downtimes","description":"The ability to set downtimes for your organization.
         A user with this permission can suppress alerts from any monitor using a downtime,
-        even if they do not have permission to edit those monitors explicitly.","created":"2019-09-16T18:39:23.306702+00:00","group_name":"Monitors","display_type":"other","restricted":false}},{"type":"permissions","id":"5e605652-dd12-11e8-9e53-375565b8970e","attributes":{"name":"logs_read_index_data","display_name":"Logs
-        Read Index Data","description":"The ability to read all or some log indexes.
-        Can be granted in a limited capacity per index from the Logs interface or
-        APIs. If granted via the Roles interface or API the permission has global
-        scope.","created":"2018-10-31T13:39:19.727450+00:00","group_name":"Logs","display_type":"read","restricted":false}},{"type":"permissions","id":"46a301e0-ec5c-11ea-aa9f-6ba6cc675d8c","attributes":{"name":"billing_edit","display_name":"Billing","description":"The
+        even if they do not have permission to edit those monitors explicitly.","created":"2019-09-16T18:39:23.306702+00:00","group_name":"Monitors","display_type":"other","restricted":false}},{"type":"permissions","id":"46a301e0-ec5c-11ea-aa9f-6ba6cc675d8c","attributes":{"name":"billing_edit","display_name":"Billing","description":"The
         ability to manage your organization''s subscription and payment method.","created":"2020-09-01T14:06:05.444705+00:00","group_name":"Billing
         and Usage","display_type":"write","restricted":false}},{"type":"permissions","id":"9ac1d8cc-e707-11ea-aa2d-73d37e989a9d","attributes":{"name":"user_access_invite","display_name":"Invite
         User","description":"Allows users to invite other users to your organization.","created":"2020-08-25T19:17:23.539701+00:00","group_name":"Access
@@ -291,9 +283,9 @@ interactions:
         for Synthetics.","created":"2020-09-17T20:20:56.322003+00:00","group_name":"Synthetic
         Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"8106300a-54f7-11eb-8cbc-7781a434a67b","attributes":{"name":"rum_apps_write","display_name":"RUM
         Applications","description":"The ability to create, edit, and delete RUM Applications.","created":"2021-01-12T16:59:16.324480+00:00","group_name":"Real
-        User Monitoring","display_type":"write","restricted":false}},{"type":"roles","id":"ddad93b6-9908-11eb-9ce8-da7ad0900002","attributes":{"name":"Test-test_get_all_users_of_a_role_returns_ok_response-1617954891.733","created_at":"2021-04-09T07:54:52.285046+00:00","modified_at":"2021-04-09T07:54:52.285046+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}},{"type":"permissions","id":"1af86ce4-7823-11ea-93dc-d7cad1b1c6cb","attributes":{"name":"logs_read_data","display_name":"Logs
+        User Monitoring","display_type":"write","restricted":false}},{"type":"permissions","id":"1af86ce4-7823-11ea-93dc-d7cad1b1c6cb","attributes":{"name":"logs_read_data","display_name":"Logs
         Read Data","description":"The ability to read log data. Can be restricted
-        with restriction queries.","created":"2020-04-06T16:24:35.989108+00:00","group_name":"Logs","display_type":"read","restricted":false}},{"type":"permissions","id":"48ef71ea-d8b1-11e9-a77a-93f408470ad0","attributes":{"name":"monitors_write","display_name":"Monitors","description":"The
+        with restriction queries.","created":"2020-04-06T16:24:35.989108+00:00","group_name":"Logs","display_type":"read","restricted":false}},{"type":"roles","id":"ddb61a58-9927-11eb-9ceb-da7ad0900002","attributes":{"name":"Test-test_get_all_users_of_a_role_returns_ok_response-1617968206","created_at":"2021-04-09T11:36:46.739275+00:00","modified_at":"2021-04-09T11:36:46.739275+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}},{"type":"permissions","id":"48ef71ea-d8b1-11e9-a77a-93f408470ad0","attributes":{"name":"monitors_write","display_name":"Monitors","description":"The
         ability to change, mute, and delete individual monitors.","created":"2019-09-16T18:39:15.597109+00:00","group_name":"Monitors","display_type":"write","restricted":false}},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304","attributes":{"name":"monitors_read","display_name":"Monitors","description":"The
         ability to view monitors.","created":"2019-09-16T18:39:07.744297+00:00","group_name":"Monitors","display_type":"read","restricted":true}},{"type":"permissions","id":"bf0dcf7c-90af-11eb-9b82-da7ad0900002","attributes":{"name":"data_scanner_read","display_name":"Data
         Scanner","description":"View data scanner configuration.","created":"2021-03-29T16:56:46.394971+00:00","group_name":"Access
@@ -303,17 +295,17 @@ interactions:
         and Application Keys","display_type":"other","restricted":false}},{"type":"permissions","id":"372896c4-f923-11ea-adbc-4fecd107156d","attributes":{"name":"api_keys_read","display_name":"API
         Keys","description":"The ability to list and retrive the key values of all
         API Keys in your organization.","created":"2020-09-17T20:20:23.279769+00:00","group_name":"API
-        and Application Keys","display_type":"read","restricted":false}}],"meta":{"page":{"total_filtered_count":1,"total_count":1}},"data":[{"type":"users","id":"ddf66c30-9908-11eb-9ce8-da7ad0900002","attributes":{"name":null,"handle":"test-test_get_all_users_of_a_role_returns_ok_response-1617954891.733@datadoghq.com","created_at":"2021-04-09T07:54:52.761851+00:00","modified_at":"2021-04-09T07:54:52.793804+00:00","email":"test-test_get_all_users_of_a_role_returns_ok_response-1617954891.733@datadoghq.com","icon":"https://secure.gravatar.com/avatar/0a5038186ae929870dc5f4b68820e794?s=48&d=retro","title":"user
-        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[{"type":"roles","id":"ddad93b6-9908-11eb-9ce8-da7ad0900002"}]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}]}'
+        and Application Keys","display_type":"read","restricted":false}}],"meta":{"page":{"total_filtered_count":1,"total_count":1}},"data":[{"type":"users","id":"ddfcf4c8-9927-11eb-9ceb-da7ad0900002","attributes":{"name":null,"handle":"test-test_get_all_users_of_a_role_returns_ok_response-1617968206@datadoghq.com","created_at":"2021-04-09T11:36:47.203691+00:00","modified_at":"2021-04-09T11:36:47.234809+00:00","email":"test-test_get_all_users_of_a_role_returns_ok_response-1617968206@datadoghq.com","icon":"https://secure.gravatar.com/avatar/d82fe0d258162f769d572d9b06d3b309?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[{"type":"roles","id":"ddb61a58-9927-11eb-9ceb-da7ad0900002"}]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}]}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '21539'
+      - '20571'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:53 GMT
+      - Fri, 09 Apr 2021 11:36:48 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -327,9 +319,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - gYZcaADwbKcv7Hm19HJx6WsLoKuOijDWAt2viPeCfWqUgyKY+9e1xZdmMJeXV3YV
+      - mNzaoDhdDKO7t4QSrAe5X7pHd0bJND187D+vRbwoluXouE2m1UaQQX0RGCvRpLVE
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -337,9 +329,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '489'
+      - '477'
       x-ratelimit-reset:
-      - '7'
+      - '12'
     status:
       code: 200
       message: OK
@@ -353,9 +345,9 @@ interactions:
       Dd-Operation-Id:
       - DisableUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/ddf66c30-9908-11eb-9ce8-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/ddfcf4c8-9927-11eb-9ceb-da7ad0900002
   response:
     body:
       string: ''
@@ -367,7 +359,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:54 GMT
+      - Fri, 09 Apr 2021 11:36:48 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -379,9 +371,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 5gfwVh/5HZ+AnGd/Di93w3NEWC6KMHT9KzmHEiRJmNdOjBtAsbOcgVFyqEChw71h
+      - L3ULR3HwCWYmEqCWGz2Yob3chcH4pjowBacBXkncP7o+/uPqKt9yGEYf/g1AJPzQ
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -397,9 +389,9 @@ interactions:
       Dd-Operation-Id:
       - DeleteRole
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/roles/ddad93b6-9908-11eb-9ce8-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/roles/ddb61a58-9927-11eb-9ceb-da7ad0900002
   response:
     body:
       string: ''
@@ -411,7 +403,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:54 GMT
+      - Fri, 09 Apr 2021 11:36:49 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -423,9 +415,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - B1nwy/pPNqX+q4pQT22cdp1QCexE35IF8qwSHy0Nf7IW0Y881qtn4tXN1lpmzaKc
+      - bgHykj7A9bfZx0Y5ZO3swhhp5tGUSNJHqFWR868+qg087CYrDOd5hQslC+noiEtH
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -433,9 +425,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '488'
+      - '476'
       x-ratelimit-reset:
-      - '6'
+      - '11'
     status:
       code: 204
       message: No Content

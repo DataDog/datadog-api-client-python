@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.Test-test_aggregate_events_returns_ok_response-1617954876.055",
+    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.Test-test_aggregate_events_returns_ok_response-1617968227",
       "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"],
       "query": "datadog-agent", "to": "1600348600"}}'
     headers:
@@ -11,12 +11,12 @@ interactions:
       Dd-Operation-Id:
       - AggregateLogs
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"pddv1ChZtNllfczlRQ1NlQ1dyeE8wb1pobm9nIi0KHUXhptTskB4EReHAecmnoF1Y_EnK8u9sLLs0xxDAEgyd0ICJDoVX-HdtWbU","elapsed":0},"data":{"buckets":[]}}'
+      string: '{"meta":{"status":"done","request_id":"pddv1ChZNdzZVdWNySVRoeVBtenNld21JLUVRIi0KHduZlPjbEQiJlQzQNqDDlX1JPdaZUjdmXp1pIkwEEgzJkZv5APp_dPujxn4","elapsed":0},"data":{"buckets":[]}}'
     headers:
       Connection:
       - keep-alive
@@ -25,7 +25,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:54:36 GMT
+      - Fri, 09 Apr 2021 11:37:08 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -39,9 +39,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - F5gm0Rce1/Abr9/0Fw8HAqWfiz0FdiH8er/AXnN6lOn3L6KyGgbsLCwgPlob1No8
       x-dd-version:
-      - '35.4273965'
+      - '35.4275259'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -51,7 +51,7 @@ interactions:
       x-ratelimit-remaining:
       - '299'
       x-ratelimit-reset:
-      - '24'
+      - '173'
     status:
       code: 200
       message: OK
