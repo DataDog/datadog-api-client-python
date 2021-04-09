@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"title": "Test-Post_an_event_returns_OK_response-1617953610.253599", "text":
-      "A text message.", "tags": ["test:TestPostaneventreturnsOKresponse1617953610253599"]}'
+    body: '{"title": "Test-Post_an_event_returns_OK_response-1617954851.395", "text":
+      "A text message.", "tags": ["test:TestPostaneventreturnsOKresponse1617954851395"]}'
     headers:
       Accept:
       - application/json
@@ -15,17 +15,17 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/events
   response:
     body:
-      string: '{"status":"ok","event":{"id":5933946021934033345,"title":"Test-Post_an_event_returns_OK_response-1617953610.253599","text":"A
-        text message.","date_happened":1617953610,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventreturnsOKresponse1617953610253599"],"url":"https://app.datadoghq.com/event/event?id=5933946021934033345"}}'
+      string: '{"status":"ok","event":{"id":5933966845591714564,"title":"Test-Post_an_event_returns_OK_response-1617954851.395","text":"A
+        text message.","date_happened":1617954851,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventreturnsOKresponse1617954851395"],"url":"https://app.datadoghq.com/event/event?id=5933966845591714564"}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '357'
+      - '351'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:33:30 GMT
+      - Fri, 09 Apr 2021 07:54:11 GMT
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       strict-transport-security:

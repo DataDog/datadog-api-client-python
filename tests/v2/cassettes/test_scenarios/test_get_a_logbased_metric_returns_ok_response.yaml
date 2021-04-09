@@ -1,8 +1,8 @@
 interactions:
 - request:
     body: '{"data": {"attributes": {"compute": {"aggregation_type": "count"}, "filter":
-      {"query": "source:Test-test_get_a_logbased_metric_returns_ok_response-1617953688.646217"}},
-      "id": "Test-test_get_a_logbased_metric_returns_ok_response-1617953688.646217",
+      {"query": "source:Test-test_get_a_logbased_metric_returns_ok_response-1617954867.208"}},
+      "id": "Test-test_get_a_logbased_metric_returns_ok_response-1617954867.208",
       "type": "logs_metrics"}}'
     headers:
       Accept:
@@ -17,16 +17,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_test_get_a_logbased_metric_returns_ok_response_1617953688.646217","attributes":{"filter":{"query":"source:Test-test_get_a_logbased_metric_returns_ok_response-1617953688.646217"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
+      string: '{"data":{"id":"Test_test_get_a_logbased_metric_returns_ok_response_1617954867.208","attributes":{"filter":{"query":"source:Test-test_get_a_logbased_metric_returns_ok_response-1617954867.208"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '275'
+      - '269'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 07:34:49 GMT
+      - Fri, 09 Apr 2021 07:54:28 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -42,9 +42,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
+      - dPySkcOzIZtKyMKDAAzuysY3gNGGj6RtYogGuSb76E8mPvoqzREyRp6lPYm91hQU
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -52,9 +52,9 @@ interactions:
       x-ratelimit-period:
       - '300'
       x-ratelimit-remaining:
-      - '289'
+      - '299'
       x-ratelimit-reset:
-      - '11'
+      - '33'
     status:
       code: 200
       message: OK
@@ -70,19 +70,19 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_test_get_a_logbased_metric_returns_ok_response_1617953688.646217
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_test_get_a_logbased_metric_returns_ok_response_1617954867.208
   response:
     body:
-      string: '{"data":{"id":"Test_test_get_a_logbased_metric_returns_ok_response_1617953688.646217","attributes":{"filter":{"query":"source:Test-test_get_a_logbased_metric_returns_ok_response-1617953688.646217"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
+      string: '{"data":{"id":"Test_test_get_a_logbased_metric_returns_ok_response_1617954867.208","attributes":{"filter":{"query":"source:Test-test_get_a_logbased_metric_returns_ok_response-1617954867.208"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '275'
+      - '269'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 07:34:49 GMT
+      - Fri, 09 Apr 2021 07:54:28 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -98,9 +98,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
+      - twvpGlmuom5y6A0pjGtXzTf554cmwJgTcCZ71fK4H/RDi+v5ehBK0zQiRcTJQG5C
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -108,9 +108,9 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '4974'
+      - '4943'
       x-ratelimit-reset:
-      - '1511'
+      - '332'
     status:
       code: 200
       message: OK
@@ -126,7 +126,7 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_test_get_a_logbased_metric_returns_ok_response_1617953688.646217
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_test_get_a_logbased_metric_returns_ok_response_1617954867.208
   response:
     body:
       string: '{}'
@@ -138,7 +138,7 @@ interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 07:34:50 GMT
+      - Fri, 09 Apr 2021 07:54:29 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -152,9 +152,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - B1nwy/pPNqX+q4pQT22cdp1QCexE35IF8qwSHy0Nf7IW0Y881qtn4tXN1lpmzaKc
+      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -162,9 +162,9 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '4973'
+      - '4942'
       x-ratelimit-reset:
-      - '1510'
+      - '332'
     status:
       code: 200
       message: OK

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"name": "Test-test_list_permissions_for_a_role_returns_ok_response-1617953708.399546"},
+    body: '{"data": {"attributes": {"name": "Test-test_list_permissions_for_a_role_returns_ok_response-1617954934.944"},
       "type": "roles"}}'
     headers:
       Accept:
@@ -15,16 +15,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
-      string: '{"data":{"type":"roles","id":"1c58d704-9906-11eb-9ce8-da7ad0900002","attributes":{"name":"Test-test_list_permissions_for_a_role_returns_ok_response-1617953708.399546","created_at":"2021-04-09T07:35:08.936776+00:00","modified_at":"2021-04-09T07:35:08.936776+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
+      string: '{"data":{"type":"roles","id":"f771bf48-9908-11eb-9ce8-da7ad0900002","attributes":{"name":"Test-test_list_permissions_for_a_role_returns_ok_response-1617954934.944","created_at":"2021-04-09T07:55:35.513775+00:00","modified_at":"2021-04-09T07:55:35.513775+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '510'
+      - '507'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:35:08 GMT
+      - Fri, 09 Apr 2021 07:55:35 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -38,9 +38,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
+      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -48,9 +48,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '499'
+      - '487'
       x-ratelimit-reset:
-      - '52'
+      - '25'
     status:
       code: 200
       message: OK
@@ -219,7 +219,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:35:09 GMT
+      - Fri, 09 Apr 2021 07:55:35 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -233,9 +233,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
+      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -253,7 +253,7 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
-    uri: https://api.datadoghq.com/api/v2/roles/1c58d704-9906-11eb-9ce8-da7ad0900002/permissions
+    uri: https://api.datadoghq.com/api/v2/roles/f771bf48-9908-11eb-9ce8-da7ad0900002/permissions
   response:
     body:
       string: '{"data":[{"type":"permissions","id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","attributes":{"name":"admin","display_name":"Privileged
@@ -272,7 +272,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:35:09 GMT
+      - Fri, 09 Apr 2021 07:55:36 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -286,9 +286,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - LcgNasIYBRkNppmD6mCKE9J6iv0eEjosuuHR5V5zw2fWbR54i39C8dhdK8zDq/40
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -296,9 +296,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '498'
+      - '486'
       x-ratelimit-reset:
-      - '51'
+      - '24'
     status:
       code: 200
       message: OK
@@ -314,7 +314,7 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v2/roles/1c58d704-9906-11eb-9ce8-da7ad0900002/permissions
+    uri: https://api.datadoghq.com/api/v2/roles/f771bf48-9908-11eb-9ce8-da7ad0900002/permissions
   response:
     body:
       string: '{"data":[{"type":"permissions","id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","attributes":{"name":"admin","display_name":"Privileged
@@ -333,7 +333,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:35:10 GMT
+      - Fri, 09 Apr 2021 07:55:36 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -347,9 +347,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - gYZcaADwbKcv7Hm19HJx6WsLoKuOijDWAt2viPeCfWqUgyKY+9e1xZdmMJeXV3YV
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -357,9 +357,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '497'
+      - '485'
       x-ratelimit-reset:
-      - '50'
+      - '24'
     status:
       code: 200
       message: OK
@@ -375,7 +375,7 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/roles/1c58d704-9906-11eb-9ce8-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/roles/f771bf48-9908-11eb-9ce8-da7ad0900002
   response:
     body:
       string: ''
@@ -387,7 +387,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:35:10 GMT
+      - Fri, 09 Apr 2021 07:55:37 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -399,9 +399,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
+      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -409,9 +409,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '496'
+      - '484'
       x-ratelimit-reset:
-      - '50'
+      - '23'
     status:
       code: 204
       message: No Content

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '[{"check": "app.ok", "host_name": "host", "status": 0, "tags": ["test:TestSubmitaServiceCheckreturnsPayloadacceptedresponse1617953612606439"]}]'
+    body: '[{"check": "app.ok", "host_name": "host", "status": 0, "tags": ["test:TestSubmitaServiceCheckreturnsPayloadacceptedresponse1617954850829"]}]'
     headers:
       Accept:
       - application/json
@@ -23,7 +23,7 @@ interactions:
       Content-Type:
       - text/json
       Date:
-      - Fri, 09 Apr 2021 07:33:33 GMT
+      - Fri, 09 Apr 2021 07:54:11 GMT
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       strict-transport-security:

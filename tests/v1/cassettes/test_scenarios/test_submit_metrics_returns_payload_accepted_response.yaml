@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"series": [{"metric": "system.load.1", "points": [[1600348600, 1.1]],
-      "tags": ["test:TestSubmitmetricsreturnsPayloadacceptedresponse161795360943565"]}]}'
+      "tags": ["test:TestSubmitmetricsreturnsPayloadacceptedresponse1617954850260"]}]}'
     headers:
       Accept:
       - application/json
@@ -24,7 +24,7 @@ interactions:
       Content-Type:
       - text/json
       Date:
-      - Fri, 09 Apr 2021 07:33:30 GMT
+      - Fri, 09 Apr 2021 07:54:10 GMT
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       strict-transport-security:

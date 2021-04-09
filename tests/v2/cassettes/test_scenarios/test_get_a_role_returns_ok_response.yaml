@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"name": "Test-test_get_a_role_returns_ok_response-1617953640.655947"},
+    body: '{"data": {"attributes": {"name": "Test-test_get_a_role_returns_ok_response-1617954901.747"},
       "type": "roles"}}'
     headers:
       Accept:
@@ -15,16 +15,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
-      string: '{"data":{"type":"roles","id":"f3fa50f8-9905-11eb-9ce8-da7ad0900002","attributes":{"name":"Test-test_get_a_role_returns_ok_response-1617953640.655947","created_at":"2021-04-09T07:34:01.207734+00:00","modified_at":"2021-04-09T07:34:01.207734+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
+      string: '{"data":{"type":"roles","id":"e3a849b4-9908-11eb-9ce8-da7ad0900002","attributes":{"name":"Test-test_get_a_role_returns_ok_response-1617954901.747","created_at":"2021-04-09T07:55:02.316597+00:00","modified_at":"2021-04-09T07:55:02.316597+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '493'
+      - '490'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:34:01 GMT
+      - Fri, 09 Apr 2021 07:55:02 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -38,9 +38,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - B1nwy/pPNqX+q4pQT22cdp1QCexE35IF8qwSHy0Nf7IW0Y881qtn4tXN1lpmzaKc
+      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -48,9 +48,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '497'
+      - '496'
       x-ratelimit-reset:
-      - '59'
+      - '58'
     status:
       code: 200
       message: OK
@@ -66,19 +66,19 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v2/roles/f3fa50f8-9905-11eb-9ce8-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/roles/e3a849b4-9908-11eb-9ce8-da7ad0900002
   response:
     body:
-      string: '{"data":{"type":"roles","id":"f3fa50f8-9905-11eb-9ce8-da7ad0900002","attributes":{"name":"Test-test_get_a_role_returns_ok_response-1617953640.655947","created_at":"2021-04-09T07:34:01.207734+00:00","modified_at":"2021-04-09T07:34:01.207734+00:00","user_count":0},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
+      string: '{"data":{"type":"roles","id":"e3a849b4-9908-11eb-9ce8-da7ad0900002","attributes":{"name":"Test-test_get_a_role_returns_ok_response-1617954901.747","created_at":"2021-04-09T07:55:02.316597+00:00","modified_at":"2021-04-09T07:55:02.316597+00:00","user_count":0},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '508'
+      - '505'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:34:01 GMT
+      - Fri, 09 Apr 2021 07:55:02 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -92,9 +92,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
+      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -102,9 +102,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '496'
+      - '495'
       x-ratelimit-reset:
-      - '59'
+      - '58'
     status:
       code: 200
       message: OK
@@ -120,7 +120,7 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/roles/f3fa50f8-9905-11eb-9ce8-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/roles/e3a849b4-9908-11eb-9ce8-da7ad0900002
   response:
     body:
       string: ''
@@ -132,7 +132,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:34:02 GMT
+      - Fri, 09 Apr 2021 07:55:03 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -144,9 +144,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - gYZcaADwbKcv7Hm19HJx6WsLoKuOijDWAt2viPeCfWqUgyKY+9e1xZdmMJeXV3YV
+      - l8RQo2maZqJf6GFThBbKNE6dvthz6njusVtau3dPXJWL2RLFoN81H+BLPB/1xgs1
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -154,9 +154,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '495'
+      - '494'
       x-ratelimit-reset:
-      - '58'
+      - '57'
     status:
       code: 204
       message: No Content

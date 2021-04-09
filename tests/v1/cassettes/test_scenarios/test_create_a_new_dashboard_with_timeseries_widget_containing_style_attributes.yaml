@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type": "ordered", "title": "Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617953615.870048
+    body: '{"layout_type": "ordered", "title": "Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617954852.604
       with timeseries widget", "widgets": [{"definition": {"type": "timeseries", "requests":
       [{"q": "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()",
       "on_right_yaxis": false, "style": {"palette": "warm", "line_type": "solid",
@@ -18,18 +18,18 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"pn4-h8f-5dn","title":"Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617953615.870048
-        with timeseries widget","url":"/dashboard/pn4-h8f-5dn/test-createanewdashboardwithtimeserieswidgetcontainingstyleattributes-1617953615","created_at":"2021-04-09T07:33:36.439508+00:00","modified_at":"2021-04-09T07:33:36.439508+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
-        by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":8362866454018905}],"layout_type":"ordered"}'
+      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"435-hfd-qx5","title":"Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617954852.604
+        with timeseries widget","url":"/dashboard/435-hfd-qx5/test-createanewdashboardwithtimeserieswidgetcontainingstyleattributes-1617954852","created_at":"2021-04-09T07:54:13.182906+00:00","modified_at":"2021-04-09T07:54:13.182906+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
+        by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":7459672875094780}],"layout_type":"ordered"}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '817'
+      - '814'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:33:36 GMT
+      - Fri, 09 Apr 2021 07:54:13 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -43,9 +43,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - nLnnBNvlCFDECRnZvzDb0z4sAO35G+IMidcAs8vrCKyjvsKWE8Yd9S3n6OjZ1qRN
+      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -63,10 +63,10 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev27 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/pn4-h8f-5dn
+    uri: https://api.datadoghq.com/api/v1/dashboard/435-hfd-qx5
   response:
     body:
-      string: '{"deleted_dashboard_id":"pn4-h8f-5dn"}'
+      string: '{"deleted_dashboard_id":"435-hfd-qx5"}'
     headers:
       Connection:
       - keep-alive
@@ -75,7 +75,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 07:33:36 GMT
+      - Fri, 09 Apr 2021 07:54:13 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -89,9 +89,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - dCmL/3rURV6BPeaqeP3Rxigq41m5CAb17XjrRE42uZ01zpr07HVhbL5/3TWMkvgu
+      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
       x-dd-version:
-      - '35.4272858'
+      - '35.4273965'
       x-frame-options:
       - SAMEORIGIN
     status:
