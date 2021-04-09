@@ -679,7 +679,7 @@ class Endpoint(object):
                 "_check_return_type",
             ]
         )
-        self.params_map["nullable"].extend(["_request_timeout"])
+        self.params_map["nullable"].extend(["_host_index", "_request_timeout"])
         self.validations = root_map["validations"]
         self.allowed_values = root_map["allowed_values"]
         self.openapi_types = root_map["openapi_types"]
