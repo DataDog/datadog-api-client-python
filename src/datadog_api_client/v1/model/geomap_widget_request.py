@@ -23,9 +23,15 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+    from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+    from datadog_api_client.v1.model.widget_formula import WidgetFormula
 
+    globals()["FormulaAndFunctionQueryDefinition"] = FormulaAndFunctionQueryDefinition
+    globals()["FormulaAndFunctionResponseFormat"] = FormulaAndFunctionResponseFormat
     globals()["LogQueryDefinition"] = LogQueryDefinition
+    globals()["WidgetFormula"] = WidgetFormula
 
 
 class GeomapWidgetRequest(ModelNormal):
@@ -72,9 +78,13 @@ class GeomapWidgetRequest(ModelNormal):
         """
         lazy_import()
         return {
+            "formulas": ([WidgetFormula],),  # noqa: E501
             "log_query": (LogQueryDefinition,),  # noqa: E501
             "q": (str,),  # noqa: E501
+            "queries": ([FormulaAndFunctionQueryDefinition],),  # noqa: E501
+            "response_format": (FormulaAndFunctionResponseFormat,),  # noqa: E501
             "rum_query": (LogQueryDefinition,),  # noqa: E501
+            "security_query": (LogQueryDefinition,),  # noqa: E501
         }
 
     @cached_property
@@ -82,9 +92,13 @@ class GeomapWidgetRequest(ModelNormal):
         return None
 
     attribute_map = {
+        "formulas": "formulas",  # noqa: E501
         "log_query": "log_query",  # noqa: E501
         "q": "q",  # noqa: E501
+        "queries": "queries",  # noqa: E501
+        "response_format": "response_format",  # noqa: E501
         "rum_query": "rum_query",  # noqa: E501
+        "security_query": "security_query",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -135,9 +149,13 @@ class GeomapWidgetRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]  # noqa: E501
             log_query (LogQueryDefinition): [optional]  # noqa: E501
             q (str): The widget metrics query.. [optional]  # noqa: E501
+            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**. [optional]  # noqa: E501
+            response_format (FormulaAndFunctionResponseFormat): [optional]  # noqa: E501
             rum_query (LogQueryDefinition): [optional]  # noqa: E501
+            security_query (LogQueryDefinition): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
