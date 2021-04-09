@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"email": "Test-test_disable_a_user_returns_ok_response-1617968174@datadoghq.com",
+    body: '{"data": {"attributes": {"email": "Test-Disable_a_user_returns_OK_response-1617999726@datadoghq.com",
       "title": "user title"}, "type": "users"}}'
     headers:
       Accept:
@@ -15,17 +15,17 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"caa90466-9927-11eb-9ceb-da7ad0900002","attributes":{"name":null,"handle":"test-test_disable_a_user_returns_ok_response-1617968174@datadoghq.com","created_at":"2021-04-09T11:36:14.776083+00:00","modified_at":"2021-04-09T11:36:14.811535+00:00","email":"test-test_disable_a_user_returns_ok_response-1617968174@datadoghq.com","icon":"https://secure.gravatar.com/avatar/53adb5feaf5940b8355c28c28d5ac5a9?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"41301770-9971-11eb-9cf2-da7ad0900002","attributes":{"name":null,"handle":"test-disable_a_user_returns_ok_response-1617999726@datadoghq.com","created_at":"2021-04-09T20:22:06.891911+00:00","modified_at":"2021-04-09T20:22:06.941403+00:00","email":"test-disable_a_user_returns_ok_response-1617999726@datadoghq.com","icon":"https://secure.gravatar.com/avatar/6d3e99ce921e8993a12bc357c84c967d?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '682'
+      - '672'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:36:14 GMT
+      - Fri, 09 Apr 2021 20:22:06 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -37,9 +37,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - l8RQo2maZqJf6GFThBbKNE6dvthz6njusVtau3dPXJWL2RLFoN81H+BLPB/1xgs1
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -57,7 +57,7 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/caa90466-9927-11eb-9ceb-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/41301770-9971-11eb-9cf2-da7ad0900002
   response:
     body:
       string: ''
@@ -69,7 +69,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:36:15 GMT
+      - Fri, 09 Apr 2021 20:22:07 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -81,9 +81,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - nLnnBNvlCFDECRnZvzDb0z4sAO35G+IMidcAs8vrCKyjvsKWE8Yd9S3n6OjZ1qRN
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -101,10 +101,10 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/caa90466-9927-11eb-9ceb-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/41301770-9971-11eb-9cf2-da7ad0900002
   response:
     body:
-      string: '{"errors": ["caa90466-9927-11eb-9ceb-da7ad0900002 not found"]}'
+      string: '{"errors": ["41301770-9971-11eb-9cf2-da7ad0900002 not found"]}'
     headers:
       Connection:
       - keep-alive
@@ -113,7 +113,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:36:15 GMT
+      - Fri, 09 Apr 2021 20:22:08 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -127,7 +127,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
     status:

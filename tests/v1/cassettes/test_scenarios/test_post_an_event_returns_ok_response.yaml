@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"title": "Test-Post_an_event_returns_OK_response-1617968268", "text":
-      "A text message.", "tags": ["test:TestPostaneventreturnsOKresponse1617968268"]}'
+    body: '{"title": "Test-Post_an_event_returns_OK_response-1617999731", "text":
+      "A text message.", "tags": ["test:TestPostaneventreturnsOKresponse1617999731"]}'
     headers:
       Accept:
       - application/json
@@ -15,8 +15,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/events
   response:
     body:
-      string: '{"status":"ok","event":{"id":5934191931573274750,"title":"Test-Post_an_event_returns_OK_response-1617968268","text":"A
-        text message.","date_happened":1617968268,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventreturnsOKresponse1617968268"],"url":"https://app.datadoghq.com/event/event?id=5934191931573274750"}}'
+      string: '{"status":"ok","event":{"id":5934719801181587474,"title":"Test-Post_an_event_returns_OK_response-1617999731","text":"A
+        text message.","date_happened":1617999731,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventreturnsOKresponse1617999731"],"url":"https://app.datadoghq.com/event/event?id=5934719801181587474"}}'
     headers:
       Connection:
       - keep-alive
@@ -25,7 +25,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:37:48 GMT
+      - Fri, 09 Apr 2021 20:22:11 GMT
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       strict-transport-security:

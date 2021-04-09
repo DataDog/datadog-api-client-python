@@ -1,8 +1,7 @@
 interactions:
 - request:
-    body: '{"data": {"id": "Testtestlisttagsbymetricnamereturnssuccessresponse1617968189",
-      "type": "manage_tags", "attributes": {"metric_type": "distribution", "tags":
-      ["app", "datacenter", "Testtestlisttagsbymetricnamereturnssuccessresponse1617968189"]}}}'
+    body: '{"data": {"attributes": {"tags": ["app", "datacenter", "TestListtagsbymetricnamereturnsSuccessresponse1617999704"],
+      "metric_type": "distribution"}, "type": "manage_tags", "id": "TestListtagsbymetricnamereturnsSuccessresponse1617999704"}}'
     headers:
       Accept:
       - application/json
@@ -13,19 +12,19 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
-    uri: https://api.datadoghq.com/api/v2/metrics/Testtestlisttagsbymetricnamereturnssuccessresponse1617968189/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestListtagsbymetricnamereturnsSuccessresponse1617999704/tags
   response:
     body:
-      string: '{"data":{"type":"manage_tags","id":"Testtestlisttagsbymetricnamereturnssuccessresponse1617968189","attributes":{"tags":["datacenter","app","Testtestlisttagsbymetricnamereturnssuccessresponse1617968189"],"include_percentiles":false,"created_at":"2021-04-09T11:36:29.291297+00:00","updated_at":"2021-04-09T11:36:29.291297+00:00","metric_type":"distribution"}}}'
+      string: '{"data":{"type":"manage_tags","id":"TestListtagsbymetricnamereturnsSuccessresponse1617999704","attributes":{"tags":["datacenter","app","TestListtagsbymetricnamereturnsSuccessresponse1617999704"],"include_percentiles":false,"created_at":"2021-04-09T20:21:44.699287+00:00","updated_at":"2021-04-09T20:21:44.699287+00:00","metric_type":"distribution"}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '358'
+      - '350'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:36:29 GMT
+      - Fri, 09 Apr 2021 20:21:44 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -37,9 +36,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
+      - F5gm0Rce1/Abr9/0Fw8HAqWfiz0FdiH8er/AXnN6lOn3L6KyGgbsLCwgPlob1No8
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -47,9 +46,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '44'
+      - '45'
       x-ratelimit-reset:
-      - '31'
+      - '16'
     status:
       code: 201
       message: Created
@@ -65,19 +64,19 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v2/metrics/Testtestlisttagsbymetricnamereturnssuccessresponse1617968189/all-tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestListtagsbymetricnamereturnsSuccessresponse1617999704/all-tags
   response:
     body:
-      string: '{"data":{"type":"metrics","id":"Testtestlisttagsbymetricnamereturnssuccessresponse1617968189","attributes":{"tags":[]}}}'
+      string: '{"data":{"type":"metrics","id":"TestListtagsbymetricnamereturnsSuccessresponse1617999704","attributes":{"tags":[]}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '120'
+      - '116'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:36:29 GMT
+      - Fri, 09 Apr 2021 20:21:45 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -91,9 +90,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - SY1h8ScsWq+kYmtbh63ltMLFAZsQjqfrgvdfAoRX+9TzT1sgMBRYaFRwfWWRRe9a
+      - l8RQo2maZqJf6GFThBbKNE6dvthz6njusVtau3dPXJWL2RLFoN81H+BLPB/1xgs1
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -101,9 +100,9 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '597'
+      - '596'
       x-ratelimit-reset:
-      - '1411'
+      - '2295'
     status:
       code: 200
       message: OK
@@ -119,7 +118,7 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/metrics/Testtestlisttagsbymetricnamereturnssuccessresponse1617968189/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestListtagsbymetricnamereturnsSuccessresponse1617999704/tags
   response:
     body:
       string: ''
@@ -131,7 +130,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:36:30 GMT
+      - Fri, 09 Apr 2021 20:21:45 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -143,9 +142,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - mNzaoDhdDKO7t4QSrAe5X7pHd0bJND187D+vRbwoluXouE2m1UaQQX0RGCvRpLVE
+      - S1wfaMZOKGT/IoMw6fqAwAwGWo2vQ44sjF3YzuETnQfxZO2T5eJbs0aX3UKb9Dwu
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -153,9 +152,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '43'
+      - '44'
       x-ratelimit-reset:
-      - '30'
+      - '15'
     status:
       code: 204
       message: No Content

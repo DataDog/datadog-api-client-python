@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type": "ordered", "title": "Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617968271
+    body: '{"layout_type": "ordered", "title": "Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617999735
       with timeseries widget", "widgets": [{"definition": {"type": "timeseries", "requests":
       [{"q": "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()",
       "on_right_yaxis": false, "style": {"palette": "warm", "line_type": "solid",
@@ -18,18 +18,18 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"ka2-izb-knf","title":"Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617968271
-        with timeseries widget","url":"/dashboard/ka2-izb-knf/test-createanewdashboardwithtimeserieswidgetcontainingstyleattributes-1617968271","created_at":"2021-04-09T11:37:51.381722+00:00","modified_at":"2021-04-09T11:37:51.381722+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
-        by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":1409474332286085}],"layout_type":"ordered"}'
+      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"3qq-2ni-bq8","title":"Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617999735
+        with timeseries widget","url":"/dashboard/3qq-2ni-bq8/test-createanewdashboardwithtimeserieswidgetcontainingstyleattributes-1617999735","created_at":"2021-04-09T20:22:15.139084+00:00","modified_at":"2021-04-09T20:22:15.139084+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
+        by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":497246117413773}],"layout_type":"ordered"}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '810'
+      - '809'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:37:51 GMT
+      - Fri, 09 Apr 2021 20:22:15 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -43,9 +43,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -63,10 +63,10 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/ka2-izb-knf
+    uri: https://api.datadoghq.com/api/v1/dashboard/3qq-2ni-bq8
   response:
     body:
-      string: '{"deleted_dashboard_id":"ka2-izb-knf"}'
+      string: '{"deleted_dashboard_id":"3qq-2ni-bq8"}'
     headers:
       Connection:
       - keep-alive
@@ -75,7 +75,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:37:51 GMT
+      - Fri, 09 Apr 2021 20:22:15 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -89,9 +89,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
+      - HbtaOKlJ6OCrx9tMXO6ivMTrEM+g0c93HDp08trmOmgdHozC5J+vn10F0H4WPjCU
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
     status:

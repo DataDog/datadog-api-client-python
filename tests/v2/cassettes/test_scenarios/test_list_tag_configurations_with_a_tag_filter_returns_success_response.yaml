@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v2/metrics?filter%5Btags%5D=Testtestlisttagconfigurationswithatagfilterreturnssuccessresponse1617968243
+    uri: https://api.datadoghq.com/api/v2/metrics?filter%5Btags%5D=TestListtagconfigurationswithatagfilterreturnsSuccessresponse1617999676
   response:
     body:
       string: '{"data":[]}'
@@ -23,7 +23,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:37:23 GMT
+      - Fri, 09 Apr 2021 20:21:16 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -35,9 +35,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - dCmL/3rURV6BPeaqeP3Rxigq41m5CAb17XjrRE42uZ01zpr07HVhbL5/3TWMkvgu
+      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -45,9 +45,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '46'
+      - '49'
       x-ratelimit-reset:
-      - '37'
+      - '44'
     status:
       code: 200
       message: OK

@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '[{"message": "Test-Send_logs_returns_Response_from_server_always_200_empty_JSON_response-1617968266",
-      "tags": "host:TestSendlogsreturnsResponsefromserveralways200emptyJSONresponse1617968266"}]'
+    body: '[{"message": "Test-Send_logs_returns_Response_from_server_always_200_empty_JSON_response-1617999729",
+      "tags": "host:TestSendlogsreturnsResponsefromserveralways200emptyJSONresponse1617999729"}]'
     headers:
       Accept:
       - application/json
@@ -24,7 +24,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:37:46 GMT
+      - Fri, 09 Apr 2021 20:22:09 GMT
     status:
       code: 200
       message: OK

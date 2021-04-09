@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type": "ordered", "title": "Test-Create_a_new_dashboard_with_a_profile_metric_query-1617968272
+    body: '{"layout_type": "ordered", "title": "Test-Create_a_new_dashboard_with_a_profile_metric_query-1617999735
       with Profile Metrics Query", "widgets": [{"definition": {"type": "timeseries",
       "requests": [{"profile_metrics_query": {"compute": {"aggregation": "sum", "facet":
       "@prof_core_cpu_cores"}, "search": {"query": "runtime:jvm"}, "group_by": [{"facet":
@@ -19,8 +19,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"a94-t7v-u7k","title":"Test-Create_a_new_dashboard_with_a_profile_metric_query-1617968272
-        with Profile Metrics Query","url":"/dashboard/a94-t7v-u7k/test-createanewdashboardwithaprofilemetricquery-1617968272-with-profile-metrics","created_at":"2021-04-09T11:37:52.891940+00:00","modified_at":"2021-04-09T11:37:52.891940+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":6446827736152926}],"layout_type":"ordered"}'
+      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"wkx-vhy-96m","title":"Test-Create_a_new_dashboard_with_a_profile_metric_query-1617999735
+        with Profile Metrics Query","url":"/dashboard/wkx-vhy-96m/test-createanewdashboardwithaprofilemetricquery-1617999735-with-profile-metrics","created_at":"2021-04-09T20:22:16.068974+00:00","modified_at":"2021-04-09T20:22:16.068974+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":3620343832605725}],"layout_type":"ordered"}'
     headers:
       Connection:
       - keep-alive
@@ -29,7 +29,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:37:52 GMT
+      - Fri, 09 Apr 2021 20:22:16 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -43,9 +43,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - JpIJLwIH2nFlZOC+u71rq7aAOL43MLZN3MUsL+gpYHdZz5QLUOG8Jysf8kVK6tPU
+      - 2328yjLSqI4XmR1pVqrPRR/SFcQsbafjEpPmZx7/3PfxUK1nJQQsX+wrMelyVyj+
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -63,10 +63,10 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/a94-t7v-u7k
+    uri: https://api.datadoghq.com/api/v1/dashboard/wkx-vhy-96m
   response:
     body:
-      string: '{"deleted_dashboard_id":"a94-t7v-u7k"}'
+      string: '{"deleted_dashboard_id":"wkx-vhy-96m"}'
     headers:
       Connection:
       - keep-alive
@@ -75,7 +75,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:37:53 GMT
+      - Fri, 09 Apr 2021 20:22:16 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -89,9 +89,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 5gfwVh/5HZ+AnGd/Di93w3NEWC6KMHT9KzmHEiRJmNdOjBtAsbOcgVFyqEChw71h
+      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
     status:

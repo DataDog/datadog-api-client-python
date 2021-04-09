@@ -140,28 +140,26 @@ def glom(value, path):
 def _get_prefix(request):
     test_class = request.cls
     if test_class:
-        prefix = "{}.{}".format(test_class.__name__, request.node.name)
+        main = "{}.{}".format(test_class.__name__, request.node.name)
     else:
-        try:
-            base_name = request.node.__scenario_report__.scenario.name
-            prefix = re.sub(r"\W", "", base_name.replace(" ", "_"))
-        except AttributeError:
-            prefix = request.node.name
-    return prefix
+        base_name = request.node.__scenario_report__.scenario.name
+        main = re.sub(r"\W", "", base_name.replace(" ", "_"))
+    prefix = "Test-Python" if _disable_recording() else "Test"
+    return f"{prefix}-{main}"
 
 
 @pytest.fixture
 def unique(request, freezer):
     prefix = _get_prefix(request)
     with freezer:
-        return f"Test-{prefix}-{datetime.now().timestamp():.0f}"
+        return f"{prefix}-{datetime.now().timestamp():.0f}"
 
 
 @pytest.fixture
 def unique_lower(request, freezer):
     prefix = _get_prefix(request).lower()
     with freezer:
-        return f"test-{prefix}-{datetime.now().timestamp():.0f}"
+        return f"{prefix}-{datetime.now().timestamp():.0f}"
 
 
 @pytest.fixture

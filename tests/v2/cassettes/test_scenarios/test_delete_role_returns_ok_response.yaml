@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"name": "Test-test_delete_role_returns_ok_response-1617968204"},
+    body: '{"data": {"attributes": {"name": "Test-Delete_role_returns_OK_response-1617999643"},
       "type": "roles"}}'
     headers:
       Accept:
@@ -15,16 +15,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
-      string: '{"data":{"type":"roles","id":"dc96c99c-9927-11eb-9ceb-da7ad0900002","attributes":{"name":"Test-test_delete_role_returns_ok_response-1617968204","created_at":"2021-04-09T11:36:44.856246+00:00","modified_at":"2021-04-09T11:36:44.856246+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
+      string: '{"data":{"type":"roles","id":"0f9bcec0-9971-11eb-9cf2-da7ad0900002","attributes":{"name":"Test-Delete_role_returns_OK_response-1617999643","created_at":"2021-04-09T20:20:43.714341+00:00","modified_at":"2021-04-09T20:20:43.714341+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '487'
+      - '482'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:36:44 GMT
+      - Fri, 09 Apr 2021 20:20:43 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -38,9 +38,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - F5gm0Rce1/Abr9/0Fw8HAqWfiz0FdiH8er/AXnN6lOn3L6KyGgbsLCwgPlob1No8
+      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -48,9 +48,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '482'
+      - '499'
       x-ratelimit-reset:
-      - '16'
+      - '17'
     status:
       code: 200
       message: OK
@@ -66,7 +66,7 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/roles/dc96c99c-9927-11eb-9ceb-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/roles/0f9bcec0-9971-11eb-9cf2-da7ad0900002
   response:
     body:
       string: ''
@@ -78,7 +78,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:36:45 GMT
+      - Fri, 09 Apr 2021 20:20:44 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -90,9 +90,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l8RQo2maZqJf6GFThBbKNE6dvthz6njusVtau3dPXJWL2RLFoN81H+BLPB/1xgs1
+      - B1nwy/pPNqX+q4pQT22cdp1QCexE35IF8qwSHy0Nf7IW0Y881qtn4tXN1lpmzaKc
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -100,9 +100,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '481'
+      - '498'
       x-ratelimit-reset:
-      - '15'
+      - '16'
     status:
       code: 204
       message: No Content
@@ -118,10 +118,10 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/roles/dc96c99c-9927-11eb-9ceb-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/roles/0f9bcec0-9971-11eb-9cf2-da7ad0900002
   response:
     body:
-      string: '{"errors": ["The role dc96c99c-9927-11eb-9ceb-da7ad0900002 does not
+      string: '{"errors": ["The role 0f9bcec0-9971-11eb-9cf2-da7ad0900002 does not
         exist not found"]}'
     headers:
       Connection:
@@ -131,7 +131,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:36:46 GMT
+      - Fri, 09 Apr 2021 20:20:44 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -145,7 +145,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -153,9 +153,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '480'
+      - '497'
       x-ratelimit-reset:
-      - '14'
+      - '16'
     status:
       code: 404
       message: Not Found

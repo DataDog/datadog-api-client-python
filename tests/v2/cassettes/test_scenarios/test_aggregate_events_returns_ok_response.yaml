@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.Test-test_aggregate_events_returns_ok_response-1617968227",
+    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.Test-Aggregate_events_returns_OK_response-1617999691",
       "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"],
       "query": "datadog-agent", "to": "1600348600"}}'
     headers:
@@ -16,7 +16,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"pddv1ChZNdzZVdWNySVRoeVBtenNld21JLUVRIi0KHduZlPjbEQiJlQzQNqDDlX1JPdaZUjdmXp1pIkwEEgzJkZv5APp_dPujxn4","elapsed":0},"data":{"buckets":[]}}'
+      string: '{"meta":{"status":"done","request_id":"pddv1ChY3LWF5R0VIYVRlSzlfRWV4ejJEeXpRIi0KHURQXwDCaJUHrfNIYbuND-eCDNe4ETcH5_6-rxBQEgw2rLd5SJWNwUQEKA8","elapsed":0},"data":{"buckets":[]}}'
     headers:
       Connection:
       - keep-alive
@@ -25,7 +25,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:37:08 GMT
+      - Fri, 09 Apr 2021 20:21:31 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -39,9 +39,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - F5gm0Rce1/Abr9/0Fw8HAqWfiz0FdiH8er/AXnN6lOn3L6KyGgbsLCwgPlob1No8
+      - L3ULR3HwCWYmEqCWGz2Yob3chcH4pjowBacBXkncP7o+/uPqKt9yGEYf/g1AJPzQ
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -51,7 +51,7 @@ interactions:
       x-ratelimit-remaining:
       - '299'
       x-ratelimit-reset:
-      - '173'
+      - '209'
     status:
       code: 200
       message: OK

@@ -23,7 +23,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:36:31 GMT
+      - Fri, 09 Apr 2021 20:21:11 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -37,9 +37,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - FCcG2z5GRhjFqYyc9iVglZEWK/dv6PHRNX0KBI6t25YFeuatUWL92fIIdoYEmN1c
+      - ADTUWWOzRI3TTp/mC1tLnevIb68AW1O76KcDvn1fwJ7wk/NmEhbiIAvvPRklPaib
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -49,7 +49,7 @@ interactions:
       x-ratelimit-remaining:
       - '99'
       x-ratelimit-reset:
-      - '30'
+      - '49'
     status:
       code: 200
       message: OK

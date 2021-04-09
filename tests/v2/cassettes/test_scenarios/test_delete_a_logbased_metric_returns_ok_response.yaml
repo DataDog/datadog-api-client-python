@@ -1,9 +1,8 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"compute": {"aggregation_type": "count"}, "filter":
-      {"query": "source:Test-test_delete_a_logbased_metric_returns_ok_response-1617968243"}},
-      "id": "Test-test_delete_a_logbased_metric_returns_ok_response-1617968243", "type":
-      "logs_metrics"}}'
+    body: '{"data": {"id": "Test-Delete_a_logbased_metric_returns_OK_response-1617999665",
+      "attributes": {"filter": {"query": "source:Test-Delete_a_logbased_metric_returns_OK_response-1617999665"},
+      "compute": {"aggregation_type": "count"}}, "type": "logs_metrics"}}'
     headers:
       Accept:
       - application/json
@@ -17,16 +16,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_test_delete_a_logbased_metric_returns_ok_response_1617968243","attributes":{"filter":{"query":"source:Test-test_delete_a_logbased_metric_returns_ok_response-1617968243"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
+      string: '{"data":{"id":"Test_Delete_a_logbased_metric_returns_OK_response_1617999665","attributes":{"filter":{"query":"source:Test-Delete_a_logbased_metric_returns_OK_response-1617999665"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '267'
+      - '257'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 11:37:23 GMT
+      - Fri, 09 Apr 2021 20:21:05 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -42,9 +41,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - LcgNasIYBRkNppmD6mCKE9J6iv0eEjosuuHR5V5zw2fWbR54i39C8dhdK8zDq/40
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -52,9 +51,9 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '80'
+      - '85'
       x-ratelimit-reset:
-      - '1357'
+      - '2335'
     status:
       code: 200
       message: OK
@@ -70,7 +69,7 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_test_delete_a_logbased_metric_returns_ok_response_1617968243
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Delete_a_logbased_metric_returns_OK_response_1617999665
   response:
     body:
       string: '{}'
@@ -82,7 +81,7 @@ interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 11:37:24 GMT
+      - Fri, 09 Apr 2021 20:21:05 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -96,9 +95,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - JpIJLwIH2nFlZOC+u71rq7aAOL43MLZN3MUsL+gpYHdZz5QLUOG8Jysf8kVK6tPU
+      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -106,9 +105,9 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '79'
+      - '84'
       x-ratelimit-reset:
-      - '1356'
+      - '2335'
     status:
       code: 200
       message: OK
@@ -124,20 +123,20 @@ interactions:
       User-Agent:
       - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_test_delete_a_logbased_metric_returns_ok_response_1617968243
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Delete_a_logbased_metric_returns_OK_response_1617999665
   response:
     body:
-      string: '{"errors":["not_found(Metric with name ''Test_test_delete_a_logbased_metric_returns_ok_response_1617968243''
+      string: '{"errors":["not_found(Metric with name ''Test_Delete_a_logbased_metric_returns_OK_response_1617999665''
         not found)"]}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '120'
+      - '115'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 11:37:24 GMT
+      - Fri, 09 Apr 2021 20:21:06 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -151,7 +150,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4275259'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -159,9 +158,9 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '78'
+      - '83'
       x-ratelimit-reset:
-      - '1356'
+      - '2334'
     status:
       code: 404
       message: Not Found

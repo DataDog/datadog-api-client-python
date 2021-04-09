@@ -9,8 +9,7 @@ interactions:
       Dd-Operation-Id:
       - CreateSecurityMonitoringRule
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev2+dirty (python 3.7.9; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
@@ -24,7 +23,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 25 Mar 2021 11:36:55 GMT
+      - Fri, 09 Apr 2021 20:20:56 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -36,7 +35,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4167755'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
     status:
