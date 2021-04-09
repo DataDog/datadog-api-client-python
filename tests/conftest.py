@@ -411,6 +411,7 @@ def build_given(version, operation):
                     return glom(context, p["source"])
 
             kwargs = {snake_case(p["name"]): build_param(p) for p in operation.get("parameters", [])}
+            kwargs["_check_input_type"] = False
             result = operation_method(**kwargs)
             client.last_response.urllib3_response.close()
 
@@ -488,6 +489,7 @@ def execute_request(undo, context, client, _package):
         # Instead of finding the response class of the method, we use the fact that all
         # responses returned have an ordered response of body|status|headers
         api_request["response"] = [e.body, e.status, e.headers]
+        return
 
     api = api_request["api"]
     operation_id = api_request["request"].__name__
@@ -497,8 +499,8 @@ def execute_request(undo, context, client, _package):
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))
-def i_should_get_an_instace_of(context, package_name, name):
-    """I should get an instace."""
+def i_should_get_an_instance_of(context, package_name, name):
+    """I should get an instance."""
     module_name = snake_case(name)
     package = importlib.import_module(f"{package_name}.model.{module_name}")
     assert isinstance(context["api_request"]["response"][0], getattr(package, name))
@@ -506,7 +508,7 @@ def i_should_get_an_instace_of(context, package_name, name):
 
 @then(parsers.parse('I should get a list of "{name}" objects'))
 def i_should_get_a_list_of_objects(context, package_name, name):
-    """I should get an instace."""
+    """I should get a list of objects."""
     module_name = snake_case(name)
     package = importlib.import_module(f"{package_name}.model.{module_name}")
     cls = getattr(package, name)
