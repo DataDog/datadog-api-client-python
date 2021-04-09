@@ -421,7 +421,7 @@
       "parameters": [
         {
           "name": "rule_id",
-          "source": "data.id"
+          "source": "id"
         }
       ],
       "type": "unsafe"

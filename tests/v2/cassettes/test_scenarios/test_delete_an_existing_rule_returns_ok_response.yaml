@@ -1,0 +1,147 @@
+interactions:
+- request:
+    body: '{"cases": [{"status": "info", "name": "", "condition": "a > 0", "notifications":
+      []}], "isEnabled": true, "message": "Test rule", "name": "datadog-api-client-python-test_delete_an_existing_rule_returns_ok_response-1616672222.019048",
+      "options": {"evaluationWindow": 900, "keepAlive": 3600, "maxSignalDuration":
+      86400}, "queries": [{"query": "@test:true", "aggregation": "count", "groupByFields":
+      [], "distinctFields": [], "metric": ""}], "filters": [], "tags": []}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateSecurityMonitoringRule
+      User-Agent:
+      - datadog-api-client-python/1.0.0b8.dev2+dirty (python 3.7.9; os Darwin; arch
+        x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
+        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1616672222804,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true","trackType":"logs"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0"}],"type":"log_detection","id":"ewz-zdr-5lp","isDefault":false,"name":"datadog-api-client-python-test_delete_an_existing_rule_returns_ok_response-1616672222.019048"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '655'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 25 Mar 2021 11:37:02 GMT
+      cache-control:
+      - no-cache
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - fIO2C4qGDheGHy4YbS+r3a3CXbh4cbRo7roILOimQyiHGjQdOat0cIpWCkupM1uX
+      x-dd-version:
+      - '35.4167755'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteSecurityMonitoringRule
+      User-Agent:
+      - datadog-api-client-python/1.0.0b8.dev2+dirty (python 3.7.9; os Darwin; arch
+        x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/ewz-zdr-5lp
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Date:
+      - Thu, 25 Mar 2021 11:37:03 GMT
+      cache-control:
+      - no-cache
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - Wjq53IVIwnB4SiR238oOYgHFMq/ZYP0LQ/Dv8C2fFLBwTje/dWJHu6pI6vIOK1zG
+      x-dd-version:
+      - '35.4167755'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteSecurityMonitoringRule
+      User-Agent:
+      - datadog-api-client-python/1.0.0b8.dev2+dirty (python 3.7.9; os Darwin; arch
+        x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/ewz-zdr-5lp
+  response:
+    body:
+      string: '{"errors":["Threat detection rule not found: ewz-zdr-5lp"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 25 Mar 2021 11:37:04 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4167755'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 404
+      message: Not Found
+version: 1
