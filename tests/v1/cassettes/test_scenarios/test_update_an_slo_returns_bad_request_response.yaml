@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - UpdateSlo
+      User-Agent:
+      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.7.9; os Darwin; arch
+        x86_64)
+    method: PUT
+    uri: https://api.datadoghq.com/api/v1/slo/datadogapiclientpythontestupdateansloreturnsbadrequestresponse1617977825684237
+  response:
+    body:
+      string: '{"errors": ["Invalid payload: Required parameter ''type'' is missing"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '69'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 09 Apr 2021 14:17:06 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4276613'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '500'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '499'
+      x-ratelimit-reset:
+      - '54'
+    status:
+      code: 400
+      message: Bad Request
+version: 1
