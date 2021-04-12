@@ -143,7 +143,7 @@ def _get_prefix(request):
         main = "{}.{}".format(test_class.__name__, request.node.name)
     else:
         base_name = request.node.__scenario_report__.scenario.name
-        main = re.sub(r"\W", "", base_name.replace(" ", "_"))
+        main = re.sub(r"[^A-Za-z0-9]+", "_", base_name)[:100]
     prefix = "Test-Python" if _disable_recording() else "Test"
     return f"{prefix}-{main}"
 
