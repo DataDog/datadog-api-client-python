@@ -253,6 +253,7 @@ class ServiceLevelObjectivesApi(object):
                     "slo_id",
                     "from_ts",
                     "to_ts",
+                    "target",
                 ],
                 "required": [
                     "slo_id",
@@ -261,25 +262,35 @@ class ServiceLevelObjectivesApi(object):
                 ],
                 "nullable": [],
                 "enum": [],
-                "validation": [],
+                "validation": [
+                    "target",
+                ],
             },
             root_map={
-                "validations": {},
+                "validations": {
+                    ("target",): {
+                        "exclusive_maximum" "inclusive_maximum": 100,
+                        "exclusive_minimum" "inclusive_minimum": 0,
+                    },
+                },
                 "allowed_values": {},
                 "openapi_types": {
                     "slo_id": (str,),
                     "from_ts": (int,),
                     "to_ts": (int,),
+                    "target": (float,),
                 },
                 "attribute_map": {
                     "slo_id": "slo_id",
                     "from_ts": "from_ts",
                     "to_ts": "to_ts",
+                    "target": "target",
                 },
                 "location_map": {
                     "slo_id": "path",
                     "from_ts": "query",
                     "to_ts": "query",
+                    "target": "query",
                 },
                 "collection_format_map": {},
             },
@@ -615,6 +626,7 @@ class ServiceLevelObjectivesApi(object):
             to_ts (int): The `to` timestamp for the query window in epoch seconds.
 
         Keyword Args:
+            target (float): The SLO target. If `target` is passed in, the response will include the error budget that remains.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
