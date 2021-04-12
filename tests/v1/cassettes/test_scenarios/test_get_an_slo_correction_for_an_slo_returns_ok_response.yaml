@@ -1,9 +1,8 @@
 interactions:
 - request:
-    body: '{"name": "datadog-api-client-python-test_get_an_slo_correction_for_an_slo_returns_ok_response-1612280304.796143",
-      "thresholds": [{"target": 95.0, "timeframe": "7d", "warning": 98.0}], "type":
-      "metric", "query": {"denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
-      "numerator": "sum:httpservice.hits{code:2xx}.as_count()"}}'
+    body: '{"type": "metric", "name": "Test-Get_an_SLO_correction_for_an_SLO_returns_OK_response-1617999732",
+      "thresholds": [{"timeframe": "7d", "target": 95.0, "warning": 98.0}], "query":
+      {"numerator": "sum:httpservice.hits{code:2xx}.as_count()", "denominator": "sum:httpservice.hits{!code:3xx}.as_count()"}}'
     headers:
       Accept:
       - application/json
@@ -12,41 +11,35 @@ interactions:
       Dd-Operation-Id:
       - CreateSlo
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev17+dirty (python 3.8.2; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"fd0d772e58a651cc88311592e7ea8f12","name":"datadog-api-client-python-test_get_an_slo_correction_for_an_slo_returns_ok_response-1612280304.796143","created_at":1612280305,"tags":[],"modified_at":1612280305,"type":"metric"}],"error":null}'
+      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"ac78e27bfcd85643b6335a5b88440aa5","name":"Test-Get_an_SLO_correction_for_an_SLO_returns_OK_response-1617999732","created_at":1617999732,"tags":[],"modified_at":1617999732,"type":"metric"}],"error":null}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '616'
+      - '583'
       Content-Type:
       - application/json
       Date:
-      - Tue, 02 Feb 2021 15:38:25 GMT
+      - Fri, 09 Apr 2021 20:22:12 GMT
       cache-control:
       - no-cache
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       pragma:
       - no-cache
-      set-cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 09-Feb-2021 15:38:25 GMT;
-        secure; HttpOnly
       strict-transport-security:
       - max-age=15724800;
       vary:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
-      x-dd-debug:
-      - SY1h8ScsWq+kYmtbh63ltMLFAZsQjqfrgvdfAoRX+9TzT1sgMBRYaFRwfWWRRe9a
       x-dd-version:
-      - '35.3826288'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -56,13 +49,13 @@ interactions:
       x-ratelimit-remaining:
       - '499'
       x-ratelimit-reset:
-      - '35'
+      - '48'
     status:
       code: 200
       message: OK
 - request:
-    body: '{"data": {"attributes": {"category": "Other", "end": 1612283904, "slo_id":
-      "fd0d772e58a651cc88311592e7ea8f12", "start": 1612280304, "timezone": "UTC",
+    body: '{"data": {"id": "1", "attributes": {"slo_id": "ac78e27bfcd85643b6335a5b88440aa5",
+      "start": 1617999731, "end": 1618003331, "category": "Other", "timezone": "UTC",
       "description": "Test Correction"}, "type": "correction"}}'
     headers:
       Accept:
@@ -72,13 +65,12 @@ interactions:
       Dd-Operation-Id:
       - CreateSloCorrection
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev17+dirty (python 3.8.2; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/slo/correction
   response:
     body:
-      string: '{"data":{"type":"correction","id":"b0973294-656c-11eb-9083-da7ad0900002","attributes":{"slo_id":"fd0d772e58a651cc88311592e7ea8f12","start":1612280304,"end":1612283904,"description":"Test
+      string: '{"data":{"type":"correction","id":"44affdde-9971-11eb-9cf2-da7ad0900002","attributes":{"slo_id":"ac78e27bfcd85643b6335a5b88440aa5","start":1617999731,"end":1618003331,"description":"Test
         Correction","category":"Other","timezone":"UTC","creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}}}}}'
     headers:
       Connection:
@@ -88,26 +80,21 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 02 Feb 2021 15:38:25 GMT
+      - Fri, 09 Apr 2021 20:22:12 GMT
       cache-control:
       - no-cache
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       pragma:
       - no-cache
-      set-cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 09-Feb-2021 15:38:25 GMT;
-        secure; HttpOnly
       strict-transport-security:
       - max-age=15724800;
       vary:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
-      x-dd-debug:
-      - HbtaOKlJ6OCrx9tMXO6ivMTrEM+g0c93HDp08trmOmgdHozC5J+vn10F0H4WPjCU
       x-dd-version:
-      - '35.3826288'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -117,7 +104,7 @@ interactions:
       x-ratelimit-remaining:
       - '11999'
       x-ratelimit-reset:
-      - '35'
+      - '48'
     status:
       code: 200
       message: OK
@@ -131,13 +118,12 @@ interactions:
       Dd-Operation-Id:
       - GetSloCorrection
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev17+dirty (python 3.8.2; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v1/slo/correction/b0973294-656c-11eb-9083-da7ad0900002
+    uri: https://api.datadoghq.com/api/v1/slo/correction/44affdde-9971-11eb-9cf2-da7ad0900002
   response:
     body:
-      string: '{"data":{"type":"correction","id":"b0973294-656c-11eb-9083-da7ad0900002","attributes":{"slo_id":"fd0d772e58a651cc88311592e7ea8f12","start":1612280304,"end":1612283904,"description":"Test
+      string: '{"data":{"type":"correction","id":"44affdde-9971-11eb-9cf2-da7ad0900002","attributes":{"slo_id":"ac78e27bfcd85643b6335a5b88440aa5","start":1617999731,"end":1618003331,"description":"Test
         Correction","category":"Other","timezone":"UTC","creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}}}}}'
     headers:
       Connection:
@@ -147,26 +133,21 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 02 Feb 2021 15:38:26 GMT
+      - Fri, 09 Apr 2021 20:22:13 GMT
       cache-control:
       - no-cache
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       pragma:
       - no-cache
-      set-cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 09-Feb-2021 15:38:26 GMT;
-        secure; HttpOnly
       strict-transport-security:
       - max-age=15724800;
       vary:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
-      x-dd-debug:
-      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
       x-dd-version:
-      - '35.3826288'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -176,7 +157,7 @@ interactions:
       x-ratelimit-remaining:
       - '11999'
       x-ratelimit-reset:
-      - '34'
+      - '47'
     status:
       code: 200
       message: OK
@@ -190,10 +171,9 @@ interactions:
       Dd-Operation-Id:
       - DeleteSloCorrection
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev17+dirty (python 3.8.2; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/correction/b0973294-656c-11eb-9083-da7ad0900002
+    uri: https://api.datadoghq.com/api/v1/slo/correction/44affdde-9971-11eb-9cf2-da7ad0900002
   response:
     body:
       string: ''
@@ -205,24 +185,19 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 02 Feb 2021 15:38:27 GMT
+      - Fri, 09 Apr 2021 20:22:13 GMT
       cache-control:
       - no-cache
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       pragma:
       - no-cache
-      set-cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 09-Feb-2021 15:38:27 GMT;
-        secure; HttpOnly
       strict-transport-security:
       - max-age=15724800;
       x-content-type-options:
       - nosniff
-      x-dd-debug:
-      - nLnnBNvlCFDECRnZvzDb0z4sAO35G+IMidcAs8vrCKyjvsKWE8Yd9S3n6OjZ1qRN
       x-dd-version:
-      - '35.3826288'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -232,7 +207,7 @@ interactions:
       x-ratelimit-remaining:
       - '11999'
       x-ratelimit-reset:
-      - '33'
+      - '47'
     status:
       code: 204
       message: No Content
@@ -246,13 +221,12 @@ interactions:
       Dd-Operation-Id:
       - DeleteSlo
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev17+dirty (python 3.8.2; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/fd0d772e58a651cc88311592e7ea8f12
+    uri: https://api.datadoghq.com/api/v1/slo/ac78e27bfcd85643b6335a5b88440aa5
   response:
     body:
-      string: '{"data":["fd0d772e58a651cc88311592e7ea8f12"],"error":null}'
+      string: '{"data":["ac78e27bfcd85643b6335a5b88440aa5"],"error":null}'
     headers:
       Connection:
       - keep-alive
@@ -261,36 +235,31 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 02 Feb 2021 15:38:27 GMT
+      - Fri, 09 Apr 2021 20:22:14 GMT
       cache-control:
       - no-cache
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       pragma:
       - no-cache
-      set-cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Tue, 09-Feb-2021 15:38:27 GMT;
-        secure; HttpOnly
       strict-transport-security:
       - max-age=15724800;
       vary:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
-      x-dd-debug:
-      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
       x-dd-version:
-      - '35.3826288'
+      - '35.4280781'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
-      - '12000'
+      - '3000'
       x-ratelimit-period:
-      - '60'
+      - '10'
       x-ratelimit-remaining:
-      - '11999'
+      - '2999'
       x-ratelimit-reset:
-      - '33'
+      - '6'
     status:
       code: 200
       message: OK

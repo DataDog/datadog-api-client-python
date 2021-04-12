@@ -5,9 +5,6 @@ import pytest
 from pytest_bdd import scenarios
 
 
-pytestmark = [
-    pytest.mark.vcr(ignore_localhost=True),
-    pytest.mark.usefixtures("context", "client", "freezer"),
-]
+pytestmark = [pytest.mark.vcr(ignore_localhost=True)]
 
 scenarios("features")

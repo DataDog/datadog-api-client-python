@@ -137,28 +137,29 @@ def glom(value, path):
     return g(value, re.sub(r"\[([0-9]*)\]", r".\1", path))
 
 
-@pytest.fixture
-def unique(request, freezer):
+def _get_prefix(request):
     test_class = request.cls
     if test_class:
-        prefix = "{}.{}".format(test_class.__name__, request.node.name)
+        main = "{}.{}".format(test_class.__name__, request.node.name)
     else:
-        prefix = request.node.name
+        base_name = request.node.__scenario_report__.scenario.name
+        main = re.sub(r"[^A-Za-z0-9]+", "_", base_name)[:100]
+    prefix = "Test-Python" if _disable_recording() else "Test"
+    return f"{prefix}-{main}"
 
+
+@pytest.fixture
+def unique(request, freezer):
+    prefix = _get_prefix(request)
     with freezer:
-        return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}"
+        return f"{prefix}-{datetime.now().timestamp():.0f}"
 
 
 @pytest.fixture
 def unique_lower(request, freezer):
-    test_class = request.cls
-    if test_class:
-        prefix = "{}.{}".format(test_class.__name__, request.node.name)
-    else:
-        prefix = request.node.name
-
+    prefix = _get_prefix(request).lower()
     with freezer:
-        return f"datadog-api-client-python-{prefix}-{datetime.now().timestamp()}".lower()
+        return f"{prefix}-{datetime.now().timestamp():.0f}"
 
 
 @pytest.fixture
@@ -207,7 +208,7 @@ def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_late
         "unique": unique,
         "unique_lower": unique_lower,
         "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique),
-        "unique_lower_alnum": re.sub(r"[^a-z0-9]+", "", unique),
+        "unique_lower_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique).lower(),
         "now_ts": now_ts,
         "now_iso": now_iso,
         "hour_later_ts": hour_later_ts,
