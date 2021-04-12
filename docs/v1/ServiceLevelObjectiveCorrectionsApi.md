@@ -5,10 +5,10 @@ All URIs are relative to *https://api.datadoghq.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#create_slo_correction) | **POST** /api/v1/slo/correction | Create an SLO correction
-[**delete_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#delete_slo_correction) | **DELETE** /api/v1/slo/correction/{slo_correction_id} | Delete an SLO Correction
+[**delete_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#delete_slo_correction) | **DELETE** /api/v1/slo/correction/{slo_correction_id} | Delete an SLO correction
 [**get_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#get_slo_correction) | **GET** /api/v1/slo/correction/{slo_correction_id} | Get an SLO correction for an SLO
 [**list_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#list_slo_correction) | **GET** /api/v1/slo/correction | Get all SLO corrections
-[**update_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#update_slo_correction) | **PATCH** /api/v1/slo/correction/{slo_correction_id} | Update an SLO Correction
+[**update_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#update_slo_correction) | **PATCH** /api/v1/slo/correction/{slo_correction_id} | Update an SLO correction
 
 
 # **create_slo_correction**
@@ -93,9 +93,9 @@ Name | Type | Description  | Notes
 # **delete_slo_correction**
 > delete_slo_correction(slo_correction_id)
 
-Delete an SLO Correction
+Delete an SLO correction
 
-Permanently delete the specified SLO Correction object
+Permanently delete the specified SLO correction object
 
 ### Example
 
@@ -120,7 +120,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Delete an SLO Correction
+        # Delete an SLO correction
         api_instance.delete_slo_correction(slo_correction_id)
     except ApiException as e:
         print("Exception when calling ServiceLevelObjectiveCorrectionsApi->delete_slo_correction: %s\n" % e)
@@ -161,7 +161,7 @@ void (empty response body)
 
 Get an SLO correction for an SLO
 
-Get an SLO Correction
+Get an SLO correction
 
 ### Example
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 Get all SLO corrections
 
-Get all Service Level Objective Corrections
+Get all Service Level Objective corrections
 
 ### Example
 
@@ -288,7 +288,7 @@ This endpoint does not need any parameter.
 # **update_slo_correction**
 > SLOCorrectionResponse update_slo_correction(slo_correction_id, body)
 
-Update an SLO Correction
+Update an SLO correction
 
 Update the specified SLO correction object object
 
@@ -327,7 +327,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Update an SLO Correction
+        # Update an SLO correction
         api_response = api_instance.update_slo_correction(slo_correction_id, body)
         pprint(api_response)
     except ApiException as e:

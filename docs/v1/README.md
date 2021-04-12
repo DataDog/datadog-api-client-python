@@ -193,10 +193,10 @@ Class | Method | HTTP request | Description
 *PagerDutyIntegrationApi* | [**update_pager_duty_integration_service**](PagerDutyIntegrationApi.md#update_pager_duty_integration_service) | **PUT** /api/v1/integration/pagerduty/configuration/services/{service_name} | Update a single service object
 *ServiceChecksApi* | [**submit_service_check**](ServiceChecksApi.md#submit_service_check) | **POST** /api/v1/check_run | Submit a Service Check
 *ServiceLevelObjectiveCorrectionsApi* | [**create_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#create_slo_correction) | **POST** /api/v1/slo/correction | Create an SLO correction
-*ServiceLevelObjectiveCorrectionsApi* | [**delete_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#delete_slo_correction) | **DELETE** /api/v1/slo/correction/{slo_correction_id} | Delete an SLO Correction
+*ServiceLevelObjectiveCorrectionsApi* | [**delete_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#delete_slo_correction) | **DELETE** /api/v1/slo/correction/{slo_correction_id} | Delete an SLO correction
 *ServiceLevelObjectiveCorrectionsApi* | [**get_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#get_slo_correction) | **GET** /api/v1/slo/correction/{slo_correction_id} | Get an SLO correction for an SLO
 *ServiceLevelObjectiveCorrectionsApi* | [**list_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#list_slo_correction) | **GET** /api/v1/slo/correction | Get all SLO corrections
-*ServiceLevelObjectiveCorrectionsApi* | [**update_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#update_slo_correction) | **PATCH** /api/v1/slo/correction/{slo_correction_id} | Update an SLO Correction
+*ServiceLevelObjectiveCorrectionsApi* | [**update_slo_correction**](ServiceLevelObjectiveCorrectionsApi.md#update_slo_correction) | **PATCH** /api/v1/slo/correction/{slo_correction_id} | Update an SLO correction
 *ServiceLevelObjectivesApi* | [**check_can_delete_slo**](ServiceLevelObjectivesApi.md#check_can_delete_slo) | **GET** /api/v1/slo/can_delete | Check if SLOs can be safely deleted
 *ServiceLevelObjectivesApi* | [**create_slo**](ServiceLevelObjectivesApi.md#create_slo) | **POST** /api/v1/slo | Create an SLO object
 *ServiceLevelObjectivesApi* | [**delete_slo**](ServiceLevelObjectivesApi.md#delete_slo) | **DELETE** /api/v1/slo/{slo_id} | Delete an SLO
@@ -333,6 +333,7 @@ Class | Method | HTTP request | Description
  - [DashboardList](DashboardList.md)
  - [DashboardListDeleteResponse](DashboardListDeleteResponse.md)
  - [DashboardListListResponse](DashboardListListResponse.md)
+ - [DashboardReflowType](DashboardReflowType.md)
  - [DashboardSummary](DashboardSummary.md)
  - [DashboardSummaryDefinition](DashboardSummaryDefinition.md)
  - [DashboardTemplateVariable](DashboardTemplateVariable.md)
