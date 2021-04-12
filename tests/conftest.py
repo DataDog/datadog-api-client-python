@@ -208,7 +208,7 @@ def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_late
         "unique": unique,
         "unique_lower": unique_lower,
         "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique),
-        "unique_lower_alnum": re.sub(r"[^a-z0-9]+", "", unique),
+        "unique_lower_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique).lower(),
         "now_ts": now_ts,
         "now_iso": now_iso,
         "hour_later_ts": hour_later_ts,
