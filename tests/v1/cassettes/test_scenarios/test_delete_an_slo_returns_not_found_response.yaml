@@ -9,23 +9,23 @@ interactions:
       Dd-Operation-Id:
       - DeleteSlo
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.7.9; os Darwin; arch
+      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
         x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/datadogapiclientpythontestdeleteansloreturnsnotfoundresponse1617977822955456
+    uri: https://api.datadoghq.com/api/v1/slo/testdeleteansloreturnsnotfoundresponse1618241473
   response:
     body:
-      string: '{"errors": ["SLO not found: datadogapiclientpythontestdeleteansloreturnsnotfoundresponse1617977822955456
+      string: '{"errors": ["SLO not found: testdeleteansloreturnsnotfoundresponse1618241473
         not found"]}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '117'
+      - '89'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 14:17:03 GMT
+      - Mon, 12 Apr 2021 15:31:13 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -39,7 +39,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4276613'
+      - '35.4290400'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:

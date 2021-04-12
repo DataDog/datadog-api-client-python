@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"name": "datadog-api-client-python-test_delete_role_returns_ok_response-1608111773.990121"},
+    body: '{"data": {"attributes": {"name": "Test-Delete_role_returns_OK_response-1617999643"},
       "type": "roles"}}'
     headers:
       Accept:
@@ -10,53 +10,47 @@ interactions:
       Dd-Operation-Id:
       - CreateRole
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev10+dirty (python 3.9.0; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
-      string: '{"data":{"type":"roles","id":"1240204c-3f83-11eb-89ca-433dcb783aea","attributes":{"name":"datadog-api-client-python-test_delete_role_returns_ok_response-1608111773.990121","created_at":"2020-12-16T09:42:54.438248+00:00","modified_at":"2020-12-16T09:42:54.438248+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"}]}}}}'
+      string: '{"data":{"type":"roles","id":"0f9bcec0-9971-11eb-9cf2-da7ad0900002","attributes":{"name":"Test-Delete_role_returns_OK_response-1617999643","created_at":"2021-04-09T20:20:43.714341+00:00","modified_at":"2021-04-09T20:20:43.714341+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
     headers:
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
       Content-Length:
-      - '448'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      - '482'
       Content-Type:
       - application/json
-      DD-POOL:
-      - dogweb
       Date:
-      - Wed, 16 Dec 2020 09:42:54 GMT
-      Pragma:
+      - Fri, 09 Apr 2021 20:20:43 GMT
+      cache-control:
       - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 09:42:54 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
       - max-age=15724800;
-      Vary:
+      vary:
       - Accept-Encoding
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-DD-Debug:
-      - 5Cj6NNcncFcQ6G9NKti+kar8gWVql7fBvPeJG7XhNnPs269m3W9o1I+JeGPUiuK3
-      X-DD-VERSION:
-      - '35.3550617'
-      X-Frame-Options:
+      x-dd-debug:
+      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
+      x-dd-version:
+      - '35.4280781'
+      x-frame-options:
       - SAMEORIGIN
-      X-RateLimit-Limit:
+      x-ratelimit-limit:
       - '500'
-      X-RateLimit-Period:
+      x-ratelimit-period:
       - '60'
-      X-RateLimit-Remaining:
-      - '496'
-      X-RateLimit-Reset:
-      - '6'
+      x-ratelimit-remaining:
+      - '499'
+      x-ratelimit-reset:
+      - '17'
     status:
       code: 200
       message: OK
@@ -70,51 +64,45 @@ interactions:
       Dd-Operation-Id:
       - DeleteRole
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev10+dirty (python 3.9.0; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/roles/1240204c-3f83-11eb-89ca-433dcb783aea
+    uri: https://api.datadoghq.com/api/v2/roles/0f9bcec0-9971-11eb-9cf2-da7ad0900002
   response:
     body:
       string: ''
     headers:
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
       Content-Length:
       - '0'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       Content-Type:
       - application/json
-      DD-POOL:
-      - dogweb
       Date:
-      - Wed, 16 Dec 2020 09:42:54 GMT
-      Pragma:
+      - Fri, 09 Apr 2021 20:20:44 GMT
+      cache-control:
       - no-cache
-      Set-Cookie:
-      - DD-PSHARD=233; Max-Age=604800; Path=/; expires=Wed, 23-Dec-2020 09:42:54 GMT;
-        secure; HttpOnly
-      Strict-Transport-Security:
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
       - max-age=15724800;
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-DD-Debug:
-      - 1P9wTBqAbIBgrelvLhZC6yMU4dh3hoPJxqgVxGKRZAP7KGr8YPkzxcmHF9q0g7sB
-      X-DD-VERSION:
-      - '35.3550617'
-      X-Frame-Options:
+      x-dd-debug:
+      - B1nwy/pPNqX+q4pQT22cdp1QCexE35IF8qwSHy0Nf7IW0Y881qtn4tXN1lpmzaKc
+      x-dd-version:
+      - '35.4280781'
+      x-frame-options:
       - SAMEORIGIN
-      X-RateLimit-Limit:
+      x-ratelimit-limit:
       - '500'
-      X-RateLimit-Period:
+      x-ratelimit-period:
       - '60'
-      X-RateLimit-Remaining:
-      - '495'
-      X-RateLimit-Reset:
-      - '6'
+      x-ratelimit-remaining:
+      - '498'
+      x-ratelimit-reset:
+      - '16'
     status:
       code: 204
       message: No Content
@@ -128,49 +116,46 @@ interactions:
       Dd-Operation-Id:
       - DeleteRole
       User-Agent:
-      - datadog-api-client-python/1.0.0b5.dev10+dirty (python 3.9.0; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/roles/1240204c-3f83-11eb-89ca-433dcb783aea
+    uri: https://api.datadoghq.com/api/v2/roles/0f9bcec0-9971-11eb-9cf2-da7ad0900002
   response:
     body:
-      string: '{"errors": ["The role 1240204c-3f83-11eb-89ca-433dcb783aea does not
+      string: '{"errors": ["The role 0f9bcec0-9971-11eb-9cf2-da7ad0900002 does not
         exist not found"]}'
     headers:
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
       Content-Length:
       - '86'
-      Content-Security-Policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       Content-Type:
       - application/json
-      DD-POOL:
-      - dogweb
       Date:
-      - Wed, 16 Dec 2020 09:42:55 GMT
-      Pragma:
+      - Fri, 09 Apr 2021 20:20:44 GMT
+      cache-control:
       - no-cache
-      Strict-Transport-Security:
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
       - max-age=15724800;
-      Vary:
+      vary:
       - Accept-Encoding
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-DD-VERSION:
-      - '35.3550617'
-      X-Frame-Options:
+      x-dd-version:
+      - '35.4280781'
+      x-frame-options:
       - SAMEORIGIN
-      X-RateLimit-Limit:
+      x-ratelimit-limit:
       - '500'
-      X-RateLimit-Period:
+      x-ratelimit-period:
       - '60'
-      X-RateLimit-Remaining:
-      - '494'
-      X-RateLimit-Reset:
-      - '5'
+      x-ratelimit-remaining:
+      - '497'
+      x-ratelimit-reset:
+      - '16'
     status:
       code: 404
       message: Not Found
