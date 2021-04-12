@@ -47,6 +47,7 @@ with ApiClient(configuration) as api_client:
         notify_list=[
             "notify_list_example",
         ],
+        reflow_type=DashboardReflowType("auto"),
         template_variable_presets=[
             DashboardTemplateVariablePreset(
                 name="name_example",
@@ -350,6 +351,7 @@ with ApiClient(configuration) as api_client:
         notify_list=[
             "notify_list_example",
         ],
+        reflow_type=DashboardReflowType("auto"),
         template_variable_presets=[
             DashboardTemplateVariablePreset(
                 name="name_example",

@@ -333,6 +333,7 @@ Class | Method | HTTP request | Description
  - [DashboardList](DashboardList.md)
  - [DashboardListDeleteResponse](DashboardListDeleteResponse.md)
  - [DashboardListListResponse](DashboardListListResponse.md)
+ - [DashboardReflowType](DashboardReflowType.md)
  - [DashboardSummary](DashboardSummary.md)
  - [DashboardSummaryDefinition](DashboardSummaryDefinition.md)
  - [DashboardTemplateVariable](DashboardTemplateVariable.md)
