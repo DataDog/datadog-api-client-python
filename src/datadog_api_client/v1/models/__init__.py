@@ -61,6 +61,7 @@ from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutTyp
 from datadog_api_client.v1.model.dashboard_list import DashboardList
 from datadog_api_client.v1.model.dashboard_list_delete_response import DashboardListDeleteResponse
 from datadog_api_client.v1.model.dashboard_list_list_response import DashboardListListResponse
+from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
 from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
 from datadog_api_client.v1.model.dashboard_summary_definition import DashboardSummaryDefinition
 from datadog_api_client.v1.model.dashboard_template_variable import DashboardTemplateVariable

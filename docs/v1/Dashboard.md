@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **is_read_only** | **bool** | Whether this dashboard is read-only. If True, only the author and admins can make changes to it. | [optional]  if omitted the server will use the default value of False
 **modified_at** | **datetime** | Modification date of the dashboard. | [optional] [readonly] 
 **notify_list** | **[str], none_type** | List of handles of users to notify when changes are made to this dashboard. | [optional] 
+**reflow_type** | [**DashboardReflowType**](DashboardReflowType.md) |  | [optional] 
 **template_variable_presets** | [**[DashboardTemplateVariablePreset], none_type**](DashboardTemplateVariablePreset.md) | Array of template variables saved views. | [optional] 
 **template_variables** | [**[DashboardTemplateVariable], none_type**](DashboardTemplateVariable.md) | List of template variables for this dashboard. | [optional] 
 **url** | **str** | The URL of the dashboard. | [optional] [readonly] 
