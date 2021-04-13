@@ -269,8 +269,8 @@ class ServiceLevelObjectivesApi(object):
             root_map={
                 "validations": {
                     ("target",): {
-                        "exclusive_maximum" "inclusive_maximum": 100,
-                        "exclusive_minimum" "inclusive_minimum": 0,
+                        "exclusive_maximum": 100,
+                        "exclusive_minimum": 0,
                     },
                 },
                 "allowed_values": {},
