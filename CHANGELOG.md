@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.0.0b8 / 2021-04-14
+
+* [Added] Add `reflow_type` property to dashboard object. See [#372](https://github.com/DataDog/datadog-api-client-python/pull/372).
+* [Added] Add security track and formulas and functions support for geomap dashboard widget. See [#370](https://github.com/DataDog/datadog-api-client-python/pull/370).
+* [Added] Generate intake endpoints. See [#367](https://github.com/DataDog/datadog-api-client-python/pull/367).
+* [Added] Add endpoint for listing all downtimes for the specified monitor. See [#361](https://github.com/DataDog/datadog-api-client-python/pull/361).
+* [Added] Add `modified_at` attribute to user response v2 schema. See [#352](https://github.com/DataDog/datadog-api-client-python/pull/352).
+* [Added] Add default environment loading in clients. See [#347](https://github.com/DataDog/datadog-api-client-python/pull/347).
+* [Added] Add `passed`, `noSavingResponseBody`, `noScreenshot`, and `disableCors` fields to Synthetics. See [#346](https://github.com/DataDog/datadog-api-client-python/pull/346).
+* [Added] Add compliance usage endpoint and compliance host statistics. See [#342](https://github.com/DataDog/datadog-api-client-python/pull/342).
+* [Added] Add tag filter options for `/api/v{1,2}/metrics`. See [#340](https://github.com/DataDog/datadog-api-client-python/pull/340).
+* [Added] Add usage fields for Heroku and OpenTelemetry. See [#337](https://github.com/DataDog/datadog-api-client-python/pull/337).
+* [Added] Add `global_time_target` field to SLO widget. See [#335](https://github.com/DataDog/datadog-api-client-python/pull/335).
+* [Added] Add method to export an API test in Synthetics. See [#334](https://github.com/DataDog/datadog-api-client-python/pull/334).
+* [Added] Add metadata to usage top average metrics response. See [#333](https://github.com/DataDog/datadog-api-client-python/pull/333).
+* [Added] Add median as valid aggregator for formulas and functions. See [#328](https://github.com/DataDog/datadog-api-client-python/pull/328).
+* [Fixed] Fix Python template for exclusiveMinimum/Maximum. See [#377](https://github.com/DataDog/datadog-api-client-python/pull/377).
+* [Fixed] Make python fail properly when invalid key is passed. See [#350](https://github.com/DataDog/datadog-api-client-python/pull/350).
+* [Fixed] Fix parsing of `oneOf` attributes. See [#344](https://github.com/DataDog/datadog-api-client-python/pull/344).
+* [Fixed] Browser Test message required. See [#330](https://github.com/DataDog/datadog-api-client-python/pull/330).
+* [Changed] Return correct object in `GetBrowserTest` endpoint. See [#359](https://github.com/DataDog/datadog-api-client-python/pull/359).
+* [Changed] Change python API model. See [#351](https://github.com/DataDog/datadog-api-client-python/pull/351).
+* [Changed] Add agent rules in security monitoring rules queries. See [#336](https://github.com/DataDog/datadog-api-client-python/pull/336).
+
 ## 1.0.0b7 / 2021-03-22
 
 * [Added] Add `legend_layout` and `legend_columns` to timeseries widget definition. See [#320](https://github.com/DataDog/datadog-api-client-python/pull/320).
