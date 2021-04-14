@@ -15,7 +15,7 @@ Feature: Service Level Objective Corrections
   Scenario: Create an SLO correction returns "Bad Request" response
     Given operation "CreateSLOCorrection" enabled
     And new "CreateSLOCorrection" request
-    And body {}
+    And body {"data": {"attributes": {"category": "Scheduled Maintenance", "description": null, "end": 1600000000, "slo_id": "sloId", "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -23,7 +23,7 @@ Feature: Service Level Objective Corrections
   Scenario: Create an SLO correction returns "OK" response
     Given operation "CreateSLOCorrection" enabled
     And new "CreateSLOCorrection" request
-    And body {}
+    And body {"data": {"attributes": {"category": "Scheduled Maintenance", "description": null, "end": 1600000000, "slo_id": "sloId", "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -72,7 +72,7 @@ Feature: Service Level Objective Corrections
     Given operation "UpdateSLOCorrection" enabled
     And new "UpdateSLOCorrection" request
     And request contains "slo_correction_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"category": "Scheduled Maintenance", "description": null, "end": 1600000000, "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -81,7 +81,7 @@ Feature: Service Level Objective Corrections
     Given operation "UpdateSLOCorrection" enabled
     And new "UpdateSLOCorrection" request
     And request contains "slo_correction_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"category": "Scheduled Maintenance", "description": null, "end": 1600000000, "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -90,6 +90,6 @@ Feature: Service Level Objective Corrections
     Given operation "UpdateSLOCorrection" enabled
     And new "UpdateSLOCorrection" request
     And request contains "slo_correction_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"category": "Scheduled Maintenance", "description": null, "end": 1600000000, "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 200 OK

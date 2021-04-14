@@ -18,7 +18,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {}
+    And body {"description": null, "integration": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -27,7 +27,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {}
+    And body {"description": null, "integration": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -36,7 +36,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {}
+    And body {"description": null, "integration": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -114,13 +114,13 @@ Feature: Metrics
   @generated @skip
   Scenario: Submit metrics returns "Payload too large" response
     Given new "SubmitMetrics" request
-    And body {}
+    And body {"series": [{"metric": "system.load.1", "points": [[1475317847, 0.7]]}]}
     When the request is sent
     Then the response status is 413 Payload too large
 
   @generated @skip
   Scenario: Submit metrics returns "Request timeout" response
     Given new "SubmitMetrics" request
-    And body {}
+    And body {"series": [{"metric": "system.load.1", "points": [[1475317847, 0.7]]}]}
     When the request is sent
     Then the response status is 408 Request timeout

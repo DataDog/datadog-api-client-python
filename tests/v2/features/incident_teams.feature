@@ -12,7 +12,7 @@ Feature: Incident Teams
   Scenario: Create a new incident team returns "Bad Request" response
     Given operation "CreateIncidentTeam" enabled
     And new "CreateIncidentTeam" request
-    And body {}
+    And body {"data": {"attributes": {"name": "team name"}, "relationships": {}, "type": "teams"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -28,7 +28,7 @@ Feature: Incident Teams
   Scenario: Create a new incident team returns "Not Found" response
     Given operation "CreateIncidentTeam" enabled
     And new "CreateIncidentTeam" request
-    And body {}
+    And body {"data": {"attributes": {"name": "team name"}, "relationships": {}, "type": "teams"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -110,7 +110,7 @@ Feature: Incident Teams
     Given operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
     And request contains "team_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"name": "team name"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {}, "type": "teams"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -119,7 +119,7 @@ Feature: Incident Teams
     Given operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
     And request contains "team_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"name": "team name"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {}, "type": "teams"}}
     When the request is sent
     Then the response status is 404 Not Found
 

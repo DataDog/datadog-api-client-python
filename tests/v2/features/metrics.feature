@@ -19,7 +19,7 @@ Feature: Metrics
     Given operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -28,7 +28,7 @@ Feature: Metrics
     Given operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -45,7 +45,7 @@ Feature: Metrics
     Given operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
     When the request is sent
     Then the response status is 429 Too Many Requests
 
@@ -199,7 +199,7 @@ Feature: Metrics
     Given operation "UpdateTagConfiguration" enabled
     And new "UpdateTagConfiguration" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"group_by": ["app", "datacenter"], "include_percentiles": false}, "id": "http.endpoint.request", "type": "manage_tags"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -218,7 +218,7 @@ Feature: Metrics
     Given operation "UpdateTagConfiguration" enabled
     And new "UpdateTagConfiguration" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"group_by": ["app", "datacenter"], "include_percentiles": false}, "id": "http.endpoint.request", "type": "manage_tags"}}
     When the request is sent
     Then the response status is 429 Too Many Requests
 
@@ -227,6 +227,6 @@ Feature: Metrics
     Given operation "UpdateTagConfiguration" enabled
     And new "UpdateTagConfiguration" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"group_by": ["app", "datacenter"], "include_percentiles": false}, "id": "http.endpoint.request", "type": "manage_tags"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

@@ -13,7 +13,7 @@ Feature: Key Management
   @generated @skip
   Scenario: Create an API key returns "Bad Request" response
     Given new "CreateAPIKey" request
-    And body {}
+    And body {"data": {"attributes": {"name": "API Key for submitting metrics"}, "type": "api_keys"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -35,14 +35,14 @@ Feature: Key Management
   @generated @skip
   Scenario: Create an application key for current user returns "Bad Request" response
     Given new "CreateCurrentUserApplicationKey" request
-    And body {}
+    And body {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "type": "application_keys"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Create an application key for current user returns "Created" response
     Given new "CreateCurrentUserApplicationKey" request
-    And body {}
+    And body {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "type": "application_keys"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -109,7 +109,7 @@ Feature: Key Management
   Scenario: Edit an API key returns "Bad Request" response
     Given new "UpdateAPIKey" request
     And request contains "api_key_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"name": "API Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "api_keys"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -117,7 +117,7 @@ Feature: Key Management
   Scenario: Edit an API key returns "Not Found" response
     Given new "UpdateAPIKey" request
     And request contains "api_key_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"name": "API Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "api_keys"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -134,7 +134,7 @@ Feature: Key Management
   Scenario: Edit an application key owned by current user returns "Bad Request" response
     Given new "UpdateCurrentUserApplicationKey" request
     And request contains "app_key_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -142,7 +142,7 @@ Feature: Key Management
   Scenario: Edit an application key owned by current user returns "Not Found" response
     Given new "UpdateCurrentUserApplicationKey" request
     And request contains "app_key_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -160,7 +160,7 @@ Feature: Key Management
   Scenario: Edit an application key returns "Bad Request" response
     Given new "UpdateApplicationKey" request
     And request contains "app_key_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -168,7 +168,7 @@ Feature: Key Management
   Scenario: Edit an application key returns "Not Found" response
     Given new "UpdateApplicationKey" request
     And request contains "app_key_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"name": "Application Key for submitting metrics"}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
     When the request is sent
     Then the response status is 404 Not Found
 

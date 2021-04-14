@@ -40,7 +40,7 @@ with ApiClient(configuration) as api_client:
         dashboards=[
             DashboardListItemRequest(
                 id="q5j-nti-fv6",
-                type=DashboardType("custom_timeboard"),
+                type=DashboardType("host_timeboard"),
             ),
         ],
     )  # DashboardListAddItemsRequest | Dashboards to add to the dashboard list.
@@ -116,7 +116,7 @@ with ApiClient(configuration) as api_client:
         dashboards=[
             DashboardListItemRequest(
                 id="q5j-nti-fv6",
-                type=DashboardType("custom_timeboard"),
+                type=DashboardType("host_timeboard"),
             ),
         ],
     )  # DashboardListDeleteItemsRequest | Dashboards to delete from the dashboard list.
@@ -258,7 +258,7 @@ with ApiClient(configuration) as api_client:
         dashboards=[
             DashboardListItemRequest(
                 id="q5j-nti-fv6",
-                type=DashboardType("custom_timeboard"),
+                type=DashboardType("host_timeboard"),
             ),
         ],
     )  # DashboardListUpdateItemsRequest | New dashboards of the dashboard list.

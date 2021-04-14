@@ -18,7 +18,7 @@ Feature: Tags
   Scenario: Add tags to a host returns "Created" response
     Given new "CreateHostTags" request
     And request contains "host_name" parameter from "<PATH>"
-    And body {}
+    And body {"host": "test.host", "tags": ["environment:production"]}
     When the request is sent
     Then the response status is 201 Created
 
@@ -26,7 +26,7 @@ Feature: Tags
   Scenario: Add tags to a host returns "Not Found" response
     Given new "CreateHostTags" request
     And request contains "host_name" parameter from "<PATH>"
-    And body {}
+    And body {"host": "test.host", "tags": ["environment:production"]}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -74,7 +74,7 @@ Feature: Tags
   Scenario: Update host tags returns "Not Found" response
     Given new "UpdateHostTags" request
     And request contains "host_name" parameter from "<PATH>"
-    And body {}
+    And body {"host": "test.host", "tags": ["environment:production"]}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -82,6 +82,6 @@ Feature: Tags
   Scenario: Update host tags returns "OK" response
     Given new "UpdateHostTags" request
     And request contains "host_name" parameter from "<PATH>"
-    And body {}
+    And body {"host": "test.host", "tags": ["environment:production"]}
     When the request is sent
     Then the response status is 201 OK

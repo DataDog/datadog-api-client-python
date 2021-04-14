@@ -72,7 +72,7 @@ body = DashboardListAddItemsRequest(
         dashboards=[
             DashboardListItemRequest(
                 id="q5j-nti-fv6",
-                type=DashboardType("custom_timeboard"),
+                type=DashboardType("host_timeboard"),
             ),
         ],
     ) # DashboardListAddItemsRequest | Dashboards to add to the dashboard list.

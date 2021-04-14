@@ -13,35 +13,35 @@ Feature: Key Management
   @generated @skip
   Scenario: Create an API key returns "Bad Request" response
     Given new "CreateAPIKey" request
-    And body {}
+    And body {"created": "2019-08-02 15:31:07", "created_by": "john@example.com", "key": "1234512345123456abcabc912349abcd", "name": "example user"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Create an API key returns "OK" response
     Given new "CreateAPIKey" request
-    And body {}
+    And body {"created": "2019-08-02 15:31:07", "created_by": "john@example.com", "key": "1234512345123456abcabc912349abcd", "name": "example user"}
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Create an application key returns "Bad Request" response
     Given new "CreateApplicationKey" request
-    And body {}
+    And body {"hash": "1234512345123459cda4eb9ced49a3d84fd0138c", "name": "example user", "owner": "example.com"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Create an application key returns "Conflict" response
     Given new "CreateApplicationKey" request
-    And body {}
+    And body {"hash": "1234512345123459cda4eb9ced49a3d84fd0138c", "name": "example user", "owner": "example.com"}
     When the request is sent
     Then the response status is 409 Conflict
 
   @generated @skip
   Scenario: Create an application key returns "OK" response
     Given new "CreateApplicationKey" request
-    And body {}
+    And body {"hash": "1234512345123459cda4eb9ced49a3d84fd0138c", "name": "example user", "owner": "example.com"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -84,7 +84,7 @@ Feature: Key Management
   Scenario: Edit an API key returns "Bad Request" response
     Given new "UpdateAPIKey" request
     And request contains "key" parameter from "<PATH>"
-    And body {}
+    And body {"created": "2019-08-02 15:31:07", "created_by": "john@example.com", "key": "1234512345123456abcabc912349abcd", "name": "example user"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -92,7 +92,7 @@ Feature: Key Management
   Scenario: Edit an API key returns "Not Found" response
     Given new "UpdateAPIKey" request
     And request contains "key" parameter from "<PATH>"
-    And body {}
+    And body {"created": "2019-08-02 15:31:07", "created_by": "john@example.com", "key": "1234512345123456abcabc912349abcd", "name": "example user"}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -100,7 +100,7 @@ Feature: Key Management
   Scenario: Edit an API key returns "OK" response
     Given new "UpdateAPIKey" request
     And request contains "key" parameter from "<PATH>"
-    And body {}
+    And body {"created": "2019-08-02 15:31:07", "created_by": "john@example.com", "key": "1234512345123456abcabc912349abcd", "name": "example user"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -108,7 +108,7 @@ Feature: Key Management
   Scenario: Edit an application key returns "Bad Request" response
     Given new "UpdateApplicationKey" request
     And request contains "key" parameter from "<PATH>"
-    And body {}
+    And body {"hash": "1234512345123459cda4eb9ced49a3d84fd0138c", "name": "example user", "owner": "example.com"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -116,7 +116,7 @@ Feature: Key Management
   Scenario: Edit an application key returns "Conflict" response
     Given new "UpdateApplicationKey" request
     And request contains "key" parameter from "<PATH>"
-    And body {}
+    And body {"hash": "1234512345123459cda4eb9ced49a3d84fd0138c", "name": "example user", "owner": "example.com"}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -124,7 +124,7 @@ Feature: Key Management
   Scenario: Edit an application key returns "Not Found" response
     Given new "UpdateApplicationKey" request
     And request contains "key" parameter from "<PATH>"
-    And body {}
+    And body {"hash": "1234512345123459cda4eb9ced49a3d84fd0138c", "name": "example user", "owner": "example.com"}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -132,7 +132,7 @@ Feature: Key Management
   Scenario: Edit an application key returns "OK" response
     Given new "UpdateApplicationKey" request
     And request contains "key" parameter from "<PATH>"
-    And body {}
+    And body {"hash": "1234512345123459cda4eb9ced49a3d84fd0138c", "name": "example user", "owner": "example.com"}
     When the request is sent
     Then the response status is 200 OK
 
