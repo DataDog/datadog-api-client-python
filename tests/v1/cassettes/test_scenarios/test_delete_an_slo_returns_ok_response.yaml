@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"type": "metric", "name": "datadog-api-client-python-test_delete_an_slo_returns_ok_response-1617977826.422617",
+    body: '{"type": "metric", "name": "Test-Delete_an_SLO_returns_OK_response-1618386924",
       "thresholds": [{"timeframe": "7d", "target": 95.0, "warning": 98.0}], "query":
       {"numerator": "sum:httpservice.hits{code:2xx}.as_count()", "denominator": "sum:httpservice.hits{!code:3xx}.as_count()"}}'
     headers:
@@ -11,22 +11,22 @@ interactions:
       Dd-Operation-Id:
       - CreateSlo
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.7.9; os Darwin; arch
+      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
         x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"8c9f80b7df085cd1b4fb6648c3ff3226","name":"datadog-api-client-python-test_delete_an_slo_returns_ok_response-1617977826.422617","created_at":1617977827,"tags":[],"modified_at":1617977827,"type":"metric"}],"error":null}'
+      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"0418feb3f8e35a9895eec945778fdaad","name":"Test-Delete_an_SLO_returns_OK_response-1618386924","created_at":1618386925,"tags":[],"modified_at":1618386925,"type":"metric"}],"error":null}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '597'
+      - '564'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 14:17:07 GMT
+      - Wed, 14 Apr 2021 07:55:25 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -40,7 +40,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4276613'
+      - '35.4306674'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -48,9 +48,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '497'
+      - '499'
       x-ratelimit-reset:
-      - '53'
+      - '36'
     status:
       code: 200
       message: OK
@@ -64,13 +64,13 @@ interactions:
       Dd-Operation-Id:
       - DeleteSlo
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.7.9; os Darwin; arch
+      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
         x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/8c9f80b7df085cd1b4fb6648c3ff3226
+    uri: https://api.datadoghq.com/api/v1/slo/0418feb3f8e35a9895eec945778fdaad
   response:
     body:
-      string: '{"data":["8c9f80b7df085cd1b4fb6648c3ff3226"],"error":null}'
+      string: '{"data":["0418feb3f8e35a9895eec945778fdaad"],"error":null}'
     headers:
       Connection:
       - keep-alive
@@ -79,7 +79,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 14:17:09 GMT
+      - Wed, 14 Apr 2021 07:55:25 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -93,60 +93,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4276613'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '3000'
-      x-ratelimit-period:
-      - '10'
-      x-ratelimit-remaining:
-      - '2997'
-      x-ratelimit-reset:
-      - '1'
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteSlo
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.7.9; os Darwin; arch
-        x86_64)
-    method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/8c9f80b7df085cd1b4fb6648c3ff3226
-  response:
-    body:
-      string: '{"errors": ["SLO not found: 8c9f80b7df085cd1b4fb6648c3ff3226 not found"]}'
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '73'
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 09 Apr 2021 14:17:10 GMT
-      cache-control:
-      - no-cache
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-dd-version:
-      - '35.4276613'
+      - '35.4306674'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -156,7 +103,60 @@ interactions:
       x-ratelimit-remaining:
       - '2999'
       x-ratelimit-reset:
+      - '5'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteSlo
+      User-Agent:
+      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/slo/0418feb3f8e35a9895eec945778fdaad
+  response:
+    body:
+      string: '{"errors": ["SLO not found: 0418feb3f8e35a9895eec945778fdaad not found"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '73'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Apr 2021 07:55:25 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4306674'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '3000'
+      x-ratelimit-period:
       - '10'
+      x-ratelimit-remaining:
+      - '2998'
+      x-ratelimit-reset:
+      - '5'
     status:
       code: 404
       message: Not Found
