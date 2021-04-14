@@ -16,14 +16,14 @@ Feature: Service Level Objectives
   @generated @skip
   Scenario: Bulk Delete SLO Timeframes returns "Bad Request" response
     Given new "DeleteSLOTimeframeInBulk" request
-    And body {}
+    And body {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Bulk Delete SLO Timeframes returns "OK" response
     Given new "DeleteSLOTimeframeInBulk" request
-    And body {}
+    And body {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
     When the request is sent
     Then the response status is 200 OK
 
@@ -144,7 +144,7 @@ Feature: Service Level Objectives
   Scenario: Update an SLO returns "Not Found" response
     Given new "UpdateSLO" request
     And request contains "slo_id" parameter from "<PATH>"
-    And body {}
+    And body null
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -152,6 +152,6 @@ Feature: Service Level Objectives
   Scenario: Update an SLO returns "OK" response
     Given new "UpdateSLO" request
     And request contains "slo_id" parameter from "<PATH>"
-    And body {}
+    And body null
     When the request is sent
     Then the response status is 200 OK

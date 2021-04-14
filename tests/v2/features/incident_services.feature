@@ -12,7 +12,7 @@ Feature: Incident Services
   Scenario: Create a new incident service returns "Bad Request" response
     Given operation "CreateIncidentService" enabled
     And new "CreateIncidentService" request
-    And body {}
+    And body {"data": {"attributes": {"name": "an example service name"}, "relationships": {}, "type": "services"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -28,7 +28,7 @@ Feature: Incident Services
   Scenario: Create a new incident service returns "Not Found" response
     Given operation "CreateIncidentService" enabled
     And new "CreateIncidentService" request
-    And body {}
+    And body {"data": {"attributes": {"name": "an example service name"}, "relationships": {}, "type": "services"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -110,7 +110,7 @@ Feature: Incident Services
     Given operation "UpdateIncidentService" enabled
     And new "UpdateIncidentService" request
     And request contains "service_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"name": "an example service name"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {}, "type": "services"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -119,7 +119,7 @@ Feature: Incident Services
     Given operation "UpdateIncidentService" enabled
     And new "UpdateIncidentService" request
     And request contains "service_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"name": "an example service name"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {}, "type": "services"}}
     When the request is sent
     Then the response status is 404 Not Found
 

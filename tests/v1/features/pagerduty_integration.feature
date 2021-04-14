@@ -12,14 +12,14 @@ Feature: PagerDuty Integration
   @generated @skip
   Scenario: Create a new service object returns "Bad Request" response
     Given new "CreatePagerDutyIntegrationService" request
-    And body {}
+    And body {"service_key": "", "service_name": ""}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Create a new service object returns "OK" response
     Given new "CreatePagerDutyIntegrationService" request
-    And body {}
+    And body {"service_key": "", "service_name": ""}
     When the request is sent
     Then the response status is 201 OK
 
@@ -55,7 +55,7 @@ Feature: PagerDuty Integration
   Scenario: Update a single service object returns "Bad Request" response
     Given new "UpdatePagerDutyIntegrationService" request
     And request contains "service_name" parameter from "<PATH>"
-    And body {}
+    And body {"service_key": ""}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -63,7 +63,7 @@ Feature: PagerDuty Integration
   Scenario: Update a single service object returns "Item Not Found" response
     Given new "UpdatePagerDutyIntegrationService" request
     And request contains "service_name" parameter from "<PATH>"
-    And body {}
+    And body {"service_key": ""}
     When the request is sent
     Then the response status is 404 Item Not Found
 
@@ -71,6 +71,6 @@ Feature: PagerDuty Integration
   Scenario: Update a single service object returns "OK" response
     Given new "UpdatePagerDutyIntegrationService" request
     And request contains "service_name" parameter from "<PATH>"
-    And body {}
+    And body {"service_key": ""}
     When the request is sent
     Then the response status is 200 OK

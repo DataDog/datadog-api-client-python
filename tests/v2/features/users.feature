@@ -10,7 +10,7 @@ Feature: Users
   @generated @skip
   Scenario: Create a user returns "Bad Request" response
     Given new "CreateUser" request
-    And body {}
+    And body {"data": {"attributes": {"email": "jane.doe@example.com", "name": null, "title": null}, "relationships": {"roles": {"data": [{"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}]}}, "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -119,7 +119,7 @@ Feature: Users
   @generated @skip
   Scenario: Send invitation emails returns "Bad Request" response
     Given new "SendInvitations" request
-    And body {}
+    And body {"data": []}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -134,7 +134,7 @@ Feature: Users
   Scenario: Update a user returns "Bad Request" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -142,7 +142,7 @@ Feature: Users
   Scenario: Update a user returns "Not found" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -162,6 +162,6 @@ Feature: Users
   Scenario: Update a user returns "Unprocessable Entity" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "<PATH>"
-    And body {}
+    And body {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
