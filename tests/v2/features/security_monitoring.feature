@@ -7,21 +7,18 @@ Feature: Security Monitoring
     And a valid "appKeyAuth" key in the system
     And an instance of "SecurityMonitoring" API
 
-  @skip-typescript
   Scenario: Create a detection rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
     And body {}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-typescript
   Scenario: Create a detection rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"hasExtendedTitle":false,"message":"Test rule","tags":[],"isDefault":false,"isEnabled":true,"type":"log_detection"}
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-typescript
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
     And request contains "rule_id" parameter with value "ThisRuleIdProbablyDoesntExist"
@@ -35,7 +32,6 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript
   Scenario: Delete an existing rule returns "OK" response
     Given there is a valid "security_rule" in the system
     And new "DeleteSecurityMonitoringRule" request
