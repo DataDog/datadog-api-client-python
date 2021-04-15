@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0b8 / 2021-04-14
+## 1.0.0b8 / 2021-04-15
 
 * [Added] Add `reflow_type` property to dashboard object. See [#372](https://github.com/DataDog/datadog-api-client-python/pull/372).
 * [Added] Add security track and formulas and functions support for geomap dashboard widget. See [#370](https://github.com/DataDog/datadog-api-client-python/pull/370).
