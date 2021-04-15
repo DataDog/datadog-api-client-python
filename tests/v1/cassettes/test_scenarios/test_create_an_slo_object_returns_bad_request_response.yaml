@@ -1,6 +1,8 @@
 interactions:
 - request:
-    body: '{}'
+    body: '{"type": "monitor", "name": "Test-Create_an_SLO_object_returns_Bad_Request_response-1618476796",
+      "thresholds": [{"target": 95.0, "target_display": "95.0", "timeframe": "7d",
+      "warning": 98, "warning_display": "98.0"}]}'
     headers:
       Accept:
       - application/json
@@ -9,22 +11,21 @@ interactions:
       Dd-Operation-Id:
       - CreateSlo
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.7.9; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"errors": ["Invalid payload: Required parameter ''type'' is missing"]}'
+      string: '{"errors": ["Invalid payload: must specify monitor_ids or monitor_search"]}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '69'
+      - '75'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 14:17:05 GMT
+      - Thu, 15 Apr 2021 08:53:16 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -36,7 +37,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4276613'
+      - '35.4317157'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -46,7 +47,7 @@ interactions:
       x-ratelimit-remaining:
       - '498'
       x-ratelimit-reset:
-      - '55'
+      - '44'
     status:
       code: 400
       message: Bad Request

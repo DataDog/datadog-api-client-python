@@ -1,12 +1,11 @@
 interactions:
 - request:
-    body: '{"name": "Test-Create_a_detection_rule_returns_OK_response-1617999699",
+    body: '{"name": "Test-Create_a_detection_rule_returns_OK_response-1618476794",
       "queries": [{"query": "@test:true", "aggregation": "count", "groupByFields":
       [], "distinctFields": [], "metric": ""}], "filters": [], "cases": [{"name":
       "", "status": "info", "condition": "a > 0", "notifications": []}], "options":
-      {"evaluationWindow": 900, "keepAlive": 3600, "maxSignalDuration": 86400}, "hasExtendedTitle":
-      false, "message": "Test rule", "tags": [], "isDefault": false, "isEnabled":
-      true, "type": "log_detection"}'
+      {"evaluationWindow": 900, "keepAlive": 3600, "maxSignalDuration": 86400}, "message":
+      "Test rule", "tags": [], "isEnabled": true}'
     headers:
       Accept:
       - application/json
@@ -15,14 +14,14 @@ interactions:
       Dd-Operation-Id:
       - CreateSecurityMonitoringRule
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
-        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1617999699750,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true","trackType":"logs"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
-        > 0"}],"type":"log_detection","id":"ecy-4eq-gvu","isDefault":false,"name":"Test-Create_a_detection_rule_returns_OK_response-1617999699"}'
+      string: '{"creationAuthorId":2320499,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
+        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1618476794363,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true","trackType":"logs"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0"}],"type":"log_detection","id":"rh4-mug-oy5","isDefault":false,"name":"Test-Create_a_detection_rule_returns_OK_response-1618476794"}'
     headers:
       Connection:
       - keep-alive
@@ -31,7 +30,7 @@ interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 20:21:39 GMT
+      - Thu, 15 Apr 2021 08:53:14 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -47,9 +46,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - LcgNasIYBRkNppmD6mCKE9J6iv0eEjosuuHR5V5zw2fWbR54i39C8dhdK8zDq/40
+      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
       x-dd-version:
-      - '35.4280781'
+      - '35.4317157'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -65,9 +64,9 @@ interactions:
       Dd-Operation-Id:
       - DeleteSecurityMonitoringRule
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/ecy-4eq-gvu
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/rh4-mug-oy5
   response:
     body:
       string: ''
@@ -77,7 +76,7 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Fri, 09 Apr 2021 20:21:39 GMT
+      - Thu, 15 Apr 2021 08:53:14 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -91,9 +90,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 2328yjLSqI4XmR1pVqrPRR/SFcQsbafjEpPmZx7/3PfxUK1nJQQsX+wrMelyVyj+
+      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
       x-dd-version:
-      - '35.4280781'
+      - '35.4317157'
       x-frame-options:
       - SAMEORIGIN
     status:

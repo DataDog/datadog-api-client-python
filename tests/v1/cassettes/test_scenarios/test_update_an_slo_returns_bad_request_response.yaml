@@ -1,6 +1,63 @@
 interactions:
 - request:
-    body: '{}'
+    body: '{"type": "metric", "name": "Test-Update_an_SLO_returns_Bad_Request_response-1618476797",
+      "thresholds": [{"timeframe": "7d", "target": 95.0, "warning": 98.0}], "query":
+      {"numerator": "sum:httpservice.hits{code:2xx}.as_count()", "denominator": "sum:httpservice.hits{!code:3xx}.as_count()"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateSlo
+      User-Agent:
+      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/slo
+  response:
+    body:
+      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","email":"team-intg-tools-libs@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"68ae35920b345f05b1dffcc0e0157334","name":"Test-Update_an_SLO_returns_Bad_Request_response-1618476797","created_at":1618476796,"tags":[],"modified_at":1618476796,"type":"metric"}],"error":null}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '615'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 15 Apr 2021 08:53:16 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4317157'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '500'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '497'
+      x-ratelimit-reset:
+      - '44'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"type": "monitor", "name": "Test-Update_an_SLO_returns_Bad_Request_response-1618476797",
+      "thresholds": [{"target": 95.0, "target_display": "95.0", "timeframe": "7d",
+      "warning": 98, "warning_display": "98.0"}]}'
     headers:
       Accept:
       - application/json
@@ -9,22 +66,21 @@ interactions:
       Dd-Operation-Id:
       - UpdateSlo
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
     method: PUT
-    uri: https://api.datadoghq.com/api/v1/slo/testupdateansloreturnsbadrequestresponse1618241473
+    uri: https://api.datadoghq.com/api/v1/slo/68ae35920b345f05b1dffcc0e0157334
   response:
     body:
-      string: '{"errors": ["Invalid payload: Required parameter ''type'' is missing"]}'
+      string: '{"errors": ["Invalid payload: must specify the query for count types"]}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '69'
+      - '71'
       Content-Type:
       - application/json
       Date:
-      - Mon, 12 Apr 2021 15:31:13 GMT
+      - Thu, 15 Apr 2021 08:53:17 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -36,7 +92,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4290400'
+      - '35.4317157'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -46,8 +102,60 @@ interactions:
       x-ratelimit-remaining:
       - '499'
       x-ratelimit-reset:
-      - '47'
+      - '43'
     status:
       code: 400
       message: Bad Request
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteSlo
+      User-Agent:
+      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/slo/68ae35920b345f05b1dffcc0e0157334
+  response:
+    body:
+      string: '{"data":["68ae35920b345f05b1dffcc0e0157334"],"error":null}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '58'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 15 Apr 2021 08:53:17 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4317157'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '3000'
+      x-ratelimit-period:
+      - '10'
+      x-ratelimit-remaining:
+      - '2998'
+      x-ratelimit-reset:
+      - '3'
+    status:
+      code: 200
+      message: OK
 version: 1
