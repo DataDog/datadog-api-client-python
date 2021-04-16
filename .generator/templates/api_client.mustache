@@ -287,7 +287,9 @@ class ApiClient(object):
             }
         elif isinstance(obj, io.IOBase):
             return cls.get_file_data_and_close_file(obj)
-        elif isinstance(obj, (str, int, float, none_type, bool)):
+        elif isinstance(obj, bool):
+            return json.dumps(obj)
+        elif isinstance(obj, (str, int, float, none_type)):
             return obj
         elif isinstance(obj, (datetime, date)):
             return obj.isoformat()
