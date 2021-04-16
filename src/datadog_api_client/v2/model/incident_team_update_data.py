@@ -76,9 +76,9 @@ class IncidentTeamUpdateData(ModelNormal):
         """
         lazy_import()
         return {
-            "id": (str,),  # noqa: E501
             "type": (IncidentTeamType,),  # noqa: E501
             "attributes": (IncidentTeamUpdateAttributes,),  # noqa: E501
+            "id": (str,),  # noqa: E501
             "relationships": (IncidentTeamRelationships,),  # noqa: E501
         }
 
@@ -87,9 +87,9 @@ class IncidentTeamUpdateData(ModelNormal):
         return None
 
     attribute_map = {
-        "id": "id",  # noqa: E501
         "type": "type",  # noqa: E501
         "attributes": "attributes",  # noqa: E501
+        "id": "id",  # noqa: E501
         "relationships": "relationships",  # noqa: E501
     }
 
@@ -107,11 +107,10 @@ class IncidentTeamUpdateData(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, id, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, *args, **kwargs):  # noqa: E501
         """IncidentTeamUpdateData - a model defined in OpenAPI
 
         Args:
-            id (str): The incident team's ID.
             type (IncidentTeamType):
 
         Keyword Args:
@@ -146,6 +145,7 @@ class IncidentTeamUpdateData(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (IncidentTeamUpdateAttributes): [optional]  # noqa: E501
+            id (str): The incident team's ID.. [optional]  # noqa: E501
             relationships (IncidentTeamRelationships): [optional]  # noqa: E501
         """
 
@@ -173,7 +173,6 @@ class IncidentTeamUpdateData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.id = id
         self.type = type
         for var_name, var_value in kwargs.items():
             if (

@@ -29,7 +29,6 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-typescript
   Scenario: Create a new dashboard with timeseries widget containing style attributes
     Given new "CreateDashboard" request
     And body {"layout_type": "ordered", "title": "{{ unique }} with timeseries widget","widgets": [{"definition": {"type": "timeseries","requests": [{"q": "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()","on_right_yaxis": false,"style": {"palette": "warm","line_type": "solid","line_width": "normal"},"display_type": "bars"}]}}]}

@@ -111,7 +111,7 @@ Feature: Logs Metrics
     Given there is a valid "logs_metric" in the system
     And new "UpdateLogsMetric" request
     And request contains "metric_id" parameter from "logs_metric.data.id"
-    And body {"data": {"id": "{{ logs_metric.data.id }}", "type": "logs_metrics", "attributes": {"filter" : {"query": "{{ logs_metric.data.attributes.filter.query }}-updated"}}}}
+    And body {"data": {"type": "logs_metrics", "attributes": {"filter" : {"query": "{{ logs_metric.data.attributes.filter.query }}-updated"}}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.filter.query" is equal to "{{ logs_metric.data.attributes.filter.query }}-updated"

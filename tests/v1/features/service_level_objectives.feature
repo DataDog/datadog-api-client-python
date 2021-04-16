@@ -47,7 +47,7 @@ Feature: Service Level Objectives
 
   Scenario: Create an SLO object returns "Bad Request" response
     Given new "CreateSLO" request
-    And body {}
+    And body {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -135,8 +135,9 @@ Feature: Service Level Objectives
 
   Scenario: Update an SLO returns "Bad Request" response
     Given new "UpdateSLO" request
-    And request contains "slo_id" parameter with value "{{ unique_lower_alnum }}"
-    And body {}
+    And there is a valid "slo" in the system
+    And request contains "slo_id" parameter from "slo.data[0].id"
+    And body {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 

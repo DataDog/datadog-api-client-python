@@ -24,7 +24,7 @@ Feature: Logs
 
   Scenario: Send logs returns "Response from server (always 200 empty JSON)." response
     Given new "SubmitLog" request
-    And body [{"message": "{{ unique }}", "tags": "host:{{ unique_alnum }}"}]
+    And body [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
     When the request is sent
     Then the response status is 200 Response from server (always 200 empty JSON).
 
