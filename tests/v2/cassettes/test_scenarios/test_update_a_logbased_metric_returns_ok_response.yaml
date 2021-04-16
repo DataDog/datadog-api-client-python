@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"data": {"id": "Test-Update_a_log_based_metric_returns_OK_response-1618386929",
-      "attributes": {"filter": {"query": "source:Test-Update_a_log_based_metric_returns_OK_response-1618386929"},
+    body: '{"data": {"id": "Test-Update_a_log_based_metric_returns_OK_response-1618476795",
+      "attributes": {"filter": {"query": "source:Test-Update_a_log_based_metric_returns_OK_response-1618476795"},
       "compute": {"aggregation_type": "count"}}, "type": "logs_metrics"}}'
     headers:
       Accept:
@@ -11,13 +11,12 @@ interactions:
       Dd-Operation-Id:
       - CreateLogsMetric
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_Update_a_log_based_metric_returns_OK_response_1618386929","attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1618386929"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
+      string: '{"data":{"id":"Test_Update_a_log_based_metric_returns_OK_response_1618476795","attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1618476795"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
     headers:
       Connection:
       - keep-alive
@@ -26,7 +25,7 @@ interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Wed, 14 Apr 2021 07:55:29 GMT
+      - Thu, 15 Apr 2021 08:53:15 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -42,9 +41,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - S1wfaMZOKGT/IoMw6fqAwAwGWo2vQ44sjF3YzuETnQfxZO2T5eJbs0aX3UKb9Dwu
+      - l8RQo2maZqJf6GFThBbKNE6dvthz6njusVtau3dPXJWL2RLFoN81H+BLPB/1xgs1
       x-dd-version:
-      - '35.4306674'
+      - '35.4317157'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -52,15 +51,14 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '25'
+      - '50'
       x-ratelimit-reset:
-      - '271'
+      - '406'
     status:
       code: 200
       message: OK
 - request:
-    body: '{"data": {"id": "Test_Update_a_log_based_metric_returns_OK_response_1618386929",
-      "type": "logs_metrics", "attributes": {"filter": {"query": "source:Test-Update_a_log_based_metric_returns_OK_response-1618386929-updated"}}}}'
+    body: '{"data": {"type": "logs_metrics", "attributes": {"filter": {"query": "source:Test-Update_a_log_based_metric_returns_OK_response-1618476795-updated"}}}}'
     headers:
       Accept:
       - application/json
@@ -69,13 +67,12 @@ interactions:
       Dd-Operation-Id:
       - UpdateLogsMetric
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_returns_OK_response_1618386929
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_returns_OK_response_1618476795
   response:
     body:
-      string: '{"data":{"id":"Test_Update_a_log_based_metric_returns_OK_response_1618386929","attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1618386929-updated"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
+      string: '{"data":{"id":"Test_Update_a_log_based_metric_returns_OK_response_1618476795","attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_returns_OK_response-1618476795-updated"},"group_by":[],"compute":{"aggregation_type":"count"}},"type":"logs_metrics"}}'
     headers:
       Connection:
       - keep-alive
@@ -84,7 +81,7 @@ interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Wed, 14 Apr 2021 07:55:30 GMT
+      - Thu, 15 Apr 2021 08:53:15 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -100,9 +97,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - SY1h8ScsWq+kYmtbh63ltMLFAZsQjqfrgvdfAoRX+9TzT1sgMBRYaFRwfWWRRe9a
+      - JpIJLwIH2nFlZOC+u71rq7aAOL43MLZN3MUsL+gpYHdZz5QLUOG8Jysf8kVK6tPU
       x-dd-version:
-      - '35.4306674'
+      - '35.4317157'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -110,9 +107,9 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '24'
+      - '49'
       x-ratelimit-reset:
-      - '270'
+      - '405'
     status:
       code: 200
       message: OK
@@ -126,10 +123,9 @@ interactions:
       Dd-Operation-Id:
       - DeleteLogsMetric
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_returns_OK_response_1618386929
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_returns_OK_response_1618476795
   response:
     body:
       string: '{}'
@@ -141,7 +137,7 @@ interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Wed, 14 Apr 2021 07:55:30 GMT
+      - Thu, 15 Apr 2021 08:53:15 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -155,9 +151,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
+      - 5gfwVh/5HZ+AnGd/Di93w3NEWC6KMHT9KzmHEiRJmNdOjBtAsbOcgVFyqEChw71h
       x-dd-version:
-      - '35.4306674'
+      - '35.4317157'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -165,9 +161,9 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '23'
+      - '48'
       x-ratelimit-reset:
-      - '270'
+      - '405'
     status:
       code: 200
       message: OK

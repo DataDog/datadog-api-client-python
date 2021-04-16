@@ -76,9 +76,9 @@ class IncidentServiceUpdateData(ModelNormal):
         """
         lazy_import()
         return {
-            "id": (str,),  # noqa: E501
             "type": (IncidentServiceType,),  # noqa: E501
             "attributes": (IncidentServiceUpdateAttributes,),  # noqa: E501
+            "id": (str,),  # noqa: E501
             "relationships": (IncidentServiceRelationships,),  # noqa: E501
         }
 
@@ -87,9 +87,9 @@ class IncidentServiceUpdateData(ModelNormal):
         return None
 
     attribute_map = {
-        "id": "id",  # noqa: E501
         "type": "type",  # noqa: E501
         "attributes": "attributes",  # noqa: E501
+        "id": "id",  # noqa: E501
         "relationships": "relationships",  # noqa: E501
     }
 
@@ -107,11 +107,10 @@ class IncidentServiceUpdateData(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, id, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, *args, **kwargs):  # noqa: E501
         """IncidentServiceUpdateData - a model defined in OpenAPI
 
         Args:
-            id (str): The incident service's ID.
             type (IncidentServiceType):
 
         Keyword Args:
@@ -146,6 +145,7 @@ class IncidentServiceUpdateData(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (IncidentServiceUpdateAttributes): [optional]  # noqa: E501
+            id (str): The incident service's ID.. [optional]  # noqa: E501
             relationships (IncidentServiceRelationships): [optional]  # noqa: E501
         """
 
@@ -173,7 +173,6 @@ class IncidentServiceUpdateData(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.id = id
         self.type = type
         for var_name, var_value in kwargs.items():
             if (

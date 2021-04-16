@@ -1,6 +1,8 @@
 interactions:
 - request:
-    body: '{}'
+    body: '{"name": "Test-Create_a_detection_rule_returns_Bad_Request_response-1618476794",
+      "queries": [{"query": ""}], "cases": [{"status": "info"}], "options": {}, "message":
+      "Test rule", "tags": [], "isEnabled": true}'
     headers:
       Accept:
       - application/json
@@ -9,21 +11,21 @@ interactions:
       Dd-Operation-Id:
       - CreateSecurityMonitoringRule
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"errors":["Invalid rule configuration","Options cannot be empty"]}'
+      string: '{"errors":["Internal error"]}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '67'
+      - '29'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:20:56 GMT
+      - Thu, 15 Apr 2021 08:53:14 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -35,7 +37,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4280781'
+      - '35.4317157'
       x-frame-options:
       - SAMEORIGIN
     status:
