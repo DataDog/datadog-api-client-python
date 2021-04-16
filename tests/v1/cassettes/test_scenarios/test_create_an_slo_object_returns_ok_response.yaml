@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"type": "metric", "description": "string", "groups": ["env:test", "role:mysql"],
-      "monitor_ids": [], "name": "Test-Create_an_SLO_object_returns_OK_response-1618386724",
+      "monitor_ids": [], "name": "Test-Create_an_SLO_object_returns_OK_response-1618576076",
       "query": {"denominator": "sum:httpservice.hits{!code:3xx}.as_count()", "numerator":
       "sum:httpservice.hits{code:2xx}.as_count()"}, "tags": ["env:prod", "app:core"],
       "thresholds": [{"target": 95.0, "target_display": "95.0", "timeframe": "7d",
@@ -14,13 +14,13 @@ interactions:
       Dd-Operation-Id:
       - CreateSlo
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
         x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"string","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"groups":["env:test","role:mysql"],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"27593afa4fb35e89be67633dddcae50c","name":"Test-Create_an_SLO_object_returns_OK_response-1618386724","created_at":1618386724,"tags":["app:core","env:prod"],"modified_at":1618386724,"type":"metric"}],"error":null}'
+      string: '{"data":[{"description":"string","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"groups":["env:test","role:mysql"],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"ebdb475b5a7d5ade93f841b9ce3b3f99","name":"Test-Create_an_SLO_object_returns_OK_response-1618576076","created_at":1618576076,"tags":["app:core","env:prod"],"modified_at":1618576076,"type":"metric"}],"error":null}'
     headers:
       Connection:
       - keep-alive
@@ -29,7 +29,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 14 Apr 2021 07:52:04 GMT
+      - Fri, 16 Apr 2021 12:27:56 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -43,7 +43,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4306674'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -51,9 +51,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '499'
+      - '498'
       x-ratelimit-reset:
-      - '56'
+      - '4'
     status:
       code: 200
       message: OK
@@ -67,13 +67,13 @@ interactions:
       Dd-Operation-Id:
       - DeleteSlo
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
         x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/27593afa4fb35e89be67633dddcae50c
+    uri: https://api.datadoghq.com/api/v1/slo/ebdb475b5a7d5ade93f841b9ce3b3f99
   response:
     body:
-      string: '{"data":["27593afa4fb35e89be67633dddcae50c"],"error":null}'
+      string: '{"data":["ebdb475b5a7d5ade93f841b9ce3b3f99"],"error":null}'
     headers:
       Connection:
       - keep-alive
@@ -82,7 +82,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 14 Apr 2021 07:52:04 GMT
+      - Fri, 16 Apr 2021 12:27:56 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -96,7 +96,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4306674'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -104,9 +104,9 @@ interactions:
       x-ratelimit-period:
       - '10'
       x-ratelimit-remaining:
-      - '2999'
+      - '2998'
       x-ratelimit-reset:
-      - '6'
+      - '4'
     status:
       code: 200
       message: OK

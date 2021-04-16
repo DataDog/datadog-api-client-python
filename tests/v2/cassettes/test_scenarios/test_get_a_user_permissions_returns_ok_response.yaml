@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"email": "Test-Get_a_user_permissions_returns_OK_response-1617999669@datadoghq.com",
+    body: '{"data": {"attributes": {"email": "Test-Get_a_user_permissions_returns_OK_response-1618576089@datadoghq.com",
       "title": "user title"}, "type": "users"}}'
     headers:
       Accept:
@@ -10,12 +10,13 @@ interactions:
       Dd-Operation-Id:
       - CreateUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"1f07100e-9971-11eb-9cf2-da7ad0900002","attributes":{"name":null,"handle":"test-get_a_user_permissions_returns_ok_response-1617999669@datadoghq.com","created_at":"2021-04-09T20:21:09.583271+00:00","modified_at":"2021-04-09T20:21:09.613733+00:00","email":"test-get_a_user_permissions_returns_ok_response-1617999669@datadoghq.com","icon":"https://secure.gravatar.com/avatar/da64ffd5c74aa20f30088f7d867ede0a?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"347a3630-9eaf-11eb-9e3f-da7ad0900002","attributes":{"name":null,"handle":"test-get_a_user_permissions_returns_ok_response-1618576089@datadoghq.com","created_at":"2021-04-16T12:28:10.181151+00:00","modified_at":"2021-04-16T12:28:10.213327+00:00","email":"test-get_a_user_permissions_returns_ok_response-1618576089@datadoghq.com","icon":"https://secure.gravatar.com/avatar/c5c3ca29bbabe60051a1053b97787c57?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       Connection:
@@ -25,7 +26,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:21:09 GMT
+      - Fri, 16 Apr 2021 12:28:10 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -37,9 +38,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - fIO2C4qGDheGHy4YbS+r3a3CXbh4cbRo7roILOimQyiHGjQdOat0cIpWCkupM1uX
+      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
       x-dd-version:
-      - '35.4280781'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -55,9 +56,10 @@ interactions:
       Dd-Operation-Id:
       - ListUserPermissions
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: GET
-    uri: https://api.datadoghq.com/api/v2/users/1f07100e-9971-11eb-9cf2-da7ad0900002/permissions
+    uri: https://api.datadoghq.com/api/v2/users/347a3630-9eaf-11eb-9e3f-da7ad0900002/permissions
   response:
     body:
       string: '{"data":[]}'
@@ -69,7 +71,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:21:10 GMT
+      - Fri, 16 Apr 2021 12:28:10 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -83,7 +85,7 @@ interactions:
       x-dd-debug:
       - twvpGlmuom5y6A0pjGtXzTf554cmwJgTcCZ71fK4H/RDi+v5ehBK0zQiRcTJQG5C
       x-dd-version:
-      - '35.4280781'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -99,9 +101,10 @@ interactions:
       Dd-Operation-Id:
       - DisableUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/1f07100e-9971-11eb-9cf2-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/347a3630-9eaf-11eb-9e3f-da7ad0900002
   response:
     body:
       string: ''
@@ -113,7 +116,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:21:10 GMT
+      - Fri, 16 Apr 2021 12:28:11 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -125,9 +128,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
+      - Um4CoU685QqAscnxhS5BD+goWu2yX1Jd4zCfGzSsEvPPIm1qURZaF8dlLl/OEY4I
       x-dd-version:
-      - '35.4280781'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
     status:

@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"series": [{"metric": "system.load.1", "points": [[1600348600, 1.1]],
-      "tags": ["test:TestSubmitmetricsreturnsPayloadacceptedresponse1617999730"]}]}'
+      "tags": ["test:TestSubmitmetricsreturnsPayloadacceptedresponse1618576073"]}]}'
     headers:
       Accept:
       - application/json
@@ -10,7 +10,8 @@ interactions:
       Dd-Operation-Id:
       - SubmitMetrics
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/series
   response:
@@ -24,7 +25,7 @@ interactions:
       Content-Type:
       - text/json
       Date:
-      - Fri, 09 Apr 2021 20:22:10 GMT
+      - Fri, 16 Apr 2021 12:27:53 GMT
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       strict-transport-security:

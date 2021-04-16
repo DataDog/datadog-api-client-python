@@ -152,14 +152,14 @@ def _get_prefix(request):
 def unique(request, freezer):
     prefix = _get_prefix(request)
     with freezer:
-        return f"{prefix}-{datetime.now().timestamp():.0f}"
+        return f"{prefix}-{int(datetime.now().timestamp())}"
 
 
 @pytest.fixture
 def unique_lower(request, freezer):
     prefix = _get_prefix(request).lower()
     with freezer:
-        return f"{prefix}-{datetime.now().timestamp():.0f}"
+        return f"{prefix}-{int(datetime.now().timestamp())}"
 
 
 @pytest.fixture

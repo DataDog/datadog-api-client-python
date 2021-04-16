@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"email": "Test-Update_a_user_returns_OK_response-1617999702@datadoghq.com",
+    body: '{"data": {"attributes": {"email": "Test-Update_a_user_returns_OK_response-1618576079@datadoghq.com",
       "title": "user title"}, "type": "users"}}'
     headers:
       Accept:
@@ -10,12 +10,13 @@ interactions:
       Dd-Operation-Id:
       - CreateUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"32aea8c4-9971-11eb-9cf2-da7ad0900002","attributes":{"name":null,"handle":"test-update_a_user_returns_ok_response-1617999702@datadoghq.com","created_at":"2021-04-09T20:21:42.556295+00:00","modified_at":"2021-04-09T20:21:42.594657+00:00","email":"test-update_a_user_returns_ok_response-1617999702@datadoghq.com","icon":"https://secure.gravatar.com/avatar/3b84d6cfc3eb737ef883aff396833dc5?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"2e62c794-9eaf-11eb-9e3e-da7ad0900002","attributes":{"name":null,"handle":"test-update_a_user_returns_ok_response-1618576079@datadoghq.com","created_at":"2021-04-16T12:27:59.961240+00:00","modified_at":"2021-04-16T12:27:59.991888+00:00","email":"test-update_a_user_returns_ok_response-1618576079@datadoghq.com","icon":"https://secure.gravatar.com/avatar/6b9d0421dbb72082df38c599bcb50527?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       Connection:
@@ -25,7 +26,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:21:42 GMT
+      - Fri, 16 Apr 2021 12:28:00 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -37,16 +38,16 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - bgHykj7A9bfZx0Y5ZO3swhhp5tGUSNJHqFWR868+qg087CYrDOd5hQslC+noiEtH
       x-dd-version:
-      - '35.4280781'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
     status:
       code: 201
       message: Created
 - request:
-    body: '{"data": {"id": "32aea8c4-9971-11eb-9cf2-da7ad0900002", "type": "users",
+    body: '{"data": {"id": "2e62c794-9eaf-11eb-9e3e-da7ad0900002", "type": "users",
       "attributes": {"name": "updated", "disabled": true}}}'
     headers:
       Accept:
@@ -56,12 +57,13 @@ interactions:
       Dd-Operation-Id:
       - UpdateUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/users/32aea8c4-9971-11eb-9cf2-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/2e62c794-9eaf-11eb-9e3e-da7ad0900002
   response:
     body:
-      string: '{"data":{"type":"users","id":"32aea8c4-9971-11eb-9cf2-da7ad0900002","attributes":{"name":"updated","handle":"test-update_a_user_returns_ok_response-1617999702@datadoghq.com","created_at":"2021-04-09T20:21:42.556295+00:00","modified_at":"2021-04-09T20:21:43.177331+00:00","email":"test-update_a_user_returns_ok_response-1617999702@datadoghq.com","icon":"https://secure.gravatar.com/avatar/3b84d6cfc3eb737ef883aff396833dc5?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"2e62c794-9eaf-11eb-9e3e-da7ad0900002","attributes":{"name":"updated","handle":"test-update_a_user_returns_ok_response-1618576079@datadoghq.com","created_at":"2021-04-16T12:27:59.961240+00:00","modified_at":"2021-04-16T12:28:00.646629+00:00","email":"test-update_a_user_returns_ok_response-1618576079@datadoghq.com","icon":"https://secure.gravatar.com/avatar/6b9d0421dbb72082df38c599bcb50527?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":true,"allowed_login_methods":[],"status":"Disabled"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}'
     headers:
       Connection:
@@ -71,7 +73,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:21:43 GMT
+      - Fri, 16 Apr 2021 12:28:01 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -85,9 +87,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - B1nwy/pPNqX+q4pQT22cdp1QCexE35IF8qwSHy0Nf7IW0Y881qtn4tXN1lpmzaKc
+      - Wjq53IVIwnB4SiR238oOYgHFMq/ZYP0LQ/Dv8C2fFLBwTje/dWJHu6pI6vIOK1zG
       x-dd-version:
-      - '35.4280781'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -103,12 +105,13 @@ interactions:
       Dd-Operation-Id:
       - DisableUser
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/32aea8c4-9971-11eb-9cf2-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/users/2e62c794-9eaf-11eb-9e3e-da7ad0900002
   response:
     body:
-      string: '{"errors": ["32aea8c4-9971-11eb-9cf2-da7ad0900002 not found"]}'
+      string: '{"errors": ["2e62c794-9eaf-11eb-9e3e-da7ad0900002 not found"]}'
     headers:
       Connection:
       - keep-alive
@@ -117,7 +120,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:21:44 GMT
+      - Fri, 16 Apr 2021 12:28:01 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -131,7 +134,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4280781'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
     status:

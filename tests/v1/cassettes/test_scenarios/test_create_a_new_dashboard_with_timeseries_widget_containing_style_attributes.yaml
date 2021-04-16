@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type": "ordered", "title": "Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617999735
+    body: '{"layout_type": "ordered", "title": "Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1618576072
       with timeseries widget", "widgets": [{"definition": {"type": "timeseries", "requests":
       [{"q": "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()",
       "on_right_yaxis": false, "style": {"palette": "warm", "line_type": "solid",
@@ -13,23 +13,24 @@ interactions:
       Dd-Operation-Id:
       - CreateDashboard
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"3qq-2ni-bq8","title":"Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1617999735
-        with timeseries widget","url":"/dashboard/3qq-2ni-bq8/test-createanewdashboardwithtimeserieswidgetcontainingstyleattributes-1617999735","created_at":"2021-04-09T20:22:15.139084+00:00","modified_at":"2021-04-09T20:22:15.139084+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
-        by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":497246117413773}],"layout_type":"ordered"}'
+      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"dau-dgt-4y9","title":"Test-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1618576072
+        with timeseries widget","url":"/dashboard/dau-dgt-4y9/test-createanewdashboardwithtimeserieswidgetcontainingstyleattributes-1618576072","created_at":"2021-04-16T12:27:53.039301+00:00","modified_at":"2021-04-16T12:27:53.039301+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"q":"sum:trace.test.errors{env:prod,service:datadog-api-spec}
+        by {resource_name}.as_count()","on_right_yaxis":false,"style":{"line_width":"normal","palette":"warm","line_type":"solid"},"display_type":"bars"}],"type":"timeseries"},"id":3226693559105968}],"layout_type":"ordered"}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '809'
+      - '810'
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:22:15 GMT
+      - Fri, 16 Apr 2021 12:27:53 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -43,9 +44,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
+      - L3ULR3HwCWYmEqCWGz2Yob3chcH4pjowBacBXkncP7o+/uPqKt9yGEYf/g1AJPzQ
       x-dd-version:
-      - '35.4280781'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -61,12 +62,13 @@ interactions:
       Dd-Operation-Id:
       - DeleteDashboard
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/3qq-2ni-bq8
+    uri: https://api.datadoghq.com/api/v1/dashboard/dau-dgt-4y9
   response:
     body:
-      string: '{"deleted_dashboard_id":"3qq-2ni-bq8"}'
+      string: '{"deleted_dashboard_id":"dau-dgt-4y9"}'
     headers:
       Connection:
       - keep-alive
@@ -75,7 +77,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:22:15 GMT
+      - Fri, 16 Apr 2021 12:27:53 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -89,9 +91,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - HbtaOKlJ6OCrx9tMXO6ivMTrEM+g0c93HDp08trmOmgdHozC5J+vn10F0H4WPjCU
+      - L3ULR3HwCWYmEqCWGz2Yob3chcH4pjowBacBXkncP7o+/uPqKt9yGEYf/g1AJPzQ
       x-dd-version:
-      - '35.4280781'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
     status:

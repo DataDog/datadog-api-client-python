@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data": {"type": "manage_tags", "id": "TestCreateatagconfigurationreturnsCreatedresponse1617999720",
+    body: '{"data": {"type": "manage_tags", "id": "TestCreateatagconfigurationreturnsCreatedresponse1618576077",
       "attributes": {"tags": ["app", "datacenter"], "metric_type": "distribution"}}}'
     headers:
       Accept:
@@ -10,12 +10,13 @@ interactions:
       Dd-Operation-Id:
       - CreateTagConfiguration
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: POST
-    uri: https://api.datadoghq.com/api/v2/metrics/TestCreateatagconfigurationreturnsCreatedresponse1617999720/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestCreateatagconfigurationreturnsCreatedresponse1618576077/tags
   response:
     body:
-      string: '{"data":{"type":"manage_tags","id":"TestCreateatagconfigurationreturnsCreatedresponse1617999720","attributes":{"tags":["datacenter","app"],"include_percentiles":false,"created_at":"2021-04-09T20:22:01.323078+00:00","updated_at":"2021-04-09T20:22:01.323078+00:00","metric_type":"distribution"}}}'
+      string: '{"data":{"type":"manage_tags","id":"TestCreateatagconfigurationreturnsCreatedresponse1618576077","attributes":{"tags":["datacenter","app"],"include_percentiles":false,"created_at":"2021-04-16T12:27:57.816720+00:00","updated_at":"2021-04-16T12:27:57.816720+00:00","metric_type":"distribution"}}}'
     headers:
       Connection:
       - keep-alive
@@ -24,7 +25,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:22:01 GMT
+      - Fri, 16 Apr 2021 12:27:57 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -36,9 +37,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - Um4CoU685QqAscnxhS5BD+goWu2yX1Jd4zCfGzSsEvPPIm1qURZaF8dlLl/OEY4I
+      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
       x-dd-version:
-      - '35.4280781'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -48,7 +49,7 @@ interactions:
       x-ratelimit-remaining:
       - '49'
       x-ratelimit-reset:
-      - '59'
+      - '3'
     status:
       code: 201
       message: Created
@@ -62,9 +63,10 @@ interactions:
       Dd-Operation-Id:
       - DeleteTagConfiguration
       User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      - datadog-api-client-python/1.0.0b9.dev1+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/metrics/TestCreateatagconfigurationreturnsCreatedresponse1617999720/tags
+    uri: https://api.datadoghq.com/api/v2/metrics/TestCreateatagconfigurationreturnsCreatedresponse1618576077/tags
   response:
     body:
       string: ''
@@ -76,7 +78,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 Apr 2021 20:22:01 GMT
+      - Fri, 16 Apr 2021 12:27:57 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -88,9 +90,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 2328yjLSqI4XmR1pVqrPRR/SFcQsbafjEpPmZx7/3PfxUK1nJQQsX+wrMelyVyj+
+      - fIO2C4qGDheGHy4YbS+r3a3CXbh4cbRo7roILOimQyiHGjQdOat0cIpWCkupM1uX
       x-dd-version:
-      - '35.4280781'
+      - '35.4327775'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -100,7 +102,7 @@ interactions:
       x-ratelimit-remaining:
       - '48'
       x-ratelimit-reset:
-      - '59'
+      - '3'
     status:
       code: 204
       message: No Content
