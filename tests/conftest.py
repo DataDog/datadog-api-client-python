@@ -152,14 +152,14 @@ def _get_prefix(request):
 def unique(request, freezer):
     prefix = _get_prefix(request)
     with freezer:
-        return f"{prefix}-{datetime.now().timestamp():.0f}"
+        return f"{prefix}-{int(datetime.now().timestamp())}"
 
 
 @pytest.fixture
 def unique_lower(request, freezer):
     prefix = _get_prefix(request).lower()
     with freezer:
-        return f"{prefix}-{datetime.now().timestamp():.0f}"
+        return f"{prefix}-{int(datetime.now().timestamp())}"
 
 
 @pytest.fixture
@@ -398,7 +398,8 @@ def build_given(version, operation):
         configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
 
         # enable unstable operation
-        configuration.unstable_operations[operation_name] = True
+        if operation_name in configuration.unstable_operations:
+            configuration.unstable_operations[operation_name] = True
 
         package = importlib.import_module(f"{package_name}.api.{module_name}_api")
         with package.ApiClient(configuration) as client:

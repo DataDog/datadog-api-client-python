@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name": "Test-Delete_an_existing_rule_returns_OK_response-1618476794",
+    body: '{"name": "Test-Delete_an_existing_rule_returns_OK_response-1618831528",
       "queries": [{"query": "@test:true", "aggregation": "count", "groupByFields":
       [], "distinctFields": [], "metric": ""}], "filters": [], "cases": [{"name":
       "", "status": "info", "condition": "a > 0", "notifications": []}], "options":
@@ -14,14 +14,15 @@ interactions:
       Dd-Operation-Id:
       - CreateSecurityMonitoringRule
       User-Agent:
-      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"creationAuthorId":2320499,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
-        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1618476793865,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true","trackType":"logs"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
-        > 0"}],"type":"log_detection","id":"zjk-73d-bwn","isDefault":false,"name":"Test-Delete_an_existing_rule_returns_OK_response-1618476794"}'
+      string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
+        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1618831528496,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true","trackType":"logs"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0"}],"type":"log_detection","id":"5ri-aq2-gz8","isDefault":false,"name":"Test-Delete_an_existing_rule_returns_OK_response-1618831528"}'
     headers:
       Connection:
       - keep-alive
@@ -30,7 +31,7 @@ interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Thu, 15 Apr 2021 08:53:13 GMT
+      - Mon, 19 Apr 2021 11:25:28 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -46,9 +47,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - dPySkcOzIZtKyMKDAAzuysY3gNGGj6RtYogGuSb76E8mPvoqzREyRp6lPYm91hQU
+      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
       x-dd-version:
-      - '35.4317157'
+      - '35.4339380'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -64,9 +65,10 @@ interactions:
       Dd-Operation-Id:
       - DeleteSecurityMonitoringRule
       User-Agent:
-      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/zjk-73d-bwn
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/5ri-aq2-gz8
   response:
     body:
       string: ''
@@ -76,7 +78,7 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Thu, 15 Apr 2021 08:53:14 GMT
+      - Mon, 19 Apr 2021 11:25:28 GMT
       cache-control:
       - no-cache
       content-disposition:
@@ -90,9 +92,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - fIO2C4qGDheGHy4YbS+r3a3CXbh4cbRo7roILOimQyiHGjQdOat0cIpWCkupM1uX
+      - l8RQo2maZqJf6GFThBbKNE6dvthz6njusVtau3dPXJWL2RLFoN81H+BLPB/1xgs1
       x-dd-version:
-      - '35.4317157'
+      - '35.4339380'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -108,12 +110,13 @@ interactions:
       Dd-Operation-Id:
       - DeleteSecurityMonitoringRule
       User-Agent:
-      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
+      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/zjk-73d-bwn
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/5ri-aq2-gz8
   response:
     body:
-      string: '{"errors":["Threat detection rule not found: zjk-73d-bwn"]}'
+      string: '{"errors":["Threat detection rule not found: 5ri-aq2-gz8"]}'
     headers:
       Connection:
       - keep-alive
@@ -122,7 +125,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 15 Apr 2021 08:53:14 GMT
+      - Mon, 19 Apr 2021 11:25:29 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -136,7 +139,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4317157'
+      - '35.4339380'
       x-frame-options:
       - SAMEORIGIN
     status:
