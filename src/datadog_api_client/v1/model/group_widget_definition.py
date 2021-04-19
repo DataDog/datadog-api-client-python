@@ -26,10 +26,12 @@ def lazy_import():
     from datadog_api_client.v1.model.group_widget_definition_type import GroupWidgetDefinitionType
     from datadog_api_client.v1.model.widget import Widget
     from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
+    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 
     globals()["GroupWidgetDefinitionType"] = GroupWidgetDefinitionType
     globals()["Widget"] = Widget
     globals()["WidgetLayoutType"] = WidgetLayoutType
+    globals()["WidgetTextAlign"] = WidgetTextAlign
 
 
 class GroupWidgetDefinition(ModelNormal):
@@ -79,7 +81,9 @@ class GroupWidgetDefinition(ModelNormal):
             "layout_type": (WidgetLayoutType,),  # noqa: E501
             "type": (GroupWidgetDefinitionType,),  # noqa: E501
             "widgets": ([Widget],),  # noqa: E501
+            "background_color": (str,),  # noqa: E501
             "title": (str,),  # noqa: E501
+            "title_align": (WidgetTextAlign,),  # noqa: E501
         }
 
     @cached_property
@@ -90,7 +94,9 @@ class GroupWidgetDefinition(ModelNormal):
         "layout_type": "layout_type",  # noqa: E501
         "type": "type",  # noqa: E501
         "widgets": "widgets",  # noqa: E501
+        "background_color": "background_color",  # noqa: E501
         "title": "title",  # noqa: E501
+        "title_align": "title_align",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -146,7 +152,9 @@ class GroupWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            background_color (str): Background color of the group title.. [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
