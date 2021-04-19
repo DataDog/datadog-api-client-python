@@ -67,9 +67,10 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
   Scenario: Get all dashboards returns "OK" response
     Given new "ListDashboards" request
+    And there is a valid "dashboard" in the system
+    And request contains "filter[shared]" parameter with value false
     When the request is sent
     Then the response status is 200 OK
 
