@@ -161,13 +161,27 @@ class DashboardsApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
+            params_map={
+                "all": [
+                    "filter_shared",
+                ],
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
             root_map={
                 "validations": {},
                 "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
+                "openapi_types": {
+                    "filter_shared": (bool,),
+                },
+                "attribute_map": {
+                    "filter_shared": "filter[shared]",
+                },
+                "location_map": {
+                    "filter_shared": "query",
+                },
                 "collection_format_map": {},
             },
             headers_map={
@@ -360,6 +374,7 @@ class DashboardsApi(object):
 
 
         Keyword Args:
+            filter_shared (bool): When `true`, this query only returns shared custom created or cloned dashboards.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

@@ -530,6 +530,8 @@ class ApiClient(object):
                         delimiter = ","
                     new_params.append((k, delimiter.join(str(value) for value in v)))
             else:
+                if isinstance(v, bool):
+                    v = json.dumps(v)
                 new_params.append((k, v))
         return new_params
 
