@@ -278,11 +278,13 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboards_api.DashboardsApi(api_client)
+    filter_shared = True  # bool | When `true`, this query only returns shared custom created or cloned dashboards. (optional)
 
-    # example, this endpoint has no required or optional parameters
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Get all dashboards
-        api_response = api_instance.list_dashboards()
+        api_response = api_instance.list_dashboards(filter_shared=filter_shared)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DashboardsApi->list_dashboards: %s\n" % e)
@@ -290,7 +292,10 @@ with ApiClient(configuration) as api_client:
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter_shared** | **bool**| When &#x60;true&#x60;, this query only returns shared custom created or cloned dashboards. | [optional]
 
 ### Return type
 
