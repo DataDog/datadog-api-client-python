@@ -15375,6 +15375,8 @@ paths:
 
         - rum: `rum alert`
 
+        - SLO: `slo alert`
+
         - watchdog: `event alert`
 
         - event-v2: `event-v2 alert`
@@ -15579,7 +15581,22 @@ paths:
         to filter results by these tags.
 
         It is only available via the API and isn''t visible or editable in the Datadog
-        UI.'
+        UI.
+
+
+        **SLO Alert Query**
+
+
+        Example: `error_budget("slo_id").over("time_window") operator #`
+
+
+        - **`slo_id`**: The alphanumeric SLO ID of the SLO you are configuring the
+        alert for.
+
+        - **`time_window`**: The time window of the SLO target you wish to alert on.
+        Valid options: `7d`, `30d`, `90d`.
+
+        - **`operator`**: `>=` or `>`'
       operationId: CreateMonitor
       requestBody:
         content:
