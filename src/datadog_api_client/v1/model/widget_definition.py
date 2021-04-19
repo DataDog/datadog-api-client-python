@@ -273,6 +273,7 @@ class WidgetDefinition(ModelComposed):
             tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]  # noqa: E501
             color (str): Color of the text.. [optional]  # noqa: E501
             font_size (str): Size of the text.. [optional]  # noqa: E501
+            background_color (str): Background color of the note.. [optional]  # noqa: E501
             events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
             yaxis (WidgetAxis): [optional]  # noqa: E501
             no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]  # noqa: E501
@@ -296,7 +297,6 @@ class WidgetDefinition(ModelComposed):
             show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]  # noqa: E501
             start (int): The start of the list. Typically 0.. [optional]  # noqa: E501
             summary_type (WidgetSummaryType): [optional]  # noqa: E501
-            background_color (str): Background color of the note.. [optional]  # noqa: E501
             show_tick (bool): Whether to show a tick or not.. [optional]  # noqa: E501
             tick_edge (WidgetTickEdge): [optional]  # noqa: E501
             tick_pos (str): Where to position the tick on an edge.. [optional]  # noqa: E501
