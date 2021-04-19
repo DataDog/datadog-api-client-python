@@ -9187,6 +9187,22 @@ components:
           description: The network host usage by tag(s).
           format: double
           type: number
+        profiled_containers_percentage:
+          description: The percentage of profiled containers usage by tag(s).
+          format: double
+          type: number
+        profiled_containers_usage:
+          description: The profiled container usage by tag(s).
+          format: double
+          type: number
+        profiled_hosts_percentage:
+          description: The percentage of profiled hosts usage by tag(s).
+          format: double
+          type: number
+        profiled_hosts_usage:
+          description: The profiled host usage by tag(s).
+          format: double
+          type: number
         snmp_percentage:
           description: The percentage of network device usage by tag(s).
           format: double
