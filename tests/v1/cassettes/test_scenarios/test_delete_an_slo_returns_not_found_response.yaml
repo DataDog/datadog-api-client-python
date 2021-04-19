@@ -12,10 +12,10 @@ interactions:
       - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
         x86_64)
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/testdeleteansloreturnsnotfoundresponse1618241473
+    uri: https://api.datadoghq.com/api/v1/slo/testdeleteansloreturnsnotfoundresponse1618831572
   response:
     body:
-      string: '{"errors": ["SLO not found: testdeleteansloreturnsnotfoundresponse1618241473
+      string: '{"errors": ["SLO not found: testdeleteansloreturnsnotfoundresponse1618831572
         not found"]}'
     headers:
       Connection:
@@ -25,7 +25,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 12 Apr 2021 15:31:13 GMT
+      - Mon, 19 Apr 2021 11:26:13 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -39,7 +39,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4290400'
+      - '35.4339380'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -47,7 +47,7 @@ interactions:
       x-ratelimit-period:
       - '10'
       x-ratelimit-remaining:
-      - '2999'
+      - '2998'
       x-ratelimit-reset:
       - '7'
     status:
