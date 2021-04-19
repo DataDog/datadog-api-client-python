@@ -85,6 +85,10 @@ class UsageAttributionValues(ModelNormal):
             "lambda_usage": (float,),  # noqa: E501
             "npm_host_percentage": (float,),  # noqa: E501
             "npm_host_usage": (float,),  # noqa: E501
+            "profiled_containers_percentage": (float,),  # noqa: E501
+            "profiled_containers_usage": (float,),  # noqa: E501
+            "profiled_hosts_percentage": (float,),  # noqa: E501
+            "profiled_hosts_usage": (float,),  # noqa: E501
             "snmp_percentage": (float,),  # noqa: E501
             "snmp_usage": (float,),  # noqa: E501
         }
@@ -114,6 +118,10 @@ class UsageAttributionValues(ModelNormal):
         "lambda_usage": "lambda_usage",  # noqa: E501
         "npm_host_percentage": "npm_host_percentage",  # noqa: E501
         "npm_host_usage": "npm_host_usage",  # noqa: E501
+        "profiled_containers_percentage": "profiled_containers_percentage",  # noqa: E501
+        "profiled_containers_usage": "profiled_containers_usage",  # noqa: E501
+        "profiled_hosts_percentage": "profiled_hosts_percentage",  # noqa: E501
+        "profiled_hosts_usage": "profiled_hosts_usage",  # noqa: E501
         "snmp_percentage": "snmp_percentage",  # noqa: E501
         "snmp_usage": "snmp_usage",  # noqa: E501
     }
@@ -186,6 +194,10 @@ class UsageAttributionValues(ModelNormal):
             lambda_usage (float): The Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_usage instead.. [optional]  # noqa: E501
             npm_host_percentage (float): The percentage of network host usage by tag(s).. [optional]  # noqa: E501
             npm_host_usage (float): The network host usage by tag(s).. [optional]  # noqa: E501
+            profiled_containers_percentage (float): The percentage of profiled containers usage by tag(s).. [optional]  # noqa: E501
+            profiled_containers_usage (float): The profiled container usage by tag(s).. [optional]  # noqa: E501
+            profiled_hosts_percentage (float): The percentage of profiled hosts usage by tag(s).. [optional]  # noqa: E501
+            profiled_hosts_usage (float): The profiled host usage by tag(s).. [optional]  # noqa: E501
             snmp_percentage (float): The percentage of network device usage by tag(s).. [optional]  # noqa: E501
             snmp_usage (float): The network device usage by tag(s).. [optional]  # noqa: E501
         """
