@@ -1532,7 +1532,7 @@ class SyntheticsApi(object):
         return self._get_api_test_endpoint.call_with_http_info(**kwargs)
 
     def get_api_test_latest_results(self, public_id, **kwargs):
-        """Get the test's latest results summaries (API)  # noqa: E501
+        """Get an API test's latest results summaries  # noqa: E501
 
         Get the last 50 test results summaries for a given Synthetics API test.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1578,7 +1578,7 @@ class SyntheticsApi(object):
         return self._get_api_test_latest_results_endpoint.call_with_http_info(**kwargs)
 
     def get_api_test_result(self, public_id, result_id, **kwargs):
-        """Get a test result (API)  # noqa: E501
+        """Get an API test result  # noqa: E501
 
         Get a specific full result from a given (API) Synthetic test.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1623,7 +1623,7 @@ class SyntheticsApi(object):
         return self._get_api_test_result_endpoint.call_with_http_info(**kwargs)
 
     def get_browser_test(self, public_id, **kwargs):
-        """Get a test configuration (browser)  # noqa: E501
+        """Get a browser test  # noqa: E501
 
         Get the detailed configuration (including steps) associated with a Synthetic browser test.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1666,7 +1666,7 @@ class SyntheticsApi(object):
         return self._get_browser_test_endpoint.call_with_http_info(**kwargs)
 
     def get_browser_test_latest_results(self, public_id, **kwargs):
-        """Get the test's latest results summaries (browser)  # noqa: E501
+        """Get a browser test's latest results summaries  # noqa: E501
 
         Get the last 50 test results summaries for a given Synthetics Browser test.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1712,7 +1712,7 @@ class SyntheticsApi(object):
         return self._get_browser_test_latest_results_endpoint.call_with_http_info(**kwargs)
 
     def get_browser_test_result(self, public_id, result_id, **kwargs):
-        """Get a test result (browser)  # noqa: E501
+        """Get a browser test result  # noqa: E501
 
         Get a specific full result from a given (browser) Synthetic test.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1966,7 +1966,7 @@ class SyntheticsApi(object):
         return self._list_tests_endpoint.call_with_http_info(**kwargs)
 
     def trigger_ci_tests(self, body, **kwargs):
-        """Trigger some Synthetics tests for CI  # noqa: E501
+        """Trigger tests from CI/CD pipelines  # noqa: E501
 
         Trigger a set of Synthetics tests for continuous integration.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
