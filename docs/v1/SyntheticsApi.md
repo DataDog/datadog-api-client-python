@@ -14,17 +14,17 @@ Method | HTTP request | Description
 [**delete_tests**](SyntheticsApi.md#delete_tests) | **POST** /api/v1/synthetics/tests/delete | Delete tests
 [**edit_global_variable**](SyntheticsApi.md#edit_global_variable) | **PUT** /api/v1/synthetics/variables/{variable_id} | Edit a global variable
 [**get_api_test**](SyntheticsApi.md#get_api_test) | **GET** /api/v1/synthetics/tests/api/{public_id} | Get an API test
-[**get_api_test_latest_results**](SyntheticsApi.md#get_api_test_latest_results) | **GET** /api/v1/synthetics/tests/{public_id}/results | Get the test&#39;s latest results summaries (API)
-[**get_api_test_result**](SyntheticsApi.md#get_api_test_result) | **GET** /api/v1/synthetics/tests/{public_id}/results/{result_id} | Get a test result (API)
-[**get_browser_test**](SyntheticsApi.md#get_browser_test) | **GET** /api/v1/synthetics/tests/browser/{public_id} | Get a test configuration (browser)
-[**get_browser_test_latest_results**](SyntheticsApi.md#get_browser_test_latest_results) | **GET** /api/v1/synthetics/tests/browser/{public_id}/results | Get the test&#39;s latest results summaries (browser)
-[**get_browser_test_result**](SyntheticsApi.md#get_browser_test_result) | **GET** /api/v1/synthetics/tests/browser/{public_id}/results/{result_id} | Get a test result (browser)
+[**get_api_test_latest_results**](SyntheticsApi.md#get_api_test_latest_results) | **GET** /api/v1/synthetics/tests/{public_id}/results | Get an API test&#39;s latest results summaries
+[**get_api_test_result**](SyntheticsApi.md#get_api_test_result) | **GET** /api/v1/synthetics/tests/{public_id}/results/{result_id} | Get an API test result
+[**get_browser_test**](SyntheticsApi.md#get_browser_test) | **GET** /api/v1/synthetics/tests/browser/{public_id} | Get a browser test
+[**get_browser_test_latest_results**](SyntheticsApi.md#get_browser_test_latest_results) | **GET** /api/v1/synthetics/tests/browser/{public_id}/results | Get a browser test&#39;s latest results summaries
+[**get_browser_test_result**](SyntheticsApi.md#get_browser_test_result) | **GET** /api/v1/synthetics/tests/browser/{public_id}/results/{result_id} | Get a browser test result
 [**get_global_variable**](SyntheticsApi.md#get_global_variable) | **GET** /api/v1/synthetics/variables/{variable_id} | Get a global variable
 [**get_private_location**](SyntheticsApi.md#get_private_location) | **GET** /api/v1/synthetics/private-locations/{location_id} | Get a private location
 [**get_test**](SyntheticsApi.md#get_test) | **GET** /api/v1/synthetics/tests/{public_id} | Get a test configuration (API)
 [**list_locations**](SyntheticsApi.md#list_locations) | **GET** /api/v1/synthetics/locations | Get all locations (public and private)
 [**list_tests**](SyntheticsApi.md#list_tests) | **GET** /api/v1/synthetics/tests | Get the list of all tests
-[**trigger_ci_tests**](SyntheticsApi.md#trigger_ci_tests) | **POST** /api/v1/synthetics/tests/trigger/ci | Trigger some Synthetics tests for CI
+[**trigger_ci_tests**](SyntheticsApi.md#trigger_ci_tests) | **POST** /api/v1/synthetics/tests/trigger/ci | Trigger tests from CI/CD pipelines
 [**update_api_test**](SyntheticsApi.md#update_api_test) | **PUT** /api/v1/synthetics/tests/api/{public_id} | Edit an API test
 [**update_browser_test**](SyntheticsApi.md#update_browser_test) | **PUT** /api/v1/synthetics/tests/browser/{public_id} | Edit a browser test
 [**update_private_location**](SyntheticsApi.md#update_private_location) | **PUT** /api/v1/synthetics/private-locations/{location_id} | Edit a private location
@@ -1055,7 +1055,7 @@ Name | Type | Description  | Notes
 # **get_api_test_latest_results**
 > SyntheticsGetAPITestLatestResultsResponse get_api_test_latest_results(public_id)
 
-Get the test's latest results summaries (API)
+Get an API test's latest results summaries
 
 Get the last 50 test results summaries for a given Synthetics API test.
 
@@ -1086,7 +1086,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get the test's latest results summaries (API)
+        # Get an API test's latest results summaries
         api_response = api_instance.get_api_test_latest_results(public_id)
         pprint(api_response)
     except ApiException as e:
@@ -1095,7 +1095,7 @@ with ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get the test's latest results summaries (API)
+        # Get an API test's latest results summaries
         api_response = api_instance.get_api_test_latest_results(public_id, from_ts=from_ts, to_ts=to_ts, probe_dc=probe_dc)
         pprint(api_response)
     except ApiException as e:
@@ -1138,7 +1138,7 @@ Name | Type | Description  | Notes
 # **get_api_test_result**
 > SyntheticsAPITestResultFull get_api_test_result(public_id, result_id)
 
-Get a test result (API)
+Get an API test result
 
 Get a specific full result from a given (API) Synthetic test.
 
@@ -1165,7 +1165,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get a test result (API)
+        # Get an API test result
         api_response = api_instance.get_api_test_result(public_id, result_id)
         pprint(api_response)
     except ApiException as e:
@@ -1206,7 +1206,7 @@ Name | Type | Description  | Notes
 # **get_browser_test**
 > SyntheticsBrowserTest get_browser_test(public_id)
 
-Get a test configuration (browser)
+Get a browser test
 
 Get the detailed configuration (including steps) associated with a Synthetic browser test.
 
@@ -1232,7 +1232,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get a test configuration (browser)
+        # Get a browser test
         api_response = api_instance.get_browser_test(public_id)
         pprint(api_response)
     except ApiException as e:
@@ -1272,7 +1272,7 @@ Name | Type | Description  | Notes
 # **get_browser_test_latest_results**
 > SyntheticsGetBrowserTestLatestResultsResponse get_browser_test_latest_results(public_id)
 
-Get the test's latest results summaries (browser)
+Get a browser test's latest results summaries
 
 Get the last 50 test results summaries for a given Synthetics Browser test.
 
@@ -1303,7 +1303,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get the test's latest results summaries (browser)
+        # Get a browser test's latest results summaries
         api_response = api_instance.get_browser_test_latest_results(public_id)
         pprint(api_response)
     except ApiException as e:
@@ -1312,7 +1312,7 @@ with ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get the test's latest results summaries (browser)
+        # Get a browser test's latest results summaries
         api_response = api_instance.get_browser_test_latest_results(public_id, from_ts=from_ts, to_ts=to_ts, probe_dc=probe_dc)
         pprint(api_response)
     except ApiException as e:
@@ -1355,7 +1355,7 @@ Name | Type | Description  | Notes
 # **get_browser_test_result**
 > SyntheticsBrowserTestResultFull get_browser_test_result(public_id, result_id)
 
-Get a test result (browser)
+Get a browser test result
 
 Get a specific full result from a given (browser) Synthetic test.
 
@@ -1382,7 +1382,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get a test result (browser)
+        # Get a browser test result
         api_response = api_instance.get_browser_test_result(public_id, result_id)
         pprint(api_response)
     except ApiException as e:
@@ -1742,7 +1742,7 @@ This endpoint does not need any parameter.
 # **trigger_ci_tests**
 > SyntheticsTriggerCITestsResponse trigger_ci_tests(body)
 
-Trigger some Synthetics tests for CI
+Trigger tests from CI/CD pipelines
 
 Trigger a set of Synthetics tests for continuous integration.
 
@@ -1810,7 +1810,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Trigger some Synthetics tests for CI
+        # Trigger tests from CI/CD pipelines
         api_response = api_instance.trigger_ci_tests(body)
         pprint(api_response)
     except ApiException as e:

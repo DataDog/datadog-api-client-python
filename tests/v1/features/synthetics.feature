@@ -274,6 +274,50 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get a browser test result returns "- Synthetic is not activated for the user" response
+    Given new "GetBrowserTestResult" request
+    And request contains "public_id" parameter from "<PATH>"
+    And request contains "result_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Get a browser test result returns "OK" response
+    Given new "GetBrowserTestResult" request
+    And request contains "public_id" parameter from "<PATH>"
+    And request contains "result_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get a browser test returns "- Synthetic is not activated for the user" response
+    Given new "GetBrowserTest" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Get a browser test returns "OK" response
+    Given new "GetBrowserTest" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get a browser test's latest results summaries returns "- Synthetic is not activated for the user" response
+    Given new "GetBrowserTestLatestResults" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Get a browser test's latest results summaries returns "OK" response
+    Given new "GetBrowserTestLatestResults" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get a global variable returns "Not found" response
     Given new "GetGlobalVariable" request
     And request contains "variable_id" parameter from "<PATH>"
@@ -316,54 +360,24 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Get a test configuration (browser) returns "- Synthetic is not activated for the user" response
-    Given new "GetBrowserTest" request
-    And request contains "public_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
-
-  @generated @skip
-  Scenario: Get a test configuration (browser) returns "OK" response
-    Given new "GetBrowserTest" request
-    And request contains "public_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Get a test result (API) returns "- Synthetic is not activated for the user" response
-    Given new "GetAPITestResult" request
-    And request contains "public_id" parameter from "<PATH>"
-    And request contains "result_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
-
-  @generated @skip
-  Scenario: Get a test result (API) returns "OK" response
-    Given new "GetAPITestResult" request
-    And request contains "public_id" parameter from "<PATH>"
-    And request contains "result_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Get a test result (browser) returns "- Synthetic is not activated for the user" response
-    Given new "GetBrowserTestResult" request
-    And request contains "public_id" parameter from "<PATH>"
-    And request contains "result_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
-
-  @generated @skip
-  Scenario: Get a test result (browser) returns "OK" response
-    Given new "GetBrowserTestResult" request
-    And request contains "public_id" parameter from "<PATH>"
-    And request contains "result_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
   Scenario: Get all locations (public and private) returns "OK" response
     Given new "ListLocations" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get an API test result returns "- Synthetic is not activated for the user" response
+    Given new "GetAPITestResult" request
+    And request contains "public_id" parameter from "<PATH>"
+    And request contains "result_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Get an API test result returns "OK" response
+    Given new "GetAPITestResult" request
+    And request contains "public_id" parameter from "<PATH>"
+    And request contains "result_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
@@ -382,6 +396,20 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get an API test's latest results summaries returns "- Synthetic is not activated for the user" response
+    Given new "GetAPITestLatestResults" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 - Synthetic is not activated for the user
+
+  @generated @skip
+  Scenario: Get an API test's latest results summaries returns "OK" response
+    Given new "GetAPITestLatestResults" request
+    And request contains "public_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get the list of all tests returns "OK - Returns the list of all Synthetic tests." response
     Given new "ListTests" request
     When the request is sent
@@ -392,34 +420,6 @@ Feature: Synthetics
     Given new "ListTests" request
     When the request is sent
     Then the response status is 404 Synthetics is not activated for the user.
-
-  @generated @skip
-  Scenario: Get the test's latest results summaries (API) returns "- Synthetic is not activated for the user" response
-    Given new "GetAPITestLatestResults" request
-    And request contains "public_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
-
-  @generated @skip
-  Scenario: Get the test's latest results summaries (API) returns "OK" response
-    Given new "GetAPITestLatestResults" request
-    And request contains "public_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Get the test's latest results summaries (browser) returns "- Synthetic is not activated for the user" response
-    Given new "GetBrowserTestLatestResults" request
-    And request contains "public_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
-
-  @generated @skip
-  Scenario: Get the test's latest results summaries (browser) returns "OK" response
-    Given new "GetBrowserTestLatestResults" request
-    And request contains "public_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 200 OK
 
   @generated @skip
   Scenario: Pause or start a test returns "- Synthetic is not activated for the user" response
@@ -446,14 +446,14 @@ Feature: Synthetics
     Then the response status is 200 OK - Returns a boolean indicating if the update was successful.
 
   @generated @skip
-  Scenario: Trigger some Synthetics tests for CI returns "JSON format is wrong" response
+  Scenario: Trigger tests from CI/CD pipelines returns "JSON format is wrong" response
     Given new "TriggerCITests" request
     And body {"tests": []}
     When the request is sent
     Then the response status is 400 JSON format is wrong
 
   @generated @skip
-  Scenario: Trigger some Synthetics tests for CI returns "OK" response
+  Scenario: Trigger tests from CI/CD pipelines returns "OK" response
     Given new "TriggerCITests" request
     And body {"tests": []}
     When the request is sent
