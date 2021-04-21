@@ -43,7 +43,7 @@ Feature: Security Monitoring
   Scenario: Get a list of security signals returns "Bad Request" response
     Given operation "SearchSecurityMonitoringSignals" enabled
     And new "SearchSecurityMonitoringSignals" request
-    And body {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": null}
+    And body {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -51,7 +51,7 @@ Feature: Security Monitoring
   Scenario: Get a list of security signals returns "OK" response
     Given operation "SearchSecurityMonitoringSignals" enabled
     And new "SearchSecurityMonitoringSignals" request
-    And body {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": null}
+    And body {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -99,7 +99,7 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
-    And body {"cases": [{"condition": null, "name": null, "notifications": [], "status": null}], "filters": [{"action": null, "query": null}], "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": null, "evaluationWindow": null, "keepAlive": null, "maxSignalDuration": null, "newValueOptions": {"forgetAfter": null, "learningDuration": null}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": null, "distinctFields": [], "groupByFields": [], "metric": null, "name": null, "query": null}], "tags": []}
+    And body {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "info"}], "filters": [{"action": "require", "query": null}], "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null]}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -107,7 +107,7 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
-    And body {"cases": [{"condition": null, "name": null, "notifications": [], "status": null}], "filters": [{"action": null, "query": null}], "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": null, "evaluationWindow": null, "keepAlive": null, "maxSignalDuration": null, "newValueOptions": {"forgetAfter": null, "learningDuration": null}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": null, "distinctFields": [], "groupByFields": [], "metric": null, "name": null, "query": null}], "tags": []}
+    And body {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "info"}], "filters": [{"action": "require", "query": null}], "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null]}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -115,6 +115,6 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
-    And body {"cases": [{"condition": null, "name": null, "notifications": [], "status": null}], "filters": [{"action": null, "query": null}], "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": null, "evaluationWindow": null, "keepAlive": null, "maxSignalDuration": null, "newValueOptions": {"forgetAfter": null, "learningDuration": null}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": null, "distinctFields": [], "groupByFields": [], "metric": null, "name": null, "query": null}], "tags": []}
+    And body {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "info"}], "filters": [{"action": "require", "query": null}], "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null]}
     When the request is sent
     Then the response status is 200 OK

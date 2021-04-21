@@ -41,7 +41,7 @@ Feature: Roles
   @generated @skip
   Scenario: Create role returns "Bad Request" response
     Given new "CreateRole" request
-    And body {"data": {"attributes": {"created_at": null, "modified_at": null, "name": "developers"}, "relationships": {"permissions": {"data": [{"id": null, "type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
+    And body {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"id": null, "type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -216,7 +216,7 @@ Feature: Roles
   Scenario: Update a role returns "Bad Request" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"created_at": null, "modified_at": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
+    And body {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -224,7 +224,7 @@ Feature: Roles
   Scenario: Update a role returns "Not found" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"created_at": null, "modified_at": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
+    And body {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -241,6 +241,6 @@ Feature: Roles
   Scenario: Update a role returns "Unprocessable Entity" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"created_at": null, "modified_at": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
+    And body {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

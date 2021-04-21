@@ -33,14 +33,14 @@ Feature: AWS Integration
   @generated @skip
   Scenario: Delete a tag filtering entry returns "Bad Request" response
     Given new "DeleteAWSTagFilter" request
-    And body {"account_id": "FAKEAC0FAKEAC2FAKEAC", "namespace": null}
+    And body {"account_id": "FAKEAC0FAKEAC2FAKEAC", "namespace": "elb"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Delete a tag filtering entry returns "OK" response
     Given new "DeleteAWSTagFilter" request
-    And body {"account_id": "FAKEAC0FAKEAC2FAKEAC", "namespace": null}
+    And body {"account_id": "FAKEAC0FAKEAC2FAKEAC", "namespace": "elb"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -112,14 +112,14 @@ Feature: AWS Integration
   @generated @skip
   Scenario: Set an AWS tag filter returns "Bad Request" response
     Given new "CreateAWSTagFilter" request
-    And body {"account_id": "1234567", "namespace": null, "tag_filter_str": "prod*"}
+    And body {"account_id": "1234567", "namespace": "elb", "tag_filter_str": "prod*"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Set an AWS tag filter returns "OK" response
     Given new "CreateAWSTagFilter" request
-    And body {"account_id": "1234567", "namespace": null, "tag_filter_str": "prod*"}
+    And body {"account_id": "1234567", "namespace": "elb", "tag_filter_str": "prod*"}
     When the request is sent
     Then the response status is 200 OK
 
