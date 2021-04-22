@@ -328,7 +328,6 @@ from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-configuration.unstable_operations["list_tags_by_metric_name"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
@@ -397,7 +396,6 @@ from datadog_api_client.v2.models import *
 from pprint import pprint
 # See configuration.py for a list of all supported configuration parameters.
 configuration = Configuration()
-configuration.unstable_operations["list_volumes_by_metric_name"] = True
 
 # Enter a context with an instance of the API client
 with ApiClient(configuration) as api_client:
