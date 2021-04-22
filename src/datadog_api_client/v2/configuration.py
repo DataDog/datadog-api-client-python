@@ -244,8 +244,6 @@ class Configuration(object):
             "delete_tag_configuration": False,
             "list_tag_configuration_by_name": False,
             "list_tag_configurations": False,
-            "list_tags_by_metric_name": False,
-            "list_volumes_by_metric_name": False,
             "update_tag_configuration": False,
             "list_security_monitoring_signals": False,
             "search_security_monitoring_signals": False,
