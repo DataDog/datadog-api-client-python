@@ -1,0 +1,269 @@
+interactions:
+- request:
+    body: '{"type": "metric", "name": "Test-Update_an_SLO_correction_returns_OK_response-1619078389",
+      "thresholds": [{"timeframe": "7d", "target": 95.0, "warning": 98.0}], "query":
+      {"numerator": "sum:httpservice.hits{code:2xx}.as_count()", "denominator": "sum:httpservice.hits{!code:3xx}.as_count()"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateSlo
+      User-Agent:
+      - datadog-api-client-python/0.1.dev309 (python 3.9.4; os Linux; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/slo
+  response:
+    body:
+      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","email":"team-intg-tools-libs@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"7277f19dc8ba554389f98179bc1debb4","name":"Test-Update_an_SLO_correction_returns_OK_response-1619078389","created_at":1619078389,"tags":[],"modified_at":1619078389,"type":"metric"}],"error":null}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '617'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 22 Apr 2021 07:59:49 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4367882'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '500'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '485'
+      x-ratelimit-reset:
+      - '11'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data": {"attributes": {"slo_id": "7277f19dc8ba554389f98179bc1debb4",
+      "start": 1619078389, "end": 1619081989, "category": "Other", "timezone": "UTC",
+      "description": "Test Correction"}, "type": "correction"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateSloCorrection
+      User-Agent:
+      - datadog-api-client-python/0.1.dev309 (python 3.9.4; os Linux; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/slo/correction
+  response:
+    body:
+      string: '{"data":{"type":"correction","id":"b66c773a-a340-11eb-9fc2-da7ad0900002","attributes":{"slo_id":"7277f19dc8ba554389f98179bc1debb4","start":1619078389,"end":1619081989,"description":"Test
+        Correction","category":"Other","timezone":"UTC","creator":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs@datadoghq.com","name":"CI
+        Account","icon":"https://secure.gravatar.com/avatar/bff625f8b50529c690eb616cd5e64167?s=48&d=retro"}}}}}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '581'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 22 Apr 2021 07:59:49 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4367882'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '12000'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '11985'
+      x-ratelimit-reset:
+      - '11'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data": {"attributes": {"category": "Deployment", "description": "Test-Update_an_SLO_correction_returns_OK_response-1619078389",
+      "end": 1619081989, "start": 1619078389, "timezone": "UTC"}, "type": "correction"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - UpdateSloCorrection
+      User-Agent:
+      - datadog-api-client-python/0.1.dev309 (python 3.9.4; os Linux; arch x86_64)
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v1/slo/correction/b66c773a-a340-11eb-9fc2-da7ad0900002
+  response:
+    body:
+      string: '{"data":{"type":"correction","id":"b66c773a-a340-11eb-9fc2-da7ad0900002","attributes":{"slo_id":"7277f19dc8ba554389f98179bc1debb4","start":1619078389,"end":1619081989,"description":"Test-Update_an_SLO_correction_returns_OK_response-1619078389","category":"Deployment","timezone":"UTC","creator":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs@datadoghq.com","name":"CI
+        Account","icon":"https://secure.gravatar.com/avatar/bff625f8b50529c690eb616cd5e64167?s=48&d=retro"}}}}}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '631'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 22 Apr 2021 07:59:50 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4367882'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '12000'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '11995'
+      x-ratelimit-reset:
+      - '11'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteSloCorrection
+      User-Agent:
+      - datadog-api-client-python/0.1.dev309 (python 3.9.4; os Linux; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/slo/correction/b66c773a-a340-11eb-9fc2-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 22 Apr 2021 07:59:50 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4367882'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '12000'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '11985'
+      x-ratelimit-reset:
+      - '10'
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteSlo
+      User-Agent:
+      - datadog-api-client-python/0.1.dev309 (python 3.9.4; os Linux; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/slo/7277f19dc8ba554389f98179bc1debb4
+  response:
+    body:
+      string: '{"data":["7277f19dc8ba554389f98179bc1debb4"],"error":null}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '58'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 22 Apr 2021 07:59:50 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4367882'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '3000'
+      x-ratelimit-period:
+      - '10'
+      x-ratelimit-remaining:
+      - '2999'
+      x-ratelimit-reset:
+      - '10'
+    status:
+      code: 200
+      message: OK
+version: 1
