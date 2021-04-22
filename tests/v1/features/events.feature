@@ -28,7 +28,7 @@ Feature: Events
   @generated @skip
   Scenario: Post an event returns "Bad Request" response
     Given new "CreateEvent" request
-    And body {"aggregation_key": null, "alert_type": "info", "date_happened": null, "device_name": null, "host": null, "id": null, "payload": "{}", "priority": "normal", "related_event_id": null, "source_type_name": null, "tags": ["environment:test"], "text": "Oh boy!", "title": "Did you hear the news today?", "url": null}
+    And body {"aggregation_key": null, "alert_type": "info", "date_happened": null, "device_name": null, "host": null, "priority": "normal", "related_event_id": null, "source_type_name": null, "tags": ["environment:test"], "text": "Oh boy!", "title": "Did you hear the news today?"}
     When the request is sent
     Then the response status is 400 Bad Request
 
