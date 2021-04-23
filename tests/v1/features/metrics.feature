@@ -107,7 +107,7 @@ Feature: Metrics
 
   Scenario: Submit metrics returns "Payload accepted" response
     Given new "SubmitMetrics" request
-    And body {"series": [{"metric": "system.load.1", "points": [[1600348600, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}
+    And body {"series": [{"metric": "system.load.1", "type": "gauge", "points": [[1600348600, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}
     When the request is sent
     Then the response status is 202 Payload accepted
 
