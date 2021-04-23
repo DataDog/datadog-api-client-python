@@ -25,11 +25,17 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 def lazy_import():
     from datadog_api_client.v1.model.distribution_widget_definition_type import DistributionWidgetDefinitionType
     from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
+    from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
+    from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
+    from datadog_api_client.v1.model.widget_marker import WidgetMarker
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.widget_time import WidgetTime
 
     globals()["DistributionWidgetDefinitionType"] = DistributionWidgetDefinitionType
     globals()["DistributionWidgetRequest"] = DistributionWidgetRequest
+    globals()["DistributionWidgetXAxis"] = DistributionWidgetXAxis
+    globals()["DistributionWidgetYAxis"] = DistributionWidgetYAxis
+    globals()["WidgetMarker"] = WidgetMarker
     globals()["WidgetTextAlign"] = WidgetTextAlign
     globals()["WidgetTime"] = WidgetTime
 
@@ -86,11 +92,14 @@ class DistributionWidgetDefinition(ModelNormal):
             "requests": ([DistributionWidgetRequest],),  # noqa: E501
             "type": (DistributionWidgetDefinitionType,),  # noqa: E501
             "legend_size": (str,),  # noqa: E501
+            "markers": ([WidgetMarker],),  # noqa: E501
             "show_legend": (bool,),  # noqa: E501
             "time": (WidgetTime,),  # noqa: E501
             "title": (str,),  # noqa: E501
             "title_align": (WidgetTextAlign,),  # noqa: E501
             "title_size": (str,),  # noqa: E501
+            "xaxis": (DistributionWidgetXAxis,),  # noqa: E501
+            "yaxis": (DistributionWidgetYAxis,),  # noqa: E501
         }
 
     @cached_property
@@ -101,11 +110,14 @@ class DistributionWidgetDefinition(ModelNormal):
         "requests": "requests",  # noqa: E501
         "type": "type",  # noqa: E501
         "legend_size": "legend_size",  # noqa: E501
+        "markers": "markers",  # noqa: E501
         "show_legend": "show_legend",  # noqa: E501
         "time": "time",  # noqa: E501
         "title": "title",  # noqa: E501
         "title_align": "title_align",  # noqa: E501
         "title_size": "title_size",  # noqa: E501
+        "xaxis": "xaxis",  # noqa: E501
+        "yaxis": "yaxis",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -160,12 +172,15 @@ class DistributionWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
-            show_legend (bool): Whether or not to display the legend on this widget.. [optional]  # noqa: E501
+            legend_size (str): (Deprecated) The widget legend was replaced by a tooltip and sidebar.. [optional]  # noqa: E501
+            markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
+            show_legend (bool): (Deprecated) The widget legend was replaced by a tooltip and sidebar.. [optional]  # noqa: E501
             time (WidgetTime): [optional]  # noqa: E501
             title (str): Title of the widget.. [optional]  # noqa: E501
             title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
+            xaxis (DistributionWidgetXAxis): [optional]  # noqa: E501
+            yaxis (DistributionWidgetYAxis): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

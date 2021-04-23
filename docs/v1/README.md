@@ -343,6 +343,8 @@ Class | Method | HTTP request | Description
  - [DistributionWidgetDefinition](DistributionWidgetDefinition.md)
  - [DistributionWidgetDefinitionType](DistributionWidgetDefinitionType.md)
  - [DistributionWidgetRequest](DistributionWidgetRequest.md)
+ - [DistributionWidgetXAxis](DistributionWidgetXAxis.md)
+ - [DistributionWidgetYAxis](DistributionWidgetYAxis.md)
  - [Downtime](Downtime.md)
  - [DowntimeRecurrence](DowntimeRecurrence.md)
  - [Event](Event.md)

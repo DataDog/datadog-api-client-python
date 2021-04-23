@@ -71,6 +71,8 @@ from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
 from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
 from datadog_api_client.v1.model.distribution_widget_definition_type import DistributionWidgetDefinitionType
 from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
+from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
+from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
 from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 from datadog_api_client.v1.model.event import Event
