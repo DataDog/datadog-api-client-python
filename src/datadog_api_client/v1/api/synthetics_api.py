@@ -1843,7 +1843,7 @@ class SyntheticsApi(object):
         return self._get_private_location_endpoint.call_with_http_info(**kwargs)
 
     def get_test(self, public_id, **kwargs):
-        """Get a test configuration (API)  # noqa: E501
+        """Get a test configuration  # noqa: E501
 
         Get the detailed configuration associated with a Synthetics test.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

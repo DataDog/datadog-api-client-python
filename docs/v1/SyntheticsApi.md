@@ -21,7 +21,7 @@ Method | HTTP request | Description
 [**get_browser_test_result**](SyntheticsApi.md#get_browser_test_result) | **GET** /api/v1/synthetics/tests/browser/{public_id}/results/{result_id} | Get a browser test result
 [**get_global_variable**](SyntheticsApi.md#get_global_variable) | **GET** /api/v1/synthetics/variables/{variable_id} | Get a global variable
 [**get_private_location**](SyntheticsApi.md#get_private_location) | **GET** /api/v1/synthetics/private-locations/{location_id} | Get a private location
-[**get_test**](SyntheticsApi.md#get_test) | **GET** /api/v1/synthetics/tests/{public_id} | Get a test configuration (API)
+[**get_test**](SyntheticsApi.md#get_test) | **GET** /api/v1/synthetics/tests/{public_id} | Get a test configuration
 [**list_locations**](SyntheticsApi.md#list_locations) | **GET** /api/v1/synthetics/locations | Get all locations (public and private)
 [**list_tests**](SyntheticsApi.md#list_tests) | **GET** /api/v1/synthetics/tests | Get the list of all tests
 [**trigger_ci_tests**](SyntheticsApi.md#trigger_ci_tests) | **POST** /api/v1/synthetics/tests/trigger/ci | Trigger tests from CI/CD pipelines
@@ -1554,7 +1554,7 @@ Name | Type | Description  | Notes
 # **get_test**
 > SyntheticsTestDetails get_test(public_id)
 
-Get a test configuration (API)
+Get a test configuration
 
 Get the detailed configuration associated with a Synthetics test.
 
@@ -1580,7 +1580,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get a test configuration (API)
+        # Get a test configuration
         api_response = api_instance.get_test(public_id)
         pprint(api_response)
     except ApiException as e:
