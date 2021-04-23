@@ -268,14 +268,16 @@ class WidgetDefinition(ModelComposed):
             group_by ([str]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
             tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
             legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
+            markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
             show_legend (bool): (screenboard only) Show the legend for this widget.. [optional]  # noqa: E501
+            xaxis (WidgetAxis): [optional]  # noqa: E501
+            yaxis (WidgetAxis): [optional]  # noqa: E501
             event_size (WidgetEventSize): [optional]  # noqa: E501
             tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]  # noqa: E501
             color (str): Color of the text.. [optional]  # noqa: E501
             font_size (str): Size of the text.. [optional]  # noqa: E501
             background_color (str): Background color of the note.. [optional]  # noqa: E501
             events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
-            yaxis (WidgetAxis): [optional]  # noqa: E501
             no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]  # noqa: E501
             no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]  # noqa: E501
             node_type (WidgetNodeType): [optional]  # noqa: E501
@@ -303,7 +305,6 @@ class WidgetDefinition(ModelComposed):
             autoscale (bool): Whether to use auto-scaling or not.. [optional]  # noqa: E501
             custom_unit (str): Display a unit of your choice on the widget.. [optional]  # noqa: E501
             color_by_groups ([str]): List of groups used for colors.. [optional]  # noqa: E501
-            xaxis (WidgetAxis): [optional]  # noqa: E501
             global_time_target (str): Defined global time target.. [optional]  # noqa: E501
             show_error_budget (bool): Defined error budget.. [optional]  # noqa: E501
             slo_id (str): ID of the SLO displayed.. [optional]  # noqa: E501
@@ -319,7 +320,6 @@ class WidgetDefinition(ModelComposed):
             has_search_bar (TableWidgetHasSearchBar): [optional]  # noqa: E501
             legend_columns ([TimeseriesWidgetLegendColumn]): Columns displayed in the legend.. [optional]  # noqa: E501
             legend_layout (TimeseriesWidgetLegendLayout): [optional]  # noqa: E501
-            markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
             right_yaxis (WidgetAxis): [optional]  # noqa: E501
             alert_id (str): ID of the alert to use in the widget.. [optional]  # noqa: E501
             type (ToplistWidgetDefinitionType): [optional]  # noqa: E501
