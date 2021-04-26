@@ -114,6 +114,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "synthetics_check_calls_count_sum": (int,),  # noqa: E501
             "trace_search_indexed_events_count_sum": (int,),  # noqa: E501
             "twol_ingested_events_bytes_sum": (int,),  # noqa: E501
+            "vsphere_host_top99p": (int,),  # noqa: E501
         }
 
     @cached_property
@@ -160,6 +161,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "synthetics_check_calls_count_sum": "synthetics_check_calls_count_sum",  # noqa: E501
         "trace_search_indexed_events_count_sum": "trace_search_indexed_events_count_sum",  # noqa: E501
         "twol_ingested_events_bytes_sum": "twol_ingested_events_bytes_sum",  # noqa: E501
+        "vsphere_host_top99p": "vsphere_host_top99p",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -249,6 +251,7 @@ class UsageSummaryDateOrg(ModelNormal):
             synthetics_check_calls_count_sum (int): Shows the sum of all Synthetic API tests over all hours in the current date for the given org.. [optional]  # noqa: E501
             trace_search_indexed_events_count_sum (int): Shows the sum of all Indexed Spans indexed over all hours in the current date for the given org.. [optional]  # noqa: E501
             twol_ingested_events_bytes_sum (int): Shows the sum of all tracing without limits bytes ingested over all hours in the current date for the given org.. [optional]  # noqa: E501
+            vsphere_host_top99p (int): Shows the 99th percentile of all vSphere hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

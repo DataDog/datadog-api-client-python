@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **trace_search_indexed_events_count_agg_sum** | **int** | Shows the sum of all Indexed Spans indexed over all hours in the current months for all organizations. | [optional] 
 **twol_ingested_events_bytes_agg_sum** | **int** | Shows the sum of all tracing without limits bytes ingested over all hours in the current months for all organizations. | [optional] 
 **usage** | [**[UsageSummaryDate]**](UsageSummaryDate.md) | An array of objects regarding hourly usage. | [optional] 
+**vsphere_host_top99p_sum** | **int** | Shows the 99th percentile of all vSphere hosts over all hours in the current months for all organizations. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

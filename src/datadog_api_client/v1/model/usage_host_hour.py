@@ -78,6 +78,7 @@ class UsageHostHour(ModelNormal):
             "hour": (datetime,),  # noqa: E501
             "infra_azure_app_service": (int,),  # noqa: E501
             "opentelemetry_host_count": (int,),  # noqa: E501
+            "vsphere_host_count": (int,),  # noqa: E501
         }
 
     @cached_property
@@ -98,6 +99,7 @@ class UsageHostHour(ModelNormal):
         "hour": "hour",  # noqa: E501
         "infra_azure_app_service": "infra_azure_app_service",  # noqa: E501
         "opentelemetry_host_count": "opentelemetry_host_count",  # noqa: E501
+        "vsphere_host_count": "vsphere_host_count",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -161,6 +163,7 @@ class UsageHostHour(ModelNormal):
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
             infra_azure_app_service (int): Contains the total number of hosts that reported via the Azure App Services integration (and were NOT running the Datadog Agent).. [optional]  # noqa: E501
             opentelemetry_host_count (int): Contains the total number of hosts reported by Datadog exporter for the OpenTelemetry Collector.. [optional]  # noqa: E501
+            vsphere_host_count (int): Contains the total number of hosts that reported via vSphere integration (and were NOT running the Datadog Agent).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
