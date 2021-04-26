@@ -385,8 +385,9 @@ def request_parameter_with_value(context, name, value):
     context["api_request"]["kwargs"][snake_case(name)] = json.loads(tpl)
 
 
-def build_given(version, operation):
+def build_given(given_file, operation):
     def wrapper(context, undo):
+        version = given_file.parent.parent.name
         name = operation["tag"].replace(" ", "")
         module_name = snake_case(operation["tag"])
         operation_name = snake_case(operation["operationId"])
@@ -412,6 +413,9 @@ def build_given(version, operation):
                     return json.loads(Template(p["value"]).render(**context))
                 if "source" in p:
                     return glom(context, p["source"])
+                if "file" in p:
+                    with (given_file.parent/p["file"]).open() as file:
+                        return json.loads(Template(file.read()).render(**context))
 
             kwargs = {snake_case(p["name"]): build_param(p) for p in operation.get("parameters", [])}
             kwargs["_check_input_type"] = False
@@ -435,10 +439,9 @@ def build_given(version, operation):
 
 
 for f in pathlib.Path(os.path.dirname(__file__)).rglob("given.json"):
-    version = f.parent.parent.name
     with f.open() as fp:
         for settings in json.load(fp):
-            given(settings["step"])(build_given(version, settings))
+            given(settings["step"])(build_given(f, settings))
 
 
 @pytest.fixture
