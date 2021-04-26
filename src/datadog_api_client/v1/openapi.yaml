@@ -17374,53 +17374,6 @@ paths:
       x-menu-order: 9
       x-undo:
         type: safe
-    post:
-      deprecated: true
-      description: Create a Synthetic test.
-      operationId: CreateTest
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SyntheticsTestDetails'
-        description: Details of the test to create.
-        required: true
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SyntheticsTestDetails'
-          description: OK - Returns the created test details.
-        '400':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIErrorResponse'
-          description: '- JSON format is wrong
-
-            - Creation failed'
-        '402':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIErrorResponse'
-          description: Test quota is reached
-        '403':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIErrorResponse'
-          description: Forbidden
-      summary: Create a test
-      tags:
-      - Synthetics
-      x-codegen-request-body-name: body
-      x-menu-order: 26
-      x-undo:
-        operationId: TODO
-        parameters: []
-        type: unsafe
   /api/v1/synthetics/tests/api:
     post:
       description: Create a Synthetic API test.
@@ -17934,62 +17887,6 @@ paths:
       x-menu-order: 24
       x-undo:
         type: safe
-    put:
-      deprecated: true
-      description: Edit the configuration of a Synthetic test.
-      operationId: UpdateTest
-      parameters:
-      - description: The public ID of the test to get details from.
-        in: path
-        name: public_id
-        required: true
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SyntheticsTestDetails'
-        description: New test details to be saved.
-        required: true
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SyntheticsTestDetails'
-          description: OK
-        '400':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIErrorResponse'
-          description: '- JSON format is wrong
-
-            - Updating sub-type is forbidden'
-        '403':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIErrorResponse'
-          description: Forbidden
-        '404':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIErrorResponse'
-          description: '- Synthetic is not activated for the user
-
-            - Test is not owned by the user
-
-            - Test can''t be found'
-      summary: Edit a test
-      tags:
-      - Synthetics
-      x-codegen-request-body-name: body
-      x-menu-order: 25
-      x-undo:
-        type: idempotent
   /api/v1/synthetics/tests/{public_id}/results:
     get:
       description: Get the last 50 test results summaries for a given Synthetics API
