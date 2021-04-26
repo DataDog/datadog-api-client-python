@@ -842,14 +842,6 @@
       "type": "safe"
     }
   },
-  "CreateTest": {
-    "tag": "Synthetics",
-    "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
-    }
-  },
   "CreateSyntheticsAPITest": {
     "tag": "Synthetics",
     "undo": {
@@ -918,12 +910,6 @@
     "tag": "Synthetics",
     "undo": {
       "type": "safe"
-    }
-  },
-  "UpdateTest": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
     }
   },
   "GetAPITestLatestResults": {

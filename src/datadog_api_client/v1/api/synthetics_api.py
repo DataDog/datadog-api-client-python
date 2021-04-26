@@ -200,42 +200,6 @@ class SyntheticsApi(object):
             api_client=api_client,
         )
 
-        self._create_test_endpoint = _Endpoint(
-            settings={
-                "response_type": (SyntheticsTestDetails,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v1/synthetics/tests",
-                "operation_id": "create_test",
-                "http_method": "POST",
-                "servers": None,
-            },
-            params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SyntheticsTestDetails,),
-                },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
         self._delete_global_variable_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -1015,48 +979,6 @@ class SyntheticsApi(object):
             api_client=api_client,
         )
 
-        self._update_test_endpoint = _Endpoint(
-            settings={
-                "response_type": (SyntheticsTestDetails,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v1/synthetics/tests/{public_id}",
-                "operation_id": "update_test",
-                "http_method": "PUT",
-                "servers": None,
-            },
-            params_map={
-                "all": [
-                    "public_id",
-                    "body",
-                ],
-                "required": [
-                    "public_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
-                    "body": (SyntheticsTestDetails,),
-                },
-                "attribute_map": {
-                    "public_id": "public_id",
-                },
-                "location_map": {
-                    "public_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
         self._update_test_pause_status_endpoint = _Endpoint(
             settings={
                 "response_type": (bool,),
@@ -1270,49 +1192,6 @@ class SyntheticsApi(object):
         kwargs = self._create_synthetics_browser_test_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
         return self._create_synthetics_browser_test_endpoint.call_with_http_info(**kwargs)
-
-    def create_test(self, body, **kwargs):
-        """Create a test  # noqa: E501
-
-        Create a Synthetic test.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.create_test(body, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            body (SyntheticsTestDetails): Details of the test to create.
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SyntheticsTestDetails
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs = self._create_test_endpoint.default_arguments(kwargs)
-        kwargs["body"] = body
-        return self._create_test_endpoint.call_with_http_info(**kwargs)
 
     def delete_global_variable(self, variable_id, **kwargs):
         """Delete a global variable  # noqa: E501
@@ -2142,51 +2021,6 @@ class SyntheticsApi(object):
         kwargs["location_id"] = location_id
         kwargs["body"] = body
         return self._update_private_location_endpoint.call_with_http_info(**kwargs)
-
-    def update_test(self, public_id, body, **kwargs):
-        """Edit a test  # noqa: E501
-
-        Edit the configuration of a Synthetic test.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.update_test(public_id, body, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            public_id (str): The public ID of the test to get details from.
-            body (SyntheticsTestDetails): New test details to be saved.
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            SyntheticsTestDetails
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs = self._update_test_endpoint.default_arguments(kwargs)
-        kwargs["public_id"] = public_id
-        kwargs["body"] = body
-        return self._update_test_endpoint.call_with_http_info(**kwargs)
 
     def update_test_pause_status(self, public_id, body, **kwargs):
         """Pause or start a test  # noqa: E501

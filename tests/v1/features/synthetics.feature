@@ -72,27 +72,6 @@ Feature: Synthetics
     Then the response status is 402 Quota reached for private locations
 
   @generated @skip
-  Scenario: Create a test returns "- JSON format is wrong" response
-    Given new "CreateTest" request
-    And body {"config": {"assertions": [], "configVariables": [{"example": null, "name": "VARIABLE_NAME", "pattern": null, "type": "text"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "port": null, "query": null, "timeout": null, "url": null}, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": null, "monitor_id": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_options": {"renotify_interval": null}, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": 60}, "public_id": null, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "subtype": "http", "tags": [null], "type": "api"}
-    When the request is sent
-    Then the response status is 400 - JSON format is wrong
-
-  @generated @skip
-  Scenario: Create a test returns "OK - Returns the created test details." response
-    Given new "CreateTest" request
-    And body {"config": {"assertions": [], "configVariables": [{"example": null, "name": "VARIABLE_NAME", "pattern": null, "type": "text"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "port": null, "query": null, "timeout": null, "url": null}, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": null, "monitor_id": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_options": {"renotify_interval": null}, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": 60}, "public_id": null, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "subtype": "http", "tags": [null], "type": "api"}
-    When the request is sent
-    Then the response status is 200 OK - Returns the created test details.
-
-  @generated @skip
-  Scenario: Create a test returns "Test quota is reached" response
-    Given new "CreateTest" request
-    And body {"config": {"assertions": [], "configVariables": [{"example": null, "name": "VARIABLE_NAME", "pattern": null, "type": "text"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "port": null, "query": null, "timeout": null, "url": null}, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": null, "monitor_id": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_options": {"renotify_interval": null}, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": 60}, "public_id": null, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "subtype": "http", "tags": [null], "type": "api"}
-    When the request is sent
-    Then the response status is 402 Test quota is reached
-
-  @generated @skip
   Scenario: Create an API test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsAPITest" request
     And body {"config": {"assertions": [], "configVariables": [{"example": null, "name": "VARIABLE_NAME", "pattern": null, "type": "text"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "port": null, "query": null, "timeout": null, "url": null}, "steps": [{"assertions": [], "extractedValues": [{"field": "content-type", "name": null, "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}], "name": null, "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "port": null, "query": null, "timeout": null, "url": null}, "subtype": "http"}]}, "locations": [null], "message": null, "monitor_id": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_options": {"renotify_interval": null}, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": 60}, "public_id": null, "status": "live", "subtype": "http", "tags": [null], "type": "api"}
@@ -222,30 +201,6 @@ Feature: Synthetics
     Given new "UpdatePrivateLocation" request
     And request contains "location_id" parameter from "<PATH>"
     And body {"description": "Description of private location", "name": "New private location", "tags": ["team:front"]}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Edit a test returns "- JSON format is wrong" response
-    Given new "UpdateTest" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body {"config": {"assertions": [], "configVariables": [{"example": null, "name": "VARIABLE_NAME", "pattern": null, "type": "text"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "port": null, "query": null, "timeout": null, "url": null}, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": null, "monitor_id": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_options": {"renotify_interval": null}, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": 60}, "public_id": null, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "subtype": "http", "tags": [null], "type": "api"}
-    When the request is sent
-    Then the response status is 400 - JSON format is wrong
-
-  @generated @skip
-  Scenario: Edit a test returns "- Synthetic is not activated for the user" response
-    Given new "UpdateTest" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body {"config": {"assertions": [], "configVariables": [{"example": null, "name": "VARIABLE_NAME", "pattern": null, "type": "text"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "port": null, "query": null, "timeout": null, "url": null}, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": null, "monitor_id": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_options": {"renotify_interval": null}, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": 60}, "public_id": null, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "subtype": "http", "tags": [null], "type": "api"}
-    When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
-
-  @generated @skip
-  Scenario: Edit a test returns "OK" response
-    Given new "UpdateTest" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body {"config": {"assertions": [], "configVariables": [{"example": null, "name": "VARIABLE_NAME", "pattern": null, "type": "text"}], "request": {"basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "port": null, "query": null, "timeout": null, "url": null}, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "element"}]}, "locations": [null], "message": null, "monitor_id": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_options": {"renotify_interval": null}, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": 60}, "public_id": null, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertCurrentUrl"}], "subtype": "http", "tags": [null], "type": "api"}
     When the request is sent
     Then the response status is 200 OK
 
