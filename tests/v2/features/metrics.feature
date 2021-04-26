@@ -32,6 +32,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 409 Conflict
 
+  @skip
   Scenario: Create a tag configuration returns "Created" response
     Given operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
@@ -49,6 +50,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 429 Too Many Requests
 
+  @skip
   Scenario: Delete a tag configuration returns "No Content" response
     Given there is a valid "metric_tag_configuration" in the system
     And operation "DeleteTagConfiguration" enabled
@@ -87,6 +89,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
+  @skip
   Scenario: List distinct metric volumes by metric name returns "Success" response
     Given there is a valid "metric_tag_configuration" in the system
     And new "ListVolumesByMetricName" request
@@ -110,6 +113,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
+  @skip
   Scenario: List tag configuration by name returns "Success" response
     Given there is a valid "metric_tag_configuration" in the system
     And operation "ListTagConfigurationByName" enabled
@@ -134,6 +138,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @skip
   Scenario: List tag configurations returns "Success" response
     Given there is a valid "metric_tag_configuration" in the system
     And operation "ListTagConfigurations" enabled
@@ -171,6 +176,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
+  @skip
   Scenario: List tags by metric name returns "Success" response
     Given there is a valid "metric_tag_configuration" in the system
     And new "ListTagsByMetricName" request
@@ -195,6 +201,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @skip
   Scenario: Update a tag configuration returns "OK" response
     Given operation "UpdateTagConfiguration" enabled
     And there is a valid "metric_tag_configuration" in the system
