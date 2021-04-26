@@ -128,6 +128,7 @@ class UsageSummaryResponse(ModelNormal):
             "trace_search_indexed_events_count_agg_sum": (int,),  # noqa: E501
             "twol_ingested_events_bytes_agg_sum": (int,),  # noqa: E501
             "usage": ([UsageSummaryDate],),  # noqa: E501
+            "vsphere_host_top99p_sum": (int,),  # noqa: E501
         }
 
     @cached_property
@@ -181,6 +182,7 @@ class UsageSummaryResponse(ModelNormal):
         "trace_search_indexed_events_count_agg_sum": "trace_search_indexed_events_count_agg_sum",  # noqa: E501
         "twol_ingested_events_bytes_agg_sum": "twol_ingested_events_bytes_agg_sum",  # noqa: E501
         "usage": "usage",  # noqa: E501
+        "vsphere_host_top99p_sum": "vsphere_host_top99p_sum",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -277,6 +279,7 @@ class UsageSummaryResponse(ModelNormal):
             trace_search_indexed_events_count_agg_sum (int): Shows the sum of all Indexed Spans indexed over all hours in the current months for all organizations.. [optional]  # noqa: E501
             twol_ingested_events_bytes_agg_sum (int): Shows the sum of all tracing without limits bytes ingested over all hours in the current months for all organizations.. [optional]  # noqa: E501
             usage ([UsageSummaryDate]): An array of objects regarding hourly usage.. [optional]  # noqa: E501
+            vsphere_host_top99p_sum (int): Shows the 99th percentile of all vSphere hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

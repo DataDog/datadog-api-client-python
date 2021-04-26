@@ -9579,6 +9579,13 @@ components:
             for the OpenTelemetry Collector.
           format: int64
           type: integer
+        vsphere_host_count:
+          description: 'Contains the total number of hosts that reported via vSphere
+            integration
+
+            (and were NOT running the Datadog Agent).'
+          format: int64
+          type: integer
       type: object
     UsageHostsResponse:
       description: Host usage response.
@@ -9666,8 +9673,7 @@ components:
           format: date-time
           type: string
         iot_device_count:
-          description: The total number of IoT device hours from the start of the
-            given hour's month until the given hour.
+          description: The total number of IoT devices during a given hour.
           format: int64
           type: integer
       type: object
@@ -10107,7 +10113,7 @@ components:
             the current date for all organizations.
           format: int64
           type: integer
-        heroku_host_top99p_sum:
+        heroku_host_top99p:
           description: Shows the 99th percentile of all Heroku dynos over all hours
             in the current date for all organizations.
           format: int64
@@ -10132,12 +10138,12 @@ components:
             current date for all organizations.
           format: int64
           type: integer
-        iot_device_agg_sum:
+        iot_device_sum:
           description: Shows the sum of all IoT devices over all hours in the current
             date for all organizations.
           format: int64
           type: integer
-        iot_device_top99p_sum:
+        iot_device_top99p:
           description: Shows the 99th percentile of all IoT devices over all hours
             in the current date all organizations.
           format: int64
@@ -10167,7 +10173,7 @@ components:
             all hours in the current date for all organizations.
           format: int64
           type: integer
-        opentelemetry_host_top99p_sum:
+        opentelemetry_host_top99p:
           description: Shows the 99th percentile of all hosts reported by the Datadog
             exporter for the OpenTelemetry Collector over all hours in the current
             date for all organizations.
@@ -10211,6 +10217,11 @@ components:
         twol_ingested_events_bytes_sum:
           description: Shows the sum of all tracing without limits bytes ingested
             over all hours in the current date for all organizations.
+          format: int64
+          type: integer
+        vsphere_host_top99p:
+          description: Shows the 99th percentile of all vSphere hosts over all hours
+            in the current date for all organizations.
           format: int64
           type: integer
       type: object
@@ -10403,6 +10414,11 @@ components:
         twol_ingested_events_bytes_sum:
           description: Shows the sum of all tracing without limits bytes ingested
             over all hours in the current date for the given org.
+          format: int64
+          type: integer
+        vsphere_host_top99p:
+          description: Shows the 99th percentile of all vSphere hosts over all hours
+            in the current date for the given org.
           format: int64
           type: integer
       type: object
@@ -10642,6 +10658,11 @@ components:
           items:
             $ref: '#/components/schemas/UsageSummaryDate'
           type: array
+        vsphere_host_top99p_sum:
+          description: Shows the 99th percentile of all vSphere hosts over all hours
+            in the current months for all organizations.
+          format: int64
+          type: integer
       type: object
     UsageSyntheticsAPIHour:
       description: Number of Synthetics API tests run for each hour for a given organization.

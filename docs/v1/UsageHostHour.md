@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **hour** | **datetime** | The hour for the usage. | [optional] 
 **infra_azure_app_service** | **int** | Contains the total number of hosts that reported via the Azure App Services integration (and were NOT running the Datadog Agent). | [optional] 
 **opentelemetry_host_count** | **int** | Contains the total number of hosts reported by Datadog exporter for the OpenTelemetry Collector. | [optional] 
+**vsphere_host_count** | **int** | Contains the total number of hosts that reported via vSphere integration (and were NOT running the Datadog Agent). | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

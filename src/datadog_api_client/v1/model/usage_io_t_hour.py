@@ -127,7 +127,7 @@ class UsageIoTHour(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
-            iot_device_count (int): The total number of IoT device hours from the start of the given hour's month until the given hour.. [optional]  # noqa: E501
+            iot_device_count (int): The total number of IoT devices during a given hour.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
