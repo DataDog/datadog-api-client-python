@@ -60,7 +60,12 @@ class SyntheticsTestRequest(ModelNormal):
 
     allowed_values = {}
 
-    validations = {}
+    validations = {
+        ("number_of_packets",): {
+            "inclusive_maximum": 10,
+            "inclusive_minimum": 0,
+        },
+    }
 
     additional_properties_type = None
 
@@ -86,8 +91,10 @@ class SyntheticsTestRequest(ModelNormal):
             "host": (str,),  # noqa: E501
             "method": (HTTPMethod,),  # noqa: E501
             "no_saving_response_body": (bool,),  # noqa: E501
+            "number_of_packets": (int,),  # noqa: E501
             "port": (int,),  # noqa: E501
             "query": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            "should_track_hops": (bool,),  # noqa: E501
             "timeout": (float,),  # noqa: E501
             "url": (str,),  # noqa: E501
         }
@@ -105,8 +112,10 @@ class SyntheticsTestRequest(ModelNormal):
         "host": "host",  # noqa: E501
         "method": "method",  # noqa: E501
         "no_saving_response_body": "noSavingResponseBody",  # noqa: E501
+        "number_of_packets": "numberOfPackets",  # noqa: E501
         "port": "port",  # noqa: E501
         "query": "query",  # noqa: E501
+        "should_track_hops": "shouldTrackHops",  # noqa: E501
         "timeout": "timeout",  # noqa: E501
         "url": "url",  # noqa: E501
     }
@@ -167,8 +176,10 @@ class SyntheticsTestRequest(ModelNormal):
             host (str): Host name to perform the test with.. [optional]  # noqa: E501
             method (HTTPMethod): [optional]  # noqa: E501
             no_saving_response_body (bool): Determines whether or not to save the response body.. [optional]  # noqa: E501
+            number_of_packets (int): Number of pings to use per test.. [optional]  # noqa: E501
             port (int): Port to use when performing the test.. [optional]  # noqa: E501
             query ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Query to use for the test.. [optional]  # noqa: E501
+            should_track_hops (bool): Turns on a traceroute probe to discover all gateways along the path to the host destination.. [optional]  # noqa: E501
             timeout (float): Timeout in seconds for the test.. [optional]  # noqa: E501
             url (str): URL to perform the test with.. [optional]  # noqa: E501
         """
