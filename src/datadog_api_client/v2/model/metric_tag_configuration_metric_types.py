@@ -46,6 +46,7 @@ class MetricTagConfigurationMetricTypes(ModelSimple):
         ("value",): {
             "GAUGE": "gauge",
             "COUNT": "count",
+            "RATE": "rate",
             "DISTRIBUTION": "distribution",
         },
     }
@@ -96,10 +97,10 @@ class MetricTagConfigurationMetricTypes(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): The metric's type.. if omitted defaults to "gauge", must be one of ["gauge", "count", "distribution", ]  # noqa: E501
+            args[0] (str): The metric's type.. if omitted defaults to "gauge", must be one of ["gauge", "count", "rate", "distribution", ]  # noqa: E501
 
         Keyword Args:
-            value (str): The metric's type.. if omitted defaults to "gauge", must be one of ["gauge", "count", "distribution", ]  # noqa: E501
+            value (str): The metric's type.. if omitted defaults to "gauge", must be one of ["gauge", "count", "rate", "distribution", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
