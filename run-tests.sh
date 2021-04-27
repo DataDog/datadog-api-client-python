@@ -29,10 +29,4 @@ if [ "$RERECORD_FAILED_TESTS" == "true" ] && [ "$RESULT" -ne "0" ]; then
     RESULT=$?
 fi
 
-# Always run integration-only tests
-set -e
-if [ "$RECORD" != "none" ] && [ -n "$DD_TEST_CLIENT_API_KEY" ] && [ -n "$DD_TEST_CLIENT_APP_KEY" ]; then
-  RECORD=none python -m pytest -m "integration-only" -vvv
-fi
-
 exit $RESULT
