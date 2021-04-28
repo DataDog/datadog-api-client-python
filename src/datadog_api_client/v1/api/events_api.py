@@ -130,6 +130,8 @@ class EventsApi(object):
                     "sources",
                     "tags",
                     "unaggregated",
+                    "exclude_aggregate",
+                    "page",
                 ],
                 "required": [
                     "start",
@@ -137,10 +139,16 @@ class EventsApi(object):
                 ],
                 "nullable": [],
                 "enum": [],
-                "validation": [],
+                "validation": [
+                    "page",
+                ],
             },
             root_map={
-                "validations": {},
+                "validations": {
+                    ("page",): {
+                        "inclusive_maximum": 2147483647,
+                    },
+                },
                 "allowed_values": {},
                 "openapi_types": {
                     "start": (int,),
@@ -149,6 +157,8 @@ class EventsApi(object):
                     "sources": (str,),
                     "tags": (str,),
                     "unaggregated": (bool,),
+                    "exclude_aggregate": (bool,),
+                    "page": (int,),
                 },
                 "attribute_map": {
                     "start": "start",
@@ -157,6 +167,8 @@ class EventsApi(object):
                     "sources": "sources",
                     "tags": "tags",
                     "unaggregated": "unaggregated",
+                    "exclude_aggregate": "exclude_aggregate",
+                    "page": "page",
                 },
                 "location_map": {
                     "start": "query",
@@ -165,6 +177,8 @@ class EventsApi(object):
                     "sources": "query",
                     "tags": "query",
                     "unaggregated": "query",
+                    "exclude_aggregate": "query",
+                    "page": "query",
                 },
                 "collection_format_map": {},
             },
@@ -264,7 +278,7 @@ class EventsApi(object):
     def list_events(self, start, end, **kwargs):
         """Query the event stream  # noqa: E501
 
-        The event stream can be queried and filtered by time, priority, sources and tags.  **Notes**: - If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  - This endpoint returns a maximum of `1000` most recent results. To return additional results, identify the last timestamp of the last result and set that as the `end` query time to paginate the results.  # noqa: E501
+        The event stream can be queried and filtered by time, priority, sources and tags.  **Notes**: - If the event you’re querying contains markdown formatting of any kind, you may see characters such as `%`,`\\`,`n` in your output.  - This endpoint returns a maximum of `1000` most recent results. To return additional results, identify the last timestamp of the last result and set that as the `end` query time to paginate the results. You can also use the page parameter to specify which set of `1000` results to return.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -279,7 +293,9 @@ class EventsApi(object):
             priority (EventPriority): Priority of your events, either `low` or `normal`.. [optional]
             sources (str): A comma separated string of sources.. [optional]
             tags (str): A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.. [optional]
-            unaggregated (bool): Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output.. [optional]
+            unaggregated (bool): Set unaggregated to `true` to return all events within the specified [`start`,`end`] timeframe. Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe, it won't be available in the output. Aggregated events with `is_aggregate=true` in the response will still be returned unless exclude_aggregate is set to `true.`. [optional]
+            exclude_aggregate (bool): Set `exclude_aggregate` to `true` to only return unaggregated events where `is_aggregate=false` in the response. If the `exclude_aggregate` parameter is set to `true`, then the unaggregated parameter is ignored and will be `true` by default.. [optional]
+            page (int): By default 1000 results are returned per request. Set page to the number of the page to return with `0` being the first page. The page parameter can only be used when either unaggregated or exclude_aggregate is set to `true.`. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
