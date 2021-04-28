@@ -26,10 +26,12 @@ def lazy_import():
     from datadog_api_client.v1.model.note_widget_definition_type import NoteWidgetDefinitionType
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
+    from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
 
     globals()["NoteWidgetDefinitionType"] = NoteWidgetDefinitionType
     globals()["WidgetTextAlign"] = WidgetTextAlign
     globals()["WidgetTickEdge"] = WidgetTickEdge
+    globals()["WidgetVerticalAlign"] = WidgetVerticalAlign
 
 
 class NoteWidgetDefinition(ModelNormal):
@@ -80,10 +82,12 @@ class NoteWidgetDefinition(ModelNormal):
             "type": (NoteWidgetDefinitionType,),  # noqa: E501
             "background_color": (str,),  # noqa: E501
             "font_size": (str,),  # noqa: E501
+            "has_padding": (bool,),  # noqa: E501
             "show_tick": (bool,),  # noqa: E501
             "text_align": (WidgetTextAlign,),  # noqa: E501
             "tick_edge": (WidgetTickEdge,),  # noqa: E501
             "tick_pos": (str,),  # noqa: E501
+            "vertical_align": (WidgetVerticalAlign,),  # noqa: E501
         }
 
     @cached_property
@@ -95,10 +99,12 @@ class NoteWidgetDefinition(ModelNormal):
         "type": "type",  # noqa: E501
         "background_color": "background_color",  # noqa: E501
         "font_size": "font_size",  # noqa: E501
+        "has_padding": "has_padding",  # noqa: E501
         "show_tick": "show_tick",  # noqa: E501
         "text_align": "text_align",  # noqa: E501
         "tick_edge": "tick_edge",  # noqa: E501
         "tick_pos": "tick_pos",  # noqa: E501
+        "vertical_align": "vertical_align",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -155,10 +161,12 @@ class NoteWidgetDefinition(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             background_color (str): Background color of the note.. [optional]  # noqa: E501
             font_size (str): Size of the text.. [optional]  # noqa: E501
+            has_padding (bool): Whether to add padding or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
             show_tick (bool): Whether to show a tick or not.. [optional]  # noqa: E501
             text_align (WidgetTextAlign): [optional]  # noqa: E501
             tick_edge (WidgetTickEdge): [optional]  # noqa: E501
             tick_pos (str): Where to position the tick on an edge.. [optional]  # noqa: E501
+            vertical_align (WidgetVerticalAlign): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
