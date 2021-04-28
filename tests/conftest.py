@@ -372,7 +372,7 @@ def request_body(context, data):
     context["api_request"]["kwargs"]["body"] = json.loads(tpl)
 
 
-@given(parsers.parse("body from file {path}"))
+@given(parsers.parse("body from file \"{path}\""))
 def request_body_from_file(context, path, package_name):
     """Set request body."""
     version = package_name.split(".")[-1]
