@@ -62,6 +62,7 @@ def lazy_import():
     from datadog_api_client.v1.model.widget_event import WidgetEvent
     from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
     from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
+    from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
     from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
     from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
     from datadog_api_client.v1.model.widget_margin import WidgetMargin
@@ -76,6 +77,7 @@ def lazy_import():
     from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
+    from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
     from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
     from datadog_api_client.v1.model.widget_viz_type import WidgetVizType
 
@@ -118,6 +120,7 @@ def lazy_import():
     globals()["WidgetEvent"] = WidgetEvent
     globals()["WidgetEventSize"] = WidgetEventSize
     globals()["WidgetGrouping"] = WidgetGrouping
+    globals()["WidgetHorizontalAlign"] = WidgetHorizontalAlign
     globals()["WidgetImageSizing"] = WidgetImageSizing
     globals()["WidgetLayoutType"] = WidgetLayoutType
     globals()["WidgetMargin"] = WidgetMargin
@@ -132,6 +135,7 @@ def lazy_import():
     globals()["WidgetTickEdge"] = WidgetTickEdge
     globals()["WidgetTime"] = WidgetTime
     globals()["WidgetTimeWindows"] = WidgetTimeWindows
+    globals()["WidgetVerticalAlign"] = WidgetVerticalAlign
     globals()["WidgetViewMode"] = WidgetViewMode
     globals()["WidgetVizType"] = WidgetVizType
 
@@ -277,14 +281,21 @@ class WidgetDefinition(ModelComposed):
             color (str): Color of the text.. [optional]  # noqa: E501
             font_size (str): Size of the text.. [optional]  # noqa: E501
             background_color (str): Background color of the note.. [optional]  # noqa: E501
+            banner_img (str): URL of image to display as a banner for the group.. [optional]  # noqa: E501
+            show_title (bool): Whether to show the title or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
             events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
             no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]  # noqa: E501
             no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]  # noqa: E501
             node_type (WidgetNodeType): [optional]  # noqa: E501
             notes (str): Notes on the title.. [optional]  # noqa: E501
             scope ([str]): List of tags used to filter the map.. [optional]  # noqa: E501
+            has_background (bool): Whether to display a background or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            has_border (bool): Whether to display a border or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            horizontal_align (WidgetHorizontalAlign): [optional]  # noqa: E501
             margin (WidgetMargin): [optional]  # noqa: E501
             sizing (WidgetImageSizing): [optional]  # noqa: E501
+            url_dark_theme (str): URL of the image in dark mode.. [optional]  # noqa: E501
+            vertical_align (WidgetVerticalAlign): [optional]  # noqa: E501
             columns ([str]): Which columns to display on the widget.. [optional]  # noqa: E501
             indexes ([str]): An array of index names to query in the stream. Use [] to query all indexes at once.. [optional]  # noqa: E501
             logset (str): ID of the log set to use.. [optional]  # noqa: E501
@@ -299,6 +310,7 @@ class WidgetDefinition(ModelComposed):
             show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]  # noqa: E501
             start (int): The start of the list. Typically 0.. [optional]  # noqa: E501
             summary_type (WidgetSummaryType): [optional]  # noqa: E501
+            has_padding (bool): Whether to add padding or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
             show_tick (bool): Whether to show a tick or not.. [optional]  # noqa: E501
             tick_edge (WidgetTickEdge): [optional]  # noqa: E501
             tick_pos (str): Where to position the tick on an edge.. [optional]  # noqa: E501

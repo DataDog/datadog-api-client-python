@@ -44,6 +44,11 @@ class WidgetImageSizing(ModelSimple):
 
     allowed_values = {
         ("value",): {
+            "FILL": "fill",
+            "CONTAIN": "contain",
+            "COVER": "cover",
+            "NONE": "none",
+            "SCALEDOWN": "scale-down",
             "ZOOM": "zoom",
             "FIT": "fit",
             "CENTER": "center",
@@ -96,10 +101,10 @@ class WidgetImageSizing(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): How to size the image on the widget.., must be one of ["zoom", "fit", "center", ]  # noqa: E501
+            args[0] (str): How to size the image on the widget. The values are based on the image `object-fit` CSS properties. **Note**: `zoom`, `fit` and `center` values are deprecated.., must be one of ["fill", "contain", "cover", "none", "scale-down", "zoom", "fit", "center", ]  # noqa: E501
 
         Keyword Args:
-            value (str): How to size the image on the widget.., must be one of ["zoom", "fit", "center", ]  # noqa: E501
+            value (str): How to size the image on the widget. The values are based on the image `object-fit` CSS properties. **Note**: `zoom`, `fit` and `center` values are deprecated.., must be one of ["fill", "contain", "cover", "none", "scale-down", "zoom", "fit", "center", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

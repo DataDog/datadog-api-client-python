@@ -44,6 +44,9 @@ class WidgetMargin(ModelSimple):
 
     allowed_values = {
         ("value",): {
+            "SM": "sm",
+            "MD": "md",
+            "LG": "lg",
             "SMALL": "small",
             "LARGE": "large",
         },
@@ -95,10 +98,10 @@ class WidgetMargin(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Size of the margins around the image.., must be one of ["small", "large", ]  # noqa: E501
+            args[0] (str): Size of the margins around the image. **Note**: `small` and `large` values are deprecated.., must be one of ["sm", "md", "lg", "small", "large", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Size of the margins around the image.., must be one of ["small", "large", ]  # noqa: E501
+            value (str): Size of the margins around the image. **Note**: `small` and `large` values are deprecated.., must be one of ["sm", "md", "lg", "small", "large", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

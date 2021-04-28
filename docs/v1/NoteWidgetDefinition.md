@@ -9,10 +9,12 @@ Name | Type | Description | Notes
 **type** | [**NoteWidgetDefinitionType**](NoteWidgetDefinitionType.md) |  | 
 **background_color** | **str** | Background color of the note. | [optional] 
 **font_size** | **str** | Size of the text. | [optional] 
+**has_padding** | **bool** | Whether to add padding or not. | [optional]  if omitted the server will use the default value of True
 **show_tick** | **bool** | Whether to show a tick or not. | [optional] 
 **text_align** | [**WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
 **tick_edge** | [**WidgetTickEdge**](WidgetTickEdge.md) |  | [optional] 
 **tick_pos** | **str** | Where to position the tick on an edge. | [optional] 
+**vertical_align** | [**WidgetVerticalAlign**](WidgetVerticalAlign.md) |  | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

@@ -82,6 +82,7 @@ class WidgetLayout(ModelNormal):
             "width": (int,),  # noqa: E501
             "x": (int,),  # noqa: E501
             "y": (int,),  # noqa: E501
+            "is_column_break": (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -93,6 +94,7 @@ class WidgetLayout(ModelNormal):
         "width": "width",  # noqa: E501
         "x": "x",  # noqa: E501
         "y": "y",  # noqa: E501
+        "is_column_break": "is_column_break",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -149,6 +151,7 @@ class WidgetLayout(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            is_column_break (bool): Whether the widget should be the first one on the second column in high density or not. **Note**: Only for the **new dashboard layout** and only one widget in the dashboard should have this property set to `true`.. [optional] if omitted the server will use the default value of False  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

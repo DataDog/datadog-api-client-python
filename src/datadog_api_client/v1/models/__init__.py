@@ -549,6 +549,7 @@ from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
 from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
+from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
 from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
@@ -573,5 +574,6 @@ from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
 from datadog_api_client.v1.model.widget_time import WidgetTime
 from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
+from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
 from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
 from datadog_api_client.v1.model.widget_viz_type import WidgetVizType

@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **type** | [**GroupWidgetDefinitionType**](GroupWidgetDefinitionType.md) |  | 
 **widgets** | [**[Widget]**](Widget.md) | List of widget groups. | 
 **background_color** | **str** | Background color of the group title. | [optional] 
+**banner_img** | **str** | URL of image to display as a banner for the group. | [optional] 
+**show_title** | **bool** | Whether to show the title or not. | [optional]  if omitted the server will use the default value of True
 **title** | **str** | Title of the widget. | [optional] 
 **title_align** | [**WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
 
