@@ -24,12 +24,16 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
     from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
     from datadog_api_client.v1.model.widget_margin import WidgetMargin
+    from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
 
     globals()["ImageWidgetDefinitionType"] = ImageWidgetDefinitionType
+    globals()["WidgetHorizontalAlign"] = WidgetHorizontalAlign
     globals()["WidgetImageSizing"] = WidgetImageSizing
     globals()["WidgetMargin"] = WidgetMargin
+    globals()["WidgetVerticalAlign"] = WidgetVerticalAlign
 
 
 class ImageWidgetDefinition(ModelNormal):
@@ -78,8 +82,13 @@ class ImageWidgetDefinition(ModelNormal):
         return {
             "type": (ImageWidgetDefinitionType,),  # noqa: E501
             "url": (str,),  # noqa: E501
+            "has_background": (bool,),  # noqa: E501
+            "has_border": (bool,),  # noqa: E501
+            "horizontal_align": (WidgetHorizontalAlign,),  # noqa: E501
             "margin": (WidgetMargin,),  # noqa: E501
             "sizing": (WidgetImageSizing,),  # noqa: E501
+            "url_dark_theme": (str,),  # noqa: E501
+            "vertical_align": (WidgetVerticalAlign,),  # noqa: E501
         }
 
     @cached_property
@@ -89,8 +98,13 @@ class ImageWidgetDefinition(ModelNormal):
     attribute_map = {
         "type": "type",  # noqa: E501
         "url": "url",  # noqa: E501
+        "has_background": "has_background",  # noqa: E501
+        "has_border": "has_border",  # noqa: E501
+        "horizontal_align": "horizontal_align",  # noqa: E501
         "margin": "margin",  # noqa: E501
         "sizing": "sizing",  # noqa: E501
+        "url_dark_theme": "url_dark_theme",  # noqa: E501
+        "vertical_align": "vertical_align",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -145,8 +159,13 @@ class ImageWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            has_background (bool): Whether to display a background or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            has_border (bool): Whether to display a border or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            horizontal_align (WidgetHorizontalAlign): [optional]  # noqa: E501
             margin (WidgetMargin): [optional]  # noqa: E501
             sizing (WidgetImageSizing): [optional]  # noqa: E501
+            url_dark_theme (str): URL of the image in dark mode.. [optional]  # noqa: E501
+            vertical_align (WidgetVerticalAlign): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

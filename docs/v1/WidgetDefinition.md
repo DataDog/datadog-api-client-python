@@ -26,14 +26,21 @@ Name | Type | Description | Notes
 **color** | **str** | Color of the text. | [optional] 
 **font_size** | **str** | Size of the text. | [optional] 
 **background_color** | **str** | Background color of the note. | [optional] 
+**banner_img** | **str** | URL of image to display as a banner for the group. | [optional] 
+**show_title** | **bool** | Whether to show the title or not. | [optional]  if omitted the server will use the default value of True
 **events** | [**[WidgetEvent]**](WidgetEvent.md) | List of widget events. | [optional] 
 **no_group_hosts** | **bool** | Whether to show the hosts that don’t fit in a group. | [optional] 
 **no_metric_hosts** | **bool** | Whether to show the hosts with no metrics. | [optional] 
 **node_type** | [**WidgetNodeType**](WidgetNodeType.md) |  | [optional] 
 **notes** | **str** | Notes on the title. | [optional] 
 **scope** | **[str]** | List of tags used to filter the map. | [optional] 
+**has_background** | **bool** | Whether to display a background or not. | [optional]  if omitted the server will use the default value of True
+**has_border** | **bool** | Whether to display a border or not. | [optional]  if omitted the server will use the default value of True
+**horizontal_align** | [**WidgetHorizontalAlign**](WidgetHorizontalAlign.md) |  | [optional] 
 **margin** | [**WidgetMargin**](WidgetMargin.md) |  | [optional] 
 **sizing** | [**WidgetImageSizing**](WidgetImageSizing.md) |  | [optional] 
+**url_dark_theme** | **str** | URL of the image in dark mode. | [optional] 
+**vertical_align** | [**WidgetVerticalAlign**](WidgetVerticalAlign.md) |  | [optional] 
 **columns** | **[str]** | Which columns to display on the widget. | [optional] 
 **indexes** | **[str]** | An array of index names to query in the stream. Use [] to query all indexes at once. | [optional] 
 **logset** | **str** | ID of the log set to use. | [optional] 
@@ -48,6 +55,7 @@ Name | Type | Description | Notes
 **show_last_triggered** | **bool** | Whether to show the time that has elapsed since the monitor/group triggered. | [optional] 
 **start** | **int** | The start of the list. Typically 0. | [optional] 
 **summary_type** | [**WidgetSummaryType**](WidgetSummaryType.md) |  | [optional] 
+**has_padding** | **bool** | Whether to add padding or not. | [optional]  if omitted the server will use the default value of True
 **show_tick** | **bool** | Whether to show a tick or not. | [optional] 
 **tick_edge** | [**WidgetTickEdge**](WidgetTickEdge.md) |  | [optional] 
 **tick_pos** | **str** | Where to position the tick on an edge. | [optional] 
