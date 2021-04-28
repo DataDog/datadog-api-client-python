@@ -1074,6 +1074,12 @@
       "type": "safe"
     }
   },
+  "GetUsageLogsByRetention": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageLogsByIndex": {
     "tag": "Usage Metering",
     "undo": {
