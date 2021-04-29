@@ -10,13 +10,13 @@ Feature: Users
   @generated @skip
   Scenario: Create a user returns "Bad Request" response
     Given new "CreateUser" request
-    And body {"data": {"attributes": {"email": "jane.doe@example.com", "name": null, "title": null}, "relationships": {"roles": {"data": [{"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}]}}, "type": "users"}}
+    And body with value {"data": {"attributes": {"email": "jane.doe@example.com", "name": null, "title": null}, "relationships": {"roles": {"data": [{"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}]}}, "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   Scenario: Create a user returns "OK" response
     Given new "CreateUser" request
-    And body {"data": {"type": "users", "attributes": {"name": "Datadog API Client Python", "email": "{{ unique }}@datadoghq.com"}}}
+    And body with value {"data": {"type": "users", "attributes": {"name": "Datadog API Client Python", "email": "{{ unique }}@datadoghq.com"}}}
     When the request is sent
     Then the response status is 201 OK
     And the response "data.attributes.email" is equal to "{{ unique_lower }}@datadoghq.com"
@@ -119,14 +119,14 @@ Feature: Users
   @generated @skip
   Scenario: Send invitation emails returns "Bad Request" response
     Given new "SendInvitations" request
-    And body {"data": []}
+    And body with value {"data": []}
     When the request is sent
     Then the response status is 400 Bad Request
 
   Scenario: Send invitation emails returns "OK" response
     Given there is a valid "user" in the system
     And new "SendInvitations" request
-    And body {"data": [{"type": "user_invitations", "relationships": {"user": {"data": {"type": "{{ user.data.type }}", "id": "{{ user.data.id }}"}}}}]}
+    And body with value {"data": [{"type": "user_invitations", "relationships": {"user": {"data": {"type": "{{ user.data.type }}", "id": "{{ user.data.id }}"}}}}]}
     When the request is sent
     Then the response status is 201 OK
 
@@ -134,7 +134,7 @@ Feature: Users
   Scenario: Update a user returns "Bad Request" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -142,7 +142,7 @@ Feature: Users
   Scenario: Update a user returns "Not found" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -150,7 +150,7 @@ Feature: Users
     Given there is a valid "user" in the system
     And new "UpdateUser" request
     And request contains "user_id" parameter from "user.data.id"
-    And body {"data": {"id": "{{ user.data.id }}", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
+    And body with value {"data": {"id": "{{ user.data.id }}", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.email" has the same value as "user.data.attributes.email"
@@ -162,6 +162,6 @@ Feature: Users
   Scenario: Update a user returns "Unprocessable Entity" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

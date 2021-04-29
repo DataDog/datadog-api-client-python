@@ -12,14 +12,14 @@ Feature: Incident Services
   Scenario: Create a new incident service returns "Bad Request" response
     Given operation "CreateIncidentService" enabled
     And new "CreateIncidentService" request
-    And body {"data": {"attributes": {"name": "an example service name"}, "type": "services"}}
+    And body with value {"data": {"attributes": {"name": "an example service name"}, "type": "services"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   Scenario: Create a new incident service returns "CREATED" response
     Given operation "CreateIncidentService" enabled
     And new "CreateIncidentService" request
-    And body {"data": {"type": "services", "attributes": {"name": "{{ unique }}"}}}
+    And body with value {"data": {"type": "services", "attributes": {"name": "{{ unique }}"}}}
     When the request is sent
     Then the response status is 201 CREATED
     And the response "data.attributes.name" is equal to "{{ unique }}"
@@ -28,7 +28,7 @@ Feature: Incident Services
   Scenario: Create a new incident service returns "Not Found" response
     Given operation "CreateIncidentService" enabled
     And new "CreateIncidentService" request
-    And body {"data": {"attributes": {"name": "an example service name"}, "type": "services"}}
+    And body with value {"data": {"attributes": {"name": "an example service name"}, "type": "services"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -110,7 +110,7 @@ Feature: Incident Services
     Given operation "UpdateIncidentService" enabled
     And new "UpdateIncidentService" request
     And request contains "service_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"name": "an example service name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "services"}}
+    And body with value {"data": {"attributes": {"name": "an example service name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "services"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -119,7 +119,7 @@ Feature: Incident Services
     Given operation "UpdateIncidentService" enabled
     And new "UpdateIncidentService" request
     And request contains "service_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"name": "an example service name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "services"}}
+    And body with value {"data": {"attributes": {"name": "an example service name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "services"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -128,7 +128,7 @@ Feature: Incident Services
     And operation "UpdateIncidentService" enabled
     And new "UpdateIncidentService" request
     And request contains "service_id" parameter from "service.data.id"
-    And body {"data": {"type": "services", "attributes": {"name": "{{ service.data.attributes.name }}-updated"}}}
+    And body with value {"data": {"type": "services", "attributes": {"name": "{{ service.data.attributes.name }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ service.data.attributes.name }}-updated"
