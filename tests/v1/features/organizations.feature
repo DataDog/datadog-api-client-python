@@ -11,14 +11,14 @@ Feature: Organizations
   @generated @skip
   Scenario: Create a child organization returns "Bad Request" response
     Given new "CreateChildOrg" request
-    And body {"billing": {"type": "parent_billing"}, "name": "New child org", "subscription": {"type": "pro"}}
+    And body with value {"billing": {"type": "parent_billing"}, "name": "New child org", "subscription": {"type": "pro"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Create a child organization returns "OK" response
     Given new "CreateChildOrg" request
-    And body {"billing": {"type": "parent_billing"}, "name": "New child org", "subscription": {"type": "pro"}}
+    And body with value {"billing": {"type": "parent_billing"}, "name": "New child org", "subscription": {"type": "pro"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -46,7 +46,7 @@ Feature: Organizations
   Scenario: Update your organization returns "Bad Request" response
     Given new "UpdateOrg" request
     And request contains "public_id" parameter from "<PATH>"
-    And body {"billing": {"type": "parent_billing"}, "description": "some description", "name": "New child org", "public_id": "abcdef12345", "settings": {"private_widget_share": false, "saml": {"enabled": false}, "saml_autocreate_access_role": "st", "saml_autocreate_users_domains": {"domains": ["example.com"], "enabled": false}, "saml_can_be_enabled": false, "saml_idp_endpoint": "https://my.saml.endpoint", "saml_idp_initiated_login": {"enabled": false}, "saml_idp_metadata_uploaded": false, "saml_login_url": "https://my.saml.login.url", "saml_strict_mode": {"enabled": false}}, "subscription": {"type": "pro"}}
+    And body with value {"billing": {"type": "parent_billing"}, "description": "some description", "name": "New child org", "public_id": "abcdef12345", "settings": {"private_widget_share": false, "saml": {"enabled": false}, "saml_autocreate_access_role": "st", "saml_autocreate_users_domains": {"domains": ["example.com"], "enabled": false}, "saml_can_be_enabled": false, "saml_idp_endpoint": "https://my.saml.endpoint", "saml_idp_initiated_login": {"enabled": false}, "saml_idp_metadata_uploaded": false, "saml_login_url": "https://my.saml.login.url", "saml_strict_mode": {"enabled": false}}, "subscription": {"type": "pro"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -54,7 +54,7 @@ Feature: Organizations
   Scenario: Update your organization returns "OK" response
     Given new "UpdateOrg" request
     And request contains "public_id" parameter from "<PATH>"
-    And body {"billing": {"type": "parent_billing"}, "description": "some description", "name": "New child org", "public_id": "abcdef12345", "settings": {"private_widget_share": false, "saml": {"enabled": false}, "saml_autocreate_access_role": "st", "saml_autocreate_users_domains": {"domains": ["example.com"], "enabled": false}, "saml_can_be_enabled": false, "saml_idp_endpoint": "https://my.saml.endpoint", "saml_idp_initiated_login": {"enabled": false}, "saml_idp_metadata_uploaded": false, "saml_login_url": "https://my.saml.login.url", "saml_strict_mode": {"enabled": false}}, "subscription": {"type": "pro"}}
+    And body with value {"billing": {"type": "parent_billing"}, "description": "some description", "name": "New child org", "public_id": "abcdef12345", "settings": {"private_widget_share": false, "saml": {"enabled": false}, "saml_autocreate_access_role": "st", "saml_autocreate_users_domains": {"domains": ["example.com"], "enabled": false}, "saml_can_be_enabled": false, "saml_idp_endpoint": "https://my.saml.endpoint", "saml_idp_initiated_login": {"enabled": false}, "saml_idp_metadata_uploaded": false, "saml_login_url": "https://my.saml.login.url", "saml_strict_mode": {"enabled": false}}, "subscription": {"type": "pro"}}
     When the request is sent
     Then the response status is 200 OK
 

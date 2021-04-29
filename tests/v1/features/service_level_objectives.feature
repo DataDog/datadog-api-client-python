@@ -16,14 +16,14 @@ Feature: Service Level Objectives
   @generated @skip
   Scenario: Bulk Delete SLO Timeframes returns "Bad Request" response
     Given new "DeleteSLOTimeframeInBulk" request
-    And body {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
+    And body with value {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Bulk Delete SLO Timeframes returns "OK" response
     Given new "DeleteSLOTimeframeInBulk" request
-    And body {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
+    And body with value {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
     When the request is sent
     Then the response status is 200 OK
 
@@ -47,13 +47,13 @@ Feature: Service Level Objectives
 
   Scenario: Create an SLO object returns "Bad Request" response
     Given new "CreateSLO" request
-    And body {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
+    And body with value {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   Scenario: Create an SLO object returns "OK" response
     Given new "CreateSLO" request
-    And body {"type":"metric","description":"string","groups":["env:test","role:mysql"],"monitor_ids":[],"name":"{{ unique }}","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"tags":["env:prod","app:core"],"thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
+    And body with value {"type":"metric","description":"string","groups":["env:test","role:mysql"],"monitor_ids":[],"name":"{{ unique }}","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"tags":["env:prod","app:core"],"thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
     When the request is sent
     Then the response status is 200 OK
 
@@ -137,7 +137,7 @@ Feature: Service Level Objectives
     Given new "UpdateSLO" request
     And there is a valid "slo" in the system
     And request contains "slo_id" parameter from "slo.data[0].id"
-    And body {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
+    And body with value {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -145,7 +145,7 @@ Feature: Service Level Objectives
   Scenario: Update an SLO returns "Not Found" response
     Given new "UpdateSLO" request
     And request contains "slo_id" parameter from "<PATH>"
-    And body null
+    And body with value null
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -153,6 +153,6 @@ Feature: Service Level Objectives
   Scenario: Update an SLO returns "OK" response
     Given new "UpdateSLO" request
     And request contains "slo_id" parameter from "<PATH>"
-    And body null
+    And body with value null
     When the request is sent
     Then the response status is 200 OK

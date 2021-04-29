@@ -35,7 +35,7 @@ Feature: Hosts
   Scenario: Mute a host returns "Invalid Parameter Error" response
     Given new "MuteHost" request
     And request contains "host_name" parameter from "<PATH>"
-    And body {"end": 1579098130, "message": "Muting this host for a test!", "override": false}
+    And body with value {"end": 1579098130, "message": "Muting this host for a test!", "override": false}
     When the request is sent
     Then the response status is 400 Invalid Parameter Error
 
@@ -43,7 +43,7 @@ Feature: Hosts
   Scenario: Mute a host returns "OK" response
     Given new "MuteHost" request
     And request contains "host_name" parameter from "<PATH>"
-    And body {"end": 1579098130, "message": "Muting this host for a test!", "override": false}
+    And body with value {"end": 1579098130, "message": "Muting this host for a test!", "override": false}
     When the request is sent
     Then the response status is 200 OK
 

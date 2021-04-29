@@ -365,9 +365,19 @@ def api_request(configuration, context, name):
     }
 
 
-@given(parsers.parse("body {data}"))
+@given(parsers.parse("body with value {data}"))
 def request_body(context, data):
     """Set request body."""
+    tpl = Template(data).render(**context)
+    context["api_request"]["kwargs"]["body"] = json.loads(tpl)
+
+
+@given(parsers.parse("body from file \"{path}\""))
+def request_body_from_file(context, path, package_name):
+    """Set request body."""
+    version = package_name.split(".")[-1]
+    with open(os.path.join(os.path.dirname(__file__), version, "features", path)) as f:
+        data = f.read()
     tpl = Template(data).render(**context)
     context["api_request"]["kwargs"]["body"] = json.loads(tpl)
 

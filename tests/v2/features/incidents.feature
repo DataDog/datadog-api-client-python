@@ -11,7 +11,7 @@ Feature: Incidents
   Scenario: Create an incident returns "Bad Request" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
-    And body {"data": {"attributes": {"customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_timeline_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": ["@test.user@test.com"], "title": "A test incident title"}, "relationships": {"commander": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    And body with value {"data": {"attributes": {"customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_timeline_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": ["@test.user@test.com"], "title": "A test incident title"}, "relationships": {"commander": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -19,7 +19,7 @@ Feature: Incidents
     Given there is a valid "user" in the system
     And operation "CreateIncident" enabled
     And new "CreateIncident" request
-    And body {"data": {"type": "incidents", "attributes": {"title": "{{unique}}", "customer_impacted": false, "fields": {"state": {"type": "dropdown", "value": "resolved"}}}, "relationships": {"commander": {"data": {"type": "{{ user.data.type }}", "id": "{{ user.data.id }}"}}}}}
+    And body with value {"data": {"type": "incidents", "attributes": {"title": "{{unique}}", "customer_impacted": false, "fields": {"state": {"type": "dropdown", "value": "resolved"}}}, "relationships": {"commander": {"data": {"type": "{{ user.data.type }}", "id": "{{ user.data.id }}"}}}}}
     When the request is sent
     Then the response status is 201 CREATED
 
@@ -27,7 +27,7 @@ Feature: Incidents
   Scenario: Create an incident returns "Not Found" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
-    And body {"data": {"attributes": {"customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_timeline_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": ["@test.user@test.com"], "title": "A test incident title"}, "relationships": {"commander": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    And body with value {"data": {"attributes": {"customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_timeline_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": ["@test.user@test.com"], "title": "A test incident title"}, "relationships": {"commander": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -106,7 +106,7 @@ Feature: Incidents
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request
     And request contains "incident_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"customer_impact_end": null, "customer_impact_scope": "Example customer impact scope", "customer_impact_start": null, "customer_impacted": false, "detected": null, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "notification_handles": ["@test.user@test.com"], "resolved": null, "title": "A test incident title"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "created_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "integrations": {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integration_metadata"}, {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integration_metadata"}]}, "last_modified_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "postmortem": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_postmortems"}}}, "type": "incidents"}}
+    And body with value {"data": {"attributes": {"customer_impact_end": null, "customer_impact_scope": "Example customer impact scope", "customer_impact_start": null, "customer_impacted": false, "detected": null, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "notification_handles": ["@test.user@test.com"], "resolved": null, "title": "A test incident title"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "created_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "integrations": {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integration_metadata"}, {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integration_metadata"}]}, "last_modified_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "postmortem": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_postmortems"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -115,7 +115,7 @@ Feature: Incidents
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request
     And request contains "incident_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"customer_impact_end": null, "customer_impact_scope": "Example customer impact scope", "customer_impact_start": null, "customer_impacted": false, "detected": null, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "notification_handles": ["@test.user@test.com"], "resolved": null, "title": "A test incident title"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "created_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "integrations": {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integration_metadata"}, {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integration_metadata"}]}, "last_modified_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "postmortem": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_postmortems"}}}, "type": "incidents"}}
+    And body with value {"data": {"attributes": {"customer_impact_end": null, "customer_impact_scope": "Example customer impact scope", "customer_impact_start": null, "customer_impacted": false, "detected": null, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "notification_handles": ["@test.user@test.com"], "resolved": null, "title": "A test incident title"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "created_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "integrations": {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integration_metadata"}, {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_integration_metadata"}]}, "last_modified_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "postmortem": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_postmortems"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -124,7 +124,7 @@ Feature: Incidents
     And there is a valid "incident" in the system
     And new "UpdateIncident" request
     And request contains "incident_id" parameter from "incident.data.id"
-    And body {"data": {"id": "{{incident.data.id}}", "type": "incidents", "attributes": {"fields": {"state": {"type": "dropdown", "value":"resolved"}}, "title": "{{ incident.data.attributes.title }}-updated"}}}
+    And body with value {"data": {"id": "{{incident.data.id}}", "type": "incidents", "attributes": {"fields": {"state": {"type": "dropdown", "value":"resolved"}}, "title": "{{ incident.data.attributes.title }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.title" is equal to "{{ incident.data.attributes.title }}-updated"

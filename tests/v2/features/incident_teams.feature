@@ -12,14 +12,14 @@ Feature: Incident Teams
   Scenario: Create a new incident team returns "Bad Request" response
     Given operation "CreateIncidentTeam" enabled
     And new "CreateIncidentTeam" request
-    And body {"data": {"attributes": {"name": "team name"}, "type": "teams"}}
+    And body with value {"data": {"attributes": {"name": "team name"}, "type": "teams"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   Scenario: Create a new incident team returns "CREATED" response
     Given operation "CreateIncidentTeam" enabled
     And new "CreateIncidentTeam" request
-    And body {"data": {"type": "teams", "attributes": {"name": "{{ unique }}"}}}
+    And body with value {"data": {"type": "teams", "attributes": {"name": "{{ unique }}"}}}
     When the request is sent
     Then the response status is 201 CREATED
     And the response "data.attributes.name" is equal to "{{ unique }}"
@@ -28,7 +28,7 @@ Feature: Incident Teams
   Scenario: Create a new incident team returns "Not Found" response
     Given operation "CreateIncidentTeam" enabled
     And new "CreateIncidentTeam" request
-    And body {"data": {"attributes": {"name": "team name"}, "type": "teams"}}
+    And body with value {"data": {"attributes": {"name": "team name"}, "type": "teams"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -110,7 +110,7 @@ Feature: Incident Teams
     Given operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
     And request contains "team_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"name": "team name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "teams"}}
+    And body with value {"data": {"attributes": {"name": "team name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "teams"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -119,7 +119,7 @@ Feature: Incident Teams
     Given operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
     And request contains "team_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"name": "team name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "teams"}}
+    And body with value {"data": {"attributes": {"name": "team name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "teams"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -128,7 +128,7 @@ Feature: Incident Teams
     And operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
     And request contains "team_id" parameter from "team.data.id"
-    And body {"data": {"type": "teams", "attributes": {"name": "{{ team.data.attributes.name }}-updated"}}}
+    And body with value {"data": {"type": "teams", "attributes": {"name": "{{ team.data.attributes.name }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ team.data.attributes.name }}-updated"

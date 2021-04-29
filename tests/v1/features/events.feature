@@ -28,13 +28,13 @@ Feature: Events
   @generated @skip
   Scenario: Post an event returns "Bad Request" response
     Given new "CreateEvent" request
-    And body {"aggregation_key": null, "alert_type": "info", "date_happened": null, "device_name": null, "host": null, "priority": "normal", "related_event_id": null, "source_type_name": null, "tags": ["environment:test"], "text": "Oh boy!", "title": "Did you hear the news today?"}
+    And body with value {"aggregation_key": null, "alert_type": "info", "date_happened": null, "device_name": null, "host": null, "priority": "normal", "related_event_id": null, "source_type_name": null, "tags": ["environment:test"], "text": "Oh boy!", "title": "Did you hear the news today?"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   Scenario: Post an event returns "OK" response
     Given new "CreateEvent" request
-    And body {"title": "{{ unique }}", "text": "A text message.", "tags": ["test:{{ unique_alnum }}"]}
+    And body with value {"title": "{{ unique }}", "text": "A text message.", "tags": ["test:{{ unique_alnum }}"]}
     When the request is sent
     Then the response status is 202 OK
 
