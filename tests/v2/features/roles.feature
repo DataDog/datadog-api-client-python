@@ -17,7 +17,7 @@ Feature: Roles
   Scenario: Add a user to a role returns "Bad Request" response
     Given new "AddUserToRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -25,7 +25,7 @@ Feature: Roles
   Scenario: Add a user to a role returns "Not found" response
     Given new "AddUserToRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -34,20 +34,20 @@ Feature: Roles
     And there is a valid "user" in the system
     And new "AddUserToRole" request
     And request contains "role_id" parameter from "role.data.id"
-    And body {"data": {"id": "{{ user.data.id}}", "type": "{{ user.data.type }}"}}
+    And body with value {"data": {"id": "{{ user.data.id}}", "type": "{{ user.data.type }}"}}
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Create role returns "Bad Request" response
     Given new "CreateRole" request
-    And body {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"id": null, "type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"id": null, "type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   Scenario: Create role returns "OK" response
     Given new "CreateRole" request
-    And body {"data": {"type": "roles", "attributes": {"name": "{{ unique }}"}}}
+    And body with value {"data": {"type": "roles", "attributes": {"name": "{{ unique }}"}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ unique }}"
@@ -102,7 +102,7 @@ Feature: Roles
   Scenario: Grant permission to a role returns "Bad Request" response
     Given new "AddPermissionToRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"id": null, "type": "permissions"}}
+    And body with value {"data": {"id": null, "type": "permissions"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -110,7 +110,7 @@ Feature: Roles
   Scenario: Grant permission to a role returns "Not found" response
     Given new "AddPermissionToRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"id": null, "type": "permissions"}}
+    And body with value {"data": {"id": null, "type": "permissions"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -119,7 +119,7 @@ Feature: Roles
     And there is a valid "permission" in the system
     And new "AddPermissionToRole" request
     And request contains "role_id" parameter from "role.data.id"
-    And body {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
+    And body with value {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -164,7 +164,7 @@ Feature: Roles
   Scenario: Remove a user from a role returns "Bad Request" response
     Given new "RemoveUserFromRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -172,7 +172,7 @@ Feature: Roles
   Scenario: Remove a user from a role returns "Not found" response
     Given new "RemoveUserFromRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -182,7 +182,7 @@ Feature: Roles
     And the "user" has the "role"
     And new "RemoveUserFromRole" request
     And request contains "role_id" parameter from "role.data.id"
-    And body {"data": {"id": "{{ user.data.id}}", "type": "{{ user.data.type }}"}}
+    And body with value {"data": {"id": "{{ user.data.id}}", "type": "{{ user.data.type }}"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -190,7 +190,7 @@ Feature: Roles
   Scenario: Revoke permission returns "Bad Request" response
     Given new "RemovePermissionFromRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"id": null, "type": "permissions"}}
+    And body with value {"data": {"id": null, "type": "permissions"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -198,7 +198,7 @@ Feature: Roles
   Scenario: Revoke permission returns "Not found" response
     Given new "RemovePermissionFromRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"id": null, "type": "permissions"}}
+    And body with value {"data": {"id": null, "type": "permissions"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -208,7 +208,7 @@ Feature: Roles
     And the "permission" is granted to the "role"
     And new "RemovePermissionFromRole" request
     And request contains "role_id" parameter from "role.data.id"
-    And body {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
+    And body with value {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -216,7 +216,7 @@ Feature: Roles
   Scenario: Update a role returns "Bad Request" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -224,7 +224,7 @@ Feature: Roles
   Scenario: Update a role returns "Not found" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -232,7 +232,7 @@ Feature: Roles
     Given there is a valid "role" in the system
     And new "UpdateRole" request
     And request contains "role_id" parameter from "role.data.id"
-    And body {"data": {"id": "{{ role.data.id }}", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}}}
+    And body with value {"data": {"id": "{{ role.data.id }}", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ role.data.attributes.name }}-updated"
@@ -241,6 +241,6 @@ Feature: Roles
   Scenario: Update a role returns "Unprocessable Entity" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "<PATH>"
-    And body {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

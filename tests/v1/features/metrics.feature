@@ -18,7 +18,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
+    And body with value {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -27,7 +27,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
+    And body with value {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -36,7 +36,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "<PATH>"
-    And body {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
+    And body with value {"description": null, "per_unit": "second", "short_name": null, "statsd_interval": null, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -101,26 +101,26 @@ Feature: Metrics
   @skip
   Scenario: Submit metrics returns "Bad Request" response
     Given new "SubmitMetrics" request
-    And body "invalid"
+    And body with value "invalid"
     When the request is sent
     Then the response status is 400 Bad Request
 
   Scenario: Submit metrics returns "Payload accepted" response
     Given new "SubmitMetrics" request
-    And body {"series": [{"metric": "system.load.1", "type": "gauge", "points": [[1600348600, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}
+    And body with value {"series": [{"metric": "system.load.1", "type": "gauge", "points": [[1600348600, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}
     When the request is sent
     Then the response status is 202 Payload accepted
 
   @generated @skip
   Scenario: Submit metrics returns "Payload too large" response
     Given new "SubmitMetrics" request
-    And body {"series": [{"metric": "system.load.1", "points": [[1475317847, 0.7]]}]}
+    And body with value {"series": [{"metric": "system.load.1", "points": [[1475317847, 0.7]]}]}
     When the request is sent
     Then the response status is 413 Payload too large
 
   @generated @skip
   Scenario: Submit metrics returns "Request timeout" response
     Given new "SubmitMetrics" request
-    And body {"series": [{"metric": "system.load.1", "points": [[1475317847, 0.7]]}]}
+    And body with value {"series": [{"metric": "system.load.1", "points": [[1475317847, 0.7]]}]}
     When the request is sent
     Then the response status is 408 Request timeout

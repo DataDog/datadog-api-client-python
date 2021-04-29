@@ -12,42 +12,42 @@ Feature: Dashboard Lists
   @generated @skip
   Scenario: Add Items to a Dashboard List returns "Bad Request" response
     Given new "CreateDashboardListItems" request
-    And body {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
+    And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Add Items to a Dashboard List returns "Not Found" response
     Given new "CreateDashboardListItems" request
-    And body {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
+    And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip
   Scenario: Add Items to a Dashboard List returns "OK" response
     Given new "CreateDashboardListItems" request
-    And body {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
+    And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip
   Scenario: Delete items from a dashboard list returns "Bad Request" response
     Given new "DeleteDashboardListItems" request
-    And body {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
+    And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Delete items from a dashboard list returns "Not Found" response
     Given new "DeleteDashboardListItems" request
-    And body {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
+    And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip
   Scenario: Delete items from a dashboard list returns "OK" response
     Given new "DeleteDashboardListItems" request
-    And body {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
+    And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 200 OK
 
@@ -66,20 +66,20 @@ Feature: Dashboard Lists
   @generated @skip
   Scenario: Update items of a dashboard list returns "Bad Request" response
     Given new "UpdateDashboardListItems" request
-    And body {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
+    And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Update items of a dashboard list returns "Not Found" response
     Given new "UpdateDashboardListItems" request
-    And body {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
+    And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip
   Scenario: Update items of a dashboard list returns "OK" response
     Given new "UpdateDashboardListItems" request
-    And body {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
+    And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 200 OK

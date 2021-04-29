@@ -13,21 +13,21 @@ Feature: Slack Integration
   @generated @skip
   Scenario: Create a Slack integration channel returns "Bad Request" response
     Given new "CreateSlackIntegrationChannel" request
-    And body {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
+    And body with value {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Create a Slack integration channel returns "Item Not Found" response
     Given new "CreateSlackIntegrationChannel" request
-    And body {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
+    And body with value {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
     When the request is sent
     Then the response status is 404 Item Not Found
 
   @generated @skip
   Scenario: Create a Slack integration channel returns "OK" response
     Given new "CreateSlackIntegrationChannel" request
-    And body {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
+    And body with value {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -95,7 +95,7 @@ Feature: Slack Integration
   Scenario: Update a Slack integration channel returns "Bad Request" response
     Given new "UpdateSlackIntegrationChannel" request
     And request contains "channel_name" parameter from "<PATH>"
-    And body {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
+    And body with value {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -103,7 +103,7 @@ Feature: Slack Integration
   Scenario: Update a Slack integration channel returns "Item Not Found" response
     Given new "UpdateSlackIntegrationChannel" request
     And request contains "channel_name" parameter from "<PATH>"
-    And body {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
+    And body with value {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
     When the request is sent
     Then the response status is 404 Item Not Found
 
@@ -111,6 +111,6 @@ Feature: Slack Integration
   Scenario: Update a Slack integration channel returns "OK" response
     Given new "UpdateSlackIntegrationChannel" request
     And request contains "channel_name" parameter from "<PATH>"
-    And body {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
+    And body with value {"display": {"message": true, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
     When the request is sent
     Then the response status is 200 OK
