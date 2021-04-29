@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **body** | **str** | Body to include in the test. | [optional] 
 **certificate** | [**SyntheticsTestRequestCertificate**](SyntheticsTestRequestCertificate.md) |  | [optional] 
 **dns_server** | **str** | DNS server to use for DNS tests. | [optional] 
+**dns_server_port** | **int** | DNS server port to use for DNS tests. | [optional] 
 **headers** | [**SyntheticsTestHeaders**](SyntheticsTestHeaders.md) |  | [optional] 
 **host** | **str** | Host name to perform the test with. | [optional] 
 **method** | [**HTTPMethod**](HTTPMethod.md) |  | [optional] 
