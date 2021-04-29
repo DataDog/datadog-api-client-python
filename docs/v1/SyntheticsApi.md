@@ -251,6 +251,7 @@ with ApiClient(configuration) as api_client:
                     ),
                 ),
                 dns_server="dns_server_example",
+                dns_server_port=1,
                 headers=SyntheticsTestHeaders(
                     key="key_example",
                 ),
@@ -266,6 +267,7 @@ with ApiClient(configuration) as api_client:
             ),
             steps=[
                 SyntheticsAPIStep(
+                    allow_failure=True,
                     assertions=[],
                     extracted_values=[
                         SyntheticsParsingOptions(
@@ -278,6 +280,7 @@ with ApiClient(configuration) as api_client:
                             type=SyntheticsGlobalVariableParseTestOptionsType("http_body"),
                         ),
                     ],
+                    is_critical=True,
                     name="name_example",
                     request=SyntheticsTestRequest(
                         basic_auth=SyntheticsBasicAuth(
@@ -298,6 +301,7 @@ with ApiClient(configuration) as api_client:
                             ),
                         ),
                         dns_server="dns_server_example",
+                        dns_server_port=1,
                         headers=SyntheticsTestHeaders(SyntheticsTestHeaders),
                         host="host_example",
                         method=HTTPMethod("GET"),
@@ -437,6 +441,7 @@ with ApiClient(configuration) as api_client:
                     ),
                 ),
                 dns_server="dns_server_example",
+                dns_server_port=1,
                 headers=SyntheticsTestHeaders(
                     key="key_example",
                 ),
@@ -450,6 +455,7 @@ with ApiClient(configuration) as api_client:
                 timeout=3.14,
                 url="url_example",
             ),
+            set_cookie="set_cookie_example",
             variables=[
                 SyntheticsBrowserVariable(
                     example="example_example",
@@ -1746,6 +1752,7 @@ with ApiClient(configuration) as api_client:
                     ),
                 ),
                 dns_server="dns_server_example",
+                dns_server_port=1,
                 headers=SyntheticsTestHeaders(
                     key="key_example",
                 ),
@@ -1761,6 +1768,7 @@ with ApiClient(configuration) as api_client:
             ),
             steps=[
                 SyntheticsAPIStep(
+                    allow_failure=True,
                     assertions=[],
                     extracted_values=[
                         SyntheticsParsingOptions(
@@ -1773,6 +1781,7 @@ with ApiClient(configuration) as api_client:
                             type=SyntheticsGlobalVariableParseTestOptionsType("http_body"),
                         ),
                     ],
+                    is_critical=True,
                     name="name_example",
                     request=SyntheticsTestRequest(
                         basic_auth=SyntheticsBasicAuth(
@@ -1793,6 +1802,7 @@ with ApiClient(configuration) as api_client:
                             ),
                         ),
                         dns_server="dns_server_example",
+                        dns_server_port=1,
                         headers=SyntheticsTestHeaders(SyntheticsTestHeaders),
                         host="host_example",
                         method=HTTPMethod("GET"),
@@ -1934,6 +1944,7 @@ with ApiClient(configuration) as api_client:
                     ),
                 ),
                 dns_server="dns_server_example",
+                dns_server_port=1,
                 headers=SyntheticsTestHeaders(
                     key="key_example",
                 ),
@@ -1947,6 +1958,7 @@ with ApiClient(configuration) as api_client:
                 timeout=3.14,
                 url="url_example",
             ),
+            set_cookie="set_cookie_example",
             variables=[
                 SyntheticsBrowserVariable(
                     example="example_example",

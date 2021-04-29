@@ -61,6 +61,10 @@ class SyntheticsTestRequest(ModelNormal):
     allowed_values = {}
 
     validations = {
+        ("dns_server_port",): {
+            "inclusive_maximum": 65535,
+            "inclusive_minimum": 1,
+        },
         ("number_of_packets",): {
             "inclusive_maximum": 10,
             "inclusive_minimum": 0,
@@ -87,6 +91,7 @@ class SyntheticsTestRequest(ModelNormal):
             "body": (str,),  # noqa: E501
             "certificate": (SyntheticsTestRequestCertificate,),  # noqa: E501
             "dns_server": (str,),  # noqa: E501
+            "dns_server_port": (int,),  # noqa: E501
             "headers": (SyntheticsTestHeaders,),  # noqa: E501
             "host": (str,),  # noqa: E501
             "method": (HTTPMethod,),  # noqa: E501
@@ -108,6 +113,7 @@ class SyntheticsTestRequest(ModelNormal):
         "body": "body",  # noqa: E501
         "certificate": "certificate",  # noqa: E501
         "dns_server": "dnsServer",  # noqa: E501
+        "dns_server_port": "dnsServerPort",  # noqa: E501
         "headers": "headers",  # noqa: E501
         "host": "host",  # noqa: E501
         "method": "method",  # noqa: E501
@@ -172,6 +178,7 @@ class SyntheticsTestRequest(ModelNormal):
             body (str): Body to include in the test.. [optional]  # noqa: E501
             certificate (SyntheticsTestRequestCertificate): [optional]  # noqa: E501
             dns_server (str): DNS server to use for DNS tests.. [optional]  # noqa: E501
+            dns_server_port (int): DNS server port to use for DNS tests.. [optional]  # noqa: E501
             headers (SyntheticsTestHeaders): [optional]  # noqa: E501
             host (str): Host name to perform the test with.. [optional]  # noqa: E501
             method (HTTPMethod): [optional]  # noqa: E501

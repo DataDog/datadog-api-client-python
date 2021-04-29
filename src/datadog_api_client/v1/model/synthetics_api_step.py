@@ -78,8 +78,10 @@ class SyntheticsAPIStep(ModelNormal):
         """
         lazy_import()
         return {
+            "allow_failure": (bool,),  # noqa: E501
             "assertions": ([SyntheticsAssertion],),  # noqa: E501
             "extracted_values": ([SyntheticsParsingOptions],),  # noqa: E501
+            "is_critical": (bool,),  # noqa: E501
             "name": (str,),  # noqa: E501
             "request": (SyntheticsTestRequest,),  # noqa: E501
             "subtype": (SyntheticsAPIStepSubtype,),  # noqa: E501
@@ -90,8 +92,10 @@ class SyntheticsAPIStep(ModelNormal):
         return None
 
     attribute_map = {
+        "allow_failure": "allowFailure",  # noqa: E501
         "assertions": "assertions",  # noqa: E501
         "extracted_values": "extractedValues",  # noqa: E501
+        "is_critical": "isCritical",  # noqa: E501
         "name": "name",  # noqa: E501
         "request": "request",  # noqa: E501
         "subtype": "subtype",  # noqa: E501
@@ -145,8 +149,10 @@ class SyntheticsAPIStep(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            allow_failure (bool): Determines whether or not to continue with test if this step fails.. [optional]  # noqa: E501
             assertions ([SyntheticsAssertion]): Array of assertions used for the test.. [optional] if omitted the server will use the default value of []  # noqa: E501
             extracted_values ([SyntheticsParsingOptions]): Array of values to parse and save as variables from the response.. [optional]  # noqa: E501
+            is_critical (bool): Determines whether or not to consider the entire test as failed if this step fails. Can be used only if `allowFailure` is `true`.. [optional]  # noqa: E501
             name (str): The name of the step.. [optional]  # noqa: E501
             request (SyntheticsTestRequest): [optional]  # noqa: E501
             subtype (SyntheticsAPIStepSubtype): [optional]  # noqa: E501

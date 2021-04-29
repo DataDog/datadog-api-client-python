@@ -78,6 +78,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
         return {
             "assertions": ([SyntheticsAssertion],),  # noqa: E501
             "request": (SyntheticsTestRequest,),  # noqa: E501
+            "set_cookie": (str,),  # noqa: E501
             "variables": ([SyntheticsBrowserVariable],),  # noqa: E501
         }
 
@@ -88,6 +89,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
     attribute_map = {
         "assertions": "assertions",  # noqa: E501
         "request": "request",  # noqa: E501
+        "set_cookie": "setCookie",  # noqa: E501
         "variables": "variables",  # noqa: E501
     }
 
@@ -143,6 +145,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            set_cookie (str): Cookies to be used for the request, using the [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) syntax.. [optional]  # noqa: E501
             variables ([SyntheticsBrowserVariable]): Array of variables used for the test steps.. [optional]  # noqa: E501
         """
 
