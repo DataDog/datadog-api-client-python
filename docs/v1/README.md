@@ -548,6 +548,8 @@ Class | Method | HTTP request | Description
  - [SLOHistoryResponseError](SLOHistoryResponseError.md)
  - [SLOHistorySLIData](SLOHistorySLIData.md)
  - [SLOListResponse](SLOListResponse.md)
+ - [SLOListResponseMetadata](SLOListResponseMetadata.md)
+ - [SLOListResponseMetadataPage](SLOListResponseMetadataPage.md)
  - [SLOResponse](SLOResponse.md)
  - [SLOThreshold](SLOThreshold.md)
  - [SLOTimeframe](SLOTimeframe.md)
