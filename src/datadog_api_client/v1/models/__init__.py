@@ -299,6 +299,7 @@ from datadog_api_client.v1.model.slo_list_response import SLOListResponse
 from datadog_api_client.v1.model.slo_list_response_metadata import SLOListResponseMetadata
 from datadog_api_client.v1.model.slo_list_response_metadata_page import SLOListResponseMetadataPage
 from datadog_api_client.v1.model.slo_response import SLOResponse
+from datadog_api_client.v1.model.slo_response_data import SLOResponseData
 from datadog_api_client.v1.model.slo_threshold import SLOThreshold
 from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
 from datadog_api_client.v1.model.slo_type import SLOType
