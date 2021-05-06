@@ -210,6 +210,7 @@ class ServiceLevelObjectivesApi(object):
             params_map={
                 "all": [
                     "slo_id",
+                    "with_configured_alert_ids",
                 ],
                 "required": [
                     "slo_id",
@@ -223,12 +224,15 @@ class ServiceLevelObjectivesApi(object):
                 "allowed_values": {},
                 "openapi_types": {
                     "slo_id": (str,),
+                    "with_configured_alert_ids": (bool,),
                 },
                 "attribute_map": {
                     "slo_id": "slo_id",
+                    "with_configured_alert_ids": "with_configured_alert_ids",
                 },
                 "location_map": {
                     "slo_id": "path",
+                    "with_configured_alert_ids": "query",
                 },
                 "collection_format_map": {},
             },
@@ -581,6 +585,7 @@ class ServiceLevelObjectivesApi(object):
             slo_id (str): The ID of the service level objective object.
 
         Keyword Args:
+            with_configured_alert_ids (bool): Get the IDs of SLO monitors that reference this SLO.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
