@@ -160,7 +160,7 @@ class SyntheticsTestOptions(ModelNormal):
             accept_self_signed (bool): For SSL test, whether or not the test should allow self signed certificates.. [optional]  # noqa: E501
             allow_insecure (bool): Allows loading insecure content for an HTTP request.. [optional]  # noqa: E501
             device_ids ([SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]  # noqa: E501
-            disable_cors (bool): Whether or not to disable CORS mechanism. Currently only available for Chrome.. [optional]  # noqa: E501
+            disable_cors (bool): Whether or not to disable CORS mechanism.. [optional]  # noqa: E501
             follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]  # noqa: E501
             min_failure_duration (int): Minimum amount of time in failure required to trigger an alert.. [optional]  # noqa: E501
             min_location_failed (int): Minimum number of locations in failure required to trigger an alert.. [optional]  # noqa: E501
