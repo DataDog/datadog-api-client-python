@@ -83,6 +83,10 @@ class Downtime(ModelNormal):
         lazy_import()
         return {
             "active": (bool,),  # noqa: E501
+            "active_child": (
+                {str: (bool, date, datetime, dict, float, int, list, str, none_type)},
+                none_type,
+            ),  # noqa: E501
             "canceled": (
                 int,
                 none_type,
@@ -121,6 +125,7 @@ class Downtime(ModelNormal):
 
     attribute_map = {
         "active": "active",  # noqa: E501
+        "active_child": "active_child",  # noqa: E501
         "canceled": "canceled",  # noqa: E501
         "creator_id": "creator_id",  # noqa: E501
         "disabled": "disabled",  # noqa: E501
@@ -187,6 +192,7 @@ class Downtime(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             active (bool): If a scheduled downtime currently exists.. [optional]  # noqa: E501
+            active_child ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): The downtime object definition of the active child for the original parent recurring downtime.. [optional]  # noqa: E501
             canceled (int, none_type): If a scheduled downtime is canceled.. [optional]  # noqa: E501
             creator_id (int): User ID of the downtime creator.. [optional]  # noqa: E501
             disabled (bool): If a downtime has been disabled.. [optional]  # noqa: E501

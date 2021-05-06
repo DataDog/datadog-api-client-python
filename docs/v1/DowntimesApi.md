@@ -174,6 +174,7 @@ with ApiClient(configuration) as api_client:
     api_instance = downtimes_api.DowntimesApi(api_client)
     body = Downtime(
         active=True,
+        active_child={},
         canceled=1412799983,
         creator_id=123456,
         disabled=False,
@@ -463,6 +464,7 @@ with ApiClient(configuration) as api_client:
     downtime_id = 123456  # int | ID of the downtime to update.
     body = Downtime(
         active=True,
+        active_child={},
         canceled=1412799983,
         creator_id=123456,
         disabled=False,
