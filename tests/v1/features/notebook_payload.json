@@ -1,0 +1,20 @@
+{
+  "data": {
+    "type": "notebooks",
+    "attributes": {
+      "name": "{{ unique }}",
+      "time": { "live_span": "1h" },
+      "cells": [
+        {
+          "attributes": {
+            "definition": {
+              "text": "# {{ unique }} notebook text",
+              "type": "markdown"
+            }
+          },
+          "type": "notebook_cells"
+        }
+      ]
+    }
+  }
+}

@@ -30,6 +30,7 @@ from datadog_api_client.v1.api.logs_indexes_api import LogsIndexesApi
 from datadog_api_client.v1.api.logs_pipelines_api import LogsPipelinesApi
 from datadog_api_client.v1.api.metrics_api import MetricsApi
 from datadog_api_client.v1.api.monitors_api import MonitorsApi
+from datadog_api_client.v1.api.notebooks_api import NotebooksApi
 from datadog_api_client.v1.api.organizations_api import OrganizationsApi
 from datadog_api_client.v1.api.pager_duty_integration_api import PagerDutyIntegrationApi
 from datadog_api_client.v1.api.service_checks_api import ServiceChecksApi

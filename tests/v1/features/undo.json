@@ -657,6 +657,43 @@
       "type": "safe"
     }
   },
+  "ListNotebooks": {
+    "tag": "Notebooks",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateNotebook": {
+    "tag": "Notebooks",
+    "undo": {
+      "operationId": "DeleteNotebook",
+      "parameters": [
+        {
+          "name": "notebook_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteNotebook": {
+    "tag": "Notebooks",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetNotebook": {
+    "tag": "Notebooks",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateNotebook": {
+    "tag": "Notebooks",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOrgs": {
     "tag": "Organizations",
     "undo": {
