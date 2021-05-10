@@ -23,8 +23,10 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.logs_by_retention import LogsByRetention
     from datadog_api_client.v1.model.usage_summary_date import UsageSummaryDate
 
+    globals()["LogsByRetention"] = LogsByRetention
     globals()["UsageSummaryDate"] = UsageSummaryDate
 
 
@@ -110,6 +112,7 @@ class UsageSummaryResponse(ModelNormal):
             "last_updated": (datetime,),  # noqa: E501
             "live_indexed_events_agg_sum": (int,),  # noqa: E501
             "live_ingested_bytes_agg_sum": (int,),  # noqa: E501
+            "logs_by_retention": (LogsByRetention,),  # noqa: E501
             "mobile_rum_session_count_agg_sum": (int,),  # noqa: E501
             "mobile_rum_session_count_android_agg_sum": (int,),  # noqa: E501
             "mobile_rum_session_count_ios_agg_sum": (int,),  # noqa: E501
@@ -164,6 +167,7 @@ class UsageSummaryResponse(ModelNormal):
         "last_updated": "last_updated",  # noqa: E501
         "live_indexed_events_agg_sum": "live_indexed_events_agg_sum",  # noqa: E501
         "live_ingested_bytes_agg_sum": "live_ingested_bytes_agg_sum",  # noqa: E501
+        "logs_by_retention": "logs_by_retention",  # noqa: E501
         "mobile_rum_session_count_agg_sum": "mobile_rum_session_count_agg_sum",  # noqa: E501
         "mobile_rum_session_count_android_agg_sum": "mobile_rum_session_count_android_agg_sum",  # noqa: E501
         "mobile_rum_session_count_ios_agg_sum": "mobile_rum_session_count_ios_agg_sum",  # noqa: E501
@@ -261,6 +265,7 @@ class UsageSummaryResponse(ModelNormal):
             last_updated (datetime): Shows the the most recent hour in the current months for all organizations for which all usages were calculated.. [optional]  # noqa: E501
             live_indexed_events_agg_sum (int): Shows the sum of all live logs indexed over all hours in the current months for all organizations (data available as of December 1, 2020).. [optional]  # noqa: E501
             live_ingested_bytes_agg_sum (int): Shows the sum of all live logs bytes ingested over all hours in the current months for all organizations (data available as of December 1, 2020).. [optional]  # noqa: E501
+            logs_by_retention (LogsByRetention): [optional]  # noqa: E501
             mobile_rum_session_count_agg_sum (int): Shows the sum of all mobile RUM Sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
             mobile_rum_session_count_android_agg_sum (int): Shows the sum of all mobile RUM Sessions on Android over all hours in the current months for all organizations.. [optional]  # noqa: E501
             mobile_rum_session_count_ios_agg_sum (int): Shows the sum of all mobile RUM Sessions on iOS over all hours in the current months for all organizations.. [optional]  # noqa: E501
