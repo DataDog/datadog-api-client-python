@@ -700,6 +700,7 @@ Class | Method | HTTP request | Description
  - [UsageAttributionPagination](UsageAttributionPagination.md)
  - [UsageAttributionResponse](UsageAttributionResponse.md)
  - [UsageAttributionSort](UsageAttributionSort.md)
+ - [UsageAttributionSupportedMetrics](UsageAttributionSupportedMetrics.md)
  - [UsageAttributionTagNames](UsageAttributionTagNames.md)
  - [UsageAttributionValues](UsageAttributionValues.md)
  - [UsageBillableSummaryBody](UsageBillableSummaryBody.md)
