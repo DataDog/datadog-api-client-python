@@ -20,6 +20,7 @@ from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
 from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
 from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
+from datadog_api_client.v1.model.usage_attribution_supported_metrics import UsageAttributionSupportedMetrics
 from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
 from datadog_api_client.v1.model.usage_compliance_response import UsageComplianceResponse
 from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
@@ -457,7 +458,7 @@ class UsageMeteringApi(object):
                 "allowed_values": {},
                 "openapi_types": {
                     "start_month": (datetime,),
-                    "fields": (str,),
+                    "fields": (UsageAttributionSupportedMetrics,),
                     "end_month": (datetime,),
                     "sort_direction": (UsageSortDirection,),
                     "sort_name": (UsageAttributionSort,),
@@ -1860,7 +1861,7 @@ class UsageMeteringApi(object):
 
         Args:
             start_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
-            fields (str): The specified field to search results for.
+            fields (UsageAttributionSupportedMetrics): Comma-separated list of usage types to return, or `*` for all usage types.
 
         Keyword Args:
             end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
