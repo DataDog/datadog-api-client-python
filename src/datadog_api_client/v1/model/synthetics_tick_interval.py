@@ -44,6 +44,7 @@ class SyntheticsTickInterval(ModelSimple):
 
     allowed_values = {
         ("value",): {
+            "THIRTY_SECONDS": 30,
             "MINUTE": 60,
             "FIVE_MINUTES": 300,
             "FIFTEEN_MINUTES": 900,
@@ -102,10 +103,10 @@ class SyntheticsTickInterval(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (int): The frequency at which to run the Synthetic test (in seconds).., must be one of [60, 300, 900, 1800, 3600, 21600, 43200, 86400, 604800, ]  # noqa: E501
+            args[0] (int): The frequency at which to run the Synthetic test (in seconds).., must be one of [30, 60, 300, 900, 1800, 3600, 21600, 43200, 86400, 604800, ]  # noqa: E501
 
         Keyword Args:
-            value (int): The frequency at which to run the Synthetic test (in seconds).., must be one of [60, 300, 900, 1800, 3600, 21600, 43200, 86400, 604800, ]  # noqa: E501
+            value (int): The frequency at which to run the Synthetic test (in seconds).., must be one of [30, 60, 300, 900, 1800, 3600, 21600, 43200, 86400, 604800, ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

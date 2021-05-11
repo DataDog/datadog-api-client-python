@@ -22,6 +22,7 @@ Method | HTTP request | Description
 [**get_usage_lambda**](UsageMeteringApi.md#get_usage_lambda) | **GET** /api/v1/usage/aws_lambda | Get hourly usage for Lambda
 [**get_usage_logs**](UsageMeteringApi.md#get_usage_logs) | **GET** /api/v1/usage/logs | Get hourly usage for Logs
 [**get_usage_logs_by_index**](UsageMeteringApi.md#get_usage_logs_by_index) | **GET** /api/v1/usage/logs_by_index | Get hourly usage for Logs by Index
+[**get_usage_logs_by_retention**](UsageMeteringApi.md#get_usage_logs_by_retention) | **GET** /api/v1/usage/logs-by-retention | Get hourly logs usage by retention
 [**get_usage_network_flows**](UsageMeteringApi.md#get_usage_network_flows) | **GET** /api/v1/usage/network_flows | Get hourly usage for Network Flows
 [**get_usage_network_hosts**](UsageMeteringApi.md#get_usage_network_hosts) | **GET** /api/v1/usage/network_hosts | Get hourly usage for Network Hosts
 [**get_usage_profiling**](UsageMeteringApi.md#get_usage_profiling) | **GET** /api/v1/usage/profiling | Get hourly usage for profiled hosts
@@ -652,7 +653,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
     start_month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
-    fields = "fields_example"  # str | The specified field to search results for.
+    fields = UsageAttributionSupportedMetrics("custom_timeseries_usage")  # UsageAttributionSupportedMetrics | Comma-separated list of usage types to return, or `*` for all usage types.
     end_month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month. (optional)
     sort_direction = UsageSortDirection("desc")  # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
     sort_name = UsageAttributionSort("custom_timeseries_usage")  # UsageAttributionSort | The field to sort by. (optional)
@@ -681,7 +682,7 @@ with ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start_month** | **datetime**| Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage beginning in this month. Maximum of 15 months ago. |
- **fields** | **str**| The specified field to search results for. |
+ **fields** | **UsageAttributionSupportedMetrics**| Comma-separated list of usage types to return, or &#x60;*&#x60; for all usage types. |
  **end_month** | **datetime**| Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage ending this month. | [optional]
  **sort_direction** | **UsageSortDirection**| The direction to sort by: &#x60;[desc, asc]&#x60;. | [optional]
  **sort_name** | **UsageAttributionSort**| The field to sort by. | [optional]
@@ -1375,6 +1376,83 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UsageLogsByIndexResponse**](UsageLogsByIndexResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;datetime-format=rfc3339
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden - User is not authorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **get_usage_logs_by_retention**
+> UsageLogsByRetentionResponse get_usage_logs_by_retention(start_hr)
+
+Get hourly logs usage by retention
+
+Get hourly usage for indexed logs by retention period.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get hourly logs usage by retention
+        api_response = api_instance.get_usage_logs_by_retention(start_hr)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_usage_logs_by_retention: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get hourly logs usage by retention
+        api_response = api_instance.get_usage_logs_by_retention(start_hr, end_hr=end_hr)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_usage_logs_by_retention: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour. |
+ **end_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour. | [optional]
+
+### Return type
+
+[**UsageLogsByRetentionResponse**](UsageLogsByRetentionResponse.md)
 
 ### Authorization
 

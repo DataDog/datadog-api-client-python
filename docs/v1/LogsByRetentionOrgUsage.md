@@ -1,11 +1,11 @@
-# SyntheticsTickInterval
+# LogsByRetentionOrgUsage
 
-The frequency at which to run the Synthetic test (in seconds).
+Indexed logs usage by retention for a single organization.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **int** | The frequency at which to run the Synthetic test (in seconds). |  must be one of [30, 60, 300, 900, 1800, 3600, 21600, 43200, 86400, 604800, ]
+**usage** | [**[LogsRetentionSumUsage]**](LogsRetentionSumUsage.md) | Indexed logs usage for each active retention for the organization. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
