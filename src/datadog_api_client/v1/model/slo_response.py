@@ -23,9 +23,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
+    from datadog_api_client.v1.model.slo_response_data import SLOResponseData
 
-    globals()["ServiceLevelObjective"] = ServiceLevelObjective
+    globals()["SLOResponseData"] = SLOResponseData
 
 
 class SLOResponse(ModelNormal):
@@ -72,7 +72,7 @@ class SLOResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "data": (ServiceLevelObjective,),  # noqa: E501
+            "data": (SLOResponseData,),  # noqa: E501
             "errors": ([str],),  # noqa: E501
         }
 
@@ -133,7 +133,7 @@ class SLOResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data (ServiceLevelObjective): [optional]  # noqa: E501
+            data (SLOResponseData): [optional]  # noqa: E501
             errors ([str]): An array of error messages. Each endpoint documents how/whether this field is used.. [optional]  # noqa: E501
         """
 

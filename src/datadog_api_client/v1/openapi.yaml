@@ -3382,6 +3382,51 @@ components:
       type: string
       x-enum-varnames:
       - ATTRIBUTE_REMAPPER
+    LogsByRetention:
+      description: Object containing logs usage data broken down by retention period.
+      properties:
+        orgs:
+          description: Indexed logs usage summary for each organization for each retention
+            period with usage.
+          properties:
+            usage:
+              description: Indexed logs usage summary for each organization.
+              items:
+                $ref: '#/components/schemas/LogsByRetentionOrgUsage'
+              type: array
+          type: object
+        usage:
+          description: Aggregated index logs usage for each retention period with
+            usage.
+          items:
+            $ref: '#/components/schemas/LogsRetentionAggSumUsage'
+          type: array
+        usage_by_month:
+          $ref: '#/components/schemas/LogsByRetentionMonthlyUsage'
+      type: object
+    LogsByRetentionMonthlyUsage:
+      description: Object containing a summary of indexed logs usage by retention
+        period for a single month.
+      properties:
+        date:
+          description: The month for the usage.
+          format: datetime
+          type: string
+        usage:
+          description: Indexed logs usage for each active retention for the month.
+          items:
+            $ref: '#/components/schemas/LogsRetentionSumUsage'
+          type: array
+      type: object
+    LogsByRetentionOrgUsage:
+      description: Indexed logs usage by retention for a single organization.
+      properties:
+        usage:
+          description: Indexed logs usage for each active retention for the organization.
+          items:
+            $ref: '#/components/schemas/LogsRetentionSumUsage'
+          type: array
+      type: object
     LogsCategoryProcessor:
       description: "Use the Category Processor to add a new attribute (without spaces\
         \ or special characters in the new attribute name)\nto a log matching a provided\
@@ -4097,6 +4142,48 @@ components:
           type: integer
       required:
       - aggregation
+      type: object
+    LogsRetentionAggSumUsage:
+      description: Object containing indexed logs usage aggregated across organizations
+        and months for a retention period.
+      properties:
+        logs_indexed_logs_usage_agg_sum:
+          description: Total indexed logs for this retention period.
+          format: int64
+          type: integer
+        logs_live_indexed_logs_usage_agg_sum:
+          description: Live indexed logs for this retention period.
+          format: int64
+          type: integer
+        logs_rehydrated_indexed_logs_usage_agg_sum:
+          description: Rehydrated indexed logs for this retention period.
+          format: int64
+          type: integer
+        retention:
+          description: The retention period in days or "custom" for all custom retention
+            periods.
+          type: string
+      type: object
+    LogsRetentionSumUsage:
+      description: Object containing indexed logs usage grouped by retention period
+        and summed.
+      properties:
+        logs_indexed_logs_usage_sum:
+          description: Total indexed logs for this retention period.
+          format: int64
+          type: integer
+        logs_live_indexed_logs_usage_sum:
+          description: Live indexed logs for this retention period.
+          format: int64
+          type: integer
+        logs_rehydrated_indexed_logs_usage_sum:
+          description: Rehydrated indexed logs for this retention period.
+          format: int64
+          type: integer
+        retention:
+          description: The retention period in days or "custom" for all custom retention
+            periods.
+          type: string
       type: object
     LogsServiceRemapper:
       description: 'Use this processor if you want to assign one or more attributes
@@ -6155,7 +6242,144 @@ components:
         level objective.
       properties:
         data:
-          $ref: '#/components/schemas/ServiceLevelObjective'
+          description: 'A service level objective object includes a service level
+            indicator, thresholds
+
+            for one or more timeframes, and metadata (`name`, `description`, `tags`,
+            etc.).'
+          properties:
+            configured_alert_ids:
+              description: A list of SLO monitors IDs that reference this SLO. This
+                field is returned only when `with_configured_alert_ids` parameter
+                is true in query.
+              example:
+              - 123
+              - 456
+              - 789
+              items:
+                description: A monitor ID.
+                format: int64
+                type: integer
+              type: array
+            created_at:
+              description: 'Creation timestamp (UNIX time in seconds)
+
+
+                Always included in service level objective responses.'
+              format: int64
+              readOnly: true
+              type: integer
+            creator:
+              $ref: '#/components/schemas/Creator'
+            description:
+              description: 'A user-defined description of the service level objective.
+
+
+                Always included in service level objective responses (but may be `null`).
+
+                Optional in create/update requests.'
+              nullable: true
+              type: string
+            groups:
+              description: 'A list of (up to 20) monitor groups that narrow the scope
+                of a monitor service level objective.
+
+
+                Included in service level objective responses if it is not empty.
+                Optional in
+
+                create/update requests for monitor service level objectives, but may
+                only be
+
+                used when then length of the `monitor_ids` field is one.'
+              example:
+              - env:prod
+              - role:mysql
+              items:
+                description: A group name, for instance `env:prod`.
+                type: string
+              type: array
+            id:
+              description: 'A unique identifier for the service level objective object.
+
+
+                Always included in service level objective responses.'
+              readOnly: true
+              type: string
+            modified_at:
+              description: 'Modification timestamp (UNIX time in seconds)
+
+
+                Always included in service level objective responses.'
+              format: int64
+              readOnly: true
+              type: integer
+            monitor_ids:
+              description: 'A list of monitor ids that defines the scope of a monitor
+                service level
+
+                objective. **Required if type is `monitor`**.'
+              items:
+                description: A monitor ID.
+                format: int64
+                type: integer
+              type: array
+            monitor_tags:
+              description: 'The union of monitor tags for all monitors referenced
+                by the `monitor_ids`
+
+                field.
+
+                Always included in service level objective responses for monitor service
+                level
+
+                objectives (but may be empty). Ignored in create/update requests.
+                Does not
+
+                affect which monitors are included in the service level objective
+                (that is
+
+                determined entirely by the `monitor_ids` field).'
+              items:
+                description: A monitor tag.
+                type: string
+              type: array
+            name:
+              description: The name of the service level objective object.
+              example: Custom Metric SLO
+              type: string
+            query:
+              $ref: '#/components/schemas/ServiceLevelObjectiveQuery'
+            tags:
+              description: 'A list of tags associated with this service level objective.
+
+                Always included in service level objective responses (but may be empty).
+
+                Optional in create/update requests.'
+              example:
+              - env:prod
+              - app:core
+              items:
+                description: A tag to apply to your SLO.
+                type: string
+              type: array
+            thresholds:
+              description: 'The thresholds (timeframes and associated targets) for
+                this service level
+
+                objective object.'
+              example:
+              - target: 95
+                timeframe: 7d
+              - target: 95
+                timeframe: 30d
+                warning: 97
+              items:
+                $ref: '#/components/schemas/SLOThreshold'
+              type: array
+            type:
+              $ref: '#/components/schemas/SLOType'
+          type: object
         errors:
           description: 'An array of error messages. Each endpoint documents how/whether
             this field is
@@ -8274,7 +8498,6 @@ components:
             $ref: '#/components/schemas/SyntheticsBrowserVariable'
           type: array
       required:
-      - request
       - assertions
       type: object
     SyntheticsTestDetails:
@@ -8391,8 +8614,7 @@ components:
             $ref: '#/components/schemas/SyntheticsDeviceID'
           type: array
         disableCors:
-          description: Whether or not to disable CORS mechanism. Currently only available
-            for Chrome.
+          description: Whether or not to disable CORS mechanism.
           type: boolean
         follow_redirects:
           description: For API HTTP test, whether or not the test should follow redirects.
@@ -8553,6 +8775,7 @@ components:
     SyntheticsTickInterval:
       description: The frequency at which to run the Synthetic test (in seconds).
       enum:
+      - 30
       - 60
       - 300
       - 900
@@ -8565,6 +8788,7 @@ components:
       format: int64
       type: integer
       x-enum-varnames:
+      - THIRTY_SECONDS
       - MINUTE
       - FIVE_MINUTES
       - FIFTEEN_MINUTES
@@ -9241,6 +9465,70 @@ components:
       - LAMBDA_INVOCATIONS_PERCENTAGE
       - LAMBDA_USAGE
       - LAMBDA_PERCENTAGE
+    UsageAttributionSupportedMetrics:
+      description: Supported fields for usage attribution requests (valid requests
+        contain one or more metrics, or `*` for all).
+      enum:
+      - custom_timeseries_usage
+      - container_usage
+      - snmp_percentage
+      - apm_host_usage
+      - browser_usage
+      - npm_host_percentage
+      - infra_host_usage
+      - custom_timeseries_percentage
+      - container_percentage
+      - lambda_usage
+      - api_usage
+      - apm_host_percentage
+      - infra_host_percentage
+      - snmp_usage
+      - browser_percentage
+      - api_percentage
+      - lambda_percentage
+      - npm_host_usage
+      - lambda_functions_usage
+      - lambda_functions_percentage
+      - lambda_invocations_usage
+      - lambda_invocations_percentage
+      - fargate_usage
+      - fargate_percentage
+      - profiled_host_usage
+      - profiled_host_percentage
+      - profiled_container_usage
+      - profiled_container_percentage
+      - '*'
+      type: string
+      x-enum-varnames:
+      - CUSTOM_TIMESERIES_USAGE
+      - CONTAINER_USAGE
+      - SNMP_PERCENTAGE
+      - APM_HOST_USAGE
+      - BROWSER_USAGE
+      - NPM_HOST_PERCENTAGE
+      - INFRA_HOST_USAGE
+      - CUSTOM_TIMESERIES_PERCENTAGE
+      - CONTAINER_PERCENTAGE
+      - LAMBDA_USAGE
+      - API_USAGE
+      - APM_HOST_PERCENTAGE
+      - INFRA_HOST_PERCENTAGE
+      - SNMP_USAGE
+      - BROWSER_PERCENTAGE
+      - API_PERCENTAGE
+      - LAMBDA_PERCENTAGE
+      - NPM_HOST_USAGE
+      - LAMBDA_FUNCTIONS_USAGE
+      - LAMBDA_FUNCTIONS_PERCENTAGE
+      - LAMBDA_INVOCATIONS_USAGE
+      - LAMBDA_INVOCATIONS_PERCENTAGE
+      - FARGATE_USAGE
+      - FARGATE_PERCENTAGE
+      - PROFILED_HOST_USAGE
+      - PROFILED_HOST_PERCENTAGE
+      - PROFILED_CONTAINER_USAGE
+      - PROFILED_CONTAINER_PERCENTAGE
+      - ALL
     UsageAttributionTagNames:
       additionalProperties:
         description: A list of tag values.
@@ -9841,6 +10129,40 @@ components:
             response.
           items:
             $ref: '#/components/schemas/UsageLogsByIndexHour'
+          type: array
+      type: object
+    UsageLogsByRetentionHour:
+      description: The number of indexed logs for each hour for a given organization
+        broken down by retention period.
+      properties:
+        indexed_events_count:
+          description: Total logs indexed with this retention period during a given
+            hour.
+          format: int64
+          type: integer
+        live_indexed_events_count:
+          description: Live logs indexed with this retention period during a given
+            hour.
+          format: int64
+          type: integer
+        rehydrated_indexed_events_count:
+          description: Rehydrated logs indexed with this retention period during a
+            given hour.
+          format: int64
+          type: integer
+        retention:
+          description: The retention period in days or "custom" for all custom retention
+            usage.
+          type: string
+      type: object
+    UsageLogsByRetentionResponse:
+      description: Response containing the indexed logs usage broken down by retention
+        period for an organization during a given hour.
+      properties:
+        usage:
+          description: Get hourly usage for indexed logs by retention period.
+          items:
+            $ref: '#/components/schemas/UsageLogsByRetentionHour'
           type: array
       type: object
     UsageLogsHour:
@@ -10657,6 +10979,8 @@ components:
             1, 2020).
           format: int64
           type: integer
+        logs_by_retention:
+          $ref: '#/components/schemas/LogsByRetention'
         mobile_rum_session_count_agg_sum:
           description: Shows the sum of all mobile RUM Sessions over all hours in
             the current months for all organizations.
@@ -16981,6 +17305,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: SLO Not Found
       summary: Create an SLO correction
       tags:
       - Service Level Objective Corrections
@@ -17194,6 +17524,13 @@ paths:
         required: true
         schema:
           type: string
+      - description: Get the IDs of SLO monitors that reference this SLO.
+        example: true
+        in: query
+        name: with_configured_alert_ids
+        required: false
+        schema:
+          type: boolean
       responses:
         '200':
           content:
@@ -18658,12 +18995,13 @@ paths:
         schema:
           format: date-time
           type: string
-      - description: The specified field to search results for.
+      - description: Comma-separated list of usage types to return, or `*` for all
+          usage types.
         in: query
         name: fields
         required: true
         schema:
-          type: string
+          $ref: '#/components/schemas/UsageAttributionSupportedMetrics'
       - description: 'Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]`
           for usage ending this month.'
         in: query
@@ -19164,6 +19502,53 @@ paths:
       tags:
       - Usage Metering
       x-menu-order: 2
+      x-undo:
+        type: safe
+  /api/v1/usage/logs-by-retention:
+    get:
+      description: Get hourly usage for indexed logs by retention period.
+      operationId: GetUsageLogsByRetention
+      parameters:
+      - description: 'Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]`
+          for usage beginning at this hour.'
+        in: query
+        name: start_hr
+        required: true
+        schema:
+          format: date-time
+          type: string
+      - description: 'Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]`
+          for usage ending
+
+          **before** this hour.'
+        in: query
+        name: end_hr
+        required: false
+        schema:
+          format: date-time
+          type: string
+      responses:
+        '200':
+          content:
+            application/json;datetime-format=rfc3339:
+              schema:
+                $ref: '#/components/schemas/UsageLogsByRetentionResponse'
+          description: OK
+        '400':
+          content:
+            application/json;datetime-format=rfc3339:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json;datetime-format=rfc3339:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden - User is not authorized
+      summary: Get hourly logs usage by retention
+      tags:
+      - Usage Metering
       x-undo:
         type: safe
   /api/v1/usage/logs_by_index:

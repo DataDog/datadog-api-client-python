@@ -176,6 +176,10 @@ from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmetic
 from datadog_api_client.v1.model.logs_arithmetic_processor_type import LogsArithmeticProcessorType
 from datadog_api_client.v1.model.logs_attribute_remapper import LogsAttributeRemapper
 from datadog_api_client.v1.model.logs_attribute_remapper_type import LogsAttributeRemapperType
+from datadog_api_client.v1.model.logs_by_retention import LogsByRetention
+from datadog_api_client.v1.model.logs_by_retention_monthly_usage import LogsByRetentionMonthlyUsage
+from datadog_api_client.v1.model.logs_by_retention_org_usage import LogsByRetentionOrgUsage
+from datadog_api_client.v1.model.logs_by_retention_orgs import LogsByRetentionOrgs
 from datadog_api_client.v1.model.logs_category_processor import LogsCategoryProcessor
 from datadog_api_client.v1.model.logs_category_processor_category import LogsCategoryProcessorCategory
 from datadog_api_client.v1.model.logs_category_processor_type import LogsCategoryProcessorType
@@ -207,6 +211,8 @@ from datadog_api_client.v1.model.logs_pipeline_processor_type import LogsPipelin
 from datadog_api_client.v1.model.logs_pipelines_order import LogsPipelinesOrder
 from datadog_api_client.v1.model.logs_processor import LogsProcessor
 from datadog_api_client.v1.model.logs_query_compute import LogsQueryCompute
+from datadog_api_client.v1.model.logs_retention_agg_sum_usage import LogsRetentionAggSumUsage
+from datadog_api_client.v1.model.logs_retention_sum_usage import LogsRetentionSumUsage
 from datadog_api_client.v1.model.logs_service_remapper import LogsServiceRemapper
 from datadog_api_client.v1.model.logs_service_remapper_type import LogsServiceRemapperType
 from datadog_api_client.v1.model.logs_sort import LogsSort
@@ -299,6 +305,7 @@ from datadog_api_client.v1.model.slo_list_response import SLOListResponse
 from datadog_api_client.v1.model.slo_list_response_metadata import SLOListResponseMetadata
 from datadog_api_client.v1.model.slo_list_response_metadata_page import SLOListResponseMetadataPage
 from datadog_api_client.v1.model.slo_response import SLOResponse
+from datadog_api_client.v1.model.slo_response_data import SLOResponseData
 from datadog_api_client.v1.model.slo_threshold import SLOThreshold
 from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
 from datadog_api_client.v1.model.slo_type import SLOType
@@ -462,6 +469,7 @@ from datadog_api_client.v1.model.usage_attribution_metadata import UsageAttribut
 from datadog_api_client.v1.model.usage_attribution_pagination import UsageAttributionPagination
 from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
 from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
+from datadog_api_client.v1.model.usage_attribution_supported_metrics import UsageAttributionSupportedMetrics
 from datadog_api_client.v1.model.usage_attribution_tag_names import UsageAttributionTagNames
 from datadog_api_client.v1.model.usage_attribution_values import UsageAttributionValues
 from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
@@ -491,6 +499,8 @@ from datadog_api_client.v1.model.usage_lambda_hour import UsageLambdaHour
 from datadog_api_client.v1.model.usage_lambda_response import UsageLambdaResponse
 from datadog_api_client.v1.model.usage_logs_by_index_hour import UsageLogsByIndexHour
 from datadog_api_client.v1.model.usage_logs_by_index_response import UsageLogsByIndexResponse
+from datadog_api_client.v1.model.usage_logs_by_retention_hour import UsageLogsByRetentionHour
+from datadog_api_client.v1.model.usage_logs_by_retention_response import UsageLogsByRetentionResponse
 from datadog_api_client.v1.model.usage_logs_hour import UsageLogsHour
 from datadog_api_client.v1.model.usage_logs_response import UsageLogsResponse
 from datadog_api_client.v1.model.usage_metric_category import UsageMetricCategory

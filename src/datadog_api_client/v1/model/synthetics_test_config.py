@@ -79,8 +79,8 @@ class SyntheticsTestConfig(ModelNormal):
         lazy_import()
         return {
             "assertions": ([SyntheticsAssertion],),  # noqa: E501
-            "request": (SyntheticsTestRequest,),  # noqa: E501
             "config_variables": ([SyntheticsConfigVariable],),  # noqa: E501
+            "request": (SyntheticsTestRequest,),  # noqa: E501
             "variables": ([SyntheticsBrowserVariable],),  # noqa: E501
         }
 
@@ -90,8 +90,8 @@ class SyntheticsTestConfig(ModelNormal):
 
     attribute_map = {
         "assertions": "assertions",  # noqa: E501
-        "request": "request",  # noqa: E501
         "config_variables": "configVariables",  # noqa: E501
+        "request": "request",  # noqa: E501
         "variables": "variables",  # noqa: E501
     }
 
@@ -109,11 +109,10 @@ class SyntheticsTestConfig(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, request, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """SyntheticsTestConfig - a model defined in OpenAPI
 
         Args:
-            request (SyntheticsTestRequest):
 
         Keyword Args:
             assertions ([SyntheticsAssertion]): Array of assertions used for the test.. defaults to []  # noqa: E501
@@ -148,6 +147,7 @@ class SyntheticsTestConfig(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             config_variables ([SyntheticsConfigVariable]): API tests only - array of variables used for the test.. [optional]  # noqa: E501
+            request (SyntheticsTestRequest): [optional]  # noqa: E501
             variables ([SyntheticsBrowserVariable]): Browser tests only - array of variables used for the test steps.. [optional]  # noqa: E501
         """
 
@@ -177,7 +177,6 @@ class SyntheticsTestConfig(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.assertions = assertions
-        self.request = request
         for var_name, var_value in kwargs.items():
             if (
                 var_name not in self.attribute_map

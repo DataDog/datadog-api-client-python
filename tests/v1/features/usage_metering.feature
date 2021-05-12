@@ -32,6 +32,18 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get hourly logs usage by retention returns "Bad Request" response
+    Given new "GetUsageLogsByRetention" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get hourly logs usage by retention returns "OK" response
+    Given new "GetUsageLogsByRetention" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get hourly usage for Compliance Monitoring returns "Bad Request" response
     Given new "GetUsageComplianceMonitoring" request
     When the request is sent

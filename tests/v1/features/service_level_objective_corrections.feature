@@ -28,6 +28,14 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 200 OK
 
+  @skip
+  Scenario: Create an SLO correction returns "SLO Not Found" response
+    Given operation "CreateSLOCorrection" enabled
+    And new "CreateSLOCorrection" request
+    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ hour_later_ts }}, "slo_id": "sloId", "start": {{ now_ts }}, "timezone": "UTC"}, "type": "correction"}}
+    When the request is sent
+    Then the response status is 404 SLO Not Found
+
   @generated @skip
   Scenario: Delete an SLO correction returns "Not found" response
     Given operation "DeleteSLOCorrection" enabled
