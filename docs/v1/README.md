@@ -350,6 +350,7 @@ Class | Method | HTTP request | Description
  - [DistributionWidgetXAxis](DistributionWidgetXAxis.md)
  - [DistributionWidgetYAxis](DistributionWidgetYAxis.md)
  - [Downtime](Downtime.md)
+ - [DowntimeChild](DowntimeChild.md)
  - [DowntimeRecurrence](DowntimeRecurrence.md)
  - [Event](Event.md)
  - [EventAlertType](EventAlertType.md)
