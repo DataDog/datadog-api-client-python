@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - ListSecurityFilters
+      User-Agent:
+      - datadog-api-client-python/0.1.dev336 (python 3.9.5; os Linux; arch x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
+  response:
+    body:
+      string: '{"data":[{"attributes":{"is_enabled":true,"name":"all ingested logs","filtered_data_type":"logs","exclusion_filters":[],"version":1,"query":"*","is_builtin":true},"type":"security_filters","id":"bc0-fow-e4j"},{"attributes":{"is_enabled":true,"name":"Custom
+        security filter","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
+        staging"}],"version":1,"query":"service:api","is_builtin":false},"type":"security_filters","id":"qhn-iuy-4oc"}]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '477'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 12 May 2021 07:24:28 GMT
+      cache-control:
+      - no-cache
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
+      x-dd-version:
+      - '35.4512853'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

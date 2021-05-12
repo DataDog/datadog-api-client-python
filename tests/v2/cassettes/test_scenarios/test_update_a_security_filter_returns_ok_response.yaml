@@ -1,0 +1,149 @@
+interactions:
+- request:
+    body: '{"data": {"type": "security_filters", "attributes": {"name": "Test-Update_a_security_filter_returns_OK_response-1620804268",
+      "query": "service:TestUpdateasecurityfilterreturnsOKresponse1620804268", "exclusion_filters":
+      [{"name": "Exclude logs from staging", "query": "source:staging"}], "filtered_data_type":
+      "logs", "is_enabled": true}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateSecurityFilter
+      User-Agent:
+      - datadog-api-client-python/0.1.dev336 (python 3.9.5; os Linux; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
+  response:
+    body:
+      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Update_a_security_filter_returns_OK_response-1620804268","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
+        logs from staging"}],"version":1,"query":"service:TestUpdateasecurityfilterreturnsOKresponse1620804268","is_builtin":false},"type":"security_filters","id":"jnr-ww4-5me"}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '372'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 12 May 2021 07:24:28 GMT
+      cache-control:
+      - no-cache
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - fIO2C4qGDheGHy4YbS+r3a3CXbh4cbRo7roILOimQyiHGjQdOat0cIpWCkupM1uX
+      x-dd-version:
+      - '35.4512853'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data": {"attributes": {"exclusion_filters": [], "filtered_data_type":
+      "logs", "is_enabled": true, "name": "Test-Update_a_security_filter_returns_OK_response-1620804268",
+      "query": "service:TestUpdateasecurityfilterreturnsOKresponse1620804268", "version":
+      1}, "type": "security_filters"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - UpdateSecurityFilter
+      User-Agent:
+      - datadog-api-client-python/0.1.dev336 (python 3.9.5; os Linux; arch x86_64)
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/jnr-ww4-5me
+  response:
+    body:
+      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Update_a_security_filter_returns_OK_response-1620804268","filtered_data_type":"logs","exclusion_filters":[],"version":2,"query":"service:TestUpdateasecurityfilterreturnsOKresponse1620804268","is_builtin":false},"type":"security_filters","id":"jnr-ww4-5me"}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '311'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 12 May 2021 07:24:28 GMT
+      cache-control:
+      - no-cache
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - JpIJLwIH2nFlZOC+u71rq7aAOL43MLZN3MUsL+gpYHdZz5QLUOG8Jysf8kVK6tPU
+      x-dd-version:
+      - '35.4512853'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteSecurityFilter
+      User-Agent:
+      - datadog-api-client-python/0.1.dev336 (python 3.9.5; os Linux; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/jnr-ww4-5me
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 12 May 2021 07:24:28 GMT
+      cache-control:
+      - no-cache
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - 5gfwVh/5HZ+AnGd/Di93w3NEWC6KMHT9KzmHEiRJmNdOjBtAsbOcgVFyqEChw71h
+      x-dd-version:
+      - '35.4512853'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 204
+      message: No Content
+version: 1
