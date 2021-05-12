@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.0.0 / 2021-05-12
+
+* [Added] Notebooks Public API Documentation. See [#432](https://github.com/DataDog/datadog-api-client-python/pull/432).
+* [Added] Add `logs_by_retention` usage property and `GetUsageLogsByRetention` endpoint. See [#425](https://github.com/DataDog/datadog-api-client-python/pull/425).
+* [Added] Add anomaly detection method to `SecurityMonitoringRuleDetectionMethod` enum. See [#424](https://github.com/DataDog/datadog-api-client-python/pull/424).
+* [Added] Add `with_configured_alert_ids` parameter to get a SLO details endpoint. See [#421](https://github.com/DataDog/datadog-api-client-python/pull/421).
+* [Added] Add `setCookie`, `dnsServerPort`,  `allowFailure ` and `isCritical` fields for Synthetics tests. See [#418](https://github.com/DataDog/datadog-api-client-python/pull/418).
+* [Added] Add `metadata` property with pagination info to `SLOList` endpoint response. See [#414](https://github.com/DataDog/datadog-api-client-python/pull/414).
+* [Added] Add new properties to group widget, note widget and image widget. See [#412](https://github.com/DataDog/datadog-api-client-python/pull/412).
+* [Added] Add support for a `rate` metric type in manage metric tags v2 endpoint. See [#409](https://github.com/DataDog/datadog-api-client-python/pull/409).
+* [Added] Add support for ICMP Synthetics tests. See [#406](https://github.com/DataDog/datadog-api-client-python/pull/406).
+* [Added] Add vSphere usage information. See [#402](https://github.com/DataDog/datadog-api-client-python/pull/402).
+* [Added] Mark metric volumes and ingested tags endpoints as stable. See [#396](https://github.com/DataDog/datadog-api-client-python/pull/396).
+* [Added] Add `filter[shared]` query parameter for searching dashboards. See [#390](https://github.com/DataDog/datadog-api-client-python/pull/390).
+* [Added] Add profiling product fields in usage metering endpoint. See [#389](https://github.com/DataDog/datadog-api-client-python/pull/389).
+* [Added] Add `title` and `background_color` properties to dashboard group widget. See [#388](https://github.com/DataDog/datadog-api-client-python/pull/388).
+* [Added] Add `marker`, `xaxis` and `yaxis` properties on distribution widgets. See [#400](https://github.com/DataDog/datadog-api-client-python/pull/400).
+* [Fixed] Remove default value of `is_column_break` layout property of dashboard. See [#431](https://github.com/DataDog/datadog-api-client-python/pull/431).
+* [Fixed] Remove nulltype. See [#401](https://github.com/DataDog/datadog-api-client-python/pull/401).
+* [Changed] Enumerate accepted values for fields parameter in usage attribution requests. See [#428](https://github.com/DataDog/datadog-api-client-python/pull/428).
+* [Changed] Add new enum value for tick interval and remove `request` as required field from synthetics test. See [#426](https://github.com/DataDog/datadog-api-client-python/pull/426).
+* [Deprecated] Deprecate `legend_size` and `show_legend` properties on distribution widgets. See [#400](https://github.com/DataDog/datadog-api-client-python/pull/400).
+* [Removed] Remove deprecated Synthetics methods `CreateTest` and `UpdateTest`. See [#403](https://github.com/DataDog/datadog-api-client-python/pull/403).
+
 ## 1.0.0b8 / 2021-04-15
 
 * [Added] Add `reflow_type` property to dashboard object. See [#372](https://github.com/DataDog/datadog-api-client-python/pull/372).
