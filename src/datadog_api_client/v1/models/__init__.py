@@ -74,6 +74,7 @@ from datadog_api_client.v1.model.distribution_widget_request import Distribution
 from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
 from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
 from datadog_api_client.v1.model.downtime import Downtime
+from datadog_api_client.v1.model.downtime_child import DowntimeChild
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 from datadog_api_client.v1.model.event import Event
 from datadog_api_client.v1.model.event_alert_type import EventAlertType
