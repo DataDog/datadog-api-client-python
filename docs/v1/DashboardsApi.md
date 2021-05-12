@@ -74,7 +74,7 @@ with ApiClient(configuration) as api_client:
                 id=1,
                 layout=WidgetLayout(
                     height=0,
-                    is_column_break=False,
+                    is_column_break=True,
                     width=0,
                     x=0,
                     y=0,
@@ -384,7 +384,7 @@ with ApiClient(configuration) as api_client:
                 id=1,
                 layout=WidgetLayout(
                     height=0,
-                    is_column_break=False,
+                    is_column_break=True,
                     width=0,
                     x=0,
                     y=0,
