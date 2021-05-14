@@ -65,8 +65,8 @@ class SyntheticsGlobalVariableValue(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "value": (str,),  # noqa: E501
             "secure": (bool,),  # noqa: E501
+            "value": (str,),  # noqa: E501
         }
 
     @cached_property
@@ -74,8 +74,8 @@ class SyntheticsGlobalVariableValue(ModelNormal):
         return None
 
     attribute_map = {
-        "value": "value",  # noqa: E501
         "secure": "secure",  # noqa: E501
+        "value": "value",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -92,11 +92,8 @@ class SyntheticsGlobalVariableValue(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, value, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """SyntheticsGlobalVariableValue - a model defined in OpenAPI
-
-        Args:
-            value (str): Value of the global variable. When reading a global variable, the value will not be present if the variable is secure.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -130,6 +127,7 @@ class SyntheticsGlobalVariableValue(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             secure (bool): Determines if the variable is secure.. [optional]  # noqa: E501
+            value (str): Value of the global variable. When reading a global variable, the value will not be present if the variable is secure.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
@@ -156,7 +154,6 @@ class SyntheticsGlobalVariableValue(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.value = value
         for var_name, var_value in kwargs.items():
             if (
                 var_name not in self.attribute_map
