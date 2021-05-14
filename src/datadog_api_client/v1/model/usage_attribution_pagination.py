@@ -66,9 +66,7 @@ class UsageAttributionPagination(ModelNormal):
         """
         return {
             "limit": (int,),  # noqa: E501
-            "offset": (int,),  # noqa: E501
-            "sort_direction": (str,),  # noqa: E501
-            "sort_name": (str,),  # noqa: E501
+            "next_record_id": (str,),  # noqa: E501
             "total_number_of_records": (int,),  # noqa: E501
         }
 
@@ -78,9 +76,7 @@ class UsageAttributionPagination(ModelNormal):
 
     attribute_map = {
         "limit": "limit",  # noqa: E501
-        "offset": "offset",  # noqa: E501
-        "sort_direction": "sort_direction",  # noqa: E501
-        "sort_name": "sort_name",  # noqa: E501
+        "next_record_id": "next_record_id",  # noqa: E501
         "total_number_of_records": "total_number_of_records",  # noqa: E501
     }
 
@@ -133,10 +129,8 @@ class UsageAttributionPagination(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             limit (int): Maximum amount of records to be returned.. [optional]  # noqa: E501
-            offset (int): Records to be skipped before beginning to return.. [optional]  # noqa: E501
-            sort_direction (str): Direction to sort by.. [optional]  # noqa: E501
-            sort_name (str): Field to sort by.. [optional]  # noqa: E501
-            total_number_of_records (int): Total number of records.. [optional]  # noqa: E501
+            next_record_id (str): The cursor to use to get the next results, if any. To make the next request, use the same parameters with the addition of this next_record_id.. [optional]  # noqa: E501
+            total_number_of_records (int): Total number of records. (deprecated after May 1st, 2021). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

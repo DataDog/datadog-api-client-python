@@ -1409,6 +1409,7 @@ class UsageMeteringApi(object):
                     "day",
                     "names",
                     "limit",
+                    "next_record_id",
                 ],
                 "required": [],
                 "nullable": [],
@@ -1430,18 +1431,21 @@ class UsageMeteringApi(object):
                     "day": (datetime,),
                     "names": ([str],),
                     "limit": (int,),
+                    "next_record_id": (str,),
                 },
                 "attribute_map": {
                     "month": "month",
                     "day": "day",
                     "names": "names",
                     "limit": "limit",
+                    "next_record_id": "next_record_id",
                 },
                 "location_map": {
                     "month": "query",
                     "day": "query",
                     "names": "query",
                     "limit": "query",
+                    "next_record_id": "query",
                 },
                 "collection_format_map": {
                     "names": "multi",
@@ -2778,9 +2782,9 @@ class UsageMeteringApi(object):
         return self._get_usage_timeseries_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_top_avg_metrics(self, **kwargs):
-        """Get top custom metrics by hourly average  # noqa: E501
+        """Get all custom metrics by hourly average  # noqa: E501
 
-        Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.  # noqa: E501
+        Get all [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2793,6 +2797,7 @@ class UsageMeteringApi(object):
             day (datetime): Datetime in ISO-8601 format, UTC, precise to day: [YYYY-MM-DD] for usage beginning at this hour. (Either month or day should be specified, but not both). [optional]
             names ([str]): Comma-separated list of metric names.. [optional]
             limit (int): Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified.. [optional] if omitted the server will use the default value of 500
+            next_record_id (str): List following results with a next_record_id provided in the previous query.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

@@ -33,7 +33,7 @@ Method | HTTP request | Description
 [**get_usage_synthetics_api**](UsageMeteringApi.md#get_usage_synthetics_api) | **GET** /api/v1/usage/synthetics_api | Get hourly usage for Synthetics API Checks
 [**get_usage_synthetics_browser**](UsageMeteringApi.md#get_usage_synthetics_browser) | **GET** /api/v1/usage/synthetics_browser | Get hourly usage for Synthetics Browser Checks
 [**get_usage_timeseries**](UsageMeteringApi.md#get_usage_timeseries) | **GET** /api/v1/usage/timeseries | Get hourly usage for custom metrics
-[**get_usage_top_avg_metrics**](UsageMeteringApi.md#get_usage_top_avg_metrics) | **GET** /api/v1/usage/top_avg_metrics | Get top custom metrics by hourly average
+[**get_usage_top_avg_metrics**](UsageMeteringApi.md#get_usage_top_avg_metrics) | **GET** /api/v1/usage/top_avg_metrics | Get all custom metrics by hourly average
 [**get_usage_trace**](UsageMeteringApi.md#get_usage_trace) | **GET** /api/v1/usage/traces | Get hourly usage for Trace Search
 
 
@@ -2250,9 +2250,9 @@ Name | Type | Description  | Notes
 # **get_usage_top_avg_metrics**
 > UsageTopAvgMetricsResponse get_usage_top_avg_metrics()
 
-Get top custom metrics by hourly average
+Get all custom metrics by hourly average
 
-Get top [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.
+Get all [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/) by hourly average. Use the month parameter to get a month-to-date data resolution or use the day parameter to get a daily resolution. One of the two is required, and only one of the two is allowed.
 
 ### Example
 
@@ -2278,12 +2278,13 @@ with ApiClient(configuration) as api_client:
         "names_example",
     ]  # [str] | Comma-separated list of metric names. (optional)
     limit = 500  # int | Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. (optional) if omitted the server will use the default value of 500
+    next_record_id = "next_record_id_example"  # str | List following results with a next_record_id provided in the previous query. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get top custom metrics by hourly average
-        api_response = api_instance.get_usage_top_avg_metrics(month=month, day=day, names=names, limit=limit)
+        # Get all custom metrics by hourly average
+        api_response = api_instance.get_usage_top_avg_metrics(month=month, day=day, names=names, limit=limit, next_record_id=next_record_id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_top_avg_metrics: %s\n" % e)
@@ -2298,6 +2299,7 @@ Name | Type | Description  | Notes
  **day** | **datetime**| Datetime in ISO-8601 format, UTC, precise to day: [YYYY-MM-DD] for usage beginning at this hour. (Either month or day should be specified, but not both) | [optional]
  **names** | **[str]**| Comma-separated list of metric names. | [optional]
  **limit** | **int**| Maximum number of results to return (between 1 and 5000) - defaults to 500 results if limit not specified. | [optional] if omitted the server will use the default value of 500
+ **next_record_id** | **str**| List following results with a next_record_id provided in the previous query. | [optional]
 
 ### Return type
 
