@@ -21927,6 +21927,8 @@ tags:
 
     - [Read more about Custom Check monitors.][4]
 
+    - [Read more about Service Check and status codes.][5]
+
 
     [1]: https://docs.datadoghq.com/monitors/monitor_types/host/?tab=checkalert
 
@@ -21934,7 +21936,9 @@ tags:
 
     [3]: https://docs.datadoghq.com/monitors/monitor_types/network/?tab=checkalert
 
-    [4]: https://docs.datadoghq.com/monitors/monitor_types/custom_check/?tab=checkalert'
+    [4]: https://docs.datadoghq.com/monitors/monitor_types/custom_check/?tab=checkalert
+
+    [5]: https://docs.datadoghq.com/developers/service_checks/'
   name: Service Checks
 - description: "SLO Status Corrections allow you to prevent specific time periods\
     \ from negatively impacting\nyour SLO\u2019s status and error budget. You can\

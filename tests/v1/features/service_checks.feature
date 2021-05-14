@@ -6,13 +6,13 @@ Feature: Service Checks
   first 500 characters are displayed.  - [Read more about Service Check
   monitors.][1] - [Read more about Process Check monitors.][2] - [Read more
   about Network Check monitors.][3] - [Read more about Custom Check
-  monitors.][4]  [1]:
+  monitors.][4] - [Read more about Service Check and status codes.][5]  [1]:
   https://docs.datadoghq.com/monitors/monitor_types/host/?tab=checkalert
   [2]: https://docs.datadoghq.com/monitors/monitor_types/process_check/?tab=
   checkalert [3]:
   https://docs.datadoghq.com/monitors/monitor_types/network/?tab=checkalert
   [4]: https://docs.datadoghq.com/monitors/monitor_types/custom_check/?tab=c
-  heckalert
+  heckalert [5]: https://docs.datadoghq.com/developers/service_checks/
 
   Background:
     Given a valid "apiKeyAuth" key in the system
