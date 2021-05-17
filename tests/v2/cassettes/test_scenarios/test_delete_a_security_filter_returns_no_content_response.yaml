@@ -1,0 +1,142 @@
+interactions:
+- request:
+    body: '{"data": {"type": "security_filters", "attributes": {"name": "Test-Delete_a_security_filter_returns_No_Content_response-1620804267",
+      "query": "service:TestDeleteasecurityfilterreturnsNoContentresponse1620804267",
+      "exclusion_filters": [{"name": "Exclude logs from staging", "query": "source:staging"}],
+      "filtered_data_type": "logs", "is_enabled": true}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateSecurityFilter
+      User-Agent:
+      - datadog-api-client-python/0.1.dev336 (python 3.9.5; os Linux; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
+  response:
+    body:
+      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1620804267","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
+        logs from staging"}],"version":1,"query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1620804267","is_builtin":false},"type":"security_filters","id":"mcp-ntc-6mb"}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '387'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 12 May 2021 07:24:27 GMT
+      cache-control:
+      - no-cache
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - 2328yjLSqI4XmR1pVqrPRR/SFcQsbafjEpPmZx7/3PfxUK1nJQQsX+wrMelyVyj+
+      x-dd-version:
+      - '35.4512853'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteSecurityFilter
+      User-Agent:
+      - datadog-api-client-python/0.1.dev336 (python 3.9.5; os Linux; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/mcp-ntc-6mb
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 12 May 2021 07:24:28 GMT
+      cache-control:
+      - no-cache
+      content-disposition:
+      - inline
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - Um4CoU685QqAscnxhS5BD+goWu2yX1Jd4zCfGzSsEvPPIm1qURZaF8dlLl/OEY4I
+      x-dd-version:
+      - '35.4512853'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteSecurityFilter
+      User-Agent:
+      - datadog-api-client-python/0.1.dev336 (python 3.9.5; os Linux; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/mcp-ntc-6mb
+  response:
+    body:
+      string: '{"errors":["not_found(Security filter with id ''mcp-ntc-6mb'' not found)"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '73'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 12 May 2021 07:24:28 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4512853'
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 404
+      message: Not Found
+version: 1

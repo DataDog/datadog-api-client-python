@@ -19,11 +19,67 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip
+  Scenario: Create a security filter returns "Bad Request" response
+    Given new "CreateSecurityFilter" request
+    And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Create a security filter returns "Conflict" response
+    Given new "CreateSecurityFilter" request
+    And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  Scenario: Create a security filter returns "OK" response
+    Given new "CreateSecurityFilter" request
+    And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "{{ unique }}", "query": "service:{{ unique_alnum }}"}, "type": "security_filters"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Create a security filter returns "Too many requests" response
+    Given new "CreateSecurityFilter" request
+    And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
+    When the request is sent
+    Then the response status is 429 Too many requests
+
+  @skip
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
     And request contains "rule_id" parameter with value "ThisRuleIdProbablyDoesntExist"
     When the request is sent
     Then the response status is 404 Not Found
+
+  Scenario: Delete a security filter returns "No Content" response
+    Given there is a valid "security_filter" in the system
+    And new "DeleteSecurityFilter" request
+    And request contains "security_filter_id" parameter from "security_filter.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip
+  Scenario: Delete a security filter returns "Not Found" response
+    Given new "DeleteSecurityFilter" request
+    And request contains "security_filter_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip
+  Scenario: Delete a security filter returns "OK" response
+    Given new "DeleteSecurityFilter" request
+    And request contains "security_filter_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Delete a security filter returns "Too many requests" response
+    Given new "DeleteSecurityFilter" request
+    And request contains "security_filter_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 429 Too many requests
 
   @generated @skip
   Scenario: Delete an existing rule returns "Not Found" response
@@ -84,6 +140,38 @@ Feature: Security Monitoring
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get a security filter returns "Not Found" response
+    Given new "GetSecurityFilter" request
+    And request contains "security_filter_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  Scenario: Get a security filter returns "OK" response
+    Given there is a valid "security_filter" in the system
+    And new "GetSecurityFilter" request
+    And request contains "security_filter_id" parameter from "security_filter.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get a security filter returns "Too many requests" response
+    Given new "GetSecurityFilter" request
+    And request contains "security_filter_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 429 Too many requests
+
+  Scenario: Get all security filters returns "OK" response
+    Given new "ListSecurityFilters" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get all security filters returns "Too many requests" response
+    Given new "ListSecurityFilters" request
+    When the request is sent
+    Then the response status is 429 Too many requests
+
+  @generated @skip
   Scenario: List rules returns "Bad Request" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
@@ -94,6 +182,46 @@ Feature: Security Monitoring
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Update a security filter returns "Bad Request" response
+    Given new "UpdateSecurityFilter" request
+    And request contains "security_filter_id" parameter from "<PATH>"
+    And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Update a security filter returns "Concurrent Modification" response
+    Given new "UpdateSecurityFilter" request
+    And request contains "security_filter_id" parameter from "<PATH>"
+    And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
+    When the request is sent
+    Then the response status is 409 Concurrent Modification
+
+  @generated @skip
+  Scenario: Update a security filter returns "Not Found" response
+    Given new "UpdateSecurityFilter" request
+    And request contains "security_filter_id" parameter from "<PATH>"
+    And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  Scenario: Update a security filter returns "OK" response
+    Given new "UpdateSecurityFilter" request
+    And there is a valid "security_filter" in the system
+    And request contains "security_filter_id" parameter from "security_filter.data.id"
+    And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "{{ unique }}", "query": "service:{{ unique_alnum }}", "version": 1}, "type": "security_filters"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Update a security filter returns "Too many requests" response
+    Given new "UpdateSecurityFilter" request
+    And request contains "security_filter_id" parameter from "<PATH>"
+    And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
+    When the request is sent
+    Then the response status is 429 Too many requests
 
   @generated @skip
   Scenario: Update an existing rule returns "Bad Request" response

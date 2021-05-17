@@ -17,6 +17,11 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
+from datadog_api_client.v2.model.security_filter_delete_response import SecurityFilterDeleteResponse
+from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
+from datadog_api_client.v2.model.security_filter_update_request import SecurityFilterUpdateRequest
+from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
@@ -37,6 +42,42 @@ class SecurityMonitoringApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        self._create_security_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters",
+                "operation_id": "create_security_filter",
+                "http_method": "POST",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "body",
+                ],
+                "required": [
+                    "body",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (SecurityFilterCreateRequest,),
+                },
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_security_monitoring_rule_endpoint = _Endpoint(
             settings={
@@ -71,6 +112,47 @@ class SecurityMonitoringApi(object):
                 "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_security_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityFilterDeleteResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}",
+                "operation_id": "delete_security_filter",
+                "http_method": "DELETE",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "security_filter_id",
+                ],
+                "required": [
+                    "security_filter_id",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "security_filter_id": (str,),
+                },
+                "attribute_map": {
+                    "security_filter_id": "security_filter_id",
+                },
+                "location_map": {
+                    "security_filter_id": "path",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
             api_client=api_client,
         )
 
@@ -115,6 +197,47 @@ class SecurityMonitoringApi(object):
             api_client=api_client,
         )
 
+        self._get_security_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}",
+                "operation_id": "get_security_filter",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "security_filter_id",
+                ],
+                "required": [
+                    "security_filter_id",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "security_filter_id": (str,),
+                },
+                "attribute_map": {
+                    "security_filter_id": "security_filter_id",
+                },
+                "location_map": {
+                    "security_filter_id": "path",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._get_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
@@ -147,6 +270,31 @@ class SecurityMonitoringApi(object):
                 "location_map": {
                     "rule_id": "path",
                 },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._list_security_filters_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityFiltersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters",
+                "operation_id": "list_security_filters",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
                 "collection_format_map": {},
             },
             headers_map={
@@ -298,6 +446,48 @@ class SecurityMonitoringApi(object):
             api_client=api_client,
         )
 
+        self._update_security_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}",
+                "operation_id": "update_security_filter",
+                "http_method": "PATCH",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "security_filter_id",
+                    "body",
+                ],
+                "required": [
+                    "security_filter_id",
+                    "body",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "security_filter_id": (str,),
+                    "body": (SecurityFilterUpdateRequest,),
+                },
+                "attribute_map": {
+                    "security_filter_id": "security_filter_id",
+                },
+                "location_map": {
+                    "security_filter_id": "path",
+                    "body": "body",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
@@ -339,6 +529,49 @@ class SecurityMonitoringApi(object):
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def create_security_filter(self, body, **kwargs):
+        """Create a security filter  # noqa: E501
+
+        Create a security filter.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_security_filter(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (SecurityFilterCreateRequest): The definition of the new security filter.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityFilterResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_security_filter_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_security_filter_endpoint.call_with_http_info(**kwargs)
 
     def create_security_monitoring_rule(self, body, **kwargs):
         """Create a detection rule  # noqa: E501
@@ -383,6 +616,49 @@ class SecurityMonitoringApi(object):
         kwargs["body"] = body
         return self._create_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
+    def delete_security_filter(self, security_filter_id, **kwargs):
+        """Delete a security filter  # noqa: E501
+
+        Delete a specific security filter.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_security_filter(security_filter_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            security_filter_id (str): The ID of the security filter.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityFilterDeleteResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_security_filter_endpoint.default_arguments(kwargs)
+        kwargs["security_filter_id"] = security_filter_id
+        return self._delete_security_filter_endpoint.call_with_http_info(**kwargs)
+
     def delete_security_monitoring_rule(self, rule_id, **kwargs):
         """Delete an existing rule  # noqa: E501
 
@@ -426,6 +702,49 @@ class SecurityMonitoringApi(object):
         kwargs["rule_id"] = rule_id
         return self._delete_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
+    def get_security_filter(self, security_filter_id, **kwargs):
+        """Get a security filter  # noqa: E501
+
+        Get the details of a specific security filter.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_security_filter(security_filter_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            security_filter_id (str): The ID of the security filter.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityFilterResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_security_filter_endpoint.default_arguments(kwargs)
+        kwargs["security_filter_id"] = security_filter_id
+        return self._get_security_filter_endpoint.call_with_http_info(**kwargs)
+
     def get_security_monitoring_rule(self, rule_id, **kwargs):
         """Get a rule's details  # noqa: E501
 
@@ -468,6 +787,46 @@ class SecurityMonitoringApi(object):
         kwargs = self._get_security_monitoring_rule_endpoint.default_arguments(kwargs)
         kwargs["rule_id"] = rule_id
         return self._get_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def list_security_filters(self, **kwargs):
+        """Get all security filters  # noqa: E501
+
+        Get the list of configured security filters with their definitions.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_security_filters(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityFiltersResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_security_filters_endpoint.default_arguments(kwargs)
+        return self._list_security_filters_endpoint.call_with_http_info(**kwargs)
 
     def list_security_monitoring_rules(self, **kwargs):
         """List rules  # noqa: E501
@@ -597,6 +956,51 @@ class SecurityMonitoringApi(object):
         """
         kwargs = self._search_security_monitoring_signals_endpoint.default_arguments(kwargs)
         return self._search_security_monitoring_signals_endpoint.call_with_http_info(**kwargs)
+
+    def update_security_filter(self, security_filter_id, body, **kwargs):
+        """Update a security filter  # noqa: E501
+
+        Update a specific security filter. Returns the security filter object when the request is successful.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_security_filter(security_filter_id, body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            security_filter_id (str): The ID of the security filter.
+            body (SecurityFilterUpdateRequest): New definition of the security filter.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SecurityFilterResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._update_security_filter_endpoint.default_arguments(kwargs)
+        kwargs["security_filter_id"] = security_filter_id
+        kwargs["body"] = body
+        return self._update_security_filter_endpoint.call_with_http_info(**kwargs)
 
     def update_security_monitoring_rule(self, rule_id, body, **kwargs):
         """Update an existing rule  # noqa: E501
