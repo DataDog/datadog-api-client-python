@@ -6,6 +6,7 @@ Downtiming gives you greater control over monitor notifications by allowing you 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** | If a scheduled downtime currently exists. | [optional] [readonly] 
+**active_child** | [**DowntimeChild**](DowntimeChild.md) |  | [optional] 
 **canceled** | **int, none_type** | If a scheduled downtime is canceled. | [optional] [readonly] 
 **creator_id** | **int** | User ID of the downtime creator. | [optional] [readonly] 
 **disabled** | **bool** | If a downtime has been disabled. | [optional] 

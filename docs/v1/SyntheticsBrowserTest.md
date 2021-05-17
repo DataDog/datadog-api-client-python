@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **message** | **str** | Notification message associated with the test. Message can either be text or an empty string. | 
 **config** | [**SyntheticsBrowserTestConfig**](SyntheticsBrowserTestConfig.md) |  | [optional] 
 **locations** | **[str]** | Array of locations used to run the test. | [optional] 
-**monitor_id** | **int** | The associated monitor ID. | [optional] 
+**monitor_id** | **int** | The associated monitor ID. | [optional] [readonly] 
 **name** | **str** | Name of the test. | [optional] 
 **options** | [**SyntheticsTestOptions**](SyntheticsTestOptions.md) |  | [optional] 
-**public_id** | **str** | The public ID of the test. | [optional] 
+**public_id** | **str** | The public ID of the test. | [optional] [readonly] 
 **status** | [**SyntheticsTestPauseStatus**](SyntheticsTestPauseStatus.md) |  | [optional] 
 **steps** | [**[SyntheticsStep]**](SyntheticsStep.md) | The steps of the test. | [optional] 
 **tags** | **[str]** | Array of tags attached to the test. | [optional] 

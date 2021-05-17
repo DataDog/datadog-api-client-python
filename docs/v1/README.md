@@ -182,6 +182,11 @@ Class | Method | HTTP request | Description
 *MonitorsApi* | [**list_monitors**](MonitorsApi.md#list_monitors) | **GET** /api/v1/monitor | Get all monitor details
 *MonitorsApi* | [**update_monitor**](MonitorsApi.md#update_monitor) | **PUT** /api/v1/monitor/{monitor_id} | Edit a monitor
 *MonitorsApi* | [**validate_monitor**](MonitorsApi.md#validate_monitor) | **POST** /api/v1/monitor/validate | Validate a monitor
+*NotebooksApi* | [**create_notebook**](NotebooksApi.md#create_notebook) | **POST** /api/v1/notebooks | Create a notebook
+*NotebooksApi* | [**delete_notebook**](NotebooksApi.md#delete_notebook) | **DELETE** /api/v1/notebooks/{notebook_id} | Delete a notebook
+*NotebooksApi* | [**get_notebook**](NotebooksApi.md#get_notebook) | **GET** /api/v1/notebooks/{notebook_id} | Get a notebook
+*NotebooksApi* | [**list_notebooks**](NotebooksApi.md#list_notebooks) | **GET** /api/v1/notebooks | Get all notebooks
+*NotebooksApi* | [**update_notebook**](NotebooksApi.md#update_notebook) | **PUT** /api/v1/notebooks/{notebook_id} | Update a notebook
 *OrganizationsApi* | [**create_child_org**](OrganizationsApi.md#create_child_org) | **POST** /api/v1/org | Create a child organization
 *OrganizationsApi* | [**get_org**](OrganizationsApi.md#get_org) | **GET** /api/v1/org/{public_id} | Get organization information
 *OrganizationsApi* | [**list_orgs**](OrganizationsApi.md#list_orgs) | **GET** /api/v1/org | List your managed organizations
@@ -269,7 +274,7 @@ Class | Method | HTTP request | Description
 *UsageMeteringApi* | [**get_usage_synthetics_api**](UsageMeteringApi.md#get_usage_synthetics_api) | **GET** /api/v1/usage/synthetics_api | Get hourly usage for Synthetics API Checks
 *UsageMeteringApi* | [**get_usage_synthetics_browser**](UsageMeteringApi.md#get_usage_synthetics_browser) | **GET** /api/v1/usage/synthetics_browser | Get hourly usage for Synthetics Browser Checks
 *UsageMeteringApi* | [**get_usage_timeseries**](UsageMeteringApi.md#get_usage_timeseries) | **GET** /api/v1/usage/timeseries | Get hourly usage for custom metrics
-*UsageMeteringApi* | [**get_usage_top_avg_metrics**](UsageMeteringApi.md#get_usage_top_avg_metrics) | **GET** /api/v1/usage/top_avg_metrics | Get top custom metrics by hourly average
+*UsageMeteringApi* | [**get_usage_top_avg_metrics**](UsageMeteringApi.md#get_usage_top_avg_metrics) | **GET** /api/v1/usage/top_avg_metrics | Get all custom metrics by hourly average
 *UsageMeteringApi* | [**get_usage_trace**](UsageMeteringApi.md#get_usage_trace) | **GET** /api/v1/usage/traces | Get hourly usage for Trace Search
 *UsersApi* | [**create_user**](UsersApi.md#create_user) | **POST** /api/v1/user | Create a user
 *UsersApi* | [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v1/user/{user_handle} | Disable a user
@@ -345,6 +350,7 @@ Class | Method | HTTP request | Description
  - [DistributionWidgetXAxis](DistributionWidgetXAxis.md)
  - [DistributionWidgetYAxis](DistributionWidgetYAxis.md)
  - [Downtime](Downtime.md)
+ - [DowntimeChild](DowntimeChild.md)
  - [DowntimeRecurrence](DowntimeRecurrence.md)
  - [Event](Event.md)
  - [EventAlertType](EventAlertType.md)
@@ -506,6 +512,43 @@ Class | Method | HTTP request | Description
  - [MonitorUpdateRequest](MonitorUpdateRequest.md)
  - [NoteWidgetDefinition](NoteWidgetDefinition.md)
  - [NoteWidgetDefinitionType](NoteWidgetDefinitionType.md)
+ - [NotebookAbsoluteTime](NotebookAbsoluteTime.md)
+ - [NotebookAuthor](NotebookAuthor.md)
+ - [NotebookCellCreateRequest](NotebookCellCreateRequest.md)
+ - [NotebookCellCreateRequestAttributes](NotebookCellCreateRequestAttributes.md)
+ - [NotebookCellResourceType](NotebookCellResourceType.md)
+ - [NotebookCellResponse](NotebookCellResponse.md)
+ - [NotebookCellResponseAttributes](NotebookCellResponseAttributes.md)
+ - [NotebookCellTime](NotebookCellTime.md)
+ - [NotebookCellUpdateRequest](NotebookCellUpdateRequest.md)
+ - [NotebookCellUpdateRequestAttributes](NotebookCellUpdateRequestAttributes.md)
+ - [NotebookCreateData](NotebookCreateData.md)
+ - [NotebookCreateDataAttributes](NotebookCreateDataAttributes.md)
+ - [NotebookCreateRequest](NotebookCreateRequest.md)
+ - [NotebookDistributionCellAttributes](NotebookDistributionCellAttributes.md)
+ - [NotebookGlobalTime](NotebookGlobalTime.md)
+ - [NotebookGraphSize](NotebookGraphSize.md)
+ - [NotebookHeatMapCellAttributes](NotebookHeatMapCellAttributes.md)
+ - [NotebookLogStreamCellAttributes](NotebookLogStreamCellAttributes.md)
+ - [NotebookMarkdownCellAttributes](NotebookMarkdownCellAttributes.md)
+ - [NotebookMarkdownCellDefinition](NotebookMarkdownCellDefinition.md)
+ - [NotebookMarkdownCellDefinitionType](NotebookMarkdownCellDefinitionType.md)
+ - [NotebookRelativeTime](NotebookRelativeTime.md)
+ - [NotebookResourceType](NotebookResourceType.md)
+ - [NotebookResponse](NotebookResponse.md)
+ - [NotebookResponseData](NotebookResponseData.md)
+ - [NotebookResponseDataAttributes](NotebookResponseDataAttributes.md)
+ - [NotebookSplitBy](NotebookSplitBy.md)
+ - [NotebookStatus](NotebookStatus.md)
+ - [NotebookTimeseriesCellAttributes](NotebookTimeseriesCellAttributes.md)
+ - [NotebookToplistCellAttributes](NotebookToplistCellAttributes.md)
+ - [NotebookUpdateCell](NotebookUpdateCell.md)
+ - [NotebookUpdateData](NotebookUpdateData.md)
+ - [NotebookUpdateDataAttributes](NotebookUpdateDataAttributes.md)
+ - [NotebookUpdateRequest](NotebookUpdateRequest.md)
+ - [NotebooksResponse](NotebooksResponse.md)
+ - [NotebooksResponseMeta](NotebooksResponseMeta.md)
+ - [NotebooksResponsePage](NotebooksResponsePage.md)
  - [Organization](Organization.md)
  - [OrganizationBilling](OrganizationBilling.md)
  - [OrganizationCreateBody](OrganizationCreateBody.md)

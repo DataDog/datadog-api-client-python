@@ -65,8 +65,10 @@ class WidgetCustomLink(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            "is_hidden": (bool,),  # noqa: E501
             "label": (str,),  # noqa: E501
             "link": (str,),  # noqa: E501
+            "override_label": (str,),  # noqa: E501
         }
 
     @cached_property
@@ -74,8 +76,10 @@ class WidgetCustomLink(ModelNormal):
         return None
 
     attribute_map = {
+        "is_hidden": "is_hidden",  # noqa: E501
         "label": "label",  # noqa: E501
         "link": "link",  # noqa: E501
+        "override_label": "override_label",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -92,12 +96,8 @@ class WidgetCustomLink(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, label, link, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """WidgetCustomLink - a model defined in OpenAPI
-
-        Args:
-            label (str): The label for the custom link URL. Keep the label short and descriptive. Use metrics and tags as variables.
-            link (str): The URL of the custom link. URL must include `http` or `https`. A relative URL must start with `/`.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -130,6 +130,10 @@ class WidgetCustomLink(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            is_hidden (bool): The flag for toggling context menu link visibility.. [optional]  # noqa: E501
+            label (str): The label for the custom link URL. Keep the label short and descriptive. Use metrics and tags as variables.. [optional]  # noqa: E501
+            link (str): The URL of the custom link. URL must include `http` or `https`. A relative URL must start with `/`.. [optional]  # noqa: E501
+            override_label (str): The label ID that refers to a context menu link. Can be `logs`, `hosts`, `traces`, `profiles`, `processes`, `containers`, or `rum`.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
@@ -156,8 +160,6 @@ class WidgetCustomLink(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.label = label
-        self.link = link
         for var_name, var_value in kwargs.items():
             if (
                 var_name not in self.attribute_map

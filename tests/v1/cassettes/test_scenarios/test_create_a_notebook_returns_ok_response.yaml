@@ -1,0 +1,117 @@
+interactions:
+- request:
+    body: '{"data": {"attributes": {"cells": [{"attributes": {"definition": {"text":
+      "## Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```", "type": "markdown"}},
+      "type": "notebook_cells"}, {"attributes": {"definition": {"requests": [{"display_type":
+      "line", "q": "avg:system.load.1{*}", "style": {"line_type": "solid", "line_width":
+      "normal", "palette": "dog_classic"}}], "show_legend": true, "type": "timeseries",
+      "yaxis": {"scale": "linear"}}, "graph_size": "m", "split_by": {"keys": [], "tags":
+      []}, "time": null}, "type": "notebook_cells"}], "name": "Test-Create_a_notebook_returns_OK_response-1620329023",
+      "status": "published", "time": {"live_span": "1h"}}, "type": "notebooks"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateNotebook
+      User-Agent:
+      - datadog-api-client-python/0.1.dev331 (python 3.9.5; os Linux; arch x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/notebooks
+  response:
+    body:
+      string: '{"data":{"type":"notebooks","id":761859,"attributes":{"name":"Test-Create_a_notebook_returns_OK_response-1620329023","cells":[{"attributes":{"definition":{"text":"##
+        Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```","type":"markdown"}},"type":"notebook_cells","id":"i5krgw50"},{"attributes":{"definition":{"requests":[{"q":"avg:system.load.1{*}","style":{"line_width":"normal","palette":"dog_classic","line_type":"solid"},"display_type":"line"}],"type":"timeseries","show_legend":true,"yaxis":{"scale":"linear"}},"graph_size":"m","split_by":{"keys":[],"tags":[]},"time":null},"type":"notebook_cells","id":"a2edo8dm"}],"time":{"live_span":"1h"},"status":"published","modified":"2021-05-06T19:23:43.472216+00:00","created":"2021-05-06T19:23:43.472216+00:00","author":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com","icon":"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1052'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 06 May 2021 19:23:43 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - S1wfaMZOKGT/IoMw6fqAwAwGWo2vQ44sjF3YzuETnQfxZO2T5eJbs0aX3UKb9Dwu
+      x-dd-version:
+      - '35.4477317'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '30'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '28'
+      x-ratelimit-reset:
+      - '17'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteNotebook
+      User-Agent:
+      - datadog-api-client-python/0.1.dev331 (python 3.9.5; os Linux; arch x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/notebooks/761859
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 06 May 2021 19:23:43 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-debug:
+      - dCmL/3rURV6BPeaqeP3Rxigq41m5CAb17XjrRE42uZ01zpr07HVhbL5/3TWMkvgu
+      x-dd-version:
+      - '35.4477317'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '30'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '28'
+      x-ratelimit-reset:
+      - '17'
+    status:
+      code: 204
+      message: No Content
+version: 1
