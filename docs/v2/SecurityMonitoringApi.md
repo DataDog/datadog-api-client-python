@@ -4,14 +4,103 @@ All URIs are relative to *https://api.datadoghq.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_security_filter**](SecurityMonitoringApi.md#create_security_filter) | **POST** /api/v2/security_monitoring/configuration/security_filters | Create a security filter
 [**create_security_monitoring_rule**](SecurityMonitoringApi.md#create_security_monitoring_rule) | **POST** /api/v2/security_monitoring/rules | Create a detection rule
+[**delete_security_filter**](SecurityMonitoringApi.md#delete_security_filter) | **DELETE** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Delete a security filter
 [**delete_security_monitoring_rule**](SecurityMonitoringApi.md#delete_security_monitoring_rule) | **DELETE** /api/v2/security_monitoring/rules/{rule_id} | Delete an existing rule
+[**get_security_filter**](SecurityMonitoringApi.md#get_security_filter) | **GET** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Get a security filter
 [**get_security_monitoring_rule**](SecurityMonitoringApi.md#get_security_monitoring_rule) | **GET** /api/v2/security_monitoring/rules/{rule_id} | Get a rule&#39;s details
+[**list_security_filters**](SecurityMonitoringApi.md#list_security_filters) | **GET** /api/v2/security_monitoring/configuration/security_filters | Get all security filters
 [**list_security_monitoring_rules**](SecurityMonitoringApi.md#list_security_monitoring_rules) | **GET** /api/v2/security_monitoring/rules | List rules
 [**list_security_monitoring_signals**](SecurityMonitoringApi.md#list_security_monitoring_signals) | **GET** /api/v2/security_monitoring/signals | Get a quick list of security signals
 [**search_security_monitoring_signals**](SecurityMonitoringApi.md#search_security_monitoring_signals) | **POST** /api/v2/security_monitoring/signals/search | Get a list of security signals
+[**update_security_filter**](SecurityMonitoringApi.md#update_security_filter) | **PATCH** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Update a security filter
 [**update_security_monitoring_rule**](SecurityMonitoringApi.md#update_security_monitoring_rule) | **PUT** /api/v2/security_monitoring/rules/{rule_id} | Update an existing rule
 
+
+# **create_security_filter**
+> SecurityFilterResponse create_security_filter(body)
+
+Create a security filter
+
+Create a security filter.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
+from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    body = SecurityFilterCreateRequest(
+        data=SecurityFilterCreateData(
+            attributes=SecurityFilterCreateAttributes(
+                exclusion_filters=[
+                    SecurityFilterExclusionFilter(
+                        name="Exclude staging",
+                        query="source:staging",
+                    ),
+                ],
+                filtered_data_type=SecurityFilterFilteredDataType("logs"),
+                is_enabled=True,
+                name="Custom security filter",
+                query="service:api",
+            ),
+            type=SecurityFilterType("security_filters"),
+        ),
+    )  # SecurityFilterCreateRequest | The definition of the new security filter.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create a security filter
+        api_response = api_instance.create_security_filter(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SecurityMonitoringApi->create_security_filter: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SecurityFilterCreateRequest**](SecurityFilterCreateRequest.md)| The definition of the new security filter. |
+
+### Return type
+
+[**SecurityFilterResponse**](SecurityFilterResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Not Authorized |  -  |
+**409** | Conflict |  -  |
+**429** | Too many requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_security_monitoring_rule**
 > SecurityMonitoringRuleResponse create_security_monitoring_rule(body)
@@ -128,6 +217,74 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **delete_security_filter**
+> SecurityFilterDeleteResponse delete_security_filter(security_filter_id)
+
+Delete a security filter
+
+Delete a specific security filter.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
+from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    security_filter_id = "security_filter_id_example"  # str | The ID of the security filter.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete a security filter
+        api_response = api_instance.delete_security_filter(security_filter_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SecurityMonitoringApi->delete_security_filter: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **security_filter_id** | **str**| The ID of the security filter. |
+
+### Return type
+
+[**SecurityFilterDeleteResponse**](SecurityFilterDeleteResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**204** | No Content |  -  |
+**403** | Not Authorized |  -  |
+**404** | Not Found |  -  |
+**429** | Too many requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **delete_security_monitoring_rule**
 > delete_security_monitoring_rule(rule_id)
 
@@ -193,6 +350,73 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **get_security_filter**
+> SecurityFilterResponse get_security_filter(security_filter_id)
+
+Get a security filter
+
+Get the details of a specific security filter.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
+from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    security_filter_id = "security_filter_id_example"  # str | The ID of the security filter.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get a security filter
+        api_response = api_instance.get_security_filter(security_filter_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SecurityMonitoringApi->get_security_filter: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **security_filter_id** | **str**| The ID of the security filter. |
+
+### Return type
+
+[**SecurityFilterResponse**](SecurityFilterResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Not Authorized |  -  |
+**404** | Not Found |  -  |
+**429** | Too many requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **get_security_monitoring_rule**
 > SecurityMonitoringRuleResponse get_security_monitoring_rule(rule_id)
 
@@ -255,6 +479,68 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **list_security_filters**
+> SecurityFiltersResponse list_security_filters()
+
+Get all security filters
+
+Get the list of configured security filters with their definitions.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
+from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        # Get all security filters
+        api_response = api_instance.list_security_filters()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SecurityMonitoringApi->list_security_filters: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SecurityFiltersResponse**](SecurityFiltersResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Not Authorized |  -  |
+**429** | Too many requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -480,6 +766,94 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Bad Request |  -  |
 **403** | Not Authorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **update_security_filter**
+> SecurityFilterResponse update_security_filter(security_filter_id, body)
+
+Update a security filter
+
+Update a specific security filter. Returns the security filter object when the request is successful.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
+from datadog_api_client.v2.api import security_monitoring_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = security_monitoring_api.SecurityMonitoringApi(api_client)
+    security_filter_id = "security_filter_id_example"  # str | The ID of the security filter.
+    body = SecurityFilterUpdateRequest(
+        data=SecurityFilterUpdateData(
+            attributes=SecurityFilterUpdateAttributes(
+                exclusion_filters=[
+                    SecurityFilterExclusionFilter(
+                        name="Exclude staging",
+                        query="source:staging",
+                    ),
+                ],
+                filtered_data_type=SecurityFilterFilteredDataType("logs"),
+                is_enabled=True,
+                name="Custom security filter",
+                query="service:api",
+                version=1,
+            ),
+            type=SecurityFilterType("security_filters"),
+        ),
+    )  # SecurityFilterUpdateRequest | New definition of the security filter.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update a security filter
+        api_response = api_instance.update_security_filter(security_filter_id, body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SecurityMonitoringApi->update_security_filter: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **security_filter_id** | **str**| The ID of the security filter. |
+ **body** | [**SecurityFilterUpdateRequest**](SecurityFilterUpdateRequest.md)| New definition of the security filter. |
+
+### Return type
+
+[**SecurityFilterResponse**](SecurityFilterResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Not Authorized |  -  |
+**404** | Not Found |  -  |
+**409** | Concurrent Modification |  -  |
+**429** | Too many requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

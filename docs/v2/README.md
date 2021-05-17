@@ -161,12 +161,17 @@ Class | Method | HTTP request | Description
 *RolesApi* | [**remove_permission_from_role**](RolesApi.md#remove_permission_from_role) | **DELETE** /api/v2/roles/{role_id}/permissions | Revoke permission
 *RolesApi* | [**remove_user_from_role**](RolesApi.md#remove_user_from_role) | **DELETE** /api/v2/roles/{role_id}/users | Remove a user from a role
 *RolesApi* | [**update_role**](RolesApi.md#update_role) | **PATCH** /api/v2/roles/{role_id} | Update a role
+*SecurityMonitoringApi* | [**create_security_filter**](SecurityMonitoringApi.md#create_security_filter) | **POST** /api/v2/security_monitoring/configuration/security_filters | Create a security filter
 *SecurityMonitoringApi* | [**create_security_monitoring_rule**](SecurityMonitoringApi.md#create_security_monitoring_rule) | **POST** /api/v2/security_monitoring/rules | Create a detection rule
+*SecurityMonitoringApi* | [**delete_security_filter**](SecurityMonitoringApi.md#delete_security_filter) | **DELETE** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Delete a security filter
 *SecurityMonitoringApi* | [**delete_security_monitoring_rule**](SecurityMonitoringApi.md#delete_security_monitoring_rule) | **DELETE** /api/v2/security_monitoring/rules/{rule_id} | Delete an existing rule
+*SecurityMonitoringApi* | [**get_security_filter**](SecurityMonitoringApi.md#get_security_filter) | **GET** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Get a security filter
 *SecurityMonitoringApi* | [**get_security_monitoring_rule**](SecurityMonitoringApi.md#get_security_monitoring_rule) | **GET** /api/v2/security_monitoring/rules/{rule_id} | Get a rule&#39;s details
+*SecurityMonitoringApi* | [**list_security_filters**](SecurityMonitoringApi.md#list_security_filters) | **GET** /api/v2/security_monitoring/configuration/security_filters | Get all security filters
 *SecurityMonitoringApi* | [**list_security_monitoring_rules**](SecurityMonitoringApi.md#list_security_monitoring_rules) | **GET** /api/v2/security_monitoring/rules | List rules
 *SecurityMonitoringApi* | [**list_security_monitoring_signals**](SecurityMonitoringApi.md#list_security_monitoring_signals) | **GET** /api/v2/security_monitoring/signals | Get a quick list of security signals
 *SecurityMonitoringApi* | [**search_security_monitoring_signals**](SecurityMonitoringApi.md#search_security_monitoring_signals) | **POST** /api/v2/security_monitoring/signals/search | Get a list of security signals
+*SecurityMonitoringApi* | [**update_security_filter**](SecurityMonitoringApi.md#update_security_filter) | **PATCH** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Update a security filter
 *SecurityMonitoringApi* | [**update_security_monitoring_rule**](SecurityMonitoringApi.md#update_security_monitoring_rule) | **PUT** /api/v2/security_monitoring/rules/{rule_id} | Update an existing rule
 *UsersApi* | [**create_user**](UsersApi.md#create_user) | **POST** /api/v2/users | Create a user
 *UsersApi* | [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v2/users/{user_id} | Disable a user
@@ -431,6 +436,22 @@ Class | Method | HTTP request | Description
  - [RolesResponse](RolesResponse.md)
  - [RolesSort](RolesSort.md)
  - [RolesType](RolesType.md)
+ - [SecurityFilter](SecurityFilter.md)
+ - [SecurityFilterAttributes](SecurityFilterAttributes.md)
+ - [SecurityFilterCreateAttributes](SecurityFilterCreateAttributes.md)
+ - [SecurityFilterCreateData](SecurityFilterCreateData.md)
+ - [SecurityFilterCreateRequest](SecurityFilterCreateRequest.md)
+ - [SecurityFilterDeleteResponse](SecurityFilterDeleteResponse.md)
+ - [SecurityFilterExclusionFilter](SecurityFilterExclusionFilter.md)
+ - [SecurityFilterExclusionFilterResponse](SecurityFilterExclusionFilterResponse.md)
+ - [SecurityFilterFilteredDataType](SecurityFilterFilteredDataType.md)
+ - [SecurityFilterMeta](SecurityFilterMeta.md)
+ - [SecurityFilterResponse](SecurityFilterResponse.md)
+ - [SecurityFilterType](SecurityFilterType.md)
+ - [SecurityFilterUpdateAttributes](SecurityFilterUpdateAttributes.md)
+ - [SecurityFilterUpdateData](SecurityFilterUpdateData.md)
+ - [SecurityFilterUpdateRequest](SecurityFilterUpdateRequest.md)
+ - [SecurityFiltersResponse](SecurityFiltersResponse.md)
  - [SecurityMonitoringFilter](SecurityMonitoringFilter.md)
  - [SecurityMonitoringFilterAction](SecurityMonitoringFilterAction.md)
  - [SecurityMonitoringListRulesResponse](SecurityMonitoringListRulesResponse.md)
