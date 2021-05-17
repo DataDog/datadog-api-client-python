@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-exit 0
 
 if [ $# -eq 0 ]; then
     echo "No arguments supplied"
