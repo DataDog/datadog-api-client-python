@@ -4,11 +4,11 @@ trigger:
   branches:
     include:
     - master
-  drafts: false
 pr:
   branches:
     include:
     - master
+  drafts: false
 schedules:
   - cron: "15 1-23/3 * * *"
     displayName: Scheduled CI run every 3 hours
