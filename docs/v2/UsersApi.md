@@ -125,7 +125,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    user_id = "user_id_example"  # str | The ID of the user.
+    user_id = "00000000-0000-0000-0000-000000000000"  # str | The ID of the user.
 
     # example passing only required values which don't have defaults set
     try:
@@ -190,7 +190,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    user_invitation_uuid = "user_invitation_uuid_example"  # str | The UUID of the user invitation.
+    user_invitation_uuid = "00000000-0000-0000-0000-000000000000"  # str | The UUID of the user invitation.
 
     # example passing only required values which don't have defaults set
     try:
@@ -256,7 +256,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    user_id = "user_id_example"  # str | The ID of the user.
+    user_id = "00000000-0000-0000-0000-000000000000"  # str | The ID of the user.
 
     # example passing only required values which don't have defaults set
     try:
@@ -322,7 +322,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    user_id = "user_id_example"  # str | The ID of the user.
+    user_id = "00000000-0000-0000-0000-000000000000"  # str | The ID of the user.
 
     # example passing only required values which don't have defaults set
     try:
@@ -388,7 +388,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    user_id = "user_id_example"  # str | The ID of the user.
+    user_id = "00000000-0000-0000-0000-000000000000"  # str | The ID of the user.
 
     # example passing only required values which don't have defaults set
     try:
@@ -459,7 +459,7 @@ with ApiClient(configuration) as api_client:
     sort = "name"  # str | User attribute to order results by. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example `sort=-name`. Options: `name`, `modified_at`, `user_count`. (optional) if omitted the server will use the default value of "name"
     sort_dir = QuerySortOrder("desc")  # QuerySortOrder | Direction of sort. Options: `asc`, `desc`. (optional)
     filter = "filter_example"  # str | Filter all users by the given string. Defaults to no filtering. (optional)
-    filter_status = "filter[status]_example"  # str | Filter on status attribute. Comma separated list, with possible values `Active`, `Pending`, and `Disabled`. Defaults to no filtering. (optional)
+    filter_status = "Active"  # str | Filter on status attribute. Comma separated list, with possible values `Active`, `Pending`, and `Disabled`. Defaults to no filtering. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -611,7 +611,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    user_id = "user_id_example"  # str | The ID of the user.
+    user_id = "00000000-0000-0000-0000-000000000000"  # str | The ID of the user.
     body = UserUpdateRequest(
         data=UserUpdateData(
             attributes=UserUpdateAttributes(
