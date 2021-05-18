@@ -4,6 +4,7 @@ trigger:
   branches:
     include:
     - master
+  drafts: false
 pr:
   branches:
     include:
