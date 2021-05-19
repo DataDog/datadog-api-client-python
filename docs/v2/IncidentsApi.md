@@ -393,7 +393,7 @@ with ApiClient(configuration) as api_client:
                     data=[
                         RelationshipToIncidentIntegrationMetadataData(
                             id="00000000-0000-0000-0000-000000000000",
-                            type=IncidentIntegrationMetadataType("incident_integration_metadata"),
+                            type=IncidentIntegrationMetadataType("incident_integrations"),
                         ),
                     ],
                 ),

@@ -44,7 +44,7 @@ class IncidentIntegrationMetadataType(ModelSimple):
 
     allowed_values = {
         ("value",): {
-            "INCIDENT_INTEGRATION_METADATA": "incident_integration_metadata",
+            "INCIDENT_INTEGRATIONS": "incident_integrations",
         },
     }
 
@@ -94,10 +94,10 @@ class IncidentIntegrationMetadataType(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Integration metadata resource type.. if omitted defaults to "incident_integration_metadata", must be one of ["incident_integration_metadata", ]  # noqa: E501
+            args[0] (str): Integration metadata resource type.. if omitted defaults to "incident_integrations", must be one of ["incident_integrations", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Integration metadata resource type.. if omitted defaults to "incident_integration_metadata", must be one of ["incident_integration_metadata", ]  # noqa: E501
+            value (str): Integration metadata resource type.. if omitted defaults to "incident_integrations", must be one of ["incident_integrations", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -138,7 +138,7 @@ class IncidentIntegrationMetadataType(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            value = "incident_integration_metadata"
+            value = "incident_integrations"
 
         _check_type = kwargs.pop("_check_type", True)
         _spec_property_naming = kwargs.pop("_spec_property_naming", False)

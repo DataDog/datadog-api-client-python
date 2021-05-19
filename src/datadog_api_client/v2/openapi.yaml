@@ -960,14 +960,14 @@ components:
       - METRICTAG
       - AUTOCOMPLETE
     IncidentIntegrationMetadataType:
-      default: incident_integration_metadata
+      default: incident_integrations
       description: Integration metadata resource type.
       enum:
-      - incident_integration_metadata
-      example: incident_integration_metadata
+      - incident_integrations
+      example: incident_integrations
       type: string
       x-enum-varnames:
-      - INCIDENT_INTEGRATION_METADATA
+      - INCIDENT_INTEGRATIONS
     IncidentPostmortemType:
       default: incident_postmortems
       description: Incident postmortem resource type.
@@ -1685,9 +1685,9 @@ components:
               integrations:
                 data:
                 - id: 00000000-0000-0000-0000-000000000000
-                  type: incident_integration_metadata
+                  type: incident_integrations
                 - id: 00000000-0000-0000-0000-000000000000
-                  type: incident_integration_metadata
+                  type: incident_integrations
               last_modified_by_user:
                 data:
                   id: 00000000-0000-0000-0000-000000000000
@@ -1729,9 +1729,9 @@ components:
               integrations:
                 data:
                 - id: 00000000-0000-0000-0000-000000000000
-                  type: incident_integration_metadata
+                  type: incident_integrations
                 - id: 00000000-0000-0000-0000-000000000000
-                  type: incident_integration_metadata
+                  type: incident_integrations
               last_modified_by_user:
                 data:
                   id: 00000000-0000-0000-0000-000000000000
@@ -3495,7 +3495,7 @@ components:
       description: A relationship reference for an integration metadata object.
       example:
         id: 00000000-0000-0000-0000-000000000000
-        type: incident_integration_metadata
+        type: incident_integrations
       properties:
         id:
           description: A unique identifier that represents the integration metadata.
@@ -3512,17 +3512,17 @@ components:
       example:
         data:
         - id: 00000000-0000-0000-0000-000000000000
-          type: incident_integration_metadata
+          type: incident_integrations
         - id: 00000000-0000-0000-0000-000000000000
-          type: incident_integration_metadata
+          type: incident_integrations
       properties:
         data:
           description: The integration metadata relationship array
           example:
           - id: 00000000-0000-0000-0000-000000000000
-            type: incident_integration_metadata
+            type: incident_integrations
           - id: 00000000-0000-0000-0000-000000000000
-            type: incident_integration_metadata
+            type: incident_integrations
           items:
             $ref: '#/components/schemas/RelationshipToIncidentIntegrationMetadataData'
           type: array
