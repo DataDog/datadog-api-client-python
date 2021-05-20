@@ -117,7 +117,7 @@ class NotebookCreateDataAttributes(ModelNormal):
 
         Args:
             cells ([NotebookCellCreateRequest]): List of cells to display in the notebook.
-            name (str): Notebook name.
+            name (str): The name of the notebook.
             time (NotebookGlobalTime):
 
         Keyword Args:

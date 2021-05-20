@@ -1,6 +1,6 @@
 # NotebookDistributionCellAttributes
 
-The attributes of a notebook distribution cell.
+The attributes of a notebook `distribution` cell.
 
 ## Properties
 Name | Type | Description | Notes
