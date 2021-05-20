@@ -6,7 +6,7 @@ The data attributes of a notebook.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cells** | [**[NotebookCellCreateRequest]**](NotebookCellCreateRequest.md) | List of cells to display in the notebook. | 
-**name** | **str** | Notebook name. | 
+**name** | **str** | The name of the notebook. | 
 **time** | [**NotebookGlobalTime**](NotebookGlobalTime.md) |  | 
 **status** | [**NotebookStatus**](NotebookStatus.md) |  | [optional] 
 

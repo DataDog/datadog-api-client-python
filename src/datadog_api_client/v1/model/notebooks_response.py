@@ -23,10 +23,10 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
-    from datadog_api_client.v1.model.notebook_response_data import NotebookResponseData
+    from datadog_api_client.v1.model.notebooks_response_data import NotebooksResponseData
     from datadog_api_client.v1.model.notebooks_response_meta import NotebooksResponseMeta
 
-    globals()["NotebookResponseData"] = NotebookResponseData
+    globals()["NotebooksResponseData"] = NotebooksResponseData
     globals()["NotebooksResponseMeta"] = NotebooksResponseMeta
 
 
@@ -74,7 +74,7 @@ class NotebooksResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "data": ([NotebookResponseData],),  # noqa: E501
+            "data": ([NotebooksResponseData],),  # noqa: E501
             "meta": (NotebooksResponseMeta,),  # noqa: E501
         }
 
@@ -135,7 +135,7 @@ class NotebooksResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([NotebookResponseData]): List of notebook definitions.. [optional]  # noqa: E501
+            data ([NotebooksResponseData]): List of notebook definitions.. [optional]  # noqa: E501
             meta (NotebooksResponseMeta): [optional]  # noqa: E501
         """
 

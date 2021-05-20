@@ -1,6 +1,6 @@
 # NotebookTimeseriesCellAttributes
 
-The attributes of a notebook timeseries cell.
+The attributes of a notebook `timeseries` cell.
 
 ## Properties
 Name | Type | Description | Notes

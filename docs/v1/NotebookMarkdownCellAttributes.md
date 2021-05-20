@@ -1,6 +1,6 @@
 # NotebookMarkdownCellAttributes
 
-The attributes of a notebooks markdown cell.
+The attributes of a notebook `markdown` cell.
 
 ## Properties
 Name | Type | Description | Notes

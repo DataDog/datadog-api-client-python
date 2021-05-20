@@ -1,6 +1,6 @@
 # NotebookToplistCellAttributes
 
-The attributes of a notebook toplist cell.
+The attributes of a notebook `toplist` cell.
 
 ## Properties
 Name | Type | Description | Notes

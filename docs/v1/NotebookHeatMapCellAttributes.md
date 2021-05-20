@@ -1,6 +1,6 @@
 # NotebookHeatMapCellAttributes
 
-The attributes of a notebook heat map cell.
+The attributes of a notebook `heatmap` cell.
 
 ## Properties
 Name | Type | Description | Notes

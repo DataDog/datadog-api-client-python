@@ -285,6 +285,8 @@ from datadog_api_client.v1.model.notebook_update_data import NotebookUpdateData
 from datadog_api_client.v1.model.notebook_update_data_attributes import NotebookUpdateDataAttributes
 from datadog_api_client.v1.model.notebook_update_request import NotebookUpdateRequest
 from datadog_api_client.v1.model.notebooks_response import NotebooksResponse
+from datadog_api_client.v1.model.notebooks_response_data import NotebooksResponseData
+from datadog_api_client.v1.model.notebooks_response_data_attributes import NotebooksResponseDataAttributes
 from datadog_api_client.v1.model.notebooks_response_meta import NotebooksResponseMeta
 from datadog_api_client.v1.model.notebooks_response_page import NotebooksResponsePage
 from datadog_api_client.v1.model.organization import Organization
