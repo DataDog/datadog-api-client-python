@@ -849,7 +849,7 @@ components:
     Dashboard:
       description: "A dashboard is Datadog\u2019s tool for visually tracking, analyzing,\
         \ and displaying\nkey performance metrics, which enable you to monitor the\
-        \ health of your infrastructure."
+        \ health of your infrastructure.\nThis is a test."
       properties:
         author_handle:
           description: Identifier of the dashboard author.
