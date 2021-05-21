@@ -163,7 +163,7 @@ with ApiClient(configuration) as api_client:
         ),
         overall_state=MonitorOverallStates("Alert"),
         priority=1,
-        query="query_example",
+        query="avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
         restricted_roles=[
             "restricted_roles_example",
         ],
@@ -182,7 +182,7 @@ with ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-        type=MonitorType("composite"),
+        type=MonitorType("metric alert"),
     )  # Monitor | Create a monitor request body.
 
     # example passing only required values which don't have defaults set
@@ -250,7 +250,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
     monitor_id = 1  # int | The ID of the monitor.
-    force = "force_example"  # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
+    force = "false"  # str | Delete the monitor even if it's referenced by other resources (e.g. SLO, composite monitor). (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -406,14 +406,14 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
-    group_states = "group_states_example"  # str | When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`. (optional)
+    group_states = "alert"  # str | When specified, shows additional information about the group states. Choose one or more from `all`, `alert`, `warn`, and `no data`. (optional)
     name = "name_example"  # str | A string to filter monitors by name. (optional)
-    tags = "tags_example"  # str | A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. For example, `host:host0`. (optional)
-    monitor_tags = "monitor_tags_example"  # str | A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors. Tags created in the Datadog UI automatically have the service key prepended. For example, `service:my-app`. (optional)
+    tags = "host:host0"  # str | A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope. For example, `host:host0`. (optional)
+    monitor_tags = "service:my-app"  # str | A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors. Tags created in the Datadog UI automatically have the service key prepended. For example, `service:my-app`. (optional)
     with_downtimes = True  # bool | If this argument is set to true, then the returned data includes all current downtimes for each monitor. (optional)
     id_offset = 1  # int | Monitor ID offset. (optional)
-    page = 1  # int | The page to start paginating from. If this argument is not specified, the request returns all monitors without pagination. (optional)
-    page_size = 1  # int | The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a `page_size` limit. However, if page is specified and `page_size` is not, the argument defaults to 100. (optional)
+    page = 0  # int | The page to start paginating from. If this argument is not specified, the request returns all monitors without pagination. (optional)
+    page_size = 20  # int | The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a `page_size` limit. However, if page is specified and `page_size` is not, the argument defaults to 100. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -563,7 +563,7 @@ with ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-        type=MonitorType("composite"),
+        type=MonitorType("metric alert"),
     )  # MonitorUpdateRequest | Edit a monitor request body.
 
     # example passing only required values which don't have defaults set
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **validate_monitor**
-> Monitor validate_monitor(body)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} validate_monitor(body)
 
 Validate a monitor
 
@@ -689,7 +689,7 @@ with ApiClient(configuration) as api_client:
         ),
         overall_state=MonitorOverallStates("Alert"),
         priority=1,
-        query="query_example",
+        query="avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
         restricted_roles=[
             "restricted_roles_example",
         ],
@@ -708,7 +708,7 @@ with ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-        type=MonitorType("composite"),
+        type=MonitorType("metric alert"),
     )  # Monitor | Monitor request object
 
     # example passing only required values which don't have defaults set
@@ -729,7 +729,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Monitor**](Monitor.md)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
