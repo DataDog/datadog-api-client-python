@@ -5,6 +5,8 @@ Object describing a monitor.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**query** | **str** | The monitor query. | 
+**type** | [**MonitorType**](MonitorType.md) |  | 
 **created** | **datetime** | Timestamp of the monitor creation. | [optional] [readonly] 
 **creator** | [**Creator**](Creator.md) |  | [optional] 
 **deleted** | **datetime, none_type** | Whether or not the monitor is deleted. (Always &#x60;null&#x60;) | [optional] [readonly] 
@@ -16,11 +18,9 @@ Name | Type | Description | Notes
 **options** | [**MonitorOptions**](MonitorOptions.md) |  | [optional] 
 **overall_state** | [**MonitorOverallStates**](MonitorOverallStates.md) |  | [optional] 
 **priority** | **int** | Integer from 1 (high) to 5 (low) indicating alert severity. | [optional] 
-**query** | **str** | The monitor query. | [optional] 
 **restricted_roles** | **[str]** | A list of role identifiers that can be pulled from the Roles API. Cannot be used with &#x60;locked&#x60; option. | [optional] 
 **state** | [**MonitorState**](MonitorState.md) |  | [optional] 
 **tags** | **[str]** | Tags associated to your monitor. | [optional] 
-**type** | [**MonitorType**](MonitorType.md) |  | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

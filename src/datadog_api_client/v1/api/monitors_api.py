@@ -321,7 +321,7 @@ class MonitorsApi(object):
 
         self._validate_monitor_endpoint = _Endpoint(
             settings={
-                "response_type": (Monitor,),
+                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor/validate",
                 "operation_id": "validate_monitor",
@@ -657,7 +657,7 @@ class MonitorsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            Monitor
+            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
                 If the method is called asynchronously, returns the request
                 thread.
         """

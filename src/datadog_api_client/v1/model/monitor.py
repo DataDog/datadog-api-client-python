@@ -85,6 +85,8 @@ class Monitor(ModelNormal):
         """
         lazy_import()
         return {
+            "query": (str,),  # noqa: E501
+            "type": (MonitorType,),  # noqa: E501
             "created": (datetime,),  # noqa: E501
             "creator": (Creator,),  # noqa: E501
             "deleted": (
@@ -99,11 +101,9 @@ class Monitor(ModelNormal):
             "options": (MonitorOptions,),  # noqa: E501
             "overall_state": (MonitorOverallStates,),  # noqa: E501
             "priority": (int,),  # noqa: E501
-            "query": (str,),  # noqa: E501
             "restricted_roles": ([str],),  # noqa: E501
             "state": (MonitorState,),  # noqa: E501
             "tags": ([str],),  # noqa: E501
-            "type": (MonitorType,),  # noqa: E501
         }
 
     @cached_property
@@ -111,6 +111,8 @@ class Monitor(ModelNormal):
         return None
 
     attribute_map = {
+        "query": "query",  # noqa: E501
+        "type": "type",  # noqa: E501
         "created": "created",  # noqa: E501
         "creator": "creator",  # noqa: E501
         "deleted": "deleted",  # noqa: E501
@@ -122,11 +124,9 @@ class Monitor(ModelNormal):
         "options": "options",  # noqa: E501
         "overall_state": "overall_state",  # noqa: E501
         "priority": "priority",  # noqa: E501
-        "query": "query",  # noqa: E501
         "restricted_roles": "restricted_roles",  # noqa: E501
         "state": "state",  # noqa: E501
         "tags": "tags",  # noqa: E501
-        "type": "type",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -143,8 +143,12 @@ class Monitor(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, query, type, *args, **kwargs):  # noqa: E501
         """Monitor - a model defined in OpenAPI
+
+        Args:
+            query (str): The monitor query.
+            type (MonitorType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -188,11 +192,9 @@ class Monitor(ModelNormal):
             options (MonitorOptions): [optional]  # noqa: E501
             overall_state (MonitorOverallStates): [optional]  # noqa: E501
             priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]  # noqa: E501
-            query (str): The monitor query.. [optional]  # noqa: E501
             restricted_roles ([str]): A list of role identifiers that can be pulled from the Roles API. Cannot be used with `locked` option.. [optional]  # noqa: E501
             state (MonitorState): [optional]  # noqa: E501
             tags ([str]): Tags associated to your monitor.. [optional]  # noqa: E501
-            type (MonitorType): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
@@ -219,6 +221,8 @@ class Monitor(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.query = query
+        self.type = type
         for var_name, var_value in kwargs.items():
             if (
                 var_name not in self.attribute_map
