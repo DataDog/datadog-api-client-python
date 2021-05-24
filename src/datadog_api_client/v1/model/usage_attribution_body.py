@@ -77,6 +77,7 @@ class UsageAttributionBody(ModelNormal):
             "month": (datetime,),  # noqa: E501
             "org_name": (str,),  # noqa: E501
             "public_id": (str,),  # noqa: E501
+            "tag_config_source": (str,),  # noqa: E501
             "tags": (UsageAttributionTagNames,),  # noqa: E501
             "updated_at": (str,),  # noqa: E501
             "values": (UsageAttributionValues,),  # noqa: E501
@@ -90,6 +91,7 @@ class UsageAttributionBody(ModelNormal):
         "month": "month",  # noqa: E501
         "org_name": "org_name",  # noqa: E501
         "public_id": "public_id",  # noqa: E501
+        "tag_config_source": "tag_config_source",  # noqa: E501
         "tags": "tags",  # noqa: E501
         "updated_at": "updated_at",  # noqa: E501
         "values": "values",  # noqa: E501
@@ -146,6 +148,7 @@ class UsageAttributionBody(ModelNormal):
             month (datetime): Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM].. [optional]  # noqa: E501
             org_name (str): The name of the organization.. [optional]  # noqa: E501
             public_id (str): The organization public ID.. [optional]  # noqa: E501
+            tag_config_source (str): The source of the usage attribution tag configuration and the selected tags in the format `<source_org_name>:<selected tag 1>-<selected tag 2>-<selected tag 3>`.. [optional]  # noqa: E501
             tags (UsageAttributionTagNames): [optional]  # noqa: E501
             updated_at (str): Shows the the most recent hour in the current months for all organizations for which all usages were calculated.. [optional]  # noqa: E501
             values (UsageAttributionValues): [optional]  # noqa: E501
