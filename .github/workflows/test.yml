@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+concurrency:
+  group: unit-${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
