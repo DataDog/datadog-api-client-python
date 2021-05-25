@@ -33,7 +33,7 @@ jobs:
       with:
         python-version: 3.8
     - name: Install
-      run: pip install --disable-pip-version-check -e .[tests]
+      run: pip install --disable-pip-version-check -e .[apm,tests]
     - name: Test
       run: ./run-tests.sh
       shell: bash
