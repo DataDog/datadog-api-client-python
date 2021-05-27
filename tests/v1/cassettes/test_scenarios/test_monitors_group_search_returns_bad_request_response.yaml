@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - SearchMonitorGroups
+      User-Agent:
+      - datadog-api-client-python/1.0.0b9.dev32+dirty (python 3.8.8; os Darwin; arch
+        x86_64)
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/monitor/groups/search?query=status%3Anotastatus
+  response:
+    body:
+      string: '{"errors": ["Query parsing error: ''notastatus'' is not a valid monitor
+        status"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '79'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 25 May 2021 10:00:26 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4600133'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '120'
+      x-ratelimit-period:
+      - '10'
+      x-ratelimit-remaining:
+      - '117'
+      x-ratelimit-reset:
+      - '4'
+    status:
+      code: 400
+      message: Bad Request
+version: 1
