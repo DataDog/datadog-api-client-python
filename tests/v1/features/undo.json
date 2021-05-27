@@ -615,6 +615,18 @@
       "type": "safe"
     }
   },
+  "SearchMonitorGroups": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchMonitors": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ValidateMonitor": {
     "tag": "Monitors",
     "undo": {

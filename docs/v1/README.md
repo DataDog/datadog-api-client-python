@@ -180,6 +180,8 @@ Class | Method | HTTP request | Description
 *MonitorsApi* | [**delete_monitor**](MonitorsApi.md#delete_monitor) | **DELETE** /api/v1/monitor/{monitor_id} | Delete a monitor
 *MonitorsApi* | [**get_monitor**](MonitorsApi.md#get_monitor) | **GET** /api/v1/monitor/{monitor_id} | Get a monitor&#39;s details
 *MonitorsApi* | [**list_monitors**](MonitorsApi.md#list_monitors) | **GET** /api/v1/monitor | Get all monitor details
+*MonitorsApi* | [**search_monitor_groups**](MonitorsApi.md#search_monitor_groups) | **GET** /api/v1/monitor/groups/search | Monitors group search
+*MonitorsApi* | [**search_monitors**](MonitorsApi.md#search_monitors) | **GET** /api/v1/monitor/search | Monitors search
 *MonitorsApi* | [**update_monitor**](MonitorsApi.md#update_monitor) | **PUT** /api/v1/monitor/{monitor_id} | Edit a monitor
 *MonitorsApi* | [**validate_monitor**](MonitorsApi.md#validate_monitor) | **POST** /api/v1/monitor/validate | Validate a monitor
 *NotebooksApi* | [**create_notebook**](NotebooksApi.md#create_notebook) | **POST** /api/v1/notebooks | Create a notebook
@@ -499,9 +501,18 @@ Class | Method | HTTP request | Description
  - [MetricsQueryUnit](MetricsQueryUnit.md)
  - [Monitor](Monitor.md)
  - [MonitorDeviceID](MonitorDeviceID.md)
+ - [MonitorGroupSearchResponse](MonitorGroupSearchResponse.md)
+ - [MonitorGroupSearchResponseCounts](MonitorGroupSearchResponseCounts.md)
+ - [MonitorGroupSearchResult](MonitorGroupSearchResult.md)
  - [MonitorOptions](MonitorOptions.md)
  - [MonitorOptionsAggregation](MonitorOptionsAggregation.md)
  - [MonitorOverallStates](MonitorOverallStates.md)
+ - [MonitorSearchCount](MonitorSearchCount.md)
+ - [MonitorSearchResponse](MonitorSearchResponse.md)
+ - [MonitorSearchResponseCounts](MonitorSearchResponseCounts.md)
+ - [MonitorSearchResponseMetadata](MonitorSearchResponseMetadata.md)
+ - [MonitorSearchResult](MonitorSearchResult.md)
+ - [MonitorSearchResultNotification](MonitorSearchResultNotification.md)
  - [MonitorState](MonitorState.md)
  - [MonitorStateGroup](MonitorStateGroup.md)
  - [MonitorSummaryWidgetDefinition](MonitorSummaryWidgetDefinition.md)
