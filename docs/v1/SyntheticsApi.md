@@ -227,9 +227,10 @@ with ApiClient(configuration) as api_client:
             config_variables=[
                 SyntheticsConfigVariable(
                     example="example_example",
+                    id="id_example",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
-                    type=SyntheticsConfigVariableType("text"),
+                    type=SyntheticsConfigVariableType("global"),
                 ),
             ],
             request=SyntheticsTestRequest(
@@ -1728,9 +1729,10 @@ with ApiClient(configuration) as api_client:
             config_variables=[
                 SyntheticsConfigVariable(
                     example="example_example",
+                    id="id_example",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
-                    type=SyntheticsConfigVariableType("text"),
+                    type=SyntheticsConfigVariableType("global"),
                 ),
             ],
             request=SyntheticsTestRequest(

@@ -5,7 +5,7 @@ Configuration object for a Synthetic test.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**assertions** | [**[SyntheticsAssertion]**](SyntheticsAssertion.md) | Array of assertions used for the test. | defaults to []
+**assertions** | [**[SyntheticsAssertion]**](SyntheticsAssertion.md) | Array of assertions used for the test. | [optional]  if omitted the server will use the default value of []
 **config_variables** | [**[SyntheticsConfigVariable]**](SyntheticsConfigVariable.md) | API tests only - array of variables used for the test. | [optional] 
 **request** | [**SyntheticsTestRequest**](SyntheticsTestRequest.md) |  | [optional] 
 **variables** | [**[SyntheticsBrowserVariable]**](SyntheticsBrowserVariable.md) | Browser tests only - array of variables used for the test steps. | [optional] 
