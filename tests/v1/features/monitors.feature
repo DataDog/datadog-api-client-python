@@ -119,6 +119,28 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
 
+  Scenario: Monitors group search returns "Bad Request" response
+    Given new "SearchMonitorGroups" request
+    And request contains "query" parameter with value "status:notastatus"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  Scenario: Monitors group search returns "OK" response
+    Given new "SearchMonitorGroups" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  Scenario: Monitors search returns "Bad Request" response
+    Given new "SearchMonitors" request
+    And request contains "query" parameter with value "status:notastatus"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  Scenario: Monitors search returns "OK" response
+    Given new "SearchMonitors" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip
   Scenario: Validate a monitor returns "Invalid JSON" response
     Given new "ValidateMonitor" request

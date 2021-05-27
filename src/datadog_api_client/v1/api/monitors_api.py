@@ -20,6 +20,8 @@ from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.check_can_delete_monitor_response import CheckCanDeleteMonitorResponse
 from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
 from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.model.monitor_group_search_response import MonitorGroupSearchResponse
+from datadog_api_client.v1.model.monitor_search_response import MonitorSearchResponse
 from datadog_api_client.v1.model.monitor_update_request import MonitorUpdateRequest
 
 
@@ -267,6 +269,108 @@ class MonitorsApi(object):
                     "id_offset": "query",
                     "page": "query",
                     "page_size": "query",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._search_monitor_groups_endpoint = _Endpoint(
+            settings={
+                "response_type": (MonitorGroupSearchResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor/groups/search",
+                "operation_id": "search_monitor_groups",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "query",
+                    "page",
+                    "per_page",
+                    "sort",
+                ],
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "query": (str,),
+                    "page": (int,),
+                    "per_page": (int,),
+                    "sort": (str,),
+                },
+                "attribute_map": {
+                    "query": "query",
+                    "page": "page",
+                    "per_page": "per_page",
+                    "sort": "sort",
+                },
+                "location_map": {
+                    "query": "query",
+                    "page": "query",
+                    "per_page": "query",
+                    "sort": "query",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._search_monitors_endpoint = _Endpoint(
+            settings={
+                "response_type": (MonitorSearchResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/monitor/search",
+                "operation_id": "search_monitors",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "query",
+                    "page",
+                    "per_page",
+                    "sort",
+                ],
+                "required": [],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "query": (str,),
+                    "page": (int,),
+                    "per_page": (int,),
+                    "sort": (str,),
+                },
+                "attribute_map": {
+                    "query": "query",
+                    "page": "page",
+                    "per_page": "per_page",
+                    "sort": "sort",
+                },
+                "location_map": {
+                    "query": "query",
+                    "page": "query",
+                    "per_page": "query",
+                    "sort": "query",
                 },
                 "collection_format_map": {},
             },
@@ -576,6 +680,94 @@ class MonitorsApi(object):
         """
         kwargs = self._list_monitors_endpoint.default_arguments(kwargs)
         return self._list_monitors_endpoint.call_with_http_info(**kwargs)
+
+    def search_monitor_groups(self, **kwargs):
+        """Monitors group search  # noqa: E501
+
+        Search and filter your monitor groups details.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_monitor_groups(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            query (str): After entering a search query in your [Manage Monitor page][1] use the query parameter value in the URL of the page as value for this parameter. Consult the dedicated [manage monitor documentation][2] page to learn more.  The query can contain any number of space-separated monitor attributes, for instance `query=\"type:metric status:alert\"`.  [1]: https://app.datadoghq.com/monitors/manage [2]: /monitors/manage_monitor/#find-the-monitors. [optional]
+            page (int): Page to start paginating from.. [optional] if omitted the server will use the default value of 0
+            per_page (int): Number of monitors to return per page.. [optional] if omitted the server will use the default value of 30
+            sort (str): String for sort order, composed of field and sort order separate by a comma, e.g. `name,asc`. Supported sort directions: `asc`, `desc`. Supported fields:  * `name` * `status` * `tags`. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MonitorGroupSearchResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._search_monitor_groups_endpoint.default_arguments(kwargs)
+        return self._search_monitor_groups_endpoint.call_with_http_info(**kwargs)
+
+    def search_monitors(self, **kwargs):
+        """Monitors search  # noqa: E501
+
+        Search and filter your monitors details.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_monitors(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            query (str): After entering a search query in your [Manage Monitor page][1] use the query parameter value in the URL of the page as value for this parameter. Consult the dedicated [manage monitor documentation][2] page to learn more.  The query can contain any number of space-separated monitor attributes, for instance `query=\"type:metric status:alert\"`.  [1]: https://app.datadoghq.com/monitors/manage [2]: /monitors/manage_monitor/#find-the-monitors. [optional]
+            page (int): Page to start paginating from.. [optional] if omitted the server will use the default value of 0
+            per_page (int): Number of monitors to return per page.. [optional] if omitted the server will use the default value of 30
+            sort (str): String for sort order, composed of field and sort order separate by a comma, e.g. `name,asc`. Supported sort directions: `asc`, `desc`. Supported fields:  * `name` * `status` * `tags`. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MonitorSearchResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._search_monitors_endpoint.default_arguments(kwargs)
+        return self._search_monitors_endpoint.call_with_http_info(**kwargs)
 
     def update_monitor(self, monitor_id, body, **kwargs):
         """Edit a monitor  # noqa: E501
