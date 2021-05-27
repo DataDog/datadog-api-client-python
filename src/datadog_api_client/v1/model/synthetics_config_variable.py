@@ -72,9 +72,10 @@ class SyntheticsConfigVariable(ModelNormal):
         """
         lazy_import()
         return {
-            "example": (str,),  # noqa: E501
             "name": (str,),  # noqa: E501
             "type": (SyntheticsConfigVariableType,),  # noqa: E501
+            "example": (str,),  # noqa: E501
+            "id": (str,),  # noqa: E501
             "pattern": (str,),  # noqa: E501
         }
 
@@ -83,9 +84,10 @@ class SyntheticsConfigVariable(ModelNormal):
         return None
 
     attribute_map = {
-        "example": "example",  # noqa: E501
         "name": "name",  # noqa: E501
         "type": "type",  # noqa: E501
+        "example": "example",  # noqa: E501
+        "id": "id",  # noqa: E501
         "pattern": "pattern",  # noqa: E501
     }
 
@@ -103,11 +105,10 @@ class SyntheticsConfigVariable(ModelNormal):
     )
 
     @convert_js_args_to_python_args
-    def __init__(self, example, name, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, type, *args, **kwargs):  # noqa: E501
         """SyntheticsConfigVariable - a model defined in OpenAPI
 
         Args:
-            example (str): Example for the variable.
             name (str): Name of the variable.
             type (SyntheticsConfigVariableType):
 
@@ -142,6 +143,8 @@ class SyntheticsConfigVariable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            example (str): Example for the variable.. [optional]  # noqa: E501
+            id (str): ID of the variable for global variables.. [optional]  # noqa: E501
             pattern (str): Pattern of the variable.. [optional]  # noqa: E501
         """
 
@@ -169,7 +172,6 @@ class SyntheticsConfigVariable(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.example = example
         self.name = name
         self.type = type
         for var_name, var_value in kwargs.items():

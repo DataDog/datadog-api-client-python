@@ -44,6 +44,7 @@ class SyntheticsConfigVariableType(ModelSimple):
 
     allowed_values = {
         ("value",): {
+            "GLOBAL": "global",
             "TEXT": "text",
         },
     }
@@ -94,10 +95,10 @@ class SyntheticsConfigVariableType(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Type of the configuration variable.. if omitted defaults to "text", must be one of ["text", ]  # noqa: E501
+            args[0] (str): Type of the configuration variable.., must be one of ["global", "text", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Type of the configuration variable.. if omitted defaults to "text", must be one of ["text", ]  # noqa: E501
+            value (str): Type of the configuration variable.., must be one of ["global", "text", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -138,7 +139,11 @@ class SyntheticsConfigVariableType(ModelSimple):
             args = list(args)
             value = args.pop(0)
         else:
-            value = "text"
+            raise ApiTypeError(
+                "value is required, but not passed in args or kwargs and doesn't have default",
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
 
         _check_type = kwargs.pop("_check_type", True)
         _spec_property_naming = kwargs.pop("_spec_property_naming", False)
