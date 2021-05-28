@@ -315,6 +315,12 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get all global variables returns "OK" response
+    Given new "ListGlobalVariables" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get all locations (public and private) returns "OK" response
     Given new "ListLocations" request
     When the request is sent
