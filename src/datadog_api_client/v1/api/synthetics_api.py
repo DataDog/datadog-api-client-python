@@ -31,6 +31,7 @@ from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_resp
     SyntheticsGetBrowserTestLatestResultsResponse,
 )
 from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
+from datadog_api_client.v1.model.synthetics_list_global_variables_response import SyntheticsListGlobalVariablesResponse
 from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
@@ -758,6 +759,31 @@ class SyntheticsApi(object):
                 "location_map": {
                     "public_id": "path",
                 },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._list_global_variables_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsListGlobalVariablesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/variables",
+                "operation_id": "list_global_variables",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {},
+                "attribute_map": {},
+                "location_map": {},
                 "collection_format_map": {},
             },
             headers_map={
@@ -1763,6 +1789,46 @@ class SyntheticsApi(object):
         kwargs = self._get_test_endpoint.default_arguments(kwargs)
         kwargs["public_id"] = public_id
         return self._get_test_endpoint.call_with_http_info(**kwargs)
+
+    def list_global_variables(self, **kwargs):
+        """Get all global variables  # noqa: E501
+
+        Get the list of all Synthetics global variables.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_global_variables(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SyntheticsListGlobalVariablesResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._list_global_variables_endpoint.default_arguments(kwargs)
+        return self._list_global_variables_endpoint.call_with_http_info(**kwargs)
 
     def list_locations(self, **kwargs):
         """Get all locations (public and private)  # noqa: E501

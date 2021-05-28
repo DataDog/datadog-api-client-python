@@ -979,6 +979,12 @@
       "type": "idempotent"
     }
   },
+  "ListGlobalVariables": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateGlobalVariable": {
     "tag": "Synthetics",
     "undo": {
