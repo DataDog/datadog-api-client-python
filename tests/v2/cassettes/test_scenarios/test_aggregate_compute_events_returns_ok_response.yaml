@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"filter": {"from": "now-15m", "indexes": ["main"], "query": "*", "to":
-      "now"}}'
+    body: '{"compute": [{"aggregation": "count", "interval": "5m", "type": "timeseries"}],
+      "filter": {"from": "now-15m", "indexes": ["main"], "query": "*", "to": "now"}}'
     headers:
       Accept:
       - application/json
@@ -16,16 +16,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"pddv1ChZjTDl4MlkzYlR5MjVDSjdSOUFrOHZnIi0KHUtBg7DFEyBW_PuB7fC41XjIlmupYgUE9pa4MZ6wEgw67shbDH2rt649h8M","elapsed":1},"data":{"buckets":[{"computes":{"c0":8},"by":{}}]}}'
+      string: '{"meta":{"status":"done","request_id":"pddv1ChY5cjc0MktqclRaV1lGdVJVODVTOWV3IiwKHK0u6RuqXLXD8sJvwwz_qe9dtl4osBDiJ9HGh2MSDJ3yYk4uBvbPLvozvg","elapsed":4},"data":{"buckets":[{"computes":{"c0":[{"value":2,"time":"2021-06-02T07:50:00.000Z"},{"value":5,"time":"2021-06-02T07:55:00.000Z"},{"value":1,"time":"2021-06-02T08:00:00.000Z"}]},"by":{}}]}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '205'
+      - '342'
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Jun 2021 08:03:56 GMT
+      - Wed, 02 Jun 2021 08:04:38 GMT
       cache-control:
       - no-cache
       content-security-policy:
@@ -39,7 +39,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - /L+SFFO+m1pPY+hRCpk5325fvfrNl0KmiquUNJolBN/5hu3HIwflqjZSbJ6NxDFG
       x-dd-version:
       - '35.4654814'
       x-frame-options:
@@ -49,9 +49,9 @@ interactions:
       x-ratelimit-period:
       - '300'
       x-ratelimit-remaining:
-      - '296'
+      - '295'
       x-ratelimit-reset:
-      - '64'
+      - '22'
     status:
       code: 200
       message: OK
