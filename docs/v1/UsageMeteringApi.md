@@ -13,8 +13,9 @@ Method | HTTP request | Description
 [**get_tracing_without_limits**](UsageMeteringApi.md#get_tracing_without_limits) | **GET** /api/v1/usage/tracing-without-limits | Get hourly usage for tracing without limits
 [**get_usage_analyzed_logs**](UsageMeteringApi.md#get_usage_analyzed_logs) | **GET** /api/v1/usage/analyzed_logs | Get hourly usage for analyzed logs
 [**get_usage_attribution**](UsageMeteringApi.md#get_usage_attribution) | **GET** /api/v1/usage/attribution | Get Usage Attribution
+[**get_usage_audit_logs**](UsageMeteringApi.md#get_usage_audit_logs) | **GET** /api/v1/usage/audit_logs | Get hourly usage for audit logs
 [**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get billable usage across your account
-[**get_usage_compliance_monitoring**](UsageMeteringApi.md#get_usage_compliance_monitoring) | **GET** /api/v1/usage/compliance-monitoring | Get hourly usage for Compliance Monitoring
+[**get_usage_cloud_security_posture_management**](UsageMeteringApi.md#get_usage_cloud_security_posture_management) | **GET** /api/v1/usage/cspm | Get hourly usage for CSPM
 [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
 [**get_usage_indexed_spans**](UsageMeteringApi.md#get_usage_indexed_spans) | **GET** /api/v1/usage/indexed-spans | Get hourly usage for indexed spans
@@ -709,6 +710,83 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **get_usage_audit_logs**
+> UsageAuditLogsResponse get_usage_audit_logs(start_hr)
+
+Get hourly usage for audit logs
+
+Get hourly usage for audit logs.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import usage_metering_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = usage_metering_api.UsageMeteringApi(api_client)
+    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get hourly usage for audit logs
+        api_response = api_instance.get_usage_audit_logs(start_hr)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_usage_audit_logs: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get hourly usage for audit logs
+        api_response = api_instance.get_usage_audit_logs(start_hr, end_hr=end_hr)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsageMeteringApi->get_usage_audit_logs: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour. |
+ **end_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour. | [optional]
+
+### Return type
+
+[**UsageAuditLogsResponse**](UsageAuditLogsResponse.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;datetime-format=rfc3339
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden - User is not authorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **get_usage_billable_summary**
 > UsageBillableSummaryResponse get_usage_billable_summary()
 
@@ -776,12 +854,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **get_usage_compliance_monitoring**
-> UsageComplianceResponse get_usage_compliance_monitoring(start_hr)
+# **get_usage_cloud_security_posture_management**
+> UsageCloudSecurityPostureManagementResponse get_usage_cloud_security_posture_management(start_hr)
 
-Get hourly usage for Compliance Monitoring
+Get hourly usage for CSPM
 
-Get hourly usage for Compliance Monitoring.
+Get hourly usage for Cloud Security Posture Management (CSPM).
 
 ### Example
 
@@ -806,20 +884,20 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get hourly usage for Compliance Monitoring
-        api_response = api_instance.get_usage_compliance_monitoring(start_hr)
+        # Get hourly usage for CSPM
+        api_response = api_instance.get_usage_cloud_security_posture_management(start_hr)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UsageMeteringApi->get_usage_compliance_monitoring: %s\n" % e)
+        print("Exception when calling UsageMeteringApi->get_usage_cloud_security_posture_management: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get hourly usage for Compliance Monitoring
-        api_response = api_instance.get_usage_compliance_monitoring(start_hr, end_hr=end_hr)
+        # Get hourly usage for CSPM
+        api_response = api_instance.get_usage_cloud_security_posture_management(start_hr, end_hr=end_hr)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling UsageMeteringApi->get_usage_compliance_monitoring: %s\n" % e)
+        print("Exception when calling UsageMeteringApi->get_usage_cloud_security_posture_management: %s\n" % e)
 ```
 
 
@@ -832,7 +910,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsageComplianceResponse**](UsageComplianceResponse.md)
+[**UsageCloudSecurityPostureManagementResponse**](UsageCloudSecurityPostureManagementResponse.md)
 
 ### Authorization
 
