@@ -1,11 +1,12 @@
-# UsageComplianceResponse
+# UsageAuditLogsHour
 
-The response containing the Compliance Monitoring usage for each hour for a given organization.
+Audit logs usage for a given organization for a given hour.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**usage** | [**[UsageComplianceHour]**](UsageComplianceHour.md) | Get hourly usage for Compliance Monitoring. | [optional] 
+**hour** | **datetime** | The hour for the usage. | [optional] 
+**lines_indexed** | **int** | The total number of audit logs lines indexed during a given hour. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

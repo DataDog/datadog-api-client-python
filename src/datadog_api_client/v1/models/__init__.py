@@ -522,12 +522,20 @@ from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionS
 from datadog_api_client.v1.model.usage_attribution_supported_metrics import UsageAttributionSupportedMetrics
 from datadog_api_client.v1.model.usage_attribution_tag_names import UsageAttributionTagNames
 from datadog_api_client.v1.model.usage_attribution_values import UsageAttributionValues
+from datadog_api_client.v1.model.usage_audit_logs_hour import UsageAuditLogsHour
+from datadog_api_client.v1.model.usage_audit_logs_response import UsageAuditLogsResponse
 from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
 from datadog_api_client.v1.model.usage_billable_summary_hour import UsageBillableSummaryHour
 from datadog_api_client.v1.model.usage_billable_summary_keys import UsageBillableSummaryKeys
 from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
-from datadog_api_client.v1.model.usage_compliance_hour import UsageComplianceHour
-from datadog_api_client.v1.model.usage_compliance_response import UsageComplianceResponse
+from datadog_api_client.v1.model.usage_cws_hour import UsageCWSHour
+from datadog_api_client.v1.model.usage_cws_response import UsageCWSResponse
+from datadog_api_client.v1.model.usage_cloud_security_posture_management_hour import (
+    UsageCloudSecurityPostureManagementHour,
+)
+from datadog_api_client.v1.model.usage_cloud_security_posture_management_response import (
+    UsageCloudSecurityPostureManagementResponse,
+)
 from datadog_api_client.v1.model.usage_custom_reports_attributes import UsageCustomReportsAttributes
 from datadog_api_client.v1.model.usage_custom_reports_data import UsageCustomReportsData
 from datadog_api_client.v1.model.usage_custom_reports_meta import UsageCustomReportsMeta

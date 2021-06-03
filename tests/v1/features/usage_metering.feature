@@ -56,14 +56,26 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Get hourly usage for Compliance Monitoring returns "Bad Request" response
-    Given new "GetUsageComplianceMonitoring" request
+  Scenario: Get hourly usage for CSPM returns "Bad Request" response
+    Given new "GetUsageCloudSecurityPostureManagement" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
-  Scenario: Get hourly usage for Compliance Monitoring returns "OK" response
-    Given new "GetUsageComplianceMonitoring" request
+  Scenario: Get hourly usage for CSPM returns "OK" response
+    Given new "GetUsageCloudSecurityPostureManagement" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get hourly usage for Cloud Workload Security returns "Bad Request" response
+    Given new "GetUsageCWS" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get hourly usage for Cloud Workload Security returns "OK" response
+    Given new "GetUsageCWS" request
     When the request is sent
     Then the response status is 200 OK
 
@@ -232,6 +244,18 @@ Feature: Usage Metering
   @generated @skip
   Scenario: Get hourly usage for analyzed logs returns "OK" response
     Given new "GetUsageAnalyzedLogs" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get hourly usage for audit logs returns "Bad Request" response
+    Given new "GetUsageAuditLogs" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get hourly usage for audit logs returns "OK" response
+    Given new "GetUsageAuditLogs" request
     When the request is sent
     Then the response status is 200 OK
 
