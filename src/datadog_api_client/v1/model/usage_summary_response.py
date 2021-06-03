@@ -77,26 +77,18 @@ class UsageSummaryResponse(ModelNormal):
             "agent_host_top99p_sum": (int,),  # noqa: E501
             "apm_azure_app_service_host_top99p_sum": (int,),  # noqa: E501
             "apm_host_top99p_sum": (int,),  # noqa: E501
+            "audit_logs_lines_indexed_agg_sum": (int,),  # noqa: E501
             "aws_host_top99p_sum": (int,),  # noqa: E501
             "aws_lambda_func_count": (int,),  # noqa: E501
             "aws_lambda_invocations_sum": (int,),  # noqa: E501
             "azure_app_service_top99p_sum": (int,),  # noqa: E501
             "azure_host_top99p_sum": (int,),  # noqa: E501
             "billable_ingested_bytes_agg_sum": (int,),  # noqa: E501
-            "compliance_container_agg_sum": (
-                bool,
-                date,
-                datetime,
-                dict,
-                float,
-                int,
-                list,
-                str,
-                none_type,
-            ),  # noqa: E501
-            "compliance_host_agg_sum": (int,),  # noqa: E501
             "container_avg_sum": (int,),  # noqa: E501
             "container_hwm_sum": (int,),  # noqa: E501
+            "cspm_container_avg_sum": (int,),  # noqa: E501
+            "cspm_container_hwm_sum": (int,),  # noqa: E501
+            "cspm_host_top99p_sum": (int,),  # noqa: E501
             "custom_ts_sum": (int,),  # noqa: E501
             "end_date": (datetime,),  # noqa: E501
             "fargate_tasks_count_avg_sum": (int,),  # noqa: E501
@@ -142,16 +134,18 @@ class UsageSummaryResponse(ModelNormal):
         "agent_host_top99p_sum": "agent_host_top99p_sum",  # noqa: E501
         "apm_azure_app_service_host_top99p_sum": "apm_azure_app_service_host_top99p_sum",  # noqa: E501
         "apm_host_top99p_sum": "apm_host_top99p_sum",  # noqa: E501
+        "audit_logs_lines_indexed_agg_sum": "audit_logs_lines_indexed_agg_sum",  # noqa: E501
         "aws_host_top99p_sum": "aws_host_top99p_sum",  # noqa: E501
         "aws_lambda_func_count": "aws_lambda_func_count",  # noqa: E501
         "aws_lambda_invocations_sum": "aws_lambda_invocations_sum",  # noqa: E501
         "azure_app_service_top99p_sum": "azure_app_service_top99p_sum",  # noqa: E501
         "azure_host_top99p_sum": "azure_host_top99p_sum",  # noqa: E501
         "billable_ingested_bytes_agg_sum": "billable_ingested_bytes_agg_sum",  # noqa: E501
-        "compliance_container_agg_sum": "compliance_container_agg_sum",  # noqa: E501
-        "compliance_host_agg_sum": "compliance_host_agg_sum",  # noqa: E501
         "container_avg_sum": "container_avg_sum",  # noqa: E501
         "container_hwm_sum": "container_hwm_sum",  # noqa: E501
+        "cspm_container_avg_sum": "cspm_container_avg_sum",  # noqa: E501
+        "cspm_container_hwm_sum": "cspm_container_hwm_sum",  # noqa: E501
+        "cspm_host_top99p_sum": "cspm_host_top99p_sum",  # noqa: E501
         "custom_ts_sum": "custom_ts_sum",  # noqa: E501
         "end_date": "end_date",  # noqa: E501
         "fargate_tasks_count_avg_sum": "fargate_tasks_count_avg_sum",  # noqa: E501
@@ -240,16 +234,18 @@ class UsageSummaryResponse(ModelNormal):
             agent_host_top99p_sum (int): Shows the 99th percentile of all agent hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             apm_azure_app_service_host_top99p_sum (int): Shows the 99th percentile of all Azure app services using APM over all hours in the current months all organizations.. [optional]  # noqa: E501
             apm_host_top99p_sum (int): Shows the 99th percentile of all distinct APM hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            audit_logs_lines_indexed_agg_sum (int): Shows the sum of all audit logs lines indexed over all hours in the current months for all organizations.. [optional]  # noqa: E501
             aws_host_top99p_sum (int): Shows the 99th percentile of all AWS hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             aws_lambda_func_count (int): Shows the average of the number of functions that executed 1 or more times each hour in the current months for all organizations.. [optional]  # noqa: E501
             aws_lambda_invocations_sum (int): Shows the sum of all AWS Lambda invocations over all hours in the current months for all organizations.. [optional]  # noqa: E501
             azure_app_service_top99p_sum (int): Shows the 99th percentile of all Azure app services over all hours in the current months for all organizations.. [optional]  # noqa: E501
             azure_host_top99p_sum (int): Shows the 99th percentile of all Azure hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             billable_ingested_bytes_agg_sum (int): Shows the sum of all log bytes ingested over all hours in the current months for all organizations.. [optional]  # noqa: E501
-            compliance_container_agg_sum (bool, date, datetime, dict, float, int, list, str, none_type): Shows the sum of all compliance containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
-            compliance_host_agg_sum (int): Shows the sum of all compliance hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             container_avg_sum (int): Shows the average of all distinct containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
             container_hwm_sum (int): Shows the sum of the high-water marks of all distinct containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            cspm_container_avg_sum (int): Shows the average number of Cloud Security Posture Management containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            cspm_container_hwm_sum (int): Shows the sum of the the high-water marks of Cloud Security Posture Management containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            cspm_host_top99p_sum (int): Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             custom_ts_sum (int): Shows the average number of distinct custom metrics over all hours in the current months for all organizations.. [optional]  # noqa: E501
             end_date (datetime): Shows the last date of usage in the current months for all organizations.. [optional]  # noqa: E501
             fargate_tasks_count_avg_sum (int): Shows the average of all Fargate tasks over all hours in the current months for all organizations.. [optional]  # noqa: E501

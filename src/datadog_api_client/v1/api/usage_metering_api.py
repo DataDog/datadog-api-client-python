@@ -21,8 +21,11 @@ from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyz
 from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
 from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
 from datadog_api_client.v1.model.usage_attribution_supported_metrics import UsageAttributionSupportedMetrics
+from datadog_api_client.v1.model.usage_audit_logs_response import UsageAuditLogsResponse
 from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
-from datadog_api_client.v1.model.usage_compliance_response import UsageComplianceResponse
+from datadog_api_client.v1.model.usage_cloud_security_posture_management_response import (
+    UsageCloudSecurityPostureManagementResponse,
+)
 from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
 from datadog_api_client.v1.model.usage_fargate_response import UsageFargateResponse
 from datadog_api_client.v1.model.usage_hosts_response import UsageHostsResponse
@@ -486,6 +489,51 @@ class UsageMeteringApi(object):
             api_client=api_client,
         )
 
+        self._get_usage_audit_logs_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageAuditLogsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/audit_logs",
+                "operation_id": "get_usage_audit_logs",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "start_hr",
+                    "end_hr",
+                ],
+                "required": [
+                    "start_hr",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
+                },
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
+                },
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._get_usage_billable_summary_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageBillableSummaryResponse,),
@@ -525,12 +573,12 @@ class UsageMeteringApi(object):
             api_client=api_client,
         )
 
-        self._get_usage_compliance_monitoring_endpoint = _Endpoint(
+        self._get_usage_cloud_security_posture_management_endpoint = _Endpoint(
             settings={
-                "response_type": (UsageComplianceResponse,),
+                "response_type": (UsageCloudSecurityPostureManagementResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v1/usage/compliance-monitoring",
-                "operation_id": "get_usage_compliance_monitoring",
+                "endpoint_path": "/api/v1/usage/cspm",
+                "operation_id": "get_usage_cloud_security_posture_management",
                 "http_method": "GET",
                 "servers": None,
             },
@@ -1901,6 +1949,50 @@ class UsageMeteringApi(object):
         kwargs["fields"] = fields
         return self._get_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
+    def get_usage_audit_logs(self, start_hr, **kwargs):
+        """Get hourly usage for audit logs  # noqa: E501
+
+        Get hourly usage for audit logs.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_audit_logs(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageAuditLogsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_audit_logs_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_audit_logs_endpoint.call_with_http_info(**kwargs)
+
     def get_usage_billable_summary(self, **kwargs):
         """Get billable usage across your account  # noqa: E501
 
@@ -1942,14 +2034,14 @@ class UsageMeteringApi(object):
         kwargs = self._get_usage_billable_summary_endpoint.default_arguments(kwargs)
         return self._get_usage_billable_summary_endpoint.call_with_http_info(**kwargs)
 
-    def get_usage_compliance_monitoring(self, start_hr, **kwargs):
-        """Get hourly usage for Compliance Monitoring  # noqa: E501
+    def get_usage_cloud_security_posture_management(self, start_hr, **kwargs):
+        """Get hourly usage for CSPM  # noqa: E501
 
-        Get hourly usage for Compliance Monitoring.  # noqa: E501
+        Get hourly usage for Cloud Security Posture Management (CSPM).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_usage_compliance_monitoring(start_hr, async_req=True)
+        >>> thread = api.get_usage_cloud_security_posture_management(start_hr, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1978,13 +2070,13 @@ class UsageMeteringApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            UsageComplianceResponse
+            UsageCloudSecurityPostureManagementResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
-        kwargs = self._get_usage_compliance_monitoring_endpoint.default_arguments(kwargs)
+        kwargs = self._get_usage_cloud_security_posture_management_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
-        return self._get_usage_compliance_monitoring_endpoint.call_with_http_info(**kwargs)
+        return self._get_usage_cloud_security_posture_management_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_fargate(self, start_hr, **kwargs):
         """Get hourly usage for Fargate  # noqa: E501
