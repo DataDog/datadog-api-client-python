@@ -42,7 +42,7 @@ configuration = datadog_api_client.v1.Configuration(
 # Configure API key authorization: apiKeyAuth
 configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
 
-# Configure API key authorization: appKeyAuth
+# Configure APP key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
 # Enter a context with an instance of the API client
