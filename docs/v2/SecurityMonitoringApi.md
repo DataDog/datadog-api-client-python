@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 Create a security filter
 
-Create a security filter.
+Create a security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.
 
 ### Example
 
@@ -355,7 +355,7 @@ void (empty response body)
 
 Get a security filter
 
-Get the details of a specific security filter.
+Get the details of a specific security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.
 
 ### Example
 
