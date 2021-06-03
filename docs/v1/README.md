@@ -260,6 +260,7 @@ Class | Method | HTTP request | Description
 *UsageMeteringApi* | [**get_usage_audit_logs**](UsageMeteringApi.md#get_usage_audit_logs) | **GET** /api/v1/usage/audit_logs | Get hourly usage for audit logs
 *UsageMeteringApi* | [**get_usage_billable_summary**](UsageMeteringApi.md#get_usage_billable_summary) | **GET** /api/v1/usage/billable-summary | Get billable usage across your account
 *UsageMeteringApi* | [**get_usage_cloud_security_posture_management**](UsageMeteringApi.md#get_usage_cloud_security_posture_management) | **GET** /api/v1/usage/cspm | Get hourly usage for CSPM
+*UsageMeteringApi* | [**get_usage_cws**](UsageMeteringApi.md#get_usage_cws) | **GET** /api/v1/usage/cws | Get hourly usage for Cloud Workload Security
 *UsageMeteringApi* | [**get_usage_fargate**](UsageMeteringApi.md#get_usage_fargate) | **GET** /api/v1/usage/fargate | Get hourly usage for Fargate
 *UsageMeteringApi* | [**get_usage_hosts**](UsageMeteringApi.md#get_usage_hosts) | **GET** /api/v1/usage/hosts | Get hourly usage for hosts and containers
 *UsageMeteringApi* | [**get_usage_indexed_spans**](UsageMeteringApi.md#get_usage_indexed_spans) | **GET** /api/v1/usage/indexed-spans | Get hourly usage for indexed spans
@@ -768,6 +769,8 @@ Class | Method | HTTP request | Description
  - [UsageBillableSummaryHour](UsageBillableSummaryHour.md)
  - [UsageBillableSummaryKeys](UsageBillableSummaryKeys.md)
  - [UsageBillableSummaryResponse](UsageBillableSummaryResponse.md)
+ - [UsageCWSHour](UsageCWSHour.md)
+ - [UsageCWSResponse](UsageCWSResponse.md)
  - [UsageCloudSecurityPostureManagementHour](UsageCloudSecurityPostureManagementHour.md)
  - [UsageCloudSecurityPostureManagementResponse](UsageCloudSecurityPostureManagementResponse.md)
  - [UsageCustomReportsAttributes](UsageCustomReportsAttributes.md)

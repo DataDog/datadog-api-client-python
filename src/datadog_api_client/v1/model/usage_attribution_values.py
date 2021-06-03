@@ -75,6 +75,10 @@ class UsageAttributionValues(ModelNormal):
             "container_usage": (float,),  # noqa: E501
             "custom_timeseries_percentage": (float,),  # noqa: E501
             "custom_timeseries_usage": (float,),  # noqa: E501
+            "cws_container_percentage": (float,),  # noqa: E501
+            "cws_container_usage": (float,),  # noqa: E501
+            "cws_host_percentage": (float,),  # noqa: E501
+            "cws_host_usage": (float,),  # noqa: E501
             "infra_host_percentage": (float,),  # noqa: E501
             "infra_host_usage": (float,),  # noqa: E501
             "lambda_functions_percentage": (float,),  # noqa: E501
@@ -108,6 +112,10 @@ class UsageAttributionValues(ModelNormal):
         "container_usage": "container_usage",  # noqa: E501
         "custom_timeseries_percentage": "custom_timeseries_percentage",  # noqa: E501
         "custom_timeseries_usage": "custom_timeseries_usage",  # noqa: E501
+        "cws_container_percentage": "cws_container_percentage",  # noqa: E501
+        "cws_container_usage": "cws_container_usage",  # noqa: E501
+        "cws_host_percentage": "cws_host_percentage",  # noqa: E501
+        "cws_host_usage": "cws_host_usage",  # noqa: E501
         "infra_host_percentage": "infra_host_percentage",  # noqa: E501
         "infra_host_usage": "infra_host_usage",  # noqa: E501
         "lambda_functions_percentage": "lambda_functions_percentage",  # noqa: E501
@@ -184,6 +192,10 @@ class UsageAttributionValues(ModelNormal):
             container_usage (float): The container usage by tag(s).. [optional]  # noqa: E501
             custom_timeseries_percentage (float): The percentage of custom metrics usage by tag(s).. [optional]  # noqa: E501
             custom_timeseries_usage (float): The custom metrics usage by tag(s).. [optional]  # noqa: E501
+            cws_container_percentage (float): The percentage of Cloud Workload Security container usage by tag(s). [optional]  # noqa: E501
+            cws_container_usage (float): The Cloud Workload Security container usage by tag(s). [optional]  # noqa: E501
+            cws_host_percentage (float): The percentage of Cloud Workload Security host usage by tag(s). [optional]  # noqa: E501
+            cws_host_usage (float): The Cloud Workload Security host usage by tag(s). [optional]  # noqa: E501
             infra_host_percentage (float): The percentage of infrastructure host usage by tag(s).. [optional]  # noqa: E501
             infra_host_usage (float): The infrastructure host usage by tag(s).. [optional]  # noqa: E501
             lambda_functions_percentage (float): The percentage of Lambda function usage by tag(s).. [optional]  # noqa: E501

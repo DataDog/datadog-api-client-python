@@ -528,6 +528,8 @@ from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillabl
 from datadog_api_client.v1.model.usage_billable_summary_hour import UsageBillableSummaryHour
 from datadog_api_client.v1.model.usage_billable_summary_keys import UsageBillableSummaryKeys
 from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
+from datadog_api_client.v1.model.usage_cws_hour import UsageCWSHour
+from datadog_api_client.v1.model.usage_cws_response import UsageCWSResponse
 from datadog_api_client.v1.model.usage_cloud_security_posture_management_hour import (
     UsageCloudSecurityPostureManagementHour,
 )
