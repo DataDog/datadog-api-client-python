@@ -39,9 +39,6 @@ configuration = datadog_api_client.v1.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: apiKeyAuth
-configuration.api_key['apiKeyAuth'] = os.getenv('DD_CLIENT_API_KEY')
-
 # Configure API key authorization: appKeyAuth
 configuration.api_key['appKeyAuth'] = os.getenv('DD_CLIENT_APP_KEY')
 
