@@ -68,6 +68,18 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get hourly usage for Cloud Workload Security returns "Bad Request" response
+    Given new "GetUsageCWS" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get hourly usage for Cloud Workload Security returns "OK" response
+    Given new "GetUsageCWS" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get hourly usage for Fargate returns "Bad Request" response
     Given new "GetUsageFargate" request
     When the request is sent

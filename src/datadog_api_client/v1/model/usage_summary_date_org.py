@@ -80,6 +80,8 @@ class UsageSummaryDateOrg(ModelNormal):
             "cspm_container_hwm": (int,),  # noqa: E501
             "cspm_host_top99p": (int,),  # noqa: E501
             "custom_ts_avg": (int,),  # noqa: E501
+            "cws_container_count_avg": (int,),  # noqa: E501
+            "cws_host_top99p": (int,),  # noqa: E501
             "fargate_tasks_count_avg": (int,),  # noqa: E501
             "fargate_tasks_count_hwm": (int,),  # noqa: E501
             "gcp_host_top99p": (int,),  # noqa: E501
@@ -129,6 +131,8 @@ class UsageSummaryDateOrg(ModelNormal):
         "cspm_container_hwm": "cspm_container_hwm",  # noqa: E501
         "cspm_host_top99p": "cspm_host_top99p",  # noqa: E501
         "custom_ts_avg": "custom_ts_avg",  # noqa: E501
+        "cws_container_count_avg": "cws_container_count_avg",  # noqa: E501
+        "cws_host_top99p": "cws_host_top99p",  # noqa: E501
         "fargate_tasks_count_avg": "fargate_tasks_count_avg",  # noqa: E501
         "fargate_tasks_count_hwm": "fargate_tasks_count_hwm",  # noqa: E501
         "gcp_host_top99p": "gcp_host_top99p",  # noqa: E501
@@ -221,6 +225,8 @@ class UsageSummaryDateOrg(ModelNormal):
             cspm_container_hwm (int): Shows the high-water mark of Cloud Security Posture Management containers over all hours in the current date for the given org.. [optional]  # noqa: E501
             cspm_host_top99p (int): Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
             custom_ts_avg (int): Shows the average number of distinct custom metrics over all hours in the current date for the given org.. [optional]  # noqa: E501
+            cws_container_count_avg (int): Shows the average of all distinct Cloud Workload Security containers over all hours in the current date for the given org.. [optional]  # noqa: E501
+            cws_host_top99p (int): Shows the 99th percentile of all Cloud Workload Security hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
             fargate_tasks_count_avg (int): The average task count for Fargate.. [optional]  # noqa: E501
             fargate_tasks_count_hwm (int): Shows the high-water mark of all Fargate tasks over all hours in the current date for the given org.. [optional]  # noqa: E501
             gcp_host_top99p (int): Shows the 99th percentile of all GCP hosts over all hours in the current date for the given org.. [optional]  # noqa: E501

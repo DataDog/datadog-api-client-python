@@ -10730,6 +10730,23 @@ components:
           description: The custom metrics usage by tag(s).
           format: double
           type: number
+        cws_container_percentage:
+          description: The percentage of Cloud Workload Security container usage by
+            tag(s)
+          format: double
+          type: number
+        cws_container_usage:
+          description: The Cloud Workload Security container usage by tag(s)
+          format: double
+          type: number
+        cws_host_percentage:
+          description: The percentage of Cloud Workload Security host usage by tag(s)
+          format: double
+          type: number
+        cws_host_usage:
+          description: The Cloud Workload Security host usage by tag(s)
+          format: double
+          type: number
         infra_host_percentage:
           description: The percentage of infrastructure host usage by tag(s).
           format: double
@@ -10935,6 +10952,35 @@ components:
           description: An array of objects regarding usage of billable summary.
           items:
             $ref: '#/components/schemas/UsageBillableSummaryHour'
+          type: array
+      type: object
+    UsageCWSHour:
+      description: Cloud Workload Security usage for a given organization for a given
+        hour.
+      properties:
+        cws_container_count:
+          description: "The total number of Cloud Workload Security container hours\
+            \ from the start of the given hour\u2019s month until the given hour."
+          format: int64
+          type: integer
+        cws_host_count:
+          description: "The total number of Cloud Workload Security host hours from\
+            \ the start of the given hour\u2019s month until the given hour."
+          format: int64
+          type: integer
+        hour:
+          description: The hour for the usage.
+          format: date-time
+          type: string
+      type: object
+    UsageCWSResponse:
+      description: Response containing the Cloud Workload Security usage for each
+        hour for a given organization.
+      properties:
+        usage:
+          description: Get hourly usage for Cloud Workload Security.
+          items:
+            $ref: '#/components/schemas/UsageCWSHour'
           type: array
       type: object
     UsageCloudSecurityPostureManagementHour:
@@ -11691,6 +11737,16 @@ components:
             hours in the current date for all organizations.
           format: int64
           type: integer
+        cws_container_count_avg:
+          description: Shows the average of all distinct Cloud Workload Security containers
+            over all hours in the current date for all organizations.
+          format: int64
+          type: integer
+        cws_host_top99p:
+          description: Shows the 99th percentile of all Cloud Workload Security hosts
+            over all hours in the current date for all organizations.
+          format: int64
+          type: integer
         date:
           description: The date for the usage.
           format: date-time
@@ -11899,6 +11955,16 @@ components:
         custom_ts_avg:
           description: Shows the average number of distinct custom metrics over all
             hours in the current date for the given org.
+          format: int64
+          type: integer
+        cws_container_count_avg:
+          description: Shows the average of all distinct Cloud Workload Security containers
+            over all hours in the current date for the given org.
+          format: int64
+          type: integer
+        cws_host_top99p:
+          description: Shows the 99th percentile of all Cloud Workload Security hosts
+            over all hours in the current date for the given org.
           format: int64
           type: integer
         fargate_tasks_count_avg:
@@ -12113,6 +12179,16 @@ components:
         custom_ts_sum:
           description: Shows the average number of distinct custom metrics over all
             hours in the current months for all organizations.
+          format: int64
+          type: integer
+        cws_containers_avg_sum:
+          description: Shows the average of all distinct Cloud Workload Security containers
+            over all hours in the current months for all organizations.
+          format: int64
+          type: integer
+        cws_host_top99p_sum:
+          description: Shows the 99th percentile of all Cloud Workload Security hosts
+            over all hours in the current months for all organizations.
           format: int64
           type: integer
         end_date:
@@ -20997,6 +21073,54 @@ paths:
       tags:
       - Usage Metering
       x-menu-order: 30
+      x-undo:
+        type: safe
+  /api/v1/usage/cws:
+    get:
+      description: Get hourly usage for Cloud Workload Security.
+      operationId: GetUsageCWS
+      parameters:
+      - description: 'Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]`
+          for usage beginning at this hour.'
+        in: query
+        name: start_hr
+        required: true
+        schema:
+          format: date-time
+          type: string
+      - description: 'Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]`
+          for usage ending
+
+          **before** this hour.'
+        in: query
+        name: end_hr
+        required: false
+        schema:
+          format: date-time
+          type: string
+      responses:
+        '200':
+          content:
+            application/json;datetime-format=rfc3339:
+              schema:
+                $ref: '#/components/schemas/UsageCWSResponse'
+          description: OK
+        '400':
+          content:
+            application/json;datetime-format=rfc3339:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json;datetime-format=rfc3339:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden - User is not authorized
+      summary: Get hourly usage for Cloud Workload Security
+      tags:
+      - Usage Metering
+      x-menu-order: 31
       x-undo:
         type: safe
   /api/v1/usage/fargate:
