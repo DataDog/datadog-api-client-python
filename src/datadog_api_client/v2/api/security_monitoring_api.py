@@ -533,7 +533,7 @@ class SecurityMonitoringApi(object):
     def create_security_filter(self, body, **kwargs):
         """Create a security filter  # noqa: E501
 
-        Create a security filter.  # noqa: E501
+        Create a security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -705,7 +705,7 @@ class SecurityMonitoringApi(object):
     def get_security_filter(self, security_filter_id, **kwargs):
         """Get a security filter  # noqa: E501
 
-        Get the details of a specific security filter.  # noqa: E501
+        Get the details of a specific security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
