@@ -7,6 +7,12 @@ Feature: Logs
     And a valid "appKeyAuth" key in the system
     And an instance of "Logs" API
 
+  Scenario: Aggregate compute events returns "OK" response
+    Given new "AggregateLogs" request
+    And body with value {"compute": [{"aggregation": "count", "interval": "5m", "type": "timeseries"}], "filter": {"from": "now-15m", "indexes": ["main"], "query": "*", "to": "now"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip
   Scenario: Aggregate events returns "Bad Request" response
     Given new "AggregateLogs" request
@@ -16,7 +22,7 @@ Feature: Logs
 
   Scenario: Aggregate events returns "OK" response
     Given new "AggregateLogs" request
-    And body with value {"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.{{ unique }}", "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"], "query": "datadog-agent", "to": "1600348600"}}
+    And body with value {"filter": {"from": "now-15m", "indexes": ["main"], "query": "*", "to": "now"}}
     When the request is sent
     Then the response status is 200 OK
 

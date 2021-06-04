@@ -163,6 +163,17 @@ class AzureAccountListResponse(ModelSimple):
                 valid_classes=(self.__class__,),
             )
 
+        if not isinstance(value, list):
+            raise ApiTypeError(
+                "Invalid non-list arguments=%s passed to %s."
+                % (
+                    args,
+                    self.__class__.__name__,
+                ),
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
+
         self._data_store = {}
         self._check_type = _check_type
         self._spec_property_naming = _spec_property_naming
