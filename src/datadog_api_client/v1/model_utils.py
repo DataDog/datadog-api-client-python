@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
+import copy
 from datetime import date, datetime  # noqa: F401
 import inspect
 import io
@@ -1104,7 +1105,10 @@ def deserialize_model(model_data, model_class, path_to_item, check_type, configu
     if issubclass(model_class, ModelSimple):
         return model_class(model_data, **kw_args)
     elif isinstance(model_data, list):
-        return model_class(*model_data, **kw_args)
+        if issubclass(model_class, ModelComposed) and allows_single_value_input(model_class):
+            return model_class(model_data, **kw_args)
+        else:
+            return model_class(*model_data, **kw_args)
     if isinstance(model_data, dict):
         kw_args.update(model_data)
         return model_class(**kw_args)
@@ -1550,6 +1554,10 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
     if len(cls._composed_schemas["oneOf"]) == 0:
         return None
 
+    # Buld a configuration that doesn't discard unknown keys for primitive types
+    discard_configuration = copy.deepcopy(constant_kwargs["_configuration"])
+    discard_configuration.discard_unknown_keys = False
+
     oneof_instances = []
     # Iterate over each oneOf schema and determine if the input data
     # matches the oneOf schemas.
@@ -1597,7 +1605,7 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                         constant_kwargs["_path_to_item"],
                         constant_kwargs["_spec_property_naming"],
                         constant_kwargs["_check_type"],
-                        configuration=constant_kwargs["_configuration"],
+                        configuration=discard_configuration,
                     )
             oneof_instances.append(oneof_instance)
         except Exception:
