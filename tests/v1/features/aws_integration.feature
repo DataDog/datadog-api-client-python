@@ -1,4 +1,4 @@
-@endpoint(aws-integration)
+@endpoint(aws-integration) @endpoint(aws-integration-v1)
 Feature: AWS Integration
   Configure your Datadog-AWS integration directly through the Datadog API.
   For more information, see the [AWS integration

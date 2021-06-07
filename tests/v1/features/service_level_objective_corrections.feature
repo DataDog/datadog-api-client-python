@@ -1,4 +1,4 @@
-@endpoint(service-level-objective-corrections)
+@endpoint(service-level-objective-corrections) @endpoint(service-level-objective-corrections-v1)
 Feature: Service Level Objective Corrections
   SLO Status Corrections allow you to prevent specific time periods from
   negatively impacting your SLO’s status and error budget. You can use

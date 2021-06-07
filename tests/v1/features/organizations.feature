@@ -1,4 +1,4 @@
-@endpoint(organizations)
+@endpoint(organizations) @endpoint(organizations-v1)
 Feature: Organizations
   Create, edit, and manage your organizations. Read more about [multi-org ac
   counts](https://docs.datadoghq.com/account_management/multi_organization).

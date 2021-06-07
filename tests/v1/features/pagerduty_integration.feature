@@ -1,4 +1,4 @@
-@endpoint(pagerduty-integration)
+@endpoint(pagerduty-integration) @endpoint(pagerduty-integration-v1)
 Feature: PagerDuty Integration
   Configure your [Datadog-PagerDuty
   integration](https://docs.datadoghq.com/api/?lang=bash#integration-

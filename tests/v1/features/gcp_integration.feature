@@ -1,4 +1,4 @@
-@endpoint(gcp-integration)
+@endpoint(gcp-integration) @endpoint(gcp-integration-v1)
 Feature: GCP Integration
   Configure your Datadog-Google Cloud Platform (GCP) integration directly
   through the Datadog API. Read more about the [Datadog-Google Cloud

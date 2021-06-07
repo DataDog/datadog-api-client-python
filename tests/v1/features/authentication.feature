@@ -1,4 +1,4 @@
-@endpoint(authentication)
+@endpoint(authentication) @endpoint(authentication-v1)
 Feature: Authentication
   All requests to Datadog’s API must be authenticated. Requests that write
   data require reporting access and require an `API key`. Requests that read

@@ -1,4 +1,4 @@
-@endpoint(logs-pipelines)
+@endpoint(logs-pipelines) @endpoint(logs-pipelines-v1)
 Feature: Logs Pipelines
   Pipelines and processors operate on incoming logs, parsing and
   transforming them into structured attributes for easier querying.  - See

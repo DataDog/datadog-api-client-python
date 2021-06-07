@@ -1,4 +1,4 @@
-@endpoint(logs-indexes)
+@endpoint(logs-indexes) @endpoint(logs-indexes-v1)
 Feature: Logs Indexes
   Manage configuration of [log
   indexes](https://docs.datadoghq.com/logs/indexes/). You need an API and

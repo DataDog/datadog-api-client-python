@@ -1,4 +1,4 @@
-@endpoint(tags)
+@endpoint(tags) @endpoint(tags-v1)
 Feature: Tags
   The tag endpoint allows you to assign tags to hosts, for example:
   `role:database`. Those tags are applied to all metrics sent by the host.

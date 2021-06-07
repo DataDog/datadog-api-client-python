@@ -1,4 +1,4 @@
-@endpoint(incidents)
+@endpoint(incidents) @endpoint(incidents-v2)
 Feature: Incidents
   Manage incident response.
 

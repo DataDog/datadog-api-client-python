@@ -1,4 +1,4 @@
-@endpoint(snapshots)
+@endpoint(snapshots) @endpoint(snapshots-v1)
 Feature: Snapshots
   Take graph snapshots using the API.
 

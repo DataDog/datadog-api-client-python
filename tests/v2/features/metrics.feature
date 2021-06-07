@@ -1,4 +1,4 @@
-@endpoint(metrics)
+@endpoint(metrics) @endpoint(metrics-v2)
 Feature: Metrics
   The metrics endpoint allows you to:  - Post metrics data so it can be
   graphed on Datadog’s dashboards - Query metrics from any time period -

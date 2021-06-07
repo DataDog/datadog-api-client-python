@@ -1,4 +1,4 @@
-@endpoint(processes)
+@endpoint(processes) @endpoint(processes-v2)
 Feature: Processes
   The processes API allows you to query processes data for your
   organization.
