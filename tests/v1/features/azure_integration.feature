@@ -1,4 +1,4 @@
-@endpoint(azure-integration)
+@endpoint(azure-integration) @endpoint(azure-integration-v1)
 Feature: Azure Integration
   Configure your Datadog-Azure integration directly through the Datadog API.
   For more information, see the [Datadog-Azure integration

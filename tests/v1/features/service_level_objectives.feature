@@ -1,4 +1,4 @@
-@endpoint(service-level-objectives)
+@endpoint(service-level-objectives) @endpoint(service-level-objectives-v1)
 Feature: Service Level Objectives
   [Service Level Objectives](https://docs.datadoghq.com/monitors/service_lev
   el_objectives/#configuration) (or SLOs) are a key part of the site

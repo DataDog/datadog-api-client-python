@@ -1,4 +1,4 @@
-@endpoint(events)
+@endpoint(events) @endpoint(events-v1)
 Feature: Events
   The events service allows you to programmatically post events to the event
   stream and fetch events from the event stream. Events are limited to 4000

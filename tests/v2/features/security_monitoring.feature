@@ -1,4 +1,4 @@
-@endpoint(security-monitoring)
+@endpoint(security-monitoring) @endpoint(security-monitoring-v2)
 Feature: Security Monitoring
   Detection rules for generating signals and listing of generated signals.
 

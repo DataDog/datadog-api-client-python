@@ -1,4 +1,4 @@
-@endpoint(notebooks)
+@endpoint(notebooks) @endpoint(notebooks-v1)
 Feature: Notebooks
   Interact with your notebooks through the API to make it easier to
   organize, find, and share all of your notebooks with your team and

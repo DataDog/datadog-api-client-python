@@ -1,4 +1,4 @@
-@endpoint(key-management)
+@endpoint(key-management) @endpoint(key-management-v2)
 Feature: Key Management
   Manage your Datadog API and application keys. You need an API key and an
   application key for a user with the required permissions to interact with

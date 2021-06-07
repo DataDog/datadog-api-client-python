@@ -1,4 +1,4 @@
-@endpoint(incident-teams)
+@endpoint(incident-teams) @endpoint(incident-teams-v2)
 Feature: Incident Teams
   Create, update, delete and retrieve teams which can be associated with
   incidents.

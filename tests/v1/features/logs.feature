@@ -1,4 +1,4 @@
-@endpoint(logs)
+@endpoint(logs) @endpoint(logs-v1)
 Feature: Logs
   Search your logs and send them to your Datadog platform over HTTP.
 

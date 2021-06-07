@@ -1,4 +1,4 @@
-@endpoint(dashboard-lists)
+@endpoint(dashboard-lists) @endpoint(dashboard-lists-v1)
 Feature: Dashboard Lists
   Interact with your dashboard lists through the API to organize, find, and
   share all of your dashboards with your team and organization.

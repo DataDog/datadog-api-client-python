@@ -1,4 +1,4 @@
-@endpoint(synthetics)
+@endpoint(synthetics) @endpoint(synthetics-v1)
 Feature: Synthetics
   Datadog Synthetics uses simulated user requests and browser rendering to
   help you ensure uptime, identify regional issues, and track your

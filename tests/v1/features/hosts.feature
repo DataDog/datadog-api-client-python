@@ -1,4 +1,4 @@
-@endpoint(hosts)
+@endpoint(hosts) @endpoint(hosts-v1)
 Feature: Hosts
   Get information about your live hosts in Datadog.
 

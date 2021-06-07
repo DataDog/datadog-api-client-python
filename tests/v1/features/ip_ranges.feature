@@ -1,4 +1,4 @@
-@endpoint(ip-ranges) @v1
+@endpoint(ip-ranges) @endpoint(ip-ranges-v1)
 Feature: IP Ranges
   Get a list of IP prefixes belonging to Datadog.
 
