@@ -335,9 +335,11 @@ with ApiClient(configuration) as api_client:
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
+            monitor_name="monitor_name_example",
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            monitor_priority=1,
             no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
@@ -484,9 +486,11 @@ with ApiClient(configuration) as api_client:
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
+            monitor_name="monitor_name_example",
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            monitor_priority=1,
             no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
@@ -1898,9 +1902,11 @@ with ApiClient(configuration) as api_client:
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
+            monitor_name="monitor_name_example",
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            monitor_priority=1,
             no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
@@ -2049,9 +2055,11 @@ with ApiClient(configuration) as api_client:
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
+            monitor_name="monitor_name_example",
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            monitor_priority=1,
             no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
