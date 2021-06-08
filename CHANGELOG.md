@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.1.0 / 2021-06-08
+
+* [Added] Add CWS to usage metering endpoint. See [#458](https://github.com/DataDog/datadog-api-client-python/pull/458).
+* [Added] Add endpoint to list Synthetics global variables. See [#459](https://github.com/DataDog/datadog-api-client-python/pull/459).
+* [Added] Add monitors search endpoint. See [#455](https://github.com/DataDog/datadog-api-client-python/pull/455).
+* [Added] Add `tag_config_source` to usage attribution response. See [#449](https://github.com/DataDog/datadog-api-client-python/pull/449).
+* [Added] Add endpoints to configure Security Filters. See [#440](https://github.com/DataDog/datadog-api-client-python/pull/440).
+* [Added] Add `active_child` nested downtime object to `Downtime` component for downtime APIs. See [#434](https://github.com/DataDog/datadog-api-client-python/pull/434).
+* [Added] Add audit logs to usage endpoints. See [#466](https://github.com/DataDog/datadog-api-client-python/pull/466).
+* [Added] Add `override_label` and `is_hidden` attribute for `WidgetCustomLink`. See [#438](https://github.com/DataDog/datadog-api-client-python/pull/438).
+* [Fixed] Fix type of day/month response attribute in custom metrics usage. See [#471](https://github.com/DataDog/datadog-api-client-python/pull/471).
+* [Fixed] Fix handling of log aggregation `oneOf`. See [#463](https://github.com/DataDog/datadog-api-client-python/pull/463).
+* [Fixed] Make `assertions` field optional for multistep synthetics tests, and add `global` config variable type. See [#457](https://github.com/DataDog/datadog-api-client-python/pull/457).
+* [Fixed] Properly mark monitor required fields. See [#448](https://github.com/DataDog/datadog-api-client-python/pull/448).
+* [Fixed] Rename `incident_integration_metadata` to `incident_integrations` to match API. See [#444](https://github.com/DataDog/datadog-api-client-python/pull/444).
+* [Fixed] Properly mark several synthetics attributes as read only. See [#437](https://github.com/DataDog/datadog-api-client-python/pull/437).
+* [Fixed] Fix paging attributes of usage attribution endpoints. See [#435](https://github.com/DataDog/datadog-api-client-python/pull/435).
+* [Changed] Rename `compliance` to `CSPM` in usage endpoint. See [#466](https://github.com/DataDog/datadog-api-client-python/pull/466).
+
 ## 1.0.0 / 2021-05-12
 
 * [Added] Notebooks Public API Documentation. See [#432](https://github.com/DataDog/datadog-api-client-python/pull/432).
