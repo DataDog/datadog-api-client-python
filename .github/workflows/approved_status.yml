@@ -16,7 +16,8 @@ jobs:
     if: >
       github.event.pull_request.draft == false &&
       !contains(github.event.pull_request.labels.*.name, 'ci/skip') &&
-      !contains(github.event.pull_request.head.ref, 'datadog-api-spec/test/')
+      !contains(github.event.pull_request.head.ref, 'datadog-api-spec/test/') &&
+      contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
     steps:
       - name: Get GitHub App token
         id: get_token
