@@ -42,7 +42,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Post pending status check
-      if: github.event_name == 'pull_request'
+      if: github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
       uses: actions/github-script@v4.0.2
       with:
         github-token: ${{ steps.get_token.outputs.token }}
@@ -71,7 +71,7 @@ jobs:
         PYTEST_ADDOPTS: "--ddtrace"
         DD_PYTEST_OPERATION_NAME: "test"
     - name: Post failure status check
-      if: failure() && github.event_name == 'pull_request'
+      if: failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
       uses: actions/github-script@v4.0.2
       with:
         github-token: ${{ steps.get_token.outputs.token }}
@@ -79,7 +79,7 @@ jobs:
           const script = require('./.github/workflows/scripts/test_integration.js')
           await script.post_status_check(github, context, "failure")
     - name: Post success status check
-      if: "!failure() && github.event_name == 'pull_request'"
+      if: "!failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')"
       uses: actions/github-script@v4.0.2
       with:
         github-token: ${{ steps.get_token.outputs.token }}
