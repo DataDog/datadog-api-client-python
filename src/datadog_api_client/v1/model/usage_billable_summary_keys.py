@@ -81,10 +81,23 @@ class UsageBillableSummaryKeys(ModelNormal):
             "infra_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
             "iot_top99p": (UsageBillableSummaryBody,),  # noqa: E501
             "lambda_function_average": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_indexed_15day_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_indexed_180day_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_indexed_30day_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_indexed_3day_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_indexed_45day_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_indexed_60day_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_indexed_7day_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_indexed_90day_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "logs_indexed_custom_retention_sum": (UsageBillableSummaryBody,),  # noqa: E501
             "logs_indexed_sum": (UsageBillableSummaryBody,),  # noqa: E501
             "logs_ingested_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "network_device_top99p": (UsageBillableSummaryBody,),  # noqa: E501
             "npm_flow_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "npm_host_sum": (UsageBillableSummaryBody,),  # noqa: E501
             "npm_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
+            "prof_container_sum": (UsageBillableSummaryBody,),  # noqa: E501
+            "prof_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
             "rum_sum": (UsageBillableSummaryBody,),  # noqa: E501
             "serverless_invocation_sum": (UsageBillableSummaryBody,),  # noqa: E501
             "siem_sum": (UsageBillableSummaryBody,),  # noqa: E501
@@ -107,10 +120,23 @@ class UsageBillableSummaryKeys(ModelNormal):
         "infra_host_top99p": "infra_host_top99p",  # noqa: E501
         "iot_top99p": "iot_top99p",  # noqa: E501
         "lambda_function_average": "lambda_function_average",  # noqa: E501
+        "logs_indexed_15day_sum": "logs_indexed_15day_sum",  # noqa: E501
+        "logs_indexed_180day_sum": "logs_indexed_180day_sum",  # noqa: E501
+        "logs_indexed_30day_sum": "logs_indexed_30day_sum",  # noqa: E501
+        "logs_indexed_3day_sum": "logs_indexed_3day_sum",  # noqa: E501
+        "logs_indexed_45day_sum": "logs_indexed_45day_sum",  # noqa: E501
+        "logs_indexed_60day_sum": "logs_indexed_60day_sum",  # noqa: E501
+        "logs_indexed_7day_sum": "logs_indexed_7day_sum",  # noqa: E501
+        "logs_indexed_90day_sum": "logs_indexed_90day_sum",  # noqa: E501
+        "logs_indexed_custom_retention_sum": "logs_indexed_custom_retention_sum",  # noqa: E501
         "logs_indexed_sum": "logs_indexed_sum",  # noqa: E501
         "logs_ingested_sum": "logs_ingested_sum",  # noqa: E501
+        "network_device_top99p": "network_device_top99p",  # noqa: E501
         "npm_flow_sum": "npm_flow_sum",  # noqa: E501
+        "npm_host_sum": "npm_host_sum",  # noqa: E501
         "npm_host_top99p": "npm_host_top99p",  # noqa: E501
+        "prof_container_sum": "prof_container_sum",  # noqa: E501
+        "prof_host_top99p": "prof_host_top99p",  # noqa: E501
         "rum_sum": "rum_sum",  # noqa: E501
         "serverless_invocation_sum": "serverless_invocation_sum",  # noqa: E501
         "siem_sum": "siem_sum",  # noqa: E501
@@ -176,10 +202,23 @@ class UsageBillableSummaryKeys(ModelNormal):
             infra_host_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
             iot_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
             lambda_function_average (UsageBillableSummaryBody): [optional]  # noqa: E501
+            logs_indexed_15day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            logs_indexed_180day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            logs_indexed_30day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            logs_indexed_3day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            logs_indexed_45day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            logs_indexed_60day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            logs_indexed_7day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            logs_indexed_90day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            logs_indexed_custom_retention_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
             logs_indexed_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
             logs_ingested_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            network_device_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
             npm_flow_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            npm_host_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
             npm_host_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
+            prof_container_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
+            prof_host_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
             rum_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
             serverless_invocation_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
             siem_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
