@@ -48,6 +48,9 @@ with ApiClient(configuration) as api_client:
             "notify_list_example",
         ],
         reflow_type=DashboardReflowType("auto"),
+        restricted_roles=[
+            "restricted_roles_example",
+        ],
         template_variable_presets=[
             DashboardTemplateVariablePreset(
                 name="name_example",
@@ -358,6 +361,9 @@ with ApiClient(configuration) as api_client:
             "notify_list_example",
         ],
         reflow_type=DashboardReflowType("auto"),
+        restricted_roles=[
+            "restricted_roles_example",
+        ],
         template_variable_presets=[
             DashboardTemplateVariablePreset(
                 name="name_example",
