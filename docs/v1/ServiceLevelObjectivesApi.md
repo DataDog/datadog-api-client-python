@@ -506,12 +506,14 @@ with ApiClient(configuration) as api_client:
     query = "monitor"  # str | The query string to filter results based on SLO names. (optional)
     tags_query = "env:prod"  # str | The query string to filter results based on a single SLO tag. (optional)
     metrics_query = "aws.elb.request_count"  # str | The query string to filter results based on SLO numerator and denominator. (optional)
+    limit = 1  # int | The number of SLOs to return in the response. (optional)
+    offset = 1  # int | The specific offset to use as the beginning of the returned response. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get all SLOs
-        api_response = api_instance.list_slos(ids=ids, query=query, tags_query=tags_query, metrics_query=metrics_query)
+        api_response = api_instance.list_slos(ids=ids, query=query, tags_query=tags_query, metrics_query=metrics_query, limit=limit, offset=offset)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->list_slos: %s\n" % e)
@@ -526,6 +528,8 @@ Name | Type | Description  | Notes
  **query** | **str**| The query string to filter results based on SLO names. | [optional]
  **tags_query** | **str**| The query string to filter results based on a single SLO tag. | [optional]
  **metrics_query** | **str**| The query string to filter results based on SLO numerator and denominator. | [optional]
+ **limit** | **int**| The number of SLOs to return in the response. | [optional]
+ **offset** | **int**| The specific offset to use as the beginning of the returned response. | [optional]
 
 ### Return type
 
