@@ -163,42 +163,45 @@ def unique_lower(request, freezer):
 
 
 @pytest.fixture
-def now_ts(freezer):
+def now(freezer):
     with freezer:
-        return int(datetime.now().timestamp())
+        return datetime.now()
+
+
+def relative_time(freezer, iso):
+    time_re = re.compile(r"now( *([+-]) *(\d+)([smhdMy]))?")
+
+    def func(arg):
+        with freezer:
+            ret = datetime.now()
+            m = time_re.match(arg)
+            if m:
+                if m.group(1):
+                    sign = m.group(2)
+                    num = int(sign + m.group(3))
+                    unit = m.group(4)
+                    if unit == "s":
+                        ret = ret.replace(second=ret.second+num)
+                    elif unit == "m":
+                        ret = ret.replace(minute=ret.minute+num)
+                    elif unit == "h":
+                        ret = ret.replace(hour=ret.hour+num)
+                    elif unit == "d":
+                        ret = ret.replace(day=ret.day+num)
+                    elif unit == "M":
+                        ret = ret.replace(month=ret.month+num)
+                    elif unit == "y":
+                        ret = ret.replace(year=ret.year+num)
+                if iso:
+                    return ret.isoformat(timespec="seconds")
+                return int(ret.timestamp())
+            return ""
+
+    return func
 
 
 @pytest.fixture
-def now_iso(freezer):
-    with freezer:
-        return datetime.now().isoformat(timespec="seconds")
-
-
-@pytest.fixture
-def hour_later_ts(freezer):
-    with freezer:
-        return int((datetime.now() + timedelta(hours=1)).timestamp())
-
-
-@pytest.fixture
-def hour_later_iso(freezer):
-    with freezer:
-        return (datetime.now() + timedelta(hours=1)).isoformat(timespec="seconds")
-
-
-@pytest.fixture
-def hour_ago_ts(freezer):
-    with freezer:
-        return int((datetime.now() + timedelta(hours=-1)).timestamp())
-
-
-@pytest.fixture
-def hour_ago_iso(freezer):
-    with freezer:
-        return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
-
-@pytest.fixture
-def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_later_iso, hour_ago_ts, hour_ago_iso):
+def context(vcr, unique, unique_lower, freezer):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
@@ -209,12 +212,9 @@ def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_late
         "unique_lower": unique_lower,
         "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique),
         "unique_lower_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique).lower(),
-        "now_ts": now_ts,
-        "now_iso": now_iso,
-        "hour_later_ts": hour_later_ts,
-        "hour_later_iso": hour_later_iso,
-        "hour_ago_ts": hour_ago_ts,
-        "hour_ago_iso": hour_ago_iso,
+        "now": now,
+        "timestamp": relative_time(freezer, False),
+        "timeISO": relative_time(freezer, True),
     }
 
     yield ctx
