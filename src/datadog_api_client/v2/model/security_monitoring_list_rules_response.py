@@ -135,7 +135,7 @@ class SecurityMonitoringListRulesResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([SecurityMonitoringRuleResponse]): TODO.. [optional]  # noqa: E501
+            data ([SecurityMonitoringRuleResponse]): Array containing the list of rules.. [optional]  # noqa: E501
             meta (ResponseMetaAttributes): [optional]  # noqa: E501
         """
 

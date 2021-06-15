@@ -60,7 +60,11 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
     allowed_values = {}
 
-    validations = {}
+    validations = {
+        ("version",): {
+            "inclusive_maximum": 2147483647,
+        },
+    }
 
     additional_properties_type = None
 
@@ -80,12 +84,14 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         return {
             "cases": ([SecurityMonitoringRuleCase],),  # noqa: E501
             "filters": ([SecurityMonitoringFilter],),  # noqa: E501
+            "has_extended_title": (bool,),  # noqa: E501
             "is_enabled": (bool,),  # noqa: E501
             "message": (str,),  # noqa: E501
             "name": (str,),  # noqa: E501
             "options": (SecurityMonitoringRuleOptions,),  # noqa: E501
             "queries": ([SecurityMonitoringRuleQuery],),  # noqa: E501
             "tags": ([str],),  # noqa: E501
+            "version": (int,),  # noqa: E501
         }
 
     @cached_property
@@ -95,12 +101,14 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
     attribute_map = {
         "cases": "cases",  # noqa: E501
         "filters": "filters",  # noqa: E501
+        "has_extended_title": "hasExtendedTitle",  # noqa: E501
         "is_enabled": "isEnabled",  # noqa: E501
         "message": "message",  # noqa: E501
         "name": "name",  # noqa: E501
         "options": "options",  # noqa: E501
         "queries": "queries",  # noqa: E501
         "tags": "tags",  # noqa: E501
+        "version": "version",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -153,12 +161,14 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             cases ([SecurityMonitoringRuleCase]): Cases for generating signals.. [optional]  # noqa: E501
             filters ([SecurityMonitoringFilter]): Additional queries to filter matched events before they are processed.. [optional]  # noqa: E501
+            has_extended_title (bool): Whether the notifications include the triggering group-by values in their title.. [optional]  # noqa: E501
             is_enabled (bool): Whether the rule is enabled.. [optional]  # noqa: E501
             message (str): Message for generated signals.. [optional]  # noqa: E501
             name (str): Name of the rule.. [optional]  # noqa: E501
             options (SecurityMonitoringRuleOptions): [optional]  # noqa: E501
             queries ([SecurityMonitoringRuleQuery]): Queries for selecting logs which are part of the rule.. [optional]  # noqa: E501
             tags ([str]): Tags for generated signals.. [optional]  # noqa: E501
+            version (int): The version of the rule being updated.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
