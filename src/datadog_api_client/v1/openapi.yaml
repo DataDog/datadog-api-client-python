@@ -7123,7 +7123,14 @@ components:
 
                 If a metric query only has one unit object, the second array element
                 is null.'
-              example: '[{"family":"bytes","scale_factor":1.0,"name":"byte","short_name":"B","plural":"bytes","id":2},null]'
+              example:
+              - family: bytes
+                id: 2
+                name: byte
+                plural: bytes
+                scale_factor: 1.0
+                short_name: B
+              - null
               items:
                 $ref: '#/components/schemas/SLOHistoryMetricsSeriesMetadataUnit'
               nullable: true
