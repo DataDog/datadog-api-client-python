@@ -56,9 +56,10 @@ import logging
 import pathlib
 import re
 import warnings
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import pytest
+from dateutil.relativedelta import relativedelta
 from jinja2 import Template
 from pytest_bdd import (
     given,
@@ -181,17 +182,17 @@ def relative_time(freezer, iso):
                     num = int(sign + m.group(3))
                     unit = m.group(4)
                     if unit == "s":
-                        ret = ret.replace(second=ret.second+num)
+                        ret += relativedelta(second=num)
                     elif unit == "m":
-                        ret = ret.replace(minute=ret.minute+num)
+                        ret += relativedelta(minute=ret.minute+num)
                     elif unit == "h":
-                        ret = ret.replace(hour=ret.hour+num)
+                        ret += relativedelta(hour=ret.hour+num)
                     elif unit == "d":
-                        ret = ret.replace(day=ret.day+num)
+                        ret += relativedelta(day=ret.day+num)
                     elif unit == "M":
-                        ret = ret.replace(month=ret.month+num)
+                        ret += relativedelta(month=ret.month+num)
                     elif unit == "y":
-                        ret = ret.replace(year=ret.year+num)
+                        ret += relativedelta(year=ret.year+num)
                 if iso:
                     return ret.isoformat(timespec="seconds")
                 return int(ret.timestamp())
