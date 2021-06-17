@@ -87,8 +87,10 @@ class MetricsQueryMetadata(ModelNormal):
             "length": (int,),  # noqa: E501
             "metric": (str,),  # noqa: E501
             "pointlist": ([Point],),  # noqa: E501
+            "query_index": (int,),  # noqa: E501
             "scope": (str,),  # noqa: E501
             "start": (int,),  # noqa: E501
+            "tag_set": ([str],),  # noqa: E501
             "unit": ([MetricsQueryUnit],),  # noqa: E501
         }
 
@@ -105,8 +107,10 @@ class MetricsQueryMetadata(ModelNormal):
         "length": "length",  # noqa: E501
         "metric": "metric",  # noqa: E501
         "pointlist": "pointlist",  # noqa: E501
+        "query_index": "query_index",  # noqa: E501
         "scope": "scope",  # noqa: E501
         "start": "start",  # noqa: E501
+        "tag_set": "tag_set",  # noqa: E501
         "unit": "unit",  # noqa: E501
     }
 
@@ -166,8 +170,10 @@ class MetricsQueryMetadata(ModelNormal):
             length (int): Number of data samples.. [optional]  # noqa: E501
             metric (str): Metric name.. [optional]  # noqa: E501
             pointlist ([Point]): List of points of the time series.. [optional]  # noqa: E501
+            query_index (int): The index of the series' query within the request.. [optional]  # noqa: E501
             scope (str): Metric scope, comma separated list of tags.. [optional]  # noqa: E501
             start (int): Start of the time window, milliseconds since Unix epoch.. [optional]  # noqa: E501
+            tag_set ([str]): Unique tags identifying this series.. [optional]  # noqa: E501
             unit ([MetricsQueryUnit]): Detailed information about the metric unit. First element describes the \"primary unit\" (for example, `bytes` in `bytes per second`), second describes the \"per unit\" (for example, `second` in `bytes per second`).. [optional]  # noqa: E501
         """
 
