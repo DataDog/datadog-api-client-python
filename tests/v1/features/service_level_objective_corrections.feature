@@ -16,7 +16,7 @@ Feature: Service Level Objective Corrections
     Given there is a valid "slo" in the system
     And operation "CreateSLOCorrection" enabled
     And new "CreateSLOCorrection" request
-    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description":  "{{ unique }}", "end": {{ hour_later_ts }}, "start": {{ now_ts }}, "timezone": "UTC"}, "type": "correction"}}
+    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description":  "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -24,7 +24,7 @@ Feature: Service Level Objective Corrections
     Given there is a valid "slo" in the system
     And operation "CreateSLOCorrection" enabled
     And new "CreateSLOCorrection" request
-    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ hour_later_ts }}, "slo_id": "{{ slo.data[0].id }}", "start": {{ now_ts }}, "timezone": "UTC"}, "type": "correction"}}
+    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "slo_id": "{{ slo.data[0].id }}", "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -32,7 +32,7 @@ Feature: Service Level Objective Corrections
   Scenario: Create an SLO correction returns "SLO Not Found" response
     Given operation "CreateSLOCorrection" enabled
     And new "CreateSLOCorrection" request
-    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ hour_later_ts }}, "slo_id": "sloId", "start": {{ now_ts }}, "timezone": "UTC"}, "type": "correction"}}
+    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "slo_id": "sloId", "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 404 SLO Not Found
 
@@ -103,7 +103,7 @@ Feature: Service Level Objective Corrections
     And operation "UpdateSLOCorrection" enabled
     And new "UpdateSLOCorrection" request
     And request contains "slo_correction_id" parameter from "correction.data.id"
-    And body with value {"data": {"attributes": {"category": "Deployment", "description": "{{ unique }}", "end": {{ hour_later_ts }}, "start": {{ now_ts }}, "timezone": "UTC"}, "type": "correction"}}
+    And body with value {"data": {"attributes": {"category": "Deployment", "description": "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.id" has the same value as "correction.data.id"
