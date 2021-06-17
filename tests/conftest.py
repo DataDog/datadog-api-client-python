@@ -182,17 +182,17 @@ def relative_time(freezer, iso):
                     num = int(sign + m.group(3))
                     unit = m.group(4)
                     if unit == "s":
-                        ret += relativedelta(second=num)
+                        ret += relativedelta(seconds=num)
                     elif unit == "m":
-                        ret += relativedelta(minute=ret.minute+num)
+                        ret += relativedelta(minutes=ret.minute+num)
                     elif unit == "h":
-                        ret += relativedelta(hour=ret.hour+num)
+                        ret += relativedelta(hours=ret.hour+num)
                     elif unit == "d":
-                        ret += relativedelta(day=ret.day+num)
+                        ret += relativedelta(days=ret.day+num)
                     elif unit == "M":
-                        ret += relativedelta(month=ret.month+num)
+                        ret += relativedelta(months=ret.month+num)
                     elif unit == "y":
-                        ret += relativedelta(year=ret.year+num)
+                        ret += relativedelta(years=ret.year+num)
                 if iso:
                     return ret.isoformat(timespec="seconds")
                 return int(ret.timestamp())
