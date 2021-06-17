@@ -31,7 +31,7 @@
                 key_type=True
             )
 
-        if self._check_type:
+        if self._check_type and value is not None:
             value = validate_and_convert_types(
                 value, required_types_mixed, path_to_item, self._spec_property_naming,
                 self._check_type, configuration=self._configuration)
