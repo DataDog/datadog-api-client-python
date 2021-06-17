@@ -441,7 +441,6 @@ Class | Method | HTTP request | Description
  - [SecurityFilterCreateAttributes](SecurityFilterCreateAttributes.md)
  - [SecurityFilterCreateData](SecurityFilterCreateData.md)
  - [SecurityFilterCreateRequest](SecurityFilterCreateRequest.md)
- - [SecurityFilterDeleteResponse](SecurityFilterDeleteResponse.md)
  - [SecurityFilterExclusionFilter](SecurityFilterExclusionFilter.md)
  - [SecurityFilterExclusionFilterResponse](SecurityFilterExclusionFilterResponse.md)
  - [SecurityFilterFilteredDataType](SecurityFilterFilteredDataType.md)

@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-import copy
 from datetime import date, datetime  # noqa: F401
 import inspect
 import io
@@ -116,7 +115,7 @@ class OpenApiModel(object):
             error_msg = type_error_message(var_name=name, var_value=name, valid_classes=(str,), key_type=True)
             raise ApiTypeError(error_msg, path_to_item=path_to_item, valid_classes=(str,), key_type=True)
 
-        if self._check_type:
+        if self._check_type and value is not None:
             value = validate_and_convert_types(
                 value,
                 required_types_mixed,
@@ -1207,6 +1206,8 @@ def attempt_convert_item(
             # if we have conversion errors when must_convert == False
             # we ignore the exception and move on to the next class
             continue
+    if must_convert:
+        raise get_type_error(input_value, path_to_item, valid_classes, key_type=key_type)
     # we were unable to convert, must_convert == False
     return input_value
 
@@ -1554,10 +1555,6 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
     if len(cls._composed_schemas["oneOf"]) == 0:
         return None
 
-    # Buld a configuration that doesn't discard unknown keys for primitive types
-    discard_configuration = copy.deepcopy(constant_kwargs["_configuration"])
-    discard_configuration.discard_unknown_keys = False
-
     oneof_instances = []
     # Iterate over each oneOf schema and determine if the input data
     # matches the oneOf schemas.
@@ -1605,7 +1602,7 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                         constant_kwargs["_path_to_item"],
                         constant_kwargs["_spec_property_naming"],
                         constant_kwargs["_check_type"],
-                        configuration=discard_configuration,
+                        configuration=constant_kwargs["_configuration"],
                     )
             oneof_instances.append(oneof_instance)
         except Exception:

@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_security_filter**
-> SecurityFilterDeleteResponse delete_security_filter(security_filter_id)
+> delete_security_filter(security_filter_id)
 
 Delete a security filter
 
@@ -248,8 +248,7 @@ with ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Delete a security filter
-        api_response = api_instance.delete_security_filter(security_filter_id)
-        pprint(api_response)
+        api_instance.delete_security_filter(security_filter_id)
     except ApiException as e:
         print("Exception when calling SecurityMonitoringApi->delete_security_filter: %s\n" % e)
 ```
@@ -263,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecurityFilterDeleteResponse**](SecurityFilterDeleteResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -278,8 +277,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
-**204** | No Content |  -  |
+**204** | OK |  -  |
 **403** | Not Authorized |  -  |
 **404** | Not Found |  -  |
 **429** | Too many requests |  -  |
