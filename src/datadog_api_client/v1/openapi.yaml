@@ -4816,6 +4816,7 @@ components:
     MetricsQueryUnit:
       description: Object containing the metric unit family, scale factor, name, and
         short name.
+      nullable: true
       properties:
         family:
           description: Unit family, allows for conversion between units of the same
