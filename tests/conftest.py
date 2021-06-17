@@ -213,7 +213,6 @@ def context(vcr, unique, unique_lower, freezer):
         "unique_lower": unique_lower,
         "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique),
         "unique_lower_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique).lower(),
-        "now": now,
         "timestamp": relative_time(freezer, False),
         "timeISO": relative_time(freezer, True),
     }
