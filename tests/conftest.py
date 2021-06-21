@@ -60,7 +60,7 @@ from datetime import datetime
 
 import pytest
 from dateutil.relativedelta import relativedelta
-from jinja2 import Template
+from jinja2 import Template, Environment, meta
 from pytest_bdd import (
     given,
     parsers,
@@ -76,12 +76,7 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
         return
 
     context = tracer.get_call_context()
-    span = tracer.start_span(
-        step.type,
-        resource=step.name,
-        span_type=step.type,
-        child_of=context,
-    )
+    span = tracer.start_span(step.type, resource=step.name, span_type=step.type, child_of=context,)
     setattr(step_func, "__dd_span__", span)
 
 
@@ -226,11 +221,7 @@ def context(vcr, unique, unique_lower, freezer):
 @pytest.fixture(scope="session")
 def record_mode(request):
     """Manage compatibility with DD client libraries."""
-    return {
-        "false": "none",
-        "true": "rewrite",
-        "none": "new_episodes",
-    }[os.getenv("RECORD", "false").lower()]
+    return {"false": "none", "true": "rewrite", "none": "new_episodes",}[os.getenv("RECORD", "false").lower()]
 
 
 def _disable_recording():
@@ -249,7 +240,7 @@ def vcr_config():
     config = dict(
         filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY"),
         filter_query_parameters=("api_key", "application_key"),
-        match_on=['method', 'scheme', 'host', 'port', 'path', 'query', 'body']
+        match_on=["method", "scheme", "host", "port", "path", "query", "body"],
     )
     if tracer:
         config["ignore_hosts"] = [tracer.writer._hostname]
@@ -372,7 +363,7 @@ def request_body(context, data):
     context["api_request"]["kwargs"]["body"] = json.loads(tpl)
 
 
-@given(parsers.parse("body from file \"{path}\""))
+@given(parsers.parse('body from file "{path}"'))
 def request_body_from_file(context, path, package_name):
     """Set request body."""
     version = package_name.split(".")[-1]
@@ -469,7 +460,16 @@ def undo(package_name, undo_operations, client):
 
         operation_name = snake_case(operation["operationId"])
         method = getattr(api, operation_name)
-        args = [glom(response, parameter["source"]) for parameter in operation.get("parameters", [])]
+        args = []
+        for parameter in operation.get("parameters", []):
+            if "source" in parameter:
+                args.append(glom(response, parameter["source"]))
+            elif "template" in parameter:
+                variables = meta.find_undeclared_variables(Environment().parse(parameter["template"]))
+                ctx = {}
+                for var in variables:
+                    ctx[var] = glom(response, var)
+                args.append(json.loads(Template(parameter["template"]).render(**ctx)))
 
         if operation_name in client.configuration.unstable_operations:
             client.configuration.unstable_operations[operation_name] = True
@@ -490,9 +490,7 @@ def execute_request(undo, context, client, _package):
     exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
 
     try:
-        response = api_request["request"](
-            *api_request["args"], **api_request["kwargs"]
-        )
+        response = api_request["request"](*api_request["args"], **api_request["kwargs"])
         client.last_response.urllib3_response.close()
         # Reserialise the response body to JSON to facilitate test assertions
         response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(response[0])
