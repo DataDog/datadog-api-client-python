@@ -26,12 +26,10 @@ def lazy_import():
     from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-    from datadog_api_client.v1.model.synthetics_tick_interval import SyntheticsTickInterval
 
     globals()["SyntheticsDeviceID"] = SyntheticsDeviceID
     globals()["SyntheticsTestOptionsMonitorOptions"] = SyntheticsTestOptionsMonitorOptions
     globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
-    globals()["SyntheticsTickInterval"] = SyntheticsTickInterval
 
 
 class SyntheticsTestOptions(ModelNormal):
@@ -65,6 +63,10 @@ class SyntheticsTestOptions(ModelNormal):
             "inclusive_maximum": 5,
             "inclusive_minimum": 1,
         },
+        ("tick_every",): {
+            "inclusive_maximum": 604800,
+            "inclusive_minimum": 30,
+        },
     }
 
     additional_properties_type = None
@@ -95,7 +97,7 @@ class SyntheticsTestOptions(ModelNormal):
             "monitor_priority": (int,),  # noqa: E501
             "no_screenshot": (bool,),  # noqa: E501
             "retry": (SyntheticsTestOptionsRetry,),  # noqa: E501
-            "tick_every": (SyntheticsTickInterval,),  # noqa: E501
+            "tick_every": (int,),  # noqa: E501
         }
 
     @cached_property
@@ -178,7 +180,7 @@ class SyntheticsTestOptions(ModelNormal):
             monitor_priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]  # noqa: E501
             no_screenshot (bool): Prevents saving screenshots of the steps.. [optional]  # noqa: E501
             retry (SyntheticsTestOptionsRetry): [optional]  # noqa: E501
-            tick_every (SyntheticsTickInterval): [optional]  # noqa: E501
+            tick_every (int): The frequency at which to run the Synthetic test (in seconds).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
