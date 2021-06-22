@@ -80,51 +80,7 @@ class AWSIntegrationApi(object):
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "create_aws_tag_filter",
                 "http_method": "POST",
-                "servers": [
-                    {
-                        "url": "https://{subdomain}.{site}",
-                        "description": "No description provided",
-                        "variables": {
-                            "site": {
-                                "description": "The regional site for our customers.",
-                                "default_value": "datadoghq.com",
-                                "enum_values": ["datadoghq.com"],
-                            },
-                            "subdomain": {
-                                "description": "The subdomain where the API is deployed.",
-                                "default_value": "api",
-                            },
-                        },
-                    },
-                    {
-                        "url": "{protocol}://{name}",
-                        "description": "No description provided",
-                        "variables": {
-                            "name": {
-                                "description": "Full site DNS name.",
-                                "default_value": "api.datadoghq.com",
-                            },
-                            "protocol": {
-                                "description": "The protocol for accessing the API.",
-                                "default_value": "https",
-                            },
-                        },
-                    },
-                    {
-                        "url": "https://{subdomain}.{site}",
-                        "description": "No description provided",
-                        "variables": {
-                            "site": {
-                                "description": "Any Datadog deployment.",
-                                "default_value": "datadoghq.com",
-                            },
-                            "subdomain": {
-                                "description": "The subdomain where the API is deployed.",
-                                "default_value": "api",
-                            },
-                        },
-                    },
-                ],
+                "servers": None,
             },
             params_map={
                 "all": [
@@ -232,51 +188,7 @@ class AWSIntegrationApi(object):
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "delete_aws_tag_filter",
                 "http_method": "DELETE",
-                "servers": [
-                    {
-                        "url": "https://{subdomain}.{site}",
-                        "description": "No description provided",
-                        "variables": {
-                            "site": {
-                                "description": "The regional site for our customers.",
-                                "default_value": "datadoghq.com",
-                                "enum_values": ["datadoghq.com"],
-                            },
-                            "subdomain": {
-                                "description": "The subdomain where the API is deployed.",
-                                "default_value": "api",
-                            },
-                        },
-                    },
-                    {
-                        "url": "{protocol}://{name}",
-                        "description": "No description provided",
-                        "variables": {
-                            "name": {
-                                "description": "Full site DNS name.",
-                                "default_value": "api.datadoghq.com",
-                            },
-                            "protocol": {
-                                "description": "The protocol for accessing the API.",
-                                "default_value": "https",
-                            },
-                        },
-                    },
-                    {
-                        "url": "https://{subdomain}.{site}",
-                        "description": "No description provided",
-                        "variables": {
-                            "site": {
-                                "description": "Any Datadog deployment.",
-                                "default_value": "datadoghq.com",
-                            },
-                            "subdomain": {
-                                "description": "The subdomain where the API is deployed.",
-                                "default_value": "api",
-                            },
-                        },
-                    },
-                ],
+                "servers": None,
             },
             params_map={
                 "all": [
@@ -384,51 +296,7 @@ class AWSIntegrationApi(object):
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "list_aws_tag_filters",
                 "http_method": "GET",
-                "servers": [
-                    {
-                        "url": "https://{subdomain}.{site}",
-                        "description": "No description provided",
-                        "variables": {
-                            "site": {
-                                "description": "The regional site for our customers.",
-                                "default_value": "datadoghq.com",
-                                "enum_values": ["datadoghq.com"],
-                            },
-                            "subdomain": {
-                                "description": "The subdomain where the API is deployed.",
-                                "default_value": "api",
-                            },
-                        },
-                    },
-                    {
-                        "url": "{protocol}://{name}",
-                        "description": "No description provided",
-                        "variables": {
-                            "name": {
-                                "description": "Full site DNS name.",
-                                "default_value": "api.datadoghq.com",
-                            },
-                            "protocol": {
-                                "description": "The protocol for accessing the API.",
-                                "default_value": "https",
-                            },
-                        },
-                    },
-                    {
-                        "url": "https://{subdomain}.{site}",
-                        "description": "No description provided",
-                        "variables": {
-                            "site": {
-                                "description": "Any Datadog deployment.",
-                                "default_value": "datadoghq.com",
-                            },
-                            "subdomain": {
-                                "description": "The subdomain where the API is deployed.",
-                                "default_value": "api",
-                            },
-                        },
-                    },
-                ],
+                "servers": None,
             },
             params_map={
                 "all": [
