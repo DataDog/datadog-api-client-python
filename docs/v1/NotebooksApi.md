@@ -14,8 +14,6 @@ Method | HTTP request | Description
 # **create_notebook**
 > NotebookResponse create_notebook(body)
 
-Create a notebook
-
 Create a notebook using the specified options.
 
 ### Example
@@ -95,8 +93,6 @@ Name | Type | Description  | Notes
 # **delete_notebook**
 > delete_notebook(notebook_id)
 
-Delete a notebook
-
 Delete a notebook using the specified ID.
 
 ### Example
@@ -160,8 +156,6 @@ void (empty response body)
 
 # **get_notebook**
 > NotebookResponse get_notebook(notebook_id)
-
-Get a notebook
 
 Get a notebook using the specified notebook ID.
 
@@ -228,9 +222,8 @@ Name | Type | Description  | Notes
 # **list_notebooks**
 > NotebooksResponse list_notebooks()
 
-Get all notebooks
-
-Get all notebooks. This can also be used to search for notebooks with a particular `query` in the notebook `name` or author `handle`.
+Get all notebooks. This can also be used to search for notebooks with a particular `query` in the notebook
+`name` or author `handle`.
 
 ### Example
 
@@ -308,8 +301,6 @@ Name | Type | Description  | Notes
 
 # **update_notebook**
 > NotebookResponse update_notebook(notebook_id, body)
-
-Update a notebook
 
 Update a notebook using the specified ID.
 

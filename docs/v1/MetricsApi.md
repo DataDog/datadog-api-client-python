@@ -15,8 +15,6 @@ Method | HTTP request | Description
 # **get_metric_metadata**
 > MetricMetadata get_metric_metadata(metric_name)
 
-Get metric metadata
-
 Get metadata about a specific metric.
 
 ### Example
@@ -80,8 +78,6 @@ Name | Type | Description  | Notes
 
 # **list_active_metrics**
 > MetricsListResponse list_active_metrics(_from)
-
-Get active metrics list
 
 Get the list of actively reporting metrics from a given time until now.
 
@@ -160,8 +156,6 @@ Name | Type | Description  | Notes
 # **list_metrics**
 > MetricSearchResponse list_metrics(q)
 
-Search metrics
-
 Search for metrics from the last 24 hours in Datadog.
 
 ### Example
@@ -225,8 +219,6 @@ Name | Type | Description  | Notes
 
 # **query_metrics**
 > MetricsQueryResponse query_metrics(_from, to, query)
-
-Query timeseries points
 
 Query timeseries points.
 
@@ -296,9 +288,17 @@ Name | Type | Description  | Notes
 # **submit_metrics**
 > IntakePayloadAccepted submit_metrics(body)
 
-Submit metrics
+The metrics end-point allows you to post time-series data that can be graphed on Datadog’s dashboards.
+The maximum payload size is 3.2 megabytes (3200000 bytes). Compressed payloads must have a decompressed size of less than 62 megabytes (62914560 bytes).
 
-The metrics end-point allows you to post time-series data that can be graphed on Datadog’s dashboards. The maximum payload size is 3.2 megabytes (3200000 bytes). Compressed payloads must have a decompressed size of less than 62 megabytes (62914560 bytes).  If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect:  - 64 bits for the timestamp - 32 bits for the value - 20 bytes for the metric names - 50 bytes for the timeseries - The full payload is approximately 100 bytes. However, with the DogStatsD API, compression is applied, which reduces the payload size.
+If you’re submitting metrics directly to the Datadog API without using DogStatsD, expect:
+
+- 64 bits for the timestamp
+- 32 bits for the value
+- 20 bytes for the metric names
+- 50 bytes for the timeseries
+- The full payload is approximately 100 bytes. However, with the DogStatsD API,
+compression is applied, which reduces the payload size.
 
 ### Example
 
@@ -375,8 +375,6 @@ Name | Type | Description  | Notes
 
 # **update_metric_metadata**
 > MetricMetadata update_metric_metadata(metric_name, body)
-
-Edit metric metadata
 
 Edit metadata of a specific metric. Find out more about [supported types](https://docs.datadoghq.com/developers/metrics).
 

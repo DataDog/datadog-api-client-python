@@ -14,8 +14,6 @@ Method | HTTP request | Description
 # **create_incident_service**
 > IncidentServiceResponse create_incident_service(body)
 
-Create a new incident service
-
 Creates a new incident service.
 
 ### Example
@@ -104,8 +102,6 @@ Name | Type | Description  | Notes
 # **delete_incident_service**
 > delete_incident_service(service_id)
 
-Delete an existing incident service
-
 Deletes an existing incident service.
 
 ### Example
@@ -172,9 +168,8 @@ void (empty response body)
 # **get_incident_service**
 > IncidentServiceResponse get_incident_service(service_id)
 
-Get details of an incident service
-
-Get details of an incident service. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident services.
+Get details of an incident service. If the `include[users]` query parameter is provided,
+the included attribute will contain the users related to these incident services.
 
 ### Example
 
@@ -252,8 +247,6 @@ Name | Type | Description  | Notes
 # **list_incident_services**
 > IncidentServicesResponse list_incident_services()
 
-Get a list of all incident services
-
 Get all incident services uploaded for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident services.
 
 ### Example
@@ -327,8 +320,6 @@ Name | Type | Description  | Notes
 
 # **update_incident_service**
 > IncidentServiceResponse update_incident_service(service_id, body)
-
-Update an existing incident service
 
 Updates an existing incident service. Only provide the attributes which should be updated as this request is a partial update.
 

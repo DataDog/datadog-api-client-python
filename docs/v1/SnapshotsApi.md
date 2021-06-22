@@ -10,9 +10,8 @@ Method | HTTP request | Description
 # **get_graph_snapshot**
 > GraphSnapshot get_graph_snapshot(start, end)
 
-Take graph snapshots
-
-Take graph snapshots. **Note**: When a snapshot is created, there is some delay before it is available.
+Take graph snapshots.
+**Note**: When a snapshot is created, there is some delay before it is available.
 
 ### Example
 

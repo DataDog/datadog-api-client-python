@@ -21,8 +21,6 @@ Method | HTTP request | Description
 # **add_permission_to_role**
 > PermissionsResponse add_permission_to_role(role_id, body)
 
-Grant permission to a role
-
 Adds a permission to a role.
 
 ### Example
@@ -95,8 +93,6 @@ Name | Type | Description  | Notes
 # **add_user_to_role**
 > UsersResponse add_user_to_role(role_id, body)
 
-Add a user to a role
-
 Adds a user to a role.
 
 ### Example
@@ -168,8 +164,6 @@ Name | Type | Description  | Notes
 
 # **create_role**
 > RoleCreateResponse create_role(body)
-
-Create role
 
 Create a new role for your organization.
 
@@ -262,8 +256,6 @@ Name | Type | Description  | Notes
 # **delete_role**
 > delete_role(role_id)
 
-Delete role
-
 Disables a role.
 
 ### Example
@@ -326,8 +318,6 @@ void (empty response body)
 
 # **get_role**
 > RoleResponse get_role(role_id)
-
-Get a role
 
 Get a role in the organization specified by the role’s `role_id`.
 
@@ -393,8 +383,6 @@ Name | Type | Description  | Notes
 # **list_permissions**
 > PermissionsResponse list_permissions()
 
-List permissions
-
 Returns a list of all permissions, including name, description, and ID.
 
 ### Example
@@ -454,8 +442,6 @@ This endpoint does not need any parameter.
 
 # **list_role_permissions**
 > PermissionsResponse list_role_permissions(role_id)
-
-List permissions for a role
 
 Returns a list of all permissions for a single role.
 
@@ -520,8 +506,6 @@ Name | Type | Description  | Notes
 
 # **list_role_users**
 > UsersResponse list_role_users(role_id)
-
-Get all users of a role
 
 Gets all users of a role.
 
@@ -604,8 +588,6 @@ Name | Type | Description  | Notes
 # **list_roles**
 > RolesResponse list_roles()
 
-List roles
-
 Returns all roles, including their names and IDs.
 
 ### Example
@@ -675,8 +657,6 @@ Name | Type | Description  | Notes
 
 # **remove_permission_from_role**
 > PermissionsResponse remove_permission_from_role(role_id, body)
-
-Revoke permission
 
 Removes a permission from a role.
 
@@ -750,8 +730,6 @@ Name | Type | Description  | Notes
 # **remove_user_from_role**
 > UsersResponse remove_user_from_role(role_id, body)
 
-Remove a user from a role
-
 Removes a user from a role.
 
 ### Example
@@ -823,8 +801,6 @@ Name | Type | Description  | Notes
 
 # **update_role**
 > RoleUpdateResponse update_role(role_id, body)
-
-Update a role
 
 Edit a role. Can only be used with application keys belonging to administrators.
 

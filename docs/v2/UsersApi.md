@@ -18,8 +18,6 @@ Method | HTTP request | Description
 # **create_user**
 > UserResponse create_user(body)
 
-Create a user
-
 Create a user for your organization.
 
 ### Example
@@ -103,9 +101,8 @@ Name | Type | Description  | Notes
 # **disable_user**
 > disable_user(user_id)
 
-Disable a user
-
-Disable a user. Can only be used with an application key belonging to an administrator user.
+Disable a user. Can only be used with an application key belonging
+to an administrator user.
 
 ### Example
 
@@ -167,8 +164,6 @@ void (empty response body)
 
 # **get_invitation**
 > UserInvitationResponse get_invitation(user_invitation_uuid)
-
-Get a user invitation
 
 Returns a single user invitation by its UUID.
 
@@ -234,8 +229,6 @@ Name | Type | Description  | Notes
 # **get_user**
 > UserResponse get_user(user_id)
 
-Get user details
-
 Get a user in the organization specified by the user’s `user_id`.
 
 ### Example
@@ -300,9 +293,8 @@ Name | Type | Description  | Notes
 # **list_user_organizations**
 > UserResponse list_user_organizations(user_id)
 
-Get a user organization
-
-Get a user organization. Returns the user information and all organizations joined by this user.
+Get a user organization. Returns the user information and all organizations
+joined by this user.
 
 ### Example
 
@@ -366,9 +358,8 @@ Name | Type | Description  | Notes
 # **list_user_permissions**
 > PermissionsResponse list_user_permissions(user_id)
 
-Get a user permissions
-
-Get a user permission set. Returns a list of the user’s permissions granted by the associated user's roles.
+Get a user permission set. Returns a list of the user’s permissions
+granted by the associated user's roles.
 
 ### Example
 
@@ -432,9 +423,8 @@ Name | Type | Description  | Notes
 # **list_users**
 > UsersResponse list_users()
 
-List all users
-
-Get the list of all users in the organization. This list includes all users even if they are deactivated or unverified.
+Get the list of all users in the organization. This list includes
+all users even if they are deactivated or unverified.
 
 ### Example
 
@@ -508,8 +498,6 @@ Name | Type | Description  | Notes
 
 # **send_invitations**
 > UserInvitationsResponse send_invitations(body)
-
-Send invitation emails
 
 Sends emails to one or more users inviting them to join the organization.
 
@@ -589,9 +577,8 @@ Name | Type | Description  | Notes
 # **update_user**
 > UserResponse update_user(user_id, body)
 
-Update a user
-
-Edit a user. Can only be used with an application key belonging to an administrator user.
+Edit a user. Can only be used with an application key belonging
+to an administrator user.
 
 ### Example
 

@@ -22,8 +22,6 @@ Method | HTTP request | Description
 # **create_api_key**
 > APIKeyResponse create_api_key(body)
 
-Create an API key
-
 Create an API key.
 
 ### Example
@@ -97,8 +95,6 @@ Name | Type | Description  | Notes
 
 Create an application key for current user
 
-Create an application key for current user
-
 ### Example
 
 * Api Key Authentication (apiKeyAuth):
@@ -168,8 +164,6 @@ Name | Type | Description  | Notes
 # **delete_api_key**
 > delete_api_key(api_key_id)
 
-Delete an API key
-
 Delete an API key.
 
 ### Example
@@ -232,8 +226,6 @@ void (empty response body)
 
 # **delete_application_key**
 > delete_application_key(app_key_id)
-
-Delete an application key
 
 Delete an application key
 
@@ -300,8 +292,6 @@ void (empty response body)
 
 Delete an application key owned by current user
 
-Delete an application key owned by current user
-
 ### Example
 
 * Api Key Authentication (apiKeyAuth):
@@ -362,8 +352,6 @@ void (empty response body)
 
 # **get_api_key**
 > APIKeyResponse get_api_key(api_key_id)
-
-Get API key
 
 Get an API key.
 
@@ -440,8 +428,6 @@ Name | Type | Description  | Notes
 # **get_current_user_application_key**
 > ApplicationKeyResponse get_current_user_application_key(app_key_id)
 
-Get one application key owned by current user
-
 Get an application key owned by current user
 
 ### Example
@@ -505,8 +491,6 @@ Name | Type | Description  | Notes
 
 # **list_api_keys**
 > APIKeysResponse list_api_keys()
-
-Get all API keys
 
 List all API keys available for your account.
 
@@ -589,8 +573,6 @@ Name | Type | Description  | Notes
 # **list_application_keys**
 > ListApplicationKeysResponse list_application_keys()
 
-Get all application keys
-
 List all application keys available for your org
 
 ### Example
@@ -667,8 +649,6 @@ Name | Type | Description  | Notes
 # **list_current_user_application_keys**
 > ListApplicationKeysResponse list_current_user_application_keys()
 
-Get all application keys owned by current user
-
 List all application keys available for current user
 
 ### Example
@@ -744,8 +724,6 @@ Name | Type | Description  | Notes
 
 # **update_api_key**
 > APIKeyResponse update_api_key(api_key_id, body)
-
-Edit an API key
 
 Update an API key.
 
@@ -824,8 +802,6 @@ Name | Type | Description  | Notes
 
 Edit an application key
 
-Edit an application key
-
 ### Example
 
 * Api Key Authentication (apiKeyAuth):
@@ -898,8 +874,6 @@ Name | Type | Description  | Notes
 
 # **update_current_user_application_key**
 > ApplicationKeyResponse update_current_user_application_key(app_key_id, body)
-
-Edit an application key owned by current user
 
 Edit an application key owned by current user
 

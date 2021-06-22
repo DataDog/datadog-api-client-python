@@ -16,8 +16,6 @@ Method | HTTP request | Description
 # **cancel_downtime**
 > cancel_downtime(downtime_id)
 
-Cancel a downtime
-
 Cancel a downtime.
 
 ### Example
@@ -80,8 +78,6 @@ void (empty response body)
 
 # **cancel_downtimes_by_scope**
 > CanceledDowntimesIds cancel_downtimes_by_scope(body)
-
-Cancel downtimes by scope
 
 Delete all downtimes that match the scope of `X`.
 
@@ -149,8 +145,6 @@ Name | Type | Description  | Notes
 
 # **create_downtime**
 > Downtime create_downtime(body)
-
-Schedule a downtime
 
 Schedule a downtime.
 
@@ -265,8 +259,6 @@ Name | Type | Description  | Notes
 # **get_downtime**
 > Downtime get_downtime(downtime_id)
 
-Get a downtime
-
 Get downtime detail by `downtime_id`.
 
 ### Example
@@ -330,8 +322,6 @@ Name | Type | Description  | Notes
 
 # **list_downtimes**
 > [Downtime] list_downtimes()
-
-Get all downtimes
 
 Get all scheduled downtimes.
 
@@ -397,8 +387,6 @@ Name | Type | Description  | Notes
 # **list_monitor_downtimes**
 > [Downtime] list_monitor_downtimes(monitor_id)
 
-Get all downtimes for a monitor
-
 Get all downtimes for the specified monitor
 
 ### Example
@@ -462,8 +450,6 @@ Name | Type | Description  | Notes
 
 # **update_downtime**
 > Downtime update_downtime(downtime_id, body)
-
-Update a downtime
 
 Update a single downtime by `downtime_id`.
 

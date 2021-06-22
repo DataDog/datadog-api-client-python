@@ -14,8 +14,6 @@ Method | HTTP request | Description
 # **create_incident**
 > IncidentResponse create_incident(body)
 
-Create an incident
-
 Create an incident.
 
 ### Example
@@ -108,8 +106,6 @@ Name | Type | Description  | Notes
 # **delete_incident**
 > delete_incident(incident_id)
 
-Delete an existing incident
-
 Deletes an existing incident from the users organization.
 
 ### Example
@@ -175,8 +171,6 @@ void (empty response body)
 
 # **get_incident**
 > IncidentResponse get_incident(incident_id)
-
-Get the details of an incident
 
 Get the details of an incident by `incident_id`.
 
@@ -258,8 +252,6 @@ Name | Type | Description  | Notes
 # **list_incidents**
 > IncidentsResponse list_incidents()
 
-Get a list of incidents
-
 Get all incidents for the user's organization.
 
 ### Example
@@ -333,8 +325,6 @@ Name | Type | Description  | Notes
 
 # **update_incident**
 > IncidentResponse update_incident(incident_id, body)
-
-Update an existing incident
 
 Updates an incident. Provide only the attributes that should be updated as this request is a partial update.
 

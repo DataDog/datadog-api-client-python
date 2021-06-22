@@ -16,9 +16,14 @@ Method | HTTP request | Description
 # **check_aws_logs_lambda_async**
 > AWSLogsAsyncResponse check_aws_logs_lambda_async(body)
 
-Check that an AWS Lambda Function exists
+Test if permissions are present to add a log-forwarding triggers for the given services and AWS account. The input
+is the same as for Enable an AWS service log collection. Subsequent requests will always repeat the above, so this
+endpoint can be polled intermittently instead of blocking.
 
-Test if permissions are present to add a log-forwarding triggers for the given services and AWS account. The input is the same as for Enable an AWS service log collection. Subsequent requests will always repeat the above, so this endpoint can be polled intermittently instead of blocking.  - Returns a status of 'created' when it's checking if the Lambda exists in the account. - Returns a status of 'waiting' while checking. - Returns a status of 'checked and ok' if the Lambda exists. - Returns a status of 'error' if the Lambda does not exist.
+- Returns a status of 'created' when it's checking if the Lambda exists in the account.
+- Returns a status of 'waiting' while checking.
+- Returns a status of 'checked and ok' if the Lambda exists.
+- Returns a status of 'error' if the Lambda does not exist.
 
 ### Example
 
@@ -85,9 +90,16 @@ Name | Type | Description  | Notes
 # **check_aws_logs_services_async**
 > AWSLogsAsyncResponse check_aws_logs_services_async(body)
 
-Check permissions for log services
+Test if permissions are present to add log-forwarding triggers for the
+given services and AWS account. Input is the same as for `EnableAWSLogServices`.
+Done async, so can be repeatedly polled in a non-blocking fashion until
+the async request completes.
 
-Test if permissions are present to add log-forwarding triggers for the given services and AWS account. Input is the same as for `EnableAWSLogServices`. Done async, so can be repeatedly polled in a non-blocking fashion until the async request completes.  - Returns a status of `created` when it's checking if the permissions exists   in the AWS account. - Returns a status of `waiting` while checking. - Returns a status of `checked and ok` if the Lambda exists. - Returns a status of `error` if the Lambda does not exist.
+- Returns a status of `created` when it's checking if the permissions exists
+  in the AWS account.
+- Returns a status of `waiting` while checking.
+- Returns a status of `checked and ok` if the Lambda exists.
+- Returns a status of `error` if the Lambda does not exist.
 
 ### Example
 
@@ -153,8 +165,6 @@ Name | Type | Description  | Notes
 
 # **create_aws_lambda_arn**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} create_aws_lambda_arn(body)
-
-Add AWS Log Lambda ARN
 
 Attach the Lambda ARN of the Lambda created for the Datadog-AWS log collection to your AWS account ID to enable log collection.
 
@@ -223,8 +233,6 @@ Name | Type | Description  | Notes
 # **delete_aws_lambda_arn**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_aws_lambda_arn(body)
 
-Delete an AWS Logs integration
-
 Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN associated with a given AWS account.
 
 ### Example
@@ -291,8 +299,6 @@ Name | Type | Description  | Notes
 
 # **enable_aws_log_services**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} enable_aws_log_services(body)
-
-Enable an AWS Logs integration
 
 Enable automatic log collection for a list of services. This should be run after running `CreateAWSLambdaARN` to save the configuration.
 
@@ -361,8 +367,6 @@ Name | Type | Description  | Notes
 # **list_aws_logs_integrations**
 > [AWSLogsListResponse] list_aws_logs_integrations()
 
-List all AWS Logs integrations
-
 List all Datadog-AWS Logs integrations configured in your Datadog account.
 
 ### Example
@@ -422,8 +426,6 @@ This endpoint does not need any parameter.
 
 # **list_aws_logs_services**
 > [AWSLogsListServicesResponse] list_aws_logs_services()
-
-Get list of AWS log ready services
 
 Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.
 

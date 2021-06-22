@@ -14,8 +14,6 @@ Method | HTTP request | Description
 # **create_slo_correction**
 > SLOCorrectionResponse create_slo_correction(body)
 
-Create an SLO correction
-
 Create an SLO Correction
 
 ### Example
@@ -94,8 +92,6 @@ Name | Type | Description  | Notes
 # **delete_slo_correction**
 > delete_slo_correction(slo_correction_id)
 
-Delete an SLO correction
-
 Permanently delete the specified SLO correction object
 
 ### Example
@@ -159,8 +155,6 @@ void (empty response body)
 
 # **get_slo_correction**
 > SLOCorrectionResponse get_slo_correction(slo_correction_id)
-
-Get an SLO correction for an SLO
 
 Get an SLO correction
 
@@ -227,8 +221,6 @@ Name | Type | Description  | Notes
 # **list_slo_correction**
 > SLOCorrectionListResponse list_slo_correction()
 
-Get all SLO corrections
-
 Get all Service Level Objective corrections
 
 ### Example
@@ -288,8 +280,6 @@ This endpoint does not need any parameter.
 
 # **update_slo_correction**
 > SLOCorrectionResponse update_slo_correction(slo_correction_id, body)
-
-Update an SLO correction
 
 Update the specified SLO correction object object
 

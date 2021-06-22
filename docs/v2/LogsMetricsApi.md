@@ -14,9 +14,8 @@ Method | HTTP request | Description
 # **create_logs_metric**
 > LogsMetricResponse create_logs_metric(body)
 
-Create a log-based metric
-
-Create a metric based on your ingested logs in your organization. Returns the log-based metric object from the request body when the request is successful.
+Create a metric based on your ingested logs in your organization.
+Returns the log-based metric object from the request body when the request is successful.
 
 ### Example
 
@@ -102,8 +101,6 @@ Name | Type | Description  | Notes
 # **delete_logs_metric**
 > delete_logs_metric(metric_id)
 
-Delete a log-based metric
-
 Delete a specific log-based metric from your organization.
 
 ### Example
@@ -167,8 +164,6 @@ void (empty response body)
 
 # **get_logs_metric**
 > LogsMetricResponse get_logs_metric(metric_id)
-
-Get a log-based metric
 
 Get a specific log-based metric from your organization.
 
@@ -235,8 +230,6 @@ Name | Type | Description  | Notes
 # **list_logs_metrics**
 > LogsMetricsResponse list_logs_metrics()
 
-Get all log-based metrics
-
 Get the list of configured log-based metrics with their definitions.
 
 ### Example
@@ -297,9 +290,8 @@ This endpoint does not need any parameter.
 # **update_logs_metric**
 > LogsMetricResponse update_logs_metric(metric_id, body)
 
-Update a log-based metric
-
-Update a specific log-based metric from your organization. Returns the log-based metric object from the request body when the request is successful.
+Update a specific log-based metric from your organization.
+Returns the log-based metric object from the request body when the request is successful.
 
 ### Example
 

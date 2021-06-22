@@ -14,8 +14,6 @@ Method | HTTP request | Description
 # **create_dashboard_list**
 > DashboardList create_dashboard_list(body)
 
-Create a dashboard list
-
 Create an empty dashboard list.
 
 ### Example
@@ -93,8 +91,6 @@ Name | Type | Description  | Notes
 # **delete_dashboard_list**
 > DashboardListDeleteResponse delete_dashboard_list(list_id)
 
-Delete a dashboard list
-
 Delete a dashboard list.
 
 ### Example
@@ -158,8 +154,6 @@ Name | Type | Description  | Notes
 
 # **get_dashboard_list**
 > DashboardList get_dashboard_list(list_id)
-
-Get a dashboard list
 
 Fetch an existing dashboard list's definition.
 
@@ -225,8 +219,6 @@ Name | Type | Description  | Notes
 # **list_dashboard_lists**
 > DashboardListListResponse list_dashboard_lists()
 
-Get all dashboard lists
-
 Fetch all of your existing dashboard list definitions.
 
 ### Example
@@ -285,8 +277,6 @@ This endpoint does not need any parameter.
 
 # **update_dashboard_list**
 > DashboardList update_dashboard_list(list_id, body)
-
-Update a dashboard list
 
 Update the name of a dashboard list.
 

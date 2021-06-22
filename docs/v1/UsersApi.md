@@ -14,9 +14,10 @@ Method | HTTP request | Description
 # **create_user**
 > UserResponse create_user(body)
 
-Create a user
+Create a user for your organization.
 
-Create a user for your organization.  **Note**: Users can only be created with the admin access role if application keys belong to administrators.
+**Note**: Users can only be created with the admin access role
+if application keys belong to administrators.
 
 ### Example
 
@@ -89,9 +90,10 @@ Name | Type | Description  | Notes
 # **disable_user**
 > UserDisableResponse disable_user(user_handle)
 
-Disable a user
+Delete a user from an organization.
 
-Delete a user from an organization.  **Note**: This endpoint can only be used with application keys belonging to administrators.
+**Note**: This endpoint can only be used with application keys belonging to
+administrators.
 
 ### Example
 
@@ -155,8 +157,6 @@ Name | Type | Description  | Notes
 
 # **get_user**
 > UserResponse get_user(user_handle)
-
-Get user details
 
 Get a user's details.
 
@@ -222,8 +222,6 @@ Name | Type | Description  | Notes
 # **list_users**
 > UserListResponse list_users()
 
-List all users
-
 List all users for your organization.
 
 ### Example
@@ -283,9 +281,9 @@ This endpoint does not need any parameter.
 # **update_user**
 > UserResponse update_user(user_handle, body)
 
-Update a user
+Update a user information.
 
-Update a user information.  **Note**: It can only be used with application keys belonging to administrators.
+**Note**: It can only be used with application keys belonging to administrators.
 
 ### Example
 
