@@ -77,7 +77,6 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-python
   Scenario: Query timeseries points returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryMetrics" request

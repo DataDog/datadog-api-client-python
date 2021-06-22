@@ -71,6 +71,18 @@ from pytest_bdd import (
 logging.basicConfig()
 
 
+def escape_reserved_keyword(word):
+    """
+    # Escape reserved language keywords like openapi generator does it
+    :param word: Word to escape
+    :return: The escaped word if it was a reserved keyword, the word unchanged otherwise
+    """
+    reserved_keywords = ["from"]
+    if word in reserved_keywords:
+        return f"_{word}"
+    return word
+
+
 def pytest_bdd_before_step(request, feature, scenario, step, step_func):
     if tracer is None:
         return
@@ -156,12 +168,6 @@ def unique_lower(request, freezer):
     prefix = _get_prefix(request).lower()
     with freezer:
         return f"{prefix}-{int(datetime.now().timestamp())}"
-
-
-@pytest.fixture
-def now(freezer):
-    with freezer:
-        return datetime.now()
 
 
 def relative_time(freezer, iso):
@@ -376,14 +382,14 @@ def request_body_from_file(context, path, package_name):
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(context, name, path):
     """Set request parameter."""
-    context["api_request"]["kwargs"][snake_case(name)] = glom(context, path)
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = glom(context, path)
 
 
 @given(parsers.parse('request contains "{name}" parameter with value {value}'))
 def request_parameter_with_value(context, name, value):
     """Set request parameter."""
     tpl = Template(value).render(**context)
-    context["api_request"]["kwargs"][snake_case(name)] = json.loads(tpl)
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = json.loads(tpl)
 
 
 def build_given(version, operation):
@@ -414,7 +420,9 @@ def build_given(version, operation):
                 if "source" in p:
                     return glom(context, p["source"])
 
-            kwargs = {snake_case(p["name"]): build_param(p) for p in operation.get("parameters", [])}
+            kwargs = {
+                escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
+            }
             kwargs["_check_input_type"] = False
             result = operation_method(**kwargs)
             client.last_response.urllib3_response.close()
