@@ -67,7 +67,17 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
         return {
             "json_path": (str,),  # noqa: E501
             "operator": (str,),  # noqa: E501
-            "target_value": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            "target_value": (
+                bool,
+                date,
+                datetime,
+                dict,
+                float,
+                int,
+                list,
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
@@ -130,7 +140,7 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             json_path (str): The JSON path to assert.. [optional]  # noqa: E501
             operator (str): The specific operator to use on the path.. [optional]  # noqa: E501
-            target_value ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): The path target value to compare to.. [optional]  # noqa: E501
+            target_value (bool, date, datetime, dict, float, int, list, str, none_type): The path target value to compare to.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

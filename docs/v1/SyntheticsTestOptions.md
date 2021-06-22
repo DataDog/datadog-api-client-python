@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **monitor_priority** | **int** | Integer from 1 (high) to 5 (low) indicating alert severity. | [optional] 
 **no_screenshot** | **bool** | Prevents saving screenshots of the steps. | [optional] 
 **retry** | [**SyntheticsTestOptionsRetry**](SyntheticsTestOptionsRetry.md) |  | [optional] 
-**tick_every** | [**SyntheticsTickInterval**](SyntheticsTickInterval.md) |  | [optional] 
+**tick_every** | **int** | The frequency at which to run the Synthetic test (in seconds). | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
