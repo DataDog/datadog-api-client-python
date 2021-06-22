@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **get_ip_ranges**
 > IPRanges get_ip_ranges()
 
-List IP Ranges
-
 Get information about Datadog IP ranges.
 
 ### Example

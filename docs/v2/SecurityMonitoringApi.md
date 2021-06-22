@@ -21,9 +21,10 @@ Method | HTTP request | Description
 # **create_security_filter**
 > SecurityFilterResponse create_security_filter(body)
 
-Create a security filter
+Create a security filter.
 
-Create a security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.
+See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+for more examples.
 
 ### Example
 
@@ -104,8 +105,6 @@ Name | Type | Description  | Notes
 
 # **create_security_monitoring_rule**
 > SecurityMonitoringRuleResponse create_security_monitoring_rule(body)
-
-Create a detection rule
 
 Create a detection rule.
 
@@ -221,8 +220,6 @@ Name | Type | Description  | Notes
 # **delete_security_filter**
 > delete_security_filter(security_filter_id)
 
-Delete a security filter
-
 Delete a specific security filter.
 
 ### Example
@@ -287,8 +284,6 @@ void (empty response body)
 # **delete_security_monitoring_rule**
 > delete_security_monitoring_rule(rule_id)
 
-Delete an existing rule
-
 Delete an existing rule. Default rules cannot be deleted.
 
 ### Example
@@ -352,9 +347,10 @@ void (empty response body)
 # **get_security_filter**
 > SecurityFilterResponse get_security_filter(security_filter_id)
 
-Get a security filter
+Get the details of a specific security filter.
 
-Get the details of a specific security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.
+See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+for more examples.
 
 ### Example
 
@@ -419,8 +415,6 @@ Name | Type | Description  | Notes
 # **get_security_monitoring_rule**
 > SecurityMonitoringRuleResponse get_security_monitoring_rule(rule_id)
 
-Get a rule's details
-
 Get a rule's details.
 
 ### Example
@@ -484,8 +478,6 @@ Name | Type | Description  | Notes
 # **list_security_filters**
 > SecurityFiltersResponse list_security_filters()
 
-Get all security filters
-
 Get the list of configured security filters with their definitions.
 
 ### Example
@@ -545,8 +537,6 @@ This endpoint does not need any parameter.
 
 # **list_security_monitoring_rules**
 > SecurityMonitoringListRulesResponse list_security_monitoring_rules()
-
-List rules
 
 List rules.
 
@@ -614,9 +604,9 @@ Name | Type | Description  | Notes
 # **list_security_monitoring_signals**
 > SecurityMonitoringSignalsListResponse list_security_monitoring_signals()
 
-Get a quick list of security signals
-
-The list endpoint returns security signals that match a search query. Both this endpoint and the POST endpoint can be used interchangeably when listing security signals.
+The list endpoint returns security signals that match a search query.
+Both this endpoint and the POST endpoint can be used interchangeably when listing
+security signals.
 
 ### Example
 
@@ -692,9 +682,9 @@ Name | Type | Description  | Notes
 # **search_security_monitoring_signals**
 > SecurityMonitoringSignalsListResponse search_security_monitoring_signals()
 
-Get a list of security signals
-
-Returns security signals that match a search query. Both this endpoint and the GET endpoint can be used interchangeably for listing security signals.
+Returns security signals that match a search query.
+Both this endpoint and the GET endpoint can be used interchangeably for listing
+security signals.
 
 ### Example
 
@@ -771,9 +761,8 @@ Name | Type | Description  | Notes
 # **update_security_filter**
 > SecurityFilterResponse update_security_filter(security_filter_id, body)
 
-Update a security filter
-
-Update a specific security filter. Returns the security filter object when the request is successful.
+Update a specific security filter.
+Returns the security filter object when the request is successful.
 
 ### Example
 
@@ -859,9 +848,9 @@ Name | Type | Description  | Notes
 # **update_security_monitoring_rule**
 > SecurityMonitoringRuleResponse update_security_monitoring_rule(rule_id, body)
 
-Update an existing rule
-
-Update an existing rule. When updating `cases`, `queries` or `options`, the whole field must be included. For example, when modifying a query all queries must be included. Default rules can only be updated to be enabled and to change notifications.
+Update an existing rule. When updating `cases`, `queries` or `options`, the whole field
+must be included. For example, when modifying a query all queries must be included.
+Default rules can only be updated to be enabled and to change notifications.
 
 ### Example
 

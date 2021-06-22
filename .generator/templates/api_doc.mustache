@@ -13,9 +13,7 @@ Method | HTTP request | Description
 # **{{{operationId}}}**
 > {{#returnType}}{{{returnType}}} {{/returnType}}{{{operationId}}}({{#requiredParams}}{{^defaultValue}}{{paramName}}{{^-last}}, {{/-last}}{{/defaultValue}}{{/requiredParams}})
 
-{{{summary}}}{{#notes}}
-
-{{{notes}}}{{/notes}}
+{{#notes}}{{{unescapedNotes}}}{{/notes}}
 
 ### Example
 

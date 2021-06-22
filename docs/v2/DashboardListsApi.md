@@ -13,8 +13,6 @@ Method | HTTP request | Description
 # **create_dashboard_list_items**
 > DashboardListAddItemsResponse create_dashboard_list_items(dashboard_list_id, body)
 
-Add Items to a Dashboard List
-
 Add dashboards to an existing dashboard list.
 
 ### Example
@@ -88,8 +86,6 @@ Name | Type | Description  | Notes
 
 # **delete_dashboard_list_items**
 > DashboardListDeleteItemsResponse delete_dashboard_list_items(dashboard_list_id, body)
-
-Delete items from a dashboard list
 
 Delete dashboards from an existing dashboard list.
 
@@ -165,8 +161,6 @@ Name | Type | Description  | Notes
 # **get_dashboard_list_items**
 > DashboardListItems get_dashboard_list_items(dashboard_list_id)
 
-Get items of a Dashboard List
-
 Fetch the dashboard list’s dashboard definitions.
 
 ### Example
@@ -230,8 +224,6 @@ Name | Type | Description  | Notes
 
 # **update_dashboard_list_items**
 > DashboardListUpdateItemsResponse update_dashboard_list_items(dashboard_list_id, body)
-
-Update items of a dashboard list
 
 Update dashboards of an existing dashboard list.
 

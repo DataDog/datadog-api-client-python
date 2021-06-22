@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **validate**
 > AuthenticationValidationResponse validate()
 
-Validate API key
-
 Check if the API key (not the APP key) is valid. If invalid, a 403 is returned.
 
 ### Example

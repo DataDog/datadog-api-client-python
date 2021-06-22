@@ -19,8 +19,6 @@ Method | HTTP request | Description
 # **create_api_key**
 > ApiKeyResponse create_api_key(body)
 
-Create an API key
-
 Creates an API key with a given name.
 
 ### Example
@@ -89,8 +87,6 @@ Name | Type | Description  | Notes
 
 # **create_application_key**
 > ApplicationKeyResponse create_application_key(body)
-
-Create an application key
 
 Create an application key with a given name.
 
@@ -161,8 +157,6 @@ Name | Type | Description  | Notes
 # **delete_api_key**
 > ApiKeyResponse delete_api_key(key)
 
-Delete an API key
-
 Delete a given API key.
 
 ### Example
@@ -228,8 +222,6 @@ Name | Type | Description  | Notes
 # **delete_application_key**
 > ApplicationKeyResponse delete_application_key(key)
 
-Delete an application key
-
 Delete a given application key.
 
 ### Example
@@ -293,8 +285,6 @@ Name | Type | Description  | Notes
 
 # **get_api_key**
 > ApiKeyResponse get_api_key(key)
-
-Get API key
 
 Get a given API key.
 
@@ -360,8 +350,6 @@ Name | Type | Description  | Notes
 # **get_application_key**
 > ApplicationKeyResponse get_application_key(key)
 
-Get an application key
-
 Get a given application key.
 
 ### Example
@@ -426,8 +414,6 @@ Name | Type | Description  | Notes
 # **list_api_keys**
 > ApiKeyListResponse list_api_keys()
 
-Get all API keys
-
 Get all API keys available for your account.
 
 ### Example
@@ -487,8 +473,6 @@ This endpoint does not need any parameter.
 # **list_application_keys**
 > ApplicationKeyListResponse list_application_keys()
 
-Get all application keys
-
 Get all application keys available for your Datadog account.
 
 ### Example
@@ -547,8 +531,6 @@ This endpoint does not need any parameter.
 
 # **update_api_key**
 > ApiKeyResponse update_api_key(key, body)
-
-Edit an API key
 
 Edit an API key name.
 
@@ -621,8 +603,6 @@ Name | Type | Description  | Notes
 
 # **update_application_key**
 > ApplicationKeyResponse update_application_key(key, body)
-
-Edit an application key
 
 Edit an application key name.
 
