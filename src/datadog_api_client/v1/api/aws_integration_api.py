@@ -476,7 +476,7 @@ class AWSIntegrationApi(object):
         >>> result = thread.get()
 
         Args:
-            body (AWSAccount): Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation).
+            body (AWSAccount): Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://docs.datadoghq.com/integrations/amazon_web_services/#setup).
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
