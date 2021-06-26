@@ -170,7 +170,7 @@ Example: `events(query).rollup(rollup_method[, measure]).last(time_window) opera
 - **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
 - **`rollup_method`** The stats roll-up method - supports `count`, `avg` and `cardinality`.
 - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-- **`time_window`** #m (5, 10, 15, or 30), #h (1, 2, or 4, 24).
+- **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
 - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
 - **`#`** an integer or decimal number used to set the threshold.
 
@@ -195,7 +195,7 @@ Example: `logs(query).index(index_name).rollup(rollup_method[, measure]).last(ti
 - **`index_name`** For multi-index organizations, the log index in which the request is performed.
 - **`rollup_method`** The stats roll-up method - supports `count`, `avg` and `cardinality`.
 - **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
-- **`time_window`** #m (between 1 and 2880), #h (between 1 and 48)
+- **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
 - **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
 - **`#`** an integer or decimal number used to set the threshold.
 
