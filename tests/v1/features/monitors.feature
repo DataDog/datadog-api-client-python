@@ -1,9 +1,9 @@
 @endpoint(monitors) @endpoint(monitors-v1)
 Feature: Monitors
   [Monitors](https://docs.datadoghq.com/monitors) allow you to watch a
-  metric or check that you care about, notifying your team when some defined
-  threshold is exceeded. Refer to the Creating Monitors page for more
-  information on creating monitors.
+  metric or check that you care about and notifies your team when a defined
+  threshold has exceeded.  For more information, see [Creating
+  Monitors](https://docs.datadoghq.com/monitors/monitor_types/).
 
   Background:
     Given a valid "apiKeyAuth" key in the system
