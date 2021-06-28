@@ -72,19 +72,12 @@ jobs:
           repository: DataDog/datadog-api-spec
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Post failure status check
-        if: failure()
+      - name: Post status check
         uses: actions/github-script@v4.0.2
+        env:
+          JOB_STATUS: ${{ needs.test.result }}
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           script: |
             const script = require('./.github/workflows/scripts/test_integration.js')
-            await script.post_status_check(github, context, "unit", "failure")
-      - name: Post success status check
-        if: "!failure()"
-        uses: actions/github-script@v4.0.2
-        with:
-          github-token: ${{ steps.get_token.outputs.token }}
-          script: |
-            const script = require('./.github/workflows/scripts/test_integration.js')
-            await script.post_status_check(github, context, "unit", "success")
+            await script.post_status_check(github, context, "unit", process.env.JOB_STATUS)
