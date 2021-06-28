@@ -31,58 +31,58 @@ jobs:
           DD_HOSTNAME: "none"
           DD_INSIDE_CI: "true"
     steps:
-    - name: Get GitHub App token
-      if: github.event_name == 'pull_request'
-      id: get_token
-      uses: tibdex/github-app-token@v1.3.0
-      with:
-        app_id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
-        private_key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
-        repository: DataDog/datadog-api-spec
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Post pending status check
-      if: github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
-      uses: actions/github-script@v4.0.2
-      with:
-        github-token: ${{ steps.get_token.outputs.token }}
-        script: |
-          const script = require('.github/workflows/scripts/test_integration.js')
-          await script.post_status_check(github, context, "pending")
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-    - name: Install
-      run: pip install --disable-pip-version-check -e .[apm,tests]
-    - name: Test
-      run: ./run-tests.sh
-      shell: bash
-      env:
-        CI: "true"
-        DD_AGENT_HOST: localhost
-        DD_ENV: prod
-        DD_SERVICE: datadog-api-client-python
-        DD_TAGS: "team:integration-tools-and-libraries"
-        DD_TEST_CLIENT_API_KEY: ${{ secrets.DD_CLIENT_API_KEY }}
-        DD_TEST_CLIENT_APP_KEY: ${{ secrets.DD_CLIENT_APP_KEY }}
-        DD_TRACE_ANALYTICS_ENABLED: "true"
-        RECORD: "none"
-        PYTEST_ADDOPTS: "--ddtrace"
-        DD_PYTEST_OPERATION_NAME: "test"
-    - name: Post failure status check
-      if: failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
-      uses: actions/github-script@v4.0.2
-      with:
-        github-token: ${{ steps.get_token.outputs.token }}
-        script: |
-          const script = require('./.github/workflows/scripts/test_integration.js')
-          await script.post_status_check(github, context, "failure")
-    - name: Post success status check
-      if: "!failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')"
-      uses: actions/github-script@v4.0.2
-      with:
-        github-token: ${{ steps.get_token.outputs.token }}
-        script: |
-          const script = require('./.github/workflows/scripts/test_integration.js')
-          await script.post_status_check(github, context, "success")
+      - name: Get GitHub App token
+        if: github.event_name == 'pull_request'
+        id: get_token
+        uses: tibdex/github-app-token@v1.3.0
+        with:
+          app_id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
+          private_key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
+          repository: DataDog/datadog-api-spec
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Post pending status check
+        if: github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
+        uses: actions/github-script@v4.0.2
+        with:
+          github-token: ${{ steps.get_token.outputs.token }}
+          script: |
+            const script = require('.github/workflows/scripts/test_integration.js')
+            await script.post_status_check(github, context, "integration", "pending")
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install
+        run: pip install --disable-pip-version-check -e .[apm,tests]
+      - name: Test
+        run: ./run-tests.sh
+        shell: bash
+        env:
+          CI: "true"
+          DD_AGENT_HOST: localhost
+          DD_ENV: prod
+          DD_SERVICE: datadog-api-client-python
+          DD_TAGS: "team:integration-tools-and-libraries"
+          DD_TEST_CLIENT_API_KEY: ${{ secrets.DD_CLIENT_API_KEY }}
+          DD_TEST_CLIENT_APP_KEY: ${{ secrets.DD_CLIENT_APP_KEY }}
+          DD_TRACE_ANALYTICS_ENABLED: "true"
+          RECORD: "none"
+          PYTEST_ADDOPTS: "--ddtrace"
+          DD_PYTEST_OPERATION_NAME: "test"
+      - name: Post failure status check
+        if: failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
+        uses: actions/github-script@v4.0.2
+        with:
+          github-token: ${{ steps.get_token.outputs.token }}
+          script: |
+            const script = require('./.github/workflows/scripts/test_integration.js')
+            await script.post_status_check(github, context, "failure")
+      - name: Post success status check
+        if: "!failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')"
+        uses: actions/github-script@v4.0.2
+        with:
+          github-token: ${{ steps.get_token.outputs.token }}
+          script: |
+            const script = require('./.github/workflows/scripts/test_integration.js')
+            await script.post_status_check(github, context, "integration", "success")

@@ -56,3 +56,35 @@ jobs:
     - name: Test
       run: ./run-tests.sh
       shell: bash
+
+  report:
+    runs-on: ubuntu-latest
+    if: always() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
+    needs: test
+    steps:
+      - name: Get GitHub App token
+        if: github.event_name == 'pull_request'
+        id: get_token
+        uses: tibdex/github-app-token@v1.3.0
+        with:
+          app_id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
+          private_key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
+          repository: DataDog/datadog-api-spec
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Post failure status check
+        if: failure()
+        uses: actions/github-script@v4.0.2
+        with:
+          github-token: ${{ steps.get_token.outputs.token }}
+          script: |
+            const script = require('./.github/workflows/scripts/test_integration.js')
+            await script.post_status_check(github, context, "unit", "failure")
+      - name: Post success status check
+        if: "!failure()"
+        uses: actions/github-script@v4.0.2
+        with:
+          github-token: ${{ steps.get_token.outputs.token }}
+          script: |
+            const script = require('./.github/workflows/scripts/test_integration.js')
+            await script.post_status_check(github, context, "unit", "success")
