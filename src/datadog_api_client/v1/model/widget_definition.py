@@ -53,8 +53,12 @@ def lazy_import():
     from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
     from datadog_api_client.v1.model.timeseries_widget_legend_layout import TimeseriesWidgetLegendLayout
     from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
-    from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
-    from datadog_api_client.v1.model.toplist_widget_request import ToplistWidgetRequest
+    from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
+    from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
+    from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy
+    from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
+    from datadog_api_client.v1.model.tree_map_widget_definition_type import TreeMapWidgetDefinitionType
+    from datadog_api_client.v1.model.tree_map_widget_request import TreeMapWidgetRequest
     from datadog_api_client.v1.model.widget import Widget
     from datadog_api_client.v1.model.widget_axis import WidgetAxis
     from datadog_api_client.v1.model.widget_color_preference import WidgetColorPreference
@@ -111,8 +115,12 @@ def lazy_import():
     globals()["TimeseriesWidgetLegendColumn"] = TimeseriesWidgetLegendColumn
     globals()["TimeseriesWidgetLegendLayout"] = TimeseriesWidgetLegendLayout
     globals()["ToplistWidgetDefinition"] = ToplistWidgetDefinition
-    globals()["ToplistWidgetDefinitionType"] = ToplistWidgetDefinitionType
-    globals()["ToplistWidgetRequest"] = ToplistWidgetRequest
+    globals()["TreeMapColorBy"] = TreeMapColorBy
+    globals()["TreeMapGroupBy"] = TreeMapGroupBy
+    globals()["TreeMapSizeBy"] = TreeMapSizeBy
+    globals()["TreeMapWidgetDefinition"] = TreeMapWidgetDefinition
+    globals()["TreeMapWidgetDefinitionType"] = TreeMapWidgetDefinitionType
+    globals()["TreeMapWidgetRequest"] = TreeMapWidgetRequest
     globals()["Widget"] = Widget
     globals()["WidgetAxis"] = WidgetAxis
     globals()["WidgetColorPreference"] = WidgetColorPreference
@@ -167,6 +175,10 @@ class WidgetDefinition(ModelComposed):
     allowed_values = {}
 
     validations = {
+        ("requests",): {
+            "max_items": 1,
+            "min_items": 1,
+        },
         ("filters",): {
             "min_items": 1,
         },
@@ -269,7 +281,6 @@ class WidgetDefinition(ModelComposed):
             unit (str): Unit to display with the value.. [optional]  # noqa: E501
             custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
             group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
-            group_by ([str]): List of tag prefixes to group by in the case of a cluster check.. [optional]  # noqa: E501
             tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
             legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
             markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
@@ -334,10 +345,11 @@ class WidgetDefinition(ModelComposed):
             legend_layout (TimeseriesWidgetLegendLayout): [optional]  # noqa: E501
             right_yaxis (WidgetAxis): [optional]  # noqa: E501
             alert_id (str): ID of the alert to use in the widget.. [optional]  # noqa: E501
-            type (ToplistWidgetDefinitionType): [optional]  # noqa: E501
+            type (TreeMapWidgetDefinitionType): [optional]  # noqa: E501
             viz_type (WidgetVizType): [optional]  # noqa: E501
-            requests ([ToplistWidgetRequest]): List of top list widget requests.. [optional]  # noqa: E501
+            requests ([TreeMapWidgetRequest]): List of top list widget requests.. [optional]  # noqa: E501
             check (str): Name of the check to use in the widget.. [optional]  # noqa: E501
+            group_by (TreeMapGroupBy): [optional]  # noqa: E501
             grouping (WidgetGrouping): [optional]  # noqa: E501
             query (str): Query to filter the monitors with.. [optional]  # noqa: E501
             text (str): Text to display.. [optional]  # noqa: E501
@@ -352,6 +364,8 @@ class WidgetDefinition(ModelComposed):
             service (str): APM service.. [optional]  # noqa: E501
             env (str): APM environment.. [optional]  # noqa: E501
             span_name (str): APM span name.. [optional]  # noqa: E501
+            color_by (TreeMapColorBy): [optional]  # noqa: E501
+            size_by (TreeMapSizeBy): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
@@ -447,5 +461,6 @@ class WidgetDefinition(ModelComposed):
                 TableWidgetDefinition,
                 TimeseriesWidgetDefinition,
                 ToplistWidgetDefinition,
+                TreeMapWidgetDefinition,
             ],
         }
