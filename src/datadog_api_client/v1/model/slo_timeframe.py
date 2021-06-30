@@ -47,6 +47,7 @@ class SLOTimeframe(ModelSimple):
             "SEVEN_DAYS": "7d",
             "THIRTY_DAYS": "30d",
             "NINETY_DAYS": "90d",
+            "CUSTOM": "custom",
         },
     }
 
@@ -96,10 +97,10 @@ class SLOTimeframe(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): The SLO time window options.., must be one of ["7d", "30d", "90d", ]  # noqa: E501
+            args[0] (str): The SLO time window options.., must be one of ["7d", "30d", "90d", "custom", ]  # noqa: E501
 
         Keyword Args:
-            value (str): The SLO time window options.., must be one of ["7d", "30d", "90d", ]  # noqa: E501
+            value (str): The SLO time window options.., must be one of ["7d", "30d", "90d", "custom", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
