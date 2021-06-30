@@ -43,12 +43,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Post pending status check
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
-        uses: actions/github-script@v4.0.2
+        uses: DataDog/github-actions/post-status-check@v1.0.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
-          script: |
-            const script = require('.github/workflows/scripts/test_integration.js')
-            await script.post_status_check(github, context, "integration", "pending")
+          repo: datadog-api-spec
+          status: pending
+          context: integration
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
         with:
@@ -72,17 +72,17 @@ jobs:
           DD_PYTEST_OPERATION_NAME: "test"
       - name: Post failure status check
         if: failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
-        uses: actions/github-script@v4.0.2
+        uses: DataDog/github-actions/post-status-check@v1.0.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
-          script: |
-            const script = require('./.github/workflows/scripts/test_integration.js')
-            await script.post_status_check(github, context, "integration", "failure")
+          repo: datadog-api-spec
+          status: failure
+          context: integration
       - name: Post success status check
         if: "!failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')"
-        uses: actions/github-script@v4.0.2
+        uses: DataDog/github-actions/post-status-check@v1.0.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
-          script: |
-            const script = require('./.github/workflows/scripts/test_integration.js')
-            await script.post_status_check(github, context, "integration", "success")
+          repo: datadog-api-spec
+          status: success
+          context: integration
