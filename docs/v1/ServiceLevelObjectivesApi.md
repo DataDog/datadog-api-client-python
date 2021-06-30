@@ -426,7 +426,7 @@ with ApiClient(configuration) as api_client:
     slo_id = "slo_id_example"  # str | The ID of the service level objective object.
     from_ts = 1  # int | The `from` timestamp for the query window in epoch seconds.
     to_ts = 1  # int | The `to` timestamp for the query window in epoch seconds.
-    target = 0  # float | The SLO target. If `target` is passed in, the response will include the error budget that remains. (optional)
+    target = 0  # float | The SLO target. If `target` is passed in, the response will include the remaining error budget and a timeframe value of `custom`. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
  **slo_id** | **str**| The ID of the service level objective object. |
  **from_ts** | **int**| The &#x60;from&#x60; timestamp for the query window in epoch seconds. |
  **to_ts** | **int**| The &#x60;to&#x60; timestamp for the query window in epoch seconds. |
- **target** | **float**| The SLO target. If &#x60;target&#x60; is passed in, the response will include the error budget that remains. | [optional]
+ **target** | **float**| The SLO target. If &#x60;target&#x60; is passed in, the response will include the remaining error budget and a timeframe value of &#x60;custom&#x60;. | [optional]
 
 ### Return type
 
