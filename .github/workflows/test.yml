@@ -73,11 +73,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Post status check
-        uses: actions/github-script@v4.0.2
-        env:
-          JOB_STATUS: ${{ needs.test.result }}
+        uses: DataDog/github-actions/post-status-check@v1.0.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
-          script: |
-            const script = require('./.github/workflows/scripts/test_integration.js')
-            await script.post_status_check(github, context, "unit", process.env.JOB_STATUS)
+          repo: datadog-api-spec
+          status: ${{ needs.test.result }}
+          context: unit
