@@ -1,12 +1,12 @@
-# SLOCorrectionListResponse
+# Pagination
 
-A list of  SLO correction objects
+Pagination object.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[SLOCorrection]**](SLOCorrection.md) | The list of of SLO corrections objects | [optional] 
-**meta** | [**ResponseMetaAttributes**](ResponseMetaAttributes.md) |  | [optional] 
+**total_count** | **int** | Total count. | [optional] 
+**total_filtered_count** | **int** | Total count of elements matched by the filter. | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
