@@ -1,43 +1,46 @@
 interactions:
 - request:
-    body: '{"name": "Test-Delete_an_existing_rule_returns_OK_response-1618831528",
-      "queries": [{"query": "@test:true", "aggregation": "count", "groupByFields":
-      [], "distinctFields": [], "metric": ""}], "filters": [], "cases": [{"name":
-      "", "status": "info", "condition": "a > 0", "notifications": []}], "options":
-      {"evaluationWindow": 900, "keepAlive": 3600, "maxSignalDuration": 86400}, "message":
-      "Test rule", "tags": [], "isEnabled": true}'
+    body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
+      rule","name":"Test-Delete_an_existing_rule_returns_OK_response-1618572735","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[]}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '395'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - CreateSecurityMonitoringRule
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '4909198046585186715'
+      x-datadog-trace-id:
+      - '9212412167078932494'
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"creationAuthorId":1445416,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
-        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1618831528496,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true","trackType":"logs"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
-        > 0"}],"type":"log_detection","id":"5ri-aq2-gz8","isDefault":false,"name":"Test-Delete_an_existing_rule_returns_OK_response-1618831528"}'
+      string: '{"creationAuthorId":2320499,"tags":[],"isEnabled":true,"hasExtendedTitle":false,"message":"Test
+        rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"maxSignalDuration":86400,"keepAlive":3600},"version":1,"createdAt":1618572735575,"filters":[],"queries":[{"distinctFields":[],"name":"","metric":"","aggregation":"count","groupByFields":[],"query":"@test:true","trackType":"logs"}],"isDeleted":false,"cases":[{"status":"info","notifications":[],"name":"","condition":"a
+        > 0"}],"type":"log_detection","id":"v3s-vcj-eu3","isDefault":false,"name":"Test-Delete_an_existing_rule_returns_OK_response-1618572735"}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '622'
-      Content-Type:
-      - application/json;charset=utf-8
-      Date:
-      - Mon, 19 Apr 2021 11:25:28 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
       content-disposition:
       - inline
+      content-length:
+      - '622'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json;charset=utf-8
+      date:
+      - Fri, 16 Apr 2021 11:32:15 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -47,9 +50,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
+      - 5gfwVh/5HZ+AnGd/Di93w3NEWC6KMHT9KzmHEiRJmNdOjBtAsbOcgVFyqEChw71h
       x-dd-version:
-      - '35.4339380'
+      - '35.4327367'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -58,33 +61,36 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteSecurityMonitoringRule
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '6537172424482588211'
+      x-datadog-trace-id:
+      - '9212412167078932494'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/5ri-aq2-gz8
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/v3s-vcj-eu3
   response:
     body:
       string: ''
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Date:
-      - Mon, 19 Apr 2021 11:25:28 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
       content-disposition:
       - inline
+      content-length:
+      - '0'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      date:
+      - Fri, 16 Apr 2021 11:32:15 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -94,7 +100,7 @@ interactions:
       x-dd-debug:
       - l8RQo2maZqJf6GFThBbKNE6dvthz6njusVtau3dPXJWL2RLFoN81H+BLPB/1xgs1
       x-dd-version:
-      - '35.4339380'
+      - '35.4327367'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -103,33 +109,36 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteSecurityMonitoringRule
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '755466276188402746'
+      x-datadog-trace-id:
+      - '9212412167078932494'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/5ri-aq2-gz8
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/v3s-vcj-eu3
   response:
     body:
-      string: '{"errors":["Threat detection rule not found: 5ri-aq2-gz8"]}'
+      string: '{"errors":["Threat detection rule not found: v3s-vcj-eu3"]}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '59'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 19 Apr 2021 11:25:29 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '59'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 16 Apr 2021 11:32:15 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -139,7 +148,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4339380'
+      - '35.4327367'
       x-frame-options:
       - SAMEORIGIN
     status:

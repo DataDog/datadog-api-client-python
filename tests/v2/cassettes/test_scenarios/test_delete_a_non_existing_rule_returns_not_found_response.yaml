@@ -2,14 +2,18 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteSecurityMonitoringRule
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '5095942047695828255'
+      x-datadog-trace-id:
+      - '5095942047695828255'
     method: DELETE
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/ThisRuleIdProbablyDoesntExist
   response:
@@ -17,18 +21,18 @@ interactions:
       string: '{"message": "The resource could not be found.<br /><br />\n\n\n", "code":
         "404 Not Found", "title": "Not Found"}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '112'
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 09 Apr 2021 20:21:46 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '112'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 15 Apr 2021 13:02:49 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -38,7 +42,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4280781'
+      - '35.4318655'
       x-frame-options:
       - SAMEORIGIN
     status:
