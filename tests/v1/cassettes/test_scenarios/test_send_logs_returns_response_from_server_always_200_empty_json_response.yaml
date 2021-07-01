@@ -1,30 +1,37 @@
 interactions:
 - request:
-    body: '[{"message": "Test-Send_logs_returns_Response_from_server_always_200_empty_JSON_response-1618476795",
-      "ddtags": "host:TestSendlogsreturnsResponsefromserveralways200emptyJSONresponse1618476795"}]'
+    body: '[{"ddtags":"host:TestSendlogsreturnsResponsefromserveralways200emptyJSONresponse1618413148","message":"Test-Send_logs_returns_Response_from_server_always_200_empty_JSON_response-1618413148"}]'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '191'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - SubmitLog
-      User-Agent:
-      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
+      host:
+      - http-intake.logs.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.12.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '184200789673602245'
+      x-datadog-trace-id:
+      - '184200789673602245'
     method: POST
     uri: https://http-intake.logs.datadoghq.com/v1/input
   response:
     body:
       string: '{}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
+      connection:
+      - close
+      content-length:
       - '2'
-      Content-Type:
+      content-type:
       - application/json
-      Date:
-      - Thu, 15 Apr 2021 08:53:15 GMT
+      date:
+      - Wed, 14 Apr 2021 15:12:29 GMT
     status:
       code: 200
       message: OK

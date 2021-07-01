@@ -1,34 +1,41 @@
 interactions:
 - request:
-    body: '{"data": {"attributes": {"name": "Test-List_permissions_for_a_role_returns_OK_response-1617999666"},
-      "type": "roles"}}'
+    body: '{"data":{"attributes":{"name":"Test-List_permissions_for_a_role_returns_OK_response-1618491758"},"type":"roles"}}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '113'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - CreateRole
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '5095942047695828255'
+      x-datadog-trace-id:
+      - '5095942047695828255'
     method: POST
     uri: https://api.datadoghq.com/api/v2/roles
   response:
     body:
-      string: '{"data":{"type":"roles","id":"1d725564-9971-11eb-9cf2-da7ad0900002","attributes":{"name":"Test-List_permissions_for_a_role_returns_OK_response-1617999666","created_at":"2021-04-09T20:21:06.931635+00:00","modified_at":"2021-04-09T20:21:06.931635+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
+      string: '{"data":{"type":"roles","id":"db2f1876-9dea-11eb-9df5-da7ad0900002","attributes":{"name":"Test-List_permissions_for_a_role_returns_OK_response-1618491758","created_at":"2021-04-15T13:02:39.012756+00:00","modified_at":"2021-04-15T13:02:39.012756+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"}]}}}}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '498'
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 09 Apr 2021 20:21:06 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '498'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 15 Apr 2021 13:02:39 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -38,9 +45,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
+      - gYZcaADwbKcv7Hm19HJx6WsLoKuOijDWAt2viPeCfWqUgyKY+9e1xZdmMJeXV3YV
       x-dd-version:
-      - '35.4280781'
+      - '35.4318655'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -48,23 +55,27 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '496'
+      - '481'
       x-ratelimit-reset:
-      - '54'
+      - '22'
     status:
       code: 200
       message: OK
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - ListPermissions
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '5095942047695828255'
+      x-datadog-trace-id:
+      - '5095942047695828255'
     method: GET
     uri: https://api.datadoghq.com/api/v2/permissions
   response:
@@ -212,18 +223,18 @@ interactions:
         Scanner","description":"Edit data scanner configuration.","created":"2021-03-29T16:56:46.398584+00:00","group_name":"Access
         Management","display_type":"write","restricted":false}}]}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
       - '21271'
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 09 Apr 2021 20:21:07 GMT
-      cache-control:
-      - no-cache
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 15 Apr 2021 13:02:39 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -233,27 +244,35 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
+      - HbtaOKlJ6OCrx9tMXO6ivMTrEM+g0c93HDp08trmOmgdHozC5J+vn10F0H4WPjCU
       x-dd-version:
-      - '35.4280781'
+      - '35.4318655'
       x-frame-options:
       - SAMEORIGIN
     status:
       code: 200
       message: OK
 - request:
-    body: '{"data": {"id": "984a2bd4-d3b4-11e8-a1ff-a7f660d43029", "type": "permissions"}}'
+    body: '{"data":{"id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","type":"permissions"}}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '75'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - AddPermissionToRole
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '5095942047695828255'
+      x-datadog-trace-id:
+      - '5095942047695828255'
     method: POST
-    uri: https://api.datadoghq.com/api/v2/roles/1d725564-9971-11eb-9cf2-da7ad0900002/permissions
+    uri: https://api.datadoghq.com/api/v2/roles/db2f1876-9dea-11eb-9df5-da7ad0900002/permissions
   response:
     body:
       string: '{"data":[{"type":"permissions","id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","attributes":{"name":"admin","display_name":"Privileged
@@ -265,18 +284,18 @@ interactions:
         ability to view monitors.","created":"2019-09-16T18:39:07.744297+00:00","group_name":"Monitors","display_type":"read","restricted":true}},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0","attributes":{"name":"apm_read","display_name":"APM
         Read Access","description":"The ability to read and query APM and Trace Analytics.","created":"2020-11-23T20:55:45.006110+00:00","group_name":"APM","display_type":"read","restricted":true}}]}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1426'
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 09 Apr 2021 20:21:07 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '1426'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 15 Apr 2021 13:02:39 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -286,9 +305,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
+      - Wjq53IVIwnB4SiR238oOYgHFMq/ZYP0LQ/Dv8C2fFLBwTje/dWJHu6pI6vIOK1zG
       x-dd-version:
-      - '35.4280781'
+      - '35.4318655'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -296,25 +315,29 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '495'
+      - '480'
       x-ratelimit-reset:
-      - '53'
+      - '21'
     status:
       code: 200
       message: OK
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - ListRolePermissions
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '5095942047695828255'
+      x-datadog-trace-id:
+      - '5095942047695828255'
     method: GET
-    uri: https://api.datadoghq.com/api/v2/roles/1d725564-9971-11eb-9cf2-da7ad0900002/permissions
+    uri: https://api.datadoghq.com/api/v2/roles/db2f1876-9dea-11eb-9df5-da7ad0900002/permissions
   response:
     body:
       string: '{"data":[{"type":"permissions","id":"984a2bd4-d3b4-11e8-a1ff-a7f660d43029","attributes":{"name":"admin","display_name":"Privileged
@@ -326,18 +349,18 @@ interactions:
         ability to view monitors.","created":"2019-09-16T18:39:07.744297+00:00","group_name":"Monitors","display_type":"read","restricted":true}},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0","attributes":{"name":"apm_read","display_name":"APM
         Read Access","description":"The ability to read and query APM and Trace Analytics.","created":"2020-11-23T20:55:45.006110+00:00","group_name":"APM","display_type":"read","restricted":true}}]}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1426'
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 09 Apr 2021 20:21:08 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '1426'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 15 Apr 2021 13:02:40 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -347,9 +370,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - bgHykj7A9bfZx0Y5ZO3swhhp5tGUSNJHqFWR868+qg087CYrDOd5hQslC+noiEtH
       x-dd-version:
-      - '35.4280781'
+      - '35.4318655'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -357,41 +380,45 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '494'
+      - '479'
       x-ratelimit-reset:
-      - '52'
+      - '20'
     status:
       code: 200
       message: OK
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteRole
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '5095942047695828255'
+      x-datadog-trace-id:
+      - '5095942047695828255'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/roles/1d725564-9971-11eb-9cf2-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/roles/db2f1876-9dea-11eb-9df5-da7ad0900002
   response:
     body:
       string: ''
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 09 Apr 2021 20:21:08 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '0'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 15 Apr 2021 13:02:40 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -401,7 +428,7 @@ interactions:
       x-dd-debug:
       - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
       x-dd-version:
-      - '35.4280781'
+      - '35.4318655'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -409,9 +436,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '493'
+      - '478'
       x-ratelimit-reset:
-      - '52'
+      - '20'
     status:
       code: 204
       message: No Content

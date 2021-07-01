@@ -2,32 +2,36 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - ListTagConfigurations
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '5095942047695828255'
+      x-datadog-trace-id:
+      - '5095942047695828255'
     method: GET
-    uri: https://api.datadoghq.com/api/v2/metrics?filter%5Btags%5D=TestListtagconfigurationswithatagfilterreturnsSuccessresponse1617999676
+    uri: https://api.datadoghq.com/api/v2/metrics?filter%5Btags%5D=TestListtagconfigurationswithatagfilterreturnsSuccessresponse1618491743
   response:
     body:
       string: '{"data":[]}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '11'
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 09 Apr 2021 20:21:16 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '11'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 15 Apr 2021 13:02:24 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -35,9 +39,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
+      - L3ULR3HwCWYmEqCWGz2Yob3chcH4pjowBacBXkncP7o+/uPqKt9yGEYf/g1AJPzQ
       x-dd-version:
-      - '35.4280781'
+      - '35.4318655'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -45,9 +49,9 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '49'
+      - '36'
       x-ratelimit-reset:
-      - '44'
+      - '36'
     status:
       code: 200
       message: OK

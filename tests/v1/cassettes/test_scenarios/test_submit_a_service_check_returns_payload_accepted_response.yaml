@@ -1,31 +1,39 @@
 interactions:
 - request:
-    body: '[{"check": "app.ok", "host_name": "host", "status": 0, "tags": ["test:TestSubmitaServiceCheckreturnsPayloadacceptedresponse1617999736"]}]'
+    body: '[{"check":"app.ok","host_name":"host","status":0,"tags":["test:TestSubmitaServiceCheckreturnsPayloadacceptedresponse1618491676"]}]'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '130'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - SubmitServiceCheck
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '5095942047695828255'
+      x-datadog-trace-id:
+      - '5095942047695828255'
     method: POST
     uri: https://api.datadoghq.com/api/v1/check_run
   response:
     body:
       string: '{"status": "ok"}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
+      connection:
+      - close
+      content-length:
       - '16'
-      Content-Type:
-      - text/json
-      Date:
-      - Fri, 09 Apr 2021 20:22:18 GMT
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - text/json
+      date:
+      - Thu, 15 Apr 2021 13:01:16 GMT
       strict-transport-security:
       - max-age=15724800;
       x-content-type-options:
