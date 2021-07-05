@@ -281,6 +281,51 @@ class KeyManagementApi(object):
             api_client=api_client,
         )
 
+        self._get_application_key_endpoint = _Endpoint(
+            settings={
+                "response_type": (ApplicationKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/application_keys/{app_key_id}",
+                "operation_id": "get_application_key",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "app_key_id",
+                    "include",
+                ],
+                "required": [
+                    "app_key_id",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "app_key_id": (str,),
+                    "include": (str,),
+                },
+                "attribute_map": {
+                    "app_key_id": "app_key_id",
+                    "include": "include",
+                },
+                "location_map": {
+                    "app_key_id": "path",
+                    "include": "query",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._get_current_user_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyResponse,),
@@ -895,6 +940,50 @@ class KeyManagementApi(object):
         kwargs = self._get_api_key_endpoint.default_arguments(kwargs)
         kwargs["api_key_id"] = api_key_id
         return self._get_api_key_endpoint.call_with_http_info(**kwargs)
+
+    def get_application_key(self, app_key_id, **kwargs):
+        """Get an application key  # noqa: E501
+
+        Get an application key for your org.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_application_key(app_key_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            app_key_id (str): The ID of the application key.
+
+        Keyword Args:
+            include (str): Resource path for related resources to include in the response. Only `owned_by` is supported.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ApplicationKeyResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_application_key_endpoint.default_arguments(kwargs)
+        kwargs["app_key_id"] = app_key_id
+        return self._get_application_key_endpoint.call_with_http_info(**kwargs)
 
     def get_current_user_application_key(self, app_key_id, **kwargs):
         """Get one application key owned by current user  # noqa: E501

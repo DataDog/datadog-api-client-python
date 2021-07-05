@@ -260,6 +260,28 @@ Feature: Key Management
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip
+  Scenario: Get an application key returns "Bad Request" response
+    Given new "GetApplicationKey" request
+    And request contains "app_key_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get an application key returns "Not Found" response
+    Given new "GetApplicationKey" request
+    And request contains "app_key_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @integration-only
+  Scenario: Get an application key returns "OK" response
+    Given there is a valid "application_key" in the system
+    And new "GetApplicationKey" request
+    And request contains "app_key_id" parameter from "application_key.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
   @integration-only
   Scenario: Get one Application key owned by current user returns "OK" response
     Given there is a valid "application_key" in the system
