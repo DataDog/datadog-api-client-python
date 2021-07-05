@@ -116,6 +116,7 @@ Class | Method | HTTP request | Description
 *KeyManagementApi* | [**delete_application_key**](KeyManagementApi.md#delete_application_key) | **DELETE** /api/v2/application_keys/{app_key_id} | Delete an application key
 *KeyManagementApi* | [**delete_current_user_application_key**](KeyManagementApi.md#delete_current_user_application_key) | **DELETE** /api/v2/current_user/application_keys/{app_key_id} | Delete an application key owned by current user
 *KeyManagementApi* | [**get_api_key**](KeyManagementApi.md#get_api_key) | **GET** /api/v2/api_keys/{api_key_id} | Get API key
+*KeyManagementApi* | [**get_application_key**](KeyManagementApi.md#get_application_key) | **GET** /api/v2/application_keys/{app_key_id} | Get an application key
 *KeyManagementApi* | [**get_current_user_application_key**](KeyManagementApi.md#get_current_user_application_key) | **GET** /api/v2/current_user/application_keys/{app_key_id} | Get one application key owned by current user
 *KeyManagementApi* | [**list_api_keys**](KeyManagementApi.md#list_api_keys) | **GET** /api/v2/api_keys | Get all API keys
 *KeyManagementApi* | [**list_application_keys**](KeyManagementApi.md#list_application_keys) | **GET** /api/v2/application_keys | Get all application keys

@@ -48,6 +48,12 @@
       "type": "idempotent"
     }
   },
+  "GetApplicationKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpdateApplicationKey": {
     "tag": "Key Management",
     "undo": {
