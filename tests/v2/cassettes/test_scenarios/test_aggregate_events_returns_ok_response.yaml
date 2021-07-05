@@ -1,35 +1,41 @@
 interactions:
 - request:
-    body: '{"filter": {"from": "now-15m", "indexes": ["main"], "query": "*", "to":
-      "now"}}'
+    body: '{"filter":{"from":"now-15m","indexes":["main"],"query":"*","to":"now"}}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '71'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - AggregateLogs
-      User-Agent:
-      - datadog-api-client-python/1.0.0b9.dev32+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '2282340330001095403'
+      x-datadog-trace-id:
+      - '2282340330001095403'
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"pddv1ChZjTDl4MlkzYlR5MjVDSjdSOUFrOHZnIi0KHUtBg7DFEyBW_PuB7fC41XjIlmupYgUE9pa4MZ6wEgw67shbDH2rt649h8M","elapsed":1},"data":{"buckets":[{"computes":{"c0":8},"by":{}}]}}'
+      string: '{"meta":{"status":"done","request_id":"pddv1ChYtOGFfX0hkRFRzeVFxOUkxNFliWkh3IiwKHNZ2_uRW5V74g9U20qpKaJ5w2W333--lwIypXxoSDOtag8A05lWXfz4bnA","elapsed":3},"data":{"buckets":[{"computes":{"c0":7},"by":{}}]}}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '205'
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Jun 2021 08:03:56 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '204'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Wed, 02 Jun 2021 10:09:21 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -39,9 +45,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - LcgNasIYBRkNppmD6mCKE9J6iv0eEjosuuHR5V5zw2fWbR54i39C8dhdK8zDq/40
       x-dd-version:
-      - '35.4654814'
+      - '35.4656181'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -49,9 +55,9 @@ interactions:
       x-ratelimit-period:
       - '300'
       x-ratelimit-remaining:
-      - '296'
+      - '295'
       x-ratelimit-reset:
-      - '64'
+      - '40'
     status:
       code: 200
       message: OK

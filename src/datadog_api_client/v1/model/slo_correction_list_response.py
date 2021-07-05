@@ -23,8 +23,10 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.response_meta_attributes import ResponseMetaAttributes
     from datadog_api_client.v1.model.slo_correction import SLOCorrection
 
+    globals()["ResponseMetaAttributes"] = ResponseMetaAttributes
     globals()["SLOCorrection"] = SLOCorrection
 
 
@@ -73,6 +75,7 @@ class SLOCorrectionListResponse(ModelNormal):
         lazy_import()
         return {
             "data": ([SLOCorrection],),  # noqa: E501
+            "meta": (ResponseMetaAttributes,),  # noqa: E501
         }
 
     @cached_property
@@ -81,6 +84,7 @@ class SLOCorrectionListResponse(ModelNormal):
 
     attribute_map = {
         "data": "data",  # noqa: E501
+        "meta": "meta",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -132,6 +136,7 @@ class SLOCorrectionListResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([SLOCorrection]): The list of of SLO corrections objects. [optional]  # noqa: E501
+            meta (ResponseMetaAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

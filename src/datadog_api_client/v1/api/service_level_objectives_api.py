@@ -639,7 +639,7 @@ class ServiceLevelObjectivesApi(object):
             to_ts (int): The `to` timestamp for the query window in epoch seconds.
 
         Keyword Args:
-            target (float): The SLO target. If `target` is passed in, the response will include the error budget that remains.. [optional]
+            target (float): The SLO target. If `target` is passed in, the response will include the remaining error budget and a timeframe value of `custom`.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

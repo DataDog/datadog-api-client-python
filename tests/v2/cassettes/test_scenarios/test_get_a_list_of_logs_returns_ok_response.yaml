@@ -1,34 +1,41 @@
 interactions:
 - request:
-    body: '{"filter": {"query": "datadog-agent", "indexes": ["main"], "from": "2020-09-17T11:48:36+01:00",
-      "to": "2020-09-17T12:48:36+01:00"}, "sort": "timestamp", "page": {"limit": 5}}'
+    body: '{"filter":{"from":"2020-09-17T11:48:36+01:00","indexes":["main"],"query":"datadog-agent","to":"2020-09-17T12:48:36+01:00"},"page":{"limit":5},"sort":"timestamp"}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '161'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - ListLogs
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '5095942047695828255'
+      x-datadog-trace-id:
+      - '5095942047695828255'
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/events/search
   response:
     body:
       string: '{"data":[]}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '11'
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 09 Apr 2021 20:20:22 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '11'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 15 Apr 2021 13:02:09 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -36,9 +43,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - l4HFlaRP3QwYSqoGKhzbYfv7zgkK63HIRR7YkyVYZspq0lGjjTBwoK8V/alf+XYt
+      - S1wfaMZOKGT/IoMw6fqAwAwGWo2vQ44sjF3YzuETnQfxZO2T5eJbs0aX3UKb9Dwu
       x-dd-version:
-      - '35.4280781'
+      - '35.4318655'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -46,9 +53,9 @@ interactions:
       x-ratelimit-period:
       - '3600'
       x-ratelimit-remaining:
-      - '297'
+      - '299'
       x-ratelimit-reset:
-      - '2378'
+      - '3471'
     status:
       code: 200
       message: OK

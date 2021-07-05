@@ -29,9 +29,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Post PR review status check
-        uses: actions/github-script@v4.0.2
+        uses: DataDog/github-actions/post-review-status@v1.0.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
-          script: |
-            const script = require('.github/workflows/scripts/approved_status.js')
-            await script.post_approved_pr_status_check(github, context)
+          repo: datadog-api-spec

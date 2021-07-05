@@ -1,33 +1,39 @@
 interactions:
 - request:
-    body: '{"series": [{"metric": "system.load.1", "type": "gauge", "points": [[1623933601,
-      1.1]], "tags": ["test:TestSubmitmetricsreturnsPayloadacceptedresponse1623933601"]}]}'
+    body: '{"series":[{"metric":"system.load.1","points":[[1623932501,1.1]],"tags":["test:TestSubmitmetricsreturnsPayloadacceptedresponse1623932501"],"type":"gauge"}]}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '156'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - SubmitMetrics
-      User-Agent:
-      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
-        x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 16.2.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '2525539895392963703'
+      x-datadog-trace-id:
+      - '2525539895392963703'
     method: POST
     uri: https://api.datadoghq.com/api/v1/series
   response:
     body:
       string: '{"status": "ok"}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
+      connection:
+      - close
+      content-length:
       - '16'
-      Content-Type:
-      - text/json
-      Date:
-      - Thu, 17 Jun 2021 12:40:02 GMT
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - text/json
+      date:
+      - Thu, 17 Jun 2021 12:21:42 GMT
       strict-transport-security:
       - max-age=15724800;
       x-content-type-options:

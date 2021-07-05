@@ -6612,6 +6612,18 @@ components:
       required:
       - service_name
       type: object
+    Pagination:
+      description: Pagination object.
+      properties:
+        total_count:
+          description: Total count.
+          format: int64
+          type: integer
+        total_filtered_count:
+          description: Total count of elements matched by the filter.
+          format: int64
+          type: integer
+      type: object
     Point:
       description: Array of timeseries points.
       example:
@@ -6764,6 +6776,12 @@ components:
           $ref: '#/components/schemas/LogQueryDefinition'
         security_query:
           $ref: '#/components/schemas/LogQueryDefinition'
+      type: object
+    ResponseMetaAttributes:
+      description: Object describing meta attributes of response.
+      properties:
+        page:
+          $ref: '#/components/schemas/Pagination'
       type: object
     SLOBulkDelete:
       additionalProperties:
@@ -6922,6 +6940,8 @@ components:
           items:
             $ref: '#/components/schemas/SLOCorrection'
           type: array
+        meta:
+          $ref: '#/components/schemas/ResponseMetaAttributes'
       type: object
     SLOCorrectionResponse:
       description: The response object of an SLO correction
@@ -7607,11 +7627,13 @@ components:
       - 7d
       - 30d
       - 90d
+      - custom
       type: string
       x-enum-varnames:
       - SEVEN_DAYS
       - THIRTY_DAYS
       - NINETY_DAYS
+      - CUSTOM
     SLOType:
       description: The type of the service level objective.
       enum:
@@ -10474,6 +10496,87 @@ components:
         style:
           $ref: '#/components/schemas/WidgetRequestStyle'
       type: object
+    TreeMapColorBy:
+      default: user
+      description: The attribute used to determine color in the widget.
+      enum:
+      - user
+      example: user
+      type: string
+      x-enum-varnames:
+      - USER
+    TreeMapGroupBy:
+      description: The attribute used to group elements in the widget.
+      enum:
+      - user
+      - family
+      - process
+      example: user
+      type: string
+      x-enum-varnames:
+      - USER
+      - FAMILY
+      - PROCESS
+    TreeMapSizeBy:
+      description: The attribute used to determine size in the widget.
+      enum:
+      - pct_cpu
+      - pct_mem
+      example: pct_cpu
+      type: string
+      x-enum-varnames:
+      - PCT_CPU
+      - PCT_MEM
+    TreeMapWidgetDefinition:
+      description: "The treemap visualization found on the Host Dashboards comes from\
+        \ the output of `ps auxww`. This is not continuously run on your hosts. Instead,\
+        \ it\u2019s run once on Agent start/restart. The treemap is only supported\
+        \ for process data on a single host dashboard \u2014 this may not be reused\
+        \ in other dashboards or for other metrics."
+      properties:
+        color_by:
+          $ref: '#/components/schemas/TreeMapColorBy'
+        group_by:
+          $ref: '#/components/schemas/TreeMapGroupBy'
+        requests:
+          description: List of top list widget requests.
+          example:
+          - q: system.load.1
+          items:
+            $ref: '#/components/schemas/TreeMapWidgetRequest'
+          maxItems: 1
+          minItems: 1
+          type: array
+        size_by:
+          $ref: '#/components/schemas/TreeMapSizeBy'
+        title:
+          description: Title of your widget.
+          type: string
+        type:
+          $ref: '#/components/schemas/TreeMapWidgetDefinitionType'
+      required:
+      - type
+      - requests
+      - size_by
+      - color_by
+      - group_by
+      type: object
+    TreeMapWidgetDefinitionType:
+      default: treemap
+      description: Type of the treemap widget.
+      enum:
+      - treemap
+      example: treemap
+      type: string
+      x-enum-varnames:
+      - TREEMAP
+    TreeMapWidgetRequest:
+      description: An updated treemap widget.
+      properties:
+        q:
+          description: The widget metrics query.
+          type: string
+      type: object
     UsageAnalyzedLogsHour:
       description: The number of analyzed logs for each hour for a given organization.
       properties:
@@ -12843,6 +12946,7 @@ components:
       - $ref: '#/components/schemas/TableWidgetDefinition'
       - $ref: '#/components/schemas/TimeseriesWidgetDefinition'
       - $ref: '#/components/schemas/ToplistWidgetDefinition'
+      - $ref: '#/components/schemas/TreeMapWidgetDefinition'
       type: object
     WidgetDisplayType:
       description: Type of display to use for the request.
@@ -19452,7 +19556,7 @@ paths:
           format: int64
           type: integer
       - description: The SLO target. If `target` is passed in, the response will include
-          the error budget that remains.
+          the remaining error budget and a timeframe value of `custom`.
         in: query
         name: target
         schema:

@@ -2,15 +2,18 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - SearchMonitors
-      User-Agent:
-      - datadog-api-client-python/1.0.0b9.dev32+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '7060831856093393156'
+      x-datadog-trace-id:
+      - '7060831856093393156'
     method: GET
     uri: https://api.datadoghq.com/api/v1/monitor/search
   response:
@@ -114,18 +117,18 @@ interactions:
         java-testSyntheticsMultipleTestsOperations-20175-1595364791-api","tags":["testing:api","check_type:api","probe_dc:aws:us-east-2","check_status:live"],"org_id":321813,"priority":null,"overall_state_modified":null,"restricted_roles":[],"type":"synthetics
         alert"}],"metadata":{"total_count":99,"page_count":30,"page":0,"per_page":30}}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '19166'
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 25 May 2021 10:00:28 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '19166'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 25 May 2021 10:23:22 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -135,7 +138,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4600133'
+      - '35.4600248'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -145,7 +148,7 @@ interactions:
       x-ratelimit-remaining:
       - '116'
       x-ratelimit-reset:
-      - '3'
+      - '8'
     status:
       code: 200
       message: OK
