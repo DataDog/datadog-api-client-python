@@ -6,6 +6,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+{{#oneOf}}
+**{{.}}** | [**{{.}}**]({{.}}.md) | Container class of the relevant properties. |
+{{/oneOf}}
+{{^oneOf}}
 {{#isEnum}}
 **value** | {{^arrayModelType}}**{{dataType}}**{{/arrayModelType}} | {{description}} | {{#defaultValue}}{{#hasRequired}} if omitted the server will use the default value of {{/hasRequired}}{{^hasRequired}}defaults to {{/hasRequired}}{{{.}}}{{/defaultValue}}{{#allowableValues}}{{#defaultValue}}, {{/defaultValue}} must be one of [{{#enumVars}}{{{value}}}, {{/enumVars}}]{{/allowableValues}}
 {{/isEnum}}
@@ -31,6 +35,7 @@ Name | Type | Description | Notes
 {{#additionalPropertiesType}}
 **any string name** | **{{additionalPropertiesType}}** | any string name can be used but the value must be the correct type | [optional]
 {{/additionalPropertiesType}}
+{{/oneOf}}
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

@@ -5,10 +5,8 @@ Updating a notebook can either insert new cell(s) or update existing cell(s) by 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**NotebookCellUpdateRequestAttributes**](NotebookCellUpdateRequestAttributes.md) |  | [optional] 
-**type** | [**NotebookCellResourceType**](NotebookCellResourceType.md) |  | [optional] 
-**id** | **str** | Notebook cell ID. | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**NotebookCellCreateRequest** | [**NotebookCellCreateRequest**](NotebookCellCreateRequest.md) | Container class of the relevant properties. |
+**NotebookCellUpdateRequest** | [**NotebookCellUpdateRequest**](NotebookCellUpdateRequest.md) | Container class of the relevant properties. |
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
