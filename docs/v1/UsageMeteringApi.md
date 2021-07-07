@@ -355,7 +355,7 @@ configuration.unstable_operations["get_specified_daily_custom_reports"] = True
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    report_id = "report_id_example"  # str | The specified ID to search results for.
+    report_id = "report_id_example"  # str | Date of the report in the format `YYYY-MM-DD`.
 
     # example passing only required values which don't have defaults set
     try:
@@ -371,7 +371,7 @@ with ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_id** | **str**| The specified ID to search results for. |
+ **report_id** | **str**| Date of the report in the format &#x60;YYYY-MM-DD&#x60;. |
 
 ### Return type
 
@@ -420,7 +420,7 @@ configuration.unstable_operations["get_specified_monthly_custom_reports"] = True
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    report_id = "report_id_example"  # str | The specified ID to search results for.
+    report_id = "report_id_example"  # str | Date of the report in the format `YYYY-MM-DD`.
 
     # example passing only required values which don't have defaults set
     try:
@@ -436,7 +436,7 @@ with ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_id** | **str**| The specified ID to search results for. |
+ **report_id** | **str**| Date of the report in the format &#x60;YYYY-MM-DD&#x60;. |
 
 ### Return type
 

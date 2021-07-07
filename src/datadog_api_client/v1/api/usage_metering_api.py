@@ -1784,7 +1784,7 @@ class UsageMeteringApi(object):
         >>> result = thread.get()
 
         Args:
-            report_id (str): The specified ID to search results for.
+            report_id (str): Date of the report in the format `YYYY-MM-DD`.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1827,7 +1827,7 @@ class UsageMeteringApi(object):
         >>> result = thread.get()
 
         Args:
-            report_id (str): The specified ID to search results for.
+            report_id (str): Date of the report in the format `YYYY-MM-DD`.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
