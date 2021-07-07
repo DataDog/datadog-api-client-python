@@ -18,7 +18,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
-from datadog_api_client.v2.model.security_filter_delete_response import SecurityFilterDeleteResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_update_request import SecurityFilterUpdateRequest
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
@@ -117,7 +116,7 @@ class SecurityMonitoringApi(object):
 
         self._delete_security_filter_endpoint = _Endpoint(
             settings={
-                "response_type": (SecurityFilterDeleteResponse,),
+                "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}",
                 "operation_id": "delete_security_filter",
@@ -651,7 +650,7 @@ class SecurityMonitoringApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SecurityFilterDeleteResponse
+            None
                 If the method is called asynchronously, returns the request
                 thread.
         """

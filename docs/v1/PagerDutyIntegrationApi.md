@@ -13,8 +13,6 @@ Method | HTTP request | Description
 # **create_pager_duty_integration_service**
 > PagerDutyServiceName create_pager_duty_integration_service(body)
 
-Create a new service object
-
 Create a new service object in the PagerDuty integration.
 
 ### Example
@@ -82,8 +80,6 @@ Name | Type | Description  | Notes
 # **delete_pager_duty_integration_service**
 > delete_pager_duty_integration_service(service_name)
 
-Delete a single service object
-
 Delete a single service object in the Datadog-PagerDuty integration.
 
 ### Example
@@ -146,8 +142,6 @@ void (empty response body)
 
 # **get_pager_duty_integration_service**
 > PagerDutyServiceName get_pager_duty_integration_service(service_name)
-
-Get a single service object
 
 Get service name in the Datadog-PagerDuty integration.
 
@@ -212,8 +206,6 @@ Name | Type | Description  | Notes
 
 # **update_pager_duty_integration_service**
 > update_pager_duty_integration_service(service_name, body)
-
-Update a single service object
 
 Update a single service object in the Datadog-PagerDuty integration.
 

@@ -1,40 +1,43 @@
 interactions:
 - request:
-    body: '{"layout_type": "ordered", "title": "Test-Get_all_dashboards_returns_OK_response-1618845099
-      with Profile Metrics Query", "widgets": [{"definition": {"type": "timeseries",
-      "requests": [{"profile_metrics_query": {"compute": {"aggregation": "sum", "facet":
-      "@prof_core_cpu_cores"}, "search": {"query": "runtime:jvm"}, "group_by": [{"facet":
-      "service", "limit": 10, "sort": {"aggregation": "sum", "order": "desc", "facet":
-      "@prof_core_cpu_cores"}}]}}]}}]}'
+    body: '{"layout_type":"ordered","title":"Test-Get_all_dashboards_returns_OK_response-1618589566
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '422'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - CreateDashboard
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '4218438968465969263'
+      x-datadog-trace-id:
+      - '8176297037572538055'
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"wv5-f7k-iix","title":"Test-Get_all_dashboards_returns_OK_response-1618845099
-        with Profile Metrics Query","url":"/dashboard/wv5-f7k-iix/test-getalldashboardsreturnsokresponse-1618845099-with-profile-metrics-query","created_at":"2021-04-19T15:11:39.709741+00:00","modified_at":"2021-04-19T15:11:39.709741+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":4681884285145219}],"layout_type":"ordered"}'
+      string: '{"notify_list":null,"description":null,"author_name":"CI Account","template_variables":null,"is_read_only":false,"id":"ehx-xau-txp","title":"Test-Get_all_dashboards_returns_OK_response-1618589566
+        with Profile Metrics Query","url":"/dashboard/ehx-xau-txp/test-getalldashboardsreturnsokresponse-1618589566-with-profile-metrics-query","created_at":"2021-04-16T16:12:46.880417+00:00","modified_at":"2021-04-16T16:12:46.880417+00:00","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":4728803576648167}],"layout_type":"ordered"}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '809'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 19 Apr 2021 15:11:39 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '835'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 16 Apr 2021 16:12:46 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -44,9 +47,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
+      - tpRCH6w417YjBovRJ8VmtuXmNONVYiRp2c8d2AxjPdGBn8PCtgG4vAztrx3qUZAN
       x-dd-version:
-      - '35.4341771'
+      - '35.4330037'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -55,15 +58,18 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - ListDashboards
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '9096810795874013138'
+      x-datadog-trace-id:
+      - '8176297037572538055'
     method: GET
     uri: https://api.datadoghq.com/api/v1/dashboard?filter%5Bshared%5D=false
   response:
@@ -73,11 +79,10 @@ interactions:
         CI","url":"/dashboard/wve-q29-wf9/datadog-api-clients-ci","layout_type":"free","modified_at":"2021-03-26T10:26:24.091171+00:00","id":"wve-q29-wf9"},{"created_at":"2021-04-13T11:50:10.192480+00:00","author_handle":"frog@datadoghq.com","is_read_only":true,"description":"Created
         using the Datadog provider in Terraform","title":"Ordered Layout Dashboard","url":"/dashboard/xc8-h6m-gyt/ordered-layout-dashboard","layout_type":"ordered","modified_at":"2021-04-13T11:50:38.881933+00:00","id":"xc8-h6m-gyt"},{"created_at":"2021-03-18T16:50:17.576247+00:00","author_handle":"frog@datadoghq.com","is_read_only":false,"description":"Various
         stats from CI runs of generated API clients","title":"Datadog API Clients
-        CI","url":"/dashboard/cnz-ww9-mv5/datadog-api-clients-ci","layout_type":"free","modified_at":"2021-03-26T09:30:32.160403+00:00","id":"cnz-ww9-mv5"},{"created_at":"2021-03-03T09:57:28.304302+00:00","author_handle":"hippolyte.henry@datadoghq.com","is_read_only":false,"description":"","title":"Hippolyte''s
-        Timeboard Wed, Mar 3, 10:57:28 am","url":"/dashboard/deh-2pa-jv8/hippolytes-timeboard-wed-mar-3-105728-am","layout_type":"ordered","modified_at":"2021-03-03T09:59:37.861240+00:00","id":"deh-2pa-jv8"},{"created_at":"2021-04-19T15:11:39.709741+00:00","author_handle":"frog@datadoghq.com","is_read_only":false,"description":null,"title":"Test-Get_all_dashboards_returns_OK_response-1618845099
-        with Profile Metrics Query","url":"/dashboard/wv5-f7k-iix/test-getalldashboardsreturnsokresponse-1618845099-with-profile-metrics-query","layout_type":"ordered","modified_at":"2021-04-19T15:11:39.709741+00:00","id":"wv5-f7k-iix"},{"created_at":"2021-04-19T01:47:41.336068+00:00","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","is_read_only":false,"description":null,"title":"Test-Ruby-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes-1618796861
-        with timeseries widget","url":"/dashboard/48a-v58-kvy/test-ruby-createanewdashboardwithtimeserieswidgetcontainingstyleattributes-16187","layout_type":"ordered","modified_at":"2021-04-19T01:47:41.336068+00:00","id":"48a-v58-kvy"},{"created_at":"2021-04-19T01:47:40.959165+00:00","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","is_read_only":false,"description":null,"title":"Test-Ruby-Create_a_new_dashboard_with_a_profile_metric_query-1618796860
-        with Profile Metrics Query","url":"/dashboard/xgi-v37-q7s/test-ruby-createanewdashboardwithaprofilemetricquery-1618796860-with-profile-met","layout_type":"ordered","modified_at":"2021-04-19T01:47:40.959165+00:00","id":"xgi-v37-q7s"},{"created_at":"2021-04-16T15:06:09.038211+00:00","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","is_read_only":false,"description":"Test
+        CI","url":"/dashboard/cnz-ww9-mv5/datadog-api-clients-ci","layout_type":"free","modified_at":"2021-03-26T09:30:32.160403+00:00","id":"cnz-ww9-mv5"},{"created_at":"2020-12-09T04:18:00.388550+00:00","author_handle":"gregory.zussa@datadoghq.com","is_read_only":false,"description":"Created
+        using the Datadog provider in Terraform","title":"Acceptance Test Timeboard","url":"/dashboard/ia3-mtz-d4e/acceptance-test-timeboard","layout_type":"ordered","modified_at":"2020-12-09T04:18:00.388550+00:00","id":"ia3-mtz-d4e"},{"created_at":"2021-03-03T09:57:28.304302+00:00","author_handle":"hippolyte.henry@datadoghq.com","is_read_only":false,"description":"","title":"Hippolyte''s
+        Timeboard Wed, Mar 3, 10:57:28 am","url":"/dashboard/deh-2pa-jv8/hippolytes-timeboard-wed-mar-3-105728-am","layout_type":"ordered","modified_at":"2021-03-03T09:59:37.861240+00:00","id":"deh-2pa-jv8"},{"created_at":"2021-04-16T16:12:46.880417+00:00","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","is_read_only":false,"description":null,"title":"Test-Get_all_dashboards_returns_OK_response-1618589566
+        with Profile Metrics Query","url":"/dashboard/ehx-xau-txp/test-getalldashboardsreturnsokresponse-1618589566-with-profile-metrics-query","layout_type":"ordered","modified_at":"2021-04-16T16:12:46.880417+00:00","id":"ehx-xau-txp"},{"created_at":"2021-04-16T15:06:09.038211+00:00","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","is_read_only":false,"description":"Test
         dashboard for Java client","title":"java-dashboardLifecycleTest-59032-1618585568-ordered","url":"/dashboard/jfc-fay-kv9/java-dashboardlifecycletest-59032-1618585568-ordered","layout_type":"ordered","modified_at":"2021-04-16T15:06:09.038211+00:00","id":"jfc-fay-kv9"},{"created_at":"2021-04-16T08:54:32.857560+00:00","author_handle":"hippolyte.henry@datadoghq.com","is_read_only":false,"description":"","title":"Hippolyte''s
         Timeboard Fri, Apr 16, 10:52:32 am","url":"/dashboard/g9w-pbx-e2b/hippolytes-timeboard-fri-apr-16-105232-am","layout_type":"ordered","modified_at":"2021-04-16T09:02:55.556697+00:00","id":"g9w-pbx-e2b"},{"created_at":"2021-04-16T08:27:11.505665+00:00","author_handle":"hippolyte.henry@datadoghq.com","is_read_only":false,"description":"","title":"Hippolyte''s
         Screenboard Fri, Apr 16, 10:20:54 am","url":"/dashboard/f4a-76m-nbn/hippolytes-screenboard-fri-apr-16-102054-am","layout_type":"free","modified_at":"2021-04-16T08:49:08.310691+00:00","id":"f4a-76m-nbn"},{"created_at":"2021-04-16T08:20:54.758861+00:00","author_handle":"hippolyte.henry@datadoghq.com","is_read_only":false,"description":"","title":"Hippolyte''s
@@ -257,8 +262,7 @@ interactions:
         Widget Dashboard","url":"/dashboard/xue-5t2-hzf/acceptance-test-log-stream-widget-dashboard","layout_type":"free","modified_at":"2021-01-06T10:40:07.910997+00:00","id":"xue-5t2-hzf"},{"created_at":"2020-12-10T09:33:15.445377+00:00","author_handle":"frog@datadoghq.com","is_read_only":false,"description":"Test
         dashboard for Ruby client","title":"ruby-DashboardsApi-dashboards-api-test-dashboards-lifecycle-1607592794-ordered","url":"/dashboard/bzu-ywp-u8a/ruby-dashboardsapi-dashboards-api-test-dashboards-lifecycle-1607592794-ordered","layout_type":"ordered","modified_at":"2020-12-10T09:33:15.445377+00:00","id":"bzu-ywp-u8a"},{"created_at":"2020-12-10T04:21:12.270024+00:00","author_handle":"gregory.zussa@datadoghq.com","is_read_only":true,"description":"Created
         using the Datadog provider in Terraform","title":"Acceptance Test Event Timeline
-        Widget Dashboard","url":"/dashboard/74v-m9u-yzs/acceptance-test-event-timeline-widget-dashboard","layout_type":"free","modified_at":"2020-12-10T04:21:12.270024+00:00","id":"74v-m9u-yzs"},{"created_at":"2020-12-09T04:18:00.388550+00:00","author_handle":"gregory.zussa@datadoghq.com","is_read_only":false,"description":"Created
-        using the Datadog provider in Terraform","title":"Acceptance Test Timeboard","url":"/dashboard/ia3-mtz-d4e/acceptance-test-timeboard","layout_type":"ordered","modified_at":"2020-12-09T04:18:00.388550+00:00","id":"ia3-mtz-d4e"},{"created_at":"2020-11-23T13:47:01.130693+00:00","author_handle":"frog@datadoghq.com","is_read_only":true,"description":"Created
+        Widget Dashboard","url":"/dashboard/74v-m9u-yzs/acceptance-test-event-timeline-widget-dashboard","layout_type":"free","modified_at":"2020-12-10T04:21:12.270024+00:00","id":"74v-m9u-yzs"},{"created_at":"2020-11-23T13:47:01.130693+00:00","author_handle":"frog@datadoghq.com","is_read_only":true,"description":"Created
         using the Datadog provider in Terraform","title":"testestestestestsetsetsetsetsetset","url":"/dashboard/d73-yfg-6jh/testestestestestsetsetsetsetsetset","layout_type":"ordered","modified_at":"2020-11-23T13:47:01.130693+00:00","id":"d73-yfg-6jh"},{"created_at":"2020-11-13T17:02:24.633554+00:00","author_handle":"frog@datadoghq.com","is_read_only":false,"description":"Test
         dashboard for Java client","title":"Java Client Test ORDERED Dashboard","url":"/dashboard/nb5-tqm-dzr/java-client-test-ordered-dashboard","layout_type":"ordered","modified_at":"2020-11-13T17:02:24.633554+00:00","id":"nb5-tqm-dzr"},{"created_at":"2020-11-04T17:05:54.452748+00:00","author_handle":"frog@datadoghq.com","is_read_only":false,"description":null,"title":"Issue
         dashboard","url":"/dashboard/tt8-s5m-uvv/issue-dashboard","layout_type":"free","modified_at":"2020-11-04T17:11:20.238351+00:00","id":"tt8-s5m-uvv"},{"created_at":"2020-11-04T17:04:05.239142+00:00","author_handle":"frog@datadoghq.com","is_read_only":false,"description":null,"title":"Issue
@@ -271,23 +275,23 @@ interactions:
         dashboard","url":"/dashboard/nv4-eg6-ayf/issue-dashboard","layout_type":"free","modified_at":"2020-11-04T16:47:07.930427+00:00","id":"nv4-eg6-ayf"},{"created_at":"2020-11-04T16:46:09.344282+00:00","author_handle":"frog@datadoghq.com","is_read_only":false,"description":null,"title":"Issue
         dashboard","url":"/dashboard/fx3-nyw-qsh/issue-dashboard","layout_type":"free","modified_at":"2020-11-04T16:46:09.344282+00:00","id":"fx3-nyw-qsh"},{"created_at":"2020-11-04T16:45:38.794935+00:00","author_handle":"frog@datadoghq.com","is_read_only":false,"description":null,"title":"Issue
         dashboard","url":"/dashboard/jdg-rz3-e4k/issue-dashboard","layout_type":"free","modified_at":"2020-11-04T16:45:38.794935+00:00","id":"jdg-rz3-e4k"},{"created_at":"2020-02-11T13:49:29.555334+00:00","author_handle":"hippolyte.henry@datadoghq.com","is_read_only":true,"description":"","title":"For
-        dashboard list tests - DO NOT DELETE","url":"/dashboard/4n7-s4g-dqv/for-dashboard-list-tests---do-not-delete","layout_type":"free","modified_at":"2020-04-08T17:54:25.574039+00:00","id":"4n7-s4g-dqv"},{"created_at":"2020-03-27T20:33:14.319317+00:00","author_handle":"frog@datadoghq.com","is_read_only":true,"description":"Created
+        dashboard list tests - DO NOT DELETE","url":"/dashboard/4n7-s4g-dqv/for-dashboard-list-tests---do-not-delete","layout_type":"free","modified_at":"2020-04-08T17:54:25.574039+00:00","id":"4n7-s4g-dqv"},{"created_at":"2020-04-02T04:04:03.269864+00:00","author_handle":"gregory.zussa@datadoghq.com","is_read_only":true,"description":"Created
         using the Datadog provider in Terraform","title":"Acceptance Test Ordered
-        Dashboard","url":"/dashboard/q2b-9zk-rzg/acceptance-test-ordered-dashboard","layout_type":"ordered","modified_at":"2020-03-27T20:33:14.319317+00:00","id":"q2b-9zk-rzg"},{"created_at":"2020-02-11T13:48:52.362473+00:00","author_handle":"hippolyte.henry@datadoghq.com","is_read_only":false,"description":null,"title":"For
+        Dashboard","url":"/dashboard/kct-4x4-w64/acceptance-test-ordered-dashboard","layout_type":"ordered","modified_at":"2020-04-02T04:04:03.269864+00:00","id":"kct-4x4-w64"},{"created_at":"2020-02-11T13:48:52.362473+00:00","author_handle":"hippolyte.henry@datadoghq.com","is_read_only":false,"description":null,"title":"For
         dashboard list tests - DO NOT DELETE","url":"/dashboard/q5j-nti-fv6/for-dashboard-list-tests---do-not-delete","layout_type":"ordered","modified_at":"2020-02-11T13:49:16.919666+00:00","id":"q5j-nti-fv6"}]}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '58315'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 19 Apr 2021 15:11:46 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '57407'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 16 Apr 2021 16:12:56 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -297,9 +301,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - F5gm0Rce1/Abr9/0Fw8HAqWfiz0FdiH8er/AXnN6lOn3L6KyGgbsLCwgPlob1No8
+      - Um4CoU685QqAscnxhS5BD+goWu2yX1Jd4zCfGzSsEvPPIm1qURZaF8dlLl/OEY4I
       x-dd-version:
-      - '35.4341771'
+      - '35.4330037'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -307,42 +311,45 @@ interactions:
       x-ratelimit-period:
       - '60'
       x-ratelimit-remaining:
-      - '59'
+      - '58'
       x-ratelimit-reset:
-      - '20'
+      - '14'
     status:
       code: 200
       message: OK
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteDashboard
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev35+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '7135465562518632369'
+      x-datadog-trace-id:
+      - '8176297037572538055'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/wv5-f7k-iix
+    uri: https://api.datadoghq.com/api/v1/dashboard/ehx-xau-txp
   response:
     body:
-      string: '{"deleted_dashboard_id":"wv5-f7k-iix"}'
+      string: '{"deleted_dashboard_id":"ehx-xau-txp"}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 19 Apr 2021 15:11:47 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '38'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 16 Apr 2021 16:12:56 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -352,9 +359,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - mNzaoDhdDKO7t4QSrAe5X7pHd0bJND187D+vRbwoluXouE2m1UaQQX0RGCvRpLVE
+      - JpIJLwIH2nFlZOC+u71rq7aAOL43MLZN3MUsL+gpYHdZz5QLUOG8Jysf8kVK6tPU
       x-dd-version:
-      - '35.4341771'
+      - '35.4330037'
       x-frame-options:
       - SAMEORIGIN
     status:

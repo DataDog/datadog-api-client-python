@@ -72,28 +72,8 @@ class UsageTopAvgMetricsMetadata(ModelNormal):
         """
         lazy_import()
         return {
-            "day": (
-                bool,
-                date,
-                datetime,
-                dict,
-                float,
-                int,
-                list,
-                str,
-                none_type,
-            ),  # noqa: E501
-            "month": (
-                bool,
-                date,
-                datetime,
-                dict,
-                float,
-                int,
-                list,
-                str,
-                none_type,
-            ),  # noqa: E501
+            "day": (datetime,),  # noqa: E501
+            "month": (datetime,),  # noqa: E501
             "pagination": (UsageAttributionPagination,),  # noqa: E501
         }
 
@@ -155,8 +135,8 @@ class UsageTopAvgMetricsMetadata(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            day (bool, date, datetime, dict, float, int, list, str, none_type): The day value from the user request that contains the returned usage data. (If day was used the request). [optional]  # noqa: E501
-            month (bool, date, datetime, dict, float, int, list, str, none_type): The month value from the user request that contains the returned usage data. (If month was used the request). [optional]  # noqa: E501
+            day (datetime): The day value from the user request that contains the returned usage data. (If day was used the request). [optional]  # noqa: E501
+            month (datetime): The month value from the user request that contains the returned usage data. (If month was used the request). [optional]  # noqa: E501
             pagination (UsageAttributionPagination): [optional]  # noqa: E501
         """
 

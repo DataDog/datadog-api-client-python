@@ -34,8 +34,6 @@ Method | HTTP request | Description
 # **create_global_variable**
 > SyntheticsGlobalVariable create_global_variable(body)
 
-Create a global variable
-
 Create a Synthetics global variable.
 
 ### Example
@@ -118,8 +116,6 @@ Name | Type | Description  | Notes
 # **create_private_location**
 > SyntheticsPrivateLocationCreationResponse create_private_location(body)
 
-Create a private location
-
 Create a new Synthetics private location.
 
 ### Example
@@ -197,8 +193,6 @@ Name | Type | Description  | Notes
 
 # **create_synthetics_api_test**
 > SyntheticsAPITest create_synthetics_api_test(body)
-
-Create an API test
 
 Create a Synthetic API test.
 
@@ -335,15 +329,17 @@ with ApiClient(configuration) as api_client:
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
+            monitor_name="monitor_name_example",
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            monitor_priority=1,
             no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
             ),
-            tick_every=SyntheticsTickInterval(30),
+            tick_every=30,
         ),
         public_id="public_id_example",
         status=SyntheticsTestPauseStatus("live"),
@@ -396,8 +392,6 @@ Name | Type | Description  | Notes
 
 # **create_synthetics_browser_test**
 > SyntheticsBrowserTest create_synthetics_browser_test(body)
-
-Create a browser test
 
 Create a Synthetic browser test.
 
@@ -484,15 +478,17 @@ with ApiClient(configuration) as api_client:
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
+            monitor_name="monitor_name_example",
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            monitor_priority=1,
             no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
             ),
-            tick_every=SyntheticsTickInterval(30),
+            tick_every=30,
         ),
         public_id="public_id_example",
         status=SyntheticsTestPauseStatus("live"),
@@ -553,8 +549,6 @@ Name | Type | Description  | Notes
 
 # **delete_global_variable**
 > delete_global_variable(variable_id)
-
-Delete a global variable
 
 Delete a Synthetics global variable.
 
@@ -620,8 +614,6 @@ void (empty response body)
 # **delete_private_location**
 > delete_private_location(location_id)
 
-Delete a private location
-
 Delete a Synthetics private location.
 
 ### Example
@@ -683,8 +675,6 @@ void (empty response body)
 
 # **delete_tests**
 > SyntheticsDeleteTestsResponse delete_tests(body)
-
-Delete tests
 
 Delete multiple Synthetic tests by ID.
 
@@ -752,8 +742,6 @@ Name | Type | Description  | Notes
 
 # **edit_global_variable**
 > SyntheticsGlobalVariable edit_global_variable(variable_id, body)
-
-Edit a global variable
 
 Edit a Synthetics global variable.
 
@@ -839,9 +827,8 @@ Name | Type | Description  | Notes
 # **get_api_test**
 > SyntheticsAPITest get_api_test(public_id)
 
-Get an API test
-
-Get the detailed configuration associated with a Synthetic API test.
+Get the detailed configuration associated with
+a Synthetic API test.
 
 ### Example
 
@@ -904,8 +891,6 @@ Name | Type | Description  | Notes
 
 # **get_api_test_latest_results**
 > SyntheticsGetAPITestLatestResultsResponse get_api_test_latest_results(public_id)
-
-Get an API test's latest results summaries
 
 Get the last 50 test results summaries for a given Synthetics API test.
 
@@ -988,8 +973,6 @@ Name | Type | Description  | Notes
 # **get_api_test_result**
 > SyntheticsAPITestResultFull get_api_test_result(public_id, result_id)
 
-Get an API test result
-
 Get a specific full result from a given (API) Synthetic test.
 
 ### Example
@@ -1056,9 +1039,8 @@ Name | Type | Description  | Notes
 # **get_browser_test**
 > SyntheticsBrowserTest get_browser_test(public_id)
 
-Get a browser test
-
-Get the detailed configuration (including steps) associated with a Synthetic browser test.
+Get the detailed configuration (including steps) associated with
+a Synthetic browser test.
 
 ### Example
 
@@ -1121,8 +1103,6 @@ Name | Type | Description  | Notes
 
 # **get_browser_test_latest_results**
 > SyntheticsGetBrowserTestLatestResultsResponse get_browser_test_latest_results(public_id)
-
-Get a browser test's latest results summaries
 
 Get the last 50 test results summaries for a given Synthetics Browser test.
 
@@ -1205,8 +1185,6 @@ Name | Type | Description  | Notes
 # **get_browser_test_result**
 > SyntheticsBrowserTestResultFull get_browser_test_result(public_id, result_id)
 
-Get a browser test result
-
 Get a specific full result from a given (browser) Synthetic test.
 
 ### Example
@@ -1273,8 +1251,6 @@ Name | Type | Description  | Notes
 # **get_global_variable**
 > SyntheticsGlobalVariable get_global_variable(variable_id)
 
-Get a global variable
-
 Get the detailed configuration of a global variable.
 
 ### Example
@@ -1339,8 +1315,6 @@ Name | Type | Description  | Notes
 # **get_private_location**
 > SyntheticsPrivateLocation get_private_location(location_id)
 
-Get a private location
-
 Get a Synthetics private location.
 
 ### Example
@@ -1403,8 +1377,6 @@ Name | Type | Description  | Notes
 
 # **get_test**
 > SyntheticsTestDetails get_test(public_id)
-
-Get a test configuration
 
 Get the detailed configuration associated with a Synthetics test.
 
@@ -1470,8 +1442,6 @@ Name | Type | Description  | Notes
 # **list_global_variables**
 > SyntheticsListGlobalVariablesResponse list_global_variables()
 
-Get all global variables
-
 Get the list of all Synthetics global variables.
 
 ### Example
@@ -1531,9 +1501,8 @@ This endpoint does not need any parameter.
 # **list_locations**
 > SyntheticsLocations list_locations()
 
-Get all locations (public and private)
-
-Get the list of public and private locations available for Synthetic tests. No arguments required.
+Get the list of public and private locations available for Synthetic
+tests. No arguments required.
 
 ### Example
 
@@ -1590,8 +1559,6 @@ This endpoint does not need any parameter.
 
 # **list_tests**
 > SyntheticsListTestsResponse list_tests()
-
-Get the list of all tests
 
 Get the list of all Synthetic tests.
 
@@ -1652,8 +1619,6 @@ This endpoint does not need any parameter.
 
 # **trigger_ci_tests**
 > SyntheticsTriggerCITestsResponse trigger_ci_tests(body)
-
-Trigger tests from CI/CD pipelines
 
 Trigger a set of Synthetics tests for continuous integration.
 
@@ -1759,8 +1724,6 @@ Name | Type | Description  | Notes
 
 # **update_api_test**
 > SyntheticsAPITest update_api_test(public_id, body)
-
-Edit an API test
 
 Edit the configuration of a Synthetic API test.
 
@@ -1898,15 +1861,17 @@ with ApiClient(configuration) as api_client:
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
+            monitor_name="monitor_name_example",
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            monitor_priority=1,
             no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
             ),
-            tick_every=SyntheticsTickInterval(30),
+            tick_every=30,
         ),
         public_id="public_id_example",
         status=SyntheticsTestPauseStatus("live"),
@@ -1960,8 +1925,6 @@ Name | Type | Description  | Notes
 
 # **update_browser_test**
 > SyntheticsBrowserTest update_browser_test(public_id, body)
-
-Edit a browser test
 
 Edit the configuration of a Synthetic browser test.
 
@@ -2049,15 +2012,17 @@ with ApiClient(configuration) as api_client:
             follow_redirects=True,
             min_failure_duration=1,
             min_location_failed=1,
+            monitor_name="monitor_name_example",
             monitor_options=SyntheticsTestOptionsMonitorOptions(
                 renotify_interval=0,
             ),
+            monitor_priority=1,
             no_screenshot=True,
             retry=SyntheticsTestOptionsRetry(
                 count=1,
                 interval=3.14,
             ),
-            tick_every=SyntheticsTickInterval(30),
+            tick_every=30,
         ),
         public_id="public_id_example",
         status=SyntheticsTestPauseStatus("live"),
@@ -2119,8 +2084,6 @@ Name | Type | Description  | Notes
 
 # **update_private_location**
 > SyntheticsPrivateLocation update_private_location(location_id, body)
-
-Edit a private location
 
 Edit a Synthetics private location.
 
@@ -2200,8 +2163,6 @@ Name | Type | Description  | Notes
 
 # **update_test_pause_status**
 > bool update_test_pause_status(public_id, body)
-
-Pause or start a test
 
 Pause or start a Synthetics test by changing the status.
 

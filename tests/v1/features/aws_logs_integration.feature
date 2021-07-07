@@ -1,4 +1,4 @@
-@endpoint(aws-logs-integration)
+@endpoint(aws-logs-integration) @endpoint(aws-logs-integration-v1)
 Feature: AWS Logs Integration
   Configure your Datadog-AWS-Logs integration directly through Datadog API.
   For more information, see the [AWS integration

@@ -16,9 +16,8 @@ Method | HTTP request | Description
 # **create_tag_configuration**
 > MetricTagConfigurationResponse create_tag_configuration(metric_name, body)
 
-Create a tag configuration
-
-Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric. Optionally, include percentile aggregations on any distribution metric. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
+Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric. Optionally, include percentile aggregations on any distribution metric.
+Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
 
 ### Example
 
@@ -97,9 +96,8 @@ Name | Type | Description  | Notes
 # **delete_tag_configuration**
 > delete_tag_configuration(metric_name)
 
-Delete a tag configuration
-
-Deletes a metric's tag configuration. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.
+Deletes a metric's tag configuration. Can only be used with application
+keys from users with the `Manage Tags for Metrics` permission.
 
 ### Example
 
@@ -163,8 +161,6 @@ void (empty response body)
 
 # **list_tag_configuration_by_name**
 > MetricTagConfigurationResponse list_tag_configuration_by_name(metric_name)
-
-List tag configuration by name
 
 Returns the tag configuration for the given metric name.
 
@@ -232,9 +228,8 @@ Name | Type | Description  | Notes
 # **list_tag_configurations**
 > MetricsAndMetricTagConfigurationsResponse list_tag_configurations()
 
-List tag configurations
-
-Returns all configured count/gauge/rate/distribution metric names (with additional filters if specified).
+Returns all configured count/gauge/rate/distribution metric names
+(with additional filters if specified).
 
 ### Example
 
@@ -311,8 +306,6 @@ Name | Type | Description  | Notes
 # **list_tags_by_metric_name**
 > MetricAllTagsResponse list_tags_by_metric_name(metric_name)
 
-List tags by metric name
-
 View indexed tag key-value pairs for a given metric name.
 
 ### Example
@@ -379,9 +372,11 @@ Name | Type | Description  | Notes
 # **list_volumes_by_metric_name**
 > MetricVolumesResponse list_volumes_by_metric_name(metric_name)
 
-List distinct metric volumes by metric name
+View distinct metrics volumes for the given metric name.
 
-View distinct metrics volumes for the given metric name.  Custom distribution metrics will return both ingested and indexed custom metric volumes. For Metrics without Limits&trade; beta customers, all metrics will return both ingested/indexed volumes. Custom metrics generated in-app from other products will return `null` for ingested volumes.
+Custom distribution metrics will return both ingested and indexed custom metric volumes.
+For Metrics without Limits&trade; beta customers, all metrics will return both ingested/indexed volumes.
+Custom metrics generated in-app from other products will return `null` for ingested volumes.
 
 ### Example
 
@@ -447,9 +442,8 @@ Name | Type | Description  | Notes
 # **update_tag_configuration**
 > MetricTagConfigurationResponse update_tag_configuration(metric_name, body)
 
-Update a tag configuration
-
-Update the tag configuration of a metric or percentile aggregations of a distribution metric. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.
+Update the tag configuration of a metric or percentile aggregations of a distribution metric. Can only be used with
+application keys from users with the `Manage Tags for Metrics` permission.
 
 ### Example
 

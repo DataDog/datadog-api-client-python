@@ -14,9 +14,8 @@ Method | HTTP request | Description
 # **create_host_tags**
 > HostTags create_host_tags(host_name, body)
 
-Add tags to a host
-
-This endpoint allows you to add new tags to a host, optionally specifying where these tags come from.
+This endpoint allows you to add new tags to a host,
+optionally specifying where these tags come from.
 
 ### Example
 
@@ -98,9 +97,8 @@ Name | Type | Description  | Notes
 # **delete_host_tags**
 > delete_host_tags(host_name)
 
-Remove host tags
-
-This endpoint allows you to remove all user-assigned tags for a single host.
+This endpoint allows you to remove all user-assigned tags
+for a single host.
 
 ### Example
 
@@ -172,8 +170,6 @@ void (empty response body)
 
 # **get_host_tags**
 > HostTags get_host_tags(host_name)
-
-Get host tags
 
 Return the list of tags that apply to a given host.
 
@@ -250,8 +246,6 @@ Name | Type | Description  | Notes
 # **list_host_tags**
 > TagToHosts list_host_tags()
 
-Get Tags
-
 Return a mapping of tags to hosts for your whole infrastructure.
 
 ### Example
@@ -317,9 +311,8 @@ Name | Type | Description  | Notes
 # **update_host_tags**
 > HostTags update_host_tags(host_name, body)
 
-Update host tags
-
-This endpoint allows you to update/replace all tags in an integration source with those supplied in the request.
+This endpoint allows you to update/replace all tags in
+an integration source with those supplied in the request.
 
 ### Example
 

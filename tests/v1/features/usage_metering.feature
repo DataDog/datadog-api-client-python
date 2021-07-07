@@ -1,4 +1,4 @@
-@endpoint(usage-metering)
+@endpoint(usage-metering) @endpoint(usage-metering-v1)
 Feature: Usage Metering
   The usage metering API allows you to get hourly, daily, and monthly usage
   across multiple facets of Datadog. This API is available to all Pro and

@@ -21,9 +21,10 @@ Method | HTTP request | Description
 # **create_security_filter**
 > SecurityFilterResponse create_security_filter(body)
 
-Create a security filter
+Create a security filter.
 
-Create a security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.
+See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+for more examples.
 
 ### Example
 
@@ -105,8 +106,6 @@ Name | Type | Description  | Notes
 # **create_security_monitoring_rule**
 > SecurityMonitoringRuleResponse create_security_monitoring_rule(body)
 
-Create a detection rule
-
 Create a detection rule.
 
 ### Example
@@ -144,9 +143,10 @@ with ApiClient(configuration) as api_client:
                 query="query_example",
             ),
         ],
+        has_extended_title=True,
         is_enabled=True,
         message="",
-        name="",
+        name="My security monitoring rule.",
         options=SecurityMonitoringRuleOptions(
             detection_method=SecurityMonitoringRuleDetectionMethod("threshold"),
             evaluation_window=SecurityMonitoringRuleEvaluationWindow(0),
@@ -172,7 +172,7 @@ with ApiClient(configuration) as api_client:
                 ],
                 metric="metric_example",
                 name="name_example",
-                query="a < 3",
+                query="a > 3",
             ),
         ],
         tags=["env:prod","team:security"],
@@ -218,9 +218,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_security_filter**
-> SecurityFilterDeleteResponse delete_security_filter(security_filter_id)
-
-Delete a security filter
+> delete_security_filter(security_filter_id)
 
 Delete a specific security filter.
 
@@ -247,8 +245,7 @@ with ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Delete a security filter
-        api_response = api_instance.delete_security_filter(security_filter_id)
-        pprint(api_response)
+        api_instance.delete_security_filter(security_filter_id)
     except ApiException as e:
         print("Exception when calling SecurityMonitoringApi->delete_security_filter: %s\n" % e)
 ```
@@ -262,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SecurityFilterDeleteResponse**](SecurityFilterDeleteResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -277,8 +274,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
-**204** | No Content |  -  |
+**204** | OK |  -  |
 **403** | Not Authorized |  -  |
 **404** | Not Found |  -  |
 **429** | Too many requests |  -  |
@@ -287,8 +283,6 @@ Name | Type | Description  | Notes
 
 # **delete_security_monitoring_rule**
 > delete_security_monitoring_rule(rule_id)
-
-Delete an existing rule
 
 Delete an existing rule. Default rules cannot be deleted.
 
@@ -353,9 +347,10 @@ void (empty response body)
 # **get_security_filter**
 > SecurityFilterResponse get_security_filter(security_filter_id)
 
-Get a security filter
+Get the details of a specific security filter.
 
-Get the details of a specific security filter.  See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/) for more examples.
+See the [security filter guide](https://docs.datadoghq.com/security_platform/guide/how-to-setup-security-filters-using-security-monitoring-api/)
+for more examples.
 
 ### Example
 
@@ -420,8 +415,6 @@ Name | Type | Description  | Notes
 # **get_security_monitoring_rule**
 > SecurityMonitoringRuleResponse get_security_monitoring_rule(rule_id)
 
-Get a rule's details
-
 Get a rule's details.
 
 ### Example
@@ -485,8 +478,6 @@ Name | Type | Description  | Notes
 # **list_security_filters**
 > SecurityFiltersResponse list_security_filters()
 
-Get all security filters
-
 Get the list of configured security filters with their definitions.
 
 ### Example
@@ -546,8 +537,6 @@ This endpoint does not need any parameter.
 
 # **list_security_monitoring_rules**
 > SecurityMonitoringListRulesResponse list_security_monitoring_rules()
-
-List rules
 
 List rules.
 
@@ -615,9 +604,9 @@ Name | Type | Description  | Notes
 # **list_security_monitoring_signals**
 > SecurityMonitoringSignalsListResponse list_security_monitoring_signals()
 
-Get a quick list of security signals
-
-The list endpoint returns security signals that match a search query. Both this endpoint and the POST endpoint can be used interchangeably when listing security signals.
+The list endpoint returns security signals that match a search query.
+Both this endpoint and the POST endpoint can be used interchangeably when listing
+security signals.
 
 ### Example
 
@@ -693,9 +682,9 @@ Name | Type | Description  | Notes
 # **search_security_monitoring_signals**
 > SecurityMonitoringSignalsListResponse search_security_monitoring_signals()
 
-Get a list of security signals
-
-Returns security signals that match a search query. Both this endpoint and the GET endpoint can be used interchangeably for listing security signals.
+Returns security signals that match a search query.
+Both this endpoint and the GET endpoint can be used interchangeably for listing
+security signals.
 
 ### Example
 
@@ -772,9 +761,8 @@ Name | Type | Description  | Notes
 # **update_security_filter**
 > SecurityFilterResponse update_security_filter(security_filter_id, body)
 
-Update a security filter
-
-Update a specific security filter. Returns the security filter object when the request is successful.
+Update a specific security filter.
+Returns the security filter object when the request is successful.
 
 ### Example
 
@@ -860,9 +848,9 @@ Name | Type | Description  | Notes
 # **update_security_monitoring_rule**
 > SecurityMonitoringRuleResponse update_security_monitoring_rule(rule_id, body)
 
-Update an existing rule
-
-Update an existing rule. When updating `cases`, `queries` or `options`, the whole field must be included. For example, when modifying a query all queries must be included. Default rules can only be updated to be enabled and to change notifications.
+Update an existing rule. When updating `cases`, `queries` or `options`, the whole field
+must be included. For example, when modifying a query all queries must be included.
+Default rules can only be updated to be enabled and to change notifications.
 
 ### Example
 
@@ -900,6 +888,7 @@ with ApiClient(configuration) as api_client:
                 query="query_example",
             ),
         ],
+        has_extended_title=True,
         is_enabled=True,
         message="message_example",
         name="name_example",
@@ -934,6 +923,7 @@ with ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
+        version=1,
     )  # SecurityMonitoringRuleUpdatePayload | 
 
     # example passing only required values which don't have defaults set

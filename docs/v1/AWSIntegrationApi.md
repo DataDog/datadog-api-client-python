@@ -18,9 +18,10 @@ Method | HTTP request | Description
 # **create_aws_account**
 > AWSAccountCreateResponse create_aws_account(body)
 
-Create an AWS integration
-
-Create a Datadog-Amazon Web Services integration. Using the `POST` method updates your integration configuration by adding your new configuration to the existing one in your Datadog organization. A unique AWS Account ID for role based authentication.
+Create a Datadog-Amazon Web Services integration.
+Using the `POST` method updates your integration configuration
+by adding your new configuration to the existing one in your Datadog organization.
+A unique AWS Account ID for role based authentication.
 
 ### Example
 
@@ -96,8 +97,6 @@ Name | Type | Description  | Notes
 # **create_aws_tag_filter**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} create_aws_tag_filter(body)
 
-Set an AWS tag filter
-
 Set an AWS tag filter.
 
 ### Example
@@ -166,8 +165,6 @@ Name | Type | Description  | Notes
 # **create_new_aws_external_id**
 > AWSAccountCreateResponse create_new_aws_external_id(body)
 
-Generate a new external ID
-
 Generate a new AWS external ID for a given AWS account ID and role name pair.
 
 ### Example
@@ -199,7 +196,7 @@ with ApiClient(configuration) as api_client:
         host_tags=["<KEY>:<VALUE>"],
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
-    )  # AWSAccount | Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation).
+    )  # AWSAccount | Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://docs.datadoghq.com/integrations/amazon_web_services/#setup).
 
     # example passing only required values which don't have defaults set
     try:
@@ -215,7 +212,7 @@ with ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AWSAccount**](AWSAccount.md)| Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://github.com/DataDog/documentation/blob/master/integrations/amazon_web_services/#installation). |
+ **body** | [**AWSAccount**](AWSAccount.md)| Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://docs.datadoghq.com/integrations/amazon_web_services/#setup). |
 
 ### Return type
 
@@ -242,8 +239,6 @@ Name | Type | Description  | Notes
 
 # **delete_aws_account**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_aws_account(body)
-
-Delete an AWS integration
 
 Delete a Datadog-AWS integration matching the specified `account_id` and `role_name parameters`.
 
@@ -321,8 +316,6 @@ Name | Type | Description  | Notes
 # **delete_aws_tag_filter**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_aws_tag_filter(body)
 
-Delete a tag filtering entry
-
 Delete a tag filtering entry.
 
 ### Example
@@ -390,8 +383,6 @@ Name | Type | Description  | Notes
 # **list_available_aws_namespaces**
 > [str] list_available_aws_namespaces()
 
-List namespace rules
-
 List all namespace rules for a given Datadog-AWS integration. This endpoint takes no arguments.
 
 ### Example
@@ -450,8 +441,6 @@ This endpoint does not need any parameter.
 
 # **list_aws_accounts**
 > AWSAccountListResponse list_aws_accounts()
-
-List all AWS integrations
 
 List all Datadog-AWS integrations available in your Datadog organization.
 
@@ -522,8 +511,6 @@ Name | Type | Description  | Notes
 # **list_aws_tag_filters**
 > AWSTagFilterListResponse list_aws_tag_filters(account_id)
 
-Get all AWS tag filters
-
 Get all AWS tag filters.
 
 ### Example
@@ -587,8 +574,6 @@ Name | Type | Description  | Notes
 
 # **update_aws_account**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_aws_account(body)
-
-Update an AWS integration
 
 Update a Datadog-Amazon Web Services integration.
 

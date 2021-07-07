@@ -10,8 +10,6 @@ Method | HTTP request | Description
 # **list_processes**
 > ProcessSummariesResponse list_processes()
 
-Get all processes
-
 Get all processes for your organization.
 
 ### Example

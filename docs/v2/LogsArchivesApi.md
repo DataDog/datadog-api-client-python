@@ -19,8 +19,6 @@ Method | HTTP request | Description
 # **add_read_role_to_archive**
 > add_read_role_to_archive(archive_id, body)
 
-Grant role to an archive
-
 Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
 
 ### Example
@@ -91,8 +89,6 @@ void (empty response body)
 
 # **create_logs_archive**
 > LogsArchive create_logs_archive(body)
-
-Create an archive
 
 Create an archive in your organization.
 
@@ -169,8 +165,6 @@ Name | Type | Description  | Notes
 # **delete_logs_archive**
 > delete_logs_archive(archive_id)
 
-Delete an archive
-
 Delete a given archive from your organization.
 
 ### Example
@@ -234,8 +228,6 @@ void (empty response body)
 
 # **get_logs_archive**
 > LogsArchive get_logs_archive(archive_id)
-
-Get an archive
 
 Get a specific archive from your organization.
 
@@ -302,9 +294,8 @@ Name | Type | Description  | Notes
 # **get_logs_archive_order**
 > LogsArchiveOrder get_logs_archive_order()
 
-Get archive order
-
-Get the current order of your archives. This endpoint takes no JSON arguments.
+Get the current order of your archives.
+This endpoint takes no JSON arguments.
 
 ### Example
 
@@ -362,8 +353,6 @@ This endpoint does not need any parameter.
 
 # **list_archive_read_roles**
 > RolesResponse list_archive_read_roles(archive_id)
-
-List read roles for an archive
 
 Returns all read roles a given archive is restricted to.
 
@@ -430,8 +419,6 @@ Name | Type | Description  | Notes
 # **list_logs_archives**
 > LogsArchives list_logs_archives()
 
-Get all archives
-
 Get the list of configured logs archives with their definitions.
 
 ### Example
@@ -490,8 +477,6 @@ This endpoint does not need any parameter.
 
 # **remove_role_from_archive**
 > remove_role_from_archive(archive_id, body)
-
-Revoke role from an archive
 
 Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
 
@@ -564,9 +549,10 @@ void (empty response body)
 # **update_logs_archive**
 > LogsArchive update_logs_archive(archive_id, body)
 
-Update an archive
+Update a given archive configuration.
 
-Update a given archive configuration.  **Note**: Using this method updates your archive configuration by **replacing** your current configuration with the new one sent to your Datadog organization.
+**Note**: Using this method updates your archive configuration by **replacing**
+your current configuration with the new one sent to your Datadog organization.
 
 ### Example
 
@@ -644,9 +630,11 @@ Name | Type | Description  | Notes
 # **update_logs_archive_order**
 > LogsArchiveOrder update_logs_archive_order(body)
 
-Update archive order
+Update the order of your archives. Since logs are processed sequentially, reordering an archive may change
+the structure and content of the data processed by other archives.
 
-Update the order of your archives. Since logs are processed sequentially, reordering an archive may change the structure and content of the data processed by other archives.  **Note**: Using the `PUT` method updates your archive's order by replacing the current order with the new one.
+**Note**: Using the `PUT` method updates your archive's order by replacing the current order
+with the new one.
 
 ### Example
 

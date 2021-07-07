@@ -1,39 +1,45 @@
 interactions:
 - request:
-    body: '{"data": {"type": "security_filters", "attributes": {"name": "Test-Get_a_security_filter_returns_OK_response-1620804267",
-      "query": "service:TestGetasecurityfilterreturnsOKresponse1620804267", "exclusion_filters":
-      [{"name": "Exclude logs from staging", "query": "source:staging"}], "filtered_data_type":
-      "logs", "is_enabled": true}}}'
+    body: '{"data":{"attributes":{"exclusion_filters":[{"name":"Exclude logs from
+      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1620751633","query":"service:TestGetasecurityfilterreturnsOKresponse1620751633"},"type":"security_filters"}}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '316'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - CreateSecurityFilter
-      User-Agent:
-      - datadog-api-client-python/0.1.dev336 (python 3.9.5; os Linux; arch x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '7866394983892329967'
+      x-datadog-trace-id:
+      - '5709383517758712003'
     method: POST
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
   response:
     body:
-      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1620804267","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
-        logs from staging"}],"version":1,"query":"service:TestGetasecurityfilterreturnsOKresponse1620804267","is_builtin":false},"type":"security_filters","id":"gk1-scp-bc6"}}'
+      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1620751633","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
+        logs from staging"}],"version":1,"query":"service:TestGetasecurityfilterreturnsOKresponse1620751633","is_builtin":false},"type":"security_filters","id":"8ez-cdr-dy8"}}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '366'
-      Content-Type:
-      - application/json;charset=utf-8
-      Date:
-      - Wed, 12 May 2021 07:24:27 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
       content-disposition:
       - inline
+      content-length:
+      - '366'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json;charset=utf-8
+      date:
+      - Wed, 12 May 2021 07:50:05 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -43,7 +49,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - vdJ3/nHEY1ioXQ6pQrBVvsQK1s4yyc+wufBMPSoXql71qZVuP/xMdtNo6DafhOAk
+      - 25u1gDlL724DHllbjFT4BhOLorBTilh+aah2uWAUEjFC/+rjczJdiyWrV/HwLwe/
       x-dd-version:
       - '35.4512853'
       x-frame-options:
@@ -54,35 +60,39 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - GetSecurityFilter
-      User-Agent:
-      - datadog-api-client-python/0.1.dev336 (python 3.9.5; os Linux; arch x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '879230036697156262'
+      x-datadog-trace-id:
+      - '5709383517758712003'
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/gk1-scp-bc6
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/8ez-cdr-dy8
   response:
     body:
-      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1620804267","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
-        logs from staging"}],"version":1,"query":"service:TestGetasecurityfilterreturnsOKresponse1620804267","is_builtin":false},"type":"security_filters","id":"gk1-scp-bc6"}}'
+      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Get_a_security_filter_returns_OK_response-1620751633","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
+        logs from staging"}],"version":1,"query":"service:TestGetasecurityfilterreturnsOKresponse1620751633","is_builtin":false},"type":"security_filters","id":"8ez-cdr-dy8"}}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '366'
-      Content-Type:
-      - application/json;charset=utf-8
-      Date:
-      - Wed, 12 May 2021 07:24:27 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
       content-disposition:
       - inline
+      content-length:
+      - '366'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json;charset=utf-8
+      date:
+      - Wed, 12 May 2021 07:50:05 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -92,7 +102,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - nLnnBNvlCFDECRnZvzDb0z4sAO35G+IMidcAs8vrCKyjvsKWE8Yd9S3n6OjZ1qRN
+      - mNzaoDhdDKO7t4QSrAe5X7pHd0bJND187D+vRbwoluXouE2m1UaQQX0RGCvRpLVE
       x-dd-version:
       - '35.4512853'
       x-frame-options:
@@ -103,32 +113,36 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteSecurityFilter
-      User-Agent:
-      - datadog-api-client-python/0.1.dev336 (python 3.9.5; os Linux; arch x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 14.16.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '4428663346379269930'
+      x-datadog-trace-id:
+      - '5709383517758712003'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/gk1-scp-bc6
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/8ez-cdr-dy8
   response:
     body:
       string: ''
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Date:
-      - Wed, 12 May 2021 07:24:27 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
       content-disposition:
       - inline
+      content-length:
+      - '0'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      date:
+      - Wed, 12 May 2021 07:50:05 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -136,7 +150,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - dCmL/3rURV6BPeaqeP3Rxigq41m5CAb17XjrRE42uZ01zpr07HVhbL5/3TWMkvgu
+      - bgHykj7A9bfZx0Y5ZO3swhhp5tGUSNJHqFWR868+qg087CYrDOd5hQslC+noiEtH
       x-dd-version:
       - '35.4512853'
       x-frame-options:

@@ -13,8 +13,6 @@ Method | HTTP request | Description
 # **create_gcp_integration**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} create_gcp_integration(body)
 
-Create a GCP integration
-
 Create a Datadog-GCP integration.
 
 ### Example
@@ -92,8 +90,6 @@ Name | Type | Description  | Notes
 
 # **delete_gcp_integration**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_gcp_integration(body)
-
-Delete a GCP integration
 
 Delete a given Datadog-GCP integration.
 
@@ -173,8 +169,6 @@ Name | Type | Description  | Notes
 # **list_gcp_integration**
 > GCPAccountListResponse list_gcp_integration()
 
-List all GCP integrations
-
 List all Datadog-GCP integrations configured in your Datadog account.
 
 ### Example
@@ -235,9 +229,10 @@ This endpoint does not need any parameter.
 # **update_gcp_integration**
 > {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_gcp_integration(body)
 
-Update a GCP integration
-
-Update a Datadog-GCP integrations host_filters and/or auto-mute. Requires a `project_id` and `client_email`, however these fields cannot be updated. If you need to update these fields, delete and use the create (`POST`) endpoint. The unspecified fields will keep their original values.
+Update a Datadog-GCP integrations host_filters and/or auto-mute.
+Requires a `project_id` and `client_email`, however these fields cannot be updated.
+If you need to update these fields, delete and use the create (`POST`) endpoint.
+The unspecified fields will keep their original values.
 
 ### Example
 

@@ -1,4 +1,4 @@
-@endpoint(metrics)
+@endpoint(metrics) @endpoint(metrics-v1)
 Feature: Metrics
   The metrics endpoint allows you to:  - Post metrics data so it can be
   graphed on Datadog’s dashboards - Query metrics from any time period -
@@ -77,10 +77,12 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
   Scenario: Query timeseries points returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryMetrics" request
+    And request contains "from" parameter with value {{ timestamp("now - 1d") }}
+    And request contains "to" parameter with value {{ timestamp("now") }}
+    And request contains "query" parameter with value "system.cpu.idle{*}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -107,7 +109,7 @@ Feature: Metrics
 
   Scenario: Submit metrics returns "Payload accepted" response
     Given new "SubmitMetrics" request
-    And body with value {"series": [{"metric": "system.load.1", "type": "gauge", "points": [[1600348600, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}
+    And body with value {"series": [{"metric": "system.load.1", "type": "gauge", "points": [[{{ timestamp("now") }}, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}
     When the request is sent
     Then the response status is 202 Payload accepted
 

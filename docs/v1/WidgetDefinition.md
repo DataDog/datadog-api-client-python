@@ -5,99 +5,32 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**time** | [**WidgetTime**](WidgetTime.md) |  | [optional] 
-**title** | **str** | Title of your widget. | [optional] 
-**title_align** | [**WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
-**title_size** | **str** | Size of the title. | [optional] 
-**precision** | **int** | Number of decimals to show. If not defined, the widget uses the raw value. | [optional] 
-**text_align** | [**WidgetTextAlign**](WidgetTextAlign.md) |  | [optional] 
-**unit** | **str** | Unit to display with the value. | [optional] 
-**custom_links** | [**[WidgetCustomLink]**](WidgetCustomLink.md) | List of custom links. | [optional] 
-**group** | **[str]** | List of tag prefixes to group by. | [optional] 
-**group_by** | **[str]** | List of tag prefixes to group by in the case of a cluster check. | [optional] 
-**tags** | **[str]** | List of tags used to filter the groups reporting a cluster check. | [optional] 
-**legend_size** | **str** | Available legend sizes for a widget. Should be one of \&quot;0\&quot;, \&quot;2\&quot;, \&quot;4\&quot;, \&quot;8\&quot;, \&quot;16\&quot;, or \&quot;auto\&quot;. | [optional] 
-**markers** | [**[WidgetMarker]**](WidgetMarker.md) | List of markers. | [optional] 
-**show_legend** | **bool** | (screenboard only) Show the legend for this widget. | [optional] 
-**xaxis** | [**WidgetAxis**](WidgetAxis.md) |  | [optional] 
-**yaxis** | [**WidgetAxis**](WidgetAxis.md) |  | [optional] 
-**event_size** | [**WidgetEventSize**](WidgetEventSize.md) |  | [optional] 
-**tags_execution** | **str** | The execution method for multi-value filters. Can be either and or or. | [optional] 
-**color** | **str** | Color of the text. | [optional] 
-**font_size** | **str** | Size of the text. | [optional] 
-**background_color** | **str** | Background color of the note. | [optional] 
-**banner_img** | **str** | URL of image to display as a banner for the group. | [optional] 
-**show_title** | **bool** | Whether to show the title or not. | [optional]  if omitted the server will use the default value of True
-**events** | [**[WidgetEvent]**](WidgetEvent.md) | List of widget events. | [optional] 
-**no_group_hosts** | **bool** | Whether to show the hosts that don’t fit in a group. | [optional] 
-**no_metric_hosts** | **bool** | Whether to show the hosts with no metrics. | [optional] 
-**node_type** | [**WidgetNodeType**](WidgetNodeType.md) |  | [optional] 
-**notes** | **str** | Notes on the title. | [optional] 
-**scope** | **[str]** | List of tags used to filter the map. | [optional] 
-**has_background** | **bool** | Whether to display a background or not. | [optional]  if omitted the server will use the default value of True
-**has_border** | **bool** | Whether to display a border or not. | [optional]  if omitted the server will use the default value of True
-**horizontal_align** | [**WidgetHorizontalAlign**](WidgetHorizontalAlign.md) |  | [optional] 
-**margin** | [**WidgetMargin**](WidgetMargin.md) |  | [optional] 
-**sizing** | [**WidgetImageSizing**](WidgetImageSizing.md) |  | [optional] 
-**url_dark_theme** | **str** | URL of the image in dark mode. | [optional] 
-**vertical_align** | [**WidgetVerticalAlign**](WidgetVerticalAlign.md) |  | [optional] 
-**columns** | **[str]** | Which columns to display on the widget. | [optional] 
-**indexes** | **[str]** | An array of index names to query in the stream. Use [] to query all indexes at once. | [optional] 
-**logset** | **str** | ID of the log set to use. | [optional] 
-**message_display** | [**WidgetMessageDisplay**](WidgetMessageDisplay.md) |  | [optional] 
-**show_date_column** | **bool** | Whether to show the date column or not | [optional] 
-**show_message_column** | **bool** | Whether to show the message column or not | [optional] 
-**sort** | [**WidgetMonitorSummarySort**](WidgetMonitorSummarySort.md) |  | [optional] 
-**color_preference** | [**WidgetColorPreference**](WidgetColorPreference.md) |  | [optional] 
-**count** | **int** | The number of monitors to display. | [optional] 
-**display_format** | [**WidgetServiceSummaryDisplayFormat**](WidgetServiceSummaryDisplayFormat.md) |  | [optional] 
-**hide_zero_counts** | **bool** | Whether to show counts of 0 or not. | [optional] 
-**show_last_triggered** | **bool** | Whether to show the time that has elapsed since the monitor/group triggered. | [optional] 
-**start** | **int** | The start of the list. Typically 0. | [optional] 
-**summary_type** | [**WidgetSummaryType**](WidgetSummaryType.md) |  | [optional] 
-**has_padding** | **bool** | Whether to add padding or not. | [optional]  if omitted the server will use the default value of True
-**show_tick** | **bool** | Whether to show a tick or not. | [optional] 
-**tick_edge** | [**WidgetTickEdge**](WidgetTickEdge.md) |  | [optional] 
-**tick_pos** | **str** | Where to position the tick on an edge. | [optional] 
-**autoscale** | **bool** | Whether to use auto-scaling or not. | [optional] 
-**custom_unit** | **str** | Display a unit of your choice on the widget. | [optional] 
-**color_by_groups** | **[str]** | List of groups used for colors. | [optional] 
-**global_time_target** | **str** | Defined global time target. | [optional] 
-**show_error_budget** | **bool** | Defined error budget. | [optional] 
-**slo_id** | **str** | ID of the SLO displayed. | [optional] 
-**time_windows** | [**[WidgetTimeWindows]**](WidgetTimeWindows.md) | Times being monitored. | [optional] 
-**view_mode** | [**WidgetViewMode**](WidgetViewMode.md) |  | [optional] 
-**show_breakdown** | **bool** | Whether to show the latency breakdown or not. | [optional] 
-**show_distribution** | **bool** | Whether to show the latency distribution or not. | [optional] 
-**show_errors** | **bool** | Whether to show the error metrics or not. | [optional] 
-**show_hits** | **bool** | Whether to show the hits metrics or not. | [optional] 
-**show_latency** | **bool** | Whether to show the latency metrics or not. | [optional] 
-**show_resource_list** | **bool** | Whether to show the resource list or not. | [optional] 
-**size_format** | [**WidgetSizeFormat**](WidgetSizeFormat.md) |  | [optional] 
-**has_search_bar** | [**TableWidgetHasSearchBar**](TableWidgetHasSearchBar.md) |  | [optional] 
-**legend_columns** | [**[TimeseriesWidgetLegendColumn]**](TimeseriesWidgetLegendColumn.md) | Columns displayed in the legend. | [optional] 
-**legend_layout** | [**TimeseriesWidgetLegendLayout**](TimeseriesWidgetLegendLayout.md) |  | [optional] 
-**right_yaxis** | [**WidgetAxis**](WidgetAxis.md) |  | [optional] 
-**alert_id** | **str** | ID of the alert to use in the widget. | [optional] 
-**type** | [**ToplistWidgetDefinitionType**](ToplistWidgetDefinitionType.md) |  | [optional] 
-**viz_type** | [**WidgetVizType**](WidgetVizType.md) |  | [optional] 
-**requests** | [**[ToplistWidgetRequest]**](ToplistWidgetRequest.md) | List of top list widget requests. | [optional] 
-**check** | **str** | Name of the check to use in the widget. | [optional] 
-**grouping** | [**WidgetGrouping**](WidgetGrouping.md) |  | [optional] 
-**query** | **str** | Query to filter the monitors with. | [optional] 
-**text** | **str** | Text to display. | [optional] 
-**style** | [**HostMapWidgetDefinitionStyle**](HostMapWidgetDefinitionStyle.md) |  | [optional] 
-**view** | [**GeomapWidgetDefinitionView**](GeomapWidgetDefinitionView.md) |  | [optional] 
-**layout_type** | [**WidgetLayoutType**](WidgetLayoutType.md) |  | [optional] 
-**widgets** | [**[Widget]**](Widget.md) | List of widget groups. | [optional] 
-**url** | **str** | URL of the image. | [optional] 
-**content** | **str** | Content of the note. | [optional] 
-**view_type** | **str** | Type of view displayed by the widget. | [optional]  if omitted the server will use the default value of "detail"
-**filters** | **[str]** | Your environment and primary tag (or * if enabled for your account). | [optional] 
-**service** | **str** | APM service. | [optional] 
-**env** | **str** | APM environment. | [optional] 
-**span_name** | **str** | APM span name. | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**AlertGraphWidgetDefinition** | [**AlertGraphWidgetDefinition**](AlertGraphWidgetDefinition.md) | Container class of the relevant properties. |
+**AlertValueWidgetDefinition** | [**AlertValueWidgetDefinition**](AlertValueWidgetDefinition.md) | Container class of the relevant properties. |
+**ChangeWidgetDefinition** | [**ChangeWidgetDefinition**](ChangeWidgetDefinition.md) | Container class of the relevant properties. |
+**CheckStatusWidgetDefinition** | [**CheckStatusWidgetDefinition**](CheckStatusWidgetDefinition.md) | Container class of the relevant properties. |
+**DistributionWidgetDefinition** | [**DistributionWidgetDefinition**](DistributionWidgetDefinition.md) | Container class of the relevant properties. |
+**EventStreamWidgetDefinition** | [**EventStreamWidgetDefinition**](EventStreamWidgetDefinition.md) | Container class of the relevant properties. |
+**EventTimelineWidgetDefinition** | [**EventTimelineWidgetDefinition**](EventTimelineWidgetDefinition.md) | Container class of the relevant properties. |
+**FreeTextWidgetDefinition** | [**FreeTextWidgetDefinition**](FreeTextWidgetDefinition.md) | Container class of the relevant properties. |
+**GeomapWidgetDefinition** | [**GeomapWidgetDefinition**](GeomapWidgetDefinition.md) | Container class of the relevant properties. |
+**GroupWidgetDefinition** | [**GroupWidgetDefinition**](GroupWidgetDefinition.md) | Container class of the relevant properties. |
+**HeatMapWidgetDefinition** | [**HeatMapWidgetDefinition**](HeatMapWidgetDefinition.md) | Container class of the relevant properties. |
+**HostMapWidgetDefinition** | [**HostMapWidgetDefinition**](HostMapWidgetDefinition.md) | Container class of the relevant properties. |
+**IFrameWidgetDefinition** | [**IFrameWidgetDefinition**](IFrameWidgetDefinition.md) | Container class of the relevant properties. |
+**ImageWidgetDefinition** | [**ImageWidgetDefinition**](ImageWidgetDefinition.md) | Container class of the relevant properties. |
+**LogStreamWidgetDefinition** | [**LogStreamWidgetDefinition**](LogStreamWidgetDefinition.md) | Container class of the relevant properties. |
+**MonitorSummaryWidgetDefinition** | [**MonitorSummaryWidgetDefinition**](MonitorSummaryWidgetDefinition.md) | Container class of the relevant properties. |
+**NoteWidgetDefinition** | [**NoteWidgetDefinition**](NoteWidgetDefinition.md) | Container class of the relevant properties. |
+**QueryValueWidgetDefinition** | [**QueryValueWidgetDefinition**](QueryValueWidgetDefinition.md) | Container class of the relevant properties. |
+**SLOWidgetDefinition** | [**SLOWidgetDefinition**](SLOWidgetDefinition.md) | Container class of the relevant properties. |
+**ScatterPlotWidgetDefinition** | [**ScatterPlotWidgetDefinition**](ScatterPlotWidgetDefinition.md) | Container class of the relevant properties. |
+**ServiceMapWidgetDefinition** | [**ServiceMapWidgetDefinition**](ServiceMapWidgetDefinition.md) | Container class of the relevant properties. |
+**ServiceSummaryWidgetDefinition** | [**ServiceSummaryWidgetDefinition**](ServiceSummaryWidgetDefinition.md) | Container class of the relevant properties. |
+**TableWidgetDefinition** | [**TableWidgetDefinition**](TableWidgetDefinition.md) | Container class of the relevant properties. |
+**TimeseriesWidgetDefinition** | [**TimeseriesWidgetDefinition**](TimeseriesWidgetDefinition.md) | Container class of the relevant properties. |
+**ToplistWidgetDefinition** | [**ToplistWidgetDefinition**](ToplistWidgetDefinition.md) | Container class of the relevant properties. |
+**TreeMapWidgetDefinition** | [**TreeMapWidgetDefinition**](TreeMapWidgetDefinition.md) | Container class of the relevant properties. |
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

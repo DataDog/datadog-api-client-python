@@ -1,35 +1,41 @@
 interactions:
 - request:
-    body: '{"type": "monitor", "name": "Test-Create_an_SLO_object_returns_Bad_Request_response-1618476796",
-      "thresholds": [{"target": 95.0, "target_display": "95.0", "timeframe": "7d",
-      "warning": 98, "warning_display": "98.0"}]}'
+    body: '{"name":"Test-Create_an_SLO_object_returns_Bad_Request_response-1618413154","thresholds":[{"target":95,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"type":"monitor"}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '201'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - CreateSlo
-      User-Agent:
-      - datadog-api-client-python/1.0.0b9.dev1 (python 3.9.4; os Linux; arch x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.12.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '184200789673602245'
+      x-datadog-trace-id:
+      - '184200789673602245'
     method: POST
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
       string: '{"errors": ["Invalid payload: must specify monitor_ids or monitor_search"]}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '75'
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 15 Apr 2021 08:53:16 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '75'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Wed, 14 Apr 2021 15:12:34 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -37,7 +43,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-version:
-      - '35.4317157'
+      - '35.4310591'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -47,7 +53,7 @@ interactions:
       x-ratelimit-remaining:
       - '498'
       x-ratelimit-reset:
-      - '44'
+      - '26'
     status:
       code: 400
       message: Bad Request

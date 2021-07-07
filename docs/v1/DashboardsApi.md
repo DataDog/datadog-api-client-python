@@ -14,9 +14,8 @@ Method | HTTP request | Description
 # **create_dashboard**
 > Dashboard create_dashboard(body)
 
-Create a new dashboard
-
-Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the `as_count()` or `as_rate()` modifiers appended. Refer to the following [documentation](https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers) for more information on these modifiers.
+Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the `as_count()` or `as_rate()` modifiers appended.
+Refer to the following [documentation](https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers) for more information on these modifiers.
 
 ### Example
 
@@ -48,6 +47,9 @@ with ApiClient(configuration) as api_client:
             "notify_list_example",
         ],
         reflow_type=DashboardReflowType("auto"),
+        restricted_roles=[
+            "restricted_roles_example",
+        ],
         template_variable_presets=[
             DashboardTemplateVariablePreset(
                 name="name_example",
@@ -125,8 +127,6 @@ Name | Type | Description  | Notes
 # **delete_dashboard**
 > DashboardDeleteResponse delete_dashboard(dashboard_id)
 
-Delete a dashboard
-
 Delete a dashboard using the specified ID.
 
 ### Example
@@ -190,8 +190,6 @@ Name | Type | Description  | Notes
 
 # **get_dashboard**
 > Dashboard get_dashboard(dashboard_id)
-
-Get a dashboard
 
 Get a dashboard using the specified ID.
 
@@ -257,9 +255,10 @@ Name | Type | Description  | Notes
 # **list_dashboards**
 > DashboardSummary list_dashboards()
 
-Get all dashboards
+Get all dashboards.
 
-Get all dashboards.  **Note**: This query will only return custom created or cloned dashboards. This query will not return preset dashboards.
+**Note**: This query will only return custom created or cloned dashboards.
+This query will not return preset dashboards.
 
 ### Example
 
@@ -323,8 +322,6 @@ Name | Type | Description  | Notes
 # **update_dashboard**
 > Dashboard update_dashboard(dashboard_id, body)
 
-Update a dashboard
-
 Update a dashboard using the specified ID.
 
 ### Example
@@ -358,6 +355,9 @@ with ApiClient(configuration) as api_client:
             "notify_list_example",
         ],
         reflow_type=DashboardReflowType("auto"),
+        restricted_roles=[
+            "restricted_roles_example",
+        ],
         template_variable_presets=[
             DashboardTemplateVariablePreset(
                 name="name_example",

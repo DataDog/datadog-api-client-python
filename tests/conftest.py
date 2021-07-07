@@ -56,10 +56,11 @@ import logging
 import pathlib
 import re
 import warnings
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import pytest
-from jinja2 import Template
+from dateutil.relativedelta import relativedelta
+from jinja2 import Template, Environment, meta
 from pytest_bdd import (
     given,
     parsers,
@@ -70,17 +71,24 @@ from pytest_bdd import (
 logging.basicConfig()
 
 
+def escape_reserved_keyword(word):
+    """
+    # Escape reserved language keywords like openapi generator does it
+    :param word: Word to escape
+    :return: The escaped word if it was a reserved keyword, the word unchanged otherwise
+    """
+    reserved_keywords = ["from"]
+    if word in reserved_keywords:
+        return f"_{word}"
+    return word
+
+
 def pytest_bdd_before_step(request, feature, scenario, step, step_func):
     if tracer is None:
         return
 
     context = tracer.get_call_context()
-    span = tracer.start_span(
-        step.type,
-        resource=step.name,
-        span_type=step.type,
-        child_of=context,
-    )
+    span = tracer.start_span(step.type, resource=step.name, span_type=step.type, child_of=context,)
     setattr(step_func, "__dd_span__", span)
 
 
@@ -162,43 +170,40 @@ def unique_lower(request, freezer):
         return f"{prefix}-{int(datetime.now().timestamp())}"
 
 
-@pytest.fixture
-def now_ts(freezer):
-    with freezer:
-        return int(datetime.now().timestamp())
+def relative_time(freezer, iso):
+    time_re = re.compile(r"now( *([+-]) *(\d+)([smhdMy]))?")
+
+    def func(arg):
+        with freezer:
+            ret = datetime.now()
+            m = time_re.match(arg)
+            if m:
+                if m.group(1):
+                    sign = m.group(2)
+                    num = int(sign + m.group(3))
+                    unit = m.group(4)
+                    if unit == "s":
+                        ret += relativedelta(seconds=num)
+                    elif unit == "m":
+                        ret += relativedelta(minutes=num)
+                    elif unit == "h":
+                        ret += relativedelta(hours=num)
+                    elif unit == "d":
+                        ret += relativedelta(days=num)
+                    elif unit == "M":
+                        ret += relativedelta(months=num)
+                    elif unit == "y":
+                        ret += relativedelta(years=num)
+                if iso:
+                    return ret.isoformat(timespec="seconds")
+                return int(ret.timestamp())
+            return ""
+
+    return func
 
 
 @pytest.fixture
-def now_iso(freezer):
-    with freezer:
-        return datetime.now().isoformat(timespec="seconds")
-
-
-@pytest.fixture
-def hour_later_ts(freezer):
-    with freezer:
-        return int((datetime.now() + timedelta(hours=1)).timestamp())
-
-
-@pytest.fixture
-def hour_later_iso(freezer):
-    with freezer:
-        return (datetime.now() + timedelta(hours=1)).isoformat(timespec="seconds")
-
-
-@pytest.fixture
-def hour_ago_ts(freezer):
-    with freezer:
-        return int((datetime.now() + timedelta(hours=-1)).timestamp())
-
-
-@pytest.fixture
-def hour_ago_iso(freezer):
-    with freezer:
-        return (datetime.now() + timedelta(hours=-1)).isoformat(timespec="seconds")
-
-@pytest.fixture
-def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_later_iso, hour_ago_ts, hour_ago_iso):
+def context(vcr, unique, unique_lower, freezer):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
@@ -209,12 +214,8 @@ def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_late
         "unique_lower": unique_lower,
         "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique),
         "unique_lower_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique).lower(),
-        "now_ts": now_ts,
-        "now_iso": now_iso,
-        "hour_later_ts": hour_later_ts,
-        "hour_later_iso": hour_later_iso,
-        "hour_ago_ts": hour_ago_ts,
-        "hour_ago_iso": hour_ago_iso,
+        "timestamp": relative_time(freezer, False),
+        "timeISO": relative_time(freezer, True),
     }
 
     yield ctx
@@ -226,11 +227,7 @@ def context(vcr, unique, unique_lower, now_ts, now_iso, hour_later_ts, hour_late
 @pytest.fixture(scope="session")
 def record_mode(request):
     """Manage compatibility with DD client libraries."""
-    return {
-        "false": "none",
-        "true": "rewrite",
-        "none": "new_episodes",
-    }[os.getenv("RECORD", "false").lower()]
+    return {"false": "none", "true": "rewrite", "none": "new_episodes",}[os.getenv("RECORD", "false").lower()]
 
 
 def _disable_recording():
@@ -249,7 +246,7 @@ def vcr_config():
     config = dict(
         filter_headers=("DD-API-KEY", "DD-APPLICATION-KEY"),
         filter_query_parameters=("api_key", "application_key"),
-        match_on=['method', 'scheme', 'host', 'port', 'path', 'query', 'body']
+        match_on=["method", "scheme", "host", "port", "path", "query", "body"],
     )
     if tracer:
         config["ignore_hosts"] = [tracer.writer._hostname]
@@ -372,7 +369,7 @@ def request_body(context, data):
     context["api_request"]["kwargs"]["body"] = json.loads(tpl)
 
 
-@given(parsers.parse("body from file \"{path}\""))
+@given(parsers.parse('body from file "{path}"'))
 def request_body_from_file(context, path, package_name):
     """Set request body."""
     version = package_name.split(".")[-1]
@@ -385,14 +382,14 @@ def request_body_from_file(context, path, package_name):
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(context, name, path):
     """Set request parameter."""
-    context["api_request"]["kwargs"][snake_case(name)] = glom(context, path)
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = glom(context, path)
 
 
 @given(parsers.parse('request contains "{name}" parameter with value {value}'))
 def request_parameter_with_value(context, name, value):
     """Set request parameter."""
     tpl = Template(value).render(**context)
-    context["api_request"]["kwargs"][snake_case(name)] = json.loads(tpl)
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = json.loads(tpl)
 
 
 def build_given(version, operation):
@@ -423,7 +420,9 @@ def build_given(version, operation):
                 if "source" in p:
                     return glom(context, p["source"])
 
-            kwargs = {snake_case(p["name"]): build_param(p) for p in operation.get("parameters", [])}
+            kwargs = {
+                escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
+            }
             kwargs["_check_input_type"] = False
             result = operation_method(**kwargs)
             client.last_response.urllib3_response.close()
@@ -469,7 +468,16 @@ def undo(package_name, undo_operations, client):
 
         operation_name = snake_case(operation["operationId"])
         method = getattr(api, operation_name)
-        args = [glom(response, parameter["source"]) for parameter in operation.get("parameters", [])]
+        args = []
+        for parameter in operation.get("parameters", []):
+            if "source" in parameter:
+                args.append(glom(response, parameter["source"]))
+            elif "template" in parameter:
+                variables = meta.find_undeclared_variables(Environment().parse(parameter["template"]))
+                ctx = {}
+                for var in variables:
+                    ctx[var] = glom(response, var)
+                args.append(json.loads(Template(parameter["template"]).render(**ctx)))
 
         if operation_name in client.configuration.unstable_operations:
             client.configuration.unstable_operations[operation_name] = True
@@ -490,9 +498,7 @@ def execute_request(undo, context, client, _package):
     exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
 
     try:
-        response = api_request["request"](
-            *api_request["args"], **api_request["kwargs"]
-        )
+        response = api_request["request"](*api_request["args"], **api_request["kwargs"])
         client.last_response.urllib3_response.close()
         # Reserialise the response body to JSON to facilitate test assertions
         response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(response[0])

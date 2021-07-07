@@ -1,4 +1,4 @@
-@endpoint(incident-services)
+@endpoint(incident-services) @endpoint(incident-services-v2)
 Feature: Incident Services
   Create, update, delete, and retrieve services which can be associated with
   incidents.

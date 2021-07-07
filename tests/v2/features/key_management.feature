@@ -1,4 +1,4 @@
-@endpoint(key-management)
+@endpoint(key-management) @endpoint(key-management-v2)
 Feature: Key Management
   Manage your Datadog API and application keys. You need an API key and an
   application key for a user with the required permissions to interact with
@@ -257,6 +257,28 @@ Feature: Key Management
   @generated @skip
   Scenario: Get all application keys returns "OK" response
     Given new "ListApplicationKeys" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Get an application key returns "Bad Request" response
+    Given new "GetApplicationKey" request
+    And request contains "app_key_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get an application key returns "Not Found" response
+    Given new "GetApplicationKey" request
+    And request contains "app_key_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @integration-only
+  Scenario: Get an application key returns "OK" response
+    Given there is a valid "application_key" in the system
+    And new "GetApplicationKey" request
+    And request contains "app_key_id" parameter from "application_key.data.id"
     When the request is sent
     Then the response status is 200 OK
 

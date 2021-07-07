@@ -14,8 +14,6 @@ Method | HTTP request | Description
 # **create_slack_integration_channel**
 > SlackIntegrationChannel create_slack_integration_channel(account_name, body)
 
-Create a Slack integration channel
-
 Add a channel to your Datadog-Slack integration.
 
 ### Example
@@ -91,8 +89,6 @@ Name | Type | Description  | Notes
 # **get_slack_integration_channel**
 > SlackIntegrationChannel get_slack_integration_channel(account_name, channel_name)
 
-Get a Slack integration channel
-
 Get a channel configured for your Datadog-Slack integration.
 
 ### Example
@@ -160,8 +156,6 @@ Name | Type | Description  | Notes
 # **get_slack_integration_channels**
 > SlackIntegrationChannels get_slack_integration_channels(account_name)
 
-Get all channels in a Slack integration
-
 Get a list of all channels configured for your Datadog-Slack integration.
 
 ### Example
@@ -226,8 +220,6 @@ Name | Type | Description  | Notes
 
 # **remove_slack_integration_channel**
 > remove_slack_integration_channel(account_name, channel_name)
-
-Remove a Slack integration channel
 
 Remove a channel from your Datadog-Slack integration.
 
@@ -294,8 +286,6 @@ void (empty response body)
 
 # **update_slack_integration_channel**
 > SlackIntegrationChannel update_slack_integration_channel(account_name, channel_name, body)
-
-Update a Slack integration channel
 
 Update a channel used in your Datadog-Slack integration.
 

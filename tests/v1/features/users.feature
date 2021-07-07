@@ -1,4 +1,4 @@
-@endpoint(users)
+@endpoint(users) @endpoint(users-v1)
 Feature: Users
   Create, edit, and disable users.
 

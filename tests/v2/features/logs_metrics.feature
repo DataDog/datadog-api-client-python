@@ -1,4 +1,4 @@
-@endpoint(logs-metrics)
+@endpoint(logs-metrics) @endpoint(logs-metrics-v2)
 Feature: Logs Metrics
   Manage configuration of [log-based
   metrics](https://app.datadoghq.com/logs/pipelines/generate-metrics) for

@@ -320,6 +320,8 @@ class ServiceLevelObjectivesApi(object):
                     "query",
                     "tags_query",
                     "metrics_query",
+                    "limit",
+                    "offset",
                 ],
                 "required": [],
                 "nullable": [],
@@ -334,18 +336,24 @@ class ServiceLevelObjectivesApi(object):
                     "query": (str,),
                     "tags_query": (str,),
                     "metrics_query": (str,),
+                    "limit": (int,),
+                    "offset": (int,),
                 },
                 "attribute_map": {
                     "ids": "ids",
                     "query": "query",
                     "tags_query": "tags_query",
                     "metrics_query": "metrics_query",
+                    "limit": "limit",
+                    "offset": "offset",
                 },
                 "location_map": {
                     "ids": "query",
                     "query": "query",
                     "tags_query": "query",
                     "metrics_query": "query",
+                    "limit": "query",
+                    "offset": "query",
                 },
                 "collection_format_map": {},
             },
@@ -631,7 +639,7 @@ class ServiceLevelObjectivesApi(object):
             to_ts (int): The `to` timestamp for the query window in epoch seconds.
 
         Keyword Args:
-            target (float): The SLO target. If `target` is passed in, the response will include the error budget that remains.. [optional]
+            target (float): The SLO target. If `target` is passed in, the response will include the remaining error budget and a timeframe value of `custom`.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -679,6 +687,8 @@ class ServiceLevelObjectivesApi(object):
             query (str): The query string to filter results based on SLO names.. [optional]
             tags_query (str): The query string to filter results based on a single SLO tag.. [optional]
             metrics_query (str): The query string to filter results based on SLO numerator and denominator.. [optional]
+            limit (int): The number of SLOs to return in the response.. [optional]
+            offset (int): The specific offset to use as the beginning of the returned response.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

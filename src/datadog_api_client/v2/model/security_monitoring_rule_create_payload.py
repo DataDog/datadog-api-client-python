@@ -85,6 +85,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
             "options": (SecurityMonitoringRuleOptions,),  # noqa: E501
             "queries": ([SecurityMonitoringRuleQueryCreate],),  # noqa: E501
             "filters": ([SecurityMonitoringFilter],),  # noqa: E501
+            "has_extended_title": (bool,),  # noqa: E501
             "tags": ([str],),  # noqa: E501
         }
 
@@ -100,6 +101,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
         "options": "options",  # noqa: E501
         "queries": "queries",  # noqa: E501
         "filters": "filters",  # noqa: E501
+        "has_extended_title": "hasExtendedTitle",  # noqa: E501
         "tags": "tags",  # noqa: E501
     }
 
@@ -160,6 +162,7 @@ class SecurityMonitoringRuleCreatePayload(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             filters ([SecurityMonitoringFilter]): Additional queries to filter matched events before they are processed.. [optional]  # noqa: E501
+            has_extended_title (bool): Whether the notifications include the triggering group-by values in their title.. [optional]  # noqa: E501
             tags ([str]): Tags for generated signals.. [optional]  # noqa: E501
         """
 

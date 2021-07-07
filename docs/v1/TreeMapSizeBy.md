@@ -1,11 +1,11 @@
-# SyntheticsTickInterval
+# TreeMapSizeBy
 
-The frequency at which to run the Synthetic test (in seconds).
+The attribute used to determine size in the widget.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **int** | The frequency at which to run the Synthetic test (in seconds). |  must be one of [30, 60, 300, 900, 1800, 3600, 21600, 43200, 86400, 604800, ]
+**value** | **str** | The attribute used to determine size in the widget. |  must be one of ["pct_cpu", "pct_mem", ]
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

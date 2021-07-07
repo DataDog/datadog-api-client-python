@@ -1,4 +1,4 @@
-@endpoint(service-checks)
+@endpoint(service-checks) @endpoint(service-checks-v1)
 Feature: Service Checks
   The service check endpoint allows you to post check statuses for use with
   monitors. Service check messages are limited to 500 characters. If a check

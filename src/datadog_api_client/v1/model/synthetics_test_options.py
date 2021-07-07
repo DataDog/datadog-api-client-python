@@ -26,12 +26,10 @@ def lazy_import():
     from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-    from datadog_api_client.v1.model.synthetics_tick_interval import SyntheticsTickInterval
 
     globals()["SyntheticsDeviceID"] = SyntheticsDeviceID
     globals()["SyntheticsTestOptionsMonitorOptions"] = SyntheticsTestOptionsMonitorOptions
     globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
-    globals()["SyntheticsTickInterval"] = SyntheticsTickInterval
 
 
 class SyntheticsTestOptions(ModelNormal):
@@ -60,7 +58,16 @@ class SyntheticsTestOptions(ModelNormal):
 
     allowed_values = {}
 
-    validations = {}
+    validations = {
+        ("monitor_priority",): {
+            "inclusive_maximum": 5,
+            "inclusive_minimum": 1,
+        },
+        ("tick_every",): {
+            "inclusive_maximum": 604800,
+            "inclusive_minimum": 30,
+        },
+    }
 
     additional_properties_type = None
 
@@ -85,10 +92,12 @@ class SyntheticsTestOptions(ModelNormal):
             "follow_redirects": (bool,),  # noqa: E501
             "min_failure_duration": (int,),  # noqa: E501
             "min_location_failed": (int,),  # noqa: E501
+            "monitor_name": (str,),  # noqa: E501
             "monitor_options": (SyntheticsTestOptionsMonitorOptions,),  # noqa: E501
+            "monitor_priority": (int,),  # noqa: E501
             "no_screenshot": (bool,),  # noqa: E501
             "retry": (SyntheticsTestOptionsRetry,),  # noqa: E501
-            "tick_every": (SyntheticsTickInterval,),  # noqa: E501
+            "tick_every": (int,),  # noqa: E501
         }
 
     @cached_property
@@ -103,7 +112,9 @@ class SyntheticsTestOptions(ModelNormal):
         "follow_redirects": "follow_redirects",  # noqa: E501
         "min_failure_duration": "min_failure_duration",  # noqa: E501
         "min_location_failed": "min_location_failed",  # noqa: E501
+        "monitor_name": "monitor_name",  # noqa: E501
         "monitor_options": "monitor_options",  # noqa: E501
+        "monitor_priority": "monitor_priority",  # noqa: E501
         "no_screenshot": "noScreenshot",  # noqa: E501
         "retry": "retry",  # noqa: E501
         "tick_every": "tick_every",  # noqa: E501
@@ -164,10 +175,12 @@ class SyntheticsTestOptions(ModelNormal):
             follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]  # noqa: E501
             min_failure_duration (int): Minimum amount of time in failure required to trigger an alert.. [optional]  # noqa: E501
             min_location_failed (int): Minimum number of locations in failure required to trigger an alert.. [optional]  # noqa: E501
+            monitor_name (str): The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs.. [optional]  # noqa: E501
             monitor_options (SyntheticsTestOptionsMonitorOptions): [optional]  # noqa: E501
+            monitor_priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]  # noqa: E501
             no_screenshot (bool): Prevents saving screenshots of the steps.. [optional]  # noqa: E501
             retry (SyntheticsTestOptionsRetry): [optional]  # noqa: E501
-            tick_every (SyntheticsTickInterval): [optional]  # noqa: E501
+            tick_every (int): The frequency at which to run the Synthetic test (in seconds).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

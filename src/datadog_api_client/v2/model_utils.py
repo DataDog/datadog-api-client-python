@@ -115,7 +115,7 @@ class OpenApiModel(object):
             error_msg = type_error_message(var_name=name, var_value=name, valid_classes=(str,), key_type=True)
             raise ApiTypeError(error_msg, path_to_item=path_to_item, valid_classes=(str,), key_type=True)
 
-        if self._check_type:
+        if self._check_type and value is not None:
             value = validate_and_convert_types(
                 value,
                 required_types_mixed,
@@ -1104,7 +1104,10 @@ def deserialize_model(model_data, model_class, path_to_item, check_type, configu
     if issubclass(model_class, ModelSimple):
         return model_class(model_data, **kw_args)
     elif isinstance(model_data, list):
-        return model_class(*model_data, **kw_args)
+        if issubclass(model_class, ModelComposed) and allows_single_value_input(model_class):
+            return model_class(model_data, **kw_args)
+        else:
+            return model_class(*model_data, **kw_args)
     if isinstance(model_data, dict):
         kw_args.update(model_data)
         return model_class(**kw_args)
@@ -1203,6 +1206,8 @@ def attempt_convert_item(
             # if we have conversion errors when must_convert == False
             # we ignore the exception and move on to the next class
             continue
+    if must_convert:
+        raise get_type_error(input_value, path_to_item, valid_classes, key_type=key_type)
     # we were unable to convert, must_convert == False
     return input_value
 
@@ -1413,7 +1418,7 @@ def model_to_dict(model_instance, serialize=True):
                 elif isinstance(value[0], ModelSimple):
                     result[attr] = [x.value for x in value]
                 else:
-                    result[attr] = [model_to_dict(x, serialize=serialize) for x in value]
+                    result[attr] = [model_to_dict(x, serialize=serialize) if x is not None else None for x in value]
             elif isinstance(value, dict):
                 result[attr] = dict(
                     map(

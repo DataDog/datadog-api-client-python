@@ -1,4 +1,4 @@
-@endpoint(slack-integration)
+@endpoint(slack-integration) @endpoint(slack-integration-v1)
 Feature: Slack Integration
   Configure your [Datadog-Slack
   integration](https://docs.datadoghq.com/integrations/slack) directly

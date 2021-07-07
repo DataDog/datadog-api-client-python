@@ -1,38 +1,43 @@
 interactions:
 - request:
-    body: '{"data": {"type": "notebooks", "attributes": {"name": "Test-Delete_a_notebook_returns_OK_response-1620723971",
-      "time": {"live_span": "1h"}, "cells": [{"attributes": {"definition": {"text":
-      "# Test-Delete_a_notebook_returns_OK_response-1620723971 notebook text", "type":
-      "markdown"}}, "type": "notebook_cells"}]}}}'
+    body: '{"data":{"attributes":{"cells":[{"attributes":{"definition":{"text":"#
+      Test-Delete_a_notebook_returns_OK_response-1620726174 notebook text","type":"markdown"}},"type":"notebook_cells"}],"name":"Test-Delete_a_notebook_returns_OK_response-1620726174","time":{"live_span":"1h"}},"type":"notebooks"}}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '296'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - CreateNotebook
-      User-Agent:
-      - datadog-api-client-python/1.0.0b9.dev32+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '471840153606093221'
+      x-datadog-trace-id:
+      - '471840153606093221'
     method: POST
     uri: https://api.datadoghq.com/api/v1/notebooks
   response:
     body:
-      string: '{"data":{"type":"notebooks","id":773899,"attributes":{"name":"Test-Delete_a_notebook_returns_OK_response-1620723971","cells":[{"attributes":{"definition":{"text":"#
-        Test-Delete_a_notebook_returns_OK_response-1620723971 notebook text","type":"markdown"}},"type":"notebook_cells","id":"2y7jp8gw"}],"time":{"live_span":"1h"},"status":"published","modified":"2021-05-11T09:06:12.032755+00:00","created":"2021-05-11T09:06:12.032755+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
+      string: '{"data":{"type":"notebooks","id":774055,"attributes":{"name":"Test-Delete_a_notebook_returns_OK_response-1620726174","cells":[{"attributes":{"definition":{"text":"#
+        Test-Delete_a_notebook_returns_OK_response-1620726174 notebook text","type":"markdown"}},"type":"notebook_cells","id":"j6gwpoqh"}],"time":{"live_span":"1h"},"status":"published","modified":"2021-05-11T09:42:54.457909+00:00","created":"2021-05-11T09:42:54.457909+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '672'
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 11 May 2021 09:06:12 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '672'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 11 May 2021 09:42:54 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -42,7 +47,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
+      - fIO2C4qGDheGHy4YbS+r3a3CXbh4cbRo7roILOimQyiHGjQdOat0cIpWCkupM1uX
       x-dd-version:
       - '35.4503153'
       x-frame-options:
@@ -54,40 +59,43 @@ interactions:
       x-ratelimit-remaining:
       - '29'
       x-ratelimit-reset:
-      - '48'
+      - '6'
     status:
       code: 200
       message: OK
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteNotebook
-      User-Agent:
-      - datadog-api-client-python/1.0.0b9.dev32+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '471840153606093221'
+      x-datadog-trace-id:
+      - '471840153606093221'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/notebooks/773899
+    uri: https://api.datadoghq.com/api/v1/notebooks/774055
   response:
     body:
       string: ''
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 11 May 2021 09:06:12 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '0'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 11 May 2021 09:42:54 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -95,60 +103,7 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - PhosSd3Ch1B6B0DXI71steKUi7XhPDttnPiIP1NdXTw0VJNWpoUnYyBmODS5ne3q
-      x-dd-version:
-      - '35.4503153'
-      x-frame-options:
-      - SAMEORIGIN
-      x-ratelimit-limit:
-      - '30'
-      x-ratelimit-period:
-      - '60'
-      x-ratelimit-remaining:
-      - '29'
-      x-ratelimit-reset:
-      - '48'
-    status:
-      code: 204
-      message: No Content
-- request:
-    body: null
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteNotebook
-      User-Agent:
-      - datadog-api-client-python/1.0.0b9.dev32+dirty (python 3.8.8; os Darwin; arch
-        x86_64)
-    method: DELETE
-    uri: https://api.datadoghq.com/api/v1/notebooks/773899
-  response:
-    body:
-      string: '{"errors": ["Notebook not found"]}'
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 11 May 2021 09:06:12 GMT
-      cache-control:
-      - no-cache
-      content-security-policy:
-      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
-      pragma:
-      - no-cache
-      strict-transport-security:
-      - max-age=15724800;
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
+      - l8RQo2maZqJf6GFThBbKNE6dvthz6njusVtau3dPXJWL2RLFoN81H+BLPB/1xgs1
       x-dd-version:
       - '35.4503153'
       x-frame-options:
@@ -160,7 +115,63 @@ interactions:
       x-ratelimit-remaining:
       - '28'
       x-ratelimit-reset:
-      - '48'
+      - '6'
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '471840153606093221'
+      x-datadog-trace-id:
+      - '471840153606093221'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/notebooks/774055
+  response:
+    body:
+      string: '{"errors": ["Notebook not found"]}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '34'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 11 May 2021 09:42:55 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-dd-version:
+      - '35.4503153'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '30'
+      x-ratelimit-period:
+      - '60'
+      x-ratelimit-remaining:
+      - '27'
+      x-ratelimit-reset:
+      - '5'
     status:
       code: 404
       message: Not Found

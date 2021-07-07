@@ -1,35 +1,41 @@
 interactions:
 - request:
-    body: '{"compute": [{"aggregation": "count", "interval": "300", "metric": "test.aggregation.Test-Aggregate_events_returns_OK_response-1617999691",
-      "type": "timeseries"}], "filter": {"from": "1600348573", "indexes": ["main"],
-      "query": "datadog-agent", "to": "1600348600"}}'
+    body: '{"filter":{"from":"now-15m","indexes":["main"],"query":"*","to":"now"}}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '71'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - AggregateLogs
-      User-Agent:
-      - datadog-api-client-python/1.0.0b8.dev29 (python 3.8.8; os Darwin; arch x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      x-datadog-parent-id:
+      - '2282340330001095403'
+      x-datadog-trace-id:
+      - '2282340330001095403'
     method: POST
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"pddv1ChY3LWF5R0VIYVRlSzlfRWV4ejJEeXpRIi0KHURQXwDCaJUHrfNIYbuND-eCDNe4ETcH5_6-rxBQEgw2rLd5SJWNwUQEKA8","elapsed":0},"data":{"buckets":[]}}'
+      string: '{"meta":{"status":"done","request_id":"pddv1ChYtOGFfX0hkRFRzeVFxOUkxNFliWkh3IiwKHNZ2_uRW5V74g9U20qpKaJ5w2W333--lwIypXxoSDOtag8A05lWXfz4bnA","elapsed":3},"data":{"buckets":[{"computes":{"c0":7},"by":{}}]}}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '176'
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 09 Apr 2021 20:21:31 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '204'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Wed, 02 Jun 2021 10:09:21 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -39,9 +45,9 @@ interactions:
       x-content-type-options:
       - nosniff
       x-dd-debug:
-      - L3ULR3HwCWYmEqCWGz2Yob3chcH4pjowBacBXkncP7o+/uPqKt9yGEYf/g1AJPzQ
+      - LcgNasIYBRkNppmD6mCKE9J6iv0eEjosuuHR5V5zw2fWbR54i39C8dhdK8zDq/40
       x-dd-version:
-      - '35.4280781'
+      - '35.4656181'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -49,9 +55,9 @@ interactions:
       x-ratelimit-period:
       - '300'
       x-ratelimit-remaining:
-      - '299'
+      - '295'
       x-ratelimit-reset:
-      - '209'
+      - '40'
     status:
       code: 200
       message: OK

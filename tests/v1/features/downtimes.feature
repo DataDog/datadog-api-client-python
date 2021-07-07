@@ -1,4 +1,4 @@
-@endpoint(downtimes)
+@endpoint(downtimes) @endpoint(downtimes-v1)
 Feature: Downtimes
   [Downtiming](https://docs.datadoghq.com/monitors/downtimes) gives you
   greater control over monitor notifications by allowing you to globally

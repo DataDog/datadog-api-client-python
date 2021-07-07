@@ -12,10 +12,12 @@ Name | Type | Description | Notes
 **follow_redirects** | **bool** | For API HTTP test, whether or not the test should follow redirects. | [optional] 
 **min_failure_duration** | **int** | Minimum amount of time in failure required to trigger an alert. | [optional] 
 **min_location_failed** | **int** | Minimum number of locations in failure required to trigger an alert. | [optional] 
+**monitor_name** | **str** | The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs. | [optional] 
 **monitor_options** | [**SyntheticsTestOptionsMonitorOptions**](SyntheticsTestOptionsMonitorOptions.md) |  | [optional] 
+**monitor_priority** | **int** | Integer from 1 (high) to 5 (low) indicating alert severity. | [optional] 
 **no_screenshot** | **bool** | Prevents saving screenshots of the steps. | [optional] 
 **retry** | [**SyntheticsTestOptionsRetry**](SyntheticsTestOptionsRetry.md) |  | [optional] 
-**tick_every** | [**SyntheticsTickInterval**](SyntheticsTickInterval.md) |  | [optional] 
+**tick_every** | **int** | The frequency at which to run the Synthetic test (in seconds). | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
