@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.2.0 / 2021-07-08
+
+* [Added] Add support for `GET /api/v2/application_keys/{app_key_id}`. See [#502](https://github.com/DataDog/datadog-api-client-python/pull/502).
+* [Added] Add `meta` property with pagination info to SLOCorrectionList endpoint response. See [#499](https://github.com/DataDog/datadog-api-client-python/pull/499).
+* [Added] Add support for treemap widget. See [#494](https://github.com/DataDog/datadog-api-client-python/pull/494).
+* [Added] Add missing properties `query_index` and `tag_set` to `MetricsQueryMetadata`. See [#468](https://github.com/DataDog/datadog-api-client-python/pull/468).
+* [Added] Add missing fields `hasExtendedTitle`, `type`, `version` and `updateAuthorId` for Security Monitoring Rule endpoints. See [#483](https://github.com/DataDog/datadog-api-client-python/pull/483).
+* [Added] Dashboard RBAC role support. See [#478](https://github.com/DataDog/datadog-api-client-python/pull/478).
+* [Added] Add missing fields in usage billable summary keys. See [#477](https://github.com/DataDog/datadog-api-client-python/pull/477).
+* [Fixed] Remove US only constraint for AWS tag filtering. See [#490](https://github.com/DataDog/datadog-api-client-python/pull/490).
+* [Fixed] Add BDD tests to synthetics. See [#489](https://github.com/DataDog/datadog-api-client-python/pull/489).
+* [Fixed] Fix Python type checking. See [#487](https://github.com/DataDog/datadog-api-client-python/pull/487).
+* [Fixed] Handle null in query metrics unit. See [#486](https://github.com/DataDog/datadog-api-client-python/pull/486).
+* [Changed] Specify format of `report_id` parameter. See [#510](https://github.com/DataDog/datadog-api-client-python/pull/510).
+* [Changed] Remove Synthetics tick interval enum. See [#488](https://github.com/DataDog/datadog-api-client-python/pull/488).
+
 ## 1.1.0 / 2021-06-08
 
 * [Added] Add CWS to usage metering endpoint. See [#458](https://github.com/DataDog/datadog-api-client-python/pull/458).
