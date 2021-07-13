@@ -1224,18 +1224,6 @@
       "type": "safe"
     }
   },
-  "GetUsageTrace": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetTracingWithoutLimits": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "ListUsers": {
     "tag": "Users",
     "undo": {
