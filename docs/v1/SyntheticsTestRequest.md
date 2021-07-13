@@ -5,6 +5,7 @@ Object describing the Synthetic test request.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allow_insecure** | **bool** | Allows loading insecure content for an HTTP request in a multistep test step. | [optional] 
 **basic_auth** | [**SyntheticsBasicAuth**](SyntheticsBasicAuth.md) |  | [optional] 
 **body** | **str** | Body to include in the test. | [optional] 
 **certificate** | [**SyntheticsTestRequestCertificate**](SyntheticsTestRequestCertificate.md) |  | [optional] 

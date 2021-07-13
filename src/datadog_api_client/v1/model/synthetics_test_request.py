@@ -87,6 +87,7 @@ class SyntheticsTestRequest(ModelNormal):
         """
         lazy_import()
         return {
+            "allow_insecure": (bool,),  # noqa: E501
             "basic_auth": (SyntheticsBasicAuth,),  # noqa: E501
             "body": (str,),  # noqa: E501
             "certificate": (SyntheticsTestRequestCertificate,),  # noqa: E501
@@ -109,6 +110,7 @@ class SyntheticsTestRequest(ModelNormal):
         return None
 
     attribute_map = {
+        "allow_insecure": "allow_insecure",  # noqa: E501
         "basic_auth": "basicAuth",  # noqa: E501
         "body": "body",  # noqa: E501
         "certificate": "certificate",  # noqa: E501
@@ -174,6 +176,7 @@ class SyntheticsTestRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            allow_insecure (bool): Allows loading insecure content for an HTTP request in a multistep test step.. [optional]  # noqa: E501
             basic_auth (SyntheticsBasicAuth): [optional]  # noqa: E501
             body (str): Body to include in the test.. [optional]  # noqa: E501
             certificate (SyntheticsTestRequestCertificate): [optional]  # noqa: E501

@@ -229,6 +229,7 @@ with ApiClient(configuration) as api_client:
                 ),
             ],
             request=SyntheticsTestRequest(
+                allow_insecure=True,
                 basic_auth=SyntheticsBasicAuth(
                     password="",
                     username="",
@@ -279,6 +280,7 @@ with ApiClient(configuration) as api_client:
                     is_critical=True,
                     name="name_example",
                     request=SyntheticsTestRequest(
+                        allow_insecure=True,
                         basic_auth=SyntheticsBasicAuth(
                             password="",
                             username="",
@@ -419,6 +421,7 @@ with ApiClient(configuration) as api_client:
                 SyntheticsAssertion(),
             ],
             request=SyntheticsTestRequest(
+                allow_insecure=True,
                 basic_auth=SyntheticsBasicAuth(
                     password="",
                     username="",
@@ -1761,6 +1764,7 @@ with ApiClient(configuration) as api_client:
                 ),
             ],
             request=SyntheticsTestRequest(
+                allow_insecure=True,
                 basic_auth=SyntheticsBasicAuth(
                     password="",
                     username="",
@@ -1811,6 +1815,7 @@ with ApiClient(configuration) as api_client:
                     is_critical=True,
                     name="name_example",
                     request=SyntheticsTestRequest(
+                        allow_insecure=True,
                         basic_auth=SyntheticsBasicAuth(
                             password="",
                             username="",
@@ -1953,6 +1958,7 @@ with ApiClient(configuration) as api_client:
                 SyntheticsAssertion(),
             ],
             request=SyntheticsTestRequest(
+                allow_insecure=True,
                 basic_auth=SyntheticsBasicAuth(
                     password="",
                     username="",
