@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**get_monthly_custom_reports**](UsageMeteringApi.md#get_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports | Get the list of available monthly custom reports
 [**get_specified_daily_custom_reports**](UsageMeteringApi.md#get_specified_daily_custom_reports) | **GET** /api/v1/daily_custom_reports/{report_id} | Get specified daily custom reports
 [**get_specified_monthly_custom_reports**](UsageMeteringApi.md#get_specified_monthly_custom_reports) | **GET** /api/v1/monthly_custom_reports/{report_id} | Get specified monthly custom reports
-[**get_tracing_without_limits**](UsageMeteringApi.md#get_tracing_without_limits) | **GET** /api/v1/usage/tracing-without-limits | Get hourly usage for tracing without limits
 [**get_usage_analyzed_logs**](UsageMeteringApi.md#get_usage_analyzed_logs) | **GET** /api/v1/usage/analyzed_logs | Get hourly usage for analyzed logs
 [**get_usage_attribution**](UsageMeteringApi.md#get_usage_attribution) | **GET** /api/v1/usage/attribution | Get Usage Attribution
 [**get_usage_audit_logs**](UsageMeteringApi.md#get_usage_audit_logs) | **GET** /api/v1/usage/audit_logs | Get hourly usage for audit logs
@@ -36,7 +35,6 @@ Method | HTTP request | Description
 [**get_usage_synthetics_browser**](UsageMeteringApi.md#get_usage_synthetics_browser) | **GET** /api/v1/usage/synthetics_browser | Get hourly usage for Synthetics Browser Checks
 [**get_usage_timeseries**](UsageMeteringApi.md#get_usage_timeseries) | **GET** /api/v1/usage/timeseries | Get hourly usage for custom metrics
 [**get_usage_top_avg_metrics**](UsageMeteringApi.md#get_usage_top_avg_metrics) | **GET** /api/v1/usage/top_avg_metrics | Get all custom metrics by hourly average
-[**get_usage_trace**](UsageMeteringApi.md#get_usage_trace) | **GET** /api/v1/usage/traces | Get hourly usage for Trace Search
 
 
 # **get_daily_custom_reports**
@@ -459,83 +457,6 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **403** | Forbidden - User is not authorized |  -  |
 **404** | Not Found |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **get_tracing_without_limits**
-> UsageTracingWithoutLimitsResponse get_tracing_without_limits(start_hr)
-
-Get hourly usage for tracing without limits.
-
-**Note** This endpoint has been renamed to `/api/v1/usage/ingested-spans`.
-
-### Example
-
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
-```python
-import os
-from dateutil.parser import parse as dateutil_parser
-from datadog_api_client.v1 import ApiClient, ApiException, Configuration
-from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.models import *
-from pprint import pprint
-# See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration()
-
-# Enter a context with an instance of the API client
-with ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get hourly usage for tracing without limits
-        api_response = api_instance.get_tracing_without_limits(start_hr)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UsageMeteringApi->get_tracing_without_limits: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get hourly usage for tracing without limits
-        api_response = api_instance.get_tracing_without_limits(start_hr, end_hr=end_hr)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UsageMeteringApi->get_tracing_without_limits: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage beginning at this hour. |
- **end_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: &#x60;[YYYY-MM-DDThh]&#x60; for usage ending **before** this hour. | [optional]
-
-### Return type
-
-[**UsageTracingWithoutLimitsResponse**](UsageTracingWithoutLimitsResponse.md)
-
-### Authorization
-
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json;datetime-format=rfc3339
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden - User is not authorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2398,83 +2319,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UsageTopAvgMetricsResponse**](UsageTopAvgMetricsResponse.md)
-
-### Authorization
-
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json;datetime-format=rfc3339
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden - User is not authorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **get_usage_trace**
-> UsageTraceResponse get_usage_trace(start_hr)
-
-Get hourly usage for trace search.
-
-**Note** This endpoint has been renamed to `/api/v1/usage/indexed-spans`.
-
-### Example
-
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
-```python
-import os
-from dateutil.parser import parse as dateutil_parser
-from datadog_api_client.v1 import ApiClient, ApiException, Configuration
-from datadog_api_client.v1.api import usage_metering_api
-from datadog_api_client.v1.models import *
-from pprint import pprint
-# See configuration.py for a list of all supported configuration parameters.
-configuration = Configuration()
-
-# Enter a context with an instance of the API client
-with ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = usage_metering_api.UsageMeteringApi(api_client)
-    start_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-    end_hr = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get hourly usage for Trace Search
-        api_response = api_instance.get_usage_trace(start_hr)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UsageMeteringApi->get_usage_trace: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get hourly usage for Trace Search
-        api_response = api_instance.get_usage_trace(start_hr, end_hr=end_hr)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling UsageMeteringApi->get_usage_trace: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour. |
- **end_hr** | **datetime**| Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour. | [optional]
-
-### Return type
-
-[**UsageTraceResponse**](UsageTraceResponse.md)
 
 ### Authorization
 

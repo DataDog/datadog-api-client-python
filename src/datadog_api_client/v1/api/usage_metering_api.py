@@ -52,8 +52,6 @@ from datadog_api_client.v1.model.usage_synthetics_browser_response import UsageS
 from datadog_api_client.v1.model.usage_synthetics_response import UsageSyntheticsResponse
 from datadog_api_client.v1.model.usage_timeseries_response import UsageTimeseriesResponse
 from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopAvgMetricsResponse
-from datadog_api_client.v1.model.usage_trace_response import UsageTraceResponse
-from datadog_api_client.v1.model.usage_tracing_without_limits_response import UsageTracingWithoutLimitsResponse
 
 
 class UsageMeteringApi(object):
@@ -332,51 +330,6 @@ class UsageMeteringApi(object):
                 },
                 "location_map": {
                     "report_id": "path",
-                },
-                "collection_format_map": {},
-            },
-            headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
-            },
-            api_client=api_client,
-        )
-
-        self._get_tracing_without_limits_endpoint = _Endpoint(
-            settings={
-                "response_type": (UsageTracingWithoutLimitsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v1/usage/tracing-without-limits",
-                "operation_id": "get_tracing_without_limits",
-                "http_method": "GET",
-                "servers": None,
-            },
-            params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
-                },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
-                },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
                 },
                 "collection_format_map": {},
             },
@@ -1552,51 +1505,6 @@ class UsageMeteringApi(object):
             api_client=api_client,
         )
 
-        self._get_usage_trace_endpoint = _Endpoint(
-            settings={
-                "response_type": (UsageTraceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v1/usage/traces",
-                "operation_id": "get_usage_trace",
-                "http_method": "GET",
-                "servers": None,
-            },
-            params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
-                },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
-                },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
-            },
-            headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
-            },
-            api_client=api_client,
-        )
-
     def get_daily_custom_reports(self, **kwargs):
         """Get the list of available daily custom reports  # noqa: E501
 
@@ -1858,50 +1766,6 @@ class UsageMeteringApi(object):
         kwargs = self._get_specified_monthly_custom_reports_endpoint.default_arguments(kwargs)
         kwargs["report_id"] = report_id
         return self._get_specified_monthly_custom_reports_endpoint.call_with_http_info(**kwargs)
-
-    def get_tracing_without_limits(self, start_hr, **kwargs):
-        """Get hourly usage for tracing without limits  # noqa: E501
-
-        Get hourly usage for tracing without limits.  **Note** This endpoint has been renamed to `/api/v1/usage/ingested-spans`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_tracing_without_limits(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
-
-        Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            UsageTracingWithoutLimitsResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs = self._get_tracing_without_limits_endpoint.default_arguments(kwargs)
-        kwargs["start_hr"] = start_hr
-        return self._get_tracing_without_limits_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_analyzed_logs(self, start_hr, **kwargs):
         """Get hourly usage for analyzed logs  # noqa: E501
@@ -3007,47 +2871,3 @@ class UsageMeteringApi(object):
         """
         kwargs = self._get_usage_top_avg_metrics_endpoint.default_arguments(kwargs)
         return self._get_usage_top_avg_metrics_endpoint.call_with_http_info(**kwargs)
-
-    def get_usage_trace(self, start_hr, **kwargs):
-        """Get hourly usage for Trace Search  # noqa: E501
-
-        Get hourly usage for trace search.  **Note** This endpoint has been renamed to `/api/v1/usage/indexed-spans`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_usage_trace(start_hr, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
-
-        Keyword Args:
-            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (float/tuple): timeout setting for this request. If one
-                number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            UsageTraceResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs = self._get_usage_trace_endpoint.default_arguments(kwargs)
-        kwargs["start_hr"] = start_hr
-        return self._get_usage_trace_endpoint.call_with_http_info(**kwargs)
