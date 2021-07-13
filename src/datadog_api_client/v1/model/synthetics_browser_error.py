@@ -75,7 +75,7 @@ class SyntheticsBrowserError(ModelNormal):
             "description": (str,),  # noqa: E501
             "name": (str,),  # noqa: E501
             "type": (SyntheticsBrowserErrorType,),  # noqa: E501
-            "status_code": (int,),  # noqa: E501
+            "status": (int,),  # noqa: E501
         }
 
     @cached_property
@@ -86,7 +86,7 @@ class SyntheticsBrowserError(ModelNormal):
         "description": "description",  # noqa: E501
         "name": "name",  # noqa: E501
         "type": "type",  # noqa: E501
-        "status_code": "statusCode",  # noqa: E501
+        "status": "status",  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -142,7 +142,7 @@ class SyntheticsBrowserError(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            status_code (int): Status Code of the error.. [optional]  # noqa: E501
+            status (int): Status Code of the error.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
