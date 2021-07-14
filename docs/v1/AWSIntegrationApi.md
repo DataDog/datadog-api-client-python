@@ -260,18 +260,11 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aws_integration_api.AWSIntegrationApi(api_client)
-    body = AWSAccount(
+    body = AWSAccountDeleteRequest(
         access_key_id="access_key_id_example",
         account_id="1234567",
-        account_specific_namespace_rules={
-            "key": True,
-        },
-        excluded_regions=["us-east-1","us-west-2"],
-        filter_tags=["<KEY>:<VALUE>"],
-        host_tags=["<KEY>:<VALUE>"],
         role_name="DatadogAWSIntegrationRole",
-        secret_access_key="secret_access_key_example",
-    )  # AWSAccount | AWS request object
+    )  # AWSAccountDeleteRequest | AWS request object
 
     # example passing only required values which don't have defaults set
     try:
@@ -287,7 +280,7 @@ with ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AWSAccount**](AWSAccount.md)| AWS request object |
+ **body** | [**AWSAccountDeleteRequest**](AWSAccountDeleteRequest.md)| AWS request object |
 
 ### Return type
 

@@ -47,21 +47,21 @@ Feature: AWS Integration
   @generated @skip
   Scenario: Delete an AWS integration returns "Bad Request" response
     Given new "DeleteAWSAccount" request
-    And body with value {"access_key_id": null, "account_id": "1234567", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["<KEY>:<VALUE>"], "host_tags": ["<KEY>:<VALUE>"], "role_name": "DatadogAWSIntegrationRole", "secret_access_key": null}
+    And body with value {"access_key_id": null, "account_id": "1234567", "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Delete an AWS integration returns "Conflict Error" response
     Given new "DeleteAWSAccount" request
-    And body with value {"access_key_id": null, "account_id": "1234567", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["<KEY>:<VALUE>"], "host_tags": ["<KEY>:<VALUE>"], "role_name": "DatadogAWSIntegrationRole", "secret_access_key": null}
+    And body with value {"access_key_id": null, "account_id": "1234567", "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 409 Conflict Error
 
   @generated @skip
   Scenario: Delete an AWS integration returns "OK" response
     Given new "DeleteAWSAccount" request
-    And body with value {"access_key_id": null, "account_id": "1234567", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["<KEY>:<VALUE>"], "host_tags": ["<KEY>:<VALUE>"], "role_name": "DatadogAWSIntegrationRole", "secret_access_key": null}
+    And body with value {"access_key_id": null, "account_id": "1234567", "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 200 OK
 

@@ -19,6 +19,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
 from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
+from datadog_api_client.v1.model.aws_account_delete_request import AWSAccountDeleteRequest
 from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
 from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilterCreateRequest
 from datadog_api_client.v1.model.aws_tag_filter_delete_request import AWSTagFilterDeleteRequest
@@ -169,7 +170,7 @@ class AWSIntegrationApi(object):
                 "validations": {},
                 "allowed_values": {},
                 "openapi_types": {
-                    "body": (AWSAccount,),
+                    "body": (AWSAccountDeleteRequest,),
                 },
                 "attribute_map": {},
                 "location_map": {
@@ -519,7 +520,7 @@ class AWSIntegrationApi(object):
         >>> result = thread.get()
 
         Args:
-            body (AWSAccount): AWS request object
+            body (AWSAccountDeleteRequest): AWS request object
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

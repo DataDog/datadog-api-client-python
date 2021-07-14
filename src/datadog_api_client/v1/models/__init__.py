@@ -13,6 +13,7 @@ from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
 from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
 from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
+from datadog_api_client.v1.model.aws_account_delete_request import AWSAccountDeleteRequest
 from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
 from datadog_api_client.v1.model.aws_logs_async_error import AWSLogsAsyncError
 from datadog_api_client.v1.model.aws_logs_async_response import AWSLogsAsyncResponse
