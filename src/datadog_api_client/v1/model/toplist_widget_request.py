@@ -89,6 +89,7 @@ class ToplistWidgetRequest(ModelNormal):
         lazy_import()
         return {
             "apm_query": (LogQueryDefinition,),  # noqa: E501
+            "audit_query": (LogQueryDefinition,),  # noqa: E501
             "conditional_formats": ([WidgetConditionalFormat],),  # noqa: E501
             "event_query": (LogQueryDefinition,),  # noqa: E501
             "formulas": ([WidgetFormula],),  # noqa: E501
@@ -110,6 +111,7 @@ class ToplistWidgetRequest(ModelNormal):
 
     attribute_map = {
         "apm_query": "apm_query",  # noqa: E501
+        "audit_query": "audit_query",  # noqa: E501
         "conditional_formats": "conditional_formats",  # noqa: E501
         "event_query": "event_query",  # noqa: E501
         "formulas": "formulas",  # noqa: E501
@@ -174,6 +176,7 @@ class ToplistWidgetRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
+            audit_query (LogQueryDefinition): [optional]  # noqa: E501
             conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
             event_query (LogQueryDefinition): [optional]  # noqa: E501
             formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]  # noqa: E501
