@@ -123,8 +123,10 @@ Class | Method | HTTP request | Description
 *DashboardListsApi* | [**update_dashboard_list**](DashboardListsApi.md#update_dashboard_list) | **PUT** /api/v1/dashboard/lists/manual/{list_id} | Update a dashboard list
 *DashboardsApi* | [**create_dashboard**](DashboardsApi.md#create_dashboard) | **POST** /api/v1/dashboard | Create a new dashboard
 *DashboardsApi* | [**delete_dashboard**](DashboardsApi.md#delete_dashboard) | **DELETE** /api/v1/dashboard/{dashboard_id} | Delete a dashboard
+*DashboardsApi* | [**delete_dashboards**](DashboardsApi.md#delete_dashboards) | **DELETE** /api/v1/dashboard | Delete dashboards
 *DashboardsApi* | [**get_dashboard**](DashboardsApi.md#get_dashboard) | **GET** /api/v1/dashboard/{dashboard_id} | Get a dashboard
 *DashboardsApi* | [**list_dashboards**](DashboardsApi.md#list_dashboards) | **GET** /api/v1/dashboard | Get all dashboards
+*DashboardsApi* | [**restore_dashboards**](DashboardsApi.md#restore_dashboards) | **PATCH** /api/v1/dashboard | Restore deleted dashboards
 *DashboardsApi* | [**update_dashboard**](DashboardsApi.md#update_dashboard) | **PUT** /api/v1/dashboard/{dashboard_id} | Update a dashboard
 *DowntimesApi* | [**cancel_downtime**](DowntimesApi.md#cancel_downtime) | **DELETE** /api/v1/downtime/{downtime_id} | Cancel a downtime
 *DowntimesApi* | [**cancel_downtimes_by_scope**](DowntimesApi.md#cancel_downtimes_by_scope) | **POST** /api/v1/downtime/cancel/by_scope | Cancel downtimes by scope
@@ -337,12 +339,17 @@ Class | Method | HTTP request | Description
  - [ContentEncoding](ContentEncoding.md)
  - [Creator](Creator.md)
  - [Dashboard](Dashboard.md)
+ - [DashboardBulkActionData](DashboardBulkActionData.md)
+ - [DashboardBulkActionDataList](DashboardBulkActionDataList.md)
+ - [DashboardBulkDeleteRequest](DashboardBulkDeleteRequest.md)
  - [DashboardDeleteResponse](DashboardDeleteResponse.md)
  - [DashboardLayoutType](DashboardLayoutType.md)
  - [DashboardList](DashboardList.md)
  - [DashboardListDeleteResponse](DashboardListDeleteResponse.md)
  - [DashboardListListResponse](DashboardListListResponse.md)
  - [DashboardReflowType](DashboardReflowType.md)
+ - [DashboardResourceType](DashboardResourceType.md)
+ - [DashboardRestoreRequest](DashboardRestoreRequest.md)
  - [DashboardSummary](DashboardSummary.md)
  - [DashboardSummaryDefinition](DashboardSummaryDefinition.md)
  - [DashboardTemplateVariable](DashboardTemplateVariable.md)

@@ -18,7 +18,9 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.dashboard import Dashboard
+from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardBulkDeleteRequest
 from datadog_api_client.v1.model.dashboard_delete_response import DashboardDeleteResponse
+from datadog_api_client.v1.model.dashboard_restore_request import DashboardRestoreRequest
 from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
 
 
@@ -111,6 +113,42 @@ class DashboardsApi(object):
             api_client=api_client,
         )
 
+        self._delete_dashboards_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/dashboard",
+                "operation_id": "delete_dashboards",
+                "http_method": "DELETE",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "body",
+                ],
+                "required": [
+                    "body",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (DashboardBulkDeleteRequest,),
+                },
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._get_dashboard_endpoint = _Endpoint(
             settings={
                 "response_type": (Dashboard,),
@@ -188,6 +226,42 @@ class DashboardsApi(object):
                 "accept": ["application/json"],
                 "content_type": [],
             },
+            api_client=api_client,
+        )
+
+        self._restore_dashboards_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/dashboard",
+                "operation_id": "restore_dashboards",
+                "http_method": "PATCH",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "body",
+                ],
+                "required": [
+                    "body",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (DashboardRestoreRequest,),
+                },
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -319,6 +393,49 @@ class DashboardsApi(object):
         kwargs["dashboard_id"] = dashboard_id
         return self._delete_dashboard_endpoint.call_with_http_info(**kwargs)
 
+    def delete_dashboards(self, body, **kwargs):
+        """Delete dashboards  # noqa: E501
+
+        Delete dashboards using the specified IDs. If there are any failures, no dashboards will be deleted (partial success is not allowed).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_dashboards(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (DashboardBulkDeleteRequest): Delete dashboards request body.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._delete_dashboards_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._delete_dashboards_endpoint.call_with_http_info(**kwargs)
+
     def get_dashboard(self, dashboard_id, **kwargs):
         """Get a dashboard  # noqa: E501
 
@@ -402,6 +519,49 @@ class DashboardsApi(object):
         """
         kwargs = self._list_dashboards_endpoint.default_arguments(kwargs)
         return self._list_dashboards_endpoint.call_with_http_info(**kwargs)
+
+    def restore_dashboards(self, body, **kwargs):
+        """Restore deleted dashboards  # noqa: E501
+
+        Restore dashboards using the specified IDs. If there are any failures, no dashboards will be restored (partial success is not allowed).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.restore_dashboards(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (DashboardRestoreRequest): Restore dashboards request body.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._restore_dashboards_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._restore_dashboards_endpoint.call_with_http_info(**kwargs)
 
     def update_dashboard(self, dashboard_id, body, **kwargs):
         """Update a dashboard  # noqa: E501
