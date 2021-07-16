@@ -73,6 +73,10 @@ class UsageAttributionValues(ModelNormal):
             "browser_usage": (float,),  # noqa: E501
             "container_percentage": (float,),  # noqa: E501
             "container_usage": (float,),  # noqa: E501
+            "cspm_container_percentage": (float,),  # noqa: E501
+            "cspm_container_usage": (float,),  # noqa: E501
+            "cspm_host_percentage": (float,),  # noqa: E501
+            "cspm_host_usage": (float,),  # noqa: E501
             "custom_timeseries_percentage": (float,),  # noqa: E501
             "custom_timeseries_usage": (float,),  # noqa: E501
             "cws_container_percentage": (float,),  # noqa: E501
@@ -110,6 +114,10 @@ class UsageAttributionValues(ModelNormal):
         "browser_usage": "browser_usage",  # noqa: E501
         "container_percentage": "container_percentage",  # noqa: E501
         "container_usage": "container_usage",  # noqa: E501
+        "cspm_container_percentage": "cspm_container_percentage",  # noqa: E501
+        "cspm_container_usage": "cspm_container_usage",  # noqa: E501
+        "cspm_host_percentage": "cspm_host_percentage",  # noqa: E501
+        "cspm_host_usage": "cspm_host_usage",  # noqa: E501
         "custom_timeseries_percentage": "custom_timeseries_percentage",  # noqa: E501
         "custom_timeseries_usage": "custom_timeseries_usage",  # noqa: E501
         "cws_container_percentage": "cws_container_percentage",  # noqa: E501
@@ -190,6 +198,10 @@ class UsageAttributionValues(ModelNormal):
             browser_usage (float): The synthetic browser test usage by tag(s).. [optional]  # noqa: E501
             container_percentage (float): The percentage of container usage by tag(s).. [optional]  # noqa: E501
             container_usage (float): The container usage by tag(s).. [optional]  # noqa: E501
+            cspm_container_percentage (float): The percentage of Cloud Security Posture Management container usage by tag(s). [optional]  # noqa: E501
+            cspm_container_usage (float): The Cloud Security Posture Management container usage by tag(s). [optional]  # noqa: E501
+            cspm_host_percentage (float): The percentage of Cloud Security Posture Management host usage by tag(s). [optional]  # noqa: E501
+            cspm_host_usage (float): The Cloud Security Posture Management host usage by tag(s). [optional]  # noqa: E501
             custom_timeseries_percentage (float): The percentage of custom metrics usage by tag(s).. [optional]  # noqa: E501
             custom_timeseries_usage (float): The custom metrics usage by tag(s).. [optional]  # noqa: E501
             cws_container_percentage (float): The percentage of Cloud Workload Security container usage by tag(s). [optional]  # noqa: E501
