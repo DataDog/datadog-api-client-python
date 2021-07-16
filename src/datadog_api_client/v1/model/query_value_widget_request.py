@@ -86,6 +86,7 @@ class QueryValueWidgetRequest(ModelNormal):
         return {
             "aggregator": (WidgetAggregator,),  # noqa: E501
             "apm_query": (LogQueryDefinition,),  # noqa: E501
+            "audit_query": (LogQueryDefinition,),  # noqa: E501
             "conditional_formats": ([WidgetConditionalFormat],),  # noqa: E501
             "event_query": (LogQueryDefinition,),  # noqa: E501
             "formulas": ([WidgetFormula],),  # noqa: E501
@@ -107,6 +108,7 @@ class QueryValueWidgetRequest(ModelNormal):
     attribute_map = {
         "aggregator": "aggregator",  # noqa: E501
         "apm_query": "apm_query",  # noqa: E501
+        "audit_query": "audit_query",  # noqa: E501
         "conditional_formats": "conditional_formats",  # noqa: E501
         "event_query": "event_query",  # noqa: E501
         "formulas": "formulas",  # noqa: E501
@@ -171,6 +173,7 @@ class QueryValueWidgetRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             aggregator (WidgetAggregator): [optional]  # noqa: E501
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
+            audit_query (LogQueryDefinition): [optional]  # noqa: E501
             conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
             event_query (LogQueryDefinition): [optional]  # noqa: E501
             formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]  # noqa: E501

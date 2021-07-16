@@ -6,6 +6,7 @@ Updated timeseries widget.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apm_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
+**audit_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **display_type** | [**WidgetDisplayType**](WidgetDisplayType.md) |  | [optional] 
 **event_query** | [**LogQueryDefinition**](LogQueryDefinition.md) |  | [optional] 
 **formulas** | [**[WidgetFormula]**](WidgetFormula.md) | List of formulas that operate on queries. **This feature is currently in beta.** | [optional] 
