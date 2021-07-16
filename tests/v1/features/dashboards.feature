@@ -60,6 +60,27 @@ Feature: Dashboards
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Delete dashboards returns "Bad Request" response
+    Given new "DeleteDashboards" request
+    And body with value {"data": [{"id": "123-abc-456", "type": "dashboard"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Delete dashboards returns "Dashboards Not Found" response
+    Given new "DeleteDashboards" request
+    And body with value {"data": [{"id": "123-abc-456", "type": "dashboard"}]}
+    When the request is sent
+    Then the response status is 404 Dashboards Not Found
+
+  Scenario: Delete dashboards returns "No Content" response
+    Given there is a valid "dashboard" in the system
+    And new "DeleteDashboards" request
+    And body with value {"data": [{"id": "{{ dashboard.id }}", "type": "dashboard"}]}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip
   Scenario: Get a dashboard returns "Item Not Found" response
     Given new "GetDashboard" request
     And request contains "dashboard_id" parameter from "<PATH>"
@@ -79,6 +100,27 @@ Feature: Dashboards
     And request contains "filter[shared]" parameter with value false
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip
+  Scenario: Restore deleted dashboards returns "Bad Request" response
+    Given new "RestoreDashboards" request
+    And body with value {"data": [{"id": "123-abc-456", "type": "dashboard"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Restore deleted dashboards returns "Dashboards Not Found" response
+    Given new "RestoreDashboards" request
+    And body with value {"data": [{"id": "123-abc-456", "type": "dashboard"}]}
+    When the request is sent
+    Then the response status is 404 Dashboards Not Found
+
+  @generated @skip
+  Scenario: Restore deleted dashboards returns "No Content" response
+    Given new "RestoreDashboards" request
+    And body with value {"data": [{"id": "123-abc-456", "type": "dashboard"}]}
+    When the request is sent
+    Then the response status is 204 No Content
 
   @generated @skip
   Scenario: Update a dashboard returns "Bad Request" response
