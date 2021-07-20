@@ -23,8 +23,12 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
+    from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
     from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
 
+    globals()["TableWidgetCellDisplayMode"] = TableWidgetCellDisplayMode
+    globals()["WidgetConditionalFormat"] = WidgetConditionalFormat
     globals()["WidgetFormulaLimit"] = WidgetFormulaLimit
 
 
@@ -74,6 +78,8 @@ class WidgetFormula(ModelNormal):
         return {
             "formula": (str,),  # noqa: E501
             "alias": (str,),  # noqa: E501
+            "cell_display_mode": (TableWidgetCellDisplayMode,),  # noqa: E501
+            "conditional_formats": ([WidgetConditionalFormat],),  # noqa: E501
             "limit": (WidgetFormulaLimit,),  # noqa: E501
         }
 
@@ -84,6 +90,8 @@ class WidgetFormula(ModelNormal):
     attribute_map = {
         "formula": "formula",  # noqa: E501
         "alias": "alias",  # noqa: E501
+        "cell_display_mode": "cell_display_mode",  # noqa: E501
+        "conditional_formats": "conditional_formats",  # noqa: E501
         "limit": "limit",  # noqa: E501
     }
 
@@ -139,6 +147,8 @@ class WidgetFormula(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             alias (str): Expression alias.. [optional]  # noqa: E501
+            cell_display_mode (TableWidgetCellDisplayMode): [optional]  # noqa: E501
+            conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
             limit (WidgetFormulaLimit): [optional]  # noqa: E501
         """
 

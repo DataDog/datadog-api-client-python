@@ -10274,6 +10274,12 @@ components:
           type: array
         event_query:
           $ref: '#/components/schemas/LogQueryDefinition'
+        formulas:
+          description: List of formulas that operate on queries. **This feature is
+            currently in beta.**
+          items:
+            $ref: '#/components/schemas/WidgetFormula'
+          type: array
         limit:
           description: For metric queries, the number of lines to show in the table.
             Only one request should have this property.
@@ -10292,6 +10298,14 @@ components:
         q:
           description: Query definition.
           type: string
+        queries:
+          description: List of queries that can be returned directly or used in formulas.
+            **This feature is currently in beta.**
+          items:
+            $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
+          type: array
+        response_format:
+          $ref: '#/components/schemas/FormulaAndFunctionResponseFormat'
         rum_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         security_query:
@@ -13063,6 +13077,13 @@ components:
         alias:
           description: Expression alias.
           type: string
+        cell_display_mode:
+          $ref: '#/components/schemas/TableWidgetCellDisplayMode'
+        conditional_formats:
+          description: List of conditional formats.
+          items:
+            $ref: '#/components/schemas/WidgetConditionalFormat'
+          type: array
         formula:
           description: String expression built from queries, formulas, and functions.
           example: func(a) + b
