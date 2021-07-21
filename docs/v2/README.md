@@ -385,6 +385,7 @@ Class | Method | HTTP request | Description
  - [MetricsAndMetricTagConfigurationsResponse](MetricsAndMetricTagConfigurationsResponse.md)
  - [Organization](Organization.md)
  - [OrganizationAttributes](OrganizationAttributes.md)
+ - [OrganizationsResponse](OrganizationsResponse.md)
  - [OrganizationsType](OrganizationsType.md)
  - [Pagination](Pagination.md)
  - [PartialAPIKey](PartialAPIKey.md)

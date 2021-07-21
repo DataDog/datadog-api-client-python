@@ -227,6 +227,7 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response 
 )
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
+from datadog_api_client.v2.model.organizations_response import OrganizationsResponse
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
 from datadog_api_client.v2.model.pagination import Pagination
 from datadog_api_client.v2.model.partial_api_key import PartialAPIKey

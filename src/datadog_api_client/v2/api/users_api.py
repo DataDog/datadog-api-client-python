@@ -17,6 +17,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.organizations_response import OrganizationsResponse
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.user_create_request import UserCreateRequest
@@ -201,7 +202,7 @@ class UsersApi(object):
 
         self._list_user_organizations_endpoint = _Endpoint(
             settings={
-                "response_type": (UserResponse,),
+                "response_type": (OrganizationsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/users/{user_id}/orgs",
                 "operation_id": "list_user_organizations",
@@ -625,7 +626,7 @@ class UsersApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            UserResponse
+            OrganizationsResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

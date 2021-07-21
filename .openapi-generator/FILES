@@ -218,6 +218,7 @@ datadog_api_client/v2/model/metrics_and_metric_tag_configurations.py
 datadog_api_client/v2/model/metrics_and_metric_tag_configurations_response.py
 datadog_api_client/v2/model/organization.py
 datadog_api_client/v2/model/organization_attributes.py
+datadog_api_client/v2/model/organizations_response.py
 datadog_api_client/v2/model/organizations_type.py
 datadog_api_client/v2/model/pagination.py
 datadog_api_client/v2/model/partial_api_key.py
@@ -550,6 +551,7 @@ docs/MetricsAndMetricTagConfigurationsResponse.md
 docs/MetricsApi.md
 docs/Organization.md
 docs/OrganizationAttributes.md
+docs/OrganizationsResponse.md
 docs/OrganizationsType.md
 docs/Pagination.md
 docs/PartialAPIKey.md
@@ -883,6 +885,7 @@ test/test_metrics_and_metric_tag_configurations_response.py
 test/test_metrics_api.py
 test/test_organization.py
 test/test_organization_attributes.py
+test/test_organizations_response.py
 test/test_organizations_type.py
 test/test_pagination.py
 test/test_partial_api_key.py

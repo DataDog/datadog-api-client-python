@@ -59,10 +59,11 @@ Feature: Users
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip
+  @skip
   Scenario: Get a user organization returns "OK" response
-    Given new "ListUserOrganizations" request
-    And request contains "user_id" parameter from "<PATH>"
+    Given there is a valid "user" in the system
+    And new "ListUserOrganizations" request
+    And request contains "user_id" parameter from "user.data.id"
     When the request is sent
     Then the response status is 200 OK
 

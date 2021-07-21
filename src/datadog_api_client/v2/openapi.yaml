@@ -3256,6 +3256,18 @@ components:
           description: URL of the site that this organization exists at.
           type: string
       type: object
+    OrganizationsResponse:
+      description: Response containing information about multiple organizations.
+      properties:
+        data:
+          description: Array of returned organizations.
+          items:
+            $ref: '#/components/schemas/Organization'
+          type: array
+        meta:
+          $ref: '#/components/schemas/ResponseMetaAttributes'
+      readOnly: true
+      type: object
     OrganizationsType:
       default: orgs
       description: Organizations resource type.
@@ -8702,7 +8714,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResponse'
+                $ref: '#/components/schemas/OrganizationsResponse'
           description: OK
         '403':
           content:
