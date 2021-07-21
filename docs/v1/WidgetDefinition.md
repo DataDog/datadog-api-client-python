@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **HostMapWidgetDefinition** | [**HostMapWidgetDefinition**](HostMapWidgetDefinition.md) | Container class of the relevant properties. |
 **IFrameWidgetDefinition** | [**IFrameWidgetDefinition**](IFrameWidgetDefinition.md) | Container class of the relevant properties. |
 **ImageWidgetDefinition** | [**ImageWidgetDefinition**](ImageWidgetDefinition.md) | Container class of the relevant properties. |
+**ListStreamWidgetDefinition** | [**ListStreamWidgetDefinition**](ListStreamWidgetDefinition.md) | Container class of the relevant properties. |
 **LogStreamWidgetDefinition** | [**LogStreamWidgetDefinition**](LogStreamWidgetDefinition.md) | Container class of the relevant properties. |
 **MonitorSummaryWidgetDefinition** | [**MonitorSummaryWidgetDefinition**](MonitorSummaryWidgetDefinition.md) | Container class of the relevant properties. |
 **NoteWidgetDefinition** | [**NoteWidgetDefinition**](NoteWidgetDefinition.md) | Container class of the relevant properties. |

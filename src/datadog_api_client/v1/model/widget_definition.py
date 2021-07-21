@@ -39,6 +39,9 @@ def lazy_import():
     from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
     from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
     from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
+    from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
+    from datadog_api_client.v1.model.list_stream_widget_definition_type import ListStreamWidgetDefinitionType
+    from datadog_api_client.v1.model.list_stream_widget_request import ListStreamWidgetRequest
     from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
     from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
     from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
@@ -57,8 +60,6 @@ def lazy_import():
     from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
     from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy
     from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
-    from datadog_api_client.v1.model.tree_map_widget_definition_type import TreeMapWidgetDefinitionType
-    from datadog_api_client.v1.model.tree_map_widget_request import TreeMapWidgetRequest
     from datadog_api_client.v1.model.widget import Widget
     from datadog_api_client.v1.model.widget_axis import WidgetAxis
     from datadog_api_client.v1.model.widget_color_preference import WidgetColorPreference
@@ -101,6 +102,9 @@ def lazy_import():
     globals()["HostMapWidgetDefinitionStyle"] = HostMapWidgetDefinitionStyle
     globals()["IFrameWidgetDefinition"] = IFrameWidgetDefinition
     globals()["ImageWidgetDefinition"] = ImageWidgetDefinition
+    globals()["ListStreamWidgetDefinition"] = ListStreamWidgetDefinition
+    globals()["ListStreamWidgetDefinitionType"] = ListStreamWidgetDefinitionType
+    globals()["ListStreamWidgetRequest"] = ListStreamWidgetRequest
     globals()["LogStreamWidgetDefinition"] = LogStreamWidgetDefinition
     globals()["MonitorSummaryWidgetDefinition"] = MonitorSummaryWidgetDefinition
     globals()["NoteWidgetDefinition"] = NoteWidgetDefinition
@@ -119,8 +123,6 @@ def lazy_import():
     globals()["TreeMapGroupBy"] = TreeMapGroupBy
     globals()["TreeMapSizeBy"] = TreeMapSizeBy
     globals()["TreeMapWidgetDefinition"] = TreeMapWidgetDefinition
-    globals()["TreeMapWidgetDefinitionType"] = TreeMapWidgetDefinitionType
-    globals()["TreeMapWidgetRequest"] = TreeMapWidgetRequest
     globals()["Widget"] = Widget
     globals()["WidgetAxis"] = WidgetAxis
     globals()["WidgetColorPreference"] = WidgetColorPreference
@@ -273,7 +275,7 @@ class WidgetDefinition(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             time (WidgetTime): [optional]  # noqa: E501
-            title (str): Title of your widget.. [optional]  # noqa: E501
+            title (str): Title of the widget.. [optional]  # noqa: E501
             title_align (WidgetTextAlign): [optional]  # noqa: E501
             title_size (str): Size of the title.. [optional]  # noqa: E501
             precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]  # noqa: E501
@@ -284,7 +286,7 @@ class WidgetDefinition(ModelComposed):
             tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
             legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
             markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
-            show_legend (bool): (screenboard only) Show the legend for this widget.. [optional]  # noqa: E501
+            show_legend (bool): Whether or not to display the legend on this widget.. [optional]  # noqa: E501
             xaxis (WidgetAxis): [optional]  # noqa: E501
             yaxis (WidgetAxis): [optional]  # noqa: E501
             event_size (WidgetEventSize): [optional]  # noqa: E501
@@ -345,9 +347,9 @@ class WidgetDefinition(ModelComposed):
             legend_layout (TimeseriesWidgetLegendLayout): [optional]  # noqa: E501
             right_yaxis (WidgetAxis): [optional]  # noqa: E501
             alert_id (str): ID of the alert to use in the widget.. [optional]  # noqa: E501
-            type (TreeMapWidgetDefinitionType): [optional]  # noqa: E501
+            type (ListStreamWidgetDefinitionType): [optional]  # noqa: E501
             viz_type (WidgetVizType): [optional]  # noqa: E501
-            requests ([TreeMapWidgetRequest]): List of top list widget requests.. [optional]  # noqa: E501
+            requests ([ListStreamWidgetRequest]): Request payload used to query items.. [optional]  # noqa: E501
             check (str): Name of the check to use in the widget.. [optional]  # noqa: E501
             group_by (TreeMapGroupBy): [optional]  # noqa: E501
             grouping (WidgetGrouping): [optional]  # noqa: E501
@@ -450,6 +452,7 @@ class WidgetDefinition(ModelComposed):
                 HostMapWidgetDefinition,
                 IFrameWidgetDefinition,
                 ImageWidgetDefinition,
+                ListStreamWidgetDefinition,
                 LogStreamWidgetDefinition,
                 MonitorSummaryWidgetDefinition,
                 NoteWidgetDefinition,
