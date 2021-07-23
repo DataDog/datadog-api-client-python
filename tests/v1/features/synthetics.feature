@@ -15,6 +15,22 @@ Feature: Synthetics
     And a valid "appKeyAuth" key in the system
     And an instance of "Synthetics" API
 
+  @replay-only @skip-python @skip-typescript @skip-java @skip-ruby
+  Scenario: Client is resilient to enum and oneOf deserialization errors
+    Given new "ListTests" request
+    When the request is sent
+    Then the response status is 200 OK - Returns the list of all Synthetic tests.
+    And the response "tests" has length 6
+    And the response "tests[0].config.assertions" has length 3
+    And the response "tests[0].config.assertions[0].operator" is equal to "lessThan"
+    And the response "tests[0].config.assertions[2].operator" is equal to "A non existent operator"
+    And the response "tests[1].config.assertions[0].operator" is equal to "lessThan"
+    And the response "tests[1].config.assertions[1].type" is equal to "A non existent assertion type"
+    And the response "tests[2].options.device_ids" has length 3
+    And the response "tests[2].options.device_ids[2]" is equal to "A non existent device ID"
+    And the response "tests[3].type" is equal to "A non existent test type"
+    And the response "tests[4].config.request.method" is equal to "A non existent method"
+
   @generated @skip
   Scenario: Create a browser test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsBrowserTest" request
