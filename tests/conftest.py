@@ -6,7 +6,7 @@ import os
 # First patch httplib
 tracer = None
 try:
-    from ddtrace import config, patch, tracer
+    from ddtrace import ServiceStatusError, config, patch, tracer
 
     if os.getenv("RECORD", "false") != "none":
         from ddtrace.internal.writer import AgentWriter
@@ -26,7 +26,10 @@ try:
                 self._started = True
                 super(Writer, self).write(*args, **kwargs)
 
-        tracer.writer.stop()
+        try:
+            tracer.writer.stop()
+        except ServiceStatusError:
+            pass
         tracer.writer = Writer(
             hostname=tracer.writer._hostname,
             port=tracer.writer._port,
