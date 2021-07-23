@@ -1654,15 +1654,12 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                         constant_kwargs['_check_type'],
                         configuration=constant_kwargs['_configuration']
                     )
-            oneof_instances.append(oneof_instance)
+            if not oneof_instance._unparsed:
+	        oneof_instances.append(oneof_instance)
         except Exception:
             pass
     if len(oneof_instances) == 0:
-        raise ApiValueError(
-            "Invalid inputs given to generate an instance of %s. None "
-            "of the oneOf schemas matched the input data." %
-            cls.__name__
-        )
+        return UnparsedObject(**model_kwargs)
     elif len(oneof_instances) > 1:
         raise ApiValueError(
             "Invalid inputs given to generate an instance of %s. Multiple "
@@ -1822,3 +1819,72 @@ def validate_get_composed_info(constant_args, model_args, self):
       additional_properties_model_instances,
       discarded_args
     ]
+
+
+class UnparsedObject(ModelNormal):
+    """A model for an oneOf we don't know about."""
+
+    allowed_values = {}
+
+    validations = {}
+
+    additional_properties_type = None
+
+    _nullable = False
+
+    openapi_types = {}
+
+    discriminator = None
+
+    attribute_map = {}
+
+    _composed_schemas = {}
+
+    required_properties = set(
+        [
+            "_data_store",
+        ]
+    )
+
+    @convert_js_args_to_python_args
+    def __init__(self, **kwargs):
+
+        self._data_store = {}
+
+        for var_name, var_value in kwargs.items():
+            self.__dict__[var_name] = var_value
+            self.__dict__["_data_store"][var_name] = var_value
+
+
+class UnparsedSimpleObject(ModelSimple):
+    """A model we don't know about."""
+
+    allowed_values = {}
+
+    validations = {}
+
+    additional_properties_type = None
+
+    _nullable = False
+
+    openapi_types = {}
+
+    discriminator = None
+
+    attribute_map = {}
+
+    _composed_schemas = {}
+
+    required_properties = set(
+        [
+            "_data_store",
+        ]
+    )
+
+    @convert_js_args_to_python_args
+    def __init__(self, value):
+
+        self._data_store = {}
+
+        self.__dict__["value"] = value
+        self.__dict__["_data_store"]["value"] = value

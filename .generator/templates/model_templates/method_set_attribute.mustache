@@ -49,3 +49,5 @@
                 self._configuration
             )
         self.__dict__['_data_store'][name] = value
+        if isinstance(value, OpenApiModel) and value._unparsed:
+            self._unparsed = True
