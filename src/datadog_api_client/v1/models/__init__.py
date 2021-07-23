@@ -169,6 +169,14 @@ from datadog_api_client.v1.model.idp_response import IdpResponse
 from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
 from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v1.model.list_stream_column import ListStreamColumn
+from datadog_api_client.v1.model.list_stream_column_width import ListStreamColumnWidth
+from datadog_api_client.v1.model.list_stream_query import ListStreamQuery
+from datadog_api_client.v1.model.list_stream_response_format import ListStreamResponseFormat
+from datadog_api_client.v1.model.list_stream_source import ListStreamSource
+from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
+from datadog_api_client.v1.model.list_stream_widget_definition_type import ListStreamWidgetDefinitionType
+from datadog_api_client.v1.model.list_stream_widget_request import ListStreamWidgetRequest
 from datadog_api_client.v1.model.log import Log
 from datadog_api_client.v1.model.log_content import LogContent
 from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
