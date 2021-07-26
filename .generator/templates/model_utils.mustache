@@ -1854,37 +1854,3 @@ class UnparsedObject(ModelNormal):
         for var_name, var_value in kwargs.items():
             self.__dict__[var_name] = var_value
             self.__dict__["_data_store"][var_name] = var_value
-
-
-class UnparsedSimpleObject(ModelSimple):
-    """A model we don't know about."""
-
-    allowed_values = {}
-
-    validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
-
-    openapi_types = {}
-
-    discriminator = None
-
-    attribute_map = {}
-
-    _composed_schemas = {}
-
-    required_properties = set(
-        [
-            "_data_store",
-        ]
-    )
-
-    @convert_js_args_to_python_args
-    def __init__(self, value):
-
-        self._data_store = {}
-
-        self.__dict__["value"] = value
-        self.__dict__["_data_store"]["value"] = value
