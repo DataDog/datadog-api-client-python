@@ -1658,14 +1658,8 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
 	        oneof_instances.append(oneof_instance)
         except Exception:
             pass
-    if len(oneof_instances) == 0:
+    if len(oneof_instances) != 1:
         return UnparsedObject(**model_kwargs)
-    elif len(oneof_instances) > 1:
-        raise ApiValueError(
-            "Invalid inputs given to generate an instance of %s. Multiple "
-            "oneOf schemas matched the inputs, but a max of one is allowed." %
-            cls.__name__
-        )
     return oneof_instances[0]
 
 
@@ -1843,6 +1837,7 @@ class UnparsedObject(ModelNormal):
     required_properties = set(
         [
             "_data_store",
+            "_unparsed",
         ]
     )
 
@@ -1850,6 +1845,7 @@ class UnparsedObject(ModelNormal):
     def __init__(self, **kwargs):
 
         self._data_store = {}
+        self._unparsed = True
 
         for var_name, var_value in kwargs.items():
             self.__dict__[var_name] = var_value
