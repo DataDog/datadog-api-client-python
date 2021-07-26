@@ -91,6 +91,8 @@ def pytest_bdd_apply_tag(tag, function):
     if not _disable_recording():
         # ignore integration-only scenarios if the recording is enabled
         skip_tags.add("integration-only")
+    if os.getenv("RECORD", "false").lower() != "false":
+        skip_tags.add("replay-only")
     if tag in skip_tags:
         marker = pytest.mark.skip(reason=f"skipped because '{tag}' in {skip_tags}")
         marker(function)
