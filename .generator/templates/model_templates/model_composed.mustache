@@ -17,6 +17,8 @@ class {{classname}}(ModelComposed):
 
     attribute_map = {}
 
+{{> model_templates/method_from_openapi_data_composed }}
+
 {{> model_templates/method_init_composed }}
 
     @cached_property
