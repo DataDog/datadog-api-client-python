@@ -1104,6 +1104,12 @@
       "type": "safe"
     }
   },
+  "GetChargebackSummary": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageCloudSecurityPostureManagement": {
     "tag": "Usage Metering",
     "undo": {

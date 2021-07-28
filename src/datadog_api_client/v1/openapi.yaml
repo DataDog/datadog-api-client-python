@@ -740,6 +740,60 @@ components:
           description: Whether to show the present value.
           type: boolean
       type: object
+    ChargebackOrgMonth:
+      description: Cost per product for a sub-org for a given month.
+      properties:
+        charges:
+          description: Charges by product and charge type.
+          items:
+            $ref: '#/components/schemas/ChargebackSummaryCharge'
+          type: array
+        date:
+          description: The month for the usage.
+          format: date-time
+          type: string
+        org_id:
+          description: ID of the sub-org.
+          format: int64
+          type: integer
+        total_cost:
+          description: Total cost for all products for the sub-org within the month.
+          format: double
+          type: number
+      type: object
+    ChargebackSummaryCharge:
+      description: Cost breakdown for a product and charge type for a sub-org.
+      properties:
+        charge_type:
+          description: The subscription type for the usage (`committed`, `on_demand`,
+            or `committed_remaining`).
+          type: string
+        cost:
+          description: Cost of usage for product attributable to sub-org.
+          format: double
+          type: number
+        price_per_unit:
+          description: Price in dollars per unit of usage.
+          format: double
+          type: number
+        product_name:
+          description: Name of product.
+          type: string
+        units:
+          description: Number of billed units attributable to sub-org.
+          format: double
+          type: number
+      type: object
+    ChargebackSummaryResponse:
+      description: A response containing usage costs allocated by sub-org for each
+        month for a given organization.
+      properties:
+        cost_allocation:
+          description: Get cost allocated by sub-org.
+          items:
+            $ref: '#/components/schemas/ChargebackOrgMonth'
+          type: array
+      type: object
     CheckCanDeleteMonitorResponse:
       description: Response of monitor IDs that can or can't be safely deleted.
       properties:
@@ -21431,6 +21485,55 @@ paths:
       tags:
       - Usage Metering
       x-menu-order: 19
+      x-undo:
+        type: safe
+  /api/v1/usage/chargeback-summary:
+    get:
+      description: Get usage cost per product for each sub-org across your multi-org
+        account.
+      operationId: GetChargebackSummary
+      parameters:
+      - description: 'Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]`
+          for usage beginning in this month.
+
+          Maximum of 15 months ago.'
+        in: query
+        name: start_month
+        required: true
+        schema:
+          format: date-time
+          type: string
+      - description: 'Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]`
+          for usage ending this month.'
+        in: query
+        name: end_month
+        required: false
+        schema:
+          format: date-time
+          type: string
+      responses:
+        '200':
+          content:
+            application/json;datetime-format=rfc3339:
+              schema:
+                $ref: '#/components/schemas/ChargebackSummaryResponse'
+          description: OK
+        '400':
+          content:
+            application/json;datetime-format=rfc3339:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json;datetime-format=rfc3339:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden - User is not authorized
+      summary: Get cost by sub-org
+      tags:
+      - Usage Metering
+      x-menu-order: 32
       x-undo:
         type: safe
   /api/v1/usage/cspm:

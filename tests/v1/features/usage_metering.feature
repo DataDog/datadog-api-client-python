@@ -44,6 +44,18 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get cost by sub-org returns "Bad Request" response
+    Given new "GetChargebackSummary" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @integration-only
+  Scenario: Get cost by sub-org returns "OK" response
+    Given new "GetChargebackSummary" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get hourly logs usage by retention returns "Bad Request" response
     Given new "GetUsageLogsByRetention" request
     When the request is sent

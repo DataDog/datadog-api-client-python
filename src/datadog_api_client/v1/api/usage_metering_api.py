@@ -17,6 +17,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
+from datadog_api_client.v1.model.chargeback_summary_response import ChargebackSummaryResponse
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
 from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
 from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
@@ -65,6 +66,51 @@ class UsageMeteringApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        self._get_chargeback_summary_endpoint = _Endpoint(
+            settings={
+                "response_type": (ChargebackSummaryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/chargeback-summary",
+                "operation_id": "get_chargeback_summary",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "start_month",
+                    "end_month",
+                ],
+                "required": [
+                    "start_month",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_month": (datetime,),
+                    "end_month": (datetime,),
+                },
+                "attribute_map": {
+                    "start_month": "start_month",
+                    "end_month": "end_month",
+                },
+                "location_map": {
+                    "start_month": "query",
+                    "end_month": "query",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
 
         self._get_daily_custom_reports_endpoint = _Endpoint(
             settings={
@@ -1504,6 +1550,50 @@ class UsageMeteringApi(object):
             },
             api_client=api_client,
         )
+
+    def get_chargeback_summary(self, start_month, **kwargs):
+        """Get cost by sub-org  # noqa: E501
+
+        Get usage cost per product for each sub-org across your multi-org account.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_chargeback_summary(start_month, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage beginning in this month. Maximum of 15 months ago.
+
+        Keyword Args:
+            end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ChargebackSummaryResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_chargeback_summary_endpoint.default_arguments(kwargs)
+        kwargs["start_month"] = start_month
+        return self._get_chargeback_summary_endpoint.call_with_http_info(**kwargs)
 
     def get_daily_custom_reports(self, **kwargs):
         """Get the list of available daily custom reports  # noqa: E501
