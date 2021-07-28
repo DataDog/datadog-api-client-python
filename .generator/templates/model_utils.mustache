@@ -1044,7 +1044,10 @@ def deserialize_model(model_data, model_class, path_to_item, check_type,
     if issubclass(model_class, ModelSimple):
         return model_class._new_from_openapi_data(model_data, **kw_args)
     elif isinstance(model_data, list):
-        return model_class._new_from_openapi_data(*model_data, **kw_args)
+        if issubclass(model_class, ModelComposed) and allows_single_value_input(model_class):
+            return model_class._new_from_openapi_data(model_data, **kw_args)
+        else:
+            return model_class._new_from_openapi_data(*model_data, **kw_args)
     if isinstance(model_data, dict):
         kw_args.update(model_data)
         return model_class._new_from_openapi_data(**kw_args)
