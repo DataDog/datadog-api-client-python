@@ -54,13 +54,4 @@
         self._additional_properties_model_instances = composed_info[2]
         discarded_args = composed_info[3]
 
-        for var_name, var_value in kwargs.items():
-            if var_name in discarded_args and \
-                        self._configuration is not None and \
-                        self._configuration.discard_unknown_keys and \
-                        self._additional_properties_model_instances:
-                # discard variable.
-                continue
-            setattr(self, var_name, var_value)
-
         return self
