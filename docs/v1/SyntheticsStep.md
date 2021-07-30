@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_failure** | **bool** | A boolean set to allow this step to fail. | [optional] 
 **name** | **str** | The name of the step. | [optional] 
-**params** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** | The parameters of the step. | [optional] 
+**params** | **dict** | The parameters of the step. | [optional] 
 **timeout** | **int** | The time before declaring a step failed. | [optional] 
 **type** | [**SyntheticsStepType**](SyntheticsStepType.md) |  | [optional] 
 

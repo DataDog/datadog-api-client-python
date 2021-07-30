@@ -20,6 +20,8 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     none_type,
     validate_get_composed_info,
 )
+from ..model_utils import OpenApiModel
+from datadog_api_client.v1.exceptions import ApiAttributeError
 
 
 def lazy_import():
@@ -121,7 +123,107 @@ class EventCreateRequest(ModelNormal):
         "url": "url",  # noqa: E501
     }
 
+    read_only_vars = {
+        "id",  # noqa: E501
+        "payload",  # noqa: E501
+        "url",  # noqa: E501
+    }
+
     _composed_schemas = {}
+
+    @classmethod
+    @convert_js_args_to_python_args
+    def _from_openapi_data(cls, text, title, *args, **kwargs):  # noqa: E501
+        """EventCreateRequest - a model defined in OpenAPI
+
+        Args:
+            text (str): The body of the event. Limited to 4000 characters. The text supports markdown. To use markdown in the event text, start the text block with `%%% \\n` and end the text block with `\\n %%%`. Use `msg_text` with the Datadog Ruby library.
+            title (str): The event title. Limited to 100 characters. Use `msg_title` with the Datadog Ruby library.
+
+        Keyword Args:
+            _check_type (bool): if True, values for parameters in openapi_types
+                                will be type checked and a TypeError will be
+                                raised if the wrong type is input.
+                                Defaults to True
+            _path_to_item (tuple/list): This is a list of keys or values to
+                                drill down to the model in received_data
+                                when deserializing a response
+            _spec_property_naming (bool): True if the variable names in the input data
+                                are serialized names, as specified in the OpenAPI document.
+                                False if the variable names in the input data
+                                are pythonic names, e.g. snake case (default)
+            _configuration (Configuration): the instance to use when
+                                deserializing a file_type parameter.
+                                If passed, type conversion is attempted
+                                If omitted no type conversion is done.
+            _visited_composed_classes (tuple): This stores a tuple of
+                                classes that we have traveled through so that
+                                if we see that class again we will not use its
+                                discriminator again.
+                                When traveling through a discriminator, the
+                                composed schema that is
+                                is traveled through is added to this set.
+                                For example if Animal has a discriminator
+                                petType and we pass in "Dog", and the class Dog
+                                allOf includes Animal, we move through Animal
+                                once using the discriminator, and pick Dog.
+                                Then in Dog, we will make an instance of the
+                                Animal class but this time we won't travel
+                                through its discriminator because we passed in
+                                _visited_composed_classes = (Animal,)
+            aggregation_key (str): An arbitrary string to use for aggregation. Limited to 100 characters. If you specify a key, all events using that key are grouped together in the Event Stream.. [optional]  # noqa: E501
+            alert_type (EventAlertType): [optional]  # noqa: E501
+            date_happened (int): POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days.. [optional]  # noqa: E501
+            device_name (str): A device name.. [optional]  # noqa: E501
+            host (str): Host name to associate with the event. Any tags associated with the host are also applied to this event.. [optional]  # noqa: E501
+            id (int): Integer ID of the event.. [optional]  # noqa: E501
+            payload (str): Payload of the event.. [optional]  # noqa: E501
+            priority (EventPriority): [optional]  # noqa: E501
+            related_event_id (int): ID of the parent event. Must be sent as an integer (i.e. no quotes).. [optional]  # noqa: E501
+            source_type_name (str): The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]  # noqa: E501
+            tags ([str]): A list of tags to apply to the event.. [optional]  # noqa: E501
+            url (str): URL of the event.. [optional]  # noqa: E501
+        """
+
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
+
+        self = super(OpenApiModel, cls).__new__(cls)
+
+        if args:
+            raise ApiTypeError(
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
+                    args,
+                    self.__class__.__name__,
+                ),
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
+
+        self._data_store = {}
+        self._check_type = _check_type
+        self._spec_property_naming = _spec_property_naming
+        self._path_to_item = _path_to_item
+        self._configuration = _configuration
+        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+
+        self.text = text
+        self.title = title
+        for var_name, var_value in kwargs.items():
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
+                # discard variable.
+                continue
+            setattr(self, var_name, var_value)
+        return self
 
     required_properties = set(
         [
@@ -223,3 +325,8 @@ class EventCreateRequest(ModelNormal):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)
+            if var_name in self.read_only_vars:
+                raise ApiAttributeError(
+                    f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
+                    f"class with read only attributes."
+                )

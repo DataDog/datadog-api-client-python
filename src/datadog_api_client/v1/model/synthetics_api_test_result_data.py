@@ -20,6 +20,8 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     none_type,
     validate_get_composed_info,
 )
+from ..model_utils import OpenApiModel
+from datadog_api_client.v1.exceptions import ApiAttributeError
 
 
 def lazy_import():
@@ -83,13 +85,9 @@ class SyntheticsAPITestResultData(ModelNormal):
             "error_message": (str,),  # noqa: E501
             "event_type": (SyntheticsTestProcessStatus,),  # noqa: E501
             "http_status_code": (int,),  # noqa: E501
-            "request_headers": (
-                {str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)},
-            ),  # noqa: E501
+            "request_headers": ({str: (dict,)},),  # noqa: E501
             "response_body": (str,),  # noqa: E501
-            "response_headers": (
-                {str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)},
-            ),  # noqa: E501
+            "response_headers": ({str: (dict,)},),  # noqa: E501
             "response_size": (int,),  # noqa: E501
             "timings": (SyntheticsTiming,),  # noqa: E501
         }
@@ -111,7 +109,95 @@ class SyntheticsAPITestResultData(ModelNormal):
         "timings": "timings",  # noqa: E501
     }
 
+    read_only_vars = {}
+
     _composed_schemas = {}
+
+    @classmethod
+    @convert_js_args_to_python_args
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+        """SyntheticsAPITestResultData - a model defined in OpenAPI
+
+        Keyword Args:
+            _check_type (bool): if True, values for parameters in openapi_types
+                                will be type checked and a TypeError will be
+                                raised if the wrong type is input.
+                                Defaults to True
+            _path_to_item (tuple/list): This is a list of keys or values to
+                                drill down to the model in received_data
+                                when deserializing a response
+            _spec_property_naming (bool): True if the variable names in the input data
+                                are serialized names, as specified in the OpenAPI document.
+                                False if the variable names in the input data
+                                are pythonic names, e.g. snake case (default)
+            _configuration (Configuration): the instance to use when
+                                deserializing a file_type parameter.
+                                If passed, type conversion is attempted
+                                If omitted no type conversion is done.
+            _visited_composed_classes (tuple): This stores a tuple of
+                                classes that we have traveled through so that
+                                if we see that class again we will not use its
+                                discriminator again.
+                                When traveling through a discriminator, the
+                                composed schema that is
+                                is traveled through is added to this set.
+                                For example if Animal has a discriminator
+                                petType and we pass in "Dog", and the class Dog
+                                allOf includes Animal, we move through Animal
+                                once using the discriminator, and pick Dog.
+                                Then in Dog, we will make an instance of the
+                                Animal class but this time we won't travel
+                                through its discriminator because we passed in
+                                _visited_composed_classes = (Animal,)
+            cert (SyntheticsSSLCertificate): [optional]  # noqa: E501
+            error_code (SyntheticsErrorCode): [optional]  # noqa: E501
+            error_message (str): The API test error message.. [optional]  # noqa: E501
+            event_type (SyntheticsTestProcessStatus): [optional]  # noqa: E501
+            http_status_code (int): The API test HTTP status code.. [optional]  # noqa: E501
+            request_headers ({str: (dict,)}): Request header object used for the API test.. [optional]  # noqa: E501
+            response_body (str): Response body returned for the API test.. [optional]  # noqa: E501
+            response_headers ({str: (dict,)}): Response headers returned for the API test.. [optional]  # noqa: E501
+            response_size (int): Global size in byte of the API test response.. [optional]  # noqa: E501
+            timings (SyntheticsTiming): [optional]  # noqa: E501
+        """
+
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
+
+        self = super(OpenApiModel, cls).__new__(cls)
+
+        if args:
+            raise ApiTypeError(
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
+                    args,
+                    self.__class__.__name__,
+                ),
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
+
+        self._data_store = {}
+        self._check_type = _check_type
+        self._spec_property_naming = _spec_property_naming
+        self._path_to_item = _path_to_item
+        self._configuration = _configuration
+        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+
+        for var_name, var_value in kwargs.items():
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
+                # discard variable.
+                continue
+            setattr(self, var_name, var_value)
+        return self
 
     required_properties = set(
         [
@@ -164,9 +250,9 @@ class SyntheticsAPITestResultData(ModelNormal):
             error_message (str): The API test error message.. [optional]  # noqa: E501
             event_type (SyntheticsTestProcessStatus): [optional]  # noqa: E501
             http_status_code (int): The API test HTTP status code.. [optional]  # noqa: E501
-            request_headers ({str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)}): Request header object used for the API test.. [optional]  # noqa: E501
+            request_headers ({str: (dict,)}): Request header object used for the API test.. [optional]  # noqa: E501
             response_body (str): Response body returned for the API test.. [optional]  # noqa: E501
-            response_headers ({str: ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},)}): Response headers returned for the API test.. [optional]  # noqa: E501
+            response_headers ({str: (dict,)}): Response headers returned for the API test.. [optional]  # noqa: E501
             response_size (int): Global size in byte of the API test response.. [optional]  # noqa: E501
             timings (SyntheticsTiming): [optional]  # noqa: E501
         """
@@ -205,3 +291,8 @@ class SyntheticsAPITestResultData(ModelNormal):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)
+            if var_name in self.read_only_vars:
+                raise ApiAttributeError(
+                    f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
+                    f"class with read only attributes."
+                )

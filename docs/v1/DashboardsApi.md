@@ -38,13 +38,9 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboards_api.DashboardsApi(api_client)
     body = Dashboard(
-        author_handle="test@datadoghq.com",
-        created_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
         description="description_example",
-        id="123-abc-456",
         is_read_only=False,
         layout_type=DashboardLayoutType("ordered"),
-        modified_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
         notify_list=[
             "notify_list_example",
         ],
@@ -71,7 +67,6 @@ with ApiClient(configuration) as api_client:
             ),
         ],
         title="",
-        url="/dashboard/123-abc-456/example-dashboard-title",
         widgets=[
             Widget(
                 definition=WidgetDefinition(),
@@ -488,13 +483,9 @@ with ApiClient(configuration) as api_client:
     api_instance = dashboards_api.DashboardsApi(api_client)
     dashboard_id = "dashboard_id_example"  # str | The ID of the dashboard.
     body = Dashboard(
-        author_handle="test@datadoghq.com",
-        created_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
         description="description_example",
-        id="123-abc-456",
         is_read_only=False,
         layout_type=DashboardLayoutType("ordered"),
-        modified_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
         notify_list=[
             "notify_list_example",
         ],
@@ -521,7 +512,6 @@ with ApiClient(configuration) as api_client:
             ),
         ],
         title="",
-        url="/dashboard/123-abc-456/example-dashboard-title",
         widgets=[
             Widget(
                 definition=WidgetDefinition(),

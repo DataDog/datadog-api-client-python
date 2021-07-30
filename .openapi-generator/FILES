@@ -341,7 +341,6 @@ datadog_api_client/v2/model/users_response.py
 datadog_api_client/v2/model/users_type.py
 datadog_api_client/v2/model_utils.py
 datadog_api_client/v2/models/__init__.py
-datadog_api_client/v2/models/__init__.py
 datadog_api_client/v2/rest.py
 docs/APIErrorResponse.md
 docs/APIKeyCreateAttributes.md

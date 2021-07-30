@@ -40,9 +40,6 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
     body = ApiKey(
-        created="2019-08-02 15:31:07",
-        created_by="john@example.com",
-        key="1234512345123456abcabc912349abcd",
         name="example user",
     )  # ApiKey | 
 
@@ -109,9 +106,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = key_management_api.KeyManagementApi(api_client)
     body = ApplicationKey(
-        hash="1234512345123459cda4eb9ced49a3d84fd0138c",
         name="example user",
-        owner="example.com",
     )  # ApplicationKey | 
 
     # example passing only required values which don't have defaults set
@@ -554,9 +549,6 @@ with ApiClient(configuration) as api_client:
     api_instance = key_management_api.KeyManagementApi(api_client)
     key = "key_example"  # str | The specific API key you are working with.
     body = ApiKey(
-        created="2019-08-02 15:31:07",
-        created_by="john@example.com",
-        key="1234512345123456abcabc912349abcd",
         name="example user",
     )  # ApiKey | 
 
@@ -626,9 +618,7 @@ with ApiClient(configuration) as api_client:
     api_instance = key_management_api.KeyManagementApi(api_client)
     key = "key_example"  # str | The specific APP key you are working with.
     body = ApplicationKey(
-        hash="1234512345123459cda4eb9ced49a3d84fd0138c",
         name="example user",
-        owner="example.com",
     )  # ApplicationKey | 
 
     # example passing only required values which don't have defaults set

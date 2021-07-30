@@ -35,18 +35,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
     body = DashboardList(
-        author=Creator(
-            email="email_example",
-            handle="handle_example",
-            name="name_example",
-        ),
-        created=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        dashboard_count=1,
-        id=1,
-        is_favorite=True,
-        modified=dateutil_parser('1970-01-01T00:00:00.00Z'),
         name="My Dashboard",
-        type="manual_dashboard_list",
     )  # DashboardList | Create a dashboard list request body.
 
     # example passing only required values which don't have defaults set
@@ -300,18 +289,7 @@ with ApiClient(configuration) as api_client:
     api_instance = dashboard_lists_api.DashboardListsApi(api_client)
     list_id = 1  # int | ID of the dashboard list to update.
     body = DashboardList(
-        author=Creator(
-            email="email_example",
-            handle="handle_example",
-            name="name_example",
-        ),
-        created=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        dashboard_count=1,
-        id=1,
-        is_favorite=True,
-        modified=dateutil_parser('1970-01-01T00:00:00.00Z'),
         name="My Dashboard",
-        type="manual_dashboard_list",
     )  # DashboardList | Update a dashboard list request body.
 
     # example passing only required values which don't have defaults set
