@@ -11,39 +11,12 @@ try:
     if os.getenv("RECORD", "false") != "none":
         from ddtrace.internal.writer import AgentWriter
 
-        class Writer(AgentWriter):
-            def is_alive(self):
-                return True
-
-            def stop(self):
-                self.flush_queue()
-
-            def join(self, **kwargs):
-                """No thread is started therefore no join is needed."""
-
-            def write(self, *args, **kwargs):
-                # make sure the thread won't get started
-                self._started = True
-                super(Writer, self).write(*args, **kwargs)
-
-        tracer.writer.stop()
-        tracer.writer = Writer(
-            hostname=tracer.writer._hostname,
-            port=tracer.writer._port,
-            uds_path=tracer.writer._uds_path,
-            https=tracer.writer._https,
+        writer = AgentWriter(
+            tracer.writer.agent_url,
+            sync_mode=True,
+            priority_sampler=tracer.priority_sampler,
         )
-
-        import pytest
-
-        @pytest.hookimpl(trylast=True)
-        def pytest_configure(config):
-            """Make sure the tracer on pin is the same as global one."""
-            from ddtrace.pin import Pin
-
-            pin = Pin.get_from(config)
-            if pin:
-                pin.tracer.writer = tracer.writer
+        tracer.configure(writer)
 
     config.httplib["distributed_tracing"] = True
     patch(httplib=True)
@@ -88,7 +61,12 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
         return
 
     context = tracer.get_call_context()
-    span = tracer.start_span(step.type, resource=step.name, span_type=step.type, child_of=context,)
+    span = tracer.start_span(
+        step.type,
+        resource=step.name,
+        span_type=step.type,
+        child_of=context,
+    )
     setattr(step_func, "__dd_span__", span)
 
 
@@ -98,7 +76,9 @@ def pytest_bdd_after_step(request, feature, scenario, step, step_func, step_func
         span.finish()
 
 
-def pytest_bdd_step_error(request, feature, scenario, step, step_func, step_func_args, exception):
+def pytest_bdd_step_error(
+    request, feature, scenario, step, step_func, step_func_args, exception
+):
     span = getattr(step_func, "__dd_span__", None)
     if span is not None:
         span.set_exc_info(type(exception), exception, exception.__traceback__)
@@ -227,7 +207,11 @@ def context(vcr, unique, unique_lower, freezer):
 @pytest.fixture(scope="session")
 def record_mode(request):
     """Manage compatibility with DD client libraries."""
-    return {"false": "none", "true": "rewrite", "none": "new_episodes",}[os.getenv("RECORD", "false").lower()]
+    return {
+        "false": "none",
+        "true": "rewrite",
+        "none": "new_episodes",
+    }[os.getenv("RECORD", "false").lower()]
 
 
 def _disable_recording():
@@ -249,7 +233,9 @@ def vcr_config():
         match_on=["method", "scheme", "host", "port", "path", "query", "body"],
     )
     if tracer:
-        config["ignore_hosts"] = [tracer.writer._hostname]
+        from urllib.parse import urlparse
+
+        config["ignore_hosts"] = [urlparse(tracer.writer.agent_url).hostname]
 
     return config
 
@@ -293,10 +279,15 @@ def _package(package_name):
 @pytest.fixture(scope="module")
 def undo_operations(package_name):
     version = package_name.split(".")[-1]
-    with open(os.path.join(os.path.dirname(__file__), version, "features", "undo.json")) as fp:
+    with open(
+        os.path.join(os.path.dirname(__file__), version, "features", "undo.json")
+    ) as fp:
         data = json.load(fp)
 
-    return {snake_case(operation_id): settings.get("undo") for operation_id, settings in data.items()}
+    return {
+        snake_case(operation_id): settings.get("undo")
+        for operation_id, settings in data.items()
+    }
 
 
 def build_configuration(package):
@@ -382,14 +373,18 @@ def request_body_from_file(context, path, package_name):
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(context, name, path):
     """Set request parameter."""
-    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = glom(context, path)
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = glom(
+        context, path
+    )
 
 
 @given(parsers.parse('request contains "{name}" parameter with value {value}'))
 def request_parameter_with_value(context, name, value):
     """Set request parameter."""
     tpl = Template(value).render(**context)
-    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = json.loads(tpl)
+    context["api_request"]["kwargs"][
+        escape_reserved_keyword(snake_case(name))
+    ] = json.loads(tpl)
 
 
 def build_given(version, operation):
@@ -401,8 +396,12 @@ def build_given(version, operation):
 
         # make sure we have a fresh instance of API client and configuration
         configuration = build_configuration(importlib.import_module(package_name))
-        configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
-        configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
+        configuration.api_key["apiKeyAuth"] = os.getenv(
+            "DD_TEST_CLIENT_API_KEY", "fake"
+        )
+        configuration.api_key["appKeyAuth"] = os.getenv(
+            "DD_TEST_CLIENT_APP_KEY", "fake"
+        )
 
         # enable unstable operation
         if operation_name in configuration.unstable_operations:
@@ -421,14 +420,17 @@ def build_given(version, operation):
                     return glom(context, p["source"])
 
             kwargs = {
-                escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
+                escape_reserved_keyword(snake_case(p["name"])): build_param(p)
+                for p in operation.get("parameters", [])
             }
             kwargs["_check_input_type"] = False
             result = operation_method(**kwargs)
             client.last_response.urllib3_response.close()
 
             # register undo method
-            context["undo_operations"].append(lambda: undo(api, operation_name, result, client=client))
+            context["undo_operations"].append(
+                lambda: undo(api, operation_name, result, client=client)
+            )
 
             # optional re-shaping
             if "source" in operation:
@@ -473,7 +475,9 @@ def undo(package_name, undo_operations, client):
             if "source" in parameter:
                 args.append(glom(response, parameter["source"]))
             elif "template" in parameter:
-                variables = meta.find_undeclared_variables(Environment().parse(parameter["template"]))
+                variables = meta.find_undeclared_variables(
+                    Environment().parse(parameter["template"])
+                )
                 ctx = {}
                 for var in variables:
                     ctx[var] = glom(response, var)
@@ -501,7 +505,9 @@ def execute_request(undo, context, client, _package):
         response = api_request["request"](*api_request["args"], **api_request["kwargs"])
         client.last_response.urllib3_response.close()
         # Reserialise the response body to JSON to facilitate test assertions
-        response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(response[0])
+        response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(
+            response[0]
+        )
         api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions
@@ -547,7 +553,11 @@ def expect_equal(context, response_path, value):
     assert test_value == response_value
 
 
-@then(parsers.parse('the response "{response_path}" has the same value as "{fixture_path}"'))
+@then(
+    parsers.parse(
+        'the response "{response_path}" has the same value as "{fixture_path}"'
+    )
+)
 def expect_equal_value(context, response_path, fixture_path):
     fixture_value = glom(context, fixture_path)
     response_value = glom(context["api_request"]["response"][0], response_path)
