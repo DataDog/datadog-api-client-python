@@ -212,7 +212,8 @@ def vcr_config():
         match_on=["method", "scheme", "host", "port", "path", "query", "body"],
     )
     if tracer:
-        config["ignore_hosts"] = [tracer.writer._hostname]
+        from urllib.parse import urlparse
+        config["ignore_hosts"] = [urlparse(tracer.writer.agent_url).hostname]
 
     return config
 
