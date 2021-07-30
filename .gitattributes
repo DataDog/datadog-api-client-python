@@ -1,0 +1,2 @@
+src/datadog_api_client/v*/**/* linguist-generated
+docs/v*/*                      linguist-generated
