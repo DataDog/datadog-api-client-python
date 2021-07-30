@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_azure_integration**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} create_azure_integration(body)
+> dict create_azure_integration(body)
 
 Create a Datadog-Azure integration.
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_azure_integration**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_azure_integration(body)
+> dict delete_azure_integration(body)
 
 Delete a given Datadog-Azure integration from your Datadog account.
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 
@@ -222,7 +222,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_azure_host_filters**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_azure_host_filters(body)
+> dict update_azure_host_filters(body)
 
 Update the defined list of host filters for a given Datadog-Azure integration.
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_azure_integration**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_azure_integration(body)
+> dict update_azure_integration(body)
 
 Update a Datadog-Azure integration. Requires an existing `tenant_name` and `client_id`.
 Any other fields supplied will overwrite existing values. To overwrite `tenant_name` or `client_id`,
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 

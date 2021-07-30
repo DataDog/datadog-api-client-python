@@ -40,14 +40,11 @@ with ApiClient(configuration) as api_client:
         filter=LogsFilter(
             query="source:python",
         ),
-        id="id_example",
         is_enabled=True,
-        is_read_only=True,
         name="",
         processors=[
             LogsProcessor(),
         ],
-        type="pipeline",
     )  # LogsPipeline | Definition of the new pipeline.
 
     # example passing only required values which don't have defaults set
@@ -369,14 +366,11 @@ with ApiClient(configuration) as api_client:
         filter=LogsFilter(
             query="source:python",
         ),
-        id="id_example",
         is_enabled=True,
-        is_read_only=True,
         name="",
         processors=[
             LogsProcessor(),
         ],
-        type="pipeline",
     )  # LogsPipeline | New definition of the pipeline.
 
     # example passing only required values which don't have defaults set

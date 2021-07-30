@@ -243,7 +243,6 @@ with ApiClient(configuration) as api_client:
         billing=OrganizationBilling(
             type="type_example",
         ),
-        created="2019-09-26T17:28:28Z",
         description="some description",
         name="New child org",
         public_id="abcdef12345",

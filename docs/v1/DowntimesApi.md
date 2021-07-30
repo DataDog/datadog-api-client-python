@@ -167,38 +167,8 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = downtimes_api.DowntimesApi(api_client)
     body = Downtime(
-        active=True,
-        active_child=DowntimeChild(
-            active=True,
-            canceled=1412799983,
-            creator_id=123456,
-            disabled=False,
-            downtime_type=2,
-            end=1412793983,
-            id=1626,
-            message="Message on the downtime",
-            monitor_id=123456,
-            monitor_tags=["*"],
-            parent_id=123,
-            recurrence=DowntimeRecurrence(
-                period=1,
-                rrule="FREQ=MONTHLY;BYSETPOS=3;BYDAY=WE;INTERVAL=1",
-                type="weeks",
-                until_date=1447786293,
-                until_occurrences=2,
-                week_days=["Mon","Tue"],
-            ),
-            scope=["env:staging"],
-            start=1412792983,
-            timezone="America/New_York",
-            updater_id=123456,
-        ),
-        canceled=1412799983,
-        creator_id=123456,
         disabled=False,
-        downtime_type=2,
         end=1412793983,
-        id=1625,
         message="Message on the downtime",
         monitor_id=123456,
         monitor_tags=["*"],
@@ -214,7 +184,6 @@ with ApiClient(configuration) as api_client:
         scope=["env:staging"],
         start=1412792983,
         timezone="America/New_York",
-        updater_id=123456,
     )  # Downtime | Schedule a downtime request body.
 
     # example passing only required values which don't have defaults set
@@ -473,38 +442,8 @@ with ApiClient(configuration) as api_client:
     api_instance = downtimes_api.DowntimesApi(api_client)
     downtime_id = 123456  # int | ID of the downtime to update.
     body = Downtime(
-        active=True,
-        active_child=DowntimeChild(
-            active=True,
-            canceled=1412799983,
-            creator_id=123456,
-            disabled=False,
-            downtime_type=2,
-            end=1412793983,
-            id=1626,
-            message="Message on the downtime",
-            monitor_id=123456,
-            monitor_tags=["*"],
-            parent_id=123,
-            recurrence=DowntimeRecurrence(
-                period=1,
-                rrule="FREQ=MONTHLY;BYSETPOS=3;BYDAY=WE;INTERVAL=1",
-                type="weeks",
-                until_date=1447786293,
-                until_occurrences=2,
-                week_days=["Mon","Tue"],
-            ),
-            scope=["env:staging"],
-            start=1412792983,
-            timezone="America/New_York",
-            updater_id=123456,
-        ),
-        canceled=1412799983,
-        creator_id=123456,
         disabled=False,
-        downtime_type=2,
         end=1412793983,
-        id=1625,
         message="Message on the downtime",
         monitor_id=123456,
         monitor_tags=["*"],
@@ -520,7 +459,6 @@ with ApiClient(configuration) as api_client:
         scope=["env:staging"],
         start=1412792983,
         timezone="America/New_York",
-        updater_id=123456,
     )  # Downtime | Update a downtime request body.
 
     # example passing only required values which don't have defaults set

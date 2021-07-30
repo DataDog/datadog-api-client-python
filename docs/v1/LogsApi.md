@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **submit_log**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} submit_log(body)
+> dict submit_log(body)
 
 Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 

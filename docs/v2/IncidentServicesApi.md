@@ -40,20 +40,6 @@ with ApiClient(configuration) as api_client:
             attributes=IncidentServiceCreateAttributes(
                 name="an example service name",
             ),
-            relationships=IncidentServiceRelationships(
-                created_by=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="00000000-0000-0000-0000-000000000000",
-                        type=UsersType("users"),
-                    ),
-                ),
-                last_modified_by=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="00000000-0000-0000-0000-000000000000",
-                        type=UsersType("users"),
-                    ),
-                ),
-            ),
             type=IncidentServiceType("services"),
         ),
     )  # IncidentServiceCreateRequest | Incident Service Payload.
@@ -349,20 +335,6 @@ with ApiClient(configuration) as api_client:
                 name="an example service name",
             ),
             id="00000000-0000-0000-0000-000000000000",
-            relationships=IncidentServiceRelationships(
-                created_by=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="00000000-0000-0000-0000-000000000000",
-                        type=UsersType("users"),
-                    ),
-                ),
-                last_modified_by=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="00000000-0000-0000-0000-000000000000",
-                        type=UsersType("users"),
-                    ),
-                ),
-            ),
             type=IncidentServiceType("services"),
         ),
     )  # IncidentServiceUpdateRequest | Incident Service Payload.

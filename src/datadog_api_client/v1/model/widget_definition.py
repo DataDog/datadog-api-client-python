@@ -20,6 +20,8 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     none_type,
     validate_get_composed_info,
 )
+from ..model_utils import OpenApiModel
+from datadog_api_client.v1.exceptions import ApiAttributeError
 
 
 def lazy_import():
@@ -186,24 +188,7 @@ class WidgetDefinition(ModelComposed):
         },
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (
-            bool,
-            date,
-            datetime,
-            dict,
-            float,
-            int,
-            list,
-            str,
-            none_type,
-        )  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -224,6 +209,181 @@ class WidgetDefinition(ModelComposed):
         return None
 
     attribute_map = {}
+
+    read_only_vars = {}
+
+    @classmethod
+    @convert_js_args_to_python_args
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+        """WidgetDefinition - a model defined in OpenAPI
+
+        Keyword Args:
+            _check_type (bool): if True, values for parameters in openapi_types
+                                will be type checked and a TypeError will be
+                                raised if the wrong type is input.
+                                Defaults to True
+            _path_to_item (tuple/list): This is a list of keys or values to
+                                drill down to the model in received_data
+                                when deserializing a response
+            _spec_property_naming (bool): True if the variable names in the input data
+                                are serialized names, as specified in the OpenAPI document.
+                                False if the variable names in the input data
+                                are pythonic names, e.g. snake case (default)
+            _configuration (Configuration): the instance to use when
+                                deserializing a file_type parameter.
+                                If passed, type conversion is attempted
+                                If omitted no type conversion is done.
+            _visited_composed_classes (tuple): This stores a tuple of
+                                classes that we have traveled through so that
+                                if we see that class again we will not use its
+                                discriminator again.
+                                When traveling through a discriminator, the
+                                composed schema that is
+                                is traveled through is added to this set.
+                                For example if Animal has a discriminator
+                                petType and we pass in "Dog", and the class Dog
+                                allOf includes Animal, we move through Animal
+                                once using the discriminator, and pick Dog.
+                                Then in Dog, we will make an instance of the
+                                Animal class but this time we won't travel
+                                through its discriminator because we passed in
+                                _visited_composed_classes = (Animal,)
+            time (WidgetTime): [optional]  # noqa: E501
+            title (str): Title of the widget.. [optional]  # noqa: E501
+            title_align (WidgetTextAlign): [optional]  # noqa: E501
+            title_size (str): Size of the title.. [optional]  # noqa: E501
+            precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]  # noqa: E501
+            text_align (WidgetTextAlign): [optional]  # noqa: E501
+            unit (str): Unit to display with the value.. [optional]  # noqa: E501
+            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
+            group ([str]): List of tag prefixes to group by.. [optional]  # noqa: E501
+            tags ([str]): List of tags used to filter the groups reporting a cluster check.. [optional]  # noqa: E501
+            legend_size (str): Available legend sizes for a widget. Should be one of \"0\", \"2\", \"4\", \"8\", \"16\", or \"auto\".. [optional]  # noqa: E501
+            markers ([WidgetMarker]): List of markers.. [optional]  # noqa: E501
+            show_legend (bool): Whether or not to display the legend on this widget.. [optional]  # noqa: E501
+            xaxis (WidgetAxis): [optional]  # noqa: E501
+            yaxis (WidgetAxis): [optional]  # noqa: E501
+            event_size (WidgetEventSize): [optional]  # noqa: E501
+            tags_execution (str): The execution method for multi-value filters. Can be either and or or.. [optional]  # noqa: E501
+            color (str): Color of the text.. [optional]  # noqa: E501
+            font_size (str): Size of the text.. [optional]  # noqa: E501
+            background_color (str): Background color of the note.. [optional]  # noqa: E501
+            banner_img (str): URL of image to display as a banner for the group.. [optional]  # noqa: E501
+            show_title (bool): Whether to show the title or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            events ([WidgetEvent]): List of widget events.. [optional]  # noqa: E501
+            no_group_hosts (bool): Whether to show the hosts that don’t fit in a group.. [optional]  # noqa: E501
+            no_metric_hosts (bool): Whether to show the hosts with no metrics.. [optional]  # noqa: E501
+            node_type (WidgetNodeType): [optional]  # noqa: E501
+            notes (str): Notes on the title.. [optional]  # noqa: E501
+            scope ([str]): List of tags used to filter the map.. [optional]  # noqa: E501
+            has_background (bool): Whether to display a background or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            has_border (bool): Whether to display a border or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            horizontal_align (WidgetHorizontalAlign): [optional]  # noqa: E501
+            margin (WidgetMargin): [optional]  # noqa: E501
+            sizing (WidgetImageSizing): [optional]  # noqa: E501
+            url_dark_theme (str): URL of the image in dark mode.. [optional]  # noqa: E501
+            vertical_align (WidgetVerticalAlign): [optional]  # noqa: E501
+            columns ([str]): Which columns to display on the widget.. [optional]  # noqa: E501
+            indexes ([str]): An array of index names to query in the stream. Use [] to query all indexes at once.. [optional]  # noqa: E501
+            logset (str): ID of the log set to use.. [optional]  # noqa: E501
+            message_display (WidgetMessageDisplay): [optional]  # noqa: E501
+            show_date_column (bool): Whether to show the date column or not. [optional]  # noqa: E501
+            show_message_column (bool): Whether to show the message column or not. [optional]  # noqa: E501
+            sort (WidgetMonitorSummarySort): [optional]  # noqa: E501
+            color_preference (WidgetColorPreference): [optional]  # noqa: E501
+            count (int): The number of monitors to display.. [optional]  # noqa: E501
+            display_format (WidgetServiceSummaryDisplayFormat): [optional]  # noqa: E501
+            hide_zero_counts (bool): Whether to show counts of 0 or not.. [optional]  # noqa: E501
+            show_last_triggered (bool): Whether to show the time that has elapsed since the monitor/group triggered.. [optional]  # noqa: E501
+            start (int): The start of the list. Typically 0.. [optional]  # noqa: E501
+            summary_type (WidgetSummaryType): [optional]  # noqa: E501
+            has_padding (bool): Whether to add padding or not.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            show_tick (bool): Whether to show a tick or not.. [optional]  # noqa: E501
+            tick_edge (WidgetTickEdge): [optional]  # noqa: E501
+            tick_pos (str): Where to position the tick on an edge.. [optional]  # noqa: E501
+            autoscale (bool): Whether to use auto-scaling or not.. [optional]  # noqa: E501
+            custom_unit (str): Display a unit of your choice on the widget.. [optional]  # noqa: E501
+            color_by_groups ([str]): List of groups used for colors.. [optional]  # noqa: E501
+            global_time_target (str): Defined global time target.. [optional]  # noqa: E501
+            show_error_budget (bool): Defined error budget.. [optional]  # noqa: E501
+            slo_id (str): ID of the SLO displayed.. [optional]  # noqa: E501
+            time_windows ([WidgetTimeWindows]): Times being monitored.. [optional]  # noqa: E501
+            view_mode (WidgetViewMode): [optional]  # noqa: E501
+            show_breakdown (bool): Whether to show the latency breakdown or not.. [optional]  # noqa: E501
+            show_distribution (bool): Whether to show the latency distribution or not.. [optional]  # noqa: E501
+            show_errors (bool): Whether to show the error metrics or not.. [optional]  # noqa: E501
+            show_hits (bool): Whether to show the hits metrics or not.. [optional]  # noqa: E501
+            show_latency (bool): Whether to show the latency metrics or not.. [optional]  # noqa: E501
+            show_resource_list (bool): Whether to show the resource list or not.. [optional]  # noqa: E501
+            size_format (WidgetSizeFormat): [optional]  # noqa: E501
+            has_search_bar (TableWidgetHasSearchBar): [optional]  # noqa: E501
+            legend_columns ([TimeseriesWidgetLegendColumn]): Columns displayed in the legend.. [optional]  # noqa: E501
+            legend_layout (TimeseriesWidgetLegendLayout): [optional]  # noqa: E501
+            right_yaxis (WidgetAxis): [optional]  # noqa: E501
+            alert_id (str): ID of the alert to use in the widget.. [optional]  # noqa: E501
+            type (ListStreamWidgetDefinitionType): [optional]  # noqa: E501
+            viz_type (WidgetVizType): [optional]  # noqa: E501
+            requests ([ListStreamWidgetRequest]): Request payload used to query items.. [optional]  # noqa: E501
+            check (str): Name of the check to use in the widget.. [optional]  # noqa: E501
+            group_by (TreeMapGroupBy): [optional]  # noqa: E501
+            grouping (WidgetGrouping): [optional]  # noqa: E501
+            query (str): Query to filter the monitors with.. [optional]  # noqa: E501
+            text (str): Text to display.. [optional]  # noqa: E501
+            style (HostMapWidgetDefinitionStyle): [optional]  # noqa: E501
+            view (GeomapWidgetDefinitionView): [optional]  # noqa: E501
+            layout_type (WidgetLayoutType): [optional]  # noqa: E501
+            widgets ([Widget]): List of widget groups.. [optional]  # noqa: E501
+            url (str): URL of the image.. [optional]  # noqa: E501
+            content (str): Content of the note.. [optional]  # noqa: E501
+            view_type (str): Type of view displayed by the widget.. [optional] if omitted the server will use the default value of "detail"  # noqa: E501
+            filters ([str]): Your environment and primary tag (or * if enabled for your account).. [optional]  # noqa: E501
+            service (str): APM service.. [optional]  # noqa: E501
+            env (str): APM environment.. [optional]  # noqa: E501
+            span_name (str): APM span name.. [optional]  # noqa: E501
+            color_by (TreeMapColorBy): [optional]  # noqa: E501
+            size_by (TreeMapSizeBy): [optional]  # noqa: E501
+        """
+
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
+
+        self = super(OpenApiModel, cls).__new__(cls)
+
+        if args:
+            raise ApiTypeError(
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
+                    args,
+                    self.__class__.__name__,
+                ),
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
+
+        self._data_store = {}
+        self._check_type = _check_type
+        self._spec_property_naming = _spec_property_naming
+        self._path_to_item = _path_to_item
+        self._configuration = _configuration
+        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+
+        constant_args = {
+            "_check_type": _check_type,
+            "_path_to_item": _path_to_item,
+            "_spec_property_naming": _spec_property_naming,
+            "_configuration": _configuration,
+            "_visited_composed_classes": self._visited_composed_classes,
+        }
+        composed_info = validate_get_composed_info(constant_args, kwargs, self)
+        self._composed_instances = composed_info[0]
+        self._var_name_to_model_instances = composed_info[1]
+        self._additional_properties_model_instances = composed_info[2]
+        discarded_args = composed_info[3]
+
+        return self
 
     required_properties = set(
         [
@@ -401,28 +561,11 @@ class WidgetDefinition(ModelComposed):
             "_configuration": _configuration,
             "_visited_composed_classes": self._visited_composed_classes,
         }
-        required_args = {}
-        model_args = {}
-        model_args.update(required_args)
-        model_args.update(kwargs)
-        composed_info = validate_get_composed_info(constant_args, model_args, self)
+        composed_info = validate_get_composed_info(constant_args, kwargs, self)
         self._composed_instances = composed_info[0]
         self._var_name_to_model_instances = composed_info[1]
         self._additional_properties_model_instances = composed_info[2]
-        unused_args = composed_info[3]
-
-        for var_name, var_value in required_args.items():
-            setattr(self, var_name, var_value)
-        for var_name, var_value in kwargs.items():
-            if (
-                var_name in unused_args
-                and self._configuration is not None
-                and self._configuration.discard_unknown_keys
-                and not self._additional_properties_model_instances
-            ):
-                # discard variable.
-                continue
-            setattr(self, var_name, var_value)
+        discarded_args = composed_info[3]
 
     @cached_property
     def _composed_schemas():

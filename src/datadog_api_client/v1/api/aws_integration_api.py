@@ -76,7 +76,7 @@ class AWSIntegrationApi(object):
 
         self._create_aws_tag_filter_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "create_aws_tag_filter",
@@ -148,7 +148,7 @@ class AWSIntegrationApi(object):
 
         self._delete_aws_account_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/aws",
                 "operation_id": "delete_aws_account",
@@ -184,7 +184,7 @@ class AWSIntegrationApi(object):
 
         self._delete_aws_tag_filter_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "delete_aws_tag_filter",
@@ -333,7 +333,7 @@ class AWSIntegrationApi(object):
 
         self._update_aws_account_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/aws",
                 "operation_id": "update_aws_account",
@@ -458,7 +458,7 @@ class AWSIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -544,7 +544,7 @@ class AWSIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -587,7 +587,7 @@ class AWSIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -759,7 +759,7 @@ class AWSIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """

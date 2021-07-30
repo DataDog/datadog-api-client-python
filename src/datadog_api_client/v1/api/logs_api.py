@@ -75,7 +75,7 @@ class LogsApi(object):
 
         self._submit_log_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth"],
                 "endpoint_path": "/v1/input",
                 "operation_id": "submit_log",
@@ -245,7 +245,7 @@ class LogsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """

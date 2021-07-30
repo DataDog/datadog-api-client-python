@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_aws_lambda_arn**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} create_aws_lambda_arn(body)
+> dict create_aws_lambda_arn(body)
 
 Attach the Lambda ARN of the Lambda created for the Datadog-AWS log collection to your AWS account ID to enable log collection.
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_aws_lambda_arn**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_aws_lambda_arn(body)
+> dict delete_aws_lambda_arn(body)
 
 Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN associated with a given AWS account.
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **enable_aws_log_services**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} enable_aws_log_services(body)
+> dict enable_aws_log_services(body)
 
 Enable automatic log collection for a list of services. This should be run after running `CreateAWSLambdaARN` to save the configuration.
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 

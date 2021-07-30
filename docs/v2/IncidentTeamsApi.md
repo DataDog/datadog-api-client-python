@@ -40,20 +40,6 @@ with ApiClient(configuration) as api_client:
             attributes=IncidentTeamCreateAttributes(
                 name="team name",
             ),
-            relationships=IncidentTeamRelationships(
-                created_by=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="00000000-0000-0000-0000-000000000000",
-                        type=UsersType("users"),
-                    ),
-                ),
-                last_modified_by=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="00000000-0000-0000-0000-000000000000",
-                        type=UsersType("users"),
-                    ),
-                ),
-            ),
             type=IncidentTeamType("teams"),
         ),
     )  # IncidentTeamCreateRequest | Incident Team Payload.
@@ -349,20 +335,6 @@ with ApiClient(configuration) as api_client:
                 name="team name",
             ),
             id="00000000-0000-0000-0000-000000000000",
-            relationships=IncidentTeamRelationships(
-                created_by=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="00000000-0000-0000-0000-000000000000",
-                        type=UsersType("users"),
-                    ),
-                ),
-                last_modified_by=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="00000000-0000-0000-0000-000000000000",
-                        type=UsersType("users"),
-                    ),
-                ),
-            ),
             type=IncidentTeamType("teams"),
         ),
     )  # IncidentTeamUpdateRequest | Incident Team Payload.

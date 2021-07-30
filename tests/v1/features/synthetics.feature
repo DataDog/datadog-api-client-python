@@ -15,7 +15,7 @@ Feature: Synthetics
     And a valid "appKeyAuth" key in the system
     And an instance of "Synthetics" API
 
-  @replay-only @skip-python @skip-typescript @skip-java @skip-ruby
+  @replay-only @skip-java @skip-python @skip-ruby @skip-typescript
   Scenario: Client is resilient to enum and oneOf deserialization errors
     Given new "ListTests" request
     When the request is sent

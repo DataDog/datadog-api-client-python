@@ -581,16 +581,8 @@ with ApiClient(configuration) as api_client:
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
     slo_id = "slo_id_example"  # str | The ID of the service level objective object.
     body = ServiceLevelObjective(
-        created_at=1,
-        creator=Creator(
-            email="email_example",
-            handle="handle_example",
-            name="name_example",
-        ),
         description="description_example",
         groups=["env:prod","role:mysql"],
-        id="id_example",
-        modified_at=1,
         monitor_ids=[
             1,
         ],

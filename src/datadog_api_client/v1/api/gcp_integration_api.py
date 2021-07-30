@@ -35,7 +35,7 @@ class GCPIntegrationApi(object):
 
         self._create_gcp_integration_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "create_gcp_integration",
@@ -71,7 +71,7 @@ class GCPIntegrationApi(object):
 
         self._delete_gcp_integration_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "delete_gcp_integration",
@@ -132,7 +132,7 @@ class GCPIntegrationApi(object):
 
         self._update_gcp_integration_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "update_gcp_integration",
@@ -201,7 +201,7 @@ class GCPIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -244,7 +244,7 @@ class GCPIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -327,7 +327,7 @@ class GCPIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """

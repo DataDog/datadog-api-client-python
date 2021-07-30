@@ -50,7 +50,6 @@ with ApiClient(configuration) as api_client:
         filter=LogsFilter(
             query="source:python",
         ),
-        is_rate_limited=False,
         name="main",
         num_retention_days=15,
     )  # LogsIndex | Object containing the new index.
