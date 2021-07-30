@@ -5,7 +5,7 @@ Object that contains the new private location, the public key for result encrypt
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** | Configuration skeleton for the private location. See installation instructions of the private location on how to use this configuration. | [optional] 
+**config** | **dict** | Configuration skeleton for the private location. See installation instructions of the private location on how to use this configuration. | [optional] 
 **private_location** | [**SyntheticsPrivateLocation**](SyntheticsPrivateLocation.md) |  | [optional] 
 **result_encryption** | [**SyntheticsPrivateLocationCreationResponseResultEncryption**](SyntheticsPrivateLocationCreationResponseResultEncryption.md) |  | [optional] 
 

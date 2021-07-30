@@ -110,7 +110,7 @@ class AWSLogsIntegrationApi(object):
 
         self._create_aws_lambda_arn_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/aws/logs",
                 "operation_id": "create_aws_lambda_arn",
@@ -146,7 +146,7 @@ class AWSLogsIntegrationApi(object):
 
         self._delete_aws_lambda_arn_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/aws/logs",
                 "operation_id": "delete_aws_lambda_arn",
@@ -182,7 +182,7 @@ class AWSLogsIntegrationApi(object):
 
         self._enable_aws_log_services_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/aws/logs/services",
                 "operation_id": "enable_aws_log_services",
@@ -387,7 +387,7 @@ class AWSLogsIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -430,7 +430,7 @@ class AWSLogsIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -473,7 +473,7 @@ class AWSLogsIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """

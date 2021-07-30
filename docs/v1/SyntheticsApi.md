@@ -56,7 +56,6 @@ with ApiClient(configuration) as api_client:
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsGlobalVariable(
         description="Example description",
-        id="id_example",
         name="MY_VARIABLE",
         parse_test_options=SyntheticsGlobalVariableParseTestOptions(
             field="content-type",
@@ -138,17 +137,7 @@ with ApiClient(configuration) as api_client:
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsPrivateLocation(
         description="Description of private location",
-        id="id_example",
         name="New private location",
-        secrets=SyntheticsPrivateLocationSecrets(
-            authentication=SyntheticsPrivateLocationSecretsAuthentication(
-                id="id_example",
-                key="key_example",
-            ),
-            config_decryption=SyntheticsPrivateLocationSecretsConfigDecryption(
-                key="key_example",
-            ),
-        ),
         tags=["team:front"],
     )  # SyntheticsPrivateLocation | Details of the private location to create.
 
@@ -265,7 +254,9 @@ with ApiClient(configuration) as api_client:
             steps=[
                 SyntheticsAPIStep(
                     allow_failure=True,
-                    assertions=[],
+                    assertions=[
+                        SyntheticsAssertion(),
+                    ],
                     extracted_values=[
                         SyntheticsParsingOptions(
                             field="content-type",
@@ -300,7 +291,9 @@ with ApiClient(configuration) as api_client:
                         ),
                         dns_server="dns_server_example",
                         dns_server_port=1,
-                        headers=SyntheticsTestHeaders(SyntheticsTestHeaders),
+                        headers=SyntheticsTestHeaders(
+                            key="key_example",
+                        ),
                         host="host_example",
                         method=HTTPMethod("GET"),
                         no_saving_response_body=True,
@@ -319,7 +312,6 @@ with ApiClient(configuration) as api_client:
             "locations_example",
         ],
         message="message_example",
-        monitor_id=1,
         name="name_example",
         options=SyntheticsTestOptions(
             accept_self_signed=True,
@@ -343,7 +335,6 @@ with ApiClient(configuration) as api_client:
             ),
             tick_every=30,
         ),
-        public_id="public_id_example",
         status=SyntheticsTestPauseStatus("live"),
         subtype=SyntheticsTestDetailsSubType("http"),
         tags=[
@@ -469,7 +460,6 @@ with ApiClient(configuration) as api_client:
             "locations_example",
         ],
         message="",
-        monitor_id=1,
         name="name_example",
         options=SyntheticsTestOptions(
             accept_self_signed=True,
@@ -493,7 +483,6 @@ with ApiClient(configuration) as api_client:
             ),
             tick_every=30,
         ),
-        public_id="public_id_example",
         status=SyntheticsTestPauseStatus("live"),
         steps=[
             SyntheticsStep(
@@ -769,7 +758,6 @@ with ApiClient(configuration) as api_client:
     variable_id = "variable_id_example"  # str | The ID of the global variable.
     body = SyntheticsGlobalVariable(
         description="Example description",
-        id="id_example",
         name="MY_VARIABLE",
         parse_test_options=SyntheticsGlobalVariableParseTestOptions(
             field="content-type",
@@ -1800,7 +1788,9 @@ with ApiClient(configuration) as api_client:
             steps=[
                 SyntheticsAPIStep(
                     allow_failure=True,
-                    assertions=[],
+                    assertions=[
+                        SyntheticsAssertion(),
+                    ],
                     extracted_values=[
                         SyntheticsParsingOptions(
                             field="content-type",
@@ -1835,7 +1825,9 @@ with ApiClient(configuration) as api_client:
                         ),
                         dns_server="dns_server_example",
                         dns_server_port=1,
-                        headers=SyntheticsTestHeaders(SyntheticsTestHeaders),
+                        headers=SyntheticsTestHeaders(
+                            key="key_example",
+                        ),
                         host="host_example",
                         method=HTTPMethod("GET"),
                         no_saving_response_body=True,
@@ -1854,7 +1846,6 @@ with ApiClient(configuration) as api_client:
             "locations_example",
         ],
         message="message_example",
-        monitor_id=1,
         name="name_example",
         options=SyntheticsTestOptions(
             accept_self_signed=True,
@@ -1878,7 +1869,6 @@ with ApiClient(configuration) as api_client:
             ),
             tick_every=30,
         ),
-        public_id="public_id_example",
         status=SyntheticsTestPauseStatus("live"),
         subtype=SyntheticsTestDetailsSubType("http"),
         tags=[
@@ -2006,7 +1996,6 @@ with ApiClient(configuration) as api_client:
             "locations_example",
         ],
         message="",
-        monitor_id=1,
         name="name_example",
         options=SyntheticsTestOptions(
             accept_self_signed=True,
@@ -2030,7 +2019,6 @@ with ApiClient(configuration) as api_client:
             ),
             tick_every=30,
         ),
-        public_id="public_id_example",
         status=SyntheticsTestPauseStatus("live"),
         steps=[
             SyntheticsStep(
@@ -2114,17 +2102,7 @@ with ApiClient(configuration) as api_client:
     location_id = "location_id_example"  # str | The ID of the private location.
     body = SyntheticsPrivateLocation(
         description="Description of private location",
-        id="id_example",
         name="New private location",
-        secrets=SyntheticsPrivateLocationSecrets(
-            authentication=SyntheticsPrivateLocationSecretsAuthentication(
-                id="id_example",
-                key="key_example",
-            ),
-            config_decryption=SyntheticsPrivateLocationSecretsConfigDecryption(
-                key="key_example",
-            ),
-        ),
         tags=["team:front"],
     )  # SyntheticsPrivateLocation | Details of the private location to be updated.
 

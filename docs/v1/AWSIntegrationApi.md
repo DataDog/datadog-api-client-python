@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_aws_tag_filter**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} create_aws_tag_filter(body)
+> dict create_aws_tag_filter(body)
 
 Set an AWS tag filter.
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_aws_account**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_aws_account(body)
+> dict delete_aws_account(body)
 
 Delete a Datadog-AWS integration matching the specified `account_id` and `role_name parameters`.
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_aws_tag_filter**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_aws_tag_filter(body)
+> dict delete_aws_tag_filter(body)
 
 Delete a tag filtering entry.
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_aws_account**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_aws_account(body)
+> dict update_aws_account(body)
 
 Update a Datadog-Amazon Web Services integration.
 
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 

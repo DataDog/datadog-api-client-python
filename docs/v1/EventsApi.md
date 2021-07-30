@@ -38,15 +38,12 @@ with ApiClient(configuration) as api_client:
         date_happened=1,
         device_name="device_name_example",
         host="host_example",
-        id=1,
-        payload="{}",
         priority=EventPriority("normal"),
         related_event_id=1,
         source_type_name="source_type_name_example",
         tags=["environment:test"],
         text="Oh boy!",
         title="Did you hear the news today?",
-        url="url_example",
     )  # EventCreateRequest | Event request object
 
     # example passing only required values which don't have defaults set

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **no_saving_response_body** | **bool** | Determines whether or not to save the response body. | [optional] 
 **number_of_packets** | **int** | Number of pings to use per test. | [optional] 
 **port** | **int** | Port to use when performing the test. | [optional] 
-**query** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** | Query to use for the test. | [optional] 
+**query** | **dict** | Query to use for the test. | [optional] 
 **should_track_hops** | **bool** | Turns on a traceroute probe to discover all gateways along the path to the host destination. | [optional] 
 **timeout** | **float** | Timeout in seconds for the test. | [optional] 
 **url** | **str** | URL to perform the test with. | [optional] 

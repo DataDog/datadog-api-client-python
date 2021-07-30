@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_gcp_integration**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} create_gcp_integration(body)
+> dict create_gcp_integration(body)
 
 Create a Datadog-GCP integration.
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_gcp_integration**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_gcp_integration(body)
+> dict delete_gcp_integration(body)
 
 Delete a given Datadog-GCP integration.
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 
@@ -227,7 +227,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_gcp_integration**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} update_gcp_integration(body)
+> dict update_gcp_integration(body)
 
 Update a Datadog-GCP integrations host_filters and/or auto-mute.
 Requires a `project_id` and `client_email`, however these fields cannot be updated.
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 

@@ -35,7 +35,7 @@ class AzureIntegrationApi(object):
 
         self._create_azure_integration_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "create_azure_integration",
@@ -71,7 +71,7 @@ class AzureIntegrationApi(object):
 
         self._delete_azure_integration_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "delete_azure_integration",
@@ -132,7 +132,7 @@ class AzureIntegrationApi(object):
 
         self._update_azure_host_filters_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/azure/host_filters",
                 "operation_id": "update_azure_host_filters",
@@ -168,7 +168,7 @@ class AzureIntegrationApi(object):
 
         self._update_azure_integration_endpoint = _Endpoint(
             settings={
-                "response_type": ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "update_azure_integration",
@@ -237,7 +237,7 @@ class AzureIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -280,7 +280,7 @@ class AzureIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -363,7 +363,7 @@ class AzureIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -406,7 +406,7 @@ class AzureIntegrationApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            {str: (bool, date, datetime, dict, float, int, list, str, none_type)}
+            dict
                 If the method is called asynchronously, returns the request
                 thread.
         """

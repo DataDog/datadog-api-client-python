@@ -20,6 +20,8 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     none_type,
     validate_get_composed_info,
 )
+from ..model_utils import OpenApiModel
+from datadog_api_client.v1.exceptions import ApiAttributeError
 
 
 class UsageSummaryDateOrg(ModelNormal):
@@ -162,7 +164,129 @@ class UsageSummaryDateOrg(ModelNormal):
         "vsphere_host_top99p": "vsphere_host_top99p",  # noqa: E501
     }
 
+    read_only_vars = {}
+
     _composed_schemas = {}
+
+    @classmethod
+    @convert_js_args_to_python_args
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+        """UsageSummaryDateOrg - a model defined in OpenAPI
+
+        Keyword Args:
+            _check_type (bool): if True, values for parameters in openapi_types
+                                will be type checked and a TypeError will be
+                                raised if the wrong type is input.
+                                Defaults to True
+            _path_to_item (tuple/list): This is a list of keys or values to
+                                drill down to the model in received_data
+                                when deserializing a response
+            _spec_property_naming (bool): True if the variable names in the input data
+                                are serialized names, as specified in the OpenAPI document.
+                                False if the variable names in the input data
+                                are pythonic names, e.g. snake case (default)
+            _configuration (Configuration): the instance to use when
+                                deserializing a file_type parameter.
+                                If passed, type conversion is attempted
+                                If omitted no type conversion is done.
+            _visited_composed_classes (tuple): This stores a tuple of
+                                classes that we have traveled through so that
+                                if we see that class again we will not use its
+                                discriminator again.
+                                When traveling through a discriminator, the
+                                composed schema that is
+                                is traveled through is added to this set.
+                                For example if Animal has a discriminator
+                                petType and we pass in "Dog", and the class Dog
+                                allOf includes Animal, we move through Animal
+                                once using the discriminator, and pick Dog.
+                                Then in Dog, we will make an instance of the
+                                Animal class but this time we won't travel
+                                through its discriminator because we passed in
+                                _visited_composed_classes = (Animal,)
+            agent_host_top99p (int): Shows the 99th percentile of all agent hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+            apm_azure_app_service_host_top99p (int): Shows the 99th percentile of all Azure app services using APM over all hours in the current date for the given org.. [optional]  # noqa: E501
+            apm_host_top99p (int): Shows the 99th percentile of all distinct APM hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+            audit_logs_lines_indexed_sum (int): Shows the sum of all audit logs lines indexed over all hours in the current date for the given org.. [optional]  # noqa: E501
+            aws_host_top99p (int): Shows the 99th percentile of all AWS hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+            aws_lambda_func_count (int): Shows the sum of all AWS Lambda invocations over all hours in the current date for the given org.. [optional]  # noqa: E501
+            aws_lambda_invocations_sum (int): Shows the sum of all AWS Lambda invocations over all hours in the current date for the given org.. [optional]  # noqa: E501
+            azure_app_service_top99p (int): Shows the 99th percentile of all Azure app services over all hours in the current date for the given org.. [optional]  # noqa: E501
+            billable_ingested_bytes_sum (int): Shows the sum of all log bytes ingested over all hours in the current date for the given org.. [optional]  # noqa: E501
+            container_avg (int): Shows the average of all distinct containers over all hours in the current date for the given org.. [optional]  # noqa: E501
+            container_hwm (int): Shows the high-water mark of all distinct containers over all hours in the current date for the given org.. [optional]  # noqa: E501
+            cspm_container_avg (int): Shows the average number of Cloud Security Posture Management containers over all hours in the current date for the given org.. [optional]  # noqa: E501
+            cspm_container_hwm (int): Shows the high-water mark of Cloud Security Posture Management containers over all hours in the current date for the given org.. [optional]  # noqa: E501
+            cspm_host_top99p (int): Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+            custom_ts_avg (int): Shows the average number of distinct custom metrics over all hours in the current date for the given org.. [optional]  # noqa: E501
+            cws_container_count_avg (int): Shows the average of all distinct Cloud Workload Security containers over all hours in the current date for the given org.. [optional]  # noqa: E501
+            cws_host_top99p (int): Shows the 99th percentile of all Cloud Workload Security hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+            fargate_tasks_count_avg (int): The average task count for Fargate.. [optional]  # noqa: E501
+            fargate_tasks_count_hwm (int): Shows the high-water mark of all Fargate tasks over all hours in the current date for the given org.. [optional]  # noqa: E501
+            gcp_host_top99p (int): Shows the 99th percentile of all GCP hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+            heroku_host_top99p (int): Shows the 99th percentile of all Heroku dynos over all hours in the current date for the given org.. [optional]  # noqa: E501
+            id (str): The organization id.. [optional]  # noqa: E501
+            incident_management_monthly_active_users_hwm (int): Shows the high-water mark of incident management monthly active users over all hours in the current date for the given org.. [optional]  # noqa: E501
+            indexed_events_count_sum (int): Shows the sum of all log events indexed over all hours in the current date for the given org.. [optional]  # noqa: E501
+            infra_host_top99p (int): Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+            ingested_events_bytes_sum (int): Shows the sum of all log bytes ingested over all hours in the current date for the given org.. [optional]  # noqa: E501
+            iot_device_agg_sum (int): Shows the sum of all IoT devices over all hours in the current date for the given org.. [optional]  # noqa: E501
+            iot_device_top99p_sum (int): Shows the 99th percentile of all IoT devices over all hours in the current date for the given org.. [optional]  # noqa: E501
+            mobile_rum_session_count_android_sum (int): Shows the sum of all mobile RUM Sessions on Android over all hours in the current date for the given org.. [optional]  # noqa: E501
+            mobile_rum_session_count_ios_sum (int): Shows the sum of all mobile RUM Sessions on iOS over all hours in the current date for the given org.. [optional]  # noqa: E501
+            mobile_rum_session_count_sum (int): Shows the sum of all mobile RUM Sessions over all hours in the current date for the given org.. [optional]  # noqa: E501
+            name (str): The organization name.. [optional]  # noqa: E501
+            netflow_indexed_events_count_sum (int): Shows the sum of all Network flows indexed over all hours in the current date for the given org.. [optional]  # noqa: E501
+            npm_host_top99p (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+            opentelemetry_host_top99p (int): Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for the given org.. [optional]  # noqa: E501
+            profiling_host_top99p (int): Shows the 99th percentile of all profiled hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+            public_id (str): The organization public id.. [optional]  # noqa: E501
+            rum_session_count_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current date for the given org.. [optional]  # noqa: E501
+            rum_total_session_count_sum (int): Shows the sum of RUM Sessions (browser and mobile) over all hours in the current date for the given org.. [optional]  # noqa: E501
+            synthetics_browser_check_calls_count_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current date for the given org.. [optional]  # noqa: E501
+            synthetics_check_calls_count_sum (int): Shows the sum of all Synthetic API tests over all hours in the current date for the given org.. [optional]  # noqa: E501
+            trace_search_indexed_events_count_sum (int): Shows the sum of all Indexed Spans indexed over all hours in the current date for the given org.. [optional]  # noqa: E501
+            twol_ingested_events_bytes_sum (int): Shows the sum of all tracing without limits bytes ingested over all hours in the current date for the given org.. [optional]  # noqa: E501
+            vsphere_host_top99p (int): Shows the 99th percentile of all vSphere hosts over all hours in the current date for the given org.. [optional]  # noqa: E501
+        """
+
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
+
+        self = super(OpenApiModel, cls).__new__(cls)
+
+        if args:
+            raise ApiTypeError(
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
+                    args,
+                    self.__class__.__name__,
+                ),
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
+
+        self._data_store = {}
+        self._check_type = _check_type
+        self._spec_property_naming = _spec_property_naming
+        self._path_to_item = _path_to_item
+        self._configuration = _configuration
+        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+
+        for var_name, var_value in kwargs.items():
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
+                # discard variable.
+                continue
+            setattr(self, var_name, var_value)
+        return self
 
     required_properties = set(
         [
@@ -290,3 +414,8 @@ class UsageSummaryDateOrg(ModelNormal):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)
+            if var_name in self.read_only_vars:
+                raise ApiAttributeError(
+                    f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
+                    f"class with read only attributes."
+                )

@@ -237,27 +237,9 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
     body = Monitor(
-        created=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        creator=Creator(
-            email="email_example",
-            handle="handle_example",
-            name="name_example",
-        ),
-        deleted=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        id=1,
         message="message_example",
-        modified=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        multi=True,
         name="name_example",
         options=MonitorOptions(
-            aggregation=MonitorOptionsAggregation(
-                group_by="host",
-                metric="metrics.name",
-                type="count",
-            ),
-            device_ids=[
-                MonitorDeviceID("laptop_large"),
-            ],
             enable_logs_sample=True,
             escalation_message="none",
             evaluation_delay=1,
@@ -290,24 +272,11 @@ with ApiClient(configuration) as api_client:
             ),
             timeout_h=1,
         ),
-        overall_state=MonitorOverallStates("Alert"),
         priority=1,
         query="avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
         restricted_roles=[
             "restricted_roles_example",
         ],
-        state=MonitorState(
-            groups={
-                "key": MonitorStateGroup(
-                    last_nodata_ts=1,
-                    last_notified_ts=1,
-                    last_resolved_ts=1,
-                    last_triggered_ts=1,
-                    name="name_example",
-                    status=MonitorOverallStates("Alert"),
-                ),
-            },
-        ),
         tags=[
             "tags_example",
         ],
@@ -752,27 +721,9 @@ with ApiClient(configuration) as api_client:
     api_instance = monitors_api.MonitorsApi(api_client)
     monitor_id = 1  # int | The ID of the monitor.
     body = MonitorUpdateRequest(
-        created=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        creator=Creator(
-            email="email_example",
-            handle="handle_example",
-            name="name_example",
-        ),
-        deleted=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        id=1,
         message="message_example",
-        modified=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        multi=True,
         name="name_example",
         options=MonitorOptions(
-            aggregation=MonitorOptionsAggregation(
-                group_by="host",
-                metric="metrics.name",
-                type="count",
-            ),
-            device_ids=[
-                MonitorDeviceID("laptop_large"),
-            ],
             enable_logs_sample=True,
             escalation_message="none",
             evaluation_delay=1,
@@ -805,24 +756,11 @@ with ApiClient(configuration) as api_client:
             ),
             timeout_h=1,
         ),
-        overall_state=MonitorOverallStates("Alert"),
         priority=1,
         query="query_example",
         restricted_roles=[
             "restricted_roles_example",
         ],
-        state=MonitorState(
-            groups={
-                "key": MonitorStateGroup(
-                    last_nodata_ts=1,
-                    last_notified_ts=1,
-                    last_resolved_ts=1,
-                    last_triggered_ts=1,
-                    name="name_example",
-                    status=MonitorOverallStates("Alert"),
-                ),
-            },
-        ),
         tags=[
             "tags_example",
         ],
@@ -872,7 +810,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **validate_monitor**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} validate_monitor(body)
+> dict validate_monitor(body)
 
 Validate the monitor provided in the request.
 
@@ -895,27 +833,9 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monitors_api.MonitorsApi(api_client)
     body = Monitor(
-        created=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        creator=Creator(
-            email="email_example",
-            handle="handle_example",
-            name="name_example",
-        ),
-        deleted=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        id=1,
         message="message_example",
-        modified=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        multi=True,
         name="name_example",
         options=MonitorOptions(
-            aggregation=MonitorOptionsAggregation(
-                group_by="host",
-                metric="metrics.name",
-                type="count",
-            ),
-            device_ids=[
-                MonitorDeviceID("laptop_large"),
-            ],
             enable_logs_sample=True,
             escalation_message="none",
             evaluation_delay=1,
@@ -948,24 +868,11 @@ with ApiClient(configuration) as api_client:
             ),
             timeout_h=1,
         ),
-        overall_state=MonitorOverallStates("Alert"),
         priority=1,
         query="avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
         restricted_roles=[
             "restricted_roles_example",
         ],
-        state=MonitorState(
-            groups={
-                "key": MonitorStateGroup(
-                    last_nodata_ts=1,
-                    last_notified_ts=1,
-                    last_resolved_ts=1,
-                    last_triggered_ts=1,
-                    name="name_example",
-                    status=MonitorOverallStates("Alert"),
-                ),
-            },
-        ),
         tags=[
             "tags_example",
         ],
@@ -990,7 +897,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+**dict**
 
 ### Authorization
 

@@ -188,8 +188,6 @@ with ApiClient(configuration) as api_client:
     body = RoleCreateRequest(
         data=RoleCreateData(
             attributes=RoleCreateAttributes(
-                created_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                modified_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 name="developers",
             ),
             relationships=RoleRelationships(
@@ -826,8 +824,6 @@ with ApiClient(configuration) as api_client:
     body = RoleUpdateRequest(
         data=RoleUpdateData(
             attributes=RoleUpdateAttributes(
-                created_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                modified_at=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 name="name_example",
             ),
             id="00000000-0000-0000-0000-000000000000",

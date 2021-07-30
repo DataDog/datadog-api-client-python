@@ -20,6 +20,8 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     none_type,
     validate_get_composed_info,
 )
+from ..model_utils import OpenApiModel
+from datadog_api_client.v1.exceptions import ApiAttributeError
 
 
 class UsageAttributionValues(ModelNormal):
@@ -142,7 +144,119 @@ class UsageAttributionValues(ModelNormal):
         "snmp_usage": "snmp_usage",  # noqa: E501
     }
 
+    read_only_vars = {}
+
     _composed_schemas = {}
+
+    @classmethod
+    @convert_js_args_to_python_args
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+        """UsageAttributionValues - a model defined in OpenAPI
+
+        Keyword Args:
+            _check_type (bool): if True, values for parameters in openapi_types
+                                will be type checked and a TypeError will be
+                                raised if the wrong type is input.
+                                Defaults to True
+            _path_to_item (tuple/list): This is a list of keys or values to
+                                drill down to the model in received_data
+                                when deserializing a response
+            _spec_property_naming (bool): True if the variable names in the input data
+                                are serialized names, as specified in the OpenAPI document.
+                                False if the variable names in the input data
+                                are pythonic names, e.g. snake case (default)
+            _configuration (Configuration): the instance to use when
+                                deserializing a file_type parameter.
+                                If passed, type conversion is attempted
+                                If omitted no type conversion is done.
+            _visited_composed_classes (tuple): This stores a tuple of
+                                classes that we have traveled through so that
+                                if we see that class again we will not use its
+                                discriminator again.
+                                When traveling through a discriminator, the
+                                composed schema that is
+                                is traveled through is added to this set.
+                                For example if Animal has a discriminator
+                                petType and we pass in "Dog", and the class Dog
+                                allOf includes Animal, we move through Animal
+                                once using the discriminator, and pick Dog.
+                                Then in Dog, we will make an instance of the
+                                Animal class but this time we won't travel
+                                through its discriminator because we passed in
+                                _visited_composed_classes = (Animal,)
+            api_percentage (float): The percentage of synthetic API test usage by tag(s).. [optional]  # noqa: E501
+            api_usage (float): The synthetic API test usage by tag(s).. [optional]  # noqa: E501
+            apm_host_percentage (float): The percentage of APM host usage by tag(s).. [optional]  # noqa: E501
+            apm_host_usage (float): The APM host usage by tag(s).. [optional]  # noqa: E501
+            browser_percentage (float): The percentage of synthetic browser test usage by tag(s).. [optional]  # noqa: E501
+            browser_usage (float): The synthetic browser test usage by tag(s).. [optional]  # noqa: E501
+            container_percentage (float): The percentage of container usage by tag(s).. [optional]  # noqa: E501
+            container_usage (float): The container usage by tag(s).. [optional]  # noqa: E501
+            cspm_container_percentage (float): The percentage of Cloud Security Posture Management container usage by tag(s). [optional]  # noqa: E501
+            cspm_container_usage (float): The Cloud Security Posture Management container usage by tag(s). [optional]  # noqa: E501
+            cspm_host_percentage (float): The percentage of Cloud Security Posture Management host usage by tag(s). [optional]  # noqa: E501
+            cspm_host_usage (float): The Cloud Security Posture Management host usage by tag(s). [optional]  # noqa: E501
+            custom_timeseries_percentage (float): The percentage of custom metrics usage by tag(s).. [optional]  # noqa: E501
+            custom_timeseries_usage (float): The custom metrics usage by tag(s).. [optional]  # noqa: E501
+            cws_container_percentage (float): The percentage of Cloud Workload Security container usage by tag(s). [optional]  # noqa: E501
+            cws_container_usage (float): The Cloud Workload Security container usage by tag(s). [optional]  # noqa: E501
+            cws_host_percentage (float): The percentage of Cloud Workload Security host usage by tag(s). [optional]  # noqa: E501
+            cws_host_usage (float): The Cloud Workload Security host usage by tag(s). [optional]  # noqa: E501
+            infra_host_percentage (float): The percentage of infrastructure host usage by tag(s).. [optional]  # noqa: E501
+            infra_host_usage (float): The infrastructure host usage by tag(s).. [optional]  # noqa: E501
+            lambda_functions_percentage (float): The percentage of Lambda function usage by tag(s).. [optional]  # noqa: E501
+            lambda_functions_usage (float): The Lambda function usage by tag(s).. [optional]  # noqa: E501
+            lambda_invocations_percentage (float): The percentage of Lambda invocation usage by tag(s).. [optional]  # noqa: E501
+            lambda_invocations_usage (float): The Lambda invocation usage by tag(s).. [optional]  # noqa: E501
+            lambda_percentage (float): The percentage of Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_percentage instead.. [optional]  # noqa: E501
+            lambda_usage (float): The Lambda function usage by tag(s).  **Note** this field is deprecated. Use lambda_functions_usage instead.. [optional]  # noqa: E501
+            npm_host_percentage (float): The percentage of network host usage by tag(s).. [optional]  # noqa: E501
+            npm_host_usage (float): The network host usage by tag(s).. [optional]  # noqa: E501
+            profiled_containers_percentage (float): The percentage of profiled containers usage by tag(s).. [optional]  # noqa: E501
+            profiled_containers_usage (float): The profiled container usage by tag(s).. [optional]  # noqa: E501
+            profiled_hosts_percentage (float): The percentage of profiled hosts usage by tag(s).. [optional]  # noqa: E501
+            profiled_hosts_usage (float): The profiled host usage by tag(s).. [optional]  # noqa: E501
+            snmp_percentage (float): The percentage of network device usage by tag(s).. [optional]  # noqa: E501
+            snmp_usage (float): The network device usage by tag(s).. [optional]  # noqa: E501
+        """
+
+        _check_type = kwargs.pop("_check_type", True)
+        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
+        _path_to_item = kwargs.pop("_path_to_item", ())
+        _configuration = kwargs.pop("_configuration", None)
+        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
+
+        self = super(OpenApiModel, cls).__new__(cls)
+
+        if args:
+            raise ApiTypeError(
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
+                % (
+                    args,
+                    self.__class__.__name__,
+                ),
+                path_to_item=_path_to_item,
+                valid_classes=(self.__class__,),
+            )
+
+        self._data_store = {}
+        self._check_type = _check_type
+        self._spec_property_naming = _spec_property_naming
+        self._path_to_item = _path_to_item
+        self._configuration = _configuration
+        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+
+        for var_name, var_value in kwargs.items():
+            if (
+                var_name not in self.attribute_map
+                and self._configuration is not None
+                and self._configuration.discard_unknown_keys
+                and self.additional_properties_type is None
+            ):
+                # discard variable.
+                continue
+            setattr(self, var_name, var_value)
+        return self
 
     required_properties = set(
         [
@@ -260,3 +374,8 @@ class UsageAttributionValues(ModelNormal):
                 # discard variable.
                 continue
             setattr(self, var_name, var_value)
+            if var_name in self.read_only_vars:
+                raise ApiAttributeError(
+                    f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
+                    f"class with read only attributes."
+                )

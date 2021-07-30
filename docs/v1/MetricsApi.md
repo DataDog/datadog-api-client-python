@@ -399,7 +399,6 @@ with ApiClient(configuration) as api_client:
     metric_name = "metric_name_example"  # str | Name of the metric for which to edit metadata.
     body = MetricMetadata(
         description="description_example",
-        integration="integration_example",
         per_unit="second",
         short_name="short_name_example",
         statsd_interval=1,

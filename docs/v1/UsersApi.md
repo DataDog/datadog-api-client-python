@@ -42,9 +42,7 @@ with ApiClient(configuration) as api_client:
         disabled=False,
         email="test@datadoghq.com",
         handle="test@datadoghq.com",
-        icon="/path/to/matching/gravatar/icon",
         name="test user",
-        verified=True,
     )  # User | User object that needs to be created.
 
     # example passing only required values which don't have defaults set
@@ -309,9 +307,7 @@ with ApiClient(configuration) as api_client:
         disabled=False,
         email="test@datadoghq.com",
         handle="test@datadoghq.com",
-        icon="/path/to/matching/gravatar/icon",
         name="test user",
-        verified=True,
     )  # User | Description of the update.
 
     # example passing only required values which don't have defaults set
