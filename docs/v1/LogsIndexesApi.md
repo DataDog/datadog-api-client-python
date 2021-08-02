@@ -41,7 +41,7 @@ with ApiClient(configuration) as api_client:
             LogsExclusion(
                 filter=LogsExclusionFilter(
                     query="*",
-                    sample_rate=1,
+                    sample_rate=1.0,
                 ),
                 is_enabled=True,
                 name="payment",
@@ -311,7 +311,7 @@ with ApiClient(configuration) as api_client:
             LogsExclusion(
                 filter=LogsExclusionFilter(
                     query="*",
-                    sample_rate=1,
+                    sample_rate=1.0,
                 ),
                 is_enabled=True,
                 name="payment",

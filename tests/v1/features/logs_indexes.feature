@@ -12,14 +12,14 @@ Feature: Logs Indexes
   @generated @skip
   Scenario: Create an index returns "Invalid Parameter Error" response
     Given new "CreateLogsIndex" request
-    And body with value {"daily_limit": 300000000, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "name": "main", "num_retention_days": 15}
+    And body with value {"daily_limit": 300000000, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "name": "main", "num_retention_days": 15}
     When the request is sent
     Then the response status is 400 Invalid Parameter Error
 
   @generated @skip
   Scenario: Create an index returns "OK" response
     Given new "CreateLogsIndex" request
-    And body with value {"daily_limit": 300000000, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "name": "main", "num_retention_days": 15}
+    And body with value {"daily_limit": 300000000, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "name": "main", "num_retention_days": 15}
     When the request is sent
     Then the response status is 200 OK
 
@@ -53,7 +53,7 @@ Feature: Logs Indexes
   Scenario: Update an index returns "Invalid Parameter Error" response
     Given new "UpdateLogsIndex" request
     And request contains "name" parameter from "<PATH>"
-    And body with value {"daily_limit": null, "disable_daily_limit": null, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "num_retention_days": null}
+    And body with value {"daily_limit": null, "disable_daily_limit": null, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "num_retention_days": null}
     When the request is sent
     Then the response status is 400 Invalid Parameter Error
 
@@ -61,7 +61,7 @@ Feature: Logs Indexes
   Scenario: Update an index returns "OK" response
     Given new "UpdateLogsIndex" request
     And request contains "name" parameter from "<PATH>"
-    And body with value {"daily_limit": null, "disable_daily_limit": null, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "num_retention_days": null}
+    And body with value {"daily_limit": null, "disable_daily_limit": null, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "num_retention_days": null}
     When the request is sent
     Then the response status is 200 OK
 
@@ -69,7 +69,7 @@ Feature: Logs Indexes
   Scenario: Update an index returns "Too Many Requests" response
     Given new "UpdateLogsIndex" request
     And request contains "name" parameter from "<PATH>"
-    And body with value {"daily_limit": null, "disable_daily_limit": null, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "num_retention_days": null}
+    And body with value {"daily_limit": null, "disable_daily_limit": null, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "num_retention_days": null}
     When the request is sent
     Then the response status is 429 Too Many Requests
 
