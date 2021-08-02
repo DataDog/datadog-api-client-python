@@ -90,7 +90,7 @@ class LogsExclusionFilter(ModelNormal):
         """LogsExclusionFilter - a model defined in OpenAPI
 
         Args:
-            sample_rate (float): Sample rate to apply to logs going through this exclusion filter, a value of 1 will exclude all logs matching the query.
+            sample_rate (float): Sample rate to apply to logs going through this exclusion filter, a value of 1.0 excludes all logs matching the query.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -181,7 +181,7 @@ class LogsExclusionFilter(ModelNormal):
         """LogsExclusionFilter - a model defined in OpenAPI
 
         Args:
-            sample_rate (float): Sample rate to apply to logs going through this exclusion filter, a value of 1 will exclude all logs matching the query.
+            sample_rate (float): Sample rate to apply to logs going through this exclusion filter, a value of 1.0 excludes all logs matching the query.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
