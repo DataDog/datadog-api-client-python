@@ -30,9 +30,9 @@ class {{classname}}(ModelComposed):
 {{/optionalVars}}
     }
 
-{{> model_templates/method_from_openapi_data_composed }}
-
 {{> model_templates/method_init_composed }}
+
+{{> model_templates/method_from_openapi_data_composed }}
 
     @cached_property
     def _composed_schemas():
