@@ -564,6 +564,7 @@ with ApiClient(configuration) as api_client:
     end_month = dateutil_parser('1970-01-01T00:00:00.00Z')  # datetime | Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month. (optional)
     sort_direction = UsageSortDirection("desc")  # UsageSortDirection | The direction to sort by: `[desc, asc]`. (optional)
     sort_name = UsageAttributionSort("custom_timeseries_usage")  # UsageAttributionSort | The field to sort by. (optional)
+    include_descendants = False  # bool | Include child org usage in the response. Defaults to false. (optional) if omitted the server will use the default value of False
 
     # example passing only required values which don't have defaults set
     try:
@@ -577,7 +578,7 @@ with ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Usage Attribution
-        api_response = api_instance.get_usage_attribution(start_month, fields, end_month=end_month, sort_direction=sort_direction, sort_name=sort_name)
+        api_response = api_instance.get_usage_attribution(start_month, fields, end_month=end_month, sort_direction=sort_direction, sort_name=sort_name, include_descendants=include_descendants)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling UsageMeteringApi->get_usage_attribution: %s\n" % e)
@@ -593,6 +594,7 @@ Name | Type | Description  | Notes
  **end_month** | **datetime**| Datetime in ISO-8601 format, UTC, precise to month: &#x60;[YYYY-MM]&#x60; for usage ending this month. | [optional]
  **sort_direction** | **UsageSortDirection**| The direction to sort by: &#x60;[desc, asc]&#x60;. | [optional]
  **sort_name** | **UsageAttributionSort**| The field to sort by. | [optional]
+ **include_descendants** | **bool**| Include child org usage in the response. Defaults to false. | [optional] if omitted the server will use the default value of False
 
 ### Return type
 
