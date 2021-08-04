@@ -1,22 +1,7 @@
     @classmethod
     @convert_js_args_to_python_args
     def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
-        """{{classname}} - a model defined in OpenAPI
-
-        Keyword Args:
-{{#requiredVars}}
-{{#defaultValue}}
-            {{name}} ({{{dataType}}}):{{#description}} {{{description}}}.{{/description}} defaults to {{{defaultValue}}}{{#allowableValues}}, must be one of [{{#enumVars}}{{{value}}}, {{/enumVars}}]{{/allowableValues}}  # noqa: E501
-{{/defaultValue}}
-{{^defaultValue}}
-            {{name}} ({{{dataType}}}):{{#description}} {{{description}}}{{/description}}
-{{/defaultValue}}
-{{/requiredVars}}
-{{> model_templates/docstring_init_required_kwargs }}
-{{#optionalVars}}
-            {{name}} ({{{dataType}}}):{{#description}} {{{description}}}.{{/description}} [optional]{{#defaultValue}} if omitted the server will use the default value of {{{defaultValue}}}{{/defaultValue}}  # noqa: E501
-{{/optionalVars}}
-        """
+        """Helper creating a new instance from a response."""
 
 {{#requiredVars}}
 {{#defaultValue}}

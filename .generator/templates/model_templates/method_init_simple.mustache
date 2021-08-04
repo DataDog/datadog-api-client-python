@@ -34,12 +34,5 @@
 {{> model_templates/invalid_pos_args }}
 
         self.value = value
-        if kwargs:
-            raise ApiTypeError(
-                "Invalid named arguments=%s passed to %s. Remove those invalid named arguments." % (
-                    kwargs,
-                    self.__class__.__name__,
-                ),
-                path_to_item=self._path_to_item,
-                valid_classes=(self.__class__,),
-            )
+
+	self._check_kw_args(kwargs)

@@ -120,12 +120,12 @@
         }
 {{/oneOf}}
 
-    @cached_property
-    def discriminator():
 {{^discriminator}}
-        return None
+    discriminator = None
 {{/discriminator}}
 {{#discriminator}}
+    @cached_property
+    def discriminator():
 {{#mappedModels}}
 {{#-first}}
 {{#imports}}

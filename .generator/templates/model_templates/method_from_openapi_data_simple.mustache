@@ -1,15 +1,5 @@
     @classmethod
     @convert_js_args_to_python_args
     def _from_openapi_data(cls, *args, **kwargs):
-        """{{classname}} - a model defined in OpenAPI
-
-        Note that value can be passed either in args or in kwargs, but not in both.
-
-        Args:
-            args[0] ({{{dataType}}}):{{#description}} {{{description}}}.{{/description}}{{#defaultValue}} if omitted defaults to {{{defaultValue}}}{{/defaultValue}}{{#allowableValues}}, must be one of [{{#enumVars}}{{{value}}}, {{/enumVars}}]{{/allowableValues}}  # noqa: E501
-
-        Keyword Args:
-            value ({{{dataType}}}):{{#description}} {{{description}}}.{{/description}}{{#defaultValue}} if omitted defaults to {{{defaultValue}}}{{/defaultValue}}{{#allowableValues}}, must be one of [{{#enumVars}}{{{value}}}, {{/enumVars}}]{{/allowableValues}}  # noqa: E501
-{{> model_templates/docstring_init_required_kwargs }}
-        """
+        """Helper creating a new instance from a response."""
         return cls(*args, **kwargs)
