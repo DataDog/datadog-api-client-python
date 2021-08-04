@@ -104,6 +104,10 @@ class MonitorOptions(ModelNormal):
                 int,
                 none_type,
             ),  # noqa: E501
+            "new_group_delay": (
+                int,
+                none_type,
+            ),  # noqa: E501
             "new_host_delay": (
                 int,
                 none_type,
@@ -147,6 +151,7 @@ class MonitorOptions(ModelNormal):
         "locked": "locked",  # noqa: E501
         "min_failure_duration": "min_failure_duration",  # noqa: E501
         "min_location_failed": "min_location_failed",  # noqa: E501
+        "new_group_delay": "new_group_delay",  # noqa: E501
         "new_host_delay": "new_host_delay",  # noqa: E501
         "no_data_timeframe": "no_data_timeframe",  # noqa: E501
         "notify_audit": "notify_audit",  # noqa: E501
@@ -212,7 +217,8 @@ class MonitorOptions(ModelNormal):
             locked (bool): Whether or not the monitor is locked (only editable by creator and admins).. [optional]  # noqa: E501
             min_failure_duration (int, none_type): How long the test should be in failure before alerting (integer, number of seconds, max 7200).. [optional] if omitted the server will use the default value of 0  # noqa: E501
             min_location_failed (int, none_type): The minimum number of locations in failure at the same time during at least one moment in the `min_failure_duration` period (`min_location_failed` and `min_failure_duration` are part of the advanced alerting rules - integer, >= 1).. [optional] if omitted the server will use the default value of 1  # noqa: E501
-            new_host_delay (int, none_type): Time (in seconds) to allow a host to boot and applications to fully start before starting the evaluation of monitor results. Should be a non negative integer.. [optional] if omitted the server will use the default value of 300  # noqa: E501
+            new_group_delay (int, none_type): Time (in seconds) to skip evaluations for new groups.  For example, this option can be used to skip evaluations for new hosts while they initialize.  Must be a non negative integer.. [optional]  # noqa: E501
+            new_host_delay (int, none_type): Time (in seconds) to allow a host to boot and applications to fully start before starting the evaluation of monitor results. Should be a non negative integer.  Use new_group_delay instead.. [optional] if omitted the server will use the default value of 300  # noqa: E501
             no_data_timeframe (int, none_type): The number of minutes before a monitor notifies after data stops reporting. Datadog recommends at least 2x the monitor timeframe for metric alerts or 2 minutes for service checks. If omitted, 2x the evaluation timeframe is used for metric alerts, and 24 hours is used for service checks.. [optional]  # noqa: E501
             notify_audit (bool): A Boolean indicating whether tagged users is notified on changes to this monitor.. [optional] if omitted the server will use the default value of False  # noqa: E501
             notify_no_data (bool): A Boolean indicating whether this monitor notifies when data stops reporting.. [optional] if omitted the server will use the default value of False  # noqa: E501
@@ -319,7 +325,8 @@ class MonitorOptions(ModelNormal):
             locked (bool): Whether or not the monitor is locked (only editable by creator and admins).. [optional]  # noqa: E501
             min_failure_duration (int, none_type): How long the test should be in failure before alerting (integer, number of seconds, max 7200).. [optional] if omitted the server will use the default value of 0  # noqa: E501
             min_location_failed (int, none_type): The minimum number of locations in failure at the same time during at least one moment in the `min_failure_duration` period (`min_location_failed` and `min_failure_duration` are part of the advanced alerting rules - integer, >= 1).. [optional] if omitted the server will use the default value of 1  # noqa: E501
-            new_host_delay (int, none_type): Time (in seconds) to allow a host to boot and applications to fully start before starting the evaluation of monitor results. Should be a non negative integer.. [optional] if omitted the server will use the default value of 300  # noqa: E501
+            new_group_delay (int, none_type): Time (in seconds) to skip evaluations for new groups.  For example, this option can be used to skip evaluations for new hosts while they initialize.  Must be a non negative integer.. [optional]  # noqa: E501
+            new_host_delay (int, none_type): Time (in seconds) to allow a host to boot and applications to fully start before starting the evaluation of monitor results. Should be a non negative integer.  Use new_group_delay instead.. [optional] if omitted the server will use the default value of 300  # noqa: E501
             no_data_timeframe (int, none_type): The number of minutes before a monitor notifies after data stops reporting. Datadog recommends at least 2x the monitor timeframe for metric alerts or 2 minutes for service checks. If omitted, 2x the evaluation timeframe is used for metric alerts, and 24 hours is used for service checks.. [optional]  # noqa: E501
             notify_audit (bool): A Boolean indicating whether tagged users is notified on changes to this monitor.. [optional] if omitted the server will use the default value of False  # noqa: E501
             notify_no_data (bool): A Boolean indicating whether this monitor notifies when data stops reporting.. [optional] if omitted the server will use the default value of False  # noqa: E501
