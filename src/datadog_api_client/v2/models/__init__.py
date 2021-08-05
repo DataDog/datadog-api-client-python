@@ -233,6 +233,7 @@ from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
 from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKeyAttributes
 from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
 from datadog_api_client.v2.model.partial_application_key_attributes import PartialApplicationKeyAttributes
+from datadog_api_client.v2.model.partial_application_key_response import PartialApplicationKeyResponse
 from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
@@ -350,6 +351,9 @@ from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_
     SecurityMonitoringSignalsListResponseMetaPage,
 )
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
+from datadog_api_client.v2.model.service_account_create_attributes import ServiceAccountCreateAttributes
+from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
+from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest
 from datadog_api_client.v2.model.user import User
 from datadog_api_client.v2.model.user_attributes import UserAttributes
 from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes

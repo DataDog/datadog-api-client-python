@@ -25,4 +25,5 @@ from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
+from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.api.users_api import UsersApi
