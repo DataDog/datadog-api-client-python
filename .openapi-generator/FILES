@@ -14,6 +14,7 @@ datadog_api_client/v2/api/metrics_api.py
 datadog_api_client/v2/api/processes_api.py
 datadog_api_client/v2/api/roles_api.py
 datadog_api_client/v2/api/security_monitoring_api.py
+datadog_api_client/v2/api/service_accounts_api.py
 datadog_api_client/v2/api/users_api.py
 datadog_api_client/v2/api_client.py
 datadog_api_client/v2/apis/__init__.py
@@ -224,6 +225,7 @@ datadog_api_client/v2/model/partial_api_key.py
 datadog_api_client/v2/model/partial_api_key_attributes.py
 datadog_api_client/v2/model/partial_application_key.py
 datadog_api_client/v2/model/partial_application_key_attributes.py
+datadog_api_client/v2/model/partial_application_key_response.py
 datadog_api_client/v2/model/permission.py
 datadog_api_client/v2/model/permission_attributes.py
 datadog_api_client/v2/model/permissions_response.py
@@ -317,6 +319,9 @@ datadog_api_client/v2/model/security_monitoring_signals_list_response_links.py
 datadog_api_client/v2/model/security_monitoring_signals_list_response_meta.py
 datadog_api_client/v2/model/security_monitoring_signals_list_response_meta_page.py
 datadog_api_client/v2/model/security_monitoring_signals_sort.py
+datadog_api_client/v2/model/service_account_create_attributes.py
+datadog_api_client/v2/model/service_account_create_data.py
+datadog_api_client/v2/model/service_account_create_request.py
 datadog_api_client/v2/model/user.py
 datadog_api_client/v2/model/user_attributes.py
 datadog_api_client/v2/model/user_create_attributes.py
@@ -555,6 +560,7 @@ docs/PartialAPIKey.md
 docs/PartialAPIKeyAttributes.md
 docs/PartialApplicationKey.md
 docs/PartialApplicationKeyAttributes.md
+docs/PartialApplicationKeyResponse.md
 docs/Permission.md
 docs/PermissionAttributes.md
 docs/PermissionsResponse.md
@@ -651,6 +657,10 @@ docs/SecurityMonitoringSignalsListResponseLinks.md
 docs/SecurityMonitoringSignalsListResponseMeta.md
 docs/SecurityMonitoringSignalsListResponseMetaPage.md
 docs/SecurityMonitoringSignalsSort.md
+docs/ServiceAccountCreateAttributes.md
+docs/ServiceAccountCreateData.md
+docs/ServiceAccountCreateRequest.md
+docs/ServiceAccountsApi.md
 docs/User.md
 docs/UserAttributes.md
 docs/UserCreateAttributes.md
@@ -888,6 +898,7 @@ test/test_partial_api_key.py
 test/test_partial_api_key_attributes.py
 test/test_partial_application_key.py
 test/test_partial_application_key_attributes.py
+test/test_partial_application_key_response.py
 test/test_permission.py
 test/test_permission_attributes.py
 test/test_permissions_response.py
@@ -984,6 +995,10 @@ test/test_security_monitoring_signals_list_response_links.py
 test/test_security_monitoring_signals_list_response_meta.py
 test/test_security_monitoring_signals_list_response_meta_page.py
 test/test_security_monitoring_signals_sort.py
+test/test_service_account_create_attributes.py
+test/test_service_account_create_data.py
+test/test_service_account_create_request.py
+test/test_service_accounts_api.py
 test/test_user.py
 test/test_user_attributes.py
 test/test_user_create_attributes.py

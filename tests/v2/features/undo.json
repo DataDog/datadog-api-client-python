@@ -500,6 +500,60 @@
       "type": "safe"
     }
   },
+  "CreateServiceAccount": {
+    "tag": "Users",
+    "undo": {
+      "operationId": "DisableUser",
+      "parameters": [
+        {
+          "name": "user_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListServiceAccountApplicationKeys": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateServiceAccountApplicationKey": {
+    "tag": "Service Accounts",
+    "undo": {
+      "operationId": "DeleteServiceAccountApplicationKey",
+      "parameters": [
+        {
+          "name": "app_key_id",
+          "source": "data.id"
+        },
+        {
+          "name": "service_account_id",
+          "source": "data.relationships.owned_by.data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteServiceAccountApplicationKey": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetServiceAccountApplicationKey": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateServiceAccountApplicationKey": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentServices": {
     "tag": "Incident Services",
     "undo": {

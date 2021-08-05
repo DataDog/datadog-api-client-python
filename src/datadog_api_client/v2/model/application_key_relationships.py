@@ -74,7 +74,7 @@ class ApplicationKeyRelationships(ModelNormal):
         """
         lazy_import()
         return {
-            "created_by": (RelationshipToUser,),  # noqa: E501
+            "owned_by": (RelationshipToUser,),  # noqa: E501
         }
 
     @cached_property
@@ -82,7 +82,7 @@ class ApplicationKeyRelationships(ModelNormal):
         return None
 
     attribute_map = {
-        "created_by": "created_by",  # noqa: E501
+        "owned_by": "owned_by",  # noqa: E501
     }
 
     read_only_vars = {}
@@ -125,7 +125,7 @@ class ApplicationKeyRelationships(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_by (RelationshipToUser): [optional]  # noqa: E501
+            owned_by (RelationshipToUser): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)
@@ -212,7 +212,7 @@ class ApplicationKeyRelationships(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_by (RelationshipToUser): [optional]  # noqa: E501
+            owned_by (RelationshipToUser): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop("_check_type", True)

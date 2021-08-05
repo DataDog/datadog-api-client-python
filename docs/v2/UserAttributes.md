@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **icon** | **str** | URL of the user&#39;s icon. | [optional] 
 **modified_at** | **datetime** | Time that the user was last modified. | [optional] 
 **name** | **str** | Name of the user. | [optional] 
+**service_account** | **bool** | Whether the user is a service account. | [optional] 
 **status** | **str** | Status of the user. | [optional] 
 **title** | **str** | Title of the user. | [optional] 
 **verified** | **bool** | Whether the user is verified. | [optional] 
