@@ -19,6 +19,7 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest
 from datadog_api_client.v2.model.user_create_request import UserCreateRequest
 from datadog_api_client.v2.model.user_invitation_response import UserInvitationResponse
 from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
@@ -39,6 +40,42 @@ class UsersApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        self._create_service_account_endpoint = _Endpoint(
+            settings={
+                "response_type": (UserResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/service_accounts",
+                "operation_id": "create_service_account",
+                "http_method": "POST",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "body",
+                ],
+                "required": [
+                    "body",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (ServiceAccountCreateRequest,),
+                },
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_user_endpoint = _Endpoint(
             settings={
@@ -417,6 +454,49 @@ class UsersApi(object):
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def create_service_account(self, body, **kwargs):
+        """Create a service account  # noqa: E501
+
+        Create a service account for your organization.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_service_account(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (ServiceAccountCreateRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UserResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._create_service_account_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._create_service_account_endpoint.call_with_http_info(**kwargs)
 
     def create_user(self, body, **kwargs):
         """Create a user  # noqa: E501
