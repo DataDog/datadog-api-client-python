@@ -27,11 +27,11 @@ from datadog_api_client.v1.exceptions import ApiAttributeError
 def lazy_import():
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
-    from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
+    from datadog_api_client.v1.model.scatterplot_widget_aggregator import ScatterplotWidgetAggregator
 
     globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
-    globals()["WidgetAggregator"] = WidgetAggregator
+    globals()["ScatterplotWidgetAggregator"] = ScatterplotWidgetAggregator
 
 
 class ScatterPlotRequest(ModelNormal):
@@ -78,7 +78,7 @@ class ScatterPlotRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "aggregator": (WidgetAggregator,),  # noqa: E501
+            "aggregator": (ScatterplotWidgetAggregator,),  # noqa: E501
             "apm_query": (LogQueryDefinition,),  # noqa: E501
             "event_query": (LogQueryDefinition,),  # noqa: E501
             "log_query": (LogQueryDefinition,),  # noqa: E501
@@ -147,7 +147,7 @@ class ScatterPlotRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregator (WidgetAggregator): [optional]  # noqa: E501
+            aggregator (ScatterplotWidgetAggregator): [optional]  # noqa: E501
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
             event_query (LogQueryDefinition): [optional]  # noqa: E501
             log_query (LogQueryDefinition): [optional]  # noqa: E501
@@ -243,7 +243,7 @@ class ScatterPlotRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregator (WidgetAggregator): [optional]  # noqa: E501
+            aggregator (ScatterplotWidgetAggregator): [optional]  # noqa: E501
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
             event_query (LogQueryDefinition): [optional]  # noqa: E501
             log_query (LogQueryDefinition): [optional]  # noqa: E501
