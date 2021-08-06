@@ -1683,6 +1683,14 @@ components:
           format: int64
           readOnly: true
           type: integer
+        id_str:
+          description: 'Handling IDs as large 64-bit numbers can cause loss of accuracy
+            issues with some programming languages.
+
+            Instead, use the string representation of the Event ID to avoid losing
+            accuracy.'
+          readOnly: true
+          type: string
         payload:
           description: Payload of the event.
           example: '{}'
@@ -2177,6 +2185,7 @@ components:
       - last
       - area
       - l2norm
+      - percentile
       example: avg
       type: string
       x-enum-varnames:
@@ -2187,6 +2196,7 @@ components:
       - LAST
       - AREA
       - L2NORM
+      - PERCENTILE
     FormulaAndFunctionMetricDataSource:
       description: Data source for metrics queries.
       enum:
@@ -3333,11 +3343,13 @@ components:
       enum:
       - issue_stream
       - logs_stream
+      - audit_stream
       example: issue_stream
       type: string
       x-enum-varnames:
       - ISSUE_STREAM
       - LOGS_STREAM
+      - AUDIT_STREAM
     ListStreamWidgetDefinition:
       description: 'The list stream visualization displays a table of recent events
         in your application that
@@ -7945,7 +7957,7 @@ components:
       description: Updated scatter plot.
       properties:
         aggregator:
-          $ref: '#/components/schemas/WidgetAggregator'
+          $ref: '#/components/schemas/ScatterplotWidgetAggregator'
         apm_query:
           $ref: '#/components/schemas/LogQueryDefinition'
         event_query:
@@ -8026,6 +8038,21 @@ components:
       type: string
       x-enum-varnames:
       - SCATTERPLOT
+    ScatterplotWidgetAggregator:
+      description: Aggregator used for the request.
+      enum:
+      - avg
+      - last
+      - max
+      - min
+      - sum
+      type: string
+      x-enum-varnames:
+      - AVERAGE
+      - LAST
+      - MAXIMUM
+      - MINIMUM
+      - SUM
     Series:
       description: 'A metric to submit to Datadog.
 
@@ -9372,6 +9399,9 @@ components:
       - firefox.laptop_large
       - firefox.tablet
       - firefox.mobile_small
+      - edge.laptop_large
+      - edge.tablet
+      - edge.mobile_small
       type: string
       x-enum-varnames:
       - LAPTOP_LARGE
@@ -9383,6 +9413,9 @@ components:
       - FIREFOX_LAPTOP_LARGE
       - FIREFOX_TABLET
       - FIREFOX_MOBILE_SMALL
+      - EDGE_LAPTOP_LARGE
+      - EDGE_TABLET
+      - EDGE_MOBILE_SMALL
     SyntheticsErrorCode:
       description: Error code that can be returned by a Synthetic test.
       enum:
@@ -13007,6 +13040,7 @@ components:
       - max
       - min
       - sum
+      - percentile
       type: string
       x-enum-varnames:
       - AVERAGE
@@ -13014,6 +13048,7 @@ components:
       - MAXIMUM
       - MINIMUM
       - SUM
+      - PERCENTILE
     WidgetAxis:
       description: Axis controls for the widget.
       properties:

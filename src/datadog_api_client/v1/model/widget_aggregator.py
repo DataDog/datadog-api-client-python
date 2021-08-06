@@ -51,6 +51,7 @@ class WidgetAggregator(ModelSimple):
             "MAXIMUM": "max",
             "MINIMUM": "min",
             "SUM": "sum",
+            "PERCENTILE": "percentile",
         },
     }
 
@@ -102,10 +103,10 @@ class WidgetAggregator(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Aggregator used for the request.., must be one of ["avg", "last", "max", "min", "sum", ]  # noqa: E501
+            args[0] (str): Aggregator used for the request.., must be one of ["avg", "last", "max", "min", "sum", "percentile", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Aggregator used for the request.., must be one of ["avg", "last", "max", "min", "sum", ]  # noqa: E501
+            value (str): Aggregator used for the request.., must be one of ["avg", "last", "max", "min", "sum", "percentile", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -194,10 +195,10 @@ class WidgetAggregator(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Aggregator used for the request.., must be one of ["avg", "last", "max", "min", "sum", ]  # noqa: E501
+            args[0] (str): Aggregator used for the request.., must be one of ["avg", "last", "max", "min", "sum", "percentile", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Aggregator used for the request.., must be one of ["avg", "last", "max", "min", "sum", ]  # noqa: E501
+            value (str): Aggregator used for the request.., must be one of ["avg", "last", "max", "min", "sum", "percentile", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
