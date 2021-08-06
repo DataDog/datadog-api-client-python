@@ -88,6 +88,7 @@ class Event(ModelNormal):
             "device_name": (str,),  # noqa: E501
             "host": (str,),  # noqa: E501
             "id": (int,),  # noqa: E501
+            "id_str": (str,),  # noqa: E501
             "payload": (str,),  # noqa: E501
             "priority": (EventPriority,),  # noqa: E501
             "source_type_name": (str,),  # noqa: E501
@@ -107,6 +108,7 @@ class Event(ModelNormal):
         "device_name": "device_name",  # noqa: E501
         "host": "host",  # noqa: E501
         "id": "id",  # noqa: E501
+        "id_str": "id_str",  # noqa: E501
         "payload": "payload",  # noqa: E501
         "priority": "priority",  # noqa: E501
         "source_type_name": "source_type_name",  # noqa: E501
@@ -118,6 +120,7 @@ class Event(ModelNormal):
 
     read_only_vars = {
         "id",  # noqa: E501
+        "id_str",  # noqa: E501
         "payload",  # noqa: E501
         "url",  # noqa: E501
     }
@@ -165,6 +168,7 @@ class Event(ModelNormal):
             device_name (str): A device name.. [optional]  # noqa: E501
             host (str): Host name to associate with the event. Any tags associated with the host are also applied to this event.. [optional]  # noqa: E501
             id (int): Integer ID of the event.. [optional]  # noqa: E501
+            id_str (str): Handling IDs as large 64-bit numbers can cause loss of accuracy issues with some programming languages. Instead, use the string representation of the Event ID to avoid losing accuracy.. [optional]  # noqa: E501
             payload (str): Payload of the event.. [optional]  # noqa: E501
             priority (EventPriority): [optional]  # noqa: E501
             source_type_name (str): The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]  # noqa: E501
@@ -263,6 +267,7 @@ class Event(ModelNormal):
             device_name (str): A device name.. [optional]  # noqa: E501
             host (str): Host name to associate with the event. Any tags associated with the host are also applied to this event.. [optional]  # noqa: E501
             id (int): Integer ID of the event.. [optional]  # noqa: E501
+            id_str (str): Handling IDs as large 64-bit numbers can cause loss of accuracy issues with some programming languages. Instead, use the string representation of the Event ID to avoid losing accuracy.. [optional]  # noqa: E501
             payload (str): Payload of the event.. [optional]  # noqa: E501
             priority (EventPriority): [optional]  # noqa: E501
             source_type_name (str): The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]  # noqa: E501

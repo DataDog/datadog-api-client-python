@@ -48,6 +48,7 @@ class ListStreamSource(ModelSimple):
         ("value",): {
             "ISSUE_STREAM": "issue_stream",
             "LOGS_STREAM": "logs_stream",
+            "AUDIT_STREAM": "audit_stream",
         },
     }
 
@@ -99,10 +100,10 @@ class ListStreamSource(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Source from which to query items to display in the stream.. if omitted defaults to "issue_stream", must be one of ["issue_stream", "logs_stream", ]  # noqa: E501
+            args[0] (str): Source from which to query items to display in the stream.. if omitted defaults to "issue_stream", must be one of ["issue_stream", "logs_stream", "audit_stream", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Source from which to query items to display in the stream.. if omitted defaults to "issue_stream", must be one of ["issue_stream", "logs_stream", ]  # noqa: E501
+            value (str): Source from which to query items to display in the stream.. if omitted defaults to "issue_stream", must be one of ["issue_stream", "logs_stream", "audit_stream", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -187,10 +188,10 @@ class ListStreamSource(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Source from which to query items to display in the stream.. if omitted defaults to "issue_stream", must be one of ["issue_stream", "logs_stream", ]  # noqa: E501
+            args[0] (str): Source from which to query items to display in the stream.. if omitted defaults to "issue_stream", must be one of ["issue_stream", "logs_stream", "audit_stream", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Source from which to query items to display in the stream.. if omitted defaults to "issue_stream", must be one of ["issue_stream", "logs_stream", ]  # noqa: E501
+            value (str): Source from which to query items to display in the stream.. if omitted defaults to "issue_stream", must be one of ["issue_stream", "logs_stream", "audit_stream", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

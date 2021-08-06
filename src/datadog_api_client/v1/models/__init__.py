@@ -381,6 +381,7 @@ from datadog_api_client.v1.model.scatter_plot_request import ScatterPlotRequest
 from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
 from datadog_api_client.v1.model.scatter_plot_widget_definition_requests import ScatterPlotWidgetDefinitionRequests
 from datadog_api_client.v1.model.scatter_plot_widget_definition_type import ScatterPlotWidgetDefinitionType
+from datadog_api_client.v1.model.scatterplot_widget_aggregator import ScatterplotWidgetAggregator
 from datadog_api_client.v1.model.series import Series
 from datadog_api_client.v1.model.service_check import ServiceCheck
 from datadog_api_client.v1.model.service_check_status import ServiceCheckStatus
