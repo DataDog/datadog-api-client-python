@@ -55,6 +55,9 @@ class SyntheticsDeviceID(ModelSimple):
             "FIREFOX_LAPTOP_LARGE": "firefox.laptop_large",
             "FIREFOX_TABLET": "firefox.tablet",
             "FIREFOX_MOBILE_SMALL": "firefox.mobile_small",
+            "EDGE_LAPTOP_LARGE": "edge.laptop_large",
+            "EDGE_TABLET": "edge.tablet",
+            "EDGE_MOBILE_SMALL": "edge.mobile_small",
         },
     }
 
@@ -106,10 +109,10 @@ class SyntheticsDeviceID(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): The device ID.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", ]  # noqa: E501
+            args[0] (str): The device ID.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", "edge.laptop_large", "edge.tablet", "edge.mobile_small", ]  # noqa: E501
 
         Keyword Args:
-            value (str): The device ID.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", ]  # noqa: E501
+            value (str): The device ID.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", "edge.laptop_large", "edge.tablet", "edge.mobile_small", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -198,10 +201,10 @@ class SyntheticsDeviceID(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): The device ID.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", ]  # noqa: E501
+            args[0] (str): The device ID.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", "edge.laptop_large", "edge.tablet", "edge.mobile_small", ]  # noqa: E501
 
         Keyword Args:
-            value (str): The device ID.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", ]  # noqa: E501
+            value (str): The device ID.., must be one of ["laptop_large", "tablet", "mobile_small", "chrome.laptop_large", "chrome.tablet", "chrome.mobile_small", "firefox.laptop_large", "firefox.tablet", "firefox.mobile_small", "edge.laptop_large", "edge.tablet", "edge.mobile_small", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
