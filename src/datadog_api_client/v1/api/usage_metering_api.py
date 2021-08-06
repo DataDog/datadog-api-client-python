@@ -401,6 +401,7 @@ class UsageMeteringApi(object):
                     "end_month",
                     "sort_direction",
                     "sort_name",
+                    "include_descendants",
                 ],
                 "required": [
                     "start_month",
@@ -419,6 +420,7 @@ class UsageMeteringApi(object):
                     "end_month": (datetime,),
                     "sort_direction": (UsageSortDirection,),
                     "sort_name": (UsageAttributionSort,),
+                    "include_descendants": (bool,),
                 },
                 "attribute_map": {
                     "start_month": "start_month",
@@ -426,6 +428,7 @@ class UsageMeteringApi(object):
                     "end_month": "end_month",
                     "sort_direction": "sort_direction",
                     "sort_name": "sort_name",
+                    "include_descendants": "include_descendants",
                 },
                 "location_map": {
                     "start_month": "query",
@@ -433,6 +436,7 @@ class UsageMeteringApi(object):
                     "end_month": "query",
                     "sort_direction": "query",
                     "sort_name": "query",
+                    "include_descendants": "query",
                 },
                 "collection_format_map": {},
             },
@@ -1829,6 +1833,7 @@ class UsageMeteringApi(object):
             end_month (datetime): Datetime in ISO-8601 format, UTC, precise to month: `[YYYY-MM]` for usage ending this month.. [optional]
             sort_direction (UsageSortDirection): The direction to sort by: `[desc, asc]`.. [optional]
             sort_name (UsageAttributionSort): The field to sort by.. [optional]
+            include_descendants (bool): Include child org usage in the response. Defaults to false.. [optional] if omitted the server will use the default value of False
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

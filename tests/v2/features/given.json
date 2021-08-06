@@ -142,6 +142,34 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"email\": \"{{ unique }}@datadoghq.com\",\n      \"title\": \"user title\",\n      \"service_account\": true\n     },\n     \"type\": \"users\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"service_account_user\" in the system",
+    "key": "service_account_user",
+    "tag": "Users",
+    "operationId": "CreateServiceAccount"
+  },
+  {
+    "parameters": [
+      {
+        "name": "service_account_id",
+        "value": "\"{{ service_account_user.data.id }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"service_account_application_key\" for \"service_account_user\"",
+    "key": "service_account_application_key",
+    "tag": "Service Accounts",
+    "operationId": "CreateServiceAccountApplicationKey"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n     },\n     \"type\": \"services\"\n  }\n}"
       }
     ],
