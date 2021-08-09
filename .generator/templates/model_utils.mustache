@@ -355,6 +355,7 @@ class OpenApiModel(object):
         self._path_to_item = _path_to_item
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+        self._unparsed = False
 
     @classmethod
     def _from_openapi_data(cls, kwargs):
@@ -396,6 +397,7 @@ class ModelSimple(OpenApiModel):
         '_path_to_item',
         '_configuration',
         '_visited_composed_classes',
+        '_unparsed',
     ])
 
 {{> model_templates/methods_setattr_getattr_normal }}
@@ -414,6 +416,7 @@ class ModelNormal(OpenApiModel):
         '_path_to_item',
         '_configuration',
         '_visited_composed_classes',
+        '_unparsed',
     ])
 
 {{> model_templates/methods_setattr_getattr_normal }}
@@ -484,6 +487,7 @@ class ModelComposed(OpenApiModel):
         '_composed_instances',
         '_var_name_to_model_instances',
         '_additional_properties_model_instances',
+        '_unparsed',
     ])
 
     def __init__(self, kwargs):
