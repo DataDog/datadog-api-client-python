@@ -3,9 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-import re  # noqa: F401
-import sys  # noqa: F401
-
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -18,10 +15,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_get_composed_info,
 )
-from ..model_utils import OpenApiModel
-from datadog_api_client.v1.exceptions import ApiAttributeError
 
 
 def lazy_import():
@@ -103,9 +97,7 @@ class QueryValueWidgetRequest(ModelNormal):
             "security_query": (LogQueryDefinition,),  # noqa: E501
         }
 
-    @cached_property
-    def discriminator():
-        return None
+    discriminator = None
 
     attribute_map = {
         "aggregator": "aggregator",  # noqa: E501
@@ -128,108 +120,6 @@ class QueryValueWidgetRequest(ModelNormal):
     read_only_vars = {}
 
     _composed_schemas = {}
-
-    @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
-        """QueryValueWidgetRequest - a model defined in OpenAPI
-
-        Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            aggregator (WidgetAggregator): [optional]  # noqa: E501
-            apm_query (LogQueryDefinition): [optional]  # noqa: E501
-            audit_query (LogQueryDefinition): [optional]  # noqa: E501
-            conditional_formats ([WidgetConditionalFormat]): List of conditional formats.. [optional]  # noqa: E501
-            event_query (LogQueryDefinition): [optional]  # noqa: E501
-            formulas ([WidgetFormula]): List of formulas that operate on queries. **This feature is currently in beta.**. [optional]  # noqa: E501
-            log_query (LogQueryDefinition): [optional]  # noqa: E501
-            network_query (LogQueryDefinition): [optional]  # noqa: E501
-            process_query (ProcessQueryDefinition): [optional]  # noqa: E501
-            profile_metrics_query (LogQueryDefinition): [optional]  # noqa: E501
-            q (str): TODO.. [optional]  # noqa: E501
-            queries ([FormulaAndFunctionQueryDefinition]): List of queries that can be returned directly or used in formulas. **This feature is currently in beta.**. [optional]  # noqa: E501
-            response_format (FormulaAndFunctionResponseFormat): [optional]  # noqa: E501
-            rum_query (LogQueryDefinition): [optional]  # noqa: E501
-            security_query (LogQueryDefinition): [optional]  # noqa: E501
-        """
-
-        _check_type = kwargs.pop("_check_type", True)
-        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
-        _path_to_item = kwargs.pop("_path_to_item", ())
-        _configuration = kwargs.pop("_configuration", None)
-        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
-
-        self = super(OpenApiModel, cls).__new__(cls)
-
-        if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
-                % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
-
-        self._data_store = {}
-        self._check_type = _check_type
-        self._spec_property_naming = _spec_property_naming
-        self._path_to_item = _path_to_item
-        self._configuration = _configuration
-        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
-
-        for var_name, var_value in kwargs.items():
-            if (
-                var_name not in self.attribute_map
-                and self._configuration is not None
-                and self._configuration.discard_unknown_keys
-                and self.additional_properties_type is None
-            ):
-                # discard variable.
-                continue
-            setattr(self, var_name, var_value)
-        return self
-
-    required_properties = set(
-        [
-            "_data_store",
-            "_check_type",
-            "_spec_property_naming",
-            "_path_to_item",
-            "_configuration",
-            "_visited_composed_classes",
-        ]
-    )
 
     @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):  # noqa: E501
@@ -282,43 +172,17 @@ class QueryValueWidgetRequest(ModelNormal):
             rum_query (LogQueryDefinition): [optional]  # noqa: E501
             security_query (LogQueryDefinition): [optional]  # noqa: E501
         """
+        super().__init__(kwargs)
 
-        _check_type = kwargs.pop("_check_type", True)
-        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
-        _path_to_item = kwargs.pop("_path_to_item", ())
-        _configuration = kwargs.pop("_configuration", None)
-        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
+        self._check_pos_args(args)
 
-        if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
-                % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
+    @classmethod
+    @convert_js_args_to_python_args
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+        """Helper creating a new instance from a response."""
 
-        self._data_store = {}
-        self._check_type = _check_type
-        self._spec_property_naming = _spec_property_naming
-        self._path_to_item = _path_to_item
-        self._configuration = _configuration
-        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+        self = super(QueryValueWidgetRequest, cls)._from_openapi_data(kwargs)
 
-        for var_name, var_value in kwargs.items():
-            if (
-                var_name not in self.attribute_map
-                and self._configuration is not None
-                and self._configuration.discard_unknown_keys
-                and self.additional_properties_type is None
-            ):
-                # discard variable.
-                continue
-            setattr(self, var_name, var_value)
-            if var_name in self.read_only_vars:
-                raise ApiAttributeError(
-                    f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
-                    f"class with read only attributes."
-                )
+        self._check_pos_args(args)
+
+        return self
