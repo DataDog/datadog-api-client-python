@@ -3,9 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 
 
-import re  # noqa: F401
-import sys  # noqa: F401
-
 from datadog_api_client.v1.model_utils import (  # noqa: F401
     ApiTypeError,
     ModelComposed,
@@ -18,10 +15,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_get_composed_info,
 )
-from ..model_utils import OpenApiModel
-from datadog_api_client.v1.exceptions import ApiAttributeError
 
 
 def lazy_import():
@@ -111,9 +105,7 @@ class Dashboard(ModelNormal):
             "url": (str,),  # noqa: E501
         }
 
-    @cached_property
-    def discriminator():
-        return None
+    discriminator = None
 
     attribute_map = {
         "layout_type": "layout_type",  # noqa: E501
@@ -142,113 +134,6 @@ class Dashboard(ModelNormal):
     }
 
     _composed_schemas = {}
-
-    @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, layout_type, title, widgets, *args, **kwargs):  # noqa: E501
-        """Dashboard - a model defined in OpenAPI
-
-        Args:
-            layout_type (DashboardLayoutType):
-            title (str): Title of the dashboard.
-            widgets ([Widget]): List of widgets to display on the dashboard.
-
-        Keyword Args:
-            _check_type (bool): if True, values for parameters in openapi_types
-                                will be type checked and a TypeError will be
-                                raised if the wrong type is input.
-                                Defaults to True
-            _path_to_item (tuple/list): This is a list of keys or values to
-                                drill down to the model in received_data
-                                when deserializing a response
-            _spec_property_naming (bool): True if the variable names in the input data
-                                are serialized names, as specified in the OpenAPI document.
-                                False if the variable names in the input data
-                                are pythonic names, e.g. snake case (default)
-            _configuration (Configuration): the instance to use when
-                                deserializing a file_type parameter.
-                                If passed, type conversion is attempted
-                                If omitted no type conversion is done.
-            _visited_composed_classes (tuple): This stores a tuple of
-                                classes that we have traveled through so that
-                                if we see that class again we will not use its
-                                discriminator again.
-                                When traveling through a discriminator, the
-                                composed schema that is
-                                is traveled through is added to this set.
-                                For example if Animal has a discriminator
-                                petType and we pass in "Dog", and the class Dog
-                                allOf includes Animal, we move through Animal
-                                once using the discriminator, and pick Dog.
-                                Then in Dog, we will make an instance of the
-                                Animal class but this time we won't travel
-                                through its discriminator because we passed in
-                                _visited_composed_classes = (Animal,)
-            author_handle (str): Identifier of the dashboard author.. [optional]  # noqa: E501
-            created_at (datetime): Creation date of the dashboard.. [optional]  # noqa: E501
-            description (str, none_type): Description of the dashboard.. [optional]  # noqa: E501
-            id (str): ID of the dashboard.. [optional]  # noqa: E501
-            is_read_only (bool): Whether this dashboard is read-only. If True, only the author and admins can make changes to it.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            modified_at (datetime): Modification date of the dashboard.. [optional]  # noqa: E501
-            notify_list ([str], none_type): List of handles of users to notify when changes are made to this dashboard.. [optional]  # noqa: E501
-            reflow_type (DashboardReflowType): [optional]  # noqa: E501
-            restricted_roles ([str]): A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard. Overrides the `is_read_only` property if both are present. **This feature is currently in beta.**. [optional]  # noqa: E501
-            template_variable_presets ([DashboardTemplateVariablePreset], none_type): Array of template variables saved views.. [optional]  # noqa: E501
-            template_variables ([DashboardTemplateVariable], none_type): List of template variables for this dashboard.. [optional]  # noqa: E501
-            url (str): The URL of the dashboard.. [optional]  # noqa: E501
-        """
-
-        _check_type = kwargs.pop("_check_type", True)
-        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
-        _path_to_item = kwargs.pop("_path_to_item", ())
-        _configuration = kwargs.pop("_configuration", None)
-        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
-
-        self = super(OpenApiModel, cls).__new__(cls)
-
-        if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
-                % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
-
-        self._data_store = {}
-        self._check_type = _check_type
-        self._spec_property_naming = _spec_property_naming
-        self._path_to_item = _path_to_item
-        self._configuration = _configuration
-        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
-
-        self.layout_type = layout_type
-        self.title = title
-        self.widgets = widgets
-        for var_name, var_value in kwargs.items():
-            if (
-                var_name not in self.attribute_map
-                and self._configuration is not None
-                and self._configuration.discard_unknown_keys
-                and self.additional_properties_type is None
-            ):
-                # discard variable.
-                continue
-            setattr(self, var_name, var_value)
-        return self
-
-    required_properties = set(
-        [
-            "_data_store",
-            "_check_type",
-            "_spec_property_naming",
-            "_path_to_item",
-            "_configuration",
-            "_visited_composed_classes",
-        ]
-    )
 
     @convert_js_args_to_python_args
     def __init__(self, layout_type, title, widgets, *args, **kwargs):  # noqa: E501
@@ -303,46 +188,24 @@ class Dashboard(ModelNormal):
             template_variables ([DashboardTemplateVariable], none_type): List of template variables for this dashboard.. [optional]  # noqa: E501
             url (str): The URL of the dashboard.. [optional]  # noqa: E501
         """
+        super().__init__(kwargs)
 
-        _check_type = kwargs.pop("_check_type", True)
-        _spec_property_naming = kwargs.pop("_spec_property_naming", False)
-        _path_to_item = kwargs.pop("_path_to_item", ())
-        _configuration = kwargs.pop("_configuration", None)
-        _visited_composed_classes = kwargs.pop("_visited_composed_classes", ())
-
-        if args:
-            raise ApiTypeError(
-                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments."
-                % (
-                    args,
-                    self.__class__.__name__,
-                ),
-                path_to_item=_path_to_item,
-                valid_classes=(self.__class__,),
-            )
-
-        self._data_store = {}
-        self._check_type = _check_type
-        self._spec_property_naming = _spec_property_naming
-        self._path_to_item = _path_to_item
-        self._configuration = _configuration
-        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+        self._check_pos_args(args)
 
         self.layout_type = layout_type
         self.title = title
         self.widgets = widgets
-        for var_name, var_value in kwargs.items():
-            if (
-                var_name not in self.attribute_map
-                and self._configuration is not None
-                and self._configuration.discard_unknown_keys
-                and self.additional_properties_type is None
-            ):
-                # discard variable.
-                continue
-            setattr(self, var_name, var_value)
-            if var_name in self.read_only_vars:
-                raise ApiAttributeError(
-                    f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
-                    f"class with read only attributes."
-                )
+
+    @classmethod
+    @convert_js_args_to_python_args
+    def _from_openapi_data(cls, layout_type, title, widgets, *args, **kwargs):  # noqa: E501
+        """Helper creating a new instance from a response."""
+
+        self = super(Dashboard, cls)._from_openapi_data(kwargs)
+
+        self._check_pos_args(args)
+
+        self.layout_type = layout_type
+        self.title = title
+        self.widgets = widgets
+        return self
