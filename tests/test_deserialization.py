@@ -79,6 +79,8 @@ def test_unknown_nested_oneof_in_list():
     assert isinstance(deserialized_data, SyntheticsAPITest)
     assert len(deserialized_data.config.assertions) == 3
     assert deserialized_data.config.assertions[2].operator == "A non existent operator"
+    assert deserialized_data.config.assertions[2]._composed_instances[0]._unparsed
+    assert not deserialized_data.config.assertions[1]._composed_instances[0]._unparsed
 
 
 def test_unknown_nested_enum_in_list():
@@ -147,6 +149,7 @@ def test_unknown_nested_enum_in_list():
     assert isinstance(deserialized_data, SyntheticsBrowserTest)
     assert len(deserialized_data.options.device_ids) == 3
     assert str(deserialized_data.options.device_ids[2]) == "A non existent device ID"
+    assert deserialized_data.options.device_ids[2]._unparsed
 
 
 def test_unknown_top_level_enum():
@@ -230,6 +233,7 @@ def test_unknown_nested_enum():
     assert isinstance(deserialized_data, SyntheticsAPITest)
     assert isinstance(deserialized_data.config.request, SyntheticsTestRequest)
     assert str(deserialized_data.config.request.method) == "A non existent method"
+    assert deserialized_data.config.request.method._unparsed
 
 
 def test_unknown_nested_one_of():
@@ -262,3 +266,4 @@ def test_unknown_nested_one_of():
     assert isinstance(deserialized_data, LogsArchive)
     assert isinstance(deserialized_data.data.attributes.destination, LogsArchiveDestination)
     assert deserialized_data.data.attributes.destination.type == "A non existent destination"
+    assert deserialized_data.data.attributes.destination._composed_instances[0]._unparsed
