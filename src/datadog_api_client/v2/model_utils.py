@@ -143,10 +143,17 @@ class OpenApiModel(object):
                 configuration=self._configuration,
             )
         if (name,) in self.allowed_values:
-            check_allowed_values(self.allowed_values, (name,), value)
+            try:
+                check_allowed_values(self.allowed_values, (name,), value)
+            except ApiValueError:
+                self.__dict__["_data_store"][name] = value
+                self._unparsed = True
+                return
         if (name,) in self.validations:
             check_validations(self.validations, (name,), value, self._configuration)
         self.__dict__["_data_store"][name] = value
+        if isinstance(value, OpenApiModel) and value._unparsed:
+            self._unparsed = True
 
     def __repr__(self):
         """For `print` and `pprint`"""
@@ -383,6 +390,7 @@ class OpenApiModel(object):
         self._path_to_item = _path_to_item
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+        self._unparsed = False
 
     @classmethod
     def _from_openapi_data(cls, kwargs):
@@ -427,6 +435,7 @@ class ModelSimple(OpenApiModel):
             "_path_to_item",
             "_configuration",
             "_visited_composed_classes",
+            "_unparsed",
         ]
     )
 
@@ -487,6 +496,7 @@ class ModelNormal(OpenApiModel):
             "_path_to_item",
             "_configuration",
             "_visited_composed_classes",
+            "_unparsed",
         ]
     )
 
@@ -611,6 +621,7 @@ class ModelComposed(OpenApiModel):
             "_composed_instances",
             "_var_name_to_model_instances",
             "_additional_properties_model_instances",
+            "_unparsed",
         ]
     )
 
@@ -1818,19 +1829,12 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                         constant_kwargs["_check_type"],
                         configuration=constant_kwargs["_configuration"],
                     )
-            oneof_instances.append(oneof_instance)
+            if not oneof_instance._unparsed:
+                oneof_instances.append(oneof_instance)
         except Exception:
             pass
-    if len(oneof_instances) == 0:
-        raise ApiValueError(
-            "Invalid inputs given to generate an instance of %s. None "
-            "of the oneOf schemas matched the input data." % cls.__name__
-        )
-    elif len(oneof_instances) > 1:
-        raise ApiValueError(
-            "Invalid inputs given to generate an instance of %s. Multiple "
-            "oneOf schemas matched the inputs, but a max of one is allowed." % cls.__name__
-        )
+    if len(oneof_instances) != 1:
+        return UnparsedObject(**model_kwargs)
     return oneof_instances[0]
 
 
@@ -1978,3 +1982,40 @@ def validate_get_composed_info(constant_args, model_args, self):
             var_name_to_model_instances[prop_name] = [self] + composed_instances
 
     return [composed_instances, var_name_to_model_instances, additional_properties_model_instances, discarded_args]
+
+
+class UnparsedObject(ModelNormal):
+    """A model for an oneOf we don't know about."""
+
+    allowed_values = {}
+
+    validations = {}
+
+    additional_properties_type = None
+
+    _nullable = False
+
+    openapi_types = {}
+
+    discriminator = None
+
+    attribute_map = {}
+
+    _composed_schemas = {}
+
+    required_properties = set(
+        [
+            "_data_store",
+            "_unparsed",
+        ]
+    )
+
+    @convert_js_args_to_python_args
+    def __init__(self, **kwargs):
+
+        self._data_store = {}
+        self._unparsed = True
+
+        for var_name, var_value in kwargs.items():
+            self.__dict__[var_name] = var_value
+            self.__dict__["_data_store"][var_name] = var_value
