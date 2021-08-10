@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **error_budget_remaining** | [**SLOErrorBudgetRemainingData**](SLOErrorBudgetRemainingData.md) |  | [optional] 
 **errors** | [**[SLOHistoryResponseError]**](SLOHistoryResponseError.md) | A list of errors while querying the history data for the service level objective. | [optional] 
 **group** | **str** | For groups in a grouped SLO, this is the group name. | [optional] 
-**history** | **[[float]]** | For &#x60;monitor&#x60; based SLOs, this includes the aggregated history uptime time series. | [optional] 
+**history** | **[[float]]** | For &#x60;monitor&#x60; based SLOs, this includes the aggregated history as arrays that include time series and uptime data where &#x60;0&#x3D;monitor&#x60; is in &#x60;OK&#x60; state and &#x60;1&#x3D;monitor&#x60; is in &#x60;alert&#x60; state. | [optional] 
 **monitor_modified** | **int** | For &#x60;monitor&#x60; based SLOs, this is the last modified timestamp in epoch seconds of the monitor. | [optional] 
 **monitor_type** | **str** | For &#x60;monitor&#x60; based SLOs, this describes the type of monitor. | [optional] 
 **name** | **str** | For groups in a grouped SLO, this is the group name. For monitors in a multi-monitor SLO, this is the monitor name. | [optional] 
