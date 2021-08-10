@@ -9,8 +9,4 @@
 
         this_val = self._data_store['value']
         that_val = other._data_store['value']
-        types = set()
-        types.add(this_val.__class__)
-        types.add(that_val.__class__)
-        vals_equal = this_val == that_val
-        return vals_equal
+        return this_val == that_val

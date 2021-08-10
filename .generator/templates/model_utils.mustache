@@ -342,10 +342,61 @@ class OpenApiModel(object):
         new_inst = new_cls._new_from_openapi_data(*args, **kwargs)
         return new_inst
 
+    def __init__(self, kwargs):
+        _check_type = kwargs.pop('_check_type', True)
+        _spec_property_naming = kwargs.pop('_spec_property_naming', False)
+        _path_to_item = kwargs.pop('_path_to_item', ())
+        _configuration = kwargs.pop('_configuration', None)
+        _visited_composed_classes = kwargs.pop('_visited_composed_classes', ())
+
+        self._data_store = {}
+        self._check_type = _check_type
+        self._spec_property_naming = _spec_property_naming
+        self._path_to_item = _path_to_item
+        self._configuration = _configuration
+        self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
+
+    @classmethod
+    def _from_openapi_data(cls, kwargs):
+        self = super(OpenApiModel, cls).__new__(cls)
+        OpenApiModel.__init__(self, kwargs)
+        return self
+
+    def _check_pos_args(self, args):
+        if args:
+            raise ApiTypeError(
+                "Invalid positional arguments=%s passed to %s. Remove those invalid positional arguments." % (
+                    args,
+                    self.__class__.__name__,
+                ),
+                path_to_item=self._path_to_item,
+                valid_classes=(self.__class__,),
+            )
+
+    def _check_kw_args(self, kwargs):
+        if kwargs:
+            raise ApiTypeError(
+                "Invalid named arguments=%s passed to %s. Remove those invalid named arguments." % (
+                    kwargs,
+                    self.__class__.__name__,
+                ),
+                path_to_item=self._path_to_item,
+                valid_classes=(self.__class__,),
+            )
+
 
 class ModelSimple(OpenApiModel):
     """the parent class of models whose type != object in their
     swagger/openapi"""
+
+    required_properties = set([
+        '_data_store',
+        '_check_type',
+        '_spec_property_naming',
+        '_path_to_item',
+        '_configuration',
+        '_visited_composed_classes',
+    ])
 
 {{> model_templates/methods_setattr_getattr_normal }}
 
@@ -356,9 +407,45 @@ class ModelNormal(OpenApiModel):
     """the parent class of models whose type == object in their
     swagger/openapi"""
 
+    required_properties = set([
+        '_data_store',
+        '_check_type',
+        '_spec_property_naming',
+        '_path_to_item',
+        '_configuration',
+        '_visited_composed_classes',
+    ])
+
 {{> model_templates/methods_setattr_getattr_normal }}
 
 {{> model_templates/methods_todict_tostr_eq_shared}}
+
+    def __init__(self, kwargs):
+        super().__init__(kwargs)
+        for var_name, var_value in kwargs.items():
+            if var_name not in self.attribute_map and \
+                        self._configuration is not None and \
+                        self._configuration.discard_unknown_keys and \
+                        self.additional_properties_type is None:
+                # discard variable.
+               continue
+            setattr(self, var_name, var_value)
+            if var_name in self.read_only_vars:
+                raise ApiAttributeError(f"`{var_name}` is a read-only attribute.")
+
+    @classmethod
+    def _from_openapi_data(cls, kwargs):
+        self = super(ModelNormal, cls).__new__(cls)
+        OpenApiModel.__init__(self, kwargs)
+        for var_name, var_value in kwargs.items():
+            if var_name not in self.attribute_map and \
+                        self._configuration is not None and \
+                        self._configuration.discard_unknown_keys and \
+                        self.additional_properties_type is None:
+                # discard variable.
+                continue
+            setattr(self, var_name, var_value)
+        return self
 
 
 class ModelComposed(OpenApiModel):
@@ -386,6 +473,39 @@ class ModelComposed(OpenApiModel):
     value (list): list of class instances, self or instances in _composed_instances
     which contain the value that the key is referring to.
     """
+
+    required_properties = set([
+        '_data_store',
+        '_check_type',
+        '_spec_property_naming',
+        '_path_to_item',
+        '_configuration',
+        '_visited_composed_classes',
+        '_composed_instances',
+        '_var_name_to_model_instances',
+        '_additional_properties_model_instances',
+    ])
+
+    def __init__(self, kwargs):
+        super().__init__(kwargs)
+        constant_args = {
+            '_check_type': self._check_type,
+            '_path_to_item': self._path_to_item,
+            '_spec_property_naming': self._spec_property_naming,
+            '_configuration': self._configuration,
+            '_visited_composed_classes': self._visited_composed_classes,
+        }
+        composed_info = validate_get_composed_info(
+            constant_args, kwargs, self)
+        self._composed_instances = composed_info[0]
+        self._var_name_to_model_instances = composed_info[1]
+        self._additional_properties_model_instances = composed_info[2]
+
+    @classmethod
+    def _from_openapi_data(cls, kwargs):
+        self = super(ModelComposed, cls).__new__(cls)
+        ModelComposed.__init__(self, kwargs)
+        return self
 
 {{> model_templates/methods_setattr_getattr_composed }}
 
