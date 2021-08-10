@@ -143,7 +143,7 @@ class SLOHistorySLIData(ModelNormal):
             error_budget_remaining (SLOErrorBudgetRemainingData): [optional]  # noqa: E501
             errors ([SLOHistoryResponseError]): A list of errors while querying the history data for the service level objective.. [optional]  # noqa: E501
             group (str): For groups in a grouped SLO, this is the group name.. [optional]  # noqa: E501
-            history ([[float]]): For `monitor` based SLOs, this includes the aggregated history uptime time series.. [optional]  # noqa: E501
+            history ([[float]]): For `monitor` based SLOs, this includes the aggregated history as arrays that include time series and uptime data where `0=monitor` is in `OK` state and `1=monitor` is in `alert` state.. [optional]  # noqa: E501
             monitor_modified (int): For `monitor` based SLOs, this is the last modified timestamp in epoch seconds of the monitor.. [optional]  # noqa: E501
             monitor_type (str): For `monitor` based SLOs, this describes the type of monitor.. [optional]  # noqa: E501
             name (str): For groups in a grouped SLO, this is the group name. For monitors in a multi-monitor SLO, this is the monitor name.. [optional]  # noqa: E501
