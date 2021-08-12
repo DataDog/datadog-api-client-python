@@ -1,0 +1,124 @@
+interactions:
+- request:
+    body: '{"name": "TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628771618", "value":
+      "variable-value", "is_secret": false}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateWebhooksIntegrationCustomVariable
+      User-Agent:
+      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
+        x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables
+  response:
+    body:
+      string: '{"is_secret":false,"name":"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628771618","value":"variable-value"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 12 Aug 2021 12:33:38 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      location:
+      - https://app.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628771618
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteWebhooksIntegrationCustomVariable
+      User-Agent:
+      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
+        x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628771618
+  response:
+    body:
+      string: '{}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 12 Aug 2021 12:33:39 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteWebhooksIntegrationCustomVariable
+      User-Agent:
+      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
+        x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1628771618
+  response:
+    body:
+      string: '{"errors": ["Custom variable does not exist"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '46'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 12 Aug 2021 12:33:39 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 400
+      message: Bad Request
+version: 1
