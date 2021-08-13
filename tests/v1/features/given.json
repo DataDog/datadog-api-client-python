@@ -15,6 +15,30 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"name\": \"{{ unique_upper_alnum }}\",\n  \"value\": \"variable-value\",\n  \"is_secret\": false\n}"
+      }
+    ],
+    "step": "there is a valid \"webhook-custom-variable\" in the system",
+    "key": "webhook-custom-variable",
+    "tag": "Webhooks Integration",
+    "operationId": "CreateWebhooksIntegrationCustomVariable"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"name\": \"{{ unique }}\",\n  \"url\": \"http://example.com/webhook\"\n}"
+      }
+    ],
+    "step": "there is a valid \"webhook\" in the system",
+    "key": "webhook",
+    "tag": "Webhooks Integration",
+    "operationId": "CreateWebhooksIntegration"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"notebooks\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"time\": { \"live_span\": \"1h\" },\n      \"cells\": [\n        {\n          \"attributes\": {\n            \"definition\": {\n              \"text\": \"# {{ unique }} notebook text\",\n              \"type\": \"markdown\"\n            }\n          },\n          \"type\": \"notebook_cells\"\n        }\n      ]\n    }\n  }\n}\n"
       }
     ],

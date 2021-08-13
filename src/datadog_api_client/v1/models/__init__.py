@@ -620,6 +620,16 @@ from datadog_api_client.v1.model.user import User
 from datadog_api_client.v1.model.user_disable_response import UserDisableResponse
 from datadog_api_client.v1.model.user_list_response import UserListResponse
 from datadog_api_client.v1.model.user_response import UserResponse
+from datadog_api_client.v1.model.webhooks_integration import WebhooksIntegration
+from datadog_api_client.v1.model.webhooks_integration_custom_variable import WebhooksIntegrationCustomVariable
+from datadog_api_client.v1.model.webhooks_integration_custom_variable_response import (
+    WebhooksIntegrationCustomVariableResponse,
+)
+from datadog_api_client.v1.model.webhooks_integration_custom_variable_update_request import (
+    WebhooksIntegrationCustomVariableUpdateRequest,
+)
+from datadog_api_client.v1.model.webhooks_integration_encoding import WebhooksIntegrationEncoding
+from datadog_api_client.v1.model.webhooks_integration_update_request import WebhooksIntegrationUpdateRequest
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
 from datadog_api_client.v1.model.widget_axis import WidgetAxis

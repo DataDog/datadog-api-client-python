@@ -42,3 +42,4 @@ from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.api.tags_api import TagsApi
 from datadog_api_client.v1.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v1.api.users_api import UsersApi
+from datadog_api_client.v1.api.webhooks_integration_api import WebhooksIntegrationApi
