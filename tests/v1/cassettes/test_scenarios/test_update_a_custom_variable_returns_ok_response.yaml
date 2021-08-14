@@ -1,0 +1,128 @@
+interactions:
+- request:
+    body: '{"name": "TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628771683", "value":
+      "variable-value", "is_secret": false}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - CreateWebhooksIntegrationCustomVariable
+      User-Agent:
+      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
+        x86_64)
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables
+  response:
+    body:
+      string: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628771683","value":"variable-value"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '106'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 12 Aug 2021 12:34:43 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      location:
+      - https://app.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628771683
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"value": "variable-updated"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Dd-Operation-Id:
+      - UpdateWebhooksIntegrationCustomVariable
+      User-Agent:
+      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
+        x86_64)
+    method: PUT
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628771683
+  response:
+    body:
+      string: '{"is_secret":false,"name":"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628771683","value":"variable-updated"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '108'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 12 Aug 2021 12:34:44 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Dd-Operation-Id:
+      - DeleteWebhooksIntegrationCustomVariable
+      User-Agent:
+      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
+        x86_64)
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1628771683
+  response:
+    body:
+      string: '{}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 12 Aug 2021 12:34:44 GMT
+      cache-control:
+      - no-cache
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1
