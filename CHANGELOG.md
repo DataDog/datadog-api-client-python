@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.3.0 / 2021-08-16
+
+* [Added] Add Webhooks integration support. See [#549](https://github.com/DataDog/datadog-api-client-python/pull/549).
+* [Added] Add missing synthetics variable parser type `x_path`. See [#548](https://github.com/DataDog/datadog-api-client-python/pull/548).
+* [Added] Add `audit_stream` to `ListStreamSource`. See [#536](https://github.com/DataDog/datadog-api-client-python/pull/536).
+* [Added] Add percentile to dashboard `WidgetAggregator` schema. See [#532](https://github.com/DataDog/datadog-api-client-python/pull/532).
+* [Added] Add `id_str` property to Event response. See [#538](https://github.com/DataDog/datadog-api-client-python/pull/538).
+* [Added] Add edge to Synthetics devices. See [#542](https://github.com/DataDog/datadog-api-client-python/pull/542).
+* [Added] Add endpoints to manage Service Accounts v2. See [#523](https://github.com/DataDog/datadog-api-client-python/pull/523).
+* [Added] Add `new_group_delay` and deprecate `new_host_delay` monitor properties. See [#535](https://github.com/DataDog/datadog-api-client-python/pull/535).
+* [Added] Add `include_descendants` param to usage attribution API. See [#540](https://github.com/DataDog/datadog-api-client-python/pull/540).
+* [Added] Update to latest openapi generator image. See [#528](https://github.com/DataDog/datadog-api-client-python/pull/528).
+* [Added] Add support for list widget in dashboards. See [#504](https://github.com/DataDog/datadog-api-client-python/pull/504).
+* [Added] Extend table widget requests to support formulas and functions. See [#526](https://github.com/DataDog/datadog-api-client-python/pull/526).
+* [Added] Add CSPM to usage attribution. See [#518](https://github.com/DataDog/datadog-api-client-python/pull/518).
+* [Added] Add support for dashboard bulk delete, restore endpoints. See [#501](https://github.com/DataDog/datadog-api-client-python/pull/501).
+* [Added] Add support for audit logs data source in dashboards. See [#521](https://github.com/DataDog/datadog-api-client-python/pull/521).
+* [Added] Add `allow_insecure` option for multistep steps in Synthetics. See [#515](https://github.com/DataDog/datadog-api-client-python/pull/515).
+* [Fixed] Improve resiliency of the Python SDK. See [#531](https://github.com/DataDog/datadog-api-client-python/pull/531).
+* [Fixed] Fix serialization of query metrics response containing nullable points. See [#516](https://github.com/DataDog/datadog-api-client-python/pull/516).
+* [Fixed] Fix `status` property name for browser error status in Synthetics. See [#517](https://github.com/DataDog/datadog-api-client-python/pull/517).
+* [Changed] Add separate schema for deleting AWS account. See [#513](https://github.com/DataDog/datadog-api-client-python/pull/513).
+* [Removed] Remove deprecated endpoints `/api/v1/usage/traces` and `/api/v1/usage/tracing-without-limits`. See [#519](https://github.com/DataDog/datadog-api-client-python/pull/519).
+
 ## 1.2.0 / 2021-07-08
 
 * [Added] Add support for `GET /api/v2/application_keys/{app_key_id}`. See [#502](https://github.com/DataDog/datadog-api-client-python/pull/502).
