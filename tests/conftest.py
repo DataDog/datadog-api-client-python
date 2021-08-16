@@ -194,8 +194,10 @@ def context(vcr, unique, unique_lower, freezer):
         "undo_operations": [],
         "unique": unique,
         "unique_lower": unique_lower,
+        "unique_upper": unique.upper(),
         "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique),
         "unique_lower_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique).lower(),
+        "unique_upper_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique).upper(),
         "timestamp": relative_time(freezer, False),
         "timeISO": relative_time(freezer, True),
     }

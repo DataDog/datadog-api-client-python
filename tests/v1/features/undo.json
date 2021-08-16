@@ -491,6 +491,68 @@
       "type": "idempotent"
     }
   },
+  "CreateWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "operationId": "DeleteWebhooksIntegrationCustomVariable",
+      "parameters": [
+        {
+          "name": "custom_variable_name",
+          "source": "name"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "operationId": "DeleteWebhooksIntegration",
+      "parameters": [
+        {
+          "name": "webhook_name",
+          "source": "name"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListLogs": {
     "tag": "Logs",
     "undo": {
