@@ -55,6 +55,11 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
     body = SyntheticsGlobalVariable(
+        attributes=SyntheticsGlobalVariableAttributes(
+            restricted_roles=[
+                "restricted_roles_example",
+            ],
+        ),
         description="Example description",
         name="MY_VARIABLE",
         parse_test_options=SyntheticsGlobalVariableParseTestOptions(
@@ -757,6 +762,11 @@ with ApiClient(configuration) as api_client:
     api_instance = synthetics_api.SyntheticsApi(api_client)
     variable_id = "variable_id_example"  # str | The ID of the global variable.
     body = SyntheticsGlobalVariable(
+        attributes=SyntheticsGlobalVariableAttributes(
+            restricted_roles=[
+                "restricted_roles_example",
+            ],
+        ),
         description="Example description",
         name="MY_VARIABLE",
         parse_test_options=SyntheticsGlobalVariableParseTestOptions(

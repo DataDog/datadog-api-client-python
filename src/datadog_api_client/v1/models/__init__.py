@@ -452,6 +452,7 @@ from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_resp
     SyntheticsGetBrowserTestLatestResultsResponse,
 )
 from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
+from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
 from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
     SyntheticsGlobalVariableParseTestOptions,
 )
