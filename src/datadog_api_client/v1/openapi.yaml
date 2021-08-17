@@ -2165,6 +2165,7 @@ components:
       - security_signals
       - profiles
       - audit
+      - events
       example: logs
       type: string
       x-enum-varnames:
@@ -2175,6 +2176,7 @@ components:
       - SECURITY_SIGNALS
       - PROFILES
       - AUDIT
+      - EVENTS
     FormulaAndFunctionMetricAggregation:
       description: The aggregation methods available for metrics queries.
       enum:
@@ -9465,6 +9467,17 @@ components:
     SyntheticsGlobalVariable:
       description: Synthetics global variable.
       properties:
+        attributes:
+          description: Attributes of the global variable.
+          properties:
+            restricted_roles:
+              description: List of role identifiers that can be pulled from the Roles
+                API.
+              items:
+                description: UUID for a role.
+                type: string
+              type: array
+          type: object
         description:
           description: Description of the global variable.
           example: Example description

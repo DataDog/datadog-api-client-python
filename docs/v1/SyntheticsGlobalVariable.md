@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** | Name of the global variable. | 
 **tags** | **[str]** | Tags of the global variable. | 
 **value** | [**SyntheticsGlobalVariableValue**](SyntheticsGlobalVariableValue.md) |  | 
+**attributes** | [**SyntheticsGlobalVariableAttributes**](SyntheticsGlobalVariableAttributes.md) |  | [optional] 
 **id** | **str** | Unique identifier of the global variable. | [optional] [readonly] 
 **parse_test_options** | [**SyntheticsGlobalVariableParseTestOptions**](SyntheticsGlobalVariableParseTestOptions.md) |  | [optional] 
 **parse_test_public_id** | **str** | A Synthetic test ID to use as a test to generate the variable value. | [optional] 

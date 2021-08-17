@@ -19,11 +19,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
     from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
         SyntheticsGlobalVariableParseTestOptions,
     )
     from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
 
+    globals()["SyntheticsGlobalVariableAttributes"] = SyntheticsGlobalVariableAttributes
     globals()["SyntheticsGlobalVariableParseTestOptions"] = SyntheticsGlobalVariableParseTestOptions
     globals()["SyntheticsGlobalVariableValue"] = SyntheticsGlobalVariableValue
 
@@ -76,6 +78,7 @@ class SyntheticsGlobalVariable(ModelNormal):
             "name": (str,),  # noqa: E501
             "tags": ([str],),  # noqa: E501
             "value": (SyntheticsGlobalVariableValue,),  # noqa: E501
+            "attributes": (SyntheticsGlobalVariableAttributes,),  # noqa: E501
             "id": (str,),  # noqa: E501
             "parse_test_options": (SyntheticsGlobalVariableParseTestOptions,),  # noqa: E501
             "parse_test_public_id": (str,),  # noqa: E501
@@ -88,6 +91,7 @@ class SyntheticsGlobalVariable(ModelNormal):
         "name": "name",  # noqa: E501
         "tags": "tags",  # noqa: E501
         "value": "value",  # noqa: E501
+        "attributes": "attributes",  # noqa: E501
         "id": "id",  # noqa: E501
         "parse_test_options": "parse_test_options",  # noqa: E501
         "parse_test_public_id": "parse_test_public_id",  # noqa: E501
@@ -140,6 +144,7 @@ class SyntheticsGlobalVariable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (SyntheticsGlobalVariableAttributes): [optional]  # noqa: E501
             id (str): Unique identifier of the global variable.. [optional]  # noqa: E501
             parse_test_options (SyntheticsGlobalVariableParseTestOptions): [optional]  # noqa: E501
             parse_test_public_id (str): A Synthetic test ID to use as a test to generate the variable value.. [optional]  # noqa: E501
