@@ -42,11 +42,14 @@ with ApiClient(configuration) as api_client:
                 fields={
                     "key": IncidentFieldAttributes(),
                 },
-                initial_timeline_cells=[
+                initial_cells=[
                     IncidentTimelineCellCreateAttributes(),
                 ],
                 notification_handles=[
-                    "@test.user@test.com",
+                    IncidentNotificationHandle(
+                        display_name="Jane Doe",
+                        handle="@test.user@test.com",
+                    ),
                 ],
                 title="A test incident title",
             ),
@@ -360,7 +363,10 @@ with ApiClient(configuration) as api_client:
                     "key": IncidentFieldAttributes(),
                 },
                 notification_handles=[
-                    "@test.user@test.com",
+                    IncidentNotificationHandle(
+                        display_name="Jane Doe",
+                        handle="@test.user@test.com",
+                    ),
                 ],
                 resolved=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 title="A test incident title",
