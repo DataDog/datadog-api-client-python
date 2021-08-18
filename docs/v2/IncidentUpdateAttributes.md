@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **customer_impacted** | **bool** | A flag indicating whether the incident caused customer impact. | [optional] 
 **detected** | **datetime, none_type** | Timestamp when the incident was detected. | [optional] 
 **fields** | [**{str: (IncidentFieldAttributes,)}**](IncidentFieldAttributes.md) | A condensed view of the user-defined fields for which to update selections. | [optional] 
-**notification_handles** | **[str]** | Notification handles that will be notified of the incident during update. | [optional] 
+**notification_handles** | [**[IncidentNotificationHandle]**](IncidentNotificationHandle.md) | Notification handles that will be notified of the incident during update. | [optional] 
 **resolved** | **datetime, none_type** | Timestamp when the incident&#39;s state was set to resolved. | [optional] 
 **title** | **str** | The title of the incident, which summarizes what happened. | [optional] 
 

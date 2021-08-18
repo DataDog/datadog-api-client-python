@@ -61,6 +61,7 @@ from datadog_api_client.v2.model.incident_field_attributes_single_value_type imp
 )
 from datadog_api_client.v2.model.incident_field_attributes_value_type import IncidentFieldAttributesValueType
 from datadog_api_client.v2.model.incident_integration_metadata_type import IncidentIntegrationMetadataType
+from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
 from datadog_api_client.v2.model.incident_postmortem_type import IncidentPostmortemType
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
 from datadog_api_client.v2.model.incident_response import IncidentResponse

@@ -20,11 +20,13 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
+    from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
     from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import (
         IncidentTimelineCellCreateAttributes,
     )
 
     globals()["IncidentFieldAttributes"] = IncidentFieldAttributes
+    globals()["IncidentNotificationHandle"] = IncidentNotificationHandle
     globals()["IncidentTimelineCellCreateAttributes"] = IncidentTimelineCellCreateAttributes
 
 
@@ -75,8 +77,8 @@ class IncidentCreateAttributes(ModelNormal):
             "customer_impacted": (bool,),  # noqa: E501
             "title": (str,),  # noqa: E501
             "fields": ({str: (IncidentFieldAttributes,)},),  # noqa: E501
-            "initial_timeline_cells": ([IncidentTimelineCellCreateAttributes],),  # noqa: E501
-            "notification_handles": ([str],),  # noqa: E501
+            "initial_cells": ([IncidentTimelineCellCreateAttributes],),  # noqa: E501
+            "notification_handles": ([IncidentNotificationHandle],),  # noqa: E501
         }
 
     discriminator = None
@@ -85,7 +87,7 @@ class IncidentCreateAttributes(ModelNormal):
         "customer_impacted": "customer_impacted",  # noqa: E501
         "title": "title",  # noqa: E501
         "fields": "fields",  # noqa: E501
-        "initial_timeline_cells": "initial_timeline_cells",  # noqa: E501
+        "initial_cells": "initial_cells",  # noqa: E501
         "notification_handles": "notification_handles",  # noqa: E501
     }
 
@@ -133,8 +135,8 @@ class IncidentCreateAttributes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             fields ({str: (IncidentFieldAttributes,)}): A condensed view of the user-defined fields for which to create initial selections.. [optional]  # noqa: E501
-            initial_timeline_cells ([IncidentTimelineCellCreateAttributes]): An array of initial timeline cells to be placed at the beginning of the incident timeline.. [optional]  # noqa: E501
-            notification_handles ([str]): Notification handles that will be notified of the incident at creation.. [optional]  # noqa: E501
+            initial_cells ([IncidentTimelineCellCreateAttributes]): An array of initial timeline cells to be placed at the beginning of the incident timeline.. [optional]  # noqa: E501
+            notification_handles ([IncidentNotificationHandle]): Notification handles that will be notified of the incident at creation.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
