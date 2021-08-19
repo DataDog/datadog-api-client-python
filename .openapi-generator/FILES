@@ -71,6 +71,7 @@ datadog_api_client/v2/model/incident_field_attributes_single_value.py
 datadog_api_client/v2/model/incident_field_attributes_single_value_type.py
 datadog_api_client/v2/model/incident_field_attributes_value_type.py
 datadog_api_client/v2/model/incident_integration_metadata_type.py
+datadog_api_client/v2/model/incident_notification_handle.py
 datadog_api_client/v2/model/incident_postmortem_type.py
 datadog_api_client/v2/model/incident_related_object.py
 datadog_api_client/v2/model/incident_response.py
@@ -398,6 +399,7 @@ docs/IncidentFieldAttributesSingleValue.md
 docs/IncidentFieldAttributesSingleValueType.md
 docs/IncidentFieldAttributesValueType.md
 docs/IncidentIntegrationMetadataType.md
+docs/IncidentNotificationHandle.md
 docs/IncidentPostmortemType.md
 docs/IncidentRelatedObject.md
 docs/IncidentResponse.md
@@ -736,6 +738,7 @@ test/test_incident_field_attributes_single_value.py
 test/test_incident_field_attributes_single_value_type.py
 test/test_incident_field_attributes_value_type.py
 test/test_incident_integration_metadata_type.py
+test/test_incident_notification_handle.py
 test/test_incident_postmortem_type.py
 test/test_incident_related_object.py
 test/test_incident_response.py
