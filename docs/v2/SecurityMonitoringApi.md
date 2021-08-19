@@ -176,6 +176,7 @@ with ApiClient(configuration) as api_client:
             ),
         ],
         tags=["env:prod","team:security"],
+        type=SecurityMonitoringRuleTypeCreate("log_detection"),
     )  # SecurityMonitoringRuleCreatePayload | 
 
     # example passing only required values which don't have defaults set

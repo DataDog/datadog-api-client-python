@@ -307,6 +307,8 @@ datadog_api_client/v2/model/security_monitoring_rule_query_aggregation.py
 datadog_api_client/v2/model/security_monitoring_rule_query_create.py
 datadog_api_client/v2/model/security_monitoring_rule_response.py
 datadog_api_client/v2/model/security_monitoring_rule_severity.py
+datadog_api_client/v2/model/security_monitoring_rule_type_create.py
+datadog_api_client/v2/model/security_monitoring_rule_type_read.py
 datadog_api_client/v2/model/security_monitoring_rule_update_payload.py
 datadog_api_client/v2/model/security_monitoring_runtime_agent_rule.py
 datadog_api_client/v2/model/security_monitoring_signal.py
@@ -646,6 +648,8 @@ docs/SecurityMonitoringRuleQueryAggregation.md
 docs/SecurityMonitoringRuleQueryCreate.md
 docs/SecurityMonitoringRuleResponse.md
 docs/SecurityMonitoringRuleSeverity.md
+docs/SecurityMonitoringRuleTypeCreate.md
+docs/SecurityMonitoringRuleTypeRead.md
 docs/SecurityMonitoringRuleUpdatePayload.md
 docs/SecurityMonitoringRuntimeAgentRule.md
 docs/SecurityMonitoringSignal.md
@@ -985,6 +989,8 @@ test/test_security_monitoring_rule_query_aggregation.py
 test/test_security_monitoring_rule_query_create.py
 test/test_security_monitoring_rule_response.py
 test/test_security_monitoring_rule_severity.py
+test/test_security_monitoring_rule_type_create.py
+test/test_security_monitoring_rule_type_read.py
 test/test_security_monitoring_rule_update_payload.py
 test/test_security_monitoring_runtime_agent_rule.py
 test/test_security_monitoring_signal.py

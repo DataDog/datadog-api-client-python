@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **options** | [**SecurityMonitoringRuleOptions**](SecurityMonitoringRuleOptions.md) |  | [optional] 
 **queries** | [**[SecurityMonitoringRuleQuery]**](SecurityMonitoringRuleQuery.md) | Queries for selecting logs which are part of the rule. | [optional] 
 **tags** | **[str]** | Tags for generated signals. | [optional] 
+**type** | [**SecurityMonitoringRuleTypeRead**](SecurityMonitoringRuleTypeRead.md) |  | [optional] 
 **update_author_id** | **int** | User ID of the user who updated the rule. | [optional] 
 **version** | **int** | The version of the rule. | [optional] 
 
