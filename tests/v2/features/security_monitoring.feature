@@ -19,6 +19,12 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  Scenario: Create a detection rule with type 'workload_security' returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":"", "agentRule":{"agentRuleId": "kernel_module_unlink_2", "expression": "(open.flags & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0)"}}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type": "workload_security"}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip
   Scenario: Create a security filter returns "Bad Request" response
     Given new "CreateSecurityFilter" request

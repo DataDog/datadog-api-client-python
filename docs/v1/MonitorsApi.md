@@ -117,7 +117,7 @@ The type of monitor chosen from:
 Example: `time_aggr(time_window):space_aggr:metric{tags} [by {key}] operator #`
 
 - `time_aggr`: avg, sum, max, min, change, or pct_change
-- `time_window`: `last_#m` (with `#` between 1 and 2880 depending on the monitor type) or `last_#h`(with `#` between 1 and 48 depending on the monitor type), or `last_1d`
+- `time_window`: `last_#m` (with `#` between 1 and 10080 depending on the monitor type) or `last_#h`(with `#` between 1 and 168 depending on the monitor type) or `last_1d`, or `last_1w`
 - `space_aggr`: avg, sum, min, or max
 - `tags`: one or more tags (comma-separated), or *
 - `key`: a 'key' in key:value tag syntax; defines a separate alert for each tag in the group (multi-alert)

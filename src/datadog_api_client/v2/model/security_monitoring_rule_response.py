@@ -23,11 +23,13 @@ def lazy_import():
     from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
+    from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
 
     globals()["SecurityMonitoringFilter"] = SecurityMonitoringFilter
     globals()["SecurityMonitoringRuleCase"] = SecurityMonitoringRuleCase
     globals()["SecurityMonitoringRuleOptions"] = SecurityMonitoringRuleOptions
     globals()["SecurityMonitoringRuleQuery"] = SecurityMonitoringRuleQuery
+    globals()["SecurityMonitoringRuleTypeRead"] = SecurityMonitoringRuleTypeRead
 
 
 class SecurityMonitoringRuleResponse(ModelNormal):
@@ -88,6 +90,7 @@ class SecurityMonitoringRuleResponse(ModelNormal):
             "options": (SecurityMonitoringRuleOptions,),  # noqa: E501
             "queries": ([SecurityMonitoringRuleQuery],),  # noqa: E501
             "tags": ([str],),  # noqa: E501
+            "type": (SecurityMonitoringRuleTypeRead,),  # noqa: E501
             "update_author_id": (int,),  # noqa: E501
             "version": (int,),  # noqa: E501
         }
@@ -109,6 +112,7 @@ class SecurityMonitoringRuleResponse(ModelNormal):
         "options": "options",  # noqa: E501
         "queries": "queries",  # noqa: E501
         "tags": "tags",  # noqa: E501
+        "type": "type",  # noqa: E501
         "update_author_id": "updateAuthorId",  # noqa: E501
         "version": "version",  # noqa: E501
     }
@@ -166,6 +170,7 @@ class SecurityMonitoringRuleResponse(ModelNormal):
             options (SecurityMonitoringRuleOptions): [optional]  # noqa: E501
             queries ([SecurityMonitoringRuleQuery]): Queries for selecting logs which are part of the rule.. [optional]  # noqa: E501
             tags ([str]): Tags for generated signals.. [optional]  # noqa: E501
+            type (SecurityMonitoringRuleTypeRead): [optional]  # noqa: E501
             update_author_id (int): User ID of the user who updated the rule.. [optional]  # noqa: E501
             version (int): The version of the rule.. [optional]  # noqa: E501
         """
