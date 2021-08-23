@@ -111,8 +111,8 @@ class SyntheticsGlobalVariableValue(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            secure (bool): Determines if the variable is secure.. [optional]  # noqa: E501
-            value (str): Value of the global variable. When reading a global variable, the value will not be present if the variable is secure.. [optional]  # noqa: E501
+            secure (bool): Determines if the value of the variable is hidden.. [optional]  # noqa: E501
+            value (str): Value of the global variable. When reading a global variable, the value will not be present if the variable is hidden with the `secure` property.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
