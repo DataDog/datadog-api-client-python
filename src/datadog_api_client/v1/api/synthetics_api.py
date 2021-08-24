@@ -1450,8 +1450,8 @@ class SyntheticsApi(object):
             public_id (str): The public ID of the test for which to search results for.
 
         Keyword Args:
-            from_ts (int): Timestamp from which to start querying results.. [optional]
-            to_ts (int): Timestamp up to which to query results.. [optional]
+            from_ts (int): Timestamp in milliseconds from which to start querying results.. [optional]
+            to_ts (int): Timestamp in milliseconds up to which to query results.. [optional]
             probe_dc ([str]): Locations for which to query results.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1584,8 +1584,8 @@ class SyntheticsApi(object):
             public_id (str): The public ID of the browser test for which to search results for.
 
         Keyword Args:
-            from_ts (int): Timestamp from which to start querying results.. [optional]
-            to_ts (int): Timestamp up to which to query results.. [optional]
+            from_ts (int): Timestamp in milliseconds from which to start querying results.. [optional]
+            to_ts (int): Timestamp in milliseconds up to which to query results.. [optional]
             probe_dc ([str]): Locations for which to query results.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
