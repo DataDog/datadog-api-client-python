@@ -1178,6 +1178,12 @@
       "type": "safe"
     }
   },
+  "GetUsageDBM": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageFargate": {
     "tag": "Usage Metering",
     "undo": {
