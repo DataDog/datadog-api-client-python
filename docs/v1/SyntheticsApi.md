@@ -914,8 +914,8 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
     public_id = "public_id_example"  # str | The public ID of the test for which to search results for.
-    from_ts = 1  # int | Timestamp from which to start querying results. (optional)
-    to_ts = 1  # int | Timestamp up to which to query results. (optional)
+    from_ts = 1  # int | Timestamp in milliseconds from which to start querying results. (optional)
+    to_ts = 1  # int | Timestamp in milliseconds up to which to query results. (optional)
     probe_dc = [
         "probe_dc_example",
     ]  # [str] | Locations for which to query results. (optional)
@@ -944,8 +944,8 @@ with ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **public_id** | **str**| The public ID of the test for which to search results for. |
- **from_ts** | **int**| Timestamp from which to start querying results. | [optional]
- **to_ts** | **int**| Timestamp up to which to query results. | [optional]
+ **from_ts** | **int**| Timestamp in milliseconds from which to start querying results. | [optional]
+ **to_ts** | **int**| Timestamp in milliseconds up to which to query results. | [optional]
  **probe_dc** | **[str]**| Locations for which to query results. | [optional]
 
 ### Return type
@@ -1126,8 +1126,8 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = synthetics_api.SyntheticsApi(api_client)
     public_id = "public_id_example"  # str | The public ID of the browser test for which to search results for.
-    from_ts = 1  # int | Timestamp from which to start querying results. (optional)
-    to_ts = 1  # int | Timestamp up to which to query results. (optional)
+    from_ts = 1  # int | Timestamp in milliseconds from which to start querying results. (optional)
+    to_ts = 1  # int | Timestamp in milliseconds up to which to query results. (optional)
     probe_dc = [
         "probe_dc_example",
     ]  # [str] | Locations for which to query results. (optional)
@@ -1156,8 +1156,8 @@ with ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **public_id** | **str**| The public ID of the browser test for which to search results for. |
- **from_ts** | **int**| Timestamp from which to start querying results. | [optional]
- **to_ts** | **int**| Timestamp up to which to query results. | [optional]
+ **from_ts** | **int**| Timestamp in milliseconds from which to start querying results. | [optional]
+ **to_ts** | **int**| Timestamp in milliseconds up to which to query results. | [optional]
  **probe_dc** | **[str]**| Locations for which to query results. | [optional]
 
 ### Return type

@@ -109,6 +109,7 @@ The type of monitor chosen from:
 - SLO: `slo alert`
 - watchdog: `event alert`
 - event-v2: `event-v2 alert`
+- audit: `audit alert`
 
 #### Query Types
 
@@ -217,6 +218,19 @@ Example: `error_budget("slo_id").over("time_window") operator #`
 - **`slo_id`**: The alphanumeric SLO ID of the SLO you are configuring the alert for.
 - **`time_window`**: The time window of the SLO target you wish to alert on. Valid options: `7d`, `30d`, `90d`.
 - **`operator`**: `>=` or `>`
+
+**Audit Alert Query**
+
+Example: `audits(query).rollup(rollup_method[, measure]).last(time_window) operator #`
+
+- **`query`** The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
+- **`rollup_method`** The stats roll-up method - supports `count`, `avg` and `cardinality`.
+- **`measure`** For `avg` and cardinality `rollup_method` - specify the measure or the facet name you want to use.
+- **`time_window`** #m (between 1 and 2880), #h (between 1 and 48).
+- **`operator`** `<`, `<=`, `>`, `>=`, `==`, or `!=`.
+- **`#`** an integer or decimal number used to set the threshold.
+
+**NOTE** Only available on US1-FED and in closed beta on EU, US3, and US1.
 
 ### Example
 

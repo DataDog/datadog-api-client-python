@@ -80,6 +80,18 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get hourly usage for Database Monitoring returns "Bad Request" response
+    Given new "GetUsageDBM" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get hourly usage for Database Monitoring returns "OK" response
+    Given new "GetUsageDBM" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get hourly usage for Fargate returns "Bad Request" response
     Given new "GetUsageFargate" request
     When the request is sent
