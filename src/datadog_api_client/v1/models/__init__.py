@@ -564,6 +564,8 @@ from datadog_api_client.v1.model.usage_custom_reports_data import UsageCustomRep
 from datadog_api_client.v1.model.usage_custom_reports_meta import UsageCustomReportsMeta
 from datadog_api_client.v1.model.usage_custom_reports_page import UsageCustomReportsPage
 from datadog_api_client.v1.model.usage_custom_reports_response import UsageCustomReportsResponse
+from datadog_api_client.v1.model.usage_dbm_hour import UsageDBMHour
+from datadog_api_client.v1.model.usage_dbm_response import UsageDBMResponse
 from datadog_api_client.v1.model.usage_fargate_hour import UsageFargateHour
 from datadog_api_client.v1.model.usage_fargate_response import UsageFargateResponse
 from datadog_api_client.v1.model.usage_host_hour import UsageHostHour

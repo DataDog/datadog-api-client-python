@@ -68,6 +68,10 @@ class UsageAttributionSupportedMetrics(ModelSimple):
             "PROFILED_HOST_PERCENTAGE": "profiled_host_percentage",
             "PROFILED_CONTAINER_USAGE": "profiled_container_usage",
             "PROFILED_CONTAINER_PERCENTAGE": "profiled_container_percentage",
+            "DBM_HOST_USAGE": "dbm_host_usage",
+            "DBM_HOST_PERCENTAGE": "dbm_host_percentage",
+            "DBM_QUERIES_USAGE": "dbm_queries_usage",
+            "DBM_QUERIES_PERCENTAGE": "dbm_queries_percentage",
             "ALL": "*",
         },
     }
@@ -105,10 +109,10 @@ class UsageAttributionSupportedMetrics(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Supported fields for usage attribution requests (valid requests contain one or more metrics, or `*` for all).., must be one of ["custom_timeseries_usage", "container_usage", "snmp_percentage", "apm_host_usage", "browser_usage", "npm_host_percentage", "infra_host_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "api_usage", "apm_host_percentage", "infra_host_percentage", "snmp_usage", "browser_percentage", "api_percentage", "lambda_percentage", "npm_host_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "fargate_usage", "fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "profiled_container_usage", "profiled_container_percentage", "*", ]  # noqa: E501
+            args[0] (str): Supported fields for usage attribution requests (valid requests contain one or more metrics, or `*` for all).., must be one of ["custom_timeseries_usage", "container_usage", "snmp_percentage", "apm_host_usage", "browser_usage", "npm_host_percentage", "infra_host_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "api_usage", "apm_host_percentage", "infra_host_percentage", "snmp_usage", "browser_percentage", "api_percentage", "lambda_percentage", "npm_host_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "fargate_usage", "fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "profiled_container_usage", "profiled_container_percentage", "dbm_host_usage", "dbm_host_percentage", "dbm_queries_usage", "dbm_queries_percentage", "*", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Supported fields for usage attribution requests (valid requests contain one or more metrics, or `*` for all).., must be one of ["custom_timeseries_usage", "container_usage", "snmp_percentage", "apm_host_usage", "browser_usage", "npm_host_percentage", "infra_host_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "api_usage", "apm_host_percentage", "infra_host_percentage", "snmp_usage", "browser_percentage", "api_percentage", "lambda_percentage", "npm_host_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "fargate_usage", "fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "profiled_container_usage", "profiled_container_percentage", "*", ]  # noqa: E501
+            value (str): Supported fields for usage attribution requests (valid requests contain one or more metrics, or `*` for all).., must be one of ["custom_timeseries_usage", "container_usage", "snmp_percentage", "apm_host_usage", "browser_usage", "npm_host_percentage", "infra_host_usage", "custom_timeseries_percentage", "container_percentage", "lambda_usage", "api_usage", "apm_host_percentage", "infra_host_percentage", "snmp_usage", "browser_percentage", "api_percentage", "lambda_percentage", "npm_host_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "fargate_usage", "fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "profiled_container_usage", "profiled_container_percentage", "dbm_host_usage", "dbm_host_percentage", "dbm_queries_usage", "dbm_queries_percentage", "*", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
