@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **request** | [**SyntheticsTestRequest**](SyntheticsTestRequest.md) |  | 
 **assertions** | [**[SyntheticsAssertion]**](SyntheticsAssertion.md) | Array of assertions used for the test. | defaults to []
+**config_variables** | [**[SyntheticsConfigVariable]**](SyntheticsConfigVariable.md) | Array of variables used for the test. | [optional] 
 **set_cookie** | **str** | Cookies to be used for the request, using the [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) syntax. | [optional] 
 **variables** | [**[SyntheticsBrowserVariable]**](SyntheticsBrowserVariable.md) | Array of variables used for the test steps. | [optional] 
 
