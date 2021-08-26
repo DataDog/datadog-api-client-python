@@ -416,6 +416,15 @@ with ApiClient(configuration) as api_client:
             assertions=[
                 SyntheticsAssertion(),
             ],
+            config_variables=[
+                SyntheticsConfigVariable(
+                    example="example_example",
+                    id="id_example",
+                    name="VARIABLE_NAME",
+                    pattern="pattern_example",
+                    type=SyntheticsConfigVariableType("global"),
+                ),
+            ],
             request=SyntheticsTestRequest(
                 allow_insecure=True,
                 basic_auth=SyntheticsBasicAuth(
@@ -1956,6 +1965,15 @@ with ApiClient(configuration) as api_client:
         config=SyntheticsBrowserTestConfig(
             assertions=[
                 SyntheticsAssertion(),
+            ],
+            config_variables=[
+                SyntheticsConfigVariable(
+                    example="example_example",
+                    id="id_example",
+                    name="VARIABLE_NAME",
+                    pattern="pattern_example",
+                    type=SyntheticsConfigVariableType("global"),
+                ),
             ],
             request=SyntheticsTestRequest(
                 allow_insecure=True,

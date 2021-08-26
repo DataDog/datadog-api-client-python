@@ -21,10 +21,12 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
     from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
+    from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
     from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
 
     globals()["SyntheticsAssertion"] = SyntheticsAssertion
     globals()["SyntheticsBrowserVariable"] = SyntheticsBrowserVariable
+    globals()["SyntheticsConfigVariable"] = SyntheticsConfigVariable
     globals()["SyntheticsTestRequest"] = SyntheticsTestRequest
 
 
@@ -74,6 +76,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
         return {
             "assertions": ([SyntheticsAssertion],),  # noqa: E501
             "request": (SyntheticsTestRequest,),  # noqa: E501
+            "config_variables": ([SyntheticsConfigVariable],),  # noqa: E501
             "set_cookie": (str,),  # noqa: E501
             "variables": ([SyntheticsBrowserVariable],),  # noqa: E501
         }
@@ -83,6 +86,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
     attribute_map = {
         "assertions": "assertions",  # noqa: E501
         "request": "request",  # noqa: E501
+        "config_variables": "configVariables",  # noqa: E501
         "set_cookie": "setCookie",  # noqa: E501
         "variables": "variables",  # noqa: E501
     }
@@ -130,6 +134,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            config_variables ([SyntheticsConfigVariable]): Array of variables used for the test.. [optional]  # noqa: E501
             set_cookie (str): Cookies to be used for the request, using the [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) syntax.. [optional]  # noqa: E501
             variables ([SyntheticsBrowserVariable]): Array of variables used for the test steps.. [optional]  # noqa: E501
         """
