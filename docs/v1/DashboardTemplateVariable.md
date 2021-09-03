@@ -6,6 +6,7 @@ Template variable.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The name of the variable. | 
+**available_values** | **[str], none_type** | The list of values that the template variable drop-down is limited to. | [optional] 
 **default** | **str, none_type** | The default value for the template variable on dashboard load. | [optional] 
 **prefix** | **str, none_type** | The tag prefix associated with the variable. Only tags with this prefix appear in the variable drop-down. | [optional] 
 

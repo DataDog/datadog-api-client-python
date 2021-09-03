@@ -12,14 +12,14 @@ Feature: Dashboards
   @generated @skip
   Scenario: Create a new dashboard returns "Bad Request" response
     Given new "CreateDashboard" request
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "system.cpu.user"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "system.cpu.user"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Create a new dashboard returns "OK" response
     Given new "CreateDashboard" request
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "system.cpu.user"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "system.cpu.user"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 200 OK
 
@@ -138,7 +138,7 @@ Feature: Dashboards
   Scenario: Update a dashboard returns "Bad Request" response
     Given new "UpdateDashboard" request
     And request contains "dashboard_id" parameter from "<PATH>"
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "system.cpu.user"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "system.cpu.user"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -146,7 +146,7 @@ Feature: Dashboards
   Scenario: Update a dashboard returns "Item Not Found" response
     Given new "UpdateDashboard" request
     And request contains "dashboard_id" parameter from "<PATH>"
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "system.cpu.user"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "system.cpu.user"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 404 Item Not Found
 
@@ -154,6 +154,6 @@ Feature: Dashboards
   Scenario: Update a dashboard returns "OK" response
     Given new "UpdateDashboard" request
     And request contains "dashboard_id" parameter from "<PATH>"
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "system.cpu.user"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "system.cpu.user"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 200 OK
