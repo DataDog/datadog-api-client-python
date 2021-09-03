@@ -365,6 +365,7 @@ from datadog_api_client.v1.model.slo_history_metrics_series_metadata_unit import
 from datadog_api_client.v1.model.slo_history_response import SLOHistoryResponse
 from datadog_api_client.v1.model.slo_history_response_data import SLOHistoryResponseData
 from datadog_api_client.v1.model.slo_history_response_error import SLOHistoryResponseError
+from datadog_api_client.v1.model.slo_history_response_error_with_type import SLOHistoryResponseErrorWithType
 from datadog_api_client.v1.model.slo_history_sli_data import SLOHistorySLIData
 from datadog_api_client.v1.model.slo_list_response import SLOListResponse
 from datadog_api_client.v1.model.slo_list_response_metadata import SLOListResponseMetadata
