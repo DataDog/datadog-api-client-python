@@ -1493,8 +1493,10 @@ def model_to_dict(model_instance, serialize=True):
                            res.append(v)
                        elif isinstance(v, ModelSimple):
                            res.append(v.value)
-                       else:
+                       elif isinstance(v, OpenApiModel):
                            res.append(model_to_dict(v, serialize=serialize))
+                       else:
+                           res.append(v)
                    result[attr] = res
             elif isinstance(value, dict):
                 result[attr] = dict(map(
@@ -1659,7 +1661,7 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                         configuration=constant_kwargs['_configuration']
                     )
             if not oneof_instance._unparsed:
-	        oneof_instances.append(oneof_instance)
+                oneof_instances.append(oneof_instance)
         except Exception:
             pass
     if len(oneof_instances) != 1:

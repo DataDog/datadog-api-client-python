@@ -1672,8 +1672,10 @@ def model_to_dict(model_instance, serialize=True):
                             res.append(v)
                         elif isinstance(v, ModelSimple):
                             res.append(v.value)
-                        else:
+                        elif isinstance(v, OpenApiModel):
                             res.append(model_to_dict(v, serialize=serialize))
+                        else:
+                            res.append(v)
                     result[attr] = res
             elif isinstance(value, dict):
                 result[attr] = dict(
