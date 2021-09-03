@@ -62,6 +62,10 @@ class DashboardTemplateVariable(ModelNormal):
         """
         return {
             "name": (str,),  # noqa: E501
+            "available_values": (
+                [str],
+                none_type,
+            ),  # noqa: E501
             "default": (
                 str,
                 none_type,
@@ -76,6 +80,7 @@ class DashboardTemplateVariable(ModelNormal):
 
     attribute_map = {
         "name": "name",  # noqa: E501
+        "available_values": "available_values",  # noqa: E501
         "default": "default",  # noqa: E501
         "prefix": "prefix",  # noqa: E501
     }
@@ -122,6 +127,7 @@ class DashboardTemplateVariable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            available_values ([str], none_type): The list of values that the template variable drop-down is limited to.. [optional]  # noqa: E501
             default (str, none_type): The default value for the template variable on dashboard load.. [optional]  # noqa: E501
             prefix (str, none_type): The tag prefix associated with the variable. Only tags with this prefix appear in the variable drop-down.. [optional]  # noqa: E501
         """
