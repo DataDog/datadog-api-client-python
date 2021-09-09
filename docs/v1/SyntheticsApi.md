@@ -243,6 +243,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 dns_server="dns_server_example",
                 dns_server_port=1,
+                follow_redirects=True,
                 headers=SyntheticsTestHeaders(
                     key="key_example",
                 ),
@@ -296,6 +297,7 @@ with ApiClient(configuration) as api_client:
                         ),
                         dns_server="dns_server_example",
                         dns_server_port=1,
+                        follow_redirects=True,
                         headers=SyntheticsTestHeaders(
                             key="key_example",
                         ),
@@ -446,6 +448,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 dns_server="dns_server_example",
                 dns_server_port=1,
+                follow_redirects=True,
                 headers=SyntheticsTestHeaders(
                     key="key_example",
                 ),
@@ -1791,6 +1794,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 dns_server="dns_server_example",
                 dns_server_port=1,
+                follow_redirects=True,
                 headers=SyntheticsTestHeaders(
                     key="key_example",
                 ),
@@ -1844,6 +1848,7 @@ with ApiClient(configuration) as api_client:
                         ),
                         dns_server="dns_server_example",
                         dns_server_port=1,
+                        follow_redirects=True,
                         headers=SyntheticsTestHeaders(
                             key="key_example",
                         ),
@@ -1996,6 +2001,7 @@ with ApiClient(configuration) as api_client:
                 ),
                 dns_server="dns_server_example",
                 dns_server_port=1,
+                follow_redirects=True,
                 headers=SyntheticsTestHeaders(
                     key="key_example",
                 ),
