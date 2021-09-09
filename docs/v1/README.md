@@ -635,6 +635,7 @@ Class | Method | HTTP request | Description
  - [SLOHistoryMetricsSeries](SLOHistoryMetricsSeries.md)
  - [SLOHistoryMetricsSeriesMetadata](SLOHistoryMetricsSeriesMetadata.md)
  - [SLOHistoryMetricsSeriesMetadataUnit](SLOHistoryMetricsSeriesMetadataUnit.md)
+ - [SLOHistoryMonitor](SLOHistoryMonitor.md)
  - [SLOHistoryResponse](SLOHistoryResponse.md)
  - [SLOHistoryResponseData](SLOHistoryResponseData.md)
  - [SLOHistoryResponseError](SLOHistoryResponseError.md)
