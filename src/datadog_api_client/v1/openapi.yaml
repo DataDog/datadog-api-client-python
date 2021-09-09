@@ -10337,6 +10337,9 @@ components:
           maximum: 65535
           minimum: 1
           type: integer
+        follow_redirects:
+          description: Specifies whether or not the request follows redirects.
+          type: boolean
         headers:
           $ref: '#/components/schemas/SyntheticsTestHeaders'
         host:
