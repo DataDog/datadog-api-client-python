@@ -21,6 +21,7 @@ Refer to the following [documentation](https://docs.datadoghq.com/developers/met
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -105,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -130,6 +131,7 @@ Delete a dashboard using the specified ID.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -170,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -195,6 +197,7 @@ Delete dashboards using the specified IDs. If there are any failures, no dashboa
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -241,7 +244,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -267,6 +270,7 @@ Get a dashboard using the specified ID.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -307,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -335,6 +339,7 @@ This query will not return preset dashboards.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -376,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -400,6 +405,7 @@ Restore dashboards using the specified IDs. If there are any failures, no dashbo
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -446,7 +452,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -472,6 +478,7 @@ Update a dashboard using the specified ID.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -558,7 +565,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 

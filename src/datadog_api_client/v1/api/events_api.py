@@ -75,7 +75,7 @@ class EventsApi(object):
         self._get_event_endpoint = _Endpoint(
             settings={
                 "response_type": (EventResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/events/{event_id}",
                 "operation_id": "get_event",
                 "http_method": "GET",
@@ -116,7 +116,7 @@ class EventsApi(object):
         self._list_events_endpoint = _Endpoint(
             settings={
                 "response_type": (EventListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/events",
                 "operation_id": "list_events",
                 "http_method": "GET",

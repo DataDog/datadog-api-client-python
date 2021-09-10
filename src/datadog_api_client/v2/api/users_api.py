@@ -80,7 +80,7 @@ class UsersApi(object):
         self._create_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/users",
                 "operation_id": "create_user",
                 "http_method": "POST",
@@ -116,7 +116,7 @@ class UsersApi(object):
         self._disable_user_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/users/{user_id}",
                 "operation_id": "disable_user",
                 "http_method": "DELETE",
@@ -157,7 +157,7 @@ class UsersApi(object):
         self._get_invitation_endpoint = _Endpoint(
             settings={
                 "response_type": (UserInvitationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/user_invitations/{user_invitation_uuid}",
                 "operation_id": "get_invitation",
                 "http_method": "GET",
@@ -198,7 +198,7 @@ class UsersApi(object):
         self._get_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/users/{user_id}",
                 "operation_id": "get_user",
                 "http_method": "GET",
@@ -239,7 +239,7 @@ class UsersApi(object):
         self._list_user_organizations_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/users/{user_id}/orgs",
                 "operation_id": "list_user_organizations",
                 "http_method": "GET",
@@ -280,7 +280,7 @@ class UsersApi(object):
         self._list_user_permissions_endpoint = _Endpoint(
             settings={
                 "response_type": (PermissionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/users/{user_id}/permissions",
                 "operation_id": "list_user_permissions",
                 "http_method": "GET",
@@ -321,7 +321,7 @@ class UsersApi(object):
         self._list_users_endpoint = _Endpoint(
             settings={
                 "response_type": (UsersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/users",
                 "operation_id": "list_users",
                 "http_method": "GET",
@@ -380,7 +380,7 @@ class UsersApi(object):
         self._send_invitations_endpoint = _Endpoint(
             settings={
                 "response_type": (UserInvitationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/user_invitations",
                 "operation_id": "send_invitations",
                 "http_method": "POST",
@@ -416,7 +416,7 @@ class UsersApi(object):
         self._update_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/users/{user_id}",
                 "operation_id": "update_user",
                 "http_method": "PATCH",

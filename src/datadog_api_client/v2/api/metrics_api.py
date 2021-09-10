@@ -167,7 +167,7 @@ class MetricsApi(object):
         self._list_tag_configurations_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricsAndMetricTagConfigurationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/metrics",
                 "operation_id": "list_tag_configurations",
                 "http_method": "GET",
@@ -226,7 +226,7 @@ class MetricsApi(object):
         self._list_tags_by_metric_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricAllTagsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/all-tags",
                 "operation_id": "list_tags_by_metric_name",
                 "http_method": "GET",
@@ -267,7 +267,7 @@ class MetricsApi(object):
         self._list_volumes_by_metric_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricVolumesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/volumes",
                 "operation_id": "list_volumes_by_metric_name",
                 "http_method": "GET",

@@ -14,6 +14,7 @@ Check if the API key (not the APP key) is valid. If invalid, a 403 is returned.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 ```python
 import os
@@ -49,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth)
 
 ### HTTP request headers
 

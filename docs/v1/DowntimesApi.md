@@ -20,6 +20,7 @@ Cancel a downtime.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -59,7 +60,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -84,6 +85,7 @@ Delete all downtimes that match the scope of `X`.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -126,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -152,6 +154,7 @@ Schedule a downtime.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -210,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -235,6 +238,7 @@ Get downtime detail by `downtime_id`.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -275,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -300,6 +304,7 @@ Get all scheduled downtimes.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -341,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -430,6 +435,7 @@ Update a single downtime by `downtime_id`.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -490,7 +496,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 

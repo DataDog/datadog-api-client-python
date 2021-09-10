@@ -121,7 +121,7 @@ class UsageMeteringApi(object):
         self._get_incident_management_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIncidentManagementResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/incident-management",
                 "operation_id": "get_incident_management",
                 "http_method": "GET",
@@ -166,7 +166,7 @@ class UsageMeteringApi(object):
         self._get_ingested_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIngestedSpansResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/ingested-spans",
                 "operation_id": "get_ingested_spans",
                 "http_method": "GET",
@@ -344,7 +344,7 @@ class UsageMeteringApi(object):
         self._get_usage_analyzed_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageAnalyzedLogsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/analyzed_logs",
                 "operation_id": "get_usage_analyzed_logs",
                 "http_method": "GET",
@@ -389,7 +389,7 @@ class UsageMeteringApi(object):
         self._get_usage_attribution_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageAttributionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/attribution",
                 "operation_id": "get_usage_attribution",
                 "http_method": "GET",
@@ -496,7 +496,7 @@ class UsageMeteringApi(object):
         self._get_usage_billable_summary_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageBillableSummaryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/billable-summary",
                 "operation_id": "get_usage_billable_summary",
                 "http_method": "GET",
@@ -580,7 +580,7 @@ class UsageMeteringApi(object):
         self._get_usage_cws_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCWSResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/cws",
                 "operation_id": "get_usage_cws",
                 "http_method": "GET",
@@ -670,7 +670,7 @@ class UsageMeteringApi(object):
         self._get_usage_fargate_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageFargateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/fargate",
                 "operation_id": "get_usage_fargate",
                 "http_method": "GET",
@@ -715,7 +715,7 @@ class UsageMeteringApi(object):
         self._get_usage_hosts_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageHostsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/hosts",
                 "operation_id": "get_usage_hosts",
                 "http_method": "GET",
@@ -760,7 +760,7 @@ class UsageMeteringApi(object):
         self._get_usage_indexed_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIndexedSpansResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/indexed-spans",
                 "operation_id": "get_usage_indexed_spans",
                 "http_method": "GET",
@@ -805,7 +805,7 @@ class UsageMeteringApi(object):
         self._get_usage_internet_of_things_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageIoTResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/iot",
                 "operation_id": "get_usage_internet_of_things",
                 "http_method": "GET",
@@ -850,7 +850,7 @@ class UsageMeteringApi(object):
         self._get_usage_lambda_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLambdaResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/aws_lambda",
                 "operation_id": "get_usage_lambda",
                 "http_method": "GET",
@@ -895,7 +895,7 @@ class UsageMeteringApi(object):
         self._get_usage_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLogsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/logs",
                 "operation_id": "get_usage_logs",
                 "http_method": "GET",
@@ -940,7 +940,7 @@ class UsageMeteringApi(object):
         self._get_usage_logs_by_index_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageLogsByIndexResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/logs_by_index",
                 "operation_id": "get_usage_logs_by_index",
                 "http_method": "GET",
@@ -1036,7 +1036,7 @@ class UsageMeteringApi(object):
         self._get_usage_network_flows_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageNetworkFlowsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/network_flows",
                 "operation_id": "get_usage_network_flows",
                 "http_method": "GET",
@@ -1081,7 +1081,7 @@ class UsageMeteringApi(object):
         self._get_usage_network_hosts_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageNetworkHostsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/network_hosts",
                 "operation_id": "get_usage_network_hosts",
                 "http_method": "GET",
@@ -1126,7 +1126,7 @@ class UsageMeteringApi(object):
         self._get_usage_profiling_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageProfilingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/profiling",
                 "operation_id": "get_usage_profiling",
                 "http_method": "GET",
@@ -1171,7 +1171,7 @@ class UsageMeteringApi(object):
         self._get_usage_rum_sessions_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageRumSessionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/rum_sessions",
                 "operation_id": "get_usage_rum_sessions",
                 "http_method": "GET",
@@ -1220,7 +1220,7 @@ class UsageMeteringApi(object):
         self._get_usage_snmp_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSNMPResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/snmp",
                 "operation_id": "get_usage_snmp",
                 "http_method": "GET",
@@ -1265,7 +1265,7 @@ class UsageMeteringApi(object):
         self._get_usage_summary_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSummaryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/summary",
                 "operation_id": "get_usage_summary",
                 "http_method": "GET",
@@ -1314,7 +1314,7 @@ class UsageMeteringApi(object):
         self._get_usage_synthetics_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSyntheticsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/synthetics",
                 "operation_id": "get_usage_synthetics",
                 "http_method": "GET",
@@ -1359,7 +1359,7 @@ class UsageMeteringApi(object):
         self._get_usage_synthetics_api_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSyntheticsAPIResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/synthetics_api",
                 "operation_id": "get_usage_synthetics_api",
                 "http_method": "GET",
@@ -1404,7 +1404,7 @@ class UsageMeteringApi(object):
         self._get_usage_synthetics_browser_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSyntheticsBrowserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/synthetics_browser",
                 "operation_id": "get_usage_synthetics_browser",
                 "http_method": "GET",
@@ -1449,7 +1449,7 @@ class UsageMeteringApi(object):
         self._get_usage_timeseries_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageTimeseriesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/timeseries",
                 "operation_id": "get_usage_timeseries",
                 "http_method": "GET",
@@ -1494,7 +1494,7 @@ class UsageMeteringApi(object):
         self._get_usage_top_avg_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageTopAvgMetricsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/usage/top_avg_metrics",
                 "operation_id": "get_usage_top_avg_metrics",
                 "http_method": "GET",

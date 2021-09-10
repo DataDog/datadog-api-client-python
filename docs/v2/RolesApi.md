@@ -25,6 +25,7 @@ Adds a permission to a role.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -72,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -98,6 +99,7 @@ Adds a user to a role.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -145,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -171,6 +173,7 @@ Create a new role for your organization.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -236,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -261,6 +264,7 @@ Disables a role.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -300,7 +304,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -325,6 +329,7 @@ Get a role in the organization specified by the role’s `role_id`.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -365,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -390,6 +395,7 @@ Returns a list of all permissions, including name, description, and ID.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -426,7 +432,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -451,6 +457,7 @@ Returns a list of all permissions for a single role.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -491,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -516,6 +523,7 @@ Gets all users of a role.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -573,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -598,6 +606,7 @@ Returns all roles, including their names and IDs.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -645,7 +654,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -669,6 +678,7 @@ Removes a permission from a role.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -716,7 +726,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -742,6 +752,7 @@ Removes a user from a role.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -789,7 +800,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -815,6 +826,7 @@ Edit a role. Can only be used with application keys belonging to administrators.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -865,7 +877,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 

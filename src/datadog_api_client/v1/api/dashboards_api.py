@@ -39,7 +39,7 @@ class DashboardsApi(object):
         self._create_dashboard_endpoint = _Endpoint(
             settings={
                 "response_type": (Dashboard,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/dashboard",
                 "operation_id": "create_dashboard",
                 "http_method": "POST",
@@ -75,7 +75,7 @@ class DashboardsApi(object):
         self._delete_dashboard_endpoint = _Endpoint(
             settings={
                 "response_type": (DashboardDeleteResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/dashboard/{dashboard_id}",
                 "operation_id": "delete_dashboard",
                 "http_method": "DELETE",
@@ -116,7 +116,7 @@ class DashboardsApi(object):
         self._delete_dashboards_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/dashboard",
                 "operation_id": "delete_dashboards",
                 "http_method": "DELETE",
@@ -152,7 +152,7 @@ class DashboardsApi(object):
         self._get_dashboard_endpoint = _Endpoint(
             settings={
                 "response_type": (Dashboard,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/dashboard/{dashboard_id}",
                 "operation_id": "get_dashboard",
                 "http_method": "GET",
@@ -193,7 +193,7 @@ class DashboardsApi(object):
         self._list_dashboards_endpoint = _Endpoint(
             settings={
                 "response_type": (DashboardSummary,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/dashboard",
                 "operation_id": "list_dashboards",
                 "http_method": "GET",
@@ -232,7 +232,7 @@ class DashboardsApi(object):
         self._restore_dashboards_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/dashboard",
                 "operation_id": "restore_dashboards",
                 "http_method": "PATCH",
@@ -268,7 +268,7 @@ class DashboardsApi(object):
         self._update_dashboard_endpoint = _Endpoint(
             settings={
                 "response_type": (Dashboard,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/dashboard/{dashboard_id}",
                 "operation_id": "update_dashboard",
                 "http_method": "PUT",

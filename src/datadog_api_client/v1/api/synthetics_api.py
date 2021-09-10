@@ -132,7 +132,7 @@ class SyntheticsApi(object):
         self._create_synthetics_api_test_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsAPITest,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/api",
                 "operation_id": "create_synthetics_api_test",
                 "http_method": "POST",
@@ -168,7 +168,7 @@ class SyntheticsApi(object):
         self._create_synthetics_browser_test_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsBrowserTest,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/browser",
                 "operation_id": "create_synthetics_browser_test",
                 "http_method": "POST",
@@ -204,7 +204,7 @@ class SyntheticsApi(object):
         self._delete_global_variable_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/variables/{variable_id}",
                 "operation_id": "delete_global_variable",
                 "http_method": "DELETE",
@@ -286,7 +286,7 @@ class SyntheticsApi(object):
         self._delete_tests_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsDeleteTestsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/delete",
                 "operation_id": "delete_tests",
                 "http_method": "POST",
@@ -364,7 +364,7 @@ class SyntheticsApi(object):
         self._get_api_test_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsAPITest,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/api/{public_id}",
                 "operation_id": "get_api_test",
                 "http_method": "GET",
@@ -405,7 +405,7 @@ class SyntheticsApi(object):
         self._get_api_test_latest_results_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsGetAPITestLatestResultsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/{public_id}/results",
                 "operation_id": "get_api_test_latest_results",
                 "http_method": "GET",
@@ -460,7 +460,7 @@ class SyntheticsApi(object):
         self._get_api_test_result_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsAPITestResultFull,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/{public_id}/results/{result_id}",
                 "operation_id": "get_api_test_result",
                 "http_method": "GET",
@@ -506,7 +506,7 @@ class SyntheticsApi(object):
         self._get_browser_test_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsBrowserTest,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}",
                 "operation_id": "get_browser_test",
                 "http_method": "GET",
@@ -547,7 +547,7 @@ class SyntheticsApi(object):
         self._get_browser_test_latest_results_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsGetBrowserTestLatestResultsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}/results",
                 "operation_id": "get_browser_test_latest_results",
                 "http_method": "GET",
@@ -602,7 +602,7 @@ class SyntheticsApi(object):
         self._get_browser_test_result_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsBrowserTestResultFull,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}/results/{result_id}",
                 "operation_id": "get_browser_test_result",
                 "http_method": "GET",
@@ -648,7 +648,7 @@ class SyntheticsApi(object):
         self._get_global_variable_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsGlobalVariable,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/variables/{variable_id}",
                 "operation_id": "get_global_variable",
                 "http_method": "GET",
@@ -771,7 +771,7 @@ class SyntheticsApi(object):
         self._list_global_variables_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsListGlobalVariablesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/variables",
                 "operation_id": "list_global_variables",
                 "http_method": "GET",
@@ -796,7 +796,7 @@ class SyntheticsApi(object):
         self._list_locations_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsLocations,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/locations",
                 "operation_id": "list_locations",
                 "http_method": "GET",
@@ -821,7 +821,7 @@ class SyntheticsApi(object):
         self._list_tests_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsListTestsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests",
                 "operation_id": "list_tests",
                 "http_method": "GET",
@@ -882,7 +882,7 @@ class SyntheticsApi(object):
         self._update_api_test_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsAPITest,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/api/{public_id}",
                 "operation_id": "update_api_test",
                 "http_method": "PUT",
@@ -924,7 +924,7 @@ class SyntheticsApi(object):
         self._update_browser_test_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsBrowserTest,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/browser/{public_id}",
                 "operation_id": "update_browser_test",
                 "http_method": "PUT",
@@ -1008,7 +1008,7 @@ class SyntheticsApi(object):
         self._update_test_pause_status_endpoint = _Endpoint(
             settings={
                 "response_type": (bool,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/tests/{public_id}/status",
                 "operation_id": "update_test_pause_status",
                 "http_method": "PUT",

@@ -82,15 +82,15 @@ configuration = {{{packageName}}}.Configuration(
 {{/isHttpSignature}}
 {{/isBasic}}
 {{#isOAuth}}
-
-# Configure OAuth2 access token for authorization: {{{name}}}
-configuration = {{{packageName}}}.Configuration(
-    host = "{{{basePath}}}"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+{{! TODO enable when OAuth is ready }}
+{{! # Configure OAuth2 access token for authorization: {{{name\}\}\} }}
+{{! configuration = {{{packageName\}\}\}.Configuration( }}
+{{!     host = "{{{basePath\}\}\}" }}
+{{! ) }}
+{{! configuration.access_token = 'YOUR_ACCESS_TOKEN' }}
 {{/isOAuth}}
 {{/authMethods}}
+{{/hasAuthMethods}}
 {{#vendorExtensions.x-unstable}}
 configuration.unstable_operations["{{operationId}}"] = True
 {{/vendorExtensions.x-unstable}}
-{{/hasAuthMethods}}

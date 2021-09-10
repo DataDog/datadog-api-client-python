@@ -40,7 +40,7 @@ class MetricsApi(object):
         self._get_metric_metadata_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricMetadata,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/metrics/{metric_name}",
                 "operation_id": "get_metric_metadata",
                 "http_method": "GET",
@@ -81,7 +81,7 @@ class MetricsApi(object):
         self._list_active_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/metrics",
                 "operation_id": "list_active_metrics",
                 "http_method": "GET",
@@ -130,7 +130,7 @@ class MetricsApi(object):
         self._list_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricSearchResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/search",
                 "operation_id": "list_metrics",
                 "http_method": "GET",
@@ -171,7 +171,7 @@ class MetricsApi(object):
         self._query_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricsQueryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/query",
                 "operation_id": "query_metrics",
                 "http_method": "GET",

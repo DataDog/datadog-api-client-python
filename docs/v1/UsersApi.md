@@ -21,6 +21,7 @@ if application keys belong to administrators.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -67,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 
@@ -227,6 +228,7 @@ List all users for your organization.
 
 ### Example
 
+* OAuth Authentication (AuthZ):
 * Api Key Authentication (apiKeyAuth):
 * Api Key Authentication (appKeyAuth):
 ```python
@@ -263,7 +265,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
 
 ### HTTP request headers
 

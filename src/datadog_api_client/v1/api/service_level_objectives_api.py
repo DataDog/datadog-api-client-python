@@ -201,7 +201,7 @@ class ServiceLevelObjectivesApi(object):
         self._get_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/slo/{slo_id}",
                 "operation_id": "get_slo",
                 "http_method": "GET",
@@ -246,7 +246,7 @@ class ServiceLevelObjectivesApi(object):
         self._get_slo_history_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOHistoryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/slo/{slo_id}/history",
                 "operation_id": "get_slo_history",
                 "http_method": "GET",
@@ -308,7 +308,7 @@ class ServiceLevelObjectivesApi(object):
         self._list_slos_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/slo",
                 "operation_id": "list_slos",
                 "http_method": "GET",

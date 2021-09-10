@@ -45,7 +45,7 @@ class RolesApi(object):
         self._add_permission_to_role_endpoint = _Endpoint(
             settings={
                 "response_type": (PermissionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles/{role_id}/permissions",
                 "operation_id": "add_permission_to_role",
                 "http_method": "POST",
@@ -87,7 +87,7 @@ class RolesApi(object):
         self._add_user_to_role_endpoint = _Endpoint(
             settings={
                 "response_type": (UsersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles/{role_id}/users",
                 "operation_id": "add_user_to_role",
                 "http_method": "POST",
@@ -129,7 +129,7 @@ class RolesApi(object):
         self._create_role_endpoint = _Endpoint(
             settings={
                 "response_type": (RoleCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles",
                 "operation_id": "create_role",
                 "http_method": "POST",
@@ -165,7 +165,7 @@ class RolesApi(object):
         self._delete_role_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles/{role_id}",
                 "operation_id": "delete_role",
                 "http_method": "DELETE",
@@ -206,7 +206,7 @@ class RolesApi(object):
         self._get_role_endpoint = _Endpoint(
             settings={
                 "response_type": (RoleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles/{role_id}",
                 "operation_id": "get_role",
                 "http_method": "GET",
@@ -247,7 +247,7 @@ class RolesApi(object):
         self._list_permissions_endpoint = _Endpoint(
             settings={
                 "response_type": (PermissionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/permissions",
                 "operation_id": "list_permissions",
                 "http_method": "GET",
@@ -272,7 +272,7 @@ class RolesApi(object):
         self._list_role_permissions_endpoint = _Endpoint(
             settings={
                 "response_type": (PermissionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles/{role_id}/permissions",
                 "operation_id": "list_role_permissions",
                 "http_method": "GET",
@@ -313,7 +313,7 @@ class RolesApi(object):
         self._list_role_users_endpoint = _Endpoint(
             settings={
                 "response_type": (UsersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles/{role_id}/users",
                 "operation_id": "list_role_users",
                 "http_method": "GET",
@@ -370,7 +370,7 @@ class RolesApi(object):
         self._list_roles_endpoint = _Endpoint(
             settings={
                 "response_type": (RolesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles",
                 "operation_id": "list_roles",
                 "http_method": "GET",
@@ -421,7 +421,7 @@ class RolesApi(object):
         self._remove_permission_from_role_endpoint = _Endpoint(
             settings={
                 "response_type": (PermissionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles/{role_id}/permissions",
                 "operation_id": "remove_permission_from_role",
                 "http_method": "DELETE",
@@ -463,7 +463,7 @@ class RolesApi(object):
         self._remove_user_from_role_endpoint = _Endpoint(
             settings={
                 "response_type": (UsersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles/{role_id}/users",
                 "operation_id": "remove_user_from_role",
                 "http_method": "DELETE",
@@ -505,7 +505,7 @@ class RolesApi(object):
         self._update_role_endpoint = _Endpoint(
             settings={
                 "response_type": (RoleUpdateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/roles/{role_id}",
                 "operation_id": "update_role",
                 "http_method": "PATCH",

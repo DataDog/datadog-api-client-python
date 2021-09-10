@@ -40,7 +40,7 @@ class MonitorsApi(object):
         self._check_can_delete_monitor_endpoint = _Endpoint(
             settings={
                 "response_type": (CheckCanDeleteMonitorResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor/can_delete",
                 "operation_id": "check_can_delete_monitor",
                 "http_method": "GET",
@@ -83,7 +83,7 @@ class MonitorsApi(object):
         self._create_monitor_endpoint = _Endpoint(
             settings={
                 "response_type": (Monitor,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor",
                 "operation_id": "create_monitor",
                 "http_method": "POST",
@@ -119,7 +119,7 @@ class MonitorsApi(object):
         self._delete_monitor_endpoint = _Endpoint(
             settings={
                 "response_type": (DeletedMonitor,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor/{monitor_id}",
                 "operation_id": "delete_monitor",
                 "http_method": "DELETE",
@@ -164,7 +164,7 @@ class MonitorsApi(object):
         self._get_monitor_endpoint = _Endpoint(
             settings={
                 "response_type": (Monitor,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor/{monitor_id}",
                 "operation_id": "get_monitor",
                 "http_method": "GET",
@@ -209,7 +209,7 @@ class MonitorsApi(object):
         self._list_monitors_endpoint = _Endpoint(
             settings={
                 "response_type": ([Monitor],),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor",
                 "operation_id": "list_monitors",
                 "http_method": "GET",
@@ -282,7 +282,7 @@ class MonitorsApi(object):
         self._search_monitor_groups_endpoint = _Endpoint(
             settings={
                 "response_type": (MonitorGroupSearchResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor/groups/search",
                 "operation_id": "search_monitor_groups",
                 "http_method": "GET",
@@ -333,7 +333,7 @@ class MonitorsApi(object):
         self._search_monitors_endpoint = _Endpoint(
             settings={
                 "response_type": (MonitorSearchResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor/search",
                 "operation_id": "search_monitors",
                 "http_method": "GET",
@@ -384,7 +384,7 @@ class MonitorsApi(object):
         self._update_monitor_endpoint = _Endpoint(
             settings={
                 "response_type": (Monitor,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor/{monitor_id}",
                 "operation_id": "update_monitor",
                 "http_method": "PUT",
@@ -426,7 +426,7 @@ class MonitorsApi(object):
         self._validate_monitor_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monitor/validate",
                 "operation_id": "validate_monitor",
                 "http_method": "POST",

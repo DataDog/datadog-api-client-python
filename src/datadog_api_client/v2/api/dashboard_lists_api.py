@@ -125,7 +125,7 @@ class DashboardListsApi(object):
         self._get_dashboard_list_items_endpoint = _Endpoint(
             settings={
                 "response_type": (DashboardListItems,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards",
                 "operation_id": "get_dashboard_list_items",
                 "http_method": "GET",
