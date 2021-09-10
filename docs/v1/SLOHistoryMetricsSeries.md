@@ -6,9 +6,9 @@ A representation of `metric` based SLO time series for the provided queries. Thi
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** | Count of submitted metrics. | 
-**metadata** | [**SLOHistoryMetricsSeriesMetadata**](SLOHistoryMetricsSeriesMetadata.md) |  | 
 **sum** | **float** | Total sum of the query. | 
 **values** | **[float]** | The query values for each metric. | 
+**metadata** | [**SLOHistoryMetricsSeriesMetadata**](SLOHistoryMetricsSeriesMetadata.md) |  | [optional] 
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
