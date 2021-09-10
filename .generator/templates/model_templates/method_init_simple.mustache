@@ -20,7 +20,7 @@
             value = args.pop(0)
 {{#defaultValue}}
         else:
-            value = {{{defaultValue}}}
+            value = {{{.}}}
 {{/defaultValue}}
 {{^defaultValue}}
         else:
