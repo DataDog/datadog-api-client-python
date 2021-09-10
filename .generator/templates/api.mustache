@@ -133,10 +133,10 @@ class {{classname}}(object):
 {{#hasValidation}}
                     ('{{paramName}}',): {
 {{#maxLength}}
-                        'max_length': {{maxLength}},{{/maxLength}}{{#minLength}}
-                        'min_length': {{minLength}},{{/minLength}}{{#maxItems}}
-                        'max_items': {{maxItems}},{{/maxItems}}{{#minItems}}
-                        'min_items': {{minItems}},{{/minItems}}{{#maximum}}
+                        'max_length': {{.}},{{/maxLength}}{{#minLength}}
+                        'min_length': {{.}},{{/minLength}}{{#maxItems}}
+                        'max_items': {{.}},{{/maxItems}}{{#minItems}}
+                        'min_items': {{.}},{{/minItems}}{{#maximum}}
                         {{#exclusiveMaximum}}'exclusive_maximum'{{/exclusiveMaximum}}{{^exclusiveMaximum}}'inclusive_maximum'{{/exclusiveMaximum}}: {{maximum}},{{/maximum}}{{#minimum}}
                         {{#exclusiveMinimum}}'exclusive_minimum'{{/exclusiveMinimum}}{{^exclusiveMinimum}}'inclusive_minimum'{{/exclusiveMinimum}}: {{minimum}},{{/minimum}}{{#pattern}}
                         'regex': {

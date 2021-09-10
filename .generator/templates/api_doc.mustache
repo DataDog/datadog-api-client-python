@@ -1,17 +1,17 @@
 # {{packageName}}.{{classname}}{{#description}}
-{{description}}{{/description}}
+{{.}}{{/description}}
 
 All URIs are relative to *{{basePath}}*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-{{#operations}}{{#operation}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{#summary}}{{summary}}{{/summary}}
+{{#operations}}{{#operation}}[**{{operationId}}**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}}
 {{/operation}}{{/operations}}
 
 {{#operations}}
 {{#operation}}
 # **{{{operationId}}}**
-> {{#returnType}}{{{returnType}}} {{/returnType}}{{{operationId}}}({{#requiredParams}}{{^defaultValue}}{{paramName}}{{^-last}}, {{/-last}}{{/defaultValue}}{{/requiredParams}})
+> {{#returnType}}{{{.}}} {{/returnType}}{{{operationId}}}({{#requiredParams}}{{^defaultValue}}{{paramName}}{{^-last}}, {{/-last}}{{/defaultValue}}{{/requiredParams}})
 
 {{#notes}}{{{unescapedNotes}}}{{/notes}}
 
@@ -62,6 +62,7 @@ Name | Type | Description  | Notes
 {{#responses.0}}
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 {{#responses}}
