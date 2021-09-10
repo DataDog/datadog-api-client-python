@@ -35,7 +35,7 @@ class SnapshotsApi(object):
         self._get_graph_snapshot_endpoint = _Endpoint(
             settings={
                 "response_type": (GraphSnapshot,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/graph/snapshot",
                 "operation_id": "get_graph_snapshot",
                 "http_method": "GET",

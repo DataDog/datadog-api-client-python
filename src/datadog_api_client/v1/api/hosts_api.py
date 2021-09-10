@@ -77,7 +77,7 @@ class HostsApi(object):
         self._list_hosts_endpoint = _Endpoint(
             settings={
                 "response_type": (HostListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/hosts",
                 "operation_id": "list_hosts",
                 "http_method": "GET",

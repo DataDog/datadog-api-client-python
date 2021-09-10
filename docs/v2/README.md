@@ -524,6 +524,24 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
+## AuthZ
+
+- **Type**: OAuth
+- **Flow**: accessCode
+- **Authorization URL**: /oauth2/v1/authorize
+- **Scopes**: 
+ - **dashboards_public_share**: The ability to share dashboards externally.
+ - **dashboards_read**: The ability to view dashboards.
+ - **dashboards_write**: The ability to create and change dashboards.
+ - **events_read**: The ability to read events data.
+ - **metrics_read**: The ability to view custom metrics.
+ - **security_monitoring_rules_read**: The ability to read Detection rules.
+ - **security_monitoring_rules_write**: The ability to create and edit Detection rules.
+ - **security_monitoring_signals_read**: The ability to view Security signals.
+ - **user_access_invite**: Allows users to invite other users to your organization.
+ - **user_access_manage**: Grants the permission to disable users, manage user roles and SAML-to-role mappings.
+
+
 ## apiKeyAuth
 
 - **Type**: API key

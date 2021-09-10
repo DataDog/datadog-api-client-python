@@ -426,6 +426,13 @@ class Configuration(object):
         :return: The Auth Settings information dict.
         """
         auth = {}
+        if self.access_token is not None:
+            auth["AuthZ"] = {
+                "type": "oauth2",
+                "in": "header",
+                "key": "Authorization",
+                "value": "Bearer " + self.access_token,
+            }
         if "apiKeyAuth" in self.api_key:
             auth["apiKeyAuth"] = {
                 "type": "api_key",

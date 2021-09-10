@@ -35,7 +35,7 @@ class AuthenticationApi(object):
         self._validate_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthenticationValidationResponse,),
-                "auth": ["apiKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth"],
                 "endpoint_path": "/api/v1/validate",
                 "operation_id": "validate",
                 "http_method": "GET",

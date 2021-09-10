@@ -39,7 +39,7 @@ class AWSLogsIntegrationApi(object):
         self._check_aws_logs_lambda_async_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSLogsAsyncResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/aws/logs/check_async",
                 "operation_id": "check_aws_logs_lambda_async",
                 "http_method": "POST",

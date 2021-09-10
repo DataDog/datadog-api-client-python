@@ -81,7 +81,7 @@ class SecurityMonitoringApi(object):
         self._create_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/rules",
                 "operation_id": "create_security_monitoring_rule",
                 "http_method": "POST",
@@ -158,7 +158,7 @@ class SecurityMonitoringApi(object):
         self._delete_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}",
                 "operation_id": "delete_security_monitoring_rule",
                 "http_method": "DELETE",
@@ -240,7 +240,7 @@ class SecurityMonitoringApi(object):
         self._get_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}",
                 "operation_id": "get_security_monitoring_rule",
                 "http_method": "GET",
@@ -306,7 +306,7 @@ class SecurityMonitoringApi(object):
         self._list_security_monitoring_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringListRulesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/rules",
                 "operation_id": "list_security_monitoring_rules",
                 "http_method": "GET",
@@ -349,7 +349,7 @@ class SecurityMonitoringApi(object):
         self._list_security_monitoring_signals_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/signals",
                 "operation_id": "list_security_monitoring_signals",
                 "http_method": "GET",
@@ -414,7 +414,7 @@ class SecurityMonitoringApi(object):
         self._search_security_monitoring_signals_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/signals/search",
                 "operation_id": "search_security_monitoring_signals",
                 "http_method": "POST",
@@ -490,7 +490,7 @@ class SecurityMonitoringApi(object):
         self._update_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}",
                 "operation_id": "update_security_monitoring_rule",
                 "http_method": "PUT",

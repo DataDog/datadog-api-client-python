@@ -37,7 +37,7 @@ class DowntimesApi(object):
         self._cancel_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/downtime/{downtime_id}",
                 "operation_id": "cancel_downtime",
                 "http_method": "DELETE",
@@ -78,7 +78,7 @@ class DowntimesApi(object):
         self._cancel_downtimes_by_scope_endpoint = _Endpoint(
             settings={
                 "response_type": (CanceledDowntimesIds,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/downtime/cancel/by_scope",
                 "operation_id": "cancel_downtimes_by_scope",
                 "http_method": "POST",
@@ -114,7 +114,7 @@ class DowntimesApi(object):
         self._create_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (Downtime,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/downtime",
                 "operation_id": "create_downtime",
                 "http_method": "POST",
@@ -150,7 +150,7 @@ class DowntimesApi(object):
         self._get_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (Downtime,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/downtime/{downtime_id}",
                 "operation_id": "get_downtime",
                 "http_method": "GET",
@@ -191,7 +191,7 @@ class DowntimesApi(object):
         self._list_downtimes_endpoint = _Endpoint(
             settings={
                 "response_type": ([Downtime],),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/downtime",
                 "operation_id": "list_downtimes",
                 "http_method": "GET",
@@ -271,7 +271,7 @@ class DowntimesApi(object):
         self._update_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (Downtime,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/downtime/{downtime_id}",
                 "operation_id": "update_downtime",
                 "http_method": "PUT",

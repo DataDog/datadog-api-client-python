@@ -38,7 +38,7 @@ class UsersApi(object):
         self._create_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/user",
                 "operation_id": "create_user",
                 "http_method": "POST",
@@ -156,7 +156,7 @@ class UsersApi(object):
         self._list_users_endpoint = _Endpoint(
             settings={
                 "response_type": (UserListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/user",
                 "operation_id": "list_users",
                 "http_method": "GET",

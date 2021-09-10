@@ -35,7 +35,7 @@ class ProcessesApi(object):
         self._list_processes_endpoint = _Endpoint(
             settings={
                 "response_type": (ProcessSummariesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/processes",
                 "operation_id": "list_processes",
                 "http_method": "GET",

@@ -172,7 +172,7 @@ class TagsApi(object):
         self._list_host_tags_endpoint = _Endpoint(
             settings={
                 "response_type": (TagToHosts,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/tags/hosts",
                 "operation_id": "list_host_tags",
                 "http_method": "GET",
