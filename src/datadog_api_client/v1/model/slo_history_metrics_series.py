@@ -69,18 +69,18 @@ class SLOHistoryMetricsSeries(ModelNormal):
         lazy_import()
         return {
             "count": (int,),  # noqa: E501
-            "metadata": (SLOHistoryMetricsSeriesMetadata,),  # noqa: E501
             "sum": (float,),  # noqa: E501
             "values": ([float],),  # noqa: E501
+            "metadata": (SLOHistoryMetricsSeriesMetadata,),  # noqa: E501
         }
 
     discriminator = None
 
     attribute_map = {
         "count": "count",  # noqa: E501
-        "metadata": "metadata",  # noqa: E501
         "sum": "sum",  # noqa: E501
         "values": "values",  # noqa: E501
+        "metadata": "metadata",  # noqa: E501
     }
 
     read_only_vars = {}
@@ -88,12 +88,11 @@ class SLOHistoryMetricsSeries(ModelNormal):
     _composed_schemas = {}
 
     @convert_js_args_to_python_args
-    def __init__(self, count, metadata, sum, values, *args, **kwargs):  # noqa: E501
+    def __init__(self, count, sum, values, *args, **kwargs):  # noqa: E501
         """SLOHistoryMetricsSeries - a model defined in OpenAPI
 
         Args:
             count (int): Count of submitted metrics.
-            metadata (SLOHistoryMetricsSeriesMetadata):
             sum (float): Total sum of the query.
             values ([float]): The query values for each metric.
 
@@ -128,19 +127,19 @@ class SLOHistoryMetricsSeries(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            metadata (SLOHistoryMetricsSeriesMetadata): [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
         self.count = count
-        self.metadata = metadata
         self.sum = sum
         self.values = values
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, count, metadata, sum, values, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, count, sum, values, *args, **kwargs):  # noqa: E501
         """Helper creating a new instance from a response."""
 
         self = super(SLOHistoryMetricsSeries, cls)._from_openapi_data(kwargs)
@@ -148,7 +147,6 @@ class SLOHistoryMetricsSeries(ModelNormal):
         self._check_pos_args(args)
 
         self.count = count
-        self.metadata = metadata
         self.sum = sum
         self.values = values
         return self
