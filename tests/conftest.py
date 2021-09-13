@@ -219,6 +219,12 @@ def _disable_recording():
     return os.getenv("RECORD", "false").lower() == "none"
 
 
+@pytest.fixture(scope="session")
+def disable_recording(request):
+    """Disable VCR.py integration. This overrides a pytest-recording fixture."""
+    return _disable_recording()
+
+
 @pytest.fixture
 def vcr_config():
     config = dict(
