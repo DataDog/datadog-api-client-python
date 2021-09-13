@@ -40,6 +40,7 @@ from pytest_bdd import (
     then,
     when,
 )
+from vcr.errors import CannotOverwriteExistingCassetteException
 
 logging.basicConfig()
 
@@ -62,10 +63,7 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
 
     context = tracer.get_call_context()
     span = tracer.start_span(
-        step.type,
-        resource=step.name,
-        span_type=step.type,
-        child_of=context,
+        step.type, resource=step.name, span_type=step.type, child_of=context,
     )
     setattr(step_func, "__dd_span__", span)
 
@@ -211,22 +209,14 @@ def context(vcr, unique, unique_lower, freezer):
 @pytest.fixture(scope="session")
 def record_mode(request):
     """Manage compatibility with DD client libraries."""
-    return {
-        "false": "none",
-        "true": "rewrite",
-        "none": "new_episodes",
-    }[os.getenv("RECORD", "false").lower()]
+    return {"false": "none", "true": "rewrite", "none": "new_episodes",}[
+        os.getenv("RECORD", "false").lower()
+    ]
 
 
 def _disable_recording():
     """Disable VCR.py integration."""
     return os.getenv("RECORD", "false").lower() == "none"
-
-
-@pytest.fixture(scope="session")
-def disable_recording(request):
-    """Disable VCR.py integration."""
-    return _disable_recording()
 
 
 @pytest.fixture
@@ -257,7 +247,14 @@ def freezer(default_cassette_name, record_mode, vcr):
             with pathlib.Path(vcr._path).with_suffix(".frozen").open("w+") as f:
                 f.write(freeze_at)
     else:
-        with pathlib.Path(vcr._path).with_suffix(".frozen").open("r") as f:
+        freeze_file = pathlib.Path(vcr._path).with_suffix(".frozen")
+        if not freeze_file.exists():
+            msg = (
+                "Time file '{}' not found: create one setting `RECORD=true` or "
+                "ignore it using `RECORD=none`".format(freeze_file)
+            )
+            raise RuntimeError(msg)
+        with freeze_file.open("r") as f:
             freeze_at = f.readline().strip()
 
     return freeze_time(parser.isoparse(freeze_at))
@@ -428,7 +425,16 @@ def build_given(version, operation):
                 for p in operation.get("parameters", [])
             }
             kwargs["_check_input_type"] = False
-            result = operation_method(**kwargs)
+            try:
+                result = operation_method(**kwargs)
+            except CannotOverwriteExistingCassetteException as e:
+                if os.getenv("RECORD", "false").lower() == "false":
+                    msg = (
+                        "Cassette '{}' not found: create one setting `RECORD=true` or "
+                        "ignore it using `RECORD=none`".format(e.cassette._path)
+                    )
+                    raise RuntimeError(msg) from e
+                raise e
             client.last_response.urllib3_response.close()
 
             # register undo method
