@@ -123,7 +123,7 @@ class SLOCorrection(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (SLOCorrectionResponseAttributes): [optional]  # noqa: E501
-            id (str): The ID of the SLO correction. [optional]  # noqa: E501
+            id (str): The ID of the SLO correction.. [optional]  # noqa: E501
             type (SLOCorrectionType): [optional]  # noqa: E501
         """
         super().__init__(kwargs)
