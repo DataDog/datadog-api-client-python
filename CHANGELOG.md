@@ -4,12 +4,12 @@
 
 * [Added] Add restricted roles for Synthetics global variables. See [#550](https://github.com/DataDog/datadog-api-client-python/pull/550).
 * [Added] Add events data source to Dashboard widgets. See [#545](https://github.com/DataDog/datadog-api-client-python/pull/545).
-* [Added] Adding support for security monitoring rule `type` property. See [#544](https://github.com/DataDog/datadog-api-client-python/pull/544).
+* [Added] Add support for security monitoring rule `type` property. See [#544](https://github.com/DataDog/datadog-api-client-python/pull/544).
 * [Added] Add `batch_id` to the synthetics trigger endpoint response. See [#556](https://github.com/DataDog/datadog-api-client-python/pull/556).
 * [Added] Add `audit alert` monitor type. See [#559](https://github.com/DataDog/datadog-api-client-python/pull/559).
 * [Added] Add DBM usage endpoint. See [#546](https://github.com/DataDog/datadog-api-client-python/pull/546).
 * [Added] Add config variables to Synthetics browser test config. See [#563](https://github.com/DataDog/datadog-api-client-python/pull/563).
-* [Added] Added `available_values` property to template variables schema. See [#564](https://github.com/DataDog/datadog-api-client-python/pull/564).
+* [Added] Add `available_values` property to template variables schema. See [#564](https://github.com/DataDog/datadog-api-client-python/pull/564).
 * [Added] Add `follow_redirects` options to test request in Synthetics. See [#571](https://github.com/DataDog/datadog-api-client-python/pull/571).
 * [Fixed] Minor fixes of the incident schema. See [#552](https://github.com/DataDog/datadog-api-client-python/pull/552).
 * [Fixed] Make SLO history metadata unit nullable. See [#555](https://github.com/DataDog/datadog-api-client-python/pull/555).
