@@ -120,7 +120,7 @@ with ApiClient(configuration) as api_client:
             SLOThreshold(
                 target=99.9,
                 target_display="99.9",
-                timeframe=SLOTimeframe("7d"),
+                timeframe=SLOTimeframe("30d"),
                 warning=90.0,
                 warning_display="90.0",
             ),
@@ -277,7 +277,7 @@ with ApiClient(configuration) as api_client:
     api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
     body = SLOBulkDelete(
         key=[
-            SLOTimeframe("7d"),
+            SLOTimeframe("30d"),
         ],
     )  # SLOBulkDelete | Delete multiple service level objective objects request body.
 
@@ -609,7 +609,7 @@ with ApiClient(configuration) as api_client:
             SLOThreshold(
                 target=99.9,
                 target_display="99.9",
-                timeframe=SLOTimeframe("7d"),
+                timeframe=SLOTimeframe("30d"),
                 warning=90.0,
                 warning_display="90.0",
             ),

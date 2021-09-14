@@ -1005,6 +1005,7 @@ components:
       enum:
       - ordered
       - free
+      example: ordered
       type: string
       x-enum-varnames:
       - ORDERED
@@ -2247,6 +2248,7 @@ components:
       enum:
       - process
       - container
+      example: process
       type: string
       x-enum-varnames:
       - PROCESS
@@ -2301,6 +2303,7 @@ components:
       enum:
       - timeseries
       - scalar
+      example: timeseries
       type: string
       x-enum-varnames:
       - TIMESERIES
@@ -3320,6 +3323,7 @@ components:
       - auto
       - compact
       - full
+      example: compact
       type: string
       x-enum-varnames:
       - AUTO
@@ -3348,6 +3352,7 @@ components:
       description: Widget response format.
       enum:
       - event_list
+      example: event_list
       type: string
       x-enum-varnames:
       - EVENT_LIST
@@ -4914,7 +4919,7 @@ components:
           example:
           - metric: system.load.1
             points:
-            - - 1475317847
+            - - 1475317847.0
               - 0.7
           items:
             $ref: '#/components/schemas/Series'
@@ -6885,7 +6890,7 @@ components:
     Point:
       description: Array of timeseries points.
       example:
-      - 1575317847
+      - 1575317847.0
       - 0.5
       items:
         description: 'Each point is of the form `[POSIX_timestamp, numeric_value]`.
@@ -6918,7 +6923,7 @@ components:
           type: integer
         metric:
           description: Your chosen metric.
-          example: ''
+          example: system.load.1
           type: string
         search_by:
           description: Your chosen search term.
@@ -7319,6 +7324,7 @@ components:
       - 30d
       - 90d
       - all
+      example: 30d
       type: string
       x-enum-varnames:
       - SEVEN_DAYS
@@ -7992,6 +7998,7 @@ components:
       - 30d
       - 90d
       - custom
+      example: 30d
       type: string
       x-enum-varnames:
       - SEVEN_DAYS
@@ -8198,9 +8205,6 @@ components:
             timestamp and a scalar value (cannot be a string). Timestamps should be
             in POSIX time in seconds, and cannot be more than ten minutes in the future
             or more than one hour in the past.
-          example:
-          - - 1575317847
-            - 0.5
           items:
             $ref: '#/components/schemas/Point'
           type: array
@@ -8676,7 +8680,6 @@ components:
         assertions:
           default: []
           description: Array of assertions used for the test.
-          example: []
           items:
             $ref: '#/components/schemas/SyntheticsAssertion'
           type: array
@@ -8885,6 +8888,7 @@ components:
       description: Assertion operator to apply.
       enum:
       - validatesJSONPath
+      example: validatesJSONPath
       type: string
       x-enum-varnames:
       - VALIDATES_JSON_PATH
@@ -8930,6 +8934,7 @@ components:
       - validates
       - isInMoreThan
       - isInLessThan
+      example: contains
       type: string
       x-enum-varnames:
       - CONTAINS
@@ -8979,6 +8984,7 @@ components:
       - packetLossPercentage
       - packetsReceived
       - networkHop
+      example: statusCode
       type: string
       x-enum-varnames:
       - BODY
@@ -9015,14 +9021,15 @@ components:
       properties:
         description:
           description: Description of the error.
-          example: ''
+          example: Example error message
           type: string
         name:
           description: Name of the error.
-          example: ''
+          example: Failed test
           type: string
         status:
           description: Status Code of the error.
+          example: 500
           format: int64
           type: integer
         type:
@@ -9037,6 +9044,7 @@ components:
       enum:
       - network
       - js
+      example: network
       type: string
       x-enum-varnames:
       - NETWORK
@@ -9274,6 +9282,7 @@ components:
       - global
       - javascript
       - text
+      example: text
       type: string
       x-enum-varnames:
       - ELEMENT
@@ -9426,6 +9435,7 @@ components:
       enum:
       - global
       - text
+      example: text
       type: string
       x-enum-varnames:
       - GLOBAL
@@ -9526,6 +9536,7 @@ components:
       - edge.laptop_large
       - edge.tablet
       - edge.mobile_small
+      example: laptop_large
       type: string
       x-enum-varnames:
       - LAPTOP_LARGE
@@ -9656,6 +9667,7 @@ components:
       enum:
       - http_body
       - http_header
+      example: http_body
       type: string
       x-enum-varnames:
       - HTTP_BODY
@@ -9668,6 +9680,7 @@ components:
       - json_path
       - regex
       - x_path
+      example: raw
       type: string
       x-enum-varnames:
       - RAW
@@ -9732,6 +9745,7 @@ components:
       type: object
     SyntheticsParsingOptions:
       description: Parsing options for variables to extract.
+      example: {}
       properties:
         field:
           description: When type is `http_header`, name of the header to use to extract
@@ -10050,6 +10064,7 @@ components:
       - typeText
       - uploadFiles
       - wait
+      example: assertElementContent
       type: string
       x-enum-varnames:
       - ASSERT_CURRENT_URL
@@ -10513,6 +10528,7 @@ components:
       description: User locator used.
       enum:
       - user_locator
+      example: user_locator
       type: string
       x-enum-varnames:
       - USER_LOCATOR
@@ -13479,6 +13495,7 @@ components:
       - '>='
       - <
       - <=
+      example: '>'
       type: string
       x-enum-varnames:
       - GREATER_THAN
@@ -13676,6 +13693,7 @@ components:
       enum:
       - check
       - cluster
+      example: check
       type: string
       x-enum-varnames:
       - CHECK
@@ -13762,6 +13780,7 @@ components:
       description: Layout type of the group.
       enum:
       - ordered
+      example: ordered
       type: string
       x-enum-varnames:
       - ORDERED
@@ -13809,6 +13828,7 @@ components:
       - 6mo
       - 1y
       - alert
+      example: 5m
       type: string
       x-enum-varnames:
       - PAST_ONE_MINUTE
@@ -13970,6 +13990,7 @@ components:
       - black_on_light_yellow
       - black_on_light_green
       - black_on_light_red
+      example: blue
       type: string
       x-enum-varnames:
       - BLUE
@@ -14127,6 +14148,7 @@ components:
       enum:
       - timeseries
       - toplist
+      example: timeseries
       type: string
       x-enum-varnames:
       - TIMESERIES

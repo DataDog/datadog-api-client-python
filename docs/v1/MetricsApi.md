@@ -332,7 +332,7 @@ with ApiClient(configuration) as api_client:
                 interval=20,
                 metric="system.load.1",
                 points=[
-                    Point([[1575317847,0.5]]),
+                    Point([1.575317847E9,0.5]),
                 ],
                 tags=["environment:test"],
                 type="rate",

@@ -4587,6 +4587,7 @@ components:
       - medium
       - high
       - critical
+      example: critical
       type: string
       x-enum-varnames:
       - INFO
