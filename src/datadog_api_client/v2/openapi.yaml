@@ -9323,7 +9323,7 @@ tags:
 
     with these endpoints. The full list of API and application keys can be
 
-    seen on your [Datadog API page](https://app.datadoghq.com/account/settings#api).'
+    seen on your [Organization Settings page](https://app.datadoghq.com/organization-settings/api-keys).'
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/account_management/api-app-keys/

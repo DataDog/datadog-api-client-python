@@ -3,7 +3,8 @@ Feature: Key Management
   Manage your Datadog API and application keys. You need an API key and an
   application key for a user with the required permissions to interact with
   these endpoints. The full list of API and application keys can be seen on
-  your [Datadog API page](https://app.datadoghq.com/account/settings#api).
+  your [Organization Settings page](https://app.datadoghq.com/organization-
+  settings/api-keys).
 
   Background:
     Given a valid "apiKeyAuth" key in the system
