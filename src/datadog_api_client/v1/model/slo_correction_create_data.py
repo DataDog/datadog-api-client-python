@@ -72,15 +72,15 @@ class SLOCorrectionCreateData(ModelNormal):
         """
         lazy_import()
         return {
-            "attributes": (SLOCorrectionCreateRequestAttributes,),  # noqa: E501
             "type": (SLOCorrectionType,),  # noqa: E501
+            "attributes": (SLOCorrectionCreateRequestAttributes,),  # noqa: E501
         }
 
     discriminator = None
 
     attribute_map = {
-        "attributes": "attributes",  # noqa: E501
         "type": "type",  # noqa: E501
+        "attributes": "attributes",  # noqa: E501
     }
 
     read_only_vars = {}
@@ -88,8 +88,11 @@ class SLOCorrectionCreateData(ModelNormal):
     _composed_schemas = {}
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, *args, **kwargs):  # noqa: E501
         """SLOCorrectionCreateData - a model defined in OpenAPI
+
+        Args:
+            type (SLOCorrectionType):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -123,19 +126,21 @@ class SLOCorrectionCreateData(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (SLOCorrectionCreateRequestAttributes): [optional]  # noqa: E501
-            type (SLOCorrectionType): [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
+        self.type = type
+
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, *args, **kwargs):  # noqa: E501
         """Helper creating a new instance from a response."""
 
         self = super(SLOCorrectionCreateData, cls)._from_openapi_data(kwargs)
 
         self._check_pos_args(args)
 
+        self.type = type
         return self
