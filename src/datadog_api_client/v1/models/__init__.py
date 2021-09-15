@@ -103,6 +103,15 @@ from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_data_
 from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition import (
     FormulaAndFunctionApmDependencyStatsQueryDefinition,
 )
+from datadog_api_client.v1.model.formula_and_function_apm_resource_stat_name import (
+    FormulaAndFunctionApmResourceStatName,
+)
+from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_data_source import (
+    FormulaAndFunctionApmResourceStatsDataSource,
+)
+from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
+    FormulaAndFunctionApmResourceStatsQueryDefinition,
+)
 from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
 from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
     FormulaAndFunctionEventQueryDefinition,
