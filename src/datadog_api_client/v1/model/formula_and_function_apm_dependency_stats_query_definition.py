@@ -76,12 +76,12 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         return {
             "data_source": (FormulaAndFunctionApmDependencyStatsDataSource,),  # noqa: E501
             "env": (str,),  # noqa: E501
+            "name": (str,),  # noqa: E501
             "operation_name": (str,),  # noqa: E501
             "resource_name": (str,),  # noqa: E501
             "service": (str,),  # noqa: E501
             "stat": (FormulaAndFunctionApmDependencyStatName,),  # noqa: E501
             "is_upstream": (bool,),  # noqa: E501
-            "name": (str,),  # noqa: E501
             "primary_tag_name": (str,),  # noqa: E501
             "primary_tag_value": (str,),  # noqa: E501
         }
@@ -91,12 +91,12 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
     attribute_map = {
         "data_source": "data_source",  # noqa: E501
         "env": "env",  # noqa: E501
+        "name": "name",  # noqa: E501
         "operation_name": "operation_name",  # noqa: E501
         "resource_name": "resource_name",  # noqa: E501
         "service": "service",  # noqa: E501
         "stat": "stat",  # noqa: E501
         "is_upstream": "is_upstream",  # noqa: E501
-        "name": "name",  # noqa: E501
         "primary_tag_name": "primary_tag_name",  # noqa: E501
         "primary_tag_value": "primary_tag_value",  # noqa: E501
     }
@@ -106,12 +106,15 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
     _composed_schemas = {}
 
     @convert_js_args_to_python_args
-    def __init__(self, data_source, env, operation_name, resource_name, service, stat, *args, **kwargs):  # noqa: E501
+    def __init__(
+        self, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs
+    ):  # noqa: E501
         """FormulaAndFunctionApmDependencyStatsQueryDefinition - a model defined in OpenAPI
 
         Args:
             data_source (FormulaAndFunctionApmDependencyStatsDataSource):
             env (str): APM environment.
+            name (str): Name of query to use in formulas.
             operation_name (str): Name of operation on service.
             resource_name (str): APM resource.
             service (str): APM service.
@@ -149,7 +152,6 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_upstream (bool): Determines whether stats for upstream or downstream dependencies should be queried.. [optional]  # noqa: E501
-            name (str): Name of query to use in formulas.. [optional]  # noqa: E501
             primary_tag_name (str): The name of the second primary tag used within APM; required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog.. [optional]  # noqa: E501
             primary_tag_value (str): Filter APM data by the second primary tag. `primary_tag_name` must also be specified.. [optional]  # noqa: E501
         """
@@ -159,6 +161,7 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
 
         self.data_source = data_source
         self.env = env
+        self.name = name
         self.operation_name = operation_name
         self.resource_name = resource_name
         self.service = service
@@ -167,7 +170,7 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
     @classmethod
     @convert_js_args_to_python_args
     def _from_openapi_data(
-        cls, data_source, env, operation_name, resource_name, service, stat, *args, **kwargs
+        cls, data_source, env, name, operation_name, resource_name, service, stat, *args, **kwargs
     ):  # noqa: E501
         """Helper creating a new instance from a response."""
 
@@ -177,6 +180,7 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
 
         self.data_source = data_source
         self.env = env
+        self.name = name
         self.operation_name = operation_name
         self.resource_name = resource_name
         self.service = service

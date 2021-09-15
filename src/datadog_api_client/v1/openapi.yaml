@@ -2129,6 +2129,7 @@ components:
       - operation_name
       - resource_name
       - service
+      - name
       type: object
     FormulaAndFunctionApmResourceStatName:
       description: APM resource stat name.
