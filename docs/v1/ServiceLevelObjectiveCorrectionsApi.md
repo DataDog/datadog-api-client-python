@@ -14,7 +14,7 @@ Method | HTTP request | Description
 # **create_slo_correction**
 > SLOCorrectionResponse create_slo_correction(body)
 
-Create an SLO Correction
+Create an SLO Correction.
 
 ### Example
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 # **delete_slo_correction**
 > delete_slo_correction(slo_correction_id)
 
-Permanently delete the specified SLO correction object
+Permanently delete the specified SLO correction object.
 
 ### Example
 
@@ -114,7 +114,7 @@ configuration.unstable_operations["delete_slo_correction"] = True
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objective_corrections_api.ServiceLevelObjectiveCorrectionsApi(api_client)
-    slo_correction_id = "slo_correction_id_example"  # str | The ID of the SLO correction object
+    slo_correction_id = "slo_correction_id_example"  # str | The ID of the SLO correction object.
 
     # example passing only required values which don't have defaults set
     try:
@@ -129,7 +129,7 @@ with ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **slo_correction_id** | **str**| The ID of the SLO correction object |
+ **slo_correction_id** | **str**| The ID of the SLO correction object. |
 
 ### Return type
 
@@ -158,7 +158,7 @@ void (empty response body)
 # **get_slo_correction**
 > SLOCorrectionResponse get_slo_correction(slo_correction_id)
 
-Get an SLO correction
+Get an SLO correction.
 
 ### Example
 
@@ -179,7 +179,7 @@ configuration.unstable_operations["get_slo_correction"] = True
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objective_corrections_api.ServiceLevelObjectiveCorrectionsApi(api_client)
-    slo_correction_id = "slo_correction_id_example"  # str | The ID of the SLO correction object
+    slo_correction_id = "slo_correction_id_example"  # str | The ID of the SLO correction object.
 
     # example passing only required values which don't have defaults set
     try:
@@ -195,7 +195,7 @@ with ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **slo_correction_id** | **str**| The ID of the SLO correction object |
+ **slo_correction_id** | **str**| The ID of the SLO correction object. |
 
 ### Return type
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 # **list_slo_correction**
 > SLOCorrectionListResponse list_slo_correction()
 
-Get all Service Level Objective corrections
+Get all Service Level Objective corrections.
 
 ### Example
 
@@ -285,7 +285,7 @@ This endpoint does not need any parameter.
 # **update_slo_correction**
 > SLOCorrectionResponse update_slo_correction(slo_correction_id, body)
 
-Update the specified SLO correction object object
+Update the specified SLO correction object object.
 
 ### Example
 
@@ -306,7 +306,7 @@ configuration.unstable_operations["update_slo_correction"] = True
 with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = service_level_objective_corrections_api.ServiceLevelObjectiveCorrectionsApi(api_client)
-    slo_correction_id = "slo_correction_id_example"  # str | The ID of the SLO correction object
+    slo_correction_id = "slo_correction_id_example"  # str | The ID of the SLO correction object.
     body = SLOCorrectionUpdateRequest(
         data=SLOCorrectionUpdateData(
             attributes=SLOCorrectionUpdateRequestAttributes(
@@ -334,7 +334,7 @@ with ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **slo_correction_id** | **str**| The ID of the SLO correction object |
+ **slo_correction_id** | **str**| The ID of the SLO correction object. |
  **body** | [**SLOCorrectionUpdateRequest**](SLOCorrectionUpdateRequest.md)| The edited SLO correction object. |
 
 ### Return type

@@ -97,9 +97,9 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
 
         Args:
             category (SLOCorrectionCategory):
-            end (int): Ending time of the correction in epoch seconds
-            slo_id (str): ID of the SLO that this correction will be applied to
-            start (int): Starting time of the correction in epoch seconds
+            end (int): Ending time of the correction in epoch seconds.
+            slo_id (str): ID of the SLO that this correction will be applied to.
+            start (int): Starting time of the correction in epoch seconds.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -133,7 +133,7 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (str): Description of the correction being made.. [optional]  # noqa: E501
-            timezone (str): The timezone to display in the UI for the correction times (defaults to \"UTC\"). [optional]  # noqa: E501
+            timezone (str): The timezone to display in the UI for the correction times (defaults to \"UTC\").. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 

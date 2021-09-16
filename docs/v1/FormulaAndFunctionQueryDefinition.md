@@ -5,6 +5,8 @@ A formula and function query.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**FormulaAndFunctionApmDependencyStatsQueryDefinition** | [**FormulaAndFunctionApmDependencyStatsQueryDefinition**](FormulaAndFunctionApmDependencyStatsQueryDefinition.md) | Container class of the relevant properties. |
+**FormulaAndFunctionApmResourceStatsQueryDefinition** | [**FormulaAndFunctionApmResourceStatsQueryDefinition**](FormulaAndFunctionApmResourceStatsQueryDefinition.md) | Container class of the relevant properties. |
 **FormulaAndFunctionEventQueryDefinition** | [**FormulaAndFunctionEventQueryDefinition**](FormulaAndFunctionEventQueryDefinition.md) | Container class of the relevant properties. |
 **FormulaAndFunctionMetricQueryDefinition** | [**FormulaAndFunctionMetricQueryDefinition**](FormulaAndFunctionMetricQueryDefinition.md) | Container class of the relevant properties. |
 **FormulaAndFunctionProcessQueryDefinition** | [**FormulaAndFunctionProcessQueryDefinition**](FormulaAndFunctionProcessQueryDefinition.md) | Container class of the relevant properties. |

@@ -120,7 +120,7 @@ class SLOCorrectionListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([SLOCorrection]): The list of of SLO corrections objects. [optional]  # noqa: E501
+            data ([SLOCorrection]): The list of of SLO corrections objects.. [optional]  # noqa: E501
             meta (ResponseMetaAttributes): [optional]  # noqa: E501
         """
         super().__init__(kwargs)

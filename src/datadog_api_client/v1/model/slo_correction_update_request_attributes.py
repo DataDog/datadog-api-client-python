@@ -126,9 +126,9 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             category (SLOCorrectionCategory): [optional]  # noqa: E501
             description (str): Description of the correction being made.. [optional]  # noqa: E501
-            end (int): Ending time of the correction in epoch seconds. [optional]  # noqa: E501
-            start (int): Starting time of the correction in epoch seconds. [optional]  # noqa: E501
-            timezone (str): The timezone to display in the UI for the correction times (defaults to \"UTC\"). [optional]  # noqa: E501
+            end (int): Ending time of the correction in epoch seconds.. [optional]  # noqa: E501
+            start (int): Starting time of the correction in epoch seconds.. [optional]  # noqa: E501
+            timezone (str): The timezone to display in the UI for the correction times (defaults to \"UTC\").. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 

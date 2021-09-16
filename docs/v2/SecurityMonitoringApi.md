@@ -136,7 +136,7 @@ with ApiClient(configuration) as api_client:
                 notifications=[
                     "notifications_example",
                 ],
-                status=SecurityMonitoringRuleSeverity("info"),
+                status=SecurityMonitoringRuleSeverity("critical"),
             ),
         ],
         filters=[
@@ -898,7 +898,7 @@ with ApiClient(configuration) as api_client:
                 notifications=[
                     "notifications_example",
                 ],
-                status=SecurityMonitoringRuleSeverity("info"),
+                status=SecurityMonitoringRuleSeverity("critical"),
             ),
         ],
         filters=[

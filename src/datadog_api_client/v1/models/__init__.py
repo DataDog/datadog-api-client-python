@@ -94,6 +94,24 @@ from datadog_api_client.v1.model.event_stream_widget_definition import EventStre
 from datadog_api_client.v1.model.event_stream_widget_definition_type import EventStreamWidgetDefinitionType
 from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
 from datadog_api_client.v1.model.event_timeline_widget_definition_type import EventTimelineWidgetDefinitionType
+from datadog_api_client.v1.model.formula_and_function_apm_dependency_stat_name import (
+    FormulaAndFunctionApmDependencyStatName,
+)
+from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_data_source import (
+    FormulaAndFunctionApmDependencyStatsDataSource,
+)
+from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition import (
+    FormulaAndFunctionApmDependencyStatsQueryDefinition,
+)
+from datadog_api_client.v1.model.formula_and_function_apm_resource_stat_name import (
+    FormulaAndFunctionApmResourceStatName,
+)
+from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_data_source import (
+    FormulaAndFunctionApmResourceStatsDataSource,
+)
+from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
+    FormulaAndFunctionApmResourceStatsQueryDefinition,
+)
 from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
 from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
     FormulaAndFunctionEventQueryDefinition,

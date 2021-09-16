@@ -222,7 +222,7 @@ with ApiClient(configuration) as api_client:
                     id="id_example",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
-                    type=SyntheticsConfigVariableType("global"),
+                    type=SyntheticsConfigVariableType("text"),
                 ),
             ],
             request=SyntheticsTestRequest(
@@ -429,7 +429,7 @@ with ApiClient(configuration) as api_client:
                     id="id_example",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
-                    type=SyntheticsConfigVariableType("global"),
+                    type=SyntheticsConfigVariableType("text"),
                 ),
             ],
             request=SyntheticsTestRequest(
@@ -474,7 +474,7 @@ with ApiClient(configuration) as api_client:
                     id="id_example",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
-                    type=SyntheticsBrowserVariableType("element"),
+                    type=SyntheticsBrowserVariableType("text"),
                 ),
             ],
         ),
@@ -512,7 +512,7 @@ with ApiClient(configuration) as api_client:
                 name="name_example",
                 params={},
                 timeout=1,
-                type=SyntheticsStepType("assertCurrentUrl"),
+                type=SyntheticsStepType("assertElementContent"),
             ),
         ],
         tags=[
@@ -1806,7 +1806,7 @@ with ApiClient(configuration) as api_client:
                     id="id_example",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
-                    type=SyntheticsConfigVariableType("global"),
+                    type=SyntheticsConfigVariableType("text"),
                 ),
             ],
             request=SyntheticsTestRequest(
@@ -2015,7 +2015,7 @@ with ApiClient(configuration) as api_client:
                     id="id_example",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
-                    type=SyntheticsConfigVariableType("global"),
+                    type=SyntheticsConfigVariableType("text"),
                 ),
             ],
             request=SyntheticsTestRequest(
@@ -2060,7 +2060,7 @@ with ApiClient(configuration) as api_client:
                     id="id_example",
                     name="VARIABLE_NAME",
                     pattern="pattern_example",
-                    type=SyntheticsBrowserVariableType("element"),
+                    type=SyntheticsBrowserVariableType("text"),
                 ),
             ],
         ),
@@ -2098,7 +2098,7 @@ with ApiClient(configuration) as api_client:
                 name="name_example",
                 params={},
                 timeout=1,
-                type=SyntheticsStepType("assertCurrentUrl"),
+                type=SyntheticsStepType("assertElementContent"),
             ),
         ],
         tags=[

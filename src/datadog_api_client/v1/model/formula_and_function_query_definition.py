@@ -19,6 +19,18 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition import (
+        FormulaAndFunctionApmDependencyStatsQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_apm_resource_stat_name import (
+        FormulaAndFunctionApmResourceStatName,
+    )
+    from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_data_source import (
+        FormulaAndFunctionApmResourceStatsDataSource,
+    )
+    from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
+        FormulaAndFunctionApmResourceStatsQueryDefinition,
+    )
     from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
         FormulaAndFunctionEventQueryDefinition,
     )
@@ -28,28 +40,26 @@ def lazy_import():
     from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
         FormulaAndFunctionEventQueryDefinitionSearch,
     )
-    from datadog_api_client.v1.model.formula_and_function_event_query_group_by import (
-        FormulaAndFunctionEventQueryGroupBy,
-    )
     from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
     from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
         FormulaAndFunctionMetricQueryDefinition,
-    )
-    from datadog_api_client.v1.model.formula_and_function_process_query_data_source import (
-        FormulaAndFunctionProcessQueryDataSource,
     )
     from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
         FormulaAndFunctionProcessQueryDefinition,
     )
     from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 
+    globals()[
+        "FormulaAndFunctionApmDependencyStatsQueryDefinition"
+    ] = FormulaAndFunctionApmDependencyStatsQueryDefinition
+    globals()["FormulaAndFunctionApmResourceStatName"] = FormulaAndFunctionApmResourceStatName
+    globals()["FormulaAndFunctionApmResourceStatsDataSource"] = FormulaAndFunctionApmResourceStatsDataSource
+    globals()["FormulaAndFunctionApmResourceStatsQueryDefinition"] = FormulaAndFunctionApmResourceStatsQueryDefinition
     globals()["FormulaAndFunctionEventQueryDefinition"] = FormulaAndFunctionEventQueryDefinition
     globals()["FormulaAndFunctionEventQueryDefinitionCompute"] = FormulaAndFunctionEventQueryDefinitionCompute
     globals()["FormulaAndFunctionEventQueryDefinitionSearch"] = FormulaAndFunctionEventQueryDefinitionSearch
-    globals()["FormulaAndFunctionEventQueryGroupBy"] = FormulaAndFunctionEventQueryGroupBy
     globals()["FormulaAndFunctionMetricAggregation"] = FormulaAndFunctionMetricAggregation
     globals()["FormulaAndFunctionMetricQueryDefinition"] = FormulaAndFunctionMetricQueryDefinition
-    globals()["FormulaAndFunctionProcessQueryDataSource"] = FormulaAndFunctionProcessQueryDataSource
     globals()["FormulaAndFunctionProcessQueryDefinition"] = FormulaAndFunctionProcessQueryDefinition
     globals()["QuerySortOrder"] = QuerySortOrder
 
@@ -140,7 +150,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregator (FormulaAndFunctionMetricAggregation): [optional]  # noqa: E501
-            group_by ([FormulaAndFunctionEventQueryGroupBy]): Group by options.. [optional]  # noqa: E501
+            group_by ([str]): Array of fields to group results by.. [optional]  # noqa: E501
             indexes ([str]): An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.. [optional]  # noqa: E501
             search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]  # noqa: E501
             is_normalized_cpu (bool): Whether to normalize the CPU percentages.. [optional]  # noqa: E501
@@ -148,11 +158,19 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
             sort (QuerySortOrder): [optional]  # noqa: E501
             tag_filters ([str]): An array of tags to filter by.. [optional]  # noqa: E501
             text_filter (str): Text to use as filter.. [optional]  # noqa: E501
-            data_source (FormulaAndFunctionProcessQueryDataSource): [optional]  # noqa: E501
-            name (str): Name of query for use in formulas.. [optional]  # noqa: E501
+            is_upstream (bool): Determines whether stats for upstream or downstream dependencies should be queried.. [optional]  # noqa: E501
+            primary_tag_name (str): Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog. [optional]  # noqa: E501
+            primary_tag_value (str): Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.. [optional]  # noqa: E501
+            data_source (FormulaAndFunctionApmResourceStatsDataSource): [optional]  # noqa: E501
+            name (str): Name of this query to use in formulas.. [optional]  # noqa: E501
             query (str): Metrics query definition.. [optional]  # noqa: E501
             compute (FormulaAndFunctionEventQueryDefinitionCompute): [optional]  # noqa: E501
             metric (str): Process metric name.. [optional]  # noqa: E501
+            env (str): APM environment.. [optional]  # noqa: E501
+            operation_name (str): Name of operation on service.. [optional]  # noqa: E501
+            resource_name (str): APM resource name.. [optional]  # noqa: E501
+            service (str): APM service name.. [optional]  # noqa: E501
+            stat (FormulaAndFunctionApmResourceStatName): [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
@@ -183,6 +201,8 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
             "anyOf": [],
             "allOf": [],
             "oneOf": [
+                FormulaAndFunctionApmDependencyStatsQueryDefinition,
+                FormulaAndFunctionApmResourceStatsQueryDefinition,
                 FormulaAndFunctionEventQueryDefinition,
                 FormulaAndFunctionMetricQueryDefinition,
                 FormulaAndFunctionProcessQueryDefinition,
