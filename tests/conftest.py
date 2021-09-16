@@ -40,7 +40,6 @@ from pytest_bdd import (
     then,
     when,
 )
-from vcr.errors import CannotOverwriteExistingCassetteException
 
 logging.basicConfig()
 
@@ -263,6 +262,13 @@ def freezer(default_cassette_name, record_mode, vcr):
         with freeze_file.open("r") as f:
             freeze_at = f.readline().strip()
 
+        if not pathlib.Path(vcr._path).exists():
+            msg = (
+                "Cassette '{}' not found: create one setting `RECORD=true` or "
+                "ignore it using `RECORD=none`".format(vcr._path)
+            )
+            raise RuntimeError(msg)
+
     return freeze_time(parser.isoparse(freeze_at))
 
 
@@ -431,16 +437,7 @@ def build_given(version, operation):
                 for p in operation.get("parameters", [])
             }
             kwargs["_check_input_type"] = False
-            try:
-                result = operation_method(**kwargs)
-            except CannotOverwriteExistingCassetteException as e:
-                if os.getenv("RECORD", "false").lower() == "false":
-                    msg = (
-                        "Cassette '{}' not found: create one setting `RECORD=true` or "
-                        "ignore it using `RECORD=none`".format(e.cassette._path)
-                    )
-                    raise RuntimeError(msg) from e
-                raise e
+            result = operation_method(**kwargs)
             client.last_response.urllib3_response.close()
 
             # register undo method
