@@ -20,6 +20,29 @@ try:
 
     config.httplib["distributed_tracing"] = True
     patch(httplib=True)
+    
+    from pytest import hookimpl
+
+    @hookimpl(hookwrapper=True)
+    def pytest_terminal_summary(terminalreporter, exitstatus, config):
+        yield  # do normal output
+
+        ci_pipeline_id = os.getenv("GITHUB_RUN_ID", None)
+        dd_service = os.getenv("DD_SERVICE", None)
+        if ci_pipeline_id and dd_service:
+            terminalreporter.ensure_newline()
+            terminalreporter.section("test reports", purple=True, bold=True)
+            terminalreporter.line(
+                "* View test APM traces and detailed time reports on Datadog (can take a few minutes to become available):"
+            )
+            terminalreporter.line(
+                "* https://app.datadoghq.com/ci/test-runs?query="
+                "%40test.service%3A{}%20%40ci.pipeline.id%3A{}&index=citest".format(
+                    dd_service, ci_pipeline_id
+                )
+            )
+
+
 except ImportError:
     pass
 
@@ -62,7 +85,10 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
 
     context = tracer.get_call_context()
     span = tracer.start_span(
-        step.type, resource=step.name, span_type=step.type, child_of=context,
+        step.type,
+        resource=step.name,
+        span_type=step.type,
+        child_of=context,
     )
     setattr(step_func, "__dd_span__", span)
 
@@ -208,9 +234,11 @@ def context(vcr, unique, unique_lower, freezer):
 @pytest.fixture(scope="session")
 def record_mode(request):
     """Manage compatibility with DD client libraries."""
-    return {"false": "none", "true": "rewrite", "none": "new_episodes",}[
-        os.getenv("RECORD", "false").lower()
-    ]
+    return {
+        "false": "none",
+        "true": "rewrite",
+        "none": "new_episodes",
+    }[os.getenv("RECORD", "false").lower()]
 
 
 def _disable_recording():
