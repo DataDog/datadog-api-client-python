@@ -27,6 +27,9 @@ def lazy_import():
     from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
     from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
     from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
+    from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
+    from datadog_api_client.v1.model.funnel_widget_definition_type import FunnelWidgetDefinitionType
+    from datadog_api_client.v1.model.funnel_widget_request import FunnelWidgetRequest
     from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
     from datadog_api_client.v1.model.geomap_widget_definition_view import GeomapWidgetDefinitionView
     from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
@@ -36,8 +39,6 @@ def lazy_import():
     from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
     from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
     from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
-    from datadog_api_client.v1.model.list_stream_widget_definition_type import ListStreamWidgetDefinitionType
-    from datadog_api_client.v1.model.list_stream_widget_request import ListStreamWidgetRequest
     from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
     from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
     from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
@@ -90,6 +91,9 @@ def lazy_import():
     globals()["EventStreamWidgetDefinition"] = EventStreamWidgetDefinition
     globals()["EventTimelineWidgetDefinition"] = EventTimelineWidgetDefinition
     globals()["FreeTextWidgetDefinition"] = FreeTextWidgetDefinition
+    globals()["FunnelWidgetDefinition"] = FunnelWidgetDefinition
+    globals()["FunnelWidgetDefinitionType"] = FunnelWidgetDefinitionType
+    globals()["FunnelWidgetRequest"] = FunnelWidgetRequest
     globals()["GeomapWidgetDefinition"] = GeomapWidgetDefinition
     globals()["GeomapWidgetDefinitionView"] = GeomapWidgetDefinitionView
     globals()["GroupWidgetDefinition"] = GroupWidgetDefinition
@@ -99,8 +103,6 @@ def lazy_import():
     globals()["IFrameWidgetDefinition"] = IFrameWidgetDefinition
     globals()["ImageWidgetDefinition"] = ImageWidgetDefinition
     globals()["ListStreamWidgetDefinition"] = ListStreamWidgetDefinition
-    globals()["ListStreamWidgetDefinitionType"] = ListStreamWidgetDefinitionType
-    globals()["ListStreamWidgetRequest"] = ListStreamWidgetRequest
     globals()["LogStreamWidgetDefinition"] = LogStreamWidgetDefinition
     globals()["MonitorSummaryWidgetDefinition"] = MonitorSummaryWidgetDefinition
     globals()["NoteWidgetDefinition"] = NoteWidgetDefinition
@@ -240,9 +242,9 @@ class WidgetDefinition(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             time (WidgetTime): [optional]  # noqa: E501
-            title (str): Title of the widget.. [optional]  # noqa: E501
+            title (str): The title of the widget.. [optional]  # noqa: E501
             title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
+            title_size (str): The size of the title.. [optional]  # noqa: E501
             precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]  # noqa: E501
             text_align (WidgetTextAlign): [optional]  # noqa: E501
             unit (str): Unit to display with the value.. [optional]  # noqa: E501
@@ -312,9 +314,9 @@ class WidgetDefinition(ModelComposed):
             legend_layout (TimeseriesWidgetLegendLayout): [optional]  # noqa: E501
             right_yaxis (WidgetAxis): [optional]  # noqa: E501
             alert_id (str): ID of the alert to use in the widget.. [optional]  # noqa: E501
-            type (ListStreamWidgetDefinitionType): [optional]  # noqa: E501
+            type (FunnelWidgetDefinitionType): [optional]  # noqa: E501
             viz_type (WidgetVizType): [optional]  # noqa: E501
-            requests ([ListStreamWidgetRequest]): Request payload used to query items.. [optional]  # noqa: E501
+            requests ([FunnelWidgetRequest]): Request payload used to query items.. [optional]  # noqa: E501
             check (str): Name of the check to use in the widget.. [optional]  # noqa: E501
             group_by (TreeMapGroupBy): [optional]  # noqa: E501
             grouping (WidgetGrouping): [optional]  # noqa: E501
@@ -371,6 +373,7 @@ class WidgetDefinition(ModelComposed):
                 EventStreamWidgetDefinition,
                 EventTimelineWidgetDefinition,
                 FreeTextWidgetDefinition,
+                FunnelWidgetDefinition,
                 GeomapWidgetDefinition,
                 GroupWidgetDefinition,
                 HeatMapWidgetDefinition,
