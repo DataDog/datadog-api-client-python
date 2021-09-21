@@ -73,6 +73,12 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].primary_tag_name" is equal to "datacenter"
     And the response "widgets[0].definition.requests[0].queries[0].operation_name" is equal to "cassandra.query"
 
+  Scenario: Create a new dashboard with funnel widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with funnel widget","widgets": [{"definition": {"type": "funnel","requests": [{"query":{"data_source":"rum","query_string":"","steps":[]},"request_type":"funnel"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+
   Scenario: Create a new dashboard with list_stream widget
     Given new "CreateDashboard" request
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"issue_stream","query_string":""},"response_format":"event_list"}]}}]}
