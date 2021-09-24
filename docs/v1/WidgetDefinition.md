@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **EventStreamWidgetDefinition** | [**EventStreamWidgetDefinition**](EventStreamWidgetDefinition.md) | Container class of the relevant properties. |
 **EventTimelineWidgetDefinition** | [**EventTimelineWidgetDefinition**](EventTimelineWidgetDefinition.md) | Container class of the relevant properties. |
 **FreeTextWidgetDefinition** | [**FreeTextWidgetDefinition**](FreeTextWidgetDefinition.md) | Container class of the relevant properties. |
+**FunnelWidgetDefinition** | [**FunnelWidgetDefinition**](FunnelWidgetDefinition.md) | Container class of the relevant properties. |
 **GeomapWidgetDefinition** | [**GeomapWidgetDefinition**](GeomapWidgetDefinition.md) | Container class of the relevant properties. |
 **GroupWidgetDefinition** | [**GroupWidgetDefinition**](GroupWidgetDefinition.md) | Container class of the relevant properties. |
 **HeatMapWidgetDefinition** | [**HeatMapWidgetDefinition**](HeatMapWidgetDefinition.md) | Container class of the relevant properties. |

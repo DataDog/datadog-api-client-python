@@ -142,6 +142,13 @@ from datadog_api_client.v1.model.formula_and_function_query_definition import Fo
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
 from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
 from datadog_api_client.v1.model.free_text_widget_definition_type import FreeTextWidgetDefinitionType
+from datadog_api_client.v1.model.funnel_query import FunnelQuery
+from datadog_api_client.v1.model.funnel_request_type import FunnelRequestType
+from datadog_api_client.v1.model.funnel_source import FunnelSource
+from datadog_api_client.v1.model.funnel_steps import FunnelSteps
+from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
+from datadog_api_client.v1.model.funnel_widget_definition_type import FunnelWidgetDefinitionType
+from datadog_api_client.v1.model.funnel_widget_request import FunnelWidgetRequest
 from datadog_api_client.v1.model.gcp_account import GCPAccount
 from datadog_api_client.v1.model.gcp_account_list_response import GCPAccountListResponse
 from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
