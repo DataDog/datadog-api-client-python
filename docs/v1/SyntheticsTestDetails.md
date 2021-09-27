@@ -6,6 +6,7 @@ Object containing details about your Synthetic test.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | [**SyntheticsTestConfig**](SyntheticsTestConfig.md) |  | [optional] 
+**creator** | [**Creator**](Creator.md) |  | [optional] 
 **locations** | **[str]** | Array of locations used to run the test. | [optional] 
 **message** | **str** | Notification message associated with the test. | [optional] 
 **monitor_id** | **int** | The associated monitor ID. | [optional] [readonly] 
