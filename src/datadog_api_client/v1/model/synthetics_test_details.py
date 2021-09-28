@@ -19,6 +19,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.creator import Creator
     from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
     from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestConfig
     from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
@@ -26,6 +27,7 @@ def lazy_import():
     from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
     from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
 
+    globals()["Creator"] = Creator
     globals()["SyntheticsStep"] = SyntheticsStep
     globals()["SyntheticsTestConfig"] = SyntheticsTestConfig
     globals()["SyntheticsTestDetailsSubType"] = SyntheticsTestDetailsSubType
@@ -79,6 +81,7 @@ class SyntheticsTestDetails(ModelNormal):
         lazy_import()
         return {
             "config": (SyntheticsTestConfig,),  # noqa: E501
+            "creator": (Creator,),  # noqa: E501
             "locations": ([str],),  # noqa: E501
             "message": (str,),  # noqa: E501
             "monitor_id": (int,),  # noqa: E501
@@ -96,6 +99,7 @@ class SyntheticsTestDetails(ModelNormal):
 
     attribute_map = {
         "config": "config",  # noqa: E501
+        "creator": "creator",  # noqa: E501
         "locations": "locations",  # noqa: E501
         "message": "message",  # noqa: E501
         "monitor_id": "monitor_id",  # noqa: E501
@@ -152,6 +156,7 @@ class SyntheticsTestDetails(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             config (SyntheticsTestConfig): [optional]  # noqa: E501
+            creator (Creator): [optional]  # noqa: E501
             locations ([str]): Array of locations used to run the test.. [optional]  # noqa: E501
             message (str): Notification message associated with the test.. [optional]  # noqa: E501
             monitor_id (int): The associated monitor ID.. [optional]  # noqa: E501
