@@ -92,7 +92,10 @@ class IncidentResponseAttributes(ModelNormal):
             ),  # noqa: E501
             "fields": ({str: (IncidentFieldAttributes,)},),  # noqa: E501
             "modified": (datetime,),  # noqa: E501
-            "notification_handles": ([IncidentNotificationHandle],),  # noqa: E501
+            "notification_handles": (
+                [IncidentNotificationHandle],
+                none_type,
+            ),  # noqa: E501
             "postmortem_id": (str,),  # noqa: E501
             "public_id": (int,),  # noqa: E501
             "resolved": (
@@ -187,7 +190,7 @@ class IncidentResponseAttributes(ModelNormal):
             detected (datetime, none_type): Timestamp when the incident was detected.. [optional]  # noqa: E501
             fields ({str: (IncidentFieldAttributes,)}): A condensed view of the user-defined fields attached to incidents.. [optional]  # noqa: E501
             modified (datetime): Timestamp when the incident was last modified.. [optional]  # noqa: E501
-            notification_handles ([IncidentNotificationHandle]): Notification handles that will be notified of the incident during update.. [optional]  # noqa: E501
+            notification_handles ([IncidentNotificationHandle], none_type): Notification handles that will be notified of the incident during update.. [optional]  # noqa: E501
             postmortem_id (str): The UUID of the postmortem object attached to the incident.. [optional]  # noqa: E501
             public_id (int): The monotonically increasing integer ID for the incident.. [optional]  # noqa: E501
             resolved (datetime, none_type): Timestamp when the incident's state was set to resolved.. [optional]  # noqa: E501
