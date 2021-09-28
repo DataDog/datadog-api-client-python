@@ -40,8 +40,8 @@ class ContentEncoding(ModelSimple):
 
     allowed_values = {
         ("value",): {
-            "gzip": "gzip",
-            "deflate": "deflate",
+            "GZIP": "gzip",
+            "DEFLATE": "deflate",
         },
     }
 
