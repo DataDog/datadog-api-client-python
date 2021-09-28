@@ -1,7 +1,7 @@
 @endpoint(downtimes) @endpoint(downtimes-v1)
 Feature: Downtimes
-  [Downtiming](https://docs.datadoghq.com/monitors/downtimes) gives you
-  greater control over monitor notifications by allowing you to globally
+  [Downtiming](https://docs.datadoghq.com/monitors/notify/downtimes) gives
+  you greater control over monitor notifications by allowing you to globally
   exclude scopes from alerting. Downtime settings, which can be scheduled
   with start and end times, prevent all alerting related to specified
   Datadog tags.
