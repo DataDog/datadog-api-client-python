@@ -534,6 +534,9 @@ Class | Method | HTTP request | Description
  - **dashboards_read**: The ability to view dashboards.
  - **dashboards_write**: The ability to create and change dashboards.
  - **events_read**: The ability to read events data.
+ - **incident_read**: The ability to view incidents in Datadog.
+ - **incident_settings_write**: The ability to configure incident settings.
+ - **incident_write**: The ability to create, view, and manage incidents in Datadog.
  - **metrics_read**: The ability to view custom metrics.
  - **security_monitoring_rules_read**: The ability to read Detection rules.
  - **security_monitoring_rules_write**: The ability to create and edit Detection rules.

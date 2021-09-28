@@ -15652,7 +15652,8 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - monitors_read
       summary: Get all downtimes
       tags:
       - Downtimes
@@ -15823,7 +15824,8 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - monitors_read
       summary: Get a downtime
       tags:
       - Downtimes
