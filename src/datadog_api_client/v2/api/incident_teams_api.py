@@ -39,7 +39,7 @@ class IncidentTeamsApi(object):
         self._create_incident_team_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTeamResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/teams",
                 "operation_id": "create_incident_team",
                 "http_method": "POST",
@@ -75,7 +75,7 @@ class IncidentTeamsApi(object):
         self._delete_incident_team_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/teams/{team_id}",
                 "operation_id": "delete_incident_team",
                 "http_method": "DELETE",
@@ -116,7 +116,7 @@ class IncidentTeamsApi(object):
         self._get_incident_team_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTeamResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/teams/{team_id}",
                 "operation_id": "get_incident_team",
                 "http_method": "GET",
@@ -161,7 +161,7 @@ class IncidentTeamsApi(object):
         self._list_incident_teams_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTeamsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/teams",
                 "operation_id": "list_incident_teams",
                 "http_method": "GET",
@@ -212,7 +212,7 @@ class IncidentTeamsApi(object):
         self._update_incident_team_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTeamResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/teams/{team_id}",
                 "operation_id": "update_incident_team",
                 "http_method": "PATCH",

@@ -22,6 +22,22 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
+  @integration-only
+  Scenario: Send deflate logs returns "Response from server (always 200 empty JSON)." response
+    Given new "SubmitLog" request
+    And body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
+    And request contains "content_encoding" parameter with value "deflate"
+    When the request is sent
+    Then the response status is 200 Response from server (always 200 empty JSON).
+
+  @integration-only
+  Scenario: Send gzip logs returns "Response from server (always 200 empty JSON)." response
+    Given new "SubmitLog" request
+    And body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
+    And request contains "content_encoding" parameter with value "gzip"
+    When the request is sent
+    Then the response status is 200 Response from server (always 200 empty JSON).
+
   Scenario: Send logs returns "Response from server (always 200 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
