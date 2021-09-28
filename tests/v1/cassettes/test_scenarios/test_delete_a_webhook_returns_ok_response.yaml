@@ -1,40 +1,47 @@
 interactions:
 - request:
-    body: '{"name": "Test-Delete_a_webhook_returns_OK_response-1628771821", "url":
-      "http://example.com/webhook"}'
+    body: '{"name":"Test-Delete_a_webhook_returns_OK_response-1628785715","url":"http://example.com/webhook"}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '98'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - CreateWebhooksIntegration
-      User-Agent:
-      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
-        x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.4+dev (node 16.3.0; os Darwin; arch
+        x64)
+      x-datadog-parent-id:
+      - '3089514925855613338'
+      x-datadog-trace-id:
+      - '3089514925855613338'
     method: POST
     uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/webhooks
   response:
     body:
-      string: '{"encode_as":"json","url":"http://example.com/webhook","custom_headers":null,"name":"Test-Delete_a_webhook_returns_OK_response-1628771821","payload":"{\"body\":
+      string: '{"encode_as":"json","url":"http://example.com/webhook","custom_headers":null,"name":"Test-Delete_a_webhook_returns_OK_response-1628785715","payload":"{\"body\":
         \"$EVENT_MSG\", \"last_updated\": \"$LAST_UPDATED\", \"event_type\": \"$EVENT_TYPE\",
         \"title\": \"$EVENT_TITLE\", \"date\": \"$DATE\", \"org\": {\"id\": \"$ORG_ID\",
         \"name\": \"$ORG_NAME\"}, \"id\": \"$ID\"}"}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '372'
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 12 Aug 2021 12:37:01 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '372'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 12 Aug 2021 16:28:35 GMT
       location:
-      - https://app.datadoghq.com/api/v1/integration/webhooks/configuration/webhooks/Test-Delete_a_webhook_returns_OK_response-1628771821
+      - https://app.datadoghq.com/api/v1/integration/webhooks/configuration/webhooks/Test-Delete_a_webhook_returns_OK_response-1628785715
       pragma:
       - no-cache
       strict-transport-security:
@@ -49,35 +56,39 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteWebhooksIntegration
-      User-Agent:
-      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
-        x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.4+dev (node 16.3.0; os Darwin; arch
+        x64)
+      x-datadog-parent-id:
+      - '3089514925855613338'
+      x-datadog-trace-id:
+      - '3089514925855613338'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/webhooks/Test-Delete_a_webhook_returns_OK_response-1628771821
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/webhooks/Test-Delete_a_webhook_returns_OK_response-1628785715
   response:
     body:
       string: '{}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '2'
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 12 Aug 2021 12:37:02 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '2'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 12 Aug 2021 16:28:36 GMT
       pragma:
       - no-cache
-      strict-transport-security:
-      - max-age=15724800;
       x-content-type-options:
       - nosniff
       x-frame-options:
@@ -88,31 +99,37 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteWebhooksIntegration
-      User-Agent:
-      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
-        x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.4+dev (node 16.3.0; os Darwin; arch
+        x64)
+      x-datadog-parent-id:
+      - '3089514925855613338'
+      x-datadog-trace-id:
+      - '3089514925855613338'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/webhooks/Test-Delete_a_webhook_returns_OK_response-1628771821
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/webhooks/Test-Delete_a_webhook_returns_OK_response-1628785715
   response:
     body:
       string: '{"errors": ["Webhook does not exist"]}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 12 Aug 2021 12:37:02 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '38'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 12 Aug 2021 16:28:36 GMT
       pragma:
       - no-cache
       strict-transport-security:

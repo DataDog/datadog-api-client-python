@@ -66,9 +66,15 @@ class NotebookAuthor(ModelNormal):
             "email": (str,),  # noqa: E501
             "handle": (str,),  # noqa: E501
             "icon": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
+            "name": (
+                str,
+                none_type,
+            ),  # noqa: E501
             "status": (str,),  # noqa: E501
-            "title": (str,),  # noqa: E501
+            "title": (
+                str,
+                none_type,
+            ),  # noqa: E501
             "verified": (bool,),  # noqa: E501
         }
 
@@ -130,9 +136,9 @@ class NotebookAuthor(ModelNormal):
             email (str): Email of the user.. [optional]  # noqa: E501
             handle (str): Handle of the user.. [optional]  # noqa: E501
             icon (str): URL of the user's icon.. [optional]  # noqa: E501
-            name (str): Name of the user.. [optional]  # noqa: E501
+            name (str, none_type): Name of the user.. [optional]  # noqa: E501
             status (str): Status of the user.. [optional]  # noqa: E501
-            title (str): Title of the user.. [optional]  # noqa: E501
+            title (str, none_type): Title of the user.. [optional]  # noqa: E501
             verified (bool): Whether the user is verified.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)

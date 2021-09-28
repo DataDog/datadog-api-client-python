@@ -5,7 +5,7 @@ Object containing all metric names returned and their associated metadata.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aggr** | **str** | Aggregation type. | [optional] [readonly] 
+**aggr** | **str, none_type** | Aggregation type. | [optional] [readonly] 
 **display_name** | **str** | Display name of the metric. | [optional] [readonly] 
 **end** | **int** | End of the time window, milliseconds since Unix epoch. | [optional] [readonly] 
 **expression** | **str** | Metric expression. | [optional] [readonly] 

@@ -71,7 +71,10 @@ class IncidentFieldAttributesSingleValue(ModelNormal):
         lazy_import()
         return {
             "type": (IncidentFieldAttributesSingleValueType,),  # noqa: E501
-            "value": (str,),  # noqa: E501
+            "value": (
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     discriminator = None
@@ -121,7 +124,7 @@ class IncidentFieldAttributesSingleValue(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (IncidentFieldAttributesSingleValueType): [optional]  # noqa: E501
-            value (str): The single value selected for this field.. [optional]  # noqa: E501
+            value (str, none_type): The single value selected for this field.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
