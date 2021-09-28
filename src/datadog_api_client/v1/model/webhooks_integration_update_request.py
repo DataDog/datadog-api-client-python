@@ -129,7 +129,7 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             custom_headers (str): If `null`, uses no header. If given a JSON payload, these will be headers attached to your webhook.. [optional]  # noqa: E501
             encode_as (WebhooksIntegrationEncoding): [optional]  # noqa: E501
-            name (str): The name of the webhook. It corresponds with `<WEBHOOK_NAME>`. Learn more on how to use it in [monitor notifications](https://docs.datadoghq.com/monitors/notifications).. [optional]  # noqa: E501
+            name (str): The name of the webhook. It corresponds with `<WEBHOOK_NAME>`. Learn more on how to use it in [monitor notifications](https://docs.datadoghq.com/monitors/notify).. [optional]  # noqa: E501
             payload (str, none_type): If `null`, uses the default payload. If given a JSON payload, the webhook returns the payload specified by the given payload. [Webhooks variable usage](https://docs.datadoghq.com/integrations/webhooks/#usage).. [optional]  # noqa: E501
             url (str): URL of the webhook.. [optional]  # noqa: E501
         """

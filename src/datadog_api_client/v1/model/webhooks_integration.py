@@ -100,7 +100,7 @@ class WebhooksIntegration(ModelNormal):
         """WebhooksIntegration - a model defined in OpenAPI
 
         Args:
-            name (str): The name of the webhook. It corresponds with `<WEBHOOK_NAME>`. Learn more on how to use it in [monitor notifications](https://docs.datadoghq.com/monitors/notifications).
+            name (str): The name of the webhook. It corresponds with `<WEBHOOK_NAME>`. Learn more on how to use it in [monitor notifications](https://docs.datadoghq.com/monitors/notify).
             url (str): URL of the webhook.
 
         Keyword Args:
