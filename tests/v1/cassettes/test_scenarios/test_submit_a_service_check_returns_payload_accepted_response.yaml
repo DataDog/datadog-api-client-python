@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '[{"check":"app.ok","host_name":"host","status":0,"tags":["test:TestSubmitaServiceCheckreturnsPayloadacceptedresponse1618491676"]}]'
+    body: '[{"check":"app.ok","host_name":"host","status":0,"tags":["test:TestSubmitaServiceCheckreturnsPayloadacceptedresponse1632824739"]}]'
     headers:
       accept:
       - application/json, */*;q=0.8
@@ -13,11 +13,11 @@ interactions:
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.17.6; os Linux; arch x64)
       x-datadog-parent-id:
-      - '5095942047695828255'
+      - '7855611061356401524'
       x-datadog-trace-id:
-      - '5095942047695828255'
+      - '1434154161010514072'
     method: POST
     uri: https://api.datadoghq.com/api/v1/check_run
   response:
@@ -33,7 +33,7 @@ interactions:
       content-type:
       - text/json
       date:
-      - Thu, 15 Apr 2021 13:01:16 GMT
+      - Tue, 28 Sep 2021 10:25:39 GMT
       strict-transport-security:
       - max-age=15724800;
       x-content-type-options:

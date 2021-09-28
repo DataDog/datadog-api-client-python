@@ -75,7 +75,10 @@ class MetricsQueryMetadata(ModelNormal):
         """
         lazy_import()
         return {
-            "aggr": (str,),  # noqa: E501
+            "aggr": (
+                str,
+                none_type,
+            ),  # noqa: E501
             "display_name": (str,),  # noqa: E501
             "end": (int,),  # noqa: E501
             "expression": (str,),  # noqa: E501
@@ -161,7 +164,7 @@ class MetricsQueryMetadata(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggr (str): Aggregation type.. [optional]  # noqa: E501
+            aggr (str, none_type): Aggregation type.. [optional]  # noqa: E501
             display_name (str): Display name of the metric.. [optional]  # noqa: E501
             end (int): End of the time window, milliseconds since Unix epoch.. [optional]  # noqa: E501
             expression (str): Metric expression.. [optional]  # noqa: E501

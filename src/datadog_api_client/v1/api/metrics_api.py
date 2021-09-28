@@ -251,7 +251,7 @@ class MetricsApi(object):
                 },
                 "collection_format_map": {},
             },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            headers_map={"accept": ["text/json"], "content_type": ["text/json"]},
             api_client=api_client,
         )
 

@@ -63,7 +63,10 @@ class Creator(ModelNormal):
         return {
             "email": (str,),  # noqa: E501
             "handle": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
+            "name": (
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     discriminator = None
@@ -115,7 +118,7 @@ class Creator(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             email (str): Email of the creator.. [optional]  # noqa: E501
             handle (str): Handle of the creator.. [optional]  # noqa: E501
-            name (str): Name of the creator.. [optional]  # noqa: E501
+            name (str, none_type): Name of the creator.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 

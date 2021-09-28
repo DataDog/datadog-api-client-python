@@ -6,7 +6,7 @@ import os
 # First patch httplib
 tracer = None
 try:
-    from ddtrace import config, patch, tracer
+    from ddtrace import config, current_trace_context, patch, tracer
 
     if os.getenv("RECORD", "false") != "none":
         from ddtrace.internal.writer import AgentWriter
@@ -20,7 +20,7 @@ try:
 
     config.httplib["distributed_tracing"] = True
     patch(httplib=True)
-    
+
     from pytest import hookimpl
 
     @hookimpl(hookwrapper=True)
@@ -83,12 +83,11 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
     if tracer is None:
         return
 
-    context = tracer.get_call_context()
     span = tracer.start_span(
         step.type,
         resource=step.name,
         span_type=step.type,
-        child_of=context,
+        child_of=current_trace_context(),
     )
     setattr(step_func, "__dd_span__", span)
 
@@ -122,7 +121,7 @@ def pytest_bdd_apply_tag(tag, function):
         return True
     elif tag.startswith("endpoint("):
         version = tag[len("endpoint(") : -1]
-        marker = pytest.mark.dd_tag(version=version)
+        marker = pytest.mark.dd_tags(version=version)
         marker(function)
         return True
     else:
@@ -298,6 +297,22 @@ def freezer(default_cassette_name, record_mode, vcr):
             raise RuntimeError(msg)
 
     return freeze_time(parser.isoparse(freeze_at))
+
+
+def pytest_recording_configure(config, vcr):
+    from vcr import matchers
+    from vcr.util import read_body
+
+    is_text_json = matchers._header_checker("text/json")
+    transformer = matchers._transform_json
+
+    def body(r1, r2):
+        if is_text_json(r1.headers) and is_text_json(r2.headers):
+            assert transformer(read_body(r1)) == transformer(read_body(r2))
+        else:
+            matchers.body(r1, r2)
+
+    vcr.matchers["body"] = body
 
 
 @given('a valid "apiKeyAuth" key in the system')

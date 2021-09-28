@@ -1,37 +1,44 @@
 interactions:
 - request:
-    body: '{"is_secret": true, "name": "TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1628763091",
-      "value": "CUSTOM_VARIABLE_VALUE"}'
+    body: '{"is_secret":true,"name":"TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1628785711","value":"CUSTOM_VARIABLE_VALUE"}'
     headers:
-      Accept:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '112'
+      content-type:
       - application/json
-      Content-Type:
-      - application/json
-      Dd-Operation-Id:
-      - CreateWebhooksIntegrationCustomVariable
-      User-Agent:
-      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
-        x86_64)
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.4+dev (node 16.3.0; os Darwin; arch
+        x64)
+      x-datadog-parent-id:
+      - '3089514925855613338'
+      x-datadog-trace-id:
+      - '3089514925855613338'
     method: POST
     uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables
   response:
     body:
-      string: '{"is_secret":true,"name":"TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1628763091"}'
+      string: '{"is_secret":true,"name":"TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1628785711"}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '80'
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 12 Aug 2021 10:11:32 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '80'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 12 Aug 2021 16:28:32 GMT
       location:
-      - https://app.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1628763091
+      - https://app.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1628785711
       pragma:
       - no-cache
       strict-transport-security:
@@ -46,31 +53,37 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Dd-Operation-Id:
-      - DeleteWebhooksIntegrationCustomVariable
-      User-Agent:
-      - datadog-api-client-python/1.1.1.dev7+dirty (python 3.8.10; os Darwin; arch
-        x86_64)
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.4+dev (node 16.3.0; os Darwin; arch
+        x64)
+      x-datadog-parent-id:
+      - '3089514925855613338'
+      x-datadog-trace-id:
+      - '3089514925855613338'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1628763091
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1628785711
   response:
     body:
       string: '{}'
     headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '2'
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 12 Aug 2021 10:11:32 GMT
       cache-control:
       - no-cache
+      connection:
+      - close
+      content-length:
+      - '2'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Thu, 12 Aug 2021 16:28:33 GMT
       pragma:
       - no-cache
       strict-transport-security:

@@ -70,7 +70,10 @@ class DashboardSummaryDefinition(ModelNormal):
         return {
             "author_handle": (str,),  # noqa: E501
             "created_at": (datetime,),  # noqa: E501
-            "description": (str,),  # noqa: E501
+            "description": (
+                str,
+                none_type,
+            ),  # noqa: E501
             "id": (str,),  # noqa: E501
             "is_read_only": (bool,),  # noqa: E501
             "layout_type": (DashboardLayoutType,),  # noqa: E501
@@ -134,7 +137,7 @@ class DashboardSummaryDefinition(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             author_handle (str): Identifier of the dashboard author.. [optional]  # noqa: E501
             created_at (datetime): Creation date of the dashboard.. [optional]  # noqa: E501
-            description (str): Description of the dashboard.. [optional]  # noqa: E501
+            description (str, none_type): Description of the dashboard.. [optional]  # noqa: E501
             id (str): Dashboard identifier.. [optional]  # noqa: E501
             is_read_only (bool): Whether this dashboard is read-only. If True, only the author and admins can make changes to it.. [optional]  # noqa: E501
             layout_type (DashboardLayoutType): [optional]  # noqa: E501

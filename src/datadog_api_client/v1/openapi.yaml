@@ -859,6 +859,7 @@ components:
           type: string
         name:
           description: Name of the creator.
+          nullable: true
           type: string
       readOnly: true
       type: object
@@ -1125,6 +1126,7 @@ components:
           type: string
         description:
           description: Description of the dashboard.
+          nullable: true
           type: string
         id:
           description: Dashboard identifier.
@@ -5210,6 +5212,7 @@ components:
         aggr:
           description: Aggregation type.
           example: avg
+          nullable: true
           readOnly: true
           type: string
         display_name:
@@ -6280,12 +6283,14 @@ components:
           type: string
         name:
           description: Name of the user.
+          nullable: true
           type: string
         status:
           description: Status of the user.
           type: string
         title:
           description: Title of the user.
+          nullable: true
           type: string
         verified:
           description: Whether the user is verified.
@@ -14945,31 +14950,31 @@ paths:
       responses:
         '202':
           content:
-            application/json:
+            text/json:
               schema:
                 $ref: '#/components/schemas/IntakePayloadAccepted'
           description: Payload accepted
         '400':
           content:
-            application/json:
+            text/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
         '403':
           content:
-            application/json:
+            text/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Authentication Error
         '408':
           content:
-            application/json:
+            text/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Request timeout
         '413':
           content:
-            application/json:
+            text/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Payload too large
@@ -20516,7 +20521,7 @@ paths:
       operationId: SubmitMetrics
       requestBody:
         content:
-          application/json:
+          text/json:
             examples:
               dynamic-points:
                 description: "Post time-series data that can be graphed on Datadog\u2019s
@@ -20536,31 +20541,31 @@ paths:
       responses:
         '202':
           content:
-            application/json:
+            text/json:
               schema:
                 $ref: '#/components/schemas/IntakePayloadAccepted'
           description: Payload accepted
         '400':
           content:
-            application/json:
+            text/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
         '403':
           content:
-            application/json:
+            text/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Authentication error
         '408':
           content:
-            application/json:
+            text/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Request timeout
         '413':
           content:
-            application/json:
+            text/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Payload too large
