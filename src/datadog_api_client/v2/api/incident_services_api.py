@@ -39,7 +39,7 @@ class IncidentServicesApi(object):
         self._create_incident_service_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentServiceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/services",
                 "operation_id": "create_incident_service",
                 "http_method": "POST",
@@ -75,7 +75,7 @@ class IncidentServicesApi(object):
         self._delete_incident_service_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/services/{service_id}",
                 "operation_id": "delete_incident_service",
                 "http_method": "DELETE",
@@ -116,7 +116,7 @@ class IncidentServicesApi(object):
         self._get_incident_service_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentServiceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/services/{service_id}",
                 "operation_id": "get_incident_service",
                 "http_method": "GET",
@@ -161,7 +161,7 @@ class IncidentServicesApi(object):
         self._list_incident_services_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentServicesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/services",
                 "operation_id": "list_incident_services",
                 "http_method": "GET",
@@ -212,7 +212,7 @@ class IncidentServicesApi(object):
         self._update_incident_service_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentServiceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/services/{service_id}",
                 "operation_id": "update_incident_service",
                 "http_method": "PATCH",
