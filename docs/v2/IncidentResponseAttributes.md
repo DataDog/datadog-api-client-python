@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **detected** | **datetime, none_type** | Timestamp when the incident was detected. | [optional] 
 **fields** | [**{str: (IncidentFieldAttributes,)}**](IncidentFieldAttributes.md) | A condensed view of the user-defined fields attached to incidents. | [optional] 
 **modified** | **datetime** | Timestamp when the incident was last modified. | [optional] [readonly] 
-**notification_handles** | [**[IncidentNotificationHandle]**](IncidentNotificationHandle.md) | Notification handles that will be notified of the incident during update. | [optional] 
+**notification_handles** | [**[IncidentNotificationHandle], none_type**](IncidentNotificationHandle.md) | Notification handles that will be notified of the incident during update. | [optional] 
 **postmortem_id** | **str** | The UUID of the postmortem object attached to the incident. | [optional] 
 **public_id** | **int** | The monotonically increasing integer ID for the incident. | [optional] 
 **resolved** | **datetime, none_type** | Timestamp when the incident&#39;s state was set to resolved. | [optional] 
