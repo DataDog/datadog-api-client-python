@@ -56,14 +56,14 @@ with ApiClient(configuration) as api_client:
                     min=50,
                 ),
                 limit=10,
-                missing=LogsGroupByMissing(),
+                missing=LogsGroupByMissing(None),
                 sort=LogsAggregateSort(
                     aggregation=LogsAggregationFunction("pc90"),
                     metric="@duration",
                     order=LogsSortOrder("asc"),
                     type=LogsAggregateSortType("alphabetical"),
                 ),
-                total=LogsGroupByTotal(),
+                total=LogsGroupByTotal(None),
             ),
         ],
         options=LogsQueryOptions(
