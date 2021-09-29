@@ -12979,8 +12979,8 @@ components:
             over all hours in the current month for all organizations.
           format: int64
           type: integer
-        dbm_queries_agg_sum:
-          description: Shows the sum of all distinct Database Monitoring normalized
+        dbm_queries_avg_sum:
+          description: Shows the average of all distinct Database Monitoring normalized
             queries over all hours in the current month for all organizations.
           format: int64
           type: integer
@@ -13213,8 +13213,8 @@ components:
             over all hours in the current month for all organizations.
           format: int64
           type: integer
-        dbm_queries_agg_sum:
-          description: Shows the sum of all distinct Database Monitoring Normalized
+        dbm_queries_avg_sum:
+          description: Shows the average of all distinct Database Monitoring Normalized
             Queries over all hours in the current month for all organizations.
           format: int64
           type: integer

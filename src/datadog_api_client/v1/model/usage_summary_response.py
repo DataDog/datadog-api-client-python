@@ -89,7 +89,7 @@ class UsageSummaryResponse(ModelNormal):
             "cws_containers_avg_sum": (int,),  # noqa: E501
             "cws_host_top99p_sum": (int,),  # noqa: E501
             "dbm_host_top99p_sum": (int,),  # noqa: E501
-            "dbm_queries_agg_sum": (int,),  # noqa: E501
+            "dbm_queries_avg_sum": (int,),  # noqa: E501
             "end_date": (datetime,),  # noqa: E501
             "fargate_tasks_count_avg_sum": (int,),  # noqa: E501
             "fargate_tasks_count_hwm_sum": (int,),  # noqa: E501
@@ -148,7 +148,7 @@ class UsageSummaryResponse(ModelNormal):
         "cws_containers_avg_sum": "cws_containers_avg_sum",  # noqa: E501
         "cws_host_top99p_sum": "cws_host_top99p_sum",  # noqa: E501
         "dbm_host_top99p_sum": "dbm_host_top99p_sum",  # noqa: E501
-        "dbm_queries_agg_sum": "dbm_queries_agg_sum",  # noqa: E501
+        "dbm_queries_avg_sum": "dbm_queries_avg_sum",  # noqa: E501
         "end_date": "end_date",  # noqa: E501
         "fargate_tasks_count_avg_sum": "fargate_tasks_count_avg_sum",  # noqa: E501
         "fargate_tasks_count_hwm_sum": "fargate_tasks_count_hwm_sum",  # noqa: E501
@@ -243,7 +243,7 @@ class UsageSummaryResponse(ModelNormal):
             cws_containers_avg_sum (int): Shows the average of all distinct Cloud Workload Security containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
             cws_host_top99p_sum (int): Shows the 99th percentile of all Cloud Workload Security hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             dbm_host_top99p_sum (int): Shows the 99th percentile of all Database Monitoring hosts over all hours in the current month for all organizations.. [optional]  # noqa: E501
-            dbm_queries_agg_sum (int): Shows the sum of all distinct Database Monitoring Normalized Queries over all hours in the current month for all organizations.. [optional]  # noqa: E501
+            dbm_queries_avg_sum (int): Shows the average of all distinct Database Monitoring Normalized Queries over all hours in the current month for all organizations.. [optional]  # noqa: E501
             end_date (datetime): Shows the last date of usage in the current months for all organizations.. [optional]  # noqa: E501
             fargate_tasks_count_avg_sum (int): Shows the average of all Fargate tasks over all hours in the current months for all organizations.. [optional]  # noqa: E501
             fargate_tasks_count_hwm_sum (int): Shows the sum of the high-water marks of all Fargate tasks over all hours in the current months for all organizations.. [optional]  # noqa: E501
