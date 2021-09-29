@@ -69,7 +69,10 @@ class IncidentFieldAttributesMultipleValue(ModelNormal):
         lazy_import()
         return {
             "type": (IncidentFieldAttributesValueType,),  # noqa: E501
-            "value": ([str],),  # noqa: E501
+            "value": (
+                [str],
+                none_type,
+            ),  # noqa: E501
         }
 
     discriminator = None
@@ -119,7 +122,7 @@ class IncidentFieldAttributesMultipleValue(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (IncidentFieldAttributesValueType): [optional]  # noqa: E501
-            value ([str]): The multiple values selected for this field.. [optional]  # noqa: E501
+            value ([str], none_type): The multiple values selected for this field.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
