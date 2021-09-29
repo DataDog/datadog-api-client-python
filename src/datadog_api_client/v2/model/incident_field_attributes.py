@@ -116,7 +116,7 @@ class IncidentFieldAttributes(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            value ([str]): The multiple values selected for this field.. [optional]  # noqa: E501
+            value ([str], none_type): The multiple values selected for this field.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
