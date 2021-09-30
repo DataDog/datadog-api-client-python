@@ -538,6 +538,8 @@ Class | Method | HTTP request | Description
  - **incident_settings_write**: The ability to configure incident settings.
  - **incident_write**: The ability to create, view, and manage incidents in Datadog.
  - **metrics_read**: The ability to view custom metrics.
+ - **security_monitoring_filters_read**: The ability to read Security Filters.
+ - **security_monitoring_filters_write**: The ability to create, edit and delete Security Filters.
  - **security_monitoring_rules_read**: The ability to read Detection rules.
  - **security_monitoring_rules_write**: The ability to create and edit Detection rules.
  - **security_monitoring_signals_read**: The ability to view Security signals.

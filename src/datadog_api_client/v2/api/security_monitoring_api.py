@@ -45,7 +45,7 @@ class SecurityMonitoringApi(object):
         self._create_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters",
                 "operation_id": "create_security_filter",
                 "http_method": "POST",
@@ -117,7 +117,7 @@ class SecurityMonitoringApi(object):
         self._delete_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}",
                 "operation_id": "delete_security_filter",
                 "http_method": "DELETE",
@@ -199,7 +199,7 @@ class SecurityMonitoringApi(object):
         self._get_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}",
                 "operation_id": "get_security_filter",
                 "http_method": "GET",
@@ -281,7 +281,7 @@ class SecurityMonitoringApi(object):
         self._list_security_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFiltersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters",
                 "operation_id": "list_security_filters",
                 "http_method": "GET",
@@ -448,7 +448,7 @@ class SecurityMonitoringApi(object):
         self._update_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}",
                 "operation_id": "update_security_filter",
                 "http_method": "PATCH",
