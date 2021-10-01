@@ -146,7 +146,10 @@ def glom(value, path):
     from glom import glom as g
 
     # replace foo[index].bar by foo.index.bar
-    return g(value, re.sub(r"\[([0-9]*)\]", r".\1", path))
+    path = re.sub(r"\[([0-9]*)\]", r".\1", path)
+    # replace camelCase to snake_case
+    path = ".".join(snake_case(p) for p in path.split("."))
+    return g(value, path)
 
 
 def _get_prefix(request):
@@ -333,17 +336,20 @@ def _package(package_name):
 
 
 @pytest.fixture(scope="module")
-def undo_operations(package_name):
-    version = package_name.split(".")[-1]
-    with open(
-        os.path.join(os.path.dirname(__file__), version, "features", "undo.json")
-    ) as fp:
-        data = json.load(fp)
+def undo_operations():
+    result = {}
+    for f in pathlib.Path(os.path.dirname(__file__)).rglob("undo.json"):
+        version = f.parent.parent.name
+        with f.open() as fp:
+            data = json.load(fp)
+            result.update(
+                {
+                    snake_case(operation_id): settings.get("undo")
+                    for operation_id, settings in data.items()
+                }
+            )
 
-    return {
-        snake_case(operation_id): settings.get("undo")
-        for operation_id, settings in data.items()
-    }
+    return result
 
 
 def build_configuration(package):
