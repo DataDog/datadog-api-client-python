@@ -270,6 +270,11 @@ def vcr_config():
 
 
 @pytest.fixture
+def default_cassette_name(default_cassette_name):
+    return re.sub("__+", "_", default_cassette_name)
+
+
+@pytest.fixture
 def freezer(default_cassette_name, record_mode, vcr):
     from freezegun import freeze_time
     from dateutil import parser
