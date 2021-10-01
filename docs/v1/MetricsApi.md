@@ -339,11 +339,21 @@ with ApiClient(configuration) as api_client:
             ),
         ],
     )  # MetricsPayload | 
+    content_encoding = MetricContentEncoding("deflate")  # MetricContentEncoding | HTTP header used to compress the media-type. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Submit metrics
         api_response = api_instance.submit_metrics(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling MetricsApi->submit_metrics: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Submit metrics
+        api_response = api_instance.submit_metrics(body, content_encoding=content_encoding)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling MetricsApi->submit_metrics: %s\n" % e)
@@ -355,6 +365,7 @@ with ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**MetricsPayload**](MetricsPayload.md)|  |
+ **content_encoding** | **MetricContentEncoding**| HTTP header used to compress the media-type. | [optional]
 
 ### Return type
 

@@ -100,6 +100,14 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
+  @integration-only
+  Scenario: Submit deflate metrics returns "Payload accepted" response
+    Given new "SubmitMetrics" request
+    And body with value {"series": [{"metric": "system.load.1", "type": "gauge", "points": [[{{ timestamp("now") }}, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}
+    And request contains "content_encoding" parameter with value "deflate"
+    When the request is sent
+    Then the response status is 202 Payload accepted
+
   @skip
   Scenario: Submit metrics returns "Bad Request" response
     Given new "SubmitMetrics" request

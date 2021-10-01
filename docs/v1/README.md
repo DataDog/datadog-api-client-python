@@ -531,6 +531,7 @@ Class | Method | HTTP request | Description
  - [LogsURLParserType](LogsURLParserType.md)
  - [LogsUserAgentParser](LogsUserAgentParser.md)
  - [LogsUserAgentParserType](LogsUserAgentParserType.md)
+ - [MetricContentEncoding](MetricContentEncoding.md)
  - [MetricMetadata](MetricMetadata.md)
  - [MetricSearchResponse](MetricSearchResponse.md)
  - [MetricSearchResponseResults](MetricSearchResponseResults.md)
