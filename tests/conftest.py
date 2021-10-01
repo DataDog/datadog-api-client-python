@@ -335,6 +335,11 @@ def a_valid_application_key(configuration):
     configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
 
 
+@pytest.fixture(scope="module")
+def package_name(api_version):
+    return "datadog_api_client." + api_version
+
+
 @pytest.fixture
 def _package(package_name):
     return importlib.import_module(package_name)
@@ -347,12 +352,10 @@ def undo_operations():
         version = f.parent.parent.name
         with f.open() as fp:
             data = json.load(fp)
-            result.update(
-                {
-                    snake_case(operation_id): settings.get("undo")
-                    for operation_id, settings in data.items()
-                }
-            )
+            result[version] = {
+                snake_case(operation_id): settings.get("undo")
+                for operation_id, settings in data.items()
+            }
 
     return result
 
@@ -496,7 +499,7 @@ def build_given(version, operation):
 
             # register undo method
             context["undo_operations"].append(
-                lambda: undo(api, operation_name, result, client=client)
+                lambda: undo(api, version, operation_name, result, client=client)
             )
 
             # optional re-shaping
@@ -524,13 +527,13 @@ def undo(package_name, undo_operations, client):
     """Clean after operation."""
     exceptions = importlib.import_module(package_name + ".exceptions")
 
-    def cleanup(api, operation_id, response, client=client):
-        if operation_id not in undo_operations:
-            raise NotImplementedError(operation_id)
+    def cleanup(api, version, operation_id, response, client=client):
+        operation = undo_operations.get(version, {}).get(operation_id)
+        if operation_id is None:
+            raise NotImplementedError((version, operation_id))
 
-        operation = undo_operations[operation_id]
         if operation["type"] is None:
-            raise NotImplementedError(operation_id)
+            raise NotImplementedError((version, operation_id))
 
         if operation["type"] != "unsafe":
             return
@@ -563,7 +566,7 @@ def undo(package_name, undo_operations, client):
 
 
 @when("the request is sent")
-def execute_request(undo, context, client, _package):
+def execute_request(undo, context, client, api_version, _package):
     """Execute the prepared request."""
     api_request = context["api_request"]
     exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
@@ -587,7 +590,7 @@ def execute_request(undo, context, client, _package):
     operation_id = api_request["request"].__name__
     response = api_request["response"][0]
 
-    context["undo_operations"].append(lambda: undo(api, operation_id, response))
+    context["undo_operations"].append(lambda: undo(api, api_version, operation_id, response))
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))
