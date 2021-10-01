@@ -18,6 +18,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v1.model.metric_content_encoding import MetricContentEncoding
 from datadog_api_client.v1.model.metric_metadata import MetricMetadata
 from datadog_api_client.v1.model.metric_search_response import MetricSearchResponse
 from datadog_api_client.v1.model.metrics_list_response import MetricsListResponse
@@ -231,6 +232,7 @@ class MetricsApi(object):
             params_map={
                 "all": [
                     "body",
+                    "content_encoding",
                 ],
                 "required": [
                     "body",
@@ -244,10 +246,14 @@ class MetricsApi(object):
                 "allowed_values": {},
                 "openapi_types": {
                     "body": (MetricsPayload,),
+                    "content_encoding": (MetricContentEncoding,),
                 },
-                "attribute_map": {},
+                "attribute_map": {
+                    "content_encoding": "Content-Encoding",
+                },
                 "location_map": {
                     "body": "body",
+                    "content_encoding": "header",
                 },
                 "collection_format_map": {},
             },
@@ -489,6 +495,7 @@ class MetricsApi(object):
             body (MetricsPayload):
 
         Keyword Args:
+            content_encoding (MetricContentEncoding): HTTP header used to compress the media-type.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
