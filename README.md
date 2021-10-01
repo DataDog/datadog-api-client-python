@@ -96,6 +96,15 @@ configuration.api_key["apiKeyAuth"] = "YOUR_API_KEY"
 configuration.api_key["appKeyAuth"] = "YOUR_APPLICATION_KEY"
 ```
 
+### Using compressed payloads
+
+If you want to accept GZIP compressed responses to reduce bandwidth utilization, set the `compress` flag
+on your configuration object:
+
+```python
+configuration.compress = True
+```
+
 ## Author
 
 support@datadoghq.com
