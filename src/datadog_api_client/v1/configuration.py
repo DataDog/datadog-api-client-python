@@ -77,8 +77,9 @@ class Configuration(object):
         :param server_operation_variables: Mapping from operation ID to a mapping with
           string values to replace variables in templated server configuration.
           The validation of enums is performed for variables with defined enum values before.
-        :param ssl_ca_cert: str - the path to a file of concatenated CA certificates
+        :param ssl_ca_cert: The path to a file of concatenated CA certificates
           in PEM format
+        :param compress: Boolean indicating whether we accept encoding responses or not.
 
         :Example:
 
@@ -119,6 +120,7 @@ class Configuration(object):
         server_operation_index=None,
         server_operation_variables=None,
         ssl_ca_cert=None,
+        compress=True,
     ):
         """Constructor"""
         self._base_path = "https://api.datadoghq.com" if host is None else host
@@ -222,6 +224,9 @@ class Configuration(object):
 
         # Options to pass down to the underlying urllib3 socket
         self.socket_options = None
+
+        # Will translate to a Accept-Encoding header
+        self.compress = compress
 
         # Keep track of unstable operations
         self.unstable_operations = {
