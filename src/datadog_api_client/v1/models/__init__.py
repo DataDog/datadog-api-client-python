@@ -283,6 +283,7 @@ from datadog_api_client.v1.model.monitor_group_search_result import MonitorGroup
 from datadog_api_client.v1.model.monitor_options import MonitorOptions
 from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
 from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
+from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
 from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount
 from datadog_api_client.v1.model.monitor_search_response import MonitorSearchResponse
 from datadog_api_client.v1.model.monitor_search_response_counts import MonitorSearchResponseCounts
