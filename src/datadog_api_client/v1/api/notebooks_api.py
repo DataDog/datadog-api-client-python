@@ -172,6 +172,8 @@ class NotebooksApi(object):
                     "sort_dir",
                     "query",
                     "include_cells",
+                    "is_template",
+                    "type",
                 ],
                 "required": [],
                 "nullable": [],
@@ -190,6 +192,8 @@ class NotebooksApi(object):
                     "sort_dir": (str,),
                     "query": (str,),
                     "include_cells": (bool,),
+                    "is_template": (bool,),
+                    "type": (str,),
                 },
                 "attribute_map": {
                     "author_handle": "author_handle",
@@ -200,6 +204,8 @@ class NotebooksApi(object):
                     "sort_dir": "sort_dir",
                     "query": "query",
                     "include_cells": "include_cells",
+                    "is_template": "is_template",
+                    "type": "type",
                 },
                 "location_map": {
                     "author_handle": "query",
@@ -210,6 +216,8 @@ class NotebooksApi(object):
                     "sort_dir": "query",
                     "query": "query",
                     "include_cells": "query",
+                    "is_template": "query",
+                    "type": "query",
                 },
                 "collection_format_map": {},
             },
@@ -407,10 +415,12 @@ class NotebooksApi(object):
             exclude_author_handle (str): Return notebooks not created by the given `author_handle`.. [optional]
             start (int): The index of the first notebook you want returned.. [optional]
             count (int): The number of notebooks to be returned.. [optional]
-            sort_field (str): Sort by field `modified` or `name`.. [optional] if omitted the server will use the default value of "modified"
+            sort_field (str): Sort by field `modified`, `name`, or `created`.. [optional] if omitted the server will use the default value of "modified"
             sort_dir (str): Sort by direction `asc` or `desc`.. [optional] if omitted the server will use the default value of "desc"
             query (str): Return only notebooks with `query` string in notebook name or author handle.. [optional]
             include_cells (bool): Value of `false` excludes the `cells` and global `time` for each notebook.. [optional] if omitted the server will use the default value of True
+            is_template (bool): True value returns only template notebooks. Default is false (returns only non-template notebooks).. [optional] if omitted the server will use the default value of False
+            type (str): If type is provided, returns only notebooks with that metadata type. Default does not have type filtering.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

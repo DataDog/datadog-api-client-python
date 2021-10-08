@@ -6517,6 +6517,8 @@ components:
           items:
             $ref: '#/components/schemas/NotebookCellCreateRequest'
           type: array
+        metadata:
+          $ref: '#/components/schemas/NotebookMetadata'
         name:
           description: The name of the notebook.
           example: Example Notebook
@@ -6634,6 +6636,41 @@ components:
       type: string
       x-enum-varnames:
       - MARKDOWN
+    NotebookMetadata:
+      description: Metadata associated with the notebook.
+      properties:
+        is_template:
+          default: false
+          description: Whether or not the notebook is a template.
+          example: false
+          type: boolean
+        take_snapshots:
+          default: false
+          description: Whether or not the notebook takes snapshot image backups of
+            the notebook's fixed-time graphs.
+          example: false
+          type: boolean
+        type:
+          $ref: '#/components/schemas/NotebookMetadataType'
+      type: object
+    NotebookMetadataType:
+      default: null
+      description: Metadata type of the notebook.
+      enum:
+      - postmortem
+      - runbook
+      - investigation
+      - documentation
+      - report
+      example: investigation
+      nullable: true
+      type: string
+      x-enum-varnames:
+      - POSTMORTEM
+      - RUNBOOK
+      - INVESTIGATION
+      - DOCUMENTATION
+      - REPORT
     NotebookRelativeTime:
       description: Relative timeframe.
       example:
@@ -6732,6 +6769,8 @@ components:
           format: date-time
           readOnly: true
           type: string
+        metadata:
+          $ref: '#/components/schemas/NotebookMetadata'
         modified:
           description: UTC time stamp for when the notebook was last modified.
           example: '2021-02-24T23:15:23.274966+00:00'
@@ -6881,6 +6920,8 @@ components:
           items:
             $ref: '#/components/schemas/NotebookUpdateCell'
           type: array
+        metadata:
+          $ref: '#/components/schemas/NotebookMetadata'
         name:
           description: The name of the notebook.
           example: Example Notebook
@@ -6913,7 +6954,7 @@ components:
             $ref: '#/components/schemas/NotebooksResponseData'
           type: array
         meta:
-          description: Metadata returned by the API.
+          description: Searches metadata returned by the API.
           properties:
             page:
               $ref: '#/components/schemas/NotebooksResponsePage'
@@ -6953,6 +6994,8 @@ components:
           format: date-time
           readOnly: true
           type: string
+        metadata:
+          $ref: '#/components/schemas/NotebookMetadata'
         modified:
           description: UTC time stamp for when the notebook was last modified.
           example: '2021-02-24T23:15:23.274966+00:00'
@@ -19969,7 +20012,7 @@ paths:
           format: int64
           type: integer
         style: form
-      - description: Sort by field `modified` or `name`.
+      - description: Sort by field `modified`, `name`, or `created`.
         in: query
         name: sort_field
         required: false
@@ -20005,6 +20048,25 @@ paths:
           default: true
           example: false
           type: boolean
+        style: form
+      - description: True value returns only template notebooks. Default is false
+          (returns only non-template notebooks).
+        in: query
+        name: is_template
+        required: false
+        schema:
+          default: false
+          example: false
+          type: boolean
+        style: form
+      - description: If type is provided, returns only notebooks with that metadata
+          type. Default does not have type filtering.
+        in: query
+        name: type
+        required: false
+        schema:
+          example: investigation
+          type: string
         style: form
       responses:
         '200':

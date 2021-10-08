@@ -22,11 +22,13 @@ def lazy_import():
     from datadog_api_client.v1.model.notebook_author import NotebookAuthor
     from datadog_api_client.v1.model.notebook_cell_response import NotebookCellResponse
     from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
+    from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
     from datadog_api_client.v1.model.notebook_status import NotebookStatus
 
     globals()["NotebookAuthor"] = NotebookAuthor
     globals()["NotebookCellResponse"] = NotebookCellResponse
     globals()["NotebookGlobalTime"] = NotebookGlobalTime
+    globals()["NotebookMetadata"] = NotebookMetadata
     globals()["NotebookStatus"] = NotebookStatus
 
 
@@ -84,6 +86,7 @@ class NotebookResponseDataAttributes(ModelNormal):
             "time": (NotebookGlobalTime,),  # noqa: E501
             "author": (NotebookAuthor,),  # noqa: E501
             "created": (datetime,),  # noqa: E501
+            "metadata": (NotebookMetadata,),  # noqa: E501
             "modified": (datetime,),  # noqa: E501
             "status": (NotebookStatus,),  # noqa: E501
         }
@@ -96,6 +99,7 @@ class NotebookResponseDataAttributes(ModelNormal):
         "time": "time",  # noqa: E501
         "author": "author",  # noqa: E501
         "created": "created",  # noqa: E501
+        "metadata": "metadata",  # noqa: E501
         "modified": "modified",  # noqa: E501
         "status": "status",  # noqa: E501
     }
@@ -149,6 +153,7 @@ class NotebookResponseDataAttributes(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             author (NotebookAuthor): [optional]  # noqa: E501
             created (datetime): UTC time stamp for when the notebook was created.. [optional]  # noqa: E501
+            metadata (NotebookMetadata): [optional]  # noqa: E501
             modified (datetime): UTC time stamp for when the notebook was last modified.. [optional]  # noqa: E501
             status (NotebookStatus): [optional]  # noqa: E501
         """

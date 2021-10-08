@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **author** | [**NotebookAuthor**](NotebookAuthor.md) |  | [optional] 
 **cells** | [**[NotebookCellResponse]**](NotebookCellResponse.md) | List of cells to display in the notebook. | [optional] 
 **created** | **datetime** | UTC time stamp for when the notebook was created. | [optional] [readonly] 
+**metadata** | [**NotebookMetadata**](NotebookMetadata.md) |  | [optional] 
 **modified** | **datetime** | UTC time stamp for when the notebook was last modified. | [optional] [readonly] 
 **status** | [**NotebookStatus**](NotebookStatus.md) |  | [optional] 
 **time** | [**NotebookGlobalTime**](NotebookGlobalTime.md) |  | [optional] 

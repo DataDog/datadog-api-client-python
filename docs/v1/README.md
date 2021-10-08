@@ -586,6 +586,8 @@ Class | Method | HTTP request | Description
  - [NotebookMarkdownCellAttributes](NotebookMarkdownCellAttributes.md)
  - [NotebookMarkdownCellDefinition](NotebookMarkdownCellDefinition.md)
  - [NotebookMarkdownCellDefinitionType](NotebookMarkdownCellDefinitionType.md)
+ - [NotebookMetadata](NotebookMetadata.md)
+ - [NotebookMetadataType](NotebookMetadataType.md)
  - [NotebookRelativeTime](NotebookRelativeTime.md)
  - [NotebookResourceType](NotebookResourceType.md)
  - [NotebookResponse](NotebookResponse.md)
