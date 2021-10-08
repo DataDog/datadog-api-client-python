@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **notify_audit** | **bool** | A Boolean indicating whether tagged users is notified on changes to this monitor. | [optional]  if omitted the server will use the default value of False
 **notify_no_data** | **bool** | A Boolean indicating whether this monitor notifies when data stops reporting. | [optional]  if omitted the server will use the default value of False
 **renotify_interval** | **int, none_type** | The number of minutes after the last notification before a monitor re-notifies on the current status. It only re-notifies if it’s not resolved. | [optional] 
+**renotify_occurrences** | **int, none_type** | The number of times re-notification messages should be sent on the current status at the provided re-notification interval. | [optional] 
+**renotify_statuses** | [**[MonitorRenotifyStatusType], none_type**](MonitorRenotifyStatusType.md) | The types of monitor statuses for which re-notification messages are sent. | [optional] 
 **require_full_window** | **bool** | A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to &#x60;false&#x60; for sparse metrics, otherwise some evaluations are skipped. Default is false. | [optional] 
 **silenced** | **{str: (int, none_type)}** | Information about the downtime applied to the monitor. | [optional] 
 **synthetics_check_id** | **str, none_type** | ID of the corresponding Synthetic check. | [optional] 

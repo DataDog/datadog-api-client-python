@@ -21,11 +21,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 def lazy_import():
     from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
     from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
+    from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
     from datadog_api_client.v1.model.monitor_threshold_window_options import MonitorThresholdWindowOptions
     from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
 
     globals()["MonitorDeviceID"] = MonitorDeviceID
     globals()["MonitorOptionsAggregation"] = MonitorOptionsAggregation
+    globals()["MonitorRenotifyStatusType"] = MonitorRenotifyStatusType
     globals()["MonitorThresholdWindowOptions"] = MonitorThresholdWindowOptions
     globals()["MonitorThresholds"] = MonitorThresholds
 
@@ -116,6 +118,14 @@ class MonitorOptions(ModelNormal):
                 int,
                 none_type,
             ),  # noqa: E501
+            "renotify_occurrences": (
+                int,
+                none_type,
+            ),  # noqa: E501
+            "renotify_statuses": (
+                [MonitorRenotifyStatusType],
+                none_type,
+            ),  # noqa: E501
             "require_full_window": (bool,),  # noqa: E501
             "silenced": ({str: (int, none_type)},),  # noqa: E501
             "synthetics_check_id": (
@@ -149,6 +159,8 @@ class MonitorOptions(ModelNormal):
         "notify_audit": "notify_audit",  # noqa: E501
         "notify_no_data": "notify_no_data",  # noqa: E501
         "renotify_interval": "renotify_interval",  # noqa: E501
+        "renotify_occurrences": "renotify_occurrences",  # noqa: E501
+        "renotify_statuses": "renotify_statuses",  # noqa: E501
         "require_full_window": "require_full_window",  # noqa: E501
         "silenced": "silenced",  # noqa: E501
         "synthetics_check_id": "synthetics_check_id",  # noqa: E501
@@ -214,6 +226,8 @@ class MonitorOptions(ModelNormal):
             notify_audit (bool): A Boolean indicating whether tagged users is notified on changes to this monitor.. [optional] if omitted the server will use the default value of False  # noqa: E501
             notify_no_data (bool): A Boolean indicating whether this monitor notifies when data stops reporting.. [optional] if omitted the server will use the default value of False  # noqa: E501
             renotify_interval (int, none_type): The number of minutes after the last notification before a monitor re-notifies on the current status. It only re-notifies if it’s not resolved.. [optional]  # noqa: E501
+            renotify_occurrences (int, none_type): The number of times re-notification messages should be sent on the current status at the provided re-notification interval.. [optional]  # noqa: E501
+            renotify_statuses ([MonitorRenotifyStatusType], none_type): The types of monitor statuses for which re-notification messages are sent.. [optional]  # noqa: E501
             require_full_window (bool): A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to `false` for sparse metrics, otherwise some evaluations are skipped. Default is false.. [optional]  # noqa: E501
             silenced ({str: (int, none_type)}): Information about the downtime applied to the monitor.. [optional]  # noqa: E501
             synthetics_check_id (str, none_type): ID of the corresponding Synthetic check.. [optional]  # noqa: E501
