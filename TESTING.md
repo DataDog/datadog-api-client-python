@@ -14,7 +14,7 @@ You can control the behavior with the `RECORD` environment variable:
 
 Recording and freeze files are stored in the directory `tests/$VERSION/cassettes/test_scenarios/`
 
-To run the tests, it's generally better to use a virtual environment. `tox` makes it easier to manage them.
+To run the tests, it's generally better to use a virtual environment. [tox](https://tox.wiki/) makes it easier to manage them.
 For example to run the tests for Python 3.9:
 
 ```shell
@@ -22,7 +22,7 @@ tox -epy39
 ```
 
 To pass extra arguments to run the tests, you need to close `tox` arguments with `--`.
-You can get more verbose information with the `-v` flag to `pytest`, or filter the tests using the `-k` or
+You can get more verbose information with the `-v` flag to `pytest`, filter the tests using the `-k` or
 specifying the test full path. For example:
 
 ```shell
@@ -30,7 +30,7 @@ tox -epy39  -- -k test_get_a_list_of_all_incident_teams_returns_ok_response -vvv
 ```
 
 `-k` takes a regular expression, so you don't have to specify the whole exact
-string.
+string. See https://docs.pytest.org/ for more information.
 
 The first time you run a test that needs recordings, it will fail with:
 `Time file '$PATH/tests/$VERSION/cassettes/test_scenarios/$TEST_NAME.frozen' not found: create one setting 'RECORD=true' or ignore it using 'RECORD=none'`.
