@@ -81,6 +81,33 @@ configuration.unstable_operations["<OperationName>"] = True
 
 where `<OperationName>` is the name of the method used to interact with that endpoint. For example: `list_log_indexes`, or `get_logs_index`
 
+
+### Changing Server
+
+When talking to a different server, like the `eu` instance, change the `server_variables`:
+
+```python
+configuration.server_variables["site"] = "datadoghq.eu"
+```
+
+
+### Disable compressed payloads
+
+If you want to disable GZIP compressed responses, set the `compress` flag
+on your configuration object:
+
+```python
+configuration.compress = False
+```
+
+### Enable requests tracing
+If you want to enable requests tracing, set the `debug` flag on your configuration object:
+
+```python
+configuration.debug = True
+```
+
+
 ## Documentation for API Endpoints and Models
 
 Documentation for API endpoints and models can be found under the docs subdirectories, in [v1](/docs/v1#documentation-for-api-endpoints) and [v2](/docs/v2#documentation-for-api-endpoints).
@@ -94,15 +121,6 @@ Authenticate with the API by providing your API and Application keys in the conf
 ```python
 configuration.api_key["apiKeyAuth"] = "YOUR_API_KEY"
 configuration.api_key["appKeyAuth"] = "YOUR_APPLICATION_KEY"
-```
-
-### Disable compressed payloads
-
-If you want to disable GZIP compressed responses, set the `compress` flag
-on your configuration object:
-
-```python
-configuration.compress = False
 ```
 
 ## Author
