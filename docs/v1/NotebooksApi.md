@@ -43,6 +43,11 @@ with ApiClient(configuration) as api_client:
                         type=NotebookCellResourceType("notebook_cells"),
                     ),
                 ],
+                metadata=NotebookMetadata(
+                    is_template=False,
+                    take_snapshots=False,
+                    type=NotebookMetadataType("investigation"),
+                ),
                 name="Example Notebook",
                 status=NotebookStatus("published"),
                 time=NotebookGlobalTime(),
@@ -250,16 +255,18 @@ with ApiClient(configuration) as api_client:
     exclude_author_handle = "test@datadoghq.com"  # str | Return notebooks not created by the given `author_handle`. (optional)
     start = 0  # int | The index of the first notebook you want returned. (optional)
     count = 5  # int | The number of notebooks to be returned. (optional)
-    sort_field = "modified"  # str | Sort by field `modified` or `name`. (optional) if omitted the server will use the default value of "modified"
+    sort_field = "modified"  # str | Sort by field `modified`, `name`, or `created`. (optional) if omitted the server will use the default value of "modified"
     sort_dir = "desc"  # str | Sort by direction `asc` or `desc`. (optional) if omitted the server will use the default value of "desc"
     query = "postmortem"  # str | Return only notebooks with `query` string in notebook name or author handle. (optional)
     include_cells = False  # bool | Value of `false` excludes the `cells` and global `time` for each notebook. (optional) if omitted the server will use the default value of True
+    is_template = False  # bool | True value returns only template notebooks. Default is false (returns only non-template notebooks). (optional) if omitted the server will use the default value of False
+    type = "investigation"  # str | If type is provided, returns only notebooks with that metadata type. Default does not have type filtering. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get all notebooks
-        api_response = api_instance.list_notebooks(author_handle=author_handle, exclude_author_handle=exclude_author_handle, start=start, count=count, sort_field=sort_field, sort_dir=sort_dir, query=query, include_cells=include_cells)
+        api_response = api_instance.list_notebooks(author_handle=author_handle, exclude_author_handle=exclude_author_handle, start=start, count=count, sort_field=sort_field, sort_dir=sort_dir, query=query, include_cells=include_cells, is_template=is_template, type=type)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling NotebooksApi->list_notebooks: %s\n" % e)
@@ -274,10 +281,12 @@ Name | Type | Description  | Notes
  **exclude_author_handle** | **str**| Return notebooks not created by the given &#x60;author_handle&#x60;. | [optional]
  **start** | **int**| The index of the first notebook you want returned. | [optional]
  **count** | **int**| The number of notebooks to be returned. | [optional]
- **sort_field** | **str**| Sort by field &#x60;modified&#x60; or &#x60;name&#x60;. | [optional] if omitted the server will use the default value of "modified"
+ **sort_field** | **str**| Sort by field &#x60;modified&#x60;, &#x60;name&#x60;, or &#x60;created&#x60;. | [optional] if omitted the server will use the default value of "modified"
  **sort_dir** | **str**| Sort by direction &#x60;asc&#x60; or &#x60;desc&#x60;. | [optional] if omitted the server will use the default value of "desc"
  **query** | **str**| Return only notebooks with &#x60;query&#x60; string in notebook name or author handle. | [optional]
  **include_cells** | **bool**| Value of &#x60;false&#x60; excludes the &#x60;cells&#x60; and global &#x60;time&#x60; for each notebook. | [optional] if omitted the server will use the default value of True
+ **is_template** | **bool**| True value returns only template notebooks. Default is false (returns only non-template notebooks). | [optional] if omitted the server will use the default value of False
+ **type** | **str**| If type is provided, returns only notebooks with that metadata type. Default does not have type filtering. | [optional]
 
 ### Return type
 
@@ -333,6 +342,11 @@ with ApiClient(configuration) as api_client:
                 cells=[
                     NotebookUpdateCell(),
                 ],
+                metadata=NotebookMetadata(
+                    is_template=False,
+                    take_snapshots=False,
+                    type=NotebookMetadataType("investigation"),
+                ),
                 name="Example Notebook",
                 status=NotebookStatus("published"),
                 time=NotebookGlobalTime(),
