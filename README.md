@@ -83,7 +83,7 @@ where `<OperationName>` is the name of the method used to interact with that end
 
 ### Changing Server
 
-When talking to a different server, like the `eu` instance, change the `server_variables`:
+When talking to a different server, like the `eu` instance, change the `server_variables` on your configuration object:
 
 ```python
 configuration.server_variables["site"] = "datadoghq.eu"
