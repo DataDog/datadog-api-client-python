@@ -38,6 +38,12 @@ Feature: Events
     When the request is sent
     Then the response status is 202 OK
 
+  Scenario: Post an event with a long title returns "OK" response
+    Given new "CreateEvent" request
+    And body with value {"title": "{{ unique }} very very very looooooooong looooooooooooong loooooooooooooooooooooong looooooooooooooooooooooooooong title with 100+ characters", "text": "A text message.", "tags": ["test:{{ unique_alnum }}"]}
+    When the request is sent
+    Then the response status is 202 OK
+
   @generated @skip
   Scenario: Query the event stream returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
