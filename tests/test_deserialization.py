@@ -5,6 +5,7 @@ from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowse
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
 from datadog_api_client.v1.model_utils import validate_and_convert_types
 from datadog_api_client.v1 import Configuration as Configuration
+from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
 from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
 from datadog_api_client.v2.model_utils import validate_and_convert_types as validate_and_convert_types_v2
@@ -267,3 +268,12 @@ def test_unknown_nested_one_of():
     assert isinstance(deserialized_data.data.attributes.destination, LogsArchiveDestination)
     assert deserialized_data.data.attributes.destination.type == "A non existent destination"
     assert deserialized_data.data.attributes.destination._composed_instances[0]._unparsed
+
+
+def test_one_of_primitive_types():
+    body = """{"data": {"buckets": [{"by": {}, "computes": {"c0": 435.3}}]}}"""
+    config = ConfigurationV2()
+    deserialized_data = validate_and_convert_types_v2(
+        json.loads(body), (LogsAggregateResponse,), ["received_data"], True, True, config)
+    assert isinstance(deserialized_data, LogsAggregateResponse)
+    assert deserialized_data.data.buckets[0].computes["c0"] == 435.3
