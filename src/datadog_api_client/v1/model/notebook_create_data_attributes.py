@@ -21,10 +21,12 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 def lazy_import():
     from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
     from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
+    from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
     from datadog_api_client.v1.model.notebook_status import NotebookStatus
 
     globals()["NotebookCellCreateRequest"] = NotebookCellCreateRequest
     globals()["NotebookGlobalTime"] = NotebookGlobalTime
+    globals()["NotebookMetadata"] = NotebookMetadata
     globals()["NotebookStatus"] = NotebookStatus
 
 
@@ -80,6 +82,7 @@ class NotebookCreateDataAttributes(ModelNormal):
             "cells": ([NotebookCellCreateRequest],),  # noqa: E501
             "name": (str,),  # noqa: E501
             "time": (NotebookGlobalTime,),  # noqa: E501
+            "metadata": (NotebookMetadata,),  # noqa: E501
             "status": (NotebookStatus,),  # noqa: E501
         }
 
@@ -89,6 +92,7 @@ class NotebookCreateDataAttributes(ModelNormal):
         "cells": "cells",  # noqa: E501
         "name": "name",  # noqa: E501
         "time": "time",  # noqa: E501
+        "metadata": "metadata",  # noqa: E501
         "status": "status",  # noqa: E501
     }
 
@@ -136,6 +140,7 @@ class NotebookCreateDataAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            metadata (NotebookMetadata): [optional]  # noqa: E501
             status (NotebookStatus): [optional]  # noqa: E501
         """
         super().__init__(kwargs)

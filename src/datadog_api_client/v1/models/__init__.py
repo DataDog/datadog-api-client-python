@@ -283,6 +283,7 @@ from datadog_api_client.v1.model.monitor_group_search_result import MonitorGroup
 from datadog_api_client.v1.model.monitor_options import MonitorOptions
 from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
 from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
+from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
 from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount
 from datadog_api_client.v1.model.monitor_search_response import MonitorSearchResponse
 from datadog_api_client.v1.model.monitor_search_response_counts import MonitorSearchResponseCounts
@@ -320,6 +321,8 @@ from datadog_api_client.v1.model.notebook_log_stream_cell_attributes import Note
 from datadog_api_client.v1.model.notebook_markdown_cell_attributes import NotebookMarkdownCellAttributes
 from datadog_api_client.v1.model.notebook_markdown_cell_definition import NotebookMarkdownCellDefinition
 from datadog_api_client.v1.model.notebook_markdown_cell_definition_type import NotebookMarkdownCellDefinitionType
+from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
+from datadog_api_client.v1.model.notebook_metadata_type import NotebookMetadataType
 from datadog_api_client.v1.model.notebook_relative_time import NotebookRelativeTime
 from datadog_api_client.v1.model.notebook_resource_type import NotebookResourceType
 from datadog_api_client.v1.model.notebook_response import NotebookResponse

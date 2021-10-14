@@ -271,6 +271,10 @@ with ApiClient(configuration) as api_client:
             notify_audit=False,
             notify_no_data=False,
             renotify_interval=1,
+            renotify_occurrences=1,
+            renotify_statuses=[
+                MonitorRenotifyStatusType("alert"),
+            ],
             require_full_window=True,
             silenced={
                 "key": 1,
@@ -768,6 +772,10 @@ with ApiClient(configuration) as api_client:
             notify_audit=False,
             notify_no_data=False,
             renotify_interval=1,
+            renotify_occurrences=1,
+            renotify_statuses=[
+                MonitorRenotifyStatusType("alert"),
+            ],
             require_full_window=True,
             silenced={
                 "key": 1,
@@ -883,6 +891,10 @@ with ApiClient(configuration) as api_client:
             notify_audit=False,
             notify_no_data=False,
             renotify_interval=1,
+            renotify_occurrences=1,
+            renotify_statuses=[
+                MonitorRenotifyStatusType("alert"),
+            ],
             require_full_window=True,
             silenced={
                 "key": 1,
