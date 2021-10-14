@@ -15,42 +15,42 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
   Scenario: Create a dashboard list returns "OK" response
     Given new "CreateDashboardList" request
-    And body with value {"name": "My Dashboard"}
+    And body with value {"name": "{{ unique }}"}
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
 
-  @generated @skip
   Scenario: Delete a dashboard list returns "Not Found" response
     Given new "DeleteDashboardList" request
-    And request contains "list_id" parameter from "<PATH>"
+    And request contains "list_id" parameter with value 0
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
   Scenario: Delete a dashboard list returns "OK" response
-    Given new "DeleteDashboardList" request
-    And request contains "list_id" parameter from "<PATH>"
+    Given there is a valid "dashboard_list" in the system
+    And new "DeleteDashboardList" request
+    And request contains "list_id" parameter from "dashboard_list.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "deleted_dashboard_list_id" has the same value as "dashboard_list.id"
 
-  @generated @skip
   Scenario: Get a dashboard list returns "Not Found" response
     Given new "GetDashboardList" request
-    And request contains "list_id" parameter from "<PATH>"
+    And request contains "list_id" parameter with value 0
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
   Scenario: Get a dashboard list returns "OK" response
-    Given new "GetDashboardList" request
-    And request contains "list_id" parameter from "<PATH>"
+    Given there is a valid "dashboard_list" in the system
+    And new "GetDashboardList" request
+    And request contains "list_id" parameter from "dashboard_list.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "id" has the same value as "dashboard_list.id"
+    And the response "name" has the same value as "dashboard_list.name"
 
-  @generated @skip
   Scenario: Get all dashboard lists returns "OK" response
     Given new "ListDashboardLists" request
     When the request is sent
@@ -64,18 +64,18 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
   Scenario: Update a dashboard list returns "Not Found" response
     Given new "UpdateDashboardList" request
-    And request contains "list_id" parameter from "<PATH>"
-    And body with value {"name": "My Dashboard"}
+    And request contains "list_id" parameter with value 0
+    And body with value {"name": "Not found"}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
   Scenario: Update a dashboard list returns "OK" response
-    Given new "UpdateDashboardList" request
-    And request contains "list_id" parameter from "<PATH>"
-    And body with value {"name": "My Dashboard"}
+    Given there is a valid "dashboard_list" in the system
+    And new "UpdateDashboardList" request
+    And request contains "list_id" parameter from "dashboard_list.id"
+    And body with value {"name": "updated {{unique}}"}
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "updated {{ unique }}"

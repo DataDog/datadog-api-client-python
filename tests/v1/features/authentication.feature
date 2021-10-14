@@ -9,10 +9,15 @@ Feature: Authentication
   directly when creating your client.  [Manage your account’s API and
   application keys](https://app.datadoghq.com/account/settings#api).
 
-  @generated @skip
+  Background:
+    Given an instance of "Authentication" API
+    And new "Validate" request
+
+  Scenario: Validate API key returns "Forbidden" response
+    When the request is sent
+    Then the response status is 403 OK
+
   Scenario: Validate API key returns "OK" response
     Given a valid "apiKeyAuth" key in the system
-    And an instance of "Authentication" API
-    And new "Validate" request
     When the request is sent
     Then the response status is 200 OK

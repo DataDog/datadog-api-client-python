@@ -15,11 +15,35 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"name\": \"{{ unique }}\"\n}"
+      }
+    ],
+    "step": "there is a valid \"dashboard_list\" in the system",
+    "key": "dashboard_list",
+    "tag": "Dashboard Lists",
+    "operationId": "CreateDashboardList"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"message\": \"{{ unique }}\",\n  \"start\": {{ timestamp(\"now\") }},\n  \"timezone\": \"Etc/UTC\",\n  \"scope\": [\"test:{{ unique_lower_alnum }}\"],\n  \"recurrence\": {\n    \"type\": \"weeks\",\n    \"period\": 1,\n    \"week_days\": [\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\"],\n    \"until_date\": {{ timestamp(\"now + 21d\")}}\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"downtime\" in the system",
+    "key": "downtime",
+    "tag": "Downtimes",
+    "operationId": "CreateDowntime"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"name\": \"{{ unique_upper_alnum }}\",\n  \"value\": \"variable-value\",\n  \"is_secret\": false\n}"
       }
     ],
-    "step": "there is a valid \"webhook-custom-variable\" in the system",
-    "key": "webhook-custom-variable",
+    "step": "there is a valid \"webhook_custom_variable\" in the system",
+    "key": "webhook_custom_variable",
     "tag": "Webhooks Integration",
     "operationId": "CreateWebhooksIntegrationCustomVariable"
   },
@@ -34,6 +58,18 @@
     "key": "webhook",
     "tag": "Webhooks Integration",
     "operationId": "CreateWebhooksIntegration"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"name\": \"{{ unique }}\",\n  \"type\": \"log alert\",\n  \"query\": \"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\n  \"message\": \"some message Notify: @hipchat-channel\",\n  \"tags\": [\"test:{{ unique_lower_alnum }}\", \"env:ci\"],\n  \"priority\": 3,\n  \"options\": {\n    \"enable_logs_sample\": true,\n    \"escalation_message\": \"the situation has escalated\",\n    \"evaluation_delay\": 700,\n    \"groupby_simple_monitor\": true,\n    \"include_tags\": true,\n    \"locked\": false,\n    \"new_host_delay\": 600,\n    \"no_data_timeframe\": null,\n    \"notify_audit\": false,\n    \"notify_no_data\": false,\n    \"renotify_interval\": 60,\n    \"require_full_window\": true,\n    \"thresholds\": { \"critical\": 2, \"warning\": 1 },\n    \"timeout_h\": 60\n  }\n}\n"
+      }
+    ],
+    "step": "there is a valid \"monitor\" in the system",
+    "key": "monitor",
+    "tag": "Monitors",
+    "operationId": "CreateMonitor"
   },
   {
     "parameters": [
@@ -70,5 +106,17 @@
     "key": "correction",
     "tag": "Service Level Objective Corrections",
     "operationId": "CreateSLOCorrection"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"config\": {\n    \"assertions\": [\n      {\n        \"operator\": \"is\",\n        \"property\": \"{{ '{{ PROPERTY }}' }}\",\n        \"target\": \"text/html\",\n        \"type\": \"header\"\n      },\n      { \"operator\": \"lessThan\", \"target\": 2000, \"type\": \"responseTime\" },\n      {\n        \"operator\": \"validatesJSONPath\",\n        \"target\": {\n          \"jsonPath\": \"topKey\",\n          \"operator\": \"isNot\",\n          \"targetValue\": \"0\"\n        },\n        \"type\": \"body\"\n      }\n    ],\n    \"configVariables\": [\n      {\n        \"example\": \"content-type\",\n        \"name\": \"PROPERTY\",\n        \"pattern\": \"content-type\",\n        \"type\": \"text\"\n      }\n    ],\n    \"request\": {\n      \"certificate\": {\n        \"cert\": {\n          \"content\": \"cert-content\",\n          \"filename\": \"cert-filename\",\n          \"updatedAt\": \"2020-10-16T09:23:24.857Z\"\n        },\n        \"key\": {\n          \"content\": \"key-content\",\n          \"filename\": \"key-filename\",\n          \"updatedAt\": \"2020-10-16T09:23:24.857Z\"\n        }\n      },\n      \"headers\": { \"unique\": \"{{ unique_lower_alnum }}\" },\n      \"method\": \"GET\",\n      \"timeout\": 10,\n      \"url\": \"https://datadoghq.com\"\n    }\n  },\n  \"locations\": [\"aws:us-east-2\"],\n  \"message\": \"BDD test payload: synthetics_api_test_payload.json\",\n  \"name\": \"{{ unique }}\",\n  \"options\": {\n    \"accept_self_signed\": false,\n    \"allow_insecure\": true,\n    \"follow_redirects\": true,\n    \"min_failure_duration\": 10,\n    \"min_location_failed\": 1,\n    \"monitor_name\": \"{{ unique }}\",\n    \"monitor_priority\": 5,\n    \"retry\": { \"count\": 3, \"interval\": 10 },\n    \"tick_every\": 60\n  },\n  \"subtype\": \"http\",\n  \"tags\": [\"testing:api\"],\n  \"type\": \"api\"\n}\n"
+      }
+    ],
+    "step": "there is a valid \"synthetics_api_test\" in the system",
+    "key": "synthetics_api_test",
+    "tag": "Synthetics",
+    "operationId": "CreateSyntheticsAPITest"
   }
 ]

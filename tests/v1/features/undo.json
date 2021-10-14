@@ -192,8 +192,13 @@
   "CreateDowntime": {
     "tag": "Downtimes",
     "undo": {
-      "operationId": "TODO",
-      "parameters": [],
+      "operationId": "CancelDowntime",
+      "parameters": [
+        {
+          "name": "downtime_id",
+          "source": "id"
+        }
+      ],
       "type": "unsafe"
     }
   },

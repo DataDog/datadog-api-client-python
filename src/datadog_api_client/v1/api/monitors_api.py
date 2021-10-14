@@ -70,7 +70,7 @@ class MonitorsApi(object):
                     "monitor_ids": "query",
                 },
                 "collection_format_map": {
-                    "monitor_ids": "multi",
+                    "monitor_ids": "csv",
                 },
             },
             headers_map={
