@@ -1651,6 +1651,8 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                     oneof_instance = oneof_class._from_openapi_data(**model_kwargs, **constant_kwargs)
                 else:
                     oneof_instance = oneof_class(**model_kwargs, **constant_kwargs)
+                if not oneof_instance._unparsed:
+                    oneof_instances.append(oneof_instance)
             else:
                 if issubclass(oneof_class, ModelSimple):
                     oneof_instance = oneof_class(model_arg, **constant_kwargs)
