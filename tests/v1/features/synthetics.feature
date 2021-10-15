@@ -390,6 +390,20 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get details of batch returns "Batch does not exist." response
+    Given new "GetSyntheticsCIBatch" request
+    And request contains "batch_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 404 Batch does not exist.
+
+  @generated @skip
+  Scenario: Get details of batch returns "OK" response
+    Given new "GetSyntheticsCIBatch" request
+    And request contains "batch_id" parameter from "<PATH>"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get the list of all tests returns "OK - Returns the list of all Synthetic tests." response
     Given new "ListTests" request
     When the request is sent

@@ -927,6 +927,12 @@
       "type": "safe"
     }
   },
+  "GetSyntheticsCIBatch": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListLocations": {
     "tag": "Synthetics",
     "undo": {
