@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.5.0 / 2021-10-15
+
+* [Added] Add `type` and `is_template` properties to notebooks. See [#615](https://github.com/DataDog/datadog-api-client-python/pull/615).
+* [Added] Add `renotify_occurrences` and `renotify_statuses` monitor options. See [#613](https://github.com/DataDog/datadog-api-client-python/pull/613).
+* [Added] Add `servername` property to SSL Synthetics tests request. See [#603](https://github.com/DataDog/datadog-api-client-python/pull/603).
+* [Added] Document encoding in metrics intake. See [#604](https://github.com/DataDog/datadog-api-client-python/pull/604).
+* [Added] Add support for formulas and functions in the Scatterplot Widget for dashboards. See [#587](https://github.com/DataDog/datadog-api-client-python/pull/587).
+* [Added] Add support for gzip and deflate encoding. See [#593](https://github.com/DataDog/datadog-api-client-python/pull/593).
+* [Added] Add information about creator to Synthetics tests details. See [#596](https://github.com/DataDog/datadog-api-client-python/pull/596).
+* [Added] Add support for funnel widget in dashboards. See [#590](https://github.com/DataDog/datadog-api-client-python/pull/590).
+* [Added] Add formula and function APM resource stats query definition for dashboards. See [#582](https://github.com/DataDog/datadog-api-client-python/pull/582).
+* [Added] ApmDependencyStatsQuery for formulas and functions dashboard widgets. See [#581](https://github.com/DataDog/datadog-api-client-python/pull/581).
+* [Fixed] Fix handling of primitive types in oneOfs. See [#621](https://github.com/DataDog/datadog-api-client-python/pull/621).
+* [Fixed] Remove event title length constraint. See [#598](https://github.com/DataDog/datadog-api-client-python/pull/598).
+* [Fixed] Allow nullable date in notebook cells. See [#607](https://github.com/DataDog/datadog-api-client-python/pull/607).
+* [Fixed] `IncidentFieldAttributesMultipleValue` can be nullable. See [#602](https://github.com/DataDog/datadog-api-client-python/pull/602).
+* [Fixed] Fix incidents schemas. See [#601](https://github.com/DataDog/datadog-api-client-python/pull/601).
+* [Fixed] Make sure that OpenAPI definition are valid with real server responses. See [#595](https://github.com/DataDog/datadog-api-client-python/pull/595).
+* [Fixed] Fix typo in usage attribution field names for profiled containers. See [#597](https://github.com/DataDog/datadog-api-client-python/pull/597).
+* [Fixed] Make the name property required for APM Dependency Stat Query widget. See [#586](https://github.com/DataDog/datadog-api-client-python/pull/586).
+* [Fixed] Mark SLO Correction Type as required. See [#568](https://github.com/DataDog/datadog-api-client-python/pull/568).
+* [Changed] Enable compression in responses. See [#612](https://github.com/DataDog/datadog-api-client-python/pull/612).
+* [Changed] Use AVG aggregation function for DBM queries. See [#592](https://github.com/DataDog/datadog-api-client-python/pull/592).
+
 ## 1.4.O / 2021-09-14
 
 * [Added] Add restricted roles for Synthetics global variables. See [#550](https://github.com/DataDog/datadog-api-client-python/pull/550).
