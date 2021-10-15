@@ -96,9 +96,10 @@ Feature: Synthetics
 
   Scenario: Create an API test returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsAPITest" request
-    And body with value {"config":{"assertions":[{"operator":"contains","property":"content-type","target":"application/json","type":"header"},{"operator":"is","target":200,"type":"statusCode"},{"operator":"validatesJSONPath","target":{"jsonPath":"topKey","operator":"isNot","targetValue":"0"},"type":"body"},{"operator":"validatesJSONPath","target":{"jsonPath":"something","operator":"moreThan","targetValue":5},"type":"body"},{"operator":"isNot","target":200,"type":"statusCode"},{"operator":"matches","target":"20[04]","type":"statusCode"},{"operator":"doesNotMatch","target":"20[04]","type":"statusCode"}],"configVariables":[],"request":{"basicAuth":{"password":"secret","username":"admin"},"body":"this is a body","headers":{"Accept":"application/json"},"method":"GET","query":{"foo":"bar"},"timeout":30,"url":"https://www.datadoghq.com"}},"locations":["aws:eu-central-1"],"message":"Notify @datadog.user","name":"{{ unique }}","options":{"follow_redirects":true,"min_location_failed":1,"monitor_options":{"renotify_interval":100},"tick_every":60},"status":"paused","subtype":"http","tags":["foo:bar","baz"],"type":"api"}
+    And body from file "synthetics_api_test_payload.json"
     When the request is sent
     Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
 
   @generated @skip
   Scenario: Create an API test returns "Test quota is reached" response
@@ -156,12 +157,14 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 404 - Tests to be deleted can't be found
 
-  @generated @skip
+  @skip
   Scenario: Delete tests returns "OK." response
-    Given new "DeleteTests" request
-    And body with value {"public_ids": []}
+    Given there is a valid "synthetics_api_test" in the system
+    And new "DeleteTests" request
+    And body with value {"public_ids": ["{{ synthetics_api_test.public_id }}"]}
     When the request is sent
     Then the response status is 200 OK.
+    And the response "deleted_tests[0].public_id" is equal to "{{ synthetics_api_test.public_id }}"
 
   @generated @skip
   Scenario: Edit a browser test returns "- JSON format is wrong" response
@@ -235,13 +238,14 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
-  @generated @skip
   Scenario: Edit an API test returns "OK" response
-    Given new "UpdateAPITest" request
-    And request contains "public_id" parameter from "<PATH>"
-    And body with value {"config": {"assertions": [], "configVariables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "text"}], "request": {"allow_insecure": null, "basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "follow_redirects": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "servername": null, "shouldTrackHops": null, "timeout": null, "url": null}, "steps": [{"allowFailure": null, "assertions": [], "extractedValues": [{}], "isCritical": null, "name": null, "request": {"allow_insecure": null, "basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "follow_redirects": null, "headers": null, "host": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "servername": null, "shouldTrackHops": null, "timeout": null, "url": null}, "subtype": "http"}]}, "locations": [null], "message": null, "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "subtype": "http", "tags": [null], "type": "api"}
+    Given there is a valid "synthetics_api_test" in the system
+    And new "UpdateAPITest" request
+    And request contains "public_id" parameter from "synthetics_api_test.publicId"
+    And body from file "synthetics_api_test_update_payload.json"
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ synthetics_api_test.name }}-updated"
 
   @generated @skip
   Scenario: Get a browser test result returns "- Synthetic is not activated for the user" response
