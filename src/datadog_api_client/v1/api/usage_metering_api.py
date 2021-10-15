@@ -43,6 +43,7 @@ from datadog_api_client.v1.model.usage_network_flows_response import UsageNetwor
 from datadog_api_client.v1.model.usage_network_hosts_response import UsageNetworkHostsResponse
 from datadog_api_client.v1.model.usage_profiling_response import UsageProfilingResponse
 from datadog_api_client.v1.model.usage_rum_sessions_response import UsageRumSessionsResponse
+from datadog_api_client.v1.model.usage_sds_response import UsageSDSResponse
 from datadog_api_client.v1.model.usage_snmp_response import UsageSNMPResponse
 from datadog_api_client.v1.model.usage_sort import UsageSort
 from datadog_api_client.v1.model.usage_sort_direction import UsageSortDirection
@@ -1207,6 +1208,51 @@ class UsageMeteringApi(object):
                     "start_hr": "query",
                     "end_hr": "query",
                     "type": "query",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_usage_sds_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageSDSResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/usage/sds",
+                "operation_id": "get_usage_sds",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "start_hr",
+                    "end_hr",
+                ],
+                "required": [
+                    "start_hr",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "start_hr": (datetime,),
+                    "end_hr": (datetime,),
+                },
+                "attribute_map": {
+                    "start_hr": "start_hr",
+                    "end_hr": "end_hr",
+                },
+                "location_map": {
+                    "start_hr": "query",
+                    "end_hr": "query",
                 },
                 "collection_format_map": {},
             },
@@ -2656,6 +2702,50 @@ class UsageMeteringApi(object):
         kwargs = self._get_usage_rum_sessions_endpoint.default_arguments(kwargs)
         kwargs["start_hr"] = start_hr
         return self._get_usage_rum_sessions_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_sds(self, start_hr, **kwargs):
+        """Get hourly usage for Sensitive Data Scanner  # noqa: E501
+
+        Get hourly usage for Sensitive Data Scanner.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_usage_sds(start_hr, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            start_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage beginning at this hour.
+
+        Keyword Args:
+            end_hr (datetime): Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]` for usage ending **before** this hour.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UsageSDSResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_usage_sds_endpoint.default_arguments(kwargs)
+        kwargs["start_hr"] = start_hr
+        return self._get_usage_sds_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_snmp(self, start_hr, **kwargs):
         """Get hourly usage for SNMP devices  # noqa: E501

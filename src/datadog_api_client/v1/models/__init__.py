@@ -635,6 +635,8 @@ from datadog_api_client.v1.model.usage_profiling_response import UsageProfilingR
 from datadog_api_client.v1.model.usage_reports_type import UsageReportsType
 from datadog_api_client.v1.model.usage_rum_sessions_hour import UsageRumSessionsHour
 from datadog_api_client.v1.model.usage_rum_sessions_response import UsageRumSessionsResponse
+from datadog_api_client.v1.model.usage_sds_hour import UsageSDSHour
+from datadog_api_client.v1.model.usage_sds_response import UsageSDSResponse
 from datadog_api_client.v1.model.usage_snmp_hour import UsageSNMPHour
 from datadog_api_client.v1.model.usage_snmp_response import UsageSNMPResponse
 from datadog_api_client.v1.model.usage_sort import UsageSort

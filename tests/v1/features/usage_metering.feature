@@ -200,6 +200,18 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip
+  Scenario: Get hourly usage for Sensitive Data Scanner returns "Bad Request" response
+    Given new "GetUsageSDS" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip
+  Scenario: Get hourly usage for Sensitive Data Scanner returns "OK" response
+    Given new "GetUsageSDS" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Get hourly usage for Synthetics API Checks returns "Bad Request" response
     Given new "GetUsageSyntheticsAPI" request
     When the request is sent
