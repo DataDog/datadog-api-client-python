@@ -59,6 +59,13 @@ components:
             auto_scaling: false
             opswork: false
           type: object
+        cspm_resource_collection_enabled:
+          default: false
+          description: Whether Datadog collects cloud security posture management
+            resources from your AWS account. This includes additional resources not
+            covered under the general `resource_collection`.
+          example: true
+          type: boolean
         excluded_regions:
           description: An array of AWS regions to exclude from metrics collection.
           example:
@@ -99,6 +106,17 @@ components:
             description: The list of the the host_tags.
             type: string
           type: array
+        metrics_collection_enabled:
+          default: true
+          description: Whether Datadog collects metrics for this AWS account.
+          example: false
+          type: boolean
+        resource_collection_enabled:
+          default: false
+          description: Whether Datadog collects a standard set of resources from your
+            AWS account.
+          example: true
+          type: boolean
         role_name:
           description: Your Datadog role delegation name.
           example: DatadogAWSIntegrationRole
