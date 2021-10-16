@@ -13721,7 +13721,8 @@ components:
           format: int64
           type: integer
         num_custom_timeseries:
-          description: Contains the number of non-aggregation custom metrics.
+          description: Contains sum of non-aggregation custom metrics and custom metrics
+            that are outputs for aggregations.
           format: int64
           type: integer
       type: object
