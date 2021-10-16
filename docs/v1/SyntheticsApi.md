@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**get_browser_test_result**](SyntheticsApi.md#get_browser_test_result) | **GET** /api/v1/synthetics/tests/browser/{public_id}/results/{result_id} | Get a browser test result
 [**get_global_variable**](SyntheticsApi.md#get_global_variable) | **GET** /api/v1/synthetics/variables/{variable_id} | Get a global variable
 [**get_private_location**](SyntheticsApi.md#get_private_location) | **GET** /api/v1/synthetics/private-locations/{location_id} | Get a private location
+[**get_synthetics_ci_batch**](SyntheticsApi.md#get_synthetics_ci_batch) | **GET** /api/v1/synthetics/ci/batch/{batch_id} | Get details of batch
 [**get_test**](SyntheticsApi.md#get_test) | **GET** /api/v1/synthetics/tests/{public_id} | Get a test configuration
 [**list_global_variables**](SyntheticsApi.md#list_global_variables) | **GET** /api/v1/synthetics/variables | Get all global variables
 [**list_locations**](SyntheticsApi.md#list_locations) | **GET** /api/v1/synthetics/locations | Get all locations (public and private)
@@ -1418,6 +1419,70 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **get_synthetics_ci_batch**
+> SyntheticsBatchDetails get_synthetics_ci_batch(batch_id)
+
+Get a batch's updated details.
+
+### Example
+
+* Api Key Authentication (apiKeyAuth):
+* Api Key Authentication (appKeyAuth):
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import synthetics_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = synthetics_api.SyntheticsApi(api_client)
+    batch_id = "batch_id_example"  # str | The ID of the batch.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get details of batch
+        api_response = api_instance.get_synthetics_ci_batch(batch_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SyntheticsApi->get_synthetics_ci_batch: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **batch_id** | **str**| The ID of the batch. |
+
+### Return type
+
+[**SyntheticsBatchDetails**](SyntheticsBatchDetails.md)
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Batch does not exist. |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **get_test**
 > SyntheticsTestDetails get_test(public_id)
 
@@ -1711,12 +1776,12 @@ with ApiClient(configuration) as api_client:
                 locations=[
                     "locations_example",
                 ],
-                metadata=SyntheticsCITestMetadata(
-                    ci=SyntheticsCITestMetadataCi(
+                metadata=SyntheticsCIBatchMetadata(
+                    ci=SyntheticsCIBatchMetadataCI(
                         pipeline="pipeline_example",
                         provider="provider_example",
                     ),
-                    git=SyntheticsCITestMetadataGit(
+                    git=SyntheticsCIBatchMetadataGit(
                         branch="branch_example",
                         commit_sha="commit_sha_example",
                     ),

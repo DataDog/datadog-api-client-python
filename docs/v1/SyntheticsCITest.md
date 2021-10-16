@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **follow_redirects** | **bool** | For API HTTP test, whether or not the test should follow redirects. | [optional] 
 **headers** | [**SyntheticsTestHeaders**](SyntheticsTestHeaders.md) |  | [optional] 
 **locations** | **[str]** | Array of locations used to run the test. | [optional] 
-**metadata** | [**SyntheticsCITestMetadata**](SyntheticsCITestMetadata.md) |  | [optional] 
+**metadata** | [**SyntheticsCIBatchMetadata**](SyntheticsCIBatchMetadata.md) |  | [optional] 
 **retry** | [**SyntheticsTestOptionsRetry**](SyntheticsTestOptionsRetry.md) |  | [optional] 
 **start_url** | **str** | Starting URL for the browser test. | [optional] 
 **variables** | **{str: (str,)}** | Variables to replace in the test. | [optional] 
