@@ -47,9 +47,12 @@ with ApiClient(configuration) as api_client:
         account_specific_namespace_rules={
             "key": True,
         },
+        cspm_resource_collection_enabled=True,
         excluded_regions=["us-east-1","us-west-2"],
         filter_tags=["<KEY>:<VALUE>"],
         host_tags=["<KEY>:<VALUE>"],
+        metrics_collection_enabled=False,
+        resource_collection_enabled=True,
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
     )  # AWSAccount | AWS Request Object
@@ -193,9 +196,12 @@ with ApiClient(configuration) as api_client:
         account_specific_namespace_rules={
             "key": True,
         },
+        cspm_resource_collection_enabled=True,
         excluded_regions=["us-east-1","us-west-2"],
         filter_tags=["<KEY>:<VALUE>"],
         host_tags=["<KEY>:<VALUE>"],
+        metrics_collection_enabled=False,
+        resource_collection_enabled=True,
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
     )  # AWSAccount | Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://docs.datadoghq.com/integrations/amazon_web_services/#setup).
@@ -602,9 +608,12 @@ with ApiClient(configuration) as api_client:
         account_specific_namespace_rules={
             "key": True,
         },
+        cspm_resource_collection_enabled=True,
         excluded_regions=["us-east-1","us-west-2"],
         filter_tags=["<KEY>:<VALUE>"],
         host_tags=["<KEY>:<VALUE>"],
+        metrics_collection_enabled=False,
+        resource_collection_enabled=True,
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
     )  # AWSAccount | AWS request object
