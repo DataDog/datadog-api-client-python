@@ -102,6 +102,8 @@ class UsageSummaryDateOrg(ModelNormal):
             "public_id": (str,),  # noqa: E501
             "rum_session_count_sum": (int,),  # noqa: E501
             "rum_total_session_count_sum": (int,),  # noqa: E501
+            "sds_logs_scanned_bytes_sum": (int,),  # noqa: E501
+            "sds_total_scanned_bytes_sum": (int,),  # noqa: E501
             "synthetics_browser_check_calls_count_sum": (int,),  # noqa: E501
             "synthetics_check_calls_count_sum": (int,),  # noqa: E501
             "trace_search_indexed_events_count_sum": (int,),  # noqa: E501
@@ -153,6 +155,8 @@ class UsageSummaryDateOrg(ModelNormal):
         "public_id": "public_id",  # noqa: E501
         "rum_session_count_sum": "rum_session_count_sum",  # noqa: E501
         "rum_total_session_count_sum": "rum_total_session_count_sum",  # noqa: E501
+        "sds_logs_scanned_bytes_sum": "sds_logs_scanned_bytes_sum",  # noqa: E501
+        "sds_total_scanned_bytes_sum": "sds_total_scanned_bytes_sum",  # noqa: E501
         "synthetics_browser_check_calls_count_sum": "synthetics_browser_check_calls_count_sum",  # noqa: E501
         "synthetics_check_calls_count_sum": "synthetics_check_calls_count_sum",  # noqa: E501
         "trace_search_indexed_events_count_sum": "trace_search_indexed_events_count_sum",  # noqa: E501
@@ -240,6 +244,8 @@ class UsageSummaryDateOrg(ModelNormal):
             public_id (str): The organization public id.. [optional]  # noqa: E501
             rum_session_count_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current date for the given org.. [optional]  # noqa: E501
             rum_total_session_count_sum (int): Shows the sum of RUM Sessions (browser and mobile) over all hours in the current date for the given org.. [optional]  # noqa: E501
+            sds_logs_scanned_bytes_sum (int): Shows the sum of all bytes scanned of logs usage by the Sensitive Data Scanner over all hours in the current month for all organizations.. [optional]  # noqa: E501
+            sds_total_scanned_bytes_sum (int): Shows the sum of all bytes scanned across all usage types by the Sensitive Data Scanner over all hours in the current month for all organizations.. [optional]  # noqa: E501
             synthetics_browser_check_calls_count_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current date for the given org.. [optional]  # noqa: E501
             synthetics_check_calls_count_sum (int): Shows the sum of all Synthetic API tests over all hours in the current date for the given org.. [optional]  # noqa: E501
             trace_search_indexed_events_count_sum (int): Shows the sum of all Indexed Spans indexed over all hours in the current date for the given org.. [optional]  # noqa: E501
