@@ -100,7 +100,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only
+  @integration-only @skip-validation
   Scenario: Submit deflate metrics returns "Payload accepted" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "type": "gauge", "points": [[{{ timestamp("now") }}, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}
