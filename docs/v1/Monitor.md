@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **name** | **str** | The monitor name. | [optional] 
 **options** | [**MonitorOptions**](MonitorOptions.md) |  | [optional] 
 **overall_state** | [**MonitorOverallStates**](MonitorOverallStates.md) |  | [optional] 
-**priority** | **int** | Integer from 1 (high) to 5 (low) indicating alert severity. | [optional] 
-**restricted_roles** | **[str]** | A list of role identifiers that can be pulled from the Roles API. Cannot be used with &#x60;locked&#x60; option. | [optional] 
+**priority** | **int, none_type** | Integer from 1 (high) to 5 (low) indicating alert severity. | [optional] 
+**restricted_roles** | **[str], none_type** | A list of role identifiers that can be pulled from the Roles API. Cannot be used with &#x60;locked&#x60; option. | [optional] 
 **state** | [**MonitorState**](MonitorState.md) |  | [optional] 
 **tags** | **[str]** | Tags associated to your monitor. | [optional] 
 
