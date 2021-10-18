@@ -96,8 +96,14 @@ class Monitor(ModelNormal):
             "name": (str,),  # noqa: E501
             "options": (MonitorOptions,),  # noqa: E501
             "overall_state": (MonitorOverallStates,),  # noqa: E501
-            "priority": (int,),  # noqa: E501
-            "restricted_roles": ([str],),  # noqa: E501
+            "priority": (
+                int,
+                none_type,
+            ),  # noqa: E501
+            "restricted_roles": (
+                [str],
+                none_type,
+            ),  # noqa: E501
             "state": (MonitorState,),  # noqa: E501
             "tags": ([str],),  # noqa: E501
         }
@@ -182,8 +188,8 @@ class Monitor(ModelNormal):
             name (str): The monitor name.. [optional]  # noqa: E501
             options (MonitorOptions): [optional]  # noqa: E501
             overall_state (MonitorOverallStates): [optional]  # noqa: E501
-            priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]  # noqa: E501
-            restricted_roles ([str]): A list of role identifiers that can be pulled from the Roles API. Cannot be used with `locked` option.. [optional]  # noqa: E501
+            priority (int, none_type): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]  # noqa: E501
+            restricted_roles ([str], none_type): A list of role identifiers that can be pulled from the Roles API. Cannot be used with `locked` option.. [optional]  # noqa: E501
             state (MonitorState): [optional]  # noqa: E501
             tags ([str]): Tags associated to your monitor.. [optional]  # noqa: E501
         """
