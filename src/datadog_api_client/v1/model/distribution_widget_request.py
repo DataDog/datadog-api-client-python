@@ -19,10 +19,12 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
     from datadog_api_client.v1.model.widget_style import WidgetStyle
 
+    globals()["ApmStatsQueryDefinition"] = ApmStatsQueryDefinition
     globals()["LogQueryDefinition"] = LogQueryDefinition
     globals()["ProcessQueryDefinition"] = ProcessQueryDefinition
     globals()["WidgetStyle"] = WidgetStyle
@@ -73,6 +75,7 @@ class DistributionWidgetRequest(ModelNormal):
         lazy_import()
         return {
             "apm_query": (LogQueryDefinition,),  # noqa: E501
+            "apm_stats_query": (ApmStatsQueryDefinition,),  # noqa: E501
             "event_query": (LogQueryDefinition,),  # noqa: E501
             "log_query": (LogQueryDefinition,),  # noqa: E501
             "network_query": (LogQueryDefinition,),  # noqa: E501
@@ -88,6 +91,7 @@ class DistributionWidgetRequest(ModelNormal):
 
     attribute_map = {
         "apm_query": "apm_query",  # noqa: E501
+        "apm_stats_query": "apm_stats_query",  # noqa: E501
         "event_query": "event_query",  # noqa: E501
         "log_query": "log_query",  # noqa: E501
         "network_query": "network_query",  # noqa: E501
@@ -139,6 +143,7 @@ class DistributionWidgetRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             apm_query (LogQueryDefinition): [optional]  # noqa: E501
+            apm_stats_query (ApmStatsQueryDefinition): [optional]  # noqa: E501
             event_query (LogQueryDefinition): [optional]  # noqa: E501
             log_query (LogQueryDefinition): [optional]  # noqa: E501
             network_query (LogQueryDefinition): [optional]  # noqa: E501

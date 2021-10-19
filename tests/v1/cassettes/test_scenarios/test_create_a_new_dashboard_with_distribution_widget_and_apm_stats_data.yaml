@@ -1,0 +1,98 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_distribution_widget_and_apm_stats_data-1634650426","widgets":[{"definition":{"requests":[{"apm_stats_query":{"env":"prod","name":"cassandra.query","primary_tag":"datacenter:dc1","row_type":"service","service":"cassandra"}}],"title":"","title_align":"left","title_size":"16","type":"distribution"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '410'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '8268861117747843641'
+      x-datadog-trace-id:
+      - '2389969289727081344'
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"4rp-6dh-ihs","title":"Test-Create_a_new_dashboard_with_distribution_widget_and_apm_stats_data-1634650426","url":"/dashboard/4rp-6dh-ihs/test-createanewdashboardwithdistributionwidgetandapmstatsdata-1634650426","created_at":"2021-10-19T13:33:47.501264+00:00","modified_at":"2021-10-19T13:33:47.501264+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"type":"distribution","requests":[{"apm_stats_query":{"primary_tag":"datacenter:dc1","row_type":"service","name":"cassandra.query","service":"cassandra","env":"prod"}}],"title_align":"left","title_size":"16","title":""},"layout":{"y":0,"width":4,"x":0,"height":4},"id":5954793079374026}],"layout_type":"ordered"}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '815'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 19 Oct 2021 13:33:47 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '5067932317896081809'
+      x-datadog-trace-id:
+      - '2389969289727081344'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/4rp-6dh-ihs
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"4rp-6dh-ihs"}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '38'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 19 Oct 2021 13:33:48 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1
