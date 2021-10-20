@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"name":"updated","options":{"evaluation_delay":null,"new_group_delay":600,"new_host_delay":null,"renotify_interval":null,"thresholds":{"critical":2,"warning":null},"timeout_h":null}}'
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '183'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '8667457301094752617'
+      x-datadog-trace-id:
+      - '8415666206679357486'
+    method: PUT
+    uri: https://api.datadoghq.com/api/v1/monitor/0
+  response:
+    body:
+      string: '{"errors": ["Monitor not found"]}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '33'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 19 Oct 2021 14:57:44 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '500'
+      x-ratelimit-period:
+      - '10'
+      x-ratelimit-remaining:
+      - '499'
+      x-ratelimit-reset:
+      - '6'
+    status:
+      code: 404
+      message: Not Found
+version: 1

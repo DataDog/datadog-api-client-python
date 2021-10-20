@@ -158,11 +158,18 @@ Feature: Users
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  Scenario: Update a user returns "Bad User ID in Request" response
+    Given there is a valid "user" in the system
+    And new "UpdateUser" request
+    And request contains "user_id" parameter from "user.data.id"
+    And body with value {"data": {"id": "00000000-mismatch-body-id-ffffffffffff", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
+    When the request is sent
+    Then the response status is 422 Bad User ID in Request
+
   Scenario: Update a user returns "Not found" response
     Given new "UpdateUser" request
-    And request contains "user_id" parameter from "<PATH>"
-    And body with value {"data": {"attributes": {"disabled": null, "email": null, "name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "users"}}
+    And request contains "user_id" parameter with value "00000000-dead-beef-dead-ffffffffffff"
+    And body with value {"data": {"id": "00000000-dead-beef-dead-ffffffffffff", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
     When the request is sent
     Then the response status is 404 Not found
 
