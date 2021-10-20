@@ -186,19 +186,20 @@ Feature: Roles
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
   Scenario: Revoke permission returns "Bad Request" response
-    Given new "RemovePermissionFromRole" request
-    And request contains "role_id" parameter from "<PATH>"
-    And body with value {"data": {"id": null, "type": "permissions"}}
+    Given there is a valid "role" in the system
+    And there is a valid "permission" in the system
+    And new "RemovePermissionFromRole" request
+    And request contains "role_id" parameter from "role.data.id"
+    And body with value {"data": {"id": "11111111-dead-beef-dead-ffffffffffff", "type": "{{ permission.type }}"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
   Scenario: Revoke permission returns "Not found" response
-    Given new "RemovePermissionFromRole" request
-    And request contains "role_id" parameter from "<PATH>"
-    And body with value {"data": {"id": null, "type": "permissions"}}
+    Given there is a valid "permission" in the system
+    And new "RemovePermissionFromRole" request
+    And request contains "role_id" parameter with value "00000000-dead-beef-dead-ffffffffffff"
+    And body with value {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -220,11 +221,18 @@ Feature: Roles
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  Scenario: Update a role returns "Bad Role ID" response
+    Given there is a valid "role" in the system
+    And new "UpdateRole" request
+    And request contains "role_id" parameter from "role.data.id"
+    And body with value {"data": {"id": "00000000-dead-beef-dead-ffffffffffff", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}}}
+    When the request is sent
+    Then the response status is 422 Bad Role ID in Request
+
   Scenario: Update a role returns "Not found" response
     Given new "UpdateRole" request
-    And request contains "role_id" parameter from "<PATH>"
-    And body with value {"data": {"attributes": {"name": null}, "id": "00000000-0000-0000-0000-000000000000", "type": "roles"}}
+    And request contains "role_id" parameter with value "00000000-dead-beef-dead-ffffffffffff"
+    And body with value {"data": {"id": "00000000-dead-beef-dead-ffffffffffff", "type": "roles", "attributes": {"name" : "updated"}}}
     When the request is sent
     Then the response status is 404 Not found
 

@@ -87,10 +87,15 @@ Feature: Downtimes
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  Scenario: Schedule a downtime once a year
+    Given new "CreateDowntime" request
+    And body from file "downtime_recurrence_payload_once_a_year.json"
+    When the request is sent
+    Then the response status is 200 OK
+
   Scenario: Schedule a downtime returns "Bad Request" response
     Given new "CreateDowntime" request
-    And body with value {"disabled": false, "end": 1412793983, "message": "Message on the downtime", "monitor_id": 123456, "monitor_tags": ["*"], "parent_id": 123, "recurrence": {"period": 1, "rrule": "FREQ=MONTHLY;BYSETPOS=3;BYDAY=WE;INTERVAL=1", "type": "weeks", "until_date": 1447786293, "until_occurrences": 2, "week_days": ["Mon", "Tue"]}, "scope": ["env:staging"], "start": 1412792983, "timezone": "America/New_York"}
+    And body from file "downtime_with_many_tags_payload.json"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -101,6 +106,44 @@ Feature: Downtimes
     Then the response status is 200 OK
     And the response "message" is equal to "{{ unique }}"
     And the response "active" is equal to true
+
+  Scenario: Schedule a downtime until date
+    Given new "CreateDowntime" request
+    And body from file "downtime_recurrence_payload_until_date.json"
+    When the request is sent
+    Then the response status is 200 OK
+
+  Scenario: Schedule a downtime with invalid type hours
+    Given new "CreateDowntime" request
+    And body from file "downtime_recurrence_payload_invalid_type_hours.json"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  Scenario: Schedule a downtime with invalid weekdays
+    Given new "CreateDowntime" request
+    And body from file "downtime_recurrence_payload_invalid_weekdays.json"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  Scenario: Schedule a downtime with mutually exclusive until occurrences and until date properties
+    Given new "CreateDowntime" request
+    And body from file "downtime_recurrence_payload_until_occurrences_and_until_date_are_mutually_exclusive.json"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  Scenario: Schedule a downtime with until occurrences
+    Given new "CreateDowntime" request
+    And body from file "downtime_recurrence_payload_until_occurrences.json"
+    When the request is sent
+    Then the response status is 200 OK
+
+  Scenario: Schedule a monitor downtime returns "OK" response
+    Given there is a valid "monitor" in the system
+    And new "CreateDowntime" request
+    And body with value {"message": "{{ unique }}", "start": {{ timestamp("now") }}, "timezone": "Etc/UTC", "scope": ["test:{{ unique_lower_alnum }}"], "monitor_id": {{ monitor.id }}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "monitor_id" has the same value as "monitor.id"
 
   @generated @skip
   Scenario: Update a downtime returns "Bad Request" response
