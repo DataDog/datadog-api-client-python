@@ -63,7 +63,6 @@ jobs:
         run: ./run-tests.sh
         shell: bash
         env:
-          CI: "true"
           DD_AGENT_HOST: localhost
           DD_ENV: prod
           DD_SERVICE: datadog-api-client-python
