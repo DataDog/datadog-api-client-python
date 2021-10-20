@@ -3,7 +3,7 @@
 
 import os
 
-# First patch httplib
+# First patch urllib
 tracer = None
 try:
     from ddtrace import config, patch, tracer
@@ -18,8 +18,7 @@ try:
         )
         tracer.configure(writer)
 
-    config.httplib["distributed_tracing"] = True
-    patch(httplib=True)
+    patch(urllib3=True)
 
     from pytest import hookimpl
 
