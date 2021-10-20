@@ -80,6 +80,25 @@ def escape_reserved_keyword(word):
     return word
 
 
+def pytest_bdd_before_scenario(request, feature, scenario):
+    if tracer is None:
+        return
+
+    span = tracer.start_span(
+        scenario.name,
+        span_type="scenario",
+        child_of=tracer.current_trace_context(),
+        activate=True,
+    )
+    setattr(scenario, "__dd_span__", span)
+
+
+def pytest_bdd_after_scenario(request, feature, scenario):
+    span = getattr(scenario, "__dd_span__", None)
+    if span is not None:
+        span.finish()
+
+
 def pytest_bdd_before_step(request, feature, scenario, step, step_func):
     if tracer is None:
         return
@@ -88,7 +107,8 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
         step.type,
         resource=step.name,
         span_type=step.type,
-        child_of=tracer.current_trace_context(),
+        child_of=getattr(scenario, "__dd_span__"),
+        activate=True,
     )
     setattr(step_func, "__dd_span__", span)
 
