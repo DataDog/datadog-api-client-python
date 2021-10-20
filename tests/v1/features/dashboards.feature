@@ -73,6 +73,17 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].primary_tag_name" is equal to "datacenter"
     And the response "widgets[0].definition.requests[0].queries[0].operation_name" is equal to "cassandra.query"
 
+  Scenario: Create a new dashboard with distribution widget and apm stats data
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [{"definition": { "title": "", "title_size": "16", "title_align": "left", "type": "distribution", "requests": [{ "apm_stats_query": { "env": "prod", "service": "cassandra", "name": "cassandra.query", "primary_tag": "datacenter:dc1", "row_type": "service" }}] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].apm_stats_query.primary_tag" is equal to "datacenter:dc1"
+    And the response "widgets[0].definition.requests[0].apm_stats_query.row_type" is equal to "service"
+    And the response "widgets[0].definition.requests[0].apm_stats_query.env" is equal to "prod"
+    And the response "widgets[0].definition.requests[0].apm_stats_query.service" is equal to "cassandra"
+    And the response "widgets[0].definition.requests[0].apm_stats_query.name" is equal to "cassandra.query"
+
   Scenario: Create a new dashboard with formulas and functions scatterplot widget
     Given new "CreateDashboard" request
     And body with value { "title": "{{ unique }}", "widgets": [ { "id": 5346764334358972, "definition": { "title": "", "title_size": "16", "title_align": "left", "type": "scatterplot", "requests": { "table": { "formulas": [ { "formula": "query1", "dimension": "x", "alias": "my-query1" }, { "formula": "query2", "dimension": "y", "alias": "my-query2" } ], "queries": [ { "data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*} by {service}", "aggregator": "avg" }, { "data_source": "metrics", "name": "query2", "query": "avg:system.mem.used{*} by {service}", "aggregator": "avg" } ], "response_format": "scalar" } } }, "layout": { "x": 0, "y": 0, "width": 4, "height": 2 } } ], "layout_type": "ordered" }
