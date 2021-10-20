@@ -11727,8 +11727,8 @@ components:
       - profiled_host_percentage
       - profiled_container_usage
       - profiled_container_percentage
-      - dbm_host_usage
-      - dbm_host_percentage
+      - dbm_hosts_usage
+      - dbm_hosts_percentage
       - dbm_queries_usage
       - dbm_queries_percentage
       - '*'
@@ -11762,8 +11762,8 @@ components:
       - PROFILED_HOST_PERCENTAGE
       - PROFILED_CONTAINER_USAGE
       - PROFILED_CONTAINER_PERCENTAGE
-      - DBM_HOST_USAGE
-      - DBM_HOST_PERCENTAGE
+      - DBM_HOSTS_USAGE
+      - DBM_HOSTS_PERCENTAGE
       - DBM_QUERIES_USAGE
       - DBM_QUERIES_PERCENTAGE
       - ALL
@@ -11855,11 +11855,11 @@ components:
           description: The Cloud Workload Security host usage by tag(s)
           format: double
           type: number
-        dbm_host_percentage:
+        dbm_hosts_percentage:
           description: The percentage of Database Monitoring host usage by tag(s).
           format: double
           type: number
-        dbm_host_usage:
+        dbm_hosts_usage:
           description: The Database Monitoring host usage by tag(s).
           format: double
           type: number

@@ -79,8 +79,8 @@ class UsageAttributionValues(ModelNormal):
             "cws_container_usage": (float,),  # noqa: E501
             "cws_host_percentage": (float,),  # noqa: E501
             "cws_host_usage": (float,),  # noqa: E501
-            "dbm_host_percentage": (float,),  # noqa: E501
-            "dbm_host_usage": (float,),  # noqa: E501
+            "dbm_hosts_percentage": (float,),  # noqa: E501
+            "dbm_hosts_usage": (float,),  # noqa: E501
             "dbm_queries_percentage": (float,),  # noqa: E501
             "dbm_queries_usage": (float,),  # noqa: E501
             "infra_host_percentage": (float,),  # noqa: E501
@@ -122,8 +122,8 @@ class UsageAttributionValues(ModelNormal):
         "cws_container_usage": "cws_container_usage",  # noqa: E501
         "cws_host_percentage": "cws_host_percentage",  # noqa: E501
         "cws_host_usage": "cws_host_usage",  # noqa: E501
-        "dbm_host_percentage": "dbm_host_percentage",  # noqa: E501
-        "dbm_host_usage": "dbm_host_usage",  # noqa: E501
+        "dbm_hosts_percentage": "dbm_hosts_percentage",  # noqa: E501
+        "dbm_hosts_usage": "dbm_hosts_usage",  # noqa: E501
         "dbm_queries_percentage": "dbm_queries_percentage",  # noqa: E501
         "dbm_queries_usage": "dbm_queries_usage",  # noqa: E501
         "infra_host_percentage": "infra_host_percentage",  # noqa: E501
@@ -201,8 +201,8 @@ class UsageAttributionValues(ModelNormal):
             cws_container_usage (float): The Cloud Workload Security container usage by tag(s). [optional]  # noqa: E501
             cws_host_percentage (float): The percentage of Cloud Workload Security host usage by tag(s). [optional]  # noqa: E501
             cws_host_usage (float): The Cloud Workload Security host usage by tag(s). [optional]  # noqa: E501
-            dbm_host_percentage (float): The percentage of Database Monitoring host usage by tag(s).. [optional]  # noqa: E501
-            dbm_host_usage (float): The Database Monitoring host usage by tag(s).. [optional]  # noqa: E501
+            dbm_hosts_percentage (float): The percentage of Database Monitoring host usage by tag(s).. [optional]  # noqa: E501
+            dbm_hosts_usage (float): The Database Monitoring host usage by tag(s).. [optional]  # noqa: E501
             dbm_queries_percentage (float): The percentage of Database Monitoring normalized queries usage by tag(s).. [optional]  # noqa: E501
             dbm_queries_usage (float): The Database Monitoring normalized queries usage by tag(s).. [optional]  # noqa: E501
             infra_host_percentage (float): The percentage of infrastructure host usage by tag(s).. [optional]  # noqa: E501
