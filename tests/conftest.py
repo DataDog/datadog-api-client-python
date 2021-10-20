@@ -6,7 +6,7 @@ import os
 # First patch httplib
 tracer = None
 try:
-    from ddtrace import config, current_trace_context, patch, tracer
+    from ddtrace import config, patch, tracer
 
     if os.getenv("RECORD", "false") != "none":
         from ddtrace.internal.writer import AgentWriter
@@ -44,7 +44,8 @@ try:
 
 
 except ImportError:
-    pass
+    if os.getenv("CI", "false") == "true":
+        raise
 
 import importlib
 import json
@@ -87,7 +88,7 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
         step.type,
         resource=step.name,
         span_type=step.type,
-        child_of=current_trace_context(),
+        child_of=tracer.current_trace_context(),
     )
     setattr(step_func, "__dd_span__", span)
 
