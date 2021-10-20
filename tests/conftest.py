@@ -44,7 +44,7 @@ try:
 
 
 except ImportError:
-    if os.getenv("CI", "false") == "true":
+    if os.getenv("CI", "false") == "true" and os.getenv("RECORD", "false") == "none":
         raise
 
 import importlib
