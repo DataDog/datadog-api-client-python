@@ -93,6 +93,9 @@ def pytest_bdd_before_scenario(request, feature, scenario):
 
 
 def pytest_bdd_after_scenario(request, feature, scenario):
+    ctx = request.getfixturevalue("context")
+    for undo in reversed(ctx["undo_operations"]):
+        undo()
     span = getattr(scenario, "__dd_span__", None)
     if span is not None:
         span.finish()
@@ -248,9 +251,6 @@ def context(vcr, unique, unique_lower, freezer):
     }
 
     yield ctx
-
-    for undo in reversed(ctx["undo_operations"]):
-        undo()
 
 
 @pytest.fixture(scope="session")
