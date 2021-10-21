@@ -102,7 +102,6 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
         step.type,
         resource=step.name,
         span_type=step.type,
-        child_of=getattr(scenario, "__dd_span__"),
         activate=True,
     )
     setattr(step_func, "__dd_span__", span)
