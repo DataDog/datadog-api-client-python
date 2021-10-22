@@ -1,6 +1,0 @@
-FROM python:3.9
-ENTRYPOINT [/datadog-api-client-python/run-tests.sh]
-
-COPY . /datadog-api-client-python
-WORKDIR /datadog-api-client-python/
-RUN pip install -e .[apm,tests]
