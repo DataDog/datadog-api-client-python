@@ -83,22 +83,15 @@ def pytest_bdd_before_scenario(request, feature, scenario):
     if tracer is None:
         return
 
-    span = tracer.start_span(
-        scenario.name,
-        span_type="scenario",
-        child_of=tracer.current_trace_context(),
-        activate=True,
-    )
-    setattr(scenario, "__dd_span__", span)
+    span = tracer.current_span()
+    span.set_tag("test.name", scenario.name)
+    span.set_tag("test.suite", scenario.feature.filename.split("tests")[-1])
 
 
 def pytest_bdd_after_scenario(request, feature, scenario):
     ctx = request.getfixturevalue("context")
     for undo in reversed(ctx["undo_operations"]):
         undo()
-    span = getattr(scenario, "__dd_span__", None)
-    if span is not None:
-        span.finish()
 
 
 def pytest_bdd_before_step(request, feature, scenario, step, step_func):
@@ -109,7 +102,7 @@ def pytest_bdd_before_step(request, feature, scenario, step, step_func):
         step.type,
         resource=step.name,
         span_type=step.type,
-        child_of=getattr(scenario, "__dd_span__"),
+        child_of=tracer.current_span(),
         activate=True,
     )
     setattr(step_func, "__dd_span__", span)
@@ -610,7 +603,9 @@ def execute_request(undo, context, client, api_version, _package):
     operation_id = api_request["request"].__name__
     response = api_request["response"][0]
 
-    context["undo_operations"].append(lambda: undo(api, api_version, operation_id, response))
+    context["undo_operations"].append(
+        lambda: undo(api, api_version, operation_id, response)
+    )
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))
