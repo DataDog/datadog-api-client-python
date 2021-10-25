@@ -2962,7 +2962,6 @@ components:
       - DELETE
       - HEAD
       - OPTIONS
-      example: GET
       type: string
       x-enum-varnames:
       - GET
@@ -9162,31 +9161,25 @@ components:
           $ref: '#/components/schemas/SyntheticsAPITestConfig'
         locations:
           description: Array of locations used to run the test.
-          example:
-          - aws:eu-west-3
           items:
             description: A location from which the test was run.
             type: string
           type: array
         message:
           description: Notification message associated with the test.
-          example: Notification message
           type: string
         monitor_id:
           description: The associated monitor ID.
-          example: 12345678
           format: int64
           readOnly: true
           type: integer
         name:
           description: Name of the test.
-          example: Test name
           type: string
         options:
           $ref: '#/components/schemas/SyntheticsTestOptions'
         public_id:
           description: The public ID for the test.
-          example: 123-abc-456
           readOnly: true
           type: string
         status:
@@ -9195,8 +9188,6 @@ components:
           $ref: '#/components/schemas/SyntheticsTestDetailsSubType'
         tags:
           description: Array of tags attached to the test.
-          example:
-          - env:production
           items:
             description: A tag attached to the test.
             type: string
@@ -9206,22 +9197,11 @@ components:
       type: object
     SyntheticsAPITestConfig:
       description: Configuration object for a Synthetic API test.
-      example:
-        assertions:
-        - operator: lessThan
-          target: 1000
-          type: responseTime
-        request:
-          method: GET
-          url: https://example.com
       properties:
         assertions:
           default: []
           description: Array of assertions used for the test.
-          example:
-          - operator: lessThan
-            target: 1000
-            type: responseTime
+          example: []
           items:
             $ref: '#/components/schemas/SyntheticsAssertion'
           type: array
@@ -10707,7 +10687,6 @@ components:
       - dns
       - multi
       - icmp
-      example: http
       type: string
       x-enum-varnames:
       - HTTP
@@ -10856,7 +10835,6 @@ components:
       enum:
       - live
       - paused
-      example: live
       type: string
       x-enum-varnames:
       - LIVE
@@ -10943,7 +10921,6 @@ components:
           type: number
         url:
           description: URL to perform the test with.
-          example: https://example.com
           type: string
       type: object
     SyntheticsTestRequestCertificate:
