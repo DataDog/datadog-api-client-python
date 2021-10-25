@@ -16,7 +16,9 @@ Method | HTTP request | Description
 # **create_tag_configuration**
 > MetricTagConfigurationResponse create_tag_configuration(metric_name, body)
 
-Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric. Optionally, include percentile aggregations on any distribution metric.
+Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric.
+Optionally, include percentile aggregations on any distribution metric or configure custom aggregations
+on any count, rate, or gauge metric.
 Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
 
 ### Example
@@ -42,6 +44,12 @@ with ApiClient(configuration) as api_client:
     body = MetricTagConfigurationCreateRequest(
         data=MetricTagConfigurationCreateData(
             attributes=MetricTagConfigurationCreateAttributes(
+                aggregations=MetricCustomAggregations([
+                    MetricCustomAggregation(
+                        space=MetricCustomSpaceAggregation("sum"),
+                        time=MetricCustomTimeAggregation("sum"),
+                    ),
+                ]),
                 include_percentiles=True,
                 metric_type=MetricTagConfigurationMetricTypes("count"),
                 tags=["app","datacenter"],
@@ -451,8 +459,9 @@ Name | Type | Description  | Notes
 # **update_tag_configuration**
 > MetricTagConfigurationResponse update_tag_configuration(metric_name, body)
 
-Update the tag configuration of a metric or percentile aggregations of a distribution metric. Can only be used with
-application keys from users with the `Manage Tags for Metrics` permission.
+Update the tag configuration of a metric or percentile aggregations of a distribution metric or custom aggregations
+of a count, rate, or gauge metric.
+Can only be used with application keys from users with the `Manage Tags for Metrics` permission.
 
 ### Example
 
@@ -477,6 +486,12 @@ with ApiClient(configuration) as api_client:
     body = MetricTagConfigurationUpdateRequest(
         data=MetricTagConfigurationUpdateData(
             attributes=MetricTagConfigurationUpdateAttributes(
+                aggregations=MetricCustomAggregations([
+                    MetricCustomAggregation(
+                        space=MetricCustomSpaceAggregation("sum"),
+                        time=MetricCustomTimeAggregation("sum"),
+                    ),
+                ]),
                 include_percentiles=True,
                 tags=["app","datacenter"],
             ),
