@@ -260,7 +260,7 @@ with ApiClient(configuration) as api_client:
                 servername="servername_example",
                 should_track_hops=True,
                 timeout=3.14,
-                url="url_example",
+                url="https://example.com",
             ),
             steps=[
                 SyntheticsAPIStep(
@@ -315,17 +315,15 @@ with ApiClient(configuration) as api_client:
                         servername="servername_example",
                         should_track_hops=True,
                         timeout=3.14,
-                        url="url_example",
+                        url="https://example.com",
                     ),
                     subtype=SyntheticsAPIStepSubtype("http"),
                 ),
             ],
         ),
-        locations=[
-            "locations_example",
-        ],
-        message="message_example",
-        name="name_example",
+        locations=["aws:eu-west-3"],
+        message="Notification message",
+        name="Test name",
         options=SyntheticsTestOptions(
             accept_self_signed=True,
             allow_insecure=True,
@@ -350,9 +348,7 @@ with ApiClient(configuration) as api_client:
         ),
         status=SyntheticsTestPauseStatus("live"),
         subtype=SyntheticsTestDetailsSubType("http"),
-        tags=[
-            "tags_example",
-        ],
+        tags=["env:production"],
         type=SyntheticsAPITestType("api"),
     )  # SyntheticsAPITest | Details of the test to create.
 
@@ -469,7 +465,7 @@ with ApiClient(configuration) as api_client:
                 servername="servername_example",
                 should_track_hops=True,
                 timeout=3.14,
-                url="url_example",
+                url="https://example.com",
             ),
             set_cookie="set_cookie_example",
             variables=[
@@ -1911,7 +1907,7 @@ with ApiClient(configuration) as api_client:
                 servername="servername_example",
                 should_track_hops=True,
                 timeout=3.14,
-                url="url_example",
+                url="https://example.com",
             ),
             steps=[
                 SyntheticsAPIStep(
@@ -1966,17 +1962,15 @@ with ApiClient(configuration) as api_client:
                         servername="servername_example",
                         should_track_hops=True,
                         timeout=3.14,
-                        url="url_example",
+                        url="https://example.com",
                     ),
                     subtype=SyntheticsAPIStepSubtype("http"),
                 ),
             ],
         ),
-        locations=[
-            "locations_example",
-        ],
-        message="message_example",
-        name="name_example",
+        locations=["aws:eu-west-3"],
+        message="Notification message",
+        name="Test name",
         options=SyntheticsTestOptions(
             accept_self_signed=True,
             allow_insecure=True,
@@ -2001,9 +1995,7 @@ with ApiClient(configuration) as api_client:
         ),
         status=SyntheticsTestPauseStatus("live"),
         subtype=SyntheticsTestDetailsSubType("http"),
-        tags=[
-            "tags_example",
-        ],
+        tags=["env:production"],
         type=SyntheticsAPITestType("api"),
     )  # SyntheticsAPITest | New test details to be saved.
 
@@ -2122,7 +2114,7 @@ with ApiClient(configuration) as api_client:
                 servername="servername_example",
                 should_track_hops=True,
                 timeout=3.14,
-                url="url_example",
+                url="https://example.com",
             ),
             set_cookie="set_cookie_example",
             variables=[
