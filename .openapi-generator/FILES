@@ -196,6 +196,10 @@ datadog_api_client/v2/model/metric.py
 datadog_api_client/v2/model/metric_all_tags.py
 datadog_api_client/v2/model/metric_all_tags_attributes.py
 datadog_api_client/v2/model/metric_all_tags_response.py
+datadog_api_client/v2/model/metric_custom_aggregation.py
+datadog_api_client/v2/model/metric_custom_aggregations.py
+datadog_api_client/v2/model/metric_custom_space_aggregation.py
+datadog_api_client/v2/model/metric_custom_time_aggregation.py
 datadog_api_client/v2/model/metric_distinct_volume.py
 datadog_api_client/v2/model/metric_distinct_volume_attributes.py
 datadog_api_client/v2/model/metric_distinct_volume_type.py
@@ -533,6 +537,10 @@ docs/Metric.md
 docs/MetricAllTags.md
 docs/MetricAllTagsAttributes.md
 docs/MetricAllTagsResponse.md
+docs/MetricCustomAggregation.md
+docs/MetricCustomAggregations.md
+docs/MetricCustomSpaceAggregation.md
+docs/MetricCustomTimeAggregation.md
 docs/MetricDistinctVolume.md
 docs/MetricDistinctVolumeAttributes.md
 docs/MetricDistinctVolumeType.md
@@ -874,6 +882,10 @@ test/test_metric.py
 test/test_metric_all_tags.py
 test/test_metric_all_tags_attributes.py
 test/test_metric_all_tags_response.py
+test/test_metric_custom_aggregation.py
+test/test_metric_custom_aggregations.py
+test/test_metric_custom_space_aggregation.py
+test/test_metric_custom_time_aggregation.py
 test/test_metric_distinct_volume.py
 test/test_metric_distinct_volume_attributes.py
 test/test_metric_distinct_volume_type.py

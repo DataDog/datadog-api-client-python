@@ -19,8 +19,10 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 
 
 def lazy_import():
+    from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
     from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 
+    globals()["MetricCustomAggregations"] = MetricCustomAggregations
     globals()["MetricTagConfigurationMetricTypes"] = MetricTagConfigurationMetricTypes
 
 
@@ -70,6 +72,7 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
         return {
             "metric_type": (MetricTagConfigurationMetricTypes,),  # noqa: E501
             "tags": ([str],),  # noqa: E501
+            "aggregations": (MetricCustomAggregations,),  # noqa: E501
             "include_percentiles": (bool,),  # noqa: E501
         }
 
@@ -78,6 +81,7 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
     attribute_map = {
         "metric_type": "metric_type",  # noqa: E501
         "tags": "tags",  # noqa: E501
+        "aggregations": "aggregations",  # noqa: E501
         "include_percentiles": "include_percentiles",  # noqa: E501
     }
 
@@ -124,6 +128,7 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            aggregations (MetricCustomAggregations): [optional]  # noqa: E501
             include_percentiles (bool): Toggle to include/exclude percentiles for a distribution metric. Defaults to false. Can only be applied to metrics that have a `metric_type` of `distribution`.. [optional] if omitted the server will use the default value of False  # noqa: E501
         """
         super().__init__(kwargs)
