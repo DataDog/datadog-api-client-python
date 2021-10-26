@@ -2,23 +2,24 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_dashboard_list_items**](DashboardListsApi.md#create_dashboard_list_items) | **POST** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Add Items to a Dashboard List
-[**delete_dashboard_list_items**](DashboardListsApi.md#delete_dashboard_list_items) | **DELETE** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Delete items from a dashboard list
-[**get_dashboard_list_items**](DashboardListsApi.md#get_dashboard_list_items) | **GET** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Get items of a Dashboard List
-[**update_dashboard_list_items**](DashboardListsApi.md#update_dashboard_list_items) | **PUT** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Update items of a dashboard list
-
+| Method                                                                              | HTTP request                                                             | Description                        |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------- |
+| [**create_dashboard_list_items**](DashboardListsApi.md#create_dashboard_list_items) | **POST** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards   | Add Items to a Dashboard List      |
+| [**delete_dashboard_list_items**](DashboardListsApi.md#delete_dashboard_list_items) | **DELETE** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards | Delete items from a dashboard list |
+| [**get_dashboard_list_items**](DashboardListsApi.md#get_dashboard_list_items)       | **GET** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards    | Get items of a Dashboard List      |
+| [**update_dashboard_list_items**](DashboardListsApi.md#update_dashboard_list_items) | **PUT** /api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards    | Update items of a dashboard list   |
 
 # **create_dashboard_list_items**
+
 > DashboardListAddItemsResponse create_dashboard_list_items(dashboard_list_id, body)
 
 Add dashboards to an existing dashboard list.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -52,13 +53,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardListsApi->create_dashboard_list_items: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dashboard_list_id** | **int**| ID of the dashboard list to add items to. |
- **body** | [**DashboardListAddItemsRequest**](DashboardListAddItemsRequest.md)| Dashboards to add to the dashboard list. |
+| Name                  | Type                                                                | Description                               | Notes |
+| --------------------- | ------------------------------------------------------------------- | ----------------------------------------- | ----- |
+| **dashboard_list_id** | **int**                                                             | ID of the dashboard list to add items to. |
+| **body**              | [**DashboardListAddItemsRequest**](DashboardListAddItemsRequest.md) | Dashboards to add to the dashboard list.  |
 
 ### Return type
 
@@ -70,30 +70,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_dashboard_list_items**
+
 > DashboardListDeleteItemsResponse delete_dashboard_list_items(dashboard_list_id, body)
 
 Delete dashboards from an existing dashboard list.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -127,13 +128,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardListsApi->delete_dashboard_list_items: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dashboard_list_id** | **int**| ID of the dashboard list to delete items from. |
- **body** | [**DashboardListDeleteItemsRequest**](DashboardListDeleteItemsRequest.md)| Dashboards to delete from the dashboard list. |
+| Name                  | Type                                                                      | Description                                    | Notes |
+| --------------------- | ------------------------------------------------------------------------- | ---------------------------------------------- | ----- |
+| **dashboard_list_id** | **int**                                                                   | ID of the dashboard list to delete items from. |
+| **body**              | [**DashboardListDeleteItemsRequest**](DashboardListDeleteItemsRequest.md) | Dashboards to delete from the dashboard list.  |
 
 ### Return type
 
@@ -145,31 +145,32 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_dashboard_list_items**
+
 > DashboardListItems get_dashboard_list_items(dashboard_list_id)
 
 Fetch the dashboard list’s dashboard definitions.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -195,12 +196,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardListsApi->get_dashboard_list_items: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dashboard_list_id** | **int**| ID of the dashboard list to get items from. |
+| Name                  | Type    | Description                                 | Notes |
+| --------------------- | ------- | ------------------------------------------- | ----- |
+| **dashboard_list_id** | **int** | ID of the dashboard list to get items from. |
 
 ### Return type
 
@@ -212,29 +212,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_dashboard_list_items**
+
 > DashboardListUpdateItemsResponse update_dashboard_list_items(dashboard_list_id, body)
 
 Update dashboards of an existing dashboard list.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -268,13 +269,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardListsApi->update_dashboard_list_items: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dashboard_list_id** | **int**| ID of the dashboard list to update items from. |
- **body** | [**DashboardListUpdateItemsRequest**](DashboardListUpdateItemsRequest.md)| New dashboards of the dashboard list. |
+| Name                  | Type                                                                      | Description                                    | Notes |
+| --------------------- | ------------------------------------------------------------------------- | ---------------------------------------------- | ----- |
+| **dashboard_list_id** | **int**                                                                   | ID of the dashboard list to update items from. |
+| **body**              | [**DashboardListUpdateItemsRequest**](DashboardListUpdateItemsRequest.md) | New dashboards of the dashboard list.          |
 
 ### Return type
 
@@ -286,18 +286,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

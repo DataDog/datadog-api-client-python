@@ -2,26 +2,27 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_logs_pipeline**](LogsPipelinesApi.md#create_logs_pipeline) | **POST** /api/v1/logs/config/pipelines | Create a pipeline
-[**delete_logs_pipeline**](LogsPipelinesApi.md#delete_logs_pipeline) | **DELETE** /api/v1/logs/config/pipelines/{pipeline_id} | Delete a pipeline
-[**get_logs_pipeline**](LogsPipelinesApi.md#get_logs_pipeline) | **GET** /api/v1/logs/config/pipelines/{pipeline_id} | Get a pipeline
-[**get_logs_pipeline_order**](LogsPipelinesApi.md#get_logs_pipeline_order) | **GET** /api/v1/logs/config/pipeline-order | Get pipeline order
-[**list_logs_pipelines**](LogsPipelinesApi.md#list_logs_pipelines) | **GET** /api/v1/logs/config/pipelines | Get all pipelines
-[**update_logs_pipeline**](LogsPipelinesApi.md#update_logs_pipeline) | **PUT** /api/v1/logs/config/pipelines/{pipeline_id} | Update a pipeline
-[**update_logs_pipeline_order**](LogsPipelinesApi.md#update_logs_pipeline_order) | **PUT** /api/v1/logs/config/pipeline-order | Update pipeline order
-
+| Method                                                                           | HTTP request                                           | Description           |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------ | --------------------- |
+| [**create_logs_pipeline**](LogsPipelinesApi.md#create_logs_pipeline)             | **POST** /api/v1/logs/config/pipelines                 | Create a pipeline     |
+| [**delete_logs_pipeline**](LogsPipelinesApi.md#delete_logs_pipeline)             | **DELETE** /api/v1/logs/config/pipelines/{pipeline_id} | Delete a pipeline     |
+| [**get_logs_pipeline**](LogsPipelinesApi.md#get_logs_pipeline)                   | **GET** /api/v1/logs/config/pipelines/{pipeline_id}    | Get a pipeline        |
+| [**get_logs_pipeline_order**](LogsPipelinesApi.md#get_logs_pipeline_order)       | **GET** /api/v1/logs/config/pipeline-order             | Get pipeline order    |
+| [**list_logs_pipelines**](LogsPipelinesApi.md#list_logs_pipelines)               | **GET** /api/v1/logs/config/pipelines                  | Get all pipelines     |
+| [**update_logs_pipeline**](LogsPipelinesApi.md#update_logs_pipeline)             | **PUT** /api/v1/logs/config/pipelines/{pipeline_id}    | Update a pipeline     |
+| [**update_logs_pipeline_order**](LogsPipelinesApi.md#update_logs_pipeline_order) | **PUT** /api/v1/logs/config/pipeline-order             | Update pipeline order |
 
 # **create_logs_pipeline**
+
 > LogsPipeline create_logs_pipeline(body)
 
 Create a pipeline in your organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -56,12 +57,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsPipelinesApi->create_logs_pipeline: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**LogsPipeline**](LogsPipeline.md)| Definition of the new pipeline. |
+| Name     | Type                                | Description                     | Notes |
+| -------- | ----------------------------------- | ------------------------------- | ----- |
+| **body** | [**LogsPipeline**](LogsPipeline.md) | Definition of the new pipeline. |
 
 ### Return type
 
@@ -73,21 +73,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_logs_pipeline**
+
 > delete_logs_pipeline(pipeline_id)
 
 Delete a given pipeline from your organization.
@@ -95,8 +95,9 @@ This endpoint takes no JSON arguments.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -121,12 +122,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsPipelinesApi->delete_logs_pipeline: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pipeline_id** | **str**| ID of the pipeline to delete. |
+| Name            | Type    | Description                   | Notes |
+| --------------- | ------- | ----------------------------- | ----- |
+| **pipeline_id** | **str** | ID of the pipeline to delete. |
 
 ### Return type
 
@@ -138,21 +138,21 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_logs_pipeline**
+
 > LogsPipeline get_logs_pipeline(pipeline_id)
 
 Get a specific pipeline from your organization.
@@ -160,8 +160,9 @@ This endpoint takes no JSON arguments.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -187,12 +188,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsPipelinesApi->get_logs_pipeline: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pipeline_id** | **str**| ID of the pipeline to get. |
+| Name            | Type    | Description                | Notes |
+| --------------- | ------- | -------------------------- | ----- |
+| **pipeline_id** | **str** | ID of the pipeline to get. |
 
 ### Return type
 
@@ -204,21 +204,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_logs_pipeline_order**
+
 > LogsPipelinesOrder get_logs_pipeline_order()
 
 Get the current order of your pipelines.
@@ -226,8 +226,9 @@ This endpoint takes no JSON arguments.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -252,8 +253,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsPipelinesApi->get_logs_pipeline_order: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -266,20 +267,20 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_logs_pipelines**
+
 > LogsPipelineList list_logs_pipelines()
 
 Get all pipelines from your organization.
@@ -287,8 +288,9 @@ This endpoint takes no JSON arguments.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -313,8 +315,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsPipelinesApi->list_logs_pipelines: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -327,20 +329,20 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_pipeline**
+
 > LogsPipeline update_logs_pipeline(pipeline_id, body)
 
 Update a given pipeline configuration to change it’s processors or their order.
@@ -350,8 +352,9 @@ your current configuration with the new one sent to your Datadog organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -387,13 +390,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsPipelinesApi->update_logs_pipeline: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pipeline_id** | **str**| ID of the pipeline to delete. |
- **body** | [**LogsPipeline**](LogsPipeline.md)| New definition of the pipeline. |
+| Name            | Type                                | Description                     | Notes |
+| --------------- | ----------------------------------- | ------------------------------- | ----- |
+| **pipeline_id** | **str**                             | ID of the pipeline to delete.   |
+| **body**        | [**LogsPipeline**](LogsPipeline.md) | New definition of the pipeline. |
 
 ### Return type
 
@@ -405,21 +407,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_pipeline_order**
+
 > LogsPipelinesOrder update_logs_pipeline_order(body)
 
 Update the order of your pipelines. Since logs are processed sequentially, reordering a pipeline may change
@@ -430,8 +432,9 @@ with the new one sent to your Datadog organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -459,12 +462,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsPipelinesApi->update_logs_pipeline_order: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**LogsPipelinesOrder**](LogsPipelinesOrder.md)| Object containing the new ordered list of pipeline IDs. |
+| Name     | Type                                            | Description                                             | Notes |
+| -------- | ----------------------------------------------- | ------------------------------------------------------- | ----- |
+| **body** | [**LogsPipelinesOrder**](LogsPipelinesOrder.md) | Object containing the new ordered list of pipeline IDs. |
 
 ### Return type
 
@@ -476,18 +478,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**422** | Unprocessable Entity |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Forbidden            | -                |
+| **422**     | Unprocessable Entity | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_azure_integration**](AzureIntegrationApi.md#create_azure_integration) | **POST** /api/v1/integration/azure | Create an Azure integration
-[**delete_azure_integration**](AzureIntegrationApi.md#delete_azure_integration) | **DELETE** /api/v1/integration/azure | Delete an Azure integration
-[**list_azure_integration**](AzureIntegrationApi.md#list_azure_integration) | **GET** /api/v1/integration/azure | List all Azure integrations
-[**update_azure_host_filters**](AzureIntegrationApi.md#update_azure_host_filters) | **POST** /api/v1/integration/azure/host_filters | Update Azure integration host filters
-[**update_azure_integration**](AzureIntegrationApi.md#update_azure_integration) | **PUT** /api/v1/integration/azure | Update an Azure integration
-
+| Method                                                                            | HTTP request                                    | Description                           |
+| --------------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------- |
+| [**create_azure_integration**](AzureIntegrationApi.md#create_azure_integration)   | **POST** /api/v1/integration/azure              | Create an Azure integration           |
+| [**delete_azure_integration**](AzureIntegrationApi.md#delete_azure_integration)   | **DELETE** /api/v1/integration/azure            | Delete an Azure integration           |
+| [**list_azure_integration**](AzureIntegrationApi.md#list_azure_integration)       | **GET** /api/v1/integration/azure               | List all Azure integrations           |
+| [**update_azure_host_filters**](AzureIntegrationApi.md#update_azure_host_filters) | **POST** /api/v1/integration/azure/host_filters | Update Azure integration host filters |
+| [**update_azure_integration**](AzureIntegrationApi.md#update_azure_integration)   | **PUT** /api/v1/integration/azure               | Update an Azure integration           |
 
 # **create_azure_integration**
+
 > dict create_azure_integration(body)
 
 Create a Datadog-Azure integration.
@@ -24,8 +24,9 @@ current configuration with the new one sent to your Datadog organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -59,12 +60,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AzureIntegrationApi->create_azure_integration: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AzureAccount**](AzureAccount.md)| Create a Datadog-Azure integration for your Datadog account request body. |
+| Name     | Type                                | Description                                                               | Notes |
+| -------- | ----------------------------------- | ------------------------------------------------------------------------- | ----- |
+| **body** | [**AzureAccount**](AzureAccount.md) | Create a Datadog-Azure integration for your Datadog account request body. |
 
 ### Return type
 
@@ -76,29 +76,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_azure_integration**
+
 > dict delete_azure_integration(body)
 
 Delete a given Datadog-Azure integration from your Datadog account.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -132,12 +133,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AzureIntegrationApi->delete_azure_integration: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AzureAccount**](AzureAccount.md)| Delete a given Datadog-Azure integration request body. |
+| Name     | Type                                | Description                                            | Notes |
+| -------- | ----------------------------------- | ------------------------------------------------------ | ----- |
+| **body** | [**AzureAccount**](AzureAccount.md) | Delete a given Datadog-Azure integration request body. |
 
 ### Return type
 
@@ -149,29 +149,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_azure_integration**
+
 > AzureAccountListResponse list_azure_integration()
 
 List all Datadog-Azure integrations configured in your Datadog account.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -196,8 +197,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AzureIntegrationApi->list_azure_integration: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -210,29 +211,30 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_azure_host_filters**
+
 > dict update_azure_host_filters(body)
 
 Update the defined list of host filters for a given Datadog-Azure integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -266,12 +268,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AzureIntegrationApi->update_azure_host_filters: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AzureAccount**](AzureAccount.md)| Update a Datadog-Azure integration&#39;s host filters request body. |
+| Name     | Type                                | Description                                                         | Notes |
+| -------- | ----------------------------------- | ------------------------------------------------------------------- | ----- |
+| **body** | [**AzureAccount**](AzureAccount.md) | Update a Datadog-Azure integration&#39;s host filters request body. |
 
 ### Return type
 
@@ -283,21 +284,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_azure_integration**
+
 > dict update_azure_integration(body)
 
 Update a Datadog-Azure integration. Requires an existing `tenant_name` and `client_id`.
@@ -306,8 +307,9 @@ use `new_tenant_name` and `new_client_id`. To leave a field unchanged, do not su
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -341,12 +343,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AzureIntegrationApi->update_azure_integration: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AzureAccount**](AzureAccount.md)| Update a Datadog-Azure integration request body. |
+| Name     | Type                                | Description                                      | Notes |
+| -------- | ----------------------------------- | ------------------------------------------------ | ----- |
+| **body** | [**AzureAccount**](AzureAccount.md) | Update a Datadog-Azure integration request body. |
 
 ### Return type
 
@@ -358,17 +359,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

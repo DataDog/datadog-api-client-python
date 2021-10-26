@@ -2,22 +2,23 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**aggregate_logs**](LogsApi.md#aggregate_logs) | **POST** /api/v2/logs/analytics/aggregate | Aggregate events
-[**list_logs**](LogsApi.md#list_logs) | **POST** /api/v2/logs/events/search | Search logs
-[**list_logs_get**](LogsApi.md#list_logs_get) | **GET** /api/v2/logs/events | Get a list of logs
-
+| Method                                          | HTTP request                              | Description        |
+| ----------------------------------------------- | ----------------------------------------- | ------------------ |
+| [**aggregate_logs**](LogsApi.md#aggregate_logs) | **POST** /api/v2/logs/analytics/aggregate | Aggregate events   |
+| [**list_logs**](LogsApi.md#list_logs)           | **POST** /api/v2/logs/events/search       | Search logs        |
+| [**list_logs_get**](LogsApi.md#list_logs_get)   | **GET** /api/v2/logs/events               | Get a list of logs |
 
 # **aggregate_logs**
+
 > LogsAggregateResponse aggregate_logs(body)
 
 The API endpoint to aggregate events into buckets and compute metrics and timeseries.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -73,7 +74,7 @@ with ApiClient(configuration) as api_client:
         page=LogsAggregateRequestPage(
             cursor="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==",
         ),
-    )  # LogsAggregateRequest | 
+    )  # LogsAggregateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -84,12 +85,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsApi->aggregate_logs: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**LogsAggregateRequest**](LogsAggregateRequest.md)|  |
+| Name     | Type                                                | Description | Notes |
+| -------- | --------------------------------------------------- | ----------- | ----- |
+| **body** | [**LogsAggregateRequest**](LogsAggregateRequest.md) |             |
 
 ### Return type
 
@@ -101,21 +101,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Not Authorized |  -  |
+| Status code | Description    | Response headers |
+| ----------- | -------------- | ---------------- |
+| **200**     | OK             | -                |
+| **400**     | Bad Request    | -                |
+| **403**     | Not Authorized | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_logs**
+
 > LogsListResponse list_logs()
 
 List endpoint returns logs that match a log search query.
@@ -132,8 +132,9 @@ See [Datadog Logs Archive documentation][2].**
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -176,12 +177,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsApi->list_logs: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**LogsListRequest**](LogsListRequest.md)|  | [optional]
+| Name     | Type                                      | Description | Notes      |
+| -------- | ----------------------------------------- | ----------- | ---------- |
+| **body** | [**LogsListRequest**](LogsListRequest.md) |             | [optional] |
 
 ### Return type
 
@@ -193,21 +193,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Not Authorized |  -  |
+| Status code | Description    | Response headers |
+| ----------- | -------------- | ---------------- |
+| **200**     | OK             | -                |
+| **400**     | Bad Request    | -                |
+| **403**     | Not Authorized | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_logs_get**
+
 > LogsListResponse list_logs_get()
 
 List endpoint returns logs that match a log search query.
@@ -224,8 +224,9 @@ See [Datadog Logs Archive documentation][2].**
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -258,18 +259,17 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsApi->list_logs_get: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter_query** | **str**| Search query following logs syntax. | [optional]
- **filter_index** | **str**| For customers with multiple indexes, the indexes to search Defaults to &#39;*&#39; which means all indexes | [optional]
- **filter_from** | **datetime**| Minimum timestamp for requested logs. | [optional]
- **filter_to** | **datetime**| Maximum timestamp for requested logs. | [optional]
- **sort** | **LogsSort**| Order of logs in results. | [optional]
- **page_cursor** | **str**| List following results with a cursor provided in the previous query. | [optional]
- **page_limit** | **int**| Maximum number of logs in the response. | [optional] if omitted the server will use the default value of 10
+| Name             | Type         | Description                                                                                                 | Notes                                                             |
+| ---------------- | ------------ | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| **filter_query** | **str**      | Search query following logs syntax.                                                                         | [optional]                                                        |
+| **filter_index** | **str**      | For customers with multiple indexes, the indexes to search Defaults to &#39;\*&#39; which means all indexes | [optional]                                                        |
+| **filter_from**  | **datetime** | Minimum timestamp for requested logs.                                                                       | [optional]                                                        |
+| **filter_to**    | **datetime** | Maximum timestamp for requested logs.                                                                       | [optional]                                                        |
+| **sort**         | **LogsSort** | Order of logs in results.                                                                                   | [optional]                                                        |
+| **page_cursor**  | **str**      | List following results with a cursor provided in the previous query.                                        | [optional]                                                        |
+| **page_limit**   | **int**      | Maximum number of logs in the response.                                                                     | [optional] if omitted the server will use the default value of 10 |
 
 ### Return type
 
@@ -281,17 +281,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Not Authorized |  -  |
+| Status code | Description    | Response headers |
+| ----------- | -------------- | ---------------- |
+| **200**     | OK             | -                |
+| **400**     | Bad Request    | -                |
+| **403**     | Not Authorized | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

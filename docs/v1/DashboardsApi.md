@@ -2,18 +2,18 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_dashboard**](DashboardsApi.md#create_dashboard) | **POST** /api/v1/dashboard | Create a new dashboard
-[**delete_dashboard**](DashboardsApi.md#delete_dashboard) | **DELETE** /api/v1/dashboard/{dashboard_id} | Delete a dashboard
-[**delete_dashboards**](DashboardsApi.md#delete_dashboards) | **DELETE** /api/v1/dashboard | Delete dashboards
-[**get_dashboard**](DashboardsApi.md#get_dashboard) | **GET** /api/v1/dashboard/{dashboard_id} | Get a dashboard
-[**list_dashboards**](DashboardsApi.md#list_dashboards) | **GET** /api/v1/dashboard | Get all dashboards
-[**restore_dashboards**](DashboardsApi.md#restore_dashboards) | **PATCH** /api/v1/dashboard | Restore deleted dashboards
-[**update_dashboard**](DashboardsApi.md#update_dashboard) | **PUT** /api/v1/dashboard/{dashboard_id} | Update a dashboard
-
+| Method                                                        | HTTP request                                | Description                |
+| ------------------------------------------------------------- | ------------------------------------------- | -------------------------- |
+| [**create_dashboard**](DashboardsApi.md#create_dashboard)     | **POST** /api/v1/dashboard                  | Create a new dashboard     |
+| [**delete_dashboard**](DashboardsApi.md#delete_dashboard)     | **DELETE** /api/v1/dashboard/{dashboard_id} | Delete a dashboard         |
+| [**delete_dashboards**](DashboardsApi.md#delete_dashboards)   | **DELETE** /api/v1/dashboard                | Delete dashboards          |
+| [**get_dashboard**](DashboardsApi.md#get_dashboard)           | **GET** /api/v1/dashboard/{dashboard_id}    | Get a dashboard            |
+| [**list_dashboards**](DashboardsApi.md#list_dashboards)       | **GET** /api/v1/dashboard                   | Get all dashboards         |
+| [**restore_dashboards**](DashboardsApi.md#restore_dashboards) | **PATCH** /api/v1/dashboard                 | Restore deleted dashboards |
+| [**update_dashboard**](DashboardsApi.md#update_dashboard)     | **PUT** /api/v1/dashboard/{dashboard_id}    | Update a dashboard         |
 
 # **create_dashboard**
+
 > Dashboard create_dashboard(body)
 
 Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the `as_count()` or `as_rate()` modifiers appended.
@@ -21,9 +21,10 @@ Refer to the following [documentation](https://docs.datadoghq.com/developers/met
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -93,12 +94,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardsApi->create_dashboard: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**Dashboard**](Dashboard.md)| Create a dashboard request body. |
+| Name     | Type                          | Description                      | Notes |
+| -------- | ----------------------------- | -------------------------------- | ----- |
+| **body** | [**Dashboard**](Dashboard.md) | Create a dashboard request body. |
 
 ### Return type
 
@@ -110,30 +110,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_dashboard**
+
 > DashboardDeleteResponse delete_dashboard(dashboard_id)
 
 Delete a dashboard using the specified ID.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -159,12 +160,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardsApi->delete_dashboard: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dashboard_id** | **str**| The ID of the dashboard. |
+| Name             | Type    | Description              | Notes |
+| ---------------- | ------- | ------------------------ | ----- |
+| **dashboard_id** | **str** | The ID of the dashboard. |
 
 ### Return type
 
@@ -176,30 +176,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication Error |  -  |
-**404** | Dashboards Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication Error | -                |
+| **404**     | Dashboards Not Found | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_dashboards**
+
 > delete_dashboards(body)
 
 Delete dashboards using the specified IDs. If there are any failures, no dashboards will be deleted (partial success is not allowed).
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -231,12 +232,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardsApi->delete_dashboards: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**DashboardBulkDeleteRequest**](DashboardBulkDeleteRequest.md)| Delete dashboards request body. |
+| Name     | Type                                                            | Description                     | Notes |
+| -------- | --------------------------------------------------------------- | ------------------------------- | ----- |
+| **body** | [**DashboardBulkDeleteRequest**](DashboardBulkDeleteRequest.md) | Delete dashboards request body. |
 
 ### Return type
 
@@ -248,31 +248,32 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No Content |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Dashboards Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **204**     | No Content           | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Forbidden            | -                |
+| **404**     | Dashboards Not Found | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_dashboard**
+
 > Dashboard get_dashboard(dashboard_id)
 
 Get a dashboard using the specified ID.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -298,12 +299,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardsApi->get_dashboard: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dashboard_id** | **str**| The ID of the dashboard. |
+| Name             | Type    | Description              | Notes |
+| ---------------- | ------- | ------------------------ | ----- |
+| **dashboard_id** | **str** | The ID of the dashboard. |
 
 ### Return type
 
@@ -315,21 +315,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication Error |  -  |
-**404** | Item Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication Error | -                |
+| **404**     | Item Not Found       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_dashboards**
+
 > DashboardSummary list_dashboards()
 
 Get all dashboards.
@@ -339,9 +339,10 @@ This query will not return preset dashboards.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -368,12 +369,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardsApi->list_dashboards: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter_shared** | **bool**| When &#x60;true&#x60;, this query only returns shared custom created or cloned dashboards. | [optional]
+| Name              | Type     | Description                                                                                | Notes      |
+| ----------------- | -------- | ------------------------------------------------------------------------------------------ | ---------- |
+| **filter_shared** | **bool** | When &#x60;true&#x60;, this query only returns shared custom created or cloned dashboards. | [optional] |
 
 ### Return type
 
@@ -385,29 +385,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **restore_dashboards**
+
 > restore_dashboards(body)
 
 Restore dashboards using the specified IDs. If there are any failures, no dashboards will be restored (partial success is not allowed).
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -439,12 +440,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardsApi->restore_dashboards: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**DashboardRestoreRequest**](DashboardRestoreRequest.md)| Restore dashboards request body. |
+| Name     | Type                                                      | Description                      | Notes |
+| -------- | --------------------------------------------------------- | -------------------------------- | ----- |
+| **body** | [**DashboardRestoreRequest**](DashboardRestoreRequest.md) | Restore dashboards request body. |
 
 ### Return type
 
@@ -456,31 +456,32 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No Content |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Dashboards Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **204**     | No Content           | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Forbidden            | -                |
+| **404**     | Dashboards Not Found | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_dashboard**
+
 > Dashboard update_dashboard(dashboard_id, body)
 
 Update a dashboard using the specified ID.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -551,13 +552,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DashboardsApi->update_dashboard: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dashboard_id** | **str**| The ID of the dashboard. |
- **body** | [**Dashboard**](Dashboard.md)| Update Dashboard request body. |
+| Name             | Type                          | Description                    | Notes |
+| ---------------- | ----------------------------- | ------------------------------ | ----- |
+| **dashboard_id** | **str**                       | The ID of the dashboard.       |
+| **body**         | [**Dashboard**](Dashboard.md) | Update Dashboard request body. |
 
 ### Return type
 
@@ -569,18 +569,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
-**404** | Item Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
+| **404**     | Item Not Found       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

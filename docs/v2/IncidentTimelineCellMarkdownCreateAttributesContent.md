@@ -3,10 +3,9 @@
 The Markdown timeline cell contents.
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**content** | **str** | The Markdown content of the cell. | [optional] 
+
+| Name        | Type    | Description                       | Notes      |
+| ----------- | ------- | --------------------------------- | ---------- |
+| **content** | **str** | The Markdown content of the cell. | [optional] |
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
-
-

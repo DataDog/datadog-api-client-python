@@ -27,9 +27,9 @@ repos:
       # When updating the version of prettier, make sure to check the  pre-commit file
       # And keep the `entry` here up to date https://github.com/pre-commit/mirrors-prettier/blob/master/.pre-commit-hooks.yaml
       - prettier@2.2.1
-  - id: lint
-    name: Lint
-    language: docker_image
-    entry: cytopia/black@sha256:14c330759f9231b3259d95ab8ac77bfe1d9da945253d1a5ff2c17fea11652198 black --fast --line-length 120 src tests
+- repo: https://github.com/psf/black
+  rev: 21.9b0
+  hooks:
+  - id: black
     stages: [manual]
-    pass_filenames: false
+    entry: black --fast --line-length 120

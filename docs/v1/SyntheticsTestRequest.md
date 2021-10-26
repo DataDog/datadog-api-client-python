@@ -3,27 +3,26 @@
 Object describing the Synthetic test request.
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**allow_insecure** | **bool** | Allows loading insecure content for an HTTP request in a multistep test step. | [optional] 
-**basic_auth** | [**SyntheticsBasicAuth**](SyntheticsBasicAuth.md) |  | [optional] 
-**body** | **str** | Body to include in the test. | [optional] 
-**certificate** | [**SyntheticsTestRequestCertificate**](SyntheticsTestRequestCertificate.md) |  | [optional] 
-**dns_server** | **str** | DNS server to use for DNS tests. | [optional] 
-**dns_server_port** | **int** | DNS server port to use for DNS tests. | [optional] 
-**follow_redirects** | **bool** | Specifies whether or not the request follows redirects. | [optional] 
-**headers** | [**SyntheticsTestHeaders**](SyntheticsTestHeaders.md) |  | [optional] 
-**host** | **str** | Host name to perform the test with. | [optional] 
-**method** | [**HTTPMethod**](HTTPMethod.md) |  | [optional] 
-**no_saving_response_body** | **bool** | Determines whether or not to save the response body. | [optional] 
-**number_of_packets** | **int** | Number of pings to use per test. | [optional] 
-**port** | **int** | Port to use when performing the test. | [optional] 
-**query** | **dict** | Query to use for the test. | [optional] 
-**servername** | **str** | For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number. | [optional] 
-**should_track_hops** | **bool** | Turns on a traceroute probe to discover all gateways along the path to the host destination. | [optional] 
-**timeout** | **float** | Timeout in seconds for the test. | [optional] 
-**url** | **str** | URL to perform the test with. | [optional] 
+
+| Name                        | Type                                                                        | Description                                                                                                                                                                                          | Notes      |
+| --------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **allow_insecure**          | **bool**                                                                    | Allows loading insecure content for an HTTP request in a multistep test step.                                                                                                                        | [optional] |
+| **basic_auth**              | [**SyntheticsBasicAuth**](SyntheticsBasicAuth.md)                           |                                                                                                                                                                                                      | [optional] |
+| **body**                    | **str**                                                                     | Body to include in the test.                                                                                                                                                                         | [optional] |
+| **certificate**             | [**SyntheticsTestRequestCertificate**](SyntheticsTestRequestCertificate.md) |                                                                                                                                                                                                      | [optional] |
+| **dns_server**              | **str**                                                                     | DNS server to use for DNS tests.                                                                                                                                                                     | [optional] |
+| **dns_server_port**         | **int**                                                                     | DNS server port to use for DNS tests.                                                                                                                                                                | [optional] |
+| **follow_redirects**        | **bool**                                                                    | Specifies whether or not the request follows redirects.                                                                                                                                              | [optional] |
+| **headers**                 | [**SyntheticsTestHeaders**](SyntheticsTestHeaders.md)                       |                                                                                                                                                                                                      | [optional] |
+| **host**                    | **str**                                                                     | Host name to perform the test with.                                                                                                                                                                  | [optional] |
+| **method**                  | [**HTTPMethod**](HTTPMethod.md)                                             |                                                                                                                                                                                                      | [optional] |
+| **no_saving_response_body** | **bool**                                                                    | Determines whether or not to save the response body.                                                                                                                                                 | [optional] |
+| **number_of_packets**       | **int**                                                                     | Number of pings to use per test.                                                                                                                                                                     | [optional] |
+| **port**                    | **int**                                                                     | Port to use when performing the test.                                                                                                                                                                | [optional] |
+| **query**                   | **dict**                                                                    | Query to use for the test.                                                                                                                                                                           | [optional] |
+| **servername**              | **str**                                                                     | For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number. | [optional] |
+| **should_track_hops**       | **bool**                                                                    | Turns on a traceroute probe to discover all gateways along the path to the host destination.                                                                                                         | [optional] |
+| **timeout**                 | **float**                                                                   | Timeout in seconds for the test.                                                                                                                                                                     | [optional] |
+| **url**                     | **str**                                                                     | URL to perform the test with.                                                                                                                                                                        | [optional] |
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
-
-

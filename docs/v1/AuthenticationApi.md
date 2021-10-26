@@ -2,20 +2,21 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**validate**](AuthenticationApi.md#validate) | **GET** /api/v1/validate | Validate API key
-
+| Method                                        | HTTP request             | Description      |
+| --------------------------------------------- | ------------------------ | ---------------- |
+| [**validate**](AuthenticationApi.md#validate) | **GET** /api/v1/validate | Validate API key |
 
 # **validate**
+
 > AuthenticationValidationResponse validate()
 
 Check if the API key (not the APP key) is valid. If invalid, a 403 is returned.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -40,8 +41,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AuthenticationApi->validate: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -54,16 +55,14 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

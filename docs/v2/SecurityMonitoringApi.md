@@ -2,23 +2,23 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_security_filter**](SecurityMonitoringApi.md#create_security_filter) | **POST** /api/v2/security_monitoring/configuration/security_filters | Create a security filter
-[**create_security_monitoring_rule**](SecurityMonitoringApi.md#create_security_monitoring_rule) | **POST** /api/v2/security_monitoring/rules | Create a detection rule
-[**delete_security_filter**](SecurityMonitoringApi.md#delete_security_filter) | **DELETE** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Delete a security filter
-[**delete_security_monitoring_rule**](SecurityMonitoringApi.md#delete_security_monitoring_rule) | **DELETE** /api/v2/security_monitoring/rules/{rule_id} | Delete an existing rule
-[**get_security_filter**](SecurityMonitoringApi.md#get_security_filter) | **GET** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Get a security filter
-[**get_security_monitoring_rule**](SecurityMonitoringApi.md#get_security_monitoring_rule) | **GET** /api/v2/security_monitoring/rules/{rule_id} | Get a rule&#39;s details
-[**list_security_filters**](SecurityMonitoringApi.md#list_security_filters) | **GET** /api/v2/security_monitoring/configuration/security_filters | Get all security filters
-[**list_security_monitoring_rules**](SecurityMonitoringApi.md#list_security_monitoring_rules) | **GET** /api/v2/security_monitoring/rules | List rules
-[**list_security_monitoring_signals**](SecurityMonitoringApi.md#list_security_monitoring_signals) | **GET** /api/v2/security_monitoring/signals | Get a quick list of security signals
-[**search_security_monitoring_signals**](SecurityMonitoringApi.md#search_security_monitoring_signals) | **POST** /api/v2/security_monitoring/signals/search | Get a list of security signals
-[**update_security_filter**](SecurityMonitoringApi.md#update_security_filter) | **PATCH** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Update a security filter
-[**update_security_monitoring_rule**](SecurityMonitoringApi.md#update_security_monitoring_rule) | **PUT** /api/v2/security_monitoring/rules/{rule_id} | Update an existing rule
-
+| Method                                                                                                | HTTP request                                                                               | Description                          |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------ |
+| [**create_security_filter**](SecurityMonitoringApi.md#create_security_filter)                         | **POST** /api/v2/security_monitoring/configuration/security_filters                        | Create a security filter             |
+| [**create_security_monitoring_rule**](SecurityMonitoringApi.md#create_security_monitoring_rule)       | **POST** /api/v2/security_monitoring/rules                                                 | Create a detection rule              |
+| [**delete_security_filter**](SecurityMonitoringApi.md#delete_security_filter)                         | **DELETE** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id} | Delete a security filter             |
+| [**delete_security_monitoring_rule**](SecurityMonitoringApi.md#delete_security_monitoring_rule)       | **DELETE** /api/v2/security_monitoring/rules/{rule_id}                                     | Delete an existing rule              |
+| [**get_security_filter**](SecurityMonitoringApi.md#get_security_filter)                               | **GET** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}    | Get a security filter                |
+| [**get_security_monitoring_rule**](SecurityMonitoringApi.md#get_security_monitoring_rule)             | **GET** /api/v2/security_monitoring/rules/{rule_id}                                        | Get a rule&#39;s details             |
+| [**list_security_filters**](SecurityMonitoringApi.md#list_security_filters)                           | **GET** /api/v2/security_monitoring/configuration/security_filters                         | Get all security filters             |
+| [**list_security_monitoring_rules**](SecurityMonitoringApi.md#list_security_monitoring_rules)         | **GET** /api/v2/security_monitoring/rules                                                  | List rules                           |
+| [**list_security_monitoring_signals**](SecurityMonitoringApi.md#list_security_monitoring_signals)     | **GET** /api/v2/security_monitoring/signals                                                | Get a quick list of security signals |
+| [**search_security_monitoring_signals**](SecurityMonitoringApi.md#search_security_monitoring_signals) | **POST** /api/v2/security_monitoring/signals/search                                        | Get a list of security signals       |
+| [**update_security_filter**](SecurityMonitoringApi.md#update_security_filter)                         | **PATCH** /api/v2/security_monitoring/configuration/security_filters/{security_filter_id}  | Update a security filter             |
+| [**update_security_monitoring_rule**](SecurityMonitoringApi.md#update_security_monitoring_rule)       | **PUT** /api/v2/security_monitoring/rules/{rule_id}                                        | Update an existing rule              |
 
 # **create_security_filter**
+
 > SecurityFilterResponse create_security_filter(body)
 
 Create a security filter.
@@ -28,9 +28,10 @@ for more examples.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -72,12 +73,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->create_security_filter: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**SecurityFilterCreateRequest**](SecurityFilterCreateRequest.md)| The definition of the new security filter. |
+| Name     | Type                                                              | Description                                | Notes |
+| -------- | ----------------------------------------------------------------- | ------------------------------------------ | ----- |
+| **body** | [**SecurityFilterCreateRequest**](SecurityFilterCreateRequest.md) | The definition of the new security filter. |
 
 ### Return type
 
@@ -89,32 +89,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Not Authorized |  -  |
-**409** | Conflict |  -  |
-**429** | Too many requests |  -  |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **400**     | Bad Request       | -                |
+| **403**     | Not Authorized    | -                |
+| **409**     | Conflict          | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_security_monitoring_rule**
+
 > SecurityMonitoringRuleResponse create_security_monitoring_rule(body)
 
 Create a detection rule.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -180,7 +181,7 @@ with ApiClient(configuration) as api_client:
         ],
         tags=["env:prod","team:security"],
         type=SecurityMonitoringRuleTypeCreate("log_detection"),
-    )  # SecurityMonitoringRuleCreatePayload | 
+    )  # SecurityMonitoringRuleCreatePayload |
 
     # example passing only required values which don't have defaults set
     try:
@@ -191,12 +192,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->create_security_monitoring_rule: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**SecurityMonitoringRuleCreatePayload**](SecurityMonitoringRuleCreatePayload.md)|  |
+| Name     | Type                                                                              | Description | Notes |
+| -------- | --------------------------------------------------------------------------------- | ----------- | ----- |
+| **body** | [**SecurityMonitoringRuleCreatePayload**](SecurityMonitoringRuleCreatePayload.md) |             |
 
 ### Return type
 
@@ -208,30 +208,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Not Authorized |  -  |
+| Status code | Description    | Response headers |
+| ----------- | -------------- | ---------------- |
+| **200**     | OK             | -                |
+| **400**     | Bad Request    | -                |
+| **403**     | Not Authorized | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_security_filter**
+
 > delete_security_filter(security_filter_id)
 
 Delete a specific security filter.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -256,12 +257,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->delete_security_filter: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **security_filter_id** | **str**| The ID of the security filter. |
+| Name                   | Type    | Description                    | Notes |
+| ---------------------- | ------- | ------------------------------ | ----- |
+| **security_filter_id** | **str** | The ID of the security filter. |
 
 ### Return type
 
@@ -273,31 +273,32 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**403** | Not Authorized |  -  |
-**404** | Not Found |  -  |
-**429** | Too many requests |  -  |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **204**     | OK                | -                |
+| **403**     | Not Authorized    | -                |
+| **404**     | Not Found         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_security_monitoring_rule**
+
 > delete_security_monitoring_rule(rule_id)
 
 Delete an existing rule. Default rules cannot be deleted.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -322,12 +323,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->delete_security_monitoring_rule: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rule_id** | **str**| The ID of the rule. |
+| Name        | Type    | Description         | Notes |
+| ----------- | ------- | ------------------- | ----- |
+| **rule_id** | **str** | The ID of the rule. |
 
 ### Return type
 
@@ -339,21 +339,21 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**403** | Not Authorized |  -  |
-**404** | Not Found |  -  |
+| Status code | Description    | Response headers |
+| ----------- | -------------- | ---------------- |
+| **204**     | OK             | -                |
+| **403**     | Not Authorized | -                |
+| **404**     | Not Found      | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_security_filter**
+
 > SecurityFilterResponse get_security_filter(security_filter_id)
 
 Get the details of a specific security filter.
@@ -363,9 +363,10 @@ for more examples.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -391,12 +392,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->get_security_filter: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **security_filter_id** | **str**| The ID of the security filter. |
+| Name                   | Type    | Description                    | Notes |
+| ---------------------- | ------- | ------------------------------ | ----- |
+| **security_filter_id** | **str** | The ID of the security filter. |
 
 ### Return type
 
@@ -408,31 +408,32 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Not Authorized |  -  |
-**404** | Not Found |  -  |
-**429** | Too many requests |  -  |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **403**     | Not Authorized    | -                |
+| **404**     | Not Found         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_security_monitoring_rule**
+
 > SecurityMonitoringRuleResponse get_security_monitoring_rule(rule_id)
 
 Get a rule's details.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -458,12 +459,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->get_security_monitoring_rule: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rule_id** | **str**| The ID of the rule. |
+| Name        | Type    | Description         | Notes |
+| ----------- | ------- | ------------------- | ----- |
+| **rule_id** | **str** | The ID of the rule. |
 
 ### Return type
 
@@ -475,29 +475,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_security_filters**
+
 > SecurityFiltersResponse list_security_filters()
 
 Get the list of configured security filters with their definitions.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -522,8 +523,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->list_security_filters: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -536,30 +537,31 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Not Authorized |  -  |
-**429** | Too many requests |  -  |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **403**     | Not Authorized    | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_security_monitoring_rules**
+
 > SecurityMonitoringListRulesResponse list_security_monitoring_rules()
 
 List rules.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -587,13 +589,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->list_security_monitoring_rules: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
- **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
+| Name            | Type    | Description                     | Notes                                                             |
+| --------------- | ------- | ------------------------------- | ----------------------------------------------------------------- |
+| **page_size**   | **int** | Size for a given page.          | [optional] if omitted the server will use the default value of 10 |
+| **page_number** | **int** | Specific page number to return. | [optional] if omitted the server will use the default value of 0  |
 
 ### Return type
 
@@ -605,20 +606,20 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_security_monitoring_signals**
+
 > SecurityMonitoringSignalsListResponse list_security_monitoring_signals()
 
 The list endpoint returns security signals that match a search query.
@@ -627,9 +628,10 @@ security signals.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -662,17 +664,16 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->list_security_monitoring_signals: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter_query** | **str**| The search query for security signals. | [optional]
- **filter_from** | **datetime**| The minimum timestamp for requested security signals. | [optional]
- **filter_to** | **datetime**| The maximum timestamp for requested security signals. | [optional]
- **sort** | **SecurityMonitoringSignalsSort**| The order of the security signals in results. | [optional]
- **page_cursor** | **str**| A list of results using the cursor provided in the previous query. | [optional]
- **page_limit** | **int**| The maximum number of security signals in the response. | [optional] if omitted the server will use the default value of 10
+| Name             | Type                              | Description                                                        | Notes                                                             |
+| ---------------- | --------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| **filter_query** | **str**                           | The search query for security signals.                             | [optional]                                                        |
+| **filter_from**  | **datetime**                      | The minimum timestamp for requested security signals.              | [optional]                                                        |
+| **filter_to**    | **datetime**                      | The maximum timestamp for requested security signals.              | [optional]                                                        |
+| **sort**         | **SecurityMonitoringSignalsSort** | The order of the security signals in results.                      | [optional]                                                        |
+| **page_cursor**  | **str**                           | A list of results using the cursor provided in the previous query. | [optional]                                                        |
+| **page_limit**   | **int**                           | The maximum number of security signals in the response.            | [optional] if omitted the server will use the default value of 10 |
 
 ### Return type
 
@@ -684,21 +685,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Not Authorized |  -  |
+| Status code | Description    | Response headers |
+| ----------- | -------------- | ---------------- |
+| **200**     | OK             | -                |
+| **400**     | Bad Request    | -                |
+| **403**     | Not Authorized | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **search_security_monitoring_signals**
+
 > SecurityMonitoringSignalsListResponse search_security_monitoring_signals()
 
 Returns security signals that match a search query.
@@ -707,9 +708,10 @@ security signals.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -748,12 +750,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->search_security_monitoring_signals: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**SecurityMonitoringSignalListRequest**](SecurityMonitoringSignalListRequest.md)|  | [optional]
+| Name     | Type                                                                              | Description | Notes      |
+| -------- | --------------------------------------------------------------------------------- | ----------- | ---------- |
+| **body** | [**SecurityMonitoringSignalListRequest**](SecurityMonitoringSignalListRequest.md) |             | [optional] |
 
 ### Return type
 
@@ -765,21 +766,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Not Authorized |  -  |
+| Status code | Description    | Response headers |
+| ----------- | -------------- | ---------------- |
+| **200**     | OK             | -                |
+| **400**     | Bad Request    | -                |
+| **403**     | Not Authorized | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_security_filter**
+
 > SecurityFilterResponse update_security_filter(security_filter_id, body)
 
 Update a specific security filter.
@@ -787,9 +788,10 @@ Returns the security filter object when the request is successful.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -833,13 +835,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->update_security_filter: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **security_filter_id** | **str**| The ID of the security filter. |
- **body** | [**SecurityFilterUpdateRequest**](SecurityFilterUpdateRequest.md)| New definition of the security filter. |
+| Name                   | Type                                                              | Description                            | Notes |
+| ---------------------- | ----------------------------------------------------------------- | -------------------------------------- | ----- |
+| **security_filter_id** | **str**                                                           | The ID of the security filter.         |
+| **body**               | [**SecurityFilterUpdateRequest**](SecurityFilterUpdateRequest.md) | New definition of the security filter. |
 
 ### Return type
 
@@ -851,24 +852,24 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Not Authorized |  -  |
-**404** | Not Found |  -  |
-**409** | Concurrent Modification |  -  |
-**429** | Too many requests |  -  |
+| Status code | Description             | Response headers |
+| ----------- | ----------------------- | ---------------- |
+| **200**     | OK                      | -                |
+| **400**     | Bad Request             | -                |
+| **403**     | Not Authorized          | -                |
+| **404**     | Not Found               | -                |
+| **409**     | Concurrent Modification | -                |
+| **429**     | Too many requests       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_security_monitoring_rule**
+
 > SecurityMonitoringRuleResponse update_security_monitoring_rule(rule_id, body)
 
 Update an existing rule. When updating `cases`, `queries` or `options`, the whole field
@@ -877,9 +878,10 @@ Default rules can only be updated to be enabled and to change notifications.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -948,7 +950,7 @@ with ApiClient(configuration) as api_client:
             "tags_example",
         ],
         version=1,
-    )  # SecurityMonitoringRuleUpdatePayload | 
+    )  # SecurityMonitoringRuleUpdatePayload |
 
     # example passing only required values which don't have defaults set
     try:
@@ -959,13 +961,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SecurityMonitoringApi->update_security_monitoring_rule: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rule_id** | **str**| The ID of the rule. |
- **body** | [**SecurityMonitoringRuleUpdatePayload**](SecurityMonitoringRuleUpdatePayload.md)|  |
+| Name        | Type                                                                              | Description         | Notes |
+| ----------- | --------------------------------------------------------------------------------- | ------------------- | ----- |
+| **rule_id** | **str**                                                                           | The ID of the rule. |
+| **body**    | [**SecurityMonitoringRuleUpdatePayload**](SecurityMonitoringRuleUpdatePayload.md) |                     |
 
 ### Return type
 
@@ -977,19 +978,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Concurrent Modification |  -  |
-**403** | Not Authorized |  -  |
-**404** | Not Found |  -  |
+| Status code | Description             | Response headers |
+| ----------- | ----------------------- | ---------------- |
+| **200**     | OK                      | -                |
+| **400**     | Bad Request             | -                |
+| **401**     | Concurrent Modification | -                |
+| **403**     | Not Authorized          | -                |
+| **404**     | Not Found               | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

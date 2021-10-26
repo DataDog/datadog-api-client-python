@@ -76,7 +76,8 @@ def test_unknown_nested_oneof_in_list():
     }"""
     config = Configuration()
     deserialized_data = validate_and_convert_types(
-        json.loads(body), (SyntheticsAPITest,), ["received_data"], True, True, config)
+        json.loads(body), (SyntheticsAPITest,), ["received_data"], True, True, config
+    )
     assert isinstance(deserialized_data, SyntheticsAPITest)
     assert len(deserialized_data.config.assertions) == 3
     assert deserialized_data.config.assertions[2].operator == "A non existent operator"
@@ -146,7 +147,8 @@ def test_unknown_nested_enum_in_list():
     }"""
     config = Configuration()
     deserialized_data = validate_and_convert_types(
-        json.loads(body), (SyntheticsBrowserTest,), ["received_data"], True, True, config)
+        json.loads(body), (SyntheticsBrowserTest,), ["received_data"], True, True, config
+    )
     assert isinstance(deserialized_data, SyntheticsBrowserTest)
     assert len(deserialized_data.options.device_ids) == 3
     assert str(deserialized_data.options.device_ids[2]) == "A non existent device ID"
@@ -189,7 +191,8 @@ def test_unknown_top_level_enum():
     }"""
     config = Configuration()
     deserialized_data = validate_and_convert_types(
-        json.loads(body), (SyntheticsBrowserTest,), ["received_data"], True, True, config)
+        json.loads(body), (SyntheticsBrowserTest,), ["received_data"], True, True, config
+    )
     assert isinstance(deserialized_data, SyntheticsBrowserTest)
     assert str(deserialized_data.type) == "A non existent test type"
 
@@ -230,7 +233,8 @@ def test_unknown_nested_enum():
     }"""
     config = Configuration()
     deserialized_data = validate_and_convert_types(
-        json.loads(body), (SyntheticsAPITest,), ["received_data"], True, True, config)
+        json.loads(body), (SyntheticsAPITest,), ["received_data"], True, True, config
+    )
     assert isinstance(deserialized_data, SyntheticsAPITest)
     assert isinstance(deserialized_data.config.request, SyntheticsTestRequest)
     assert str(deserialized_data.config.request.method) == "A non existent method"
@@ -263,7 +267,8 @@ def test_unknown_nested_one_of():
     }"""
     config = ConfigurationV2()
     deserialized_data = validate_and_convert_types_v2(
-        json.loads(body), (LogsArchive,), ["received_data"], True, True, config)
+        json.loads(body), (LogsArchive,), ["received_data"], True, True, config
+    )
     assert isinstance(deserialized_data, LogsArchive)
     assert isinstance(deserialized_data.data.attributes.destination, LogsArchiveDestination)
     assert deserialized_data.data.attributes.destination.type == "A non existent destination"
@@ -274,6 +279,7 @@ def test_one_of_primitive_types():
     body = """{"data": {"buckets": [{"by": {}, "computes": {"c0": 435.3}}]}}"""
     config = ConfigurationV2()
     deserialized_data = validate_and_convert_types_v2(
-        json.loads(body), (LogsAggregateResponse,), ["received_data"], True, True, config)
+        json.loads(body), (LogsAggregateResponse,), ["received_data"], True, True, config
+    )
     assert isinstance(deserialized_data, LogsAggregateResponse)
     assert deserialized_data.data.buckets[0].computes["c0"] == 435.3

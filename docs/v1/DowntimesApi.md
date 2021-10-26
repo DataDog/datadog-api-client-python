@@ -2,27 +2,28 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**cancel_downtime**](DowntimesApi.md#cancel_downtime) | **DELETE** /api/v1/downtime/{downtime_id} | Cancel a downtime
-[**cancel_downtimes_by_scope**](DowntimesApi.md#cancel_downtimes_by_scope) | **POST** /api/v1/downtime/cancel/by_scope | Cancel downtimes by scope
-[**create_downtime**](DowntimesApi.md#create_downtime) | **POST** /api/v1/downtime | Schedule a downtime
-[**get_downtime**](DowntimesApi.md#get_downtime) | **GET** /api/v1/downtime/{downtime_id} | Get a downtime
-[**list_downtimes**](DowntimesApi.md#list_downtimes) | **GET** /api/v1/downtime | Get all downtimes
-[**list_monitor_downtimes**](DowntimesApi.md#list_monitor_downtimes) | **GET** /api/v1/monitor/{monitor_id}/downtimes | Get all downtimes for a monitor
-[**update_downtime**](DowntimesApi.md#update_downtime) | **PUT** /api/v1/downtime/{downtime_id} | Update a downtime
-
+| Method                                                                     | HTTP request                                   | Description                     |
+| -------------------------------------------------------------------------- | ---------------------------------------------- | ------------------------------- |
+| [**cancel_downtime**](DowntimesApi.md#cancel_downtime)                     | **DELETE** /api/v1/downtime/{downtime_id}      | Cancel a downtime               |
+| [**cancel_downtimes_by_scope**](DowntimesApi.md#cancel_downtimes_by_scope) | **POST** /api/v1/downtime/cancel/by_scope      | Cancel downtimes by scope       |
+| [**create_downtime**](DowntimesApi.md#create_downtime)                     | **POST** /api/v1/downtime                      | Schedule a downtime             |
+| [**get_downtime**](DowntimesApi.md#get_downtime)                           | **GET** /api/v1/downtime/{downtime_id}         | Get a downtime                  |
+| [**list_downtimes**](DowntimesApi.md#list_downtimes)                       | **GET** /api/v1/downtime                       | Get all downtimes               |
+| [**list_monitor_downtimes**](DowntimesApi.md#list_monitor_downtimes)       | **GET** /api/v1/monitor/{monitor_id}/downtimes | Get all downtimes for a monitor |
+| [**update_downtime**](DowntimesApi.md#update_downtime)                     | **PUT** /api/v1/downtime/{downtime_id}         | Update a downtime               |
 
 # **cancel_downtime**
+
 > cancel_downtime(downtime_id)
 
 Cancel a downtime.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -47,12 +48,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->cancel_downtime: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **downtime_id** | **int**| ID of the downtime to cancel. |
+| Name            | Type    | Description                   | Notes |
+| --------------- | ------- | ----------------------------- | ----- |
+| **downtime_id** | **int** | ID of the downtime to cancel. |
 
 ### Return type
 
@@ -64,30 +64,31 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Downtime not found |  -  |
+| Status code | Description        | Response headers |
+| ----------- | ------------------ | ---------------- |
+| **204**     | OK                 | -                |
+| **403**     | Forbidden          | -                |
+| **404**     | Downtime not found | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **cancel_downtimes_by_scope**
+
 > CanceledDowntimesIds cancel_downtimes_by_scope(body)
 
 Delete all downtimes that match the scope of `X`.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -115,12 +116,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->cancel_downtimes_by_scope: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CancelDowntimesByScopeRequest**](CancelDowntimesByScopeRequest.md)| Scope to cancel downtimes for. |
+| Name     | Type                                                                  | Description                    | Notes |
+| -------- | --------------------------------------------------------------------- | ------------------------------ | ----- |
+| **body** | [**CancelDowntimesByScopeRequest**](CancelDowntimesByScopeRequest.md) | Scope to cancel downtimes for. |
 
 ### Return type
 
@@ -132,31 +132,32 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Downtimes not found |  -  |
+| Status code | Description         | Response headers |
+| ----------- | ------------------- | ---------------- |
+| **200**     | OK                  | -                |
+| **400**     | Bad Request         | -                |
+| **403**     | Forbidden           | -                |
+| **404**     | Downtimes not found | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_downtime**
+
 > Downtime create_downtime(body)
 
 Schedule a downtime.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -200,12 +201,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->create_downtime: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**Downtime**](Downtime.md)| Schedule a downtime request body. |
+| Name     | Type                        | Description                       | Notes |
+| -------- | --------------------------- | --------------------------------- | ----- |
+| **body** | [**Downtime**](Downtime.md) | Schedule a downtime request body. |
 
 ### Return type
 
@@ -217,30 +217,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_downtime**
+
 > Downtime get_downtime(downtime_id)
 
 Get downtime detail by `downtime_id`.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -266,12 +267,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->get_downtime: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **downtime_id** | **int**| ID of the downtime to fetch. |
+| Name            | Type    | Description                  | Notes |
+| --------------- | ------- | ---------------------------- | ----- |
+| **downtime_id** | **int** | ID of the downtime to fetch. |
 
 ### Return type
 
@@ -283,30 +283,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Downtime not found |  -  |
+| Status code | Description        | Response headers |
+| ----------- | ------------------ | ---------------- |
+| **200**     | OK                 | -                |
+| **403**     | Forbidden          | -                |
+| **404**     | Downtime not found | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_downtimes**
+
 > [Downtime] list_downtimes()
 
 Get all scheduled downtimes.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -333,12 +334,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->list_downtimes: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **current_only** | **bool**| Only return downtimes that are active when the request is made. | [optional]
+| Name             | Type     | Description                                                     | Notes      |
+| ---------------- | -------- | --------------------------------------------------------------- | ---------- |
+| **current_only** | **bool** | Only return downtimes that are active when the request is made. | [optional] |
 
 ### Return type
 
@@ -350,28 +350,29 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_monitor_downtimes**
+
 > [Downtime] list_monitor_downtimes(monitor_id)
 
 Get all downtimes for the specified monitor
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -397,12 +398,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->list_monitor_downtimes: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **monitor_id** | **int**| The id of the monitor |
+| Name           | Type    | Description           | Notes |
+| -------------- | ------- | --------------------- | ----- |
+| **monitor_id** | **int** | The id of the monitor |
 
 ### Return type
 
@@ -414,30 +414,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**404** | Monitor Not Found error |  -  |
+| Status code | Description             | Response headers |
+| ----------- | ----------------------- | ---------------- |
+| **200**     | OK                      | -                |
+| **400**     | Bad Request             | -                |
+| **404**     | Monitor Not Found error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_downtime**
+
 > Downtime update_downtime(downtime_id, body)
 
 Update a single downtime by `downtime_id`.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -482,13 +483,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling DowntimesApi->update_downtime: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **downtime_id** | **int**| ID of the downtime to update. |
- **body** | [**Downtime**](Downtime.md)| Update a downtime request body. |
+| Name            | Type                        | Description                     | Notes |
+| --------------- | --------------------------- | ------------------------------- | ----- |
+| **downtime_id** | **int**                     | ID of the downtime to update.   |
+| **body**        | [**Downtime**](Downtime.md) | Update a downtime request body. |
 
 ### Return type
 
@@ -500,18 +500,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Downtime not found |  -  |
+| Status code | Description        | Response headers |
+| ----------- | ------------------ | ---------------- |
+| **200**     | OK                 | -                |
+| **400**     | Bad Request        | -                |
+| **403**     | Forbidden          | -                |
+| **404**     | Downtime not found | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

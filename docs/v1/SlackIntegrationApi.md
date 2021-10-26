@@ -2,24 +2,25 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_slack_integration_channel**](SlackIntegrationApi.md#create_slack_integration_channel) | **POST** /api/v1/integration/slack/configuration/accounts/{account_name}/channels | Create a Slack integration channel
-[**get_slack_integration_channel**](SlackIntegrationApi.md#get_slack_integration_channel) | **GET** /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name} | Get a Slack integration channel
-[**get_slack_integration_channels**](SlackIntegrationApi.md#get_slack_integration_channels) | **GET** /api/v1/integration/slack/configuration/accounts/{account_name}/channels | Get all channels in a Slack integration
-[**remove_slack_integration_channel**](SlackIntegrationApi.md#remove_slack_integration_channel) | **DELETE** /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name} | Remove a Slack integration channel
-[**update_slack_integration_channel**](SlackIntegrationApi.md#update_slack_integration_channel) | **PATCH** /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name} | Update a Slack integration channel
-
+| Method                                                                                          | HTTP request                                                                                       | Description                             |
+| ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| [**create_slack_integration_channel**](SlackIntegrationApi.md#create_slack_integration_channel) | **POST** /api/v1/integration/slack/configuration/accounts/{account_name}/channels                  | Create a Slack integration channel      |
+| [**get_slack_integration_channel**](SlackIntegrationApi.md#get_slack_integration_channel)       | **GET** /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name}    | Get a Slack integration channel         |
+| [**get_slack_integration_channels**](SlackIntegrationApi.md#get_slack_integration_channels)     | **GET** /api/v1/integration/slack/configuration/accounts/{account_name}/channels                   | Get all channels in a Slack integration |
+| [**remove_slack_integration_channel**](SlackIntegrationApi.md#remove_slack_integration_channel) | **DELETE** /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name} | Remove a Slack integration channel      |
+| [**update_slack_integration_channel**](SlackIntegrationApi.md#update_slack_integration_channel) | **PATCH** /api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name}  | Update a Slack integration channel      |
 
 # **create_slack_integration_channel**
+
 > SlackIntegrationChannel create_slack_integration_channel(account_name, body)
 
 Add a channel to your Datadog-Slack integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -54,13 +55,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SlackIntegrationApi->create_slack_integration_channel: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_name** | **str**| Your Slack account name. |
- **body** | [**SlackIntegrationChannel**](SlackIntegrationChannel.md)| Payload describing Slack channel to be created |
+| Name             | Type                                                      | Description                                    | Notes |
+| ---------------- | --------------------------------------------------------- | ---------------------------------------------- | ----- |
+| **account_name** | **str**                                                   | Your Slack account name.                       |
+| **body**         | [**SlackIntegrationChannel**](SlackIntegrationChannel.md) | Payload describing Slack channel to be created |
 
 ### Return type
 
@@ -72,30 +72,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
-**404** | Item Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Item Not Found       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_slack_integration_channel**
+
 > SlackIntegrationChannel get_slack_integration_channel(account_name, channel_name)
 
 Get a channel configured for your Datadog-Slack integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -122,13 +123,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SlackIntegrationApi->get_slack_integration_channel: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_name** | **str**| Your Slack account name. |
- **channel_name** | **str**| The name of the Slack channel being operated on. |
+| Name             | Type    | Description                                      | Notes |
+| ---------------- | ------- | ------------------------------------------------ | ----- |
+| **account_name** | **str** | Your Slack account name.                         |
+| **channel_name** | **str** | The name of the Slack channel being operated on. |
 
 ### Return type
 
@@ -140,30 +140,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
-**404** | Item Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Item Not Found       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_slack_integration_channels**
+
 > SlackIntegrationChannels get_slack_integration_channels(account_name)
 
 Get a list of all channels configured for your Datadog-Slack integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -189,12 +190,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SlackIntegrationApi->get_slack_integration_channels: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_name** | **str**| Your Slack account name. |
+| Name             | Type    | Description              | Notes |
+| ---------------- | ------- | ------------------------ | ----- |
+| **account_name** | **str** | Your Slack account name. |
 
 ### Return type
 
@@ -206,30 +206,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
-**404** | Item Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Item Not Found       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **remove_slack_integration_channel**
+
 > remove_slack_integration_channel(account_name, channel_name)
 
 Remove a channel from your Datadog-Slack integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -255,13 +256,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SlackIntegrationApi->remove_slack_integration_channel: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_name** | **str**| Your Slack account name. |
- **channel_name** | **str**| The name of the Slack channel being operated on. |
+| Name             | Type    | Description                                      | Notes |
+| ---------------- | ------- | ------------------------------------------------ | ----- |
+| **account_name** | **str** | Your Slack account name.                         |
+| **channel_name** | **str** | The name of the Slack channel being operated on. |
 
 ### Return type
 
@@ -273,30 +273,31 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | The channel was removed successfully. |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
-**404** | Item Not Found |  -  |
+| Status code | Description                           | Response headers |
+| ----------- | ------------------------------------- | ---------------- |
+| **204**     | The channel was removed successfully. | -                |
+| **400**     | Bad Request                           | -                |
+| **403**     | Authentication error                  | -                |
+| **404**     | Item Not Found                        | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_slack_integration_channel**
+
 > SlackIntegrationChannel update_slack_integration_channel(account_name, channel_name, body)
 
 Update a channel used in your Datadog-Slack integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -332,14 +333,13 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SlackIntegrationApi->update_slack_integration_channel: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_name** | **str**| Your Slack account name. |
- **channel_name** | **str**| The name of the Slack channel being operated on. |
- **body** | [**SlackIntegrationChannel**](SlackIntegrationChannel.md)| Payload describing fields and values to be updated. |
+| Name             | Type                                                      | Description                                         | Notes |
+| ---------------- | --------------------------------------------------------- | --------------------------------------------------- | ----- |
+| **account_name** | **str**                                                   | Your Slack account name.                            |
+| **channel_name** | **str**                                                   | The name of the Slack channel being operated on.    |
+| **body**         | [**SlackIntegrationChannel**](SlackIntegrationChannel.md) | Payload describing fields and values to be updated. |
 
 ### Return type
 
@@ -351,18 +351,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
-**404** | Item Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Item Not Found       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

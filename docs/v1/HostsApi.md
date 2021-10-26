@@ -2,15 +2,15 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**get_host_totals**](HostsApi.md#get_host_totals) | **GET** /api/v1/hosts/totals | Get the total number of active hosts
-[**list_hosts**](HostsApi.md#list_hosts) | **GET** /api/v1/hosts | Get all hosts for your organization
-[**mute_host**](HostsApi.md#mute_host) | **POST** /api/v1/host/{host_name}/mute | Mute a host
-[**unmute_host**](HostsApi.md#unmute_host) | **POST** /api/v1/host/{host_name}/unmute | Unmute a host
-
+| Method                                             | HTTP request                             | Description                          |
+| -------------------------------------------------- | ---------------------------------------- | ------------------------------------ |
+| [**get_host_totals**](HostsApi.md#get_host_totals) | **GET** /api/v1/hosts/totals             | Get the total number of active hosts |
+| [**list_hosts**](HostsApi.md#list_hosts)           | **GET** /api/v1/hosts                    | Get all hosts for your organization  |
+| [**mute_host**](HostsApi.md#mute_host)             | **POST** /api/v1/host/{host_name}/mute   | Mute a host                          |
+| [**unmute_host**](HostsApi.md#unmute_host)         | **POST** /api/v1/host/{host_name}/unmute | Unmute a host                        |
 
 # **get_host_totals**
+
 > HostTotals get_host_totals()
 
 This endpoint returns the total number of active and up hosts in your Datadog account.
@@ -18,8 +18,9 @@ Active means the host has reported in the past hour, and up means it has reporte
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -46,12 +47,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling HostsApi->get_host_totals: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **_from** | **int**| Number of seconds from which you want to get total number of active hosts. | [optional]
+| Name       | Type    | Description                                                                | Notes      |
+| ---------- | ------- | -------------------------------------------------------------------------- | ---------- |
+| **\_from** | **int** | Number of seconds from which you want to get total number of active hosts. | [optional] |
 
 ### Return type
 
@@ -63,21 +63,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Invalid Parameter Error |  -  |
-**403** | Forbidden |  -  |
+| Status code | Description             | Response headers |
+| ----------- | ----------------------- | ---------------- |
+| **200**     | OK                      | -                |
+| **400**     | Invalid Parameter Error | -                |
+| **403**     | Forbidden               | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_hosts**
+
 > HostListResponse list_hosts()
 
 This endpoint allows searching for hosts by name, alias, or tag.
@@ -87,9 +87,10 @@ Results are paginated with a max of 1000 results at a time.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -123,19 +124,18 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling HostsApi->list_hosts: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **str**| String to filter search results. | [optional]
- **sort_field** | **str**| Sort hosts by this field. | [optional]
- **sort_dir** | **str**| Direction of sort. Options include &#x60;asc&#x60; and &#x60;desc&#x60;. | [optional]
- **start** | **int**| Host result to start search from. | [optional]
- **count** | **int**| Number of hosts to return. Max 1000. | [optional]
- **_from** | **int**| Number of seconds since UNIX epoch from which you want to search your hosts. | [optional]
- **include_muted_hosts_data** | **bool**| Include information on the muted status of hosts and when the mute expires. | [optional]
- **include_hosts_metadata** | **bool**| Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.). | [optional]
+| Name                         | Type     | Description                                                                                      | Notes      |
+| ---------------------------- | -------- | ------------------------------------------------------------------------------------------------ | ---------- |
+| **filter**                   | **str**  | String to filter search results.                                                                 | [optional] |
+| **sort_field**               | **str**  | Sort hosts by this field.                                                                        | [optional] |
+| **sort_dir**                 | **str**  | Direction of sort. Options include &#x60;asc&#x60; and &#x60;desc&#x60;.                         | [optional] |
+| **start**                    | **int**  | Host result to start search from.                                                                | [optional] |
+| **count**                    | **int**  | Number of hosts to return. Max 1000.                                                             | [optional] |
+| **\_from**                   | **int**  | Number of seconds since UNIX epoch from which you want to search your hosts.                     | [optional] |
+| **include_muted_hosts_data** | **bool** | Include information on the muted status of hosts and when the mute expires.                      | [optional] |
+| **include_hosts_metadata**   | **bool** | Include additional metadata about the hosts (agent_version, machine, platform, processor, etc.). | [optional] |
 
 ### Return type
 
@@ -147,29 +147,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Invalid Parameter Error |  -  |
-**403** | Forbidden |  -  |
+| Status code | Description             | Response headers |
+| ----------- | ----------------------- | ---------------- |
+| **200**     | OK                      | -                |
+| **400**     | Invalid Parameter Error | -                |
+| **403**     | Forbidden               | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **mute_host**
+
 > HostMuteResponse mute_host(host_name, body)
 
 Mute a host.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -200,13 +201,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling HostsApi->mute_host: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **host_name** | **str**| Name of the host to mute. |
- **body** | [**HostMuteSettings**](HostMuteSettings.md)| Mute a host request body. |
+| Name          | Type                                        | Description               | Notes |
+| ------------- | ------------------------------------------- | ------------------------- | ----- |
+| **host_name** | **str**                                     | Name of the host to mute. |
+| **body**      | [**HostMuteSettings**](HostMuteSettings.md) | Mute a host request body. |
 
 ### Return type
 
@@ -218,29 +218,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Invalid Parameter Error |  -  |
-**403** | Forbidden |  -  |
+| Status code | Description             | Response headers |
+| ----------- | ----------------------- | ---------------- |
+| **200**     | OK                      | -                |
+| **400**     | Invalid Parameter Error | -                |
+| **403**     | Forbidden               | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **unmute_host**
+
 > HostMuteResponse unmute_host(host_name)
 
 Unmutes a host. This endpoint takes no JSON arguments.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -266,12 +267,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling HostsApi->unmute_host: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **host_name** | **str**| Name of the host to unmute. |
+| Name          | Type    | Description                 | Notes |
+| ------------- | ------- | --------------------------- | ----- |
+| **host_name** | **str** | Name of the host to unmute. |
 
 ### Return type
 
@@ -283,17 +283,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Invalid Parameter Error |  -  |
-**403** | Forbidden |  -  |
+| Status code | Description             | Response headers |
+| ----------- | ----------------------- | ---------------- |
+| **200**     | OK                      | -                |
+| **400**     | Invalid Parameter Error | -                |
+| **403**     | Forbidden               | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

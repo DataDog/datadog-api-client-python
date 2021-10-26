@@ -2,29 +2,30 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_service_account**](UsersApi.md#create_service_account) | **POST** /api/v2/service_accounts | Create a service account
-[**create_user**](UsersApi.md#create_user) | **POST** /api/v2/users | Create a user
-[**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v2/users/{user_id} | Disable a user
-[**get_invitation**](UsersApi.md#get_invitation) | **GET** /api/v2/user_invitations/{user_invitation_uuid} | Get a user invitation
-[**get_user**](UsersApi.md#get_user) | **GET** /api/v2/users/{user_id} | Get user details
-[**list_user_organizations**](UsersApi.md#list_user_organizations) | **GET** /api/v2/users/{user_id}/orgs | Get a user organization
-[**list_user_permissions**](UsersApi.md#list_user_permissions) | **GET** /api/v2/users/{user_id}/permissions | Get a user permissions
-[**list_users**](UsersApi.md#list_users) | **GET** /api/v2/users | List all users
-[**send_invitations**](UsersApi.md#send_invitations) | **POST** /api/v2/user_invitations | Send invitation emails
-[**update_user**](UsersApi.md#update_user) | **PATCH** /api/v2/users/{user_id} | Update a user
-
+| Method                                                             | HTTP request                                            | Description              |
+| ------------------------------------------------------------------ | ------------------------------------------------------- | ------------------------ |
+| [**create_service_account**](UsersApi.md#create_service_account)   | **POST** /api/v2/service_accounts                       | Create a service account |
+| [**create_user**](UsersApi.md#create_user)                         | **POST** /api/v2/users                                  | Create a user            |
+| [**disable_user**](UsersApi.md#disable_user)                       | **DELETE** /api/v2/users/{user_id}                      | Disable a user           |
+| [**get_invitation**](UsersApi.md#get_invitation)                   | **GET** /api/v2/user_invitations/{user_invitation_uuid} | Get a user invitation    |
+| [**get_user**](UsersApi.md#get_user)                               | **GET** /api/v2/users/{user_id}                         | Get user details         |
+| [**list_user_organizations**](UsersApi.md#list_user_organizations) | **GET** /api/v2/users/{user_id}/orgs                    | Get a user organization  |
+| [**list_user_permissions**](UsersApi.md#list_user_permissions)     | **GET** /api/v2/users/{user_id}/permissions             | Get a user permissions   |
+| [**list_users**](UsersApi.md#list_users)                           | **GET** /api/v2/users                                   | List all users           |
+| [**send_invitations**](UsersApi.md#send_invitations)               | **POST** /api/v2/user_invitations                       | Send invitation emails   |
+| [**update_user**](UsersApi.md#update_user)                         | **PATCH** /api/v2/users/{user_id}                       | Update a user            |
 
 # **create_service_account**
+
 > UserResponse create_service_account(body)
 
 Create a service account for your organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -59,7 +60,7 @@ with ApiClient(configuration) as api_client:
             ),
             type=UsersType("users"),
         ),
-    )  # ServiceAccountCreateRequest | 
+    )  # ServiceAccountCreateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -70,12 +71,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->create_service_account: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ServiceAccountCreateRequest**](ServiceAccountCreateRequest.md)|  |
+| Name     | Type                                                              | Description | Notes |
+| -------- | ----------------------------------------------------------------- | ----------- | ----- |
+| **body** | [**ServiceAccountCreateRequest**](ServiceAccountCreateRequest.md) |             |
 
 ### Return type
 
@@ -87,30 +87,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **201**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_user**
+
 > UserResponse create_user(body)
 
 Create a user for your organization.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -144,7 +145,7 @@ with ApiClient(configuration) as api_client:
             ),
             type=UsersType("users"),
         ),
-    )  # UserCreateRequest | 
+    )  # UserCreateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -155,12 +156,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->create_user: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UserCreateRequest**](UserCreateRequest.md)|  |
+| Name     | Type                                          | Description | Notes |
+| -------- | --------------------------------------------- | ----------- | ----- |
+| **body** | [**UserCreateRequest**](UserCreateRequest.md) |             |
 
 ### Return type
 
@@ -172,21 +172,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **201**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **disable_user**
+
 > disable_user(user_id)
 
 Disable a user. Can only be used with an application key belonging
@@ -194,9 +194,10 @@ to an administrator user.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -221,12 +222,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->disable_user: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**| The ID of the user. |
+| Name        | Type    | Description         | Notes |
+| ----------- | ------- | ------------------- | ----- |
+| **user_id** | **str** | The ID of the user. |
 
 ### Return type
 
@@ -238,30 +238,31 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**403** | Authentication error |  -  |
-**404** | Not found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **204**     | OK                   | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Not found            | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_invitation**
+
 > UserInvitationResponse get_invitation(user_invitation_uuid)
 
 Returns a single user invitation by its UUID.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -287,12 +288,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->get_invitation: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_invitation_uuid** | **str**| The UUID of the user invitation. |
+| Name                     | Type    | Description                      | Notes |
+| ------------------------ | ------- | -------------------------------- | ----- |
+| **user_invitation_uuid** | **str** | The UUID of the user invitation. |
 
 ### Return type
 
@@ -304,30 +304,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication error |  -  |
-**404** | Not found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Not found            | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_user**
+
 > UserResponse get_user(user_id)
 
 Get a user in the organization specified by the user’s `user_id`.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -353,12 +354,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->get_user: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**| The ID of the user. |
+| Name        | Type    | Description         | Notes |
+| ----------- | ------- | ------------------- | ----- |
+| **user_id** | **str** | The ID of the user. |
 
 ### Return type
 
@@ -370,21 +370,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK for get user |  -  |
-**403** | Authentication error |  -  |
-**404** | Not found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK for get user      | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Not found            | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_user_organizations**
+
 > UserResponse list_user_organizations(user_id)
 
 Get a user organization. Returns the user information and all organizations
@@ -392,9 +392,10 @@ joined by this user.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -420,12 +421,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->list_user_organizations: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**| The ID of the user. |
+| Name        | Type    | Description         | Notes |
+| ----------- | ------- | ------------------- | ----- |
+| **user_id** | **str** | The ID of the user. |
 
 ### Return type
 
@@ -437,21 +437,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication error |  -  |
-**404** | Not found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Not found            | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_user_permissions**
+
 > PermissionsResponse list_user_permissions(user_id)
 
 Get a user permission set. Returns a list of the user’s permissions
@@ -459,9 +459,10 @@ granted by the associated user's roles.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -487,12 +488,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->list_user_permissions: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**| The ID of the user. |
+| Name        | Type    | Description         | Notes |
+| ----------- | ------- | ------------------- | ----- |
+| **user_id** | **str** | The ID of the user. |
 
 ### Return type
 
@@ -504,21 +504,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication error |  -  |
-**404** | Not found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Not found            | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_users**
+
 > UsersResponse list_users()
 
 Get the list of all users in the organization. This list includes
@@ -526,9 +526,10 @@ all users even if they are deactivated or unverified.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -560,17 +561,16 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->list_users: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
- **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
- **sort** | **str**| User attribute to order results by. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example &#x60;sort&#x3D;-name&#x60;. Options: &#x60;name&#x60;, &#x60;modified_at&#x60;, &#x60;user_count&#x60;. | [optional] if omitted the server will use the default value of "name"
- **sort_dir** | **QuerySortOrder**| Direction of sort. Options: &#x60;asc&#x60;, &#x60;desc&#x60;. | [optional]
- **filter** | **str**| Filter all users by the given string. Defaults to no filtering. | [optional]
- **filter_status** | **str**| Filter on status attribute. Comma separated list, with possible values &#x60;Active&#x60;, &#x60;Pending&#x60;, and &#x60;Disabled&#x60;. Defaults to no filtering. | [optional]
+| Name              | Type               | Description                                                                                                                                                                                                                                                        | Notes                                                                 |
+| ----------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| **page_size**     | **int**            | Size for a given page.                                                                                                                                                                                                                                             | [optional] if omitted the server will use the default value of 10     |
+| **page_number**   | **int**            | Specific page number to return.                                                                                                                                                                                                                                    | [optional] if omitted the server will use the default value of 0      |
+| **sort**          | **str**            | User attribute to order results by. Sort order is ascending by default. Sort order is descending if the field is prefixed by a negative sign, for example &#x60;sort&#x3D;-name&#x60;. Options: &#x60;name&#x60;, &#x60;modified_at&#x60;, &#x60;user_count&#x60;. | [optional] if omitted the server will use the default value of "name" |
+| **sort_dir**      | **QuerySortOrder** | Direction of sort. Options: &#x60;asc&#x60;, &#x60;desc&#x60;.                                                                                                                                                                                                     | [optional]                                                            |
+| **filter**        | **str**            | Filter all users by the given string. Defaults to no filtering.                                                                                                                                                                                                    | [optional]                                                            |
+| **filter_status** | **str**            | Filter on status attribute. Comma separated list, with possible values &#x60;Active&#x60;, &#x60;Pending&#x60;, and &#x60;Disabled&#x60;. Defaults to no filtering.                                                                                                | [optional]                                                            |
 
 ### Return type
 
@@ -582,30 +582,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **send_invitations**
+
 > UserInvitationsResponse send_invitations(body)
 
 Sends emails to one or more users inviting them to join the organization.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -634,7 +635,7 @@ with ApiClient(configuration) as api_client:
                 type=UserInvitationsType("user_invitations"),
             ),
         ],
-    )  # UserInvitationsRequest | 
+    )  # UserInvitationsRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -645,12 +646,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->send_invitations: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UserInvitationsRequest**](UserInvitationsRequest.md)|  |
+| Name     | Type                                                    | Description | Notes |
+| -------- | ------------------------------------------------------- | ----------- | ----- |
+| **body** | [**UserInvitationsRequest**](UserInvitationsRequest.md) |             |
 
 ### Return type
 
@@ -662,21 +662,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **201**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_user**
+
 > UserResponse update_user(user_id, body)
 
 Edit a user. Can only be used with an application key belonging
@@ -684,9 +684,10 @@ to an administrator user.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -712,7 +713,7 @@ with ApiClient(configuration) as api_client:
             id="00000000-0000-0000-0000-000000000000",
             type=UsersType("users"),
         ),
-    )  # UserUpdateRequest | 
+    )  # UserUpdateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -723,13 +724,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->update_user: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**| The ID of the user. |
- **body** | [**UserUpdateRequest**](UserUpdateRequest.md)|  |
+| Name        | Type                                          | Description         | Notes |
+| ----------- | --------------------------------------------- | ------------------- | ----- |
+| **user_id** | **str**                                       | The ID of the user. |
+| **body**    | [**UserUpdateRequest**](UserUpdateRequest.md) |                     |
 
 ### Return type
 
@@ -741,19 +741,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
-**404** | Not found |  -  |
-**422** | Unprocessable Entity |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Not found            | -                |
+| **422**     | Unprocessable Entity | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
