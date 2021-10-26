@@ -59,10 +59,25 @@ jobs:
         run: ./run-tests.sh
         shell: bash
 
+  examples:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false && !contains(github.event.pull_request.labels.*.name, 'ci/skip') && !contains(github.event.pull_request.head.ref, 'datadog-api-spec/test/')
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+      - name: Check examples
+        run: ./check-examples.sh
+        shell: bash
+
   report:
     runs-on: ubuntu-latest
     if: always() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
-    needs: test
+    needs: 
+      - test
+      - examples
     steps:
       - name: Get GitHub App token
         if: github.event_name == 'pull_request'
