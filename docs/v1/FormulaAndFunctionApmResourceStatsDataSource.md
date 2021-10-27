@@ -3,10 +3,9 @@
 Data source for APM resource stats queries.
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**value** | **str** | Data source for APM resource stats queries. | defaults to "apm_resource_stats",  must be one of ["apm_resource_stats", ]
+
+| Name      | Type    | Description                                 | Notes                                                                     |
+| --------- | ------- | ------------------------------------------- | ------------------------------------------------------------------------- |
+| **value** | **str** | Data source for APM resource stats queries. | defaults to "apm_resource_stats", must be one of ["apm_resource_stats", ] |
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
-
-

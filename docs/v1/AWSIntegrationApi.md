@@ -2,20 +2,20 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_aws_account**](AWSIntegrationApi.md#create_aws_account) | **POST** /api/v1/integration/aws | Create an AWS integration
-[**create_aws_tag_filter**](AWSIntegrationApi.md#create_aws_tag_filter) | **POST** /api/v1/integration/aws/filtering | Set an AWS tag filter
-[**create_new_aws_external_id**](AWSIntegrationApi.md#create_new_aws_external_id) | **PUT** /api/v1/integration/aws/generate_new_external_id | Generate a new external ID
-[**delete_aws_account**](AWSIntegrationApi.md#delete_aws_account) | **DELETE** /api/v1/integration/aws | Delete an AWS integration
-[**delete_aws_tag_filter**](AWSIntegrationApi.md#delete_aws_tag_filter) | **DELETE** /api/v1/integration/aws/filtering | Delete a tag filtering entry
-[**list_available_aws_namespaces**](AWSIntegrationApi.md#list_available_aws_namespaces) | **GET** /api/v1/integration/aws/available_namespace_rules | List namespace rules
-[**list_aws_accounts**](AWSIntegrationApi.md#list_aws_accounts) | **GET** /api/v1/integration/aws | List all AWS integrations
-[**list_aws_tag_filters**](AWSIntegrationApi.md#list_aws_tag_filters) | **GET** /api/v1/integration/aws/filtering | Get all AWS tag filters
-[**update_aws_account**](AWSIntegrationApi.md#update_aws_account) | **PUT** /api/v1/integration/aws | Update an AWS integration
-
+| Method                                                                                  | HTTP request                                              | Description                  |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------- | ---------------------------- |
+| [**create_aws_account**](AWSIntegrationApi.md#create_aws_account)                       | **POST** /api/v1/integration/aws                          | Create an AWS integration    |
+| [**create_aws_tag_filter**](AWSIntegrationApi.md#create_aws_tag_filter)                 | **POST** /api/v1/integration/aws/filtering                | Set an AWS tag filter        |
+| [**create_new_aws_external_id**](AWSIntegrationApi.md#create_new_aws_external_id)       | **PUT** /api/v1/integration/aws/generate_new_external_id  | Generate a new external ID   |
+| [**delete_aws_account**](AWSIntegrationApi.md#delete_aws_account)                       | **DELETE** /api/v1/integration/aws                        | Delete an AWS integration    |
+| [**delete_aws_tag_filter**](AWSIntegrationApi.md#delete_aws_tag_filter)                 | **DELETE** /api/v1/integration/aws/filtering              | Delete a tag filtering entry |
+| [**list_available_aws_namespaces**](AWSIntegrationApi.md#list_available_aws_namespaces) | **GET** /api/v1/integration/aws/available_namespace_rules | List namespace rules         |
+| [**list_aws_accounts**](AWSIntegrationApi.md#list_aws_accounts)                         | **GET** /api/v1/integration/aws                           | List all AWS integrations    |
+| [**list_aws_tag_filters**](AWSIntegrationApi.md#list_aws_tag_filters)                   | **GET** /api/v1/integration/aws/filtering                 | Get all AWS tag filters      |
+| [**update_aws_account**](AWSIntegrationApi.md#update_aws_account)                       | **PUT** /api/v1/integration/aws                           | Update an AWS integration    |
 
 # **create_aws_account**
+
 > AWSAccountCreateResponse create_aws_account(body)
 
 Create a Datadog-Amazon Web Services integration.
@@ -25,8 +25,9 @@ A unique AWS Account ID for role based authentication.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -47,9 +48,12 @@ with ApiClient(configuration) as api_client:
         account_specific_namespace_rules={
             "key": True,
         },
+        cspm_resource_collection_enabled=True,
         excluded_regions=["us-east-1","us-west-2"],
         filter_tags=["<KEY>:<VALUE>"],
         host_tags=["<KEY>:<VALUE>"],
+        metrics_collection_enabled=False,
+        resource_collection_enabled=True,
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
     )  # AWSAccount | AWS Request Object
@@ -63,12 +67,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->create_aws_account: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AWSAccount**](AWSAccount.md)| AWS Request Object |
+| Name     | Type                            | Description        | Notes |
+| -------- | ------------------------------- | ------------------ | ----- |
+| **body** | [**AWSAccount**](AWSAccount.md) | AWS Request Object |
 
 ### Return type
 
@@ -80,30 +83,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
-**409** | Conflict Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
+| **409**     | Conflict Error       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_aws_tag_filter**
+
 > dict create_aws_tag_filter(body)
 
 Set an AWS tag filter.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -133,12 +137,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->create_aws_tag_filter: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AWSTagFilterCreateRequest**](AWSTagFilterCreateRequest.md)| Set an AWS tag filter using an &#x60;aws_account_identifier&#x60;, &#x60;namespace&#x60;, and filtering string. Namespace options are &#x60;application_elb&#x60;, &#x60;elb&#x60;, &#x60;lambda&#x60;, &#x60;network_elb&#x60;, &#x60;rds&#x60;, &#x60;sqs&#x60;, and &#x60;custom&#x60;. |
+| Name     | Type                                                          | Description                                                                                                                                                                                                                                                                                | Notes |
+| -------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| **body** | [**AWSTagFilterCreateRequest**](AWSTagFilterCreateRequest.md) | Set an AWS tag filter using an &#x60;aws_account_identifier&#x60;, &#x60;namespace&#x60;, and filtering string. Namespace options are &#x60;application_elb&#x60;, &#x60;elb&#x60;, &#x60;lambda&#x60;, &#x60;network_elb&#x60;, &#x60;rds&#x60;, &#x60;sqs&#x60;, and &#x60;custom&#x60;. |
 
 ### Return type
 
@@ -150,29 +153,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_new_aws_external_id**
+
 > AWSAccountCreateResponse create_new_aws_external_id(body)
 
 Generate a new AWS external ID for a given AWS account ID and role name pair.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -193,9 +197,12 @@ with ApiClient(configuration) as api_client:
         account_specific_namespace_rules={
             "key": True,
         },
+        cspm_resource_collection_enabled=True,
         excluded_regions=["us-east-1","us-west-2"],
         filter_tags=["<KEY>:<VALUE>"],
         host_tags=["<KEY>:<VALUE>"],
+        metrics_collection_enabled=False,
+        resource_collection_enabled=True,
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
     )  # AWSAccount | Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://docs.datadoghq.com/integrations/amazon_web_services/#setup).
@@ -209,12 +216,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->create_new_aws_external_id: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AWSAccount**](AWSAccount.md)| Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://docs.datadoghq.com/integrations/amazon_web_services/#setup). |
+| Name     | Type                            | Description                                                                                                                                                                                                         | Notes |
+| -------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **body** | [**AWSAccount**](AWSAccount.md) | Your Datadog role delegation name. For more information about your AWS account Role name, see the [Datadog AWS integration configuration info](https://docs.datadoghq.com/integrations/amazon_web_services/#setup). |
 
 ### Return type
 
@@ -226,29 +232,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_aws_account**
+
 > dict delete_aws_account(body)
 
 Delete a Datadog-AWS integration matching the specified `account_id` and `role_name parameters`.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -278,12 +285,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->delete_aws_account: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AWSAccountDeleteRequest**](AWSAccountDeleteRequest.md)| AWS request object |
+| Name     | Type                                                      | Description        | Notes |
+| -------- | --------------------------------------------------------- | ------------------ | ----- |
+| **body** | [**AWSAccountDeleteRequest**](AWSAccountDeleteRequest.md) | AWS request object |
 
 ### Return type
 
@@ -295,30 +301,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
-**409** | Conflict Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
+| **409**     | Conflict Error       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_aws_tag_filter**
+
 > dict delete_aws_tag_filter(body)
 
 Delete a tag filtering entry.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -347,12 +354,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->delete_aws_tag_filter: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AWSTagFilterDeleteRequest**](AWSTagFilterDeleteRequest.md)| Delete a tag filtering entry for a given AWS account and &#x60;dd-aws&#x60; namespace. |
+| Name     | Type                                                          | Description                                                                            | Notes |
+| -------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ----- |
+| **body** | [**AWSTagFilterDeleteRequest**](AWSTagFilterDeleteRequest.md) | Delete a tag filtering entry for a given AWS account and &#x60;dd-aws&#x60; namespace. |
 
 ### Return type
 
@@ -364,29 +370,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_available_aws_namespaces**
+
 > [str] list_available_aws_namespaces()
 
 List all namespace rules for a given Datadog-AWS integration. This endpoint takes no arguments.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -411,8 +418,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->list_available_aws_namespaces: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -425,28 +432,29 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_aws_accounts**
+
 > AWSAccountListResponse list_aws_accounts()
 
 List all Datadog-AWS integrations available in your Datadog organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -475,14 +483,13 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->list_aws_accounts: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| Only return AWS accounts that matches this &#x60;account_id&#x60;. | [optional]
- **role_name** | **str**| Only return AWS accounts that matches this role_name. | [optional]
- **access_key_id** | **str**| Only return AWS accounts that matches this &#x60;access_key_id&#x60;. | [optional]
+| Name              | Type    | Description                                                           | Notes      |
+| ----------------- | ------- | --------------------------------------------------------------------- | ---------- |
+| **account_id**    | **str** | Only return AWS accounts that matches this &#x60;account_id&#x60;.    | [optional] |
+| **role_name**     | **str** | Only return AWS accounts that matches this role_name.                 | [optional] |
+| **access_key_id** | **str** | Only return AWS accounts that matches this &#x60;access_key_id&#x60;. | [optional] |
 
 ### Return type
 
@@ -494,29 +501,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_aws_tag_filters**
+
 > AWSTagFilterListResponse list_aws_tag_filters(account_id)
 
 Get all AWS tag filters.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -542,12 +550,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->list_aws_tag_filters: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| Only return AWS filters that matches this &#x60;account_id&#x60;. |
+| Name           | Type    | Description                                                       | Notes |
+| -------------- | ------- | ----------------------------------------------------------------- | ----- |
+| **account_id** | **str** | Only return AWS filters that matches this &#x60;account_id&#x60;. |
 
 ### Return type
 
@@ -559,29 +566,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_aws_account**
+
 > dict update_aws_account(body)
 
 Update a Datadog-Amazon Web Services integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -602,9 +610,12 @@ with ApiClient(configuration) as api_client:
         account_specific_namespace_rules={
             "key": True,
         },
+        cspm_resource_collection_enabled=True,
         excluded_regions=["us-east-1","us-west-2"],
         filter_tags=["<KEY>:<VALUE>"],
         host_tags=["<KEY>:<VALUE>"],
+        metrics_collection_enabled=False,
+        resource_collection_enabled=True,
         role_name="DatadogAWSIntegrationRole",
         secret_access_key="secret_access_key_example",
     )  # AWSAccount | AWS request object
@@ -630,15 +641,14 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling AWSIntegrationApi->update_aws_account: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**AWSAccount**](AWSAccount.md)| AWS request object |
- **account_id** | **str**| Only return AWS accounts that matches this &#x60;account_id&#x60;. | [optional]
- **role_name** | **str**| Only return AWS accounts that match this &#x60;role_name&#x60;. Required if &#x60;account_id&#x60; is specified. | [optional]
- **access_key_id** | **str**| Only return AWS accounts that matches this &#x60;access_key_id&#x60;. Required if none of the other two options are specified. | [optional]
+| Name              | Type                            | Description                                                                                                                    | Notes      |
+| ----------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| **body**          | [**AWSAccount**](AWSAccount.md) | AWS request object                                                                                                             |
+| **account_id**    | **str**                         | Only return AWS accounts that matches this &#x60;account_id&#x60;.                                                             | [optional] |
+| **role_name**     | **str**                         | Only return AWS accounts that match this &#x60;role_name&#x60;. Required if &#x60;account_id&#x60; is specified.               | [optional] |
+| **access_key_id** | **str**                         | Only return AWS accounts that matches this &#x60;access_key_id&#x60;. Required if none of the other two options are specified. | [optional] |
 
 ### Return type
 
@@ -650,18 +660,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
-**409** | Conflict Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
+| **409**     | Conflict Error       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

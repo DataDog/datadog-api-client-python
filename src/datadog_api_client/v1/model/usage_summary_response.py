@@ -117,6 +117,8 @@ class UsageSummaryResponse(ModelNormal):
             "rehydrated_ingested_bytes_agg_sum": (int,),  # noqa: E501
             "rum_session_count_agg_sum": (int,),  # noqa: E501
             "rum_total_session_count_agg_sum": (int,),  # noqa: E501
+            "sds_logs_scanned_bytes_sum": (int,),  # noqa: E501
+            "sds_total_scanned_bytes_sum": (int,),  # noqa: E501
             "start_date": (datetime,),  # noqa: E501
             "synthetics_browser_check_calls_count_agg_sum": (int,),  # noqa: E501
             "synthetics_check_calls_count_agg_sum": (int,),  # noqa: E501
@@ -176,6 +178,8 @@ class UsageSummaryResponse(ModelNormal):
         "rehydrated_ingested_bytes_agg_sum": "rehydrated_ingested_bytes_agg_sum",  # noqa: E501
         "rum_session_count_agg_sum": "rum_session_count_agg_sum",  # noqa: E501
         "rum_total_session_count_agg_sum": "rum_total_session_count_agg_sum",  # noqa: E501
+        "sds_logs_scanned_bytes_sum": "sds_logs_scanned_bytes_sum",  # noqa: E501
+        "sds_total_scanned_bytes_sum": "sds_total_scanned_bytes_sum",  # noqa: E501
         "start_date": "start_date",  # noqa: E501
         "synthetics_browser_check_calls_count_agg_sum": "synthetics_browser_check_calls_count_agg_sum",  # noqa: E501
         "synthetics_check_calls_count_agg_sum": "synthetics_check_calls_count_agg_sum",  # noqa: E501
@@ -271,6 +275,8 @@ class UsageSummaryResponse(ModelNormal):
             rehydrated_ingested_bytes_agg_sum (int): Shows the sum of all rehydrated logs bytes ingested over all hours in the current months for all organizations (data available as of December 1, 2020).. [optional]  # noqa: E501
             rum_session_count_agg_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
             rum_total_session_count_agg_sum (int): Shows the sum of RUM Sessions (browser and mobile) over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            sds_logs_scanned_bytes_sum (int): Shows the sum of all bytes scanned of logs usage by the Sensitive Data Scanner over all hours in the current month for all organizations.. [optional]  # noqa: E501
+            sds_total_scanned_bytes_sum (int): Shows the sum of all bytes scanned across all usage types by the Sensitive Data Scanner over all hours in the current month for all organizations.. [optional]  # noqa: E501
             start_date (datetime): Shows the first date of usage in the current months for all organizations.. [optional]  # noqa: E501
             synthetics_browser_check_calls_count_agg_sum (int): Shows the sum of all Synthetic browser tests over all hours in the current months for all organizations.. [optional]  # noqa: E501
             synthetics_check_calls_count_agg_sum (int): Shows the sum of all Synthetic API tests over all hours in the current months for all organizations.. [optional]  # noqa: E501

@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '527870682909236389'
+      x-datadog-trace-id:
+      - '890735975570205481'
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/validate
+  response:
+    body:
+      string: '{"errors": ["API key required"]}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '32'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 01 Oct 2021 08:28:30 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 403
+      message: Forbidden
+version: 1

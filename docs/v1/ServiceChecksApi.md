@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**submit_service_check**](ServiceChecksApi.md#submit_service_check) | **POST** /api/v1/check_run | Submit a Service Check
-
+| Method                                                               | HTTP request               | Description            |
+| -------------------------------------------------------------------- | -------------------------- | ---------------------- |
+| [**submit_service_check**](ServiceChecksApi.md#submit_service_check) | **POST** /api/v1/check_run | Submit a Service Check |
 
 # **submit_service_check**
+
 > IntakePayloadAccepted submit_service_check(body)
 
 Submit a list of Service Checks.
@@ -16,7 +16,8 @@ Submit a list of Service Checks.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -51,12 +52,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceChecksApi->submit_service_check: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ServiceChecks**](ServiceChecks.md)| Service Check request body. |
+| Name     | Type                                  | Description                 | Notes |
+| -------- | ------------------------------------- | --------------------------- | ----- |
+| **body** | [**ServiceChecks**](ServiceChecks.md) | Service Check request body. |
 
 ### Return type
 
@@ -68,19 +68,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: text/json
-
+- **Content-Type**: application/json
+- **Accept**: text/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**202** | Payload accepted |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
-**408** | Request timeout |  -  |
-**413** | Payload too large |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **202**     | Payload accepted     | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
+| **408**     | Request timeout      | -                |
+| **413**     | Payload too large    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**get_ip_ranges**](IPRangesApi.md#get_ip_ranges) | **GET** / | List IP Ranges
-
+| Method                                            | HTTP request | Description    |
+| ------------------------------------------------- | ------------ | -------------- |
+| [**get_ip_ranges**](IPRangesApi.md#get_ip_ranges) | **GET** /    | List IP Ranges |
 
 # **get_ip_ranges**
+
 > IPRanges get_ip_ranges()
 
 Get information about Datadog IP ranges.
@@ -38,8 +38,8 @@ with ApiClient() as api_client:
         print("Exception when calling IPRangesApi->get_ip_ranges: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -52,15 +52,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

@@ -2,23 +2,24 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_pager_duty_integration_service**](PagerDutyIntegrationApi.md#create_pager_duty_integration_service) | **POST** /api/v1/integration/pagerduty/configuration/services | Create a new service object
-[**delete_pager_duty_integration_service**](PagerDutyIntegrationApi.md#delete_pager_duty_integration_service) | **DELETE** /api/v1/integration/pagerduty/configuration/services/{service_name} | Delete a single service object
-[**get_pager_duty_integration_service**](PagerDutyIntegrationApi.md#get_pager_duty_integration_service) | **GET** /api/v1/integration/pagerduty/configuration/services/{service_name} | Get a single service object
-[**update_pager_duty_integration_service**](PagerDutyIntegrationApi.md#update_pager_duty_integration_service) | **PUT** /api/v1/integration/pagerduty/configuration/services/{service_name} | Update a single service object
-
+| Method                                                                                                        | HTTP request                                                                   | Description                    |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------ |
+| [**create_pager_duty_integration_service**](PagerDutyIntegrationApi.md#create_pager_duty_integration_service) | **POST** /api/v1/integration/pagerduty/configuration/services                  | Create a new service object    |
+| [**delete_pager_duty_integration_service**](PagerDutyIntegrationApi.md#delete_pager_duty_integration_service) | **DELETE** /api/v1/integration/pagerduty/configuration/services/{service_name} | Delete a single service object |
+| [**get_pager_duty_integration_service**](PagerDutyIntegrationApi.md#get_pager_duty_integration_service)       | **GET** /api/v1/integration/pagerduty/configuration/services/{service_name}    | Get a single service object    |
+| [**update_pager_duty_integration_service**](PagerDutyIntegrationApi.md#update_pager_duty_integration_service) | **PUT** /api/v1/integration/pagerduty/configuration/services/{service_name}    | Update a single service object |
 
 # **create_pager_duty_integration_service**
+
 > PagerDutyServiceName create_pager_duty_integration_service(body)
 
 Create a new service object in the PagerDuty integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -47,12 +48,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling PagerDutyIntegrationApi->create_pager_duty_integration_service: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PagerDutyService**](PagerDutyService.md)| Create a new service object request body. |
+| Name     | Type                                        | Description                               | Notes |
+| -------- | ------------------------------------------- | ----------------------------------------- | ----- |
+| **body** | [**PagerDutyService**](PagerDutyService.md) | Create a new service object request body. |
 
 ### Return type
 
@@ -64,29 +64,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **201**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_pager_duty_integration_service**
+
 > delete_pager_duty_integration_service(service_name)
 
 Delete a single service object in the Datadog-PagerDuty integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -111,12 +112,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling PagerDutyIntegrationApi->delete_pager_duty_integration_service: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_name** | **str**| The service name |
+| Name             | Type    | Description      | Notes |
+| ---------------- | ------- | ---------------- | ----- |
+| **service_name** | **str** | The service name |
 
 ### Return type
 
@@ -128,29 +128,30 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication error |  -  |
-**404** | Item Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Item Not Found       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_pager_duty_integration_service**
+
 > PagerDutyServiceName get_pager_duty_integration_service(service_name)
 
 Get service name in the Datadog-PagerDuty integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -176,12 +177,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling PagerDutyIntegrationApi->get_pager_duty_integration_service: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_name** | **str**| The service name. |
+| Name             | Type    | Description       | Notes |
+| ---------------- | ------- | ----------------- | ----- |
+| **service_name** | **str** | The service name. |
 
 ### Return type
 
@@ -193,29 +193,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication error |  -  |
-**404** | Item Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Item Not Found       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_pager_duty_integration_service**
+
 > update_pager_duty_integration_service(service_name, body)
 
 Update a single service object in the Datadog-PagerDuty integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -243,13 +244,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling PagerDutyIntegrationApi->update_pager_duty_integration_service: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_name** | **str**| The service name |
- **body** | [**PagerDutyServiceKey**](PagerDutyServiceKey.md)| Update an existing service object request body. |
+| Name             | Type                                              | Description                                     | Notes |
+| ---------------- | ------------------------------------------------- | ----------------------------------------------- | ----- |
+| **service_name** | **str**                                           | The service name                                |
+| **body**         | [**PagerDutyServiceKey**](PagerDutyServiceKey.md) | Update an existing service object request body. |
 
 ### Return type
 
@@ -261,18 +261,16 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
-**404** | Item Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Item Not Found       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

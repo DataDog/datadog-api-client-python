@@ -19,6 +19,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_api_test_result_full import SyntheticsAPITestResultFull
+from datadog_api_client.v1.model.synthetics_batch_details import SyntheticsBatchDetails
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_browser_test_result_full import SyntheticsBrowserTestResultFull
 from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
@@ -717,6 +718,47 @@ class SyntheticsApi(object):
                 },
                 "location_map": {
                     "location_id": "path",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_synthetics_ci_batch_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsBatchDetails,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/ci/batch/{batch_id}",
+                "operation_id": "get_synthetics_ci_batch",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "batch_id",
+                ],
+                "required": [
+                    "batch_id",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "batch_id": (str,),
+                },
+                "attribute_map": {
+                    "batch_id": "batch_id",
+                },
+                "location_map": {
+                    "batch_id": "path",
                 },
                 "collection_format_map": {},
             },
@@ -1746,6 +1788,49 @@ class SyntheticsApi(object):
         kwargs = self._get_private_location_endpoint.default_arguments(kwargs)
         kwargs["location_id"] = location_id
         return self._get_private_location_endpoint.call_with_http_info(**kwargs)
+
+    def get_synthetics_ci_batch(self, batch_id, **kwargs):
+        """Get details of batch  # noqa: E501
+
+        Get a batch's updated details.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_synthetics_ci_batch(batch_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            batch_id (str): The ID of the batch.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SyntheticsBatchDetails
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_synthetics_ci_batch_endpoint.default_arguments(kwargs)
+        kwargs["batch_id"] = batch_id
+        return self._get_synthetics_ci_batch_endpoint.call_with_http_info(**kwargs)
 
     def get_test(self, public_id, **kwargs):
         """Get a test configuration  # noqa: E501

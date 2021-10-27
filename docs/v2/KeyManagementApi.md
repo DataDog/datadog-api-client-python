@@ -2,33 +2,34 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_api_key**](KeyManagementApi.md#create_api_key) | **POST** /api/v2/api_keys | Create an API key
-[**create_current_user_application_key**](KeyManagementApi.md#create_current_user_application_key) | **POST** /api/v2/current_user/application_keys | Create an application key for current user
-[**delete_api_key**](KeyManagementApi.md#delete_api_key) | **DELETE** /api/v2/api_keys/{api_key_id} | Delete an API key
-[**delete_application_key**](KeyManagementApi.md#delete_application_key) | **DELETE** /api/v2/application_keys/{app_key_id} | Delete an application key
-[**delete_current_user_application_key**](KeyManagementApi.md#delete_current_user_application_key) | **DELETE** /api/v2/current_user/application_keys/{app_key_id} | Delete an application key owned by current user
-[**get_api_key**](KeyManagementApi.md#get_api_key) | **GET** /api/v2/api_keys/{api_key_id} | Get API key
-[**get_application_key**](KeyManagementApi.md#get_application_key) | **GET** /api/v2/application_keys/{app_key_id} | Get an application key
-[**get_current_user_application_key**](KeyManagementApi.md#get_current_user_application_key) | **GET** /api/v2/current_user/application_keys/{app_key_id} | Get one application key owned by current user
-[**list_api_keys**](KeyManagementApi.md#list_api_keys) | **GET** /api/v2/api_keys | Get all API keys
-[**list_application_keys**](KeyManagementApi.md#list_application_keys) | **GET** /api/v2/application_keys | Get all application keys
-[**list_current_user_application_keys**](KeyManagementApi.md#list_current_user_application_keys) | **GET** /api/v2/current_user/application_keys | Get all application keys owned by current user
-[**update_api_key**](KeyManagementApi.md#update_api_key) | **PATCH** /api/v2/api_keys/{api_key_id} | Edit an API key
-[**update_application_key**](KeyManagementApi.md#update_application_key) | **PATCH** /api/v2/application_keys/{app_key_id} | Edit an application key
-[**update_current_user_application_key**](KeyManagementApi.md#update_current_user_application_key) | **PATCH** /api/v2/current_user/application_keys/{app_key_id} | Edit an application key owned by current user
-
+| Method                                                                                             | HTTP request                                                  | Description                                     |
+| -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------- |
+| [**create_api_key**](KeyManagementApi.md#create_api_key)                                           | **POST** /api/v2/api_keys                                     | Create an API key                               |
+| [**create_current_user_application_key**](KeyManagementApi.md#create_current_user_application_key) | **POST** /api/v2/current_user/application_keys                | Create an application key for current user      |
+| [**delete_api_key**](KeyManagementApi.md#delete_api_key)                                           | **DELETE** /api/v2/api_keys/{api_key_id}                      | Delete an API key                               |
+| [**delete_application_key**](KeyManagementApi.md#delete_application_key)                           | **DELETE** /api/v2/application_keys/{app_key_id}              | Delete an application key                       |
+| [**delete_current_user_application_key**](KeyManagementApi.md#delete_current_user_application_key) | **DELETE** /api/v2/current_user/application_keys/{app_key_id} | Delete an application key owned by current user |
+| [**get_api_key**](KeyManagementApi.md#get_api_key)                                                 | **GET** /api/v2/api_keys/{api_key_id}                         | Get API key                                     |
+| [**get_application_key**](KeyManagementApi.md#get_application_key)                                 | **GET** /api/v2/application_keys/{app_key_id}                 | Get an application key                          |
+| [**get_current_user_application_key**](KeyManagementApi.md#get_current_user_application_key)       | **GET** /api/v2/current_user/application_keys/{app_key_id}    | Get one application key owned by current user   |
+| [**list_api_keys**](KeyManagementApi.md#list_api_keys)                                             | **GET** /api/v2/api_keys                                      | Get all API keys                                |
+| [**list_application_keys**](KeyManagementApi.md#list_application_keys)                             | **GET** /api/v2/application_keys                              | Get all application keys                        |
+| [**list_current_user_application_keys**](KeyManagementApi.md#list_current_user_application_keys)   | **GET** /api/v2/current_user/application_keys                 | Get all application keys owned by current user  |
+| [**update_api_key**](KeyManagementApi.md#update_api_key)                                           | **PATCH** /api/v2/api_keys/{api_key_id}                       | Edit an API key                                 |
+| [**update_application_key**](KeyManagementApi.md#update_application_key)                           | **PATCH** /api/v2/application_keys/{app_key_id}               | Edit an application key                         |
+| [**update_current_user_application_key**](KeyManagementApi.md#update_current_user_application_key) | **PATCH** /api/v2/current_user/application_keys/{app_key_id}  | Edit an application key owned by current user   |
 
 # **create_api_key**
+
 > APIKeyResponse create_api_key(body)
 
 Create an API key.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -50,7 +51,7 @@ with ApiClient(configuration) as api_client:
             ),
             type=APIKeysType("api_keys"),
         ),
-    )  # APIKeyCreateRequest | 
+    )  # APIKeyCreateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -61,12 +62,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->create_api_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**APIKeyCreateRequest**](APIKeyCreateRequest.md)|  |
+| Name     | Type                                              | Description | Notes |
+| -------- | ------------------------------------------------- | ----------- | ----- |
+| **body** | [**APIKeyCreateRequest**](APIKeyCreateRequest.md) |             |
 
 ### Return type
 
@@ -78,29 +78,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Created |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **201**     | Created     | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_current_user_application_key**
+
 > ApplicationKeyResponse create_current_user_application_key(body)
 
 Create an application key for current user
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -122,7 +123,7 @@ with ApiClient(configuration) as api_client:
             ),
             type=ApplicationKeysType("application_keys"),
         ),
-    )  # ApplicationKeyCreateRequest | 
+    )  # ApplicationKeyCreateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -133,12 +134,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->create_current_user_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ApplicationKeyCreateRequest**](ApplicationKeyCreateRequest.md)|  |
+| Name     | Type                                                              | Description | Notes |
+| -------- | ----------------------------------------------------------------- | ----------- | ----- |
+| **body** | [**ApplicationKeyCreateRequest**](ApplicationKeyCreateRequest.md) |             |
 
 ### Return type
 
@@ -150,29 +150,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Created |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **201**     | Created     | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_api_key**
+
 > delete_api_key(api_key_id)
 
 Delete an API key.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -197,12 +198,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->delete_api_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_key_id** | **str**| The ID of the API key. |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **api_key_id** | **str** | The ID of the API key. |
 
 ### Return type
 
@@ -214,29 +214,30 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No Content |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **204**     | No Content  | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_application_key**
+
 > delete_application_key(app_key_id)
 
 Delete an application key
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -261,12 +262,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->delete_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_key_id** | **str**| The ID of the application key. |
+| Name           | Type    | Description                    | Notes |
+| -------------- | ------- | ------------------------------ | ----- |
+| **app_key_id** | **str** | The ID of the application key. |
 
 ### Return type
 
@@ -278,29 +278,30 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No Content |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **204**     | No Content  | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_current_user_application_key**
+
 > delete_current_user_application_key(app_key_id)
 
 Delete an application key owned by current user
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -325,12 +326,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->delete_current_user_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_key_id** | **str**| The ID of the application key. |
+| Name           | Type    | Description                    | Notes |
+| -------------- | ------- | ------------------------------ | ----- |
+| **app_key_id** | **str** | The ID of the application key. |
 
 ### Return type
 
@@ -342,29 +342,30 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No Content |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **204**     | No Content  | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_api_key**
+
 > APIKeyResponse get_api_key(api_key_id)
 
 Get an API key.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -400,13 +401,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->get_api_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_key_id** | **str**| The ID of the API key. |
- **include** | **str**| Comma separated list of resource paths for related resources to include in the response. Supported resource paths are &#x60;created_by&#x60; and &#x60;modified_by&#x60;. | [optional]
+| Name           | Type    | Description                                                                                                                                                               | Notes      |
+| -------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **api_key_id** | **str** | The ID of the API key.                                                                                                                                                    |
+| **include**    | **str** | Comma separated list of resource paths for related resources to include in the response. Supported resource paths are &#x60;created_by&#x60; and &#x60;modified_by&#x60;. | [optional] |
 
 ### Return type
 
@@ -418,29 +418,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_application_key**
+
 > ApplicationKeyResponse get_application_key(app_key_id)
 
 Get an application key for your org.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -476,13 +477,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->get_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_key_id** | **str**| The ID of the application key. |
- **include** | **str**| Resource path for related resources to include in the response. Only &#x60;owned_by&#x60; is supported. | [optional]
+| Name           | Type    | Description                                                                                             | Notes      |
+| -------------- | ------- | ------------------------------------------------------------------------------------------------------- | ---------- |
+| **app_key_id** | **str** | The ID of the application key.                                                                          |
+| **include**    | **str** | Resource path for related resources to include in the response. Only &#x60;owned_by&#x60; is supported. | [optional] |
 
 ### Return type
 
@@ -494,30 +494,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_current_user_application_key**
+
 > ApplicationKeyResponse get_current_user_application_key(app_key_id)
 
 Get an application key owned by current user
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -543,12 +544,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->get_current_user_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_key_id** | **str**| The ID of the application key. |
+| Name           | Type    | Description                    | Notes |
+| -------------- | ------- | ------------------------------ | ----- |
+| **app_key_id** | **str** | The ID of the application key. |
 
 ### Return type
 
@@ -560,29 +560,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_api_keys**
+
 > APIKeysResponse list_api_keys()
 
 List all API keys available for your account.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -617,20 +618,19 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->list_api_keys: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
- **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
- **sort** | **APIKeysSort**| API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional]
- **filter** | **str**| Filter API keys by the specified string. | [optional]
- **filter_created_at_start** | **str**| Only include API keys created on or after the specified date. | [optional]
- **filter_created_at_end** | **str**| Only include API keys created on or before the specified date. | [optional]
- **filter_modified_at_start** | **str**| Only include API keys modified on or after the specified date. | [optional]
- **filter_modified_at_end** | **str**| Only include API keys modified on or before the specified date. | [optional]
- **include** | **str**| Comma separated list of resource paths for related resources to include in the response. Supported resource paths are &#x60;created_by&#x60; and &#x60;modified_by&#x60;. | [optional]
+| Name                         | Type            | Description                                                                                                                                                               | Notes                                                             |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| **page_size**                | **int**         | Size for a given page.                                                                                                                                                    | [optional] if omitted the server will use the default value of 10 |
+| **page_number**              | **int**         | Specific page number to return.                                                                                                                                           | [optional] if omitted the server will use the default value of 0  |
+| **sort**                     | **APIKeysSort** | API key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign.                | [optional]                                                        |
+| **filter**                   | **str**         | Filter API keys by the specified string.                                                                                                                                  | [optional]                                                        |
+| **filter_created_at_start**  | **str**         | Only include API keys created on or after the specified date.                                                                                                             | [optional]                                                        |
+| **filter_created_at_end**    | **str**         | Only include API keys created on or before the specified date.                                                                                                            | [optional]                                                        |
+| **filter_modified_at_start** | **str**         | Only include API keys modified on or after the specified date.                                                                                                            | [optional]                                                        |
+| **filter_modified_at_end**   | **str**         | Only include API keys modified on or before the specified date.                                                                                                           | [optional]                                                        |
+| **include**                  | **str**         | Comma separated list of resource paths for related resources to include in the response. Supported resource paths are &#x60;created_by&#x60; and &#x60;modified_by&#x60;. | [optional]                                                        |
 
 ### Return type
 
@@ -642,29 +642,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_application_keys**
+
 > ListApplicationKeysResponse list_application_keys()
 
 List all application keys available for your org
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -696,17 +697,16 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->list_application_keys: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
- **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
- **sort** | **ApplicationKeysSort**| Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional]
- **filter** | **str**| Filter application keys by the specified string. | [optional]
- **filter_created_at_start** | **str**| Only include application keys created on or after the specified date. | [optional]
- **filter_created_at_end** | **str**| Only include application keys created on or before the specified date. | [optional]
+| Name                        | Type                    | Description                                                                                                                                                        | Notes                                                             |
+| --------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| **page_size**               | **int**                 | Size for a given page.                                                                                                                                             | [optional] if omitted the server will use the default value of 10 |
+| **page_number**             | **int**                 | Specific page number to return.                                                                                                                                    | [optional] if omitted the server will use the default value of 0  |
+| **sort**                    | **ApplicationKeysSort** | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional]                                                        |
+| **filter**                  | **str**                 | Filter application keys by the specified string.                                                                                                                   | [optional]                                                        |
+| **filter_created_at_start** | **str**                 | Only include application keys created on or after the specified date.                                                                                              | [optional]                                                        |
+| **filter_created_at_end**   | **str**                 | Only include application keys created on or before the specified date.                                                                                             | [optional]                                                        |
 
 ### Return type
 
@@ -718,30 +718,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_current_user_application_keys**
+
 > ListApplicationKeysResponse list_current_user_application_keys()
 
 List all application keys available for current user
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -773,17 +774,16 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->list_current_user_application_keys: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
- **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
- **sort** | **ApplicationKeysSort**| Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional]
- **filter** | **str**| Filter application keys by the specified string. | [optional]
- **filter_created_at_start** | **str**| Only include application keys created on or after the specified date. | [optional]
- **filter_created_at_end** | **str**| Only include application keys created on or before the specified date. | [optional]
+| Name                        | Type                    | Description                                                                                                                                                        | Notes                                                             |
+| --------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| **page_size**               | **int**                 | Size for a given page.                                                                                                                                             | [optional] if omitted the server will use the default value of 10 |
+| **page_number**             | **int**                 | Specific page number to return.                                                                                                                                    | [optional] if omitted the server will use the default value of 0  |
+| **sort**                    | **ApplicationKeysSort** | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional]                                                        |
+| **filter**                  | **str**                 | Filter application keys by the specified string.                                                                                                                   | [optional]                                                        |
+| **filter_created_at_start** | **str**                 | Only include application keys created on or after the specified date.                                                                                              | [optional]                                                        |
+| **filter_created_at_end**   | **str**                 | Only include application keys created on or before the specified date.                                                                                             | [optional]                                                        |
 
 ### Return type
 
@@ -795,30 +795,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_api_key**
+
 > APIKeyResponse update_api_key(api_key_id, body)
 
 Update an API key.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -842,7 +843,7 @@ with ApiClient(configuration) as api_client:
             id="00112233-4455-6677-8899-aabbccddeeff",
             type=APIKeysType("api_keys"),
         ),
-    )  # APIKeyUpdateRequest | 
+    )  # APIKeyUpdateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -853,13 +854,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->update_api_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_key_id** | **str**| The ID of the API key. |
- **body** | [**APIKeyUpdateRequest**](APIKeyUpdateRequest.md)|  |
+| Name           | Type                                              | Description            | Notes |
+| -------------- | ------------------------------------------------- | ---------------------- | ----- |
+| **api_key_id** | **str**                                           | The ID of the API key. |
+| **body**       | [**APIKeyUpdateRequest**](APIKeyUpdateRequest.md) |                        |
 
 ### Return type
 
@@ -871,30 +871,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_application_key**
+
 > ApplicationKeyResponse update_application_key(app_key_id, body)
 
 Edit an application key
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -918,7 +919,7 @@ with ApiClient(configuration) as api_client:
             id="00112233-4455-6677-8899-aabbccddeeff",
             type=ApplicationKeysType("application_keys"),
         ),
-    )  # ApplicationKeyUpdateRequest | 
+    )  # ApplicationKeyUpdateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -929,13 +930,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->update_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_key_id** | **str**| The ID of the application key. |
- **body** | [**ApplicationKeyUpdateRequest**](ApplicationKeyUpdateRequest.md)|  |
+| Name           | Type                                                              | Description                    | Notes |
+| -------------- | ----------------------------------------------------------------- | ------------------------------ | ----- |
+| **app_key_id** | **str**                                                           | The ID of the application key. |
+| **body**       | [**ApplicationKeyUpdateRequest**](ApplicationKeyUpdateRequest.md) |                                |
 
 ### Return type
 
@@ -947,30 +947,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_current_user_application_key**
+
 > ApplicationKeyResponse update_current_user_application_key(app_key_id, body)
 
 Edit an application key owned by current user
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -994,7 +995,7 @@ with ApiClient(configuration) as api_client:
             id="00112233-4455-6677-8899-aabbccddeeff",
             type=ApplicationKeysType("application_keys"),
         ),
-    )  # ApplicationKeyUpdateRequest | 
+    )  # ApplicationKeyUpdateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -1005,13 +1006,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling KeyManagementApi->update_current_user_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **app_key_id** | **str**| The ID of the application key. |
- **body** | [**ApplicationKeyUpdateRequest**](ApplicationKeyUpdateRequest.md)|  |
+| Name           | Type                                                              | Description                    | Notes |
+| -------------- | ----------------------------------------------------------------- | ------------------------------ | ----- |
+| **app_key_id** | **str**                                                           | The ID of the application key. |
+| **body**       | [**ApplicationKeyUpdateRequest**](ApplicationKeyUpdateRequest.md) |                                |
 
 ### Return type
 
@@ -1023,18 +1023,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

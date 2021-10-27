@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**get_graph_snapshot**](SnapshotsApi.md#get_graph_snapshot) | **GET** /api/v1/graph/snapshot | Take graph snapshots
-
+| Method                                                       | HTTP request                   | Description          |
+| ------------------------------------------------------------ | ------------------------------ | -------------------- |
+| [**get_graph_snapshot**](SnapshotsApi.md#get_graph_snapshot) | **GET** /api/v1/graph/snapshot | Take graph snapshots |
 
 # **get_graph_snapshot**
+
 > GraphSnapshot get_graph_snapshot(start, end)
 
 Take graph snapshots.
@@ -15,9 +15,10 @@ Take graph snapshots.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -57,17 +58,16 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling SnapshotsApi->get_graph_snapshot: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start** | **int**| The POSIX timestamp of the start of the query. |
- **end** | **int**| The POSIX timestamp of the end of the query. |
- **metric_query** | **str**| The metric query. | [optional]
- **event_query** | **str**| A query that adds event bands to the graph. | [optional]
- **graph_def** | **str**| A JSON document defining the graph. &#x60;graph_def&#x60; can be used instead of &#x60;metric_query&#x60;. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded. | [optional]
- **title** | **str**| A title for the graph. If no title is specified, the graph does not have a title. | [optional]
+| Name             | Type    | Description                                                                                                                                                                                                                                                                         | Notes      |
+| ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **start**        | **int** | The POSIX timestamp of the start of the query.                                                                                                                                                                                                                                      |
+| **end**          | **int** | The POSIX timestamp of the end of the query.                                                                                                                                                                                                                                        |
+| **metric_query** | **str** | The metric query.                                                                                                                                                                                                                                                                   | [optional] |
+| **event_query**  | **str** | A query that adds event bands to the graph.                                                                                                                                                                                                                                         | [optional] |
+| **graph_def**    | **str** | A JSON document defining the graph. &#x60;graph_def&#x60; can be used instead of &#x60;metric_query&#x60;. The JSON document uses the [grammar defined here](https://docs.datadoghq.com/graphing/graphing_json/#grammar) and should be formatted to a single line then URL encoded. | [optional] |
+| **title**        | **str** | A title for the graph. If no title is specified, the graph does not have a title.                                                                                                                                                                                                   | [optional] |
 
 ### Return type
 
@@ -79,17 +79,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

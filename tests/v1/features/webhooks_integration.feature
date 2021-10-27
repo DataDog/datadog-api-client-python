@@ -43,9 +43,9 @@ Feature: Webhooks Integration
     Then the response status is 404 Item Not Found
 
   Scenario: Delete a custom variable returns "OK" response
-    Given there is a valid "webhook-custom-variable" in the system
+    Given there is a valid "webhook_custom_variable" in the system
     And new "DeleteWebhooksIntegrationCustomVariable" request
-    And request contains "custom_variable_name" parameter from "webhook-custom-variable.name"
+    And request contains "custom_variable_name" parameter from "webhook_custom_variable.name"
     When the request is sent
     Then the response status is 200 OK
 
@@ -122,9 +122,9 @@ Feature: Webhooks Integration
     Then the response status is 404 Item Not Found
 
   Scenario: Update a custom variable returns "OK" response
-    Given there is a valid "webhook-custom-variable" in the system
+    Given there is a valid "webhook_custom_variable" in the system
     And new "UpdateWebhooksIntegrationCustomVariable" request
-    And request contains "custom_variable_name" parameter from "webhook-custom-variable.name"
+    And request contains "custom_variable_name" parameter from "webhook_custom_variable.name"
     And body with value {"value": "variable-updated"}
     When the request is sent
     Then the response status is 200 OK

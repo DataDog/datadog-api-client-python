@@ -20,13 +20,13 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
-    from datadog_api_client.v1.model.synthetics_ci_test_metadata import SyntheticsCITestMetadata
+    from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
     from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 
     globals()["SyntheticsBasicAuth"] = SyntheticsBasicAuth
-    globals()["SyntheticsCITestMetadata"] = SyntheticsCITestMetadata
+    globals()["SyntheticsCIBatchMetadata"] = SyntheticsCIBatchMetadata
     globals()["SyntheticsDeviceID"] = SyntheticsDeviceID
     globals()["SyntheticsTestHeaders"] = SyntheticsTestHeaders
     globals()["SyntheticsTestOptionsRetry"] = SyntheticsTestOptionsRetry
@@ -86,7 +86,7 @@ class SyntheticsCITest(ModelNormal):
             "follow_redirects": (bool,),  # noqa: E501
             "headers": (SyntheticsTestHeaders,),  # noqa: E501
             "locations": ([str],),  # noqa: E501
-            "metadata": (SyntheticsCITestMetadata,),  # noqa: E501
+            "metadata": (SyntheticsCIBatchMetadata,),  # noqa: E501
             "retry": (SyntheticsTestOptionsRetry,),  # noqa: E501
             "start_url": (str,),  # noqa: E501
             "variables": ({str: (str,)},),  # noqa: E501
@@ -162,7 +162,7 @@ class SyntheticsCITest(ModelNormal):
             follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]  # noqa: E501
             headers (SyntheticsTestHeaders): [optional]  # noqa: E501
             locations ([str]): Array of locations used to run the test.. [optional]  # noqa: E501
-            metadata (SyntheticsCITestMetadata): [optional]  # noqa: E501
+            metadata (SyntheticsCIBatchMetadata): [optional]  # noqa: E501
             retry (SyntheticsTestOptionsRetry): [optional]  # noqa: E501
             start_url (str): Starting URL for the browser test.. [optional]  # noqa: E501
             variables ({str: (str,)}): Variables to replace in the test.. [optional]  # noqa: E501

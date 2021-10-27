@@ -1,0 +1,98 @@
+interactions:
+- request:
+    body: '{"name":"Test-Create_a_dashboard_list_returns_OK_response-1633076910"}'
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '70'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '5109831984350151899'
+      x-datadog-trace-id:
+      - '6513686906630519743'
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual
+  response:
+    body:
+      string: '{"is_favorite":false,"name":"Test-Create_a_dashboard_list_returns_OK_response-1633076910","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2021-10-01T08:28:30.564949+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2021-10-01T08:28:30.564987+00:00","id":240514}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '315'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 01 Oct 2021 08:28:30 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '505642647925618187'
+      x-datadog-trace-id:
+      - '6513686906630519743'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/240514
+  response:
+    body:
+      string: '{"deleted_dashboard_list_id":240514}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '36'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 01 Oct 2021 08:28:30 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

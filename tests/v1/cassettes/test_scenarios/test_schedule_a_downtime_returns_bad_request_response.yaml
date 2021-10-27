@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: '{"monitor_tags":["tag0","tag1","tag2","tag3","tag4","tag5","tag6","tag7","tag8","tag9","tag10","tag11","tag12","tag13","tag14","tag15","tag16","tag17","tag18","tag19","tag20","tag21","tag22","tag23","tag24","tag25","tag26","tag27","tag28","tag29","tag30","tag31","tag32","tag33","tag34","tag35","tag36","tag37","tag38","tag39","tag40","tag41","tag42","tag43","tag44","tag45","tag46","tag47","tag48","tag49"]}'
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '408'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '1450953105393253435'
+      x-datadog-trace-id:
+      - '7914033587087729955'
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/downtime
+  response:
+    body:
+      string: '{"errors": ["Invalid scope parameter"]}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '39'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 19 Oct 2021 14:57:42 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 400
+      message: Bad Request
+version: 1

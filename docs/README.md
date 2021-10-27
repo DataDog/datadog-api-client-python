@@ -108,4 +108,3 @@ configuration.compress = False
 ## Author
 
 support@datadoghq.com
-

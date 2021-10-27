@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '9043798307086523531'
+      x-datadog-trace-id:
+      - '1076663721604932769'
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/monitor?group_states=notagroupstate
+  response:
+    body:
+      string: '{"errors":["Invalid group_state filters."]}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '43'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 19 Oct 2021 14:57:46 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-period:
+      - '10'
+      x-ratelimit-remaining:
+      - '999'
+      x-ratelimit-reset:
+      - '5'
+    status:
+      code: 400
+      message: Bad Request
+version: 1

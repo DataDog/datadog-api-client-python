@@ -118,7 +118,7 @@ class UsageTimeseriesHour(ModelNormal):
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
             num_custom_input_timeseries (int): Contains the number of custom metrics that are inputs for aggregations (metric configured is custom).. [optional]  # noqa: E501
             num_custom_output_timeseries (int): Contains the number of custom metrics that are outputs for aggregations (metric configured is custom).. [optional]  # noqa: E501
-            num_custom_timeseries (int): Contains the number of non-aggregation custom metrics.. [optional]  # noqa: E501
+            num_custom_timeseries (int): Contains sum of non-aggregation custom metrics and custom metrics that are outputs for aggregations.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 

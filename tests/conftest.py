@@ -3,23 +3,18 @@
 
 import os
 
-# First patch httplib
+# First patch urllib
 tracer = None
 try:
-    from ddtrace import config, current_trace_context, patch, tracer
+    from ddtrace import config, patch, tracer
 
     if os.getenv("RECORD", "false") != "none":
         from ddtrace.internal.writer import AgentWriter
 
-        writer = AgentWriter(
-            tracer.writer.agent_url,
-            sync_mode=True,
-            priority_sampler=tracer.priority_sampler,
-        )
+        writer = AgentWriter(tracer.writer.agent_url, sync_mode=True, priority_sampler=tracer.priority_sampler)
         tracer.configure(writer)
 
-    config.httplib["distributed_tracing"] = True
-    patch(httplib=True)
+    patch(urllib3=True)
 
     from pytest import hookimpl
 
@@ -37,14 +32,13 @@ try:
             )
             terminalreporter.line(
                 "* https://app.datadoghq.com/ci/test-runs?query="
-                "%40test.service%3A{}%20%40ci.pipeline.id%3A{}&index=citest".format(
-                    dd_service, ci_pipeline_id
-                )
+                "%40test.service%3A{}%20%40ci.pipeline.id%3A{}&index=citest".format(dd_service, ci_pipeline_id)
             )
 
 
 except ImportError:
-    pass
+    if os.getenv("CI", "false") == "true" and os.getenv("RECORD", "false") == "none":
+        raise
 
 import importlib
 import json
@@ -57,12 +51,7 @@ from datetime import datetime
 import pytest
 from dateutil.relativedelta import relativedelta
 from jinja2 import Template, Environment, meta
-from pytest_bdd import (
-    given,
-    parsers,
-    then,
-    when,
-)
+from pytest_bdd import given, parsers, then, when
 
 logging.basicConfig()
 
@@ -79,15 +68,27 @@ def escape_reserved_keyword(word):
     return word
 
 
+def pytest_bdd_before_scenario(request, feature, scenario):
+    if tracer is None:
+        return
+
+    span = tracer.current_span()
+    span.set_tag("test.name", scenario.name)
+    span.set_tag("test.suite", scenario.feature.filename.split("tests")[-1])
+
+
+def pytest_bdd_after_scenario(request, feature, scenario):
+    ctx = request.getfixturevalue("context")
+    for undo in reversed(ctx["undo_operations"]):
+        undo()
+
+
 def pytest_bdd_before_step(request, feature, scenario, step, step_func):
     if tracer is None:
         return
 
     span = tracer.start_span(
-        step.type,
-        resource=step.name,
-        span_type=step.type,
-        child_of=current_trace_context(),
+        step.type, resource=step.name, span_type=step.type, child_of=tracer.current_span(), activate=True
     )
     setattr(step_func, "__dd_span__", span)
 
@@ -98,9 +99,7 @@ def pytest_bdd_after_step(request, feature, scenario, step, step_func, step_func
         span.finish()
 
 
-def pytest_bdd_step_error(
-    request, feature, scenario, step, step_func, step_func_args, exception
-):
+def pytest_bdd_step_error(request, feature, scenario, step, step_func, step_func_args, exception):
     span = getattr(step_func, "__dd_span__", None)
     if span is not None:
         span.set_exc_info(type(exception), exception, exception.__traceback__)
@@ -146,7 +145,10 @@ def glom(value, path):
     from glom import glom as g
 
     # replace foo[index].bar by foo.index.bar
-    return g(value, re.sub(r"\[([0-9]*)\]", r".\1", path))
+    path = re.sub(r"\[([0-9]*)\]", r".\1", path)
+    # replace camelCase to snake_case
+    path = ".".join(snake_case(p) for p in path.split("."))
+    return g(value, path)
 
 
 def _get_prefix(request):
@@ -226,18 +228,11 @@ def context(vcr, unique, unique_lower, freezer):
 
     yield ctx
 
-    for undo in reversed(ctx["undo_operations"]):
-        undo()
-
 
 @pytest.fixture(scope="session")
 def record_mode(request):
     """Manage compatibility with DD client libraries."""
-    return {
-        "false": "none",
-        "true": "rewrite",
-        "none": "new_episodes",
-    }[os.getenv("RECORD", "false").lower()]
+    return {"false": "none", "true": "rewrite", "none": "new_episodes"}[os.getenv("RECORD", "false").lower()]
 
 
 def _disable_recording():
@@ -264,6 +259,11 @@ def vcr_config():
         config["ignore_hosts"] = [urlparse(tracer.writer.agent_url).hostname]
 
     return config
+
+
+@pytest.fixture
+def default_cassette_name(default_cassette_name):
+    return re.sub("__+", "_", default_cassette_name)
 
 
 @pytest.fixture
@@ -327,23 +327,28 @@ def a_valid_application_key(configuration):
     configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
 
 
+@pytest.fixture(scope="module")
+def package_name(api_version):
+    return "datadog_api_client." + api_version
+
+
 @pytest.fixture
 def _package(package_name):
     return importlib.import_module(package_name)
 
 
 @pytest.fixture(scope="module")
-def undo_operations(package_name):
-    version = package_name.split(".")[-1]
-    with open(
-        os.path.join(os.path.dirname(__file__), version, "features", "undo.json")
-    ) as fp:
-        data = json.load(fp)
+def undo_operations():
+    result = {}
+    for f in pathlib.Path(os.path.dirname(__file__)).rglob("undo.json"):
+        version = f.parent.parent.name
+        with f.open() as fp:
+            data = json.load(fp)
+            result[version] = {
+                snake_case(operation_id): settings.get("undo") for operation_id, settings in data.items()
+            }
 
-    return {
-        snake_case(operation_id): settings.get("undo")
-        for operation_id, settings in data.items()
-    }
+    return result
 
 
 def build_configuration(package):
@@ -375,11 +380,7 @@ def api(context, package_name, client, name):
     """Return an API instance."""
     module_name = snake_case(name)
     package = importlib.import_module(f"{package_name}.api.{module_name}_api")
-    context["api"] = {
-        "api": getattr(package, name + "Api")(client),
-        "package": package_name,
-        "calls": [],
-    }
+    context["api"] = {"api": getattr(package, name + "Api")(client), "package": package_name, "calls": []}
 
 
 @given(parsers.parse('operation "{name}" enabled'))
@@ -429,18 +430,14 @@ def request_body_from_file(context, path, package_name):
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(context, name, path):
     """Set request parameter."""
-    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = glom(
-        context, path
-    )
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = glom(context, path)
 
 
 @given(parsers.parse('request contains "{name}" parameter with value {value}'))
 def request_parameter_with_value(context, name, value):
     """Set request parameter."""
     tpl = Template(value).render(**context)
-    context["api_request"]["kwargs"][
-        escape_reserved_keyword(snake_case(name))
-    ] = json.loads(tpl)
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = json.loads(tpl)
 
 
 def build_given(version, operation):
@@ -452,12 +449,8 @@ def build_given(version, operation):
 
         # make sure we have a fresh instance of API client and configuration
         configuration = build_configuration(importlib.import_module(package_name))
-        configuration.api_key["apiKeyAuth"] = os.getenv(
-            "DD_TEST_CLIENT_API_KEY", "fake"
-        )
-        configuration.api_key["appKeyAuth"] = os.getenv(
-            "DD_TEST_CLIENT_APP_KEY", "fake"
-        )
+        configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
+        configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
 
         # enable unstable operation
         if operation_name in configuration.unstable_operations:
@@ -476,17 +469,14 @@ def build_given(version, operation):
                     return glom(context, p["source"])
 
             kwargs = {
-                escape_reserved_keyword(snake_case(p["name"])): build_param(p)
-                for p in operation.get("parameters", [])
+                escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
             }
             kwargs["_check_input_type"] = False
             result = operation_method(**kwargs)
             client.last_response.urllib3_response.close()
 
             # register undo method
-            context["undo_operations"].append(
-                lambda: undo(api, operation_name, result, client=client)
-            )
+            context["undo_operations"].append(lambda: undo(api, version, operation_name, result, client=client))
 
             # optional re-shaping
             if "source" in operation:
@@ -513,13 +503,13 @@ def undo(package_name, undo_operations, client):
     """Clean after operation."""
     exceptions = importlib.import_module(package_name + ".exceptions")
 
-    def cleanup(api, operation_id, response, client=client):
-        if operation_id not in undo_operations:
-            raise NotImplementedError(operation_id)
+    def cleanup(api, version, operation_id, response, client=client):
+        operation = undo_operations.get(version, {}).get(operation_id)
+        if operation_id is None:
+            raise NotImplementedError((version, operation_id))
 
-        operation = undo_operations[operation_id]
         if operation["type"] is None:
-            raise NotImplementedError(operation_id)
+            raise NotImplementedError((version, operation_id))
 
         if operation["type"] != "unsafe":
             return
@@ -531,9 +521,7 @@ def undo(package_name, undo_operations, client):
             if "source" in parameter:
                 args.append(glom(response, parameter["source"]))
             elif "template" in parameter:
-                variables = meta.find_undeclared_variables(
-                    Environment().parse(parameter["template"])
-                )
+                variables = meta.find_undeclared_variables(Environment().parse(parameter["template"]))
                 ctx = {}
                 for var in variables:
                     ctx[var] = glom(response, var)
@@ -552,7 +540,7 @@ def undo(package_name, undo_operations, client):
 
 
 @when("the request is sent")
-def execute_request(undo, context, client, _package):
+def execute_request(undo, context, client, api_version, _package):
     """Execute the prepared request."""
     api_request = context["api_request"]
     exceptions = importlib.import_module(context["api"]["package"] + ".exceptions")
@@ -561,9 +549,7 @@ def execute_request(undo, context, client, _package):
         response = api_request["request"](*api_request["args"], **api_request["kwargs"])
         client.last_response.urllib3_response.close()
         # Reserialise the response body to JSON to facilitate test assertions
-        response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(
-            response[0]
-        )
+        response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(response[0])
         api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions
@@ -576,7 +562,7 @@ def execute_request(undo, context, client, _package):
     operation_id = api_request["request"].__name__
     response = api_request["response"][0]
 
-    context["undo_operations"].append(lambda: undo(api, operation_id, response))
+    context["undo_operations"].append(lambda: undo(api, api_version, operation_id, response))
 
 
 @then(parsers.parse('I should get an instance of "{name}"'))
@@ -609,11 +595,7 @@ def expect_equal(context, response_path, value):
     assert test_value == response_value
 
 
-@then(
-    parsers.parse(
-        'the response "{response_path}" has the same value as "{fixture_path}"'
-    )
-)
+@then(parsers.parse('the response "{response_path}" has the same value as "{fixture_path}"'))
 def expect_equal_value(context, response_path, fixture_path):
     fixture_value = glom(context, fixture_path)
     response_value = glom(context["api_request"]["response"][0], response_path)

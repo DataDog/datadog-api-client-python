@@ -2,19 +2,19 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**check_can_delete_slo**](ServiceLevelObjectivesApi.md#check_can_delete_slo) | **GET** /api/v1/slo/can_delete | Check if SLOs can be safely deleted
-[**create_slo**](ServiceLevelObjectivesApi.md#create_slo) | **POST** /api/v1/slo | Create an SLO object
-[**delete_slo**](ServiceLevelObjectivesApi.md#delete_slo) | **DELETE** /api/v1/slo/{slo_id} | Delete an SLO
-[**delete_slo_timeframe_in_bulk**](ServiceLevelObjectivesApi.md#delete_slo_timeframe_in_bulk) | **POST** /api/v1/slo/bulk_delete | Bulk Delete SLO Timeframes
-[**get_slo**](ServiceLevelObjectivesApi.md#get_slo) | **GET** /api/v1/slo/{slo_id} | Get an SLO&#39;s details
-[**get_slo_history**](ServiceLevelObjectivesApi.md#get_slo_history) | **GET** /api/v1/slo/{slo_id}/history | Get an SLO&#39;s history
-[**list_slos**](ServiceLevelObjectivesApi.md#list_slos) | **GET** /api/v1/slo | Get all SLOs
-[**update_slo**](ServiceLevelObjectivesApi.md#update_slo) | **PUT** /api/v1/slo/{slo_id} | Update an SLO
-
+| Method                                                                                        | HTTP request                         | Description                         |
+| --------------------------------------------------------------------------------------------- | ------------------------------------ | ----------------------------------- |
+| [**check_can_delete_slo**](ServiceLevelObjectivesApi.md#check_can_delete_slo)                 | **GET** /api/v1/slo/can_delete       | Check if SLOs can be safely deleted |
+| [**create_slo**](ServiceLevelObjectivesApi.md#create_slo)                                     | **POST** /api/v1/slo                 | Create an SLO object                |
+| [**delete_slo**](ServiceLevelObjectivesApi.md#delete_slo)                                     | **DELETE** /api/v1/slo/{slo_id}      | Delete an SLO                       |
+| [**delete_slo_timeframe_in_bulk**](ServiceLevelObjectivesApi.md#delete_slo_timeframe_in_bulk) | **POST** /api/v1/slo/bulk_delete     | Bulk Delete SLO Timeframes          |
+| [**get_slo**](ServiceLevelObjectivesApi.md#get_slo)                                           | **GET** /api/v1/slo/{slo_id}         | Get an SLO&#39;s details            |
+| [**get_slo_history**](ServiceLevelObjectivesApi.md#get_slo_history)                           | **GET** /api/v1/slo/{slo_id}/history | Get an SLO&#39;s history            |
+| [**list_slos**](ServiceLevelObjectivesApi.md#list_slos)                                       | **GET** /api/v1/slo                  | Get all SLOs                        |
+| [**update_slo**](ServiceLevelObjectivesApi.md#update_slo)                                     | **PUT** /api/v1/slo/{slo_id}         | Update an SLO                       |
 
 # **check_can_delete_slo**
+
 > CheckCanDeleteSLOResponse check_can_delete_slo(ids)
 
 Check if an SLO can be safely deleted. For example,
@@ -22,8 +22,9 @@ assure an SLO can be deleted without disrupting a dashboard.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -49,12 +50,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceLevelObjectivesApi->check_can_delete_slo: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ids** | **str**| A comma separated list of the IDs of the service level objectives objects. |
+| Name    | Type    | Description                                                                | Notes |
+| ------- | ------- | -------------------------------------------------------------------------- | ----- |
+| **ids** | **str** | A comma separated list of the IDs of the service level objectives objects. |
 
 ### Return type
 
@@ -66,30 +66,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**409** | Conflict |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **409**     | Conflict    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_slo**
+
 > SLOListResponse create_slo(body)
 
 Create a service level objective object.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -137,12 +138,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceLevelObjectivesApi->create_slo: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ServiceLevelObjectiveRequest**](ServiceLevelObjectiveRequest.md)| Service level objective request object. |
+| Name     | Type                                                                | Description                             | Notes |
+| -------- | ------------------------------------------------------------------- | --------------------------------------- | ----- |
+| **body** | [**ServiceLevelObjectiveRequest**](ServiceLevelObjectiveRequest.md) | Service level objective request object. |
 
 ### Return type
 
@@ -154,21 +154,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_slo**
+
 > SLODeleteResponse delete_slo(slo_id)
 
 Permanently delete the specified service level objective object.
@@ -178,8 +178,9 @@ a 409 conflict error because the SLO is referenced in a dashboard.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -215,13 +216,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceLevelObjectivesApi->delete_slo: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slo_id** | **str**| The ID of the service level objective. |
- **force** | **str**| Delete the monitor even if it&#39;s referenced by other resources (e.g. SLO, composite monitor). | [optional]
+| Name       | Type    | Description                                                                                      | Notes      |
+| ---------- | ------- | ------------------------------------------------------------------------------------------------ | ---------- |
+| **slo_id** | **str** | The ID of the service level objective.                                                           |
+| **force**  | **str** | Delete the monitor even if it&#39;s referenced by other resources (e.g. SLO, composite monitor). | [optional] |
 
 ### Return type
 
@@ -233,22 +233,22 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not found |  -  |
-**409** | Conflict |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not found   | -                |
+| **409**     | Conflict    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_slo_timeframe_in_bulk**
+
 > SLOBulkDeleteResponse delete_slo_timeframe_in_bulk(body)
 
 Delete (or partially delete) multiple service level objective objects.
@@ -259,8 +259,9 @@ objective object is deleted as well.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -290,12 +291,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceLevelObjectivesApi->delete_slo_timeframe_in_bulk: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**SLOBulkDelete**](SLOBulkDelete.md)| Delete multiple service level objective objects request body. |
+| Name     | Type                                  | Description                                                   | Notes |
+| -------- | ------------------------------------- | ------------------------------------------------------------- | ----- |
+| **body** | [**SLOBulkDelete**](SLOBulkDelete.md) | Delete multiple service level objective objects request body. |
 
 ### Return type
 
@@ -307,30 +307,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_slo**
+
 > SLOResponse get_slo(slo_id)
 
 Get a service level objective object.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -366,13 +367,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceLevelObjectivesApi->get_slo: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slo_id** | **str**| The ID of the service level objective object. |
- **with_configured_alert_ids** | **bool**| Get the IDs of SLO monitors that reference this SLO. | [optional]
+| Name                          | Type     | Description                                          | Notes      |
+| ----------------------------- | -------- | ---------------------------------------------------- | ---------- |
+| **slo_id**                    | **str**  | The ID of the service level objective object.        |
+| **with_configured_alert_ids** | **bool** | Get the IDs of SLO monitors that reference this SLO. | [optional] |
 
 ### Return type
 
@@ -384,21 +384,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_slo_history**
+
 > SLOHistoryResponse get_slo_history(slo_id, from_ts, to_ts)
 
 Get a specific SLO’s history, regardless of its SLO type.
@@ -412,9 +412,10 @@ Examples of both are shown.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -453,15 +454,14 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceLevelObjectivesApi->get_slo_history: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slo_id** | **str**| The ID of the service level objective object. |
- **from_ts** | **int**| The &#x60;from&#x60; timestamp for the query window in epoch seconds. |
- **to_ts** | **int**| The &#x60;to&#x60; timestamp for the query window in epoch seconds. |
- **target** | **float**| The SLO target. If &#x60;target&#x60; is passed in, the response will include the remaining error budget and a timeframe value of &#x60;custom&#x60;. | [optional]
+| Name        | Type      | Description                                                                                                                                           | Notes      |
+| ----------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **slo_id**  | **str**   | The ID of the service level objective object.                                                                                                         |
+| **from_ts** | **int**   | The &#x60;from&#x60; timestamp for the query window in epoch seconds.                                                                                 |
+| **to_ts**   | **int**   | The &#x60;to&#x60; timestamp for the query window in epoch seconds.                                                                                   |
+| **target**  | **float** | The SLO target. If &#x60;target&#x60; is passed in, the response will include the remaining error budget and a timeframe value of &#x60;custom&#x60;. | [optional] |
 
 ### Return type
 
@@ -473,31 +473,32 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_slos**
+
 > SLOListResponse list_slos()
 
 Get a list of service level objective objects for your organization.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -529,17 +530,16 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceLevelObjectivesApi->list_slos: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ids** | **str**| A comma separated list of the IDs of the service level objectives objects. | [optional]
- **query** | **str**| The query string to filter results based on SLO names. | [optional]
- **tags_query** | **str**| The query string to filter results based on a single SLO tag. | [optional]
- **metrics_query** | **str**| The query string to filter results based on SLO numerator and denominator. | [optional]
- **limit** | **int**| The number of SLOs to return in the response. | [optional]
- **offset** | **int**| The specific offset to use as the beginning of the returned response. | [optional]
+| Name              | Type    | Description                                                                | Notes      |
+| ----------------- | ------- | -------------------------------------------------------------------------- | ---------- |
+| **ids**           | **str** | A comma separated list of the IDs of the service level objectives objects. | [optional] |
+| **query**         | **str** | The query string to filter results based on SLO names.                     | [optional] |
+| **tags_query**    | **str** | The query string to filter results based on a single SLO tag.              | [optional] |
+| **metrics_query** | **str** | The query string to filter results based on SLO numerator and denominator. | [optional] |
+| **limit**         | **int** | The number of SLOs to return in the response.                              | [optional] |
+| **offset**        | **int** | The specific offset to use as the beginning of the returned response.      | [optional] |
 
 ### Return type
 
@@ -551,30 +551,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_slo**
+
 > SLOListResponse update_slo(slo_id, body)
 
 Update the specified service level objective object.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -626,13 +627,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceLevelObjectivesApi->update_slo: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **slo_id** | **str**| The ID of the service level objective object. |
- **body** | [**ServiceLevelObjective**](ServiceLevelObjective.md)| The edited service level objective request object. |
+| Name       | Type                                                  | Description                                        | Notes |
+| ---------- | ----------------------------------------------------- | -------------------------------------------------- | ----- |
+| **slo_id** | **str**                                               | The ID of the service level objective object.      |
+| **body**   | [**ServiceLevelObjective**](ServiceLevelObjective.md) | The edited service level objective request object. |
 
 ### Return type
 
@@ -644,18 +644,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

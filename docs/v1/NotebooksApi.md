@@ -2,24 +2,25 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_notebook**](NotebooksApi.md#create_notebook) | **POST** /api/v1/notebooks | Create a notebook
-[**delete_notebook**](NotebooksApi.md#delete_notebook) | **DELETE** /api/v1/notebooks/{notebook_id} | Delete a notebook
-[**get_notebook**](NotebooksApi.md#get_notebook) | **GET** /api/v1/notebooks/{notebook_id} | Get a notebook
-[**list_notebooks**](NotebooksApi.md#list_notebooks) | **GET** /api/v1/notebooks | Get all notebooks
-[**update_notebook**](NotebooksApi.md#update_notebook) | **PUT** /api/v1/notebooks/{notebook_id} | Update a notebook
-
+| Method                                                 | HTTP request                               | Description       |
+| ------------------------------------------------------ | ------------------------------------------ | ----------------- |
+| [**create_notebook**](NotebooksApi.md#create_notebook) | **POST** /api/v1/notebooks                 | Create a notebook |
+| [**delete_notebook**](NotebooksApi.md#delete_notebook) | **DELETE** /api/v1/notebooks/{notebook_id} | Delete a notebook |
+| [**get_notebook**](NotebooksApi.md#get_notebook)       | **GET** /api/v1/notebooks/{notebook_id}    | Get a notebook    |
+| [**list_notebooks**](NotebooksApi.md#list_notebooks)   | **GET** /api/v1/notebooks                  | Get all notebooks |
+| [**update_notebook**](NotebooksApi.md#update_notebook) | **PUT** /api/v1/notebooks/{notebook_id}    | Update a notebook |
 
 # **create_notebook**
+
 > NotebookResponse create_notebook(body)
 
 Create a notebook using the specified options.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -65,12 +66,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling NotebooksApi->create_notebook: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**NotebookCreateRequest**](NotebookCreateRequest.md)| The JSON description of the notebook you want to create. |
+| Name     | Type                                                  | Description                                              | Notes |
+| -------- | ----------------------------------------------------- | -------------------------------------------------------- | ----- |
+| **body** | [**NotebookCreateRequest**](NotebookCreateRequest.md) | The JSON description of the notebook you want to create. |
 
 ### Return type
 
@@ -82,29 +82,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_notebook**
+
 > delete_notebook(notebook_id)
 
 Delete a notebook using the specified ID.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -129,12 +130,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling NotebooksApi->delete_notebook: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **notebook_id** | **int**| Unique ID, assigned when you create the notebook. |
+| Name            | Type    | Description                                       | Notes |
+| --------------- | ------- | ------------------------------------------------- | ----- |
+| **notebook_id** | **int** | Unique ID, assigned when you create the notebook. |
 
 ### Return type
 
@@ -146,30 +146,31 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
-**404** | Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **204**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
+| **404**     | Not Found            | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_notebook**
+
 > NotebookResponse get_notebook(notebook_id)
 
 Get a notebook using the specified notebook ID.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -195,12 +196,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling NotebooksApi->get_notebook: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **notebook_id** | **int**| Unique ID, assigned when you create the notebook. |
+| Name            | Type    | Description                                       | Notes |
+| --------------- | ------- | ------------------------------------------------- | ----- |
+| **notebook_id** | **int** | Unique ID, assigned when you create the notebook. |
 
 ### Return type
 
@@ -212,22 +212,22 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
-**404** | Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
+| **404**     | Not Found            | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_notebooks**
+
 > NotebooksResponse list_notebooks()
 
 Get all notebooks. This can also be used to search for notebooks with a particular `query` in the notebook
@@ -235,8 +235,9 @@ Get all notebooks. This can also be used to search for notebooks with a particul
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -272,21 +273,20 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling NotebooksApi->list_notebooks: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **author_handle** | **str**| Return notebooks created by the given &#x60;author_handle&#x60;. | [optional]
- **exclude_author_handle** | **str**| Return notebooks not created by the given &#x60;author_handle&#x60;. | [optional]
- **start** | **int**| The index of the first notebook you want returned. | [optional]
- **count** | **int**| The number of notebooks to be returned. | [optional]
- **sort_field** | **str**| Sort by field &#x60;modified&#x60;, &#x60;name&#x60;, or &#x60;created&#x60;. | [optional] if omitted the server will use the default value of "modified"
- **sort_dir** | **str**| Sort by direction &#x60;asc&#x60; or &#x60;desc&#x60;. | [optional] if omitted the server will use the default value of "desc"
- **query** | **str**| Return only notebooks with &#x60;query&#x60; string in notebook name or author handle. | [optional]
- **include_cells** | **bool**| Value of &#x60;false&#x60; excludes the &#x60;cells&#x60; and global &#x60;time&#x60; for each notebook. | [optional] if omitted the server will use the default value of True
- **is_template** | **bool**| True value returns only template notebooks. Default is false (returns only non-template notebooks). | [optional] if omitted the server will use the default value of False
- **type** | **str**| If type is provided, returns only notebooks with that metadata type. Default does not have type filtering. | [optional]
+| Name                      | Type     | Description                                                                                                | Notes                                                                     |
+| ------------------------- | -------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| **author_handle**         | **str**  | Return notebooks created by the given &#x60;author_handle&#x60;.                                           | [optional]                                                                |
+| **exclude_author_handle** | **str**  | Return notebooks not created by the given &#x60;author_handle&#x60;.                                       | [optional]                                                                |
+| **start**                 | **int**  | The index of the first notebook you want returned.                                                         | [optional]                                                                |
+| **count**                 | **int**  | The number of notebooks to be returned.                                                                    | [optional]                                                                |
+| **sort_field**            | **str**  | Sort by field &#x60;modified&#x60;, &#x60;name&#x60;, or &#x60;created&#x60;.                              | [optional] if omitted the server will use the default value of "modified" |
+| **sort_dir**              | **str**  | Sort by direction &#x60;asc&#x60; or &#x60;desc&#x60;.                                                     | [optional] if omitted the server will use the default value of "desc"     |
+| **query**                 | **str**  | Return only notebooks with &#x60;query&#x60; string in notebook name or author handle.                     | [optional]                                                                |
+| **include_cells**         | **bool** | Value of &#x60;false&#x60; excludes the &#x60;cells&#x60; and global &#x60;time&#x60; for each notebook.   | [optional] if omitted the server will use the default value of True       |
+| **is_template**           | **bool** | True value returns only template notebooks. Default is false (returns only non-template notebooks).        | [optional] if omitted the server will use the default value of False      |
+| **type**                  | **str**  | If type is provided, returns only notebooks with that metadata type. Default does not have type filtering. | [optional]                                                                |
 
 ### Return type
 
@@ -298,29 +298,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_notebook**
+
 > NotebookResponse update_notebook(notebook_id, body)
 
 Update a notebook using the specified ID.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -364,13 +365,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling NotebooksApi->update_notebook: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **notebook_id** | **int**| Unique ID, assigned when you create the notebook. |
- **body** | [**NotebookUpdateRequest**](NotebookUpdateRequest.md)| Update notebook request body. |
+| Name            | Type                                                  | Description                                       | Notes |
+| --------------- | ----------------------------------------------------- | ------------------------------------------------- | ----- |
+| **notebook_id** | **int**                                               | Unique ID, assigned when you create the notebook. |
+| **body**        | [**NotebookUpdateRequest**](NotebookUpdateRequest.md) | Update notebook request body.                     |
 
 ### Return type
 
@@ -382,19 +382,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication Error |  -  |
-**404** | Not Found |  -  |
-**409** | Conflict |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication Error | -                |
+| **404**     | Not Found            | -                |
+| **409**     | Conflict             | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

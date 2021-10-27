@@ -192,8 +192,13 @@
   "CreateDowntime": {
     "tag": "Downtimes",
     "undo": {
-      "operationId": "TODO",
-      "parameters": [],
+      "operationId": "CancelDowntime",
+      "parameters": [
+        {
+          "name": "downtime_id",
+          "source": "id"
+        }
+      ],
       "type": "unsafe"
     }
   },
@@ -922,6 +927,12 @@
       "type": "safe"
     }
   },
+  "GetSyntheticsCIBatch": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListLocations": {
     "tag": "Synthetics",
     "undo": {
@@ -1257,6 +1268,12 @@
     }
   },
   "GetUsageRumSessions": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetUsageSDS": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"

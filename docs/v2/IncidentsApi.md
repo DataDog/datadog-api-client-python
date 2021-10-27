@@ -2,25 +2,26 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_incident**](IncidentsApi.md#create_incident) | **POST** /api/v2/incidents | Create an incident
-[**delete_incident**](IncidentsApi.md#delete_incident) | **DELETE** /api/v2/incidents/{incident_id} | Delete an existing incident
-[**get_incident**](IncidentsApi.md#get_incident) | **GET** /api/v2/incidents/{incident_id} | Get the details of an incident
-[**list_incidents**](IncidentsApi.md#list_incidents) | **GET** /api/v2/incidents | Get a list of incidents
-[**update_incident**](IncidentsApi.md#update_incident) | **PATCH** /api/v2/incidents/{incident_id} | Update an existing incident
-
+| Method                                                 | HTTP request                               | Description                    |
+| ------------------------------------------------------ | ------------------------------------------ | ------------------------------ |
+| [**create_incident**](IncidentsApi.md#create_incident) | **POST** /api/v2/incidents                 | Create an incident             |
+| [**delete_incident**](IncidentsApi.md#delete_incident) | **DELETE** /api/v2/incidents/{incident_id} | Delete an existing incident    |
+| [**get_incident**](IncidentsApi.md#get_incident)       | **GET** /api/v2/incidents/{incident_id}    | Get the details of an incident |
+| [**list_incidents**](IncidentsApi.md#list_incidents)   | **GET** /api/v2/incidents                  | Get a list of incidents        |
+| [**update_incident**](IncidentsApi.md#update_incident) | **PATCH** /api/v2/incidents/{incident_id}  | Update an existing incident    |
 
 # **create_incident**
+
 > IncidentResponse create_incident(body)
 
 Create an incident.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -75,12 +76,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling IncidentsApi->create_incident: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**IncidentCreateRequest**](IncidentCreateRequest.md)| Incident payload. |
+| Name     | Type                                                  | Description       | Notes |
+| -------- | ----------------------------------------------------- | ----------------- | ----- |
+| **body** | [**IncidentCreateRequest**](IncidentCreateRequest.md) | Incident payload. |
 
 ### Return type
 
@@ -92,32 +92,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | CREATED |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| Status code | Description  | Response headers |
+| ----------- | ------------ | ---------------- |
+| **201**     | CREATED      | -                |
+| **400**     | Bad Request  | -                |
+| **401**     | Unauthorized | -                |
+| **403**     | Forbidden    | -                |
+| **404**     | Not Found    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_incident**
+
 > delete_incident(incident_id)
 
 Deletes an existing incident from the users organization.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -143,12 +144,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling IncidentsApi->delete_incident: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **incident_id** | **str**| The UUID the incident. |
+| Name            | Type    | Description            | Notes |
+| --------------- | ------- | ---------------------- | ----- |
+| **incident_id** | **str** | The UUID the incident. |
 
 ### Return type
 
@@ -160,32 +160,33 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| Status code | Description  | Response headers |
+| ----------- | ------------ | ---------------- |
+| **204**     | OK           | -                |
+| **400**     | Bad Request  | -                |
+| **401**     | Unauthorized | -                |
+| **403**     | Forbidden    | -                |
+| **404**     | Not Found    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_incident**
+
 > IncidentResponse get_incident(incident_id)
 
 Get the details of an incident by `incident_id`.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -224,13 +225,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling IncidentsApi->get_incident: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **incident_id** | **str**| The UUID the incident. |
- **include** | [**[IncidentRelatedObject]**](IncidentRelatedObject.md)| Specifies which types of related objects should be included in the response. | [optional]
+| Name            | Type                                                    | Description                                                                  | Notes      |
+| --------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------- |
+| **incident_id** | **str**                                                 | The UUID the incident.                                                       |
+| **include**     | [**[IncidentRelatedObject]**](IncidentRelatedObject.md) | Specifies which types of related objects should be included in the response. | [optional] |
 
 ### Return type
 
@@ -242,32 +242,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| Status code | Description  | Response headers |
+| ----------- | ------------ | ---------------- |
+| **200**     | OK           | -                |
+| **400**     | Bad Request  | -                |
+| **401**     | Unauthorized | -                |
+| **403**     | Forbidden    | -                |
+| **404**     | Not Found    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_incidents**
+
 > IncidentsResponse list_incidents()
 
 Get all incidents for the user's organization.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -299,14 +300,13 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling IncidentsApi->list_incidents: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **include** | [**[IncidentRelatedObject]**](IncidentRelatedObject.md)| Specifies which types of related objects should be included in the response. | [optional]
- **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
- **page_offset** | **int**| Specific offset to use as the beginning of the returned page. | [optional] if omitted the server will use the default value of 0
+| Name            | Type                                                    | Description                                                                  | Notes                                                             |
+| --------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| **include**     | [**[IncidentRelatedObject]**](IncidentRelatedObject.md) | Specifies which types of related objects should be included in the response. | [optional]                                                        |
+| **page_size**   | **int**                                                 | Size for a given page.                                                       | [optional] if omitted the server will use the default value of 10 |
+| **page_offset** | **int**                                                 | Specific offset to use as the beginning of the returned page.                | [optional] if omitted the server will use the default value of 0  |
 
 ### Return type
 
@@ -318,32 +318,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| Status code | Description  | Response headers |
+| ----------- | ------------ | ---------------- |
+| **200**     | OK           | -                |
+| **400**     | Bad Request  | -                |
+| **401**     | Unauthorized | -                |
+| **403**     | Forbidden    | -                |
+| **404**     | Not Found    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_incident**
+
 > IncidentResponse update_incident(incident_id, body)
 
 Updates an incident. Provide only the attributes that should be updated as this request is a partial update.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -428,13 +429,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling IncidentsApi->update_incident: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **incident_id** | **str**| The UUID the incident. |
- **body** | [**IncidentUpdateRequest**](IncidentUpdateRequest.md)| Incident Payload. |
+| Name            | Type                                                  | Description            | Notes |
+| --------------- | ----------------------------------------------------- | ---------------------- | ----- |
+| **incident_id** | **str**                                               | The UUID the incident. |
+| **body**        | [**IncidentUpdateRequest**](IncidentUpdateRequest.md) | Incident Payload.      |
 
 ### Return type
 
@@ -446,19 +446,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| Status code | Description  | Response headers |
+| ----------- | ------------ | ---------------- |
+| **200**     | OK           | -                |
+| **400**     | Bad Request  | -                |
+| **401**     | Unauthorized | -                |
+| **403**     | Forbidden    | -                |
+| **404**     | Not Found    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

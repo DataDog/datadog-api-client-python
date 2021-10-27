@@ -1,0 +1,144 @@
+interactions:
+- request:
+    body: '{"name":"Test-Get_a_dashboard_list_returns_OK_response-1633076911"}'
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '67'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '5281220592070185763'
+      x-datadog-trace-id:
+      - '7009140366009758469'
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual
+  response:
+    body:
+      string: '{"is_favorite":false,"name":"Test-Get_a_dashboard_list_returns_OK_response-1633076911","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2021-10-01T08:28:31.263184+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2021-10-01T08:28:31.263207+00:00","id":240516}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '312'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 01 Oct 2021 08:28:31 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '70974873809417467'
+      x-datadog-trace-id:
+      - '7009140366009758469'
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/240516
+  response:
+    body:
+      string: '{"is_favorite":false,"name":"Test-Get_a_dashboard_list_returns_OK_response-1633076911","dashboard_count":0,"author":{"handle":"frog@datadoghq.com","name":null},"created":"2021-10-01T08:28:31.263184+00:00","type":"manual_dashboard_list","dashboards":null,"modified":"2021-10-01T08:28:31.263207+00:00","id":240516}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '312'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 01 Oct 2021 08:28:31 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '4469593808324531688'
+      x-datadog-trace-id:
+      - '7009140366009758469'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/lists/manual/240516
+  response:
+    body:
+      string: '{"deleted_dashboard_list_id":240516}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '36'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Fri, 01 Oct 2021 08:28:31 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1
