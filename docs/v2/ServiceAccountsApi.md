@@ -2,24 +2,25 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_service_account_application_key**](ServiceAccountsApi.md#create_service_account_application_key) | **POST** /api/v2/service_accounts/{service_account_id}/application_keys | Create an application key for this service account
-[**delete_service_account_application_key**](ServiceAccountsApi.md#delete_service_account_application_key) | **DELETE** /api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id} | Delete an application key for this service account
-[**get_service_account_application_key**](ServiceAccountsApi.md#get_service_account_application_key) | **GET** /api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id} | Get one application key for this service account
-[**list_service_account_application_keys**](ServiceAccountsApi.md#list_service_account_application_keys) | **GET** /api/v2/service_accounts/{service_account_id}/application_keys | List application keys for this service account
-[**update_service_account_application_key**](ServiceAccountsApi.md#update_service_account_application_key) | **PATCH** /api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id} | Edit an application key for this service account
-
+| Method                                                                                                     | HTTP request                                                                           | Description                                        |
+| ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| [**create_service_account_application_key**](ServiceAccountsApi.md#create_service_account_application_key) | **POST** /api/v2/service_accounts/{service_account_id}/application_keys                | Create an application key for this service account |
+| [**delete_service_account_application_key**](ServiceAccountsApi.md#delete_service_account_application_key) | **DELETE** /api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id} | Delete an application key for this service account |
+| [**get_service_account_application_key**](ServiceAccountsApi.md#get_service_account_application_key)       | **GET** /api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}    | Get one application key for this service account   |
+| [**list_service_account_application_keys**](ServiceAccountsApi.md#list_service_account_application_keys)   | **GET** /api/v2/service_accounts/{service_account_id}/application_keys                 | List application keys for this service account     |
+| [**update_service_account_application_key**](ServiceAccountsApi.md#update_service_account_application_key) | **PATCH** /api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}  | Edit an application key for this service account   |
 
 # **create_service_account_application_key**
+
 > ApplicationKeyResponse create_service_account_application_key(service_account_id, body)
 
 Create an application key for this service account.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -42,7 +43,7 @@ with ApiClient(configuration) as api_client:
             ),
             type=ApplicationKeysType("application_keys"),
         ),
-    )  # ApplicationKeyCreateRequest | 
+    )  # ApplicationKeyCreateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -53,13 +54,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceAccountsApi->create_service_account_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_account_id** | **str**| The ID of the service account. |
- **body** | [**ApplicationKeyCreateRequest**](ApplicationKeyCreateRequest.md)|  |
+| Name                   | Type                                                              | Description                    | Notes |
+| ---------------------- | ----------------------------------------------------------------- | ------------------------------ | ----- |
+| **service_account_id** | **str**                                                           | The ID of the service account. |
+| **body**               | [**ApplicationKeyCreateRequest**](ApplicationKeyCreateRequest.md) |                                |
 
 ### Return type
 
@@ -71,29 +71,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Created |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **201**     | Created     | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_service_account_application_key**
+
 > delete_service_account_application_key(service_account_id, app_key_id)
 
 Delete an application key owned by this service account.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -119,13 +120,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceAccountsApi->delete_service_account_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_account_id** | **str**| The ID of the service account. |
- **app_key_id** | **str**| The ID of the application key. |
+| Name                   | Type    | Description                    | Notes |
+| ---------------------- | ------- | ------------------------------ | ----- |
+| **service_account_id** | **str** | The ID of the service account. |
+| **app_key_id**         | **str** | The ID of the application key. |
 
 ### Return type
 
@@ -137,29 +137,30 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No Content |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **204**     | No Content  | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_service_account_application_key**
+
 > PartialApplicationKeyResponse get_service_account_application_key(service_account_id, app_key_id)
 
 Get an application key owned by this service account.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -186,13 +187,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceAccountsApi->get_service_account_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_account_id** | **str**| The ID of the service account. |
- **app_key_id** | **str**| The ID of the application key. |
+| Name                   | Type    | Description                    | Notes |
+| ---------------------- | ------- | ------------------------------ | ----- |
+| **service_account_id** | **str** | The ID of the service account. |
+| **app_key_id**         | **str** | The ID of the application key. |
 
 ### Return type
 
@@ -204,29 +204,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_service_account_application_keys**
+
 > ListApplicationKeysResponse list_service_account_application_keys(service_account_id)
 
 List all application keys available for this service account.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -267,18 +268,17 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceAccountsApi->list_service_account_application_keys: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_account_id** | **str**| The ID of the service account. |
- **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
- **page_number** | **int**| Specific page number to return. | [optional] if omitted the server will use the default value of 0
- **sort** | **ApplicationKeysSort**| Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional]
- **filter** | **str**| Filter application keys by the specified string. | [optional]
- **filter_created_at_start** | **str**| Only include application keys created on or after the specified date. | [optional]
- **filter_created_at_end** | **str**| Only include application keys created on or before the specified date. | [optional]
+| Name                        | Type                    | Description                                                                                                                                                        | Notes                                                             |
+| --------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| **service_account_id**      | **str**                 | The ID of the service account.                                                                                                                                     |
+| **page_size**               | **int**                 | Size for a given page.                                                                                                                                             | [optional] if omitted the server will use the default value of 10 |
+| **page_number**             | **int**                 | Specific page number to return.                                                                                                                                    | [optional] if omitted the server will use the default value of 0  |
+| **sort**                    | **ApplicationKeysSort** | Application key attribute used to sort results. Sort order is ascending by default. In order to specify a descending sort, prefix the attribute with a minus sign. | [optional]                                                        |
+| **filter**                  | **str**                 | Filter application keys by the specified string.                                                                                                                   | [optional]                                                        |
+| **filter_created_at_start** | **str**                 | Only include application keys created on or after the specified date.                                                                                              | [optional]                                                        |
+| **filter_created_at_end**   | **str**                 | Only include application keys created on or before the specified date.                                                                                             | [optional]                                                        |
 
 ### Return type
 
@@ -290,30 +290,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_service_account_application_key**
+
 > PartialApplicationKeyResponse update_service_account_application_key(service_account_id, app_key_id, body)
 
 Edit an application key owned by this service account.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -338,7 +339,7 @@ with ApiClient(configuration) as api_client:
             id="00112233-4455-6677-8899-aabbccddeeff",
             type=ApplicationKeysType("application_keys"),
         ),
-    )  # ApplicationKeyUpdateRequest | 
+    )  # ApplicationKeyUpdateRequest |
 
     # example passing only required values which don't have defaults set
     try:
@@ -349,14 +350,13 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling ServiceAccountsApi->update_service_account_application_key: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_account_id** | **str**| The ID of the service account. |
- **app_key_id** | **str**| The ID of the application key. |
- **body** | [**ApplicationKeyUpdateRequest**](ApplicationKeyUpdateRequest.md)|  |
+| Name                   | Type                                                              | Description                    | Notes |
+| ---------------------- | ----------------------------------------------------------------- | ------------------------------ | ----- |
+| **service_account_id** | **str**                                                           | The ID of the service account. |
+| **app_key_id**         | **str**                                                           | The ID of the application key. |
+| **body**               | [**ApplicationKeyUpdateRequest**](ApplicationKeyUpdateRequest.md) |                                |
 
 ### Return type
 
@@ -368,18 +368,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

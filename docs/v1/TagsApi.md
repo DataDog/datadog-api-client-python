@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_host_tags**](TagsApi.md#create_host_tags) | **POST** /api/v1/tags/hosts/{host_name} | Add tags to a host
-[**delete_host_tags**](TagsApi.md#delete_host_tags) | **DELETE** /api/v1/tags/hosts/{host_name} | Remove host tags
-[**get_host_tags**](TagsApi.md#get_host_tags) | **GET** /api/v1/tags/hosts/{host_name} | Get host tags
-[**list_host_tags**](TagsApi.md#list_host_tags) | **GET** /api/v1/tags/hosts | Get Tags
-[**update_host_tags**](TagsApi.md#update_host_tags) | **PUT** /api/v1/tags/hosts/{host_name} | Update host tags
-
+| Method                                              | HTTP request                              | Description        |
+| --------------------------------------------------- | ----------------------------------------- | ------------------ |
+| [**create_host_tags**](TagsApi.md#create_host_tags) | **POST** /api/v1/tags/hosts/{host_name}   | Add tags to a host |
+| [**delete_host_tags**](TagsApi.md#delete_host_tags) | **DELETE** /api/v1/tags/hosts/{host_name} | Remove host tags   |
+| [**get_host_tags**](TagsApi.md#get_host_tags)       | **GET** /api/v1/tags/hosts/{host_name}    | Get host tags      |
+| [**list_host_tags**](TagsApi.md#list_host_tags)     | **GET** /api/v1/tags/hosts                | Get Tags           |
+| [**update_host_tags**](TagsApi.md#update_host_tags) | **PUT** /api/v1/tags/hosts/{host_name}    | Update host tags   |
 
 # **create_host_tags**
+
 > HostTags create_host_tags(host_name, body)
 
 This endpoint allows you to add new tags to a host,
@@ -19,8 +19,9 @@ optionally specifying where these tags come from.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -62,14 +63,13 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling TagsApi->create_host_tags: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **host_name** | **str**| This endpoint allows you to add new tags to a host, optionally specifying where the tags came from. |
- **body** | [**HostTags**](HostTags.md)| Update host tags request body. |
- **source** | **str**| The source of the tags. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). | [optional]
+| Name          | Type                        | Description                                                                                                                                         | Notes      |
+| ------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **host_name** | **str**                     | This endpoint allows you to add new tags to a host, optionally specifying where the tags came from.                                                 |
+| **body**      | [**HostTags**](HostTags.md) | Update host tags request body.                                                                                                                      |
+| **source**    | **str**                     | The source of the tags. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). | [optional] |
 
 ### Return type
 
@@ -81,21 +81,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Created |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **201**     | Created     | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_host_tags**
+
 > delete_host_tags(host_name)
 
 This endpoint allows you to remove all user-assigned tags
@@ -103,8 +103,9 @@ for a single host.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -138,13 +139,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling TagsApi->delete_host_tags: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **host_name** | **str**| This endpoint allows you to remove all user-assigned tags for a single host. |
- **source** | **str**| The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). | [optional]
+| Name          | Type    | Description                                                                                                                                                             | Notes      |
+| ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **host_name** | **str** | This endpoint allows you to remove all user-assigned tags for a single host.                                                                                            |
+| **source**    | **str** | The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value). | [optional] |
 
 ### Return type
 
@@ -156,29 +156,30 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **204**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_host_tags**
+
 > HostTags get_host_tags(host_name)
 
 Return the list of tags that apply to a given host.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -214,13 +215,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling TagsApi->get_host_tags: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **host_name** | **str**| When specified, filters list of tags to those tags with the specified source. |
- **source** | **str**| Source to filter. | [optional]
+| Name          | Type    | Description                                                                   | Notes      |
+| ------------- | ------- | ----------------------------------------------------------------------------- | ---------- |
+| **host_name** | **str** | When specified, filters list of tags to those tags with the specified source. |
+| **source**    | **str** | Source to filter.                                                             | [optional] |
 
 ### Return type
 
@@ -232,30 +232,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_host_tags**
+
 > TagToHosts list_host_tags()
 
 Return a mapping of tags to hosts for your whole infrastructure.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -282,12 +283,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling TagsApi->list_host_tags: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **source** | **str**| When specified, filters host list to those tags with the specified source. | [optional]
+| Name       | Type    | Description                                                                | Notes      |
+| ---------- | ------- | -------------------------------------------------------------------------- | ---------- |
+| **source** | **str** | When specified, filters host list to those tags with the specified source. | [optional] |
 
 ### Return type
 
@@ -299,21 +299,21 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_host_tags**
+
 > HostTags update_host_tags(host_name, body)
 
 This endpoint allows you to update/replace all tags in
@@ -321,8 +321,9 @@ an integration source with those supplied in the request.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -364,14 +365,13 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling TagsApi->update_host_tags: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **host_name** | **str**| This endpoint allows you to update/replace all in an integration source with those supplied in the request. |
- **body** | [**HostTags**](HostTags.md)| Add tags to host |
- **source** | **str**| The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value) | [optional]
+| Name          | Type                        | Description                                                                                                                                                            | Notes      |
+| ------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **host_name** | **str**                     | This endpoint allows you to update/replace all in an integration source with those supplied in the request.                                                            |
+| **body**      | [**HostTags**](HostTags.md) | Add tags to host                                                                                                                                                       |
+| **source**    | **str**                     | The source of the tags (e.g. chef, puppet). [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value) | [optional] |
 
 ### Return type
 
@@ -383,17 +383,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **201**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

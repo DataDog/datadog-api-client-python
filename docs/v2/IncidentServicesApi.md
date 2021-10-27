@@ -2,25 +2,26 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_incident_service**](IncidentServicesApi.md#create_incident_service) | **POST** /api/v2/services | Create a new incident service
-[**delete_incident_service**](IncidentServicesApi.md#delete_incident_service) | **DELETE** /api/v2/services/{service_id} | Delete an existing incident service
-[**get_incident_service**](IncidentServicesApi.md#get_incident_service) | **GET** /api/v2/services/{service_id} | Get details of an incident service
-[**list_incident_services**](IncidentServicesApi.md#list_incident_services) | **GET** /api/v2/services | Get a list of all incident services
-[**update_incident_service**](IncidentServicesApi.md#update_incident_service) | **PATCH** /api/v2/services/{service_id} | Update an existing incident service
-
+| Method                                                                        | HTTP request                             | Description                         |
+| ----------------------------------------------------------------------------- | ---------------------------------------- | ----------------------------------- |
+| [**create_incident_service**](IncidentServicesApi.md#create_incident_service) | **POST** /api/v2/services                | Create a new incident service       |
+| [**delete_incident_service**](IncidentServicesApi.md#delete_incident_service) | **DELETE** /api/v2/services/{service_id} | Delete an existing incident service |
+| [**get_incident_service**](IncidentServicesApi.md#get_incident_service)       | **GET** /api/v2/services/{service_id}    | Get details of an incident service  |
+| [**list_incident_services**](IncidentServicesApi.md#list_incident_services)   | **GET** /api/v2/services                 | Get a list of all incident services |
+| [**update_incident_service**](IncidentServicesApi.md#update_incident_service) | **PATCH** /api/v2/services/{service_id}  | Update an existing incident service |
 
 # **create_incident_service**
+
 > IncidentServiceResponse create_incident_service(body)
 
 Creates a new incident service.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -54,12 +55,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling IncidentServicesApi->create_incident_service: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**IncidentServiceCreateRequest**](IncidentServiceCreateRequest.md)| Incident Service Payload. |
+| Name     | Type                                                                | Description               | Notes |
+| -------- | ------------------------------------------------------------------- | ------------------------- | ----- |
+| **body** | [**IncidentServiceCreateRequest**](IncidentServiceCreateRequest.md) | Incident Service Payload. |
 
 ### Return type
 
@@ -71,32 +71,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | CREATED |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| Status code | Description  | Response headers |
+| ----------- | ------------ | ---------------- |
+| **201**     | CREATED      | -                |
+| **400**     | Bad Request  | -                |
+| **401**     | Unauthorized | -                |
+| **403**     | Forbidden    | -                |
+| **404**     | Not Found    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_incident_service**
+
 > delete_incident_service(service_id)
 
 Deletes an existing incident service.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -122,12 +123,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling IncidentServicesApi->delete_incident_service: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_id** | **str**| The ID of the incident service. |
+| Name           | Type    | Description                     | Notes |
+| -------------- | ------- | ------------------------------- | ----- |
+| **service_id** | **str** | The ID of the incident service. |
 
 ### Return type
 
@@ -139,23 +139,23 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| Status code | Description  | Response headers |
+| ----------- | ------------ | ---------------- |
+| **204**     | OK           | -                |
+| **400**     | Bad Request  | -                |
+| **401**     | Unauthorized | -                |
+| **403**     | Forbidden    | -                |
+| **404**     | Not Found    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_incident_service**
+
 > IncidentServiceResponse get_incident_service(service_id)
 
 Get details of an incident service. If the `include[users]` query parameter is provided,
@@ -163,9 +163,10 @@ the included attribute will contain the users related to these incident services
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -202,13 +203,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling IncidentServicesApi->get_incident_service: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_id** | **str**| The ID of the incident service. |
- **include** | **IncidentRelatedObject**| Specifies which types of related objects should be included in the response. | [optional]
+| Name           | Type                      | Description                                                                  | Notes      |
+| -------------- | ------------------------- | ---------------------------------------------------------------------------- | ---------- |
+| **service_id** | **str**                   | The ID of the incident service.                                              |
+| **include**    | **IncidentRelatedObject** | Specifies which types of related objects should be included in the response. | [optional] |
 
 ### Return type
 
@@ -220,32 +220,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| Status code | Description  | Response headers |
+| ----------- | ------------ | ---------------- |
+| **200**     | OK           | -                |
+| **400**     | Bad Request  | -                |
+| **401**     | Unauthorized | -                |
+| **403**     | Forbidden    | -                |
+| **404**     | Not Found    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_incident_services**
+
 > IncidentServicesResponse list_incident_services()
 
 Get all incident services uploaded for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident services.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -276,15 +277,14 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling IncidentServicesApi->list_incident_services: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **include** | **IncidentRelatedObject**| Specifies which types of related objects should be included in the response. | [optional]
- **page_size** | **int**| Size for a given page. | [optional] if omitted the server will use the default value of 10
- **page_offset** | **int**| Specific offset to use as the beginning of the returned page. | [optional] if omitted the server will use the default value of 0
- **filter** | **str**| A search query that filters services by name. | [optional]
+| Name            | Type                      | Description                                                                  | Notes                                                             |
+| --------------- | ------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| **include**     | **IncidentRelatedObject** | Specifies which types of related objects should be included in the response. | [optional]                                                        |
+| **page_size**   | **int**                   | Size for a given page.                                                       | [optional] if omitted the server will use the default value of 10 |
+| **page_offset** | **int**                   | Specific offset to use as the beginning of the returned page.                | [optional] if omitted the server will use the default value of 0  |
+| **filter**      | **str**                   | A search query that filters services by name.                                | [optional]                                                        |
 
 ### Return type
 
@@ -296,32 +296,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| Status code | Description  | Response headers |
+| ----------- | ------------ | ---------------- |
+| **200**     | OK           | -                |
+| **400**     | Bad Request  | -                |
+| **401**     | Unauthorized | -                |
+| **403**     | Forbidden    | -                |
+| **404**     | Not Found    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_incident_service**
+
 > IncidentServiceResponse update_incident_service(service_id, body)
 
 Updates an existing incident service. Only provide the attributes which should be updated as this request is a partial update.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -357,13 +358,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling IncidentServicesApi->update_incident_service: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **service_id** | **str**| The ID of the incident service. |
- **body** | [**IncidentServiceUpdateRequest**](IncidentServiceUpdateRequest.md)| Incident Service Payload. |
+| Name           | Type                                                                | Description                     | Notes |
+| -------------- | ------------------------------------------------------------------- | ------------------------------- | ----- |
+| **service_id** | **str**                                                             | The ID of the incident service. |
+| **body**       | [**IncidentServiceUpdateRequest**](IncidentServiceUpdateRequest.md) | Incident Service Payload.       |
 
 ### Return type
 
@@ -375,19 +375,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| Status code | Description  | Response headers |
+| ----------- | ------------ | ---------------- |
+| **200**     | OK           | -                |
+| **400**     | Bad Request  | -                |
+| **401**     | Unauthorized | -                |
+| **403**     | Forbidden    | -                |
+| **404**     | Not Found    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

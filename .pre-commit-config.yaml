@@ -7,3 +7,29 @@ repos:
     entry: Unstage generated files with 'git reset --' command
     files: '^datadog_api_client/v.*'
     verbose: true
+  - id: generate
+    name: Generate
+    language: node
+    entry: make
+    files: "^.generator/.*"
+    pass_filenames: false
+  - id: docs
+    name: Format documentation
+    stages: [manual]
+    language: node
+    language_version: 14.12.0
+    entry: prettier --write --list-different --ignore-unknown
+    "types": [text]
+    files: '^docs/'
+    args: []
+    require_serial: false
+    additional_dependencies:
+      # When updating the version of prettier, make sure to check the  pre-commit file
+      # And keep the `entry` here up to date https://github.com/pre-commit/mirrors-prettier/blob/master/.pre-commit-hooks.yaml
+      - prettier@2.2.1
+- repo: https://github.com/psf/black
+  rev: 21.9b0
+  hooks:
+  - id: black
+    stages: [manual]
+    entry: black --fast --line-length 120

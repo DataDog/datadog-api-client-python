@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_child_org**](OrganizationsApi.md#create_child_org) | **POST** /api/v1/org | Create a child organization
-[**get_org**](OrganizationsApi.md#get_org) | **GET** /api/v1/org/{public_id} | Get organization information
-[**list_orgs**](OrganizationsApi.md#list_orgs) | **GET** /api/v1/org | List your managed organizations
-[**update_org**](OrganizationsApi.md#update_org) | **PUT** /api/v1/org/{public_id} | Update your organization
-[**upload_id_p_for_org**](OrganizationsApi.md#upload_id_p_for_org) | **POST** /api/v1/org/{public_id}/idp_metadata | Upload IdP metadata
-
+| Method                                                             | HTTP request                                  | Description                     |
+| ------------------------------------------------------------------ | --------------------------------------------- | ------------------------------- |
+| [**create_child_org**](OrganizationsApi.md#create_child_org)       | **POST** /api/v1/org                          | Create a child organization     |
+| [**get_org**](OrganizationsApi.md#get_org)                         | **GET** /api/v1/org/{public_id}               | Get organization information    |
+| [**list_orgs**](OrganizationsApi.md#list_orgs)                     | **GET** /api/v1/org                           | List your managed organizations |
+| [**update_org**](OrganizationsApi.md#update_org)                   | **PUT** /api/v1/org/{public_id}               | Update your organization        |
+| [**upload_id_p_for_org**](OrganizationsApi.md#upload_id_p_for_org) | **POST** /api/v1/org/{public_id}/idp_metadata | Upload IdP metadata             |
 
 # **create_child_org**
+
 > OrganizationCreateResponse create_child_org(body)
 
 Create a child organization.
@@ -27,8 +27,9 @@ by using the `org.public_id`, `api_key.key`, and
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -62,12 +63,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling OrganizationsApi->create_child_org: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**OrganizationCreateBody**](OrganizationCreateBody.md)| Organization object that needs to be created |
+| Name     | Type                                                    | Description                                  | Notes |
+| -------- | ------------------------------------------------------- | -------------------------------------------- | ----- |
+| **body** | [**OrganizationCreateBody**](OrganizationCreateBody.md) | Organization object that needs to be created |
 
 ### Return type
 
@@ -79,29 +79,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_org**
+
 > OrganizationResponse get_org(public_id)
 
 Get organization information.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -127,12 +128,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling OrganizationsApi->get_org: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **public_id** | **str**| The &#x60;public_id&#x60; of the organization you are operating within. |
+| Name          | Type    | Description                                                             | Notes |
+| ------------- | ------- | ----------------------------------------------------------------------- | ----- |
+| **public_id** | **str** | The &#x60;public_id&#x60; of the organization you are operating within. |
 
 ### Return type
 
@@ -144,29 +144,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_orgs**
+
 > OrganizationListResponse list_orgs()
 
 List your managed organizations.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -191,8 +192,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling OrganizationsApi->list_orgs: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -205,28 +206,29 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_org**
+
 > OrganizationResponse update_org(public_id, body)
 
 Update your organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -275,7 +277,7 @@ with ApiClient(configuration) as api_client:
         subscription=OrganizationSubscription(
             type="type_example",
         ),
-    )  # Organization | 
+    )  # Organization |
 
     # example passing only required values which don't have defaults set
     try:
@@ -286,13 +288,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling OrganizationsApi->update_org: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **public_id** | **str**| The &#x60;public_id&#x60; of the organization you are operating within. |
- **body** | [**Organization**](Organization.md)|  |
+| Name          | Type                                | Description                                                             | Notes |
+| ------------- | ----------------------------------- | ----------------------------------------------------------------------- | ----- |
+| **public_id** | **str**                             | The &#x60;public_id&#x60; of the organization you are operating within. |
+| **body**      | [**Organization**](Organization.md) |                                                                         |
 
 ### Return type
 
@@ -304,34 +305,35 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **upload_id_p_for_org**
+
 > IdpResponse upload_id_p_for_org(public_id, idp_file)
 
 There are a couple of options for updating the Identity Provider (IdP)
 metadata from your SAML IdP.
 
-* **Multipart Form-Data**: Post the IdP metadata file using a form post.
+- **Multipart Form-Data**: Post the IdP metadata file using a form post.
 
-* **XML Body:** Post the IdP metadata file as the body of the request.
+- **XML Body:** Post the IdP metadata file as the body of the request.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -358,13 +360,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling OrganizationsApi->upload_id_p_for_org: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **public_id** | **str**| The &#x60;public_id&#x60; of the organization you are operating with |
- **idp_file** | **file_type**| The path to the XML metadata file you wish to upload. |
+| Name          | Type          | Description                                                          | Notes |
+| ------------- | ------------- | -------------------------------------------------------------------- | ----- |
+| **public_id** | **str**       | The &#x60;public_id&#x60; of the organization you are operating with |
+| **idp_file**  | **file_type** | The path to the XML metadata file you wish to upload.                |
 
 ### Return type
 
@@ -376,18 +377,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**415** | Unsupported Media Type |  -  |
+| Status code | Description            | Response headers |
+| ----------- | ---------------------- | ---------------- |
+| **200**     | OK                     | -                |
+| **400**     | Bad Request            | -                |
+| **403**     | Forbidden              | -                |
+| **415**     | Unsupported Media Type | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

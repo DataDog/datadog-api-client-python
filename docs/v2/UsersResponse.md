@@ -3,12 +3,11 @@
 Response containing information about multiple users.
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | [**[User]**](User.md) | Array of returned users. | [optional] 
-**included** | [**[UserResponseIncludedItem]**](UserResponseIncludedItem.md) | Array of objects related to the users. | [optional] 
-**meta** | [**ResponseMetaAttributes**](ResponseMetaAttributes.md) |  | [optional] 
+
+| Name         | Type                                                          | Description                            | Notes      |
+| ------------ | ------------------------------------------------------------- | -------------------------------------- | ---------- |
+| **data**     | [**[User]**](User.md)                                         | Array of returned users.               | [optional] |
+| **included** | [**[UserResponseIncludedItem]**](UserResponseIncludedItem.md) | Array of objects related to the users. | [optional] |
+| **meta**     | [**ResponseMetaAttributes**](ResponseMetaAttributes.md)       |                                        | [optional] |
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
-
-

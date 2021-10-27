@@ -2,25 +2,26 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_logs_index**](LogsIndexesApi.md#create_logs_index) | **POST** /api/v1/logs/config/indexes | Create an index
-[**get_logs_index**](LogsIndexesApi.md#get_logs_index) | **GET** /api/v1/logs/config/indexes/{name} | Get an index
-[**get_logs_index_order**](LogsIndexesApi.md#get_logs_index_order) | **GET** /api/v1/logs/config/index-order | Get indexes order
-[**list_log_indexes**](LogsIndexesApi.md#list_log_indexes) | **GET** /api/v1/logs/config/indexes | Get all indexes
-[**update_logs_index**](LogsIndexesApi.md#update_logs_index) | **PUT** /api/v1/logs/config/indexes/{name} | Update an index
-[**update_logs_index_order**](LogsIndexesApi.md#update_logs_index_order) | **PUT** /api/v1/logs/config/index-order | Update indexes order
-
+| Method                                                                   | HTTP request                               | Description          |
+| ------------------------------------------------------------------------ | ------------------------------------------ | -------------------- |
+| [**create_logs_index**](LogsIndexesApi.md#create_logs_index)             | **POST** /api/v1/logs/config/indexes       | Create an index      |
+| [**get_logs_index**](LogsIndexesApi.md#get_logs_index)                   | **GET** /api/v1/logs/config/indexes/{name} | Get an index         |
+| [**get_logs_index_order**](LogsIndexesApi.md#get_logs_index_order)       | **GET** /api/v1/logs/config/index-order    | Get indexes order    |
+| [**list_log_indexes**](LogsIndexesApi.md#list_log_indexes)               | **GET** /api/v1/logs/config/indexes        | Get all indexes      |
+| [**update_logs_index**](LogsIndexesApi.md#update_logs_index)             | **PUT** /api/v1/logs/config/indexes/{name} | Update an index      |
+| [**update_logs_index_order**](LogsIndexesApi.md#update_logs_index_order) | **PUT** /api/v1/logs/config/index-order    | Update indexes order |
 
 # **create_logs_index**
+
 > LogsIndex create_logs_index(body)
 
 Creates a new index. Returns the Index object passed in the request body when the request is successful.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -63,12 +64,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->create_logs_index: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**LogsIndex**](LogsIndex.md)| Object containing the new index. |
+| Name     | Type                          | Description                      | Notes |
+| -------- | ----------------------------- | -------------------------------- | ----- |
+| **body** | [**LogsIndex**](LogsIndex.md) | Object containing the new index. |
 
 ### Return type
 
@@ -80,29 +80,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Invalid Parameter Error |  -  |
-**403** | Forbidden |  -  |
+| Status code | Description             | Response headers |
+| ----------- | ----------------------- | ---------------- |
+| **200**     | OK                      | -                |
+| **400**     | Invalid Parameter Error | -                |
+| **403**     | Forbidden               | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_logs_index**
+
 > LogsIndex get_logs_index(name)
 
 Get one log index from your organization. This endpoint takes no JSON arguments.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -128,12 +129,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->get_logs_index: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **str**| Name of the log index. |
+| Name     | Type    | Description            | Notes |
+| -------- | ------- | ---------------------- | ----- |
+| **name** | **str** | Name of the log index. |
 
 ### Return type
 
@@ -145,29 +145,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not Found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_logs_index_order**
+
 > LogsIndexesOrder get_logs_index_order()
 
 Get the current order of your log indexes. This endpoint takes no JSON arguments.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -192,8 +193,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->get_logs_index_order: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -206,20 +207,20 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_log_indexes**
+
 > LogsIndexListResponse list_log_indexes()
 
 The Index object describes the configuration of a log index.
@@ -227,8 +228,9 @@ This endpoint returns an array of the `LogIndex` objects of your organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -253,8 +255,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->list_log_indexes: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -267,20 +269,20 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_index**
+
 > LogsIndex update_logs_index(name, body)
 
 Update an index as identified by its name.
@@ -291,8 +293,9 @@ your current configuration with the new one sent to your Datadog organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -336,13 +339,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->update_logs_index: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **str**| Name of the log index. |
- **body** | [**LogsIndexUpdateRequest**](LogsIndexUpdateRequest.md)| Object containing the new &#x60;LogsIndexUpdateRequest&#x60;. |
+| Name     | Type                                                    | Description                                                   | Notes |
+| -------- | ------------------------------------------------------- | ------------------------------------------------------------- | ----- |
+| **name** | **str**                                                 | Name of the log index.                                        |
+| **body** | [**LogsIndexUpdateRequest**](LogsIndexUpdateRequest.md) | Object containing the new &#x60;LogsIndexUpdateRequest&#x60;. |
 
 ### Return type
 
@@ -354,22 +356,22 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Invalid Parameter Error |  -  |
-**403** | Forbidden |  -  |
-**429** | Too Many Requests |  -  |
+| Status code | Description             | Response headers |
+| ----------- | ----------------------- | ---------------- |
+| **200**     | OK                      | -                |
+| **400**     | Invalid Parameter Error | -                |
+| **403**     | Forbidden               | -                |
+| **429**     | Too Many Requests       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_index_order**
+
 > LogsIndexesOrder update_logs_index_order(body)
 
 This endpoint updates the index order of your organization.
@@ -377,8 +379,9 @@ It returns the index order object passed in the request body when the request is
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -406,12 +409,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsIndexesApi->update_logs_index_order: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**LogsIndexesOrder**](LogsIndexesOrder.md)| Object containing the new ordered list of index names |
+| Name     | Type                                        | Description                                           | Notes |
+| -------- | ------------------------------------------- | ----------------------------------------------------- | ----- |
+| **body** | [**LogsIndexesOrder**](LogsIndexesOrder.md) | Object containing the new ordered list of index names |
 
 ### Return type
 
@@ -423,17 +425,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

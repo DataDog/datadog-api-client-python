@@ -2,23 +2,24 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_gcp_integration**](GCPIntegrationApi.md#create_gcp_integration) | **POST** /api/v1/integration/gcp | Create a GCP integration
-[**delete_gcp_integration**](GCPIntegrationApi.md#delete_gcp_integration) | **DELETE** /api/v1/integration/gcp | Delete a GCP integration
-[**list_gcp_integration**](GCPIntegrationApi.md#list_gcp_integration) | **GET** /api/v1/integration/gcp | List all GCP integrations
-[**update_gcp_integration**](GCPIntegrationApi.md#update_gcp_integration) | **PUT** /api/v1/integration/gcp | Update a GCP integration
-
+| Method                                                                    | HTTP request                       | Description               |
+| ------------------------------------------------------------------------- | ---------------------------------- | ------------------------- |
+| [**create_gcp_integration**](GCPIntegrationApi.md#create_gcp_integration) | **POST** /api/v1/integration/gcp   | Create a GCP integration  |
+| [**delete_gcp_integration**](GCPIntegrationApi.md#delete_gcp_integration) | **DELETE** /api/v1/integration/gcp | Delete a GCP integration  |
+| [**list_gcp_integration**](GCPIntegrationApi.md#list_gcp_integration)     | **GET** /api/v1/integration/gcp    | List all GCP integrations |
+| [**update_gcp_integration**](GCPIntegrationApi.md#update_gcp_integration) | **PUT** /api/v1/integration/gcp    | Update a GCP integration  |
 
 # **create_gcp_integration**
+
 > dict create_gcp_integration(body)
 
 Create a Datadog-GCP integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -58,12 +59,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling GCPIntegrationApi->create_gcp_integration: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**GCPAccount**](GCPAccount.md)| Create a Datadog-GCP integration. |
+| Name     | Type                            | Description                       | Notes |
+| -------- | ------------------------------- | --------------------------------- | ----- |
+| **body** | [**GCPAccount**](GCPAccount.md) | Create a Datadog-GCP integration. |
 
 ### Return type
 
@@ -75,29 +75,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_gcp_integration**
+
 > dict delete_gcp_integration(body)
 
 Delete a given Datadog-GCP integration.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -137,12 +138,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling GCPIntegrationApi->delete_gcp_integration: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**GCPAccount**](GCPAccount.md)| Delete a given Datadog-GCP integration. |
+| Name     | Type                            | Description                             | Notes |
+| -------- | ------------------------------- | --------------------------------------- | ----- |
+| **body** | [**GCPAccount**](GCPAccount.md) | Delete a given Datadog-GCP integration. |
 
 ### Return type
 
@@ -154,29 +154,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_gcp_integration**
+
 > GCPAccountListResponse list_gcp_integration()
 
 List all Datadog-GCP integrations configured in your Datadog account.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -201,8 +202,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling GCPIntegrationApi->list_gcp_integration: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -215,21 +216,21 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_gcp_integration**
+
 > dict update_gcp_integration(body)
 
 Update a Datadog-GCP integrations host_filters and/or auto-mute.
@@ -239,8 +240,9 @@ The unspecified fields will keep their original values.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -280,12 +282,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling GCPIntegrationApi->update_gcp_integration: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**GCPAccount**](GCPAccount.md)| Update a Datadog-GCP integration. |
+| Name     | Type                            | Description                       | Notes |
+| -------- | ------------------------------- | --------------------------------- | ----- |
+| **body** | [**GCPAccount**](GCPAccount.md) | Update a Datadog-GCP integration. |
 
 ### Return type
 
@@ -297,17 +298,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_user**](UsersApi.md#create_user) | **POST** /api/v1/user | Create a user
-[**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v1/user/{user_handle} | Disable a user
-[**get_user**](UsersApi.md#get_user) | **GET** /api/v1/user/{user_handle} | Get user details
-[**list_users**](UsersApi.md#list_users) | **GET** /api/v1/user | List all users
-[**update_user**](UsersApi.md#update_user) | **PUT** /api/v1/user/{user_handle} | Update a user
-
+| Method                                       | HTTP request                          | Description      |
+| -------------------------------------------- | ------------------------------------- | ---------------- |
+| [**create_user**](UsersApi.md#create_user)   | **POST** /api/v1/user                 | Create a user    |
+| [**disable_user**](UsersApi.md#disable_user) | **DELETE** /api/v1/user/{user_handle} | Disable a user   |
+| [**get_user**](UsersApi.md#get_user)         | **GET** /api/v1/user/{user_handle}    | Get user details |
+| [**list_users**](UsersApi.md#list_users)     | **GET** /api/v1/user                  | List all users   |
+| [**update_user**](UsersApi.md#update_user)   | **PUT** /api/v1/user/{user_handle}    | Update a user    |
 
 # **create_user**
+
 > UserResponse create_user(body)
 
 Create a user for your organization.
@@ -21,9 +21,10 @@ if application keys belong to administrators.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -55,12 +56,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->create_user: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**User**](User.md)| User object that needs to be created. |
+| Name     | Type                | Description                           | Notes |
+| -------- | ------------------- | ------------------------------------- | ----- |
+| **body** | [**User**](User.md) | User object that needs to be created. |
 
 ### Return type
 
@@ -72,22 +72,22 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | User created |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
-**409** | Conflict |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | User created         | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
+| **409**     | Conflict             | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **disable_user**
+
 > UserDisableResponse disable_user(user_handle)
 
 Delete a user from an organization.
@@ -97,8 +97,9 @@ administrators.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -124,12 +125,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->disable_user: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_handle** | **str**| The handle of the user. |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **user_handle** | **str** | The handle of the user. |
 
 ### Return type
 
@@ -141,30 +141,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | User disabled |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
-**404** | Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | User disabled        | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Not Found            | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_user**
+
 > UserResponse get_user(user_handle)
 
 Get a user's details.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -190,12 +191,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->get_user: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_handle** | **str**| The ID of the user. |
+| Name            | Type    | Description         | Notes |
+| --------------- | ------- | ------------------- | ----- |
+| **user_handle** | **str** | The ID of the user. |
 
 ### Return type
 
@@ -207,30 +207,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK for get user |  -  |
-**403** | Authentication error |  -  |
-**404** | Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK for get user      | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Not Found            | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_users**
+
 > UserListResponse list_users()
 
 List all users for your organization.
 
 ### Example
 
-* OAuth Authentication (AuthZ):
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -255,8 +256,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->list_users: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -269,20 +270,20 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Authentication error |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **403**     | Authentication error | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_user**
+
 > UserResponse update_user(user_handle, body)
 
 Update a user information.
@@ -291,8 +292,9 @@ Update a user information.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -325,13 +327,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling UsersApi->update_user: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_handle** | **str**| The ID of the user. |
- **body** | [**User**](User.md)| Description of the update. |
+| Name            | Type                | Description                | Notes |
+| --------------- | ------------------- | -------------------------- | ----- |
+| **user_handle** | **str**             | The ID of the user.        |
+| **body**        | [**User**](User.md) | Description of the update. |
 
 ### Return type
 
@@ -343,18 +344,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | User updated |  -  |
-**400** | Bad Request |  -  |
-**403** | Authentication error |  -  |
-**404** | Not Found |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | User updated         | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Authentication error | -                |
+| **404**     | Not Found            | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-

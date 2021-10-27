@@ -2,29 +2,30 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**add_read_role_to_archive**](LogsArchivesApi.md#add_read_role_to_archive) | **POST** /api/v2/logs/config/archives/{archive_id}/readers | Grant role to an archive
-[**create_logs_archive**](LogsArchivesApi.md#create_logs_archive) | **POST** /api/v2/logs/config/archives | Create an archive
-[**delete_logs_archive**](LogsArchivesApi.md#delete_logs_archive) | **DELETE** /api/v2/logs/config/archives/{archive_id} | Delete an archive
-[**get_logs_archive**](LogsArchivesApi.md#get_logs_archive) | **GET** /api/v2/logs/config/archives/{archive_id} | Get an archive
-[**get_logs_archive_order**](LogsArchivesApi.md#get_logs_archive_order) | **GET** /api/v2/logs/config/archive-order | Get archive order
-[**list_archive_read_roles**](LogsArchivesApi.md#list_archive_read_roles) | **GET** /api/v2/logs/config/archives/{archive_id}/readers | List read roles for an archive
-[**list_logs_archives**](LogsArchivesApi.md#list_logs_archives) | **GET** /api/v2/logs/config/archives | Get all archives
-[**remove_role_from_archive**](LogsArchivesApi.md#remove_role_from_archive) | **DELETE** /api/v2/logs/config/archives/{archive_id}/readers | Revoke role from an archive
-[**update_logs_archive**](LogsArchivesApi.md#update_logs_archive) | **PUT** /api/v2/logs/config/archives/{archive_id} | Update an archive
-[**update_logs_archive_order**](LogsArchivesApi.md#update_logs_archive_order) | **PUT** /api/v2/logs/config/archive-order | Update archive order
-
+| Method                                                                        | HTTP request                                                 | Description                    |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
+| [**add_read_role_to_archive**](LogsArchivesApi.md#add_read_role_to_archive)   | **POST** /api/v2/logs/config/archives/{archive_id}/readers   | Grant role to an archive       |
+| [**create_logs_archive**](LogsArchivesApi.md#create_logs_archive)             | **POST** /api/v2/logs/config/archives                        | Create an archive              |
+| [**delete_logs_archive**](LogsArchivesApi.md#delete_logs_archive)             | **DELETE** /api/v2/logs/config/archives/{archive_id}         | Delete an archive              |
+| [**get_logs_archive**](LogsArchivesApi.md#get_logs_archive)                   | **GET** /api/v2/logs/config/archives/{archive_id}            | Get an archive                 |
+| [**get_logs_archive_order**](LogsArchivesApi.md#get_logs_archive_order)       | **GET** /api/v2/logs/config/archive-order                    | Get archive order              |
+| [**list_archive_read_roles**](LogsArchivesApi.md#list_archive_read_roles)     | **GET** /api/v2/logs/config/archives/{archive_id}/readers    | List read roles for an archive |
+| [**list_logs_archives**](LogsArchivesApi.md#list_logs_archives)               | **GET** /api/v2/logs/config/archives                         | Get all archives               |
+| [**remove_role_from_archive**](LogsArchivesApi.md#remove_role_from_archive)   | **DELETE** /api/v2/logs/config/archives/{archive_id}/readers | Revoke role from an archive    |
+| [**update_logs_archive**](LogsArchivesApi.md#update_logs_archive)             | **PUT** /api/v2/logs/config/archives/{archive_id}            | Update an archive              |
+| [**update_logs_archive_order**](LogsArchivesApi.md#update_logs_archive_order) | **PUT** /api/v2/logs/config/archive-order                    | Update archive order           |
 
 # **add_read_role_to_archive**
+
 > add_read_role_to_archive(archive_id, body)
 
 Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -45,7 +46,7 @@ with ApiClient(configuration) as api_client:
             id="3653d3c6-0c75-11ea-ad28-fb5701eabc7d",
             type=RolesType("roles"),
         ),
-    )  # RelationshipToRole | 
+    )  # RelationshipToRole |
 
     # example passing only required values which don't have defaults set
     try:
@@ -55,13 +56,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->add_read_role_to_archive: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **archive_id** | **str**| The ID of the archive. |
- **body** | [**RelationshipToRole**](RelationshipToRole.md)|  |
+| Name           | Type                                            | Description            | Notes |
+| -------------- | ----------------------------------------------- | ---------------------- | ----- |
+| **archive_id** | **str**                                         | The ID of the archive. |
+| **body**       | [**RelationshipToRole**](RelationshipToRole.md) |                        |
 
 ### Return type
 
@@ -73,30 +73,31 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not found |  -  |
+| ----------- | ----------- | ---------------- |
+| **204**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **create_logs_archive**
+
 > LogsArchive create_logs_archive(body)
 
 Create an archive in your organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -133,12 +134,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->create_logs_archive: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**LogsArchiveCreateRequest**](LogsArchiveCreateRequest.md)| The definition of the new archive. |
+| Name     | Type                                                        | Description                        | Notes |
+| -------- | ----------------------------------------------------------- | ---------------------------------- | ----- |
+| **body** | [**LogsArchiveCreateRequest**](LogsArchiveCreateRequest.md) | The definition of the new archive. |
 
 ### Return type
 
@@ -150,29 +150,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **delete_logs_archive**
+
 > delete_logs_archive(archive_id)
 
 Delete a given archive from your organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -197,12 +198,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->delete_logs_archive: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **archive_id** | **str**| The ID of the archive. |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **archive_id** | **str** | The ID of the archive. |
 
 ### Return type
 
@@ -214,30 +214,31 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not found |  -  |
+| ----------- | ----------- | ---------------- |
+| **204**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_logs_archive**
+
 > LogsArchive get_logs_archive(archive_id)
 
 Get a specific archive from your organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -263,12 +264,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->get_logs_archive: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **archive_id** | **str**| The ID of the archive. |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **archive_id** | **str** | The ID of the archive. |
 
 ### Return type
 
@@ -280,22 +280,22 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **get_logs_archive_order**
+
 > LogsArchiveOrder get_logs_archive_order()
 
 Get the current order of your archives.
@@ -303,8 +303,9 @@ This endpoint takes no JSON arguments.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -329,8 +330,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->get_logs_archive_order: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -343,28 +344,29 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_archive_read_roles**
+
 > RolesResponse list_archive_read_roles(archive_id)
 
 Returns all read roles a given archive is restricted to.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -390,12 +392,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->list_archive_read_roles: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **archive_id** | **str**| The ID of the archive. |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **archive_id** | **str** | The ID of the archive. |
 
 ### Return type
 
@@ -407,30 +408,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **list_logs_archives**
+
 > LogsArchives list_logs_archives()
 
 Get the list of configured logs archives with their definitions.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -455,8 +457,8 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->list_logs_archives: %s\n" % e)
 ```
 
-
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -469,28 +471,29 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**403** | Forbidden |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **403**     | Forbidden   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **remove_role_from_archive**
+
 > remove_role_from_archive(archive_id, body)
 
 Removes a role from an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -511,7 +514,7 @@ with ApiClient(configuration) as api_client:
             id="3653d3c6-0c75-11ea-ad28-fb5701eabc7d",
             type=RolesType("roles"),
         ),
-    )  # RelationshipToRole | 
+    )  # RelationshipToRole |
 
     # example passing only required values which don't have defaults set
     try:
@@ -521,13 +524,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->remove_role_from_archive: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **archive_id** | **str**| The ID of the archive. |
- **body** | [**RelationshipToRole**](RelationshipToRole.md)|  |
+| Name           | Type                                            | Description            | Notes |
+| -------------- | ----------------------------------------------- | ---------------------- | ----- |
+| **archive_id** | **str**                                         | The ID of the archive. |
+| **body**       | [**RelationshipToRole**](RelationshipToRole.md) |                        |
 
 ### Return type
 
@@ -539,22 +541,22 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not found |  -  |
+| ----------- | ----------- | ---------------- |
+| **204**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_archive**
+
 > LogsArchive update_logs_archive(archive_id, body)
 
 Update a given archive configuration.
@@ -564,8 +566,9 @@ your current configuration with the new one sent to your Datadog organization.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -603,13 +606,12 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->update_logs_archive: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **archive_id** | **str**| The ID of the archive. |
- **body** | [**LogsArchiveCreateRequest**](LogsArchiveCreateRequest.md)| New definition of the archive. |
+| Name           | Type                                                        | Description                    | Notes |
+| -------------- | ----------------------------------------------------------- | ------------------------------ | ----- |
+| **archive_id** | **str**                                                     | The ID of the archive.         |
+| **body**       | [**LogsArchiveCreateRequest**](LogsArchiveCreateRequest.md) | New definition of the archive. |
 
 ### Return type
 
@@ -621,22 +623,22 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**404** | Not found |  -  |
+| ----------- | ----------- | ---------------- |
+| **200**     | OK          | -                |
+| **400**     | Bad Request | -                |
+| **403**     | Forbidden   | -                |
+| **404**     | Not found   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **update_logs_archive_order**
+
 > LogsArchiveOrder update_logs_archive_order(body)
 
 Update the order of your archives. Since logs are processed sequentially, reordering an archive may change
@@ -647,8 +649,9 @@ with the new one.
 
 ### Example
 
-* Api Key Authentication (apiKeyAuth):
-* Api Key Authentication (appKeyAuth):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
 ```python
 import os
 from dateutil.parser import parse as dateutil_parser
@@ -681,12 +684,11 @@ with ApiClient(configuration) as api_client:
         print("Exception when calling LogsArchivesApi->update_logs_archive_order: %s\n" % e)
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**LogsArchiveOrder**](LogsArchiveOrder.md)| An object containing the new ordered list of archive IDs. |
+| Name     | Type                                        | Description                                               | Notes |
+| -------- | ------------------------------------------- | --------------------------------------------------------- | ----- |
+| **body** | [**LogsArchiveOrder**](LogsArchiveOrder.md) | An object containing the new ordered list of archive IDs. |
 
 ### Return type
 
@@ -698,18 +700,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-**422** | Unprocessable Entity |  -  |
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | OK                   | -                |
+| **400**     | Bad Request          | -                |
+| **403**     | Forbidden            | -                |
+| **422**     | Unprocessable Entity | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
