@@ -179,11 +179,11 @@ class Dashboard(ModelNormal):
             created_at (datetime): Creation date of the dashboard.. [optional]  # noqa: E501
             description (str, none_type): Description of the dashboard.. [optional]  # noqa: E501
             id (str): ID of the dashboard.. [optional]  # noqa: E501
-            is_read_only (bool): Whether this dashboard is read-only. If True, only the author and admins can make changes to it.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            is_read_only (bool): Whether this dashboard is read-only. If True, only the author and admins can make changes to it. Prefer using `restricted_roles` to manage write authorization.. [optional] if omitted the server will use the default value of False  # noqa: E501
             modified_at (datetime): Modification date of the dashboard.. [optional]  # noqa: E501
             notify_list ([str], none_type): List of handles of users to notify when changes are made to this dashboard.. [optional]  # noqa: E501
             reflow_type (DashboardReflowType): [optional]  # noqa: E501
-            restricted_roles ([str]): A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard. Overrides the `is_read_only` property if both are present. **This feature is currently in beta.**. [optional]  # noqa: E501
+            restricted_roles ([str]): A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard.. [optional]  # noqa: E501
             template_variable_presets ([DashboardTemplateVariablePreset], none_type): Array of template variables saved views.. [optional]  # noqa: E501
             template_variables ([DashboardTemplateVariable], none_type): List of template variables for this dashboard.. [optional]  # noqa: E501
             url (str): The URL of the dashboard.. [optional]  # noqa: E501
