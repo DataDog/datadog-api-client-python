@@ -70,7 +70,9 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
         return {
             "category": (SLOCorrectionCategory,),  # noqa: E501
             "description": (str,),  # noqa: E501
+            "duration": (int,),  # noqa: E501
             "end": (int,),  # noqa: E501
+            "rrule": (str,),  # noqa: E501
             "start": (int,),  # noqa: E501
             "timezone": (str,),  # noqa: E501
         }
@@ -80,7 +82,9 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
     attribute_map = {
         "category": "category",  # noqa: E501
         "description": "description",  # noqa: E501
+        "duration": "duration",  # noqa: E501
         "end": "end",  # noqa: E501
+        "rrule": "rrule",  # noqa: E501
         "start": "start",  # noqa: E501
         "timezone": "timezone",  # noqa: E501
     }
@@ -126,7 +130,9 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             category (SLOCorrectionCategory): [optional]  # noqa: E501
             description (str): Description of the correction being made.. [optional]  # noqa: E501
+            duration (int): Length of time (in seconds) for a specified `rrule` recurring SLO correction.. [optional]  # noqa: E501
             end (int): Ending time of the correction in epoch seconds.. [optional]  # noqa: E501
+            rrule (str): Recurrence rules as defined in the iCalendar RFC 5545.. [optional]  # noqa: E501
             start (int): Starting time of the correction in epoch seconds.. [optional]  # noqa: E501
             timezone (str): The timezone to display in the UI for the correction times (defaults to \"UTC\").. [optional]  # noqa: E501
         """
