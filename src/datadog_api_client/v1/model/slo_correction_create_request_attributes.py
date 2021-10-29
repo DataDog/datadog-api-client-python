@@ -69,10 +69,12 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         lazy_import()
         return {
             "category": (SLOCorrectionCategory,),  # noqa: E501
-            "end": (int,),  # noqa: E501
             "slo_id": (str,),  # noqa: E501
             "start": (int,),  # noqa: E501
             "description": (str,),  # noqa: E501
+            "duration": (int,),  # noqa: E501
+            "end": (int,),  # noqa: E501
+            "rrule": (str,),  # noqa: E501
             "timezone": (str,),  # noqa: E501
         }
 
@@ -80,10 +82,12 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
 
     attribute_map = {
         "category": "category",  # noqa: E501
-        "end": "end",  # noqa: E501
         "slo_id": "slo_id",  # noqa: E501
         "start": "start",  # noqa: E501
         "description": "description",  # noqa: E501
+        "duration": "duration",  # noqa: E501
+        "end": "end",  # noqa: E501
+        "rrule": "rrule",  # noqa: E501
         "timezone": "timezone",  # noqa: E501
     }
 
@@ -92,12 +96,11 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
     _composed_schemas = {}
 
     @convert_js_args_to_python_args
-    def __init__(self, category, end, slo_id, start, *args, **kwargs):  # noqa: E501
+    def __init__(self, category, slo_id, start, *args, **kwargs):  # noqa: E501
         """SLOCorrectionCreateRequestAttributes - a model defined in OpenAPI
 
         Args:
             category (SLOCorrectionCategory):
-            end (int): Ending time of the correction in epoch seconds.
             slo_id (str): ID of the SLO that this correction will be applied to.
             start (int): Starting time of the correction in epoch seconds.
 
@@ -133,6 +136,9 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (str): Description of the correction being made.. [optional]  # noqa: E501
+            duration (int): Length of time (in seconds) for a specified `rrule` recurring SLO correction.. [optional]  # noqa: E501
+            end (int): Ending time of the correction in epoch seconds.. [optional]  # noqa: E501
+            rrule (str): Recurrence rules as defined in the iCalendar RFC 5545.. [optional]  # noqa: E501
             timezone (str): The timezone to display in the UI for the correction times (defaults to \"UTC\").. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
@@ -140,13 +146,12 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         self._check_pos_args(args)
 
         self.category = category
-        self.end = end
         self.slo_id = slo_id
         self.start = start
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, category, end, slo_id, start, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, category, slo_id, start, *args, **kwargs):  # noqa: E501
         """Helper creating a new instance from a response."""
 
         self = super(SLOCorrectionCreateRequestAttributes, cls)._from_openapi_data(kwargs)
@@ -154,7 +159,6 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         self._check_pos_args(args)
 
         self.category = category
-        self.end = end
         self.slo_id = slo_id
         self.start = start
         return self

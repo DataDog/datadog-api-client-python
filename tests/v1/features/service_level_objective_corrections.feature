@@ -36,6 +36,14 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 404 SLO Not Found
 
+  Scenario: Create an SLO correction with rrule returns "OK" response
+    Given there is a valid "slo" in the system
+    And operation "CreateSLOCorrection" enabled
+    And new "CreateSLOCorrection" request
+    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "slo_id": "{{ slo.data[0].id }}", "start": {{ timestamp("now") }}, "duration": 3600, "rrule": "RRULE:FREQ=DAILY;INTERVAL=10;COUNT=5", "timezone": "UTC"}, "type": "correction"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip
   Scenario: Delete an SLO correction returns "Not found" response
     Given operation "DeleteSLOCorrection" enabled
@@ -93,7 +101,7 @@ Feature: Service Level Objective Corrections
     Given operation "UpdateSLOCorrection" enabled
     And new "UpdateSLOCorrection" request
     And request contains "slo_correction_id" parameter from "<PATH>"
-    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": null, "end": 1600000000, "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
+    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": null, "duration": 3600, "end": 1600000000, "rrule": "RRULE:FREQ=DAILY;INTERVAL=10;COUNT=5", "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 404 Not Found
 
