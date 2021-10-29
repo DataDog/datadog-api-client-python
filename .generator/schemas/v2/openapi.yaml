@@ -1926,7 +1926,6 @@ components:
       items:
         $ref: '#/components/schemas/LogsAggregateBucketValueTimeseriesPoint'
       type: array
-      x-generate-alias-as-model: true
     LogsAggregateBucketValueTimeseriesPoint:
       description: A timeseries point
       properties:
