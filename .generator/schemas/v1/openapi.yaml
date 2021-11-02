@@ -964,7 +964,7 @@ components:
           - definition:
               requests:
                 fill:
-                  q: system.cpu.user
+                  q: avg:system.cpu.user{*}
               type: hostmap
           items:
             $ref: '#/components/schemas/Widget'
@@ -2867,7 +2867,7 @@ components:
           - definition:
               requests:
                 fill:
-                  q: system.cpu.user
+                  q: avg:system.cpu.user{*}
               type: hostmap
           items:
             $ref: '#/components/schemas/Widget'
