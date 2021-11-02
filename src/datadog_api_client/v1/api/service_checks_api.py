@@ -72,7 +72,7 @@ class ServiceChecksApi(object):
     def submit_service_check(self, body, **kwargs):
         """Submit a Service Check  # noqa: E501
 
-        Submit a list of Service Checks.  **Note**: A valid API key is required.  # noqa: E501
+        Submit a list of Service Checks.  **Notes**: - A valid API key is required. - Service checks can be submitted up to 10 minutes in the past.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
