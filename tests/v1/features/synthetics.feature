@@ -442,13 +442,13 @@ Feature: Synthetics
   @generated @skip
   Scenario: Trigger tests from CI/CD pipelines returns "JSON format is wrong" response
     Given new "TriggerCITests" request
-    And body with value {"tests": [{"allowInsecureCertificates": null, "basicAuth": {"password": "", "username": ""}, "body": null, "bodyType": null, "cookies": null, "deviceIds": ["laptop_large"], "followRedirects": null, "headers": null, "locations": [null], "metadata": {"ci": {"pipeline": null, "provider": null}, "git": {"branch": null, "commit_sha": null}}, "public_id": "aaa-aaa-aaa", "retry": {"count": null, "interval": null}, "startUrl": null, "variables": null}]}
+    And body with value {"tests": [{"allowInsecureCertificates": null, "basicAuth": {"password": "", "username": ""}, "body": null, "bodyType": null, "cookies": null, "deviceIds": ["laptop_large"], "followRedirects": null, "headers": null, "locations": [null], "metadata": {"ci": {"pipeline": {"url": null}, "provider": {"name": null}}, "git": {"branch": null, "commitSha": null}}, "public_id": "aaa-aaa-aaa", "retry": {"count": null, "interval": null}, "startUrl": null, "variables": null}]}
     When the request is sent
     Then the response status is 400 JSON format is wrong
 
   @generated @skip
   Scenario: Trigger tests from CI/CD pipelines returns "OK" response
     Given new "TriggerCITests" request
-    And body with value {"tests": [{"allowInsecureCertificates": null, "basicAuth": {"password": "", "username": ""}, "body": null, "bodyType": null, "cookies": null, "deviceIds": ["laptop_large"], "followRedirects": null, "headers": null, "locations": [null], "metadata": {"ci": {"pipeline": null, "provider": null}, "git": {"branch": null, "commit_sha": null}}, "public_id": "aaa-aaa-aaa", "retry": {"count": null, "interval": null}, "startUrl": null, "variables": null}]}
+    And body with value {"tests": [{"allowInsecureCertificates": null, "basicAuth": {"password": "", "username": ""}, "body": null, "bodyType": null, "cookies": null, "deviceIds": ["laptop_large"], "followRedirects": null, "headers": null, "locations": [null], "metadata": {"ci": {"pipeline": {"url": null}, "provider": {"name": null}}, "git": {"branch": null, "commitSha": null}}, "public_id": "aaa-aaa-aaa", "retry": {"count": null, "interval": null}, "startUrl": null, "variables": null}]}
     When the request is sent
     Then the response status is 200 OK
