@@ -128,7 +128,7 @@ class SyntheticsTestConfig(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            assertions ([SyntheticsAssertion]): Array of assertions used for the test.. [optional] if omitted the server will use the default value of []  # noqa: E501
+            assertions ([SyntheticsAssertion]): Array of assertions used for the test. Required for single API tests.. [optional] if omitted the server will use the default value of []  # noqa: E501
             config_variables ([SyntheticsConfigVariable]): Array of variables used for the test.. [optional]  # noqa: E501
             request (SyntheticsTestRequest): [optional]  # noqa: E501
             variables ([SyntheticsBrowserVariable]): Browser tests only - array of variables used for the test steps.. [optional]  # noqa: E501

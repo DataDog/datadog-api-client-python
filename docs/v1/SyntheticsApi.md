@@ -1778,8 +1778,12 @@ with ApiClient(configuration) as api_client:
                 ],
                 metadata=SyntheticsCIBatchMetadata(
                     ci=SyntheticsCIBatchMetadataCI(
-                        pipeline="pipeline_example",
-                        provider="provider_example",
+                        pipeline=SyntheticsCIBatchMetadataPipeline(
+                            url="url_example",
+                        ),
+                        provider=SyntheticsCIBatchMetadataProvider(
+                            name="name_example",
+                        ),
                     ),
                     git=SyntheticsCIBatchMetadataGit(
                         branch="branch_example",

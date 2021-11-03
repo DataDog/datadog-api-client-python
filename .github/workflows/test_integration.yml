@@ -23,7 +23,7 @@ jobs:
       github.event_name == 'schedule'
     services:
       datadog-agent:
-        image: datadog/agent:latest
+        image: gcr.io/datadoghq/agent:latest
         ports:
           - 8126:8126
         env:
