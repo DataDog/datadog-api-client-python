@@ -4,9 +4,9 @@ Description of the CI provider.
 
 ## Properties
 
-| Name         | Type    | Description              | Notes      |
-| ------------ | ------- | ------------------------ | ---------- |
-| **pipeline** | **str** | Name of the pipeline.    | [optional] |
-| **provider** | **str** | Name of the CI provider. | [optional] |
+| Name         | Type                                                                          | Description | Notes      |
+| ------------ | ----------------------------------------------------------------------------- | ----------- | ---------- |
+| **pipeline** | [**SyntheticsCIBatchMetadataPipeline**](SyntheticsCIBatchMetadataPipeline.md) |             | [optional] |
+| **provider** | [**SyntheticsCIBatchMetadataProvider**](SyntheticsCIBatchMetadataProvider.md) |             | [optional] |
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)

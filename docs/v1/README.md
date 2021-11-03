@@ -737,6 +737,8 @@ All URIs are relative to *https://api.datadoghq.com*
 - [SyntheticsCIBatchMetadata](SyntheticsCIBatchMetadata.md)
 - [SyntheticsCIBatchMetadataCI](SyntheticsCIBatchMetadataCI.md)
 - [SyntheticsCIBatchMetadataGit](SyntheticsCIBatchMetadataGit.md)
+- [SyntheticsCIBatchMetadataPipeline](SyntheticsCIBatchMetadataPipeline.md)
+- [SyntheticsCIBatchMetadataProvider](SyntheticsCIBatchMetadataProvider.md)
 - [SyntheticsCITest](SyntheticsCITest.md)
 - [SyntheticsCITestBody](SyntheticsCITestBody.md)
 - [SyntheticsCheckType](SyntheticsCheckType.md)
