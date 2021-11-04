@@ -605,6 +605,10 @@ components:
     AzureAccount:
       description: Datadog-Azure integrations configured for your organization.
       properties:
+        automute:
+          description: Silence monitors for expected Azure VM shutdowns.
+          example: true
+          type: boolean
         client_id:
           description: Your Azure web application ID.
           example: testc7f6-1234-5678-9101-3fcbf464test
@@ -6152,6 +6156,7 @@ components:
       - composite
       - event alert
       - log alert
+      - metric alert
       - process alert
       - query alert
       - rum alert
