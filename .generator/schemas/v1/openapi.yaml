@@ -25003,6 +25003,7 @@ paths:
         type: safe
   /v1/input:
     post:
+      deprecated: true
       description: 'Send your logs to your Datadog platform over HTTP. Limits per
         HTTP request are:
 

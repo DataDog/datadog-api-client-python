@@ -158,6 +158,12 @@
       "type": "idempotent"
     }
   },
+  "SubmitLog": {
+    "tag": "Logs",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "AggregateLogs": {
     "tag": "Logs",
     "undo": {
