@@ -20,7 +20,8 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v2.model.http_log_error import HTTPLogError
-    globals()['HTTPLogError'] = HTTPLogError
+
+    globals()["HTTPLogError"] = HTTPLogError
 
 
 class HTTPLogErrors(ModelNormal):
@@ -47,11 +48,9 @@ class HTTPLogErrors(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -69,19 +68,16 @@ class HTTPLogErrors(ModelNormal):
         """
         lazy_import()
         return {
-            'errors': ([HTTPLogError],),  # noqa: E501
+            "errors": ([HTTPLogError],),  # noqa: E501
         }
 
     discriminator = None
 
-
-
     attribute_map = {
-        'errors': 'errors',  # noqa: E501
+        "errors": "errors",  # noqa: E501
     }
 
-    read_only_vars = {
-    }
+    read_only_vars = {}
 
     _composed_schemas = {}
 
@@ -124,12 +120,7 @@ class HTTPLogErrors(ModelNormal):
         """
         super().__init__(kwargs)
 
-
         self._check_pos_args(args)
-
-
-
-
 
     @classmethod
     @convert_js_args_to_python_args
@@ -140,8 +131,4 @@ class HTTPLogErrors(ModelNormal):
 
         self._check_pos_args(args)
 
-
-
         return self
-
-
