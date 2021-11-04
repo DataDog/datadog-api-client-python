@@ -103,7 +103,7 @@ The type of monitor chosen from:
 - integration: `query alert` or `service check`
 - live process: `process alert`
 - logs: `log alert`
-- metric: `metric alert`
+- metric: `query alert`
 - network: `service check`
 - outlier: `query alert`
 - process: `service check`
@@ -302,7 +302,7 @@ with ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-        type=MonitorType("metric alert"),
+        type=MonitorType("query alert"),
     )  # Monitor | Create a monitor request body.
 
     # example passing only required values which don't have defaults set
@@ -803,7 +803,7 @@ with ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-        type=MonitorType("metric alert"),
+        type=MonitorType("query alert"),
     )  # MonitorUpdateRequest | Edit a monitor request body.
 
     # example passing only required values which don't have defaults set
@@ -922,7 +922,7 @@ with ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-        type=MonitorType("metric alert"),
+        type=MonitorType("query alert"),
     )  # Monitor | Monitor request object
 
     # example passing only required values which don't have defaults set

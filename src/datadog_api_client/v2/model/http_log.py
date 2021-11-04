@@ -20,7 +20,8 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v2.model.http_log_item import HTTPLogItem
-    globals()['HTTPLogItem'] = HTTPLogItem
+
+    globals()["HTTPLogItem"] = HTTPLogItem
 
 
 class HTTPLog(ModelSimple):
@@ -43,11 +44,9 @@ class HTTPLog(ModelSimple):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -65,12 +64,10 @@ class HTTPLog(ModelSimple):
         """
         lazy_import()
         return {
-            'value': ([HTTPLogItem],),
+            "value": ([HTTPLogItem],),
         }
 
     discriminator = None
-
-
 
     attribute_map = {}
 
@@ -120,8 +117,8 @@ class HTTPLog(ModelSimple):
         """
         super().__init__(kwargs)
 
-        if 'value' in kwargs:
-            value = kwargs.pop('value')
+        if "value" in kwargs:
+            value = kwargs.pop("value")
         elif args:
             args = list(args)
             value = args.pop(0)
@@ -134,16 +131,12 @@ class HTTPLog(ModelSimple):
 
         self._check_pos_args(args)
 
-
         self.value = value
 
-	self._check_kw_args(kwargs)
-
+        self._check_kw_args(kwargs)
 
     @classmethod
     @convert_js_args_to_python_args
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
         return cls(*args, **kwargs)
-
-
