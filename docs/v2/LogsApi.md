@@ -7,6 +7,7 @@ All URIs are relative to *https://api.datadoghq.com*
 | [**aggregate_logs**](LogsApi.md#aggregate_logs) | **POST** /api/v2/logs/analytics/aggregate | Aggregate events   |
 | [**list_logs**](LogsApi.md#list_logs)           | **POST** /api/v2/logs/events/search       | Search logs        |
 | [**list_logs_get**](LogsApi.md#list_logs_get)   | **GET** /api/v2/logs/events               | Get a list of logs |
+| [**submit_log**](LogsApi.md#submit_log)         | **POST** /api/v2/logs                     | Send logs          |
 
 # **aggregate_logs**
 
@@ -291,5 +292,120 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK             | -                |
 | **400**     | Bad Request    | -                |
 | **403**     | Not Authorized | -                |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **submit_log**
+
+> dict submit_log(body)
+
+Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:
+
+- Maximum content size per payload (uncompressed): 5MB
+- Maximum size for a single log: 1MB
+- Maximum array size if sending multiple logs in an array: 1000 entries
+
+Any log exceeding 1MB is accepted and truncated by Datadog:
+
+- For a single log request, the API truncates the log at 1MB and returns a 2xx.
+- For a multi-logs request, the API processes all logs, truncates only logs larger than 1MB, and returns a 2xx.
+
+Datadog recommends sending your logs compressed.
+Add the `Content-Encoding: gzip` header to the request when sending compressed logs.
+
+The status codes answered by the HTTP API are:
+
+- 202: Accepted: the request has been accepted for processing
+- 400: Bad request (likely an issue in the payload formatting)
+- 401: Unauthorized (likely a missing API Key)
+- 403: Permission issue (likely using an invalid API Key)
+- 408: Request Timeout, request should be retried after some time
+- 413: Payload too large (batch is above 5MB uncompressed)
+- 429: Too Many Requests, request should be retried after some time
+- 500: Internal Server Error, the server encountered an unexpected condition that prevented it from fulfilling the request, request should be retried after some time
+- 503: Service Unavailable, the server is not ready to handle the request probably because it is overloaded, request should be retried after some time
+
+### Example
+
+- Api Key Authentication (apiKeyAuth):
+
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v2 import ApiClient, ApiException, Configuration
+from datadog_api_client.v2.api import logs_api
+from datadog_api_client.v2.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = logs_api.LogsApi(api_client)
+    body = HTTPLog([
+        HTTPLogItem(
+            ddsource="nginx",
+            ddtags="env:staging,version:5.1",
+            hostname="i-012345678",
+            message="2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World",
+            service="payment",
+        ),
+    ])  # HTTPLog | Log to send (JSON format).
+    content_encoding = ContentEncoding("gzip")  # ContentEncoding | HTTP header used to compress the media-type. (optional)
+    ddtags = "env:prod,user:my-user"  # str | Log tags can be passed as query parameters with `text/plain` content type. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Send logs
+        api_response = api_instance.submit_log(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LogsApi->submit_log: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Send logs
+        api_response = api_instance.submit_log(body, content_encoding=content_encoding, ddtags=ddtags)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LogsApi->submit_log: %s\n" % e)
+```
+
+### Parameters
+
+| Name                 | Type                      | Description                                                                          | Notes      |
+| -------------------- | ------------------------- | ------------------------------------------------------------------------------------ | ---------- |
+| **body**             | [**HTTPLog**](HTTPLog.md) | Log to send (JSON format).                                                           |
+| **content_encoding** | **ContentEncoding**       | HTTP header used to compress the media-type.                                         | [optional] |
+| **ddtags**           | **str**                   | Log tags can be passed as query parameters with &#x60;text/plain&#x60; content type. | [optional] |
+
+### Return type
+
+**dict**
+
+### Authorization
+
+[apiKeyAuth](README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/logplex-1, text/plain
+- **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description                                              | Response headers |
+| ----------- | -------------------------------------------------------- | ---------------- |
+| **202**     | Request accepted for processing (always 202 empty JSON). | -                |
+| **400**     | Bad Request                                              | -                |
+| **401**     | Unauthorized                                             | -                |
+| **403**     | Forbidden                                                | -                |
+| **408**     | Request Timeout                                          | -                |
+| **413**     | Payload Too Large                                        | -                |
+| **429**     | Too Many Requests                                        | -                |
+| **500**     | Internal Server Error                                    | -                |
+| **503**     | Service Unavailable                                      | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
