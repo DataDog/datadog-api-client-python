@@ -33,6 +33,7 @@ from datadog_api_client.v2.model.application_key_update_data import ApplicationK
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+from datadog_api_client.v2.model.content_encoding import ContentEncoding
 from datadog_api_client.v2.model.creator import Creator
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
@@ -49,6 +50,10 @@ from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
+from datadog_api_client.v2.model.http_log import HTTPLog
+from datadog_api_client.v2.model.http_log_error import HTTPLogError
+from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
+from datadog_api_client.v2.model.http_log_item import HTTPLogItem
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
 from datadog_api_client.v2.model.incident_create_relationships import IncidentCreateRelationships
