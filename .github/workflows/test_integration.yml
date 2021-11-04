@@ -32,8 +32,8 @@ jobs:
           curl https://keys.datadoghq.com/DATADOG_APT_KEY_F14F620E.public | sudo gpg --no-default-keyring --keyring /usr/share/keyrings/datadog-archive-keyring.gpg --import --batch
           sudo cp /usr/share/keyrings/datadog-archive-keyring.gpg /etc/apt/trusted.gpg.d
           sudo apt-get update
-          sudo apt-get install datadog-iot-agent datadog-signing-keys
-          sudo sh -c "sed 's/api_key:.*/api_key:$DD_API_KEY/' /etc/datadog-agent/datadog.yaml.example > /etc/datadog-agent/datadog.yaml"
+          sudo apt-get install datadog-agent datadog-signing-keys
+          sudo sh -c "echo 'api_key: $DD_API_KEY\napm_config:\n  enabled: true\n' > /etc/datadog-agent/datadog.yaml"
           sudo systemctl restart datadog-agent.service
         env:
           DD_API_KEY: ${{ secrets.DD_API_KEY }}
