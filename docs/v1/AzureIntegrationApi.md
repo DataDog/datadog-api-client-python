@@ -42,6 +42,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
     body = AzureAccount(
+        automute=True,
         client_id="testc7f6-1234-5678-9101-3fcbf464test",
         client_secret="testingx./Sw*g/Y33t..R1cH+hScMDt",
         errors=["*"],
@@ -115,6 +116,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
     body = AzureAccount(
+        automute=True,
         client_id="testc7f6-1234-5678-9101-3fcbf464test",
         client_secret="testingx./Sw*g/Y33t..R1cH+hScMDt",
         errors=["*"],
@@ -250,6 +252,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
     body = AzureAccount(
+        automute=True,
         client_id="testc7f6-1234-5678-9101-3fcbf464test",
         client_secret="testingx./Sw*g/Y33t..R1cH+hScMDt",
         errors=["*"],
@@ -325,6 +328,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = azure_integration_api.AzureIntegrationApi(api_client)
     body = AzureAccount(
+        automute=True,
         client_id="testc7f6-1234-5678-9101-3fcbf464test",
         client_secret="testingx./Sw*g/Y33t..R1cH+hScMDt",
         errors=["*"],

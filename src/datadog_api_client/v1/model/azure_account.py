@@ -61,6 +61,7 @@ class AzureAccount(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            "automute": (bool,),  # noqa: E501
             "client_id": (str,),  # noqa: E501
             "client_secret": (str,),  # noqa: E501
             "errors": ([str],),  # noqa: E501
@@ -73,6 +74,7 @@ class AzureAccount(ModelNormal):
     discriminator = None
 
     attribute_map = {
+        "automute": "automute",  # noqa: E501
         "client_id": "client_id",  # noqa: E501
         "client_secret": "client_secret",  # noqa: E501
         "errors": "errors",  # noqa: E501
@@ -121,6 +123,7 @@ class AzureAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            automute (bool): Silence monitors for expected Azure VM shutdowns.. [optional]  # noqa: E501
             client_id (str): Your Azure web application ID.. [optional]  # noqa: E501
             client_secret (str): Your Azure web application secret key.. [optional]  # noqa: E501
             errors ([str]): Errors in your configuration.. [optional]  # noqa: E501
