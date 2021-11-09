@@ -526,7 +526,7 @@ class DowntimesApi(object):
     def list_monitor_downtimes(self, monitor_id, **kwargs):
         """Get all downtimes for a monitor  # noqa: E501
 
-        Get all downtimes for the specified monitor  # noqa: E501
+        Get all active downtimes for the specified monitor.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

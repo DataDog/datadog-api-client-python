@@ -366,7 +366,7 @@ with ApiClient(configuration) as api_client:
 
 > [Downtime] list_monitor_downtimes(monitor_id)
 
-Get all downtimes for the specified monitor
+Get all active downtimes for the specified monitor.
 
 ### Example
 
