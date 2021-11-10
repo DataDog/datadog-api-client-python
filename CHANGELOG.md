@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.6.0 / 2021-11-09
+
+* [Added] Add support for Azure `automute` option. See [#647](https://github.com/DataDog/datadog-api-client-python/pull/647).
+* [Added] Add v2 intake endpoint. See [#640](https://github.com/DataDog/datadog-api-client-python/pull/640).
+* [Added] Add support for RRULE fields in SLO corrections. See [#600](https://github.com/DataDog/datadog-api-client-python/pull/600).
+* [Added] Add aggregations attribute to v2 metric tag configuration. See [#577](https://github.com/DataDog/datadog-api-client-python/pull/577).
+* [Added] Add `apm_stats_query` property to `DistributionWidgetRequest`. See [#628](https://github.com/DataDog/datadog-api-client-python/pull/628).
+* [Fixed] Use plural form for dbm hosts usage properties. See [#611](https://github.com/DataDog/datadog-api-client-python/pull/611).
+* [Fixed] Make monitor properties `priority` and `restricted_roles` nullable. See [#627](https://github.com/DataDog/datadog-api-client-python/pull/627).
+* [Changed] Update Synthetics CI test metadata. See [#610](https://github.com/DataDog/datadog-api-client-python/pull/610).
+* [Deprecated] Update property descriptions for Dashboard RBAC release. See [#639](https://github.com/DataDog/datadog-api-client-python/pull/639).
+
 ## 1.5.0 / 2021-10-15
 
 * [Added] Add `type` and `is_template` properties to notebooks. See [#615](https://github.com/DataDog/datadog-api-client-python/pull/615).

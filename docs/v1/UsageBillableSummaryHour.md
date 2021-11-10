@@ -11,7 +11,7 @@ Response with monthly summary of data billed by Datadog.
 | **num_orgs**       | **int**                                                     | The number of organizations.                  | [optional] |
 | **org_name**       | **str**                                                     | The organization name.                        | [optional] |
 | **public_id**      | **str**                                                     | The organization public ID.                   | [optional] |
-| **ratio_in_month** | **int**                                                     | Shows usage aggregation for a billing period. | [optional] |
+| **ratio_in_month** | **float**                                                   | Shows usage aggregation for a billing period. | [optional] |
 | **start_date**     | **datetime**                                                | Shows the first date of usage.                | [optional] |
 | **usage**          | [**UsageBillableSummaryKeys**](UsageBillableSummaryKeys.md) |                                               | [optional] |
 
