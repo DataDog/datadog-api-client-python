@@ -255,7 +255,7 @@ with ApiClient(configuration) as api_client:
     api_instance = monitors_api.MonitorsApi(api_client)
     body = Monitor(
         message="message_example",
-        name="name_example",
+        name="My monitor",
         options=MonitorOptions(
             enable_logs_sample=True,
             escalation_message="none",
@@ -875,7 +875,7 @@ with ApiClient(configuration) as api_client:
     api_instance = monitors_api.MonitorsApi(api_client)
     body = Monitor(
         message="message_example",
-        name="name_example",
+        name="My monitor",
         options=MonitorOptions(
             enable_logs_sample=True,
             escalation_message="none",
