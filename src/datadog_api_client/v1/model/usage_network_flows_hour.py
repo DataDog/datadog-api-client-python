@@ -62,14 +62,14 @@ class UsageNetworkFlowsHour(ModelNormal):
         """
         return {
             "hour": (datetime,),  # noqa: E501
-            "indexed_event_count": (int,),  # noqa: E501
+            "indexed_events_count": (int,),  # noqa: E501
         }
 
     discriminator = None
 
     attribute_map = {
         "hour": "hour",  # noqa: E501
-        "indexed_event_count": "indexed_event_count",  # noqa: E501
+        "indexed_events_count": "indexed_events_count",  # noqa: E501
     }
 
     read_only_vars = {}
@@ -112,7 +112,7 @@ class UsageNetworkFlowsHour(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
-            indexed_event_count (int): Contains the number of netflow events indexed.. [optional]  # noqa: E501
+            indexed_events_count (int): Contains the number of netflow events indexed.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
