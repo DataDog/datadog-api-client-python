@@ -120,8 +120,8 @@ class SyntheticsAssertion(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             _property (str): The associated assertion property.. [optional]  # noqa: E501
-            target (SyntheticsAssertionJSONPathTargetTarget): [optional]  # noqa: E501
             operator (SyntheticsAssertionJSONPathOperator): [optional]  # noqa: E501
+            target (SyntheticsAssertionJSONPathTargetTarget): [optional]  # noqa: E501
             type (SyntheticsAssertionType): [optional]  # noqa: E501
         """
         super().__init__(kwargs)

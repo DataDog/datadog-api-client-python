@@ -92,7 +92,17 @@ class SyntheticsStepDetail(ModelNormal):
             "time_to_interactive": (float,),  # noqa: E501
             "type": (SyntheticsStepType,),  # noqa: E501
             "url": (str,),  # noqa: E501
-            "value": (dict,),  # noqa: E501
+            "value": (
+                bool,
+                date,
+                datetime,
+                dict,
+                float,
+                int,
+                list,
+                str,
+                none_type,
+            ),  # noqa: E501
             "vitals_metrics": ([SyntheticsCoreWebVitals],),  # noqa: E501
             "warnings": ([SyntheticsStepDetailWarning],),  # noqa: E501
         }
@@ -172,7 +182,7 @@ class SyntheticsStepDetail(ModelNormal):
             time_to_interactive (float): Time before starting the step.. [optional]  # noqa: E501
             type (SyntheticsStepType): [optional]  # noqa: E501
             url (str): URL to perform the step against.. [optional]  # noqa: E501
-            value (dict): Value for the step.. [optional]  # noqa: E501
+            value (bool, date, datetime, dict, float, int, list, str, none_type): Value for the step.. [optional]  # noqa: E501
             vitals_metrics ([SyntheticsCoreWebVitals]): Array of Core Web Vitals metrics for the step.. [optional]  # noqa: E501
             warnings ([SyntheticsStepDetailWarning]): Warning collected that didn't failed the step.. [optional]  # noqa: E501
         """
