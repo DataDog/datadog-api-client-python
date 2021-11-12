@@ -440,6 +440,20 @@ Feature: Synthetics
     Then the response status is 200 OK - Returns a boolean indicating if the update was successful.
 
   @generated @skip
+  Scenario: Trigger some Synthetics tests returns "Bad Request" response
+    Given new "TriggerTests" request
+    And body with value {"tests": [{"metadata": {"ci": {"pipeline": {"url": null}, "provider": {"name": null}}, "git": {"branch": null, "commitSha": null}}, "public_id": "aaa-aaa-aaa"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  Scenario: Trigger some Synthetics tests returns "OK" response
+    Given there is a valid "synthetics_api_test" in the system
+    And new "TriggerTests" request
+    And body with value {"tests": [{"public_id": "{{ synthetics_api_test.public_id }}"}]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip
   Scenario: Trigger tests from CI/CD pipelines returns "JSON format is wrong" response
     Given new "TriggerCITests" request
     And body with value {"tests": [{"allowInsecureCertificates": null, "basicAuth": {"password": "", "username": ""}, "body": null, "bodyType": null, "cookies": null, "deviceIds": ["laptop_large"], "followRedirects": null, "headers": null, "locations": [null], "metadata": {"ci": {"pipeline": {"url": null}, "provider": {"name": null}}, "git": {"branch": null, "commitSha": null}}, "public_id": "aaa-aaa-aaa", "retry": {"count": null, "interval": null}, "startUrl": null, "variables": null}]}

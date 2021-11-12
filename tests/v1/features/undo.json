@@ -1039,6 +1039,12 @@
       "type": "idempotent"
     }
   },
+  "TriggerTests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "TriggerCITests": {
     "tag": "Synthetics",
     "undo": {
