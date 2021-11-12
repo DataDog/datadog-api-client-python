@@ -1267,6 +1267,12 @@
       "type": "safe"
     }
   },
+  "GetUsageRumUnits": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageRumSessions": {
     "tag": "Usage Metering",
     "undo": {
