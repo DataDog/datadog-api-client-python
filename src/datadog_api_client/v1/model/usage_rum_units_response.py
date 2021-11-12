@@ -20,7 +20,8 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.usage_rum_units_hour import UsageRumUnitsHour
-    globals()['UsageRumUnitsHour'] = UsageRumUnitsHour
+
+    globals()["UsageRumUnitsHour"] = UsageRumUnitsHour
 
 
 class UsageRumUnitsResponse(ModelNormal):
@@ -47,11 +48,9 @@ class UsageRumUnitsResponse(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -69,19 +68,16 @@ class UsageRumUnitsResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'usage': ([UsageRumUnitsHour],),  # noqa: E501
+            "usage": ([UsageRumUnitsHour],),  # noqa: E501
         }
 
     discriminator = None
 
-
-
     attribute_map = {
-        'usage': 'usage',  # noqa: E501
+        "usage": "usage",  # noqa: E501
     }
 
-    read_only_vars = {
-    }
+    read_only_vars = {}
 
     _composed_schemas = {}
 
@@ -124,12 +120,7 @@ class UsageRumUnitsResponse(ModelNormal):
         """
         super().__init__(kwargs)
 
-
         self._check_pos_args(args)
-
-
-
-
 
     @classmethod
     @convert_js_args_to_python_args
@@ -140,8 +131,4 @@ class UsageRumUnitsResponse(ModelNormal):
 
         self._check_pos_args(args)
 
-
-
         return self
-
-
