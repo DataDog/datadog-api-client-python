@@ -20,7 +20,8 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
 
 def lazy_import():
     from datadog_api_client.v1.model.synthetics_trigger_test import SyntheticsTriggerTest
-    globals()['SyntheticsTriggerTest'] = SyntheticsTriggerTest
+
+    globals()["SyntheticsTriggerTest"] = SyntheticsTriggerTest
 
 
 class SyntheticsTriggerBody(ModelNormal):
@@ -47,11 +48,9 @@ class SyntheticsTriggerBody(ModelNormal):
           as additional properties values.
     """
 
-    allowed_values = {
-    }
+    allowed_values = {}
 
-    validations = {
-    }
+    validations = {}
 
     additional_properties_type = None
 
@@ -69,19 +68,16 @@ class SyntheticsTriggerBody(ModelNormal):
         """
         lazy_import()
         return {
-            'tests': ([SyntheticsTriggerTest],),  # noqa: E501
+            "tests": ([SyntheticsTriggerTest],),  # noqa: E501
         }
 
     discriminator = None
 
-
-
     attribute_map = {
-        'tests': 'tests',  # noqa: E501
+        "tests": "tests",  # noqa: E501
     }
 
-    read_only_vars = {
-    }
+    read_only_vars = {}
 
     _composed_schemas = {}
 
@@ -126,13 +122,9 @@ class SyntheticsTriggerBody(ModelNormal):
         """
         super().__init__(kwargs)
 
-
         self._check_pos_args(args)
 
-
-
         self.tests = tests
-
 
     @classmethod
     @convert_js_args_to_python_args
@@ -143,9 +135,5 @@ class SyntheticsTriggerBody(ModelNormal):
 
         self._check_pos_args(args)
 
-
-
         self.tests = tests
         return self
-
-
