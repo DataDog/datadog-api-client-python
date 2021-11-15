@@ -71,8 +71,6 @@ class SyntheticsAssertionTarget(ModelNormal):
         lazy_import()
         return {
             "operator": (SyntheticsAssertionOperator,),  # noqa: E501
-            "type": (SyntheticsAssertionType,),  # noqa: E501
-            "_property": (str,),  # noqa: E501
             "target": (
                 bool,
                 date,
@@ -84,15 +82,17 @@ class SyntheticsAssertionTarget(ModelNormal):
                 str,
                 none_type,
             ),  # noqa: E501
+            "type": (SyntheticsAssertionType,),  # noqa: E501
+            "_property": (str,),  # noqa: E501
         }
 
     discriminator = None
 
     attribute_map = {
         "operator": "operator",  # noqa: E501
+        "target": "target",  # noqa: E501
         "type": "type",  # noqa: E501
         "_property": "property",  # noqa: E501
-        "target": "target",  # noqa: E501
     }
 
     read_only_vars = {}
@@ -100,11 +100,12 @@ class SyntheticsAssertionTarget(ModelNormal):
     _composed_schemas = {}
 
     @convert_js_args_to_python_args
-    def __init__(self, operator, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, operator, target, type, *args, **kwargs):  # noqa: E501
         """SyntheticsAssertionTarget - a model defined in OpenAPI
 
         Args:
             operator (SyntheticsAssertionOperator):
+            target (bool, date, datetime, dict, float, int, list, str, none_type): Value used by the operator.
             type (SyntheticsAssertionType):
 
         Keyword Args:
@@ -139,18 +140,18 @@ class SyntheticsAssertionTarget(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             _property (str): The associated assertion property.. [optional]  # noqa: E501
-            target (bool, date, datetime, dict, float, int, list, str, none_type): Value used by the operator.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
         self.operator = operator
+        self.target = target
         self.type = type
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, operator, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, operator, target, type, *args, **kwargs):  # noqa: E501
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsAssertionTarget, cls)._from_openapi_data(kwargs)
@@ -158,5 +159,6 @@ class SyntheticsAssertionTarget(ModelNormal):
         self._check_pos_args(args)
 
         self.operator = operator
+        self.target = target
         self.type = type
         return self

@@ -23,6 +23,23 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
 
+  Scenario: Create a new dashboard with a formulas and functions change widget
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "change", "requests": [ { "formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ { "data_source": "logs", "name": "query1", "search": { "query": "" }, "indexes": [ "*" ], "compute": { "aggregation": "count" }, "group_by": [] } ], "response_format": "scalar", "compare_to": "hour_before", "increase_good": true, "order_by": "change", "change_type": "absolute", "order_dir": "desc" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
+    And the response "widgets[0].definition.requests[0].compare_to" is equal to "hour_before"
+    And the response "widgets[0].definition.requests[0].increase_good" is equal to true
+    And the response "widgets[0].definition.requests[0].order_by" is equal to "change"
+    And the response "widgets[0].definition.requests[0].change_type" is equal to "absolute"
+    And the response "widgets[0].definition.requests[0].order_dir" is equal to "desc"
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "logs"
+    And the response "widgets[0].definition.requests[0].queries[0].name" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].queries[0].compute.aggregation" is equal to "count"
+    And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "hour_before(query1)"
+    And the response "widgets[0].definition.requests[0].formulas[1].formula" is equal to "query1"
+
   Scenario: Create a new dashboard with a profile metric query
     Given new "CreateDashboard" request
     And body from file "dashboard_payload.json"

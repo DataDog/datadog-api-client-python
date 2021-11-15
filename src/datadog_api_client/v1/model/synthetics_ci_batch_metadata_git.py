@@ -111,7 +111,7 @@ class SyntheticsCIBatchMetadataGit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            branch (str): The branch name.. [optional]  # noqa: E501
+            branch (str): Branch name.. [optional]  # noqa: E501
             commit_sha (str): The commit SHA.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
