@@ -32,6 +32,7 @@ function camel(value) {
     # NOTE special cases for all caps groups which we can't handle otherwise
     gsub("Aws", "AWS", head);
     gsub("Gcp", "GCP", head);
+    gsub("Slo", "SLO", head);
     return head;
 }
 
