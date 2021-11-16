@@ -72,6 +72,7 @@ class UsageSummaryDate(ModelNormal):
             "apm_azure_app_service_host_top99p": (int,),  # noqa: E501
             "apm_host_top99p": (int,),  # noqa: E501
             "audit_logs_lines_indexed_sum": (int,),  # noqa: E501
+            "avg_profiled_fargate_tasks": (int,),  # noqa: E501
             "aws_host_top99p": (int,),  # noqa: E501
             "aws_lambda_func_count": (int,),  # noqa: E501
             "aws_lambda_invocations_sum": (int,),  # noqa: E501
@@ -130,6 +131,7 @@ class UsageSummaryDate(ModelNormal):
         "apm_azure_app_service_host_top99p": "apm_azure_app_service_host_top99p",  # noqa: E501
         "apm_host_top99p": "apm_host_top99p",  # noqa: E501
         "audit_logs_lines_indexed_sum": "audit_logs_lines_indexed_sum",  # noqa: E501
+        "avg_profiled_fargate_tasks": "avg_profiled_fargate_tasks",  # noqa: E501
         "aws_host_top99p": "aws_host_top99p",  # noqa: E501
         "aws_lambda_func_count": "aws_lambda_func_count",  # noqa: E501
         "aws_lambda_invocations_sum": "aws_lambda_invocations_sum",  # noqa: E501
@@ -224,6 +226,7 @@ class UsageSummaryDate(ModelNormal):
             apm_azure_app_service_host_top99p (int): Shows the 99th percentile of all Azure app services using APM over all hours in the current date all organizations.. [optional]  # noqa: E501
             apm_host_top99p (int): Shows the 99th percentile of all distinct APM hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
             audit_logs_lines_indexed_sum (int): Shows the sum of audit logs lines indexed over all hours in the current date for all organizations.. [optional]  # noqa: E501
+            avg_profiled_fargate_tasks (int): The average profiled task count for Fargate Profiling.. [optional]  # noqa: E501
             aws_host_top99p (int): Shows the 99th percentile of all AWS hosts over all hours in the current date for all organizations.. [optional]  # noqa: E501
             aws_lambda_func_count (int): Shows the average of the number of functions that executed 1 or more times each hour in the current date for all organizations.. [optional]  # noqa: E501
             aws_lambda_invocations_sum (int): Shows the sum of all AWS Lambda invocations over all hours in the current date for all organizations.. [optional]  # noqa: E501
