@@ -115,6 +115,13 @@ Feature: Synthetics
     Then the response status is 200 OK - Returns the created test details.
     And the response "name" is equal to "{{ unique }}"
 
+  Scenario: Create an API test with WEBSOCKET subtype returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_test_websocket_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+
   @generated @skip
   Scenario: Delete a global variable returns "JSON format is wrong" response
     Given new "DeleteGlobalVariable" request
