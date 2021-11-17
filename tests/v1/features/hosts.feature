@@ -17,6 +17,7 @@ Feature: Hosts
   Scenario: Get all hosts for your organization returns "OK" response
     Given new "ListHosts" request
     And request contains "filter" parameter with value "env:ci"
+    And request contains "include_hosts_metadata" parameter with value true
     When the request is sent
     Then the response status is 200 OK
 
