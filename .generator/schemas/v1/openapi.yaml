@@ -6181,6 +6181,8 @@ components:
       - slo alert
       - event-v2 alert
       - audit alert
+      - metric-slo alert
+      - monitor-slo alert
       example: query alert
       type: string
       x-enum-varnames:
@@ -6197,6 +6199,8 @@ components:
       - SLO_ALERT
       - EVENT_V2_ALERT
       - AUDIT_ALERT
+      - METRIC_SLO_ALERT
+      - MONITOR_SLO_ALERT
     MonitorUpdateRequest:
       description: Object describing a monitor update request.
       properties:
