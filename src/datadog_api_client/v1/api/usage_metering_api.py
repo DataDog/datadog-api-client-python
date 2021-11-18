@@ -114,7 +114,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -159,7 +159,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -204,7 +204,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -255,7 +255,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -296,7 +296,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -337,7 +337,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -382,7 +382,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -444,7 +444,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -489,7 +489,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -528,7 +528,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -573,7 +573,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -618,7 +618,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -663,7 +663,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -708,7 +708,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -753,7 +753,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -798,7 +798,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -843,7 +843,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -888,7 +888,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -933,7 +933,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -984,7 +984,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1029,7 +1029,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1074,7 +1074,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1119,7 +1119,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1164,7 +1164,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1213,7 +1213,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1258,7 +1258,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1303,7 +1303,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1348,7 +1348,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1397,7 +1397,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1442,7 +1442,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1487,7 +1487,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1532,7 +1532,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1577,7 +1577,7 @@ class UsageMeteringApi(object):
                 "collection_format_map": {},
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -1641,7 +1641,7 @@ class UsageMeteringApi(object):
                 },
             },
             headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
+                "accept": ["application/json;datetime-format=rfc3339", "application/json"],
                 "content_type": [],
             },
             api_client=api_client,

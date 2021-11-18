@@ -111,11 +111,12 @@ with ApiClient(configuration) as api_client:
 
 ### HTTP response details
 
-| Status code | Description     | Response headers |
-| ----------- | --------------- | ---------------- |
-| **200**     | OK              | -                |
-| **400**     | Invalid request | -                |
-| **403**     | Forbidden       | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **400**     | Invalid request   | -                |
+| **403**     | Forbidden         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -185,6 +186,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                               | -                |
 | **402**     | Quota reached for private locations              | -                |
 | **404**     | Private locations are not activated for the user | -                |
+| **429**     | Too many requests                                | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -392,6 +394,7 @@ with ApiClient(configuration) as api_client:
 | **400**     | - JSON format is wrong - Creation failed | -                |
 | **402**     | Test quota is reached                    | -                |
 | **403**     | Forbidden                                | -                |
+| **429**     | Too many requests                        | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -562,6 +565,7 @@ with ApiClient(configuration) as api_client:
 | **400**     | - JSON format is wrong - Creation failed | -                |
 | **402**     | Test quota is reached                    | -                |
 | **403**     | Forbidden                                | -                |
+| **429**     | Too many requests                        | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -628,6 +632,7 @@ void (empty response body)
 | **400**     | JSON format is wrong | -                |
 | **403**     | Forbidden            | -                |
 | **404**     | Not found            | -                |
+| **429**     | Too many requests    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -691,6 +696,7 @@ void (empty response body)
 | ----------- | ------------------------------------------------------------------------------------ | ---------------- |
 | **204**     | OK                                                                                   | -                |
 | **404**     | - Private locations are not activated for the user - Private location does not exist | -                |
+| **429**     | Too many requests                                                                    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -760,6 +766,7 @@ with ApiClient(configuration) as api_client:
 | **400**     | - JSON format is wrong - Test cannot be deleted as it&#39;s used elsewhere (as a sub-test or in an uptime widget) - Some IDs are not owned by the user | -                |
 | **403**     | Forbidden                                                                                                                                              | -                |
 | **404**     | - Tests to be deleted can&#39;t be found - Synthetics is not activated for the user                                                                    | -                |
+| **429**     | Too many requests                                                                                                                                      | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -844,11 +851,12 @@ with ApiClient(configuration) as api_client:
 
 ### HTTP response details
 
-| Status code | Description     | Response headers |
-| ----------- | --------------- | ---------------- |
-| **200**     | OK              | -                |
-| **400**     | Invalid request | -                |
-| **403**     | Forbidden       | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **400**     | Invalid request   | -                |
+| **403**     | Forbidden         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -916,6 +924,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                                                                   | -                |
 | **403**     | Forbidden                                                                            | -                |
 | **404**     | - Synthetic Monitoring is not activated for the user - Test is not owned by the user | -                |
+| **429**     | Too many requests                                                                    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -999,6 +1008,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                                                        | -                |
 | **403**     | Forbidden                                                                 | -                |
 | **404**     | - Synthetic is not activated for the user - Test is not owned by the user | -                |
+| **429**     | Too many requests                                                         | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1067,6 +1077,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                                                                  | -                |
 | **403**     | Forbidden                                                                           | -                |
 | **404**     | - Synthetic is not activated for the user - Test or result is not owned by the user | -                |
+| **429**     | Too many requests                                                                   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1134,6 +1145,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                                                        | -                |
 | **403**     | Forbidden                                                                 | -                |
 | **404**     | - Synthetic is not activated for the user - Test is not owned by the user | -                |
+| **429**     | Too many requests                                                         | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1217,6 +1229,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                                                        | -                |
 | **403**     | forbidden                                                                 | -                |
 | **404**     | - Synthetic is not activated for the user - Test is not owned by the user | -                |
+| **429**     | Too many requests                                                         | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1285,6 +1298,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                                                                  | -                |
 | **403**     | Forbidden                                                                           | -                |
 | **404**     | - Synthetic is not activated for the user - Test or result is not owned by the user | -                |
+| **429**     | Too many requests                                                                   | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1346,11 +1360,12 @@ with ApiClient(configuration) as api_client:
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-| ----------- | ----------- | ---------------- |
-| **200**     | OK          | -                |
-| **403**     | Forbidden   | -                |
-| **404**     | Not found   | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **403**     | Forbidden         | -                |
+| **404**     | Not found         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1415,6 +1430,7 @@ with ApiClient(configuration) as api_client:
 | ----------- | ---------------------------------------------------------------------------------------------- | ---------------- |
 | **200**     | OK                                                                                             | -                |
 | **404**     | - Synthetic private locations are not activated for the user - Private location does not exist | -                |
+| **429**     | Too many requests                                                                              | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1479,6 +1495,7 @@ with ApiClient(configuration) as api_client:
 | ----------- | --------------------- | ---------------- |
 | **200**     | OK                    | -                |
 | **404**     | Batch does not exist. | -                |
+| **429**     | Too many requests     | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1544,6 +1561,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                                                        | -                |
 | **403**     | Forbidden                                                                 | -                |
 | **404**     | - Synthetic is not activated for the user - Test is not owned by the user | -                |
+| **429**     | Too many requests                                                         | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1602,10 +1620,11 @@ This endpoint does not need any parameter.
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-| ----------- | ----------- | ---------------- |
-| **200**     | OK          | -                |
-| **403**     | Forbidden   | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **403**     | Forbidden         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1665,9 +1684,10 @@ This endpoint does not need any parameter.
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-| ----------- | ----------- | ---------------- |
-| **200**     | OK          | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1731,6 +1751,7 @@ This endpoint does not need any parameter.
 | **200**     | OK - Returns the list of all Synthetic tests. | -                |
 | **403**     | Forbidden                                     | -                |
 | **404**     | Synthetics is not activated for the user.     | -                |
+| **429**     | Too many requests                             | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1841,6 +1862,7 @@ with ApiClient(configuration) as api_client:
 | ----------- | -------------------- | ---------------- |
 | **200**     | OK                   | -                |
 | **400**     | JSON format is wrong | -                |
+| **429**     | Too many requests    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1921,10 +1943,11 @@ with ApiClient(configuration) as api_client:
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-| ----------- | ----------- | ---------------- |
-| **200**     | OK          | -                |
-| **400**     | Bad Request | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **400**     | Bad Request       | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2134,6 +2157,7 @@ with ApiClient(configuration) as api_client:
 | **400**     | - JSON format is wrong - Updating sub-type is forbidden                                                        | -                |
 | **403**     | Forbidden                                                                                                      | -                |
 | **404**     | - Synthetic Monitoring is not activated for the user - Test is not owned by the user - Test can&#39;t be found | -                |
+| **429**     | Too many requests                                                                                              | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2306,6 +2330,7 @@ with ApiClient(configuration) as api_client:
 | **400**     | - JSON format is wrong - Updating sub-type is forbidden                                                        | -                |
 | **403**     | Forbidden                                                                                                      | -                |
 | **404**     | - Synthetic Monitoring is not activated for the user - Test is not owned by the user - Test can&#39;t be found | -                |
+| **429**     | Too many requests                                                                                              | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2376,6 +2401,7 @@ with ApiClient(configuration) as api_client:
 | ----------- | ------------------------------------------------------------------------------------ | ---------------- |
 | **200**     | OK                                                                                   | -                |
 | **404**     | - Private locations are not activated for the user - Private location does not exist | -                |
+| **429**     | Too many requests                                                                    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2447,5 +2473,6 @@ with ApiClient(configuration) as api_client:
 | **400**     | JSON format is wrong.                                                     | -                |
 | **403**     | Forbidden                                                                 | -                |
 | **404**     | - Synthetic is not activated for the user - Test is not owned by the user | -                |
+| **429**     | Too many requests                                                         | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

@@ -66,14 +66,6 @@ Feature: Logs Indexes
     Then the response status is 200 OK
 
   @generated @skip
-  Scenario: Update an index returns "Too Many Requests" response
-    Given new "UpdateLogsIndex" request
-    And request contains "name" parameter from "<PATH>"
-    And body with value {"daily_limit": null, "disable_daily_limit": null, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "is_enabled": null, "name": "payment"}], "filter": {"query": "source:python"}, "num_retention_days": null}
-    When the request is sent
-    Then the response status is 429 Too Many Requests
-
-  @generated @skip
   Scenario: Update indexes order returns "Bad Request" response
     Given new "UpdateLogsIndexOrder" request
     And body with value {"index_names": ["main", "payments", "web"]}

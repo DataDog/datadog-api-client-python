@@ -45,13 +45,6 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
-  Scenario: Create a security filter returns "Too many requests" response
-    Given new "CreateSecurityFilter" request
-    And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
-    When the request is sent
-    Then the response status is 429 Too many requests
-
   @skip
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
@@ -79,13 +72,6 @@ Feature: Security Monitoring
     And request contains "security_filter_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Delete a security filter returns "Too many requests" response
-    Given new "DeleteSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 429 Too many requests
 
   @generated @skip
   Scenario: Delete an existing rule returns "Not Found" response
@@ -159,23 +145,10 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
-  Scenario: Get a security filter returns "Too many requests" response
-    Given new "GetSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
-    When the request is sent
-    Then the response status is 429 Too many requests
-
   Scenario: Get all security filters returns "OK" response
     Given new "ListSecurityFilters" request
     When the request is sent
     Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Get all security filters returns "Too many requests" response
-    Given new "ListSecurityFilters" request
-    When the request is sent
-    Then the response status is 429 Too many requests
 
   @generated @skip
   Scenario: List rules returns "Bad Request" response
@@ -220,14 +193,6 @@ Feature: Security Monitoring
     And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "{{ unique }}", "query": "service:{{ unique_alnum }}", "version": 1}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 200 OK
-
-  @generated @skip
-  Scenario: Update a security filter returns "Too many requests" response
-    Given new "UpdateSecurityFilter" request
-    And request contains "security_filter_id" parameter from "<PATH>"
-    And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api", "version": 1}, "type": "security_filters"}}
-    When the request is sent
-    Then the response status is 429 Too many requests
 
   @generated @skip
   Scenario: Update an existing rule returns "Bad Request" response
