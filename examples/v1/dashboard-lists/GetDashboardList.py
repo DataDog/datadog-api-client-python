@@ -9,7 +9,8 @@ from datadog_api_client.v1.api.dashboard_lists_api import DashboardListsApi
 # there is a valid "dashboard_list" in the system
 DASHBOARD_LIST_ID = environ["DASHBOARD_LIST_ID"]
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = DashboardListsApi(api_client)
     response = api_instance.get_dashboard_list(list_id=int(DASHBOARD_LIST_ID))
 

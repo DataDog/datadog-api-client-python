@@ -21,7 +21,8 @@ body = APIKeyUpdateRequest(
     )
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = KeyManagementApi(api_client)
     response = api_instance.update_api_key(api_key_id=API_KEY_DATA_ID, body=body)
 

@@ -17,7 +17,8 @@ USER_DATA_ID = environ["USER_DATA_ID"]
 
 body = RelationshipToUser(data=RelationshipToUserData(id=USER_DATA_ID, type=UsersType("users")))
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = RolesApi(api_client)
     response = api_instance.add_user_to_role(role_id=ROLE_DATA_ID, body=body)
 

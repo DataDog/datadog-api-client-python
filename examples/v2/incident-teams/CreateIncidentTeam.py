@@ -16,7 +16,9 @@ body = IncidentTeamCreateRequest(
     )
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+configuration.unstable_operations["create_incident_team"] = True
+with ApiClient(configuration) as api_client:
     api_instance = IncidentTeamsApi(api_client)
     response = api_instance.create_incident_team(body=body)
 

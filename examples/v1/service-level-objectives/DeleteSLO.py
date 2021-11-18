@@ -9,7 +9,8 @@ from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelO
 # there is a valid "slo" in the system
 SLO_DATA_0_ID = environ["SLO_DATA_0_ID"]
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectivesApi(api_client)
     response = api_instance.delete_slo(slo_id=SLO_DATA_0_ID)
 
