@@ -100,7 +100,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -108,6 +108,7 @@ with ApiClient(configuration) as api_client:
 | ----------- | ---------------------------------- | ---------------- |
 | **200**     | OK                                 | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -176,7 +177,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -185,6 +186,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -253,7 +255,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -262,6 +264,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -326,7 +329,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -334,6 +337,7 @@ with ApiClient(configuration) as api_client:
 | ----------- | ---------------------------------- | ---------------- |
 | **200**     | OK                                 | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -391,7 +395,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -400,6 +404,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **403**     | Forbidden - User is not authorized | -                |
 | **404**     | Not Found                          | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -457,7 +462,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -467,6 +472,7 @@ with ApiClient(configuration) as api_client:
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
 | **404**     | Not Found                          | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -535,7 +541,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -544,6 +550,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -621,7 +628,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -629,6 +636,7 @@ with ApiClient(configuration) as api_client:
 | ----------- | ---------------------------------- | ---------------- |
 | **200**     | OK                                 | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -696,7 +704,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -705,6 +713,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -763,7 +772,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -772,6 +781,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -839,7 +849,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -848,6 +858,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -916,7 +927,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -925,6 +936,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -992,7 +1004,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1001,6 +1013,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1069,7 +1082,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1078,6 +1091,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1146,7 +1160,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1155,6 +1169,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1223,7 +1238,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1232,6 +1247,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1300,7 +1316,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1309,6 +1325,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1377,7 +1394,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1386,6 +1403,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1454,7 +1472,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1463,6 +1481,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1535,7 +1554,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1544,6 +1563,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1611,7 +1631,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1620,6 +1640,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1688,7 +1709,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1697,6 +1718,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1765,7 +1787,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1774,6 +1796,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1842,7 +1865,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1851,6 +1874,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1921,7 +1945,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -1930,6 +1954,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1998,7 +2023,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -2007,6 +2032,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2074,7 +2100,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -2083,6 +2109,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2151,7 +2178,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -2160,6 +2187,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2230,7 +2258,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -2239,6 +2267,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2307,7 +2336,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -2316,6 +2345,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2384,7 +2414,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -2393,6 +2423,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2461,7 +2492,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -2470,6 +2501,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2538,7 +2570,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -2547,6 +2579,7 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2615,7 +2648,7 @@ with ApiClient(configuration) as api_client:
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;datetime-format=rfc3339
+- **Accept**: application/json;datetime-format=rfc3339, application/json
 
 ### HTTP response details
 
@@ -2624,5 +2657,6 @@ with ApiClient(configuration) as api_client:
 | **200**     | OK                                 | -                |
 | **400**     | Bad Request                        | -                |
 | **403**     | Forbidden - User is not authorized | -                |
+| **429**     | Too many requests                  | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

@@ -16,6 +16,7 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types,
 )
+from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.ip_ranges import IPRanges
 
 
