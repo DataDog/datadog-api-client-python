@@ -19,7 +19,8 @@ body = UserUpdateRequest(
     )
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = UsersApi(api_client)
     response = api_instance.update_user(user_id=USER_DATA_ID, body=body)
 

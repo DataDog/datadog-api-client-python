@@ -94,7 +94,8 @@ body = SyntheticsAPITest(
     type=SyntheticsAPITestType("api"),
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     response = api_instance.update_api_test(public_id=SYNTHETICS_API_TEST_PUBLIC_ID, body=body)
 

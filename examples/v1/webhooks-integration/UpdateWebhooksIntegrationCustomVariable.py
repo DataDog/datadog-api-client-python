@@ -14,7 +14,8 @@ WEBHOOK_CUSTOM_VARIABLE_NAME = environ["WEBHOOK_CUSTOM_VARIABLE_NAME"]
 
 body = WebhooksIntegrationCustomVariableUpdateRequest(value="variable-updated")
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = WebhooksIntegrationApi(api_client)
     response = api_instance.update_webhooks_integration_custom_variable(
         custom_variable_name=WEBHOOK_CUSTOM_VARIABLE_NAME, body=body

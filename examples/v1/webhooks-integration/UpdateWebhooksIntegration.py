@@ -12,7 +12,8 @@ WEBHOOK_NAME = environ["WEBHOOK_NAME"]
 
 body = WebhooksIntegrationUpdateRequest(url="https://example.com/webhook-updated")
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = WebhooksIntegrationApi(api_client)
     response = api_instance.update_webhooks_integration(webhook_name=WEBHOOK_NAME, body=body)
 

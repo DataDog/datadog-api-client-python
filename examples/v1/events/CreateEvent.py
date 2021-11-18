@@ -12,7 +12,8 @@ body = EventCreateRequest(
     tags=["test:ExamplePostaneventreturnsOKresponse"],
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = EventsApi(api_client)
     response = api_instance.create_event(body=body)
 

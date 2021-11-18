@@ -9,7 +9,8 @@ from datadog_api_client.v2.model.logs_query_filter import LogsQueryFilter
 
 body = LogsAggregateRequest(filter=LogsQueryFilter(_from="now-15m", indexes=["main"], query="*", to="now"))
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = LogsApi(api_client)
     response = api_instance.aggregate_logs(body=body)
 

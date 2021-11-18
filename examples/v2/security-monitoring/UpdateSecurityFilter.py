@@ -28,7 +28,8 @@ body = SecurityFilterUpdateRequest(
     )
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.update_security_filter(security_filter_id=SECURITY_FILTER_DATA_ID, body=body)
 

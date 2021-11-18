@@ -20,7 +20,8 @@ body = MetricsPayload(
     ]
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     response = api_instance.submit_metrics(body=body)
 
