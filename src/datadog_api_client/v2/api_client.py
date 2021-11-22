@@ -678,6 +678,7 @@ class Endpoint(object):
                 "_return_http_data_only",
                 "_check_input_type",
                 "_check_return_type",
+                "_spec_property_naming",
             ]
         )
         self.params_map["nullable"].extend(["_host_index", "_request_timeout"])
@@ -692,6 +693,7 @@ class Endpoint(object):
             "_return_http_data_only": (bool,),
             "_check_input_type": (bool,),
             "_check_return_type": (bool,),
+            "_spec_property_naming": (bool,),
         }
         self.openapi_types.update(extra_types)
         self.attribute_map = root_map["attribute_map"]
@@ -720,7 +722,7 @@ class Endpoint(object):
                 value,
                 self.openapi_types[key],
                 [key],
-                False,
+                kwargs["_spec_property_naming"],
                 kwargs["_check_input_type"],
                 configuration=self.api_client.configuration,
             )
@@ -776,6 +778,7 @@ class Endpoint(object):
         default_kwargs["_request_timeout"] = kwargs.get("_request_timeout")
         default_kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
         default_kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+        default_kwargs["_spec_property_naming"] = kwargs.get("_spec_property_naming", False)
         default_kwargs["_host_index"] = kwargs.get("_host_index")
         return default_kwargs
 
