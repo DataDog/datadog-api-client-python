@@ -133,6 +133,7 @@ All URIs are relative to *https://api.datadoghq.com*
 | _LogsApi_               | [**aggregate_logs**](LogsApi.md#aggregate_logs)                                                            | **POST** /api/v2/logs/analytics/aggregate                                                  | Aggregate events                                   |
 | _LogsApi_               | [**list_logs**](LogsApi.md#list_logs)                                                                      | **POST** /api/v2/logs/events/search                                                        | Search logs                                        |
 | _LogsApi_               | [**list_logs_get**](LogsApi.md#list_logs_get)                                                              | **GET** /api/v2/logs/events                                                                | Get a list of logs                                 |
+| _LogsApi_               | [**submit_log**](LogsApi.md#submit_log)                                                                    | **POST** /api/v2/logs                                                                      | Send logs                                          |
 | _LogsArchivesApi_       | [**add_read_role_to_archive**](LogsArchivesApi.md#add_read_role_to_archive)                                | **POST** /api/v2/logs/config/archives/{archive_id}/readers                                 | Grant role to an archive                           |
 | _LogsArchivesApi_       | [**create_logs_archive**](LogsArchivesApi.md#create_logs_archive)                                          | **POST** /api/v2/logs/config/archives                                                      | Create an archive                                  |
 | _LogsArchivesApi_       | [**delete_logs_archive**](LogsArchivesApi.md#delete_logs_archive)                                          | **DELETE** /api/v2/logs/config/archives/{archive_id}                                       | Delete an archive                                  |
@@ -222,6 +223,7 @@ All URIs are relative to *https://api.datadoghq.com*
 - [ApplicationKeyUpdateRequest](ApplicationKeyUpdateRequest.md)
 - [ApplicationKeysSort](ApplicationKeysSort.md)
 - [ApplicationKeysType](ApplicationKeysType.md)
+- [ContentEncoding](ContentEncoding.md)
 - [Creator](Creator.md)
 - [DashboardListAddItemsRequest](DashboardListAddItemsRequest.md)
 - [DashboardListAddItemsResponse](DashboardListAddItemsResponse.md)
@@ -238,6 +240,10 @@ All URIs are relative to *https://api.datadoghq.com*
 - [FullAPIKeyAttributes](FullAPIKeyAttributes.md)
 - [FullApplicationKey](FullApplicationKey.md)
 - [FullApplicationKeyAttributes](FullApplicationKeyAttributes.md)
+- [HTTPLog](HTTPLog.md)
+- [HTTPLogError](HTTPLogError.md)
+- [HTTPLogErrors](HTTPLogErrors.md)
+- [HTTPLogItem](HTTPLogItem.md)
 - [IncidentCreateAttributes](IncidentCreateAttributes.md)
 - [IncidentCreateData](IncidentCreateData.md)
 - [IncidentCreateRelationships](IncidentCreateRelationships.md)

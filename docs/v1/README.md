@@ -252,6 +252,7 @@ All URIs are relative to *https://api.datadoghq.com*
 | _SyntheticsApi_                       | [**list_locations**](SyntheticsApi.md#list_locations)                                                                    | **GET** /api/v1/synthetics/locations                                                               | Get all locations (public and private)            |
 | _SyntheticsApi_                       | [**list_tests**](SyntheticsApi.md#list_tests)                                                                            | **GET** /api/v1/synthetics/tests                                                                   | Get the list of all tests                         |
 | _SyntheticsApi_                       | [**trigger_ci_tests**](SyntheticsApi.md#trigger_ci_tests)                                                                | **POST** /api/v1/synthetics/tests/trigger/ci                                                       | Trigger tests from CI/CD pipelines                |
+| _SyntheticsApi_                       | [**trigger_tests**](SyntheticsApi.md#trigger_tests)                                                                      | **POST** /api/v1/synthetics/tests/trigger                                                          | Trigger some Synthetics tests                     |
 | _SyntheticsApi_                       | [**update_api_test**](SyntheticsApi.md#update_api_test)                                                                  | **PUT** /api/v1/synthetics/tests/api/{public_id}                                                   | Edit an API test                                  |
 | _SyntheticsApi_                       | [**update_browser_test**](SyntheticsApi.md#update_browser_test)                                                          | **PUT** /api/v1/synthetics/tests/browser/{public_id}                                               | Edit a browser test                               |
 | _SyntheticsApi_                       | [**update_private_location**](SyntheticsApi.md#update_private_location)                                                  | **PUT** /api/v1/synthetics/private-locations/{location_id}                                         | Edit a private location                           |
@@ -286,6 +287,7 @@ All URIs are relative to *https://api.datadoghq.com*
 | _UsageMeteringApi_                    | [**get_usage_network_hosts**](UsageMeteringApi.md#get_usage_network_hosts)                                               | **GET** /api/v1/usage/network_hosts                                                                | Get hourly usage for Network Hosts                |
 | _UsageMeteringApi_                    | [**get_usage_profiling**](UsageMeteringApi.md#get_usage_profiling)                                                       | **GET** /api/v1/usage/profiling                                                                    | Get hourly usage for profiled hosts               |
 | _UsageMeteringApi_                    | [**get_usage_rum_sessions**](UsageMeteringApi.md#get_usage_rum_sessions)                                                 | **GET** /api/v1/usage/rum_sessions                                                                 | Get hourly usage for RUM Sessions                 |
+| _UsageMeteringApi_                    | [**get_usage_rum_units**](UsageMeteringApi.md#get_usage_rum_units)                                                       | **GET** /api/v1/usage/rum                                                                          | Get hourly usage for RUM Units                    |
 | _UsageMeteringApi_                    | [**get_usage_sds**](UsageMeteringApi.md#get_usage_sds)                                                                   | **GET** /api/v1/usage/sds                                                                          | Get hourly usage for Sensitive Data Scanner       |
 | _UsageMeteringApi_                    | [**get_usage_snmp**](UsageMeteringApi.md#get_usage_snmp)                                                                 | **GET** /api/v1/usage/snmp                                                                         | Get hourly usage for SNMP devices                 |
 | _UsageMeteringApi_                    | [**get_usage_summary**](UsageMeteringApi.md#get_usage_summary)                                                           | **GET** /api/v1/usage/summary                                                                      | Get usage across your multi-org account           |
@@ -795,9 +797,11 @@ All URIs are relative to *https://api.datadoghq.com*
 - [SyntheticsTestRequestCertificate](SyntheticsTestRequestCertificate.md)
 - [SyntheticsTestRequestCertificateItem](SyntheticsTestRequestCertificateItem.md)
 - [SyntheticsTiming](SyntheticsTiming.md)
+- [SyntheticsTriggerBody](SyntheticsTriggerBody.md)
 - [SyntheticsTriggerCITestLocation](SyntheticsTriggerCITestLocation.md)
 - [SyntheticsTriggerCITestRunResult](SyntheticsTriggerCITestRunResult.md)
 - [SyntheticsTriggerCITestsResponse](SyntheticsTriggerCITestsResponse.md)
+- [SyntheticsTriggerTest](SyntheticsTriggerTest.md)
 - [SyntheticsUpdateTestPauseStatusPayload](SyntheticsUpdateTestPauseStatusPayload.md)
 - [SyntheticsVariableParser](SyntheticsVariableParser.md)
 - [SyntheticsWarningType](SyntheticsWarningType.md)
@@ -882,6 +886,8 @@ All URIs are relative to *https://api.datadoghq.com*
 - [UsageReportsType](UsageReportsType.md)
 - [UsageRumSessionsHour](UsageRumSessionsHour.md)
 - [UsageRumSessionsResponse](UsageRumSessionsResponse.md)
+- [UsageRumUnitsHour](UsageRumUnitsHour.md)
+- [UsageRumUnitsResponse](UsageRumUnitsResponse.md)
 - [UsageSDSHour](UsageSDSHour.md)
 - [UsageSDSResponse](UsageSDSResponse.md)
 - [UsageSNMPHour](UsageSNMPHour.md)

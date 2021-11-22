@@ -17,6 +17,9 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
+from datadog_api_client.v2.model.content_encoding import ContentEncoding
+from datadog_api_client.v2.model.http_log import HTTPLog
+from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
 from datadog_api_client.v2.model.logs_aggregate_request import LogsAggregateRequest
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_list_request import LogsListRequest
@@ -175,6 +178,104 @@ class LogsApi(object):
             api_client=api_client,
         )
 
+        self._submit_log_endpoint = _Endpoint(
+            settings={
+                "response_type": (dict,),
+                "auth": ["apiKeyAuth"],
+                "endpoint_path": "/api/v2/logs",
+                "operation_id": "submit_log",
+                "http_method": "POST",
+                "servers": [
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "description": "No description provided",
+                        "variables": {
+                            "site": {
+                                "description": "The regional site for customers.",
+                                "default_value": "datadoghq.com",
+                                "enum_values": [
+                                    "datadoghq.com",
+                                    "us3.datadoghq.com",
+                                    "us5.datadoghq.com",
+                                    "datadoghq.eu",
+                                    "ddog-gov.com",
+                                ],
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "http-intake.logs",
+                            },
+                        },
+                    },
+                    {
+                        "url": "{protocol}://{name}",
+                        "description": "No description provided",
+                        "variables": {
+                            "name": {
+                                "description": "Full site DNS name.",
+                                "default_value": "http-intake.logs.datadoghq.com",
+                            },
+                            "protocol": {
+                                "description": "The protocol for accessing the API.",
+                                "default_value": "https",
+                            },
+                        },
+                    },
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "description": "No description provided",
+                        "variables": {
+                            "site": {
+                                "description": "Any Datadog deployment.",
+                                "default_value": "datadoghq.com",
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "http-intake.logs",
+                            },
+                        },
+                    },
+                ],
+            },
+            params_map={
+                "all": [
+                    "body",
+                    "content_encoding",
+                    "ddtags",
+                ],
+                "required": [
+                    "body",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (HTTPLog,),
+                    "content_encoding": (ContentEncoding,),
+                    "ddtags": (str,),
+                },
+                "attribute_map": {
+                    "content_encoding": "Content-Encoding",
+                    "ddtags": "ddtags",
+                },
+                "location_map": {
+                    "body": "body",
+                    "content_encoding": "header",
+                    "ddtags": "query",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": ["application/json", "application/logplex-1", "text/plain"],
+            },
+            api_client=api_client,
+        )
+
     def aggregate_logs(self, body, **kwargs):
         """Aggregate events  # noqa: E501
 
@@ -305,3 +406,48 @@ class LogsApi(object):
         """
         kwargs = self._list_logs_get_endpoint.default_arguments(kwargs)
         return self._list_logs_get_endpoint.call_with_http_info(**kwargs)
+
+    def submit_log(self, body, **kwargs):
+        """Send logs  # noqa: E501
+
+        Send your logs to your Datadog platform over HTTP. Limits per HTTP request are:  - Maximum content size per payload (uncompressed): 5MB - Maximum size for a single log: 1MB - Maximum array size if sending multiple logs in an array: 1000 entries  Any log exceeding 1MB is accepted and truncated by Datadog: - For a single log request, the API truncates the log at 1MB and returns a 2xx. - For a multi-logs request, the API processes all logs, truncates only logs larger than 1MB, and returns a 2xx.  Datadog recommends sending your logs compressed. Add the `Content-Encoding: gzip` header to the request when sending compressed logs.  The status codes answered by the HTTP API are: - 202: Accepted: the request has been accepted for processing - 400: Bad request (likely an issue in the payload formatting) - 401: Unauthorized (likely a missing API Key) - 403: Permission issue (likely using an invalid API Key) - 408: Request Timeout, request should be retried after some time - 413: Payload too large (batch is above 5MB uncompressed) - 429: Too Many Requests, request should be retried after some time - 500: Internal Server Error, the server encountered an unexpected condition that prevented it from fulfilling the request, request should be retried after some time - 503: Service Unavailable, the server is not ready to handle the request probably because it is overloaded, request should be retried after some time  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.submit_log(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (HTTPLog): Log to send (JSON format).
+
+        Keyword Args:
+            content_encoding (ContentEncoding): HTTP header used to compress the media-type.. [optional]
+            ddtags (str): Log tags can be passed as query parameters with `text/plain` content type.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            dict
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._submit_log_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._submit_log_endpoint.call_with_http_info(**kwargs)

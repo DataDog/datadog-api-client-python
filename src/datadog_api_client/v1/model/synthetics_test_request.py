@@ -92,6 +92,7 @@ class SyntheticsTestRequest(ModelNormal):
             "follow_redirects": (bool,),  # noqa: E501
             "headers": (SyntheticsTestHeaders,),  # noqa: E501
             "host": (str,),  # noqa: E501
+            "message": (str,),  # noqa: E501
             "method": (HTTPMethod,),  # noqa: E501
             "no_saving_response_body": (bool,),  # noqa: E501
             "number_of_packets": (int,),  # noqa: E501
@@ -115,6 +116,7 @@ class SyntheticsTestRequest(ModelNormal):
         "follow_redirects": "follow_redirects",  # noqa: E501
         "headers": "headers",  # noqa: E501
         "host": "host",  # noqa: E501
+        "message": "message",  # noqa: E501
         "method": "method",  # noqa: E501
         "no_saving_response_body": "noSavingResponseBody",  # noqa: E501
         "number_of_packets": "numberOfPackets",  # noqa: E501
@@ -174,6 +176,7 @@ class SyntheticsTestRequest(ModelNormal):
             follow_redirects (bool): Specifies whether or not the request follows redirects.. [optional]  # noqa: E501
             headers (SyntheticsTestHeaders): [optional]  # noqa: E501
             host (str): Host name to perform the test with.. [optional]  # noqa: E501
+            message (str): Message to send for UDP or WebSocket tests.. [optional]  # noqa: E501
             method (HTTPMethod): [optional]  # noqa: E501
             no_saving_response_body (bool): Determines whether or not to save the response body.. [optional]  # noqa: E501
             number_of_packets (int): Number of pings to use per test.. [optional]  # noqa: E501

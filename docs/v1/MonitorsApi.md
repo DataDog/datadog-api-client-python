@@ -80,6 +80,7 @@ with ApiClient(configuration) as api_client:
 | **400**     | Bad Request             | -                |
 | **403**     | Forbidden               | -                |
 | **409**     | Deletion conflict error | -                |
+| **429**     | Too many requests       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -103,7 +104,7 @@ The type of monitor chosen from:
 - integration: `query alert` or `service check`
 - live process: `process alert`
 - logs: `log alert`
-- metric: `metric alert`
+- metric: `query alert`
 - network: `service check`
 - outlier: `query alert`
 - process: `service check`
@@ -255,7 +256,7 @@ with ApiClient(configuration) as api_client:
     api_instance = monitors_api.MonitorsApi(api_client)
     body = Monitor(
         message="message_example",
-        name="name_example",
+        name="My monitor",
         options=MonitorOptions(
             enable_logs_sample=True,
             escalation_message="none",
@@ -302,7 +303,7 @@ with ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-        type=MonitorType("metric alert"),
+        type=MonitorType("query alert"),
     )  # Monitor | Create a monitor request body.
 
     # example passing only required values which don't have defaults set
@@ -335,11 +336,12 @@ with ApiClient(configuration) as api_client:
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-| ----------- | ----------- | ---------------- |
-| **200**     | OK          | -                |
-| **400**     | Bad Request | -                |
-| **403**     | Forbidden   | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **400**     | Bad Request       | -                |
+| **403**     | Forbidden         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -419,6 +421,7 @@ with ApiClient(configuration) as api_client:
 | **401**     | Authentication error | -                |
 | **403**     | Forbidden            | -                |
 | **404**     | Item not found error | -                |
+| **429**     | Too many requests    | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -497,6 +500,7 @@ with ApiClient(configuration) as api_client:
 | **400**     | Bad Request             | -                |
 | **403**     | Authentication error    | -                |
 | **404**     | Monitor Not Found error | -                |
+| **429**     | Too many requests       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -573,11 +577,12 @@ with ApiClient(configuration) as api_client:
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-| ----------- | ----------- | ---------------- |
-| **200**     | OK          | -                |
-| **400**     | Bad Request | -                |
-| **403**     | Forbidden   | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **400**     | Bad Request       | -                |
+| **403**     | Forbidden         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -646,11 +651,12 @@ with ApiClient(configuration) as api_client:
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-| ----------- | ----------- | ---------------- |
-| **200**     | OK          | -                |
-| **400**     | Bad Request | -                |
-| **403**     | Forbidden   | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **400**     | Bad Request       | -                |
+| **403**     | Forbidden         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -719,11 +725,12 @@ with ApiClient(configuration) as api_client:
 
 ### HTTP response details
 
-| Status code | Description | Response headers |
-| ----------- | ----------- | ---------------- |
-| **200**     | OK          | -                |
-| **400**     | Bad Request | -                |
-| **403**     | Forbidden   | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **400**     | Bad Request       | -                |
+| **403**     | Forbidden         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -803,7 +810,7 @@ with ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-        type=MonitorType("metric alert"),
+        type=MonitorType("query alert"),
     )  # MonitorUpdateRequest | Edit a monitor request body.
 
     # example passing only required values which don't have defaults set
@@ -844,6 +851,7 @@ with ApiClient(configuration) as api_client:
 | **401**     | Authentication error    | -                |
 | **403**     | Forbidden               | -                |
 | **404**     | Monitor Not Found error | -                |
+| **429**     | Too many requests       | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -875,7 +883,7 @@ with ApiClient(configuration) as api_client:
     api_instance = monitors_api.MonitorsApi(api_client)
     body = Monitor(
         message="message_example",
-        name="name_example",
+        name="My monitor",
         options=MonitorOptions(
             enable_logs_sample=True,
             escalation_message="none",
@@ -922,7 +930,7 @@ with ApiClient(configuration) as api_client:
         tags=[
             "tags_example",
         ],
-        type=MonitorType("metric alert"),
+        type=MonitorType("query alert"),
     )  # Monitor | Monitor request object
 
     # example passing only required values which don't have defaults set
@@ -955,10 +963,11 @@ with ApiClient(configuration) as api_client:
 
 ### HTTP response details
 
-| Status code | Description  | Response headers |
-| ----------- | ------------ | ---------------- |
-| **200**     | OK           | -                |
-| **400**     | Invalid JSON | -                |
-| **403**     | Forbidden    | -                |
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **400**     | Invalid JSON      | -                |
+| **403**     | Forbidden         | -                |
+| **429**     | Too many requests | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

@@ -73,7 +73,7 @@ class UsageBillableSummaryHour(ModelNormal):
             "num_orgs": (int,),  # noqa: E501
             "org_name": (str,),  # noqa: E501
             "public_id": (str,),  # noqa: E501
-            "ratio_in_month": (int,),  # noqa: E501
+            "ratio_in_month": (float,),  # noqa: E501
             "start_date": (datetime,),  # noqa: E501
             "usage": (UsageBillableSummaryKeys,),  # noqa: E501
         }
@@ -135,7 +135,7 @@ class UsageBillableSummaryHour(ModelNormal):
             num_orgs (int): The number of organizations.. [optional]  # noqa: E501
             org_name (str): The organization name.. [optional]  # noqa: E501
             public_id (str): The organization public ID.. [optional]  # noqa: E501
-            ratio_in_month (int): Shows usage aggregation for a billing period.. [optional]  # noqa: E501
+            ratio_in_month (float): Shows usage aggregation for a billing period.. [optional]  # noqa: E501
             start_date (datetime): Shows the first date of usage.. [optional]  # noqa: E501
             usage (UsageBillableSummaryKeys): [optional]  # noqa: E501
         """

@@ -40,6 +40,7 @@ from datadog_api_client.v1.model.synthetics_private_location_creation_response i
     SyntheticsPrivateLocationCreationResponse,
 )
 from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
+from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTriggerBody
 from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
 from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import (
     SyntheticsUpdateTestPauseStatusPayload,
@@ -910,6 +911,42 @@ class SyntheticsApi(object):
                 "allowed_values": {},
                 "openapi_types": {
                     "body": (SyntheticsCITestBody,),
+                },
+                "attribute_map": {},
+                "location_map": {
+                    "body": "body",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._trigger_tests_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsTriggerCITestsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/trigger",
+                "operation_id": "trigger_tests",
+                "http_method": "POST",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "body",
+                ],
+                "required": [
+                    "body",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "body": (SyntheticsTriggerBody,),
                 },
                 "attribute_map": {},
                 "location_map": {
@@ -2037,6 +2074,49 @@ class SyntheticsApi(object):
         kwargs = self._trigger_ci_tests_endpoint.default_arguments(kwargs)
         kwargs["body"] = body
         return self._trigger_ci_tests_endpoint.call_with_http_info(**kwargs)
+
+    def trigger_tests(self, body, **kwargs):
+        """Trigger some Synthetics tests  # noqa: E501
+
+        Trigger a set of Synthetics tests.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.trigger_tests(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (SyntheticsTriggerBody): The identifiers of the tests to trigger.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SyntheticsTriggerCITestsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._trigger_tests_endpoint.default_arguments(kwargs)
+        kwargs["body"] = body
+        return self._trigger_tests_endpoint.call_with_http_info(**kwargs)
 
     def update_api_test(self, public_id, body, **kwargs):
         """Edit an API test  # noqa: E501

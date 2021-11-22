@@ -74,12 +74,16 @@ class UsageSummaryResponse(ModelNormal):
             "apm_azure_app_service_host_top99p_sum": (int,),  # noqa: E501
             "apm_host_top99p_sum": (int,),  # noqa: E501
             "audit_logs_lines_indexed_agg_sum": (int,),  # noqa: E501
+            "avg_profiled_fargate_tasks_sum": (int,),  # noqa: E501
             "aws_host_top99p_sum": (int,),  # noqa: E501
             "aws_lambda_func_count": (int,),  # noqa: E501
             "aws_lambda_invocations_sum": (int,),  # noqa: E501
             "azure_app_service_top99p_sum": (int,),  # noqa: E501
             "azure_host_top99p_sum": (int,),  # noqa: E501
             "billable_ingested_bytes_agg_sum": (int,),  # noqa: E501
+            "browser_rum_lite_session_count_agg_sum": (int,),  # noqa: E501
+            "browser_rum_replay_session_count_agg_sum": (int,),  # noqa: E501
+            "browser_rum_units_agg_sum": (int,),  # noqa: E501
             "container_avg_sum": (int,),  # noqa: E501
             "container_hwm_sum": (int,),  # noqa: E501
             "cspm_container_avg_sum": (int,),  # noqa: E501
@@ -105,9 +109,11 @@ class UsageSummaryResponse(ModelNormal):
             "live_indexed_events_agg_sum": (int,),  # noqa: E501
             "live_ingested_bytes_agg_sum": (int,),  # noqa: E501
             "logs_by_retention": (LogsByRetention,),  # noqa: E501
+            "mobile_rum_lite_session_count_agg_sum": (int,),  # noqa: E501
             "mobile_rum_session_count_agg_sum": (int,),  # noqa: E501
             "mobile_rum_session_count_android_agg_sum": (int,),  # noqa: E501
             "mobile_rum_session_count_ios_agg_sum": (int,),  # noqa: E501
+            "mobile_rum_units_agg_sum": (int,),  # noqa: E501
             "netflow_indexed_events_count_agg_sum": (int,),  # noqa: E501
             "npm_host_top99p_sum": (int,),  # noqa: E501
             "opentelemetry_host_top99p_sum": (int,),  # noqa: E501
@@ -117,6 +123,7 @@ class UsageSummaryResponse(ModelNormal):
             "rehydrated_ingested_bytes_agg_sum": (int,),  # noqa: E501
             "rum_session_count_agg_sum": (int,),  # noqa: E501
             "rum_total_session_count_agg_sum": (int,),  # noqa: E501
+            "rum_units_agg_sum": (int,),  # noqa: E501
             "sds_logs_scanned_bytes_sum": (int,),  # noqa: E501
             "sds_total_scanned_bytes_sum": (int,),  # noqa: E501
             "start_date": (datetime,),  # noqa: E501
@@ -135,12 +142,16 @@ class UsageSummaryResponse(ModelNormal):
         "apm_azure_app_service_host_top99p_sum": "apm_azure_app_service_host_top99p_sum",  # noqa: E501
         "apm_host_top99p_sum": "apm_host_top99p_sum",  # noqa: E501
         "audit_logs_lines_indexed_agg_sum": "audit_logs_lines_indexed_agg_sum",  # noqa: E501
+        "avg_profiled_fargate_tasks_sum": "avg_profiled_fargate_tasks_sum",  # noqa: E501
         "aws_host_top99p_sum": "aws_host_top99p_sum",  # noqa: E501
         "aws_lambda_func_count": "aws_lambda_func_count",  # noqa: E501
         "aws_lambda_invocations_sum": "aws_lambda_invocations_sum",  # noqa: E501
         "azure_app_service_top99p_sum": "azure_app_service_top99p_sum",  # noqa: E501
         "azure_host_top99p_sum": "azure_host_top99p_sum",  # noqa: E501
         "billable_ingested_bytes_agg_sum": "billable_ingested_bytes_agg_sum",  # noqa: E501
+        "browser_rum_lite_session_count_agg_sum": "browser_rum_lite_session_count_agg_sum",  # noqa: E501
+        "browser_rum_replay_session_count_agg_sum": "browser_rum_replay_session_count_agg_sum",  # noqa: E501
+        "browser_rum_units_agg_sum": "browser_rum_units_agg_sum",  # noqa: E501
         "container_avg_sum": "container_avg_sum",  # noqa: E501
         "container_hwm_sum": "container_hwm_sum",  # noqa: E501
         "cspm_container_avg_sum": "cspm_container_avg_sum",  # noqa: E501
@@ -166,9 +177,11 @@ class UsageSummaryResponse(ModelNormal):
         "live_indexed_events_agg_sum": "live_indexed_events_agg_sum",  # noqa: E501
         "live_ingested_bytes_agg_sum": "live_ingested_bytes_agg_sum",  # noqa: E501
         "logs_by_retention": "logs_by_retention",  # noqa: E501
+        "mobile_rum_lite_session_count_agg_sum": "mobile_rum_lite_session_count_agg_sum",  # noqa: E501
         "mobile_rum_session_count_agg_sum": "mobile_rum_session_count_agg_sum",  # noqa: E501
         "mobile_rum_session_count_android_agg_sum": "mobile_rum_session_count_android_agg_sum",  # noqa: E501
         "mobile_rum_session_count_ios_agg_sum": "mobile_rum_session_count_ios_agg_sum",  # noqa: E501
+        "mobile_rum_units_agg_sum": "mobile_rum_units_agg_sum",  # noqa: E501
         "netflow_indexed_events_count_agg_sum": "netflow_indexed_events_count_agg_sum",  # noqa: E501
         "npm_host_top99p_sum": "npm_host_top99p_sum",  # noqa: E501
         "opentelemetry_host_top99p_sum": "opentelemetry_host_top99p_sum",  # noqa: E501
@@ -178,6 +191,7 @@ class UsageSummaryResponse(ModelNormal):
         "rehydrated_ingested_bytes_agg_sum": "rehydrated_ingested_bytes_agg_sum",  # noqa: E501
         "rum_session_count_agg_sum": "rum_session_count_agg_sum",  # noqa: E501
         "rum_total_session_count_agg_sum": "rum_total_session_count_agg_sum",  # noqa: E501
+        "rum_units_agg_sum": "rum_units_agg_sum",  # noqa: E501
         "sds_logs_scanned_bytes_sum": "sds_logs_scanned_bytes_sum",  # noqa: E501
         "sds_total_scanned_bytes_sum": "sds_total_scanned_bytes_sum",  # noqa: E501
         "start_date": "start_date",  # noqa: E501
@@ -232,12 +246,16 @@ class UsageSummaryResponse(ModelNormal):
             apm_azure_app_service_host_top99p_sum (int): Shows the 99th percentile of all Azure app services using APM over all hours in the current months all organizations.. [optional]  # noqa: E501
             apm_host_top99p_sum (int): Shows the 99th percentile of all distinct APM hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             audit_logs_lines_indexed_agg_sum (int): Shows the sum of all audit logs lines indexed over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            avg_profiled_fargate_tasks_sum (int): Shows the average of all profiled Fargate tasks over all hours in the current months for all organizations.. [optional]  # noqa: E501
             aws_host_top99p_sum (int): Shows the 99th percentile of all AWS hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             aws_lambda_func_count (int): Shows the average of the number of functions that executed 1 or more times each hour in the current months for all organizations.. [optional]  # noqa: E501
             aws_lambda_invocations_sum (int): Shows the sum of all AWS Lambda invocations over all hours in the current months for all organizations.. [optional]  # noqa: E501
             azure_app_service_top99p_sum (int): Shows the 99th percentile of all Azure app services over all hours in the current months for all organizations.. [optional]  # noqa: E501
             azure_host_top99p_sum (int): Shows the 99th percentile of all Azure hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             billable_ingested_bytes_agg_sum (int): Shows the sum of all log bytes ingested over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            browser_rum_lite_session_count_agg_sum (int): Shows the sum of all browser lite sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            browser_rum_replay_session_count_agg_sum (int): Shows the sum of all browser replay sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            browser_rum_units_agg_sum (int): Shows the sum of all browser RUM units over all hours in the current months for all organizations.. [optional]  # noqa: E501
             container_avg_sum (int): Shows the average of all distinct containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
             container_hwm_sum (int): Shows the sum of the high-water marks of all distinct containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
             cspm_container_avg_sum (int): Shows the average number of Cloud Security Posture Management containers over all hours in the current months for all organizations.. [optional]  # noqa: E501
@@ -263,9 +281,11 @@ class UsageSummaryResponse(ModelNormal):
             live_indexed_events_agg_sum (int): Shows the sum of all live logs indexed over all hours in the current months for all organizations (data available as of December 1, 2020).. [optional]  # noqa: E501
             live_ingested_bytes_agg_sum (int): Shows the sum of all live logs bytes ingested over all hours in the current months for all organizations (data available as of December 1, 2020).. [optional]  # noqa: E501
             logs_by_retention (LogsByRetention): [optional]  # noqa: E501
+            mobile_rum_lite_session_count_agg_sum (int): Shows the sum of all mobile lite sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
             mobile_rum_session_count_agg_sum (int): Shows the sum of all mobile RUM Sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
             mobile_rum_session_count_android_agg_sum (int): Shows the sum of all mobile RUM Sessions on Android over all hours in the current months for all organizations.. [optional]  # noqa: E501
             mobile_rum_session_count_ios_agg_sum (int): Shows the sum of all mobile RUM Sessions on iOS over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            mobile_rum_units_agg_sum (int): Shows the sum of all mobile RUM units over all hours in the current months for all organizations.. [optional]  # noqa: E501
             netflow_indexed_events_count_agg_sum (int): Shows the sum of all Network flows indexed over all hours in the current months for all organizations.. [optional]  # noqa: E501
             npm_host_top99p_sum (int): Shows the 99th percentile of all distinct Networks hosts over all hours in the current months for all organizations.. [optional]  # noqa: E501
             opentelemetry_host_top99p_sum (int): Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current months for all organizations.. [optional]  # noqa: E501
@@ -275,6 +295,7 @@ class UsageSummaryResponse(ModelNormal):
             rehydrated_ingested_bytes_agg_sum (int): Shows the sum of all rehydrated logs bytes ingested over all hours in the current months for all organizations (data available as of December 1, 2020).. [optional]  # noqa: E501
             rum_session_count_agg_sum (int): Shows the sum of all browser RUM Sessions over all hours in the current months for all organizations.. [optional]  # noqa: E501
             rum_total_session_count_agg_sum (int): Shows the sum of RUM Sessions (browser and mobile) over all hours in the current months for all organizations.. [optional]  # noqa: E501
+            rum_units_agg_sum (int): Shows the sum of all browser and mobile RUM units over all hours in the current months for all organizations.. [optional]  # noqa: E501
             sds_logs_scanned_bytes_sum (int): Shows the sum of all bytes scanned of logs usage by the Sensitive Data Scanner over all hours in the current month for all organizations.. [optional]  # noqa: E501
             sds_total_scanned_bytes_sum (int): Shows the sum of all bytes scanned across all usage types by the Sensitive Data Scanner over all hours in the current month for all organizations.. [optional]  # noqa: E501
             start_date (datetime): Shows the first date of usage in the current months for all organizations.. [optional]  # noqa: E501

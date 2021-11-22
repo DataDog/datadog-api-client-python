@@ -544,9 +544,11 @@ from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRe
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
 from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
+from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTriggerBody
 from datadog_api_client.v1.model.synthetics_trigger_ci_test_location import SyntheticsTriggerCITestLocation
 from datadog_api_client.v1.model.synthetics_trigger_ci_test_run_result import SyntheticsTriggerCITestRunResult
 from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
+from datadog_api_client.v1.model.synthetics_trigger_test import SyntheticsTriggerTest
 from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import (
     SyntheticsUpdateTestPauseStatusPayload,
 )
@@ -637,6 +639,8 @@ from datadog_api_client.v1.model.usage_profiling_response import UsageProfilingR
 from datadog_api_client.v1.model.usage_reports_type import UsageReportsType
 from datadog_api_client.v1.model.usage_rum_sessions_hour import UsageRumSessionsHour
 from datadog_api_client.v1.model.usage_rum_sessions_response import UsageRumSessionsResponse
+from datadog_api_client.v1.model.usage_rum_units_hour import UsageRumUnitsHour
+from datadog_api_client.v1.model.usage_rum_units_response import UsageRumUnitsResponse
 from datadog_api_client.v1.model.usage_sds_hour import UsageSDSHour
 from datadog_api_client.v1.model.usage_sds_response import UsageSDSResponse
 from datadog_api_client.v1.model.usage_snmp_hour import UsageSNMPHour

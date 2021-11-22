@@ -1039,6 +1039,12 @@
       "type": "idempotent"
     }
   },
+  "TriggerTests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "TriggerCITests": {
     "tag": "Synthetics",
     "undo": {
@@ -1262,6 +1268,12 @@
     }
   },
   "GetUsageProfiling": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetUsageRumUnits": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
