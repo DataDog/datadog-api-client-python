@@ -399,12 +399,13 @@ def api_request(configuration, context, name):
         "args": [],
         "kwargs": {
             "_host_index": configuration.server_index,
-            "_check_input_type": False,
+            "_check_input_type": True,
             "async_req": False,
             "_check_return_type": True,
             "_return_http_data_only": False,
             "_preload_content": True,
             "_request_timeout": None,
+            "_spec_property_naming": True,
         },
         "response": (None, None, None),
     }
