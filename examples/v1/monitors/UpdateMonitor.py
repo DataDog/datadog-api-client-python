@@ -25,7 +25,8 @@ body = MonitorUpdateRequest(
     ),
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     response = api_instance.update_monitor(monitor_id=int(MONITOR_ID), body=body)
 

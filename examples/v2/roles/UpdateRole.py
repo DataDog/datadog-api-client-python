@@ -20,7 +20,8 @@ body = RoleUpdateRequest(
     )
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = RolesApi(api_client)
     response = api_instance.update_role(role_id=ROLE_DATA_ID, body=body)
 

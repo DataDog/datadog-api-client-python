@@ -12,7 +12,8 @@ DOWNTIME_SCOPE_0 = environ["DOWNTIME_SCOPE_0"]
 
 body = CancelDowntimesByScopeRequest(scope=DOWNTIME_SCOPE_0)
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
     response = api_instance.cancel_downtimes_by_scope(body=body)
 

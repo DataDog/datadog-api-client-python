@@ -12,7 +12,8 @@ DASHBOARD_LIST_ID = environ["DASHBOARD_LIST_ID"]
 
 body = DashboardList(name="updated Example-Update_a_dashboard_list_returns_OK_response")
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = DashboardListsApi(api_client)
     response = api_instance.update_dashboard_list(list_id=int(DASHBOARD_LIST_ID), body=body)
 

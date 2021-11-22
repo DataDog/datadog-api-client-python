@@ -16,7 +16,8 @@ body = HTTPLog(
     ]
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = LogsApi(api_client)
     response = api_instance.submit_log(body=body)
 

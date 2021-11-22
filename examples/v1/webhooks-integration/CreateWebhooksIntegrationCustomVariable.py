@@ -10,7 +10,8 @@ body = WebhooksIntegrationCustomVariable(
     is_secret=True, name="EXAMPLECREATEACUSTOMVARIABLERETURNSOKRESPONSE", value="CUSTOM_VARIABLE_VALUE"
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = WebhooksIntegrationApi(api_client)
     response = api_instance.create_webhooks_integration_custom_variable(body=body)
 

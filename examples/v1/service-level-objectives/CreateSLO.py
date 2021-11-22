@@ -27,7 +27,8 @@ body = ServiceLevelObjectiveRequest(
     ],
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectivesApi(api_client)
     response = api_instance.create_slo(body=body)
 

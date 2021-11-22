@@ -70,7 +70,10 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "batch_id": (str,),  # noqa: E501
+            "batch_id": (
+                str,
+                none_type,
+            ),  # noqa: E501
             "locations": ([SyntheticsTriggerCITestLocation],),  # noqa: E501
             "results": ([SyntheticsTriggerCITestRunResult],),  # noqa: E501
             "triggered_check_ids": ([str],),  # noqa: E501
@@ -124,7 +127,7 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            batch_id (str): The public ID of the batch triggered.. [optional]  # noqa: E501
+            batch_id (str, none_type): The public ID of the batch triggered.. [optional]  # noqa: E501
             locations ([SyntheticsTriggerCITestLocation]): List of Synthetics locations.. [optional]  # noqa: E501
             results ([SyntheticsTriggerCITestRunResult]): Information about the tests runs.. [optional]  # noqa: E501
             triggered_check_ids ([str]): The public IDs of the Synthetics test triggered.. [optional]  # noqa: E501

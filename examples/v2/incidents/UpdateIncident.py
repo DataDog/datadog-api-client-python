@@ -34,7 +34,9 @@ body = IncidentUpdateRequest(
     )
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+configuration.unstable_operations["update_incident"] = True
+with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)
     response = api_instance.update_incident(incident_id=INCIDENT_DATA_ID, body=body)
 

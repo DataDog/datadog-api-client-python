@@ -79,7 +79,8 @@ body = NotebookUpdateRequest(
     )
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = NotebooksApi(api_client)
     response = api_instance.update_notebook(notebook_id=int(NOTEBOOK_DATA_ID), body=body)
 

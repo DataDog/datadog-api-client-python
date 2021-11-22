@@ -9,7 +9,8 @@ from datadog_api_client.v1.api.webhooks_integration_api import WebhooksIntegrati
 # there is a valid "webhook" in the system
 WEBHOOK_NAME = environ["WEBHOOK_NAME"]
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = WebhooksIntegrationApi(api_client)
     response = api_instance.get_webhooks_integration(webhook_name=WEBHOOK_NAME)
 

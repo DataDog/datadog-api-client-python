@@ -8,7 +8,8 @@ from datadog_api_client.v1.model.dashboard_list import DashboardList
 
 body = DashboardList(name="Example-Create_a_dashboard_list_returns_OK_response")
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = DashboardListsApi(api_client)
     response = api_instance.create_dashboard_list(body=body)
 

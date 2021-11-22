@@ -75,7 +75,8 @@ body = NotebookCreateRequest(
     )
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = NotebooksApi(api_client)
     response = api_instance.create_notebook(body=body)
 

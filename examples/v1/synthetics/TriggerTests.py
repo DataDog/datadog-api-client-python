@@ -13,7 +13,8 @@ SYNTHETICS_API_TEST_PUBLIC_ID = environ["SYNTHETICS_API_TEST_PUBLIC_ID"]
 
 body = SyntheticsTriggerBody(tests=[SyntheticsTriggerTest(public_id=SYNTHETICS_API_TEST_PUBLIC_ID)])
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     response = api_instance.trigger_tests(body=body)
 

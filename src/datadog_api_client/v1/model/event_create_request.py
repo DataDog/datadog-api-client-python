@@ -56,9 +56,6 @@ class EventCreateRequest(ModelNormal):
         ("text",): {
             "max_length": 4000,
         },
-        ("title",): {
-            "max_length": 100,
-        },
         ("aggregation_key",): {
             "max_length": 100,
         },
@@ -129,7 +126,7 @@ class EventCreateRequest(ModelNormal):
 
         Args:
             text (str): The body of the event. Limited to 4000 characters. The text supports markdown. To use markdown in the event text, start the text block with `%%% \\n` and end the text block with `\\n %%%`. Use `msg_text` with the Datadog Ruby library.
-            title (str): The event title. Limited to 100 characters. Use `msg_title` with the Datadog Ruby library.
+            title (str): The event title.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

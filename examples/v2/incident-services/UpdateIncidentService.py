@@ -20,7 +20,9 @@ body = IncidentServiceUpdateRequest(
     )
 )
 
-with ApiClient(Configuration()) as api_client:
+configuration = Configuration()
+configuration.unstable_operations["update_incident_service"] = True
+with ApiClient(configuration) as api_client:
     api_instance = IncidentServicesApi(api_client)
     response = api_instance.update_incident_service(service_id=SERVICE_DATA_ID, body=body)
 
