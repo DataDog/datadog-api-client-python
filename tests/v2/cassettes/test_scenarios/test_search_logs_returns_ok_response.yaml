@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"filter":{"from":"2020-09-17T11:48:36+01:00","indexes":["main"],"query":"datadog-agent","to":"2020-09-17T12:48:36+01:00"},"page":{"limit":5},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '161'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '1029241237632597083'
+      x-datadog-trace-id:
+      - '7754844521331040482'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/events/search
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      cache-control:
+      - no-cache
+      connection:
+      - close
+      content-length:
+      - '11'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - application/json
+      date:
+      - Tue, 23 Nov 2021 09:37:55 GMT
+      pragma:
+      - no-cache
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-envoy-upstream-service-time:
+      - '101'
+      x-frame-options:
+      - SAMEORIGIN
+      x-ratelimit-limit:
+      - '10'
+      x-ratelimit-period:
+      - '10'
+      x-ratelimit-remaining:
+      - '9'
+      x-ratelimit-reset:
+      - '5'
+    status:
+      code: 200
+      message: OK
+version: 1

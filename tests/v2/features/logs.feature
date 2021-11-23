@@ -35,7 +35,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 400 Bad Request
 
-  Scenario: Get a list of logs returns "OK" response
+  Scenario: Search logs returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "ListLogs" enabled
     And new "ListLogs" request
@@ -62,14 +62,6 @@ Feature: Logs
     And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web* AND @http.status_code:[200 TO 299]", "to": "now"}, "options": {"timeOffset": null, "timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 400 Bad Request
-
-  @generated @skip
-  Scenario: Search logs returns "OK" response
-    Given a valid "appKeyAuth" key in the system
-    And new "ListLogs" request
-    And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web* AND @http.status_code:[200 TO 299]", "to": "now"}, "options": {"timeOffset": null, "timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
-    When the request is sent
-    Then the response status is 200 OK
 
   @integration-only
   Scenario: Send deflat logs returns "Request accepted for processing (always 202 empty JSON)." response
