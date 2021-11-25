@@ -29,8 +29,8 @@ body = Monitor(
         notify_no_data=False,
         renotify_interval=60,
         require_full_window=True,
+        timeout_h=24,
         thresholds=MonitorThresholds(critical=2.0, warning=1.0),
-        timeout_h=60,
     ),
 )
 

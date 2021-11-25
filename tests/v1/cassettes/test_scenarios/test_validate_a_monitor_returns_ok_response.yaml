@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Validate_a_monitor_returns_OK_response-1633076916","options":{"enable_logs_sample":true,"escalation_message":"the
-      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_no_data":false,"renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":60},"priority":3,"query":"logs(\"service:foo
+      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_no_data":false,"renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
       AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
       > 2","tags":["test:testvalidateamonitorreturnsokresponse1633076916","env:ci"],"type":"log
       alert"}'
@@ -17,11 +17,11 @@ interactions:
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
       x-datadog-parent-id:
-      - '7725271528772420835'
+      - '3842702030734030874'
       x-datadog-trace-id:
-      - '6870665174742654481'
+      - '453425212175196308'
     method: POST
     uri: https://api.datadoghq.com/api/v1/monitor/validate
   response:
@@ -39,13 +39,15 @@ interactions:
       content-type:
       - application/json
       date:
-      - Fri, 01 Oct 2021 08:28:36 GMT
+      - Tue, 23 Nov 2021 16:30:01 GMT
       pragma:
       - no-cache
       strict-transport-security:
       - max-age=15724800;
       x-content-type-options:
       - nosniff
+      x-envoy-upstream-service-time:
+      - '156'
       x-frame-options:
       - SAMEORIGIN
     status:

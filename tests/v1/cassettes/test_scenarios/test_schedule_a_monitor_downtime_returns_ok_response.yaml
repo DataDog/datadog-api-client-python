@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1634655463","options":{"enable_logs_sample":true,"escalation_message":"the
-      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_no_data":false,"renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":60},"priority":3,"query":"logs(\"service:foo
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1637697115","options":{"enable_logs_sample":true,"escalation_message":"the
+      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_no_data":false,"renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
       AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
-      > 2","tags":["test:testscheduleamonitordowntimereturnsokresponse1634655463","env:ci"],"type":"log
+      > 2","tags":["test:testscheduleamonitordowntimereturnsokresponse1637697115","env:ci"],"type":"log
       alert"}'
     headers:
       accept:
@@ -17,19 +17,19 @@ interactions:
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
       x-datadog-parent-id:
-      - '4930539286708416161'
+      - '8950635000541597768'
       x-datadog-trace-id:
-      - '9106492334440217670'
+      - '6676591243214722342'
     method: POST
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
     body:
-      string: '{"restricted_roles":null,"tags":["test:testscheduleamonitordowntimereturnsokresponse1634655463","env:ci"],"deleted":null,"query":"logs(\"service:foo
+      string: '{"restricted_roles":null,"tags":["test:testscheduleamonitordowntimereturnsokresponse1637697115","env:ci"],"deleted":null,"query":"logs(\"service:foo
         AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
-        > 2","message":"some message Notify: @hipchat-channel","id":50341249,"multi":true,"name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1634655463","created":"2021-10-19T14:57:43.559073+00:00","created_at":1634655463000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2021-10-19T14:57:43.559073+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
-        Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":60,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
+        > 2","message":"some message Notify: @hipchat-channel","id":55498427,"multi":true,"name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1637697115","created":"2021-11-23T19:51:56.161872+00:00","created_at":1637697116000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2021-11-23T19:51:56.161872+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
+        Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":24,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
         situation has escalated","evaluation_delay":700,"thresholds":{"critical":2.0,"warning":1.0}}}'
     headers:
       cache-control:
@@ -43,7 +43,7 @@ interactions:
       content-type:
       - application/json
       date:
-      - Tue, 19 Oct 2021 14:57:43 GMT
+      - Tue, 23 Nov 2021 19:51:56 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -52,6 +52,8 @@ interactions:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
+      x-envoy-upstream-service-time:
+      - '222'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -61,12 +63,12 @@ interactions:
       x-ratelimit-remaining:
       - '499'
       x-ratelimit-reset:
-      - '7'
+      - '4'
     status:
       code: 200
       message: OK
 - request:
-    body: '{"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1634655463","monitor_id":50341249,"scope":["test:testscheduleamonitordowntimereturnsokresponse1634655463"],"start":1634655463,"timezone":"Etc/UTC"}'
+    body: '{"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1637697115","monitor_id":55498427,"scope":["test:testscheduleamonitordowntimereturnsokresponse1637697115"],"start":1637697115,"timezone":"Etc/UTC"}'
     headers:
       accept:
       - application/json, */*;q=0.8
@@ -79,16 +81,16 @@ interactions:
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
       x-datadog-parent-id:
-      - '9077270044337228905'
+      - '9213506342341186653'
       x-datadog-trace-id:
-      - '9106492334440217670'
+      - '6676591243214722342'
     method: POST
     uri: https://api.datadoghq.com/api/v1/downtime
   response:
     body:
-      string: '{"recurrence":null,"end":null,"monitor_tags":["*"],"child_id":null,"canceled":null,"monitor_id":50341249,"created":1634655463,"org_id":321813,"modified":1634655463,"disabled":false,"start":1634655463,"creator_id":1445416,"parent_id":null,"timezone":"Etc/UTC","active":true,"scope":["test:testscheduleamonitordowntimereturnsokresponse1634655463"],"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1634655463","downtime_type":2,"id":1511004149,"updater_id":null}'
+      string: '{"recurrence":null,"end":null,"monitor_tags":["*"],"child_id":null,"canceled":null,"monitor_id":55498427,"created":1637697116,"org_id":321813,"modified":1637697116,"disabled":false,"start":1637697115,"creator_id":1445416,"parent_id":null,"timezone":"Etc/UTC","active":true,"scope":["test:testscheduleamonitordowntimereturnsokresponse1637697115"],"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1637697115","downtime_type":2,"id":1581499822,"updater_id":null}'
     headers:
       cache-control:
       - no-cache
@@ -101,7 +103,7 @@ interactions:
       content-type:
       - application/json
       date:
-      - Tue, 19 Oct 2021 14:57:44 GMT
+      - Tue, 23 Nov 2021 19:51:56 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -110,6 +112,8 @@ interactions:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
+      x-envoy-upstream-service-time:
+      - '612'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -125,13 +129,13 @@ interactions:
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
       x-datadog-parent-id:
-      - '2665549855593758730'
+      - '3234193273315300970'
       x-datadog-trace-id:
-      - '9106492334440217670'
+      - '6676591243214722342'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/downtime/1511004149
+    uri: https://api.datadoghq.com/api/v1/downtime/1581499822
   response:
     body:
       string: ''
@@ -140,18 +144,20 @@ interactions:
       - no-cache
       connection:
       - close
-      content-length:
-      - '0'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       date:
-      - Tue, 19 Oct 2021 14:57:44 GMT
+      - Tue, 23 Nov 2021 19:51:56 GMT
       pragma:
       - no-cache
       strict-transport-security:
       - max-age=15724800;
+      vary:
+      - Accept-Encoding
       x-content-type-options:
       - nosniff
+      x-envoy-upstream-service-time:
+      - '121'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -167,16 +173,16 @@ interactions:
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
       x-datadog-parent-id:
-      - '5566251627578481799'
+      - '2932941568806604103'
       x-datadog-trace-id:
-      - '9106492334440217670'
+      - '6676591243214722342'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/monitor/50341249
+    uri: https://api.datadoghq.com/api/v1/monitor/55498427
   response:
     body:
-      string: '{"deleted_monitor_id":50341249}'
+      string: '{"deleted_monitor_id":55498427}'
     headers:
       cache-control:
       - no-cache
@@ -189,7 +195,7 @@ interactions:
       content-type:
       - application/json
       date:
-      - Tue, 19 Oct 2021 14:57:44 GMT
+      - Tue, 23 Nov 2021 19:51:57 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -198,6 +204,8 @@ interactions:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
+      x-envoy-upstream-service-time:
+      - '183'
       x-frame-options:
       - SAMEORIGIN
     status:
