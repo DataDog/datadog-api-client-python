@@ -235,6 +235,7 @@ class Configuration(object):
             "get_slo_correction": False,
             "list_slo_correction": False,
             "update_slo_correction": False,
+            "get_slo_corrections": False,
             "get_slo_history": False,
             "get_daily_custom_reports": False,
             "get_monthly_custom_reports": False,

@@ -921,6 +921,12 @@
       "type": "idempotent"
     }
   },
+  "GetSLOCorrections": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSLOHistory": {
     "tag": "Service Level Objectives",
     "undo": {

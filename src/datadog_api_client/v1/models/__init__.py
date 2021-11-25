@@ -380,6 +380,9 @@ from datadog_api_client.v1.model.slo_correction_create_request_attributes import
 from datadog_api_client.v1.model.slo_correction_list_response import SLOCorrectionListResponse
 from datadog_api_client.v1.model.slo_correction_response import SLOCorrectionResponse
 from datadog_api_client.v1.model.slo_correction_response_attributes import SLOCorrectionResponseAttributes
+from datadog_api_client.v1.model.slo_correction_response_attributes_modifier import (
+    SLOCorrectionResponseAttributesModifier,
+)
 from datadog_api_client.v1.model.slo_correction_type import SLOCorrectionType
 from datadog_api_client.v1.model.slo_correction_update_data import SLOCorrectionUpdateData
 from datadog_api_client.v1.model.slo_correction_update_request import SLOCorrectionUpdateRequest
