@@ -63,6 +63,8 @@ class UsageSDSHour(ModelNormal):
         return {
             "hour": (datetime,),  # noqa: E501
             "logs_scanned_bytes": (int,),  # noqa: E501
+            "org_name": (str,),  # noqa: E501
+            "public_id": (str,),  # noqa: E501
             "total_scanned_bytes": (int,),  # noqa: E501
         }
 
@@ -71,6 +73,8 @@ class UsageSDSHour(ModelNormal):
     attribute_map = {
         "hour": "hour",  # noqa: E501
         "logs_scanned_bytes": "logs_scanned_bytes",  # noqa: E501
+        "org_name": "org_name",  # noqa: E501
+        "public_id": "public_id",  # noqa: E501
         "total_scanned_bytes": "total_scanned_bytes",  # noqa: E501
     }
 
@@ -115,6 +119,8 @@ class UsageSDSHour(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
             logs_scanned_bytes (int): The total number of bytes scanned of logs usage by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.. [optional]  # noqa: E501
+            org_name (str): The organization name.. [optional]  # noqa: E501
+            public_id (str): The organization public ID.. [optional]  # noqa: E501
             total_scanned_bytes (int): The total number of bytes scanned across all usage types by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)

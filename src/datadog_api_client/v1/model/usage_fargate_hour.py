@@ -63,6 +63,8 @@ class UsageFargateHour(ModelNormal):
         return {
             "avg_profiled_fargate_tasks": (int,),  # noqa: E501
             "hour": (datetime,),  # noqa: E501
+            "org_name": (str,),  # noqa: E501
+            "public_id": (str,),  # noqa: E501
             "tasks_count": (int,),  # noqa: E501
         }
 
@@ -71,6 +73,8 @@ class UsageFargateHour(ModelNormal):
     attribute_map = {
         "avg_profiled_fargate_tasks": "avg_profiled_fargate_tasks",  # noqa: E501
         "hour": "hour",  # noqa: E501
+        "org_name": "org_name",  # noqa: E501
+        "public_id": "public_id",  # noqa: E501
         "tasks_count": "tasks_count",  # noqa: E501
     }
 
@@ -115,6 +119,8 @@ class UsageFargateHour(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             avg_profiled_fargate_tasks (int): The average profiled task count for Fargate Profiling.. [optional]  # noqa: E501
             hour (datetime): The hour for the usage.. [optional]  # noqa: E501
+            org_name (str): The organization name.. [optional]  # noqa: E501
+            public_id (str): The organization public ID.. [optional]  # noqa: E501
             tasks_count (int): The number of Fargate tasks run.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
