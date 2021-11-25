@@ -2,16 +2,17 @@
 
 All URIs are relative to *https://api.datadoghq.com*
 
-| Method                                                                                        | HTTP request                         | Description                         |
-| --------------------------------------------------------------------------------------------- | ------------------------------------ | ----------------------------------- |
-| [**check_can_delete_slo**](ServiceLevelObjectivesApi.md#check_can_delete_slo)                 | **GET** /api/v1/slo/can_delete       | Check if SLOs can be safely deleted |
-| [**create_slo**](ServiceLevelObjectivesApi.md#create_slo)                                     | **POST** /api/v1/slo                 | Create an SLO object                |
-| [**delete_slo**](ServiceLevelObjectivesApi.md#delete_slo)                                     | **DELETE** /api/v1/slo/{slo_id}      | Delete an SLO                       |
-| [**delete_slo_timeframe_in_bulk**](ServiceLevelObjectivesApi.md#delete_slo_timeframe_in_bulk) | **POST** /api/v1/slo/bulk_delete     | Bulk Delete SLO Timeframes          |
-| [**get_slo**](ServiceLevelObjectivesApi.md#get_slo)                                           | **GET** /api/v1/slo/{slo_id}         | Get an SLO&#39;s details            |
-| [**get_slo_history**](ServiceLevelObjectivesApi.md#get_slo_history)                           | **GET** /api/v1/slo/{slo_id}/history | Get an SLO&#39;s history            |
-| [**list_slos**](ServiceLevelObjectivesApi.md#list_slos)                                       | **GET** /api/v1/slo                  | Get all SLOs                        |
-| [**update_slo**](ServiceLevelObjectivesApi.md#update_slo)                                     | **PUT** /api/v1/slo/{slo_id}         | Update an SLO                       |
+| Method                                                                                        | HTTP request                             | Description                         |
+| --------------------------------------------------------------------------------------------- | ---------------------------------------- | ----------------------------------- |
+| [**check_can_delete_slo**](ServiceLevelObjectivesApi.md#check_can_delete_slo)                 | **GET** /api/v1/slo/can_delete           | Check if SLOs can be safely deleted |
+| [**create_slo**](ServiceLevelObjectivesApi.md#create_slo)                                     | **POST** /api/v1/slo                     | Create an SLO object                |
+| [**delete_slo**](ServiceLevelObjectivesApi.md#delete_slo)                                     | **DELETE** /api/v1/slo/{slo_id}          | Delete an SLO                       |
+| [**delete_slo_timeframe_in_bulk**](ServiceLevelObjectivesApi.md#delete_slo_timeframe_in_bulk) | **POST** /api/v1/slo/bulk_delete         | Bulk Delete SLO Timeframes          |
+| [**get_slo**](ServiceLevelObjectivesApi.md#get_slo)                                           | **GET** /api/v1/slo/{slo_id}             | Get an SLO&#39;s details            |
+| [**get_slo_corrections**](ServiceLevelObjectivesApi.md#get_slo_corrections)                   | **GET** /api/v1/slo/{slo_id}/corrections | Get Corrections For an SLO          |
+| [**get_slo_history**](ServiceLevelObjectivesApi.md#get_slo_history)                           | **GET** /api/v1/slo/{slo_id}/history     | Get an SLO&#39;s history            |
+| [**list_slos**](ServiceLevelObjectivesApi.md#list_slos)                                       | **GET** /api/v1/slo                      | Get all SLOs                        |
+| [**update_slo**](ServiceLevelObjectivesApi.md#update_slo)                                     | **PUT** /api/v1/slo/{slo_id}             | Update an SLO                       |
 
 # **check_can_delete_slo**
 
@@ -402,6 +403,75 @@ with ApiClient(configuration) as api_client:
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **get_slo_corrections**
+
+> SLOCorrectionListResponse get_slo_corrections(slo_id)
+
+Get corrections applied to an SLO
+
+### Example
+
+- OAuth Authentication (AuthZ):
+- Api Key Authentication (apiKeyAuth):
+- Api Key Authentication (appKeyAuth):
+
+```python
+import os
+from dateutil.parser import parse as dateutil_parser
+from datadog_api_client.v1 import ApiClient, ApiException, Configuration
+from datadog_api_client.v1.api import service_level_objectives_api
+from datadog_api_client.v1.models import *
+from pprint import pprint
+# See configuration.py for a list of all supported configuration parameters.
+configuration = Configuration()
+configuration.unstable_operations["get_slo_corrections"] = True
+
+# Enter a context with an instance of the API client
+with ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = service_level_objectives_api.ServiceLevelObjectivesApi(api_client)
+    slo_id = "slo_id_example"  # str | The ID of the service level objective object.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Corrections For an SLO
+        api_response = api_instance.get_slo_corrections(slo_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ServiceLevelObjectivesApi->get_slo_corrections: %s\n" % e)
+```
+
+### Parameters
+
+| Name       | Type    | Description                                   | Notes |
+| ---------- | ------- | --------------------------------------------- | ----- |
+| **slo_id** | **str** | The ID of the service level objective object. |
+
+### Return type
+
+[**SLOCorrectionListResponse**](SLOCorrectionListResponse.md)
+
+### Authorization
+
+[AuthZ](README.md#AuthZ), [apiKeyAuth](README.md#apiKeyAuth), [appKeyAuth](README.md#appKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description       | Response headers |
+| ----------- | ----------------- | ---------------- |
+| **200**     | OK                | -                |
+| **400**     | Bad Request       | -                |
+| **403**     | Forbidden         | -                |
+| **404**     | Not Found         | -                |
+| **429**     | Too many requests | -                |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **get_slo_history**
 
 > SLOHistoryResponse get_slo_history(slo_id, from_ts, to_ts)
@@ -440,6 +510,7 @@ with ApiClient(configuration) as api_client:
     from_ts = 1  # int | The `from` timestamp for the query window in epoch seconds.
     to_ts = 1  # int | The `to` timestamp for the query window in epoch seconds.
     target = 0  # float | The SLO target. If `target` is passed in, the response will include the remaining error budget and a timeframe value of `custom`. (optional)
+    apply_correction = True  # bool | Defaults to `true`. If any SLO corrections are applied and this parameter is set to `false`, then the corrections will not be applied and the SLI values will not be affected. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -453,7 +524,7 @@ with ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get an SLO's history
-        api_response = api_instance.get_slo_history(slo_id, from_ts, to_ts, target=target)
+        api_response = api_instance.get_slo_history(slo_id, from_ts, to_ts, target=target, apply_correction=apply_correction)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ServiceLevelObjectivesApi->get_slo_history: %s\n" % e)
@@ -461,12 +532,13 @@ with ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name        | Type      | Description                                                                                                                                           | Notes      |
-| ----------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| **slo_id**  | **str**   | The ID of the service level objective object.                                                                                                         |
-| **from_ts** | **int**   | The &#x60;from&#x60; timestamp for the query window in epoch seconds.                                                                                 |
-| **to_ts**   | **int**   | The &#x60;to&#x60; timestamp for the query window in epoch seconds.                                                                                   |
-| **target**  | **float** | The SLO target. If &#x60;target&#x60; is passed in, the response will include the remaining error budget and a timeframe value of &#x60;custom&#x60;. | [optional] |
+| Name                 | Type      | Description                                                                                                                                                                                        | Notes      |
+| -------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **slo_id**           | **str**   | The ID of the service level objective object.                                                                                                                                                      |
+| **from_ts**          | **int**   | The &#x60;from&#x60; timestamp for the query window in epoch seconds.                                                                                                                              |
+| **to_ts**            | **int**   | The &#x60;to&#x60; timestamp for the query window in epoch seconds.                                                                                                                                |
+| **target**           | **float** | The SLO target. If &#x60;target&#x60; is passed in, the response will include the remaining error budget and a timeframe value of &#x60;custom&#x60;.                                              | [optional] |
+| **apply_correction** | **bool**  | Defaults to &#x60;true&#x60;. If any SLO corrections are applied and this parameter is set to &#x60;false&#x60;, then the corrections will not be applied and the SLI values will not be affected. | [optional] |
 
 ### Return type
 

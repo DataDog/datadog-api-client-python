@@ -20,6 +20,7 @@ from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDeleteSLOResponse
 from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
 from datadog_api_client.v1.model.slo_bulk_delete_response import SLOBulkDeleteResponse
+from datadog_api_client.v1.model.slo_correction_list_response import SLOCorrectionListResponse
 from datadog_api_client.v1.model.slo_delete_response import SLODeleteResponse
 from datadog_api_client.v1.model.slo_history_response import SLOHistoryResponse
 from datadog_api_client.v1.model.slo_list_response import SLOListResponse
@@ -243,6 +244,47 @@ class ServiceLevelObjectivesApi(object):
             api_client=api_client,
         )
 
+        self._get_slo_corrections_endpoint = _Endpoint(
+            settings={
+                "response_type": (SLOCorrectionListResponse,),
+                "auth": ["AuthZ", "apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/slo/{slo_id}/corrections",
+                "operation_id": "get_slo_corrections",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "slo_id",
+                ],
+                "required": [
+                    "slo_id",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "slo_id": (str,),
+                },
+                "attribute_map": {
+                    "slo_id": "slo_id",
+                },
+                "location_map": {
+                    "slo_id": "path",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._get_slo_history_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOHistoryResponse,),
@@ -258,6 +300,7 @@ class ServiceLevelObjectivesApi(object):
                     "from_ts",
                     "to_ts",
                     "target",
+                    "apply_correction",
                 ],
                 "required": [
                     "slo_id",
@@ -283,18 +326,21 @@ class ServiceLevelObjectivesApi(object):
                     "from_ts": (int,),
                     "to_ts": (int,),
                     "target": (float,),
+                    "apply_correction": (bool,),
                 },
                 "attribute_map": {
                     "slo_id": "slo_id",
                     "from_ts": "from_ts",
                     "to_ts": "to_ts",
                     "target": "target",
+                    "apply_correction": "apply_correction",
                 },
                 "location_map": {
                     "slo_id": "path",
                     "from_ts": "query",
                     "to_ts": "query",
                     "target": "query",
+                    "apply_correction": "query",
                 },
                 "collection_format_map": {},
             },
@@ -623,6 +669,49 @@ class ServiceLevelObjectivesApi(object):
         kwargs["slo_id"] = slo_id
         return self._get_slo_endpoint.call_with_http_info(**kwargs)
 
+    def get_slo_corrections(self, slo_id, **kwargs):
+        """Get Corrections For an SLO  # noqa: E501
+
+        Get corrections applied to an SLO  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_slo_corrections(slo_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            slo_id (str): The ID of the service level objective object.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (float/tuple): timeout setting for this request. If one
+                number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SLOCorrectionListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs = self._get_slo_corrections_endpoint.default_arguments(kwargs)
+        kwargs["slo_id"] = slo_id
+        return self._get_slo_corrections_endpoint.call_with_http_info(**kwargs)
+
     def get_slo_history(self, slo_id, from_ts, to_ts, **kwargs):
         """Get an SLO's history  # noqa: E501
 
@@ -640,6 +729,7 @@ class ServiceLevelObjectivesApi(object):
 
         Keyword Args:
             target (float): The SLO target. If `target` is passed in, the response will include the remaining error budget and a timeframe value of `custom`.. [optional]
+            apply_correction (bool): Defaults to `true`. If any SLO corrections are applied and this parameter is set to `false`, then the corrections will not be applied and the SLI values will not be affected.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
