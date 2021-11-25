@@ -85,6 +85,7 @@ class MonitorSearchResult(ModelNormal):
             "name": (str,),  # noqa: E501
             "notifications": ([MonitorSearchResultNotification],),  # noqa: E501
             "org_id": (int,),  # noqa: E501
+            "query": (str,),  # noqa: E501
             "scopes": ([str],),  # noqa: E501
             "status": (MonitorOverallStates,),  # noqa: E501
             "tags": ([str],),  # noqa: E501
@@ -102,6 +103,7 @@ class MonitorSearchResult(ModelNormal):
         "name": "name",  # noqa: E501
         "notifications": "notifications",  # noqa: E501
         "org_id": "org_id",  # noqa: E501
+        "query": "query",  # noqa: E501
         "scopes": "scopes",  # noqa: E501
         "status": "status",  # noqa: E501
         "tags": "tags",  # noqa: E501
@@ -164,6 +166,7 @@ class MonitorSearchResult(ModelNormal):
             name (str): The monitor name.. [optional]  # noqa: E501
             notifications ([MonitorSearchResultNotification]): The notification triggered by the monitor.. [optional]  # noqa: E501
             org_id (int): The ID of the organization.. [optional]  # noqa: E501
+            query (str): The monitor query.. [optional]  # noqa: E501
             scopes ([str]): The scope(s) to which the downtime applies, e.g. `host:app2`. Provide multiple scopes as a comma-separated list, e.g. `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (i.e. `env:dev AND env:prod`), NOT any of them.. [optional]  # noqa: E501
             status (MonitorOverallStates): [optional]  # noqa: E501
             tags ([str]): Tags associated with the monitor.. [optional]  # noqa: E501
