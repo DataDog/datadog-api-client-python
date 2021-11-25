@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Get_a_monitor_s_details_returns_OK_response-1633076916","options":{"enable_logs_sample":true,"escalation_message":"the
-      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_no_data":false,"renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":60},"priority":3,"query":"logs(\"service:foo
+      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_no_data":false,"renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
       AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
       > 2","tags":["test:testgetamonitorsdetailsreturnsokresponse1633076916","env:ci"],"type":"log
       alert"}'
@@ -17,19 +17,19 @@ interactions:
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
       x-datadog-parent-id:
-      - '63312736928356333'
+      - '3232860684573382239'
       x-datadog-trace-id:
-      - '1420381005831529841'
+      - '6117109063257143035'
     method: POST
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
     body:
       string: '{"restricted_roles":null,"tags":["test:testgetamonitorsdetailsreturnsokresponse1633076916","env:ci"],"deleted":null,"query":"logs(\"service:foo
         AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
-        > 2","message":"some message Notify: @hipchat-channel","id":48053797,"multi":true,"name":"Test-Get_a_monitor_s_details_returns_OK_response-1633076916","created":"2021-10-01T08:28:36.257147+00:00","created_at":1633076916000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2021-10-01T08:28:36.257147+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
-        Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":60,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
+        > 2","message":"some message Notify: @hipchat-channel","id":55498413,"multi":true,"name":"Test-Get_a_monitor_s_details_returns_OK_response-1633076916","created":"2021-11-23T19:51:33.863444+00:00","created_at":1637697093000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2021-11-23T19:51:33.863444+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
+        Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":24,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
         situation has escalated","evaluation_delay":700,"thresholds":{"critical":2.0,"warning":1.0}}}'
     headers:
       cache-control:
@@ -43,7 +43,7 @@ interactions:
       content-type:
       - application/json
       date:
-      - Fri, 01 Oct 2021 08:28:36 GMT
+      - Tue, 23 Nov 2021 19:51:33 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -52,6 +52,8 @@ interactions:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
+      x-envoy-upstream-service-time:
+      - '165'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -59,9 +61,9 @@ interactions:
       x-ratelimit-period:
       - '10'
       x-ratelimit-remaining:
-      - '494'
+      - '495'
       x-ratelimit-reset:
-      - '4'
+      - '7'
     status:
       code: 200
       message: OK
@@ -75,19 +77,19 @@ interactions:
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
       x-datadog-parent-id:
-      - '8253442116508040747'
+      - '4314249282729752311'
       x-datadog-trace-id:
-      - '1420381005831529841'
+      - '6117109063257143035'
     method: GET
-    uri: https://api.datadoghq.com/api/v1/monitor/48053797
+    uri: https://api.datadoghq.com/api/v1/monitor/55498413
   response:
     body:
       string: '{"restricted_roles":null,"tags":["test:testgetamonitorsdetailsreturnsokresponse1633076916","env:ci"],"deleted":null,"query":"logs(\"service:foo
         AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
-        > 2","message":"some message Notify: @hipchat-channel","id":48053797,"multi":true,"name":"Test-Get_a_monitor_s_details_returns_OK_response-1633076916","created":"2021-10-01T08:28:36.257147+00:00","created_at":1633076916000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2021-10-01T08:28:36.257147+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
-        Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":60,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
+        > 2","message":"some message Notify: @hipchat-channel","id":55498413,"multi":true,"name":"Test-Get_a_monitor_s_details_returns_OK_response-1633076916","created":"2021-11-23T19:51:33.863444+00:00","created_at":1637697093000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2021-11-23T19:51:33.863444+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
+        Data","type":"log alert","options":{"notify_audit":false,"locked":false,"timeout_h":24,"renotify_interval":60,"include_tags":true,"no_data_timeframe":null,"silenced":{},"new_host_delay":600,"require_full_window":true,"notify_no_data":false,"enable_logs_sample":true,"groupby_simple_monitor":true,"escalation_message":"the
         situation has escalated","evaluation_delay":700,"thresholds":{"critical":2.0,"warning":1.0}}}'
     headers:
       cache-control:
@@ -101,7 +103,7 @@ interactions:
       content-type:
       - application/json
       date:
-      - Fri, 01 Oct 2021 08:28:36 GMT
+      - Tue, 23 Nov 2021 19:51:33 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -110,6 +112,8 @@ interactions:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
+      x-envoy-upstream-service-time:
+      - '69'
       x-frame-options:
       - SAMEORIGIN
       x-ratelimit-limit:
@@ -119,7 +123,7 @@ interactions:
       x-ratelimit-remaining:
       - '2999'
       x-ratelimit-reset:
-      - '4'
+      - '7'
     status:
       code: 200
       message: OK
@@ -133,16 +137,16 @@ interactions:
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/1.0.0-beta.5 (node 14.18.0; os Linux; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
       x-datadog-parent-id:
-      - '409036591108243268'
+      - '7201604623744333043'
       x-datadog-trace-id:
-      - '1420381005831529841'
+      - '6117109063257143035'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/monitor/48053797
+    uri: https://api.datadoghq.com/api/v1/monitor/55498413
   response:
     body:
-      string: '{"deleted_monitor_id":48053797}'
+      string: '{"deleted_monitor_id":55498413}'
     headers:
       cache-control:
       - no-cache
@@ -155,7 +159,7 @@ interactions:
       content-type:
       - application/json
       date:
-      - Fri, 01 Oct 2021 08:28:36 GMT
+      - Tue, 23 Nov 2021 19:51:34 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -164,6 +168,8 @@ interactions:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
+      x-envoy-upstream-service-time:
+      - '197'
       x-frame-options:
       - SAMEORIGIN
     status:

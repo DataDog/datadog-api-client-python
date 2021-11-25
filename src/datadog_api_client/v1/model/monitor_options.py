@@ -233,7 +233,7 @@ class MonitorOptions(ModelNormal):
             synthetics_check_id (str, none_type): ID of the corresponding Synthetic check.. [optional]  # noqa: E501
             threshold_windows (MonitorThresholdWindowOptions): [optional]  # noqa: E501
             thresholds (MonitorThresholds): [optional]  # noqa: E501
-            timeout_h (int, none_type): The number of hours of the monitor not reporting data before it automatically resolves from a triggered state.. [optional]  # noqa: E501
+            timeout_h (int, none_type): The number of hours of the monitor not reporting data before it automatically resolves from a triggered state. The minimum allowed value is 0 hours. The maximum allowed value is 24 hours.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
 
