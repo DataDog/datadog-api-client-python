@@ -129,7 +129,7 @@ class SyntheticsBrowserVariable(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             example (str): Example for the variable.. [optional]  # noqa: E501
-            id (str): ID for the variable.. [optional]  # noqa: E501
+            id (str): ID for the variable. Global variables require an ID.. [optional]  # noqa: E501
             pattern (str): Pattern of the variable.. [optional]  # noqa: E501
         """
         super().__init__(kwargs)
