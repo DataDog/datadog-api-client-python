@@ -38,12 +38,12 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
-  @generated @skip
   Scenario: Create a browser test returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsBrowserTest" request
-    And body with value {"config": {"assertions": [], "configVariables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "text"}], "request": {"allow_insecure": null, "basicAuth": {"password": "", "username": ""}, "body": null, "certificate": {"cert": {"content": null, "filename": null, "updatedAt": null}, "key": {"content": null, "filename": null, "updatedAt": null}}, "dnsServer": null, "dnsServerPort": null, "follow_redirects": null, "headers": null, "host": null, "message": null, "method": "GET", "noSavingResponseBody": null, "numberOfPackets": null, "port": null, "query": null, "servername": null, "shouldTrackHops": null, "timeout": null, "url": "https://example.com"}, "setCookie": null, "variables": [{"example": null, "id": null, "name": "VARIABLE_NAME", "pattern": null, "type": "text"}]}, "locations": [null], "message": "", "name": null, "options": {"accept_self_signed": null, "allow_insecure": null, "device_ids": ["laptop_large"], "disableCors": null, "follow_redirects": null, "min_failure_duration": null, "min_location_failed": null, "monitor_name": null, "monitor_options": {"renotify_interval": null}, "monitor_priority": null, "noScreenshot": null, "retry": {"count": null, "interval": null}, "tick_every": null}, "status": "live", "steps": [{"allowFailure": null, "name": null, "params": null, "timeout": null, "type": "assertElementContent"}], "tags": [null], "type": "browser"}
+    And body from file "synthetics_browser_test_payload.json"
     When the request is sent
     Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
 
   @generated @skip
   Scenario: Create a browser test returns "Test quota is reached" response
