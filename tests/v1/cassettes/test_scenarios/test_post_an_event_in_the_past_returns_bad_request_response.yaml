@@ -1,0 +1,47 @@
+interactions:
+- request:
+    body: '{"date_happened":1,"tags":["test:TestPostaneventinthepastreturnsBadRequestresponse1638045281"],"text":"A
+      text message.","title":"Test-Post_an_event_in_the_past_returns_Bad_Request_response-1638045281"}'
+    headers:
+      accept:
+      - application/json, */*;q=0.8
+      connection:
+      - close
+      content-length:
+      - '201'
+      content-type:
+      - application/json
+      host:
+      - api.datadoghq.com
+      user-agent:
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
+      x-datadog-parent-id:
+      - '343467568446934486'
+      x-datadog-trace-id:
+      - '4038788092229867157'
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/events
+  response:
+    body:
+      string: '{"errors": ["Event too far in the past"]}'
+    headers:
+      connection:
+      - close
+      content-length:
+      - '41'
+      content-security-policy:
+      - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
+      content-type:
+      - text/plain; charset=utf-8
+      date:
+      - Sat, 27 Nov 2021 20:34:41 GMT
+      strict-transport-security:
+      - max-age=15724800;
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 400
+      message: Bad Request
+version: 1
