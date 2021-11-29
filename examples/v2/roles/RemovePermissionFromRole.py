@@ -16,7 +16,7 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 PERMISSION_ID = environ["PERMISSION_ID"]
 
 body = RelationshipToPermission(
-    data=RelationshipToPermissionData(id=PERMISSION_ID, type=PermissionsType("permissions"))
+    data=RelationshipToPermissionData(id="33028452-cf74-1efc-0302-d3ff925feb4c", type=PermissionsType("permissions"))
 )
 
 configuration = Configuration()

@@ -15,7 +15,9 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 # there is a valid "user" in the system
 USER_DATA_ID = environ["USER_DATA_ID"]
 
-body = RelationshipToUser(data=RelationshipToUserData(id=USER_DATA_ID, type=UsersType("users")))
+body = RelationshipToUser(
+    data=RelationshipToUserData(id="acdbf151-4b02-7d24-bb34-66d6994071a7", type=UsersType("users"))
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
