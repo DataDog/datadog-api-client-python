@@ -26,7 +26,7 @@ All URIs are relative to *https://api.datadoghq.com*
 | [**list_locations**](SyntheticsApi.md#list_locations)                                   | **GET** /api/v1/synthetics/locations                                     | Get all locations (public and private)            |
 | [**list_tests**](SyntheticsApi.md#list_tests)                                           | **GET** /api/v1/synthetics/tests                                         | Get the list of all tests                         |
 | [**trigger_ci_tests**](SyntheticsApi.md#trigger_ci_tests)                               | **POST** /api/v1/synthetics/tests/trigger/ci                             | Trigger tests from CI/CD pipelines                |
-| [**trigger_tests**](SyntheticsApi.md#trigger_tests)                                     | **POST** /api/v1/synthetics/tests/trigger                                | Trigger some Synthetics tests                     |
+| [**trigger_tests**](SyntheticsApi.md#trigger_tests)                                     | **POST** /api/v1/synthetics/tests/trigger                                | Trigger Synthetics tests                          |
 | [**update_api_test**](SyntheticsApi.md#update_api_test)                                 | **PUT** /api/v1/synthetics/tests/api/{public_id}                         | Edit an API test                                  |
 | [**update_browser_test**](SyntheticsApi.md#update_browser_test)                         | **PUT** /api/v1/synthetics/tests/browser/{public_id}                     | Edit a browser test                               |
 | [**update_private_location**](SyntheticsApi.md#update_private_location)                 | **PUT** /api/v1/synthetics/private-locations/{location_id}               | Edit a private location                           |
@@ -1915,7 +1915,7 @@ with ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Trigger some Synthetics tests
+        # Trigger Synthetics tests
         api_response = api_instance.trigger_tests(body)
         pprint(api_response)
     except ApiException as e:
