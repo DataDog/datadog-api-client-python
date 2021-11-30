@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_profile_metric_query-1618849856
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_returns_OK_response-1638225032
       with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
     headers:
       accept:
@@ -8,36 +8,36 @@ interactions:
       connection:
       - close
       content-length:
-      - '434'
+      - '426'
       content-type:
       - application/json
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
       x-datadog-parent-id:
-      - '3655514069460001882'
+      - '5830080563978653823'
       x-datadog-trace-id:
-      - '3655514069460001882'
+      - '6208097067999596962'
     method: POST
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":null,"description":null,"author_name":null,"template_variables":null,"is_read_only":false,"id":"u82-g9u-st4","title":"Test-Create_a_new_dashboard_with_a_profile_metric_query-1618849856
-        with Profile Metrics Query","url":"/dashboard/u82-g9u-st4/test-createanewdashboardwithaprofilemetricquery-1618849856-with-profile-metrics","created_at":"2021-04-19T16:30:57.031039+00:00","modified_at":"2021-04-19T16:30:57.031039+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":2478815064249381}],"layout_type":"ordered"}'
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"3bx-gkd-w2k","title":"Test-Create_a_new_dashboard_returns_OK_response-1638225032
+        with Profile Metrics Query","url":"/dashboard/3bx-gkd-w2k/test-createanewdashboardreturnsokresponse-1638225032-with-profile-metrics-query","created_at":"2021-11-29T22:30:32.645351+00:00","modified_at":"2021-11-29T22:30:32.645351+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"search":{"query":"runtime:jvm"},"group_by":[{"facet":"service","sort":{"facet":"@prof_core_cpu_cores","aggregation":"sum","order":"desc"},"limit":10}],"compute":{"facet":"@prof_core_cpu_cores","aggregation":"sum"}}}],"type":"timeseries"},"id":4897053143473204}],"layout_type":"ordered"}'
     headers:
       cache-control:
       - no-cache
       connection:
       - close
       content-length:
-      - '824'
+      - '838'
       content-security-policy:
       - frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report
       content-type:
       - application/json
       date:
-      - Mon, 19 Apr 2021 16:30:57 GMT
+      - Mon, 29 Nov 2021 22:30:32 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -46,10 +46,8 @@ interactions:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
-      x-dd-debug:
-      - F5gm0Rce1/Abr9/0Fw8HAqWfiz0FdiH8er/AXnN6lOn3L6KyGgbsLCwgPlob1No8
-      x-dd-version:
-      - '35.4342685'
+      x-envoy-upstream-service-time:
+      - '113'
       x-frame-options:
       - SAMEORIGIN
     status:
@@ -65,16 +63,16 @@ interactions:
       host:
       - api.datadoghq.com
       user-agent:
-      - datadog-api-client-typescript/0.1.0 (node 15.11.0; os Darwin; arch x64)
+      - datadog-api-client-typescript/1.0.0-beta.6 (node 14.18.1; os Linux; arch x64)
       x-datadog-parent-id:
-      - '3655514069460001882'
+      - '4203962888754522355'
       x-datadog-trace-id:
-      - '3655514069460001882'
+      - '6208097067999596962'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/u82-g9u-st4
+    uri: https://api.datadoghq.com/api/v1/dashboard/3bx-gkd-w2k
   response:
     body:
-      string: '{"deleted_dashboard_id":"u82-g9u-st4"}'
+      string: '{"deleted_dashboard_id":"3bx-gkd-w2k"}'
     headers:
       cache-control:
       - no-cache
@@ -87,7 +85,7 @@ interactions:
       content-type:
       - application/json
       date:
-      - Mon, 19 Apr 2021 16:30:57 GMT
+      - Mon, 29 Nov 2021 22:30:32 GMT
       pragma:
       - no-cache
       strict-transport-security:
@@ -96,10 +94,8 @@ interactions:
       - Accept-Encoding
       x-content-type-options:
       - nosniff
-      x-dd-debug:
-      - 5gfwVh/5HZ+AnGd/Di93w3NEWC6KMHT9KzmHEiRJmNdOjBtAsbOcgVFyqEChw71h
-      x-dd-version:
-      - '35.4342685'
+      x-envoy-upstream-service-time:
+      - '125'
       x-frame-options:
       - SAMEORIGIN
     status:
