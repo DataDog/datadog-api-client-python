@@ -16,10 +16,9 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
   Scenario: Create a new dashboard returns "OK" response
     Given new "CreateDashboard" request
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [null], "reflow_type": "auto", "restricted_roles": [null], "template_variable_presets": [{"name": null, "template_variables": [{"name": null, "value": null}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body from file "dashboard_payload.json"
     When the request is sent
     Then the response status is 200 OK
 
@@ -39,12 +38,6 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].compute.aggregation" is equal to "count"
     And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "hour_before(query1)"
     And the response "widgets[0].definition.requests[0].formulas[1].formula" is equal to "query1"
-
-  Scenario: Create a new dashboard with a profile metric query
-    Given new "CreateDashboard" request
-    And body from file "dashboard_payload.json"
-    When the request is sent
-    Then the response status is 200 OK
 
   Scenario: Create a new dashboard with a query value widget using the percentile aggregator
     Given new "CreateDashboard" request
