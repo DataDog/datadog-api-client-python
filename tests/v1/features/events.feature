@@ -25,6 +25,13 @@ Feature: Events
     When the request is sent
     Then the response status is 200 OK
 
+  Scenario: Post an event in the past returns "Bad Request" response
+    Given new "CreateEvent" request
+    And body with value {"title": "{{ unique }}", "text": "A text message.", "date_happened": 1, "tags": ["test:{{ unique_alnum }}"]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors[0]" is equal to "Event too far in the past"
+
   @generated @skip
   Scenario: Post an event returns "Bad Request" response
     Given new "CreateEvent" request
@@ -43,13 +50,6 @@ Feature: Events
     And body with value {"title": "{{ unique }} very very very looooooooong looooooooooooong loooooooooooooooooooooong looooooooooooooooooooooooooong title with 100+ characters", "text": "A text message.", "tags": ["test:{{ unique_alnum }}"]}
     When the request is sent
     Then the response status is 202 OK
-
-  Scenario: Post an event in the past returns "Bad Request" response
-    Given new "CreateEvent" request
-    And body with value {"title": "{{ unique }}", "text": "A text message.", "date_happened": 1, "tags": ["test:{{ unique_alnum }}"]}
-    When the request is sent
-    Then the response status is 400 Bad Request
-    And the response "errors[0]" is equal to "Event too far in the past"
 
   @generated @skip
   Scenario: Query the event stream returns "Bad Request" response
