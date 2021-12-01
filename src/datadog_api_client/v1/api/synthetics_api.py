@@ -2076,7 +2076,7 @@ class SyntheticsApi(object):
         return self._trigger_ci_tests_endpoint.call_with_http_info(**kwargs)
 
     def trigger_tests(self, body, **kwargs):
-        """Trigger some Synthetics tests  # noqa: E501
+        """Trigger Synthetics tests  # noqa: E501
 
         Trigger a set of Synthetics tests.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
