@@ -3,12 +3,14 @@
 
 import os
 
+RECORD = os.getenv("RECORD", "false").lower()
+
 # First patch urllib
 tracer = None
 try:
-    from ddtrace import config, patch, tracer
+    from ddtrace import patch, tracer
 
-    if os.getenv("RECORD", "false") != "none":
+    if RECORD != "none":
         from ddtrace.internal.writer import AgentWriter
 
         writer = AgentWriter(tracer.writer.agent_url, sync_mode=True, priority_sampler=tracer.priority_sampler)
@@ -37,7 +39,7 @@ try:
 
 
 except ImportError:
-    if os.getenv("CI", "false") == "true" and os.getenv("RECORD", "false") == "none":
+    if os.getenv("CI", "false") == "true" and RECORD == "none":
         raise
 
 import importlib
@@ -54,6 +56,13 @@ from jinja2 import Template, Environment, meta
 from pytest_bdd import given, parsers, then, when
 
 logging.basicConfig()
+
+PATTERN_ALPHANUM = re.compile(r"[^A-Za-z0-9]+")
+PATTERN_DOUBLE_UNDERSCORE = re.compile(r"__+")
+PATTERN_LEADING_ALPHA = re.compile(r"(.)([A-Z][a-z]+)")
+PATTERN_FOLLOWING_ALPHA = re.compile(r"([a-z0-9])([A-Z])")
+PATTERN_WHITESPACE = re.compile(r"\W")
+PATTERN_INDEX = re.compile(r"\[([0-9]*)\]")
 
 
 def escape_reserved_keyword(word):
@@ -109,10 +118,10 @@ def pytest_bdd_step_error(request, feature, scenario, step, step_func, step_func
 def pytest_bdd_apply_tag(tag, function):
     """Register tags as custom markers and skip test for '@skip' ones."""
     skip_tags = {"skip", "skip-python"}
-    if not _disable_recording():
+    if RECORD != "none":
         # ignore integration-only scenarios if the recording is enabled
         skip_tags.add("integration-only")
-    if os.getenv("RECORD", "false").lower() != "false":
+    if RECORD != "false":
         skip_tags.add("replay-only")
     if tag in skip_tags:
         marker = pytest.mark.skip(reason=f"skipped because '{tag}' in {skip_tags}")
@@ -134,18 +143,18 @@ def pytest_bdd_apply_tag(tag, function):
 
 
 def snake_case(value):
-    s1 = re.sub(r"(.)([A-Z][a-z]+)", r"\1_\2", value)
-    s1 = re.sub(r"([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
-    s1 = re.sub(r"\W", "_", s1)
-    s1 = re.sub(r"_+$", "", s1)
-    return re.sub(r"__+", "_", s1)
+    s1 = PATTERN_LEADING_ALPHA.sub(r"\1_\2", value)
+    s1 = PATTERN_FOLLOWING_ALPHA.sub(r"\1_\2", s1).lower()
+    s1 = PATTERN_WHITESPACE.sub("_", s1)
+    s1 = s1.rstrip("_")
+    return PATTERN_DOUBLE_UNDERSCORE.sub("_", s1)
 
 
 def glom(value, path):
     from glom import glom as g
 
     # replace foo[index].bar by foo.index.bar
-    path = re.sub(r"\[([0-9]*)\]", r".\1", path)
+    path = PATTERN_INDEX.sub(r".\1", path)
     # replace camelCase to snake_case
     path = ".".join(snake_case(p) for p in path.split("."))
     return g(value, path)
@@ -157,7 +166,7 @@ def _get_prefix(request):
         main = "{}.{}".format(test_class.__name__, request.node.name)
     else:
         base_name = request.node.__scenario_report__.scenario.name
-        main = re.sub(r"[^A-Za-z0-9]+", "_", base_name)[:100]
+        main = PATTERN_ALPHANUM.sub("_", base_name)[:100]
     prefix = "Test-Python" if _disable_recording() else "Test"
     return f"{prefix}-{main}"
 
@@ -165,13 +174,6 @@ def _get_prefix(request):
 @pytest.fixture
 def unique(request, freezer):
     prefix = _get_prefix(request)
-    with freezer:
-        return f"{prefix}-{int(datetime.now().timestamp())}"
-
-
-@pytest.fixture
-def unique_lower(request, freezer):
-    prefix = _get_prefix(request).lower()
     with freezer:
         return f"{prefix}-{int(datetime.now().timestamp())}"
 
@@ -209,7 +211,7 @@ def relative_time(freezer, iso):
 
 
 @pytest.fixture
-def context(vcr, unique, unique_lower, freezer):
+def context(vcr, unique, freezer):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
@@ -217,11 +219,11 @@ def context(vcr, unique, unique_lower, freezer):
     ctx = {
         "undo_operations": [],
         "unique": unique,
-        "unique_lower": unique_lower,
+        "unique_lower": unique.lower(),
         "unique_upper": unique.upper(),
-        "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique),
-        "unique_lower_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique).lower(),
-        "unique_upper_alnum": re.sub(r"[^A-Za-z0-9]+", "", unique).upper(),
+        "unique_alnum": PATTERN_ALPHANUM.sub("", unique),
+        "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
+        "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
         "timestamp": relative_time(freezer, False),
         "timeISO": relative_time(freezer, True),
     }
@@ -232,12 +234,12 @@ def context(vcr, unique, unique_lower, freezer):
 @pytest.fixture(scope="session")
 def record_mode(request):
     """Manage compatibility with DD client libraries."""
-    return {"false": "none", "true": "rewrite", "none": "new_episodes"}[os.getenv("RECORD", "false").lower()]
+    return {"false": "none", "true": "rewrite", "none": "new_episodes"}[RECORD]
 
 
 def _disable_recording():
     """Disable VCR.py integration."""
-    return os.getenv("RECORD", "false").lower() == "none"
+    return RECORD == "none"
 
 
 @pytest.fixture(scope="session")
@@ -263,7 +265,7 @@ def vcr_config():
 
 @pytest.fixture
 def default_cassette_name(default_cassette_name):
-    return re.sub("__+", "_", default_cassette_name)
+    return PATTERN_DOUBLE_UNDERSCORE.sub("_", default_cassette_name)
 
 
 @pytest.fixture
@@ -564,23 +566,6 @@ def execute_request(undo, context, client, api_version, _package):
     response = api_request["response"][0]
 
     context["undo_operations"].append(lambda: undo(api, api_version, operation_id, response))
-
-
-@then(parsers.parse('I should get an instance of "{name}"'))
-def i_should_get_an_instance_of(context, package_name, name):
-    """I should get an instance."""
-    module_name = snake_case(name)
-    package = importlib.import_module(f"{package_name}.model.{module_name}")
-    assert isinstance(context["api_request"]["response"][0], getattr(package, name))
-
-
-@then(parsers.parse('I should get a list of "{name}" objects'))
-def i_should_get_a_list_of_objects(context, package_name, name):
-    """I should get a list of objects."""
-    module_name = snake_case(name)
-    package = importlib.import_module(f"{package_name}.model.{module_name}")
-    cls = getattr(package, name)
-    assert all(isinstance(obj, cls) for obj in context["api_request"]["response"][0])
 
 
 @then(parsers.parse("the response status is {status:d} {description}"))
