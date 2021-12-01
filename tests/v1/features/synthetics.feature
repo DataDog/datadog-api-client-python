@@ -255,7 +255,7 @@ Feature: Synthetics
   Scenario: Edit an API test returns "OK" response
     Given there is a valid "synthetics_api_test" in the system
     And new "UpdateAPITest" request
-    And request contains "public_id" parameter from "synthetics_api_test.publicId"
+    And request contains "public_id" parameter from "synthetics_api_test.public_id"
     And body from file "synthetics_api_test_update_payload.json"
     When the request is sent
     Then the response status is 200 OK
