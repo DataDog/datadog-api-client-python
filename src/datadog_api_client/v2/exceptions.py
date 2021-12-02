@@ -2,6 +2,8 @@
 # This product includes software developed at Datadog (https://www.datadoghq.com/).
 # Copyright 2019-Present Datadog, Inc.
 
+import json
+
 
 class OpenApiException(Exception):
     """The base exception class for all OpenAPIExceptions"""
@@ -94,7 +96,10 @@ class ApiException(OpenApiException):
         if http_resp:
             self.status = http_resp.status
             self.reason = http_resp.reason
-            self.body = http_resp.data
+            try:
+                self.body = json.loads(http_resp.data)
+            except Exception:
+                self.body = http_resp.data.decode("utf-8")
             self.headers = http_resp.getheaders()
         else:
             self.status = status

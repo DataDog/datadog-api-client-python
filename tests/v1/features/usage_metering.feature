@@ -5,7 +5,9 @@ Feature: Usage Metering
   Enterprise customers. Usage is only accessible for [parent-level organizat
   ions](https://docs.datadoghq.com/account_management/multi_organization/).
   **Note**: Usage data is delayed by up to 72 hours from when it was
-  incurred. It is retained for the past 15 months.
+  incurred. It is retained for the past 15 months.  You can retrieve up to
+  24 hours of hourly usage data for multiple organizations, and up to two
+  months of hourly usage data for a single organization in one request.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

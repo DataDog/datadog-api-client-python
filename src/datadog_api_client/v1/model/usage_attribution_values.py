@@ -83,6 +83,8 @@ class UsageAttributionValues(ModelNormal):
             "dbm_hosts_usage": (float,),  # noqa: E501
             "dbm_queries_percentage": (float,),  # noqa: E501
             "dbm_queries_usage": (float,),  # noqa: E501
+            "estimated_indexed_logs_percentage": (float,),  # noqa: E501
+            "estimated_indexed_logs_usage": (float,),  # noqa: E501
             "infra_host_percentage": (float,),  # noqa: E501
             "infra_host_usage": (float,),  # noqa: E501
             "lambda_functions_percentage": (float,),  # noqa: E501
@@ -126,6 +128,8 @@ class UsageAttributionValues(ModelNormal):
         "dbm_hosts_usage": "dbm_hosts_usage",  # noqa: E501
         "dbm_queries_percentage": "dbm_queries_percentage",  # noqa: E501
         "dbm_queries_usage": "dbm_queries_usage",  # noqa: E501
+        "estimated_indexed_logs_percentage": "estimated_indexed_logs_percentage",  # noqa: E501
+        "estimated_indexed_logs_usage": "estimated_indexed_logs_usage",  # noqa: E501
         "infra_host_percentage": "infra_host_percentage",  # noqa: E501
         "infra_host_usage": "infra_host_usage",  # noqa: E501
         "lambda_functions_percentage": "lambda_functions_percentage",  # noqa: E501
@@ -205,6 +209,8 @@ class UsageAttributionValues(ModelNormal):
             dbm_hosts_usage (float): The Database Monitoring host usage by tag(s).. [optional]  # noqa: E501
             dbm_queries_percentage (float): The percentage of Database Monitoring normalized queries usage by tag(s).. [optional]  # noqa: E501
             dbm_queries_usage (float): The Database Monitoring normalized queries usage by tag(s).. [optional]  # noqa: E501
+            estimated_indexed_logs_percentage (float): The percentage of estimated live indexed logs usage by tag(s). Note this field is in private beta.. [optional]  # noqa: E501
+            estimated_indexed_logs_usage (float): The estimated live indexed logs usage by tag(s). Note this field is in private beta.. [optional]  # noqa: E501
             infra_host_percentage (float): The percentage of infrastructure host usage by tag(s).. [optional]  # noqa: E501
             infra_host_usage (float): The infrastructure host usage by tag(s).. [optional]  # noqa: E501
             lambda_functions_percentage (float): The percentage of Lambda function usage by tag(s).. [optional]  # noqa: E501

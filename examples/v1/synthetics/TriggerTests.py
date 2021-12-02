@@ -1,5 +1,5 @@
 """
-Trigger some Synthetics tests returns "OK" response
+Trigger Synthetics tests returns "OK" response
 """
 
 from os import environ
