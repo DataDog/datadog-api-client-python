@@ -76,6 +76,9 @@ def pytest_bdd_before_scenario(request, feature, scenario):
     span.set_tag("test.name", scenario.name)
     span.set_tag("test.suite", scenario.feature.filename.split("tests")[-1])
 
+    for tag in scenario.tags | scenario.feature.tags:
+        if tag.startswith("team:"):
+            span.set_tag("test.codeowners", f"@{tag[5:]}")
 
 def pytest_bdd_after_scenario(request, feature, scenario):
     ctx = request.getfixturevalue("context")
@@ -117,6 +120,8 @@ def pytest_bdd_apply_tag(tag, function):
     if tag in skip_tags:
         marker = pytest.mark.skip(reason=f"skipped because '{tag}' in {skip_tags}")
         marker(function)
+        return True
+    elif tag.startswith("team:"):
         return True
     elif tag.startswith("endpoint("):
         version = tag[len("endpoint(") : -1]
