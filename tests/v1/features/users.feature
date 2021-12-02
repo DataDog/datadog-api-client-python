@@ -10,21 +10,21 @@ Feature: Users
   @generated @skip
   Scenario: Create a user returns "Bad Request" response
     Given new "CreateUser" request
-    And body with value {"access_role": "st", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
+    And body with value {"disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip
   Scenario: Create a user returns "Conflict" response
     Given new "CreateUser" request
-    And body with value {"access_role": "st", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
+    And body with value {"disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
     When the request is sent
     Then the response status is 409 Conflict
 
   @generated @skip
   Scenario: Create a user returns "User created" response
     Given new "CreateUser" request
-    And body with value {"access_role": "st", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
+    And body with value {"disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
     When the request is sent
     Then the response status is 200 User created
 
@@ -73,7 +73,7 @@ Feature: Users
   Scenario: Update a user returns "Bad Request" response
     Given new "UpdateUser" request
     And request contains "user_handle" parameter from "<PATH>"
-    And body with value {"access_role": "st", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
+    And body with value {"disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -81,7 +81,7 @@ Feature: Users
   Scenario: Update a user returns "Not Found" response
     Given new "UpdateUser" request
     And request contains "user_handle" parameter from "<PATH>"
-    And body with value {"access_role": "st", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
+    And body with value {"disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -89,6 +89,6 @@ Feature: Users
   Scenario: Update a user returns "User updated" response
     Given new "UpdateUser" request
     And request contains "user_handle" parameter from "<PATH>"
-    And body with value {"access_role": "st", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
+    And body with value {"disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
     When the request is sent
     Then the response status is 200 User updated
