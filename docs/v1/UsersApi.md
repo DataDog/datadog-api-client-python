@@ -40,6 +40,7 @@ with ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     body = User(
+        access_role=AccessRole("st"),
         disabled=False,
         email="test@datadoghq.com",
         handle="test@datadoghq.com",
@@ -314,6 +315,7 @@ with ApiClient(configuration) as api_client:
     api_instance = users_api.UsersApi(api_client)
     user_handle = "test@datadoghq.com"  # str | The ID of the user.
     body = User(
+        access_role=AccessRole("st"),
         disabled=False,
         email="test@datadoghq.com",
         handle="test@datadoghq.com",
