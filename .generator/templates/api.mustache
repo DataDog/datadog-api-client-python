@@ -5,8 +5,6 @@ import sys  # noqa: F401
 
 from {{packageName}}.api_client import ApiClient, Endpoint as _Endpoint
 from {{packageName}}.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -88,50 +86,19 @@ class {{classname}}(object):
 {{/servers}}
             },
             params_map={
-                'all': [
 {{#allParams}}
-                    '{{paramName}}',
-{{/allParams}}
-                ],
-{{#requiredParams}}
-{{#-first}}
-                'required': [
-{{/-first}}
-                    '{{paramName}}',
-{{#-last}}
-                ],
-{{/-last}}
-{{/requiredParams}}
-{{^requiredParams}}
-                'required': [],
-{{/requiredParams}}
-                'nullable': [
-{{#allParams}}
-{{#isNullable}}
-                    '{{paramName}}',
-{{/isNullable}}
-{{/allParams}}
-                ],
-                'enum': [
-{{#allParams}}
+                '{{paramName}}': {
+                     {{#required}}'required': True,{{/required}}
+		     {{#isNullable}}'nullable': True,{{/isNullable}}
 {{#isEnum}}
-                    '{{paramName}}',
+                     'allowed_values': {
+{{#isNullable}}
+                        'None': None,{{/isNullable}}{{#allowableValues}}{{#enumVars}}
+                        "{{name}}": {{{value}}}{{^-last}},{{/-last}}{{/enumVars}}{{/allowableValues}}
+                    },
 {{/isEnum}}
-{{/allParams}}
-                ],
-                'validation': [
-{{#allParams}}
 {{#hasValidation}}
-                    '{{paramName}}',
-{{/hasValidation}}
-{{/allParams}}
-                ]
-            },
-            root_map={
-                'validations': {
-{{#allParams}}
-{{#hasValidation}}
-                    ('{{paramName}}',): {
+                     'validation': {
 {{#maxLength}}
                         'max_length': {{.}},{{/maxLength}}{{#minLength}}
                         'min_length': {{.}},{{/minLength}}{{#maxItems}}
@@ -145,45 +112,17 @@ class {{classname}}(object):
                         },{{/pattern}}
                     },
 {{/hasValidation}}
-{{/allParams}}
-                },
-                'allowed_values': {
-{{#allParams}}
-{{#isEnum}}
-                    ('{{paramName}}',): {
-{{#isNullable}}
-                        'None': None,{{/isNullable}}{{#allowableValues}}{{#enumVars}}
-                        "{{name}}": {{{value}}}{{^-last}},{{/-last}}{{/enumVars}}{{/allowableValues}}
-                    },
-{{/isEnum}}
-{{/allParams}}
-                },
-                'openapi_types': {
-{{#allParams}}
-                    '{{paramName}}':
-                        ({{{dataType}}},),
-{{/allParams}}
-                },
-                'attribute_map': {
-{{#allParams}}
-{{^isBodyParam}}
-                    '{{paramName}}': '{{baseName}}',
+                    'openapi_types': ({{{dataType}}},),
+		   {{^isBodyParam}}
+                    'attribute_map': '{{baseName}}',
 {{/isBodyParam}}
-{{/allParams}}
-                },
-                'location_map': {
-{{#allParams}}
-                    '{{paramName}}': '{{#isFormParam}}form{{/isFormParam}}{{#isQueryParam}}query{{/isQueryParam}}{{#isPathParam}}path{{/isPathParam}}{{#isHeaderParam}}header{{/isHeaderParam}}{{#isCookieParam}}cookie{{/isCookieParam}}{{#isBodyParam}}body{{/isBodyParam}}',
-{{/allParams}}
-                },
-                'collection_format_map': {
-{{#allParams}}
+                    'location_map': '{{#isFormParam}}form{{/isFormParam}}{{#isQueryParam}}query{{/isQueryParam}}{{#isPathParam}}path{{/isPathParam}}{{#isHeaderParam}}header{{/isHeaderParam}}{{#isCookieParam}}cookie{{/isCookieParam}}{{#isBodyParam}}body{{/isBodyParam}}',
 {{#collectionFormat}}
-                    '{{paramName}}': '{{collectionFormat}}',
+                    'collection_format_map': '{{collectionFormat}}',
 {{/collectionFormat}}
+	    },
 {{/allParams}}
-                }
-            },
+},
             headers_map={
 {{#hasProduces}}
                 'accept': [

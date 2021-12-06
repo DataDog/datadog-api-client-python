@@ -35,17 +35,17 @@
             value = validate_and_convert_types(
                 value, required_types_mixed, path_to_item, self._spec_property_naming,
                 self._check_type, configuration=self._configuration)
-        if (name,) in self.allowed_values:
+        if name in self.allowed_values:
             try:
-		check_allowed_values(self.allowed_values, (name,), value)
+		check_allowed_values(list(self.allowed_values[name].values()), name, value)
             except ApiValueError:
                 self.__dict__["_data_store"][name] = value
                 self._unparsed = True
                 return
-        if (name,) in self.validations:
+        if name in self.validations:
             check_validations(
-                self.validations,
-                (name,),
+                self.validations[name],
+                name,
                 value,
                 self._configuration
             )

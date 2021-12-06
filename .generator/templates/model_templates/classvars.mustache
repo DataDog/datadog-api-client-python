@@ -1,6 +1,6 @@
     allowed_values = {
 {{#isEnum}}
-        ('value',): {
+        'value': {
 {{#isNullable}}
             'None': None,
 {{/isNullable}}
@@ -13,7 +13,7 @@
 {{/isEnum}}
 {{#requiredVars}}
 {{#isEnum}}
-        ('{{name}}',): {
+        '{{name}}': {
 {{#isNullable}}
             'None': None,
 {{/isNullable}}
@@ -27,7 +27,7 @@
 {{/requiredVars}}
 {{#optionalVars}}
 {{#isEnum}}
-        ('{{name}}',): {
+        '{{name}}': {
 {{#isNullable}}
             'None': None,
 {{/isNullable}}
@@ -43,18 +43,18 @@
 
     validations = {
 {{#hasValidation}}
-        ('value',): {
+        'value': {
 {{> model_templates/validations }}
 {{/hasValidation}}
 {{#requiredVars}}
 {{#hasValidation}}
-        ('{{name}}',): {
+        '{{name}}': {
 {{> model_templates/validations }}
 {{/hasValidation}}
 {{/requiredVars}}
 {{#optionalVars}}
 {{#hasValidation}}
-        ('{{name}}',): {
+        '{{name}}': {
 {{> model_templates/validations }}
 {{/hasValidation}}
 {{/optionalVars}}
