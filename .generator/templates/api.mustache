@@ -114,11 +114,11 @@ class {{classname}}(object):
 {{/hasValidation}}
                     'openapi_types': ({{{dataType}}},),
 		   {{^isBodyParam}}
-                    'attribute_map': '{{baseName}}',
+                    'attribute': '{{baseName}}',
 {{/isBodyParam}}
-                    'location_map': '{{#isFormParam}}form{{/isFormParam}}{{#isQueryParam}}query{{/isQueryParam}}{{#isPathParam}}path{{/isPathParam}}{{#isHeaderParam}}header{{/isHeaderParam}}{{#isCookieParam}}cookie{{/isCookieParam}}{{#isBodyParam}}body{{/isBodyParam}}',
+                    'location': '{{#isFormParam}}form{{/isFormParam}}{{#isQueryParam}}query{{/isQueryParam}}{{#isPathParam}}path{{/isPathParam}}{{#isHeaderParam}}header{{/isHeaderParam}}{{#isCookieParam}}cookie{{/isCookieParam}}{{#isBodyParam}}body{{/isBodyParam}}',
 {{#collectionFormat}}
-                    'collection_format_map': '{{collectionFormat}}',
+                    'collection_format': '{{collectionFormat}}',
 {{/collectionFormat}}
 	    },
 {{/allParams}}
