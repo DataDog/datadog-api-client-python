@@ -621,8 +621,8 @@ class Endpoint(object):
 
     def _validate_inputs(self, kwargs):
         for param in kwargs:
-            params_map = self.params_map[param]
-            allowed_values = params_map.get('allowed_values')
+            param_map = self.params_map[param]
+            allowed_values = param_map.get('allowed_values')
             if allowed_values:
                 check_allowed_values(
                     list(allowed_values.values()),
@@ -630,7 +630,7 @@ class Endpoint(object):
                     kwargs[param]
                 )
 
-            validations = params_map.get('validation')
+            validations = param_map.get('validation')
             if validations:
                 check_validations(
                     validations,
@@ -665,16 +665,16 @@ class Endpoint(object):
         }
 
         for param_name, param_value in kwargs.items():
-            params_map = self.params_map[param_name]
-            param_location = params_map.get('location')
+            param_map = self.params_map[param_name]
+            param_location = param_map.get('location')
             if param_location is None:
                 continue
             if param_location:
                 if param_location == 'body':
                     params['body'] = param_value
                     continue
-                base_name = params_map['attribute']
-                openapi_types = params_map['openapi_types']
+                base_name = param_map['attribute']
+                openapi_types = param_map['openapi_types']
                 if (param_location == 'form' and
                         openapi_types == (file_type,)):
                     params['file'][param_name] = [param_value]
@@ -687,7 +687,7 @@ class Endpoint(object):
                     params[param_location].append(param_value_full)
                 if param_location not in {'form', 'query'}:
                     params[param_location][base_name] = param_value
-                collection_format = params_map.get('collection_format')
+                collection_format = param_map.get('collection_format')
                 if collection_format:
                     params['collection_format'][base_name] = collection_format
 
@@ -750,8 +750,8 @@ class Endpoint(object):
                     (key, self.settings['operation_id'])
                 )
 
-        for key, params_map in self.params_map.items():
-            if params_map.get('required') and key not in kwargs:
+        for key, param_map in self.params_map.items():
+            if param_map.get('required') and key not in kwargs:
                 raise ApiValueError(
                     "Missing the required parameter `%s` when calling "
                     "`%s`" % (key, self.settings['operation_id'])
