@@ -117,9 +117,6 @@
         }
 {{/oneOf}}
 
-{{^discriminator}}
-    discriminator = None
-{{/discriminator}}
 {{#discriminator}}
     @cached_property
     def discriminator():

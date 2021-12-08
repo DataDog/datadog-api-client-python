@@ -118,6 +118,8 @@ class OpenApiModel(object):
 
     _nullable = False
 
+    discriminator = None
+
 {{> model_templates/method_set_attribute }}
 
 {{> model_templates/methods_shared }}
@@ -1839,8 +1841,6 @@ class UnparsedObject(ModelNormal):
     validations = {}
 
     openapi_types = {}
-
-    discriminator = None
 
     required_properties = set(
         [
