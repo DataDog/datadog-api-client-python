@@ -76,7 +76,7 @@
         lazy_import()
 {{/-first}}
 {{/imports}}
-        return ({{{dataType}}},)  # noqa: E501
+        return ({{{dataType}}},)
 {{/additionalProperties}}
 
     {{#isNullable}}_nullable = True{{/isNullable}}
@@ -113,10 +113,10 @@
             'value': ({{{dataType}}},),
 {{/isArray}}
 {{#requiredVars}}
-            '{{name}}': ({{{dataType}}},),  # noqa: E501
+            '{{name}}': ({{{dataType}}},),
 {{/requiredVars}}
 {{#optionalVars}}
-            '{{name}}': ({{{dataType}}},),  # noqa: E501
+            '{{name}}': ({{{dataType}}},),
 {{/optionalVars}}
         }
 {{/oneOf}}

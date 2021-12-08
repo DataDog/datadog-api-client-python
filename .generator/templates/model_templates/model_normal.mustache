@@ -15,22 +15,22 @@ class {{classname}}(ModelNormal):
 
     attribute_map = {
 {{#requiredVars}}
-        '{{name}}': '{{baseName}}',  # noqa: E501
+        '{{name}}': '{{baseName}}',
 {{/requiredVars}}
 {{#optionalVars}}
-        '{{name}}': '{{baseName}}',  # noqa: E501
+        '{{name}}': '{{baseName}}',
 {{/optionalVars}}
     }
 
     read_only_vars = {
 {{#requiredVars}}
 {{#isReadOnly}}
-        '{{name}}',  # noqa: E501
+        '{{name}}',
 {{/isReadOnly}}
 {{/requiredVars}}
 {{#optionalVars}}
 {{#isReadOnly}}
-        '{{name}}',  # noqa: E501
+        '{{name}}',
 {{/isReadOnly}}
 {{/optionalVars}}
     }
