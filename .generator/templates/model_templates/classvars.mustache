@@ -1,5 +1,5 @@
-    allowed_values = {
 {{#isEnum}}
+    allowed_values = {
         'value': {
 {{#isNullable}}
             'None': None,
@@ -10,7 +10,10 @@
 {{/enumVars}}
 {{/allowableValues}}
         },
+    }
 {{/isEnum}}
+{{#hasEnums}}
+    allowed_values = {
 {{#requiredVars}}
 {{#isEnum}}
         '{{name}}': {
@@ -40,6 +43,7 @@
 {{/isEnum}}
 {{/optionalVars}}
     }
+{{/hasEnums}}
 
     validations = {
 {{#hasValidation}}
