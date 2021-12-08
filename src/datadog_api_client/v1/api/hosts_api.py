@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -45,27 +43,11 @@ class HostsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "_from",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "_from": (int,),
+                "_from": {
+                    "openapi_types": (int,),
+                    "attribute": "from",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "_from": "from",
-                },
-                "location_map": {
-                    "_from": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -84,55 +66,46 @@ class HostsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "filter",
-                    "sort_field",
-                    "sort_dir",
-                    "start",
-                    "count",
-                    "_from",
-                    "include_muted_hosts_data",
-                    "include_hosts_metadata",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "filter": (str,),
-                    "sort_field": (str,),
-                    "sort_dir": (str,),
-                    "start": (int,),
-                    "count": (int,),
-                    "_from": (int,),
-                    "include_muted_hosts_data": (bool,),
-                    "include_hosts_metadata": (bool,),
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "filter": "filter",
-                    "sort_field": "sort_field",
-                    "sort_dir": "sort_dir",
-                    "start": "start",
-                    "count": "count",
-                    "_from": "from",
-                    "include_muted_hosts_data": "include_muted_hosts_data",
-                    "include_hosts_metadata": "include_hosts_metadata",
+                "sort_field": {
+                    "openapi_types": (str,),
+                    "attribute": "sort_field",
+                    "location": "query",
                 },
-                "location_map": {
-                    "filter": "query",
-                    "sort_field": "query",
-                    "sort_dir": "query",
-                    "start": "query",
-                    "count": "query",
-                    "_from": "query",
-                    "include_muted_hosts_data": "query",
-                    "include_hosts_metadata": "query",
+                "sort_dir": {
+                    "openapi_types": (str,),
+                    "attribute": "sort_dir",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "start": {
+                    "openapi_types": (int,),
+                    "attribute": "start",
+                    "location": "query",
+                },
+                "count": {
+                    "openapi_types": (int,),
+                    "attribute": "count",
+                    "location": "query",
+                },
+                "_from": {
+                    "openapi_types": (int,),
+                    "attribute": "from",
+                    "location": "query",
+                },
+                "include_muted_hosts_data": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_muted_hosts_data",
+                    "location": "query",
+                },
+                "include_hosts_metadata": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_hosts_metadata",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -151,33 +124,17 @@ class HostsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "host_name",
-                    "body",
-                ],
-                "required": [
-                    "host_name",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "host_name": (str,),
-                    "body": (HostMuteSettings,),
+                "host_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "host_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "host_name": "host_name",
+                "body": {
+                    "required": True,
+                    "openapi_types": (HostMuteSettings,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "host_name": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -193,29 +150,12 @@ class HostsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "host_name",
-                ],
-                "required": [
-                    "host_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "host_name": (str,),
+                "host_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "host_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "host_name": "host_name",
-                },
-                "location_map": {
-                    "host_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],

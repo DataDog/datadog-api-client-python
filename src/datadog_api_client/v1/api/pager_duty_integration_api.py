@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -44,27 +42,11 @@ class PagerDutyIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (PagerDutyService,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (PagerDutyService,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -80,29 +62,12 @@ class PagerDutyIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_name",
-                ],
-                "required": [
-                    "service_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_name": (str,),
+                "service_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_name": "service_name",
-                },
-                "location_map": {
-                    "service_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -121,29 +86,12 @@ class PagerDutyIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_name",
-                ],
-                "required": [
-                    "service_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_name": (str,),
+                "service_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_name": "service_name",
-                },
-                "location_map": {
-                    "service_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -162,33 +110,17 @@ class PagerDutyIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_name",
-                    "body",
-                ],
-                "required": [
-                    "service_name",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_name": (str,),
-                    "body": (PagerDutyServiceKey,),
+                "service_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_name": "service_name",
+                "body": {
+                    "required": True,
+                    "openapi_types": (PagerDutyServiceKey,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "service_name": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

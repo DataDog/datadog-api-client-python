@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -47,30 +45,12 @@ class MonitorsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "monitor_ids",
-                ],
-                "required": [
-                    "monitor_ids",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "monitor_ids": ([int],),
-                },
-                "attribute_map": {
-                    "monitor_ids": "monitor_ids",
-                },
-                "location_map": {
-                    "monitor_ids": "query",
-                },
-                "collection_format_map": {
-                    "monitor_ids": "csv",
+                "monitor_ids": {
+                    "required": True,
+                    "openapi_types": ([int],),
+                    "attribute": "monitor_ids",
+                    "location": "query",
+                    "collection_format": "csv",
                 },
             },
             headers_map={
@@ -90,27 +70,11 @@ class MonitorsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (Monitor,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (Monitor,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -126,33 +90,17 @@ class MonitorsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "monitor_id",
-                    "force",
-                ],
-                "required": [
-                    "monitor_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "monitor_id": (int,),
-                    "force": (str,),
+                "monitor_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "monitor_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "monitor_id": "monitor_id",
-                    "force": "force",
+                "force": {
+                    "openapi_types": (str,),
+                    "attribute": "force",
+                    "location": "query",
                 },
-                "location_map": {
-                    "monitor_id": "path",
-                    "force": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -171,33 +119,17 @@ class MonitorsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "monitor_id",
-                    "group_states",
-                ],
-                "required": [
-                    "monitor_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "monitor_id": (int,),
-                    "group_states": (str,),
+                "monitor_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "monitor_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "monitor_id": "monitor_id",
-                    "group_states": "group_states",
+                "group_states": {
+                    "openapi_types": (str,),
+                    "attribute": "group_states",
+                    "location": "query",
                 },
-                "location_map": {
-                    "monitor_id": "path",
-                    "group_states": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -216,61 +148,49 @@ class MonitorsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "group_states",
-                    "name",
-                    "tags",
-                    "monitor_tags",
-                    "with_downtimes",
-                    "id_offset",
-                    "page",
-                    "page_size",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [
-                    "page_size",
-                ],
-            },
-            root_map={
-                "validations": {
-                    ("page_size",): {
+                "group_states": {
+                    "openapi_types": (str,),
+                    "attribute": "group_states",
+                    "location": "query",
+                },
+                "name": {
+                    "openapi_types": (str,),
+                    "attribute": "name",
+                    "location": "query",
+                },
+                "tags": {
+                    "openapi_types": (str,),
+                    "attribute": "tags",
+                    "location": "query",
+                },
+                "monitor_tags": {
+                    "openapi_types": (str,),
+                    "attribute": "monitor_tags",
+                    "location": "query",
+                },
+                "with_downtimes": {
+                    "openapi_types": (bool,),
+                    "attribute": "with_downtimes",
+                    "location": "query",
+                },
+                "id_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "id_offset",
+                    "location": "query",
+                },
+                "page": {
+                    "openapi_types": (int,),
+                    "attribute": "page",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
                         "inclusive_maximum": 1000,
                     },
+                    "openapi_types": (int,),
+                    "attribute": "page_size",
+                    "location": "query",
                 },
-                "allowed_values": {},
-                "openapi_types": {
-                    "group_states": (str,),
-                    "name": (str,),
-                    "tags": (str,),
-                    "monitor_tags": (str,),
-                    "with_downtimes": (bool,),
-                    "id_offset": (int,),
-                    "page": (int,),
-                    "page_size": (int,),
-                },
-                "attribute_map": {
-                    "group_states": "group_states",
-                    "name": "name",
-                    "tags": "tags",
-                    "monitor_tags": "monitor_tags",
-                    "with_downtimes": "with_downtimes",
-                    "id_offset": "id_offset",
-                    "page": "page",
-                    "page_size": "page_size",
-                },
-                "location_map": {
-                    "group_states": "query",
-                    "name": "query",
-                    "tags": "query",
-                    "monitor_tags": "query",
-                    "with_downtimes": "query",
-                    "id_offset": "query",
-                    "page": "query",
-                    "page_size": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -289,39 +209,26 @@ class MonitorsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "query",
-                    "page",
-                    "per_page",
-                    "sort",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "query": (str,),
-                    "page": (int,),
-                    "per_page": (int,),
-                    "sort": (str,),
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "query": "query",
-                    "page": "page",
-                    "per_page": "per_page",
-                    "sort": "sort",
+                "page": {
+                    "openapi_types": (int,),
+                    "attribute": "page",
+                    "location": "query",
                 },
-                "location_map": {
-                    "query": "query",
-                    "page": "query",
-                    "per_page": "query",
-                    "sort": "query",
+                "per_page": {
+                    "openapi_types": (int,),
+                    "attribute": "per_page",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -340,39 +247,26 @@ class MonitorsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "query",
-                    "page",
-                    "per_page",
-                    "sort",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "query": (str,),
-                    "page": (int,),
-                    "per_page": (int,),
-                    "sort": (str,),
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "query": "query",
-                    "page": "page",
-                    "per_page": "per_page",
-                    "sort": "sort",
+                "page": {
+                    "openapi_types": (int,),
+                    "attribute": "page",
+                    "location": "query",
                 },
-                "location_map": {
-                    "query": "query",
-                    "page": "query",
-                    "per_page": "query",
-                    "sort": "query",
+                "per_page": {
+                    "openapi_types": (int,),
+                    "attribute": "per_page",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -391,33 +285,17 @@ class MonitorsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "monitor_id",
-                    "body",
-                ],
-                "required": [
-                    "monitor_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "monitor_id": (int,),
-                    "body": (MonitorUpdateRequest,),
+                "monitor_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "monitor_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "monitor_id": "monitor_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (MonitorUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "monitor_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -433,27 +311,11 @@ class MonitorsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (Monitor,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (Monitor,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -42,50 +40,38 @@ class SnapshotsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start",
-                    "end",
-                    "metric_query",
-                    "event_query",
-                    "graph_def",
-                    "title",
-                ],
-                "required": [
-                    "start",
-                    "end",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start": (int,),
-                    "end": (int,),
-                    "metric_query": (str,),
-                    "event_query": (str,),
-                    "graph_def": (str,),
-                    "title": (str,),
+                "start": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "start",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start": "start",
-                    "end": "end",
-                    "metric_query": "metric_query",
-                    "event_query": "event_query",
-                    "graph_def": "graph_def",
-                    "title": "title",
+                "end": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "end",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start": "query",
-                    "end": "query",
-                    "metric_query": "query",
-                    "event_query": "query",
-                    "graph_def": "query",
-                    "title": "query",
+                "metric_query": {
+                    "openapi_types": (str,),
+                    "attribute": "metric_query",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "event_query": {
+                    "openapi_types": (str,),
+                    "attribute": "event_query",
+                    "location": "query",
+                },
+                "graph_def": {
+                    "openapi_types": (str,),
+                    "attribute": "graph_def",
+                    "location": "query",
+                },
+                "title": {
+                    "openapi_types": (str,),
+                    "attribute": "title",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],

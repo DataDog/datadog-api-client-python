@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -46,27 +44,11 @@ class IncidentServicesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (IncidentServiceCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentServiceCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -82,29 +64,12 @@ class IncidentServicesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_id",
-                ],
-                "required": [
-                    "service_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_id": (str,),
+                "service_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_id": "service_id",
-                },
-                "location_map": {
-                    "service_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -123,33 +88,17 @@ class IncidentServicesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_id",
-                    "include",
-                ],
-                "required": [
-                    "service_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_id": (str,),
-                    "include": (IncidentRelatedObject,),
+                "service_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_id": "service_id",
-                    "include": "include",
+                "include": {
+                    "openapi_types": (IncidentRelatedObject,),
+                    "attribute": "include",
+                    "location": "query",
                 },
-                "location_map": {
-                    "service_id": "path",
-                    "include": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -168,39 +117,26 @@ class IncidentServicesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "include",
-                    "page_size",
-                    "page_offset",
-                    "filter",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "include": (IncidentRelatedObject,),
-                    "page_size": (int,),
-                    "page_offset": (int,),
-                    "filter": (str,),
+                "include": {
+                    "openapi_types": (IncidentRelatedObject,),
+                    "attribute": "include",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "include": "include",
-                    "page_size": "page[size]",
-                    "page_offset": "page[offset]",
-                    "filter": "filter",
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "include": "query",
-                    "page_size": "query",
-                    "page_offset": "query",
-                    "filter": "query",
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -219,33 +155,17 @@ class IncidentServicesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_id",
-                    "body",
-                ],
-                "required": [
-                    "service_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_id": (str,),
-                    "body": (IncidentServiceUpdateRequest,),
+                "service_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_id": "service_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentServiceUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "service_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

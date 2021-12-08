@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -43,37 +41,22 @@ class TagsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "host_name",
-                    "body",
-                    "source",
-                ],
-                "required": [
-                    "host_name",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "host_name": (str,),
-                    "body": (HostTags,),
-                    "source": (str,),
+                "host_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "host_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "host_name": "host_name",
-                    "source": "source",
+                "body": {
+                    "required": True,
+                    "openapi_types": (HostTags,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "host_name": "path",
-                    "body": "body",
-                    "source": "query",
+                "source": {
+                    "openapi_types": (str,),
+                    "attribute": "source",
+                    "location": "query",
                 },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -89,33 +72,17 @@ class TagsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "host_name",
-                    "source",
-                ],
-                "required": [
-                    "host_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "host_name": (str,),
-                    "source": (str,),
+                "host_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "host_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "host_name": "host_name",
-                    "source": "source",
+                "source": {
+                    "openapi_types": (str,),
+                    "attribute": "source",
+                    "location": "query",
                 },
-                "location_map": {
-                    "host_name": "path",
-                    "source": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -134,33 +101,17 @@ class TagsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "host_name",
-                    "source",
-                ],
-                "required": [
-                    "host_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "host_name": (str,),
-                    "source": (str,),
+                "host_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "host_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "host_name": "host_name",
-                    "source": "source",
+                "source": {
+                    "openapi_types": (str,),
+                    "attribute": "source",
+                    "location": "query",
                 },
-                "location_map": {
-                    "host_name": "path",
-                    "source": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -179,27 +130,11 @@ class TagsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "source",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "source": (str,),
+                "source": {
+                    "openapi_types": (str,),
+                    "attribute": "source",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "source": "source",
-                },
-                "location_map": {
-                    "source": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -218,37 +153,22 @@ class TagsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "host_name",
-                    "body",
-                    "source",
-                ],
-                "required": [
-                    "host_name",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "host_name": (str,),
-                    "body": (HostTags,),
-                    "source": (str,),
+                "host_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "host_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "host_name": "host_name",
-                    "source": "source",
+                "body": {
+                    "required": True,
+                    "openapi_types": (HostTags,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "host_name": "path",
-                    "body": "body",
-                    "source": "query",
+                "source": {
+                    "openapi_types": (str,),
+                    "attribute": "source",
+                    "location": "query",
                 },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

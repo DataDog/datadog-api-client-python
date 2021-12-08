@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -51,29 +49,12 @@ class ServiceLevelObjectivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "ids",
-                ],
-                "required": [
-                    "ids",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "ids": (str,),
+                "ids": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "ids",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "ids": "ids",
-                },
-                "location_map": {
-                    "ids": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -92,27 +73,11 @@ class ServiceLevelObjectivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (ServiceLevelObjectiveRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (ServiceLevelObjectiveRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -128,33 +93,17 @@ class ServiceLevelObjectivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "slo_id",
-                    "force",
-                ],
-                "required": [
-                    "slo_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "slo_id": (str,),
-                    "force": (str,),
+                "slo_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "slo_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "slo_id": "slo_id",
-                    "force": "force",
+                "force": {
+                    "openapi_types": (str,),
+                    "attribute": "force",
+                    "location": "query",
                 },
-                "location_map": {
-                    "slo_id": "path",
-                    "force": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -173,27 +122,11 @@ class ServiceLevelObjectivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SLOBulkDelete,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SLOBulkDelete,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -209,33 +142,17 @@ class ServiceLevelObjectivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "slo_id",
-                    "with_configured_alert_ids",
-                ],
-                "required": [
-                    "slo_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "slo_id": (str,),
-                    "with_configured_alert_ids": (bool,),
+                "slo_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "slo_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "slo_id": "slo_id",
-                    "with_configured_alert_ids": "with_configured_alert_ids",
+                "with_configured_alert_ids": {
+                    "openapi_types": (bool,),
+                    "attribute": "with_configured_alert_ids",
+                    "location": "query",
                 },
-                "location_map": {
-                    "slo_id": "path",
-                    "with_configured_alert_ids": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -254,29 +171,12 @@ class ServiceLevelObjectivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "slo_id",
-                ],
-                "required": [
-                    "slo_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "slo_id": (str,),
+                "slo_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "slo_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "slo_id": "slo_id",
-                },
-                "location_map": {
-                    "slo_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -295,54 +195,38 @@ class ServiceLevelObjectivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "slo_id",
-                    "from_ts",
-                    "to_ts",
-                    "target",
-                    "apply_correction",
-                ],
-                "required": [
-                    "slo_id",
-                    "from_ts",
-                    "to_ts",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [
-                    "target",
-                ],
-            },
-            root_map={
-                "validations": {
-                    ("target",): {
+                "slo_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "slo_id",
+                    "location": "path",
+                },
+                "from_ts": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "from_ts",
+                    "location": "query",
+                },
+                "to_ts": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "to_ts",
+                    "location": "query",
+                },
+                "target": {
+                    "validation": {
                         "exclusive_maximum": 100,
                         "exclusive_minimum": 0,
                     },
+                    "openapi_types": (float,),
+                    "attribute": "target",
+                    "location": "query",
                 },
-                "allowed_values": {},
-                "openapi_types": {
-                    "slo_id": (str,),
-                    "from_ts": (int,),
-                    "to_ts": (int,),
-                    "target": (float,),
-                    "apply_correction": (bool,),
+                "apply_correction": {
+                    "openapi_types": (bool,),
+                    "attribute": "apply_correction",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "slo_id": "slo_id",
-                    "from_ts": "from_ts",
-                    "to_ts": "to_ts",
-                    "target": "target",
-                    "apply_correction": "apply_correction",
-                },
-                "location_map": {
-                    "slo_id": "path",
-                    "from_ts": "query",
-                    "to_ts": "query",
-                    "target": "query",
-                    "apply_correction": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -361,47 +245,36 @@ class ServiceLevelObjectivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "ids",
-                    "query",
-                    "tags_query",
-                    "metrics_query",
-                    "limit",
-                    "offset",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "ids": (str,),
-                    "query": (str,),
-                    "tags_query": (str,),
-                    "metrics_query": (str,),
-                    "limit": (int,),
-                    "offset": (int,),
+                "ids": {
+                    "openapi_types": (str,),
+                    "attribute": "ids",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "ids": "ids",
-                    "query": "query",
-                    "tags_query": "tags_query",
-                    "metrics_query": "metrics_query",
-                    "limit": "limit",
-                    "offset": "offset",
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
                 },
-                "location_map": {
-                    "ids": "query",
-                    "query": "query",
-                    "tags_query": "query",
-                    "metrics_query": "query",
-                    "limit": "query",
-                    "offset": "query",
+                "tags_query": {
+                    "openapi_types": (str,),
+                    "attribute": "tags_query",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "metrics_query": {
+                    "openapi_types": (str,),
+                    "attribute": "metrics_query",
+                    "location": "query",
+                },
+                "limit": {
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+                "offset": {
+                    "openapi_types": (int,),
+                    "attribute": "offset",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -420,33 +293,17 @@ class ServiceLevelObjectivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "slo_id",
-                    "body",
-                ],
-                "required": [
-                    "slo_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "slo_id": (str,),
-                    "body": (ServiceLevelObjective,),
+                "slo_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "slo_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "slo_id": "slo_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (ServiceLevelObjective,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "slo_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

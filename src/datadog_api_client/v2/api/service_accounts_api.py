@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -47,33 +45,17 @@ class ServiceAccountsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_account_id",
-                    "body",
-                ],
-                "required": [
-                    "service_account_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_account_id": (str,),
-                    "body": (ApplicationKeyCreateRequest,),
+                "service_account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_account_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_account_id": "service_account_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (ApplicationKeyCreateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "service_account_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -89,34 +71,18 @@ class ServiceAccountsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_account_id",
-                    "app_key_id",
-                ],
-                "required": [
-                    "service_account_id",
-                    "app_key_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_account_id": (str,),
-                    "app_key_id": (str,),
+                "service_account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_account_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_account_id": "service_account_id",
-                    "app_key_id": "app_key_id",
+                "app_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_key_id",
+                    "location": "path",
                 },
-                "location_map": {
-                    "service_account_id": "path",
-                    "app_key_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -135,34 +101,18 @@ class ServiceAccountsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_account_id",
-                    "app_key_id",
-                ],
-                "required": [
-                    "service_account_id",
-                    "app_key_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_account_id": (str,),
-                    "app_key_id": (str,),
+                "service_account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_account_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_account_id": "service_account_id",
-                    "app_key_id": "app_key_id",
+                "app_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_key_id",
+                    "location": "path",
                 },
-                "location_map": {
-                    "service_account_id": "path",
-                    "app_key_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -181,53 +131,42 @@ class ServiceAccountsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_account_id",
-                    "page_size",
-                    "page_number",
-                    "sort",
-                    "filter",
-                    "filter_created_at_start",
-                    "filter_created_at_end",
-                ],
-                "required": [
-                    "service_account_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_account_id": (str,),
-                    "page_size": (int,),
-                    "page_number": (int,),
-                    "sort": (ApplicationKeysSort,),
-                    "filter": (str,),
-                    "filter_created_at_start": (str,),
-                    "filter_created_at_end": (str,),
+                "service_account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_account_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_account_id": "service_account_id",
-                    "page_size": "page[size]",
-                    "page_number": "page[number]",
-                    "sort": "sort",
-                    "filter": "filter",
-                    "filter_created_at_start": "filter[created_at][start]",
-                    "filter_created_at_end": "filter[created_at][end]",
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "service_account_id": "path",
-                    "page_size": "query",
-                    "page_number": "query",
-                    "sort": "query",
-                    "filter": "query",
-                    "filter_created_at_start": "query",
-                    "filter_created_at_end": "query",
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "sort": {
+                    "openapi_types": (ApplicationKeysSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
+                "filter_created_at_start": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[created_at][start]",
+                    "location": "query",
+                },
+                "filter_created_at_end": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[created_at][end]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -246,38 +185,23 @@ class ServiceAccountsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "service_account_id",
-                    "app_key_id",
-                    "body",
-                ],
-                "required": [
-                    "service_account_id",
-                    "app_key_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "service_account_id": (str,),
-                    "app_key_id": (str,),
-                    "body": (ApplicationKeyUpdateRequest,),
+                "service_account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_account_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "service_account_id": "service_account_id",
-                    "app_key_id": "app_key_id",
+                "app_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_key_id",
+                    "location": "path",
                 },
-                "location_map": {
-                    "service_account_id": "path",
-                    "app_key_id": "path",
-                    "body": "body",
+                "body": {
+                    "required": True,
+                    "openapi_types": (ApplicationKeyUpdateRequest,),
+                    "location": "body",
                 },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

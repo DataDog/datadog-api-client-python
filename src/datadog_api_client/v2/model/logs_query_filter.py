@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    change_keys_js_to_python,
     convert_js_args_to_python_args,
     date,
     datetime,
@@ -25,21 +24,21 @@ class LogsQueryFilter(ModelNormal):
     Do not edit the class manually.
 
     Attributes:
-      allowed_values (dict): The key is the tuple path to the attribute
-          and the for var_name this is (var_name,). The value is a dict
+      allowed_values (dict): The key is the name of the attribute. The value is a dict
           with a capitalized key describing the allowed value and an allowed
           value. These dicts store the allowed enum values.
+
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
       discriminator_value_class_map (dict): A dict to go from the discriminator
           variable value to the discriminator class name.
-      validations (dict): The key is the tuple path to the attribute
-          and the for var_name this is (var_name,). The value is a dict
+      validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
           inclusive_minimum, and regex.
       additional_properties_type (tuple): A tuple of classes accepted
           as additional properties values.
+
     """
 
     allowed_values = {}

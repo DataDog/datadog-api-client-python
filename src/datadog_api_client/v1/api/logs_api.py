@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -47,27 +45,11 @@ class LogsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (LogsListRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (LogsListRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -133,36 +115,21 @@ class LogsApi(object):
                 ],
             },
             params_map={
-                "all": [
-                    "body",
-                    "content_encoding",
-                    "ddtags",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (HTTPLog,),
-                    "content_encoding": (ContentEncoding,),
-                    "ddtags": (str,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (HTTPLog,),
+                    "location": "body",
                 },
-                "attribute_map": {
-                    "content_encoding": "Content-Encoding",
-                    "ddtags": "ddtags",
+                "content_encoding": {
+                    "openapi_types": (ContentEncoding,),
+                    "attribute": "Content-Encoding",
+                    "location": "header",
                 },
-                "location_map": {
-                    "body": "body",
-                    "content_encoding": "header",
-                    "ddtags": "query",
+                "ddtags": {
+                    "openapi_types": (str,),
+                    "attribute": "ddtags",
+                    "location": "query",
                 },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
