@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -45,27 +43,11 @@ class NotebooksApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (NotebookCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (NotebookCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -81,29 +63,12 @@ class NotebooksApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "notebook_id",
-                ],
-                "required": [
-                    "notebook_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "notebook_id": (int,),
+                "notebook_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "notebook_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "notebook_id": "notebook_id",
-                },
-                "location_map": {
-                    "notebook_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -122,29 +87,12 @@ class NotebooksApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "notebook_id",
-                ],
-                "required": [
-                    "notebook_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "notebook_id": (int,),
+                "notebook_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "notebook_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "notebook_id": "notebook_id",
-                },
-                "location_map": {
-                    "notebook_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -163,63 +111,56 @@ class NotebooksApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "author_handle",
-                    "exclude_author_handle",
-                    "start",
-                    "count",
-                    "sort_field",
-                    "sort_dir",
-                    "query",
-                    "include_cells",
-                    "is_template",
-                    "type",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "author_handle": (str,),
-                    "exclude_author_handle": (str,),
-                    "start": (int,),
-                    "count": (int,),
-                    "sort_field": (str,),
-                    "sort_dir": (str,),
-                    "query": (str,),
-                    "include_cells": (bool,),
-                    "is_template": (bool,),
-                    "type": (str,),
+                "author_handle": {
+                    "openapi_types": (str,),
+                    "attribute": "author_handle",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "author_handle": "author_handle",
-                    "exclude_author_handle": "exclude_author_handle",
-                    "start": "start",
-                    "count": "count",
-                    "sort_field": "sort_field",
-                    "sort_dir": "sort_dir",
-                    "query": "query",
-                    "include_cells": "include_cells",
-                    "is_template": "is_template",
-                    "type": "type",
+                "exclude_author_handle": {
+                    "openapi_types": (str,),
+                    "attribute": "exclude_author_handle",
+                    "location": "query",
                 },
-                "location_map": {
-                    "author_handle": "query",
-                    "exclude_author_handle": "query",
-                    "start": "query",
-                    "count": "query",
-                    "sort_field": "query",
-                    "sort_dir": "query",
-                    "query": "query",
-                    "include_cells": "query",
-                    "is_template": "query",
-                    "type": "query",
+                "start": {
+                    "openapi_types": (int,),
+                    "attribute": "start",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "count": {
+                    "openapi_types": (int,),
+                    "attribute": "count",
+                    "location": "query",
+                },
+                "sort_field": {
+                    "openapi_types": (str,),
+                    "attribute": "sort_field",
+                    "location": "query",
+                },
+                "sort_dir": {
+                    "openapi_types": (str,),
+                    "attribute": "sort_dir",
+                    "location": "query",
+                },
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
+                },
+                "include_cells": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_cells",
+                    "location": "query",
+                },
+                "is_template": {
+                    "openapi_types": (bool,),
+                    "attribute": "is_template",
+                    "location": "query",
+                },
+                "type": {
+                    "openapi_types": (str,),
+                    "attribute": "type",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -238,33 +179,17 @@ class NotebooksApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "notebook_id",
-                    "body",
-                ],
-                "required": [
-                    "notebook_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "notebook_id": (int,),
-                    "body": (NotebookUpdateRequest,),
+                "notebook_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "notebook_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "notebook_id": "notebook_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (NotebookUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "notebook_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

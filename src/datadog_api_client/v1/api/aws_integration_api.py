@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -48,27 +46,11 @@ class AWSIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (AWSAccount,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSAccount,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -84,27 +66,11 @@ class AWSIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (AWSTagFilterCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSTagFilterCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -120,27 +86,11 @@ class AWSIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (AWSAccount,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSAccount,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -156,27 +106,11 @@ class AWSIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (AWSAccountDeleteRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSAccountDeleteRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -192,27 +126,11 @@ class AWSIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (AWSTagFilterDeleteRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSTagFilterDeleteRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -227,15 +145,7 @@ class AWSIntegrationApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -253,35 +163,21 @@ class AWSIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "account_id",
-                    "role_name",
-                    "access_key_id",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "account_id": (str,),
-                    "role_name": (str,),
-                    "access_key_id": (str,),
+                "account_id": {
+                    "openapi_types": (str,),
+                    "attribute": "account_id",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "account_id": "account_id",
-                    "role_name": "role_name",
-                    "access_key_id": "access_key_id",
+                "role_name": {
+                    "openapi_types": (str,),
+                    "attribute": "role_name",
+                    "location": "query",
                 },
-                "location_map": {
-                    "account_id": "query",
-                    "role_name": "query",
-                    "access_key_id": "query",
+                "access_key_id": {
+                    "openapi_types": (str,),
+                    "attribute": "access_key_id",
+                    "location": "query",
                 },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -300,29 +196,12 @@ class AWSIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "account_id",
-                ],
-                "required": [
-                    "account_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "account_id": (str,),
+                "account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_id",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "account_id": "account_id",
-                },
-                "location_map": {
-                    "account_id": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -341,40 +220,26 @@ class AWSIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                    "account_id",
-                    "role_name",
-                    "access_key_id",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (AWSAccount,),
-                    "account_id": (str,),
-                    "role_name": (str,),
-                    "access_key_id": (str,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSAccount,),
+                    "location": "body",
                 },
-                "attribute_map": {
-                    "account_id": "account_id",
-                    "role_name": "role_name",
-                    "access_key_id": "access_key_id",
+                "account_id": {
+                    "openapi_types": (str,),
+                    "attribute": "account_id",
+                    "location": "query",
                 },
-                "location_map": {
-                    "body": "body",
-                    "account_id": "query",
-                    "role_name": "query",
-                    "access_key_id": "query",
+                "role_name": {
+                    "openapi_types": (str,),
+                    "attribute": "role_name",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "access_key_id": {
+                    "openapi_types": (str,),
+                    "attribute": "access_key_id",
+                    "location": "query",
+                },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

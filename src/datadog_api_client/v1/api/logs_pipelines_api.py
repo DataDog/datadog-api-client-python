@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -45,27 +43,11 @@ class LogsPipelinesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (LogsPipeline,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (LogsPipeline,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -81,29 +63,12 @@ class LogsPipelinesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "pipeline_id",
-                ],
-                "required": [
-                    "pipeline_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "pipeline_id": (str,),
+                "pipeline_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "pipeline_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "pipeline_id": "pipeline_id",
-                },
-                "location_map": {
-                    "pipeline_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -122,29 +87,12 @@ class LogsPipelinesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "pipeline_id",
-                ],
-                "required": [
-                    "pipeline_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "pipeline_id": (str,),
+                "pipeline_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "pipeline_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "pipeline_id": "pipeline_id",
-                },
-                "location_map": {
-                    "pipeline_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -162,15 +110,7 @@ class LogsPipelinesApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -187,15 +127,7 @@ class LogsPipelinesApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -213,33 +145,17 @@ class LogsPipelinesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "pipeline_id",
-                    "body",
-                ],
-                "required": [
-                    "pipeline_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "pipeline_id": (str,),
-                    "body": (LogsPipeline,),
+                "pipeline_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "pipeline_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "pipeline_id": "pipeline_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (LogsPipeline,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "pipeline_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -255,27 +171,11 @@ class LogsPipelinesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (LogsPipelinesOrder,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (LogsPipelinesOrder,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

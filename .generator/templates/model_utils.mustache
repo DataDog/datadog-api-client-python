@@ -632,50 +632,49 @@ def get_simple_class(input_value):
     return type(input_value)
 
 
-def check_allowed_values(allowed_values, input_variable_path, input_values):
+def check_allowed_values(allowed_values, input_variable, input_values):
     """Raises an exception if the input_values are not allowed
 
     Args:
-        allowed_values (dict): the allowed_values dict
-        input_variable_path (tuple): the path to the input variable
+        allowed_values (list): the allowed_values list
+        input_variable (str): the name of the input variable
         input_values (list/str/int/float/date/datetime): the values that we
             are checking to see if they are in allowed_values
     """
-    these_allowed_values = list(allowed_values[input_variable_path].values())
     if (isinstance(input_values, list)
             and not set(input_values).issubset(
-                set(these_allowed_values))):
+                set(allowed_values))):
         invalid_values = ", ".join(
-            map(str, set(input_values) - set(these_allowed_values))),
+            map(str, set(input_values) - set(allowed_values))),
         raise ApiValueError(
             "Invalid values for `%s` [%s], must be a subset of [%s]" %
             (
-                input_variable_path[0],
+                input_variable,
                 invalid_values,
-                ", ".join(map(str, these_allowed_values))
+                ", ".join(map(str, allowed_values))
             )
         )
     elif (isinstance(input_values, dict)
             and not set(
-                input_values.keys()).issubset(set(these_allowed_values))):
+                input_values.keys()).issubset(set(allowed_values))):
         invalid_values = ", ".join(
-            map(str, set(input_values.keys()) - set(these_allowed_values)))
+            map(str, set(input_values.keys()) - set(allowed_values)))
         raise ApiValueError(
             "Invalid keys in `%s` [%s], must be a subset of [%s]" %
             (
-                input_variable_path[0],
+                input_variable,
                 invalid_values,
-                ", ".join(map(str, these_allowed_values))
+                ", ".join(map(str, allowed_values))
             )
         )
     elif (not isinstance(input_values, (list, dict))
-            and input_values not in these_allowed_values):
+            and input_values not in allowed_values):
         raise ApiValueError(
             "Invalid value for `%s` (%s), must be one of %s" %
             (
-                input_variable_path[0],
+                input_variable,
                 input_values,
-                these_allowed_values
+                allowed_values
             )
         )
 
@@ -696,13 +695,13 @@ def is_json_validation_enabled(schema_keyword, configuration=None):
 
 
 def check_validations(
-        validations, input_variable_path, input_values,
+        validations, input_variable, input_values,
         configuration=None):
     """Raises an exception if the input_values are invalid
 
     Args:
         validations (dict): the validation dictionary.
-        input_variable_path (tuple): the path to the input variable.
+        input_variable (str): the name of the input variable.
         input_values (list/str/int/float/date/datetime): the values that we
             are checking.
         configuration (Configuration): the configuration class.
@@ -711,67 +710,66 @@ def check_validations(
     if input_values is None:
         return
 
-    current_validations = validations[input_variable_path]
     if (is_json_validation_enabled('multipleOf', configuration) and
-            'multiple_of' in current_validations and
+            'multiple_of' in validations and
             isinstance(input_values, (int, float)) and
-            not (float(input_values) / current_validations['multiple_of']).is_integer()):
+            not (float(input_values) / validations['multiple_of']).is_integer()):
         # Note 'multipleOf' will be as good as the floating point arithmetic.
         raise ApiValueError(
             "Invalid value for `%s`, value must be a multiple of "
             "`%s`" % (
-                input_variable_path[0],
-                current_validations['multiple_of']
+                input_variable,
+                validations['multiple_of']
             )
         )
 
     if (is_json_validation_enabled('maxLength', configuration) and
-            'max_length' in current_validations and
-            len(input_values) > current_validations['max_length']):
+            'max_length' in validations and
+            len(input_values) > validations['max_length']):
         raise ApiValueError(
             "Invalid value for `%s`, length must be less than or equal to "
             "`%s`" % (
-                input_variable_path[0],
-                current_validations['max_length']
+                input_variable,
+                validations['max_length']
             )
         )
 
     if (is_json_validation_enabled('minLength', configuration) and
-            'min_length' in current_validations and
-            len(input_values) < current_validations['min_length']):
+            'min_length' in validations and
+            len(input_values) < validations['min_length']):
         raise ApiValueError(
             "Invalid value for `%s`, length must be greater than or equal to "
             "`%s`" % (
-                input_variable_path[0],
-                current_validations['min_length']
+                input_variable,
+                validations['min_length']
             )
         )
 
     if (is_json_validation_enabled('maxItems', configuration) and
-            'max_items' in current_validations and
-            len(input_values) > current_validations['max_items']):
+            'max_items' in validations and
+            len(input_values) > validations['max_items']):
         raise ApiValueError(
             "Invalid value for `%s`, number of items must be less than or "
             "equal to `%s`" % (
-                input_variable_path[0],
-                current_validations['max_items']
+                input_variable,
+                validations['max_items']
             )
         )
 
     if (is_json_validation_enabled('minItems', configuration) and
-            'min_items' in current_validations and
-            len(input_values) < current_validations['min_items']):
+            'min_items' in validations and
+            len(input_values) < validations['min_items']):
         raise ValueError(
             "Invalid value for `%s`, number of items must be greater than or "
             "equal to `%s`" % (
-                input_variable_path[0],
-                current_validations['min_items']
+                input_variable,
+                validations['min_items']
             )
         )
 
     items = ('exclusive_maximum', 'inclusive_maximum', 'exclusive_minimum',
              'inclusive_minimum')
-    if (any(item in current_validations for item in items)):
+    if (any(item in validations for item in items)):
         if isinstance(input_values, list):
             max_val = max(input_values)
             min_val = min(input_values)
@@ -783,55 +781,55 @@ def check_validations(
             min_val = input_values
 
     if (is_json_validation_enabled('exclusiveMaximum', configuration) and
-            'exclusive_maximum' in current_validations and
-            max_val >= current_validations['exclusive_maximum']):
+            'exclusive_maximum' in validations and
+            max_val >= validations['exclusive_maximum']):
         raise ApiValueError(
             "Invalid value for `%s`, must be a value less than `%s`" % (
-                input_variable_path[0],
-                current_validations['exclusive_maximum']
+                input_variable,
+                validations['exclusive_maximum']
             )
         )
 
     if (is_json_validation_enabled('maximum', configuration) and
-            'inclusive_maximum' in current_validations and
-            max_val > current_validations['inclusive_maximum']):
+            'inclusive_maximum' in validations and
+            max_val > validations['inclusive_maximum']):
         raise ApiValueError(
             "Invalid value for `%s`, must be a value less than or equal to "
             "`%s`" % (
-                input_variable_path[0],
-                current_validations['inclusive_maximum']
+                input_variable,
+                validations['inclusive_maximum']
             )
         )
 
     if (is_json_validation_enabled('exclusiveMinimum', configuration) and
-            'exclusive_minimum' in current_validations and
-            min_val <= current_validations['exclusive_minimum']):
+            'exclusive_minimum' in validations and
+            min_val <= validations['exclusive_minimum']):
         raise ApiValueError(
             "Invalid value for `%s`, must be a value greater than `%s`" %
             (
-                input_variable_path[0],
-                current_validations['exclusive_maximum']
+                input_variable,
+                validations['exclusive_maximum']
             )
         )
 
     if (is_json_validation_enabled('minimum', configuration) and
-            'inclusive_minimum' in current_validations and
-            min_val < current_validations['inclusive_minimum']):
+            'inclusive_minimum' in validations and
+            min_val < validations['inclusive_minimum']):
         raise ApiValueError(
             "Invalid value for `%s`, must be a value greater than or equal "
             "to `%s`" % (
-                input_variable_path[0],
-                current_validations['inclusive_minimum']
+                input_variable,
+                validations['inclusive_minimum']
             )
         )
-    flags = current_validations.get('regex', {}).get('flags', 0)
+    flags = validations.get('regex', {}).get('flags', 0)
     if (is_json_validation_enabled('pattern', configuration) and
-            'regex' in current_validations and
-            not re.search(current_validations['regex']['pattern'],
+            'regex' in validations and
+            not re.search(validations['regex']['pattern'],
                           input_values, flags=flags)):
         err_msg = r"Invalid value for `%s`, must match regular expression `%s`" % (
-                    input_variable_path[0],
-                    current_validations['regex']['pattern']
+                    input_variable,
+                    validations['regex']['pattern']
                 )
         if flags != 0:
             # Don't print the regex flags if the flags are not

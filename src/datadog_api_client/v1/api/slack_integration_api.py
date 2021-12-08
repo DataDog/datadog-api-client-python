@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -43,33 +41,17 @@ class SlackIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "account_name",
-                    "body",
-                ],
-                "required": [
-                    "account_name",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "account_name": (str,),
-                    "body": (SlackIntegrationChannel,),
+                "account_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "account_name": "account_name",
+                "body": {
+                    "required": True,
+                    "openapi_types": (SlackIntegrationChannel,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "account_name": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -85,34 +67,18 @@ class SlackIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "account_name",
-                    "channel_name",
-                ],
-                "required": [
-                    "account_name",
-                    "channel_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "account_name": (str,),
-                    "channel_name": (str,),
+                "account_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "account_name": "account_name",
-                    "channel_name": "channel_name",
+                "channel_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "channel_name",
+                    "location": "path",
                 },
-                "location_map": {
-                    "account_name": "path",
-                    "channel_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -131,29 +97,12 @@ class SlackIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "account_name",
-                ],
-                "required": [
-                    "account_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "account_name": (str,),
+                "account_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "account_name": "account_name",
-                },
-                "location_map": {
-                    "account_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -172,34 +121,18 @@ class SlackIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "account_name",
-                    "channel_name",
-                ],
-                "required": [
-                    "account_name",
-                    "channel_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "account_name": (str,),
-                    "channel_name": (str,),
+                "account_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "account_name": "account_name",
-                    "channel_name": "channel_name",
+                "channel_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "channel_name",
+                    "location": "path",
                 },
-                "location_map": {
-                    "account_name": "path",
-                    "channel_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -218,38 +151,23 @@ class SlackIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "account_name",
-                    "channel_name",
-                    "body",
-                ],
-                "required": [
-                    "account_name",
-                    "channel_name",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "account_name": (str,),
-                    "channel_name": (str,),
-                    "body": (SlackIntegrationChannel,),
+                "account_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "account_name": "account_name",
-                    "channel_name": "channel_name",
+                "channel_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "channel_name",
+                    "location": "path",
                 },
-                "location_map": {
-                    "account_name": "path",
-                    "channel_name": "path",
-                    "body": "body",
+                "body": {
+                    "required": True,
+                    "openapi_types": (SlackIntegrationChannel,),
+                    "location": "body",
                 },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

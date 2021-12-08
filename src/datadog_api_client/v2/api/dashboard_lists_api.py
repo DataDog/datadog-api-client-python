@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -48,33 +46,17 @@ class DashboardListsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "dashboard_list_id",
-                    "body",
-                ],
-                "required": [
-                    "dashboard_list_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "dashboard_list_id": (int,),
-                    "body": (DashboardListAddItemsRequest,),
+                "dashboard_list_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "dashboard_list_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "dashboard_list_id": "dashboard_list_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (DashboardListAddItemsRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "dashboard_list_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -90,33 +72,17 @@ class DashboardListsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "dashboard_list_id",
-                    "body",
-                ],
-                "required": [
-                    "dashboard_list_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "dashboard_list_id": (int,),
-                    "body": (DashboardListDeleteItemsRequest,),
+                "dashboard_list_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "dashboard_list_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "dashboard_list_id": "dashboard_list_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (DashboardListDeleteItemsRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "dashboard_list_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -132,29 +98,12 @@ class DashboardListsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "dashboard_list_id",
-                ],
-                "required": [
-                    "dashboard_list_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "dashboard_list_id": (int,),
+                "dashboard_list_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "dashboard_list_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "dashboard_list_id": "dashboard_list_id",
-                },
-                "location_map": {
-                    "dashboard_list_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -173,33 +122,17 @@ class DashboardListsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "dashboard_list_id",
-                    "body",
-                ],
-                "required": [
-                    "dashboard_list_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "dashboard_list_id": (int,),
-                    "body": (DashboardListUpdateItemsRequest,),
+                "dashboard_list_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "dashboard_list_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "dashboard_list_id": "dashboard_list_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (DashboardListUpdateItemsRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "dashboard_list_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

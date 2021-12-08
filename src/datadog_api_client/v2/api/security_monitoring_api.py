@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -52,27 +50,11 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SecurityFilterCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityFilterCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -88,27 +70,11 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SecurityMonitoringRuleCreatePayload,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleCreatePayload,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -124,29 +90,12 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "security_filter_id",
-                ],
-                "required": [
-                    "security_filter_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "security_filter_id": (str,),
+                "security_filter_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "security_filter_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "security_filter_id": "security_filter_id",
-                },
-                "location_map": {
-                    "security_filter_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -165,29 +114,12 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "rule_id",
-                ],
-                "required": [
-                    "rule_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "rule_id": (str,),
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "rule_id": "rule_id",
-                },
-                "location_map": {
-                    "rule_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -206,29 +138,12 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "security_filter_id",
-                ],
-                "required": [
-                    "security_filter_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "security_filter_id": (str,),
+                "security_filter_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "security_filter_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "security_filter_id": "security_filter_id",
-                },
-                "location_map": {
-                    "security_filter_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -247,29 +162,12 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "rule_id",
-                ],
-                "required": [
-                    "rule_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "rule_id": (str,),
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "rule_id": "rule_id",
-                },
-                "location_map": {
-                    "rule_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -287,15 +185,7 @@ class SecurityMonitoringApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -313,31 +203,16 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "page_size",
-                    "page_number",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "page_size": (int,),
-                    "page_number": (int,),
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "page_size": "page[size]",
-                    "page_number": "page[number]",
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "page_size": "query",
-                    "page_number": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -356,53 +231,39 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "filter_query",
-                    "filter_from",
-                    "filter_to",
-                    "sort",
-                    "page_cursor",
-                    "page_limit",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [
-                    "page_limit",
-                ],
-            },
-            root_map={
-                "validations": {
-                    ("page_limit",): {
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+                "filter_from": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[from]",
+                    "location": "query",
+                },
+                "filter_to": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[to]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (SecurityMonitoringSignalsSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
                         "inclusive_maximum": 1000,
                     },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
                 },
-                "allowed_values": {},
-                "openapi_types": {
-                    "filter_query": (str,),
-                    "filter_from": (datetime,),
-                    "filter_to": (datetime,),
-                    "sort": (SecurityMonitoringSignalsSort,),
-                    "page_cursor": (str,),
-                    "page_limit": (int,),
-                },
-                "attribute_map": {
-                    "filter_query": "filter[query]",
-                    "filter_from": "filter[from]",
-                    "filter_to": "filter[to]",
-                    "sort": "sort",
-                    "page_cursor": "page[cursor]",
-                    "page_limit": "page[limit]",
-                },
-                "location_map": {
-                    "filter_query": "query",
-                    "filter_from": "query",
-                    "filter_to": "query",
-                    "sort": "query",
-                    "page_cursor": "query",
-                    "page_limit": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -421,25 +282,10 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SecurityMonitoringSignalListRequest,),
+                "body": {
+                    "openapi_types": (SecurityMonitoringSignalListRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -455,33 +301,17 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "security_filter_id",
-                    "body",
-                ],
-                "required": [
-                    "security_filter_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "security_filter_id": (str,),
-                    "body": (SecurityFilterUpdateRequest,),
+                "security_filter_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "security_filter_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "security_filter_id": "security_filter_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityFilterUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "security_filter_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -497,33 +327,17 @@ class SecurityMonitoringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "rule_id",
-                    "body",
-                ],
-                "required": [
-                    "rule_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "rule_id": (str,),
-                    "body": (SecurityMonitoringRuleUpdatePayload,),
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "rule_id": "rule_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleUpdatePayload,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "rule_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

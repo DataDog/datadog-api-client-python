@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -69,27 +67,11 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SyntheticsGlobalVariable,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsGlobalVariable,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -105,27 +87,11 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SyntheticsPrivateLocation,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsPrivateLocation,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -141,27 +107,11 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SyntheticsAPITest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsAPITest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -177,27 +127,11 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SyntheticsBrowserTest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsBrowserTest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -213,29 +147,12 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "variable_id",
-                ],
-                "required": [
-                    "variable_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "variable_id": (str,),
+                "variable_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "variable_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "variable_id": "variable_id",
-                },
-                "location_map": {
-                    "variable_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -254,29 +171,12 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "location_id",
-                ],
-                "required": [
-                    "location_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "location_id": (str,),
+                "location_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "location_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "location_id": "location_id",
-                },
-                "location_map": {
-                    "location_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -295,27 +195,11 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SyntheticsDeleteTestsPayload,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsDeleteTestsPayload,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -331,33 +215,17 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "variable_id",
-                    "body",
-                ],
-                "required": [
-                    "variable_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "variable_id": (str,),
-                    "body": (SyntheticsGlobalVariable,),
+                "variable_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "variable_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "variable_id": "variable_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsGlobalVariable,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "variable_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -373,29 +241,12 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                ],
-                "required": [
-                    "public_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
-                },
-                "location_map": {
-                    "public_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -414,42 +265,27 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                    "from_ts",
-                    "to_ts",
-                    "probe_dc",
-                ],
-                "required": [
-                    "public_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
-                    "from_ts": (int,),
-                    "to_ts": (int,),
-                    "probe_dc": ([str],),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
-                    "from_ts": "from_ts",
-                    "to_ts": "to_ts",
-                    "probe_dc": "probe_dc",
+                "from_ts": {
+                    "openapi_types": (int,),
+                    "attribute": "from_ts",
+                    "location": "query",
                 },
-                "location_map": {
-                    "public_id": "path",
-                    "from_ts": "query",
-                    "to_ts": "query",
-                    "probe_dc": "query",
+                "to_ts": {
+                    "openapi_types": (int,),
+                    "attribute": "to_ts",
+                    "location": "query",
                 },
-                "collection_format_map": {
-                    "probe_dc": "multi",
+                "probe_dc": {
+                    "openapi_types": ([str],),
+                    "attribute": "probe_dc",
+                    "location": "query",
+                    "collection_format": "multi",
                 },
             },
             headers_map={
@@ -469,34 +305,18 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                    "result_id",
-                ],
-                "required": [
-                    "public_id",
-                    "result_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
-                    "result_id": (str,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
-                    "result_id": "result_id",
+                "result_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "result_id",
+                    "location": "path",
                 },
-                "location_map": {
-                    "public_id": "path",
-                    "result_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -515,29 +335,12 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                ],
-                "required": [
-                    "public_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
-                },
-                "location_map": {
-                    "public_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -556,42 +359,27 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                    "from_ts",
-                    "to_ts",
-                    "probe_dc",
-                ],
-                "required": [
-                    "public_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
-                    "from_ts": (int,),
-                    "to_ts": (int,),
-                    "probe_dc": ([str],),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
-                    "from_ts": "from_ts",
-                    "to_ts": "to_ts",
-                    "probe_dc": "probe_dc",
+                "from_ts": {
+                    "openapi_types": (int,),
+                    "attribute": "from_ts",
+                    "location": "query",
                 },
-                "location_map": {
-                    "public_id": "path",
-                    "from_ts": "query",
-                    "to_ts": "query",
-                    "probe_dc": "query",
+                "to_ts": {
+                    "openapi_types": (int,),
+                    "attribute": "to_ts",
+                    "location": "query",
                 },
-                "collection_format_map": {
-                    "probe_dc": "multi",
+                "probe_dc": {
+                    "openapi_types": ([str],),
+                    "attribute": "probe_dc",
+                    "location": "query",
+                    "collection_format": "multi",
                 },
             },
             headers_map={
@@ -611,34 +399,18 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                    "result_id",
-                ],
-                "required": [
-                    "public_id",
-                    "result_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
-                    "result_id": (str,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
-                    "result_id": "result_id",
+                "result_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "result_id",
+                    "location": "path",
                 },
-                "location_map": {
-                    "public_id": "path",
-                    "result_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -657,29 +429,12 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "variable_id",
-                ],
-                "required": [
-                    "variable_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "variable_id": (str,),
+                "variable_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "variable_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "variable_id": "variable_id",
-                },
-                "location_map": {
-                    "variable_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -698,29 +453,12 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "location_id",
-                ],
-                "required": [
-                    "location_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "location_id": (str,),
+                "location_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "location_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "location_id": "location_id",
-                },
-                "location_map": {
-                    "location_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -739,29 +477,12 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "batch_id",
-                ],
-                "required": [
-                    "batch_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "batch_id": (str,),
+                "batch_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "batch_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "batch_id": "batch_id",
-                },
-                "location_map": {
-                    "batch_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -780,29 +501,12 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                ],
-                "required": [
-                    "public_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
-                },
-                "location_map": {
-                    "public_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -820,15 +524,7 @@ class SyntheticsApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -845,15 +541,7 @@ class SyntheticsApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -870,15 +558,7 @@ class SyntheticsApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -896,27 +576,11 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SyntheticsCITestBody,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsCITestBody,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -932,27 +596,11 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SyntheticsTriggerBody,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsTriggerBody,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -968,33 +616,17 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                    "body",
-                ],
-                "required": [
-                    "public_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
-                    "body": (SyntheticsAPITest,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsAPITest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "public_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -1010,33 +642,17 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                    "body",
-                ],
-                "required": [
-                    "public_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
-                    "body": (SyntheticsBrowserTest,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsBrowserTest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "public_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -1052,33 +668,17 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "location_id",
-                    "body",
-                ],
-                "required": [
-                    "location_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "location_id": (str,),
-                    "body": (SyntheticsPrivateLocation,),
+                "location_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "location_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "location_id": "location_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsPrivateLocation,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "location_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -1094,33 +694,17 @@ class SyntheticsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                    "body",
-                ],
-                "required": [
-                    "public_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
-                    "body": (SyntheticsUpdateTestPauseStatusPayload,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsUpdateTestPauseStatusPayload,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "public_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

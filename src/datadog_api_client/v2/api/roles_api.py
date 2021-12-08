@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -52,33 +50,17 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "role_id",
-                    "body",
-                ],
-                "required": [
-                    "role_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "role_id": (str,),
-                    "body": (RelationshipToPermission,),
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "role_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "role_id": "role_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (RelationshipToPermission,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "role_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -94,33 +76,17 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "role_id",
-                    "body",
-                ],
-                "required": [
-                    "role_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "role_id": (str,),
-                    "body": (RelationshipToUser,),
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "role_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "role_id": "role_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (RelationshipToUser,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "role_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -136,27 +102,11 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (RoleCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (RoleCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -172,29 +122,12 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "role_id",
-                ],
-                "required": [
-                    "role_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "role_id": (str,),
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "role_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "role_id": "role_id",
-                },
-                "location_map": {
-                    "role_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -213,29 +146,12 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "role_id",
-                ],
-                "required": [
-                    "role_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "role_id": (str,),
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "role_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "role_id": "role_id",
-                },
-                "location_map": {
-                    "role_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -253,15 +169,7 @@ class RolesApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -279,29 +187,12 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "role_id",
-                ],
-                "required": [
-                    "role_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "role_id": (str,),
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "role_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "role_id": "role_id",
-                },
-                "location_map": {
-                    "role_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -320,45 +211,32 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "role_id",
-                    "page_size",
-                    "page_number",
-                    "sort",
-                    "filter",
-                ],
-                "required": [
-                    "role_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "role_id": (str,),
-                    "page_size": (int,),
-                    "page_number": (int,),
-                    "sort": (str,),
-                    "filter": (str,),
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "role_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "role_id": "role_id",
-                    "page_size": "page[size]",
-                    "page_number": "page[number]",
-                    "sort": "sort",
-                    "filter": "filter",
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "role_id": "path",
-                    "page_size": "query",
-                    "page_number": "query",
-                    "sort": "query",
-                    "filter": "query",
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -377,39 +255,26 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "page_size",
-                    "page_number",
-                    "sort",
-                    "filter",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "page_size": (int,),
-                    "page_number": (int,),
-                    "sort": (RolesSort,),
-                    "filter": (str,),
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "page_size": "page[size]",
-                    "page_number": "page[number]",
-                    "sort": "sort",
-                    "filter": "filter",
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "page_size": "query",
-                    "page_number": "query",
-                    "sort": "query",
-                    "filter": "query",
+                "sort": {
+                    "openapi_types": (RolesSort,),
+                    "attribute": "sort",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -428,33 +293,17 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "role_id",
-                    "body",
-                ],
-                "required": [
-                    "role_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "role_id": (str,),
-                    "body": (RelationshipToPermission,),
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "role_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "role_id": "role_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (RelationshipToPermission,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "role_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -470,33 +319,17 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "role_id",
-                    "body",
-                ],
-                "required": [
-                    "role_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "role_id": (str,),
-                    "body": (RelationshipToUser,),
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "role_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "role_id": "role_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (RelationshipToUser,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "role_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -512,33 +345,17 @@ class RolesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "role_id",
-                    "body",
-                ],
-                "required": [
-                    "role_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "role_id": (str,),
-                    "body": (RoleUpdateRequest,),
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "role_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "role_id": "role_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (RoleUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "role_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

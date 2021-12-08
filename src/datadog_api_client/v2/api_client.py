@@ -18,7 +18,7 @@ from urllib3.fields import RequestField
 
 from datadog_api_client.v2 import rest
 from datadog_api_client.v2.configuration import Configuration
-from datadog_api_client.v2.exceptions import ApiTypeError, ApiValueError, ApiException
+from datadog_api_client.v2.exceptions import ApiTypeError, ApiValueError
 from datadog_api_client.v2.model_utils import (
     ModelNormal,
     ModelSimple,
@@ -59,7 +59,7 @@ class ApiClient(object):
 
     _pool = None
 
-    def __init__(self, configuration=None, header_name=None, header_value=None, cookie=None, pool_threads=1):
+    def __init__(self, configuration=None, cookie=None, pool_threads=1):
         if configuration is None:
             configuration = Configuration.get_default_copy()
         self.configuration = configuration
@@ -67,8 +67,6 @@ class ApiClient(object):
 
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
-        if header_name is not None:
-            self.default_headers[header_name] = header_value
         if self.configuration.compress:
             self.default_headers["Accept-Encoding"] = "gzip"
         self.cookie = cookie
@@ -111,7 +109,7 @@ class ApiClient(object):
     def set_default_header(self, header_name, header_value):
         self.default_headers[header_name] = header_value
 
-    def __call_api(
+    def _call_api(
         self,
         resource_path: str,
         method: str,
@@ -162,9 +160,9 @@ class ApiClient(object):
             post_params = self.parameters_to_tuples(post_params, collection_formats)
             post_params.extend(self.files_parameters(files))
             if header_params["Content-Type"].startswith("multipart"):
-                post_params = self.parameters_to_multipart(post_params, (dict))
+                post_params = self.parameters_to_multipart(post_params, (dict,))
 
-        # body
+                # body
         if body:
             body = self.sanitize_for_serialization(body)
 
@@ -179,7 +177,7 @@ class ApiClient(object):
             url = _host + resource_path
 
         # perform request and return response
-        response_data = self.request(
+        response_data = self.rest_client.request(
             method,
             url,
             query_params=query_params,
@@ -380,7 +378,7 @@ class ApiClient(object):
             then the method will return the response directly.
         """
         if not async_req:
-            return self.__call_api(
+            return self._call_api(
                 resource_path,
                 method,
                 path_params,
@@ -400,7 +398,7 @@ class ApiClient(object):
             )
 
         return self.pool.apply_async(
-            self.__call_api,
+            self._call_api,
             (
                 resource_path,
                 method,
@@ -420,86 +418,6 @@ class ApiClient(object):
                 _check_type,
             ),
         )
-
-    def request(
-        self,
-        method,
-        url,
-        query_params=None,
-        headers=None,
-        post_params=None,
-        body=None,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
-        """Makes the HTTP request using RESTClient."""
-        if method == "GET":
-            return self.rest_client.GET(
-                url,
-                query_params=query_params,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-                headers=headers,
-            )
-        elif method == "HEAD":
-            return self.rest_client.HEAD(
-                url,
-                query_params=query_params,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-                headers=headers,
-            )
-        elif method == "OPTIONS":
-            return self.rest_client.OPTIONS(
-                url,
-                query_params=query_params,
-                headers=headers,
-                post_params=post_params,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-                body=body,
-            )
-        elif method == "POST":
-            return self.rest_client.POST(
-                url,
-                query_params=query_params,
-                headers=headers,
-                post_params=post_params,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-                body=body,
-            )
-        elif method == "PUT":
-            return self.rest_client.PUT(
-                url,
-                query_params=query_params,
-                headers=headers,
-                post_params=post_params,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-                body=body,
-            )
-        elif method == "PATCH":
-            return self.rest_client.PATCH(
-                url,
-                query_params=query_params,
-                headers=headers,
-                post_params=post_params,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-                body=body,
-            )
-        elif method == "DELETE":
-            return self.rest_client.DELETE(
-                url,
-                query_params=query_params,
-                headers=headers,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-                body=body,
-            )
-        else:
-            raise ApiValueError("http method must be `GET`, `HEAD`, `OPTIONS`," " `POST`, `PATCH`, `PUT` or `DELETE`.")
 
     def parameters_to_tuples(self, params, collection_formats):
         """Get parameters as list of tuples, formatting collections.
@@ -631,7 +549,7 @@ class ApiClient(object):
 
 
 class Endpoint(object):
-    def __init__(self, settings=None, params_map=None, root_map=None, headers_map=None, api_client=None, callable=None):
+    def __init__(self, settings=None, params_map=None, headers_map=None, api_client=None):
         """Creates an endpoint
 
         Args:
@@ -643,74 +561,49 @@ class Endpoint(object):
                 'http_method' (str): POST/PUT/PATCH/GET etc
                 'servers' (list): list of str servers that this endpoint is at
             params_map (dict): see below key value pairs
-                'all' (list): list of str endpoint parameter names
-                'required' (list): list of required parameter names
-                'nullable' (list): list of nullable parameter names
-                'enum' (list): list of parameters with enum values
-                'validation' (list): list of parameters with validations
-            root_map
-                'validations' (dict): the dict mapping endpoint parameter tuple
-                    paths to their validation dictionaries
-                'allowed_values' (dict): the dict mapping endpoint parameter
-                    tuple paths to their allowed_values (enum) dictionaries
+                'required' (bool): whether the parameter is required
+                'nullable' (bool): whether the parameter is nullable
+                'validations' (dict): the validations dictionaries
+                'allowed_values' (dict): the allowed values (enum) dictionaries
                 'openapi_types' (dict): param_name to openapi type
-                'attribute_map' (dict): param_name to camelCase name
-                'location_map' (dict): param_name to  'body', 'file', 'form',
-                    'header', 'path', 'query'
-                collection_format_map (dict): param_name to `csv` etc.
+                'attribute' (str): camelCase name
+                'location' (str): 'body', 'file', 'form', 'header', 'path', 'query'
+                'collection_format' (str): `csv` etc.
             headers_map (dict): see below key value pairs
                 'accept' (list): list of Accept header strings
                 'content_type' (list): list of Content-Type header strings
             api_client (ApiClient) api client instance
-            callable (function): the function which is invoked when the
-                Endpoint is called
         """
         self.settings = settings
         self.params_map = params_map
-        self.params_map["all"].extend(
-            [
-                "async_req",
-                "_host_index",
-                "_preload_content",
-                "_request_timeout",
-                "_return_http_data_only",
-                "_check_input_type",
-                "_check_return_type",
-                "_spec_property_naming",
-            ]
+        self.params_map.update(
+            {
+                "async_req": {"openapi_types": (bool,)},
+                "_host_index": {"openapi_types": (none_type, int), "nullable": True},
+                "_preload_content": {"openapi_types": (bool,)},
+                "_request_timeout": {
+                    "openapi_types": (none_type, float, (float,), [float], int, (int,), [int]),
+                    "nullable": True,
+                },
+                "_return_http_data_only": {"openapi_types": (bool,)},
+                "_check_input_type": {"openapi_types": (bool,)},
+                "_check_return_type": {"openapi_types": (bool,)},
+                "_spec_property_naming": {"openapi_types": (bool,)},
+            }
         )
-        self.params_map["nullable"].extend(["_host_index", "_request_timeout"])
-        self.validations = root_map["validations"]
-        self.allowed_values = root_map["allowed_values"]
-        self.openapi_types = root_map["openapi_types"]
-        extra_types = {
-            "async_req": (bool,),
-            "_host_index": (none_type, int),
-            "_preload_content": (bool,),
-            "_request_timeout": (none_type, float, (float,), [float], int, (int,), [int]),
-            "_return_http_data_only": (bool,),
-            "_check_input_type": (bool,),
-            "_check_return_type": (bool,),
-            "_spec_property_naming": (bool,),
-        }
-        self.openapi_types.update(extra_types)
-        self.attribute_map = root_map["attribute_map"]
-        self.location_map = root_map["location_map"]
-        self.collection_format_map = root_map["collection_format_map"]
         self.headers_map = headers_map
         self.api_client = api_client
-        self.callable = callable
 
-    def __validate_inputs(self, kwargs):
-        for param in self.params_map["enum"]:
-            if param in kwargs:
-                check_allowed_values(self.allowed_values, (param,), kwargs[param])
+    def _validate_inputs(self, kwargs):
+        for param in kwargs:
+            param_map = self.params_map[param]
+            allowed_values = param_map.get("allowed_values")
+            if allowed_values:
+                check_allowed_values(list(allowed_values.values()), param, kwargs[param])
 
-        for param in self.params_map["validation"]:
-            if param in kwargs:
-                check_validations(
-                    self.validations, (param,), kwargs[param], configuration=self.api_client.configuration
-                )
+            validations = param_map.get("validation")
+            if validations:
+                check_validations(validations, param, kwargs[param], configuration=self.api_client.configuration)
 
         if kwargs["_check_input_type"] is False:
             return
@@ -718,7 +611,7 @@ class Endpoint(object):
         for key, value in kwargs.items():
             fixed_val = validate_and_convert_types(
                 value,
-                self.openapi_types[key],
+                self.params_map[key]["openapi_types"],
                 [key],
                 kwargs["_spec_property_naming"],
                 kwargs["_check_input_type"],
@@ -726,21 +619,23 @@ class Endpoint(object):
             )
             kwargs[key] = fixed_val
 
-    def __gather_params(self, kwargs):
+    def _gather_params(self, kwargs):
         params = {"body": None, "collection_format": {}, "file": {}, "form": [], "header": {}, "path": {}, "query": []}
 
         for param_name, param_value in kwargs.items():
-            param_location = self.location_map.get(param_name)
+            param_map = self.params_map[param_name]
+            param_location = param_map.get("location")
             if param_location is None:
                 continue
             if param_location:
                 if param_location == "body":
                     params["body"] = param_value
                     continue
-                base_name = self.attribute_map[param_name]
-                if param_location == "form" and self.openapi_types[param_name] == (file_type,):
+                base_name = param_map["attribute"]
+                openapi_types = param_map["openapi_types"]
+                if param_location == "form" and openapi_types == (file_type,):
                     params["file"][param_name] = [param_value]
-                elif param_location == "form" and self.openapi_types[param_name] == ([file_type],):
+                elif param_location == "form" and openapi_types == ([file_type],):
                     # param_value is already a list
                     params["file"][param_name] = param_value
                 elif param_location in {"form", "query"}:
@@ -748,24 +643,11 @@ class Endpoint(object):
                     params[param_location].append(param_value_full)
                 if param_location not in {"form", "query"}:
                     params[param_location][base_name] = param_value
-                collection_format = self.collection_format_map.get(param_name)
+                collection_format = param_map.get("collection_format")
                 if collection_format:
                     params["collection_format"][base_name] = collection_format
 
         return params
-
-    def __call__(self, *args, **kwargs):
-        """This method is invoked when endpoints are called
-        Example:
-
-        api_instance = DashboardListsApi()
-        api_instance.create_dashboard_list_items  # this is an instance of the class Endpoint
-        api_instance.create_dashboard_list_items()  # this invokes api_instance.create_dashboard_list_items.__call__()
-        which then invokes the callable functions stored in that endpoint at
-        api_instance.create_dashboard_list_items.callable or self.callable in this class
-
-        """
-        return self.callable(self, *args, **kwargs)
 
     def default_arguments(self, kwargs):
         """Helper setting default arguments to call_with_http_info."""
@@ -808,28 +690,28 @@ class Endpoint(object):
             _host = None
 
         for key, value in kwargs.items():
-            if key not in self.params_map["all"]:
+            if key not in self.params_map:
                 raise ApiTypeError(
                     "Got an unexpected parameter '%s'" " to method `%s`" % (key, self.settings["operation_id"])
                 )
             # only throw this nullable ApiValueError if _check_input_type
             # is False, if _check_input_type==True we catch this case
-            # in self.__validate_inputs
-            if key not in self.params_map["nullable"] and value is None and kwargs["_check_input_type"] is False:
+            # in self._validate_inputs
+            if not self.params_map[key].get("nullable") and value is None and kwargs["_check_input_type"] is False:
                 raise ApiValueError(
                     "Value may not be None for non-nullable parameter `%s`"
                     " when calling `%s`" % (key, self.settings["operation_id"])
                 )
 
-        for key in self.params_map["required"]:
-            if key not in kwargs.keys():
+        for key, param_map in self.params_map.items():
+            if param_map.get("required") and key not in kwargs:
                 raise ApiValueError(
                     "Missing the required parameter `%s` when calling " "`%s`" % (key, self.settings["operation_id"])
                 )
 
-        self.__validate_inputs(kwargs)
+        self._validate_inputs(kwargs)
 
-        params = self.__gather_params(kwargs)
+        params = self._gather_params(kwargs)
         params["header"]["Dd-Operation-Id"] = "".join(x.title() for x in self.settings["operation_id"].split("_"))
 
         accept_headers_list = self.headers_map["accept"]

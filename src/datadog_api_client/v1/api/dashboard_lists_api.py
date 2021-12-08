@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -44,27 +42,11 @@ class DashboardListsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (DashboardList,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (DashboardList,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -80,29 +62,12 @@ class DashboardListsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "list_id",
-                ],
-                "required": [
-                    "list_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "list_id": (int,),
+                "list_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "list_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "list_id": "list_id",
-                },
-                "location_map": {
-                    "list_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -121,29 +86,12 @@ class DashboardListsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "list_id",
-                ],
-                "required": [
-                    "list_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "list_id": (int,),
+                "list_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "list_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "list_id": "list_id",
-                },
-                "location_map": {
-                    "list_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -161,15 +109,7 @@ class DashboardListsApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -187,33 +127,17 @@ class DashboardListsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "list_id",
-                    "body",
-                ],
-                "required": [
-                    "list_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "list_id": (int,),
-                    "body": (DashboardList,),
+                "list_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "list_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "list_id": "list_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (DashboardList,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "list_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

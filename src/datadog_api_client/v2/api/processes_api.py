@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -42,54 +40,40 @@ class ProcessesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "search",
-                    "tags",
-                    "_from",
-                    "to",
-                    "page_limit",
-                    "page_cursor",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [
-                    "page_limit",
-                ],
-            },
-            root_map={
-                "validations": {
-                    ("page_limit",): {
+                "search": {
+                    "openapi_types": (str,),
+                    "attribute": "search",
+                    "location": "query",
+                },
+                "tags": {
+                    "openapi_types": (str,),
+                    "attribute": "tags",
+                    "location": "query",
+                },
+                "_from": {
+                    "openapi_types": (int,),
+                    "attribute": "from",
+                    "location": "query",
+                },
+                "to": {
+                    "openapi_types": (int,),
+                    "attribute": "to",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
                         "inclusive_maximum": 10000,
                         "inclusive_minimum": 1,
                     },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
                 },
-                "allowed_values": {},
-                "openapi_types": {
-                    "search": (str,),
-                    "tags": (str,),
-                    "_from": (int,),
-                    "to": (int,),
-                    "page_limit": (int,),
-                    "page_cursor": (str,),
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "search": "search",
-                    "tags": "tags",
-                    "_from": "from",
-                    "to": "to",
-                    "page_limit": "page[limit]",
-                    "page_cursor": "page[cursor]",
-                },
-                "location_map": {
-                    "search": "query",
-                    "tags": "query",
-                    "_from": "query",
-                    "to": "query",
-                    "page_limit": "query",
-                    "page_cursor": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],

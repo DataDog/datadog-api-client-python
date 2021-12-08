@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -46,27 +44,11 @@ class EventsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (EventCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (EventCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -82,29 +64,12 @@ class EventsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "event_id",
-                ],
-                "required": [
-                    "event_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "event_id": (int,),
+                "event_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "event_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "event_id": "event_id",
-                },
-                "location_map": {
-                    "event_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -123,64 +88,51 @@ class EventsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start",
-                    "end",
-                    "priority",
-                    "sources",
-                    "tags",
-                    "unaggregated",
-                    "exclude_aggregate",
-                    "page",
-                ],
-                "required": [
-                    "start",
-                    "end",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [
-                    "page",
-                ],
-            },
-            root_map={
-                "validations": {
-                    ("page",): {
+                "start": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "start",
+                    "location": "query",
+                },
+                "end": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "end",
+                    "location": "query",
+                },
+                "priority": {
+                    "openapi_types": (EventPriority,),
+                    "attribute": "priority",
+                    "location": "query",
+                },
+                "sources": {
+                    "openapi_types": (str,),
+                    "attribute": "sources",
+                    "location": "query",
+                },
+                "tags": {
+                    "openapi_types": (str,),
+                    "attribute": "tags",
+                    "location": "query",
+                },
+                "unaggregated": {
+                    "openapi_types": (bool,),
+                    "attribute": "unaggregated",
+                    "location": "query",
+                },
+                "exclude_aggregate": {
+                    "openapi_types": (bool,),
+                    "attribute": "exclude_aggregate",
+                    "location": "query",
+                },
+                "page": {
+                    "validation": {
                         "inclusive_maximum": 2147483647,
                     },
+                    "openapi_types": (int,),
+                    "attribute": "page",
+                    "location": "query",
                 },
-                "allowed_values": {},
-                "openapi_types": {
-                    "start": (int,),
-                    "end": (int,),
-                    "priority": (EventPriority,),
-                    "sources": (str,),
-                    "tags": (str,),
-                    "unaggregated": (bool,),
-                    "exclude_aggregate": (bool,),
-                    "page": (int,),
-                },
-                "attribute_map": {
-                    "start": "start",
-                    "end": "end",
-                    "priority": "priority",
-                    "sources": "sources",
-                    "tags": "tags",
-                    "unaggregated": "unaggregated",
-                    "exclude_aggregate": "exclude_aggregate",
-                    "page": "page",
-                },
-                "location_map": {
-                    "start": "query",
-                    "end": "query",
-                    "priority": "query",
-                    "sources": "query",
-                    "tags": "query",
-                    "unaggregated": "query",
-                    "exclude_aggregate": "query",
-                    "page": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],

@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -48,29 +46,12 @@ class MetricsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "metric_name",
-                ],
-                "required": [
-                    "metric_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "metric_name": (str,),
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "metric_name": "metric_name",
-                },
-                "location_map": {
-                    "metric_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -89,37 +70,22 @@ class MetricsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "_from",
-                    "host",
-                    "tag_filter",
-                ],
-                "required": [
-                    "_from",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "_from": (int,),
-                    "host": (str,),
-                    "tag_filter": (str,),
+                "_from": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "from",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "_from": "from",
-                    "host": "host",
-                    "tag_filter": "tag_filter",
+                "host": {
+                    "openapi_types": (str,),
+                    "attribute": "host",
+                    "location": "query",
                 },
-                "location_map": {
-                    "_from": "query",
-                    "host": "query",
-                    "tag_filter": "query",
+                "tag_filter": {
+                    "openapi_types": (str,),
+                    "attribute": "tag_filter",
+                    "location": "query",
                 },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -138,29 +104,12 @@ class MetricsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "q",
-                ],
-                "required": [
-                    "q",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "q": (str,),
+                "q": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "q",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "q": "q",
-                },
-                "location_map": {
-                    "q": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -179,39 +128,24 @@ class MetricsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "_from",
-                    "to",
-                    "query",
-                ],
-                "required": [
-                    "_from",
-                    "to",
-                    "query",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "_from": (int,),
-                    "to": (int,),
-                    "query": (str,),
+                "_from": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "from",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "_from": "from",
-                    "to": "to",
-                    "query": "query",
+                "to": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "to",
+                    "location": "query",
                 },
-                "location_map": {
-                    "_from": "query",
-                    "to": "query",
-                    "query": "query",
+                "query": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
                 },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -230,32 +164,16 @@ class MetricsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                    "content_encoding",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (MetricsPayload,),
-                    "content_encoding": (MetricContentEncoding,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (MetricsPayload,),
+                    "location": "body",
                 },
-                "attribute_map": {
-                    "content_encoding": "Content-Encoding",
+                "content_encoding": {
+                    "openapi_types": (MetricContentEncoding,),
+                    "attribute": "Content-Encoding",
+                    "location": "header",
                 },
-                "location_map": {
-                    "body": "body",
-                    "content_encoding": "header",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["text/json", "application/json"], "content_type": ["text/json"]},
             api_client=api_client,
@@ -271,33 +189,17 @@ class MetricsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "metric_name",
-                    "body",
-                ],
-                "required": [
-                    "metric_name",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "metric_name": (str,),
-                    "body": (MetricMetadata,),
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "metric_name": "metric_name",
+                "body": {
+                    "required": True,
+                    "openapi_types": (MetricMetadata,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "metric_name": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
