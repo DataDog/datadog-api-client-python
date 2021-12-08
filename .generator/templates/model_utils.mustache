@@ -110,6 +110,14 @@ def composed_model_input_classes(cls):
 class OpenApiModel(object):
     """The base class for all OpenAPIModels"""
 
+    _composed_schemas = {}
+
+    additional_properties_type = None
+
+    attribute_map = {}
+
+    _nullable = False
+
 {{> model_templates/method_set_attribute }}
 
 {{> model_templates/methods_shared }}
@@ -997,7 +1005,7 @@ def change_keys_js_to_python(input_dict, model_class):
     document).
     """
 
-    if getattr(model_class, 'attribute_map', None) is None:
+    if not getattr(model_class, 'attribute_map', None):
         return input_dict
     output_dict = {}
     reversed_attr_map = {value: key for key, value in
@@ -1830,17 +1838,9 @@ class UnparsedObject(ModelNormal):
 
     validations = {}
 
-    additional_properties_type = None
-
-    _nullable = False
-
     openapi_types = {}
 
     discriminator = None
-
-    attribute_map = {}
-
-    _composed_schemas = {}
 
     required_properties = set(
         [

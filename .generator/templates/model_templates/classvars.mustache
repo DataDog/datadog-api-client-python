@@ -74,11 +74,8 @@
 {{/imports}}
         return ({{{dataType}}},)  # noqa: E501
 {{/additionalProperties}}
-{{^additionalProperties}}
-    additional_properties_type = None
-{{/additionalProperties}}
 
-    _nullable = {{#isNullable}}True{{/isNullable}}{{^isNullable}}False{{/isNullable}}
+    {{#isNullable}}_nullable = True{{/isNullable}}
 
     @cached_property
     def openapi_types():
