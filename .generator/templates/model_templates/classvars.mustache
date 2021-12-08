@@ -14,7 +14,7 @@
 {{/isEnum}}
 {{#hasEnums}}
     allowed_values = {
-{{#requiredVars}}
+{{#vars}}
 {{#isEnum}}
         '{{name}}': {
 {{#isNullable}}
@@ -27,21 +27,7 @@
 {{/allowableValues}}
         },
 {{/isEnum}}
-{{/requiredVars}}
-{{#optionalVars}}
-{{#isEnum}}
-        '{{name}}': {
-{{#isNullable}}
-            'None': None,
-{{/isNullable}}
-{{#allowableValues}}
-{{#enumVars}}
-            '{{name}}': {{{value}}},
-{{/enumVars}}
-{{/allowableValues}}
-        },
-{{/isEnum}}
-{{/optionalVars}}
+{{/vars}}
     }
 {{/hasEnums}}
 
@@ -50,18 +36,12 @@
         'value': {
 {{> model_templates/validations }}
 {{/hasValidation}}
-{{#requiredVars}}
+{{#vars}}
 {{#hasValidation}}
         '{{name}}': {
 {{> model_templates/validations }}
 {{/hasValidation}}
-{{/requiredVars}}
-{{#optionalVars}}
-{{#hasValidation}}
-        '{{name}}': {
-{{> model_templates/validations }}
-{{/hasValidation}}
-{{/optionalVars}}
+{{/vars}}
     }
 
 {{#additionalProperties}}
@@ -112,12 +92,9 @@
 {{#isArray}}
             'value': ({{{dataType}}},),
 {{/isArray}}
-{{#requiredVars}}
+{{#vars}}
             '{{name}}': ({{{dataType}}},),
-{{/requiredVars}}
-{{#optionalVars}}
-            '{{name}}': ({{{dataType}}},),
-{{/optionalVars}}
+{{/vars}}
         }
 {{/oneOf}}
 
