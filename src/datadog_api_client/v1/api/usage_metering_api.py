@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -79,39 +77,26 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "page_size",
-                    "page_number",
-                    "sort_dir",
-                    "sort",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "page_size": (int,),
-                    "page_number": (int,),
-                    "sort_dir": (UsageSortDirection,),
-                    "sort": (UsageSort,),
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "page_size": "page[size]",
-                    "page_number": "page[number]",
-                    "sort_dir": "sort_dir",
-                    "sort": "sort",
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "page_size": "query",
-                    "page_number": "query",
-                    "sort_dir": "query",
-                    "sort": "query",
+                "sort_dir": {
+                    "openapi_types": (UsageSortDirection,),
+                    "attribute": "sort_dir",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "sort": {
+                    "openapi_types": (UsageSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -130,33 +115,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -175,33 +144,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -220,39 +173,26 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "page_size",
-                    "page_number",
-                    "sort_dir",
-                    "sort",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "page_size": (int,),
-                    "page_number": (int,),
-                    "sort_dir": (UsageSortDirection,),
-                    "sort": (UsageSort,),
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "page_size": "page[size]",
-                    "page_number": "page[number]",
-                    "sort_dir": "sort_dir",
-                    "sort": "sort",
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "page_size": "query",
-                    "page_number": "query",
-                    "sort_dir": "query",
-                    "sort": "query",
+                "sort_dir": {
+                    "openapi_types": (UsageSortDirection,),
+                    "attribute": "sort_dir",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "sort": {
+                    "openapi_types": (UsageSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -271,29 +211,12 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "report_id",
-                ],
-                "required": [
-                    "report_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "report_id": (str,),
+                "report_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "report_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "report_id": "report_id",
-                },
-                "location_map": {
-                    "report_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -312,29 +235,12 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "report_id",
-                ],
-                "required": [
-                    "report_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "report_id": (str,),
+                "report_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "report_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "report_id": "report_id",
-                },
-                "location_map": {
-                    "report_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -353,33 +259,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -398,50 +288,38 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_month",
-                    "fields",
-                    "end_month",
-                    "sort_direction",
-                    "sort_name",
-                    "include_descendants",
-                ],
-                "required": [
-                    "start_month",
-                    "fields",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_month": (datetime,),
-                    "fields": (UsageAttributionSupportedMetrics,),
-                    "end_month": (datetime,),
-                    "sort_direction": (UsageSortDirection,),
-                    "sort_name": (UsageAttributionSort,),
-                    "include_descendants": (bool,),
+                "start_month": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_month",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_month": "start_month",
-                    "fields": "fields",
-                    "end_month": "end_month",
-                    "sort_direction": "sort_direction",
-                    "sort_name": "sort_name",
-                    "include_descendants": "include_descendants",
+                "fields": {
+                    "required": True,
+                    "openapi_types": (UsageAttributionSupportedMetrics,),
+                    "attribute": "fields",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_month": "query",
-                    "fields": "query",
-                    "end_month": "query",
-                    "sort_direction": "query",
-                    "sort_name": "query",
-                    "include_descendants": "query",
+                "end_month": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_month",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "sort_direction": {
+                    "openapi_types": (UsageSortDirection,),
+                    "attribute": "sort_direction",
+                    "location": "query",
+                },
+                "sort_name": {
+                    "openapi_types": (UsageAttributionSort,),
+                    "attribute": "sort_name",
+                    "location": "query",
+                },
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -460,33 +338,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -505,27 +367,11 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "month",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "month": (datetime,),
+                "month": {
+                    "openapi_types": (datetime,),
+                    "attribute": "month",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "month": "month",
-                },
-                "location_map": {
-                    "month": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -544,33 +390,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -589,33 +419,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -634,33 +448,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -679,33 +477,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -724,33 +506,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -769,33 +535,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -814,33 +564,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -859,33 +593,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -904,33 +622,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -949,38 +651,22 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                    "index_name",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
-                    "index_name": ([str],),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
-                    "index_name": "index_name",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                    "index_name": "query",
-                },
-                "collection_format_map": {
-                    "index_name": "multi",
+                "index_name": {
+                    "openapi_types": ([str],),
+                    "attribute": "index_name",
+                    "location": "query",
+                    "collection_format": "multi",
                 },
             },
             headers_map={
@@ -1000,33 +686,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1045,33 +715,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1090,33 +744,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1135,33 +773,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1180,37 +802,22 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                    "type",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
-                    "type": (str,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
-                    "type": "type",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                    "type": "query",
+                "type": {
+                    "openapi_types": (str,),
+                    "attribute": "type",
+                    "location": "query",
                 },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1229,33 +836,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1274,33 +865,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1319,33 +894,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1364,37 +923,22 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_month",
-                    "end_month",
-                    "include_org_details",
-                ],
-                "required": [
-                    "start_month",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_month": (datetime,),
-                    "end_month": (datetime,),
-                    "include_org_details": (bool,),
+                "start_month": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_month",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_month": "start_month",
-                    "end_month": "end_month",
-                    "include_org_details": "include_org_details",
+                "end_month": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_month",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_month": "query",
-                    "end_month": "query",
-                    "include_org_details": "query",
+                "include_org_details": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_org_details",
+                    "location": "query",
                 },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1413,33 +957,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1458,33 +986,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1503,33 +1015,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1548,33 +1044,17 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "start_hr",
-                    "end_hr",
-                ],
-                "required": [
-                    "start_hr",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "start_hr": (datetime,),
-                    "end_hr": (datetime,),
+                "start_hr": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_hr",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "start_hr": "start_hr",
-                    "end_hr": "end_hr",
+                "end_hr": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_hr",
+                    "location": "query",
                 },
-                "location_map": {
-                    "start_hr": "query",
-                    "end_hr": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339", "application/json"],
@@ -1593,51 +1073,35 @@ class UsageMeteringApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "month",
-                    "day",
-                    "names",
-                    "limit",
-                    "next_record_id",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [
-                    "limit",
-                ],
-            },
-            root_map={
-                "validations": {
-                    ("limit",): {
+                "month": {
+                    "openapi_types": (datetime,),
+                    "attribute": "month",
+                    "location": "query",
+                },
+                "day": {
+                    "openapi_types": (datetime,),
+                    "attribute": "day",
+                    "location": "query",
+                },
+                "names": {
+                    "openapi_types": ([str],),
+                    "attribute": "names",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "limit": {
+                    "validation": {
                         "inclusive_maximum": 5000,
                         "inclusive_minimum": 1,
                     },
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
                 },
-                "allowed_values": {},
-                "openapi_types": {
-                    "month": (datetime,),
-                    "day": (datetime,),
-                    "names": ([str],),
-                    "limit": (int,),
-                    "next_record_id": (str,),
-                },
-                "attribute_map": {
-                    "month": "month",
-                    "day": "day",
-                    "names": "names",
-                    "limit": "limit",
-                    "next_record_id": "next_record_id",
-                },
-                "location_map": {
-                    "month": "query",
-                    "day": "query",
-                    "names": "query",
-                    "limit": "query",
-                    "next_record_id": "query",
-                },
-                "collection_format_map": {
-                    "names": "multi",
+                "next_record_id": {
+                    "openapi_types": (str,),
+                    "attribute": "next_record_id",
+                    "location": "query",
                 },
             },
             headers_map={

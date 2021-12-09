@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -47,33 +45,17 @@ class LogsArchivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "archive_id",
-                    "body",
-                ],
-                "required": [
-                    "archive_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "archive_id": (str,),
-                    "body": (RelationshipToRole,),
+                "archive_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "archive_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "archive_id": "archive_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (RelationshipToRole,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "archive_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -89,27 +71,11 @@ class LogsArchivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (LogsArchiveCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (LogsArchiveCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -125,29 +91,12 @@ class LogsArchivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "archive_id",
-                ],
-                "required": [
-                    "archive_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "archive_id": (str,),
+                "archive_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "archive_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "archive_id": "archive_id",
-                },
-                "location_map": {
-                    "archive_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -166,29 +115,12 @@ class LogsArchivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "archive_id",
-                ],
-                "required": [
-                    "archive_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "archive_id": (str,),
+                "archive_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "archive_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "archive_id": "archive_id",
-                },
-                "location_map": {
-                    "archive_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -206,15 +138,7 @@ class LogsArchivesApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -232,29 +156,12 @@ class LogsArchivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "archive_id",
-                ],
-                "required": [
-                    "archive_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "archive_id": (str,),
+                "archive_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "archive_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "archive_id": "archive_id",
-                },
-                "location_map": {
-                    "archive_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -272,15 +179,7 @@ class LogsArchivesApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -298,33 +197,17 @@ class LogsArchivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "archive_id",
-                    "body",
-                ],
-                "required": [
-                    "archive_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "archive_id": (str,),
-                    "body": (RelationshipToRole,),
+                "archive_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "archive_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "archive_id": "archive_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (RelationshipToRole,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "archive_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -340,33 +223,17 @@ class LogsArchivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "archive_id",
-                    "body",
-                ],
-                "required": [
-                    "archive_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "archive_id": (str,),
-                    "body": (LogsArchiveCreateRequest,),
+                "archive_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "archive_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "archive_id": "archive_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (LogsArchiveCreateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "archive_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -382,27 +249,11 @@ class LogsArchivesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (LogsArchiveOrder,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (LogsArchiveOrder,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

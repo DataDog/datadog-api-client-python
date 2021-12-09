@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -51,27 +49,11 @@ class UsersApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (ServiceAccountCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (ServiceAccountCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -87,27 +69,11 @@ class UsersApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (UserCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (UserCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -123,29 +89,12 @@ class UsersApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "user_id",
-                ],
-                "required": [
-                    "user_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "user_id": (str,),
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "user_id": "user_id",
-                },
-                "location_map": {
-                    "user_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -164,29 +113,12 @@ class UsersApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "user_invitation_uuid",
-                ],
-                "required": [
-                    "user_invitation_uuid",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "user_invitation_uuid": (str,),
+                "user_invitation_uuid": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_invitation_uuid",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "user_invitation_uuid": "user_invitation_uuid",
-                },
-                "location_map": {
-                    "user_invitation_uuid": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -205,29 +137,12 @@ class UsersApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "user_id",
-                ],
-                "required": [
-                    "user_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "user_id": (str,),
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "user_id": "user_id",
-                },
-                "location_map": {
-                    "user_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -246,29 +161,12 @@ class UsersApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "user_id",
-                ],
-                "required": [
-                    "user_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "user_id": (str,),
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "user_id": "user_id",
-                },
-                "location_map": {
-                    "user_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -287,29 +185,12 @@ class UsersApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "user_id",
-                ],
-                "required": [
-                    "user_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "user_id": (str,),
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "user_id": "user_id",
-                },
-                "location_map": {
-                    "user_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -328,47 +209,36 @@ class UsersApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "page_size",
-                    "page_number",
-                    "sort",
-                    "sort_dir",
-                    "filter",
-                    "filter_status",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "page_size": (int,),
-                    "page_number": (int,),
-                    "sort": (str,),
-                    "sort_dir": (QuerySortOrder,),
-                    "filter": (str,),
-                    "filter_status": (str,),
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "page_size": "page[size]",
-                    "page_number": "page[number]",
-                    "sort": "sort",
-                    "sort_dir": "sort_dir",
-                    "filter": "filter",
-                    "filter_status": "filter[status]",
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "page_size": "query",
-                    "page_number": "query",
-                    "sort": "query",
-                    "sort_dir": "query",
-                    "filter": "query",
-                    "filter_status": "query",
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "sort_dir": {
+                    "openapi_types": (QuerySortOrder,),
+                    "attribute": "sort_dir",
+                    "location": "query",
+                },
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
+                "filter_status": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[status]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -387,27 +257,11 @@ class UsersApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (UserInvitationsRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (UserInvitationsRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -423,33 +277,17 @@ class UsersApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "user_id",
-                    "body",
-                ],
-                "required": [
-                    "user_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "user_id": (str,),
-                    "body": (UserUpdateRequest,),
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "user_id": "user_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (UserUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "user_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

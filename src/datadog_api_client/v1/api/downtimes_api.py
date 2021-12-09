@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -44,29 +42,12 @@ class DowntimesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "downtime_id",
-                ],
-                "required": [
-                    "downtime_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "downtime_id": (int,),
+                "downtime_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "downtime_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "downtime_id": "downtime_id",
-                },
-                "location_map": {
-                    "downtime_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -85,27 +66,11 @@ class DowntimesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (CancelDowntimesByScopeRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (CancelDowntimesByScopeRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -121,27 +86,11 @@ class DowntimesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (Downtime,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (Downtime,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -157,29 +106,12 @@ class DowntimesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "downtime_id",
-                ],
-                "required": [
-                    "downtime_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "downtime_id": (int,),
+                "downtime_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "downtime_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "downtime_id": "downtime_id",
-                },
-                "location_map": {
-                    "downtime_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -198,27 +130,11 @@ class DowntimesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "current_only",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "current_only": (bool,),
+                "current_only": {
+                    "openapi_types": (bool,),
+                    "attribute": "current_only",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "current_only": "current_only",
-                },
-                "location_map": {
-                    "current_only": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -237,29 +153,12 @@ class DowntimesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "monitor_id",
-                ],
-                "required": [
-                    "monitor_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "monitor_id": (int,),
+                "monitor_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "monitor_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "monitor_id": "monitor_id",
-                },
-                "location_map": {
-                    "monitor_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -278,33 +177,17 @@ class DowntimesApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "downtime_id",
-                    "body",
-                ],
-                "required": [
-                    "downtime_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "downtime_id": (int,),
-                    "body": (Downtime,),
+                "downtime_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "downtime_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "downtime_id": "downtime_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (Downtime,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "downtime_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

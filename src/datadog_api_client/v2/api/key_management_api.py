@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -51,27 +49,11 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (APIKeyCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (APIKeyCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -87,27 +69,11 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (ApplicationKeyCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (ApplicationKeyCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -123,29 +89,12 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "api_key_id",
-                ],
-                "required": [
-                    "api_key_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "api_key_id": (str,),
+                "api_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "api_key_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "api_key_id": "api_key_id",
-                },
-                "location_map": {
-                    "api_key_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -164,29 +113,12 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "app_key_id",
-                ],
-                "required": [
-                    "app_key_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "app_key_id": (str,),
+                "app_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_key_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "app_key_id": "app_key_id",
-                },
-                "location_map": {
-                    "app_key_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -205,29 +137,12 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "app_key_id",
-                ],
-                "required": [
-                    "app_key_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "app_key_id": (str,),
+                "app_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_key_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "app_key_id": "app_key_id",
-                },
-                "location_map": {
-                    "app_key_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -246,33 +161,17 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "api_key_id",
-                    "include",
-                ],
-                "required": [
-                    "api_key_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "api_key_id": (str,),
-                    "include": (str,),
+                "api_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "api_key_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "api_key_id": "api_key_id",
-                    "include": "include",
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
                 },
-                "location_map": {
-                    "api_key_id": "path",
-                    "include": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -291,33 +190,17 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "app_key_id",
-                    "include",
-                ],
-                "required": [
-                    "app_key_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "app_key_id": (str,),
-                    "include": (str,),
+                "app_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_key_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "app_key_id": "app_key_id",
-                    "include": "include",
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
                 },
-                "location_map": {
-                    "app_key_id": "path",
-                    "include": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -336,29 +219,12 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "app_key_id",
-                ],
-                "required": [
-                    "app_key_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "app_key_id": (str,),
+                "app_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_key_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "app_key_id": "app_key_id",
-                },
-                "location_map": {
-                    "app_key_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -377,59 +243,51 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "page_size",
-                    "page_number",
-                    "sort",
-                    "filter",
-                    "filter_created_at_start",
-                    "filter_created_at_end",
-                    "filter_modified_at_start",
-                    "filter_modified_at_end",
-                    "include",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "page_size": (int,),
-                    "page_number": (int,),
-                    "sort": (APIKeysSort,),
-                    "filter": (str,),
-                    "filter_created_at_start": (str,),
-                    "filter_created_at_end": (str,),
-                    "filter_modified_at_start": (str,),
-                    "filter_modified_at_end": (str,),
-                    "include": (str,),
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "page_size": "page[size]",
-                    "page_number": "page[number]",
-                    "sort": "sort",
-                    "filter": "filter",
-                    "filter_created_at_start": "filter[created_at][start]",
-                    "filter_created_at_end": "filter[created_at][end]",
-                    "filter_modified_at_start": "filter[modified_at][start]",
-                    "filter_modified_at_end": "filter[modified_at][end]",
-                    "include": "include",
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "page_size": "query",
-                    "page_number": "query",
-                    "sort": "query",
-                    "filter": "query",
-                    "filter_created_at_start": "query",
-                    "filter_created_at_end": "query",
-                    "filter_modified_at_start": "query",
-                    "filter_modified_at_end": "query",
-                    "include": "query",
+                "sort": {
+                    "openapi_types": (APIKeysSort,),
+                    "attribute": "sort",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
+                "filter_created_at_start": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[created_at][start]",
+                    "location": "query",
+                },
+                "filter_created_at_end": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[created_at][end]",
+                    "location": "query",
+                },
+                "filter_modified_at_start": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[modified_at][start]",
+                    "location": "query",
+                },
+                "filter_modified_at_end": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[modified_at][end]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -448,47 +306,36 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "page_size",
-                    "page_number",
-                    "sort",
-                    "filter",
-                    "filter_created_at_start",
-                    "filter_created_at_end",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "page_size": (int,),
-                    "page_number": (int,),
-                    "sort": (ApplicationKeysSort,),
-                    "filter": (str,),
-                    "filter_created_at_start": (str,),
-                    "filter_created_at_end": (str,),
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "page_size": "page[size]",
-                    "page_number": "page[number]",
-                    "sort": "sort",
-                    "filter": "filter",
-                    "filter_created_at_start": "filter[created_at][start]",
-                    "filter_created_at_end": "filter[created_at][end]",
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "page_size": "query",
-                    "page_number": "query",
-                    "sort": "query",
-                    "filter": "query",
-                    "filter_created_at_start": "query",
-                    "filter_created_at_end": "query",
+                "sort": {
+                    "openapi_types": (ApplicationKeysSort,),
+                    "attribute": "sort",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
+                "filter_created_at_start": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[created_at][start]",
+                    "location": "query",
+                },
+                "filter_created_at_end": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[created_at][end]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -507,47 +354,36 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "page_size",
-                    "page_number",
-                    "sort",
-                    "filter",
-                    "filter_created_at_start",
-                    "filter_created_at_end",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "page_size": (int,),
-                    "page_number": (int,),
-                    "sort": (ApplicationKeysSort,),
-                    "filter": (str,),
-                    "filter_created_at_start": (str,),
-                    "filter_created_at_end": (str,),
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
                 },
-                "attribute_map": {
-                    "page_size": "page[size]",
-                    "page_number": "page[number]",
-                    "sort": "sort",
-                    "filter": "filter",
-                    "filter_created_at_start": "filter[created_at][start]",
-                    "filter_created_at_end": "filter[created_at][end]",
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
-                "location_map": {
-                    "page_size": "query",
-                    "page_number": "query",
-                    "sort": "query",
-                    "filter": "query",
-                    "filter_created_at_start": "query",
-                    "filter_created_at_end": "query",
+                "sort": {
+                    "openapi_types": (ApplicationKeysSort,),
+                    "attribute": "sort",
+                    "location": "query",
                 },
-                "collection_format_map": {},
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
+                "filter_created_at_start": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[created_at][start]",
+                    "location": "query",
+                },
+                "filter_created_at_end": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[created_at][end]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -566,33 +402,17 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "api_key_id",
-                    "body",
-                ],
-                "required": [
-                    "api_key_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "api_key_id": (str,),
-                    "body": (APIKeyUpdateRequest,),
+                "api_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "api_key_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "api_key_id": "api_key_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (APIKeyUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "api_key_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -608,33 +428,17 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "app_key_id",
-                    "body",
-                ],
-                "required": [
-                    "app_key_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "app_key_id": (str,),
-                    "body": (ApplicationKeyUpdateRequest,),
+                "app_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_key_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "app_key_id": "app_key_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (ApplicationKeyUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "app_key_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -650,33 +454,17 @@ class KeyManagementApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "app_key_id",
-                    "body",
-                ],
-                "required": [
-                    "app_key_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "app_key_id": (str,),
-                    "body": (ApplicationKeyUpdateRequest,),
+                "app_key_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_key_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "app_key_id": "app_key_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (ApplicationKeyUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "app_key_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -49,27 +47,11 @@ class LogsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (LogsAggregateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (LogsAggregateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -85,25 +67,10 @@ class LogsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (LogsListRequest,),
+                "body": {
+                    "openapi_types": (LogsListRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -119,57 +86,44 @@ class LogsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "filter_query",
-                    "filter_index",
-                    "filter_from",
-                    "filter_to",
-                    "sort",
-                    "page_cursor",
-                    "page_limit",
-                ],
-                "required": [],
-                "nullable": [],
-                "enum": [],
-                "validation": [
-                    "page_limit",
-                ],
-            },
-            root_map={
-                "validations": {
-                    ("page_limit",): {
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+                "filter_index": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[index]",
+                    "location": "query",
+                },
+                "filter_from": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[from]",
+                    "location": "query",
+                },
+                "filter_to": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[to]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (LogsSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
                         "inclusive_maximum": 1000,
                     },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
                 },
-                "allowed_values": {},
-                "openapi_types": {
-                    "filter_query": (str,),
-                    "filter_index": (str,),
-                    "filter_from": (datetime,),
-                    "filter_to": (datetime,),
-                    "sort": (LogsSort,),
-                    "page_cursor": (str,),
-                    "page_limit": (int,),
-                },
-                "attribute_map": {
-                    "filter_query": "filter[query]",
-                    "filter_index": "filter[index]",
-                    "filter_from": "filter[from]",
-                    "filter_to": "filter[to]",
-                    "sort": "sort",
-                    "page_cursor": "page[cursor]",
-                    "page_limit": "page[limit]",
-                },
-                "location_map": {
-                    "filter_query": "query",
-                    "filter_index": "query",
-                    "filter_from": "query",
-                    "filter_to": "query",
-                    "sort": "query",
-                    "page_cursor": "query",
-                    "page_limit": "query",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -238,36 +192,21 @@ class LogsApi(object):
                 ],
             },
             params_map={
-                "all": [
-                    "body",
-                    "content_encoding",
-                    "ddtags",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (HTTPLog,),
-                    "content_encoding": (ContentEncoding,),
-                    "ddtags": (str,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (HTTPLog,),
+                    "location": "body",
                 },
-                "attribute_map": {
-                    "content_encoding": "Content-Encoding",
-                    "ddtags": "ddtags",
+                "content_encoding": {
+                    "openapi_types": (ContentEncoding,),
+                    "attribute": "Content-Encoding",
+                    "location": "header",
                 },
-                "location_map": {
-                    "body": "body",
-                    "content_encoding": "header",
-                    "ddtags": "query",
+                "ddtags": {
+                    "openapi_types": (str,),
+                    "attribute": "ddtags",
+                    "location": "query",
                 },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],

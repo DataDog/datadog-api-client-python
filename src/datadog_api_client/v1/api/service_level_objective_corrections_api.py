@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -45,27 +43,11 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (SLOCorrectionCreateRequest,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (SLOCorrectionCreateRequest,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -81,29 +63,12 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "slo_correction_id",
-                ],
-                "required": [
-                    "slo_correction_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "slo_correction_id": (str,),
+                "slo_correction_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "slo_correction_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "slo_correction_id": "slo_correction_id",
-                },
-                "location_map": {
-                    "slo_correction_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -122,29 +87,12 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "slo_correction_id",
-                ],
-                "required": [
-                    "slo_correction_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "slo_correction_id": (str,),
+                "slo_correction_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "slo_correction_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "slo_correction_id": "slo_correction_id",
-                },
-                "location_map": {
-                    "slo_correction_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -162,15 +110,7 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -188,33 +128,17 @@ class ServiceLevelObjectiveCorrectionsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "slo_correction_id",
-                    "body",
-                ],
-                "required": [
-                    "slo_correction_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "slo_correction_id": (str,),
-                    "body": (SLOCorrectionUpdateRequest,),
+                "slo_correction_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "slo_correction_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "slo_correction_id": "slo_correction_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (SLOCorrectionUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "slo_correction_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

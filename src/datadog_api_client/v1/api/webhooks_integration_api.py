@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -50,27 +48,11 @@ class WebhooksIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (WebhooksIntegration,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (WebhooksIntegration,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -86,27 +68,11 @@ class WebhooksIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (WebhooksIntegrationCustomVariable,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (WebhooksIntegrationCustomVariable,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -122,29 +88,12 @@ class WebhooksIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "webhook_name",
-                ],
-                "required": [
-                    "webhook_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "webhook_name": (str,),
+                "webhook_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "webhook_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "webhook_name": "webhook_name",
-                },
-                "location_map": {
-                    "webhook_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -163,29 +112,12 @@ class WebhooksIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "custom_variable_name",
-                ],
-                "required": [
-                    "custom_variable_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "custom_variable_name": (str,),
+                "custom_variable_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "custom_variable_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "custom_variable_name": "custom_variable_name",
-                },
-                "location_map": {
-                    "custom_variable_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -204,29 +136,12 @@ class WebhooksIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "webhook_name",
-                ],
-                "required": [
-                    "webhook_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "webhook_name": (str,),
+                "webhook_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "webhook_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "webhook_name": "webhook_name",
-                },
-                "location_map": {
-                    "webhook_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -245,29 +160,12 @@ class WebhooksIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "custom_variable_name",
-                ],
-                "required": [
-                    "custom_variable_name",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "custom_variable_name": (str,),
+                "custom_variable_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "custom_variable_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "custom_variable_name": "custom_variable_name",
-                },
-                "location_map": {
-                    "custom_variable_name": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -286,33 +184,17 @@ class WebhooksIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "webhook_name",
-                    "body",
-                ],
-                "required": [
-                    "webhook_name",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "webhook_name": (str,),
-                    "body": (WebhooksIntegrationUpdateRequest,),
+                "webhook_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "webhook_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "webhook_name": "webhook_name",
+                "body": {
+                    "required": True,
+                    "openapi_types": (WebhooksIntegrationUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "webhook_name": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -328,33 +210,17 @@ class WebhooksIntegrationApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "custom_variable_name",
-                    "body",
-                ],
-                "required": [
-                    "custom_variable_name",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "custom_variable_name": (str,),
-                    "body": (WebhooksIntegrationCustomVariableUpdateRequest,),
+                "custom_variable_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "custom_variable_name",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "custom_variable_name": "custom_variable_name",
+                "body": {
+                    "required": True,
+                    "openapi_types": (WebhooksIntegrationCustomVariableUpdateRequest,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "custom_variable_name": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,

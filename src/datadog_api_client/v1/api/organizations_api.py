@@ -8,8 +8,6 @@ import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
-    check_allowed_values,
-    check_validations,
     date,
     datetime,
     file_type,
@@ -47,27 +45,11 @@ class OrganizationsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "body",
-                ],
-                "required": [
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "body": (OrganizationCreateBody,),
+                "body": {
+                    "required": True,
+                    "openapi_types": (OrganizationCreateBody,),
+                    "location": "body",
                 },
-                "attribute_map": {},
-                "location_map": {
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -83,29 +65,12 @@ class OrganizationsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                ],
-                "required": [
-                    "public_id",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
-                },
-                "location_map": {
-                    "public_id": "path",
-                },
-                "collection_format_map": {},
             },
             headers_map={
                 "accept": ["application/json"],
@@ -123,15 +88,7 @@ class OrganizationsApi(object):
                 "http_method": "GET",
                 "servers": None,
             },
-            params_map={"all": [], "required": [], "nullable": [], "enum": [], "validation": []},
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
-                "collection_format_map": {},
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -149,33 +106,17 @@ class OrganizationsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                    "body",
-                ],
-                "required": [
-                    "public_id",
-                    "body",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
-                    "body": (Organization,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
+                "body": {
+                    "required": True,
+                    "openapi_types": (Organization,),
+                    "location": "body",
                 },
-                "location_map": {
-                    "public_id": "path",
-                    "body": "body",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
@@ -191,34 +132,18 @@ class OrganizationsApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [
-                    "public_id",
-                    "idp_file",
-                ],
-                "required": [
-                    "public_id",
-                    "idp_file",
-                ],
-                "nullable": [],
-                "enum": [],
-                "validation": [],
-            },
-            root_map={
-                "validations": {},
-                "allowed_values": {},
-                "openapi_types": {
-                    "public_id": (str,),
-                    "idp_file": (file_type,),
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
                 },
-                "attribute_map": {
-                    "public_id": "public_id",
-                    "idp_file": "idp_file",
+                "idp_file": {
+                    "required": True,
+                    "openapi_types": (file_type,),
+                    "attribute": "idp_file",
+                    "location": "form",
                 },
-                "location_map": {
-                    "public_id": "path",
-                    "idp_file": "form",
-                },
-                "collection_format_map": {},
             },
             headers_map={"accept": ["application/json"], "content_type": ["multipart/form-data"]},
             api_client=api_client,
