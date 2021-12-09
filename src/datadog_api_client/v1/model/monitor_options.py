@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -44,8 +43,6 @@ class MonitorOptions(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -55,18 +52,12 @@ class MonitorOptions(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "min_failure_duration": {
             "inclusive_maximum": 7200,
             "inclusive_minimum": 0,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -80,102 +71,97 @@ class MonitorOptions(ModelNormal):
         """
         lazy_import()
         return {
-            "aggregation": (MonitorOptionsAggregation,),  # noqa: E501
-            "device_ids": ([MonitorDeviceID],),  # noqa: E501
-            "enable_logs_sample": (bool,),  # noqa: E501
-            "escalation_message": (str,),  # noqa: E501
+            "aggregation": (MonitorOptionsAggregation,),
+            "device_ids": ([MonitorDeviceID],),
+            "enable_logs_sample": (bool,),
+            "escalation_message": (str,),
             "evaluation_delay": (
                 int,
                 none_type,
-            ),  # noqa: E501
-            "groupby_simple_monitor": (bool,),  # noqa: E501
-            "include_tags": (bool,),  # noqa: E501
-            "locked": (bool,),  # noqa: E501
+            ),
+            "groupby_simple_monitor": (bool,),
+            "include_tags": (bool,),
+            "locked": (bool,),
             "min_failure_duration": (
                 int,
                 none_type,
-            ),  # noqa: E501
+            ),
             "min_location_failed": (
                 int,
                 none_type,
-            ),  # noqa: E501
+            ),
             "new_group_delay": (
                 int,
                 none_type,
-            ),  # noqa: E501
+            ),
             "new_host_delay": (
                 int,
                 none_type,
-            ),  # noqa: E501
+            ),
             "no_data_timeframe": (
                 int,
                 none_type,
-            ),  # noqa: E501
-            "notify_audit": (bool,),  # noqa: E501
-            "notify_no_data": (bool,),  # noqa: E501
+            ),
+            "notify_audit": (bool,),
+            "notify_no_data": (bool,),
             "renotify_interval": (
                 int,
                 none_type,
-            ),  # noqa: E501
+            ),
             "renotify_occurrences": (
                 int,
                 none_type,
-            ),  # noqa: E501
+            ),
             "renotify_statuses": (
                 [MonitorRenotifyStatusType],
                 none_type,
-            ),  # noqa: E501
-            "require_full_window": (bool,),  # noqa: E501
-            "silenced": ({str: (int, none_type)},),  # noqa: E501
+            ),
+            "require_full_window": (bool,),
+            "silenced": ({str: (int, none_type)},),
             "synthetics_check_id": (
                 str,
                 none_type,
-            ),  # noqa: E501
-            "threshold_windows": (MonitorThresholdWindowOptions,),  # noqa: E501
-            "thresholds": (MonitorThresholds,),  # noqa: E501
+            ),
+            "threshold_windows": (MonitorThresholdWindowOptions,),
+            "thresholds": (MonitorThresholds,),
             "timeout_h": (
                 int,
                 none_type,
-            ),  # noqa: E501
+            ),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "aggregation": "aggregation",  # noqa: E501
-        "device_ids": "device_ids",  # noqa: E501
-        "enable_logs_sample": "enable_logs_sample",  # noqa: E501
-        "escalation_message": "escalation_message",  # noqa: E501
-        "evaluation_delay": "evaluation_delay",  # noqa: E501
-        "groupby_simple_monitor": "groupby_simple_monitor",  # noqa: E501
-        "include_tags": "include_tags",  # noqa: E501
-        "locked": "locked",  # noqa: E501
-        "min_failure_duration": "min_failure_duration",  # noqa: E501
-        "min_location_failed": "min_location_failed",  # noqa: E501
-        "new_group_delay": "new_group_delay",  # noqa: E501
-        "new_host_delay": "new_host_delay",  # noqa: E501
-        "no_data_timeframe": "no_data_timeframe",  # noqa: E501
-        "notify_audit": "notify_audit",  # noqa: E501
-        "notify_no_data": "notify_no_data",  # noqa: E501
-        "renotify_interval": "renotify_interval",  # noqa: E501
-        "renotify_occurrences": "renotify_occurrences",  # noqa: E501
-        "renotify_statuses": "renotify_statuses",  # noqa: E501
-        "require_full_window": "require_full_window",  # noqa: E501
-        "silenced": "silenced",  # noqa: E501
-        "synthetics_check_id": "synthetics_check_id",  # noqa: E501
-        "threshold_windows": "threshold_windows",  # noqa: E501
-        "thresholds": "thresholds",  # noqa: E501
-        "timeout_h": "timeout_h",  # noqa: E501
+        "aggregation": "aggregation",
+        "device_ids": "device_ids",
+        "enable_logs_sample": "enable_logs_sample",
+        "escalation_message": "escalation_message",
+        "evaluation_delay": "evaluation_delay",
+        "groupby_simple_monitor": "groupby_simple_monitor",
+        "include_tags": "include_tags",
+        "locked": "locked",
+        "min_failure_duration": "min_failure_duration",
+        "min_location_failed": "min_location_failed",
+        "new_group_delay": "new_group_delay",
+        "new_host_delay": "new_host_delay",
+        "no_data_timeframe": "no_data_timeframe",
+        "notify_audit": "notify_audit",
+        "notify_no_data": "notify_no_data",
+        "renotify_interval": "renotify_interval",
+        "renotify_occurrences": "renotify_occurrences",
+        "renotify_statuses": "renotify_statuses",
+        "require_full_window": "require_full_window",
+        "silenced": "silenced",
+        "synthetics_check_id": "synthetics_check_id",
+        "threshold_windows": "threshold_windows",
+        "thresholds": "thresholds",
+        "timeout_h": "timeout_h",
     }
 
     read_only_vars = {
-        "device_ids",  # noqa: E501
+        "device_ids",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MonitorOptions - a model defined in OpenAPI
 
         Keyword Args:
@@ -209,38 +195,37 @@ class MonitorOptions(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregation (MonitorOptionsAggregation): [optional]  # noqa: E501
-            device_ids ([MonitorDeviceID]): IDs of the device the Synthetics monitor is running on.. [optional]  # noqa: E501
-            enable_logs_sample (bool): Whether or not to send a log sample when the log monitor triggers.. [optional]  # noqa: E501
-            escalation_message (str): We recommend using the [is_renotify](https://docs.datadoghq.com/monitors/notify/?tab=is_alert#renotify), block in the original message instead. A message to include with a re-notification. Supports the `@username` notification we allow elsewhere. Not applicable if `renotify_interval` is `None`.. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            evaluation_delay (int, none_type): Time (in seconds) to delay evaluation, as a non-negative integer. For example, if the value is set to `300` (5min), the timeframe is set to `last_5m` and the time is 7:00, the monitor evaluates data from 6:50 to 6:55. This is useful for AWS CloudWatch and other backfilled metrics to ensure the monitor always has data during evaluation.. [optional]  # noqa: E501
-            groupby_simple_monitor (bool): Whether the log alert monitor triggers a single alert or multiple alerts when any group breaches a threshold.. [optional]  # noqa: E501
-            include_tags (bool): A Boolean indicating whether notifications from this monitor automatically inserts its triggering tags into the title.  **Examples** - If `True`, `[Triggered on {host:h1}] Monitor Title` - If `False`, `[Triggered] Monitor Title`. [optional] if omitted the server will use the default value of True  # noqa: E501
-            locked (bool): Whether or not the monitor is locked (only editable by creator and admins).. [optional]  # noqa: E501
-            min_failure_duration (int, none_type): How long the test should be in failure before alerting (integer, number of seconds, max 7200).. [optional] if omitted the server will use the default value of 0  # noqa: E501
-            min_location_failed (int, none_type): The minimum number of locations in failure at the same time during at least one moment in the `min_failure_duration` period (`min_location_failed` and `min_failure_duration` are part of the advanced alerting rules - integer, >= 1).. [optional] if omitted the server will use the default value of 1  # noqa: E501
-            new_group_delay (int, none_type): Time (in seconds) to skip evaluations for new groups.  For example, this option can be used to skip evaluations for new hosts while they initialize.  Must be a non negative integer.. [optional]  # noqa: E501
-            new_host_delay (int, none_type): Time (in seconds) to allow a host to boot and applications to fully start before starting the evaluation of monitor results. Should be a non negative integer.  Use new_group_delay instead.. [optional] if omitted the server will use the default value of 300  # noqa: E501
-            no_data_timeframe (int, none_type): The number of minutes before a monitor notifies after data stops reporting. Datadog recommends at least 2x the monitor timeframe for query alerts or 2 minutes for service checks. If omitted, 2x the evaluation timeframe is used for query alerts, and 24 hours is used for service checks.. [optional]  # noqa: E501
-            notify_audit (bool): A Boolean indicating whether tagged users is notified on changes to this monitor.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            notify_no_data (bool): A Boolean indicating whether this monitor notifies when data stops reporting.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            renotify_interval (int, none_type): The number of minutes after the last notification before a monitor re-notifies on the current status. It only re-notifies if it’s not resolved.. [optional]  # noqa: E501
-            renotify_occurrences (int, none_type): The number of times re-notification messages should be sent on the current status at the provided re-notification interval.. [optional]  # noqa: E501
-            renotify_statuses ([MonitorRenotifyStatusType], none_type): The types of monitor statuses for which re-notification messages are sent.. [optional]  # noqa: E501
-            require_full_window (bool): A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to `false` for sparse metrics, otherwise some evaluations are skipped. Default is false.. [optional]  # noqa: E501
-            silenced ({str: (int, none_type)}): Information about the downtime applied to the monitor.. [optional]  # noqa: E501
-            synthetics_check_id (str, none_type): ID of the corresponding Synthetic check.. [optional]  # noqa: E501
-            threshold_windows (MonitorThresholdWindowOptions): [optional]  # noqa: E501
-            thresholds (MonitorThresholds): [optional]  # noqa: E501
-            timeout_h (int, none_type): The number of hours of the monitor not reporting data before it automatically resolves from a triggered state. The minimum allowed value is 0 hours. The maximum allowed value is 24 hours.. [optional]  # noqa: E501
+            aggregation (MonitorOptionsAggregation): [optional]
+            device_ids ([MonitorDeviceID]): IDs of the device the Synthetics monitor is running on.. [optional]
+            enable_logs_sample (bool): Whether or not to send a log sample when the log monitor triggers.. [optional]
+            escalation_message (str): We recommend using the [is_renotify](https://docs.datadoghq.com/monitors/notify/?tab=is_alert#renotify), block in the original message instead. A message to include with a re-notification. Supports the `@username` notification we allow elsewhere. Not applicable if `renotify_interval` is `None`.. [optional] if omitted the server will use the default value of "none"
+            evaluation_delay (int, none_type): Time (in seconds) to delay evaluation, as a non-negative integer. For example, if the value is set to `300` (5min), the timeframe is set to `last_5m` and the time is 7:00, the monitor evaluates data from 6:50 to 6:55. This is useful for AWS CloudWatch and other backfilled metrics to ensure the monitor always has data during evaluation.. [optional]
+            groupby_simple_monitor (bool): Whether the log alert monitor triggers a single alert or multiple alerts when any group breaches a threshold.. [optional]
+            include_tags (bool): A Boolean indicating whether notifications from this monitor automatically inserts its triggering tags into the title.  **Examples** - If `True`, `[Triggered on {host:h1}] Monitor Title` - If `False`, `[Triggered] Monitor Title`. [optional] if omitted the server will use the default value of True
+            locked (bool): Whether or not the monitor is locked (only editable by creator and admins).. [optional]
+            min_failure_duration (int, none_type): How long the test should be in failure before alerting (integer, number of seconds, max 7200).. [optional] if omitted the server will use the default value of 0
+            min_location_failed (int, none_type): The minimum number of locations in failure at the same time during at least one moment in the `min_failure_duration` period (`min_location_failed` and `min_failure_duration` are part of the advanced alerting rules - integer, >= 1).. [optional] if omitted the server will use the default value of 1
+            new_group_delay (int, none_type): Time (in seconds) to skip evaluations for new groups.  For example, this option can be used to skip evaluations for new hosts while they initialize.  Must be a non negative integer.. [optional]
+            new_host_delay (int, none_type): Time (in seconds) to allow a host to boot and applications to fully start before starting the evaluation of monitor results. Should be a non negative integer.  Use new_group_delay instead.. [optional] if omitted the server will use the default value of 300
+            no_data_timeframe (int, none_type): The number of minutes before a monitor notifies after data stops reporting. Datadog recommends at least 2x the monitor timeframe for query alerts or 2 minutes for service checks. If omitted, 2x the evaluation timeframe is used for query alerts, and 24 hours is used for service checks.. [optional]
+            notify_audit (bool): A Boolean indicating whether tagged users is notified on changes to this monitor.. [optional] if omitted the server will use the default value of False
+            notify_no_data (bool): A Boolean indicating whether this monitor notifies when data stops reporting.. [optional] if omitted the server will use the default value of False
+            renotify_interval (int, none_type): The number of minutes after the last notification before a monitor re-notifies on the current status. It only re-notifies if it’s not resolved.. [optional]
+            renotify_occurrences (int, none_type): The number of times re-notification messages should be sent on the current status at the provided re-notification interval.. [optional]
+            renotify_statuses ([MonitorRenotifyStatusType], none_type): The types of monitor statuses for which re-notification messages are sent.. [optional]
+            require_full_window (bool): A Boolean indicating whether this monitor needs a full window of data before it’s evaluated. We highly recommend you set this to `false` for sparse metrics, otherwise some evaluations are skipped. Default is false.. [optional]
+            silenced ({str: (int, none_type)}): Information about the downtime applied to the monitor.. [optional]
+            synthetics_check_id (str, none_type): ID of the corresponding Synthetic check.. [optional]
+            threshold_windows (MonitorThresholdWindowOptions): [optional]
+            thresholds (MonitorThresholds): [optional]
+            timeout_h (int, none_type): The number of hours of the monitor not reporting data before it automatically resolves from a triggered state. The minimum allowed value is 0 hours. The maximum allowed value is 24 hours.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MonitorOptions, cls)._from_openapi_data(kwargs)

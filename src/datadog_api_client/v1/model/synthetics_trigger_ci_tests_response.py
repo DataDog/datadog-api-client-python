@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -72,27 +63,22 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
             "batch_id": (
                 str,
                 none_type,
-            ),  # noqa: E501
-            "locations": ([SyntheticsTriggerCITestLocation],),  # noqa: E501
-            "results": ([SyntheticsTriggerCITestRunResult],),  # noqa: E501
-            "triggered_check_ids": ([str],),  # noqa: E501
+            ),
+            "locations": ([SyntheticsTriggerCITestLocation],),
+            "results": ([SyntheticsTriggerCITestRunResult],),
+            "triggered_check_ids": ([str],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "batch_id": "batch_id",  # noqa: E501
-        "locations": "locations",  # noqa: E501
-        "results": "results",  # noqa: E501
-        "triggered_check_ids": "triggered_check_ids",  # noqa: E501
+        "batch_id": "batch_id",
+        "locations": "locations",
+        "results": "results",
+        "triggered_check_ids": "triggered_check_ids",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsTriggerCITestsResponse - a model defined in OpenAPI
 
         Keyword Args:
@@ -126,18 +112,17 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            batch_id (str, none_type): The public ID of the batch triggered.. [optional]  # noqa: E501
-            locations ([SyntheticsTriggerCITestLocation]): List of Synthetics locations.. [optional]  # noqa: E501
-            results ([SyntheticsTriggerCITestRunResult]): Information about the tests runs.. [optional]  # noqa: E501
-            triggered_check_ids ([str]): The public IDs of the Synthetics test triggered.. [optional]  # noqa: E501
+            batch_id (str, none_type): The public ID of the batch triggered.. [optional]
+            locations ([SyntheticsTriggerCITestLocation]): List of Synthetics locations.. [optional]
+            results ([SyntheticsTriggerCITestRunResult]): Information about the tests runs.. [optional]
+            triggered_check_ids ([str]): The public IDs of the Synthetics test triggered.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsTriggerCITestsResponse, cls)._from_openapi_data(kwargs)

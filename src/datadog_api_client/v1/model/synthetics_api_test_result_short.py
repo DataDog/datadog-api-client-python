@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class SyntheticsAPITestResultShort(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class SyntheticsAPITestResultShort(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,29 +60,24 @@ class SyntheticsAPITestResultShort(ModelNormal):
         """
         lazy_import()
         return {
-            "check_time": (float,),  # noqa: E501
-            "probe_dc": (str,),  # noqa: E501
-            "result": (SyntheticsAPITestResultShortResult,),  # noqa: E501
-            "result_id": (str,),  # noqa: E501
-            "status": (SyntheticsTestMonitorStatus,),  # noqa: E501
+            "check_time": (float,),
+            "probe_dc": (str,),
+            "result": (SyntheticsAPITestResultShortResult,),
+            "result_id": (str,),
+            "status": (SyntheticsTestMonitorStatus,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "check_time": "check_time",  # noqa: E501
-        "probe_dc": "probe_dc",  # noqa: E501
-        "result": "result",  # noqa: E501
-        "result_id": "result_id",  # noqa: E501
-        "status": "status",  # noqa: E501
+        "check_time": "check_time",
+        "probe_dc": "probe_dc",
+        "result": "result",
+        "result_id": "result_id",
+        "status": "status",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsAPITestResultShort - a model defined in OpenAPI
 
         Keyword Args:
@@ -125,19 +111,18 @@ class SyntheticsAPITestResultShort(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            check_time (float): Last time the API test was performed.. [optional]  # noqa: E501
-            probe_dc (str): Location from which the API test was performed.. [optional]  # noqa: E501
-            result (SyntheticsAPITestResultShortResult): [optional]  # noqa: E501
-            result_id (str): ID of the API test result.. [optional]  # noqa: E501
-            status (SyntheticsTestMonitorStatus): [optional]  # noqa: E501
+            check_time (float): Last time the API test was performed.. [optional]
+            probe_dc (str): Location from which the API test was performed.. [optional]
+            result (SyntheticsAPITestResultShortResult): [optional]
+            result_id (str): ID of the API test result.. [optional]
+            status (SyntheticsTestMonitorStatus): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsAPITestResultShort, cls)._from_openapi_data(kwargs)

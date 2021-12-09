@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class SyntheticsGlobalVariable(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class SyntheticsGlobalVariable(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,37 +64,32 @@ class SyntheticsGlobalVariable(ModelNormal):
         """
         lazy_import()
         return {
-            "description": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "value": (SyntheticsGlobalVariableValue,),  # noqa: E501
-            "attributes": (SyntheticsGlobalVariableAttributes,),  # noqa: E501
-            "id": (str,),  # noqa: E501
-            "parse_test_options": (SyntheticsGlobalVariableParseTestOptions,),  # noqa: E501
-            "parse_test_public_id": (str,),  # noqa: E501
+            "attributes": (SyntheticsGlobalVariableAttributes,),
+            "description": (str,),
+            "id": (str,),
+            "name": (str,),
+            "parse_test_options": (SyntheticsGlobalVariableParseTestOptions,),
+            "parse_test_public_id": (str,),
+            "tags": ([str],),
+            "value": (SyntheticsGlobalVariableValue,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "description": "description",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "value": "value",  # noqa: E501
-        "attributes": "attributes",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "parse_test_options": "parse_test_options",  # noqa: E501
-        "parse_test_public_id": "parse_test_public_id",  # noqa: E501
+        "description": "description",
+        "name": "name",
+        "tags": "tags",
+        "value": "value",
+        "attributes": "attributes",
+        "id": "id",
+        "parse_test_options": "parse_test_options",
+        "parse_test_public_id": "parse_test_public_id",
     }
 
     read_only_vars = {
-        "id",  # noqa: E501
+        "id",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, description, name, tags, value, *args, **kwargs):  # noqa: E501
+    def __init__(self, description, name, tags, value, *args, **kwargs):
         """SyntheticsGlobalVariable - a model defined in OpenAPI
 
         Args:
@@ -143,10 +129,10 @@ class SyntheticsGlobalVariable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (SyntheticsGlobalVariableAttributes): [optional]  # noqa: E501
-            id (str): Unique identifier of the global variable.. [optional]  # noqa: E501
-            parse_test_options (SyntheticsGlobalVariableParseTestOptions): [optional]  # noqa: E501
-            parse_test_public_id (str): A Synthetic test ID to use as a test to generate the variable value.. [optional]  # noqa: E501
+            attributes (SyntheticsGlobalVariableAttributes): [optional]
+            id (str): Unique identifier of the global variable.. [optional]
+            parse_test_options (SyntheticsGlobalVariableParseTestOptions): [optional]
+            parse_test_public_id (str): A Synthetic test ID to use as a test to generate the variable value.. [optional]
         """
         super().__init__(kwargs)
 
@@ -158,8 +144,7 @@ class SyntheticsGlobalVariable(ModelNormal):
         self.value = value
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, description, name, tags, value, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, description, name, tags, value, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsGlobalVariable, cls)._from_openapi_data(kwargs)

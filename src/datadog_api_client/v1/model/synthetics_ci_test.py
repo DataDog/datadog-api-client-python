@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -44,8 +43,6 @@ class SyntheticsCITest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -55,13 +52,7 @@ class SyntheticsCITest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -75,47 +66,42 @@ class SyntheticsCITest(ModelNormal):
         """
         lazy_import()
         return {
-            "public_id": (str,),  # noqa: E501
-            "allow_insecure_certificates": (bool,),  # noqa: E501
-            "basic_auth": (SyntheticsBasicAuth,),  # noqa: E501
-            "body": (str,),  # noqa: E501
-            "body_type": (str,),  # noqa: E501
-            "cookies": (str,),  # noqa: E501
-            "device_ids": ([SyntheticsDeviceID],),  # noqa: E501
-            "follow_redirects": (bool,),  # noqa: E501
-            "headers": (SyntheticsTestHeaders,),  # noqa: E501
-            "locations": ([str],),  # noqa: E501
-            "metadata": (SyntheticsCIBatchMetadata,),  # noqa: E501
-            "retry": (SyntheticsTestOptionsRetry,),  # noqa: E501
-            "start_url": (str,),  # noqa: E501
-            "variables": ({str: (str,)},),  # noqa: E501
+            "allow_insecure_certificates": (bool,),
+            "basic_auth": (SyntheticsBasicAuth,),
+            "body": (str,),
+            "body_type": (str,),
+            "cookies": (str,),
+            "device_ids": ([SyntheticsDeviceID],),
+            "follow_redirects": (bool,),
+            "headers": (SyntheticsTestHeaders,),
+            "locations": ([str],),
+            "metadata": (SyntheticsCIBatchMetadata,),
+            "public_id": (str,),
+            "retry": (SyntheticsTestOptionsRetry,),
+            "start_url": (str,),
+            "variables": ({str: (str,)},),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "public_id": "public_id",  # noqa: E501
-        "allow_insecure_certificates": "allowInsecureCertificates",  # noqa: E501
-        "basic_auth": "basicAuth",  # noqa: E501
-        "body": "body",  # noqa: E501
-        "body_type": "bodyType",  # noqa: E501
-        "cookies": "cookies",  # noqa: E501
-        "device_ids": "deviceIds",  # noqa: E501
-        "follow_redirects": "followRedirects",  # noqa: E501
-        "headers": "headers",  # noqa: E501
-        "locations": "locations",  # noqa: E501
-        "metadata": "metadata",  # noqa: E501
-        "retry": "retry",  # noqa: E501
-        "start_url": "startUrl",  # noqa: E501
-        "variables": "variables",  # noqa: E501
+        "public_id": "public_id",
+        "allow_insecure_certificates": "allowInsecureCertificates",
+        "basic_auth": "basicAuth",
+        "body": "body",
+        "body_type": "bodyType",
+        "cookies": "cookies",
+        "device_ids": "deviceIds",
+        "follow_redirects": "followRedirects",
+        "headers": "headers",
+        "locations": "locations",
+        "metadata": "metadata",
+        "retry": "retry",
+        "start_url": "startUrl",
+        "variables": "variables",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, public_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, public_id, *args, **kwargs):
         """SyntheticsCITest - a model defined in OpenAPI
 
         Args:
@@ -152,19 +138,19 @@ class SyntheticsCITest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            allow_insecure_certificates (bool): Disable certificate checks in API tests.. [optional]  # noqa: E501
-            basic_auth (SyntheticsBasicAuth): [optional]  # noqa: E501
-            body (str): Body to include in the test.. [optional]  # noqa: E501
-            body_type (str): Type of the data sent in a synthetics API test.. [optional]  # noqa: E501
-            cookies (str): Cookies for the request.. [optional]  # noqa: E501
-            device_ids ([SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]  # noqa: E501
-            follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]  # noqa: E501
-            headers (SyntheticsTestHeaders): [optional]  # noqa: E501
-            locations ([str]): Array of locations used to run the test.. [optional]  # noqa: E501
-            metadata (SyntheticsCIBatchMetadata): [optional]  # noqa: E501
-            retry (SyntheticsTestOptionsRetry): [optional]  # noqa: E501
-            start_url (str): Starting URL for the browser test.. [optional]  # noqa: E501
-            variables ({str: (str,)}): Variables to replace in the test.. [optional]  # noqa: E501
+            allow_insecure_certificates (bool): Disable certificate checks in API tests.. [optional]
+            basic_auth (SyntheticsBasicAuth): [optional]
+            body (str): Body to include in the test.. [optional]
+            body_type (str): Type of the data sent in a synthetics API test.. [optional]
+            cookies (str): Cookies for the request.. [optional]
+            device_ids ([SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]
+            follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]
+            headers (SyntheticsTestHeaders): [optional]
+            locations ([str]): Array of locations used to run the test.. [optional]
+            metadata (SyntheticsCIBatchMetadata): [optional]
+            retry (SyntheticsTestOptionsRetry): [optional]
+            start_url (str): Starting URL for the browser test.. [optional]
+            variables ({str: (str,)}): Variables to replace in the test.. [optional]
         """
         super().__init__(kwargs)
 
@@ -173,8 +159,7 @@ class SyntheticsCITest(ModelNormal):
         self.public_id = public_id
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, public_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, public_id, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsCITest, cls)._from_openapi_data(kwargs)

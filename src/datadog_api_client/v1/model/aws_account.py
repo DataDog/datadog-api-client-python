@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class AWSAccount(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class AWSAccount(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,41 +51,36 @@ class AWSAccount(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "access_key_id": (str,),  # noqa: E501
-            "account_id": (str,),  # noqa: E501
-            "account_specific_namespace_rules": ({str: (bool,)},),  # noqa: E501
-            "cspm_resource_collection_enabled": (bool,),  # noqa: E501
-            "excluded_regions": ([str],),  # noqa: E501
-            "filter_tags": ([str],),  # noqa: E501
-            "host_tags": ([str],),  # noqa: E501
-            "metrics_collection_enabled": (bool,),  # noqa: E501
-            "resource_collection_enabled": (bool,),  # noqa: E501
-            "role_name": (str,),  # noqa: E501
-            "secret_access_key": (str,),  # noqa: E501
+            "access_key_id": (str,),
+            "account_id": (str,),
+            "account_specific_namespace_rules": ({str: (bool,)},),
+            "cspm_resource_collection_enabled": (bool,),
+            "excluded_regions": ([str],),
+            "filter_tags": ([str],),
+            "host_tags": ([str],),
+            "metrics_collection_enabled": (bool,),
+            "resource_collection_enabled": (bool,),
+            "role_name": (str,),
+            "secret_access_key": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "access_key_id": "access_key_id",  # noqa: E501
-        "account_id": "account_id",  # noqa: E501
-        "account_specific_namespace_rules": "account_specific_namespace_rules",  # noqa: E501
-        "cspm_resource_collection_enabled": "cspm_resource_collection_enabled",  # noqa: E501
-        "excluded_regions": "excluded_regions",  # noqa: E501
-        "filter_tags": "filter_tags",  # noqa: E501
-        "host_tags": "host_tags",  # noqa: E501
-        "metrics_collection_enabled": "metrics_collection_enabled",  # noqa: E501
-        "resource_collection_enabled": "resource_collection_enabled",  # noqa: E501
-        "role_name": "role_name",  # noqa: E501
-        "secret_access_key": "secret_access_key",  # noqa: E501
+        "access_key_id": "access_key_id",
+        "account_id": "account_id",
+        "account_specific_namespace_rules": "account_specific_namespace_rules",
+        "cspm_resource_collection_enabled": "cspm_resource_collection_enabled",
+        "excluded_regions": "excluded_regions",
+        "filter_tags": "filter_tags",
+        "host_tags": "host_tags",
+        "metrics_collection_enabled": "metrics_collection_enabled",
+        "resource_collection_enabled": "resource_collection_enabled",
+        "role_name": "role_name",
+        "secret_access_key": "secret_access_key",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """AWSAccount - a model defined in OpenAPI
 
         Keyword Args:
@@ -128,25 +114,24 @@ class AWSAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            access_key_id (str): Your AWS access key ID. Only required if your AWS account is a GovCloud or China account.. [optional]  # noqa: E501
-            account_id (str): Your AWS Account ID without dashes.. [optional]  # noqa: E501
-            account_specific_namespace_rules ({str: (bool,)}): An object, (in the form `{\"namespace1\":true/false, \"namespace2\":true/false}`), that enables or disables metric collection for specific AWS namespaces for this AWS account only.. [optional]  # noqa: E501
-            cspm_resource_collection_enabled (bool): Whether Datadog collects cloud security posture management resources from your AWS account. This includes additional resources not covered under the general `resource_collection`.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            excluded_regions ([str]): An array of AWS regions to exclude from metrics collection.. [optional]  # noqa: E501
-            filter_tags ([str]): The array of EC2 tags (in the form `key:value`) defines a filter that Datadog uses when collecting metrics from EC2. Wildcards, such as `?` (for single characters) and `*` (for multiple characters) can also be used. Only hosts that match one of the defined tags will be imported into Datadog. The rest will be ignored. Host matching a given tag can also be excluded by adding `!` before the tag. For example, `env:production,instance-type:c1.*,!region:us-east-1`. [optional]  # noqa: E501
-            host_tags ([str]): Array of tags (in the form `key:value`) to add to all hosts and metrics reporting through this integration.. [optional]  # noqa: E501
-            metrics_collection_enabled (bool): Whether Datadog collects metrics for this AWS account.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            resource_collection_enabled (bool): Whether Datadog collects a standard set of resources from your AWS account.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            role_name (str): Your Datadog role delegation name.. [optional]  # noqa: E501
-            secret_access_key (str): Your AWS secret access key. Only required if your AWS account is a GovCloud or China account.. [optional]  # noqa: E501
+            access_key_id (str): Your AWS access key ID. Only required if your AWS account is a GovCloud or China account.. [optional]
+            account_id (str): Your AWS Account ID without dashes.. [optional]
+            account_specific_namespace_rules ({str: (bool,)}): An object, (in the form `{\"namespace1\":true/false, \"namespace2\":true/false}`), that enables or disables metric collection for specific AWS namespaces for this AWS account only.. [optional]
+            cspm_resource_collection_enabled (bool): Whether Datadog collects cloud security posture management resources from your AWS account. This includes additional resources not covered under the general `resource_collection`.. [optional] if omitted the server will use the default value of False
+            excluded_regions ([str]): An array of AWS regions to exclude from metrics collection.. [optional]
+            filter_tags ([str]): The array of EC2 tags (in the form `key:value`) defines a filter that Datadog uses when collecting metrics from EC2. Wildcards, such as `?` (for single characters) and `*` (for multiple characters) can also be used. Only hosts that match one of the defined tags will be imported into Datadog. The rest will be ignored. Host matching a given tag can also be excluded by adding `!` before the tag. For example, `env:production,instance-type:c1.*,!region:us-east-1`. [optional]
+            host_tags ([str]): Array of tags (in the form `key:value`) to add to all hosts and metrics reporting through this integration.. [optional]
+            metrics_collection_enabled (bool): Whether Datadog collects metrics for this AWS account.. [optional] if omitted the server will use the default value of True
+            resource_collection_enabled (bool): Whether Datadog collects a standard set of resources from your AWS account.. [optional] if omitted the server will use the default value of False
+            role_name (str): Your Datadog role delegation name.. [optional]
+            secret_access_key (str): Your AWS secret access key. Only required if your AWS account is a GovCloud or China account.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(AWSAccount, cls)._from_openapi_data(kwargs)

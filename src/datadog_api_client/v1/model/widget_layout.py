@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class WidgetLayout(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -40,8 +37,6 @@ class WidgetLayout(ModelNormal):
           as additional properties values.
 
     """
-
-    allowed_values = {}
 
     validations = {
         "height": {
@@ -58,10 +53,6 @@ class WidgetLayout(ModelNormal):
         },
     }
 
-    additional_properties_type = None
-
-    _nullable = False
-
     @cached_property
     def openapi_types():
         """
@@ -73,29 +64,24 @@ class WidgetLayout(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "height": (int,),  # noqa: E501
-            "width": (int,),  # noqa: E501
-            "x": (int,),  # noqa: E501
-            "y": (int,),  # noqa: E501
-            "is_column_break": (bool,),  # noqa: E501
+            "height": (int,),
+            "is_column_break": (bool,),
+            "width": (int,),
+            "x": (int,),
+            "y": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "height": "height",  # noqa: E501
-        "width": "width",  # noqa: E501
-        "x": "x",  # noqa: E501
-        "y": "y",  # noqa: E501
-        "is_column_break": "is_column_break",  # noqa: E501
+        "height": "height",
+        "width": "width",
+        "x": "x",
+        "y": "y",
+        "is_column_break": "is_column_break",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, height, width, x, y, *args, **kwargs):  # noqa: E501
+    def __init__(self, height, width, x, y, *args, **kwargs):
         """WidgetLayout - a model defined in OpenAPI
 
         Args:
@@ -135,7 +121,7 @@ class WidgetLayout(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_column_break (bool): Whether the widget should be the first one on the second column in high density or not. **Note**: Only for the **new dashboard layout** and only one widget in the dashboard should have this property set to `true`.. [optional]  # noqa: E501
+            is_column_break (bool): Whether the widget should be the first one on the second column in high density or not. **Note**: Only for the **new dashboard layout** and only one widget in the dashboard should have this property set to `true`.. [optional]
         """
         super().__init__(kwargs)
 
@@ -147,8 +133,7 @@ class WidgetLayout(ModelNormal):
         self.y = y
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, height, width, x, y, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, height, width, x, y, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(WidgetLayout, cls)._from_openapi_data(kwargs)

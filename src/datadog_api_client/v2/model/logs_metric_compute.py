@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class LogsMetricCompute(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class LogsMetricCompute(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,23 +58,18 @@ class LogsMetricCompute(ModelNormal):
         """
         lazy_import()
         return {
-            "aggregation_type": (LogsMetricComputeAggregationType,),  # noqa: E501
-            "path": (str,),  # noqa: E501
+            "aggregation_type": (LogsMetricComputeAggregationType,),
+            "path": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "aggregation_type": "aggregation_type",  # noqa: E501
-        "path": "path",  # noqa: E501
+        "aggregation_type": "aggregation_type",
+        "path": "path",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, aggregation_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, aggregation_type, *args, **kwargs):
         """LogsMetricCompute - a model defined in OpenAPI
 
         Args:
@@ -120,7 +106,7 @@ class LogsMetricCompute(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            path (str): The path to the value the log-based metric will aggregate on (only used if the aggregation type is a \"distribution\").. [optional]  # noqa: E501
+            path (str): The path to the value the log-based metric will aggregate on (only used if the aggregation type is a \"distribution\").. [optional]
         """
         super().__init__(kwargs)
 
@@ -129,8 +115,7 @@ class LogsMetricCompute(ModelNormal):
         self.aggregation_type = aggregation_type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, aggregation_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, aggregation_type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsMetricCompute, cls)._from_openapi_data(kwargs)

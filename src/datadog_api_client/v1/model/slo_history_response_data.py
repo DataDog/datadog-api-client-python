@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -46,8 +45,6 @@ class SLOHistoryResponseData(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -57,13 +54,7 @@ class SLOHistoryResponseData(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -77,39 +68,34 @@ class SLOHistoryResponseData(ModelNormal):
         """
         lazy_import()
         return {
-            "from_ts": (int,),  # noqa: E501
-            "group_by": ([str],),  # noqa: E501
-            "groups": ([SLOHistoryMonitor],),  # noqa: E501
-            "monitors": ([SLOHistoryMonitor],),  # noqa: E501
-            "overall": (SLOHistorySLIData,),  # noqa: E501
-            "series": (SLOHistoryMetrics,),  # noqa: E501
-            "thresholds": ({str: (SLOThreshold,)},),  # noqa: E501
-            "to_ts": (int,),  # noqa: E501
-            "type": (SLOType,),  # noqa: E501
-            "type_id": (SLOTypeNumeric,),  # noqa: E501
+            "from_ts": (int,),
+            "group_by": ([str],),
+            "groups": ([SLOHistoryMonitor],),
+            "monitors": ([SLOHistoryMonitor],),
+            "overall": (SLOHistorySLIData,),
+            "series": (SLOHistoryMetrics,),
+            "thresholds": ({str: (SLOThreshold,)},),
+            "to_ts": (int,),
+            "type": (SLOType,),
+            "type_id": (SLOTypeNumeric,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "from_ts": "from_ts",  # noqa: E501
-        "group_by": "group_by",  # noqa: E501
-        "groups": "groups",  # noqa: E501
-        "monitors": "monitors",  # noqa: E501
-        "overall": "overall",  # noqa: E501
-        "series": "series",  # noqa: E501
-        "thresholds": "thresholds",  # noqa: E501
-        "to_ts": "to_ts",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "type_id": "type_id",  # noqa: E501
+        "from_ts": "from_ts",
+        "group_by": "group_by",
+        "groups": "groups",
+        "monitors": "monitors",
+        "overall": "overall",
+        "series": "series",
+        "thresholds": "thresholds",
+        "to_ts": "to_ts",
+        "type": "type",
+        "type_id": "type_id",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SLOHistoryResponseData - a model defined in OpenAPI
 
         Keyword Args:
@@ -143,24 +129,23 @@ class SLOHistoryResponseData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            from_ts (int): The `from` timestamp in epoch seconds.. [optional]  # noqa: E501
-            group_by ([str]): For `metric` based SLOs where the query includes a group-by clause, this represents the list of grouping parameters.  This is not included in responses for `monitor` based SLOs.. [optional]  # noqa: E501
-            groups ([SLOHistoryMonitor]): For grouped SLOs, this represents SLI data for specific groups.  This is not included in the responses for `metric` based SLOs.. [optional]  # noqa: E501
-            monitors ([SLOHistoryMonitor]): For multi-monitor SLOs, this represents SLI data for specific monitors.  This is not included in the responses for `metric` based SLOs.. [optional]  # noqa: E501
-            overall (SLOHistorySLIData): [optional]  # noqa: E501
-            series (SLOHistoryMetrics): [optional]  # noqa: E501
-            thresholds ({str: (SLOThreshold,)}): mapping of string timeframe to the SLO threshold.. [optional]  # noqa: E501
-            to_ts (int): The `to` timestamp in epoch seconds.. [optional]  # noqa: E501
-            type (SLOType): [optional]  # noqa: E501
-            type_id (SLOTypeNumeric): [optional]  # noqa: E501
+            from_ts (int): The `from` timestamp in epoch seconds.. [optional]
+            group_by ([str]): For `metric` based SLOs where the query includes a group-by clause, this represents the list of grouping parameters.  This is not included in responses for `monitor` based SLOs.. [optional]
+            groups ([SLOHistoryMonitor]): For grouped SLOs, this represents SLI data for specific groups.  This is not included in the responses for `metric` based SLOs.. [optional]
+            monitors ([SLOHistoryMonitor]): For multi-monitor SLOs, this represents SLI data for specific monitors.  This is not included in the responses for `metric` based SLOs.. [optional]
+            overall (SLOHistorySLIData): [optional]
+            series (SLOHistoryMetrics): [optional]
+            thresholds ({str: (SLOThreshold,)}): mapping of string timeframe to the SLO threshold.. [optional]
+            to_ts (int): The `to` timestamp in epoch seconds.. [optional]
+            type (SLOType): [optional]
+            type_id (SLOTypeNumeric): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SLOHistoryResponseData, cls)._from_openapi_data(kwargs)

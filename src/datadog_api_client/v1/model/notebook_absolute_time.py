@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class NotebookAbsoluteTime(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class NotebookAbsoluteTime(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,25 +51,20 @@ class NotebookAbsoluteTime(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "end": (datetime,),  # noqa: E501
-            "start": (datetime,),  # noqa: E501
-            "live": (bool,),  # noqa: E501
+            "end": (datetime,),
+            "live": (bool,),
+            "start": (datetime,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "end": "end",  # noqa: E501
-        "start": "start",  # noqa: E501
-        "live": "live",  # noqa: E501
+        "end": "end",
+        "start": "start",
+        "live": "live",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, end, start, *args, **kwargs):  # noqa: E501
+    def __init__(self, end, start, *args, **kwargs):
         """NotebookAbsoluteTime - a model defined in OpenAPI
 
         Args:
@@ -116,7 +102,7 @@ class NotebookAbsoluteTime(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            live (bool): Indicates whether the timeframe should be shifted to end at the current time.. [optional]  # noqa: E501
+            live (bool): Indicates whether the timeframe should be shifted to end at the current time.. [optional]
         """
         super().__init__(kwargs)
 
@@ -126,8 +112,7 @@ class NotebookAbsoluteTime(ModelNormal):
         self.start = start
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, end, start, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, end, start, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(NotebookAbsoluteTime, cls)._from_openapi_data(kwargs)

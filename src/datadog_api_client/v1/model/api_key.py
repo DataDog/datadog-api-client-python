@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class ApiKey(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,18 +38,12 @@ class ApiKey(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "key": {
             "max_length": 32,
             "min_length": 32,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -65,31 +56,26 @@ class ApiKey(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "created": (str,),  # noqa: E501
-            "created_by": (str,),  # noqa: E501
-            "key": (str,),  # noqa: E501
-            "name": (str,),  # noqa: E501
+            "created": (str,),
+            "created_by": (str,),
+            "key": (str,),
+            "name": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "created": "created",  # noqa: E501
-        "created_by": "created_by",  # noqa: E501
-        "key": "key",  # noqa: E501
-        "name": "name",  # noqa: E501
+        "created": "created",
+        "created_by": "created_by",
+        "key": "key",
+        "name": "name",
     }
 
     read_only_vars = {
-        "created",  # noqa: E501
-        "created_by",  # noqa: E501
-        "key",  # noqa: E501
+        "created",
+        "created_by",
+        "key",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """ApiKey - a model defined in OpenAPI
 
         Keyword Args:
@@ -123,18 +109,17 @@ class ApiKey(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created (str): Date of creation of the API key.. [optional]  # noqa: E501
-            created_by (str): Datadog user handle that created the API key.. [optional]  # noqa: E501
-            key (str): API key.. [optional]  # noqa: E501
-            name (str): Name of your API key.. [optional]  # noqa: E501
+            created (str): Date of creation of the API key.. [optional]
+            created_by (str): Datadog user handle that created the API key.. [optional]
+            key (str): API key.. [optional]
+            name (str): Name of your API key.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ApiKey, cls)._from_openapi_data(kwargs)

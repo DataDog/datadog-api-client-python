@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class WidgetConditionalFormat(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class WidgetConditionalFormat(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,37 +60,32 @@ class WidgetConditionalFormat(ModelNormal):
         """
         lazy_import()
         return {
-            "comparator": (WidgetComparator,),  # noqa: E501
-            "palette": (WidgetPalette,),  # noqa: E501
-            "value": (float,),  # noqa: E501
-            "custom_bg_color": (str,),  # noqa: E501
-            "custom_fg_color": (str,),  # noqa: E501
-            "hide_value": (bool,),  # noqa: E501
-            "image_url": (str,),  # noqa: E501
-            "metric": (str,),  # noqa: E501
-            "timeframe": (str,),  # noqa: E501
+            "comparator": (WidgetComparator,),
+            "custom_bg_color": (str,),
+            "custom_fg_color": (str,),
+            "hide_value": (bool,),
+            "image_url": (str,),
+            "metric": (str,),
+            "palette": (WidgetPalette,),
+            "timeframe": (str,),
+            "value": (float,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "comparator": "comparator",  # noqa: E501
-        "palette": "palette",  # noqa: E501
-        "value": "value",  # noqa: E501
-        "custom_bg_color": "custom_bg_color",  # noqa: E501
-        "custom_fg_color": "custom_fg_color",  # noqa: E501
-        "hide_value": "hide_value",  # noqa: E501
-        "image_url": "image_url",  # noqa: E501
-        "metric": "metric",  # noqa: E501
-        "timeframe": "timeframe",  # noqa: E501
+        "comparator": "comparator",
+        "palette": "palette",
+        "value": "value",
+        "custom_bg_color": "custom_bg_color",
+        "custom_fg_color": "custom_fg_color",
+        "hide_value": "hide_value",
+        "image_url": "image_url",
+        "metric": "metric",
+        "timeframe": "timeframe",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, comparator, palette, value, *args, **kwargs):  # noqa: E501
+    def __init__(self, comparator, palette, value, *args, **kwargs):
         """WidgetConditionalFormat - a model defined in OpenAPI
 
         Args:
@@ -138,12 +124,12 @@ class WidgetConditionalFormat(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            custom_bg_color (str): Color palette to apply to the background, same values available as palette.. [optional]  # noqa: E501
-            custom_fg_color (str): Color palette to apply to the foreground, same values available as palette.. [optional]  # noqa: E501
-            hide_value (bool): True hides values.. [optional]  # noqa: E501
-            image_url (str): Displays an image as the background.. [optional]  # noqa: E501
-            metric (str): Metric from the request to correlate this conditional format with.. [optional]  # noqa: E501
-            timeframe (str): Defines the displayed timeframe.. [optional]  # noqa: E501
+            custom_bg_color (str): Color palette to apply to the background, same values available as palette.. [optional]
+            custom_fg_color (str): Color palette to apply to the foreground, same values available as palette.. [optional]
+            hide_value (bool): True hides values.. [optional]
+            image_url (str): Displays an image as the background.. [optional]
+            metric (str): Metric from the request to correlate this conditional format with.. [optional]
+            timeframe (str): Defines the displayed timeframe.. [optional]
         """
         super().__init__(kwargs)
 
@@ -154,8 +140,7 @@ class WidgetConditionalFormat(ModelNormal):
         self.value = value
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, comparator, palette, value, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, comparator, palette, value, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(WidgetConditionalFormat, cls)._from_openapi_data(kwargs)

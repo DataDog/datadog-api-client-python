@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class MetricsQueryMetadata(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,18 +46,12 @@ class MetricsQueryMetadata(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "unit": {
             "max_items": 2,
             "min_items": 2,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -77,59 +68,54 @@ class MetricsQueryMetadata(ModelNormal):
             "aggr": (
                 str,
                 none_type,
-            ),  # noqa: E501
-            "display_name": (str,),  # noqa: E501
-            "end": (int,),  # noqa: E501
-            "expression": (str,),  # noqa: E501
-            "interval": (int,),  # noqa: E501
-            "length": (int,),  # noqa: E501
-            "metric": (str,),  # noqa: E501
-            "pointlist": ([Point],),  # noqa: E501
-            "query_index": (int,),  # noqa: E501
-            "scope": (str,),  # noqa: E501
-            "start": (int,),  # noqa: E501
-            "tag_set": ([str],),  # noqa: E501
-            "unit": ([MetricsQueryUnit],),  # noqa: E501
+            ),
+            "display_name": (str,),
+            "end": (int,),
+            "expression": (str,),
+            "interval": (int,),
+            "length": (int,),
+            "metric": (str,),
+            "pointlist": ([Point],),
+            "query_index": (int,),
+            "scope": (str,),
+            "start": (int,),
+            "tag_set": ([str],),
+            "unit": ([MetricsQueryUnit],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "aggr": "aggr",  # noqa: E501
-        "display_name": "display_name",  # noqa: E501
-        "end": "end",  # noqa: E501
-        "expression": "expression",  # noqa: E501
-        "interval": "interval",  # noqa: E501
-        "length": "length",  # noqa: E501
-        "metric": "metric",  # noqa: E501
-        "pointlist": "pointlist",  # noqa: E501
-        "query_index": "query_index",  # noqa: E501
-        "scope": "scope",  # noqa: E501
-        "start": "start",  # noqa: E501
-        "tag_set": "tag_set",  # noqa: E501
-        "unit": "unit",  # noqa: E501
+        "aggr": "aggr",
+        "display_name": "display_name",
+        "end": "end",
+        "expression": "expression",
+        "interval": "interval",
+        "length": "length",
+        "metric": "metric",
+        "pointlist": "pointlist",
+        "query_index": "query_index",
+        "scope": "scope",
+        "start": "start",
+        "tag_set": "tag_set",
+        "unit": "unit",
     }
 
     read_only_vars = {
-        "aggr",  # noqa: E501
-        "display_name",  # noqa: E501
-        "end",  # noqa: E501
-        "expression",  # noqa: E501
-        "interval",  # noqa: E501
-        "length",  # noqa: E501
-        "metric",  # noqa: E501
-        "pointlist",  # noqa: E501
-        "query_index",  # noqa: E501
-        "scope",  # noqa: E501
-        "start",  # noqa: E501
-        "tag_set",  # noqa: E501
-        "unit",  # noqa: E501
+        "aggr",
+        "display_name",
+        "end",
+        "expression",
+        "interval",
+        "length",
+        "metric",
+        "pointlist",
+        "query_index",
+        "scope",
+        "start",
+        "tag_set",
+        "unit",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MetricsQueryMetadata - a model defined in OpenAPI
 
         Keyword Args:
@@ -163,27 +149,26 @@ class MetricsQueryMetadata(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggr (str, none_type): Aggregation type.. [optional]  # noqa: E501
-            display_name (str): Display name of the metric.. [optional]  # noqa: E501
-            end (int): End of the time window, milliseconds since Unix epoch.. [optional]  # noqa: E501
-            expression (str): Metric expression.. [optional]  # noqa: E501
-            interval (int): Number of seconds between data samples.. [optional]  # noqa: E501
-            length (int): Number of data samples.. [optional]  # noqa: E501
-            metric (str): Metric name.. [optional]  # noqa: E501
-            pointlist ([Point]): List of points of the time series.. [optional]  # noqa: E501
-            query_index (int): The index of the series' query within the request.. [optional]  # noqa: E501
-            scope (str): Metric scope, comma separated list of tags.. [optional]  # noqa: E501
-            start (int): Start of the time window, milliseconds since Unix epoch.. [optional]  # noqa: E501
-            tag_set ([str]): Unique tags identifying this series.. [optional]  # noqa: E501
-            unit ([MetricsQueryUnit]): Detailed information about the metric unit. First element describes the \"primary unit\" (for example, `bytes` in `bytes per second`), second describes the \"per unit\" (for example, `second` in `bytes per second`).. [optional]  # noqa: E501
+            aggr (str, none_type): Aggregation type.. [optional]
+            display_name (str): Display name of the metric.. [optional]
+            end (int): End of the time window, milliseconds since Unix epoch.. [optional]
+            expression (str): Metric expression.. [optional]
+            interval (int): Number of seconds between data samples.. [optional]
+            length (int): Number of data samples.. [optional]
+            metric (str): Metric name.. [optional]
+            pointlist ([Point]): List of points of the time series.. [optional]
+            query_index (int): The index of the series' query within the request.. [optional]
+            scope (str): Metric scope, comma separated list of tags.. [optional]
+            start (int): Start of the time window, milliseconds since Unix epoch.. [optional]
+            tag_set ([str]): Unique tags identifying this series.. [optional]
+            unit ([MetricsQueryUnit]): Detailed information about the metric unit. First element describes the \"primary unit\" (for example, `bytes` in `bytes per second`), second describes the \"per unit\" (for example, `second` in `bytes per second`).. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MetricsQueryMetadata, cls)._from_openapi_data(kwargs)

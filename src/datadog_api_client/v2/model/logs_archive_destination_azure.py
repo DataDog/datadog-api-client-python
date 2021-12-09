@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class LogsArchiveDestinationAzure(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class LogsArchiveDestinationAzure(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,31 +60,26 @@ class LogsArchiveDestinationAzure(ModelNormal):
         """
         lazy_import()
         return {
-            "container": (str,),  # noqa: E501
-            "integration": (LogsArchiveIntegrationAzure,),  # noqa: E501
-            "storage_account": (str,),  # noqa: E501
-            "type": (LogsArchiveDestinationAzureType,),  # noqa: E501
-            "path": (str,),  # noqa: E501
-            "region": (str,),  # noqa: E501
+            "container": (str,),
+            "integration": (LogsArchiveIntegrationAzure,),
+            "path": (str,),
+            "region": (str,),
+            "storage_account": (str,),
+            "type": (LogsArchiveDestinationAzureType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "container": "container",  # noqa: E501
-        "integration": "integration",  # noqa: E501
-        "storage_account": "storage_account",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "path": "path",  # noqa: E501
-        "region": "region",  # noqa: E501
+        "container": "container",
+        "integration": "integration",
+        "storage_account": "storage_account",
+        "type": "type",
+        "path": "path",
+        "region": "region",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, container, integration, storage_account, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, container, integration, storage_account, type, *args, **kwargs):
         """LogsArchiveDestinationAzure - a model defined in OpenAPI
 
         Args:
@@ -133,8 +119,8 @@ class LogsArchiveDestinationAzure(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            path (str): The archive path.. [optional]  # noqa: E501
-            region (str): The region where the archive will be stored.. [optional]  # noqa: E501
+            path (str): The archive path.. [optional]
+            region (str): The region where the archive will be stored.. [optional]
         """
         super().__init__(kwargs)
 
@@ -146,8 +132,7 @@ class LogsArchiveDestinationAzure(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, container, integration, storage_account, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, container, integration, storage_account, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsArchiveDestinationAzure, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class FunnelQuery(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class FunnelQuery(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,25 +60,20 @@ class FunnelQuery(ModelNormal):
         """
         lazy_import()
         return {
-            "data_source": (FunnelSource,),  # noqa: E501
-            "query_string": (str,),  # noqa: E501
-            "steps": (FunnelSteps,),  # noqa: E501
+            "data_source": (FunnelSource,),
+            "query_string": (str,),
+            "steps": (FunnelSteps,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "data_source": "data_source",  # noqa: E501
-        "query_string": "query_string",  # noqa: E501
-        "steps": "steps",  # noqa: E501
+        "data_source": "data_source",
+        "query_string": "query_string",
+        "steps": "steps",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, data_source, query_string, steps, *args, **kwargs):  # noqa: E501
+    def __init__(self, data_source, query_string, steps, *args, **kwargs):
         """FunnelQuery - a model defined in OpenAPI
 
         Args:
@@ -136,8 +122,7 @@ class FunnelQuery(ModelNormal):
         self.steps = steps
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, data_source, query_string, steps, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, data_source, query_string, steps, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(FunnelQuery, cls)._from_openapi_data(kwargs)

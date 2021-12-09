@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class MonitorSearchResponseCounts(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class MonitorSearchResponseCounts(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,27 +58,22 @@ class MonitorSearchResponseCounts(ModelNormal):
         """
         lazy_import()
         return {
-            "muted": (MonitorSearchCount,),  # noqa: E501
-            "status": (MonitorSearchCount,),  # noqa: E501
-            "tag": (MonitorSearchCount,),  # noqa: E501
-            "type": (MonitorSearchCount,),  # noqa: E501
+            "muted": (MonitorSearchCount,),
+            "status": (MonitorSearchCount,),
+            "tag": (MonitorSearchCount,),
+            "type": (MonitorSearchCount,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "muted": "muted",  # noqa: E501
-        "status": "status",  # noqa: E501
-        "tag": "tag",  # noqa: E501
-        "type": "type",  # noqa: E501
+        "muted": "muted",
+        "status": "status",
+        "tag": "tag",
+        "type": "type",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MonitorSearchResponseCounts - a model defined in OpenAPI
 
         Keyword Args:
@@ -121,18 +107,17 @@ class MonitorSearchResponseCounts(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            muted (MonitorSearchCount): [optional]  # noqa: E501
-            status (MonitorSearchCount): [optional]  # noqa: E501
-            tag (MonitorSearchCount): [optional]  # noqa: E501
-            type (MonitorSearchCount): [optional]  # noqa: E501
+            muted (MonitorSearchCount): [optional]
+            status (MonitorSearchCount): [optional]
+            tag (MonitorSearchCount): [optional]
+            type (MonitorSearchCount): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MonitorSearchResponseCounts, cls)._from_openapi_data(kwargs)

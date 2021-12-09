@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
@@ -246,9 +244,9 @@ class AWSIntegrationApi(object):
         )
 
     def create_aws_account(self, body, **kwargs):
-        """Create an AWS integration  # noqa: E501
+        """Create an AWS integration
 
-        Create a Datadog-Amazon Web Services integration. Using the `POST` method updates your integration configuration by adding your new configuration to the existing one in your Datadog organization. A unique AWS Account ID for role based authentication.  # noqa: E501
+        Create a Datadog-Amazon Web Services integration. Using the `POST` method updates your integration configuration by adding your new configuration to the existing one in your Datadog organization. A unique AWS Account ID for role based authentication.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -289,9 +287,9 @@ class AWSIntegrationApi(object):
         return self._create_aws_account_endpoint.call_with_http_info(**kwargs)
 
     def create_aws_tag_filter(self, body, **kwargs):
-        """Set an AWS tag filter  # noqa: E501
+        """Set an AWS tag filter
 
-        Set an AWS tag filter.  # noqa: E501
+        Set an AWS tag filter.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -332,9 +330,9 @@ class AWSIntegrationApi(object):
         return self._create_aws_tag_filter_endpoint.call_with_http_info(**kwargs)
 
     def create_new_aws_external_id(self, body, **kwargs):
-        """Generate a new external ID  # noqa: E501
+        """Generate a new external ID
 
-        Generate a new AWS external ID for a given AWS account ID and role name pair.  # noqa: E501
+        Generate a new AWS external ID for a given AWS account ID and role name pair.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -375,9 +373,9 @@ class AWSIntegrationApi(object):
         return self._create_new_aws_external_id_endpoint.call_with_http_info(**kwargs)
 
     def delete_aws_account(self, body, **kwargs):
-        """Delete an AWS integration  # noqa: E501
+        """Delete an AWS integration
 
-        Delete a Datadog-AWS integration matching the specified `account_id` and `role_name parameters`.  # noqa: E501
+        Delete a Datadog-AWS integration matching the specified `account_id` and `role_name parameters`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -418,9 +416,9 @@ class AWSIntegrationApi(object):
         return self._delete_aws_account_endpoint.call_with_http_info(**kwargs)
 
     def delete_aws_tag_filter(self, body, **kwargs):
-        """Delete a tag filtering entry  # noqa: E501
+        """Delete a tag filtering entry
 
-        Delete a tag filtering entry.  # noqa: E501
+        Delete a tag filtering entry.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -461,9 +459,9 @@ class AWSIntegrationApi(object):
         return self._delete_aws_tag_filter_endpoint.call_with_http_info(**kwargs)
 
     def list_available_aws_namespaces(self, **kwargs):
-        """List namespace rules  # noqa: E501
+        """List namespace rules
 
-        List all namespace rules for a given Datadog-AWS integration. This endpoint takes no arguments.  # noqa: E501
+        List all namespace rules for a given Datadog-AWS integration. This endpoint takes no arguments.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -501,9 +499,9 @@ class AWSIntegrationApi(object):
         return self._list_available_aws_namespaces_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_accounts(self, **kwargs):
-        """List all AWS integrations  # noqa: E501
+        """List all AWS integrations
 
-        List all Datadog-AWS integrations available in your Datadog organization.  # noqa: E501
+        List all Datadog-AWS integrations available in your Datadog organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -544,9 +542,9 @@ class AWSIntegrationApi(object):
         return self._list_aws_accounts_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_tag_filters(self, account_id, **kwargs):
-        """Get all AWS tag filters  # noqa: E501
+        """Get all AWS tag filters
 
-        Get all AWS tag filters.  # noqa: E501
+        Get all AWS tag filters.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -587,9 +585,9 @@ class AWSIntegrationApi(object):
         return self._list_aws_tag_filters_endpoint.call_with_http_info(**kwargs)
 
     def update_aws_account(self, body, **kwargs):
-        """Update an AWS integration  # noqa: E501
+        """Update an AWS integration
 
-        Update a Datadog-Amazon Web Services integration.  # noqa: E501
+        Update a Datadog-Amazon Web Services integration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

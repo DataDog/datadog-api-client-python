@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class SyntheticsDevice(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class SyntheticsDevice(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,29 +58,24 @@ class SyntheticsDevice(ModelNormal):
         """
         lazy_import()
         return {
-            "height": (int,),  # noqa: E501
-            "id": (SyntheticsDeviceID,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "width": (int,),  # noqa: E501
-            "is_mobile": (bool,),  # noqa: E501
+            "height": (int,),
+            "id": (SyntheticsDeviceID,),
+            "is_mobile": (bool,),
+            "name": (str,),
+            "width": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "height": "height",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "width": "width",  # noqa: E501
-        "is_mobile": "isMobile",  # noqa: E501
+        "height": "height",
+        "id": "id",
+        "name": "name",
+        "width": "width",
+        "is_mobile": "isMobile",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, height, id, name, width, *args, **kwargs):  # noqa: E501
+    def __init__(self, height, id, name, width, *args, **kwargs):
         """SyntheticsDevice - a model defined in OpenAPI
 
         Args:
@@ -129,7 +115,7 @@ class SyntheticsDevice(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_mobile (bool): Whether or not the device is a mobile.. [optional]  # noqa: E501
+            is_mobile (bool): Whether or not the device is a mobile.. [optional]
         """
         super().__init__(kwargs)
 
@@ -141,8 +127,7 @@ class SyntheticsDevice(ModelNormal):
         self.width = width
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, height, id, name, width, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, height, id, name, width, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsDevice, cls)._from_openapi_data(kwargs)

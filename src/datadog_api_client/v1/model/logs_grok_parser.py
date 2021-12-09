@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class LogsGrokParser(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,17 +46,11 @@ class LogsGrokParser(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "samples": {
             "max_items": 5,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,31 +64,26 @@ class LogsGrokParser(ModelNormal):
         """
         lazy_import()
         return {
-            "grok": (LogsGrokParserRules,),  # noqa: E501
-            "source": (str,),  # noqa: E501
-            "type": (LogsGrokParserType,),  # noqa: E501
-            "is_enabled": (bool,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "samples": ([str],),  # noqa: E501
+            "grok": (LogsGrokParserRules,),
+            "is_enabled": (bool,),
+            "name": (str,),
+            "samples": ([str],),
+            "source": (str,),
+            "type": (LogsGrokParserType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "grok": "grok",  # noqa: E501
-        "source": "source",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "is_enabled": "is_enabled",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "samples": "samples",  # noqa: E501
+        "grok": "grok",
+        "source": "source",
+        "type": "type",
+        "is_enabled": "is_enabled",
+        "name": "name",
+        "samples": "samples",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, grok, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, grok, type, *args, **kwargs):
         """LogsGrokParser - a model defined in OpenAPI
 
         Args:
@@ -105,7 +91,7 @@ class LogsGrokParser(ModelNormal):
             type (LogsGrokParserType):
 
         Keyword Args:
-            source (str): Name of the log attribute to parse.. defaults to "message"  # noqa: E501
+            source (str): Name of the log attribute to parse.. defaults to "message"
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -136,9 +122,9 @@ class LogsGrokParser(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            name (str): Name of the processor.. [optional]  # noqa: E501
-            samples ([str]): List of sample logs to test this grok parser.. [optional]  # noqa: E501
+            is_enabled (bool): Whether or not the processor is enabled.. [optional] if omitted the server will use the default value of False
+            name (str): Name of the processor.. [optional]
+            samples ([str]): List of sample logs to test this grok parser.. [optional]
         """
         super().__init__(kwargs)
 
@@ -151,8 +137,7 @@ class LogsGrokParser(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, grok, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, grok, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
         source = kwargs.get("source", "message")
 

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class ProcessQueryDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,17 +38,11 @@ class ProcessQueryDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "limit": {
             "inclusive_minimum": 0,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -64,27 +55,22 @@ class ProcessQueryDefinition(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "metric": (str,),  # noqa: E501
-            "filter_by": ([str],),  # noqa: E501
-            "limit": (int,),  # noqa: E501
-            "search_by": (str,),  # noqa: E501
+            "filter_by": ([str],),
+            "limit": (int,),
+            "metric": (str,),
+            "search_by": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "metric": "metric",  # noqa: E501
-        "filter_by": "filter_by",  # noqa: E501
-        "limit": "limit",  # noqa: E501
-        "search_by": "search_by",  # noqa: E501
+        "metric": "metric",
+        "filter_by": "filter_by",
+        "limit": "limit",
+        "search_by": "search_by",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, metric, *args, **kwargs):  # noqa: E501
+    def __init__(self, metric, *args, **kwargs):
         """ProcessQueryDefinition - a model defined in OpenAPI
 
         Args:
@@ -121,9 +107,9 @@ class ProcessQueryDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            filter_by ([str]): List of processes.. [optional]  # noqa: E501
-            limit (int): Max number of items in the filter list.. [optional]  # noqa: E501
-            search_by (str): Your chosen search term.. [optional]  # noqa: E501
+            filter_by ([str]): List of processes.. [optional]
+            limit (int): Max number of items in the filter list.. [optional]
+            search_by (str): Your chosen search term.. [optional]
         """
         super().__init__(kwargs)
 
@@ -132,8 +118,7 @@ class ProcessQueryDefinition(ModelNormal):
         self.metric = metric
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, metric, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, metric, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(ProcessQueryDefinition, cls)._from_openapi_data(kwargs)

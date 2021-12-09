@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class SyntheticsBatchResult(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class SyntheticsBatchResult(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,39 +64,34 @@ class SyntheticsBatchResult(ModelNormal):
         """
         lazy_import()
         return {
-            "device": (SyntheticsDeviceID,),  # noqa: E501
-            "duration": (float,),  # noqa: E501
-            "execution_rule": (SyntheticsTestExecutionRule,),  # noqa: E501
-            "location": (str,),  # noqa: E501
-            "result_id": (str,),  # noqa: E501
-            "retries": (float,),  # noqa: E501
-            "status": (SyntheticsStatus,),  # noqa: E501
-            "test_name": (str,),  # noqa: E501
-            "test_public_id": (str,),  # noqa: E501
-            "test_type": (SyntheticsTestDetailsType,),  # noqa: E501
+            "device": (SyntheticsDeviceID,),
+            "duration": (float,),
+            "execution_rule": (SyntheticsTestExecutionRule,),
+            "location": (str,),
+            "result_id": (str,),
+            "retries": (float,),
+            "status": (SyntheticsStatus,),
+            "test_name": (str,),
+            "test_public_id": (str,),
+            "test_type": (SyntheticsTestDetailsType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "device": "device",  # noqa: E501
-        "duration": "duration",  # noqa: E501
-        "execution_rule": "execution_rule",  # noqa: E501
-        "location": "location",  # noqa: E501
-        "result_id": "result_id",  # noqa: E501
-        "retries": "retries",  # noqa: E501
-        "status": "status",  # noqa: E501
-        "test_name": "test_name",  # noqa: E501
-        "test_public_id": "test_public_id",  # noqa: E501
-        "test_type": "test_type",  # noqa: E501
+        "device": "device",
+        "duration": "duration",
+        "execution_rule": "execution_rule",
+        "location": "location",
+        "result_id": "result_id",
+        "retries": "retries",
+        "status": "status",
+        "test_name": "test_name",
+        "test_public_id": "test_public_id",
+        "test_type": "test_type",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsBatchResult - a model defined in OpenAPI
 
         Keyword Args:
@@ -139,24 +125,23 @@ class SyntheticsBatchResult(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            device (SyntheticsDeviceID): [optional]  # noqa: E501
-            duration (float): Total duration in millisecond of the test.. [optional]  # noqa: E501
-            execution_rule (SyntheticsTestExecutionRule): [optional]  # noqa: E501
-            location (str): Name of the location.. [optional]  # noqa: E501
-            result_id (str): The ID of the result to get.. [optional]  # noqa: E501
-            retries (float): Total duration in millisecond of the test.. [optional]  # noqa: E501
-            status (SyntheticsStatus): [optional]  # noqa: E501
-            test_name (str): Name of the test.. [optional]  # noqa: E501
-            test_public_id (str): The public ID of the Synthetic test.. [optional]  # noqa: E501
-            test_type (SyntheticsTestDetailsType): [optional]  # noqa: E501
+            device (SyntheticsDeviceID): [optional]
+            duration (float): Total duration in millisecond of the test.. [optional]
+            execution_rule (SyntheticsTestExecutionRule): [optional]
+            location (str): Name of the location.. [optional]
+            result_id (str): The ID of the result to get.. [optional]
+            retries (float): Total duration in millisecond of the test.. [optional]
+            status (SyntheticsStatus): [optional]
+            test_name (str): Name of the test.. [optional]
+            test_public_id (str): The public ID of the Synthetic test.. [optional]
+            test_type (SyntheticsTestDetailsType): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsBatchResult, cls)._from_openapi_data(kwargs)

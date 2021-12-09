@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class HostMapRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class HostMapRequest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,37 +60,32 @@ class HostMapRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "apm_query": (LogQueryDefinition,),  # noqa: E501
-            "event_query": (LogQueryDefinition,),  # noqa: E501
-            "log_query": (LogQueryDefinition,),  # noqa: E501
-            "network_query": (LogQueryDefinition,),  # noqa: E501
-            "process_query": (ProcessQueryDefinition,),  # noqa: E501
-            "profile_metrics_query": (LogQueryDefinition,),  # noqa: E501
-            "q": (str,),  # noqa: E501
-            "rum_query": (LogQueryDefinition,),  # noqa: E501
-            "security_query": (LogQueryDefinition,),  # noqa: E501
+            "apm_query": (LogQueryDefinition,),
+            "event_query": (LogQueryDefinition,),
+            "log_query": (LogQueryDefinition,),
+            "network_query": (LogQueryDefinition,),
+            "process_query": (ProcessQueryDefinition,),
+            "profile_metrics_query": (LogQueryDefinition,),
+            "q": (str,),
+            "rum_query": (LogQueryDefinition,),
+            "security_query": (LogQueryDefinition,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "apm_query": "apm_query",  # noqa: E501
-        "event_query": "event_query",  # noqa: E501
-        "log_query": "log_query",  # noqa: E501
-        "network_query": "network_query",  # noqa: E501
-        "process_query": "process_query",  # noqa: E501
-        "profile_metrics_query": "profile_metrics_query",  # noqa: E501
-        "q": "q",  # noqa: E501
-        "rum_query": "rum_query",  # noqa: E501
-        "security_query": "security_query",  # noqa: E501
+        "apm_query": "apm_query",
+        "event_query": "event_query",
+        "log_query": "log_query",
+        "network_query": "network_query",
+        "process_query": "process_query",
+        "profile_metrics_query": "profile_metrics_query",
+        "q": "q",
+        "rum_query": "rum_query",
+        "security_query": "security_query",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """HostMapRequest - a model defined in OpenAPI
 
         Keyword Args:
@@ -133,23 +119,22 @@ class HostMapRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            apm_query (LogQueryDefinition): [optional]  # noqa: E501
-            event_query (LogQueryDefinition): [optional]  # noqa: E501
-            log_query (LogQueryDefinition): [optional]  # noqa: E501
-            network_query (LogQueryDefinition): [optional]  # noqa: E501
-            process_query (ProcessQueryDefinition): [optional]  # noqa: E501
-            profile_metrics_query (LogQueryDefinition): [optional]  # noqa: E501
-            q (str): Query definition.. [optional]  # noqa: E501
-            rum_query (LogQueryDefinition): [optional]  # noqa: E501
-            security_query (LogQueryDefinition): [optional]  # noqa: E501
+            apm_query (LogQueryDefinition): [optional]
+            event_query (LogQueryDefinition): [optional]
+            log_query (LogQueryDefinition): [optional]
+            network_query (LogQueryDefinition): [optional]
+            process_query (ProcessQueryDefinition): [optional]
+            profile_metrics_query (LogQueryDefinition): [optional]
+            q (str): Query definition.. [optional]
+            rum_query (LogQueryDefinition): [optional]
+            security_query (LogQueryDefinition): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(HostMapRequest, cls)._from_openapi_data(kwargs)

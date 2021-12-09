@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class DashboardSummaryDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class DashboardSummaryDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,40 +58,35 @@ class DashboardSummaryDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "author_handle": (str,),  # noqa: E501
-            "created_at": (datetime,),  # noqa: E501
+            "author_handle": (str,),
+            "created_at": (datetime,),
             "description": (
                 str,
                 none_type,
-            ),  # noqa: E501
-            "id": (str,),  # noqa: E501
-            "is_read_only": (bool,),  # noqa: E501
-            "layout_type": (DashboardLayoutType,),  # noqa: E501
-            "modified_at": (datetime,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "url": (str,),  # noqa: E501
+            ),
+            "id": (str,),
+            "is_read_only": (bool,),
+            "layout_type": (DashboardLayoutType,),
+            "modified_at": (datetime,),
+            "title": (str,),
+            "url": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "author_handle": "author_handle",  # noqa: E501
-        "created_at": "created_at",  # noqa: E501
-        "description": "description",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "is_read_only": "is_read_only",  # noqa: E501
-        "layout_type": "layout_type",  # noqa: E501
-        "modified_at": "modified_at",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "url": "url",  # noqa: E501
+        "author_handle": "author_handle",
+        "created_at": "created_at",
+        "description": "description",
+        "id": "id",
+        "is_read_only": "is_read_only",
+        "layout_type": "layout_type",
+        "modified_at": "modified_at",
+        "title": "title",
+        "url": "url",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """DashboardSummaryDefinition - a model defined in OpenAPI
 
         Keyword Args:
@@ -134,23 +120,22 @@ class DashboardSummaryDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            author_handle (str): Identifier of the dashboard author.. [optional]  # noqa: E501
-            created_at (datetime): Creation date of the dashboard.. [optional]  # noqa: E501
-            description (str, none_type): Description of the dashboard.. [optional]  # noqa: E501
-            id (str): Dashboard identifier.. [optional]  # noqa: E501
-            is_read_only (bool): Whether this dashboard is read-only. If True, only the author and admins can make changes to it.. [optional]  # noqa: E501
-            layout_type (DashboardLayoutType): [optional]  # noqa: E501
-            modified_at (datetime): Modification date of the dashboard.. [optional]  # noqa: E501
-            title (str): Title of the dashboard.. [optional]  # noqa: E501
-            url (str): URL of the dashboard.. [optional]  # noqa: E501
+            author_handle (str): Identifier of the dashboard author.. [optional]
+            created_at (datetime): Creation date of the dashboard.. [optional]
+            description (str, none_type): Description of the dashboard.. [optional]
+            id (str): Dashboard identifier.. [optional]
+            is_read_only (bool): Whether this dashboard is read-only. If True, only the author and admins can make changes to it.. [optional]
+            layout_type (DashboardLayoutType): [optional]
+            modified_at (datetime): Modification date of the dashboard.. [optional]
+            title (str): Title of the dashboard.. [optional]
+            url (str): URL of the dashboard.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(DashboardSummaryDefinition, cls)._from_openapi_data(kwargs)

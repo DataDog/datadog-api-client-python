@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -40,8 +39,6 @@ class LogsMetricCreateAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -51,13 +48,7 @@ class LogsMetricCreateAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -71,25 +62,20 @@ class LogsMetricCreateAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            "compute": (LogsMetricCompute,),  # noqa: E501
-            "filter": (LogsMetricFilter,),  # noqa: E501
-            "group_by": ([LogsMetricGroupBy],),  # noqa: E501
+            "compute": (LogsMetricCompute,),
+            "filter": (LogsMetricFilter,),
+            "group_by": ([LogsMetricGroupBy],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "compute": "compute",  # noqa: E501
-        "filter": "filter",  # noqa: E501
-        "group_by": "group_by",  # noqa: E501
+        "compute": "compute",
+        "filter": "filter",
+        "group_by": "group_by",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, compute, *args, **kwargs):  # noqa: E501
+    def __init__(self, compute, *args, **kwargs):
         """LogsMetricCreateAttributes - a model defined in OpenAPI
 
         Args:
@@ -126,8 +112,8 @@ class LogsMetricCreateAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            filter (LogsMetricFilter): [optional]  # noqa: E501
-            group_by ([LogsMetricGroupBy]): The rules for the group by.. [optional]  # noqa: E501
+            filter (LogsMetricFilter): [optional]
+            group_by ([LogsMetricGroupBy]): The rules for the group by.. [optional]
         """
         super().__init__(kwargs)
 
@@ -136,8 +122,7 @@ class LogsMetricCreateAttributes(ModelNormal):
         self.compute = compute
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, compute, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, compute, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsMetricCreateAttributes, cls)._from_openapi_data(kwargs)

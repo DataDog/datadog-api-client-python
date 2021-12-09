@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -40,8 +39,6 @@ class LogsByRetention(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -51,13 +48,7 @@ class LogsByRetention(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -71,25 +62,20 @@ class LogsByRetention(ModelNormal):
         """
         lazy_import()
         return {
-            "orgs": (LogsByRetentionOrgs,),  # noqa: E501
-            "usage": ([LogsRetentionAggSumUsage],),  # noqa: E501
-            "usage_by_month": (LogsByRetentionMonthlyUsage,),  # noqa: E501
+            "orgs": (LogsByRetentionOrgs,),
+            "usage": ([LogsRetentionAggSumUsage],),
+            "usage_by_month": (LogsByRetentionMonthlyUsage,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "orgs": "orgs",  # noqa: E501
-        "usage": "usage",  # noqa: E501
-        "usage_by_month": "usage_by_month",  # noqa: E501
+        "orgs": "orgs",
+        "usage": "usage",
+        "usage_by_month": "usage_by_month",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """LogsByRetention - a model defined in OpenAPI
 
         Keyword Args:
@@ -123,17 +109,16 @@ class LogsByRetention(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            orgs (LogsByRetentionOrgs): [optional]  # noqa: E501
-            usage ([LogsRetentionAggSumUsage]): Aggregated index logs usage for each retention period with usage.. [optional]  # noqa: E501
-            usage_by_month (LogsByRetentionMonthlyUsage): [optional]  # noqa: E501
+            orgs (LogsByRetentionOrgs): [optional]
+            usage ([LogsRetentionAggSumUsage]): Aggregated index logs usage for each retention period with usage.. [optional]
+            usage_by_month (LogsByRetentionMonthlyUsage): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsByRetention, cls)._from_openapi_data(kwargs)

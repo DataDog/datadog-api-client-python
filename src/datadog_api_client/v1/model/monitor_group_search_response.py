@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -40,8 +39,6 @@ class MonitorGroupSearchResponse(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -51,13 +48,7 @@ class MonitorGroupSearchResponse(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -71,27 +62,22 @@ class MonitorGroupSearchResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "counts": (MonitorGroupSearchResponseCounts,),  # noqa: E501
-            "groups": ([MonitorGroupSearchResult],),  # noqa: E501
-            "metadata": (MonitorSearchResponseMetadata,),  # noqa: E501
+            "counts": (MonitorGroupSearchResponseCounts,),
+            "groups": ([MonitorGroupSearchResult],),
+            "metadata": (MonitorSearchResponseMetadata,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "counts": "counts",  # noqa: E501
-        "groups": "groups",  # noqa: E501
-        "metadata": "metadata",  # noqa: E501
+        "counts": "counts",
+        "groups": "groups",
+        "metadata": "metadata",
     }
 
     read_only_vars = {
-        "groups",  # noqa: E501
+        "groups",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """MonitorGroupSearchResponse - a model defined in OpenAPI
 
         Keyword Args:
@@ -125,17 +111,16 @@ class MonitorGroupSearchResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            counts (MonitorGroupSearchResponseCounts): [optional]  # noqa: E501
-            groups ([MonitorGroupSearchResult]): The list of found monitor groups.. [optional]  # noqa: E501
-            metadata (MonitorSearchResponseMetadata): [optional]  # noqa: E501
+            counts (MonitorGroupSearchResponseCounts): [optional]
+            groups ([MonitorGroupSearchResult]): The list of found monitor groups.. [optional]
+            metadata (MonitorSearchResponseMetadata): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(MonitorGroupSearchResponse, cls)._from_openapi_data(kwargs)

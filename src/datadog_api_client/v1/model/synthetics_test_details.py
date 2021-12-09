@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -48,8 +47,6 @@ class SyntheticsTestDetails(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -59,13 +56,7 @@ class SyntheticsTestDetails(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -79,48 +70,43 @@ class SyntheticsTestDetails(ModelNormal):
         """
         lazy_import()
         return {
-            "config": (SyntheticsTestConfig,),  # noqa: E501
-            "creator": (Creator,),  # noqa: E501
-            "locations": ([str],),  # noqa: E501
-            "message": (str,),  # noqa: E501
-            "monitor_id": (int,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "options": (SyntheticsTestOptions,),  # noqa: E501
-            "public_id": (str,),  # noqa: E501
-            "status": (SyntheticsTestPauseStatus,),  # noqa: E501
-            "steps": ([SyntheticsStep],),  # noqa: E501
-            "subtype": (SyntheticsTestDetailsSubType,),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "type": (SyntheticsTestDetailsType,),  # noqa: E501
+            "config": (SyntheticsTestConfig,),
+            "creator": (Creator,),
+            "locations": ([str],),
+            "message": (str,),
+            "monitor_id": (int,),
+            "name": (str,),
+            "options": (SyntheticsTestOptions,),
+            "public_id": (str,),
+            "status": (SyntheticsTestPauseStatus,),
+            "steps": ([SyntheticsStep],),
+            "subtype": (SyntheticsTestDetailsSubType,),
+            "tags": ([str],),
+            "type": (SyntheticsTestDetailsType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "config": "config",  # noqa: E501
-        "creator": "creator",  # noqa: E501
-        "locations": "locations",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "monitor_id": "monitor_id",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "options": "options",  # noqa: E501
-        "public_id": "public_id",  # noqa: E501
-        "status": "status",  # noqa: E501
-        "steps": "steps",  # noqa: E501
-        "subtype": "subtype",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "type": "type",  # noqa: E501
+        "config": "config",
+        "creator": "creator",
+        "locations": "locations",
+        "message": "message",
+        "monitor_id": "monitor_id",
+        "name": "name",
+        "options": "options",
+        "public_id": "public_id",
+        "status": "status",
+        "steps": "steps",
+        "subtype": "subtype",
+        "tags": "tags",
+        "type": "type",
     }
 
     read_only_vars = {
-        "monitor_id",  # noqa: E501
-        "public_id",  # noqa: E501
+        "monitor_id",
+        "public_id",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsTestDetails - a model defined in OpenAPI
 
         Keyword Args:
@@ -154,27 +140,26 @@ class SyntheticsTestDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            config (SyntheticsTestConfig): [optional]  # noqa: E501
-            creator (Creator): [optional]  # noqa: E501
-            locations ([str]): Array of locations used to run the test.. [optional]  # noqa: E501
-            message (str): Notification message associated with the test.. [optional]  # noqa: E501
-            monitor_id (int): The associated monitor ID.. [optional]  # noqa: E501
-            name (str): Name of the test.. [optional]  # noqa: E501
-            options (SyntheticsTestOptions): [optional]  # noqa: E501
-            public_id (str): The test public ID.. [optional]  # noqa: E501
-            status (SyntheticsTestPauseStatus): [optional]  # noqa: E501
-            steps ([SyntheticsStep]): For browser test, the steps of the test.. [optional]  # noqa: E501
-            subtype (SyntheticsTestDetailsSubType): [optional]  # noqa: E501
-            tags ([str]): Array of tags attached to the test.. [optional]  # noqa: E501
-            type (SyntheticsTestDetailsType): [optional]  # noqa: E501
+            config (SyntheticsTestConfig): [optional]
+            creator (Creator): [optional]
+            locations ([str]): Array of locations used to run the test.. [optional]
+            message (str): Notification message associated with the test.. [optional]
+            monitor_id (int): The associated monitor ID.. [optional]
+            name (str): Name of the test.. [optional]
+            options (SyntheticsTestOptions): [optional]
+            public_id (str): The test public ID.. [optional]
+            status (SyntheticsTestPauseStatus): [optional]
+            steps ([SyntheticsStep]): For browser test, the steps of the test.. [optional]
+            subtype (SyntheticsTestDetailsSubType): [optional]
+            tags ([str]): Array of tags attached to the test.. [optional]
+            type (SyntheticsTestDetailsType): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsTestDetails, cls)._from_openapi_data(kwargs)

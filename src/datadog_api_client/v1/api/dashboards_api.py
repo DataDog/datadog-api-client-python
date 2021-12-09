@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.dashboard import Dashboard
@@ -192,9 +190,9 @@ class DashboardsApi(object):
         )
 
     def create_dashboard(self, body, **kwargs):
-        """Create a new dashboard  # noqa: E501
+        """Create a new dashboard
 
-        Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the `as_count()` or `as_rate()` modifiers appended. Refer to the following [documentation](https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers) for more information on these modifiers.  # noqa: E501
+        Create a dashboard using the specified options. When defining queries in your widgets, take note of which queries should have the `as_count()` or `as_rate()` modifiers appended. Refer to the following [documentation](https://docs.datadoghq.com/developers/metrics/type_modifiers/?tab=count#in-application-modifiers) for more information on these modifiers.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -235,9 +233,9 @@ class DashboardsApi(object):
         return self._create_dashboard_endpoint.call_with_http_info(**kwargs)
 
     def delete_dashboard(self, dashboard_id, **kwargs):
-        """Delete a dashboard  # noqa: E501
+        """Delete a dashboard
 
-        Delete a dashboard using the specified ID.  # noqa: E501
+        Delete a dashboard using the specified ID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -278,9 +276,9 @@ class DashboardsApi(object):
         return self._delete_dashboard_endpoint.call_with_http_info(**kwargs)
 
     def delete_dashboards(self, body, **kwargs):
-        """Delete dashboards  # noqa: E501
+        """Delete dashboards
 
-        Delete dashboards using the specified IDs. If there are any failures, no dashboards will be deleted (partial success is not allowed).  # noqa: E501
+        Delete dashboards using the specified IDs. If there are any failures, no dashboards will be deleted (partial success is not allowed).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -321,9 +319,9 @@ class DashboardsApi(object):
         return self._delete_dashboards_endpoint.call_with_http_info(**kwargs)
 
     def get_dashboard(self, dashboard_id, **kwargs):
-        """Get a dashboard  # noqa: E501
+        """Get a dashboard
 
-        Get a dashboard using the specified ID.  # noqa: E501
+        Get a dashboard using the specified ID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -364,9 +362,9 @@ class DashboardsApi(object):
         return self._get_dashboard_endpoint.call_with_http_info(**kwargs)
 
     def list_dashboards(self, **kwargs):
-        """Get all dashboards  # noqa: E501
+        """Get all dashboards
 
-        Get all dashboards.  **Note**: This query will only return custom created or cloned dashboards. This query will not return preset dashboards.  # noqa: E501
+        Get all dashboards.  **Note**: This query will only return custom created or cloned dashboards. This query will not return preset dashboards.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -405,9 +403,9 @@ class DashboardsApi(object):
         return self._list_dashboards_endpoint.call_with_http_info(**kwargs)
 
     def restore_dashboards(self, body, **kwargs):
-        """Restore deleted dashboards  # noqa: E501
+        """Restore deleted dashboards
 
-        Restore dashboards using the specified IDs. If there are any failures, no dashboards will be restored (partial success is not allowed).  # noqa: E501
+        Restore dashboards using the specified IDs. If there are any failures, no dashboards will be restored (partial success is not allowed).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -448,9 +446,9 @@ class DashboardsApi(object):
         return self._restore_dashboards_endpoint.call_with_http_info(**kwargs)
 
     def update_dashboard(self, dashboard_id, body, **kwargs):
-        """Update a dashboard  # noqa: E501
+        """Update a dashboard
 
-        Update a dashboard using the specified ID.  # noqa: E501
+        Update a dashboard using the specified ID.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

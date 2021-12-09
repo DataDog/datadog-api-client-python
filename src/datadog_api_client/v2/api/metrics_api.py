@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.metric_all_tags_response import MetricAllTagsResponse
@@ -235,9 +233,9 @@ class MetricsApi(object):
         )
 
     def create_tag_configuration(self, metric_name, body, **kwargs):
-        """Create a tag configuration  # noqa: E501
+        """Create a tag configuration
 
-        Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric. Optionally, include percentile aggregations on any distribution metric or configure custom aggregations on any count, rate, or gauge metric. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.  # noqa: E501
+        Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric. Optionally, include percentile aggregations on any distribution metric or configure custom aggregations on any count, rate, or gauge metric. Can only be used with application keys of users with the `Manage Tags for Metrics` permission.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -280,9 +278,9 @@ class MetricsApi(object):
         return self._create_tag_configuration_endpoint.call_with_http_info(**kwargs)
 
     def delete_tag_configuration(self, metric_name, **kwargs):
-        """Delete a tag configuration  # noqa: E501
+        """Delete a tag configuration
 
-        Deletes a metric's tag configuration. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.  # noqa: E501
+        Deletes a metric's tag configuration. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -323,9 +321,9 @@ class MetricsApi(object):
         return self._delete_tag_configuration_endpoint.call_with_http_info(**kwargs)
 
     def list_tag_configuration_by_name(self, metric_name, **kwargs):
-        """List tag configuration by name  # noqa: E501
+        """List tag configuration by name
 
-        Returns the tag configuration for the given metric name.  # noqa: E501
+        Returns the tag configuration for the given metric name.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -366,9 +364,9 @@ class MetricsApi(object):
         return self._list_tag_configuration_by_name_endpoint.call_with_http_info(**kwargs)
 
     def list_tag_configurations(self, **kwargs):
-        """List tag configurations  # noqa: E501
+        """List tag configurations
 
-        Returns all configured count/gauge/rate/distribution metric names (with additional filters if specified).  # noqa: E501
+        Returns all configured count/gauge/rate/distribution metric names (with additional filters if specified).
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -412,9 +410,9 @@ class MetricsApi(object):
         return self._list_tag_configurations_endpoint.call_with_http_info(**kwargs)
 
     def list_tags_by_metric_name(self, metric_name, **kwargs):
-        """List tags by metric name  # noqa: E501
+        """List tags by metric name
 
-        View indexed tag key-value pairs for a given metric name.  # noqa: E501
+        View indexed tag key-value pairs for a given metric name.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -455,9 +453,9 @@ class MetricsApi(object):
         return self._list_tags_by_metric_name_endpoint.call_with_http_info(**kwargs)
 
     def list_volumes_by_metric_name(self, metric_name, **kwargs):
-        """List distinct metric volumes by metric name  # noqa: E501
+        """List distinct metric volumes by metric name
 
-        View distinct metrics volumes for the given metric name.  Custom distribution metrics will return both ingested and indexed custom metric volumes. For Metrics without Limits&trade; beta customers, all metrics will return both ingested/indexed volumes. Custom metrics generated in-app from other products will return `null` for ingested volumes.  # noqa: E501
+        View distinct metrics volumes for the given metric name.  Custom distribution metrics will return both ingested and indexed custom metric volumes. For Metrics without Limits&trade; beta customers, all metrics will return both ingested/indexed volumes. Custom metrics generated in-app from other products will return `null` for ingested volumes.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -498,9 +496,9 @@ class MetricsApi(object):
         return self._list_volumes_by_metric_name_endpoint.call_with_http_info(**kwargs)
 
     def update_tag_configuration(self, metric_name, body, **kwargs):
-        """Update a tag configuration  # noqa: E501
+        """Update a tag configuration
 
-        Update the tag configuration of a metric or percentile aggregations of a distribution metric or custom aggregations of a count, rate, or gauge metric. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.  # noqa: E501
+        Update the tag configuration of a metric or percentile aggregations of a distribution metric or custom aggregations of a count, rate, or gauge metric. Can only be used with application keys from users with the `Manage Tags for Metrics` permission.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

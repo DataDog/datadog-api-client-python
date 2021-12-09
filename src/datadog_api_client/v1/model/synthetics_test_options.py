@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -40,8 +39,6 @@ class SyntheticsTestOptions(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -50,8 +47,6 @@ class SyntheticsTestOptions(ModelNormal):
           as additional properties values.
 
     """
-
-    allowed_values = {}
 
     validations = {
         "monitor_priority": {
@@ -63,10 +58,6 @@ class SyntheticsTestOptions(ModelNormal):
             "inclusive_minimum": 30,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -80,45 +71,40 @@ class SyntheticsTestOptions(ModelNormal):
         """
         lazy_import()
         return {
-            "accept_self_signed": (bool,),  # noqa: E501
-            "allow_insecure": (bool,),  # noqa: E501
-            "device_ids": ([SyntheticsDeviceID],),  # noqa: E501
-            "disable_cors": (bool,),  # noqa: E501
-            "follow_redirects": (bool,),  # noqa: E501
-            "min_failure_duration": (int,),  # noqa: E501
-            "min_location_failed": (int,),  # noqa: E501
-            "monitor_name": (str,),  # noqa: E501
-            "monitor_options": (SyntheticsTestOptionsMonitorOptions,),  # noqa: E501
-            "monitor_priority": (int,),  # noqa: E501
-            "no_screenshot": (bool,),  # noqa: E501
-            "retry": (SyntheticsTestOptionsRetry,),  # noqa: E501
-            "tick_every": (int,),  # noqa: E501
+            "accept_self_signed": (bool,),
+            "allow_insecure": (bool,),
+            "device_ids": ([SyntheticsDeviceID],),
+            "disable_cors": (bool,),
+            "follow_redirects": (bool,),
+            "min_failure_duration": (int,),
+            "min_location_failed": (int,),
+            "monitor_name": (str,),
+            "monitor_options": (SyntheticsTestOptionsMonitorOptions,),
+            "monitor_priority": (int,),
+            "no_screenshot": (bool,),
+            "retry": (SyntheticsTestOptionsRetry,),
+            "tick_every": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "accept_self_signed": "accept_self_signed",  # noqa: E501
-        "allow_insecure": "allow_insecure",  # noqa: E501
-        "device_ids": "device_ids",  # noqa: E501
-        "disable_cors": "disableCors",  # noqa: E501
-        "follow_redirects": "follow_redirects",  # noqa: E501
-        "min_failure_duration": "min_failure_duration",  # noqa: E501
-        "min_location_failed": "min_location_failed",  # noqa: E501
-        "monitor_name": "monitor_name",  # noqa: E501
-        "monitor_options": "monitor_options",  # noqa: E501
-        "monitor_priority": "monitor_priority",  # noqa: E501
-        "no_screenshot": "noScreenshot",  # noqa: E501
-        "retry": "retry",  # noqa: E501
-        "tick_every": "tick_every",  # noqa: E501
+        "accept_self_signed": "accept_self_signed",
+        "allow_insecure": "allow_insecure",
+        "device_ids": "device_ids",
+        "disable_cors": "disableCors",
+        "follow_redirects": "follow_redirects",
+        "min_failure_duration": "min_failure_duration",
+        "min_location_failed": "min_location_failed",
+        "monitor_name": "monitor_name",
+        "monitor_options": "monitor_options",
+        "monitor_priority": "monitor_priority",
+        "no_screenshot": "noScreenshot",
+        "retry": "retry",
+        "tick_every": "tick_every",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsTestOptions - a model defined in OpenAPI
 
         Keyword Args:
@@ -152,27 +138,26 @@ class SyntheticsTestOptions(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            accept_self_signed (bool): For SSL test, whether or not the test should allow self signed certificates.. [optional]  # noqa: E501
-            allow_insecure (bool): Allows loading insecure content for an HTTP request.. [optional]  # noqa: E501
-            device_ids ([SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]  # noqa: E501
-            disable_cors (bool): Whether or not to disable CORS mechanism.. [optional]  # noqa: E501
-            follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]  # noqa: E501
-            min_failure_duration (int): Minimum amount of time in failure required to trigger an alert.. [optional]  # noqa: E501
-            min_location_failed (int): Minimum number of locations in failure required to trigger an alert.. [optional]  # noqa: E501
-            monitor_name (str): The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs.. [optional]  # noqa: E501
-            monitor_options (SyntheticsTestOptionsMonitorOptions): [optional]  # noqa: E501
-            monitor_priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]  # noqa: E501
-            no_screenshot (bool): Prevents saving screenshots of the steps.. [optional]  # noqa: E501
-            retry (SyntheticsTestOptionsRetry): [optional]  # noqa: E501
-            tick_every (int): The frequency at which to run the Synthetic test (in seconds).. [optional]  # noqa: E501
+            accept_self_signed (bool): For SSL test, whether or not the test should allow self signed certificates.. [optional]
+            allow_insecure (bool): Allows loading insecure content for an HTTP request.. [optional]
+            device_ids ([SyntheticsDeviceID]): For browser test, array with the different device IDs used to run the test.. [optional]
+            disable_cors (bool): Whether or not to disable CORS mechanism.. [optional]
+            follow_redirects (bool): For API HTTP test, whether or not the test should follow redirects.. [optional]
+            min_failure_duration (int): Minimum amount of time in failure required to trigger an alert.. [optional]
+            min_location_failed (int): Minimum number of locations in failure required to trigger an alert.. [optional]
+            monitor_name (str): The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs.. [optional]
+            monitor_options (SyntheticsTestOptionsMonitorOptions): [optional]
+            monitor_priority (int): Integer from 1 (high) to 5 (low) indicating alert severity.. [optional]
+            no_screenshot (bool): Prevents saving screenshots of the steps.. [optional]
+            retry (SyntheticsTestOptionsRetry): [optional]
+            tick_every (int): The frequency at which to run the Synthetic test (in seconds).. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsTestOptions, cls)._from_openapi_data(kwargs)

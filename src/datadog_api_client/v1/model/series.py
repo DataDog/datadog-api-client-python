@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class Series(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class Series(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,34 +58,29 @@ class Series(ModelNormal):
         """
         lazy_import()
         return {
-            "metric": (str,),  # noqa: E501
-            "points": ([Point],),  # noqa: E501
-            "host": (str,),  # noqa: E501
+            "host": (str,),
             "interval": (
                 int,
                 none_type,
-            ),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "type": (str,),  # noqa: E501
+            ),
+            "metric": (str,),
+            "points": ([Point],),
+            "tags": ([str],),
+            "type": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "metric": "metric",  # noqa: E501
-        "points": "points",  # noqa: E501
-        "host": "host",  # noqa: E501
-        "interval": "interval",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "type": "type",  # noqa: E501
+        "metric": "metric",
+        "points": "points",
+        "host": "host",
+        "interval": "interval",
+        "tags": "tags",
+        "type": "type",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, metric, points, *args, **kwargs):  # noqa: E501
+    def __init__(self, metric, points, *args, **kwargs):
         """Series - a model defined in OpenAPI
 
         Args:
@@ -132,10 +118,10 @@ class Series(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            host (str): The name of the host that produced the metric.. [optional]  # noqa: E501
-            interval (int, none_type): If the type of the metric is rate or count, define the corresponding interval.. [optional]  # noqa: E501
-            tags ([str]): A list of tags associated with the metric.. [optional]  # noqa: E501
-            type (str): The type of the metric either `count`, `gauge`, or `rate`.. [optional] if omitted the server will use the default value of "gauge"  # noqa: E501
+            host (str): The name of the host that produced the metric.. [optional]
+            interval (int, none_type): If the type of the metric is rate or count, define the corresponding interval.. [optional]
+            tags ([str]): A list of tags associated with the metric.. [optional]
+            type (str): The type of the metric either `count`, `gauge`, or `rate`.. [optional] if omitted the server will use the default value of "gauge"
         """
         super().__init__(kwargs)
 
@@ -145,8 +131,7 @@ class Series(ModelNormal):
         self.points = points
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, metric, points, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, metric, points, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(Series, cls)._from_openapi_data(kwargs)

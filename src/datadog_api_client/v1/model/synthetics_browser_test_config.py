@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class SyntheticsBrowserTestConfig(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,36 +64,31 @@ class SyntheticsBrowserTestConfig(ModelNormal):
         """
         lazy_import()
         return {
-            "assertions": ([SyntheticsAssertion],),  # noqa: E501
-            "request": (SyntheticsTestRequest,),  # noqa: E501
-            "config_variables": ([SyntheticsConfigVariable],),  # noqa: E501
-            "set_cookie": (str,),  # noqa: E501
-            "variables": ([SyntheticsBrowserVariable],),  # noqa: E501
+            "assertions": ([SyntheticsAssertion],),
+            "config_variables": ([SyntheticsConfigVariable],),
+            "request": (SyntheticsTestRequest,),
+            "set_cookie": (str,),
+            "variables": ([SyntheticsBrowserVariable],),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "assertions": "assertions",  # noqa: E501
-        "request": "request",  # noqa: E501
-        "config_variables": "configVariables",  # noqa: E501
-        "set_cookie": "setCookie",  # noqa: E501
-        "variables": "variables",  # noqa: E501
+        "assertions": "assertions",
+        "request": "request",
+        "config_variables": "configVariables",
+        "set_cookie": "setCookie",
+        "variables": "variables",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, request, *args, **kwargs):  # noqa: E501
+    def __init__(self, request, *args, **kwargs):
         """SyntheticsBrowserTestConfig - a model defined in OpenAPI
 
         Args:
             request (SyntheticsTestRequest):
 
         Keyword Args:
-            assertions ([SyntheticsAssertion]): Array of assertions used for the test.. defaults to []  # noqa: E501
+            assertions ([SyntheticsAssertion]): Array of assertions used for the test.. defaults to []
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -133,9 +119,9 @@ class SyntheticsBrowserTestConfig(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            config_variables ([SyntheticsConfigVariable]): Array of variables used for the test.. [optional]  # noqa: E501
-            set_cookie (str): Cookies to be used for the request, using the [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) syntax.. [optional]  # noqa: E501
-            variables ([SyntheticsBrowserVariable]): Array of variables used for the test steps.. [optional]  # noqa: E501
+            config_variables ([SyntheticsConfigVariable]): Array of variables used for the test.. [optional]
+            set_cookie (str): Cookies to be used for the request, using the [Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) syntax.. [optional]
+            variables ([SyntheticsBrowserVariable]): Array of variables used for the test steps.. [optional]
         """
         super().__init__(kwargs)
 
@@ -147,8 +133,7 @@ class SyntheticsBrowserTestConfig(ModelNormal):
         self.request = request
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, request, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, request, *args, **kwargs):
         """Helper creating a new instance from a response."""
         assertions = kwargs.get("assertions", [])
 

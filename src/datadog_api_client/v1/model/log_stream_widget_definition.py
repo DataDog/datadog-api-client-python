@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -44,8 +43,6 @@ class LogStreamWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -55,13 +52,7 @@ class LogStreamWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -75,45 +66,40 @@ class LogStreamWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "type": (LogStreamWidgetDefinitionType,),  # noqa: E501
-            "columns": ([str],),  # noqa: E501
-            "indexes": ([str],),  # noqa: E501
-            "logset": (str,),  # noqa: E501
-            "message_display": (WidgetMessageDisplay,),  # noqa: E501
-            "query": (str,),  # noqa: E501
-            "show_date_column": (bool,),  # noqa: E501
-            "show_message_column": (bool,),  # noqa: E501
-            "sort": (WidgetFieldSort,),  # noqa: E501
-            "time": (WidgetTime,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "title_align": (WidgetTextAlign,),  # noqa: E501
-            "title_size": (str,),  # noqa: E501
+            "columns": ([str],),
+            "indexes": ([str],),
+            "logset": (str,),
+            "message_display": (WidgetMessageDisplay,),
+            "query": (str,),
+            "show_date_column": (bool,),
+            "show_message_column": (bool,),
+            "sort": (WidgetFieldSort,),
+            "time": (WidgetTime,),
+            "title": (str,),
+            "title_align": (WidgetTextAlign,),
+            "title_size": (str,),
+            "type": (LogStreamWidgetDefinitionType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "type": "type",  # noqa: E501
-        "columns": "columns",  # noqa: E501
-        "indexes": "indexes",  # noqa: E501
-        "logset": "logset",  # noqa: E501
-        "message_display": "message_display",  # noqa: E501
-        "query": "query",  # noqa: E501
-        "show_date_column": "show_date_column",  # noqa: E501
-        "show_message_column": "show_message_column",  # noqa: E501
-        "sort": "sort",  # noqa: E501
-        "time": "time",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "title_align": "title_align",  # noqa: E501
-        "title_size": "title_size",  # noqa: E501
+        "type": "type",
+        "columns": "columns",
+        "indexes": "indexes",
+        "logset": "logset",
+        "message_display": "message_display",
+        "query": "query",
+        "show_date_column": "show_date_column",
+        "show_message_column": "show_message_column",
+        "sort": "sort",
+        "time": "time",
+        "title": "title",
+        "title_align": "title_align",
+        "title_size": "title_size",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, *args, **kwargs):
         """LogStreamWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -150,18 +136,18 @@ class LogStreamWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            columns ([str]): Which columns to display on the widget.. [optional]  # noqa: E501
-            indexes ([str]): An array of index names to query in the stream. Use [] to query all indexes at once.. [optional]  # noqa: E501
-            logset (str): ID of the log set to use.. [optional]  # noqa: E501
-            message_display (WidgetMessageDisplay): [optional]  # noqa: E501
-            query (str): Query to filter the log stream with.. [optional]  # noqa: E501
-            show_date_column (bool): Whether to show the date column or not. [optional]  # noqa: E501
-            show_message_column (bool): Whether to show the message column or not. [optional]  # noqa: E501
-            sort (WidgetFieldSort): [optional]  # noqa: E501
-            time (WidgetTime): [optional]  # noqa: E501
-            title (str): Title of the widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
+            columns ([str]): Which columns to display on the widget.. [optional]
+            indexes ([str]): An array of index names to query in the stream. Use [] to query all indexes at once.. [optional]
+            logset (str): ID of the log set to use.. [optional]
+            message_display (WidgetMessageDisplay): [optional]
+            query (str): Query to filter the log stream with.. [optional]
+            show_date_column (bool): Whether to show the date column or not. [optional]
+            show_message_column (bool): Whether to show the message column or not. [optional]
+            sort (WidgetFieldSort): [optional]
+            time (WidgetTime): [optional]
+            title (str): Title of the widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
+            title_size (str): Size of the title.. [optional]
         """
         super().__init__(kwargs)
 
@@ -170,8 +156,7 @@ class LogStreamWidgetDefinition(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogStreamWidgetDefinition, cls)._from_openapi_data(kwargs)

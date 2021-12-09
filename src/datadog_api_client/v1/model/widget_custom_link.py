@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class WidgetCustomLink(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class WidgetCustomLink(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,27 +51,22 @@ class WidgetCustomLink(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "is_hidden": (bool,),  # noqa: E501
-            "label": (str,),  # noqa: E501
-            "link": (str,),  # noqa: E501
-            "override_label": (str,),  # noqa: E501
+            "is_hidden": (bool,),
+            "label": (str,),
+            "link": (str,),
+            "override_label": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "is_hidden": "is_hidden",  # noqa: E501
-        "label": "label",  # noqa: E501
-        "link": "link",  # noqa: E501
-        "override_label": "override_label",  # noqa: E501
+        "is_hidden": "is_hidden",
+        "label": "label",
+        "link": "link",
+        "override_label": "override_label",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """WidgetCustomLink - a model defined in OpenAPI
 
         Keyword Args:
@@ -114,18 +100,17 @@ class WidgetCustomLink(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_hidden (bool): The flag for toggling context menu link visibility.. [optional]  # noqa: E501
-            label (str): The label for the custom link URL. Keep the label short and descriptive. Use metrics and tags as variables.. [optional]  # noqa: E501
-            link (str): The URL of the custom link. URL must include `http` or `https`. A relative URL must start with `/`.. [optional]  # noqa: E501
-            override_label (str): The label ID that refers to a context menu link. Can be `logs`, `hosts`, `traces`, `profiles`, `processes`, `containers`, or `rum`.. [optional]  # noqa: E501
+            is_hidden (bool): The flag for toggling context menu link visibility.. [optional]
+            label (str): The label for the custom link URL. Keep the label short and descriptive. Use metrics and tags as variables.. [optional]
+            link (str): The URL of the custom link. URL must include `http` or `https`. A relative URL must start with `/`.. [optional]
+            override_label (str): The label ID that refers to a context menu link. Can be `logs`, `hosts`, `traces`, `profiles`, `processes`, `containers`, or `rum`.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(WidgetCustomLink, cls)._from_openapi_data(kwargs)

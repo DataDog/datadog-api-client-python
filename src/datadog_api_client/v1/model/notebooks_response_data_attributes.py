@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -44,8 +43,6 @@ class NotebooksResponseDataAttributes(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -55,18 +52,12 @@ class NotebooksResponseDataAttributes(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "name": {
             "max_length": 80,
             "min_length": 0,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -80,38 +71,33 @@ class NotebooksResponseDataAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            "name": (str,),  # noqa: E501
-            "author": (NotebookAuthor,),  # noqa: E501
-            "cells": ([NotebookCellResponse],),  # noqa: E501
-            "created": (datetime,),  # noqa: E501
-            "metadata": (NotebookMetadata,),  # noqa: E501
-            "modified": (datetime,),  # noqa: E501
-            "status": (NotebookStatus,),  # noqa: E501
-            "time": (NotebookGlobalTime,),  # noqa: E501
+            "author": (NotebookAuthor,),
+            "cells": ([NotebookCellResponse],),
+            "created": (datetime,),
+            "metadata": (NotebookMetadata,),
+            "modified": (datetime,),
+            "name": (str,),
+            "status": (NotebookStatus,),
+            "time": (NotebookGlobalTime,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "name": "name",  # noqa: E501
-        "author": "author",  # noqa: E501
-        "cells": "cells",  # noqa: E501
-        "created": "created",  # noqa: E501
-        "metadata": "metadata",  # noqa: E501
-        "modified": "modified",  # noqa: E501
-        "status": "status",  # noqa: E501
-        "time": "time",  # noqa: E501
+        "name": "name",
+        "author": "author",
+        "cells": "cells",
+        "created": "created",
+        "metadata": "metadata",
+        "modified": "modified",
+        "status": "status",
+        "time": "time",
     }
 
     read_only_vars = {
-        "created",  # noqa: E501
-        "modified",  # noqa: E501
+        "created",
+        "modified",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, name, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, *args, **kwargs):
         """NotebooksResponseDataAttributes - a model defined in OpenAPI
 
         Args:
@@ -148,13 +134,13 @@ class NotebooksResponseDataAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            author (NotebookAuthor): [optional]  # noqa: E501
-            cells ([NotebookCellResponse]): List of cells to display in the notebook.. [optional]  # noqa: E501
-            created (datetime): UTC time stamp for when the notebook was created.. [optional]  # noqa: E501
-            metadata (NotebookMetadata): [optional]  # noqa: E501
-            modified (datetime): UTC time stamp for when the notebook was last modified.. [optional]  # noqa: E501
-            status (NotebookStatus): [optional]  # noqa: E501
-            time (NotebookGlobalTime): [optional]  # noqa: E501
+            author (NotebookAuthor): [optional]
+            cells ([NotebookCellResponse]): List of cells to display in the notebook.. [optional]
+            created (datetime): UTC time stamp for when the notebook was created.. [optional]
+            metadata (NotebookMetadata): [optional]
+            modified (datetime): UTC time stamp for when the notebook was last modified.. [optional]
+            status (NotebookStatus): [optional]
+            time (NotebookGlobalTime): [optional]
         """
         super().__init__(kwargs)
 
@@ -163,8 +149,7 @@ class NotebooksResponseDataAttributes(ModelNormal):
         self.name = name
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(NotebooksResponseDataAttributes, cls)._from_openapi_data(kwargs)

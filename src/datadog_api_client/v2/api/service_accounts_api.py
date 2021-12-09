@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
@@ -208,9 +206,9 @@ class ServiceAccountsApi(object):
         )
 
     def create_service_account_application_key(self, service_account_id, body, **kwargs):
-        """Create an application key for this service account  # noqa: E501
+        """Create an application key for this service account
 
-        Create an application key for this service account.  # noqa: E501
+        Create an application key for this service account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -253,9 +251,9 @@ class ServiceAccountsApi(object):
         return self._create_service_account_application_key_endpoint.call_with_http_info(**kwargs)
 
     def delete_service_account_application_key(self, service_account_id, app_key_id, **kwargs):
-        """Delete an application key for this service account  # noqa: E501
+        """Delete an application key for this service account
 
-        Delete an application key owned by this service account.  # noqa: E501
+        Delete an application key owned by this service account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -298,9 +296,9 @@ class ServiceAccountsApi(object):
         return self._delete_service_account_application_key_endpoint.call_with_http_info(**kwargs)
 
     def get_service_account_application_key(self, service_account_id, app_key_id, **kwargs):
-        """Get one application key for this service account  # noqa: E501
+        """Get one application key for this service account
 
-        Get an application key owned by this service account.  # noqa: E501
+        Get an application key owned by this service account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -343,9 +341,9 @@ class ServiceAccountsApi(object):
         return self._get_service_account_application_key_endpoint.call_with_http_info(**kwargs)
 
     def list_service_account_application_keys(self, service_account_id, **kwargs):
-        """List application keys for this service account  # noqa: E501
+        """List application keys for this service account
 
-        List all application keys available for this service account.  # noqa: E501
+        List all application keys available for this service account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -392,9 +390,9 @@ class ServiceAccountsApi(object):
         return self._list_service_account_application_keys_endpoint.call_with_http_info(**kwargs)
 
     def update_service_account_application_key(self, service_account_id, app_key_id, body, **kwargs):
-        """Edit an application key for this service account  # noqa: E501
+        """Edit an application key for this service account
 
-        Edit an application key owned by this service account.  # noqa: E501
+        Edit an application key owned by this service account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

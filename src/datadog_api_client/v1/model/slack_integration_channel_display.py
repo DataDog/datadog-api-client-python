@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class SlackIntegrationChannelDisplay(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class SlackIntegrationChannelDisplay(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,27 +51,22 @@ class SlackIntegrationChannelDisplay(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "message": (bool,),  # noqa: E501
-            "notified": (bool,),  # noqa: E501
-            "snapshot": (bool,),  # noqa: E501
-            "tags": (bool,),  # noqa: E501
+            "message": (bool,),
+            "notified": (bool,),
+            "snapshot": (bool,),
+            "tags": (bool,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "message": "message",  # noqa: E501
-        "notified": "notified",  # noqa: E501
-        "snapshot": "snapshot",  # noqa: E501
-        "tags": "tags",  # noqa: E501
+        "message": "message",
+        "notified": "notified",
+        "snapshot": "snapshot",
+        "tags": "tags",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SlackIntegrationChannelDisplay - a model defined in OpenAPI
 
         Keyword Args:
@@ -114,18 +100,17 @@ class SlackIntegrationChannelDisplay(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message (bool): Show the main body of the alert event.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            notified (bool): Show the list of @-handles in the alert event.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            snapshot (bool): Show the alert event's snapshot image.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            tags (bool): Show the scopes on which the monitor alerted.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            message (bool): Show the main body of the alert event.. [optional] if omitted the server will use the default value of True
+            notified (bool): Show the list of @-handles in the alert event.. [optional] if omitted the server will use the default value of True
+            snapshot (bool): Show the alert event's snapshot image.. [optional] if omitted the server will use the default value of True
+            tags (bool): Show the scopes on which the monitor alerted.. [optional] if omitted the server will use the default value of True
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SlackIntegrationChannelDisplay, cls)._from_openapi_data(kwargs)

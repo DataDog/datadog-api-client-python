@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class SyntheticsVariableParser(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class SyntheticsVariableParser(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,23 +58,18 @@ class SyntheticsVariableParser(ModelNormal):
         """
         lazy_import()
         return {
-            "type": (SyntheticsGlobalVariableParserType,),  # noqa: E501
-            "value": (str,),  # noqa: E501
+            "type": (SyntheticsGlobalVariableParserType,),
+            "value": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "type": "type",  # noqa: E501
-        "value": "value",  # noqa: E501
+        "type": "type",
+        "value": "value",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, *args, **kwargs):
         """SyntheticsVariableParser - a model defined in OpenAPI
 
         Args:
@@ -120,7 +106,7 @@ class SyntheticsVariableParser(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            value (str): Regex or JSON path used for the parser. Not used with type `raw`.. [optional]  # noqa: E501
+            value (str): Regex or JSON path used for the parser. Not used with type `raw`.. [optional]
         """
         super().__init__(kwargs)
 
@@ -129,8 +115,7 @@ class SyntheticsVariableParser(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsVariableParser, cls)._from_openapi_data(kwargs)

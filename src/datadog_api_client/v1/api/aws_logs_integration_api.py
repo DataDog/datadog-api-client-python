@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
@@ -169,9 +167,9 @@ class AWSLogsIntegrationApi(object):
         )
 
     def check_aws_logs_lambda_async(self, body, **kwargs):
-        """Check that an AWS Lambda Function exists  # noqa: E501
+        """Check that an AWS Lambda Function exists
 
-        Test if permissions are present to add a log-forwarding triggers for the given services and AWS account. The input is the same as for Enable an AWS service log collection. Subsequent requests will always repeat the above, so this endpoint can be polled intermittently instead of blocking.  - Returns a status of 'created' when it's checking if the Lambda exists in the account. - Returns a status of 'waiting' while checking. - Returns a status of 'checked and ok' if the Lambda exists. - Returns a status of 'error' if the Lambda does not exist.  # noqa: E501
+        Test if permissions are present to add a log-forwarding triggers for the given services and AWS account. The input is the same as for Enable an AWS service log collection. Subsequent requests will always repeat the above, so this endpoint can be polled intermittently instead of blocking.  - Returns a status of 'created' when it's checking if the Lambda exists in the account. - Returns a status of 'waiting' while checking. - Returns a status of 'checked and ok' if the Lambda exists. - Returns a status of 'error' if the Lambda does not exist.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -212,9 +210,9 @@ class AWSLogsIntegrationApi(object):
         return self._check_aws_logs_lambda_async_endpoint.call_with_http_info(**kwargs)
 
     def check_aws_logs_services_async(self, body, **kwargs):
-        """Check permissions for log services  # noqa: E501
+        """Check permissions for log services
 
-        Test if permissions are present to add log-forwarding triggers for the given services and AWS account. Input is the same as for `EnableAWSLogServices`. Done async, so can be repeatedly polled in a non-blocking fashion until the async request completes.  - Returns a status of `created` when it's checking if the permissions exists   in the AWS account. - Returns a status of `waiting` while checking. - Returns a status of `checked and ok` if the Lambda exists. - Returns a status of `error` if the Lambda does not exist.  # noqa: E501
+        Test if permissions are present to add log-forwarding triggers for the given services and AWS account. Input is the same as for `EnableAWSLogServices`. Done async, so can be repeatedly polled in a non-blocking fashion until the async request completes.  - Returns a status of `created` when it's checking if the permissions exists   in the AWS account. - Returns a status of `waiting` while checking. - Returns a status of `checked and ok` if the Lambda exists. - Returns a status of `error` if the Lambda does not exist.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -255,9 +253,9 @@ class AWSLogsIntegrationApi(object):
         return self._check_aws_logs_services_async_endpoint.call_with_http_info(**kwargs)
 
     def create_aws_lambda_arn(self, body, **kwargs):
-        """Add AWS Log Lambda ARN  # noqa: E501
+        """Add AWS Log Lambda ARN
 
-        Attach the Lambda ARN of the Lambda created for the Datadog-AWS log collection to your AWS account ID to enable log collection.  # noqa: E501
+        Attach the Lambda ARN of the Lambda created for the Datadog-AWS log collection to your AWS account ID to enable log collection.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -298,9 +296,9 @@ class AWSLogsIntegrationApi(object):
         return self._create_aws_lambda_arn_endpoint.call_with_http_info(**kwargs)
 
     def delete_aws_lambda_arn(self, body, **kwargs):
-        """Delete an AWS Logs integration  # noqa: E501
+        """Delete an AWS Logs integration
 
-        Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN associated with a given AWS account.  # noqa: E501
+        Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN associated with a given AWS account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -341,9 +339,9 @@ class AWSLogsIntegrationApi(object):
         return self._delete_aws_lambda_arn_endpoint.call_with_http_info(**kwargs)
 
     def enable_aws_log_services(self, body, **kwargs):
-        """Enable an AWS Logs integration  # noqa: E501
+        """Enable an AWS Logs integration
 
-        Enable automatic log collection for a list of services. This should be run after running `CreateAWSLambdaARN` to save the configuration.  # noqa: E501
+        Enable automatic log collection for a list of services. This should be run after running `CreateAWSLambdaARN` to save the configuration.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -384,9 +382,9 @@ class AWSLogsIntegrationApi(object):
         return self._enable_aws_log_services_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_logs_integrations(self, **kwargs):
-        """List all AWS Logs integrations  # noqa: E501
+        """List all AWS Logs integrations
 
-        List all Datadog-AWS Logs integrations configured in your Datadog account.  # noqa: E501
+        List all Datadog-AWS Logs integrations configured in your Datadog account.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -424,9 +422,9 @@ class AWSLogsIntegrationApi(object):
         return self._list_aws_logs_integrations_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_logs_services(self, **kwargs):
-        """Get list of AWS log ready services  # noqa: E501
+        """Get list of AWS log ready services
 
-        Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.  # noqa: E501
+        Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageAttributionPagination(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageAttributionPagination(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,25 +51,20 @@ class UsageAttributionPagination(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "limit": (int,),  # noqa: E501
-            "next_record_id": (str,),  # noqa: E501
-            "total_number_of_records": (int,),  # noqa: E501
+            "limit": (int,),
+            "next_record_id": (str,),
+            "total_number_of_records": (int,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "limit": "limit",  # noqa: E501
-        "next_record_id": "next_record_id",  # noqa: E501
-        "total_number_of_records": "total_number_of_records",  # noqa: E501
+        "limit": "limit",
+        "next_record_id": "next_record_id",
+        "total_number_of_records": "total_number_of_records",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageAttributionPagination - a model defined in OpenAPI
 
         Keyword Args:
@@ -112,17 +98,16 @@ class UsageAttributionPagination(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            limit (int): Maximum amount of records to be returned.. [optional]  # noqa: E501
-            next_record_id (str): The cursor to use to get the next results, if any. To make the next request, use the same parameters with the addition of this next_record_id.. [optional]  # noqa: E501
-            total_number_of_records (int): Total number of records. (deprecated after May 1st, 2021). [optional]  # noqa: E501
+            limit (int): Maximum amount of records to be returned.. [optional]
+            next_record_id (str): The cursor to use to get the next results, if any. To make the next request, use the same parameters with the addition of this next_record_id.. [optional]
+            total_number_of_records (int): Total number of records. (deprecated after May 1st, 2021). [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageAttributionPagination, cls)._from_openapi_data(kwargs)

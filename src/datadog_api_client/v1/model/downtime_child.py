@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class DowntimeChild(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -46,8 +43,6 @@ class DowntimeChild(ModelNormal):
           as additional properties values.
 
     """
-
-    allowed_values = {}
 
     validations = {
         "creator_id": {
@@ -60,8 +55,6 @@ class DowntimeChild(ModelNormal):
             "inclusive_maximum": 2147483647,
         },
     }
-
-    additional_properties_type = None
 
     _nullable = True
 
@@ -77,73 +70,68 @@ class DowntimeChild(ModelNormal):
         """
         lazy_import()
         return {
-            "active": (bool,),  # noqa: E501
+            "active": (bool,),
             "canceled": (
                 int,
                 none_type,
-            ),  # noqa: E501
-            "creator_id": (int,),  # noqa: E501
-            "disabled": (bool,),  # noqa: E501
-            "downtime_type": (int,),  # noqa: E501
+            ),
+            "creator_id": (int,),
+            "disabled": (bool,),
+            "downtime_type": (int,),
             "end": (
                 int,
                 none_type,
-            ),  # noqa: E501
-            "id": (int,),  # noqa: E501
-            "message": (str,),  # noqa: E501
+            ),
+            "id": (int,),
+            "message": (str,),
             "monitor_id": (
                 int,
                 none_type,
-            ),  # noqa: E501
-            "monitor_tags": ([str],),  # noqa: E501
+            ),
+            "monitor_tags": ([str],),
             "parent_id": (
                 int,
                 none_type,
-            ),  # noqa: E501
-            "recurrence": (DowntimeRecurrence,),  # noqa: E501
-            "scope": ([str],),  # noqa: E501
-            "start": (int,),  # noqa: E501
-            "timezone": (str,),  # noqa: E501
+            ),
+            "recurrence": (DowntimeRecurrence,),
+            "scope": ([str],),
+            "start": (int,),
+            "timezone": (str,),
             "updater_id": (
                 int,
                 none_type,
-            ),  # noqa: E501
+            ),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "active": "active",  # noqa: E501
-        "canceled": "canceled",  # noqa: E501
-        "creator_id": "creator_id",  # noqa: E501
-        "disabled": "disabled",  # noqa: E501
-        "downtime_type": "downtime_type",  # noqa: E501
-        "end": "end",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "message": "message",  # noqa: E501
-        "monitor_id": "monitor_id",  # noqa: E501
-        "monitor_tags": "monitor_tags",  # noqa: E501
-        "parent_id": "parent_id",  # noqa: E501
-        "recurrence": "recurrence",  # noqa: E501
-        "scope": "scope",  # noqa: E501
-        "start": "start",  # noqa: E501
-        "timezone": "timezone",  # noqa: E501
-        "updater_id": "updater_id",  # noqa: E501
+        "active": "active",
+        "canceled": "canceled",
+        "creator_id": "creator_id",
+        "disabled": "disabled",
+        "downtime_type": "downtime_type",
+        "end": "end",
+        "id": "id",
+        "message": "message",
+        "monitor_id": "monitor_id",
+        "monitor_tags": "monitor_tags",
+        "parent_id": "parent_id",
+        "recurrence": "recurrence",
+        "scope": "scope",
+        "start": "start",
+        "timezone": "timezone",
+        "updater_id": "updater_id",
     }
 
     read_only_vars = {
-        "active",  # noqa: E501
-        "canceled",  # noqa: E501
-        "creator_id",  # noqa: E501
-        "downtime_type",  # noqa: E501
-        "id",  # noqa: E501
-        "updater_id",  # noqa: E501
+        "active",
+        "canceled",
+        "creator_id",
+        "downtime_type",
+        "id",
+        "updater_id",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """DowntimeChild - a model defined in OpenAPI
 
         Keyword Args:
@@ -177,30 +165,29 @@ class DowntimeChild(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            active (bool): If a scheduled downtime currently exists.. [optional]  # noqa: E501
-            canceled (int, none_type): If a scheduled downtime is canceled.. [optional]  # noqa: E501
-            creator_id (int): User ID of the downtime creator.. [optional]  # noqa: E501
-            disabled (bool): If a downtime has been disabled.. [optional]  # noqa: E501
-            downtime_type (int): `0` for a downtime applied on `*` or all, `1` when the downtime is only scoped to hosts, or `2` when the downtime is scoped to anything but hosts.. [optional]  # noqa: E501
-            end (int, none_type): POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely until you cancel it.. [optional]  # noqa: E501
-            id (int): The downtime ID.. [optional]  # noqa: E501
-            message (str): A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.. [optional]  # noqa: E501
-            monitor_id (int, none_type): A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.. [optional]  # noqa: E501
-            monitor_tags ([str]): A comma-separated list of monitor tags. For example, tags that are applied directly to monitors, not tags that are used in monitor queries (which are filtered by the scope parameter), to which the downtime applies. The resulting downtime applies to monitors that match ALL provided monitor tags. For example, `service:postgres` **AND** `team:frontend`.. [optional]  # noqa: E501
-            parent_id (int, none_type): ID of the parent Downtime.. [optional]  # noqa: E501
-            recurrence (DowntimeRecurrence): [optional]  # noqa: E501
-            scope ([str]): The scope(s) to which the downtime applies. For example, `host:app2`. Provide multiple scopes as a comma-separated list like `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (`env:dev` **AND** `env:prod`).. [optional]  # noqa: E501
-            start (int): POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.. [optional]  # noqa: E501
-            timezone (str): The timezone in which to display the downtime's start and end times in Datadog applications.. [optional]  # noqa: E501
-            updater_id (int, none_type): ID of the last user that updated the downtime.. [optional]  # noqa: E501
+            active (bool): If a scheduled downtime currently exists.. [optional]
+            canceled (int, none_type): If a scheduled downtime is canceled.. [optional]
+            creator_id (int): User ID of the downtime creator.. [optional]
+            disabled (bool): If a downtime has been disabled.. [optional]
+            downtime_type (int): `0` for a downtime applied on `*` or all, `1` when the downtime is only scoped to hosts, or `2` when the downtime is scoped to anything but hosts.. [optional]
+            end (int, none_type): POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely until you cancel it.. [optional]
+            id (int): The downtime ID.. [optional]
+            message (str): A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.. [optional]
+            monitor_id (int, none_type): A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.. [optional]
+            monitor_tags ([str]): A comma-separated list of monitor tags. For example, tags that are applied directly to monitors, not tags that are used in monitor queries (which are filtered by the scope parameter), to which the downtime applies. The resulting downtime applies to monitors that match ALL provided monitor tags. For example, `service:postgres` **AND** `team:frontend`.. [optional]
+            parent_id (int, none_type): ID of the parent Downtime.. [optional]
+            recurrence (DowntimeRecurrence): [optional]
+            scope ([str]): The scope(s) to which the downtime applies. For example, `host:app2`. Provide multiple scopes as a comma-separated list like `env:dev,env:prod`. The resulting downtime applies to sources that matches ALL provided scopes (`env:dev` **AND** `env:prod`).. [optional]
+            start (int): POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.. [optional]
+            timezone (str): The timezone in which to display the downtime's start and end times in Datadog applications.. [optional]
+            updater_id (int, none_type): ID of the last user that updated the downtime.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(DowntimeChild, cls)._from_openapi_data(kwargs)

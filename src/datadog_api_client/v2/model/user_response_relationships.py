@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class UserResponseRelationships(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class UserResponseRelationships(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,27 +64,22 @@ class UserResponseRelationships(ModelNormal):
         """
         lazy_import()
         return {
-            "org": (RelationshipToOrganization,),  # noqa: E501
-            "other_orgs": (RelationshipToOrganizations,),  # noqa: E501
-            "other_users": (RelationshipToUsers,),  # noqa: E501
-            "roles": (RelationshipToRoles,),  # noqa: E501
+            "org": (RelationshipToOrganization,),
+            "other_orgs": (RelationshipToOrganizations,),
+            "other_users": (RelationshipToUsers,),
+            "roles": (RelationshipToRoles,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "org": "org",  # noqa: E501
-        "other_orgs": "other_orgs",  # noqa: E501
-        "other_users": "other_users",  # noqa: E501
-        "roles": "roles",  # noqa: E501
+        "org": "org",
+        "other_orgs": "other_orgs",
+        "other_users": "other_users",
+        "roles": "roles",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UserResponseRelationships - a model defined in OpenAPI
 
         Keyword Args:
@@ -127,18 +113,17 @@ class UserResponseRelationships(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            org (RelationshipToOrganization): [optional]  # noqa: E501
-            other_orgs (RelationshipToOrganizations): [optional]  # noqa: E501
-            other_users (RelationshipToUsers): [optional]  # noqa: E501
-            roles (RelationshipToRoles): [optional]  # noqa: E501
+            org (RelationshipToOrganization): [optional]
+            other_orgs (RelationshipToOrganizations): [optional]
+            other_users (RelationshipToUsers): [optional]
+            roles (RelationshipToRoles): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UserResponseRelationships, cls)._from_openapi_data(kwargs)

@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.ip_ranges import IPRanges
@@ -94,9 +92,9 @@ class IPRangesApi(object):
         )
 
     def get_ip_ranges(self, **kwargs):
-        """List IP Ranges  # noqa: E501
+        """List IP Ranges
 
-        Get information about Datadog IP ranges.  # noqa: E501
+        Get information about Datadog IP ranges.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

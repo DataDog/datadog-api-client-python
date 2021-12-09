@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class SyntheticsTiming(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class SyntheticsTiming(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,37 +51,32 @@ class SyntheticsTiming(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "dns": (float,),  # noqa: E501
-            "download": (float,),  # noqa: E501
-            "first_byte": (float,),  # noqa: E501
-            "handshake": (float,),  # noqa: E501
-            "redirect": (float,),  # noqa: E501
-            "ssl": (float,),  # noqa: E501
-            "tcp": (float,),  # noqa: E501
-            "total": (float,),  # noqa: E501
-            "wait": (float,),  # noqa: E501
+            "dns": (float,),
+            "download": (float,),
+            "first_byte": (float,),
+            "handshake": (float,),
+            "redirect": (float,),
+            "ssl": (float,),
+            "tcp": (float,),
+            "total": (float,),
+            "wait": (float,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "dns": "dns",  # noqa: E501
-        "download": "download",  # noqa: E501
-        "first_byte": "firstByte",  # noqa: E501
-        "handshake": "handshake",  # noqa: E501
-        "redirect": "redirect",  # noqa: E501
-        "ssl": "ssl",  # noqa: E501
-        "tcp": "tcp",  # noqa: E501
-        "total": "total",  # noqa: E501
-        "wait": "wait",  # noqa: E501
+        "dns": "dns",
+        "download": "download",
+        "first_byte": "firstByte",
+        "handshake": "handshake",
+        "redirect": "redirect",
+        "ssl": "ssl",
+        "tcp": "tcp",
+        "total": "total",
+        "wait": "wait",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsTiming - a model defined in OpenAPI
 
         Keyword Args:
@@ -124,23 +110,22 @@ class SyntheticsTiming(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            dns (float): The duration in millisecond of the DNS lookup.. [optional]  # noqa: E501
-            download (float): The time in millisecond to download the response.. [optional]  # noqa: E501
-            first_byte (float): The time in millisecond to first byte.. [optional]  # noqa: E501
-            handshake (float): The duration in millisecond of the TLS handshake.. [optional]  # noqa: E501
-            redirect (float): The time in millisecond spent during redirections.. [optional]  # noqa: E501
-            ssl (float): The duration in millisecond of the TLS handshake.. [optional]  # noqa: E501
-            tcp (float): Time in millisecond to establish the TCP connection.. [optional]  # noqa: E501
-            total (float): The overall time in millisecond the request took to be processed.. [optional]  # noqa: E501
-            wait (float): Time spent in millisecond waiting for a response.. [optional]  # noqa: E501
+            dns (float): The duration in millisecond of the DNS lookup.. [optional]
+            download (float): The time in millisecond to download the response.. [optional]
+            first_byte (float): The time in millisecond to first byte.. [optional]
+            handshake (float): The duration in millisecond of the TLS handshake.. [optional]
+            redirect (float): The time in millisecond spent during redirections.. [optional]
+            ssl (float): The duration in millisecond of the TLS handshake.. [optional]
+            tcp (float): Time in millisecond to establish the TCP connection.. [optional]
+            total (float): The overall time in millisecond the request took to be processed.. [optional]
+            wait (float): Time spent in millisecond waiting for a response.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsTiming, cls)._from_openapi_data(kwargs)

@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v2.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v2.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
@@ -172,9 +170,9 @@ class IncidentServicesApi(object):
         )
 
     def create_incident_service(self, body, **kwargs):
-        """Create a new incident service  # noqa: E501
+        """Create a new incident service
 
-        Creates a new incident service.  # noqa: E501
+        Creates a new incident service.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -215,9 +213,9 @@ class IncidentServicesApi(object):
         return self._create_incident_service_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident_service(self, service_id, **kwargs):
-        """Delete an existing incident service  # noqa: E501
+        """Delete an existing incident service
 
-        Deletes an existing incident service.  # noqa: E501
+        Deletes an existing incident service.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -258,9 +256,9 @@ class IncidentServicesApi(object):
         return self._delete_incident_service_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_service(self, service_id, **kwargs):
-        """Get details of an incident service  # noqa: E501
+        """Get details of an incident service
 
-        Get details of an incident service. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident services.  # noqa: E501
+        Get details of an incident service. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident services.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -302,9 +300,9 @@ class IncidentServicesApi(object):
         return self._get_incident_service_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_services(self, **kwargs):
-        """Get a list of all incident services  # noqa: E501
+        """Get a list of all incident services
 
-        Get all incident services uploaded for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident services.  # noqa: E501
+        Get all incident services uploaded for the requesting user's organization. If the `include[users]` query parameter is provided, the included attribute will contain the users related to these incident services.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -346,9 +344,9 @@ class IncidentServicesApi(object):
         return self._list_incident_services_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_service(self, service_id, body, **kwargs):
-        """Update an existing incident service  # noqa: E501
+        """Update an existing incident service
 
-        Updates an existing incident service. Only provide the attributes which should be updated as this request is a partial update.  # noqa: E501
+        Updates an existing incident service. Only provide the attributes which should be updated as this request is a partial update.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

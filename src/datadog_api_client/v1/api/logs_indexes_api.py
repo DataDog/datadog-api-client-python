@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
@@ -159,9 +157,9 @@ class LogsIndexesApi(object):
         )
 
     def create_logs_index(self, body, **kwargs):
-        """Create an index  # noqa: E501
+        """Create an index
 
-        Creates a new index. Returns the Index object passed in the request body when the request is successful.  # noqa: E501
+        Creates a new index. Returns the Index object passed in the request body when the request is successful.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -202,9 +200,9 @@ class LogsIndexesApi(object):
         return self._create_logs_index_endpoint.call_with_http_info(**kwargs)
 
     def get_logs_index(self, name, **kwargs):
-        """Get an index  # noqa: E501
+        """Get an index
 
-        Get one log index from your organization. This endpoint takes no JSON arguments.  # noqa: E501
+        Get one log index from your organization. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -245,9 +243,9 @@ class LogsIndexesApi(object):
         return self._get_logs_index_endpoint.call_with_http_info(**kwargs)
 
     def get_logs_index_order(self, **kwargs):
-        """Get indexes order  # noqa: E501
+        """Get indexes order
 
-        Get the current order of your log indexes. This endpoint takes no JSON arguments.  # noqa: E501
+        Get the current order of your log indexes. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -285,9 +283,9 @@ class LogsIndexesApi(object):
         return self._get_logs_index_order_endpoint.call_with_http_info(**kwargs)
 
     def list_log_indexes(self, **kwargs):
-        """Get all indexes  # noqa: E501
+        """Get all indexes
 
-        The Index object describes the configuration of a log index. This endpoint returns an array of the `LogIndex` objects of your organization.  # noqa: E501
+        The Index object describes the configuration of a log index. This endpoint returns an array of the `LogIndex` objects of your organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -325,9 +323,9 @@ class LogsIndexesApi(object):
         return self._list_log_indexes_endpoint.call_with_http_info(**kwargs)
 
     def update_logs_index(self, name, body, **kwargs):
-        """Update an index  # noqa: E501
+        """Update an index
 
-        Update an index as identified by its name. Returns the Index object passed in the request body when the request is successful.  Using the `PUT` method updates your index’s configuration by **replacing** your current configuration with the new one sent to your Datadog organization.  # noqa: E501
+        Update an index as identified by its name. Returns the Index object passed in the request body when the request is successful.  Using the `PUT` method updates your index’s configuration by **replacing** your current configuration with the new one sent to your Datadog organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -370,9 +368,9 @@ class LogsIndexesApi(object):
         return self._update_logs_index_endpoint.call_with_http_info(**kwargs)
 
     def update_logs_index_order(self, body, **kwargs):
-        """Update indexes order  # noqa: E501
+        """Update indexes order
 
-        This endpoint updates the index order of your organization. It returns the index order object passed in the request body when the request is successful.  # noqa: E501
+        This endpoint updates the index order of your organization. It returns the index order object passed in the request body when the request is successful.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

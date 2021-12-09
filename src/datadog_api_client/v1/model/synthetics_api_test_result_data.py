@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class SyntheticsAPITestResultData(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class SyntheticsAPITestResultData(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,39 +64,34 @@ class SyntheticsAPITestResultData(ModelNormal):
         """
         lazy_import()
         return {
-            "cert": (SyntheticsSSLCertificate,),  # noqa: E501
-            "error_code": (SyntheticsErrorCode,),  # noqa: E501
-            "error_message": (str,),  # noqa: E501
-            "event_type": (SyntheticsTestProcessStatus,),  # noqa: E501
-            "http_status_code": (int,),  # noqa: E501
-            "request_headers": ({str: (dict,)},),  # noqa: E501
-            "response_body": (str,),  # noqa: E501
-            "response_headers": ({str: (dict,)},),  # noqa: E501
-            "response_size": (int,),  # noqa: E501
-            "timings": (SyntheticsTiming,),  # noqa: E501
+            "cert": (SyntheticsSSLCertificate,),
+            "error_code": (SyntheticsErrorCode,),
+            "error_message": (str,),
+            "event_type": (SyntheticsTestProcessStatus,),
+            "http_status_code": (int,),
+            "request_headers": ({str: (dict,)},),
+            "response_body": (str,),
+            "response_headers": ({str: (dict,)},),
+            "response_size": (int,),
+            "timings": (SyntheticsTiming,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "cert": "cert",  # noqa: E501
-        "error_code": "errorCode",  # noqa: E501
-        "error_message": "errorMessage",  # noqa: E501
-        "event_type": "eventType",  # noqa: E501
-        "http_status_code": "httpStatusCode",  # noqa: E501
-        "request_headers": "requestHeaders",  # noqa: E501
-        "response_body": "responseBody",  # noqa: E501
-        "response_headers": "responseHeaders",  # noqa: E501
-        "response_size": "responseSize",  # noqa: E501
-        "timings": "timings",  # noqa: E501
+        "cert": "cert",
+        "error_code": "errorCode",
+        "error_message": "errorMessage",
+        "event_type": "eventType",
+        "http_status_code": "httpStatusCode",
+        "request_headers": "requestHeaders",
+        "response_body": "responseBody",
+        "response_headers": "responseHeaders",
+        "response_size": "responseSize",
+        "timings": "timings",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """SyntheticsAPITestResultData - a model defined in OpenAPI
 
         Keyword Args:
@@ -139,24 +125,23 @@ class SyntheticsAPITestResultData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            cert (SyntheticsSSLCertificate): [optional]  # noqa: E501
-            error_code (SyntheticsErrorCode): [optional]  # noqa: E501
-            error_message (str): The API test error message.. [optional]  # noqa: E501
-            event_type (SyntheticsTestProcessStatus): [optional]  # noqa: E501
-            http_status_code (int): The API test HTTP status code.. [optional]  # noqa: E501
-            request_headers ({str: (dict,)}): Request header object used for the API test.. [optional]  # noqa: E501
-            response_body (str): Response body returned for the API test.. [optional]  # noqa: E501
-            response_headers ({str: (dict,)}): Response headers returned for the API test.. [optional]  # noqa: E501
-            response_size (int): Global size in byte of the API test response.. [optional]  # noqa: E501
-            timings (SyntheticsTiming): [optional]  # noqa: E501
+            cert (SyntheticsSSLCertificate): [optional]
+            error_code (SyntheticsErrorCode): [optional]
+            error_message (str): The API test error message.. [optional]
+            event_type (SyntheticsTestProcessStatus): [optional]
+            http_status_code (int): The API test HTTP status code.. [optional]
+            request_headers ({str: (dict,)}): Request header object used for the API test.. [optional]
+            response_body (str): Response body returned for the API test.. [optional]
+            response_headers ({str: (dict,)}): Response headers returned for the API test.. [optional]
+            response_size (int): Global size in byte of the API test response.. [optional]
+            timings (SyntheticsTiming): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsAPITestResultData, cls)._from_openapi_data(kwargs)

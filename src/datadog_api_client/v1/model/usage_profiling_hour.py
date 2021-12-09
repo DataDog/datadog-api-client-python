@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class UsageProfilingHour(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class UsageProfilingHour(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,25 +51,20 @@ class UsageProfilingHour(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "avg_container_agent_count": (int,),  # noqa: E501
-            "host_count": (int,),  # noqa: E501
-            "hour": (datetime,),  # noqa: E501
+            "avg_container_agent_count": (int,),
+            "host_count": (int,),
+            "hour": (datetime,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "avg_container_agent_count": "avg_container_agent_count",  # noqa: E501
-        "host_count": "host_count",  # noqa: E501
-        "hour": "hour",  # noqa: E501
+        "avg_container_agent_count": "avg_container_agent_count",
+        "host_count": "host_count",
+        "hour": "hour",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageProfilingHour - a model defined in OpenAPI
 
         Keyword Args:
@@ -112,17 +98,16 @@ class UsageProfilingHour(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            avg_container_agent_count (int): Get average number of container agents for that hour.. [optional]  # noqa: E501
-            host_count (int): Contains the total number of profiled hosts reporting during a given hour.. [optional]  # noqa: E501
-            hour (datetime): The hour for the usage.. [optional]  # noqa: E501
+            avg_container_agent_count (int): Get average number of container agents for that hour.. [optional]
+            host_count (int): Contains the total number of profiled hosts reporting during a given hour.. [optional]
+            hour (datetime): The hour for the usage.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageProfilingHour, cls)._from_openapi_data(kwargs)

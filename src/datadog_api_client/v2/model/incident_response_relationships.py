@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class IncidentResponseRelationships(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class IncidentResponseRelationships(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,29 +64,24 @@ class IncidentResponseRelationships(ModelNormal):
         """
         lazy_import()
         return {
-            "commander_user": (RelationshipToUser,),  # noqa: E501
-            "created_by_user": (RelationshipToUser,),  # noqa: E501
-            "integrations": (RelationshipToIncidentIntegrationMetadatas,),  # noqa: E501
-            "last_modified_by_user": (RelationshipToUser,),  # noqa: E501
-            "postmortem": (RelationshipToIncidentPostmortem,),  # noqa: E501
+            "commander_user": (RelationshipToUser,),
+            "created_by_user": (RelationshipToUser,),
+            "integrations": (RelationshipToIncidentIntegrationMetadatas,),
+            "last_modified_by_user": (RelationshipToUser,),
+            "postmortem": (RelationshipToIncidentPostmortem,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "commander_user": "commander_user",  # noqa: E501
-        "created_by_user": "created_by_user",  # noqa: E501
-        "integrations": "integrations",  # noqa: E501
-        "last_modified_by_user": "last_modified_by_user",  # noqa: E501
-        "postmortem": "postmortem",  # noqa: E501
+        "commander_user": "commander_user",
+        "created_by_user": "created_by_user",
+        "integrations": "integrations",
+        "last_modified_by_user": "last_modified_by_user",
+        "postmortem": "postmortem",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """IncidentResponseRelationships - a model defined in OpenAPI
 
         Keyword Args:
@@ -129,19 +115,18 @@ class IncidentResponseRelationships(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            commander_user (RelationshipToUser): [optional]  # noqa: E501
-            created_by_user (RelationshipToUser): [optional]  # noqa: E501
-            integrations (RelationshipToIncidentIntegrationMetadatas): [optional]  # noqa: E501
-            last_modified_by_user (RelationshipToUser): [optional]  # noqa: E501
-            postmortem (RelationshipToIncidentPostmortem): [optional]  # noqa: E501
+            commander_user (RelationshipToUser): [optional]
+            created_by_user (RelationshipToUser): [optional]
+            integrations (RelationshipToIncidentIntegrationMetadatas): [optional]
+            last_modified_by_user (RelationshipToUser): [optional]
+            postmortem (RelationshipToIncidentPostmortem): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(IncidentResponseRelationships, cls)._from_openapi_data(kwargs)

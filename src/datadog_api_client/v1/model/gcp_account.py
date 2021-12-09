@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -30,8 +29,6 @@ class GCPAccount(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -41,13 +38,7 @@ class GCPAccount(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -60,45 +51,40 @@ class GCPAccount(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            "auth_provider_x509_cert_url": (str,),  # noqa: E501
-            "auth_uri": (str,),  # noqa: E501
-            "automute": (bool,),  # noqa: E501
-            "client_email": (str,),  # noqa: E501
-            "client_id": (str,),  # noqa: E501
-            "client_x509_cert_url": (str,),  # noqa: E501
-            "errors": ([str],),  # noqa: E501
-            "host_filters": (str,),  # noqa: E501
-            "private_key": (str,),  # noqa: E501
-            "private_key_id": (str,),  # noqa: E501
-            "project_id": (str,),  # noqa: E501
-            "token_uri": (str,),  # noqa: E501
-            "type": (str,),  # noqa: E501
+            "auth_provider_x509_cert_url": (str,),
+            "auth_uri": (str,),
+            "automute": (bool,),
+            "client_email": (str,),
+            "client_id": (str,),
+            "client_x509_cert_url": (str,),
+            "errors": ([str],),
+            "host_filters": (str,),
+            "private_key": (str,),
+            "private_key_id": (str,),
+            "project_id": (str,),
+            "token_uri": (str,),
+            "type": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "auth_provider_x509_cert_url": "auth_provider_x509_cert_url",  # noqa: E501
-        "auth_uri": "auth_uri",  # noqa: E501
-        "automute": "automute",  # noqa: E501
-        "client_email": "client_email",  # noqa: E501
-        "client_id": "client_id",  # noqa: E501
-        "client_x509_cert_url": "client_x509_cert_url",  # noqa: E501
-        "errors": "errors",  # noqa: E501
-        "host_filters": "host_filters",  # noqa: E501
-        "private_key": "private_key",  # noqa: E501
-        "private_key_id": "private_key_id",  # noqa: E501
-        "project_id": "project_id",  # noqa: E501
-        "token_uri": "token_uri",  # noqa: E501
-        "type": "type",  # noqa: E501
+        "auth_provider_x509_cert_url": "auth_provider_x509_cert_url",
+        "auth_uri": "auth_uri",
+        "automute": "automute",
+        "client_email": "client_email",
+        "client_id": "client_id",
+        "client_x509_cert_url": "client_x509_cert_url",
+        "errors": "errors",
+        "host_filters": "host_filters",
+        "private_key": "private_key",
+        "private_key_id": "private_key_id",
+        "project_id": "project_id",
+        "token_uri": "token_uri",
+        "type": "type",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """GCPAccount - a model defined in OpenAPI
 
         Keyword Args:
@@ -132,27 +118,26 @@ class GCPAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            auth_provider_x509_cert_url (str): Should be `https://www.googleapis.com/oauth2/v1/certs`.. [optional]  # noqa: E501
-            auth_uri (str): Should be `https://accounts.google.com/o/oauth2/auth`.. [optional]  # noqa: E501
-            automute (bool): Silence monitors for expected GCE instance shutdowns.. [optional]  # noqa: E501
-            client_email (str): Your email found in your JSON service account key.. [optional]  # noqa: E501
-            client_id (str): Your ID found in your JSON service account key.. [optional]  # noqa: E501
-            client_x509_cert_url (str): Should be `https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>` where `<CLIENT_EMAIL>` is the email found in your JSON service account key.. [optional]  # noqa: E501
-            errors ([str]): An array of errors.. [optional]  # noqa: E501
-            host_filters (str): Limit the GCE instances that are pulled into Datadog by using tags. Only hosts that match one of the defined tags are imported into Datadog.. [optional]  # noqa: E501
-            private_key (str): Your private key name found in your JSON service account key.. [optional]  # noqa: E501
-            private_key_id (str): Your private key ID found in your JSON service account key.. [optional]  # noqa: E501
-            project_id (str): Your Google Cloud project ID found in your JSON service account key.. [optional]  # noqa: E501
-            token_uri (str): Should be `https://accounts.google.com/o/oauth2/token`.. [optional]  # noqa: E501
-            type (str): The value for service_account found in your JSON service account key.. [optional]  # noqa: E501
+            auth_provider_x509_cert_url (str): Should be `https://www.googleapis.com/oauth2/v1/certs`.. [optional]
+            auth_uri (str): Should be `https://accounts.google.com/o/oauth2/auth`.. [optional]
+            automute (bool): Silence monitors for expected GCE instance shutdowns.. [optional]
+            client_email (str): Your email found in your JSON service account key.. [optional]
+            client_id (str): Your ID found in your JSON service account key.. [optional]
+            client_x509_cert_url (str): Should be `https://www.googleapis.com/robot/v1/metadata/x509/<CLIENT_EMAIL>` where `<CLIENT_EMAIL>` is the email found in your JSON service account key.. [optional]
+            errors ([str]): An array of errors.. [optional]
+            host_filters (str): Limit the GCE instances that are pulled into Datadog by using tags. Only hosts that match one of the defined tags are imported into Datadog.. [optional]
+            private_key (str): Your private key name found in your JSON service account key.. [optional]
+            private_key_id (str): Your private key ID found in your JSON service account key.. [optional]
+            project_id (str): Your Google Cloud project ID found in your JSON service account key.. [optional]
+            token_uri (str): Should be `https://accounts.google.com/o/oauth2/token`.. [optional]
+            type (str): The value for service_account found in your JSON service account key.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(GCPAccount, cls)._from_openapi_data(kwargs)

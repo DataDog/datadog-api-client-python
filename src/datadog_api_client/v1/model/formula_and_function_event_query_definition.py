@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -48,8 +47,6 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -59,13 +56,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -79,31 +70,26 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "compute": (FormulaAndFunctionEventQueryDefinitionCompute,),  # noqa: E501
-            "data_source": (FormulaAndFunctionEventsDataSource,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "group_by": ([FormulaAndFunctionEventQueryGroupBy],),  # noqa: E501
-            "indexes": ([str],),  # noqa: E501
-            "search": (FormulaAndFunctionEventQueryDefinitionSearch,),  # noqa: E501
+            "compute": (FormulaAndFunctionEventQueryDefinitionCompute,),
+            "data_source": (FormulaAndFunctionEventsDataSource,),
+            "group_by": ([FormulaAndFunctionEventQueryGroupBy],),
+            "indexes": ([str],),
+            "name": (str,),
+            "search": (FormulaAndFunctionEventQueryDefinitionSearch,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "compute": "compute",  # noqa: E501
-        "data_source": "data_source",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "group_by": "group_by",  # noqa: E501
-        "indexes": "indexes",  # noqa: E501
-        "search": "search",  # noqa: E501
+        "compute": "compute",
+        "data_source": "data_source",
+        "name": "name",
+        "group_by": "group_by",
+        "indexes": "indexes",
+        "search": "search",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, compute, data_source, name, *args, **kwargs):  # noqa: E501
+    def __init__(self, compute, data_source, name, *args, **kwargs):
         """FormulaAndFunctionEventQueryDefinition - a model defined in OpenAPI
 
         Args:
@@ -142,9 +128,9 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            group_by ([FormulaAndFunctionEventQueryGroupBy]): Group by options.. [optional]  # noqa: E501
-            indexes ([str]): An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.. [optional]  # noqa: E501
-            search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]  # noqa: E501
+            group_by ([FormulaAndFunctionEventQueryGroupBy]): Group by options.. [optional]
+            indexes ([str]): An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.. [optional]
+            search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]
         """
         super().__init__(kwargs)
 
@@ -155,8 +141,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         self.name = name
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, compute, data_source, name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, compute, data_source, name, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(FormulaAndFunctionEventQueryDefinition, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,27 +64,22 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
         """
         lazy_import()
         return {
-            "operator": (SyntheticsAssertionJSONPathOperator,),  # noqa: E501
-            "type": (SyntheticsAssertionType,),  # noqa: E501
-            "_property": (str,),  # noqa: E501
-            "target": (SyntheticsAssertionJSONPathTargetTarget,),  # noqa: E501
+            "operator": (SyntheticsAssertionJSONPathOperator,),
+            "_property": (str,),
+            "target": (SyntheticsAssertionJSONPathTargetTarget,),
+            "type": (SyntheticsAssertionType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "operator": "operator",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "_property": "property",  # noqa: E501
-        "target": "target",  # noqa: E501
+        "operator": "operator",
+        "type": "type",
+        "_property": "property",
+        "target": "target",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, operator, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, operator, type, *args, **kwargs):
         """SyntheticsAssertionJSONPathTarget - a model defined in OpenAPI
 
         Args:
@@ -131,8 +117,8 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            _property (str): The associated assertion property.. [optional]  # noqa: E501
-            target (SyntheticsAssertionJSONPathTargetTarget): [optional]  # noqa: E501
+            _property (str): The associated assertion property.. [optional]
+            target (SyntheticsAssertionJSONPathTargetTarget): [optional]
         """
         super().__init__(kwargs)
 
@@ -142,8 +128,7 @@ class SyntheticsAssertionJSONPathTarget(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, operator, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, operator, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(SyntheticsAssertionJSONPathTarget, cls)._from_openapi_data(kwargs)

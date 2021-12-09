@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class EventCreateResponse(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,8 +46,6 @@ class EventCreateResponse(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "text": {
             "max_length": 4000,
@@ -59,10 +54,6 @@ class EventCreateResponse(ModelNormal):
             "max_length": 100,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -76,51 +67,46 @@ class EventCreateResponse(ModelNormal):
         """
         lazy_import()
         return {
-            "alert_type": (EventAlertType,),  # noqa: E501
-            "date_happened": (int,),  # noqa: E501
-            "device_name": (str,),  # noqa: E501
-            "host": (str,),  # noqa: E501
-            "id": (int,),  # noqa: E501
-            "payload": (str,),  # noqa: E501
-            "priority": (EventPriority,),  # noqa: E501
-            "related_event_id": (int,),  # noqa: E501
-            "source_type_name": (str,),  # noqa: E501
-            "status": (str,),  # noqa: E501
-            "tags": ([str],),  # noqa: E501
-            "text": (str,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "url": (str,),  # noqa: E501
+            "alert_type": (EventAlertType,),
+            "date_happened": (int,),
+            "device_name": (str,),
+            "host": (str,),
+            "id": (int,),
+            "payload": (str,),
+            "priority": (EventPriority,),
+            "related_event_id": (int,),
+            "source_type_name": (str,),
+            "status": (str,),
+            "tags": ([str],),
+            "text": (str,),
+            "title": (str,),
+            "url": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "alert_type": "alert_type",  # noqa: E501
-        "date_happened": "date_happened",  # noqa: E501
-        "device_name": "device_name",  # noqa: E501
-        "host": "host",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "payload": "payload",  # noqa: E501
-        "priority": "priority",  # noqa: E501
-        "related_event_id": "related_event_id",  # noqa: E501
-        "source_type_name": "source_type_name",  # noqa: E501
-        "status": "status",  # noqa: E501
-        "tags": "tags",  # noqa: E501
-        "text": "text",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "url": "url",  # noqa: E501
+        "alert_type": "alert_type",
+        "date_happened": "date_happened",
+        "device_name": "device_name",
+        "host": "host",
+        "id": "id",
+        "payload": "payload",
+        "priority": "priority",
+        "related_event_id": "related_event_id",
+        "source_type_name": "source_type_name",
+        "status": "status",
+        "tags": "tags",
+        "text": "text",
+        "title": "title",
+        "url": "url",
     }
 
     read_only_vars = {
-        "id",  # noqa: E501
-        "payload",  # noqa: E501
-        "url",  # noqa: E501
+        "id",
+        "payload",
+        "url",
     }
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """EventCreateResponse - a model defined in OpenAPI
 
         Keyword Args:
@@ -154,28 +140,27 @@ class EventCreateResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            alert_type (EventAlertType): [optional]  # noqa: E501
-            date_happened (int): POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days.. [optional]  # noqa: E501
-            device_name (str): A device name.. [optional]  # noqa: E501
-            host (str): Host name to associate with the event. Any tags associated with the host are also applied to this event.. [optional]  # noqa: E501
-            id (int): Integer ID of the event.. [optional]  # noqa: E501
-            payload (str): Payload of the event.. [optional]  # noqa: E501
-            priority (EventPriority): [optional]  # noqa: E501
-            related_event_id (int): ID of the parent event. Must be sent as an integer (i.e. no quotes).. [optional]  # noqa: E501
-            source_type_name (str): The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]  # noqa: E501
-            status (str): A status.. [optional]  # noqa: E501
-            tags ([str]): A list of tags to apply to the event.. [optional]  # noqa: E501
-            text (str): The body of the event. Limited to 4000 characters. The text supports markdown. Use `msg_text` with the Datadog Ruby library.. [optional]  # noqa: E501
-            title (str): The event title. Limited to 100 characters. Use `msg_title` with the Datadog Ruby library.. [optional]  # noqa: E501
-            url (str): URL of the event.. [optional]  # noqa: E501
+            alert_type (EventAlertType): [optional]
+            date_happened (int): POSIX timestamp of the event. Must be sent as an integer (i.e. no quotes). Limited to events no older than 7 days.. [optional]
+            device_name (str): A device name.. [optional]
+            host (str): Host name to associate with the event. Any tags associated with the host are also applied to this event.. [optional]
+            id (int): Integer ID of the event.. [optional]
+            payload (str): Payload of the event.. [optional]
+            priority (EventPriority): [optional]
+            related_event_id (int): ID of the parent event. Must be sent as an integer (i.e. no quotes).. [optional]
+            source_type_name (str): The type of event being posted. Option examples include nagios, hudson, jenkins, my_apps, chef, puppet, git, bitbucket, etc. A complete list of source attribute values [available here](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).. [optional]
+            status (str): A status.. [optional]
+            tags ([str]): A list of tags to apply to the event.. [optional]
+            text (str): The body of the event. Limited to 4000 characters. The text supports markdown. Use `msg_text` with the Datadog Ruby library.. [optional]
+            title (str): The event title. Limited to 100 characters. Use `msg_title` with the Datadog Ruby library.. [optional]
+            url (str): URL of the event.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(EventCreateResponse, cls)._from_openapi_data(kwargs)

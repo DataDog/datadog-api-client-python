@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -44,8 +43,6 @@ class QueryValueWidgetDefinition(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -55,18 +52,12 @@ class QueryValueWidgetDefinition(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {
         "requests": {
             "max_items": 1,
             "min_items": 1,
         },
     }
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -80,41 +71,36 @@ class QueryValueWidgetDefinition(ModelNormal):
         """
         lazy_import()
         return {
-            "requests": ([QueryValueWidgetRequest],),  # noqa: E501
-            "type": (QueryValueWidgetDefinitionType,),  # noqa: E501
-            "autoscale": (bool,),  # noqa: E501
-            "custom_links": ([WidgetCustomLink],),  # noqa: E501
-            "custom_unit": (str,),  # noqa: E501
-            "precision": (int,),  # noqa: E501
-            "text_align": (WidgetTextAlign,),  # noqa: E501
-            "time": (WidgetTime,),  # noqa: E501
-            "title": (str,),  # noqa: E501
-            "title_align": (WidgetTextAlign,),  # noqa: E501
-            "title_size": (str,),  # noqa: E501
+            "autoscale": (bool,),
+            "custom_links": ([WidgetCustomLink],),
+            "custom_unit": (str,),
+            "precision": (int,),
+            "requests": ([QueryValueWidgetRequest],),
+            "text_align": (WidgetTextAlign,),
+            "time": (WidgetTime,),
+            "title": (str,),
+            "title_align": (WidgetTextAlign,),
+            "title_size": (str,),
+            "type": (QueryValueWidgetDefinitionType,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "requests": "requests",  # noqa: E501
-        "type": "type",  # noqa: E501
-        "autoscale": "autoscale",  # noqa: E501
-        "custom_links": "custom_links",  # noqa: E501
-        "custom_unit": "custom_unit",  # noqa: E501
-        "precision": "precision",  # noqa: E501
-        "text_align": "text_align",  # noqa: E501
-        "time": "time",  # noqa: E501
-        "title": "title",  # noqa: E501
-        "title_align": "title_align",  # noqa: E501
-        "title_size": "title_size",  # noqa: E501
+        "requests": "requests",
+        "type": "type",
+        "autoscale": "autoscale",
+        "custom_links": "custom_links",
+        "custom_unit": "custom_unit",
+        "precision": "precision",
+        "text_align": "text_align",
+        "time": "time",
+        "title": "title",
+        "title_align": "title_align",
+        "title_size": "title_size",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, requests, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, requests, type, *args, **kwargs):
         """QueryValueWidgetDefinition - a model defined in OpenAPI
 
         Args:
@@ -152,15 +138,15 @@ class QueryValueWidgetDefinition(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            autoscale (bool): Whether to use auto-scaling or not.. [optional]  # noqa: E501
-            custom_links ([WidgetCustomLink]): List of custom links.. [optional]  # noqa: E501
-            custom_unit (str): Display a unit of your choice on the widget.. [optional]  # noqa: E501
-            precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]  # noqa: E501
-            text_align (WidgetTextAlign): [optional]  # noqa: E501
-            time (WidgetTime): [optional]  # noqa: E501
-            title (str): Title of your widget.. [optional]  # noqa: E501
-            title_align (WidgetTextAlign): [optional]  # noqa: E501
-            title_size (str): Size of the title.. [optional]  # noqa: E501
+            autoscale (bool): Whether to use auto-scaling or not.. [optional]
+            custom_links ([WidgetCustomLink]): List of custom links.. [optional]
+            custom_unit (str): Display a unit of your choice on the widget.. [optional]
+            precision (int): Number of decimals to show. If not defined, the widget uses the raw value.. [optional]
+            text_align (WidgetTextAlign): [optional]
+            time (WidgetTime): [optional]
+            title (str): Title of your widget.. [optional]
+            title_align (WidgetTextAlign): [optional]
+            title_size (str): Size of the title.. [optional]
         """
         super().__init__(kwargs)
 
@@ -170,8 +156,7 @@ class QueryValueWidgetDefinition(ModelNormal):
         self.type = type
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, requests, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, requests, type, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(QueryValueWidgetDefinition, cls)._from_openapi_data(kwargs)

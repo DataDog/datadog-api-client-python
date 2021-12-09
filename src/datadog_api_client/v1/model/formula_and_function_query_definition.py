@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -76,8 +75,6 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -87,13 +84,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -107,14 +98,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         """
         return {}
 
-    discriminator = None
-
-    attribute_map = {}
-
-    read_only_vars = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """FormulaAndFunctionQueryDefinition - a model defined in OpenAPI
 
         Keyword Args:
@@ -148,36 +132,35 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregator (FormulaAndFunctionMetricAggregation): [optional]  # noqa: E501
-            group_by ([str]): Array of fields to group results by.. [optional]  # noqa: E501
-            indexes ([str]): An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.. [optional]  # noqa: E501
-            search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]  # noqa: E501
-            is_normalized_cpu (bool): Whether to normalize the CPU percentages.. [optional]  # noqa: E501
-            limit (int): Number of hits to return.. [optional]  # noqa: E501
-            sort (QuerySortOrder): [optional]  # noqa: E501
-            tag_filters ([str]): An array of tags to filter by.. [optional]  # noqa: E501
-            text_filter (str): Text to use as filter.. [optional]  # noqa: E501
-            is_upstream (bool): Determines whether stats for upstream or downstream dependencies should be queried.. [optional]  # noqa: E501
-            primary_tag_name (str): Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog. [optional]  # noqa: E501
-            primary_tag_value (str): Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.. [optional]  # noqa: E501
-            data_source (FormulaAndFunctionApmResourceStatsDataSource): [optional]  # noqa: E501
-            name (str): Name of this query to use in formulas.. [optional]  # noqa: E501
-            query (str): Metrics query definition.. [optional]  # noqa: E501
-            compute (FormulaAndFunctionEventQueryDefinitionCompute): [optional]  # noqa: E501
-            metric (str): Process metric name.. [optional]  # noqa: E501
-            env (str): APM environment.. [optional]  # noqa: E501
-            operation_name (str): Name of operation on service.. [optional]  # noqa: E501
-            resource_name (str): APM resource name.. [optional]  # noqa: E501
-            service (str): APM service name.. [optional]  # noqa: E501
-            stat (FormulaAndFunctionApmResourceStatName): [optional]  # noqa: E501
+            aggregator (FormulaAndFunctionMetricAggregation): [optional]
+            group_by ([str]): Array of fields to group results by.. [optional]
+            indexes ([str]): An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.. [optional]
+            search (FormulaAndFunctionEventQueryDefinitionSearch): [optional]
+            is_normalized_cpu (bool): Whether to normalize the CPU percentages.. [optional]
+            limit (int): Number of hits to return.. [optional]
+            sort (QuerySortOrder): [optional]
+            tag_filters ([str]): An array of tags to filter by.. [optional]
+            text_filter (str): Text to use as filter.. [optional]
+            is_upstream (bool): Determines whether stats for upstream or downstream dependencies should be queried.. [optional]
+            primary_tag_name (str): Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog. [optional]
+            primary_tag_value (str): Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.. [optional]
+            data_source (FormulaAndFunctionApmResourceStatsDataSource): [optional]
+            name (str): Name of this query to use in formulas.. [optional]
+            query (str): Metrics query definition.. [optional]
+            compute (FormulaAndFunctionEventQueryDefinitionCompute): [optional]
+            metric (str): Process metric name.. [optional]
+            env (str): APM environment.. [optional]
+            operation_name (str): Name of operation on service.. [optional]
+            resource_name (str): APM resource name.. [optional]
+            service (str): APM service name.. [optional]
+            stat (FormulaAndFunctionApmResourceStatName): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(FormulaAndFunctionQueryDefinition, cls)._from_openapi_data(kwargs)

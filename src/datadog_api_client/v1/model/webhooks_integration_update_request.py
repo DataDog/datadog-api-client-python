@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,32 +58,27 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
         """
         lazy_import()
         return {
-            "custom_headers": (str,),  # noqa: E501
-            "encode_as": (WebhooksIntegrationEncoding,),  # noqa: E501
-            "name": (str,),  # noqa: E501
+            "custom_headers": (str,),
+            "encode_as": (WebhooksIntegrationEncoding,),
+            "name": (str,),
             "payload": (
                 str,
                 none_type,
-            ),  # noqa: E501
-            "url": (str,),  # noqa: E501
+            ),
+            "url": (str,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "custom_headers": "custom_headers",  # noqa: E501
-        "encode_as": "encode_as",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "payload": "payload",  # noqa: E501
-        "url": "url",  # noqa: E501
+        "custom_headers": "custom_headers",
+        "encode_as": "encode_as",
+        "name": "name",
+        "payload": "payload",
+        "url": "url",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """WebhooksIntegrationUpdateRequest - a model defined in OpenAPI
 
         Keyword Args:
@@ -126,19 +112,18 @@ class WebhooksIntegrationUpdateRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            custom_headers (str): If `null`, uses no header. If given a JSON payload, these will be headers attached to your webhook.. [optional]  # noqa: E501
-            encode_as (WebhooksIntegrationEncoding): [optional]  # noqa: E501
-            name (str): The name of the webhook. It corresponds with `<WEBHOOK_NAME>`. Learn more on how to use it in [monitor notifications](https://docs.datadoghq.com/monitors/notify).. [optional]  # noqa: E501
-            payload (str, none_type): If `null`, uses the default payload. If given a JSON payload, the webhook returns the payload specified by the given payload. [Webhooks variable usage](https://docs.datadoghq.com/integrations/webhooks/#usage).. [optional]  # noqa: E501
-            url (str): URL of the webhook.. [optional]  # noqa: E501
+            custom_headers (str): If `null`, uses no header. If given a JSON payload, these will be headers attached to your webhook.. [optional]
+            encode_as (WebhooksIntegrationEncoding): [optional]
+            name (str): The name of the webhook. It corresponds with `<WEBHOOK_NAME>`. Learn more on how to use it in [monitor notifications](https://docs.datadoghq.com/monitors/notify).. [optional]
+            payload (str, none_type): If `null`, uses the default payload. If given a JSON payload, the webhook returns the payload specified by the given payload. [Webhooks variable usage](https://docs.datadoghq.com/integrations/webhooks/#usage).. [optional]
+            url (str): URL of the webhook.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(WebhooksIntegrationUpdateRequest, cls)._from_openapi_data(kwargs)

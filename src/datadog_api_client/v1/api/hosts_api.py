@@ -4,7 +4,6 @@
 
 
 import re  # noqa: F401
-import sys  # noqa: F401
 
 from datadog_api_client.v1.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.v1.model_utils import (  # noqa: F401
@@ -12,7 +11,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     datetime,
     file_type,
     none_type,
-    validate_and_convert_types,
 )
 from datadog_api_client.v1.model.api_error_response import APIErrorResponse
 from datadog_api_client.v1.model.host_list_response import HostListResponse
@@ -165,9 +163,9 @@ class HostsApi(object):
         )
 
     def get_host_totals(self, **kwargs):
-        """Get the total number of active hosts  # noqa: E501
+        """Get the total number of active hosts
 
-        This endpoint returns the total number of active and up hosts in your Datadog account. Active means the host has reported in the past hour, and up means it has reported in the past two hours.  # noqa: E501
+        This endpoint returns the total number of active and up hosts in your Datadog account. Active means the host has reported in the past hour, and up means it has reported in the past two hours.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -206,9 +204,9 @@ class HostsApi(object):
         return self._get_host_totals_endpoint.call_with_http_info(**kwargs)
 
     def list_hosts(self, **kwargs):
-        """Get all hosts for your organization  # noqa: E501
+        """Get all hosts for your organization
 
-        This endpoint allows searching for hosts by name, alias, or tag. Hosts live within the past 3 hours are included by default. Retention is 7 days. Results are paginated with a max of 1000 results at a time.  # noqa: E501
+        This endpoint allows searching for hosts by name, alias, or tag. Hosts live within the past 3 hours are included by default. Retention is 7 days. Results are paginated with a max of 1000 results at a time.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -254,9 +252,9 @@ class HostsApi(object):
         return self._list_hosts_endpoint.call_with_http_info(**kwargs)
 
     def mute_host(self, host_name, body, **kwargs):
-        """Mute a host  # noqa: E501
+        """Mute a host
 
-        Mute a host.  # noqa: E501
+        Mute a host.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -299,9 +297,9 @@ class HostsApi(object):
         return self._mute_host_endpoint.call_with_http_info(**kwargs)
 
     def unmute_host(self, host_name, **kwargs):
-        """Unmute a host  # noqa: E501
+        """Unmute a host
 
-        Unmutes a host. This endpoint takes no JSON arguments.  # noqa: E501
+        Unmutes a host. This endpoint takes no JSON arguments.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

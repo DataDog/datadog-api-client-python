@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -36,8 +35,6 @@ class UsageBillableSummaryKeys(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -47,13 +44,7 @@ class UsageBillableSummaryKeys(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -67,83 +58,78 @@ class UsageBillableSummaryKeys(ModelNormal):
         """
         lazy_import()
         return {
-            "apm_host_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "apm_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
-            "apm_trace_search_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "fargate_container_average": (UsageBillableSummaryBody,),  # noqa: E501
-            "infra_container_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "infra_host_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "infra_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
-            "iot_top99p": (UsageBillableSummaryBody,),  # noqa: E501
-            "lambda_function_average": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_indexed_15day_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_indexed_180day_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_indexed_30day_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_indexed_3day_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_indexed_45day_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_indexed_60day_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_indexed_7day_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_indexed_90day_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_indexed_custom_retention_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_indexed_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "logs_ingested_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "network_device_top99p": (UsageBillableSummaryBody,),  # noqa: E501
-            "npm_flow_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "npm_host_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "npm_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
-            "prof_container_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "prof_host_top99p": (UsageBillableSummaryBody,),  # noqa: E501
-            "rum_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "serverless_invocation_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "siem_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "synthetics_api_tests_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "synthetics_browser_checks_sum": (UsageBillableSummaryBody,),  # noqa: E501
-            "timeseries_average": (UsageBillableSummaryBody,),  # noqa: E501
+            "apm_host_sum": (UsageBillableSummaryBody,),
+            "apm_host_top99p": (UsageBillableSummaryBody,),
+            "apm_trace_search_sum": (UsageBillableSummaryBody,),
+            "fargate_container_average": (UsageBillableSummaryBody,),
+            "infra_container_sum": (UsageBillableSummaryBody,),
+            "infra_host_sum": (UsageBillableSummaryBody,),
+            "infra_host_top99p": (UsageBillableSummaryBody,),
+            "iot_top99p": (UsageBillableSummaryBody,),
+            "lambda_function_average": (UsageBillableSummaryBody,),
+            "logs_indexed_15day_sum": (UsageBillableSummaryBody,),
+            "logs_indexed_180day_sum": (UsageBillableSummaryBody,),
+            "logs_indexed_30day_sum": (UsageBillableSummaryBody,),
+            "logs_indexed_3day_sum": (UsageBillableSummaryBody,),
+            "logs_indexed_45day_sum": (UsageBillableSummaryBody,),
+            "logs_indexed_60day_sum": (UsageBillableSummaryBody,),
+            "logs_indexed_7day_sum": (UsageBillableSummaryBody,),
+            "logs_indexed_90day_sum": (UsageBillableSummaryBody,),
+            "logs_indexed_custom_retention_sum": (UsageBillableSummaryBody,),
+            "logs_indexed_sum": (UsageBillableSummaryBody,),
+            "logs_ingested_sum": (UsageBillableSummaryBody,),
+            "network_device_top99p": (UsageBillableSummaryBody,),
+            "npm_flow_sum": (UsageBillableSummaryBody,),
+            "npm_host_sum": (UsageBillableSummaryBody,),
+            "npm_host_top99p": (UsageBillableSummaryBody,),
+            "prof_container_sum": (UsageBillableSummaryBody,),
+            "prof_host_top99p": (UsageBillableSummaryBody,),
+            "rum_sum": (UsageBillableSummaryBody,),
+            "serverless_invocation_sum": (UsageBillableSummaryBody,),
+            "siem_sum": (UsageBillableSummaryBody,),
+            "synthetics_api_tests_sum": (UsageBillableSummaryBody,),
+            "synthetics_browser_checks_sum": (UsageBillableSummaryBody,),
+            "timeseries_average": (UsageBillableSummaryBody,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "apm_host_sum": "apm_host_sum",  # noqa: E501
-        "apm_host_top99p": "apm_host_top99p",  # noqa: E501
-        "apm_trace_search_sum": "apm_trace_search_sum",  # noqa: E501
-        "fargate_container_average": "fargate_container_average",  # noqa: E501
-        "infra_container_sum": "infra_container_sum",  # noqa: E501
-        "infra_host_sum": "infra_host_sum",  # noqa: E501
-        "infra_host_top99p": "infra_host_top99p",  # noqa: E501
-        "iot_top99p": "iot_top99p",  # noqa: E501
-        "lambda_function_average": "lambda_function_average",  # noqa: E501
-        "logs_indexed_15day_sum": "logs_indexed_15day_sum",  # noqa: E501
-        "logs_indexed_180day_sum": "logs_indexed_180day_sum",  # noqa: E501
-        "logs_indexed_30day_sum": "logs_indexed_30day_sum",  # noqa: E501
-        "logs_indexed_3day_sum": "logs_indexed_3day_sum",  # noqa: E501
-        "logs_indexed_45day_sum": "logs_indexed_45day_sum",  # noqa: E501
-        "logs_indexed_60day_sum": "logs_indexed_60day_sum",  # noqa: E501
-        "logs_indexed_7day_sum": "logs_indexed_7day_sum",  # noqa: E501
-        "logs_indexed_90day_sum": "logs_indexed_90day_sum",  # noqa: E501
-        "logs_indexed_custom_retention_sum": "logs_indexed_custom_retention_sum",  # noqa: E501
-        "logs_indexed_sum": "logs_indexed_sum",  # noqa: E501
-        "logs_ingested_sum": "logs_ingested_sum",  # noqa: E501
-        "network_device_top99p": "network_device_top99p",  # noqa: E501
-        "npm_flow_sum": "npm_flow_sum",  # noqa: E501
-        "npm_host_sum": "npm_host_sum",  # noqa: E501
-        "npm_host_top99p": "npm_host_top99p",  # noqa: E501
-        "prof_container_sum": "prof_container_sum",  # noqa: E501
-        "prof_host_top99p": "prof_host_top99p",  # noqa: E501
-        "rum_sum": "rum_sum",  # noqa: E501
-        "serverless_invocation_sum": "serverless_invocation_sum",  # noqa: E501
-        "siem_sum": "siem_sum",  # noqa: E501
-        "synthetics_api_tests_sum": "synthetics_api_tests_sum",  # noqa: E501
-        "synthetics_browser_checks_sum": "synthetics_browser_checks_sum",  # noqa: E501
-        "timeseries_average": "timeseries_average",  # noqa: E501
+        "apm_host_sum": "apm_host_sum",
+        "apm_host_top99p": "apm_host_top99p",
+        "apm_trace_search_sum": "apm_trace_search_sum",
+        "fargate_container_average": "fargate_container_average",
+        "infra_container_sum": "infra_container_sum",
+        "infra_host_sum": "infra_host_sum",
+        "infra_host_top99p": "infra_host_top99p",
+        "iot_top99p": "iot_top99p",
+        "lambda_function_average": "lambda_function_average",
+        "logs_indexed_15day_sum": "logs_indexed_15day_sum",
+        "logs_indexed_180day_sum": "logs_indexed_180day_sum",
+        "logs_indexed_30day_sum": "logs_indexed_30day_sum",
+        "logs_indexed_3day_sum": "logs_indexed_3day_sum",
+        "logs_indexed_45day_sum": "logs_indexed_45day_sum",
+        "logs_indexed_60day_sum": "logs_indexed_60day_sum",
+        "logs_indexed_7day_sum": "logs_indexed_7day_sum",
+        "logs_indexed_90day_sum": "logs_indexed_90day_sum",
+        "logs_indexed_custom_retention_sum": "logs_indexed_custom_retention_sum",
+        "logs_indexed_sum": "logs_indexed_sum",
+        "logs_ingested_sum": "logs_ingested_sum",
+        "network_device_top99p": "network_device_top99p",
+        "npm_flow_sum": "npm_flow_sum",
+        "npm_host_sum": "npm_host_sum",
+        "npm_host_top99p": "npm_host_top99p",
+        "prof_container_sum": "prof_container_sum",
+        "prof_host_top99p": "prof_host_top99p",
+        "rum_sum": "rum_sum",
+        "serverless_invocation_sum": "serverless_invocation_sum",
+        "siem_sum": "siem_sum",
+        "synthetics_api_tests_sum": "synthetics_api_tests_sum",
+        "synthetics_browser_checks_sum": "synthetics_browser_checks_sum",
+        "timeseries_average": "timeseries_average",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """UsageBillableSummaryKeys - a model defined in OpenAPI
 
         Keyword Args:
@@ -177,46 +163,45 @@ class UsageBillableSummaryKeys(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            apm_host_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            apm_host_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
-            apm_trace_search_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            fargate_container_average (UsageBillableSummaryBody): [optional]  # noqa: E501
-            infra_container_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            infra_host_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            infra_host_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
-            iot_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
-            lambda_function_average (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_indexed_15day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_indexed_180day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_indexed_30day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_indexed_3day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_indexed_45day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_indexed_60day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_indexed_7day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_indexed_90day_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_indexed_custom_retention_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_indexed_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            logs_ingested_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            network_device_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
-            npm_flow_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            npm_host_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            npm_host_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
-            prof_container_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            prof_host_top99p (UsageBillableSummaryBody): [optional]  # noqa: E501
-            rum_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            serverless_invocation_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            siem_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            synthetics_api_tests_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            synthetics_browser_checks_sum (UsageBillableSummaryBody): [optional]  # noqa: E501
-            timeseries_average (UsageBillableSummaryBody): [optional]  # noqa: E501
+            apm_host_sum (UsageBillableSummaryBody): [optional]
+            apm_host_top99p (UsageBillableSummaryBody): [optional]
+            apm_trace_search_sum (UsageBillableSummaryBody): [optional]
+            fargate_container_average (UsageBillableSummaryBody): [optional]
+            infra_container_sum (UsageBillableSummaryBody): [optional]
+            infra_host_sum (UsageBillableSummaryBody): [optional]
+            infra_host_top99p (UsageBillableSummaryBody): [optional]
+            iot_top99p (UsageBillableSummaryBody): [optional]
+            lambda_function_average (UsageBillableSummaryBody): [optional]
+            logs_indexed_15day_sum (UsageBillableSummaryBody): [optional]
+            logs_indexed_180day_sum (UsageBillableSummaryBody): [optional]
+            logs_indexed_30day_sum (UsageBillableSummaryBody): [optional]
+            logs_indexed_3day_sum (UsageBillableSummaryBody): [optional]
+            logs_indexed_45day_sum (UsageBillableSummaryBody): [optional]
+            logs_indexed_60day_sum (UsageBillableSummaryBody): [optional]
+            logs_indexed_7day_sum (UsageBillableSummaryBody): [optional]
+            logs_indexed_90day_sum (UsageBillableSummaryBody): [optional]
+            logs_indexed_custom_retention_sum (UsageBillableSummaryBody): [optional]
+            logs_indexed_sum (UsageBillableSummaryBody): [optional]
+            logs_ingested_sum (UsageBillableSummaryBody): [optional]
+            network_device_top99p (UsageBillableSummaryBody): [optional]
+            npm_flow_sum (UsageBillableSummaryBody): [optional]
+            npm_host_sum (UsageBillableSummaryBody): [optional]
+            npm_host_top99p (UsageBillableSummaryBody): [optional]
+            prof_container_sum (UsageBillableSummaryBody): [optional]
+            prof_host_top99p (UsageBillableSummaryBody): [optional]
+            rum_sum (UsageBillableSummaryBody): [optional]
+            serverless_invocation_sum (UsageBillableSummaryBody): [optional]
+            siem_sum (UsageBillableSummaryBody): [optional]
+            synthetics_api_tests_sum (UsageBillableSummaryBody): [optional]
+            synthetics_browser_checks_sum (UsageBillableSummaryBody): [optional]
+            timeseries_average (UsageBillableSummaryBody): [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(UsageBillableSummaryKeys, cls)._from_openapi_data(kwargs)

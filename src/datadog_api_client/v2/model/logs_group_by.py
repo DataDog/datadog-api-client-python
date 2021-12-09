@@ -9,7 +9,6 @@ from datadog_api_client.v2.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -42,8 +41,6 @@ class LogsGroupBy(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -53,13 +50,7 @@ class LogsGroupBy(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -73,31 +64,26 @@ class LogsGroupBy(ModelNormal):
         """
         lazy_import()
         return {
-            "facet": (str,),  # noqa: E501
-            "histogram": (LogsGroupByHistogram,),  # noqa: E501
-            "limit": (int,),  # noqa: E501
-            "missing": (LogsGroupByMissing,),  # noqa: E501
-            "sort": (LogsAggregateSort,),  # noqa: E501
-            "total": (LogsGroupByTotal,),  # noqa: E501
+            "facet": (str,),
+            "histogram": (LogsGroupByHistogram,),
+            "limit": (int,),
+            "missing": (LogsGroupByMissing,),
+            "sort": (LogsAggregateSort,),
+            "total": (LogsGroupByTotal,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "facet": "facet",  # noqa: E501
-        "histogram": "histogram",  # noqa: E501
-        "limit": "limit",  # noqa: E501
-        "missing": "missing",  # noqa: E501
-        "sort": "sort",  # noqa: E501
-        "total": "total",  # noqa: E501
+        "facet": "facet",
+        "histogram": "histogram",
+        "limit": "limit",
+        "missing": "missing",
+        "sort": "sort",
+        "total": "total",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, facet, *args, **kwargs):  # noqa: E501
+    def __init__(self, facet, *args, **kwargs):
         """LogsGroupBy - a model defined in OpenAPI
 
         Args:
@@ -134,11 +120,11 @@ class LogsGroupBy(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            histogram (LogsGroupByHistogram): [optional]  # noqa: E501
-            limit (int): The maximum buckets to return for this group by. [optional] if omitted the server will use the default value of 10  # noqa: E501
-            missing (LogsGroupByMissing): [optional]  # noqa: E501
-            sort (LogsAggregateSort): [optional]  # noqa: E501
-            total (LogsGroupByTotal): [optional]  # noqa: E501
+            histogram (LogsGroupByHistogram): [optional]
+            limit (int): The maximum buckets to return for this group by. [optional] if omitted the server will use the default value of 10
+            missing (LogsGroupByMissing): [optional]
+            sort (LogsAggregateSort): [optional]
+            total (LogsGroupByTotal): [optional]
         """
         super().__init__(kwargs)
 
@@ -147,8 +133,7 @@ class LogsGroupBy(ModelNormal):
         self.facet = facet
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, facet, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, facet, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(LogsGroupBy, cls)._from_openapi_data(kwargs)

@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -45,10 +44,6 @@ class LogsStringBuilderProcessorType(ModelSimple):
 
     validations = {}
 
-    additional_properties_type = None
-
-    _nullable = False
-
     @cached_property
     def openapi_types():
         """
@@ -63,23 +58,16 @@ class LogsStringBuilderProcessorType(ModelSimple):
             "value": (str,),
         }
 
-    discriminator = None
-
-    attribute_map = {}
-
-    _composed_schemas = None
-
-    @convert_js_args_to_python_args
     def __init__(self, *args, **kwargs):
         """LogsStringBuilderProcessorType - a model defined in OpenAPI
 
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Type of logs string builder processor.. if omitted defaults to "string-builder-processor", must be one of ["string-builder-processor", ]  # noqa: E501
+            args[0] (str): Type of logs string builder processor.. if omitted defaults to "string-builder-processor", must be one of ["string-builder-processor"]
 
         Keyword Args:
-            value (str): Type of logs string builder processor.. if omitted defaults to "string-builder-processor", must be one of ["string-builder-processor", ]  # noqa: E501
+            value (str): Type of logs string builder processor.. if omitted defaults to "string-builder-processor", must be one of ["string-builder-processor"]
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -128,7 +116,6 @@ class LogsStringBuilderProcessorType(ModelSimple):
         self._check_kw_args(kwargs)
 
     @classmethod
-    @convert_js_args_to_python_args
     def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
         return cls(*args, **kwargs)

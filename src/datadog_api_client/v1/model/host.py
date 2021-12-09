@@ -9,7 +9,6 @@ from datadog_api_client.v1.model_utils import (  # noqa: F401
     ModelNormal,
     ModelSimple,
     cached_property,
-    convert_js_args_to_python_args,
     date,
     datetime,
     file_type,
@@ -38,8 +37,6 @@ class Host(ModelNormal):
 
       attribute_map (dict): The key is attribute name
           and the value is json key in definition.
-      discriminator_value_class_map (dict): A dict to go from the discriminator
-          variable value to the discriminator class name.
       validations (dict): The key is the name of the attribute. The value is a dict
           that stores validations for max_length, min_length, max_items,
           min_items, exclusive_maximum, inclusive_maximum, exclusive_minimum,
@@ -49,13 +46,7 @@ class Host(ModelNormal):
 
     """
 
-    allowed_values = {}
-
     validations = {}
-
-    additional_properties_type = None
-
-    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -69,47 +60,42 @@ class Host(ModelNormal):
         """
         lazy_import()
         return {
-            "aliases": ([str],),  # noqa: E501
-            "apps": ([str],),  # noqa: E501
-            "aws_name": (str,),  # noqa: E501
-            "host_name": (str,),  # noqa: E501
-            "id": (int,),  # noqa: E501
-            "is_muted": (bool,),  # noqa: E501
-            "last_reported_time": (int,),  # noqa: E501
-            "meta": (HostMeta,),  # noqa: E501
-            "metrics": (HostMetrics,),  # noqa: E501
-            "mute_timeout": (int,),  # noqa: E501
-            "name": (str,),  # noqa: E501
-            "sources": ([str],),  # noqa: E501
-            "tags_by_source": ({str: ([str],)},),  # noqa: E501
-            "up": (bool,),  # noqa: E501
+            "aliases": ([str],),
+            "apps": ([str],),
+            "aws_name": (str,),
+            "host_name": (str,),
+            "id": (int,),
+            "is_muted": (bool,),
+            "last_reported_time": (int,),
+            "meta": (HostMeta,),
+            "metrics": (HostMetrics,),
+            "mute_timeout": (int,),
+            "name": (str,),
+            "sources": ([str],),
+            "tags_by_source": ({str: ([str],)},),
+            "up": (bool,),
         }
 
-    discriminator = None
-
     attribute_map = {
-        "aliases": "aliases",  # noqa: E501
-        "apps": "apps",  # noqa: E501
-        "aws_name": "aws_name",  # noqa: E501
-        "host_name": "host_name",  # noqa: E501
-        "id": "id",  # noqa: E501
-        "is_muted": "is_muted",  # noqa: E501
-        "last_reported_time": "last_reported_time",  # noqa: E501
-        "meta": "meta",  # noqa: E501
-        "metrics": "metrics",  # noqa: E501
-        "mute_timeout": "mute_timeout",  # noqa: E501
-        "name": "name",  # noqa: E501
-        "sources": "sources",  # noqa: E501
-        "tags_by_source": "tags_by_source",  # noqa: E501
-        "up": "up",  # noqa: E501
+        "aliases": "aliases",
+        "apps": "apps",
+        "aws_name": "aws_name",
+        "host_name": "host_name",
+        "id": "id",
+        "is_muted": "is_muted",
+        "last_reported_time": "last_reported_time",
+        "meta": "meta",
+        "metrics": "metrics",
+        "mute_timeout": "mute_timeout",
+        "name": "name",
+        "sources": "sources",
+        "tags_by_source": "tags_by_source",
+        "up": "up",
     }
 
     read_only_vars = {}
 
-    _composed_schemas = {}
-
-    @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):
         """Host - a model defined in OpenAPI
 
         Keyword Args:
@@ -143,28 +129,27 @@ class Host(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aliases ([str]): Host aliases collected by Datadog.. [optional]  # noqa: E501
-            apps ([str]): The Datadog integrations reporting metrics for the host.. [optional]  # noqa: E501
-            aws_name (str): AWS name of your host.. [optional]  # noqa: E501
-            host_name (str): The host name.. [optional]  # noqa: E501
-            id (int): The host ID.. [optional]  # noqa: E501
-            is_muted (bool): If a host is muted or unmuted.. [optional]  # noqa: E501
-            last_reported_time (int): Last time the host reported a metric data point.. [optional]  # noqa: E501
-            meta (HostMeta): [optional]  # noqa: E501
-            metrics (HostMetrics): [optional]  # noqa: E501
-            mute_timeout (int): Timeout of the mute applied to your host.. [optional]  # noqa: E501
-            name (str): The host name.. [optional]  # noqa: E501
-            sources ([str]): Source or cloud provider associated with your host.. [optional]  # noqa: E501
-            tags_by_source ({str: ([str],)}): List of tags for each source (AWS, Datadog Agent, Chef..).. [optional]  # noqa: E501
-            up (bool): Displays UP when the expected metrics are received and displays `???` if no metrics are received.. [optional]  # noqa: E501
+            aliases ([str]): Host aliases collected by Datadog.. [optional]
+            apps ([str]): The Datadog integrations reporting metrics for the host.. [optional]
+            aws_name (str): AWS name of your host.. [optional]
+            host_name (str): The host name.. [optional]
+            id (int): The host ID.. [optional]
+            is_muted (bool): If a host is muted or unmuted.. [optional]
+            last_reported_time (int): Last time the host reported a metric data point.. [optional]
+            meta (HostMeta): [optional]
+            metrics (HostMetrics): [optional]
+            mute_timeout (int): Timeout of the mute applied to your host.. [optional]
+            name (str): The host name.. [optional]
+            sources ([str]): Source or cloud provider associated with your host.. [optional]
+            tags_by_source ({str: ([str],)}): List of tags for each source (AWS, Datadog Agent, Chef..).. [optional]
+            up (bool): Displays UP when the expected metrics are received and displays `???` if no metrics are received.. [optional]
         """
         super().__init__(kwargs)
 
         self._check_pos_args(args)
 
     @classmethod
-    @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):
         """Helper creating a new instance from a response."""
 
         self = super(Host, cls)._from_openapi_data(kwargs)
