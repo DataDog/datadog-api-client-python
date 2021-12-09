@@ -7,6 +7,7 @@ import os
 import pprint
 import re
 import tempfile
+from types import MappingProxyType
 
 from dateutil.parser import parse
 
@@ -19,6 +20,7 @@ from {{packageName}}.exceptions import (
 
 none_type = type(None)
 file_type = io.IOBase
+empty_dict = MappingProxyType({})
 
 
 def convert_js_args_to_python_args(fn):
@@ -110,17 +112,17 @@ def composed_model_input_classes(cls):
 class OpenApiModel(object):
     """The base class for all OpenAPIModels"""
 
-    _composed_schemas = {}
+    _composed_schemas = empty_dict
 
     additional_properties_type = None
 
-    attribute_map = {}
+    attribute_map = empty_dict
 
     _nullable = False
 
     discriminator = None
 
-    allowed_values = {}
+    allowed_values = empty_dict
 
 {{> model_templates/method_set_attribute }}
 
@@ -1838,9 +1840,9 @@ def validate_get_composed_info(constant_args, model_args, self):
 class UnparsedObject(ModelNormal):
     """A model for an oneOf we don't know about."""
 
-    validations = {}
+    validations = empty_dict
 
-    openapi_types = {}
+    openapi_types = empty_dict
 
     required_properties = set(
         [
