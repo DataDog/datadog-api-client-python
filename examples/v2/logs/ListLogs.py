@@ -18,6 +18,7 @@ body = LogsListRequest(
 )
 
 configuration = Configuration()
+configuration.unstable_operations["list_logs"] = True
 with ApiClient(configuration) as api_client:
     api_instance = LogsApi(api_client)
     response = api_instance.list_logs(body=body)

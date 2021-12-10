@@ -13,11 +13,12 @@ Feature: Authentication
     Given an instance of "Authentication" API
     And new "Validate" request
 
-  @skip-validation
+  @skip-validation @team:DataDog/team-aaa
   Scenario: Validate API key returns "Forbidden" response
     When the request is sent
     Then the response status is 403 OK
 
+  @team:DataDog/team-aaa
   Scenario: Validate API key returns "OK" response
     Given a valid "apiKeyAuth" key in the system
     When the request is sent

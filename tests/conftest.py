@@ -38,9 +38,7 @@ try:
             )
             terminalreporter.line(
                 "* https://app.datadoghq.com/ci/test-runs?query="
-                "%40test.service%3A{}%20%40ci.pipeline.id%3A{}&index=citest".format(
-                    dd_service, ci_pipeline_id
-                )
+                "%40test.service%3A{}%20%40ci.pipeline.id%3A{}&index=citest".format(dd_service, ci_pipeline_id)
             )
 
 
@@ -91,11 +89,7 @@ def pytest_bdd_before_scenario(request, feature, scenario):
     span.set_tag("test.name", scenario.name)
     span.set_tag("test.suite", scenario.feature.filename.split("tests")[-1])
 
-    codeowners = [
-        f"@{tag[5:]}"
-        for tag in scenario.tags | scenario.feature.tags
-        if tag.startswith("team:")
-    ]
+    codeowners = [f"@{tag[5:]}" for tag in scenario.tags | scenario.feature.tags if tag.startswith("team:")]
     if codeowners:
         span.set_tag("test.codeowners", json.dumps(codeowners))
 
@@ -126,9 +120,7 @@ def pytest_bdd_after_step(request, feature, scenario, step, step_func, step_func
         span.finish()
 
 
-def pytest_bdd_step_error(
-    request, feature, scenario, step, step_func, step_func_args, exception
-):
+def pytest_bdd_step_error(request, feature, scenario, step, step_func, step_func_args, exception):
     span = getattr(step_func, "__dd_span__", None)
     if span is not None:
         span.set_exc_info(type(exception), exception, exception.__traceback__)
@@ -369,8 +361,7 @@ def undo_operations():
         with f.open() as fp:
             data = json.load(fp)
             result[version] = {
-                snake_case(operation_id): settings.get("undo")
-                for operation_id, settings in data.items()
+                snake_case(operation_id): settings.get("undo") for operation_id, settings in data.items()
             }
 
     return result
@@ -460,18 +451,14 @@ def request_body_from_file(context, path, package_name):
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(context, name, path):
     """Set request parameter."""
-    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = glom(
-        context, path
-    )
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = glom(context, path)
 
 
 @given(parsers.parse('request contains "{name}" parameter with value {value}'))
 def request_parameter_with_value(context, name, value):
     """Set request parameter."""
     tpl = Template(value).render(**context)
-    context["api_request"]["kwargs"][
-        escape_reserved_keyword(snake_case(name))
-    ] = json.loads(tpl)
+    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = json.loads(tpl)
 
 
 def build_given(version, operation):
@@ -483,12 +470,8 @@ def build_given(version, operation):
 
         # make sure we have a fresh instance of API client and configuration
         configuration = build_configuration(importlib.import_module(package_name))
-        configuration.api_key["apiKeyAuth"] = os.getenv(
-            "DD_TEST_CLIENT_API_KEY", "fake"
-        )
-        configuration.api_key["appKeyAuth"] = os.getenv(
-            "DD_TEST_CLIENT_APP_KEY", "fake"
-        )
+        configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
+        configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
 
         # enable unstable operation
         if operation_name in configuration.unstable_operations:
@@ -507,16 +490,13 @@ def build_given(version, operation):
                     return glom(context, p["source"])
 
             kwargs = {
-                escape_reserved_keyword(snake_case(p["name"])): build_param(p)
-                for p in operation.get("parameters", [])
+                escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
             }
             kwargs["_check_input_type"] = False
             result = operation_method(**kwargs)
 
             # register undo method
-            context["undo_operations"].append(
-                lambda: undo(api, version, operation_name, result, client=client)
-            )
+            context["undo_operations"].append(lambda: undo(api, version, operation_name, result, client=client))
 
             # optional re-shaping
             if "source" in operation:
@@ -561,9 +541,7 @@ def undo(package_name, undo_operations, client):
             if "source" in parameter:
                 args.append(glom(response, parameter["source"]))
             elif "template" in parameter:
-                variables = meta.find_undeclared_variables(
-                    Environment().parse(parameter["template"])
-                )
+                variables = meta.find_undeclared_variables(Environment().parse(parameter["template"]))
                 ctx = {}
                 for var in variables:
                     ctx[var] = glom(response, var)
@@ -589,9 +567,7 @@ def execute_request(undo, context, client, api_version, _package):
     try:
         response = api_request["request"](*api_request["args"], **api_request["kwargs"])
         # Reserialise the response body to JSON to facilitate test assertions
-        response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(
-            response[0]
-        )
+        response_body_json = _package.api_client.ApiClient.sanitize_for_serialization(response[0])
         api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions
@@ -604,9 +580,7 @@ def execute_request(undo, context, client, api_version, _package):
     operation_id = api_request["request"].__name__
     response = api_request["response"][0]
 
-    context["undo_operations"].append(
-        lambda: undo(api, api_version, operation_id, response)
-    )
+    context["undo_operations"].append(lambda: undo(api, api_version, operation_id, response))
 
 
 @then(parsers.parse("the response status is {status:d} {description}"))
@@ -622,11 +596,7 @@ def expect_equal(context, response_path, value):
     assert test_value == response_value
 
 
-@then(
-    parsers.parse(
-        'the response "{response_path}" has the same value as "{fixture_path}"'
-    )
-)
+@then(parsers.parse('the response "{response_path}" has the same value as "{fixture_path}"'))
 def expect_equal_value(context, response_path, fixture_path):
     fixture_value = glom(context, fixture_path)
     response_value = glom(context["api_request"]["response"][0], response_path)
