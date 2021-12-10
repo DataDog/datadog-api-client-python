@@ -14,7 +14,7 @@ Feature: Metrics
     And a valid "appKeyAuth" key in the system
     And an instance of "Metrics" API
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: Create a tag configuration returns "Bad Request" response
     Given operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
@@ -23,7 +23,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: Create a tag configuration returns "Conflict" response
     Given operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
@@ -32,7 +32,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 409 Conflict
 
-  @skip
+  @skip @team:DataDog/points-aggregation
   Scenario: Create a tag configuration returns "Created" response
     Given operation "CreateTagConfiguration" enabled
     And new "CreateTagConfiguration" request
@@ -41,7 +41,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 201 Created
 
-  @skip
+  @skip @team:DataDog/points-aggregation
   Scenario: Delete a tag configuration returns "No Content" response
     Given there is a valid "metric_tag_configuration" in the system
     And operation "DeleteTagConfiguration" enabled
@@ -50,7 +50,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: Delete a tag configuration returns "Not found" response
     Given operation "DeleteTagConfiguration" enabled
     And new "DeleteTagConfiguration" request
@@ -58,21 +58,21 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: List distinct metric volumes by metric name returns "Bad Request" response
     Given new "ListVolumesByMetricName" request
     And request contains "metric_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: List distinct metric volumes by metric name returns "Not Found" response
     Given new "ListVolumesByMetricName" request
     And request contains "metric_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip
+  @skip @team:DataDog/points-aggregation
   Scenario: List distinct metric volumes by metric name returns "Success" response
     Given there is a valid "metric_tag_configuration" in the system
     And new "ListVolumesByMetricName" request
@@ -81,7 +81,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: List tag configuration by name returns "Not Found" response
     Given operation "ListTagConfigurationByName" enabled
     And new "ListTagConfigurationByName" request
@@ -89,7 +89,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip
+  @skip @team:DataDog/points-aggregation
   Scenario: List tag configuration by name returns "Success" response
     Given there is a valid "metric_tag_configuration" in the system
     And operation "ListTagConfigurationByName" enabled
@@ -99,14 +99,14 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: List tag configurations returns "Bad Request" response
     Given operation "ListTagConfigurations" enabled
     And new "ListTagConfigurations" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip
+  @skip @team:DataDog/points-aggregation
   Scenario: List tag configurations returns "Success" response
     Given there is a valid "metric_tag_configuration" in the system
     And operation "ListTagConfigurations" enabled
@@ -116,6 +116,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data[0].id" has the same value as "metric_tag_configuration.data.id"
 
+  @team:DataDog/points-aggregation
   Scenario: List tag configurations with a tag filter returns "Success" response
     Given operation "ListTagConfigurations" enabled
     And new "ListTagConfigurations" request
@@ -123,21 +124,21 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: List tags by metric name returns "Bad Request" response
     Given new "ListTagsByMetricName" request
     And request contains "metric_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: List tags by metric name returns "Not Found" response
     Given new "ListTagsByMetricName" request
     And request contains "metric_name" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip
+  @skip @team:DataDog/points-aggregation
   Scenario: List tags by metric name returns "Success" response
     Given there is a valid "metric_tag_configuration" in the system
     And new "ListTagsByMetricName" request
@@ -146,7 +147,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: Update a tag configuration returns "Bad Request" response
     Given operation "UpdateTagConfiguration" enabled
     And new "UpdateTagConfiguration" request
@@ -155,7 +156,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip
+  @skip @team:DataDog/points-aggregation
   Scenario: Update a tag configuration returns "OK" response
     Given operation "UpdateTagConfiguration" enabled
     And there is a valid "metric_tag_configuration" in the system
@@ -166,7 +167,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.attributes.tags[0]" is equal to "app"
 
-  @generated @skip
+  @generated @skip @team:DataDog/points-aggregation
   Scenario: Update a tag configuration returns "Unprocessable Entity" response
     Given operation "UpdateTagConfiguration" enabled
     And new "UpdateTagConfiguration" request

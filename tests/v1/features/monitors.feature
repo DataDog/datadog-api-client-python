@@ -10,18 +10,19 @@ Feature: Monitors
     And a valid "appKeyAuth" key in the system
     And an instance of "Monitors" API
 
-  @generated @skip
+  @generated @skip @team:DataDog/monitor-app
   Scenario: Check if a monitor can be deleted returns "Bad Request" response
     Given new "CheckCanDeleteMonitor" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/monitor-app
   Scenario: Check if a monitor can be deleted returns "Deletion conflict error" response
     Given new "CheckCanDeleteMonitor" request
     When the request is sent
     Then the response status is 409 Deletion conflict error
 
+  @team:DataDog/monitor-app
   Scenario: Check if a monitor can be deleted returns "OK" response
     Given there is a valid "monitor" in the system
     And new "CheckCanDeleteMonitor" request
@@ -29,12 +30,14 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/monitor-app
   Scenario: Create a monitor returns "Bad Request" response
     Given new "CreateMonitor" request
     And body with value {"type": "log alert", "query": "query"}
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/monitor-app
   Scenario: Create a monitor returns "OK" response
     Given there is a valid "role" in the system
     And new "CreateMonitor" request
@@ -42,19 +45,21 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/monitor-app
   Scenario: Delete a monitor returns "Bad Request" response
     Given new "DeleteMonitor" request
     And request contains "monitor_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/monitor-app
   Scenario: Delete a monitor returns "Item not found error" response
     Given new "DeleteMonitor" request
     And request contains "monitor_id" parameter with value 0
     When the request is sent
     Then the response status is 404 Item not found error
 
+  @team:DataDog/monitor-app
   Scenario: Delete a monitor returns "OK" response
     Given there is a valid "monitor" in the system
     And new "DeleteMonitor" request
@@ -62,7 +67,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/monitor-app
   Scenario: Edit a monitor returns "Bad Request" response
     Given new "UpdateMonitor" request
     And request contains "monitor_id" parameter from "<PATH>"
@@ -70,6 +75,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/monitor-app
   Scenario: Edit a monitor returns "Monitor Not Found error" response
     Given new "UpdateMonitor" request
     And request contains "monitor_id" parameter with value 0
@@ -77,6 +83,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 404 Monitor Not Found error
 
+  @team:DataDog/monitor-app
   Scenario: Edit a monitor returns "OK" response
     Given there is a valid "monitor" in the system
     And new "UpdateMonitor" request
@@ -86,19 +93,21 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "name" is equal to "{{ monitor.name }}-updated"
 
-  @generated @skip
+  @generated @skip @team:DataDog/monitor-app
   Scenario: Get a monitor's details returns "Bad Request" response
     Given new "GetMonitor" request
     And request contains "monitor_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/monitor-app
   Scenario: Get a monitor's details returns "Monitor Not Found error" response
     Given new "GetMonitor" request
     And request contains "monitor_id" parameter with value 12345
     When the request is sent
     Then the response status is 404 Monitor Not Found error
 
+  @team:DataDog/monitor-app
   Scenario: Get a monitor's details returns "OK" response
     Given there is a valid "monitor" in the system
     And new "GetMonitor" request
@@ -107,6 +116,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "id" has the same value as "monitor.id"
 
+  @team:DataDog/monitor-app
   Scenario: Get a synthetics monitor's details
     Given there is a valid "synthetics_api_test" in the system
     And new "GetMonitor" request
@@ -115,19 +125,20 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "options.synthetics_check_id" has the same value as "synthetics_api_test.public_id"
 
+  @team:DataDog/monitor-app
   Scenario: Get all monitor details returns "Bad Request" response
     Given new "ListMonitors" request
     And request contains "group_states" parameter with value "notagroupstate"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @integration-only
+  @integration-only @team:DataDog/monitor-app
   Scenario: Get all monitor details returns "OK" response
     Given new "ListMonitors" request
     When the request is sent
     Then the response status is 200 OK
 
-  @skip
+  @skip @team:DataDog/monitor-app
   Scenario: Get all monitor details with tags
     Given there is a valid "monitor" in the system
     And new "ListMonitors" request
@@ -137,34 +148,40 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "[0].id" has the same value as "monitor.id"
 
+  @team:DataDog/monitor-app
   Scenario: Monitors group search returns "Bad Request" response
     Given new "SearchMonitorGroups" request
     And request contains "query" parameter with value "status:notastatus"
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/monitor-app
   Scenario: Monitors group search returns "OK" response
     Given new "SearchMonitorGroups" request
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/monitor-app
   Scenario: Monitors search returns "Bad Request" response
     Given new "SearchMonitors" request
     And request contains "query" parameter with value "status:notastatus"
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/monitor-app
   Scenario: Monitors search returns "OK" response
     Given new "SearchMonitors" request
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/monitor-app
   Scenario: Validate a monitor returns "Invalid JSON" response
     Given new "ValidateMonitor" request
     And body with value {"type": "log alert", "query": "query"}
     When the request is sent
     Then the response status is 400 Invalid JSON
 
+  @team:DataDog/monitor-app
   Scenario: Validate a monitor returns "OK" response
     Given new "ValidateMonitor" request
     And body from file "monitor_payload.json"

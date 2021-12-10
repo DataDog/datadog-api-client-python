@@ -9,75 +9,75 @@ Feature: Dashboard Lists
     And an instance of "DashboardLists" API
     And request contains "dashboard_list_id" parameter from "<PATH>"
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Add Items to a Dashboard List returns "Bad Request" response
     Given new "CreateDashboardListItems" request
     And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Add Items to a Dashboard List returns "Not Found" response
     Given new "CreateDashboardListItems" request
     And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Add Items to a Dashboard List returns "OK" response
     Given new "CreateDashboardListItems" request
     And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Delete items from a dashboard list returns "Bad Request" response
     Given new "DeleteDashboardListItems" request
     And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Delete items from a dashboard list returns "Not Found" response
     Given new "DeleteDashboardListItems" request
     And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Delete items from a dashboard list returns "OK" response
     Given new "DeleteDashboardListItems" request
     And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Get items of a Dashboard List returns "Not Found" response
     Given new "GetDashboardListItems" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Get items of a Dashboard List returns "OK" response
     Given new "GetDashboardListItems" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Update items of a dashboard list returns "Bad Request" response
     Given new "UpdateDashboardListItems" request
     And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Update items of a dashboard list returns "Not Found" response
     Given new "UpdateDashboardListItems" request
     And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip
+  @generated @skip @team:DataDog/dashboards
   Scenario: Update items of a dashboard list returns "OK" response
     Given new "UpdateDashboardListItems" request
     And body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}

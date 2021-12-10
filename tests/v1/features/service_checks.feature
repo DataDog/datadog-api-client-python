@@ -21,24 +21,25 @@ Feature: Service Checks
     And an instance of "ServiceChecks" API
     And new "SubmitServiceCheck" request
 
-  @generated @skip
+  @generated @skip @team:DataDog/monitors-evaluation
   Scenario: Submit a Service Check returns "Bad Request" response
     Given body with value [{"check": "app.ok", "host_name": "app.host1", "message": "app is running", "status": 0, "tags": ["environment:test"], "timestamp": null}]
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/monitors-evaluation
   Scenario: Submit a Service Check returns "Payload accepted" response
     Given body with value [{"check": "app.ok", "host_name": "host", "status": 0, "tags": ["test:{{ unique_alnum }}"]}]
     When the request is sent
     Then the response status is 202 Payload accepted
 
-  @generated @skip
+  @generated @skip @team:DataDog/monitors-evaluation
   Scenario: Submit a Service Check returns "Payload too large" response
     Given body with value [{"check": "app.ok", "host_name": "app.host1", "message": "app is running", "status": 0, "tags": ["environment:test"], "timestamp": null}]
     When the request is sent
     Then the response status is 413 Payload too large
 
-  @generated @skip
+  @generated @skip @team:DataDog/monitors-evaluation
   Scenario: Submit a Service Check returns "Request timeout" response
     Given body with value [{"check": "app.ok", "host_name": "app.host1", "message": "app is running", "status": 0, "tags": ["environment:test"], "timestamp": null}]
     When the request is sent

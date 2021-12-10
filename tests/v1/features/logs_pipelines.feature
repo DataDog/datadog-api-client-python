@@ -22,61 +22,61 @@ Feature: Logs Pipelines
     And a valid "appKeyAuth" key in the system
     And an instance of "LogsPipelines" API
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Create a pipeline returns "Bad Request" response
     Given new "CreateLogsPipeline" request
     And body with value {"filter": {"query": "source:python"}, "is_enabled": null, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar\n", "support_rules": "rule_name_1 foo\nrule_name_2 bar\n"}, "is_enabled": false, "name": null, "samples": [null], "source": "message", "type": "grok-parser"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Create a pipeline returns "OK" response
     Given new "CreateLogsPipeline" request
     And body with value {"filter": {"query": "source:python"}, "is_enabled": null, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar\n", "support_rules": "rule_name_1 foo\nrule_name_2 bar\n"}, "is_enabled": false, "name": null, "samples": [null], "source": "message", "type": "grok-parser"}]}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Delete a pipeline returns "Bad Request" response
     Given new "DeleteLogsPipeline" request
     And request contains "pipeline_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Delete a pipeline returns "OK" response
     Given new "DeleteLogsPipeline" request
     And request contains "pipeline_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Get a pipeline returns "Bad Request" response
     Given new "GetLogsPipeline" request
     And request contains "pipeline_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Get a pipeline returns "OK" response
     Given new "GetLogsPipeline" request
     And request contains "pipeline_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Get all pipelines returns "OK" response
     Given new "ListLogsPipelines" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Get pipeline order returns "OK" response
     Given new "GetLogsPipelineOrder" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Update a pipeline returns "Bad Request" response
     Given new "UpdateLogsPipeline" request
     And request contains "pipeline_id" parameter from "<PATH>"
@@ -84,7 +84,7 @@ Feature: Logs Pipelines
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Update a pipeline returns "OK" response
     Given new "UpdateLogsPipeline" request
     And request contains "pipeline_id" parameter from "<PATH>"
@@ -92,21 +92,21 @@ Feature: Logs Pipelines
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Update pipeline order returns "Bad Request" response
     Given new "UpdateLogsPipelineOrder" request
     And body with value {"pipeline_ids": ["tags", "org_ids", "products"]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Update pipeline order returns "OK" response
     Given new "UpdateLogsPipelineOrder" request
     And body with value {"pipeline_ids": ["tags", "org_ids", "products"]}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/event-platform-experience
   Scenario: Update pipeline order returns "Unprocessable Entity" response
     Given new "UpdateLogsPipelineOrder" request
     And body with value {"pipeline_ids": ["tags", "org_ids", "products"]}

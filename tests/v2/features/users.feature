@@ -7,13 +7,14 @@ Feature: Users
     And a valid "appKeyAuth" key in the system
     And an instance of "Users" API
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Create a service account returns "Bad Request" response
     Given new "CreateServiceAccount" request
     And body with value {"data": {"attributes": {"email": "jane.doe@example.com", "name": null, "service_account": true, "title": null}, "relationships": {"roles": {"data": [{"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}]}}, "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/team-aaa
   Scenario: Create a service account returns "OK" response
     Given there is a valid "role" in the system
     And new "CreateServiceAccount" request
@@ -26,13 +27,14 @@ Feature: Users
     And the response "data.attributes.service_account" is equal to true
     And the response "data.relationships.roles.data[0].id" is equal to "{{ role.data.id }}"
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Create a user returns "Bad Request" response
     Given new "CreateUser" request
     And body with value {"data": {"attributes": {"email": "jane.doe@example.com", "name": null, "title": null}, "relationships": {"roles": {"data": [{"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}]}}, "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/team-aaa
   Scenario: Create a user returns "OK" response
     Given new "CreateUser" request
     And body with value {"data": {"type": "users", "attributes": {"name": "Datadog API Client Python", "email": "{{ unique }}@datadoghq.com"}}}
@@ -43,13 +45,14 @@ Feature: Users
     And the response "data.attributes.disabled" is false
     And the response "data.attributes.service_account" is false
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Disable a user returns "Not found" response
     Given new "DisableUser" request
     And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not found
 
+  @team:DataDog/team-aaa
   Scenario: Disable a user returns "OK" response
     Given there is a valid "user" in the system
     And new "DisableUser" request
@@ -57,13 +60,14 @@ Feature: Users
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Get a user invitation returns "Not found" response
     Given new "GetInvitation" request
     And request contains "user_invitation_uuid" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not found
 
+  @team:DataDog/team-aaa
   Scenario: Get a user invitation returns "OK" response
     Given there is a valid "user" in the system
     And the "user" has a "user_invitation"
@@ -72,27 +76,28 @@ Feature: Users
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Get a user organization returns "Not found" response
     Given new "ListUserOrganizations" request
     And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Get a user organization returns "OK" response
     Given new "ListUserOrganizations" request
     And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Get a user permissions returns "Not found" response
     Given new "ListUserPermissions" request
     And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not found
 
+  @team:DataDog/team-aaa
   Scenario: Get a user permissions returns "OK" response
     Given there is a valid "user" in the system
     And new "ListUserPermissions" request
@@ -100,6 +105,7 @@ Feature: Users
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/team-aaa
   Scenario: Get a user returns "OK" response
     Given there is a valid "user" in the system
     And new "GetUser" request
@@ -107,26 +113,27 @@ Feature: Users
     When the request is sent
     Then the response status is 200 OK for get user
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Get user details returns "Not found" response
     Given new "GetUser" request
     And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Get user details returns "OK for get user" response
     Given new "GetUser" request
     And request contains "user_id" parameter from "<PATH>"
     When the request is sent
     Then the response status is 200 OK for get user
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: List all users returns "Bad Request" response
     Given new "ListUsers" request
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/team-aaa
   Scenario: List all users returns "OK" response
     Given there is a valid "user" in the system
     And new "ListUsers" request
@@ -136,13 +143,14 @@ Feature: Users
     And the response "meta.page.total_filtered_count" is equal to 1
     And the response "data[0].attributes.email" has the same value as "user.data.attributes.email"
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Send invitation emails returns "Bad Request" response
     Given new "SendInvitations" request
     And body with value {"data": []}
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/team-aaa
   Scenario: Send invitation emails returns "OK" response
     Given there is a valid "user" in the system
     And new "SendInvitations" request
@@ -150,7 +158,7 @@ Feature: Users
     When the request is sent
     Then the response status is 201 OK
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Update a user returns "Bad Request" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "<PATH>"
@@ -158,6 +166,7 @@ Feature: Users
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @team:DataDog/team-aaa
   Scenario: Update a user returns "Bad User ID in Request" response
     Given there is a valid "user" in the system
     And new "UpdateUser" request
@@ -166,6 +175,7 @@ Feature: Users
     When the request is sent
     Then the response status is 422 Bad User ID in Request
 
+  @team:DataDog/team-aaa
   Scenario: Update a user returns "Not found" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter with value "00000000-dead-beef-dead-ffffffffffff"
@@ -173,6 +183,7 @@ Feature: Users
     When the request is sent
     Then the response status is 404 Not found
 
+  @team:DataDog/team-aaa
   Scenario: Update a user returns "OK" response
     Given there is a valid "user" in the system
     And new "UpdateUser" request
@@ -185,7 +196,7 @@ Feature: Users
     And the response "data.attributes.name" is equal to "updated"
     And the response "data.attributes.disabled" is equal to true
 
-  @generated @skip
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Update a user returns "Unprocessable Entity" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "<PATH>"
