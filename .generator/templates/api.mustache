@@ -164,33 +164,31 @@ class {{classname}}(object):
     ):
         """{{#summary}}{{{.}}}{{/summary}}{{^summary}}{{operationId}}{{/summary}}
 
-{{#notes}}
         {{{notes}}}
-{{/notes}}
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
+        asynchronous HTTP request, please pass async_req=True.
 
         >>> thread = api.{{operationId}}({{#requiredParams}}{{^defaultValue}}{{paramName}}, {{/defaultValue}}{{/requiredParams}}{{#requiredParams}}{{#defaultValue}}{{paramName}}={{{defaultValue}}}, {{/defaultValue}}{{/requiredParams}}async_req=True)
         >>> result = thread.get()
-
 {{#requiredParams}}
 {{#-last}}
+
         Args:
 {{/-last}}
 {{/requiredParams}}
 {{#requiredParams}}
 {{^defaultValue}}
-            {{paramName}} ({{dataType}}):{{#description}} {{{description}}}{{/description}}
+            {{paramName}} ({{dataType}}):{{#description}} {{{.}}}{{/description}}
 {{/defaultValue}}
 {{/requiredParams}}
 {{#requiredParams}}
 {{#defaultValue}}
-            {{paramName}} ({{dataType}}):{{#description}} {{{description}}}.{{/description}} defaults to {{{defaultValue}}}, must be one of [{{{defaultValue}}}]
+            {{paramName}} ({{dataType}}):{{#description}} {{{.}}}{{/description}} Defaults to {{{defaultValue}}}. Must be one of [{{{defaultValue}}}]
 {{/defaultValue}}
 {{/requiredParams}}
 
         Keyword Args:{{#optionalParams}}
-            {{paramName}} ({{dataType}}):{{#description}} {{{description}}}.{{/description}} [optional]{{#defaultValue}} if omitted the server will use the default value of {{{defaultValue}}}{{/defaultValue}}{{/optionalParams}}
+            {{paramName}} ({{dataType}}): [optional]{{#description}} {{{.}}}{{/description}}{{#defaultValue}} If omitted the server will use the default value of {{{defaultValue}}}.{{/defaultValue}}{{/optionalParams}}
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
